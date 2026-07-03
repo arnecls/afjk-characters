@@ -230,10 +230,10 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -1436,7 +1436,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
               "label": "Immune — Self"
@@ -1524,10 +1524,10 @@
               "label": "Magic"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -3114,10 +3114,10 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
               "label": "Unaffected — Self (Supreme+)"
@@ -3605,7 +3605,7 @@
               "label": "HP loss"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -4900,7 +4900,7 @@
               "label": "Knock down — Area"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         },
@@ -5801,7 +5801,7 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -7120,7 +7120,7 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -7842,7 +7842,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -9272,7 +9272,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -10234,7 +10234,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Silence"
+              "label": "Silence — Single target"
             }
           ]
         },
@@ -10287,10 +10287,10 @@
           ],
           "skill_card_tags": [
             {
-              "label": "Silence"
+              "label": "Silence — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         }
@@ -11379,7 +11379,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -12225,7 +12225,7 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -12368,7 +12368,7 @@
           ],
           "skill_card_tags": [
             {
-              "label": "Blind"
+              "label": "Blind — Single target"
             }
           ]
         }
@@ -12546,7 +12546,7 @@
               "label": "Physical"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             },
             {
               "label": "Untargetable — Self"
@@ -13098,7 +13098,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Silence"
+              "label": "Silence — Single target"
             }
           ]
         },
@@ -13965,7 +13965,7 @@
           ],
           "skill_card_tags": [
             {
-              "label": "Bind (EX+10)"
+              "label": "Bind — Single target (EX+10)"
             }
           ]
         },
@@ -14813,13 +14813,13 @@
               "polarity": "buff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
-              "label": "Displace"
+              "label": "Displace — Single target"
             },
             {
-              "label": "Silence"
+              "label": "Silence — Single target"
             }
           ]
         },
@@ -16858,7 +16858,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -17146,10 +17146,10 @@
               "label": "Magic"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         }
@@ -17461,7 +17461,7 @@
               "label": "Magic"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -17878,10 +17878,10 @@
               "polarity": "buff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
-              "label": "Sleep"
+              "label": "Sleep — Single target"
             }
           ]
         },
@@ -18087,7 +18087,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -18260,10 +18260,10 @@
               "polarity": "buff"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         }
@@ -18458,7 +18458,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -18634,7 +18634,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Taunt"
+              "label": "Taunt — Single target"
             }
           ]
         },
@@ -19183,7 +19183,7 @@
               "label": "Max HP-based damage"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -19638,7 +19638,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -20467,7 +20467,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -24023,7 +24023,7 @@
               "label": "Physical"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
               "label": "Knock back — Area"
@@ -24973,7 +24973,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             }
           ]
         },
@@ -25046,7 +25046,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -25565,7 +25565,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -25790,7 +25790,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock up (EX+10)"
+              "label": "Knock up — Single target (EX+10)"
             }
           ]
         },
@@ -25872,7 +25872,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         }
@@ -26775,7 +26775,7 @@
               "label": "Physical"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             }
           ]
         },
@@ -26922,7 +26922,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         },
@@ -27574,7 +27574,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             }
           ]
         },
@@ -28175,10 +28175,10 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         },
@@ -29836,7 +29836,7 @@
               "label": "Knock back — Area"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -29929,7 +29929,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -30020,7 +30020,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -30478,7 +30478,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -31553,10 +31553,10 @@
               "polarity": "buff"
             },
             {
-              "label": "Disarm"
+              "label": "Disarm — Single target"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             }
           ]
         },
@@ -32087,10 +32087,10 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -32512,10 +32512,10 @@
               "label": "Magic"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -32600,7 +32600,7 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -32688,10 +32688,10 @@
               "label": "Magic"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -33298,7 +33298,7 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         }
@@ -33844,10 +33844,10 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             },
             {
-              "label": "Stun (Supreme+)"
+              "label": "Stun — Single target (Supreme+)"
             },
             {
               "label": "Unaffected — Self"
@@ -34341,7 +34341,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun (EX+10)"
+              "label": "Stun — Single target (EX+10)"
             }
           ]
         },
@@ -34675,7 +34675,7 @@
               "label": "Magic"
             },
             {
-              "label": "Blind"
+              "label": "Blind — Single target"
             }
           ]
         },
@@ -34828,7 +34828,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             }
           ]
         },
@@ -35099,7 +35099,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -35519,7 +35519,7 @@
               "label": "Magic"
             },
             {
-              "label": "Charm"
+              "label": "Charm — Single target"
             }
           ]
         },
@@ -37062,7 +37062,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Displace"
+              "label": "Displace — Single target"
             },
             {
               "label": "Unaffected — Self (Supreme+)"
@@ -37149,10 +37149,10 @@
               "label": "Physical"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         },
@@ -37657,7 +37657,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             }
           ]
         },
@@ -38417,7 +38417,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -38843,7 +38843,7 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -40819,7 +40819,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -43170,10 +43170,10 @@
               "label": "Magic"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
-              "label": "Taunt"
+              "label": "Taunt — Single target"
             }
           ]
         },
@@ -43405,7 +43405,7 @@
               "label": "Displace — Multiple targets"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -43752,7 +43752,7 @@
               "label": "Max HP-based damage"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
               "label": "Displace — Multiple targets"
@@ -44126,10 +44126,10 @@
               "polarity": "debuff"
             },
             {
-              "label": "Displace"
+              "label": "Displace — Single target"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -44796,10 +44796,10 @@
               "label": "Magic"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             }
           ]
         },
@@ -44962,7 +44962,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             }
           ]
         },
@@ -45272,7 +45272,7 @@
               "label": "Physical"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             }
           ]
         },
@@ -46202,10 +46202,10 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             },
             {
-              "label": "Displace"
+              "label": "Displace — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -46308,7 +46308,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             }
           ]
         },
@@ -46921,7 +46921,7 @@
               "label": "Physical"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -47254,7 +47254,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Charm"
+              "label": "Charm — Single target"
             }
           ]
         },
@@ -48318,7 +48318,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -49446,7 +49446,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock up"
+              "label": "Knock up — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -50332,7 +50332,7 @@
               "label": "Magic"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             }
           ]
         },
@@ -50802,7 +50802,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -52791,7 +52791,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -53217,7 +53217,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
               "label": "Stun — Multiple targets"
@@ -53699,10 +53699,10 @@
               "polarity": "debuff"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             },
             {
-              "label": "Silence"
+              "label": "Silence — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -55472,7 +55472,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Interrupt"
+              "label": "Interrupt — Single target"
             }
           ]
         },
@@ -56046,7 +56046,7 @@
               "label": "Physical"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             }
           ]
         },
@@ -57976,7 +57976,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -58210,7 +58210,7 @@
               "label": "True damage"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -58401,7 +58401,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -59336,10 +59336,10 @@
               "polarity": "debuff"
             },
             {
-              "label": "Knock down"
+              "label": "Knock down — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             },
             {
               "label": "Unaffected — Self"
@@ -60008,7 +60008,7 @@
               "polarity": "debuff"
             },
             {
-              "label": "Bind"
+              "label": "Bind — Single target"
             }
           ]
         },
@@ -60852,7 +60852,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -60926,7 +60926,7 @@
               "label": "Physical"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },
@@ -62038,10 +62038,10 @@
               "label": "Physical"
             },
             {
-              "label": "Knock back"
+              "label": "Knock back — Single target"
             },
             {
-              "label": "Stun"
+              "label": "Stun — Single target"
             }
           ]
         },

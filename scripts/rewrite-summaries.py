@@ -8944,7 +8944,7 @@ def _skill_card_tag_for_effect(
         return f"{text} — path"
     if explicit_targeting and targeting:
         return f"{text} — {targeting}"
-    if is_cc and targeting and targeting != "Single target":
+    if is_cc and targeting:
         return f"{text} — {targeting}"
     if targeting and targeting not in ("Single target",):
         return f"{text} — {targeting}"

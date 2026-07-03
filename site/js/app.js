@@ -64,13 +64,13 @@ metas.map(function(meta){return('<span class="chip '+
 meta.cls+'">'+
 meta.emoji+" "+
 escapeHtml(chipDisplayLabel(meta.text))+"</span>");}).join("")+"</div>");}
-function renderStackedTargetingPill(tokens){const metas=tokens.map(function(token){return targetingTokenMeta(token);}).filter(Boolean).sort(function(a,b){return b.rank-a.rank;});if(!metas.length){return"";}
+function renderStackedTargetingPill(tokens,tipHtmlOverride){const metas=tokens.map(function(token){return targetingTokenMeta(token);}).filter(Boolean).sort(function(a,b){return b.rank-a.rank;});if(!metas.length){return"";}
 if(metas.length===1){const only=metas[0];return chipSpan(only.emoji,only.text,only.cls);}
 const segmentsHtml=metas.map(function(meta,index){const isFirst=index===0;const content=isFirst?meta.emoji+" "+escapeHtml(chipDisplayLabel(meta.text)):meta.emoji;return('<span class="chip-stacked-seg '+
 meta.cls+
 (isFirst?" chip-stacked-first":" chip-stacked-icon")+'">'+
-content+"</span>");}).join("");return('<span class="chip chip-stacked chip-has-tip" data-tip-html="'+
-escapeHtml(renderStackedTargetingTipHtml(metas))+'" tabindex="0" role="button" aria-describedby="chip-tooltip">'+
+content+"</span>");}).join("");const tipHtml=tipHtmlOverride||renderStackedTargetingTipHtml(metas);return('<span class="chip chip-stacked chip-has-tip" data-tip-html="'+
+escapeHtml(tipHtml)+'" tabindex="0" role="button" aria-describedby="chip-tooltip">'+
 segmentsHtml+"</span>");}
 function chipifyTargetingSegment(segment){const normalized=unwrapBackticks(segment.trim());if(!normalized){return"";}
 const parts=normalized.split(/\s*,\s*/).map(function(part){return normalizeToken(part);}).filter(Boolean);if(parts.length>1&&parts.every(function(part){return targetingTokenMeta(part);})){return renderStackedTargetingPill(parts);}
@@ -82,6 +82,10 @@ if(lower.indexOf("conditional (rare)")!==-1){return"conditional (rare)";}
 if(trimmed==="Max HP-based damage"){return"Max HP damage";}
 const statModifierDisplay={"Damage taken":"DMG taken","Magic damage":"Magic DMG","Damage dealt":"DMG dealt",};if(Object.prototype.hasOwnProperty.call(statModifierDisplay,trimmed)){return statModifierDisplay[trimmed];}
 return trimmed;}
+function skillCardTargetingDisplayLabel(text){const trimmed=(text||"").trim();const lower=trimmed.toLowerCase();const short={"all units":"all","multiple targets":"multiple","single target":"single",};if(Object.prototype.hasOwnProperty.call(short,lower)){return short[lower];}
+return chipDisplayLabel(trimmed);}
+function targetingDisplayLabel(text,skillCardDisplay){if(skillCardDisplay){return skillCardTargetingDisplayLabel(text);}
+return chipDisplayLabel(text);}
 function chipSpan(emoji,text,cls,tooltip){const tipAttr=chipTipAttrs(tooltip);const tipCls=tooltip?" chip-has-tip":"";return('<span class="chip '+
 cls+
 tipCls+'"'+
@@ -96,7 +100,7 @@ function qualityIndicatorMeta(value,isCc){const lower=value.toLowerCase();if(!QU
 return{cls:"chip-quality "+QUALITY_CLASS[lower],label:isCc?CC_DURATION_LABEL[lower]:lower,tooltip:QUALITY_TOOLTIPS[lower],emoji:"",};}
 function targetingIndicatorMeta(targeting){const lower=(targeting||"").trim().toLowerCase();if(lower==="all summons"){return{cls:"chip-target",label:"summons",tooltip:"",emoji:"🐾",};}
 if(lower==="owned summons"||lower==="own summons"||lower==="summon"||lower==="summons only"){return{cls:"chip-target",label:"owned",tooltip:"",emoji:"🐾",};}
-const def=config.TARGETING_DEFINITIONS[lower];if(def){const label=lower==="self"?"Self":lower==="all units"?"All units":lower==="multiple targets"?"Multiple targets":lower==="single target"?"Single target":lower==="path"?"Path":targeting.trim();return{cls:def.cls,label:label,tooltip:"",emoji:def.emoji,};}
+const def=config.TARGETING_DEFINITIONS[lower];if(def){const label=lower==="self"?"Self":lower==="all units"?"All units":lower==="multiple targets"?"Multiple targets":lower==="single target"?"Single target":lower==="path"?"path":targeting.trim();return{cls:def.cls,label:label,tooltip:"",emoji:def.emoji,};}
 return null;}
 function resolveIndicatorMeta(label,indicator,isCc){if(isSpeedMetricLabel(label)){return(speedIndicatorMeta(indicator)||qualityIndicatorMeta(indicator,isCc));}
 return(qualityIndicatorMeta(indicator,isCc)||speedIndicatorMeta(indicator));}
@@ -142,8 +146,9 @@ escapeHtml(tierSuffix)+'">'+
 escapeHtml(short)+"</sup>");}
 function formatMergedTierSuffix(tierSuffix){if(!tierSuffix){return"";}
 return formatAscensionTierDisplay(tierSuffix);}
-function isAreaShapeTargeting(targeting){const lower=(targeting||"").trim().toLowerCase();return lower==="area"||lower==="arc"||lower==="path";}
-function formatMergedIndicator(left,indicatorMeta,textOnlyLeft,iconOnlyRight){let leftHtml;if(left.hasIcon){leftHtml='<span class="chip-merged-left '+
+function targetingSegmentCompact(iconOnlyTargeting,index,segmentCount){if(iconOnlyTargeting){return segmentCount>1;}
+return index>0;}
+function formatMergedIndicator(left,indicatorMeta,textOnlyLeft,iconOnlyRight,skillCardDisplay){let leftHtml;if(left.hasIcon){leftHtml='<span class="chip-merged-left '+
 left.cls+'">'+
 left.emoji+" "+
 escapeHtml(chipDisplayLabel(left.text))+
@@ -157,7 +162,7 @@ rightTitle+
 (indicatorMeta.tooltip?chipTipAttrs(indicatorMeta.tooltip):"");const rightHtml="<span"+
 rightAttrs+">"+
 emojiPart+
-(showLabel?escapeHtml(indicatorMeta.label):"")+"</span>";return('<span class="chip chip-merged">'+
+(showLabel?escapeHtml(targetingDisplayLabel(indicatorMeta.label,skillCardDisplay)):"")+"</span>";return('<span class="chip chip-merged">'+
 leftHtml+'<span class="chip-merged-sep" aria-hidden="true">|</span>'+
 rightHtml+"</span>");}
 function mergeLabelWithIndicator(label,indicator,tierSuffix,polarity){const leading=resolveLeadingChip(label,polarity);const meta=resolveIndicatorMeta(label,indicator,leading.isCc);if(!meta){return null;}
@@ -167,8 +172,8 @@ function mergeEffectWithQuality(effectLabel,qualityValue,tierSuffix,polarity){co
 const leading=resolveLeadingChip(effectLabel,polarity);if(leading.emoji){return(formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:tierSuffix||"",},qualityMeta,false)+escapeHtml(effectChipRemainder(leading.remainder)));}
 return formatMergedIndicator({textOnly:effectLabel,tierSuffix:tierSuffix||""},qualityMeta,true);}
 function mergeEffectWithTargeting(effectLabel,targeting,tierSuffix,polarity){const targetingMeta=targetingIndicatorMeta(targeting);if(!targetingMeta){return null;}
-const iconOnlyRight=isAreaShapeTargeting(targeting);const leading=resolveLeadingChip(effectLabel,polarity);if(leading.emoji){return(formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:tierSuffix||"",},targetingMeta,false,iconOnlyRight)+escapeHtml(effectChipRemainder(leading.remainder)));}
-return formatMergedIndicator({textOnly:effectLabel,tierSuffix:tierSuffix||""},targetingMeta,true,iconOnlyRight);}
+const leading=resolveLeadingChip(effectLabel,polarity);if(leading.emoji){return(formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:tierSuffix||"",},targetingMeta,false,false,true)+escapeHtml(effectChipRemainder(leading.remainder)));}
+return formatMergedIndicator({textOnly:effectLabel,tierSuffix:tierSuffix||""},targetingMeta,true,false,true);}
 function tryChipify(token){const text=normalizeToken(token);if(!text){return null;}
 const lower=text.toLowerCase();if(QUALITY_CLASS[lower]){return formatTag(text);}
 if(lower==="signature fuel"){return formatTag(text);}
@@ -228,7 +233,8 @@ const last=segments[segments.length-1];if(/conditional/i.test(last)){trailingPar
 chipTipAttrs(conditionalTooltip(last))+">🎲 "+
 escapeHtml(last)+"</span>");segments.pop();}}
 popTrailingConditional();popTrailingQuality();popTrailingConditional();const first=segments.shift();const parsed=parseEffectLabelParts(first);let firstHtml;if(/^Primary damage type/i.test(first)){firstHtml=promoteStrongToDamageChips(renderInline(first));}else if(trailingQuality){firstHtml=renderSummaryEffectChip(parsed.base,parsed.tier,trailingQuality,polarity);}else{firstHtml=renderSummaryEffectChip(parsed.base,parsed.tier,"",polarity);}
-const targetingTokens=[];segments.forEach(function(seg){unwrapBackticks(seg.trim()).split(/\s*,\s*/).forEach(function(part){const normalized=normalizeToken(part);if(normalized&&targetingTokenMeta(normalized)){targetingTokens.push(normalized);}});});const targetingHtml=renderStackedTargetingPill(targetingTokens);return enhancePlainTargetingInHtml([firstHtml,targetingHtml,trailingParts.join(" ")].filter(Boolean).join(" "));}
+const targetingTokens=[];segments.forEach(function(seg){unwrapBackticks(seg.trim()).split(/\s*,\s*/).forEach(function(part){const normalized=normalizeToken(part);if(normalized&&targetingTokenMeta(normalized)){targetingTokens.push(normalized);}});});let targetingHtml=renderStackedTargetingPill(targetingTokens);if(targetingTokens.length>1){const sharedTipHtml=renderEffectTargetingStackedTipHtml(first,polarity,targetingTokens);firstHtml=withAnyChipTooltip(firstHtml,sharedTipHtml);targetingHtml=renderStackedTargetingPill(targetingTokens,sharedTipHtml);}
+return enhancePlainTargetingInHtml([firstHtml,targetingHtml,trailingParts.join(" ")].filter(Boolean).join(" "));}
 function renderRichLine(raw,polarity){const text=normalizeSummaryText(raw);if(/\s*(?:—|–)\s*/.test(text)){return renderEmDashLine(text,polarity);}
 const parenMatch=text.match(/^(.+?)\s*\(([^)]+)\)\s*(.*)$/);if(parenMatch&&!/^Primary damage type/i.test(text)){const prefixHtml=chipifyEffectName(parenMatch[1].trim(),polarity);const innerParts=parenMatch[2].split(/\s*,\s*/).map(function(s){return normalizeToken(s);}).filter(Boolean);const innerHtml=innerParts.map(tokenToHtml).join(" ");const suffixRaw=parenMatch[3].trim();const suffixHtml=suffixRaw?renderInline(suffixRaw):"";return enhancePlainTargetingInHtml(prefixHtml+" ("+
 innerHtml+")"+
@@ -296,25 +302,30 @@ escapeHtml(qMeta.label)+"</span>");}
 function renderEffectQualityMergedPill(base,polarity,qualityRange){const leading=resolveLeadingChip(base,polarity);const qMeta=qualityRangeMeta(qualityRange,leading.isCc);if(!qMeta){return"";}
 if(leading.emoji){return formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:"",},qMeta,false);}
 return formatMergedIndicator({textOnly:base,tierSuffix:""},qMeta,true);}
-function renderTargetingMergedPill(targetingSegments,iconOnlyTargeting){if(!targetingSegments.length){return"";}
-if(targetingSegments.length===1){const meta=targetingSegments[0];return chipSpan(meta.emoji,meta.text||meta.label,meta.cls);}
-if(iconOnlyTargeting){const parts=targetingSegments.map(function(meta){return renderMergedTargetingSegment(meta,true);});return'<span class="chip chip-merged">'+parts.join("")+"</span>";}
+function renderTargetingMergedPill(targetingSegments,iconOnlyTargeting,skillCardDisplay){if(!targetingSegments.length){return"";}
+if(targetingSegments.length===1){const meta=targetingSegments[0];return chipSpan(meta.emoji,targetingDisplayLabel(meta.text||meta.label,skillCardDisplay),meta.cls);}
+if(iconOnlyTargeting){const segmentCount=targetingSegments.length;const parts=targetingSegments.map(function(meta,index){return renderMergedTargetingSegment(meta,targetingSegmentCompact(iconOnlyTargeting,index,segmentCount),skillCardDisplay);});return'<span class="chip chip-merged">'+parts.join("")+"</span>";}
 const parts=[];targetingSegments.forEach(function(meta,index){if(index===0){parts.push('<span class="chip-merged-left '+
 meta.cls+'">'+
 meta.emoji+" "+
 escapeHtml(chipDisplayLabel(meta.text||meta.label))+"</span>");return;}
-parts.push(renderMergedTargetingSegment(meta,true));});return'<span class="chip chip-merged">'+parts.join("")+"</span>";}
-function renderMergedEffectBodyParts(first,leading,qualityRange,targetingSegments,iconOnlyTargeting){const bodyParts=[];if(leading.emoji){bodyParts.push('<span class="chip-merged-left '+
+parts.push(renderMergedTargetingSegment(meta,true,false));});return'<span class="chip chip-merged">'+parts.join("")+"</span>";}
+function renderMergedEffectBodyParts(first,leading,qualityRange,targetingSegments,iconOnlyTargeting,skillCardDisplay){const bodyParts=[];if(leading.emoji){bodyParts.push('<span class="chip-merged-left '+
 leading.cls+'">'+
 leading.emoji+" "+
 escapeHtml(chipDisplayLabel(leading.text))+"</span>");}else{bodyParts.push('<span class="chip-merged-left chip-merged-label">'+
 escapeHtml(chipDisplayLabel(first.base))+"</span>");}
 const qualitySeg=renderMergedQualitySegment(qualityRange,leading.isCc);if(qualitySeg){bodyParts.push(qualitySeg);}
-targetingSegments.forEach(function(meta,index){const compact=iconOnlyTargeting?true:index>0;bodyParts.push(renderMergedTargetingSegment(meta,compact));});return bodyParts;}
+const segmentCount=targetingSegments.length;targetingSegments.forEach(function(meta,index){bodyParts.push(renderMergedTargetingSegment(meta,targetingSegmentCompact(iconOnlyTargeting,index,segmentCount),skillCardDisplay));});return bodyParts;}
 function groupedVariantTipAttrs(tipHtml){return(' chip-has-tip" data-tip-html="'+
 escapeHtml(tipHtml)+'" tabindex="0" role="button" aria-describedby="chip-tooltip"');}
 function withChipTooltip(chipHtml,tipHtml){if(!chipHtml||!tipHtml){return chipHtml;}
 return chipHtml.replace('<span class="chip chip-merged"','<span class="chip chip-merged'+groupedVariantTipAttrs(tipHtml));}
+function withAnyChipTooltip(chipHtml,tipHtml){if(!chipHtml||!tipHtml){return chipHtml;}
+return chipHtml.replace(/(<span class="chip[^"]*)"/,"$1"+groupedVariantTipAttrs(tipHtml));}
+function renderEffectTargetingStackedTipHtml(effectLabel,polarity,targetingTokens){return('<div class="chip-stacked-tip">'+
+targetingTokens.map(function(token){return('<div class="chip-merged-tip-line">'+
+renderRichLine(effectLabel+" — "+token,polarity)+"</div>");}).join("")+"</div>");}
 function renderStandaloneEffectTooltipChip(variant){const parsed=parseEffectLabelParts(variant.base);const tier=variant.tier||parsed.tier;const base=parsed.base;const polarity=variant.polarity;const leading=resolveLeadingChip(base,polarity);if(leading.emoji){return('<span class="chip '+
 leading.cls+'">'+
 leading.emoji+" "+
@@ -333,10 +344,10 @@ function renderTargetingTooltipLine(variant){if(!variant.targeting){return"";}
 const tMeta=targetingIndicatorMeta(variant.targeting);if(tMeta){return('<span class="chip '+
 tMeta.cls+'">'+
 (tMeta.emoji?tMeta.emoji+" ":"")+
-escapeHtml(tMeta.label)+"</span>");}
+escapeHtml(chipDisplayLabel(tMeta.label))+"</span>");}
 return chipifyTargetingSegment(variant.targeting);}
-function renderMergedTargetingSegment(meta,compact){const emoji=meta.emoji?meta.emoji:"";const label=compact?"":escapeHtml(chipDisplayLabel(meta.text||meta.label));const spacer=compact||!label?"":" ";const titleAttr=compact&&(meta.text||meta.label)?' title="'+
-escapeHtml(chipDisplayLabel(meta.text||meta.label))+'"':"";return('<span class="chip-merged-right '+
+function renderMergedTargetingSegment(meta,compact,skillCardDisplay){const emoji=meta.emoji?meta.emoji:"";const label=compact?"":escapeHtml(targetingDisplayLabel(meta.text||meta.label,skillCardDisplay));const spacer=compact||!label?"":" ";const titleAttr=compact&&(meta.text||meta.label)?' title="'+
+escapeHtml(meta.text||meta.label)+'"':"";return('<span class="chip-merged-right '+
 meta.cls+'"'+
 titleAttr+">"+
 emoji+
@@ -351,11 +362,11 @@ return renderVariantTooltipParts(variant).join(" ");}
 function renderMergedVariantTooltipHtml(variants){return('<div class="chip-stacked-tip">'+
 variants.map(function(variant){return('<div class="chip-merged-tip-line">'+
 renderVariantTooltipContent(variant)+"</div>");}).join("")+"</div>");}
-function renderGroupedVariantPill(variants,opts){opts=opts||{};const iconOnlyTargeting=!!opts.iconOnlyTargeting;if(!variants||variants.length<=1){return"";}
-const first=variants[0];const polarity=first.polarity;const leading=resolveLeadingChip(first.base,polarity);const qualityRange=combineQualities(variants.map(function(v){return v.quality;}));const targetingSegments=collectTargetingSegments(variants);if(qualityRange&&targetingSegments.length){const fullTip=renderMergedVariantTooltipHtml(variants);const effectPill=withChipTooltip(renderEffectQualityMergedPill(first.base,polarity,qualityRange),fullTip);const targetingPill=withChipTooltip(renderTargetingMergedPill(targetingSegments,iconOnlyTargeting),fullTip);return('<span class="grouped-variant-pills">'+
+function renderGroupedVariantPill(variants,opts){opts=opts||{};const iconOnlyTargeting=!!opts.iconOnlyTargeting;const skillCardDisplay=!!opts.skillCardDisplay;if(!variants||variants.length<=1){return"";}
+const first=variants[0];const polarity=first.polarity;const leading=resolveLeadingChip(first.base,polarity);const qualityRange=combineQualities(variants.map(function(v){return v.quality;}));const targetingSegments=collectTargetingSegments(variants);if(qualityRange&&targetingSegments.length){const fullTip=renderMergedVariantTooltipHtml(variants);const effectPill=withChipTooltip(renderEffectQualityMergedPill(first.base,polarity,qualityRange),fullTip);const targetingPill=withChipTooltip(renderTargetingMergedPill(targetingSegments,iconOnlyTargeting,skillCardDisplay),fullTip);return('<span class="grouped-variant-pills">'+
 effectPill+" "+
 targetingPill+"</span>");}
-const bodyHtml=renderMergedEffectBodyParts(first,leading,qualityRange,targetingSegments,iconOnlyTargeting).join("");return withChipTooltip('<span class="chip chip-merged">'+bodyHtml+"</span>",renderMergedVariantTooltipHtml(variants));}
+const bodyHtml=renderMergedEffectBodyParts(first,leading,qualityRange,targetingSegments,iconOnlyTargeting,skillCardDisplay).join("");return withChipTooltip('<span class="chip chip-merged">'+bodyHtml+"</span>",renderMergedVariantTooltipHtml(variants));}
 function groupParsedVariants(items,parseFn,cardPolarity){const groupByKey={};items.forEach(function(item,index){const variant=parseFn(item,cardPolarity);if(!variant){return;}
 const key=effectVariantGroupKey(variant,cardPolarity);if(!groupByKey[key]){groupByKey[key]={key:key,variants:[],indices:[],firstIndex:index,};}
 const group=groupByKey[key];if(group.firstIndex>index){group.firstIndex=index;}
@@ -499,7 +510,7 @@ function skillCardTagLabel(tag){if(typeof tag==="string"){return tag;}
 return tag&&tag.label?tag.label:"";}
 function renderSkillCardTags(tags){if(!tags||!tags.length){return"";}
 const entries=[];tags.forEach(function(tag){const label=skillCardTagLabel(tag);if(!label){return;}
-const polarity=typeof tag==="object"&&tag.polarity?tag.polarity:"";entries.push({label:label,polarity:polarity});});const grouped=chips.groupParsedVariants(entries.map(function(entry){return entry;}),function(entry){return chips.parseSkillCardVariant(entry.label,entry.polarity);},"");let html="";grouped.forEach(function(item){if(item.type==="group"){const pill=chips.renderGroupedVariantPill(item.variants,{iconOnlyTargeting:true,});if(pill){html+=pill;}
+const polarity=typeof tag==="object"&&tag.polarity?tag.polarity:"";entries.push({label:label,polarity:polarity});});const grouped=chips.groupParsedVariants(entries.map(function(entry){return entry;}),function(entry){return chips.parseSkillCardVariant(entry.label,entry.polarity);},"");let html="";grouped.forEach(function(item){if(item.type==="group"){const pill=chips.renderGroupedVariantPill(item.variants,{iconOnlyTargeting:true,skillCardDisplay:true,});if(pill){html+=pill;}
 return;}
 const entry=item.item;const chip=chips.chipifySkillCardTag(entry.label,entry.polarity);if(chip){html+=chip;}});return html;}
 window.AFKJ.skills={enrichSkillInline:enrichSkillInline,skillDetailPhases:skillDetailPhases,formatSkillDetail:formatSkillDetail,skillCardData:skillCardData,renderSkillCards:renderSkillCards,skillCardChipKey:skillCardChipKey,skillCardTagLabel:skillCardTagLabel,renderSkillCardTags:renderSkillCardTags,};window.AFKJ.chips.renderSkillCardTags=renderSkillCardTags;})();window.AFKJ=window.AFKJ||{};(function(){const config=window.AFKJ.config;const utils=window.AFKJ.utils;const escapeHtml=utils.escapeHtml.bind(utils);const FILTERS_COLLAPSE_MQ=window.matchMedia("(max-width: 600px)");function updateListStickyOffset(){const dom=window.AFKJ.state.dom;if(!dom.siteHeader){return;}

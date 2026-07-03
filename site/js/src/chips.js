@@ -349,7 +349,7 @@ window.AFKJ = window.AFKJ || {};
     );
   }
 
-  function renderStackedTargetingPill(tokens) {
+  function renderStackedTargetingPill(tokens, tipHtmlOverride) {
     const metas = tokens
       .map(function (token) {
         return targetingTokenMeta(token);
@@ -383,9 +383,10 @@ window.AFKJ = window.AFKJ || {};
       })
       .join("");
 
+    const tipHtml = tipHtmlOverride || renderStackedTargetingTipHtml(metas);
     return (
       '<span class="chip chip-stacked chip-has-tip" data-tip-html="' +
-      escapeHtml(renderStackedTargetingTipHtml(metas)) +
+      escapeHtml(tipHtml) +
       '" tabindex="0" role="button" aria-describedby="chip-tooltip">' +
       segmentsHtml +
       "</span>"
@@ -445,6 +446,27 @@ window.AFKJ = window.AFKJ || {};
       return statModifierDisplay[trimmed];
     }
     return trimmed;
+  }
+
+  function skillCardTargetingDisplayLabel(text) {
+    const trimmed = (text || "").trim();
+    const lower = trimmed.toLowerCase();
+    const short = {
+      "all units": "all",
+      "multiple targets": "multiple",
+      "single target": "single",
+    };
+    if (Object.prototype.hasOwnProperty.call(short, lower)) {
+      return short[lower];
+    }
+    return chipDisplayLabel(trimmed);
+  }
+
+  function targetingDisplayLabel(text, skillCardDisplay) {
+    if (skillCardDisplay) {
+      return skillCardTargetingDisplayLabel(text);
+    }
+    return chipDisplayLabel(text);
   }
 
   function chipSpan(emoji, text, cls, tooltip) {
@@ -530,7 +552,7 @@ window.AFKJ = window.AFKJ || {};
             : lower === "single target"
               ? "Single target"
               : lower === "path"
-                ? "Path"
+                ? "path"
                 : targeting.trim();
       return {
         cls: def.cls,
@@ -810,12 +832,20 @@ window.AFKJ = window.AFKJ || {};
     return formatAscensionTierDisplay(tierSuffix);
   }
 
-  function isAreaShapeTargeting(targeting) {
-    const lower = (targeting || "").trim().toLowerCase();
-    return lower === "area" || lower === "arc" || lower === "path";
+  function targetingSegmentCompact(iconOnlyTargeting, index, segmentCount) {
+    if (iconOnlyTargeting) {
+      return segmentCount > 1;
+    }
+    return index > 0;
   }
 
-  function formatMergedIndicator(left, indicatorMeta, textOnlyLeft, iconOnlyRight) {
+  function formatMergedIndicator(
+    left,
+    indicatorMeta,
+    textOnlyLeft,
+    iconOnlyRight,
+    skillCardDisplay
+  ) {
     let leftHtml;
     if (left.hasIcon) {
       leftHtml =
@@ -855,7 +885,11 @@ window.AFKJ = window.AFKJ || {};
       rightAttrs +
       ">" +
       emojiPart +
-      (showLabel ? escapeHtml(indicatorMeta.label) : "") +
+      (showLabel
+        ? escapeHtml(
+            targetingDisplayLabel(indicatorMeta.label, skillCardDisplay)
+          )
+        : "") +
       "</span>";
 
     return (
@@ -931,7 +965,6 @@ window.AFKJ = window.AFKJ || {};
     if (!targetingMeta) {
       return null;
     }
-    const iconOnlyRight = isAreaShapeTargeting(targeting);
     const leading = resolveLeadingChip(effectLabel, polarity);
     if (leading.emoji) {
       return (
@@ -945,7 +978,8 @@ window.AFKJ = window.AFKJ || {};
           },
           targetingMeta,
           false,
-          iconOnlyRight
+          false,
+          true
         ) + escapeHtml(effectChipRemainder(leading.remainder))
       );
     }
@@ -953,7 +987,8 @@ window.AFKJ = window.AFKJ || {};
       { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
       targetingMeta,
       true,
-      iconOnlyRight
+      false,
+      true
     );
   }
 
@@ -1266,7 +1301,19 @@ window.AFKJ = window.AFKJ || {};
           }
         });
     });
-    const targetingHtml = renderStackedTargetingPill(targetingTokens);
+    let targetingHtml = renderStackedTargetingPill(targetingTokens);
+    if (targetingTokens.length > 1) {
+      const sharedTipHtml = renderEffectTargetingStackedTipHtml(
+        first,
+        polarity,
+        targetingTokens
+      );
+      firstHtml = withAnyChipTooltip(firstHtml, sharedTipHtml);
+      targetingHtml = renderStackedTargetingPill(
+        targetingTokens,
+        sharedTipHtml
+      );
+    }
 
     return enhancePlainTargetingInHtml(
       [firstHtml, targetingHtml, trailingParts.join(" ")]
@@ -1732,7 +1779,11 @@ window.AFKJ = window.AFKJ || {};
     );
   }
 
-  function renderTargetingMergedPill(targetingSegments, iconOnlyTargeting) {
+  function renderTargetingMergedPill(
+    targetingSegments,
+    iconOnlyTargeting,
+    skillCardDisplay
+  ) {
     if (!targetingSegments.length) {
       return "";
     }
@@ -1740,13 +1791,18 @@ window.AFKJ = window.AFKJ || {};
       const meta = targetingSegments[0];
       return chipSpan(
         meta.emoji,
-        meta.text || meta.label,
+        targetingDisplayLabel(meta.text || meta.label, skillCardDisplay),
         meta.cls
       );
     }
     if (iconOnlyTargeting) {
-      const parts = targetingSegments.map(function (meta) {
-        return renderMergedTargetingSegment(meta, true);
+      const segmentCount = targetingSegments.length;
+      const parts = targetingSegments.map(function (meta, index) {
+        return renderMergedTargetingSegment(
+          meta,
+          targetingSegmentCompact(iconOnlyTargeting, index, segmentCount),
+          skillCardDisplay
+        );
       });
       return '<span class="chip chip-merged">' + parts.join("") + "</span>";
     }
@@ -1764,7 +1820,7 @@ window.AFKJ = window.AFKJ || {};
         );
         return;
       }
-      parts.push(renderMergedTargetingSegment(meta, true));
+      parts.push(renderMergedTargetingSegment(meta, true, false));
     });
     return '<span class="chip chip-merged">' + parts.join("") + "</span>";
   }
@@ -1774,7 +1830,8 @@ window.AFKJ = window.AFKJ || {};
     leading,
     qualityRange,
     targetingSegments,
-    iconOnlyTargeting
+    iconOnlyTargeting,
+    skillCardDisplay
   ) {
     const bodyParts = [];
     if (leading.emoji) {
@@ -1800,9 +1857,15 @@ window.AFKJ = window.AFKJ || {};
       bodyParts.push(qualitySeg);
     }
 
+    const segmentCount = targetingSegments.length;
     targetingSegments.forEach(function (meta, index) {
-      const compact = iconOnlyTargeting ? true : index > 0;
-      bodyParts.push(renderMergedTargetingSegment(meta, compact));
+      bodyParts.push(
+        renderMergedTargetingSegment(
+          meta,
+          targetingSegmentCompact(iconOnlyTargeting, index, segmentCount),
+          skillCardDisplay
+        )
+      );
     });
     return bodyParts;
   }
@@ -1822,6 +1885,32 @@ window.AFKJ = window.AFKJ || {};
     return chipHtml.replace(
       '<span class="chip chip-merged"',
       '<span class="chip chip-merged' + groupedVariantTipAttrs(tipHtml)
+    );
+  }
+
+  function withAnyChipTooltip(chipHtml, tipHtml) {
+    if (!chipHtml || !tipHtml) {
+      return chipHtml;
+    }
+    return chipHtml.replace(
+      /(<span class="chip[^"]*)"/,
+      "$1" + groupedVariantTipAttrs(tipHtml)
+    );
+  }
+
+  function renderEffectTargetingStackedTipHtml(effectLabel, polarity, targetingTokens) {
+    return (
+      '<div class="chip-stacked-tip">' +
+      targetingTokens
+        .map(function (token) {
+          return (
+            '<div class="chip-merged-tip-line">' +
+            renderRichLine(effectLabel + " — " + token, polarity) +
+            "</div>"
+          );
+        })
+        .join("") +
+      "</div>"
     );
   }
 
@@ -1891,23 +1980,25 @@ window.AFKJ = window.AFKJ || {};
         tMeta.cls +
         '">' +
         (tMeta.emoji ? tMeta.emoji + " " : "") +
-        escapeHtml(tMeta.label) +
+        escapeHtml(chipDisplayLabel(tMeta.label)) +
         "</span>"
       );
     }
     return chipifyTargetingSegment(variant.targeting);
   }
 
-  function renderMergedTargetingSegment(meta, compact) {
+  function renderMergedTargetingSegment(meta, compact, skillCardDisplay) {
     const emoji = meta.emoji ? meta.emoji : "";
     const label = compact
       ? ""
-      : escapeHtml(chipDisplayLabel(meta.text || meta.label));
+      : escapeHtml(
+          targetingDisplayLabel(meta.text || meta.label, skillCardDisplay)
+        );
     const spacer = compact || !label ? "" : " ";
     const titleAttr =
       compact && (meta.text || meta.label)
         ? ' title="' +
-          escapeHtml(chipDisplayLabel(meta.text || meta.label)) +
+          escapeHtml(meta.text || meta.label) +
           '"'
         : "";
     return (
@@ -1964,6 +2055,7 @@ window.AFKJ = window.AFKJ || {};
   function renderGroupedVariantPill(variants, opts) {
     opts = opts || {};
     const iconOnlyTargeting = !!opts.iconOnlyTargeting;
+    const skillCardDisplay = !!opts.skillCardDisplay;
     if (!variants || variants.length <= 1) {
       return "";
     }
@@ -1985,7 +2077,11 @@ window.AFKJ = window.AFKJ || {};
         fullTip
       );
       const targetingPill = withChipTooltip(
-        renderTargetingMergedPill(targetingSegments, iconOnlyTargeting),
+        renderTargetingMergedPill(
+          targetingSegments,
+          iconOnlyTargeting,
+          skillCardDisplay
+        ),
         fullTip
       );
       return (
@@ -2002,7 +2098,8 @@ window.AFKJ = window.AFKJ || {};
       leading,
       qualityRange,
       targetingSegments,
-      iconOnlyTargeting
+      iconOnlyTargeting,
+      skillCardDisplay
     ).join("");
 
     return withChipTooltip(

@@ -338,6 +338,18 @@ class RoundTripTests(unittest.TestCase):
         self.assertIn("Knock up — Single target", labels)
         self.assertIn("Knock up — Multiple targets (EX+10)", labels)
 
+    def test_skill_card_cc_tag_includes_single_target(self):
+        self.assertEqual(
+            rs._skill_card_tag_for_effect("Stun", "Single target", is_cc=True),
+            "Stun — Single target",
+        )
+        self.assertEqual(
+            rs._skill_card_tag_for_effect(
+                "Knock back", "Single target", is_cc=True
+            ),
+            "Knock back — Single target",
+        )
+
     def test_cassadee_processed_skill1_effects_preserve_targeting_variants(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
         skill1 = hero.skill_slices["Skill1"]

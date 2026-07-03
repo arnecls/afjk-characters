@@ -33,45 +33,91 @@ loadModule("namespace.js");
 loadModule("utils.js");
 loadModule("config.js");
 loadModule("chips.js");
+loadModule("skills.js");
 
 const chipify = context.window.AFKJ.chips.chipifySkillCardTag;
+const renderSkillCardTags =
+  context.window.AFKJ.skills.renderSkillCardTags;
 if (typeof chipify !== "function") {
   console.error("chipifySkillCardTag not found");
   process.exit(1);
 }
 
-function assertTargetingRendered(label, polarity, needle) {
+function assertTargetingRendered(label, polarity, needles) {
   const html = chipify(label, polarity);
   if (!html) {
     throw new Error(`empty chip html for ${label}`);
   }
-  if (!html.includes(needle)) {
-    throw new Error(
-      `expected ${JSON.stringify(needle)} in chip html for ${label}: ${html}`
-    );
+  const expected = Array.isArray(needles) ? needles : [needles];
+  for (const needle of expected) {
+    if (!html.includes(needle)) {
+      throw new Error(
+        `expected ${JSON.stringify(needle)} in chip html for ${label}: ${html}`
+      );
+    }
   }
 }
 
-const cases = [
-  ["Phys DEF — Area", "debuff", "⭕"],
-  ["ATK — Self (EX+10)", "buff", "Self"],
-  ["Lifedrain — Multiple targets", "buff", "Multiple targets"],
-  ["Blind — Area (EX+15)", "", "⭕"],
-  ["Direct healing — Self (Supreme+)", "buff", "Self"],
-  ["Knock back — path", "cc", "〰️"],
+const singleTargetCases = [
+  ["Phys DEF — Area", "debuff", ["⭕", "Area"]],
+  ["ATK — Self (EX+10)", "buff", ["🪞", "Self"]],
+  ["Lifedrain — Multiple targets", "buff", ["👥", "multiple"]],
+  ["Blind — Area (EX+15)", "", ["⭕", "Area"]],
+  ["Direct healing — Self (Supreme+)", "buff", ["🪞", "Self"]],
+  ["Knock back — path", "cc", ["〰️", "path"]],
+  ["Lifedrain — Owned", "buff", ["🐾", "owned"]],
 ];
 
 let failed = 0;
-for (const [label, polarity, needle] of cases) {
+for (const [label, polarity, needles] of singleTargetCases) {
   try {
-    assertTargetingRendered(label, polarity, needle);
+    assertTargetingRendered(label, polarity, needles);
   } catch (err) {
     failed += 1;
     console.error(err.message);
   }
 }
 
+const multiTargetHtml = renderSkillCardTags([
+  { label: "ATK SPD — Self", polarity: "buff" },
+  { label: "ATK SPD — Owned", polarity: "buff" },
+]);
+if (!multiTargetHtml.includes("🪞") || !multiTargetHtml.includes("🐾")) {
+  failed += 1;
+  console.error(
+    "expected grouped multi-target pill to include Self and owned icons"
+  );
+}
+if (multiTargetHtml.includes(">Self<") || />\s*owned\s*</i.test(multiTargetHtml)) {
+  failed += 1;
+  console.error(
+    "expected grouped multi-target pill to omit targeting text labels"
+  );
+}
+
+const stunHtml = renderSkillCardTags([
+  { label: "Stun — All units", polarity: "cc" },
+  { label: "Stun — Multiple targets", polarity: "cc" },
+  { label: "Stun — Single target", polarity: "cc" },
+]);
+if (!stunHtml.includes("🌐") || !stunHtml.includes("👥") || !stunHtml.includes("🎯")) {
+  failed += 1;
+  console.error("expected grouped stun pill to include all targeting icons");
+}
+if (
+  stunHtml.includes(">all<") ||
+  stunHtml.includes(">multiple<") ||
+  stunHtml.includes(">single<")
+) {
+  failed += 1;
+  console.error(
+    "expected grouped stun pill to omit short targeting text labels"
+  );
+}
+
 if (failed) {
   process.exit(1);
 }
-console.log(`OK: ${cases.length} skill-card chip targeting checks`);
+console.log(
+  `OK: ${singleTargetCases.length} single-target and 2 multi-target skill-card checks`
+);
