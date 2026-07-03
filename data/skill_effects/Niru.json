@@ -1,0 +1,219 @@
+{
+  "title": "Niru - Soul Collector",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "1fa9e7a42d332b48bffa8f4db816ba055706db946ae7dc50d17d209873f2397e",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Spirit form protection",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+            },
+            {
+              "label": "Start-of-battle cast",
+              "tier": "mythic+",
+              "targeting": "Self",
+              "description": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+            },
+            {
+              "label": "Spirit form protection",
+              "tier": "ex+5",
+              "targeting": "All units",
+              "description": "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Ally blessing active",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+            },
+            {
+              "label": "Enemy defeat",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "24aad706519968535506e93b6b01b57ea4059811053eec936975a6eeb254cdf0",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 0.45
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 600.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "c26c634be9e619e618e599a5153ac15f89929af11f64310b3b037837e7b35120",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 195.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "fff6820b1f57bb839a003ae90d6944ab8514352a2cc662f2529c39b886ed388b",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "7706167370018343da85867545a68d488c5f2437bdb787380c40e56063b1e268",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "631fb9631912cf1179275d5a69368f3c453b7888787a9c7f4155e446c6e9a75a",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Healing",
+              "label": "healing",
+              "duration": 8.0
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Phys DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

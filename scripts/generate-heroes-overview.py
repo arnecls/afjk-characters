@@ -681,9 +681,6 @@ def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
     if provider_has_special(provider, "Ally blessing"):
         return "Ally blessing"
     text = provider_skill_text(provider)
-    name = _rs._extract_ally_grant_name(text)
-    if name:
-        return f"Ally grant ({name})"
     if re.search(
         r"bless(?:es|ing)? (?:an ally|allies|the nearest ally)|"
         r"grants?\s+temporary blessings|Tidal Strength",

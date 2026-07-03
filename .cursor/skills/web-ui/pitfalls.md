@@ -226,6 +226,6 @@ Regenerate with `just render-site` after JSON edits.
 | User report | Wrong fix | Right fix |
 | --- | --- | --- |
 | Wrong pill label | Edit `heroes.json` by hand | Fix detection or `app.js` |
-| Missing skill card tag | Only `app.js` | `rewrite-summaries.py` + `just views` |
+| Missing skill card tag | Only `app.js` | sidecar + `just views` |
 | List column wrong | Only `app.js` | `overview-to-csv.py` + render pipeline |
 | Chip color | `heroes.json` | `styles.css` or `TAG_DEFINITIONS.cls` |

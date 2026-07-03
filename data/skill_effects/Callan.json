@@ -1,0 +1,246 @@
+{
+  "title": "Callan - Grim Soulkeeper",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "97d8b699c1fafbb311c96f229566d94673070e72dc11e9037f15254618cab4a1",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "start_of_battle",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Damage absorption (allies)",
+              "tier": "base",
+              "targeting": "Area",
+              "description": "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius."
+            },
+            {
+              "label": "Damage absorption (allies)",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "description": "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius."
+            },
+            {
+              "label": "Stored damage release",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Callan converts 25% + 1% of the damage absorbed by his shield into golem's might during battle."
+            },
+            {
+              "label": "Stored damage release",
+              "tier": "base",
+              "targeting": "Area",
+              "description": "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius."
+            },
+            {
+              "label": "Stored damage release",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based)."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Stored resource threshold",
+              "tier": "base",
+              "description": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based)."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "9111c0c8f26bbf2655668f0410cd76879be2116085b5357fec620ac7c06c7015",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "knock_down"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "9daba0450e3ff0d8030975cfd247dee8f3aa227428316f62524e24e28b92550d",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "4264d1ab0cf8633b40f56ae839c39e85e1d768a52d8e177bdb8298ecb1ddd9d3",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Vitality",
+              "label": "buff_defensive"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "0967fbff3f5f9955353828f5945b996d23be0d177fb2020dd949aceed2908088",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.3,
+                  "comparison": "below"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+10": {
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "97e91988bdd5a09d081d44938a3179dde644bd800e580d82b0f125e38f20583f",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

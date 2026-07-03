@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Download hero portraits and faction/class icons from Yaphalla into site/assets/."""
+"""Download faction and class icons from Yaphalla into site/assets/."""
 
 from __future__ import annotations
 
 import json
 import sys
-import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -14,14 +13,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
 
-# Display name -> Yaphalla hex image filename (without .png).
-YAPHALLA_PORTRAIT_NAMES: dict[str, str] = {
-    "Twins": "Elijah & Lailah",
-    "Galahad": "Gala",
-}
-
 YAPHALLA_BASE = "https://www.yaphalla.com"
-PORTRAITS_DIR = io.ROOT / "site" / "assets" / "portraits"
 ICONS_DIR = io.ROOT / "site" / "assets" / "icons"
 HEROES_JSON = io.ROOT / "site" / "data" / "heroes.json"
 
@@ -41,11 +33,6 @@ def _http_get(url: str) -> bytes | None:
 
 def _yaphalla_url(path: str) -> str:
     return YAPHALLA_BASE + path
-
-
-def _portrait_path(name: str) -> str:
-    encoded = urllib.parse.quote(name, safe="")
-    return f"/assets/images/hexes/unit/{encoded}.png"
 
 
 def download_file(url: str, dest: Path) -> bool:
@@ -79,15 +66,6 @@ def main() -> None:
     classes: set[str] = set()
 
     for hero in heroes:
-        name = hero["name"]
-        yaphalla_name = YAPHALLA_PORTRAIT_NAMES.get(name, name)
-        dest = PORTRAITS_DIR / f"{name}.png"
-        url = _yaphalla_url(_portrait_path(yaphalla_name))
-        if download_file(url, dest):
-            downloaded += 1
-        else:
-            if dest.exists():
-                skipped += 1
         if hero.get("faction"):
             factions.add(hero["faction"])
         if hero.get("class"):
@@ -112,7 +90,7 @@ def main() -> None:
             skipped += 1
 
     print(
-        f"Portraits/icons: {downloaded} downloaded, "
+        f"Icons: {downloaded} downloaded, "
         f"{skipped} already cached ({len(heroes)} heroes)"
     )
 

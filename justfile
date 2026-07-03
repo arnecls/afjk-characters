@@ -1,10 +1,11 @@
 # AFK Journey hero data pipeline.
 # Run `just` (or `just -l`) to list recipes.
 #
-# Pipeline: download -> process -> render
+# Pipeline: download -> analyze -> render
 #   download : data/heroes_data.json          (Fandom baseline + Yaphalla gaps)
-#   process  : data/heroes_data_processed.json + heroes_data_synergies.json
-#   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
+#   analyze  : merges data/skill_effects/*.json sidecars into
+#              data/heroes_data_processed.json + heroes_data_synergies.json
+#   render   : Heroes.md, heroes-overview.md, heroes-overview.csv, site data
 
 default:
     @just --list
@@ -42,7 +43,7 @@ test: ensure-venv
 test-serial: ensure-venv
     .venv/bin/python -m unittest discover -s scripts -p 'test_*.py' -v
 
-# Analyse data/heroes_data.json -> processed + synergies JSON.
+# Merge AI skill-effect sidecars into processed + synergies JSON.
 analyze: ensure-venv
     .venv/bin/python scripts/process_heroes.py
     .venv/bin/python scripts/process_synergies.py
@@ -59,7 +60,7 @@ render-heroes:
 render-overview:
     python3 scripts/render_overview.py
 
-# Build site/data from overview views and cache missing portraits, and bundle JS assets.
+# Build site/data from overview views, cache missing faction/class icons, bundle JS.
 render-site: render-overview
     python3 scripts/render_site.py
     python3 scripts/download_hero_images.py

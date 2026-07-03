@@ -131,8 +131,8 @@ Synergy ranking and same-role magnitude bands assume every hero is **fully
 ascended**: all skill slots unlock (Ultimate through Supreme+ / EX tiers), and
 numeric comparison uses the **strongest parseable value** per effect label
 across skill level lines — not the base unlock value. This is implemented in
-`add_effect()` / `_merge_effects()` in `rewrite-summaries.py` (max numeric
-wins). Processed JSON may set `is_max_known: false` when higher tiers still
+`_merge_effects_from_list()` in `rewrite-summaries.py` (max numeric wins).
+Processed JSON may set `is_max_known: false` when higher tiers still
 use `(scaled)` placeholders in source text.
 
 ## Quality indicators
@@ -265,8 +265,16 @@ in `site/data/heroes.json` → `sections.skillCards`. Tags are computed during
 
 Stored on each skill as `skill_card_tags` in `heroes_data_processed.json`.
 `render_site.py` reads those tags (does not re-derive). After changing
-detection in `rewrite-summaries.py`, run `just views` (analyze + render) so
-processed JSON and the site stay aligned.
+effects in `data/skill_effects/<short_name>.json`, run `just views`
+(analyze + render) so processed JSON and the site stay aligned.
+
+**Skill effect extraction** (AI-authored sidecar, not regex):
+
+- Source of truth: `data/skill_effects/<short_name>.json` per hero.
+- `analyze_hero()` loads sidecar via `scripts/skill_effects_store.py`.
+- Each skill entry stores `source_hash`; stale hash fails `just validate`.
+- To fix detection: re-extract with the extract-skill-effects skill — do not
+  edit regex rule tables (removed from `rewrite-summaries.py`).
 
 **Skill summary authoring** (AI-generated, not scripted):
 
@@ -515,8 +523,8 @@ DoT, CC, etc.); top picks are then sorted by score for display.
    same movement / static-tile rules as stat-buff synergy lines.
 
 Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
-`main()` prints an enabler pattern scan for skill phrases not yet in
-`SPECIAL_REQUIRES_RULES`.
+`main()` prints an enabler pattern scan for skill phrases not yet matched by
+synergy enablers.
 
 ## Special effects (summary lines)
 
@@ -542,8 +550,8 @@ Line format (no Provides/Requires prefix on each bullet):
   **Ally grants:** phrasing like `grants Sparks to allies` or `grants an ally
   Brightfeather` adds `Ally grant (name)`; when allies with that grant can
   inflict DoT or debuffs on enemies in the same skill text, also list
-  `Ally DoT on enemies` / `Ally Vitality debuff on enemies` (see
-  `detect_ally_grant_effects` in `rewrite-summaries.py`).
+  `Ally DoT on enemies` / `Ally Vitality debuff on enemies` (stored in the
+  hero's skill effects sidecar under `special_provides`).
 - **Requires** — e.g. continuous damage on enemies, magic damage from allies,
   debuff on target (Aging), form or stance active, ally blessing active,
   passive with internal cooldown, enemy not CC-immune, party composition,
@@ -551,19 +559,16 @@ Line format (no Provides/Requires prefix on each bullet):
   providers granting many/wide ally buffs, start-of-battle preferred; see
   `match_ally_stat_buffs` in `generate-heroes-overview.py`).
 
-Patterns live in `scripts/rewrite-summaries.py` (`SPECIAL_PROVIDES_RULES`,
-`SPECIAL_REQUIRES_RULES`, `BUFF_RULES` including ally ATK SPD phrasing like
-`grants all allies N ATK SPD` / `increases the ATK SPD of these allies`,
-`DOT_INTERVAL_RE`, and companion/summon helpers). When merging buffs from
-several skill chunks, ally-wide targeting is kept over self-only. Regenerate
-`heroes-overview.md` after changing them.
+Special provides/requires are extracted into the skill effects sidecar
+(`special_provides` / `special_requires` per tier). When merging buffs from
+several skill tiers, ally-wide targeting is kept over self-only. Regenerate
+`heroes-overview.md` after changing sidecar data.
 
 ## Healing
 
 Some units can _heal_ other units and/or provide shields.
-Healing is not to be mistaking with the "healing" stat, but can rather be detected
-from texts like "restoring 45% HP" or "restoring HP". If the text includes an
-over time" (HoT) phrasing like "over 2s" it counts as "Healing over time".
+Healing effects are extracted into the skill effects sidecar as `heal` /
+`dot` with `healing_type`. Do not confuse with the **Healing** stat column.
 
 ## Stats the unit benefits from
 

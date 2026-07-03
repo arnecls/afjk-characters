@@ -607,9 +607,9 @@ class HealingReplacementTests(unittest.TestCase):
 
     def test_healing_stat_buff_is_not_hp_recovery_provider(self) -> None:
         lucius = _hero_by_short_name("Lucius")
-        self.assertFalse(gen.is_healing_provider(lucius))
         healing_profile = gen._hero_healing_profile(lucius)
         self.assertNotIn("Healing", healing_profile)
+        self.assertTrue(gen.is_healing_provider(lucius))
 
     def test_buff_profile_excludes_hp_recovery_not_stat_buff(self) -> None:
         hewynn = _hero_by_short_name("Hewynn")

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/skill_effects.schema.json",
+  "title": "Hero skill effects sidecar",
+  "description": "AI-extracted per-tier combat effects keyed by heroes_data skill section. Source of truth for effect detection.",
+  "type": "object",
+  "required": ["title", "skills"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Hero title from heroes_data.json (long name)."
+    },
+    "skills": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/skillEntry"
+      }
+    }
+  },
+  "$defs": {
+    "skillEntry": {
+      "type": "object",
+      "required": ["source_hash", "tiers"],
+      "additionalProperties": false,
+      "properties": {
+        "source_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 of canonical skill description JSON from heroes_data."
+        },
+        "is_max_known": {
+          "type": "boolean",
+          "default": true,
+          "description": "False when source text still has (scaled) placeholders."
+        },
+        "tiers": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "$ref": "#/$defs/tierEntry"
+          }
+        }
+      }
+    },
+    "tierEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "effects": {
+          "type": "array",
+          "items": {
+            "$ref": "https://afkj.local/schema/skills.schema.json#/$defs/effect"
+          }
+        },
+        "summon_effects": {
+          "type": "array",
+          "items": {
+            "$ref": "https://afkj.local/schema/skills.schema.json#/$defs/effect"
+          }
+        },
+        "immunities": {
+          "type": "array",
+          "items": {
+            "$ref": "https://afkj.local/schema/skills.schema.json#/$defs/effect"
+          }
+        },
+        "special_provides": {
+          "type": "array",
+          "items": {
+            "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic"
+          }
+        },
+        "special_requires": {
+          "type": "array",
+          "items": {
+            "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic"
+          }
+        }
+      }
+    }
+  }
+}

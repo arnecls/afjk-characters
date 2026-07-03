@@ -1,0 +1,244 @@
+{
+  "title": "Cryonaia - Arctic Revenant",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "258bdddce77d18552eacadb658741dc630d0e515b77b3feb52dced0d0b8f6ba2",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "immune",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Enemy isolation (domain)",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield."
+            },
+            {
+              "label": "Battle time pause",
+              "tier": "ex+15",
+              "targeting": "Self",
+              "description": "The biting cold of Eternal Winter freezes time itself."
+            },
+            {
+              "label": "Battle time pause",
+              "tier": "ex+15",
+              "targeting": "Single target",
+              "description": "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
+            },
+            {
+              "label": "Instant defeat",
+              "tier": "supreme+",
+              "targeting": "Self",
+              "description": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Boss encounter",
+              "tier": "base",
+              "targeting": "Enemies",
+              "description": "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "6eba22768fb02cd98cea1fd0696fa5c5cdaf9f483f4c17bd477895d46805bb4d",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 77.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "d62736c69d9080e3184f9178d15ac5d538ba4a9a18acf40977bed5448641e7c5",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 220.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "6012892befd571001f95240479d22a9920967dbe5504f921b38c0a219231d37d",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 12.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "6bb7ddf5dee88f0bcc186165ef94f8f6022305fc44bd949bc98337d0161fd2f1",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+5": {
+          "effects": [
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage taken",
+              "label": "debuff_stat"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "14fa9189636b1d09551c0591c7a278c06b466dd984fe7db359db3ca404b8dc5d",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

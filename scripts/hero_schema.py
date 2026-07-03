@@ -38,6 +38,11 @@ def _rs():
         import importlib.util
         import sys
 
+        existing = sys.modules.get("rewrite_summaries")
+        if existing is not None:
+            _RS = existing
+            return _RS
+
         spec = importlib.util.spec_from_file_location(
             "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
         )
@@ -279,6 +284,8 @@ def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -
             return "buff_summon_defensive"
         return "buff_summon_stat"
     if category == "debuff":
+        if low == "hp loss":
+            return "debuff_hp_loss"
         if "dot" in low or "burn" in low or "bleed" in low:
             return "dot"
         if any(x in low for x in ("atk", "haste", "crit", "execution")):
@@ -559,7 +566,7 @@ def _numeric_from_value(value: Any) -> float | None:
 
 
 def _merge_effects(effects: list[Any]) -> list[Any]:
-    """Merge legacy effects by (category, label), matching add_effect().
+    """Merge effects by (category, label), keeping strongest numeric per tier.
 
     Keeps the strongest numeric per label for fully-ascended synergy comparison.
     """
@@ -762,7 +769,7 @@ def _legacy_spatial_from_schema(effect: dict[str, Any]) -> dict[str, Any]:
     if area_direction:
         fields["area_direction"] = area_direction
     area_count = effect.get("area_count")
-    if area_count is not None and area in ("radius", "path", "rectangle", "arc"):
+    if area_count is not None:
         fields["area_count"] = area_count
     return fields
 
@@ -962,7 +969,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             category="buff",
             label=label,
             tier=tier,
-            targeting=targeting if not summon else "Single target",
+            targeting=targeting,
             numeric=numeric,
             qualitative="",
             conditional=conditional,
@@ -976,7 +983,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             category="buff",
             label=name,
             tier=tier,
-            targeting=targeting if not summon else "Single target",
+            targeting=targeting,
             numeric=numeric,
             qualitative="",
             conditional=conditional,

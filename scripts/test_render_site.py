@@ -105,7 +105,7 @@ class RenderSiteTests(unittest.TestCase):
         haste = next(item for item in buffs["buffs"] if item["label"] == "Haste")
         self.assertEqual(haste["targetingType"], "All summons")
         self.assertIn(haste["quality"], ("low", "average", "high"))
-        beneficiary = next(h for h in bb["heroes"] if h["name"] == "Berial")
+        beneficiary = next(h for h in bb["heroes"] if h["name"] == "Cecia")
         self.assertTrue(beneficiary["reasons"])
         self.assertTrue(
             any("Damage dealt" in r for r in beneficiary["reasons"]),

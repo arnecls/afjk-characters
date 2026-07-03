@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Choose pytest-xdist worker count from a memory budget probe.
 
-Peak RSS measured on subset (test_detect_damage_types + test_summary_parsing)
+Peak RSS measured on subset (test_skill_descriptions + test_hero_schema)
 with ``-n auto``; extrapolated to full suite with 20% headroom. Budget 1536 MB.
 """
 
@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent
 VENV_PY = ROOT / ".venv" / "bin" / "python"
 MEMORY_LIMIT_MB = 1536
 SUBSET_PATHS = (
-    "scripts/test_detect_damage_types.py",
-    "scripts/test_summary_parsing.py",
+    "scripts/test_skill_descriptions.py",
+    "scripts/test_hero_schema.py",
 )
 FULL_SUITE_TEST_COUNT = 471
 # Subset probe peak ~891 MB (13 procs, -n auto); extrapolated full suite ~2142 MB
