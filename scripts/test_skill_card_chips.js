@@ -20,7 +20,7 @@ const context = {
       return null;
     },
     createElement() {
-      return { setAttribute() {}, appendChild() {} };
+      return { setAttribute() { }, appendChild() { } };
     },
   },
   location: { pathname: "/", protocol: "file:" },
@@ -53,11 +53,12 @@ function assertTargetingRendered(label, polarity, needle) {
 }
 
 const cases = [
-  ["Phys DEF — Area", "debuff", "Area"],
+  ["Phys DEF — Area", "debuff", "⭕"],
   ["ATK — Self (EX+10)", "buff", "Self"],
   ["Lifedrain — Multiple targets", "buff", "Multiple targets"],
-  ["Blind — Area (EX+15)", "", "Area"],
+  ["Blind — Area (EX+15)", "", "⭕"],
   ["Direct healing — Self (Supreme+)", "buff", "Self"],
+  ["Knock back — path", "cc", "〰️"],
 ];
 
 let failed = 0;

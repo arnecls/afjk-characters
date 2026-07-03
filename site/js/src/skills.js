@@ -469,17 +469,40 @@ window.AFKJ = window.AFKJ || {};
       return "";
     }
 
-    const seen = new Set();
-    let html = "";
+    const entries = [];
     tags.forEach(function (tag) {
       const label = skillCardTagLabel(tag);
-      const key = skillCardChipKey(label);
-      if (!key || seen.has(key)) {
+      if (!label) {
         return;
       }
-      seen.add(key);
-      const polarity = typeof tag === "object" && tag.polarity ? tag.polarity : "";
-      const chip = chips.chipifySkillCardTag(label, polarity);
+      const polarity =
+        typeof tag === "object" && tag.polarity ? tag.polarity : "";
+      entries.push({ label: label, polarity: polarity });
+    });
+
+    const grouped = chips.groupParsedVariants(
+      entries.map(function (entry) {
+        return entry;
+      }),
+      function (entry) {
+        return chips.parseSkillCardVariant(entry.label, entry.polarity);
+      },
+      ""
+    );
+
+    let html = "";
+    grouped.forEach(function (item) {
+      if (item.type === "group") {
+        const pill = chips.renderGroupedVariantPill(item.variants, {
+          iconOnlyTargeting: true,
+        });
+        if (pill) {
+          html += pill;
+        }
+        return;
+      }
+      const entry = item.item;
+      const chip = chips.chipifySkillCardTag(entry.label, entry.polarity);
       if (chip) {
         html += chip;
       }
