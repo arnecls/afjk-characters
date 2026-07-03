@@ -23,10 +23,10 @@ pipeline output, use [web-ui](../web-ui/SKILL.md).
 | Phase | Goal | Key outputs |
 |-------|------|-------------|
 | **A — Register + download** | Hero name in sources; raw skill text in repo | `data/heroes_data.json` |
-| **B — Skill effects** | AI-extracted effects sidecar | `data/skill_effects/<short_name>.json` |
+| **B — Detection gaps** | New flavor text parsed into effects | `scripts/rewrite-summaries.py`, tests, `heroes_data_processed.json` |
 | **C — Curated metadata** | Identity skill, tags, summaries, play blurb | 4 AI JSON files under `data/` |
 | **D — Overrides** | Fix auto-detect edge cases only when wrong | `placement_constraint_overrides.json`, `movement_overrides.json`, `melee_overrides.json` |
-| **E — Validate + verify** | Schema, semantics, combat icon, site | `just validate`, `site/assets/combat-icons/` |
+| **E — Validate + verify** | Schema, semantics, character portrait, site | `just validate`, `site/assets/portraits/` |
 
 Commands (agent runs these):
 
@@ -47,16 +47,18 @@ Task progress:
 - [ ] A2. Register in scripts/sources_web.py HERO_NAMES if Fandom-listed
 - [ ] A3. Run just download; review warnings for this hero
 - [ ] A4. Read raw skill block in data/heroes_data.json
-- [ ] B1. Follow [extract-skill-effects](../extract-skill-effects/SKILL.md) for this hero
-- [ ] B2. Validate sidecar schema + show diff vs processed; user approves
-- [ ] B3. Save sidecar; run just views; re-check effects until gaps closed
+- [ ] B1. Run scoped analyze_hero debug snippet
+- [ ] B2. Run scoped gap-scan snippet
+- [ ] B3. Walk sentences per skill; ask user on each unresolved gap
+- [ ] B4. Patch rewrite-summaries.py + regression test + CACHE_VERSION bump per fix
+- [ ] B5. Run just views; re-check this hero until gaps closed or user stops
 - [ ] C1. Add signature_skills.json entry
 - [ ] C2. Add hero_behavior_tags.json entry (behavior-tags skill rules)
 - [ ] C3. Add heroes_data_skill_summary.json entries per skill category
 - [ ] C4. Add hero_play_overviews.json entry
 - [ ] D1. Check placement / movement / melee; add overrides only if wrong
 - [ ] E1. Run just validate; fix hero-specific issues
-- [ ] E2. Confirm combat icon and site/data/heroes.json for this hero
+- [ ] E2. Confirm character portrait and site/data/heroes.json for this hero
 - [ ] E3. Report files touched and open items
 ```
 
@@ -117,15 +119,14 @@ Do not proceed to Phase B until skill text is present for every slot.
 
 ---
 
-## Phase B — Interactive sidecar extraction loop
+## Phase B — Interactive detection-gap loop
 
-New heroes almost always introduce skill phrasing that needs careful extraction.
-This phase walks each sentence against the hero's sidecar and **stops to ask the
+New heroes almost always introduce skill phrasing the regex engine has not seen.
+This phase walks each sentence against detected output and **stops to ask the
 user** when a mechanic is visible in text but missing from `effects`.
 
 Reference: `.cursor/AGENTS.md` (damage types, CC, buffs, targeting,
-immunities). Extraction workflow:
-[extract-skill-effects](../extract-skill-effects/SKILL.md).
+immunities). Detection engine: `scripts/rewrite-summaries.py`.
 
 ### B1. Print current detection
 
@@ -157,43 +158,47 @@ For each skill section (`Ultimate`, `Skill 1`, …, `Ex`):
    - Current detection for that skill section (or "none")
    - Your classification guess: damage type / buff / debuff / CC / immunity /
      special provide / special require / targeting-only / flavor-only
-   - Proposed sidecar change in one sentence (tier, effect type, label,
-     target, numeric if parseable)
+   - Which rule table likely needs a change:
+     `BUFF_RULES`, `DEBUFF_RULES`, `CC_RULES`, `SPECIAL_PROVIDES_RULES`,
+     `SPECIAL_REQUIRES_RULES`, damage-type detector, targeting heuristic, or
+     a spurious-match guard (`_cc_match_is_spurious`, etc.)
+   - Proposed fix in one sentence
 
    Offer choices: **confirm classification**, **edit classification**, **skip
    (flavor-only / deferred)**, or **stop early**.
 
-4. On confirm, update the sidecar (B4), then re-run detection for **this skill
-   only** before moving to the next sentence.
+4. On confirm, apply fix (B4), then re-run detection for **this skill only**
+   before moving to the next sentence.
 
 ### Failure modes (classify before asking)
 
+From `docs/skill-analysis-pipeline.md`:
+
 | Mode | Signal | Typical fix |
 |------|--------|-------------|
-| **New mechanic** | Brand-new verb or game term (e.g. "roots" → Bind) | Add effect row to sidecar tier |
-| **Wrong structure** | Known mechanic, wrong tier or target in sidecar | Edit sidecar entry |
-| **Spurious match** | Flavor text extracted as an effect | Remove or guard in sidecar; post-process only if magnitude/targeting wrong |
+| **New mechanic** | Brand-new verb or game term (e.g. "roots" → Bind) | Add regex to the right rule table |
+| **Broken pattern** | Known mechanic, new sentence structure breaks regex | Extend existing pattern or chunk split in `heroes_io.py` |
+| **Spurious match** | Flavor text triggers wrong effect | Add guard in `rewrite-summaries.py`; do not add a new rule |
 
-When unsure between new mechanic and mis-extraction, show the sentence and
+When unsure between new mechanic and broken pattern, show the sentence and
 ask — do not guess silently.
 
 ### B4. Apply each confirmed fix
 
 Per confirmed gap:
 
-1. Edit `data/skill_effects/<short_name>.json` following
-   [extract-skill-effects](../extract-skill-effects/SKILL.md).
-2. Validate with `skill_effects_store.validate_sidecar_doc()` and
-   `verify_sidecar_hashes()`.
-3. Run `just views`.
-4. Re-read this hero in `data/heroes_data_processed.json` and
+1. Patch `scripts/rewrite-summaries.py` (primary) or `scripts/heroes_io.py`
+   (sentence splitting) or `scripts/hero_schema.py` (schema mapping).
+2. Add a regression test in the matching `scripts/test_*.py` using the
+   **literal hero sentence** as fixture text.
+3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py`.
+4. Run `just views`.
+5. Re-read this hero in `data/heroes_data_processed.json` and
    `site/data/heroes.json` `skillCards` for the changed section.
 
-For post-processing issues (correct sidecar, wrong magnitude, movement, or
-placement), see [hero-data](../hero-data/SKILL.md) — may need
-`scripts/rewrite-summaries.py` post-process helpers instead of sidecar edits.
-For display-only issues (correct JSON, wrong chip color), see **Detection vs
-display** in hero-data — may need `site/js/app.js` `TAG_DEFINITIONS`.
+For display-only issues (correct JSON, wrong chip color), see
+[hero-data](../hero-data/SKILL.md) **Detection vs display** — may need
+`site/js/app.js` `TAG_DEFINITIONS` instead of detection changes.
 
 ### B5. Exit condition
 
@@ -204,8 +209,8 @@ Repeat B3–B4 until:
 - User says stop early (document remaining gaps in final report).
 
 Optional: run `python3 scripts/generate-heroes-overview.py` directly to print
-enabler-pattern scan for skill phrases not yet matched by synergy enablers —
-not part of default `just views`.
+enabler-pattern scan for phrases not yet in `SPECIAL_REQUIRES_RULES` — not
+part of default `just views`.
 
 ---
 
@@ -303,7 +308,7 @@ Confirm for this hero:
 | Skill text | `Heroes.md` |
 | Synergies + behavior | `heroes-overview.md` |
 | Site bundle | `site/data/heroes.json` |
-| Combat icon (Fandom wiki) | `site/assets/combat-icons/<DisplayName>.png` (manual; see [CONTEXT.md](../../CONTEXT.md) — Character portrait) |
+| Character portrait (Fandom wiki) | `site/assets/portraits/<DisplayName>.png` (manual; see [CONTEXT.md](../../CONTEXT.md) — Character portrait) |
 
 If skill card chips look wrong despite correct processed JSON, see
 [web-ui](../web-ui/SKILL.md).
@@ -356,8 +361,11 @@ for sec, sl in sorted(hero.skill_slices.items()):
 PY
 ```
 
-For one clause in isolation, inspect or edit the matching tier in
-`data/skill_effects/<short_name>.json`, then re-run `rs.analyze_hero(hero)`.
+For one clause in isolation:
+
+```python
+rs.analyze_text(effects, [], {}, [], tier, text, primary_dmg)
+```
 
 ### Scoped gap scan (one hero)
 
@@ -468,11 +476,11 @@ processed data, try both names if one fails.
 
 1. Added `"Kazim"` to `HERO_NAMES` in `sources_web.py`
 2. `just download` → `heroes_data.json` skill text
-3. Sidecar updates in `data/skill_effects/<short_name>.json` + tests for new phrasing
+3. Detection patches in `rewrite-summaries.py` + tests for new phrasing
 4. Curated: `signature_skills.json`, `hero_behavior_tags.json`,
    `heroes_data_skill_summary.json`
 5. `just views` → processed, synergies, overview, site
-6. Wiki combat icon in `site/assets/combat-icons/Kazim.png`
+6. Wiki character portrait in `site/assets/portraits/Kazim.png`
 7. `hero_play_overviews.json` added in follow-up commit
 
 Use this as a file-touch checklist, not a guarantee every new hero needs the

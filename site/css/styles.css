@@ -27,12 +27,6 @@
   --chip-damage-fg: #4a5568;
   --chip-stat-bg: #d8e3f6;
   --chip-stat-fg: #304060;
-  --chip-tooltip-bg: #1f2937;
-  --chip-scaling-mod-bg: color-mix(in srgb, var(--chip-tooltip-bg) 80%, white);
-  --chip-scaling-mod-fg: #f3f4f6;
-  --chip-scaling-mod-border: color-mix(in srgb,
-      var(--chip-scaling-mod-bg) 55%,
-      white);
   --chip-heal-bg: #c8e6d4;
   --chip-heal-fg: #1f4d36;
   --chip-debuff-bg: #f5d4d4;
@@ -560,86 +554,13 @@ a:hover {
   text-align: left;
 }
 
-.list-hero-hex {
-  --list-hex-size: 36px;
-  --list-hex-border-width: 2px;
-  --list-hex-clip: polygon(
-    50% 0%,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0% 75%,
-    0% 25%
-  );
-  --list-hex-border: var(--border);
-  flex: 0 0 var(--list-hex-size);
-  width: var(--list-hex-size);
-  height: calc(var(--list-hex-size) * 1.1547);
-  position: relative;
-  display: inline-block;
-}
-
-.list-hero-hex[data-faction="lightbearer"] {
-  --list-hex-border: #4a6b8a;
-}
-
-.list-hero-hex[data-faction="wilder"] {
-  --list-hex-border: #4a8860;
-}
-
-.list-hero-hex[data-faction="mauler"] {
-  --list-hex-border: #a06637;
-}
-
-.list-hero-hex[data-faction="graveborn"] {
-  --list-hex-border: #2f4238;
-}
-
-.list-hero-hex[data-faction="celestial"] {
-  --list-hex-border: #d99a3d;
-}
-
-.list-hero-hex[data-faction="hypogean"] {
-  --list-hex-border: #4b4282;
-}
-
-.list-hero-hex[data-faction="dimensional"] {
-  --list-hex-border: #5090e8;
-}
-
-.list-hero-hex-wrap {
-  position: absolute;
-  inset: 0;
-}
-
-.list-hero-hex-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--list-hex-border);
-  clip-path: var(--list-hex-clip);
-  z-index: 0;
-}
-
-.list-portrait.hero-card-portrait {
-  position: absolute;
-  inset: var(--list-hex-border-width);
-  width: auto;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: unset;
-  border-radius: 0;
-  clip-path: var(--list-hex-clip);
-  z-index: 1;
-}
-
-.list-portrait.hero-card-portrait .hero-card-portrait-frame,
-.list-portrait.hero-card-portrait .hero-card-portrait-frame::before {
-  clip-path: inherit;
-}
-
-.list-portrait.hero-card-portrait .hero-card-combat-icon {
-  transform: translate(-50%, -50%) scale(1.32);
+.heroes-table .col-name-portrait {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #e4e9f0, #d8dfe8);
 }
 
 .heroes-table th.sortable {
@@ -1161,7 +1082,7 @@ a:hover {
   background-image: url("../assets/faction-backgrounds/dimensional.jpg");
 }
 
-.hero-card-combat-icon {
+.hero-card-character-portrait {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1932,94 +1853,16 @@ a:hover {
 .synergy-common-buffer {
   display: inline-flex;
   align-items: center;
-  gap: 0.35em;
+  gap: 0.2em;
   vertical-align: baseline;
 }
 
-.inline-hero-hex {
-  --inline-hex-border-width: 1.5px;
-  --inline-hex-clip: polygon(
-    50% 0%,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0% 75%,
-    0% 25%
-  );
-  --inline-hex-border: var(--border);
-  display: inline-block;
-  position: relative;
-  width: calc(1em / 1.1547);
+.synergy-common-buffer .inline-hero-portrait {
   height: 1em;
-  flex-shrink: 0;
-  vertical-align: -0.08em;
-}
-
-.inline-hero-hex[data-faction="lightbearer"] {
-  --inline-hex-border: #4a6b8a;
-}
-
-.inline-hero-hex[data-faction="wilder"] {
-  --inline-hex-border: #4a8860;
-}
-
-.inline-hero-hex[data-faction="mauler"] {
-  --inline-hex-border: #a06637;
-}
-
-.inline-hero-hex[data-faction="graveborn"] {
-  --inline-hex-border: #2f4238;
-}
-
-.inline-hero-hex[data-faction="celestial"] {
-  --inline-hex-border: #d99a3d;
-}
-
-.inline-hero-hex[data-faction="hypogean"] {
-  --inline-hex-border: #4b4282;
-}
-
-.inline-hero-hex[data-faction="dimensional"] {
-  --inline-hex-border: #5090e8;
-}
-
-.inline-hero-hex-wrap {
-  position: absolute;
-  inset: 0;
-}
-
-.inline-hero-hex-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--inline-hex-border);
-  clip-path: var(--inline-hex-clip);
-  z-index: 0;
-}
-
-.inline-hero-hex-inner {
-  position: absolute;
-  inset: var(--inline-hex-border-width);
-  clip-path: var(--inline-hex-clip);
-  background: color-mix(
-    in srgb,
-    var(--inline-hex-border) 14%,
-    var(--surface-panel)
-  );
-  overflow: hidden;
-  z-index: 1;
-}
-
-.inline-hero-hex-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
+  width: auto;
+  border-radius: 2px;
   object-fit: cover;
-  object-position: center center;
-  transform: translate(-50%, -50%) scale(1.32);
+  flex-shrink: 0;
 }
 
 .synergy-requires {
@@ -2197,7 +2040,7 @@ a:hover {
   max-width: 16rem;
   padding: 0.45rem 0.6rem;
   border-radius: 0.35rem;
-  background: var(--chip-tooltip-bg);
+  background: #1f2937;
   color: #f9fafb;
   font-size: 0.75rem;
   font-weight: 400;
@@ -2244,7 +2087,7 @@ a:hover {
   left: 50%;
   margin-left: -5px;
   border: 5px solid transparent;
-  border-top-color: var(--chip-tooltip-bg);
+  border-top-color: #1f2937;
 }
 
 html.welcome-warning-pending body,
@@ -2353,8 +2196,8 @@ html.welcome-warning-pending .welcome-warning,
   z-index: 9;
   display: flex;
   flex-direction: column;
-  width: min(32rem, calc(100vw - 1.5rem));
-  max-width: 32rem;
+  width: min(28rem, calc(100vw - 1.5rem));
+  max-width: 28rem;
   --skill-card-panel: #161c26;
   --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 75%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
@@ -2578,12 +2421,6 @@ html.welcome-warning-pending .welcome-warning,
   color: var(--chip-stat-fg);
 }
 
-.chip-scaling-mod {
-  background: var(--chip-scaling-mod-bg);
-  color: var(--chip-scaling-mod-fg);
-  border-color: var(--chip-scaling-mod-border);
-}
-
 .chip-heal {
   background: var(--chip-heal-bg);
   color: var(--chip-heal-fg);
@@ -2795,52 +2632,19 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .hero-compact-card {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   border: 1px solid var(--border);
+  padding: 0;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   min-width: 0;
-  --compact-hex-size: 86px;
-  --compact-hex-border-width: 4px;
-  --compact-hex-offset-left: -1.1rem;
-  --compact-hex-gap: 0.65rem;
-  --compact-hex-border: var(--border);
-  --compact-hex-rotate: 10deg;
-  background: linear-gradient(calc(110deg + var(--compact-hex-rotate)),
-      var(--compact-hex-border) 0.5rem,
-      var(--surface-panel) 7rem);
-  padding: 0.55rem 0.6rem 0.6rem calc(var(--compact-hex-size) + var(--compact-hex-offset-left) + var(--compact-hex-gap));
-  min-height: calc(1.15rem + 0.9rem * 1.3 + 0.2rem + 0.2rem + (0.75rem * 1.35 + 0.24rem) * 2 + 0.35rem);
-}
-
-.hero-compact-card[data-faction="lightbearer"] {
-  --compact-hex-border: #4a6b8a;
-}
-
-.hero-compact-card[data-faction="wilder"] {
-  --compact-hex-border: #4a8860;
-}
-
-.hero-compact-card[data-faction="mauler"] {
-  --compact-hex-border: #a06637;
-}
-
-.hero-compact-card[data-faction="graveborn"] {
-  --compact-hex-border: #2f4238;
-}
-
-.hero-compact-card[data-faction="celestial"] {
-  --compact-hex-border: #d99a3d;
-}
-
-.hero-compact-card[data-faction="hypogean"] {
-  --compact-hex-border: #4b4282;
-}
-
-.hero-compact-card[data-faction="dimensional"] {
-  --compact-hex-border: #5090e8;
+  background: var(--surface-panel);
+  --compact-wave-panel: var(--surface-panel);
+  --compact-wave-accent: color-mix(in srgb, var(--surface-panel) 68%, var(--text-muted));
+  --compact-wave-hatch: rgba(70, 90, 120, 0.06);
 }
 
 .hero-compact-card:hover {
@@ -2849,89 +2653,80 @@ html.welcome-warning-pending .welcome-warning,
   border-color: var(--accent-soft);
 }
 
+/* Synergy compact cards: portrait column = 25% of card width */
+.synergy-section .hero-compact-card {
+  --compact-portrait-width: 15%;
+}
+
+/* Replacement compact cards: portrait column = 20% of card width */
+.replacement-category .hero-compact-card {
+  --compact-portrait-width: 30%;
+}
+
 .hero-compact-portrait-wrap {
-  --compact-hex-clip: polygon(50% 0%,
-      100% 25%,
-      100% 75%,
-      50% 100%,
-      0% 75%,
-      0% 25%);
+  position: relative;
+  flex: 0 0 var(--compact-portrait-width, 79px);
+  min-height: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-compact-wave {
   position: absolute;
-  top: -0.8rem;
-  left: var(--compact-hex-offset-left);
-  width: var(--compact-hex-size);
-  height: calc(var(--compact-hex-size) * 1.1547);
-  margin-right: var(--compact-hex-gap);
-  transform: rotate(var(--compact-hex-rotate));
-  transform-origin: center center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 38%;
   z-index: 2;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.hero-compact-portrait-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--compact-hex-border);
-  clip-path: var(--compact-hex-clip);
-  z-index: 0;
+.hero-compact-wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-compact-wave-accent {
+  fill: var(--compact-wave-accent);
+  opacity: 0.75;
+}
+
+.hero-compact-wave-panel {
+  fill: var(--compact-wave-panel);
+}
+
+.hero-compact-wave-panel-hatch {
+  pointer-events: none;
 }
 
 .compact-portrait.hero-card-portrait {
-  position: absolute;
-  inset: var(--compact-hex-border-width);
-  width: auto;
-  height: auto;
-  min-height: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
   aspect-ratio: unset;
   border-radius: 0;
-  clip-path: var(--compact-hex-clip);
-  z-index: 1;
-}
-
-.compact-portrait.hero-card-portrait .hero-card-portrait-frame {
-  clip-path: inherit;
-}
-
-/* Counter-rotate the image content so only the hex frame appears rotated.
-   Slight scale-up hides corners uncovered by the counter-rotation. */
-.compact-portrait.hero-card-portrait .hero-card-portrait-frame::before {
-  transform: rotate(calc(-1 * var(--compact-hex-rotate, 0deg))) scale(1.15);
-}
-
-.compact-portrait.hero-card-portrait .hero-card-combat-icon {
-  transform: translate(-50%, -50%) rotate(calc(-1 * var(--compact-hex-rotate, 0deg))) scale(1.45);
 }
 
 .hero-compact-portrait-fallback {
-  position: absolute;
-  inset: var(--compact-hex-border-width);
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
-  clip-path: var(--compact-hex-clip);
-  z-index: 1;
 }
 
 .hero-compact-body {
+  flex: 1;
   min-width: 0;
-  background: transparent;
+  padding: 0.6rem 0.6rem 0.6rem 0.65rem;
+  background: var(--surface-panel);
   position: relative;
   z-index: 1;
 }
 
-.hero-compact-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.45rem;
-  margin-bottom: 0.2rem;
-}
-
 .hero-compact-name {
-  flex: 1 1 auto;
-  min-width: 0;
   font-weight: 600;
   font-size: 0.9rem;
   line-height: 1.3;
@@ -2942,14 +2737,12 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .hero-compact-score {
-  flex: 0 0 auto;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
   color: var(--accent);
-  margin-top: 0;
-  line-height: 1.3;
-  white-space: nowrap;
-  letter-spacing: -0.02em;
+  margin-top: 0.15rem;
+  line-height: 1.2;
 }
 
 .hero-compact-detail {

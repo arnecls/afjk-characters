@@ -75,11 +75,9 @@ category icons on pool cards.
 ## Character portrait
 
 When the project owner asks for a hero's **character portrait**, they
-mean the **combat icon** asset:
+mean the in-battle character art from the AFK Journey Fandom wiki, stored at
+`site/assets/portraits/<DisplayName>.png`.
 
-- **Combat icon** — in-battle character art from the AFK Journey Fandom
-  wiki, at `site/assets/combat-icons/<DisplayName>.png`.
-
-Combat icons are used across grid cards, detail portraits, list-view
-hex thumbnails, compact synergy/replacement cards, and common-buffer
-inline badges.
+Character portraits are used across grid cards, detail portraits, list-view
+hex thumbnails, compact synergy/replacement cards, and common-buffer inline
+badges.

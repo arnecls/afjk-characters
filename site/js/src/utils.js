@@ -100,18 +100,11 @@ window.AFKJ.utils = {
     return "assets/icons/" + kind + "/" + fname + ".png";
   },
 
-  combatIconPath: function (hero) {
+  characterPortraitPath: function (hero) {
     if (!hero || !hero.name) {
       return null;
     }
-    return this.combatIconPathForName(hero.name);
-  },
-
-  combatIconPathForName: function (name) {
-    if (!name) {
-      return null;
-    }
-    return "assets/combat-icons/" + name + ".png";
+    return "assets/portraits/" + hero.name + ".png";
   },
 
   factionDataKey: function (faction) {

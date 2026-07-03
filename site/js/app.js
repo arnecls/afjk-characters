@@ -11,9 +11,8 @@ if(path.indexOf("/hero/")!==-1){return decodeURIComponent(path.split("/hero/")[1
 return null;},redirectLegacyHeroPath:function(){if(location.hash.match(/^#hero\//)){return;}
 const path=location.pathname;const idx=path.indexOf("/hero/");if(idx===-1){return;}
 const slug=path.slice(idx+6).replace(/\/$/,"");if(!slug){return;}
-const base=path.slice(0,idx+1);history.replaceState(null,"",base+this.heroHash(decodeURIComponent(slug)));},iconPath:function(kind,value){if(!value)return null;const fname=value.toLowerCase().replace(/\s+/g,"");return"assets/icons/"+kind+"/"+fname+".png";},combatIconPath:function(hero){if(!hero||!hero.name){return null;}
-return this.combatIconPathForName(hero.name);},combatIconPathForName:function(name){if(!name){return null;}
-return"assets/combat-icons/"+name+".png";},factionDataKey:function(faction){if(!faction){return"";}
+const base=path.slice(0,idx+1);history.replaceState(null,"",base+this.heroHash(decodeURIComponent(slug)));},iconPath:function(kind,value){if(!value)return null;const fname=value.toLowerCase().replace(/\s+/g,"");return"assets/icons/"+kind+"/"+fname+".png";},characterPortraitPath:function(hero){if(!hero||!hero.name){return null;}
+return"assets/portraits/"+hero.name+".png";},factionDataKey:function(faction){if(!faction){return"";}
 return faction.toLowerCase().replace(/\s+/g,"");},CELESTIAL_HYPOGEAN_BONUS_KEY:"celestialhypogean",factionBonusGroupKey:function(faction){const key=this.factionDataKey(faction);if(key==="celestial"||key==="hypogean"){return this.CELESTIAL_HYPOGEAN_BONUS_KEY;}
 return key;},factionClass:function(faction){if(!faction)return"";return"badge-faction-"+faction.toLowerCase().replace(/\s+/g,"");},escapeHtml:function(text){if(typeof text!=="string")return"";return text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");},linkifyHero:function(name,slug){const state=window.AFKJ.state;if(slug&&state.heroBySlug[slug]){return('<a href="'+
 this.escapeHtml(this.heroUrl(slug))+'" class="hero-link" data-slug="'+
@@ -447,13 +446,11 @@ showSkillPopover(card,data);}
 document.addEventListener("click",function(e){const card=skillCardFromEvent(e);if(card){e.preventDefault();e.stopPropagation();openFromCard(card);return;}
 if(anchorCard&&!popover.contains(e.target)&&!anchorCard.contains(e.target)){hideSkillPopover();}});backdrop.addEventListener("click",function(){hideSkillPopover();});document.addEventListener("keydown",function(e){const card=e.target.closest(".skill-card[data-skill-category]");if(card&&(e.key==="Enter"||e.key===" ")&&!e.target.closest(".skill-card-tags .chip")){e.preventDefault();openFromCard(card);return;}
 if(e.key==="Escape"&&anchorCard){hideSkillPopover();anchorCard.focus();}});window.addEventListener("scroll",function(){if(anchorCard&&!popover.hidden){positionSkillPopover(anchorCard);}},true);window.addEventListener("resize",function(){if(anchorCard&&!popover.hidden){positionSkillPopover(anchorCard);}});if(window.visualViewport){window.visualViewport.addEventListener("resize",function(){if(anchorCard&&!popover.hidden){positionSkillPopover(anchorCard);}});window.visualViewport.addEventListener("scroll",function(){if(anchorCard&&!popover.hidden){positionSkillPopover(anchorCard);}});}}
-window.AFKJ.ui={updateListStickyOffset:updateListStickyOffset,updateHeaderNav:updateHeaderNav,updateFiltersToggleLabel:updateFiltersToggleLabel,setFiltersCollapsed:setFiltersCollapsed,initFiltersCollapse:initFiltersCollapse,initWelcomeWarning:initWelcomeWarning,initChipTooltips:initChipTooltips,initSkillCardPopover:initSkillCardPopover,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const escapeHtml=utils.escapeHtml.bind(utils);function renderHeroPortrait(hero,extraClass){const factionKey=utils.factionDataKey(hero.faction);const combatSrc=utils.assetUrl(utils.combatIconPath(hero));return('<div class="hero-card-portrait hero-card-portrait--'+
+window.AFKJ.ui={updateListStickyOffset:updateListStickyOffset,updateHeaderNav:updateHeaderNav,updateFiltersToggleLabel:updateFiltersToggleLabel,setFiltersCollapsed:setFiltersCollapsed,initFiltersCollapse:initFiltersCollapse,initWelcomeWarning:initWelcomeWarning,initChipTooltips:initChipTooltips,initSkillCardPopover:initSkillCardPopover,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const escapeHtml=utils.escapeHtml.bind(utils);function renderHeroPortrait(hero,extraClass){const factionKey=utils.factionDataKey(hero.faction);const characterPortrait=utils.characterPortraitPath(hero);const portraitSrc=utils.assetUrl(characterPortrait||hero.portrait);const portraitFallback=utils.assetUrl(hero.portrait);return('<div class="hero-card-portrait hero-card-portrait--'+
 escapeHtml(factionKey)+
-(extraClass?" "+extraClass:"")+'">'+'<div class="hero-card-portrait-frame">'+'<img class="hero-card-combat-icon" src="'+
-escapeHtml(combatSrc)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">'+"</div></div>");}
-function renderListHeroPortrait(hero){const factionKey=utils.factionDataKey(hero.faction);return('<span class="list-hero-hex" data-faction="'+
-escapeHtml(factionKey)+'" aria-hidden="true">'+'<span class="list-hero-hex-wrap">'+
-renderHeroPortrait(hero,"list-portrait")+"</span></span>");}
+(extraClass?" "+extraClass:"")+'">'+'<div class="hero-card-portrait-frame">'+'<img class="hero-card-character-portrait" src="'+
+escapeHtml(portraitSrc)+'" alt="" loading="lazy" onerror="this.onerror=null;this.src='+
+JSON.stringify(portraitFallback)+'">'+"</div></div>");}
 function renderGridCardFactionIcon(hero){if(!hero.faction){return"";}
 const icon=utils.iconPath("factions",hero.faction);if(!icon){return"";}
 return('<img class="hero-card-faction-icon" src="'+
@@ -525,7 +522,7 @@ cardHtml+
 opts.chromeHtml+"</div>");}
 return cardHtml;}
 function renderGrid(){const state=window.AFKJ.state;const list=window.AFKJ.router.filteredHeroes();state.dom.heroGrid.innerHTML=list.map(function(h){return buildHeroCardHtml(h,{role:"link"});}).join("");state.dom.emptyState.classList.toggle("hidden",list.length>0);scheduleFitHeroCardNames();}
-window.AFKJ.views.grid={renderHeroPortrait:renderHeroPortrait,renderListHeroPortrait:renderListHeroPortrait,renderGridCardFactionIcon:renderGridCardFactionIcon,renderGridCardClassIcon:renderGridCardClassIcon,renderGridCardFactionStack:renderGridCardFactionStack,renderGridCardRole:renderGridCardRole,renderHeroCardWave:renderHeroCardWave,renderCompactCardWave:renderCompactCardWave,buildHeroCardHtml:buildHeroCardHtml,scheduleFitHeroCardNames:scheduleFitHeroCardNames,renderGrid:renderGrid,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const EFFECT_CC_COLUMNS=["Stun","Knock down","Knock up","Knock back","Frighten","Silence","Charm","Sleep","Displace","Bind","Interrupt","Taunt","Blind",];const EFFECT_ANTI_CC_COLUMNS=["Unaffected","Steadfast","Immune","Untargetable","Cleanse",];const TIMING_RANK={permanent:50,"start of battle":40,form:35,"on ultimate":30,"on skill":25,once:20,"conditional (frequent)":15,conditional:10,"conditional (rare)":5,};const STRENGTH_RANK={high:3,average:2,low:1,};const DMG_COLUMN_BASE={Magic:"Magic",Physical:"Physical",Ranged:"Ranged",True:"True damage","HP Loss":"HP loss","Max HP":"Max HP damage",};let columnFilterPointerHandler=null;function parseCsv(text){const rows=[];let row=[];let field="";let inQuotes=false;for(let i=0;i<text.length;i++){const c=text[i];if(inQuotes){if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{inQuotes=false;}}else{field+=c;}}else if(c==='"'){inQuotes=true;}else if(c===","){row.push(field);field="";}else if(c==="\n"||(c==="\r"&&text[i+1]==="\n")){row.push(field);if(row.some(function(cell){return cell.length>0;})){rows.push(row);}
+window.AFKJ.views.grid={renderHeroPortrait:renderHeroPortrait,renderGridCardFactionIcon:renderGridCardFactionIcon,renderGridCardClassIcon:renderGridCardClassIcon,renderGridCardFactionStack:renderGridCardFactionStack,renderGridCardRole:renderGridCardRole,renderHeroCardWave:renderHeroCardWave,renderCompactCardWave:renderCompactCardWave,buildHeroCardHtml:buildHeroCardHtml,scheduleFitHeroCardNames:scheduleFitHeroCardNames,renderGrid:renderGrid,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const escapeHtml=utils.escapeHtml.bind(utils);const EFFECT_CC_COLUMNS=["Stun","Knock down","Knock up","Knock back","Frighten","Silence","Charm","Sleep","Displace","Bind","Interrupt","Taunt","Blind",];const EFFECT_ANTI_CC_COLUMNS=["Unaffected","Steadfast","Immune","Untargetable","Cleanse",];const TIMING_RANK={permanent:50,"start of battle":40,form:35,"on ultimate":30,"on skill":25,once:20,"conditional (frequent)":15,conditional:10,"conditional (rare)":5,};const STRENGTH_RANK={high:3,average:2,low:1,};const DMG_COLUMN_BASE={Magic:"Magic",Physical:"Physical",Ranged:"Ranged",True:"True damage","HP Loss":"HP loss","Max HP":"Max HP damage",};let columnFilterPointerHandler=null;function parseCsv(text){const rows=[];let row=[];let field="";let inQuotes=false;for(let i=0;i<text.length;i++){const c=text[i];if(inQuotes){if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{inQuotes=false;}}else{field+=c;}}else if(c==='"'){inQuotes=true;}else if(c===","){row.push(field);field="";}else if(c==="\n"||(c==="\r"&&text[i+1]==="\n")){row.push(field);if(row.some(function(cell){return cell.length>0;})){rows.push(row);}
 row=[];field="";if(c==="\r"){i++;}}else if(c!=="\r"){field+=c;}}
 if(field.length||row.length){row.push(field);rows.push(row);}
 return rows;}
@@ -762,8 +759,8 @@ width+'px">');}).join("");state.dom.heroesTable.style.tableLayout="fixed";}
 function buildListBodyHtml(rows){const state=window.AFKJ.state;const tiers=window.AFKJ.tiers;let bodyHtml="";rows.forEach(function(row){const name=row[0]||"";const hero=state.heroByName[name];bodyHtml+="<tr>";row.forEach(function(cell,idx){const col=state.csvHeaders[idx];let inner;if(col==="Name"){if(hero){inner='<a href="'+
 escapeHtml(utils.heroUrl(hero.slug))+'" class="hero-link col-name-link" data-slug="'+
 escapeHtml(hero.slug)+'">'+'<span class="col-name-text">'+
-escapeHtml(name)+"</span>"+
-gridView.renderListHeroPortrait(hero)+"</a>";}else{inner=escapeHtml(name);}}else{inner=renderTableCell(col,getListCellRawValue(row,idx,col));}
+escapeHtml(name)+"</span>"+'<img class="col-name-portrait" src="'+
+utils.assetUrl(hero.portrait)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">'+"</a>";}else{inner=escapeHtml(name);}}else{inner=renderTableCell(col,getListCellRawValue(row,idx,col));}
 let tdCls="";const colCls=listColumnClass(col);if(colCls){tdCls=' class="'+colCls+'"';}
 bodyHtml+="<td"+tdCls+">"+inner+"</td>";});bodyHtml+="</tr>";});return bodyHtml;}
 function renderList(){const state=window.AFKJ.state;const dom=state.dom;const tiers=window.AFKJ.tiers;if(!state.csvHeaders.length){if(dom.heroesTableHead){dom.heroesTableHead.innerHTML="";}
@@ -1008,26 +1005,24 @@ const slotCard=e.target.closest(".mix-slot .hero-card");if(slotCard){e.preventDe
 return;}
 const gridCard=e.target.closest("#mix-hero-grid .hero-card");if(gridCard&&gridCard.dataset.slug){e.preventDefault();e.stopPropagation();openMixGridContextMenu(gridCard.dataset.slug,e.clientX,e.clientY);}});ensureMixContextMenu();}
 window.AFKJ.views.mix={loadMixData:loadMixData,mixSlottedSlugSet:mixSlottedSlugSet,compactMixSlots:compactMixSlots,mixFirstFreeSlotIndex:mixFirstFreeSlotIndex,removeSlugFromMixSlots:removeSlugFromMixSlots,clearMixAlternativeHighlights:clearMixAlternativeHighlights,mixSlotIndexForSlug:mixSlotIndexForSlug,tryReplaceHighlightedAlternative:tryReplaceHighlightedAlternative,addHeroToMixZone:addHeroToMixZone,placeHeroInMixZone:placeHeroInMixZone,synergyScoreForPair:synergyScoreForPair,getQualifyingMixFactions:getQualifyingMixFactions,mixHeroSkillTags:mixHeroSkillTags,mixHeroBehaviorTags:mixHeroBehaviorTags,computeMixSpeedBonus:computeMixSpeedBonus,computeMixFocusBonus:computeMixFocusBonus,computeMixScore:computeMixScore,mixRawRoleProminence:mixRawRoleProminence,resolvePrydwenTierRank:resolvePrydwenTierRank,roleProminenceTierPoints:roleProminenceTierPoints,mixCombinedRoleProminenceRaw:mixCombinedRoleProminenceRaw,normalizeScores:normalizeScores,computeNormalizedRoleBonuses:computeNormalizedRoleBonuses,computeNormalizedTierBonuses:computeNormalizedTierBonuses,mixPoolHeroes:mixPoolHeroes,mixSortedPoolHeroes:mixSortedPoolHeroes,renderMixHeroCard:renderMixHeroCard,renderMixSlots:renderMixSlots,renderMixGrid:renderMixGrid,renderMix:renderMix,syncMixFocusButtons:syncMixFocusButtons,syncMixModeButtons:syncMixModeButtons,buildMixHighlightMap:buildMixHighlightMap,getMixOverallReplacement:getMixOverallReplacement,closeMixContextMenu:closeMixContextMenu,openMixContextMenu:openMixContextMenu,openMixGridContextMenu:openMixGridContextMenu,removeHeroFromMixSlot:removeHeroFromMixSlot,initMixInteractions:initMixInteractions,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const tiers=window.AFKJ.tiers;const skills=window.AFKJ.skills;const markdown=window.AFKJ.markdown;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const BENEFIT_MAX_STARS=5;const BENEFIT_MIN_STARS=1;const BENEFIT_STAR="⭐";function formatBeneficiaryRatingDisplay(scoreRating){const rating=Number(scoreRating);if(!isFinite(rating)){return"";}
-const clamped=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,rating));const roundedStars=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,Math.round(clamped)));return BENEFIT_STAR.repeat(roundedStars);}
-function beneficiaryScoreTooltip(scoreRating){const rating=Number(scoreRating);if(!isFinite(rating)){return"Benefit rating out of 5";}
-const clamped=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,rating));return"Benefit rating: "+clamped.toFixed(1)+" out of 5";}
-function renderBeneficiaryScore(scoreRating){const text=formatBeneficiaryRatingDisplay(scoreRating);if(!text){return"";}
-return('<div class="hero-compact-score" title="'+
-escapeHtml(beneficiaryScoreTooltip(scoreRating))+'">'+
+const clamped=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,rating));const fullStars=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,Math.floor(clamped)));return BENEFIT_STAR.repeat(fullStars)+" ("+clamped.toFixed(1)+")";}
+function renderBeneficiaryScore(scoreRating,scoreDisplay){const text=scoreDisplay||formatBeneficiaryRatingDisplay(scoreRating);if(!text){return"";}
+return('<div class="hero-compact-score" title="Benefit rating out of 5">'+
 escapeHtml(text)+"</div>");}
-function renderHeroCompactCard(slug,name,bodyHtml,footerHtml,headerHtml){const hero=window.AFKJ.state.heroBySlug[slug];const factionKey=hero?utils.factionDataKey(hero.faction):"";const portraitHero=hero||{name:name,faction:""};const portraitHtml=gridView.renderHeroPortrait(portraitHero,"compact-portrait");return('<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="'+
-escapeHtml(slug)+'" data-faction="'+
-escapeHtml(factionKey)+'" tabindex="0" role="link" aria-label="'+
+function renderHeroCompactCard(slug,name,bodyHtml,footerHtml){const hero=window.AFKJ.state.heroBySlug[slug];let portraitHtml="";if(hero){portraitHtml=gridView.renderHeroPortrait(hero,"compact-portrait");}else{const portrait="assets/portraits/"+name+".png";portraitHtml='<img class="hero-compact-portrait-fallback" src="'+
+utils.assetUrl(portrait)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">';}
+return('<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="'+
+escapeHtml(slug)+'" tabindex="0" role="link" aria-label="'+
 escapeHtml(name)+'">'+'<div class="hero-compact-portrait-wrap">'+
-portraitHtml+"</div>"+'<div class="hero-compact-body">'+'<div class="hero-compact-header">'+'<div class="hero-compact-name">'+
+portraitHtml+
+gridView.renderCompactCardWave(slug)+"</div>"+'<div class="hero-compact-body">'+'<div class="hero-compact-name">'+
 utils.linkifyHero(name,slug)+"</div>"+
-(headerHtml||"")+"</div>"+
 (bodyHtml||"")+
 (footerHtml||"")+"</div></article>");}
-function renderHeroRowCard(slug,name,bodyHtml){const hero=window.AFKJ.state.heroBySlug[slug];const combatSrc=utils.assetUrl(utils.combatIconPath(hero||{name:name}));return('<article class="hero-row-card" data-slug="'+
+function renderHeroRowCard(slug,name,bodyHtml){const hero=window.AFKJ.state.heroBySlug[slug];const portrait=hero?hero.portrait:"assets/portraits/"+name+".png";return('<article class="hero-row-card" data-slug="'+
 escapeHtml(slug)+'" tabindex="0" role="link" aria-label="'+
 escapeHtml(name)+'">'+'<img src="'+
-escapeHtml(combatSrc)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">'+'<div class="hero-row-body">'+'<div class="hero-row-name">'+
+utils.assetUrl(portrait)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">'+'<div class="hero-row-body">'+'<div class="hero-row-name">'+
 utils.linkifyHero(name,slug)+"</div>"+
 (bodyHtml||"")+"</div></article>");}
 function renderHeroRowList(items,layoutClass){if(!items.length){return"";}
@@ -1108,12 +1103,11 @@ return html;}
 function synergyPartnerScoreRating(ref){const rating=ref.scoreRating!=null?ref.scoreRating:ref.score_rating;const value=Number(rating);return Number.isFinite(value)?value:0;}
 function sortSynergyHeroes(heroes){return heroes.slice().sort(function(a,b){const aRating=a.scoreRating!=null?a.scoreRating:a.score_rating;const bRating=b.scoreRating!=null?b.scoreRating:b.score_rating;if(bRating!==aRating){return bRating-aRating;}
 return String(a.name||"").localeCompare(String(b.name||""));});}
-function renderSynergyHeroCard(ref,bodyHtml){const scoreHtml=renderBeneficiaryScore(ref.scoreRating!=null?ref.scoreRating:ref.score_rating);return renderHeroCompactCard(ref.slug,ref.name,bodyHtml||"","",scoreHtml);}
+function renderSynergyHeroCard(ref,bodyHtml){const scoreHtml=renderBeneficiaryScore(ref.scoreRating!=null?ref.scoreRating:ref.score_rating,ref.scoreDisplay||ref.score_display);return renderHeroCompactCard(ref.slug,ref.name,scoreHtml+(bodyHtml||""));}
 function renderSynergyHeroGrid(heroes,bodyForHero){if(!heroes||!heroes.length){return"";}
 return renderHeroRowList(sortSynergyHeroes(heroes).map(function(hero){return renderSynergyHeroCard(hero,bodyForHero(hero));}),"hero-compact-grid-2");}
-function renderInlineHeroPortrait(slug,name){const hero=window.AFKJ.state.heroBySlug[slug];const factionKey=hero?utils.factionDataKey(hero.faction):"";const combatSrc=utils.assetUrl(utils.combatIconPath(hero||{name:name}));return('<span class="inline-hero-hex" data-faction="'+
-escapeHtml(factionKey)+'" aria-hidden="true">'+'<span class="inline-hero-hex-wrap">'+'<span class="inline-hero-hex-inner">'+'<img class="inline-hero-hex-icon" src="'+
-escapeHtml(combatSrc)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">'+"</span></span></span>");}
+function renderInlineHeroPortrait(slug,name){const hero=window.AFKJ.state.heroBySlug[slug];const portrait=hero?hero.portrait:"assets/portraits/"+name+".png";return('<img class="inline-hero-portrait" src="'+
+utils.assetUrl(portrait)+'" alt="" loading="lazy" onerror="this.style.opacity=0.3">');}
 function synergyIntroWithoutCommonBuffers(intro){if(!intro){return"";}
 return intro.split("\n").filter(function(line){return!/^Common buffers are /i.test(line.trim());}).join("\n").trim();}
 function renderCommonBuffers(buffers){if(!buffers||!buffers.length){return"";}

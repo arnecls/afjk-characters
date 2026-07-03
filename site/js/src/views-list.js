@@ -4,7 +4,6 @@ window.AFKJ = window.AFKJ || {};
   const utils = window.AFKJ.utils;
   const config = window.AFKJ.config;
   const chips = window.AFKJ.chips;
-  const gridView = window.AFKJ.views.grid;
   const escapeHtml = utils.escapeHtml.bind(utils);
 
   const EFFECT_CC_COLUMNS = [
@@ -1326,7 +1325,9 @@ window.AFKJ = window.AFKJ || {};
               '<span class="col-name-text">' +
               escapeHtml(name) +
               "</span>" +
-              gridView.renderListHeroPortrait(hero) +
+              '<img class="col-name-portrait" src="' +
+              utils.assetUrl(hero.portrait) +
+              '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
               "</a>";
           } else {
             inner = escapeHtml(name);
