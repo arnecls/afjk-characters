@@ -227,6 +227,9 @@ _ENERGY_RECOVERY_SPEED_FACTOR = 10.0
 
 _SIGNATURE_SECTIONS: dict[str, str] | None = None
 _BEHAVIOR_TAGS: dict[str, frozenset[str]] | None = None
+_SUMMON_PROFILES: dict[str, dict[str, bool]] | None = None
+SUMMONER_BEHAVIOR_TAG = "summoner"
+RANGED_DAMAGE_SUMMON_LABEL = "Ranged damage"
 
 # Receiver Requires labels that are self-setup, not partner-enabled.
 SKIP_ENABLER_REQUIRES = frozenset(
@@ -345,36 +348,17 @@ def _direct_buff_labels_for_stat(stat: str) -> list[str]:
     return labels
 
 
-def summon_buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
-    """Buff labels on allied summons that satisfy a benefit stat."""
-    prefs = list(buff_labels_for_stat(stat))
-    if stat == "ATK":
-        prefs.append(("Damage dealt", 1.0))
-    return prefs
-
-
-def receiver_summons(hero: _rs.Hero) -> bool:
-    return _rs.hero_fields_summon_units(hero)
-
-
-# Summon buffs apply to the receiver's summons, not the hero's own stat line.
-SUMMON_RECEIVER_STATS: tuple[str, ...] = ("ATK", "ATK SPD", "Haste")
-
-
-def receiver_summon_synergy_stats(hero: _rs.Hero) -> list[str]:
-    """Stats a summoner's field units benefit from, plus any receiver stats."""
-    if not receiver_summons(hero):
-        return receiver_stats(hero)
-    seen: set[str] = set()
-    ordered: list[str] = []
-    for stat in SUMMON_RECEIVER_STATS + tuple(receiver_stats(hero)):
-        if stat not in seen:
-            seen.add(stat)
-            ordered.append(stat)
-    return ordered
-
-
 SUMMON_TARGETING_WEIGHT = 3.0
+
+
+def receiver_has_summoner_tag(hero: _rs.Hero) -> bool:
+    tags = _load_behavior_tags().get(short_name(hero.title), frozenset())
+    return SUMMONER_BEHAVIOR_TAG in tags
+
+
+def receiver_has_ranged_summons(hero: _rs.Hero) -> bool:
+    profile = _load_summon_profiles().get(short_name(hero.title), {})
+    return bool(profile.get("has_ranged_summons"))
 
 
 def format_reason_for_display(reason: str) -> str:
@@ -1277,8 +1261,14 @@ def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
     return "Shield" in receiver_stats(receiver)
 
 
+def _has_all_summons_buff_reason(reasons: list[str]) -> bool:
+    return any("(all summons" in r for r in reasons)
+
+
 def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
     """Drop weak or irrelevant synergy lines from the ranked list."""
+    if _has_all_summons_buff_reason(reasons):
+        return False
     stat = _stat_synergy_reasons(reasons)
     has_enabler = any(r.startswith("Enables ") for r in reasons)
 
@@ -1498,54 +1488,50 @@ def score_synergy(
 def score_summon_synergy(
     provider: _rs.Hero, receiver: _rs.Hero
 ) -> tuple[float, list[str]]:
-    """Match summon-only buffs to heroes who field summons."""
-    if _is_same_hero(provider, receiver) or not receiver_summons(receiver):
+    """Match all-summons buffs to summoner-tagged receivers."""
+    if _is_same_hero(provider, receiver) or not receiver_has_summoner_tag(receiver):
         return 0.0, []
 
     if not provider.summon_effects:
         return 0.0, []
 
+    best_by_label: dict[str, tuple[float, str]] = {}
+
+    for effect in provider.summon_effects:
+        if effect.category != "buff":
+            continue
+        if _rs.is_own_summon_buff_targeting(effect.targeting):
+            continue
+        if not _rs.is_all_summon_buff_targeting(effect.targeting):
+            continue
+        if _rs.effect_synergy_excluded(effect):
+            continue
+        if (
+            effect.label == RANGED_DAMAGE_SUMMON_LABEL
+            and not receiver_has_ranged_summons(receiver)
+        ):
+            continue
+        mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+        pts = SUMMON_TARGETING_WEIGHT * mw * _rs.effect_synergy_multiplier(effect)
+        if pts <= 0:
+            continue
+        cond = (
+            f", conditional ({effect.conditional})"
+            if effect.conditional
+            else ""
+        )
+        detail = f"{effect.label} (all summons, {effect.magnitude}{cond})"
+        prev = best_by_label.get(effect.label)
+        if prev is None or pts > prev[0]:
+            best_by_label[effect.label] = (pts, detail)
+
     reasons: list[str] = []
     total = 0.0
-    seen_stats: set[str] = set()
-    credited_buffs: set[str] = set()
-
-    for stat in receiver_summon_synergy_stats(receiver):
-        if stat == "Haste" and "Haste" in credited_buffs:
-            continue
-        label_prefs = summon_buff_labels_for_stat(stat)
-        allowed = {label for label, _ in label_prefs}
-        mult_by_label = dict(label_prefs)
-        best_for_stat: tuple[float, str] | None = None
-
-        for effect in provider.summon_effects:
-            if effect.category != "buff" or effect.label not in allowed:
-                continue
-            if _rs.is_own_summon_buff_targeting(effect.targeting):
-                continue
-            if _rs.effect_synergy_excluded(effect):
-                continue
-            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
-            pts = SUMMON_TARGETING_WEIGHT * mw * mult_by_label[effect.label]
-            pts *= _rs.effect_synergy_multiplier(effect)
-            if pts <= 0:
-                continue
-            cond = (
-                f", conditional ({effect.conditional})"
-                if effect.conditional
-                else ""
-            )
-            detail = f"{effect.label} (all summons, {effect.magnitude}{cond})"
-            if best_for_stat is None or pts > best_for_stat[0]:
-                best_for_stat = (pts, detail, effect.label)
-
-        if best_for_stat:
-            total += best_for_stat[0]
-            if stat not in seen_stats:
-                seen_stats.add(stat)
-                reasons.append(f"{stat} via {best_for_stat[1]}")
-            if stat == "ATK SPD" and best_for_stat[2] == "Haste":
-                credited_buffs.add("Haste")
+    for label, (pts, detail) in sorted(
+        best_by_label.items(), key=lambda item: (-item[1][0], item[0])
+    ):
+        total += pts
+        reasons.append(f"{label} via {detail}")
 
     return total, reasons
 
@@ -2193,6 +2179,17 @@ def _load_behavior_tags() -> dict[str, frozenset[str]]:
                 name: frozenset(tags) for name, tags in data.items()
             }
     return _BEHAVIOR_TAGS
+
+
+def _load_summon_profiles() -> dict[str, dict[str, bool]]:
+    global _SUMMON_PROFILES
+    if _SUMMON_PROFILES is None:
+        path = ROOT / "data" / "hero_summon_profiles.json"
+        if not path.exists():
+            _SUMMON_PROFILES = {}
+        else:
+            _SUMMON_PROFILES = json.loads(path.read_text(encoding="utf-8"))
+    return _SUMMON_PROFILES
 
 
 def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:

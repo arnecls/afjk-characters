@@ -1909,6 +1909,14 @@
           "score": 1.5
         },
         {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK (single target, high)",
@@ -1923,6 +1931,13 @@
             "Haste via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Dunlingr",
@@ -1985,51 +2000,55 @@
       ],
       "beneficiaries": [
         {
-          "score": 14.25,
-          "name": "Berial"
-        },
-        {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Bryon"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Cecia"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
+          "name": "Chippy"
+        },
+        {
+          "score": 12.0,
+          "name": "Daimon"
+        },
+        {
+          "score": 12.0,
           "name": "Damian"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Florabelle"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Hodgkin"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Laios"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Lamentis"
         },
         {
-          "score": 14.25,
-          "name": "Mehira"
+          "score": 12.0,
+          "name": "Marcille"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Peggy"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Phraesto"
         },
         {
-          "score": 14.25,
+          "score": 12.0,
           "name": "Zanie"
         }
       ],
@@ -2447,14 +2466,6 @@
     },
     "Berial": {
       "synergies": [
-        {
-          "provider": "Aurora",
-          "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
-          ],
-          "score": 14.25
-        },
         {
           "provider": "Rowan",
           "reasons": [
@@ -3388,14 +3399,6 @@
     "Bryon": {
       "synergies": [
         {
-          "provider": "Aurora",
-          "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
-          ],
-          "score": 14.25
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
@@ -3403,6 +3406,14 @@
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
           "score": 13.636800000000001
+        },
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Tasi",
@@ -3436,6 +3447,13 @@
             "ATK SPD via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 7.500000000000001
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Rowan",
@@ -3525,6 +3543,15 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)",
+            "Ranged damage via Ranged damage (all summons, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Lorsan",
@@ -5100,10 +5127,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Tilaya",
@@ -5146,6 +5173,13 @@
             "ATK SPD via Haste (single target, high) `signature fuel`"
           ],
           "score": 6.75
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Isabella",
@@ -5318,11 +5352,10 @@
         {
           "provider": "Peggy",
           "reasons": [
-            "ATK via ATK (all summons, low)",
-            "Physical DEF via DEF (all summons, average)",
-            "Magic DEF via DEF (all summons, average)"
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
           ],
-          "score": 15.0
+          "score": 9.0
         },
         {
           "provider": "Lorsan",
@@ -5514,6 +5547,29 @@
     },
     "Chippy": {
       "synergies": [
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
+          ],
+          "score": 12.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
+        },
         {
           "provider": "Lorsan",
           "reasons": [
@@ -6690,12 +6746,27 @@
     "Daimon": {
       "synergies": [
         {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "Max HP via Max HP (multiple targets, high)",
             "Shield via Shield (single target, average)"
           ],
           "score": 7.5
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Contess",
@@ -6746,6 +6817,14 @@
             "Shield via Shield (single target, average)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
+          ],
+          "score": 9.0
         },
         {
           "provider": "Hepler",
@@ -6938,10 +7017,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Hugin",
@@ -6976,6 +7055,13 @@
             "Energy via Energy (multiple targets, low) `signature fuel`"
           ],
           "score": 7.08
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Dunlingr",
@@ -7071,6 +7157,14 @@
           "score": 1.08
         },
         {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -7087,8 +7181,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.1875,
-          "name": "Lamentis"
+          "score": 21.1,
+          "name": "Nerion"
+        },
+        {
+          "score": 18.295,
+          "name": "Carolina"
+        },
+        {
+          "score": 13.7625,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -8181,10 +8283,6 @@
         },
         {
           "score": 4.5,
-          "name": "Aurora"
-        },
-        {
-          "score": 4.5,
           "name": "Frieren"
         },
         {
@@ -8238,10 +8336,6 @@
         {
           "score": 3.0,
           "name": "Zandrok"
-        },
-        {
-          "score": 2.025,
-          "name": "Chippy"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -9259,10 +9353,6 @@
         {
           "score": 3.0,
           "name": "Silvina"
-        },
-        {
-          "score": 2.5353,
-          "name": "Chippy"
         },
         {
           "score": 1.08,
@@ -10444,10 +10534,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Twins",
@@ -10471,6 +10561,15 @@
             "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)",
+            "Ranged damage via Ranged damage (all summons, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Kazim",
@@ -10551,6 +10650,22 @@
         {
           "score": 14.5,
           "name": "Kazim"
+        },
+        {
+          "score": 6.0,
+          "name": "Chippy"
+        },
+        {
+          "score": 6.0,
+          "name": "Daimon"
+        },
+        {
+          "score": 6.0,
+          "name": "Hodgkin"
+        },
+        {
+          "score": 6.0,
+          "name": "Marcille"
         },
         {
           "score": 6.0,
@@ -14127,10 +14242,17 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Twins",
@@ -14188,6 +14310,14 @@
             "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
+          ],
+          "score": 9.0
         }
       ],
       "beneficiaries": [
@@ -16509,10 +16639,6 @@
         },
         {
           "score": 7.5,
-          "name": "Florabelle"
-        },
-        {
-          "score": 7.5,
           "name": "Frieren"
         },
         {
@@ -16562,10 +16688,6 @@
         {
           "score": 3.0,
           "name": "Pippa"
-        },
-        {
-          "score": 2.025,
-          "name": "Chippy"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -18363,10 +18485,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Tilaya",
@@ -18443,6 +18565,13 @@
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 7.212
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Shakir",
@@ -18557,18 +18686,17 @@
           "score": 1.4040000000000001
         },
         {
-          "provider": "Peggy",
-          "reasons": [
-            "ATK via ATK (all summons, low)",
-            "Physical DEF via DEF (all summons, average)",
-            "Magic DEF via DEF (all summons, average)"
-          ],
-          "score": 15.0
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
           ],
           "score": 9.0
         },
@@ -18702,10 +18830,19 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)",
+            "Ranged damage via Ranged damage (all summons, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Lorsan",
@@ -18738,6 +18875,13 @@
             "Healing via Direct healing (single target, average)"
           ],
           "score": 6.1875
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Tasi",
@@ -22372,12 +22516,27 @@
     "Marcille": {
       "synergies": [
         {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
             "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 7.461
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Twins",
@@ -22442,6 +22601,14 @@
             "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
+          ],
+          "score": 9.0
         },
         {
           "provider": "Lorsan",
@@ -22948,14 +23115,6 @@
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
           "score": 12.631800000000002
-        },
-        {
-          "provider": "Aurora",
-          "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
-          ],
-          "score": 14.25
         },
         {
           "provider": "Rowan",
@@ -27507,10 +27666,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Hugin",
@@ -27717,16 +27876,20 @@
       ],
       "beneficiaries": [
         {
-          "score": 15.0,
-          "name": "Cecia"
-        },
-        {
-          "score": 15.0,
-          "name": "Laios"
+          "score": 12.0,
+          "name": "Florabelle"
         },
         {
           "score": 12.0,
-          "name": "Shadewing"
+          "name": "Lamentis"
+        },
+        {
+          "score": 9.0,
+          "name": "Aurora"
+        },
+        {
+          "score": 9.0,
+          "name": "Chippy"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -27799,10 +27962,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Contess",
@@ -27896,8 +28059,8 @@
         {
           "provider": "Peggy",
           "reasons": [
-            "ATK via ATK (all summons, low)",
-            "Magic DEF via DEF (all summons, average)"
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)"
           ],
           "score": 9.0
         },
@@ -28147,10 +28310,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 4.5,
-          "name": "Daimon"
-        },
         {
           "score": 4.5,
           "name": "Gerda"
@@ -28716,10 +28875,6 @@
         {
           "score": 2.16,
           "name": "Evie"
-        },
-        {
-          "score": 2.16,
-          "name": "Marcille"
         },
         {
           "score": 2.16,
@@ -29608,10 +29763,6 @@
         },
         {
           "score": 3.2399999999999998,
-          "name": "Marcille"
-        },
-        {
-          "score": 3.2399999999999998,
           "name": "Nara"
         },
         {
@@ -29764,10 +29915,6 @@
         {
           "score": 4.5,
           "name": "Callan"
-        },
-        {
-          "score": 4.5,
-          "name": "Daimon"
         },
         {
           "score": 4.5,
@@ -30358,10 +30505,6 @@
         {
           "score": 3.2399999999999998,
           "name": "Contess"
-        },
-        {
-          "score": 3.2399999999999998,
-          "name": "Hodgkin"
         },
         {
           "score": 3.2399999999999998,
@@ -35094,6 +35237,10 @@
         },
         {
           "score": 11.25,
+          "name": "Mehira"
+        },
+        {
+          "score": 11.25,
           "name": "Soren"
         },
         {
@@ -35766,6 +35913,10 @@
         }
       ],
       "beneficiaries": [
+        {
+          "score": 4.725,
+          "name": "Berial"
+        },
         {
           "score": 4.725,
           "name": "Kordan"
@@ -38937,10 +39088,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt (all summons, low)",
-            "ATK SPD via Haste (all summons, high)"
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, low)"
           ],
-          "score": 14.25
+          "score": 12.0
         },
         {
           "provider": "Twins",
@@ -38974,6 +39125,15 @@
           "score": 1.875
         },
         {
+          "provider": "Peggy",
+          "reasons": [
+            "DEF via DEF (all summons, average)",
+            "ATK via ATK (all summons, low)",
+            "Ranged damage via Ranged damage (all summons, low)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK (single target, high)",
@@ -38996,6 +39156,13 @@
             "ATK SPD via ATK SPD (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Lorsan",

@@ -1,0 +1,44 @@
+{
+  "Aurora": {
+    "has_ranged_summons": false
+  },
+  "Bryon": {
+    "has_ranged_summons": true
+  },
+  "Cecia": {
+    "has_ranged_summons": false
+  },
+  "Chippy": {
+    "has_ranged_summons": false
+  },
+  "Daimon": {
+    "has_ranged_summons": false
+  },
+  "Damian": {
+    "has_ranged_summons": false
+  },
+  "Florabelle": {
+    "has_ranged_summons": true
+  },
+  "Hodgkin": {
+    "has_ranged_summons": false
+  },
+  "Laios": {
+    "has_ranged_summons": false
+  },
+  "Lamentis": {
+    "has_ranged_summons": true
+  },
+  "Marcille": {
+    "has_ranged_summons": false
+  },
+  "Peggy": {
+    "has_ranged_summons": true
+  },
+  "Phraesto": {
+    "has_ranged_summons": false
+  },
+  "Zanie": {
+    "has_ranged_summons": true
+  }
+}

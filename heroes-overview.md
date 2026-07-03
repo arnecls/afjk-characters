@@ -75,7 +75,7 @@ These are the **6** strongest pairings:
 - Kulu (3.9 / 5)
 - Lily May (3.8 / 5)
 - Shadewing (3.3 / 5)
-- Zanie (2.7 / 5)
+- Zanie (3.0 / 5)
 - Kordan (2.3 / 5)
 
 ### Units that can act as a replacement for Aliceth
@@ -308,6 +308,9 @@ Common buffers are **Hugin**, **Rowan**, or **Tasi**.
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Hepler**
@@ -317,9 +320,6 @@ Common buffers are **Hugin**, **Rowan**, or **Tasi**.
 - **Damian**
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Phraesto**
-  - Shield (single target, average)
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Alsa
 
@@ -566,11 +566,14 @@ reduce lightning strike interval for same target within AoE zone
 ### Units improving Arden
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Rowan**, **Ravion**, or **Hugin**.
+Common buffers are **Rowan**, **Hugin**, or **Kazim**.
 
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Parisa**
@@ -579,8 +582,6 @@ Common buffers are **Rowan**, **Ravion**, or **Hugin**.
 - **Thador**
   - Energy via Energy recovery (lieutenant, start of battle) `signature fuel`
 - **Laios**
-  - Energy (single target, high) `signature fuel`
-- **Scarlita**
   - Energy (single target, high) `signature fuel`
 
 ### Units benefitting most from Arden
@@ -906,6 +907,11 @@ high energy during sleep expands transformation field radius
 Look for units providing: `ATK` `Haste`  
 Common buffers are **Twins**, **Kazim**, or **Mikola**.
 
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
 - **Isabella**
@@ -915,27 +921,23 @@ Common buffers are **Twins**, **Kazim**, or **Mikola**.
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Hepler**
   - Haste (single target, low) `signature fuel`
-- **Mehira**
-  - Haste (multiple targets, low) `signature fuel`
-- **Soren**
-  - Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Aurora
 
 Aurora provides Haste to all summons `high` and Damage dealt (Mythic+) to all summons `low`.
 
-**12** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **6** strongest pairings: 
 
-- Berial (5.0 / 5)
-- Bryon (5.0 / 5)
+- Cecia (5.0 / 5)
+- Chippy (5.0 / 5)
+- Daimon (5.0 / 5)
 - Damian (5.0 / 5)
 - Florabelle (5.0 / 5)
-- Hodgkin (5.0 / 5)
-- Cecia (4.8 / 5)
+- Bryon (4.5 / 5)
 
 ### Units that can act as a replacement for Aurora
 
@@ -1158,12 +1160,12 @@ extend stealth duration after own defeat
 
 ### Units improving Berial
 
-- **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Thador**
@@ -1511,21 +1513,22 @@ Look for units providing: `Haste` `Energy`
 Common buffers are **Hugin**, **Tasi**, or **Twins**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+  - Ranged damage via Ranged damage (all summons, low)
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
   - ATK SPD via Haste (single target, high) `signature fuel`
 - **Damian**
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Florabelle**
+  - Shield (all summons, average)
 - **Laios**
   - Energy (single target, high) `signature fuel`
-- **Scarlita**
-  - Energy (single target, high) `signature fuel`
-- **Hepler**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Bryon
 
@@ -2013,26 +2016,23 @@ reduce normal attacks needed to trigger enhanced attack
 Look for units providing: `ATK SPD / Haste` `DEF Penetration` `Physical DEF` `Magic DEF`  
 Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
-- **Peggy**
-  - ATK (all summons, low)
-  - DEF (all summons, average)
-  - DEF (all summons, average)
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Florabelle**
+  - Shield (all summons, average)
 - **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
   - Phys DEF (single target, low)
   - Magic DEF (single target, low)
-- **Scarlita**
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
-  - Energy (single target, high) `signature fuel`
 
 ### Units benefitting most from Cecia
 
@@ -2133,19 +2133,20 @@ rare chance for massive single normal attack damage
 
 ### Units improving Chippy
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Parisa**
   - ATK SPD (multiple targets, average) `signature fuel`
-- **Laios**
-  - Energy (single target, high) `signature fuel`
-- **Scarlita**
-  - Energy (single target, high) `signature fuel`
-- **Lyca**
-  - Energy (all units, low) `signature fuel`
-  - ATK SPD (all units, low) `signature fuel`
 
 ### Units benefitting most from Chippy
 
@@ -2218,12 +2219,14 @@ violations trigger stun or silence based on rule type
 ### Units improving Contess
 
 Look for units providing: `Energy`  
-Common buffers are **Rowan**, **Ravion**, or **Hugin**.
+Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Smokey & Meerky**
@@ -2361,6 +2364,9 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Gunnar**
@@ -2373,9 +2379,6 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 - **Phraesto**
   - Shield (single target, average)
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
-- **Scarlita**
-  - Shield (single target, average)
-  - Energy (single target, high) `signature fuel`
 
 ### Units benefitting most from Cryonaia
 
@@ -2593,18 +2596,20 @@ excess shield value converts to HP
 Look for units providing: `Max HP` `Shield`  
 Common buffers are **Twins**, **Contess**, or **Hugin**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Phraesto**
   - Max HP (single target, low)
   - Shield (single target, average)
 - **Saida**
   - Shield (multiple targets, high)
 - **Galahad**
-  - Shield (single target, average)
-- **Gunnar**
-  - Shield (single target, average)
-- **Hepler**
-  - Shield (single target, average)
-- **Himmel**
   - Shield (single target, average)
 
 ### Units benefitting most from Daimon
@@ -2708,25 +2713,27 @@ Look for units providing: `ATK` `Haste` `Energy`
 Common buffers are **Hugin**, **Kazim**, or **Mikola**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-- **Hepler**
-  - Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Damian
 
 Damian provides Direct healing to single targets `average` and Haste (Mythic+) to multiple targets `average` — conditional (frequent).
 
-- Lamentis (2.7 / 5)
+- Carolina (3.9 / 5)
+- Nerion (3.8 / 5)
+- Silven (2.3 / 5)
 
 ### Units that can act as a replacement for Damian
 
@@ -2992,7 +2999,7 @@ Common buffers are **Twins**, **Contess**, or **Tasi**.
 
 Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single targets `average`, ATK SPD (Supreme+) to all units `low`, and Lifedrain (Supreme+) to all units `average`.
 
-**27** units include this provider among their top 6 synergy partners. Why the match is common:
+**25** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -3001,9 +3008,9 @@ These are the **6** strongest pairings:
 - Indris (5.0 / 5)
 - Cyran (3.6 / 5)
 - Viperian (3.4 / 5)
-- Bryon (3.1 / 5)
+- Lamentis (3.2 / 5)
+- Bryon (3.2 / 5)
 - Mikola (2.9 / 5)
-- Lamentis (2.9 / 5)
 
 ### Units that can act as a replacement for Dunlingr
 
@@ -3229,12 +3236,14 @@ full intel spawns an extra ally support quill
 ### Units improving Evie
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Twins**, **Ravion**, or **Rowan**.
+Common buffers are **Twins** or **Rowan**.
 
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Smokey & Meerky**
@@ -3251,7 +3260,7 @@ Evie provides ATK to single targets `high` and Direct healing to single targets 
 - Shadewing (4.4 / 5)
 - Bonnie (3.6 / 5)
 - Dunlingr (2.6 / 5)
-- Phraesto (2.3 / 5)
+- Phraesto (2.5 / 5)
 
 ### Units that can act as a replacement for Evie
 
@@ -3487,13 +3496,14 @@ Common buffers are **Rowan**, **Hugin**, or **Mikola**.
   - ATK SPD (multiple targets, average) `signature fuel`
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Gunnar**
   - ATK (single target, average)
   - ATK SPD (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Fay
 
@@ -3597,8 +3607,12 @@ Look for units providing: `ATK` `Haste`
 Common buffers are **Twins**, **Hugin**, or **Kazim**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+  - Ranged damage via Ranged damage (all summons, low)
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
 - **Isabella**
@@ -3608,13 +3622,15 @@ Common buffers are **Twins**, **Hugin**, or **Kazim**.
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Hepler**
   - Haste (single target, low) `signature fuel`
-- **Mehira**
-  - Haste (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Florabelle
 
 - Kazim (5.0 / 5)
-- Phraesto (2.7 / 5)
+- Chippy (3.0 / 5)
+- Daimon (3.0 / 5)
+- Hodgkin (3.0 / 5)
+- Marcille (3.0 / 5)
+- Phraesto (3.0 / 5)
 
 ### Units that can act as a replacement for Florabelle
 
@@ -3839,8 +3855,8 @@ Common buffers are **Hugin**, **Twins**, or **Kazim**.
   - Haste (single target, low) `signature fuel`
 - **Damian**
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Hepler**
-  - Haste (single target, low) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Galahad
 
@@ -4801,11 +4817,14 @@ haste boost for ally when cleansed
 ### Units improving Hewynn
 
 Look for units providing: `ATK`  
-Common buffers are **Rowan**, **Ravion**, or **Kazim**.
+Common buffers are **Rowan**, **Kazim**, or **Mikola**.
 
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Parisa**
@@ -4816,8 +4835,6 @@ Common buffers are **Rowan**, **Ravion**, or **Kazim**.
 - **Gunnar**
   - ATK (single target, average)
   - ATK SPD (single target, low) `signature fuel`
-- **Lorsan**
-  - ATK SPD via Haste (single target, high) `signature fuel`
 
 ### Units benefitting most from Hewynn
 
@@ -5066,21 +5083,22 @@ cannon hits reduce target Phys DEF
 ### Units improving Hodgkin
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Twins**, **Rowan**, or **Ravion**.
+Common buffers are **Twins** or **Rowan**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
-- **Lyca**
-  - Energy (all units, low) `signature fuel`
-- **Smokey & Meerky**
-  - Energy (single target, low) `signature fuel`
-- **Thador**
-  - Energy (single target, low) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Hodgkin
 
@@ -5186,9 +5204,9 @@ Common buffers are **Twins**, **Tasi**, or **Rowan**.
   - Energy (single target, high) `signature fuel`
 - **Damian**
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Hepler**
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Hugin
@@ -5203,9 +5221,9 @@ Hugin provides ATK to multiple targets `low`, Energy to single targets `average`
 These are the **6** strongest pairings: 
 
 - Alsa (5.0 / 5)
+- Bryon (5.0 / 5)
 - Koko (5.0 / 5)
 - Lorsan (5.0 / 5)
-- Bryon (4.8 / 5)
 - Tasi (4.5 / 5)
 - Silven (4.1 / 5)
 
@@ -5510,9 +5528,9 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 Isabella provides ATK to single targets `low` — conditional (frequent), ATK SPD to single targets `low`, Direct healing to single targets `high`, Haste to single targets `low`, Magic DEF to single targets `low`, Phys DEF to single targets `low`, and Vitality to single targets `low`.
 
+- Lamentis (3.1 / 5)
 - Granny Dahnie (2.9 / 5)
 - Perseus (2.9 / 5)
-- Lamentis (2.8 / 5)
 - Hepler (2.7 / 5)
 
 ### Units that can act as a replacement for Isabella
@@ -5767,7 +5785,7 @@ Kazim also requires units **providing knock up**
 
 Kazim provides Haste to multiple targets `average` and ATK (Mythic+) to single targets `high`.
 
-**28** units include this provider among their top 6 synergy partners. Why the match is common:
+**26** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -5895,6 +5913,9 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Scarlita**
@@ -5904,9 +5925,6 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
   - Haste (single target, low) `signature fuel`
   - Shield (single target, average)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Koko
 
@@ -6015,7 +6033,7 @@ assist or defeat inside zone repositions caster and circle to new target
 ### Units improving Kordan
 
 Look for units providing: `ATK` `Shield` `DEF Penetration` `Physical DEF` `Magic DEF`  
-Common buffers are **Twins**, **Contess**, or **Ravion**.
+Common buffers are **Twins**, **Contess**, or **Rowan**.
 
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
@@ -6023,6 +6041,9 @@ Common buffers are **Twins**, **Contess**, or **Ravion**.
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Scarlita**
   - Shield (single target, average)
   - Phys DEF (single target, low)
@@ -6033,9 +6054,6 @@ Common buffers are **Twins**, **Contess**, or **Ravion**.
 - **Parisa**
   - ATK (multiple targets, high)
   - ATK SPD (multiple targets, average) `signature fuel`
-- **Phraesto**
-  - Shield (single target, average)
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Kordan
 
@@ -6043,8 +6061,8 @@ Kordan provides ATK in an area `low`, Lifedrain in an area `average`, Magic DEF 
 
 - Carolina (4.8 / 5)
 - Nerion (4.2 / 5)
+- Zanie (3.0 / 5)
 - Lily May (2.9 / 5)
-- Zanie (2.7 / 5)
 
 ### Units that can act as a replacement for Kordan
 
@@ -6146,13 +6164,14 @@ Common buffers are **Rowan**, **Twins**, or **Tasi**.
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, average)
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Korin
 
@@ -6498,13 +6517,9 @@ max HP permanently grows with each ingredient collected
 Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Energy`  
 Common buffers are **Twins**, **Kazim**, or **Mikola**.
 
-- **Peggy**
-  - ATK (all summons, low)
-  - DEF (all summons, average)
-  - DEF (all summons, average)
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
 - **Tilaya**
   - Max HP (area, average)
   - DEF (area, high)
@@ -6514,6 +6529,9 @@ Common buffers are **Twins**, **Kazim**, or **Mikola**.
   - ATK SPD (multiple targets, average) `signature fuel`
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
 - **Isabella**
   - ATK (single target, low, conditional (frequent))
   - ATK SPD via Haste (single target, low) `signature fuel`
@@ -6529,7 +6547,7 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Energy to s
 - Nara (4.2 / 5)
 - Hugin (3.9 / 5)
 - Thoran (3.3 / 5)
-- Hodgkin (1.9 / 5)
+- Hodgkin (2.1 / 5)
 
 ### Units that can act as a replacement for Laios
 
@@ -6624,8 +6642,12 @@ Look for units providing: `ATK SPD / Haste` `Healing` `Energy`
 Common buffers are **Dunlingr**, **Tasi**, or **Mikola**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+  - Ranged damage via Ranged damage (all summons, low)
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
   - Direct healing (single target, low)
@@ -6635,11 +6657,8 @@ Common buffers are **Dunlingr**, **Tasi**, or **Mikola**.
 - **Damian**
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
   - Direct healing (single target, average)
-- **Smokey & Meerky**
-  - Direct healing (single target, high)
-  - Energy (single target, low) `signature fuel`
-- **Evie**
-  - Direct healing (single target, high)
+- **Florabelle**
+  - Shield (all summons, average)
 
 ### Units benefitting most from Lamentis
 
@@ -6758,6 +6777,9 @@ Common buffers are **Twins**, **Rowan**, or **Kazim**.
 - **Pandora**
   - Max HP (single target, average)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Phraesto**
   - Max HP (single target, low)
   - Shield (single target, average)
@@ -6765,9 +6787,6 @@ Common buffers are **Twins**, **Rowan**, or **Kazim**.
 - **Shakir**
   - Haste (multiple targets, average) `signature fuel`
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
-- **Scarlita**
-  - Shield (single target, average)
-  - Energy (single target, high) `signature fuel`
 
 ### Units benefitting most from Lenya
 
@@ -6982,6 +7001,9 @@ Common buffers are **Hugin**, **Rowan**, or **Kazim**.
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Parisa**
@@ -6994,8 +7016,6 @@ Common buffers are **Hugin**, **Rowan**, or **Kazim**.
   - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Thador**
-  - Energy via Energy recovery (lieutenant, start of battle) `signature fuel`
 
 ### Units benefitting most from Lorsan
 
@@ -7008,8 +7028,8 @@ Lorsan provides Haste to single targets `high`.
 These are the **6** strongest pairings: 
 
 - Viperian (4.7 / 5)
+- Mehira (4.5 / 5)
 - Carolina (4.5 / 5)
-- Mehira (4.2 / 5)
 - Soren (4.0 / 5)
 - Korin (3.8 / 5)
 - Alsa (3.7 / 5)
@@ -7242,7 +7262,7 @@ heal one extra ally per cast
 ### Units improving Lucius
 
 Look for units providing: `Shield` `Healing`  
-Common buffers are **Rowan**, **Contess**, or **Ravion**.
+Common buffers are **Rowan**, **Contess**, or **Twins**.
 
 - **Pandora**
   - Direct healing (single target, high)
@@ -7250,6 +7270,9 @@ Common buffers are **Rowan**, **Contess**, or **Ravion**.
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Phraesto**
   - Shield (single target, average)
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
@@ -7259,9 +7282,6 @@ Common buffers are **Rowan**, **Contess**, or **Ravion**.
 - **Lorsan**
   - Direct healing (single target, low)
   - ATK SPD via Haste (single target, high) `signature fuel`
-- **Damian**
-  - Direct healing (single target, average)
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Lucius
 
@@ -7735,6 +7755,9 @@ Common buffers are **Rowan**, **Hugin**, or **Tasi**.
 
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Damian**
@@ -7743,8 +7766,6 @@ Common buffers are **Rowan**, **Hugin**, or **Tasi**.
   - ATK SPD (multiple targets, average) `signature fuel`
 - **Thador**
   - Energy via Energy recovery (lieutenant, start of battle) `signature fuel`
-- **Phraesto**
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Lyca
 
@@ -7868,19 +7889,20 @@ recover extra energy while buffed by allies
 Look for units providing: `ATK SPD / Haste` `Energy`  
 Common buffers are **Hugin**, **Twins**, or **Dunlingr**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Parisa**
-  - ATK SPD (multiple targets, average) `signature fuel`
-- **Lyca**
-  - ATK SPD (all units, low) `signature fuel`
-  - Energy (all units, low) `signature fuel`
 
 ### Units benefitting most from Marcille
 
@@ -8100,9 +8122,6 @@ charmed or bewitched enemies take increased damage
 Look for units providing: `Haste` `Max HP`  
 Common buffers are **Twins**, **Rowan**, or **Tasi**.
 
-- **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
@@ -8112,6 +8131,9 @@ Common buffers are **Twins**, **Rowan**, or **Tasi**.
 - **Pandora**
   - Max HP (single target, average)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Shakir**
   - Haste (multiple targets, average) `signature fuel`
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
@@ -8133,8 +8155,8 @@ These are the **6** strongest pairings:
 - Sylphira (2.2 / 5)
 - Cyran (2.0 / 5)
 - Kulu (1.9 / 5)
-- Aurora (1.8 / 5)
-- Zanie (1.5 / 5)
+- Aurora (1.7 / 5)
+- Zanie (1.6 / 5)
 
 ### Units that can act as a replacement for Mehira
 
@@ -8248,6 +8270,9 @@ Common buffers are **Rowan**, **Twins**, or **Dunlingr**.
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Isabella**
   - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
@@ -8256,9 +8281,6 @@ Common buffers are **Rowan**, **Twins**, or **Dunlingr**.
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Shakir**
-  - Haste (multiple targets, average) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Mikola
 
@@ -8463,6 +8485,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Smokey & Meerky**
@@ -9158,12 +9182,14 @@ ally inside the box is unaffected by caster ultimate
 ### Units improving Pandora
 
 Look for units providing: `Energy`  
-Common buffers are **Rowan**, **Ravion**, or **Hugin**.
+Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Smokey & Meerky**
@@ -9184,8 +9210,8 @@ These are the **6** strongest pairings:
 - Lucius (4.4 / 5)
 - Korin (4.2 / 5)
 - Lily May (3.5 / 5)
+- Berial (3.4 / 5)
 - Hewynn (3.4 / 5)
-- Berial (3.1 / 5)
 - Arden (3.0 / 5)
 
 ### Units that can act as a replacement for Pandora
@@ -9542,8 +9568,8 @@ Look for units providing: `ATK` `Haste` `Shield`
 Common buffers are **Hugin**, **Contess**, or **Twins**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
 - **Gunnar**
@@ -9562,9 +9588,10 @@ Common buffers are **Hugin**, **Contess**, or **Twins**.
 
 Peggy provides Ranged damage to all summons `low`, Damage dealt (EX+10) to multiple targets `low`, ATK (Supreme+) to all summons `low`, and DEF (Supreme+) to all summons `average`.
 
-- Cecia (5.0 / 5)
-- Laios (4.4 / 5)
-- Shadewing (2.5 / 5)
+- Aurora (5.0 / 5)
+- Florabelle (5.0 / 5)
+- Lamentis (5.0 / 5)
+- Chippy (4.0 / 5)
 
 ### Units that can act as a replacement for Peggy
 
@@ -9783,14 +9810,14 @@ both in same row gain initial shield at battle start
 ### Units improving Phraesto
 
 Look for units providing: `Shield` `Healing` `Energy` `Magic DEF`  
-Common buffers are **Contess**, **Twins**, or **Ravion**.
+Common buffers are **Contess**, **Twins**, or **Rowan**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
 - **Peggy**
+  - DEF via DEF (all summons, average)
   - ATK (all summons, low)
-  - DEF (all summons, average)
 - **Scarlita**
   - Shield (single target, average)
   - Energy (single target, high) `signature fuel`
@@ -9808,7 +9835,6 @@ Common buffers are **Contess**, **Twins**, or **Ravion**.
 
 Phraesto provides Damage taken to single targets `low` and Max HP to single targets `low`.
 
-- Daimon (3.4 / 5)
 - Gerda (3.4 / 5)
 - Salazer (3.4 / 5)
 - Tilaya (3.4 / 5)
@@ -10057,7 +10083,7 @@ Common buffers are **Twins**, **Kazim**, or **Mikola**.
 
 Ravion provides ATK to multiple targets `high`, Energy to multiple targets `average`, Haste (Mythic+) to multiple targets `average`, and Lifedrain (EX+10) to single targets `low` — conditional (rare).
 
-**21** units include this provider among their top 6 synergy partners. Why the match is common:
+**20** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -10067,7 +10093,7 @@ These are the **6** strongest pairings:
 - Arden (3.6 / 5)
 - Shemira (3.6 / 5)
 - Valen (3.6 / 5)
-- Berial (3.3 / 5)
+- Berial (3.6 / 5)
 - Koko (3.2 / 5)
 - Zorya (2.9 / 5)
 
@@ -10279,21 +10305,22 @@ control immunity skill cooldown reduced
 ### Units improving Rhys
 
 Look for units providing: `ATK SPD / Haste` `CRIT` `CRIT DMG Boost`  
-Common buffers are **Rowan**, **Tasi**, or **Ravion**.
+Common buffers are **Rowan**, **Tasi**, or **Twins**.
 
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Damian**
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Parisa**
   - ATK SPD (multiple targets, average) `signature fuel`
-- **Thador**
-  - Energy via Energy recovery (lieutenant, start of battle) `signature fuel`
 
 ### Units benefitting most from Rhys
 
@@ -10391,7 +10418,7 @@ place one extra heal at battle start
 ### Units improving Rowan
 
 Look for units providing: `ATK` `Haste` `Max HP` `Energy`  
-Common buffers are **Twins**, **Dunlingr**, or **Ravion**.
+Common buffers are **Twins**, **Dunlingr**, or **Kazim**.
 
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
@@ -10412,7 +10439,7 @@ Common buffers are **Twins**, **Dunlingr**, or **Ravion**.
 
 Rowan provides Direct healing to single targets `low`, Energy in an area `high`, Magic DEF (Mythic+) to single targets `average`, and Phys DEF (Mythic+) to single targets `average`.
 
-**43** units include this provider among their top 6 synergy partners. Why the match is common:
+**42** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -10531,15 +10558,15 @@ _No synergy partners matched stat buffs or enablers._
 
 Saida provides Shield to multiple targets `high`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **6** strongest pairings: 
 
 - Callan (5.0 / 5)
+- Kruger (5.0 / 5)
 - Eironn (3.6 / 5)
-- Daimon (3.4 / 5)
 - Gerda (3.4 / 5)
 - Baelran (3.0 / 5)
 - Faramor (2.3 / 5)
@@ -10872,10 +10899,12 @@ shielding an ally also increases their Phys and Magic DEF
 ### Units improving Scarlita
 
 Look for units providing: `ATK` `Execution` `Energy`  
-Common buffers are **Twins**, **Rowan**, or **Ravion**.
+Common buffers are **Twins** or **Rowan**.
 
 - **Laios**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Smokey & Meerky**
@@ -10887,7 +10916,7 @@ Common buffers are **Twins**, **Rowan**, or **Ravion**.
 
 Scarlita provides Energy to single targets `average`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 
@@ -11129,7 +11158,7 @@ drain ally HP at start for lasting ATK boost and shield
 ### Units improving Shadewing
 
 Look for units providing: `ATK` `Shield` `Energy`  
-Common buffers are **Ravion**, **Contess**, or **Twins**.
+Common buffers are **Contess**, **Twins**, or **Dunlingr**.
 
 Shadewing also requires units **dealing continuous damage** to enemies and/or units **putting debuffs** on enemies
 
@@ -11365,11 +11394,14 @@ each hero defeat spawns an extra summon
 ### Units improving Shemira
 
 Look for units providing: `Shield` `Energy`  
-Common buffers are **Hugin**, **Ravion**, or **Twins**.
+Common buffers are **Hugin**, **Twins**, or **Contess**.
 
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Scarlita**
@@ -11380,8 +11412,6 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 - **Thador**
   - Energy via Energy recovery (lieutenant, start of battle) `signature fuel`
-- **Saida**
-  - Shield (multiple targets, high)
 
 ### Units benefitting most from Shemira
 
@@ -11819,6 +11849,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Thador**
@@ -12153,16 +12185,15 @@ Common buffers are **Rowan**, **Twins**, or **Tasi**.
 - **Pandora**
   - Max HP (single target, average)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Shakir**
   - Haste (multiple targets, average) `signature fuel`
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
 - **Damian**
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Zandrok**
-  - Haste (area, low, conditional (frequent)) `signature fuel`
-  - Max HP (multiple targets, average)
-  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Soren
 
@@ -12272,6 +12303,9 @@ Common buffers are **Twins**, **Rowan**, or **Kazim**.
 - **Lorsan**
   - Haste (single target, high) `signature fuel`
   - ATK SPD via Haste (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Shakir**
@@ -12280,9 +12314,6 @@ Common buffers are **Twins**, **Rowan**, or **Kazim**.
 - **Parisa**
   - ATK (multiple targets, high)
   - ATK SPD (multiple targets, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Sylphira
 
@@ -12526,32 +12557,31 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Pandora**
   - Max HP (single target, average)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Parisa**
   - ATK (multiple targets, high)
   - ATK SPD (multiple targets, average) `signature fuel`
 - **Damian**
   - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Zandrok**
-  - Haste (area, low, conditional (frequent)) `signature fuel`
-  - Max HP (multiple targets, average)
-  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Tasi
 
 Tasi provides Haste (EX+5) to single targets `high`.
 
-**21** units include this provider among their top 6 synergy partners. Why the match is common:
+**22** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **6** strongest pairings: 
 
 - Viperian (4.7 / 5)
-- Bryon (4.2 / 5)
+- Mehira (4.5 / 5)
+- Bryon (4.3 / 5)
 - Soren (4.0 / 5)
 - Lyca (3.8 / 5)
-- Rhys (3.8 / 5)
 - Alsa (3.7 / 5)
 
 ### Units that can act as a replacement for Tasi
@@ -12794,12 +12824,19 @@ Common buffers are **Twins** or **Contess**.
 
 Thador provides Energy (EX+10) to single targets `low`.
 
+**7** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
+- **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+These are the **6** strongest pairings: 
+
+- Berial (2.5 / 5)
 - Sylphira (2.5 / 5)
 - Shemira (2.3 / 5)
 - Evie (2.1 / 5)
 - Smokey & Meerky (2.1 / 5)
 - Kordan (2.0 / 5)
-- Thoran (1.8 / 5)
 
 ### Units that can act as a replacement for Thador
 
@@ -12900,12 +12937,14 @@ ultimate additionally drains HP from enemy
 ### Units improving Thoran
 
 Look for units providing: `Max HP` `Energy`  
-Common buffers are **Twins**, **Ravion**, or **Rowan**.
+Common buffers are **Twins** or **Rowan**.
 
 - **Laios**
   - Energy (single target, high) `signature fuel`
 - **Scarlita**
   - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
 - **Lyca**
   - Energy (all units, low) `signature fuel`
 - **Smokey & Meerky**
@@ -13034,8 +13073,8 @@ These are the **6** strongest pairings:
 - Natsu (5.0 / 5)
 - Granny Dahnie (4.9 / 5)
 - Hepler (4.6 / 5)
+- Cecia (4.0 / 5)
 - Laios (3.7 / 5)
-- Cecia (3.4 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
@@ -13138,7 +13177,7 @@ Common buffers are **Hugin**, **Tasi**, or **Dunlingr**.
 
 Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `low`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `high`, Shield to single targets `low`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**89** units include this provider among their top 6 synergy partners. Why the match is common:
+**88** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -13386,15 +13425,15 @@ Vala also requires enemies **to be defeated**
   - ATK (multiple targets, high)
   - ATK SPD (multiple targets, average) `signature fuel`
   - Enables Enemy defeat via Marked target (focus fire)
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
   - Enables Enemy defeat via HP threshold strike
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, low)
-  - Enables Enemy defeat via Instant defeat
 
 ### Units benefitting most from Vala
 
@@ -13506,11 +13545,14 @@ lightning AoE also stuns enemies
 ### Units improving Valen
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Rowan**, **Ravion**, or **Kazim**.
+Common buffers are **Rowan**, **Kazim**, or **Mikola**.
 
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Parisa**
@@ -13519,8 +13561,6 @@ Common buffers are **Rowan**, **Ravion**, or **Kazim**.
 - **Thador**
   - Energy via Energy recovery (lieutenant, start of battle) `signature fuel`
 - **Laios**
-  - Energy (single target, high) `signature fuel`
-- **Scarlita**
   - Energy (single target, high) `signature fuel`
 
 ### Units benefitting most from Valen
@@ -14244,21 +14284,23 @@ Look for units providing: `ATK` `ATK SPD / Haste` `DEF Penetration`
 Common buffers are **Twins**, **Kazim**, or **Mikola**.
 
 - **Aurora**
-  - Damage dealt (all summons, low)
-  - ATK SPD via Haste (all summons, high)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, low)
+- **Peggy**
+  - DEF via DEF (all summons, average)
+  - ATK (all summons, low)
+  - Ranged damage via Ranged damage (all summons, low)
 - **Parisa**
   - ATK (multiple targets, high)
   - ATK SPD (multiple targets, average) `signature fuel`
 - **Aliceth**
   - ATK (multiple targets, low)
   - DEF Penetration (multiple targets, high)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Kordan**
   - ATK (area, low)
   - DEF Penetration (area, high)
-- **Lorsan**
-  - ATK SPD via Haste (single target, high) `signature fuel`
-- **Shakir**
-  - ATK SPD via Haste (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Zanie
 
