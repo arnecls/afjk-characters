@@ -10,15 +10,20 @@ description: >-
 
 # Web UI (site viewer)
 
-The browser lives in `site/`. Almost all rendering logic is in one file:
-`site/js/app.js`. Styles: `site/css/styles.css`. Data:
-`site/data/heroes.json` and `site/data/heroes-overview.csv`.
+The browser lives in `site/`. JavaScript source files live in
+`site/js/src/`; bundled/minified output is `site/js/app.js`. Styles:
+`site/css/styles.css`. Data: `site/data/heroes.json` and
+`site/data/heroes-overview.csv`.
+
+**Never hand-edit `site/js/app.js`.** Make JavaScript changes in
+`site/js/src/**`, then rebuild `site/js/app.js` with
+`python3 scripts/bundle_js.py` or `just render-site`.
 
 Read `.cursor/AGENTS.md` for skill-card tag rules and magnitude vocabulary.
 
 ## Workflow
 
-```
+```markdown
 Task progress:
 - [ ] 1. Reproduce — which view, which hero/section, expected vs actual
 - [ ] 2. Classify — data, detection, or display-only (see below)
@@ -33,9 +38,9 @@ Task progress:
 | Symptom | Likely layer | Where to fix |
 | --- | --- | --- |
 | Wrong effect **missing or extra** on skill card | Sidecar extraction | `data/skill_effects/<hero>.json` → `just views` |
-| Tag string correct in JSON but **wrong chip** on screen | Display | `site/js/app.js` (`TAG_DEFINITIONS`, chip helpers) |
+| Tag string correct in JSON but **wrong chip** on screen | Display | `site/js/src/` (`TAG_DEFINITIONS`, chip helpers) → bundle |
 | Synergy/summary **wording** wrong in markdown and web | Generation | `scripts/generate-heroes-overview.py` / `rewrite-summaries.py` → `just render-site` |
-| **Layout, color, filter, column** behavior | CSS / JS view code | `site/css/styles.css`, `site/js/app.js` |
+| **Layout, color, filter, column** behavior | CSS / JS view code | `site/css/styles.css`, `site/js/src/` → bundle |
 | List view column **content** wrong | CSV pipeline | `scripts/overview-to-csv.py` → `just render-site` |
 
 **Skill cards:** tags are computed during `just analyze` and stored as
@@ -46,8 +51,8 @@ Task progress:
 After changing skill effects in `data/skill_effects/<hero>.json`, run
 **`just views`** (analyze + render), not `just analyze` alone.
 
-Display-only chip fixes need **no** data regen — reload the page after
-editing `app.js`.
+Display-only chip fixes need **no** data regen — rebuild the JS bundle after
+editing `site/js/src/**`, then reload the page.
 
 ### 2. Trace skill-card issues
 
@@ -59,7 +64,7 @@ console.log(h.sections.skillCards.find(c => c.label === 'Legendary+'));
 "
 ```
 
-If `tags` are correct but pills look wrong → display layer in `app.js`.
+If `tags` are correct but pills look wrong → display layer in `site/js/src/`.
 
 Key render path:
 
@@ -74,7 +79,7 @@ Canonical dedup keys: `skillCardChipKey` (JS) and
 before damage keys** so labels like `Ranged DEF buff` do not match
 `Ranged` damage.
 
-### 3. Chip / pill system (`app.js`)
+### 3. Chip / pill system (`site/js/src/`)
 
 **Registry:** `TAG_DEFINITIONS` — emoji + CSS class per label.
 
@@ -123,7 +128,7 @@ pill rules (historical bugs: text outside pills in table cells).
 
 ### 5. Display wording (web-UI only)
 
-Use these in `app.js` / `chipDisplayLabel`, not in detection JSON:
+Use these in `site/js/src/` / `chipDisplayLabel`, not in detection JSON:
 
 | Prefer | Not in web UI |
 | --- | --- |
@@ -188,17 +193,17 @@ PYTHONPATH=scripts .venv/bin/python -m unittest \
 | Detection / skill_card_tags | `just views` |
 | Overview markdown / synergies only | `just render-site` |
 | CSV columns | `just render-overview` (includes CSV) |
-| `app.js` / `styles.css` only | Reload browser — no regen |
+| `site/js/src/` / `styles.css` only | `python3 scripts/bundle_js.py`, then reload browser — no data regen |
 
 ## When to touch Python vs JS
 
 - **New effect label** on skill cards → detection (`format_skill_card_tags`)
   **and** display (`TAG_DEFINITIONS`, `_SKILL_CARD_STAT_KEYS` or debuff keys)
 - **Wrong chip icon/color for existing label** → JS (+ CSS) only
-- **New list column** → `overview-to-csv.py`, `render_site.py`, `app.js`
+- **New list column** → `overview-to-csv.py`, `render_site.py`, `site/js/src/`
   headers + `buildListBodyHtml`
 - **Play overview length** on character sheet → `data/hero_play_overviews.json`
-  + `just render-site`
+  and `just render-site`
 
 ## Reporting
 

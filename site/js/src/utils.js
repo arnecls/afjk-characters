@@ -104,7 +104,14 @@ window.AFKJ.utils = {
     if (!hero || !hero.name) {
       return null;
     }
-    return "assets/portraits/" + hero.name + ".png";
+    return this.characterPortraitPathForName(hero.name);
+  },
+
+  characterPortraitPathForName: function (name) {
+    if (!name) {
+      return null;
+    }
+    return "assets/portraits/" + name + ".png";
   },
 
   factionDataKey: function (faction) {
