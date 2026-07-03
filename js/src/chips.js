@@ -59,6 +59,7 @@ window.AFKJ = window.AFKJ || {};
     "all units": 70,
     global: 65,
     area: 60,
+    path: 55,
     arc: 50,
     "multiple targets": 40,
     allies: 35,
@@ -91,6 +92,7 @@ window.AFKJ = window.AFKJ || {};
     { re: /\bSummons only\b/gi, key: "owned summons" },
     { re: /\bArea\b/g, key: "area" },
     { re: /\bArc\b/g, key: "arc" },
+    { re: /\bpath\b/gi, key: "path" },
     { re: /\bSelf\b/g, key: "self" },
   ];
 
@@ -525,8 +527,10 @@ window.AFKJ = window.AFKJ || {};
             ? "All units"
             : lower === "multiple targets"
               ? "Multiple targets"
-              : lower === "single target"
-                ? "Single target"
+            : lower === "single target"
+              ? "Single target"
+              : lower === "path"
+                ? "Path"
                 : targeting.trim();
       return {
         cls: def.cls,
@@ -806,7 +810,12 @@ window.AFKJ = window.AFKJ || {};
     return formatAscensionTierDisplay(tierSuffix);
   }
 
-  function formatMergedIndicator(left, indicatorMeta, textOnlyLeft) {
+  function isAreaShapeTargeting(targeting) {
+    const lower = (targeting || "").trim().toLowerCase();
+    return lower === "area" || lower === "arc" || lower === "path";
+  }
+
+  function formatMergedIndicator(left, indicatorMeta, textOnlyLeft, iconOnlyRight) {
     let leftHtml;
     if (left.hasIcon) {
       leftHtml =
@@ -826,20 +835,27 @@ window.AFKJ = window.AFKJ || {};
         "</span>";
     }
 
-    const emojiPart =
-      textOnlyLeft && indicatorMeta.emoji ? indicatorMeta.emoji + " " : "";
+    const showLabel = !iconOnlyRight;
+    const emojiPart = indicatorMeta.emoji
+      ? indicatorMeta.emoji + (showLabel && indicatorMeta.label ? " " : "")
+      : "";
+    const rightTitle =
+      iconOnlyRight && indicatorMeta.label
+        ? ' title="' + escapeHtml(indicatorMeta.label) + '"'
+        : "";
     const rightAttrs =
       ' class="chip-merged-right ' +
       indicatorMeta.cls +
       (indicatorMeta.tooltip ? " chip-has-tip" : "") +
       '"' +
+      rightTitle +
       (indicatorMeta.tooltip ? chipTipAttrs(indicatorMeta.tooltip) : "");
     const rightHtml =
       "<span" +
       rightAttrs +
       ">" +
       emojiPart +
-      escapeHtml(indicatorMeta.label) +
+      (showLabel ? escapeHtml(indicatorMeta.label) : "") +
       "</span>";
 
     return (
@@ -915,6 +931,7 @@ window.AFKJ = window.AFKJ || {};
     if (!targetingMeta) {
       return null;
     }
+    const iconOnlyRight = isAreaShapeTargeting(targeting);
     const leading = resolveLeadingChip(effectLabel, polarity);
     if (leading.emoji) {
       return (
@@ -927,14 +944,16 @@ window.AFKJ = window.AFKJ || {};
             tierSuffix: tierSuffix || "",
           },
           targetingMeta,
-          false
+          false,
+          iconOnlyRight
         ) + escapeHtml(effectChipRemainder(leading.remainder))
       );
     }
     return formatMergedIndicator(
       { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
       targetingMeta,
-      true
+      true,
+      iconOnlyRight
     );
   }
 
@@ -1386,6 +1405,673 @@ window.AFKJ = window.AFKJ || {};
     return chipifyTargetingSegment(targetingType);
   }
 
+  const QUALITY_RANK = { low: 0, average: 1, high: 2 };
+
+  function isQualityToken(value) {
+    return !!QUALITY_CLASS[(value || "").toLowerCase()];
+  }
+
+  function combineQualities(qualities) {
+    const uniq = [];
+    qualities.forEach(function (q) {
+      const lower = (q || "").toLowerCase();
+      if (isQualityToken(lower) && uniq.indexOf(lower) === -1) {
+        uniq.push(lower);
+      }
+    });
+    if (!uniq.length) {
+      return "";
+    }
+    uniq.sort(function (a, b) {
+      return QUALITY_RANK[a] - QUALITY_RANK[b];
+    });
+    if (uniq.length === 1) {
+      return uniq[0];
+    }
+    return uniq[0] + "-" + uniq[uniq.length - 1];
+  }
+
+  function combineTargetings(targetings) {
+    const parts = [];
+    const seen = new Set();
+    targetings.forEach(function (t) {
+      if (!t) {
+        return;
+      }
+      t.split(/\s*,\s*/).forEach(function (piece) {
+        const norm = piece.trim();
+        const key = norm.toLowerCase();
+        if (!norm || seen.has(key)) {
+          return;
+        }
+        seen.add(key);
+        const meta = targetingIndicatorMeta(norm);
+        parts.push({
+          key: key,
+          label: meta ? meta.label : norm,
+          rank: TARGETING_RANK[key] || 0,
+        });
+      });
+    });
+    parts.sort(function (a, b) {
+      return b.rank - a.rank;
+    });
+    return parts
+      .map(function (p) {
+        return p.label;
+      })
+      .join(" + ");
+  }
+
+  function combineTierLabels(tiers) {
+    const uniq = [];
+    tiers.forEach(function (t) {
+      if (t && uniq.indexOf(t) === -1) {
+        uniq.push(t);
+      }
+    });
+    return uniq
+      .map(function (t) {
+        return shortAscensionTierName(t);
+      })
+      .join(", ");
+  }
+
+  function combineUniqueText(values) {
+    const uniq = [];
+    values.forEach(function (v) {
+      if (v && uniq.indexOf(v) === -1) {
+        uniq.push(v);
+      }
+    });
+    return uniq.join(" + ");
+  }
+
+  function buildVariantModifier(variants) {
+    const parts = [];
+    const quality = combineQualities(
+      variants.map(function (v) {
+        return v.quality;
+      })
+    );
+    if (quality) {
+      parts.push(quality);
+    }
+    const targeting = combineTargetings(
+      variants.map(function (v) {
+        return v.targeting;
+      })
+    );
+    if (targeting) {
+      parts.push(targeting);
+    }
+    const tiers = combineTierLabels(
+      variants.map(function (v) {
+        return v.tier;
+      })
+    );
+    if (tiers) {
+      parts.push(tiers);
+    }
+    const timing = combineUniqueText(
+      variants.map(function (v) {
+        return v.timing;
+      })
+    );
+    if (timing) {
+      parts.push(timing);
+    }
+    return parts.join("; ");
+  }
+
+  function effectVariantGroupKey(variant, cardPolarity) {
+    const polarity = cardPolarity || variant.polarity || "";
+    return variant.base.toLowerCase() + ":" + polarity;
+  }
+
+  function parseSkillCardVariant(raw, explicitPolarity) {
+    let work = (raw || "").trim();
+    if (!work) {
+      return null;
+    }
+    let tier = "";
+    const tierMatch = work.match(ASCENSION_TIER_SUFFIX_RE);
+    if (tierMatch) {
+      tier = tierMatch[1];
+      work = work.slice(0, tierMatch.index).trim();
+    }
+    const split = parseSkillCardTag(work);
+    if (!split.tag) {
+      return null;
+    }
+    const polarity =
+      explicitPolarity || effectLabelPolarity(split.tag) || "buff";
+    return {
+      base: split.tag,
+      tier: tier,
+      targeting: split.targeting || "",
+      quality: "",
+      conditional: "",
+      timing: "",
+      polarity: polarity,
+      raw: raw,
+    };
+  }
+
+  function parseSummaryVariant(raw, cardPolarity) {
+    const segments = splitSummarySegments(raw);
+    if (!segments.length) {
+      return null;
+    }
+    const parsed = parseEffectLabelParts(segments[0]);
+    if (!parsed.base) {
+      return null;
+    }
+    let targeting = "";
+    let quality = "";
+    let conditional = "";
+    let timing = "";
+    for (let i = 1; i < segments.length; i++) {
+      const seg = unwrapBackticks(segments[i]);
+      const lower = seg.toLowerCase();
+      if (isQualityToken(lower)) {
+        quality = lower;
+      } else if (/conditional\s*\(/i.test(seg)) {
+        conditional = seg;
+      } else if (targetingIndicatorMeta(seg)) {
+        if (targeting) {
+          targeting += ", " + seg;
+        } else {
+          targeting = seg;
+        }
+      } else if (!timing) {
+        timing = seg;
+      } else {
+        timing += " + " + seg;
+      }
+    }
+    if (
+      !targeting &&
+      segments[1] &&
+      !isQualityToken(unwrapBackticks(segments[1]).toLowerCase()) &&
+      !/conditional\s*\(/i.test(segments[1])
+    ) {
+      targeting = unwrapBackticks(segments[1]);
+      if (
+        segments[2] &&
+        isQualityToken(unwrapBackticks(segments[2]).toLowerCase())
+      ) {
+        quality = unwrapBackticks(segments[2]).toLowerCase();
+      }
+      if (segments[3] && /conditional\s*\(/i.test(segments[3])) {
+        conditional = segments[3];
+      } else if (segments[3]) {
+        timing = segments[3];
+      }
+    }
+    const polarity =
+      cardPolarity || effectLabelPolarity(parsed.base) || "buff";
+    return {
+      base: parsed.base,
+      tier: parsed.tier || "",
+      targeting: targeting,
+      quality: quality,
+      conditional: conditional,
+      timing: timing,
+      polarity: polarity,
+      raw: raw,
+    };
+  }
+
+  function collectTargetingSegments(variants) {
+    const parts = [];
+    const seen = new Set();
+    variants.forEach(function (v) {
+      if (!v.targeting) {
+        return;
+      }
+      v.targeting.split(/\s*,\s*/).forEach(function (piece) {
+        const norm = piece.trim();
+        const key = norm.toLowerCase();
+        if (!norm || seen.has(key)) {
+          return;
+        }
+        seen.add(key);
+        const tokenMeta = targetingTokenMeta(norm);
+        if (tokenMeta) {
+          parts.push(tokenMeta);
+          return;
+        }
+        const indMeta = targetingIndicatorMeta(norm);
+        if (indMeta) {
+          parts.push({
+            emoji: indMeta.emoji,
+            text: indMeta.label,
+            cls: indMeta.cls,
+            rank: TARGETING_RANK[key] || 0,
+          });
+        }
+      });
+    });
+    parts.sort(function (a, b) {
+      return b.rank - a.rank;
+    });
+    return parts;
+  }
+
+  function mergedVariantSep() {
+    return '<span class="chip-merged-sep" aria-hidden="true">|</span>';
+  }
+
+  function qualityRangeMeta(qualityValue, isCc) {
+    if (!qualityValue) {
+      return null;
+    }
+    if (qualityValue.indexOf("-") !== -1) {
+      const range = qualityValue.split("-");
+      if (
+        range.length === 2 &&
+        isQualityToken(range[0]) &&
+        isQualityToken(range[1])
+      ) {
+        return {
+          cls: "chip-generic",
+          label: qualityValue,
+          tooltip: "",
+          emoji: "",
+        };
+      }
+    }
+    return qualityIndicatorMeta(qualityValue, isCc);
+  }
+
+  function renderMergedQualitySegment(qualityValue, isCc) {
+    if (!qualityValue) {
+      return "";
+    }
+    const qMeta = qualityRangeMeta(qualityValue, isCc);
+    if (!qMeta) {
+      return (
+        '<span class="chip-merged-right chip-generic">' +
+        escapeHtml(qualityValue) +
+        "</span>"
+      );
+    }
+    return (
+      '<span class="chip-merged-right ' +
+      qMeta.cls +
+      '">' +
+      escapeHtml(qMeta.label) +
+      "</span>"
+    );
+  }
+
+  function renderEffectQualityMergedPill(base, polarity, qualityRange) {
+    const leading = resolveLeadingChip(base, polarity);
+    const qMeta = qualityRangeMeta(qualityRange, leading.isCc);
+    if (!qMeta) {
+      return "";
+    }
+    if (leading.emoji) {
+      return formatMergedIndicator(
+        {
+          hasIcon: true,
+          emoji: leading.emoji,
+          text: leading.text,
+          cls: leading.cls,
+          tierSuffix: "",
+        },
+        qMeta,
+        false
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: base, tierSuffix: "" },
+      qMeta,
+      true
+    );
+  }
+
+  function renderTargetingMergedPill(targetingSegments, iconOnlyTargeting) {
+    if (!targetingSegments.length) {
+      return "";
+    }
+    if (targetingSegments.length === 1) {
+      const meta = targetingSegments[0];
+      return chipSpan(
+        meta.emoji,
+        meta.text || meta.label,
+        meta.cls
+      );
+    }
+    if (iconOnlyTargeting) {
+      const parts = targetingSegments.map(function (meta) {
+        return renderMergedTargetingSegment(meta, true);
+      });
+      return '<span class="chip chip-merged">' + parts.join("") + "</span>";
+    }
+    const parts = [];
+    targetingSegments.forEach(function (meta, index) {
+      if (index === 0) {
+        parts.push(
+          '<span class="chip-merged-left ' +
+            meta.cls +
+            '">' +
+            meta.emoji +
+            " " +
+            escapeHtml(chipDisplayLabel(meta.text || meta.label)) +
+            "</span>"
+        );
+        return;
+      }
+      parts.push(renderMergedTargetingSegment(meta, true));
+    });
+    return '<span class="chip chip-merged">' + parts.join("") + "</span>";
+  }
+
+  function renderMergedEffectBodyParts(
+    first,
+    leading,
+    qualityRange,
+    targetingSegments,
+    iconOnlyTargeting
+  ) {
+    const bodyParts = [];
+    if (leading.emoji) {
+      bodyParts.push(
+        '<span class="chip-merged-left ' +
+          leading.cls +
+          '">' +
+          leading.emoji +
+          " " +
+          escapeHtml(chipDisplayLabel(leading.text)) +
+          "</span>"
+      );
+    } else {
+      bodyParts.push(
+        '<span class="chip-merged-left chip-merged-label">' +
+          escapeHtml(chipDisplayLabel(first.base)) +
+          "</span>"
+      );
+    }
+
+    const qualitySeg = renderMergedQualitySegment(qualityRange, leading.isCc);
+    if (qualitySeg) {
+      bodyParts.push(qualitySeg);
+    }
+
+    targetingSegments.forEach(function (meta, index) {
+      const compact = iconOnlyTargeting ? true : index > 0;
+      bodyParts.push(renderMergedTargetingSegment(meta, compact));
+    });
+    return bodyParts;
+  }
+
+  function groupedVariantTipAttrs(tipHtml) {
+    return (
+      ' chip-has-tip" data-tip-html="' +
+      escapeHtml(tipHtml) +
+      '" tabindex="0" role="button" aria-describedby="chip-tooltip"'
+    );
+  }
+
+  function withChipTooltip(chipHtml, tipHtml) {
+    if (!chipHtml || !tipHtml) {
+      return chipHtml;
+    }
+    return chipHtml.replace(
+      '<span class="chip chip-merged"',
+      '<span class="chip chip-merged' + groupedVariantTipAttrs(tipHtml)
+    );
+  }
+
+  function renderStandaloneEffectTooltipChip(variant) {
+    const parsed = parseEffectLabelParts(variant.base);
+    const tier = variant.tier || parsed.tier;
+    const base = parsed.base;
+    const polarity = variant.polarity;
+    const leading = resolveLeadingChip(base, polarity);
+    if (leading.emoji) {
+      return (
+        '<span class="chip ' +
+        leading.cls +
+        '">' +
+        leading.emoji +
+        " " +
+        escapeHtml(chipDisplayLabel(leading.text)) +
+        formatMergedTierSuffix(tier) +
+        "</span>"
+      );
+    }
+    const chip = extractChipHtml(
+      renderStandaloneEffectChip(base, tier, polarity)
+    );
+    return chip || renderStandaloneEffectChip(base, tier, polarity);
+  }
+
+  function renderVariantTooltipParts(variant) {
+    const parts = [renderStandaloneEffectTooltipChip(variant)];
+    if (variant.quality) {
+      const qChip = formatTag(variant.quality);
+      if (qChip) {
+        parts.push(qChip);
+      }
+    }
+    const targeting = renderTargetingTooltipLine(variant);
+    if (targeting) {
+      parts.push(targeting);
+    }
+    if (variant.timing) {
+      parts.push(
+        '<span class="chip chip-generic">' +
+          escapeHtml(variant.timing) +
+          "</span>"
+      );
+    }
+    if (variant.conditional) {
+      parts.push(
+        '<span class="chip chip-generic chip-has-tip"' +
+          chipTipAttrs(conditionalTooltip(variant.conditional)) +
+          ">🎲 " +
+          escapeHtml(variant.conditional) +
+          "</span>"
+      );
+    }
+    return parts;
+  }
+
+  function renderTargetingTooltipLine(variant) {
+    if (!variant.targeting) {
+      return "";
+    }
+    const tMeta = targetingIndicatorMeta(variant.targeting);
+    if (tMeta) {
+      return (
+        '<span class="chip ' +
+        tMeta.cls +
+        '">' +
+        (tMeta.emoji ? tMeta.emoji + " " : "") +
+        escapeHtml(tMeta.label) +
+        "</span>"
+      );
+    }
+    return chipifyTargetingSegment(variant.targeting);
+  }
+
+  function renderMergedTargetingSegment(meta, compact) {
+    const emoji = meta.emoji ? meta.emoji : "";
+    const label = compact
+      ? ""
+      : escapeHtml(chipDisplayLabel(meta.text || meta.label));
+    const spacer = compact || !label ? "" : " ";
+    const titleAttr =
+      compact && (meta.text || meta.label)
+        ? ' title="' +
+          escapeHtml(chipDisplayLabel(meta.text || meta.label)) +
+          '"'
+        : "";
+    return (
+      '<span class="chip-merged-right ' +
+      meta.cls +
+      '"' +
+      titleAttr +
+      ">" +
+      emoji +
+      spacer +
+      label +
+      "</span>"
+    );
+  }
+
+  function variantTierOnTrailingSegment(variant) {
+    if (!variant.tier) {
+      return false;
+    }
+    const segments = splitSummarySegments(variant.raw);
+    if (!segments.length) {
+      return false;
+    }
+    const parsed = parseEffectLabelParts(segments[0]);
+    return !parsed.tier;
+  }
+
+  function renderVariantTooltipContent(variant) {
+    if (!variant.raw) {
+      return "";
+    }
+    if (variant.quality || /`/.test(variant.raw)) {
+      return renderRichLine(variant.raw, variant.polarity);
+    }
+    return renderVariantTooltipParts(variant).join(" ");
+  }
+
+  function renderMergedVariantTooltipHtml(variants) {
+    return (
+      '<div class="chip-stacked-tip">' +
+      variants
+        .map(function (variant) {
+          return (
+            '<div class="chip-merged-tip-line">' +
+            renderVariantTooltipContent(variant) +
+            "</div>"
+          );
+        })
+        .join("") +
+      "</div>"
+    );
+  }
+
+  function renderGroupedVariantPill(variants, opts) {
+    opts = opts || {};
+    const iconOnlyTargeting = !!opts.iconOnlyTargeting;
+    if (!variants || variants.length <= 1) {
+      return "";
+    }
+
+    const first = variants[0];
+    const polarity = first.polarity;
+    const leading = resolveLeadingChip(first.base, polarity);
+    const qualityRange = combineQualities(
+      variants.map(function (v) {
+        return v.quality;
+      })
+    );
+    const targetingSegments = collectTargetingSegments(variants);
+
+    if (qualityRange && targetingSegments.length) {
+      const fullTip = renderMergedVariantTooltipHtml(variants);
+      const effectPill = withChipTooltip(
+        renderEffectQualityMergedPill(first.base, polarity, qualityRange),
+        fullTip
+      );
+      const targetingPill = withChipTooltip(
+        renderTargetingMergedPill(targetingSegments, iconOnlyTargeting),
+        fullTip
+      );
+      return (
+        '<span class="grouped-variant-pills">' +
+        effectPill +
+        " " +
+        targetingPill +
+        "</span>"
+      );
+    }
+
+    const bodyHtml = renderMergedEffectBodyParts(
+      first,
+      leading,
+      qualityRange,
+      targetingSegments,
+      iconOnlyTargeting
+    ).join("");
+
+    return withChipTooltip(
+      '<span class="chip chip-merged">' + bodyHtml + "</span>",
+      renderMergedVariantTooltipHtml(variants)
+    );
+  }
+
+  function groupParsedVariants(items, parseFn, cardPolarity) {
+    const groupByKey = {};
+
+    items.forEach(function (item, index) {
+      const variant = parseFn(item, cardPolarity);
+      if (!variant) {
+        return;
+      }
+      const key = effectVariantGroupKey(variant, cardPolarity);
+      if (!groupByKey[key]) {
+        groupByKey[key] = {
+          key: key,
+          variants: [],
+          indices: [],
+          firstIndex: index,
+        };
+      }
+      const group = groupByKey[key];
+      if (group.firstIndex > index) {
+        group.firstIndex = index;
+      }
+      if (
+        !group.variants.some(function (v) {
+          return v.raw === variant.raw;
+        })
+      ) {
+        group.variants.push(variant);
+      }
+      group.indices.push(index);
+    });
+
+    const consumed = new Set();
+    const result = [];
+    items.forEach(function (item, index) {
+      if (consumed.has(index)) {
+        return;
+      }
+      const variant = parseFn(item, cardPolarity);
+      if (!variant) {
+        result.push({ type: "raw", item: item });
+        return;
+      }
+      const key = effectVariantGroupKey(variant, cardPolarity);
+      const group = groupByKey[key];
+      if (group.variants.length > 1) {
+        result.push({ type: "group", variants: group.variants });
+        group.indices.forEach(function (i) {
+          consumed.add(i);
+        });
+        return;
+      }
+      result.push({ type: "raw", item: item });
+      consumed.add(index);
+    });
+    return result;
+  }
+
+  function groupSummaryItems(items, cardPolarity) {
+    return groupParsedVariants(items, parseSummaryVariant, cardPolarity);
+  }
+
   function parseSkillCardTag(raw) {
     let tag = raw.trim();
     let targeting = "";
@@ -1408,7 +2094,7 @@ window.AFKJ = window.AFKJ || {};
       return { tag: tag, targeting: targeting };
     }
     const enemyTargetingMatch = tag.match(
-      /^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Multiple targets|Single target|path)\s*$/i
+      /^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Path|Multiple targets|Single target)\s*$/i
     );
     if (enemyTargetingMatch) {
       tag = enemyTargetingMatch[1].trim();
@@ -1593,5 +2279,11 @@ window.AFKJ = window.AFKJ || {};
     extractChipHtml: extractChipHtml,
     parseSkillCardTag: parseSkillCardTag,
     chipifySkillCardTag: chipifySkillCardTag,
+    parseSkillCardVariant: parseSkillCardVariant,
+    parseSummaryVariant: parseSummaryVariant,
+    groupSummaryItems: groupSummaryItems,
+    groupParsedVariants: groupParsedVariants,
+    renderGroupedVariantPill: renderGroupedVariantPill,
+    buildVariantModifier: buildVariantModifier,
   };
 })();

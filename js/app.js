@@ -19,7 +19,7 @@ return key;},factionClass:function(faction){if(!faction)return"";return"badge-fa
 this.escapeHtml(this.heroUrl(slug))+'" class="hero-link" data-slug="'+
 this.escapeHtml(slug)+'">'+
 this.escapeHtml(name)+"</a>");}
-return this.escapeHtml(name);},rectContainsPoint:function(rect,x,y,pad){return(x>=rect.left-pad&&x<=rect.right+pad&&y>=rect.top-pad&&y<=rect.bottom+pad);}};window.AFKJ=window.AFKJ||{};window.AFKJ.state={BASE:"",heroes:[],heroesMeta:{},heroBySlug:{},heroByName:{},activeFaction:"",activeClass:"",activeRole:"",viewMode:"grid",csvHeaders:[],csvRows:[],listColumnsById:{},sortColumn:0,sortDir:1,csvColumnFilters:{},csvColumnFilterCombine:{},csvColumnFilterOptions:[],openColumnFilter:-1,csvColumnWidths:[],columnWidthsLocked:false,detailHero:null,closeSkillCardPopover:function(){},mixSlots:[null,null,null,null,null],mixMarked:[false,false,false,false,false],mixFocus:{cc:false,ccImmunity:false,sustain:false,speed:false,noUltimate:false,},mixMode:"",mixSynergyIndex:{},mixConfig:{},mixRoleProminence:{},mixContextSlotIndex:-1,mixContextGridSlug:null,mixSlotLastTap:null,dom:{gridView:null,listView:null,mixView:null,detailView:null,heroGrid:null,mixHeroGrid:null,mixDropZone:null,mixEmptyState:null,mixRemoveAllBtn:null,heroDetail:null,emptyState:null,listEmptyState:null,heroesTableHead:null,heroesTableBody:null,heroesTable:null,searchInput:null,filtersPanel:null,filtersEl:null,filtersToggle:null,filtersToggleLabel:null,headerBack:null,viewToggle:null,siteHeader:null,}};window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const escapeHtml=utils.escapeHtml.bind(utils);const QUALITY_CLASS={high:"chip-q-high",average:"chip-q-medium",low:"chip-q-low",};const SKILL_OVERVIEW_SPEED_LABELS={speed:true,"first cast speed":true,};const SPEED_CLASS={slow:"chip-s-slow",average:"chip-s-normal",fast:"chip-s-fast",};const SPEED_EMOJI={slow:"🐢",average:"🚶",fast:"🚀",};const QUALITY_EMOJI={high:"⬆️",average:"➡️",low:"⬇️",};const CC_DURATION_LABEL={low:"short",average:"average",high:"long",};const QUALITY_TOOLTIPS={high:"Top third vs same-role peers for this effect.",average:"Middle band vs same-role peers with the same effect label.",low:"Below average vs same-role peers for this effect type.",};const SPEED_TOOLTIPS={slow:"Slow to cast: longer cooldown, initial delay, or ultimate energy fill time.",average:"Typical cast timing for this skill group among same-role peers.",fast:"Quick to cast: short delay, low cooldown, or battle-start override.",};const SIGNATURE_FUEL_TOOLTIP="Signature skill casts slowly; Haste and Energy recovery buffs are especially valuable.";const TARGETING_RANK={"all units":70,global:65,area:60,arc:50,"multiple targets":40,allies:35,enemies:35,"single target":30,self:20,};const MOVEMENT_DEFINITIONS={stationary:{emoji:"📍",cls:"chip-movement"},moving:{emoji:"🏃",cls:"chip-movement"},"mostly stationary":{emoji:"🚶",cls:"chip-movement"},"high movement":{emoji:"💨",cls:"chip-movement"},"moving / stationary":{emoji:"↔️",cls:"chip-movement"},};const MOVEMENT_KEYS=Object.keys(MOVEMENT_DEFINITIONS).sort(function(a,b){return b.length-a.length;});const TARGETING_PHRASES=[{re:/\bMultiple targets\b/gi,key:"multiple targets"},{re:/\bSingle target\b/gi,key:"single target"},{re:/\bAll units\b/gi,key:"all units"},{re:/\bEnemies\b/gi,key:"enemies"},{re:/\bGlobal\b/gi,key:"global"},{re:/\bOn Skill\b/gi,key:"on skill"},{re:/\bAll summons\b/gi,key:"all summons"},{re:/\bOwned summons\b/gi,key:"owned summons"},{re:/\bSummons only\b/gi,key:"owned summons"},{re:/\bArea\b/g,key:"area"},{re:/\bArc\b/g,key:"arc"},{re:/\bSelf\b/g,key:"self"},];const STAT_KEYS=Object.keys(config.TAG_DEFINITIONS).filter(function(key){const cls=config.TAG_DEFINITIONS[key].cls;return cls&&cls.indexOf("chip-stat")!==-1;}).sort(function(a,b){return b.length-a.length;});const HEAL_CHIP_KEYS=["Direct healing","Healing over time","HoT","Healing"].sort(function(a,b){return b.length-a.length;});function healingChipDisplay(text){if(text==="Healing over time"){return"HoT";}
+return this.escapeHtml(name);},rectContainsPoint:function(rect,x,y,pad){return(x>=rect.left-pad&&x<=rect.right+pad&&y>=rect.top-pad&&y<=rect.bottom+pad);}};window.AFKJ=window.AFKJ||{};window.AFKJ.state={BASE:"",heroes:[],heroesMeta:{},heroBySlug:{},heroByName:{},activeFaction:"",activeClass:"",activeRole:"",viewMode:"grid",csvHeaders:[],csvRows:[],listColumnsById:{},sortColumn:0,sortDir:1,csvColumnFilters:{},csvColumnFilterCombine:{},csvColumnFilterOptions:[],openColumnFilter:-1,csvColumnWidths:[],columnWidthsLocked:false,detailHero:null,closeSkillCardPopover:function(){},mixSlots:[null,null,null,null,null],mixMarked:[false,false,false,false,false],mixFocus:{cc:false,ccImmunity:false,sustain:false,speed:false,noUltimate:false,},mixMode:"",mixSynergyIndex:{},mixConfig:{},mixRoleProminence:{},mixContextSlotIndex:-1,mixContextGridSlug:null,mixSlotLastTap:null,dom:{gridView:null,listView:null,mixView:null,detailView:null,heroGrid:null,mixHeroGrid:null,mixDropZone:null,mixEmptyState:null,mixRemoveAllBtn:null,heroDetail:null,emptyState:null,listEmptyState:null,heroesTableHead:null,heroesTableBody:null,heroesTable:null,searchInput:null,filtersPanel:null,filtersEl:null,filtersToggle:null,filtersToggleLabel:null,headerBack:null,viewToggle:null,siteHeader:null,}};window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const escapeHtml=utils.escapeHtml.bind(utils);const QUALITY_CLASS={high:"chip-q-high",average:"chip-q-medium",low:"chip-q-low",};const SKILL_OVERVIEW_SPEED_LABELS={speed:true,"first cast speed":true,};const SPEED_CLASS={slow:"chip-s-slow",average:"chip-s-normal",fast:"chip-s-fast",};const SPEED_EMOJI={slow:"🐢",average:"🚶",fast:"🚀",};const QUALITY_EMOJI={high:"⬆️",average:"➡️",low:"⬇️",};const CC_DURATION_LABEL={low:"short",average:"average",high:"long",};const QUALITY_TOOLTIPS={high:"Top third vs same-role peers for this effect.",average:"Middle band vs same-role peers with the same effect label.",low:"Below average vs same-role peers for this effect type.",};const SPEED_TOOLTIPS={slow:"Slow to cast: longer cooldown, initial delay, or ultimate energy fill time.",average:"Typical cast timing for this skill group among same-role peers.",fast:"Quick to cast: short delay, low cooldown, or battle-start override.",};const SIGNATURE_FUEL_TOOLTIP="Signature skill casts slowly; Haste and Energy recovery buffs are especially valuable.";const TARGETING_RANK={"all units":70,global:65,area:60,path:55,arc:50,"multiple targets":40,allies:35,enemies:35,"single target":30,self:20,};const MOVEMENT_DEFINITIONS={stationary:{emoji:"📍",cls:"chip-movement"},moving:{emoji:"🏃",cls:"chip-movement"},"mostly stationary":{emoji:"🚶",cls:"chip-movement"},"high movement":{emoji:"💨",cls:"chip-movement"},"moving / stationary":{emoji:"↔️",cls:"chip-movement"},};const MOVEMENT_KEYS=Object.keys(MOVEMENT_DEFINITIONS).sort(function(a,b){return b.length-a.length;});const TARGETING_PHRASES=[{re:/\bMultiple targets\b/gi,key:"multiple targets"},{re:/\bSingle target\b/gi,key:"single target"},{re:/\bAll units\b/gi,key:"all units"},{re:/\bEnemies\b/gi,key:"enemies"},{re:/\bGlobal\b/gi,key:"global"},{re:/\bOn Skill\b/gi,key:"on skill"},{re:/\bAll summons\b/gi,key:"all summons"},{re:/\bOwned summons\b/gi,key:"owned summons"},{re:/\bSummons only\b/gi,key:"owned summons"},{re:/\bArea\b/g,key:"area"},{re:/\bArc\b/g,key:"arc"},{re:/\bpath\b/gi,key:"path"},{re:/\bSelf\b/g,key:"self"},];const STAT_KEYS=Object.keys(config.TAG_DEFINITIONS).filter(function(key){const cls=config.TAG_DEFINITIONS[key].cls;return cls&&cls.indexOf("chip-stat")!==-1;}).sort(function(a,b){return b.length-a.length;});const HEAL_CHIP_KEYS=["Direct healing","Healing over time","HoT","Healing"].sort(function(a,b){return b.length-a.length;});function healingChipDisplay(text){if(text==="Healing over time"){return"HoT";}
 return text;}
 function tryMergeTrailingLabel(before,indicator){const match=before.match(/(^|[\s,])([\w][\w\s]*?)\s+$/);if(!match){return null;}
 const prefix=before.slice(0,match.index)+match[1];const label=match[2].trim();const merged=window.AFKJ.chips.mergeLabelWithIndicator(label,indicator.trim());if(!merged){return null;}
@@ -96,7 +96,7 @@ function qualityIndicatorMeta(value,isCc){const lower=value.toLowerCase();if(!QU
 return{cls:"chip-quality "+QUALITY_CLASS[lower],label:isCc?CC_DURATION_LABEL[lower]:lower,tooltip:QUALITY_TOOLTIPS[lower],emoji:"",};}
 function targetingIndicatorMeta(targeting){const lower=(targeting||"").trim().toLowerCase();if(lower==="all summons"){return{cls:"chip-target",label:"summons",tooltip:"",emoji:"🐾",};}
 if(lower==="owned summons"||lower==="own summons"||lower==="summon"||lower==="summons only"){return{cls:"chip-target",label:"owned",tooltip:"",emoji:"🐾",};}
-const def=config.TARGETING_DEFINITIONS[lower];if(def){const label=lower==="self"?"Self":lower==="all units"?"All units":lower==="multiple targets"?"Multiple targets":lower==="single target"?"Single target":targeting.trim();return{cls:def.cls,label:label,tooltip:"",emoji:def.emoji,};}
+const def=config.TARGETING_DEFINITIONS[lower];if(def){const label=lower==="self"?"Self":lower==="all units"?"All units":lower==="multiple targets"?"Multiple targets":lower==="single target"?"Single target":lower==="path"?"Path":targeting.trim();return{cls:def.cls,label:label,tooltip:"",emoji:def.emoji,};}
 return null;}
 function resolveIndicatorMeta(label,indicator,isCc){if(isSpeedMetricLabel(label)){return(speedIndicatorMeta(indicator)||qualityIndicatorMeta(indicator,isCc));}
 return(qualityIndicatorMeta(indicator,isCc)||speedIndicatorMeta(indicator));}
@@ -142,20 +142,22 @@ escapeHtml(tierSuffix)+'">'+
 escapeHtml(short)+"</sup>");}
 function formatMergedTierSuffix(tierSuffix){if(!tierSuffix){return"";}
 return formatAscensionTierDisplay(tierSuffix);}
-function formatMergedIndicator(left,indicatorMeta,textOnlyLeft){let leftHtml;if(left.hasIcon){leftHtml='<span class="chip-merged-left '+
+function isAreaShapeTargeting(targeting){const lower=(targeting||"").trim().toLowerCase();return lower==="area"||lower==="arc"||lower==="path";}
+function formatMergedIndicator(left,indicatorMeta,textOnlyLeft,iconOnlyRight){let leftHtml;if(left.hasIcon){leftHtml='<span class="chip-merged-left '+
 left.cls+'">'+
 left.emoji+" "+
 escapeHtml(chipDisplayLabel(left.text))+
 formatMergedTierSuffix(left.tierSuffix)+"</span>";}else{leftHtml='<span class="chip-merged-left chip-merged-label">'+
 escapeHtml(chipDisplayLabel(left.textOnly))+
 formatMergedTierSuffix(left.tierSuffix)+"</span>";}
-const emojiPart=textOnlyLeft&&indicatorMeta.emoji?indicatorMeta.emoji+" ":"";const rightAttrs=' class="chip-merged-right '+
+const showLabel=!iconOnlyRight;const emojiPart=indicatorMeta.emoji?indicatorMeta.emoji+(showLabel&&indicatorMeta.label?" ":""):"";const rightTitle=iconOnlyRight&&indicatorMeta.label?' title="'+escapeHtml(indicatorMeta.label)+'"':"";const rightAttrs=' class="chip-merged-right '+
 indicatorMeta.cls+
 (indicatorMeta.tooltip?" chip-has-tip":"")+'"'+
+rightTitle+
 (indicatorMeta.tooltip?chipTipAttrs(indicatorMeta.tooltip):"");const rightHtml="<span"+
 rightAttrs+">"+
 emojiPart+
-escapeHtml(indicatorMeta.label)+"</span>";return('<span class="chip chip-merged">'+
+(showLabel?escapeHtml(indicatorMeta.label):"")+"</span>";return('<span class="chip chip-merged">'+
 leftHtml+'<span class="chip-merged-sep" aria-hidden="true">|</span>'+
 rightHtml+"</span>");}
 function mergeLabelWithIndicator(label,indicator,tierSuffix,polarity){const leading=resolveLeadingChip(label,polarity);const meta=resolveIndicatorMeta(label,indicator,leading.isCc);if(!meta){return null;}
@@ -165,8 +167,8 @@ function mergeEffectWithQuality(effectLabel,qualityValue,tierSuffix,polarity){co
 const leading=resolveLeadingChip(effectLabel,polarity);if(leading.emoji){return(formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:tierSuffix||"",},qualityMeta,false)+escapeHtml(effectChipRemainder(leading.remainder)));}
 return formatMergedIndicator({textOnly:effectLabel,tierSuffix:tierSuffix||""},qualityMeta,true);}
 function mergeEffectWithTargeting(effectLabel,targeting,tierSuffix,polarity){const targetingMeta=targetingIndicatorMeta(targeting);if(!targetingMeta){return null;}
-const leading=resolveLeadingChip(effectLabel,polarity);if(leading.emoji){return(formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:tierSuffix||"",},targetingMeta,false)+escapeHtml(effectChipRemainder(leading.remainder)));}
-return formatMergedIndicator({textOnly:effectLabel,tierSuffix:tierSuffix||""},targetingMeta,true);}
+const iconOnlyRight=isAreaShapeTargeting(targeting);const leading=resolveLeadingChip(effectLabel,polarity);if(leading.emoji){return(formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:tierSuffix||"",},targetingMeta,false,iconOnlyRight)+escapeHtml(effectChipRemainder(leading.remainder)));}
+return formatMergedIndicator({textOnly:effectLabel,tierSuffix:tierSuffix||""},targetingMeta,true,iconOnlyRight);}
 function tryChipify(token){const text=normalizeToken(token);if(!text){return null;}
 const lower=text.toLowerCase();if(QUALITY_CLASS[lower]){return formatTag(text);}
 if(lower==="signature fuel"){return formatTag(text);}
@@ -252,10 +254,121 @@ function renderBuffProvidedEntry(buff){const parsed=parseEffectLabelParts(buff.l
 return'<span class="synergy-buff-entry">'+html+"</span>";}
 function renderBuffTargetingChip(targetingType){if(!targetingType){return"";}
 return chipifyTargetingSegment(targetingType);}
+const QUALITY_RANK={low:0,average:1,high:2};function isQualityToken(value){return!!QUALITY_CLASS[(value||"").toLowerCase()];}
+function combineQualities(qualities){const uniq=[];qualities.forEach(function(q){const lower=(q||"").toLowerCase();if(isQualityToken(lower)&&uniq.indexOf(lower)===-1){uniq.push(lower);}});if(!uniq.length){return"";}
+uniq.sort(function(a,b){return QUALITY_RANK[a]-QUALITY_RANK[b];});if(uniq.length===1){return uniq[0];}
+return uniq[0]+"-"+uniq[uniq.length-1];}
+function combineTargetings(targetings){const parts=[];const seen=new Set();targetings.forEach(function(t){if(!t){return;}
+t.split(/\s*,\s*/).forEach(function(piece){const norm=piece.trim();const key=norm.toLowerCase();if(!norm||seen.has(key)){return;}
+seen.add(key);const meta=targetingIndicatorMeta(norm);parts.push({key:key,label:meta?meta.label:norm,rank:TARGETING_RANK[key]||0,});});});parts.sort(function(a,b){return b.rank-a.rank;});return parts.map(function(p){return p.label;}).join(" + ");}
+function combineTierLabels(tiers){const uniq=[];tiers.forEach(function(t){if(t&&uniq.indexOf(t)===-1){uniq.push(t);}});return uniq.map(function(t){return shortAscensionTierName(t);}).join(", ");}
+function combineUniqueText(values){const uniq=[];values.forEach(function(v){if(v&&uniq.indexOf(v)===-1){uniq.push(v);}});return uniq.join(" + ");}
+function buildVariantModifier(variants){const parts=[];const quality=combineQualities(variants.map(function(v){return v.quality;}));if(quality){parts.push(quality);}
+const targeting=combineTargetings(variants.map(function(v){return v.targeting;}));if(targeting){parts.push(targeting);}
+const tiers=combineTierLabels(variants.map(function(v){return v.tier;}));if(tiers){parts.push(tiers);}
+const timing=combineUniqueText(variants.map(function(v){return v.timing;}));if(timing){parts.push(timing);}
+return parts.join("; ");}
+function effectVariantGroupKey(variant,cardPolarity){const polarity=cardPolarity||variant.polarity||"";return variant.base.toLowerCase()+":"+polarity;}
+function parseSkillCardVariant(raw,explicitPolarity){let work=(raw||"").trim();if(!work){return null;}
+let tier="";const tierMatch=work.match(ASCENSION_TIER_SUFFIX_RE);if(tierMatch){tier=tierMatch[1];work=work.slice(0,tierMatch.index).trim();}
+const split=parseSkillCardTag(work);if(!split.tag){return null;}
+const polarity=explicitPolarity||effectLabelPolarity(split.tag)||"buff";return{base:split.tag,tier:tier,targeting:split.targeting||"",quality:"",conditional:"",timing:"",polarity:polarity,raw:raw,};}
+function parseSummaryVariant(raw,cardPolarity){const segments=splitSummarySegments(raw);if(!segments.length){return null;}
+const parsed=parseEffectLabelParts(segments[0]);if(!parsed.base){return null;}
+let targeting="";let quality="";let conditional="";let timing="";for(let i=1;i<segments.length;i++){const seg=unwrapBackticks(segments[i]);const lower=seg.toLowerCase();if(isQualityToken(lower)){quality=lower;}else if(/conditional\s*\(/i.test(seg)){conditional=seg;}else if(targetingIndicatorMeta(seg)){if(targeting){targeting+=", "+seg;}else{targeting=seg;}}else if(!timing){timing=seg;}else{timing+=" + "+seg;}}
+if(!targeting&&segments[1]&&!isQualityToken(unwrapBackticks(segments[1]).toLowerCase())&&!/conditional\s*\(/i.test(segments[1])){targeting=unwrapBackticks(segments[1]);if(segments[2]&&isQualityToken(unwrapBackticks(segments[2]).toLowerCase())){quality=unwrapBackticks(segments[2]).toLowerCase();}
+if(segments[3]&&/conditional\s*\(/i.test(segments[3])){conditional=segments[3];}else if(segments[3]){timing=segments[3];}}
+const polarity=cardPolarity||effectLabelPolarity(parsed.base)||"buff";return{base:parsed.base,tier:parsed.tier||"",targeting:targeting,quality:quality,conditional:conditional,timing:timing,polarity:polarity,raw:raw,};}
+function collectTargetingSegments(variants){const parts=[];const seen=new Set();variants.forEach(function(v){if(!v.targeting){return;}
+v.targeting.split(/\s*,\s*/).forEach(function(piece){const norm=piece.trim();const key=norm.toLowerCase();if(!norm||seen.has(key)){return;}
+seen.add(key);const tokenMeta=targetingTokenMeta(norm);if(tokenMeta){parts.push(tokenMeta);return;}
+const indMeta=targetingIndicatorMeta(norm);if(indMeta){parts.push({emoji:indMeta.emoji,text:indMeta.label,cls:indMeta.cls,rank:TARGETING_RANK[key]||0,});}});});parts.sort(function(a,b){return b.rank-a.rank;});return parts;}
+function mergedVariantSep(){return'<span class="chip-merged-sep" aria-hidden="true">|</span>';}
+function qualityRangeMeta(qualityValue,isCc){if(!qualityValue){return null;}
+if(qualityValue.indexOf("-")!==-1){const range=qualityValue.split("-");if(range.length===2&&isQualityToken(range[0])&&isQualityToken(range[1])){return{cls:"chip-generic",label:qualityValue,tooltip:"",emoji:"",};}}
+return qualityIndicatorMeta(qualityValue,isCc);}
+function renderMergedQualitySegment(qualityValue,isCc){if(!qualityValue){return"";}
+const qMeta=qualityRangeMeta(qualityValue,isCc);if(!qMeta){return('<span class="chip-merged-right chip-generic">'+
+escapeHtml(qualityValue)+"</span>");}
+return('<span class="chip-merged-right '+
+qMeta.cls+'">'+
+escapeHtml(qMeta.label)+"</span>");}
+function renderEffectQualityMergedPill(base,polarity,qualityRange){const leading=resolveLeadingChip(base,polarity);const qMeta=qualityRangeMeta(qualityRange,leading.isCc);if(!qMeta){return"";}
+if(leading.emoji){return formatMergedIndicator({hasIcon:true,emoji:leading.emoji,text:leading.text,cls:leading.cls,tierSuffix:"",},qMeta,false);}
+return formatMergedIndicator({textOnly:base,tierSuffix:""},qMeta,true);}
+function renderTargetingMergedPill(targetingSegments,iconOnlyTargeting){if(!targetingSegments.length){return"";}
+if(targetingSegments.length===1){const meta=targetingSegments[0];return chipSpan(meta.emoji,meta.text||meta.label,meta.cls);}
+if(iconOnlyTargeting){const parts=targetingSegments.map(function(meta){return renderMergedTargetingSegment(meta,true);});return'<span class="chip chip-merged">'+parts.join("")+"</span>";}
+const parts=[];targetingSegments.forEach(function(meta,index){if(index===0){parts.push('<span class="chip-merged-left '+
+meta.cls+'">'+
+meta.emoji+" "+
+escapeHtml(chipDisplayLabel(meta.text||meta.label))+"</span>");return;}
+parts.push(renderMergedTargetingSegment(meta,true));});return'<span class="chip chip-merged">'+parts.join("")+"</span>";}
+function renderMergedEffectBodyParts(first,leading,qualityRange,targetingSegments,iconOnlyTargeting){const bodyParts=[];if(leading.emoji){bodyParts.push('<span class="chip-merged-left '+
+leading.cls+'">'+
+leading.emoji+" "+
+escapeHtml(chipDisplayLabel(leading.text))+"</span>");}else{bodyParts.push('<span class="chip-merged-left chip-merged-label">'+
+escapeHtml(chipDisplayLabel(first.base))+"</span>");}
+const qualitySeg=renderMergedQualitySegment(qualityRange,leading.isCc);if(qualitySeg){bodyParts.push(qualitySeg);}
+targetingSegments.forEach(function(meta,index){const compact=iconOnlyTargeting?true:index>0;bodyParts.push(renderMergedTargetingSegment(meta,compact));});return bodyParts;}
+function groupedVariantTipAttrs(tipHtml){return(' chip-has-tip" data-tip-html="'+
+escapeHtml(tipHtml)+'" tabindex="0" role="button" aria-describedby="chip-tooltip"');}
+function withChipTooltip(chipHtml,tipHtml){if(!chipHtml||!tipHtml){return chipHtml;}
+return chipHtml.replace('<span class="chip chip-merged"','<span class="chip chip-merged'+groupedVariantTipAttrs(tipHtml));}
+function renderStandaloneEffectTooltipChip(variant){const parsed=parseEffectLabelParts(variant.base);const tier=variant.tier||parsed.tier;const base=parsed.base;const polarity=variant.polarity;const leading=resolveLeadingChip(base,polarity);if(leading.emoji){return('<span class="chip '+
+leading.cls+'">'+
+leading.emoji+" "+
+escapeHtml(chipDisplayLabel(leading.text))+
+formatMergedTierSuffix(tier)+"</span>");}
+const chip=extractChipHtml(renderStandaloneEffectChip(base,tier,polarity));return chip||renderStandaloneEffectChip(base,tier,polarity);}
+function renderVariantTooltipParts(variant){const parts=[renderStandaloneEffectTooltipChip(variant)];if(variant.quality){const qChip=formatTag(variant.quality);if(qChip){parts.push(qChip);}}
+const targeting=renderTargetingTooltipLine(variant);if(targeting){parts.push(targeting);}
+if(variant.timing){parts.push('<span class="chip chip-generic">'+
+escapeHtml(variant.timing)+"</span>");}
+if(variant.conditional){parts.push('<span class="chip chip-generic chip-has-tip"'+
+chipTipAttrs(conditionalTooltip(variant.conditional))+">🎲 "+
+escapeHtml(variant.conditional)+"</span>");}
+return parts;}
+function renderTargetingTooltipLine(variant){if(!variant.targeting){return"";}
+const tMeta=targetingIndicatorMeta(variant.targeting);if(tMeta){return('<span class="chip '+
+tMeta.cls+'">'+
+(tMeta.emoji?tMeta.emoji+" ":"")+
+escapeHtml(tMeta.label)+"</span>");}
+return chipifyTargetingSegment(variant.targeting);}
+function renderMergedTargetingSegment(meta,compact){const emoji=meta.emoji?meta.emoji:"";const label=compact?"":escapeHtml(chipDisplayLabel(meta.text||meta.label));const spacer=compact||!label?"":" ";const titleAttr=compact&&(meta.text||meta.label)?' title="'+
+escapeHtml(chipDisplayLabel(meta.text||meta.label))+'"':"";return('<span class="chip-merged-right '+
+meta.cls+'"'+
+titleAttr+">"+
+emoji+
+spacer+
+label+"</span>");}
+function variantTierOnTrailingSegment(variant){if(!variant.tier){return false;}
+const segments=splitSummarySegments(variant.raw);if(!segments.length){return false;}
+const parsed=parseEffectLabelParts(segments[0]);return!parsed.tier;}
+function renderVariantTooltipContent(variant){if(!variant.raw){return"";}
+if(variant.quality||/`/.test(variant.raw)){return renderRichLine(variant.raw,variant.polarity);}
+return renderVariantTooltipParts(variant).join(" ");}
+function renderMergedVariantTooltipHtml(variants){return('<div class="chip-stacked-tip">'+
+variants.map(function(variant){return('<div class="chip-merged-tip-line">'+
+renderVariantTooltipContent(variant)+"</div>");}).join("")+"</div>");}
+function renderGroupedVariantPill(variants,opts){opts=opts||{};const iconOnlyTargeting=!!opts.iconOnlyTargeting;if(!variants||variants.length<=1){return"";}
+const first=variants[0];const polarity=first.polarity;const leading=resolveLeadingChip(first.base,polarity);const qualityRange=combineQualities(variants.map(function(v){return v.quality;}));const targetingSegments=collectTargetingSegments(variants);if(qualityRange&&targetingSegments.length){const fullTip=renderMergedVariantTooltipHtml(variants);const effectPill=withChipTooltip(renderEffectQualityMergedPill(first.base,polarity,qualityRange),fullTip);const targetingPill=withChipTooltip(renderTargetingMergedPill(targetingSegments,iconOnlyTargeting),fullTip);return('<span class="grouped-variant-pills">'+
+effectPill+" "+
+targetingPill+"</span>");}
+const bodyHtml=renderMergedEffectBodyParts(first,leading,qualityRange,targetingSegments,iconOnlyTargeting).join("");return withChipTooltip('<span class="chip chip-merged">'+bodyHtml+"</span>",renderMergedVariantTooltipHtml(variants));}
+function groupParsedVariants(items,parseFn,cardPolarity){const groupByKey={};items.forEach(function(item,index){const variant=parseFn(item,cardPolarity);if(!variant){return;}
+const key=effectVariantGroupKey(variant,cardPolarity);if(!groupByKey[key]){groupByKey[key]={key:key,variants:[],indices:[],firstIndex:index,};}
+const group=groupByKey[key];if(group.firstIndex>index){group.firstIndex=index;}
+if(!group.variants.some(function(v){return v.raw===variant.raw;})){group.variants.push(variant);}
+group.indices.push(index);});const consumed=new Set();const result=[];items.forEach(function(item,index){if(consumed.has(index)){return;}
+const variant=parseFn(item,cardPolarity);if(!variant){result.push({type:"raw",item:item});return;}
+const key=effectVariantGroupKey(variant,cardPolarity);const group=groupByKey[key];if(group.variants.length>1){result.push({type:"group",variants:group.variants});group.indices.forEach(function(i){consumed.add(i);});return;}
+result.push({type:"raw",item:item});consumed.add(index);});return result;}
+function groupSummaryItems(items,cardPolarity){return groupParsedVariants(items,parseSummaryVariant,cardPolarity);}
 function parseSkillCardTag(raw){let tag=raw.trim();let targeting="";const allSummonMatch=tag.match(/^(.+?)\s*(?:—|–)\s*Summons\s*$/i);if(allSummonMatch){tag=allSummonMatch[1].trim();targeting="All summons";return{tag:tag,targeting:targeting};}
 const ownSummonMatch=tag.match(/^(.+?)\s*(?:—|–)\s*Owned\s*$/i);if(ownSummonMatch){tag=ownSummonMatch[1].trim();targeting="Owned summons";return{tag:tag,targeting:targeting};}
 const legacySummonMatch=tag.match(/^(.+?)\s*(?:—|–)\s*Summon\s*$/i);if(legacySummonMatch){tag=legacySummonMatch[1].trim();targeting="Owned summons";return{tag:tag,targeting:targeting};}
-const enemyTargetingMatch=tag.match(/^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Multiple targets|Single target|path)\s*$/i);if(enemyTargetingMatch){tag=enemyTargetingMatch[1].trim();targeting=enemyTargetingMatch[2].trim();return{tag:tag,targeting:targeting};}
+const enemyTargetingMatch=tag.match(/^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Path|Multiple targets|Single target)\s*$/i);if(enemyTargetingMatch){tag=enemyTargetingMatch[1].trim();targeting=enemyTargetingMatch[2].trim();return{tag:tag,targeting:targeting};}
 const selfMatch=tag.match(/^(.+?)\s*(?:—|–)\s*Self\s*$/i);if(selfMatch){tag=selfMatch[1].trim();targeting="Self";}
 return{tag:tag,targeting:targeting};}
 function chipifySkillCardTag(raw,explicitPolarity){let work=raw.trim();if(!work){return"";}
@@ -269,7 +382,7 @@ const statChip=extractChipHtml(chipifyLeadingStat(tag));if(statChip){return inje
 const effectChip=extractChipHtml(renderStandaloneEffectChip(tag,tierSuffix,polarity));if(effectChip){return effectChip;}
 const label=tag.replace(/\s*\([^)]*\)/g,"").trim();if(!label){return"";}
 return injectTierIntoChipHtml(chipSpan("🏷️",label,effectChipClassForPolarity(polarity,"chip-generic")),tierSuffix);}
-window.AFKJ.chips={QUALITY_CLASS:QUALITY_CLASS,SPEED_CLASS:SPEED_CLASS,SPEED_EMOJI:SPEED_EMOJI,QUALITY_EMOJI:QUALITY_EMOJI,QUALITY_TOOLTIPS:QUALITY_TOOLTIPS,SPEED_TOOLTIPS:SPEED_TOOLTIPS,SIGNATURE_FUEL_TOOLTIP:SIGNATURE_FUEL_TOOLTIP,MOVEMENT_DEFINITIONS:MOVEMENT_DEFINITIONS,MOVEMENT_KEYS:MOVEMENT_KEYS,TARGETING_PHRASES:TARGETING_PHRASES,STAT_KEYS:STAT_KEYS,HEAL_CHIP_KEYS:HEAL_CHIP_KEYS,healingChipDisplay:healingChipDisplay,tryMergeTrailingLabel:tryMergeTrailingLabel,renderInline:renderInline,conditionalTooltip:conditionalTooltip,chipTipAttrs:chipTipAttrs,normalizeToken:normalizeToken,normalizeSummaryText:normalizeSummaryText,splitSummarySegments:splitSummarySegments,isInsideHtmlTag:isInsideHtmlTag,isInsideChipSpan:isInsideChipSpan,isInsideSpanClass:isInsideSpanClass,isInsideSkillInlineStat:isInsideSkillInlineStat,isInsideSkillInlineTime:isInsideSkillInlineTime,isInsideSkillInlineNum:isInsideSkillInlineNum,isInsideStrong:isInsideStrong,boldSkillNumericTokens:boldSkillNumericTokens,replaceOutsideChips:replaceOutsideChips,enhancePlainTargetingInHtml:enhancePlainTargetingInHtml,targetingTokenMeta:targetingTokenMeta,renderStackedTargetingTipHtml:renderStackedTargetingTipHtml,renderStackedTargetingPill:renderStackedTargetingPill,chipifyTargetingSegment:chipifyTargetingSegment,chipDisplayLabel:chipDisplayLabel,chipSpan:chipSpan,behaviorTagTooltip:behaviorTagTooltip,behaviorTagDefinition:behaviorTagDefinition,behaviorTagChip:behaviorTagChip,isSpeedMetricLabel:isSpeedMetricLabel,qualityIndicatorMeta:qualityIndicatorMeta,targetingIndicatorMeta:targetingIndicatorMeta,resolveIndicatorMeta:resolveIndicatorMeta,speedIndicatorMeta:speedIndicatorMeta,isCcChipClass:isCcChipClass,isCcFamilyChipClass:isCcFamilyChipClass,ccFamilyChipKeys:ccFamilyChipKeys,exactTagDefinitionKey:exactTagDefinitionKey,isStatModifierLabel:isStatModifierLabel,effectLabelPolarity:effectLabelPolarity,effectChipClassForPolarity:effectChipClassForPolarity,resolveLeadingChip:resolveLeadingChip,effectChipRemainder:effectChipRemainder,shortAscensionTierName:shortAscensionTierName,formatAscensionTierDisplay:formatAscensionTierDisplay,formatMergedTierSuffix:formatMergedTierSuffix,formatMergedIndicator:formatMergedIndicator,mergeLabelWithIndicator:mergeLabelWithIndicator,mergeEffectWithQuality:mergeEffectWithQuality,mergeEffectWithTargeting:mergeEffectWithTargeting,tryChipify:tryChipify,tokenToHtml:tokenToHtml,chipifyEffectName:chipifyEffectName,chipifyLeadingCcType:chipifyLeadingCcType,chipifyLeadingStat:chipifyLeadingStat,unwrapBackticks:unwrapBackticks,promoteStrongToDamageChips:promoteStrongToDamageChips,parseEffectLabelParts:parseEffectLabelParts,injectTierIntoChipHtml:injectTierIntoChipHtml,applyEffectPolarityToChipHtml:applyEffectPolarityToChipHtml,renderStandaloneEffectChip:renderStandaloneEffectChip,renderSummaryEffectChip:renderSummaryEffectChip,summaryCardPolarity:summaryCardPolarity,renderEmDashLine:renderEmDashLine,renderRichLine:renderRichLine,formatTag:formatTag,renderMergedEffectPill:renderMergedEffectPill,renderBuffProvidedEntry:renderBuffProvidedEntry,renderBuffTargetingChip:renderBuffTargetingChip,extractChipHtml:extractChipHtml,parseSkillCardTag:parseSkillCardTag,chipifySkillCardTag:chipifySkillCardTag,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const escapeHtml=utils.escapeHtml.bind(utils);const PRYDWEN_TIER_MODES=[{key:"afk_stages",label:"AFK Stages"},{key:"dream_realm",label:"Dream Realm"},{key:"dream_realm_endless",label:"Dream Realm (Endless)"},{key:"pvp",label:"PVP"},];const TIER_CSV_COLUMNS=[{header:"AFK Stages tier",key:"afk_stages"},{header:"Dream Realm tier",key:"dream_realm"},{header:"Dream Realm Endless tier",key:"dream_realm_endless"},{header:"PVP tier",key:"pvp"},];const TIER_CSV_HEADERS={};TIER_CSV_COLUMNS.forEach(function(tierCol){TIER_CSV_HEADERS[tierCol.header]=true;});const TIER_RANK_ORDER=["C","B","A","A+","S","S+"];const REFERENCE_TIER_WEIGHT=7;const REFERENCE_TIER_POINTS_PER_STEP=100;const TIER_FILTER_ORDER=["?","C","B","A","A+","S","S+"];function isUnrankedPrydwenTier(tier){const value=tier!=null?String(tier).trim():"";return!value||value==="?";}
+window.AFKJ.chips={QUALITY_CLASS:QUALITY_CLASS,SPEED_CLASS:SPEED_CLASS,SPEED_EMOJI:SPEED_EMOJI,QUALITY_EMOJI:QUALITY_EMOJI,QUALITY_TOOLTIPS:QUALITY_TOOLTIPS,SPEED_TOOLTIPS:SPEED_TOOLTIPS,SIGNATURE_FUEL_TOOLTIP:SIGNATURE_FUEL_TOOLTIP,MOVEMENT_DEFINITIONS:MOVEMENT_DEFINITIONS,MOVEMENT_KEYS:MOVEMENT_KEYS,TARGETING_PHRASES:TARGETING_PHRASES,STAT_KEYS:STAT_KEYS,HEAL_CHIP_KEYS:HEAL_CHIP_KEYS,healingChipDisplay:healingChipDisplay,tryMergeTrailingLabel:tryMergeTrailingLabel,renderInline:renderInline,conditionalTooltip:conditionalTooltip,chipTipAttrs:chipTipAttrs,normalizeToken:normalizeToken,normalizeSummaryText:normalizeSummaryText,splitSummarySegments:splitSummarySegments,isInsideHtmlTag:isInsideHtmlTag,isInsideChipSpan:isInsideChipSpan,isInsideSpanClass:isInsideSpanClass,isInsideSkillInlineStat:isInsideSkillInlineStat,isInsideSkillInlineTime:isInsideSkillInlineTime,isInsideSkillInlineNum:isInsideSkillInlineNum,isInsideStrong:isInsideStrong,boldSkillNumericTokens:boldSkillNumericTokens,replaceOutsideChips:replaceOutsideChips,enhancePlainTargetingInHtml:enhancePlainTargetingInHtml,targetingTokenMeta:targetingTokenMeta,renderStackedTargetingTipHtml:renderStackedTargetingTipHtml,renderStackedTargetingPill:renderStackedTargetingPill,chipifyTargetingSegment:chipifyTargetingSegment,chipDisplayLabel:chipDisplayLabel,chipSpan:chipSpan,behaviorTagTooltip:behaviorTagTooltip,behaviorTagDefinition:behaviorTagDefinition,behaviorTagChip:behaviorTagChip,isSpeedMetricLabel:isSpeedMetricLabel,qualityIndicatorMeta:qualityIndicatorMeta,targetingIndicatorMeta:targetingIndicatorMeta,resolveIndicatorMeta:resolveIndicatorMeta,speedIndicatorMeta:speedIndicatorMeta,isCcChipClass:isCcChipClass,isCcFamilyChipClass:isCcFamilyChipClass,ccFamilyChipKeys:ccFamilyChipKeys,exactTagDefinitionKey:exactTagDefinitionKey,isStatModifierLabel:isStatModifierLabel,effectLabelPolarity:effectLabelPolarity,effectChipClassForPolarity:effectChipClassForPolarity,resolveLeadingChip:resolveLeadingChip,effectChipRemainder:effectChipRemainder,shortAscensionTierName:shortAscensionTierName,formatAscensionTierDisplay:formatAscensionTierDisplay,formatMergedTierSuffix:formatMergedTierSuffix,formatMergedIndicator:formatMergedIndicator,mergeLabelWithIndicator:mergeLabelWithIndicator,mergeEffectWithQuality:mergeEffectWithQuality,mergeEffectWithTargeting:mergeEffectWithTargeting,tryChipify:tryChipify,tokenToHtml:tokenToHtml,chipifyEffectName:chipifyEffectName,chipifyLeadingCcType:chipifyLeadingCcType,chipifyLeadingStat:chipifyLeadingStat,unwrapBackticks:unwrapBackticks,promoteStrongToDamageChips:promoteStrongToDamageChips,parseEffectLabelParts:parseEffectLabelParts,injectTierIntoChipHtml:injectTierIntoChipHtml,applyEffectPolarityToChipHtml:applyEffectPolarityToChipHtml,renderStandaloneEffectChip:renderStandaloneEffectChip,renderSummaryEffectChip:renderSummaryEffectChip,summaryCardPolarity:summaryCardPolarity,renderEmDashLine:renderEmDashLine,renderRichLine:renderRichLine,formatTag:formatTag,renderMergedEffectPill:renderMergedEffectPill,renderBuffProvidedEntry:renderBuffProvidedEntry,renderBuffTargetingChip:renderBuffTargetingChip,extractChipHtml:extractChipHtml,parseSkillCardTag:parseSkillCardTag,chipifySkillCardTag:chipifySkillCardTag,parseSkillCardVariant:parseSkillCardVariant,parseSummaryVariant:parseSummaryVariant,groupSummaryItems:groupSummaryItems,groupParsedVariants:groupParsedVariants,renderGroupedVariantPill:renderGroupedVariantPill,buildVariantModifier:buildVariantModifier,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const escapeHtml=utils.escapeHtml.bind(utils);const PRYDWEN_TIER_MODES=[{key:"afk_stages",label:"AFK Stages"},{key:"dream_realm",label:"Dream Realm"},{key:"dream_realm_endless",label:"Dream Realm (Endless)"},{key:"pvp",label:"PVP"},];const TIER_CSV_COLUMNS=[{header:"AFK Stages tier",key:"afk_stages"},{header:"Dream Realm tier",key:"dream_realm"},{header:"Dream Realm Endless tier",key:"dream_realm_endless"},{header:"PVP tier",key:"pvp"},];const TIER_CSV_HEADERS={};TIER_CSV_COLUMNS.forEach(function(tierCol){TIER_CSV_HEADERS[tierCol.header]=true;});const TIER_RANK_ORDER=["C","B","A","A+","S","S+"];const REFERENCE_TIER_WEIGHT=7;const REFERENCE_TIER_POINTS_PER_STEP=100;const TIER_FILTER_ORDER=["?","C","B","A","A+","S","S+"];function isUnrankedPrydwenTier(tier){const value=tier!=null?String(tier).trim():"";return!value||value==="?";}
 function prydwenTierClass(tier){if(isUnrankedPrydwenTier(tier)){return"tier-unknown";}
 const normalized=String(tier).trim().replace(/\+/g,"-plus");return"tier-"+normalized.toLowerCase();}
 function prydwenTierDisplay(tier){return isUnrankedPrydwenTier(tier)?"?":String(tier).trim();}
@@ -385,8 +498,10 @@ const base=tag.replace(/\s*\([^)]*\)/g,"").trim();return base+targetingKey+tierK
 function skillCardTagLabel(tag){if(typeof tag==="string"){return tag;}
 return tag&&tag.label?tag.label:"";}
 function renderSkillCardTags(tags){if(!tags||!tags.length){return"";}
-const seen=new Set();let html="";tags.forEach(function(tag){const label=skillCardTagLabel(tag);const key=skillCardChipKey(label);if(!key||seen.has(key)){return;}
-seen.add(key);const polarity=typeof tag==="object"&&tag.polarity?tag.polarity:"";const chip=chips.chipifySkillCardTag(label,polarity);if(chip){html+=chip;}});return html;}
+const entries=[];tags.forEach(function(tag){const label=skillCardTagLabel(tag);if(!label){return;}
+const polarity=typeof tag==="object"&&tag.polarity?tag.polarity:"";entries.push({label:label,polarity:polarity});});const grouped=chips.groupParsedVariants(entries.map(function(entry){return entry;}),function(entry){return chips.parseSkillCardVariant(entry.label,entry.polarity);},"");let html="";grouped.forEach(function(item){if(item.type==="group"){const pill=chips.renderGroupedVariantPill(item.variants,{iconOnlyTargeting:true,});if(pill){html+=pill;}
+return;}
+const entry=item.item;const chip=chips.chipifySkillCardTag(entry.label,entry.polarity);if(chip){html+=chip;}});return html;}
 window.AFKJ.skills={enrichSkillInline:enrichSkillInline,skillDetailPhases:skillDetailPhases,formatSkillDetail:formatSkillDetail,skillCardData:skillCardData,renderSkillCards:renderSkillCards,skillCardChipKey:skillCardChipKey,skillCardTagLabel:skillCardTagLabel,renderSkillCardTags:renderSkillCardTags,};window.AFKJ.chips.renderSkillCardTags=renderSkillCardTags;})();window.AFKJ=window.AFKJ||{};(function(){const config=window.AFKJ.config;const utils=window.AFKJ.utils;const escapeHtml=utils.escapeHtml.bind(utils);const FILTERS_COLLAPSE_MQ=window.matchMedia("(max-width: 600px)");function updateListStickyOffset(){const dom=window.AFKJ.state.dom;if(!dom.siteHeader){return;}
 const offset=dom.siteHeader.offsetHeight;document.documentElement.style.setProperty("--list-sticky-top",offset+"px");if(dom.listView){dom.listView.style.setProperty("--list-sticky-offset",offset+"px");}}
 function updateHeaderNav(inDetail){const state=window.AFKJ.state;const dom=state.dom;if(dom.filtersPanel){dom.filtersPanel.classList.toggle("hidden",inDetail||state.viewMode==="list");}
@@ -1202,7 +1317,8 @@ const cardTitle=line.slice(5).trim();if(/ Requires$/i.test(cardTitle)){current=n
 current={title:cardTitle,items:[]};return;}
 if(line.startsWith("- ")&&current){current.items.push(line.slice(2));}});if(current){cards.push(current);}
 if(!cards.length){return"";}
-let html='<div class="detail-section summary-section">';html+="<h2>Summary</h2>";html+='<div class="summary-grid">';cards.forEach(function(card){html+='<div class="summary-card">';html+="<h4>"+chips.renderInline(card.title)+"</h4>";if(card.items.length){html+="<ul>";const polarity=chips.summaryCardPolarity(card.title);card.items.forEach(function(item){html+="<li>"+chips.renderRichLine(item,polarity)+"</li>";});html+="</ul>";}
+let html='<div class="detail-section summary-section">';html+="<h2>Summary</h2>";html+='<div class="summary-grid">';cards.forEach(function(card){html+='<div class="summary-card">';html+="<h4>"+chips.renderInline(card.title)+"</h4>";if(card.items.length){html+="<ul>";const polarity=chips.summaryCardPolarity(card.title);chips.groupSummaryItems(card.items,polarity).forEach(function(item){if(item.type==="group"){html+="<li>"+chips.renderGroupedVariantPill(item.variants)+"</li>";return;}
+html+="<li>"+chips.renderRichLine(item.item,polarity)+"</li>";});html+="</ul>";}
 html+="</div>";});html+="</div>";html+="</div>";return html;}
 function splitBehavior(md){const marker="#### Skill overview";const idx=md.indexOf(marker);if(idx===-1){return{behavior:md,skillOverview:null};}
 return{behavior:md.slice(0,idx).trim(),skillOverview:md.slice(idx).trim(),};}

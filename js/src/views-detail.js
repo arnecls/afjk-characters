@@ -1124,8 +1124,13 @@ window.AFKJ = window.AFKJ || {};
       if (card.items.length) {
         html += "<ul>";
         const polarity = chips.summaryCardPolarity(card.title);
-        card.items.forEach(function (item) {
-          html += "<li>" + chips.renderRichLine(item, polarity) + "</li>";
+        chips.groupSummaryItems(card.items, polarity).forEach(function (item) {
+          if (item.type === "group") {
+            html +=
+              "<li>" + chips.renderGroupedVariantPill(item.variants) + "</li>";
+            return;
+          }
+          html += "<li>" + chips.renderRichLine(item.item, polarity) + "</li>";
         });
         html += "</ul>";
       }

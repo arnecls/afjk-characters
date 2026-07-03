@@ -2854,6 +2854,7 @@ html.welcome-warning-pending .welcome-warning,
 .chip.chip-merged {
   display: inline-flex;
   align-items: stretch;
+  gap: 0;
   padding: 0;
   background: transparent;
   overflow: hidden;
@@ -2902,6 +2903,20 @@ html.welcome-warning-pending .welcome-warning,
   width: fit-content;
 }
 
+.chip-merged-tip-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chip-stacked-tip .chip-tier-badge {
+  line-height: 1;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.15em;
+}
+
 .chip-merged-left,
 .chip-merged-right {
   display: inline-flex;
@@ -2911,13 +2926,25 @@ html.welcome-warning-pending .welcome-warning,
   white-space: nowrap;
 }
 
+.grouped-variant-pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  vertical-align: baseline;
+}
+
 .chip-merged-left {
   border-radius: 999px 0 0 999px;
 }
 
 .chip-merged-right {
-  border-radius: 0 999px 999px 0;
+  border-radius: 0;
   border-left: 1px solid rgba(30, 50, 90, 0.18);
+}
+
+.chip-merged-right:last-child {
+  border-radius: 0 999px 999px 0;
 }
 
 .chip-merged-label {
