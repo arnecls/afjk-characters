@@ -42,8 +42,8 @@
   },
   "display_limits": {
     "max_synergies": 6,
-    "max_beneficiaries_display": 6,
-    "fallback_beneficiaries_display": 3,
+    "max_beneficiaries_display": 4,
+    "fallback_beneficiaries_display": 4,
     "obvious_provider_threshold": 20
   },
   "behavior_thresholds": {

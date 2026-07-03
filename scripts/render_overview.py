@@ -233,7 +233,7 @@ def build_overview(
     data: dict, processed: dict, synergies: dict, config: dict
 ) -> tuple[str, dict[str, rs.Hero]]:
     limits = config.get("display_limits", {})
-    max_syn = limits.get("max_synergies", 5)
+    max_syn = limits.get("max_synergies", 10)
     max_ben = limits.get("max_beneficiaries_display", 10)
     obvious_threshold = limits.get("obvious_provider_threshold", 20)
     rep_scoring = config.get("replacement_scoring", {})

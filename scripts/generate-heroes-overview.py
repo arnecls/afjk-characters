@@ -78,7 +78,7 @@ MAG_WEIGHT = {"high": 3.0, "average": 2.0, "low": 1.0}
 # beneficiaries (multiplier breaks ties at equal targeting/magnitude).
 HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
 
-MAX_SYNERGIES = 5
+MAX_SYNERGIES = 10
 MAX_BENEFICIARIES_DISPLAY = 10
 FALLBACK_BENEFICIARIES_DISPLAY = 3
 BENEFIT_MAX_STARS = 5
