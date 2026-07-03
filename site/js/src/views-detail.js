@@ -59,16 +59,11 @@ window.AFKJ = window.AFKJ || {};
   function renderHeroCompactCard(slug, name, bodyHtml, footerHtml, headerHtml) {
     const hero = window.AFKJ.state.heroBySlug[slug];
     const factionKey = hero ? utils.factionDataKey(hero.faction) : "";
-    let portraitHtml = "";
-    if (hero) {
-      portraitHtml = gridView.renderHeroPortrait(hero, "compact-portrait");
-    } else {
-      const portrait = "assets/portraits/" + name + ".png";
-      portraitHtml =
-        '<img class="hero-compact-portrait-fallback" src="' +
-        utils.assetUrl(portrait) +
-        '" alt="" loading="lazy" onerror="this.style.opacity=0.3">';
-    }
+    const portraitHero = hero || { name: name, faction: "" };
+    const portraitHtml = gridView.renderHeroPortrait(
+      portraitHero,
+      "compact-portrait"
+    );
     return (
       '<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="' +
       escapeHtml(slug) +
@@ -95,7 +90,9 @@ window.AFKJ = window.AFKJ || {};
 
   function renderHeroRowCard(slug, name, bodyHtml) {
     const hero = window.AFKJ.state.heroBySlug[slug];
-    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
+    const combatSrc = utils.assetUrl(
+      utils.combatIconPath(hero || { name: name })
+    );
     return (
       '<article class="hero-row-card" data-slug="' +
       escapeHtml(slug) +
@@ -103,7 +100,7 @@ window.AFKJ = window.AFKJ || {};
       escapeHtml(name) +
       '">' +
       '<img src="' +
-      utils.assetUrl(portrait) +
+      escapeHtml(combatSrc) +
       '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
       '<div class="hero-row-body">' +
       '<div class="hero-row-name">' +
@@ -658,11 +655,20 @@ window.AFKJ = window.AFKJ || {};
 
   function renderInlineHeroPortrait(slug, name) {
     const hero = window.AFKJ.state.heroBySlug[slug];
-    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
+    const factionKey = hero ? utils.factionDataKey(hero.faction) : "";
+    const combatSrc = utils.assetUrl(
+      utils.combatIconPath(hero || { name: name })
+    );
     return (
-      '<img class="inline-hero-portrait" src="' +
-      utils.assetUrl(portrait) +
-      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">'
+      '<span class="inline-hero-hex" data-faction="' +
+      escapeHtml(factionKey) +
+      '" aria-hidden="true">' +
+      '<span class="inline-hero-hex-wrap">' +
+      '<span class="inline-hero-hex-inner">' +
+      '<img class="inline-hero-hex-icon" src="' +
+      escapeHtml(combatSrc) +
+      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
+      "</span></span></span>"
     );
   }
 

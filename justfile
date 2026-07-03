@@ -60,7 +60,7 @@ render-heroes:
 render-overview:
     python3 scripts/render_overview.py
 
-# Build site/data from overview views and cache missing portraits, and bundle JS assets.
+# Build site/data from overview views, cache missing faction/class icons, bundle JS.
 render-site: render-overview
     python3 scripts/render_site.py
     python3 scripts/download_hero_images.py

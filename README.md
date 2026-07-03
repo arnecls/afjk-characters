@@ -49,7 +49,8 @@ Browse the roster in a browser at **[https://arnecls.github.io/afjk-characters/]
 
 Each hero has a shareable URL, e.g. `/hero/aliceth`. Synergy partners link to their own pages.
 
-Hero portraits and faction/class icons in the web viewer are from [Yaphalla](https://www.yaphalla.com/heroes).
+Hero faction/class icons in the web viewer are from [Yaphalla](https://www.yaphalla.com/heroes).
+Combat icons are from the AFK Journey Fandom wiki.
 
 Rebuild site data locally:
 
@@ -57,7 +58,7 @@ Rebuild site data locally:
 just render-site
 ```
 
-This refreshes `heroes-overview.md` / `heroes-overview.csv`, copies the CSV into `site/data/`, writes `site/data/heroes.json`, and downloads any missing portrait images from Yaphalla into `site/assets/`. Running `just views` also refreshes the site data.
+This refreshes `heroes-overview.md` / `heroes-overview.csv`, copies the CSV into `site/data/`, writes `site/data/heroes.json`, and downloads any missing faction/class icons from Yaphalla into `site/assets/icons/`. Running `just views` also refreshes the site data.
 
 Skill-card chip tags on the character sheet come from the same analysis pass as `heroes_data_processed.json` (`skill_card_tags` per skill). After changing skill effects in `data/skill_effects/<hero>.json`, run `just views` (not `just analyze` alone) so both processed JSON and `site/data/heroes.json` update together.
 

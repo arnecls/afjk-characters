@@ -26,7 +26,7 @@ pipeline output, use [web-ui](../web-ui/SKILL.md).
 | **B — Skill effects** | AI-extracted effects sidecar | `data/skill_effects/<short_name>.json` |
 | **C — Curated metadata** | Identity skill, tags, summaries, play blurb | 4 AI JSON files under `data/` |
 | **D — Overrides** | Fix auto-detect edge cases only when wrong | `placement_constraint_overrides.json`, `movement_overrides.json`, `melee_overrides.json` |
-| **E — Validate + verify** | Schema, semantics, portraits, site | `just validate`, `site/assets/portraits/`, `site/assets/combat-icons/` |
+| **E — Validate + verify** | Schema, semantics, combat icon, site | `just validate`, `site/assets/combat-icons/` |
 
 Commands (agent runs these):
 
@@ -56,7 +56,7 @@ Task progress:
 - [ ] C4. Add hero_play_overviews.json entry
 - [ ] D1. Check placement / movement / melee; add overrides only if wrong
 - [ ] E1. Run just validate; fix hero-specific issues
-- [ ] E2. Confirm character portraits (Yaphalla hex + wiki combat icon) and site/data/heroes.json for this hero
+- [ ] E2. Confirm combat icon and site/data/heroes.json for this hero
 - [ ] E3. Report files touched and open items
 ```
 
@@ -303,7 +303,6 @@ Confirm for this hero:
 | Skill text | `Heroes.md` |
 | Synergies + behavior | `heroes-overview.md` |
 | Site bundle | `site/data/heroes.json` |
-| Portrait (Yaphalla hex) | `site/assets/portraits/<DisplayName>.png` (fetched by `just render-site`) |
 | Combat icon (Fandom wiki) | `site/assets/combat-icons/<DisplayName>.png` (manual; see [CONTEXT.md](../../CONTEXT.md) — Character portrait) |
 
 If skill card chips look wrong despite correct processed JSON, see
@@ -473,7 +472,7 @@ processed data, try both names if one fails.
 4. Curated: `signature_skills.json`, `hero_behavior_tags.json`,
    `heroes_data_skill_summary.json`
 5. `just views` → processed, synergies, overview, site
-6. Yaphalla portrait in `site/assets/portraits/Kazim.png`; wiki combat icon in `site/assets/combat-icons/Kazim.png`
+6. Wiki combat icon in `site/assets/combat-icons/Kazim.png`
 7. `hero_play_overviews.json` added in follow-up commit
 
 Use this as a file-touch checklist, not a guarantee every new hero needs the

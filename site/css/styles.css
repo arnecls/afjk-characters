@@ -560,13 +560,86 @@ a:hover {
   text-align: left;
 }
 
-.heroes-table .col-name-portrait {
-  flex: 0 0 36px;
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #e4e9f0, #d8dfe8);
+.list-hero-hex {
+  --list-hex-size: 36px;
+  --list-hex-border-width: 2px;
+  --list-hex-clip: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  --list-hex-border: var(--border);
+  flex: 0 0 var(--list-hex-size);
+  width: var(--list-hex-size);
+  height: calc(var(--list-hex-size) * 1.1547);
+  position: relative;
+  display: inline-block;
+}
+
+.list-hero-hex[data-faction="lightbearer"] {
+  --list-hex-border: #4a6b8a;
+}
+
+.list-hero-hex[data-faction="wilder"] {
+  --list-hex-border: #4a8860;
+}
+
+.list-hero-hex[data-faction="mauler"] {
+  --list-hex-border: #a06637;
+}
+
+.list-hero-hex[data-faction="graveborn"] {
+  --list-hex-border: #2f4238;
+}
+
+.list-hero-hex[data-faction="celestial"] {
+  --list-hex-border: #d99a3d;
+}
+
+.list-hero-hex[data-faction="hypogean"] {
+  --list-hex-border: #4b4282;
+}
+
+.list-hero-hex[data-faction="dimensional"] {
+  --list-hex-border: #5090e8;
+}
+
+.list-hero-hex-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.list-hero-hex-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--list-hex-border);
+  clip-path: var(--list-hex-clip);
+  z-index: 0;
+}
+
+.list-portrait.hero-card-portrait {
+  position: absolute;
+  inset: var(--list-hex-border-width);
+  width: auto;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: unset;
+  border-radius: 0;
+  clip-path: var(--list-hex-clip);
+  z-index: 1;
+}
+
+.list-portrait.hero-card-portrait .hero-card-portrait-frame,
+.list-portrait.hero-card-portrait .hero-card-portrait-frame::before {
+  clip-path: inherit;
+}
+
+.list-portrait.hero-card-portrait .hero-card-combat-icon {
+  transform: translate(-50%, -50%) scale(1.32);
 }
 
 .heroes-table th.sortable {
@@ -1859,16 +1932,94 @@ a:hover {
 .synergy-common-buffer {
   display: inline-flex;
   align-items: center;
-  gap: 0.2em;
+  gap: 0.35em;
   vertical-align: baseline;
 }
 
-.synergy-common-buffer .inline-hero-portrait {
+.inline-hero-hex {
+  --inline-hex-border-width: 1.5px;
+  --inline-hex-clip: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  --inline-hex-border: var(--border);
+  display: inline-block;
+  position: relative;
+  width: calc(1em / 1.1547);
   height: 1em;
-  width: auto;
-  border-radius: 2px;
-  object-fit: cover;
   flex-shrink: 0;
+  vertical-align: -0.08em;
+}
+
+.inline-hero-hex[data-faction="lightbearer"] {
+  --inline-hex-border: #4a6b8a;
+}
+
+.inline-hero-hex[data-faction="wilder"] {
+  --inline-hex-border: #4a8860;
+}
+
+.inline-hero-hex[data-faction="mauler"] {
+  --inline-hex-border: #a06637;
+}
+
+.inline-hero-hex[data-faction="graveborn"] {
+  --inline-hex-border: #2f4238;
+}
+
+.inline-hero-hex[data-faction="celestial"] {
+  --inline-hex-border: #d99a3d;
+}
+
+.inline-hero-hex[data-faction="hypogean"] {
+  --inline-hex-border: #4b4282;
+}
+
+.inline-hero-hex[data-faction="dimensional"] {
+  --inline-hex-border: #5090e8;
+}
+
+.inline-hero-hex-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.inline-hero-hex-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--inline-hex-border);
+  clip-path: var(--inline-hex-clip);
+  z-index: 0;
+}
+
+.inline-hero-hex-inner {
+  position: absolute;
+  inset: var(--inline-hex-border-width);
+  clip-path: var(--inline-hex-clip);
+  background: color-mix(
+    in srgb,
+    var(--inline-hex-border) 14%,
+    var(--surface-panel)
+  );
+  overflow: hidden;
+  z-index: 1;
+}
+
+.inline-hero-hex-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: translate(-50%, -50%) scale(1.32);
 }
 
 .synergy-requires {
