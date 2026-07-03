@@ -7,9 +7,7 @@ window.AFKJ = window.AFKJ || {};
 
   function renderHeroPortrait(hero, extraClass) {
     const factionKey = utils.factionDataKey(hero.faction);
-    const characterPortrait = utils.characterPortraitPath(hero);
-    const portraitSrc = utils.assetUrl(characterPortrait || hero.portrait);
-    const portraitFallback = utils.assetUrl(hero.portrait);
+    const portraitSrc = utils.assetUrl(utils.characterPortraitPath(hero));
     return (
       '<div class="hero-card-portrait hero-card-portrait--' +
       escapeHtml(factionKey) +
@@ -18,10 +16,20 @@ window.AFKJ = window.AFKJ || {};
       '<div class="hero-card-portrait-frame">' +
       '<img class="hero-card-character-portrait" src="' +
       escapeHtml(portraitSrc) +
-      '" alt="" loading="lazy" onerror="this.onerror=null;this.src=' +
-      JSON.stringify(portraitFallback) +
-      '">' +
+      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
       "</div></div>"
+    );
+  }
+
+  function renderListHeroPortrait(hero) {
+    const factionKey = utils.factionDataKey(hero.faction);
+    return (
+      '<span class="list-hero-hex" data-faction="' +
+      escapeHtml(factionKey) +
+      '" aria-hidden="true">' +
+      '<span class="list-hero-hex-wrap">' +
+      renderHeroPortrait(hero, "list-portrait") +
+      "</span></span>"
     );
   }
 
@@ -367,6 +375,7 @@ window.AFKJ = window.AFKJ || {};
   // Export module API to window.AFKJ.views.grid
   window.AFKJ.views.grid = {
     renderHeroPortrait: renderHeroPortrait,
+    renderListHeroPortrait: renderListHeroPortrait,
     renderGridCardFactionIcon: renderGridCardFactionIcon,
     renderGridCardClassIcon: renderGridCardClassIcon,
     renderGridCardFactionStack: renderGridCardFactionStack,
