@@ -495,6 +495,7 @@ window.AFKJ = window.AFKJ || {};
       if (item.type === "group") {
         const pill = chips.renderGroupedVariantPill(item.variants, {
           iconOnlyTargeting: true,
+          skillCardDisplay: true,
         });
         if (pill) {
           html += pill;
