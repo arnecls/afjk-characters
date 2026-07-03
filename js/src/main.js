@@ -43,6 +43,78 @@ window.AFKJ = window.AFKJ || {};
     });
   }
 
+  function filterContextClass(filterType, value) {
+    if (filterType === "faction") {
+      return "filter-btn-faction-" + utils.factionDataKey(value);
+    }
+    if (filterType === "class") {
+      return "filter-btn-class-" + value.toLowerCase().replace(/\s+/g, "");
+    }
+    if (filterType === "role") {
+      return "filter-btn-role-" + value.replace(/_/g, "-");
+    }
+    return "";
+  }
+
+  function renderFilterFactionIcon(faction) {
+    const icon = utils.iconPath("factions", faction);
+    if (!icon) {
+      return "";
+    }
+    return (
+      '<span class="filter-btn-icon filter-btn-icon-img" aria-hidden="true">' +
+      '<img src="' +
+      utils.assetUrl(icon) +
+      '" alt="">' +
+      "</span>"
+    );
+  }
+
+  function renderFilterClassIcon(className) {
+    const icon = utils.iconPath("class", className);
+    if (!icon) {
+      return "";
+    }
+    return (
+      '<span class="filter-btn-icon filter-btn-icon-img" aria-hidden="true">' +
+      '<img src="' +
+      utils.assetUrl(icon) +
+      '" alt="">' +
+      "</span>"
+    );
+  }
+
+  function renderFilterBtn(filterType, value, label) {
+    let iconHtml = "";
+    if (filterType === "faction") {
+      iconHtml = renderFilterFactionIcon(value);
+    } else if (filterType === "class") {
+      iconHtml = renderFilterClassIcon(value);
+    } else if (filterType === "role") {
+      iconHtml = window.AFKJ.views.detail.renderRoleCategoryIcon(value);
+      if (iconHtml) {
+        iconHtml = iconHtml.replace(
+          'class="role-category-icon"',
+          'class="filter-btn-icon filter-btn-icon-role role-category-icon"'
+        );
+      }
+    }
+    const ctxClass = filterContextClass(filterType, value);
+    return (
+      '<button type="button" class="filter-btn ' +
+      ctxClass +
+      '" data-filter="' +
+      escapeHtml(filterType) +
+      '" data-value="' +
+      escapeHtml(value) +
+      '">' +
+      iconHtml +
+      '<span class="filter-btn-label">' +
+      escapeHtml(label) +
+      "</span></button>"
+    );
+  }
+
   function buildFilters() {
     const dom = state.dom;
     const factions = [];
@@ -70,12 +142,7 @@ window.AFKJ = window.AFKJ || {};
       '<div class="filter-row filter-row-faction">' +
       '<span class="filter-label">Faction</span>';
     factions.forEach(function (f) {
-      html +=
-        '<button type="button" class="filter-btn" data-filter="faction" data-value="' +
-        escapeHtml(f) +
-        '">' +
-        escapeHtml(f) +
-        "</button>";
+      html += renderFilterBtn("faction", f, f);
     });
     html += "</div>";
     html += '<div class="filter-row filter-row-secondary">';
@@ -83,12 +150,7 @@ window.AFKJ = window.AFKJ || {};
     html += '<div class="filter-group filter-group-class">';
     html += '<span class="filter-label">Class</span>';
     classes.forEach(function (c) {
-      html +=
-        '<button type="button" class="filter-btn" data-filter="class" data-value="' +
-        escapeHtml(c) +
-        '">' +
-        escapeHtml(c) +
-        "</button>";
+      html += renderFilterBtn("class", c, c);
     });
     html += "</div>";
     html += '<div class="filter-group filter-group-role">';
@@ -98,12 +160,7 @@ window.AFKJ = window.AFKJ || {};
         return;
       }
       const meta = config.ROLE_CATEGORY_META[roleKey];
-      html +=
-        '<button type="button" class="filter-btn" data-filter="role" data-value="' +
-        escapeHtml(roleKey) +
-        '">' +
-        escapeHtml(meta.label) +
-        "</button>";
+      html += renderFilterBtn("role", roleKey, meta.label);
     });
     html += "</div></div></div>";
     dom.filtersEl.innerHTML = html;

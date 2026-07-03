@@ -291,7 +291,6 @@ a:hover {
 }
 
 .filters-toggle:hover,
-.filter-btn:hover,
 .col-filter-clear:hover,
 .mix-focus-btn:hover,
 .mix-mode-btn:hover {
@@ -326,17 +325,238 @@ a:hover {
 }
 
 .filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--filter-border, var(--border));
   border-radius: 999px;
-  background: var(--surface);
-  color: var(--text-muted);
+  background: var(--filter-bg, var(--surface));
+  color: var(--filter-fg, var(--text-muted));
   font-size: 0.85rem;
+  line-height: 1.2;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
-.filter-btn.active,
+.filter-btn:hover {
+  border-color: var(--filter-border-active, var(--accent));
+  color: var(--filter-fg-active, var(--accent));
+  background: var(--filter-bg-hover, var(--filter-bg, var(--surface)));
+}
+
+.filter-btn.active {
+  background: var(--filter-bg-active, var(--accent));
+  border-color: var(--filter-border-active, var(--accent));
+  color: var(--filter-fg-active, #fff);
+}
+
+.filter-btn-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.filter-btn-icon-img img {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+.filter-btn-icon-role .role-category-icon-svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.filter-btn-label {
+  min-width: 0;
+}
+
+.filter-btn-faction-celestial {
+  --filter-bg: #fffef9;
+  --filter-border: #f5edd8;
+  --filter-fg: #8a6200;
+  --filter-bg-hover: #fffaf0;
+  --filter-bg-active: #fff0c8;
+  --filter-border-active: #e8d090;
+  --filter-fg-active: #6b4a00;
+}
+
+.filter-btn-faction-hypogean {
+  --filter-bg: #fefcff;
+  --filter-border: #eee8f8;
+  --filter-fg: #4b4282;
+  --filter-bg-hover: #faf6fe;
+  --filter-bg-active: #ece4f8;
+  --filter-border-active: #c8b8e8;
+  --filter-fg-active: #3a3270;
+}
+
+.filter-btn-faction-lightbearer {
+  --filter-bg: #fafcff;
+  --filter-border: #e8f0f8;
+  --filter-fg: #2e4560;
+  --filter-bg-hover: #f4f8fc;
+  --filter-bg-active: #dce8f4;
+  --filter-border-active: #a8c0d8;
+  --filter-fg-active: #1e3550;
+}
+
+.filter-btn-faction-mauler {
+  --filter-bg: #fffef9;
+  --filter-border: #f5ebe0;
+  --filter-fg: #6b4420;
+  --filter-bg-hover: #fff8f0;
+  --filter-bg-active: #f0dcc8;
+  --filter-border-active: #d8b898;
+  --filter-fg-active: #5a3818;
+}
+
+.filter-btn-faction-graveborn {
+  --filter-bg: #fafeff;
+  --filter-border: #e8f0ec;
+  --filter-fg: #1a2620;
+  --filter-bg-hover: #f4f8f6;
+  --filter-bg-active: #d4e0d8;
+  --filter-border-active: #98b0a4;
+  --filter-fg-active: #101a16;
+}
+
+.filter-btn-faction-wilder {
+  --filter-bg: #fafffb;
+  --filter-border: #e8f2ea;
+  --filter-fg: #3d6044;
+  --filter-bg-hover: #f4faf6;
+  --filter-bg-active: #dceade;
+  --filter-border-active: #a0c8a8;
+  --filter-fg-active: #2d5034;
+}
+
+.filter-btn-faction-dimensional {
+  --filter-bg: #fafcff;
+  --filter-border: #e8eef8;
+  --filter-fg: #181838;
+  --filter-bg-hover: #f4f8fe;
+  --filter-bg-active: #dce8fc;
+  --filter-border-active: #a0b8e8;
+  --filter-fg-active: #101028;
+}
+
+.filter-btn-class-warrior {
+  --filter-bg: color-mix(in srgb, var(--class-shape-warrior) 8%, white);
+  --filter-border: color-mix(in srgb, var(--class-color-warrior) 10%, white);
+  --filter-fg: color-mix(in srgb, var(--class-color-warrior) 78%, black);
+  --filter-bg-hover: color-mix(in srgb, var(--class-shape-warrior) 14%, white);
+  --filter-bg-active: var(--class-shape-warrior);
+  --filter-border-active: color-mix(in srgb, var(--class-color-warrior) 55%, white);
+  --filter-fg-active: color-mix(in srgb, var(--class-color-warrior) 88%, black);
+}
+
+.filter-btn-class-tank {
+  --filter-bg: color-mix(in srgb, var(--class-shape-tank) 8%, white);
+  --filter-border: color-mix(in srgb, var(--class-color-tank) 10%, white);
+  --filter-fg: color-mix(in srgb, var(--class-color-tank) 78%, black);
+  --filter-bg-hover: color-mix(in srgb, var(--class-shape-tank) 14%, white);
+  --filter-bg-active: var(--class-shape-tank);
+  --filter-border-active: color-mix(in srgb, var(--class-color-tank) 55%, white);
+  --filter-fg-active: color-mix(in srgb, var(--class-color-tank) 88%, black);
+}
+
+.filter-btn-class-rogue {
+  --filter-bg: color-mix(in srgb, var(--class-shape-rogue) 8%, white);
+  --filter-border: color-mix(in srgb, var(--class-color-rogue) 10%, white);
+  --filter-fg: color-mix(in srgb, var(--class-color-rogue) 78%, black);
+  --filter-bg-hover: color-mix(in srgb, var(--class-shape-rogue) 14%, white);
+  --filter-bg-active: var(--class-shape-rogue);
+  --filter-border-active: color-mix(in srgb, var(--class-color-rogue) 55%, white);
+  --filter-fg-active: color-mix(in srgb, var(--class-color-rogue) 88%, black);
+}
+
+.filter-btn-class-mage {
+  --filter-bg: color-mix(in srgb, var(--class-shape-mage) 8%, white);
+  --filter-border: color-mix(in srgb, var(--class-color-mage) 10%, white);
+  --filter-fg: color-mix(in srgb, var(--class-color-mage) 78%, black);
+  --filter-bg-hover: color-mix(in srgb, var(--class-shape-mage) 14%, white);
+  --filter-bg-active: var(--class-shape-mage);
+  --filter-border-active: color-mix(in srgb, var(--class-color-mage) 55%, white);
+  --filter-fg-active: color-mix(in srgb, var(--class-color-mage) 88%, black);
+}
+
+.filter-btn-class-marksman {
+  --filter-bg: #fafcff;
+  --filter-border: #e0e8f5;
+  --filter-fg: #3a6090;
+  --filter-bg-hover: #f4f8fe;
+  --filter-bg-active: #dce8f8;
+  --filter-border-active: #a8c0e0;
+  --filter-fg-active: #284878;
+}
+
+.filter-btn-class-support {
+  --filter-bg: #fafffc;
+  --filter-border: #e8f2ec;
+  --filter-fg: #2a6040;
+  --filter-bg-hover: #f4faf6;
+  --filter-bg-active: #d9e9de;
+  --filter-border-active: #98c8a8;
+  --filter-fg-active: #1e5030;
+}
+
+.filter-btn-role-damage-dealer {
+  --role-icon-circle: var(--class-color-warrior);
+  --role-icon-shape: var(--class-shape-warrior);
+  --role-icon-border: var(--class-border-warrior);
+  --filter-bg: #fffafb;
+  --filter-border: #f5e4e8;
+  --filter-fg: #b82832;
+  --filter-bg-hover: #fff0f2;
+  --filter-bg-active: #f3d6da;
+  --filter-border-active: #d89098;
+  --filter-fg-active: #981820;
+}
+
+.filter-btn-role-specialist {
+  --role-icon-circle: var(--class-color-mage);
+  --role-icon-shape: var(--class-shape-mage);
+  --role-icon-border: var(--class-border-mage);
+  --filter-bg: #fefcff;
+  --filter-border: #eee6f8;
+  --filter-fg: #8a40b0;
+  --filter-bg-hover: #f8f0fc;
+  --filter-bg-active: #e9d8f4;
+  --filter-border-active: #c0a0d8;
+  --filter-fg-active: #703090;
+}
+
+.filter-btn-role-support {
+  --role-icon-circle: var(--class-color-rogue);
+  --role-icon-shape: var(--class-shape-rogue);
+  --role-icon-border: var(--class-border-rogue);
+  --filter-bg: #fafffc;
+  --filter-border: #e8f2ec;
+  --filter-fg: #2a8048;
+  --filter-bg-hover: #f4faf6;
+  --filter-bg-active: #d9e9de;
+  --filter-border-active: #98c8a8;
+  --filter-fg-active: #1e6838;
+}
+
+.filter-btn-role-tank {
+  --role-icon-circle: var(--class-color-tank);
+  --role-icon-shape: var(--class-shape-tank);
+  --role-icon-border: var(--class-border-tank);
+  --filter-bg: #fffef9;
+  --filter-border: #f0ead8;
+  --filter-fg: #a07000;
+  --filter-bg-hover: #fffaf4;
+  --filter-bg-active: #e6d8a8;
+  --filter-border-active: #d0b878;
+  --filter-fg-active: #805800;
+}
+
 .mix-focus-btn.active,
 .mix-mode-btn.active {
   background: var(--accent);
