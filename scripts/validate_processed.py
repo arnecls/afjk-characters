@@ -58,6 +58,7 @@ _CC_KEYWORDS: dict[str, str] = {
     "interrupt": r"\binterrupt\b",
     "taunt": r"\btaunt\b",
     "blind": r"\bblind(?:ing|s|ed)?\b",
+    "disarm": r"\bdisarm(?:ing|ed|s)?\b",
     "bind": r"\b(?:bind(?:ing|s)?|immobiliz|entangl|imprison)\b",
     "freeze": r"\bfreez(?:e|es|ed|ing) (?!time itself)(?!and defeats)\b",
 }
@@ -79,6 +80,7 @@ _CC_LABEL_MAP: dict[str, str] = {
     "interrupt": "Interrupt",
     "taunt": "Taunt",
     "blind": "Blind",
+    "disarm": "Disarm",
     "freeze": "Bind",
 }
 

@@ -87,6 +87,23 @@
           "effects": [
             {
               "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "duration": 8.0,
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 340.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
@@ -94,6 +111,17 @@
               "target_count": 1,
               "type": "crowd_control",
               "cc-type": "interrupt"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "disarm",
+              "duration": 4.0
             },
             {
               "tier": "base",

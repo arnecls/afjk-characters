@@ -124,6 +124,7 @@ just validate
 - **Targeting** from same sentence/clause as the effect.
 - **True damage hierarchy:** keep HP loss / max-HP subtypes; drop generic True when subtype applies.
 - **Freeze/frozen** → Bind CC type.
+- **Disarm/disarming** → Disarm CC type.
 - **Polarity:** buff vs debuff via effect `type`, not label suffix.
 - **Fully ascended values:** strongest parseable number per effect across tiers; tier on each effect.
 - **Conditional:** encode in `conditions[]`; use `conditional (frequent|rare)` semantics from AGENTS.md for magnitude (downstream).

@@ -7069,7 +7069,7 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 
 **Best overall replacement**
 
-- Perseus (59% `Buffs on allies` `Damage`)
+- Perseus (55% `Buffs on allies` `Damage`)
 
 **Buffs on allies**
 
@@ -7091,9 +7091,9 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 
 **Crowd Control**
 
-- Scarlita (85% `Stun` `Knock up` `Knock down`)
-- Callan (82% `Stun` `Knock down`)
-- Antandra (82% `Stun` `Knock down`)
+- Scarlita (63% `Stun` `Knock up` `Knock down`)
+- Callan (61% `Stun` `Knock down`)
+- Antandra (61% `Stun` `Knock down`)
 
 ### Summary for Lucca
 
@@ -7110,6 +7110,7 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 
 - Immune — Self — On skill
 - Steadfast (Mythic+) — Self — Permanent
+- Disarm — Single target — `average`
 - Interrupt — Single target — `low`
 - Knock down — Area — `low`
 - Knock up — Area — `low`

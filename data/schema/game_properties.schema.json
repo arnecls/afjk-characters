@@ -75,7 +75,8 @@
         "interrupt",
         "taunt",
         "blind",
-        "bind"
+        "bind",
+        "disarm"
       ],
       "description": "Crowd-control category."
     },

@@ -453,6 +453,26 @@ class RoundTripTests(unittest.TestCase):
         self.assertEqual(phys.targeting, "Area")
         self.assertEqual(phys.area_count, 2)
 
+    def test_lucca_skill1_disarm_and_shield(self):
+        hero, _data = self._hero_by_title_prefix("Lucca")
+        skill1 = hero.skill_slices["Skill1"]
+        disarm = [
+            e
+            for e in skill1.effects
+            if e.category == "cc" and e.label == "Disarm"
+        ]
+        self.assertEqual(len(disarm), 1)
+        self.assertEqual(disarm[0].numeric, 4.0)
+        self.assertEqual(disarm[0].targeting, "Single target")
+        shields = [e for e in skill1.effects if e.label == "Shield"]
+        self.assertEqual(len(shields), 1)
+        self.assertEqual(shields[0].numeric, 340.0)
+        self.assertEqual(shields[0].targeting, "Self")
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        labels = tag_labels(tags)
+        self.assertIn("Disarm", labels)
+        self.assertIn("Shield — Self", labels)
+
     def test_canonical_chip_key_preserves_targeting_for_lifedrain_and_healing(
         self,
     ):

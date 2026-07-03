@@ -65,6 +65,7 @@ window.AFKJ.config = {
     "Crit DMG boost": { emoji: "💥", cls: "chip-stat" },
     "Fatal blow immunity": { emoji: "♻️", cls: "chip-stat" },
     Blind: { emoji: "👁️", cls: "chip-cc" },
+    Disarm: { emoji: "👊", cls: "chip-cc" },
     Stun: { emoji: "💫", cls: "chip-cc" },
     "Knock back": { emoji: "↩️", cls: "chip-cc" },
     "Knock down": { emoji: "⬇️", cls: "chip-cc" },

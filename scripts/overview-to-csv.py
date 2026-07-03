@@ -49,6 +49,7 @@ CC_TYPES: list[str] = [
     "Interrupt",
     "Taunt",
     "Blind",
+    "Disarm",
 ]
 
 ANTI_CC_TYPES: list[str] = [

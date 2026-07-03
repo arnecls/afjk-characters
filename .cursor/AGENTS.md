@@ -89,6 +89,7 @@ fuzzy to define clear rules.
 - Sleep (hypnotized; cannot move or act)
 - Displace (force new position; pull/teleport without knock immobility)
 - Blind (cannot use normal attacks)
+- Disarm (prevents normal attacks; an abnormal status in-game; skills unaffected)
 - Interrupt (stop ultimates)
 - Taunt (force attack on caster)
 

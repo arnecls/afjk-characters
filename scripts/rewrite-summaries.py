@@ -2604,6 +2604,7 @@ _CC_LABEL_KEYWORDS: dict[str, str] = {
         r"bind(?:ing|s)?|freez(?:e|es|ing|ed)"
     ),
     "Blind": r"blind(?:ing|s|ed)?",
+    "Disarm": r"disarm(?:ing|ed|s)?",
     "Taunt": r"taunt",
     "Interrupt": r"interrupt",
 }
@@ -7549,6 +7550,7 @@ _SKILL_CARD_CC_KEYS: tuple[str, ...] = tuple(
     sorted(
         (
             "Blind",
+            "Disarm",
             "Stun",
             "Knock back",
             "Knock down",

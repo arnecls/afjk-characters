@@ -19859,7 +19859,7 @@
         "cc": [
           {
             "name": "Scarlita",
-            "score": 0.8571,
+            "score": 0.6383,
             "matches": [
               "Stun",
               "Knock up",
@@ -19868,7 +19868,7 @@
           },
           {
             "name": "Callan",
-            "score": 0.8229,
+            "score": 0.6128,
             "matches": [
               "Stun",
               "Knock down"
@@ -19876,7 +19876,7 @@
           },
           {
             "name": "Antandra",
-            "score": 0.8229,
+            "score": 0.6128,
             "matches": [
               "Stun",
               "Knock down"
@@ -19886,7 +19886,7 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.5949,
+            "score": 0.5501,
             "matches": [
               "Buffs on allies",
               "Damage"

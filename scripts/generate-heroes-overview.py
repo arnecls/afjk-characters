@@ -871,6 +871,7 @@ _CC_SUSTAINED_LABELS = frozenset(
         "Knock down",
         "Knock back",
         "Blind",
+        "Disarm",
     }
 )
 
