@@ -46,15 +46,47 @@ window.AFKJ = window.AFKJ || {};
     skill5: "✨",
   };
 
+  const SKILL_SCALING_DURATION_MOD_RE =
+    /(\d+(?:\.\d+)?)\s*(\((?:SP-based|HP[- ]based|ATK[- ]based)\))\s*s\b/gi;
+
+  const SKILL_SCALING_MODIFIERS = [
+    {
+      re: /\(SP-based\)/gi,
+      emoji: "💡",
+      tooltip: "This number is based on skill power.",
+    },
+    {
+      re: /\(HP[- ]based\)/gi,
+      emoji: "❤️",
+      tooltip: "This number is based on HP.",
+    },
+    {
+      re: /\(ATK[- ]based\)/gi,
+      emoji: "💪",
+      tooltip: "This number is based on ATK.",
+    },
+  ];
+
+  function normalizeScalingDurationModifiers(text) {
+    return text.replace(SKILL_SCALING_DURATION_MOD_RE, "$1s $2");
+  }
+
+  function skillScalingModifierChip(entry) {
+    return chips.chipSpan(entry.emoji, "", "chip-scaling-mod", entry.tooltip);
+  }
+
   function enrichSkillInline(text, opts) {
     opts = opts || {};
     if (!text) {
       return "";
     }
     const TAG_DEFINITIONS = window.AFKJ.config.TAG_DEFINITIONS;
-    let out = escapeHtml(text);
-    out = out.replace(/\(ATK-based\)/g, "{{ATK_BASED}}");
-    out = out.replace(/\(HP-based\)/g, "{{HP_BASED}}");
+    let out = escapeHtml(normalizeScalingDurationModifiers(text));
+    SKILL_SCALING_MODIFIERS.forEach(function (entry) {
+      out = chips.replaceOutsideChips(out, entry.re, function () {
+        return skillScalingModifierChip(entry);
+      });
+    });
     out = chips.replaceOutsideChips(
       out,
       /\bphys(?:ical)?\s*&\s*magic\s+def\b/gi,
@@ -94,14 +126,6 @@ window.AFKJ = window.AFKJ || {};
         return chips.chipSpan(def.emoji, match, def.cls);
       });
     });
-    out = out.replace(
-      /\{\{ATK_BASED\}\}/g,
-      '<span class="skill-inline-stat">💪 ATK</span>'
-    );
-    out = out.replace(
-      /\{\{HP_BASED\}\}/g,
-      '<span class="skill-inline-stat">❤️ HP</span>'
-    );
     chips.ccFamilyChipKeys().forEach(function (key) {
       const def = TAG_DEFINITIONS[key];
       const re = new RegExp(

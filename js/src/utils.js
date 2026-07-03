@@ -104,7 +104,14 @@ window.AFKJ.utils = {
     if (!hero || !hero.name) {
       return null;
     }
-    return "assets/combat-icons/" + hero.name + ".png";
+    return this.combatIconPathForName(hero.name);
+  },
+
+  combatIconPathForName: function (name) {
+    if (!name) {
+      return null;
+    }
+    return "assets/combat-icons/" + name + ".png";
   },
 
   factionDataKey: function (faction) {
