@@ -3199,6 +3199,35 @@ html.welcome-warning-pending .welcome-warning,
   letter-spacing: -0.02em;
 }
 
+.hero-compact-score--boxed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  letter-spacing: 0;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.compact-rating-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35em;
+  min-height: 1.35em;
+  padding: 0.14em 0.16em;
+  border-radius: 0.22rem;
+  background: var(--chip-generic-bg);
+  border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+  font-size: 0.68rem;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.compact-rating-icon--empty {
+  background: color-mix(in srgb, var(--chip-generic-bg) 45%, var(--surface-panel));
+  border-color: color-mix(in srgb, var(--border) 40%, transparent);
+}
+
 .hero-compact-detail {
   font-size: 0.78rem;
   color: var(--text-muted);

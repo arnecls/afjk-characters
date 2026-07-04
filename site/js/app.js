@@ -1133,14 +1133,31 @@ mixSlotLastTap={key:tapKey,time:now};});dom.mixView.addEventListener("contextmen
 const slotCard=e.target.closest(".mix-slot .hero-card");if(slotCard){e.preventDefault();e.stopPropagation();const slot=slotCard.closest(".mix-slot");const index=slot?parseInt(slot.dataset.slot,10):-1;if(index>=0){openMixContextMenu(index,e.clientX,e.clientY);}
 return;}
 const gridCard=e.target.closest("#mix-hero-grid .hero-card");if(gridCard&&gridCard.dataset.slug){e.preventDefault();e.stopPropagation();openMixGridContextMenu(gridCard.dataset.slug,e.clientX,e.clientY);}});ensureMixContextMenu();}
-window.AFKJ.views.mix={loadMixData:loadMixData,mixSlottedSlugSet:mixSlottedSlugSet,compactMixSlots:compactMixSlots,mixFirstFreeSlotIndex:mixFirstFreeSlotIndex,removeSlugFromMixSlots:removeSlugFromMixSlots,clearMixAlternativeHighlights:clearMixAlternativeHighlights,mixSlotIndexForSlug:mixSlotIndexForSlug,tryReplaceHighlightedAlternative:tryReplaceHighlightedAlternative,addHeroToMixZone:addHeroToMixZone,placeHeroInMixZone:placeHeroInMixZone,synergyScoreForPair:synergyScoreForPair,getQualifyingMixFactions:getQualifyingMixFactions,mixHeroSkillTags:mixHeroSkillTags,mixHeroBehaviorTags:mixHeroBehaviorTags,computeMixSpeedBonus:computeMixSpeedBonus,computeMixFocusBonus:computeMixFocusBonus,computeMixScore:computeMixScore,mixRawRoleProminence:mixRawRoleProminence,resolvePrydwenTierRank:resolvePrydwenTierRank,roleProminenceTierPoints:roleProminenceTierPoints,mixCombinedRoleProminenceRaw:mixCombinedRoleProminenceRaw,normalizeScores:normalizeScores,computeNormalizedRoleBonuses:computeNormalizedRoleBonuses,computeNormalizedTierBonuses:computeNormalizedTierBonuses,mixPoolHeroes:mixPoolHeroes,mixSortedPoolHeroes:mixSortedPoolHeroes,renderMixHeroCard:renderMixHeroCard,renderMixSlots:renderMixSlots,renderMixGrid:renderMixGrid,renderMix:renderMix,syncMixFocusButtons:syncMixFocusButtons,syncMixModeButtons:syncMixModeButtons,buildMixHighlightMap:buildMixHighlightMap,getMixOverallReplacement:getMixOverallReplacement,closeMixContextMenu:closeMixContextMenu,openMixContextMenu:openMixContextMenu,openMixGridContextMenu:openMixGridContextMenu,removeHeroFromMixSlot:removeHeroFromMixSlot,initMixInteractions:initMixInteractions,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const tiers=window.AFKJ.tiers;const skills=window.AFKJ.skills;const markdown=window.AFKJ.markdown;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const BENEFIT_MAX_STARS=5;const BENEFIT_MIN_STARS=1;const BENEFIT_STAR="⭐";function formatBeneficiaryRatingDisplay(scoreRating){const rating=Number(scoreRating);if(!isFinite(rating)){return"";}
-const clamped=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,rating));const roundedStars=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,Math.round(clamped)));return BENEFIT_STAR.repeat(roundedStars);}
-function beneficiaryScoreTooltip(scoreRating){const rating=Number(scoreRating);if(!isFinite(rating)){return"Benefit rating out of 5";}
-const clamped=Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,rating));return"Benefit rating: "+clamped.toFixed(1)+" out of 5";}
-function renderBeneficiaryScore(scoreRating){const text=formatBeneficiaryRatingDisplay(scoreRating);if(!text){return"";}
-return('<div class="hero-compact-score" title="'+
-escapeHtml(beneficiaryScoreTooltip(scoreRating))+'">'+
-escapeHtml(text)+"</div>");}
+window.AFKJ.views.mix={loadMixData:loadMixData,mixSlottedSlugSet:mixSlottedSlugSet,compactMixSlots:compactMixSlots,mixFirstFreeSlotIndex:mixFirstFreeSlotIndex,removeSlugFromMixSlots:removeSlugFromMixSlots,clearMixAlternativeHighlights:clearMixAlternativeHighlights,mixSlotIndexForSlug:mixSlotIndexForSlug,tryReplaceHighlightedAlternative:tryReplaceHighlightedAlternative,addHeroToMixZone:addHeroToMixZone,placeHeroInMixZone:placeHeroInMixZone,synergyScoreForPair:synergyScoreForPair,getQualifyingMixFactions:getQualifyingMixFactions,mixHeroSkillTags:mixHeroSkillTags,mixHeroBehaviorTags:mixHeroBehaviorTags,computeMixSpeedBonus:computeMixSpeedBonus,computeMixFocusBonus:computeMixFocusBonus,computeMixScore:computeMixScore,mixRawRoleProminence:mixRawRoleProminence,resolvePrydwenTierRank:resolvePrydwenTierRank,roleProminenceTierPoints:roleProminenceTierPoints,mixCombinedRoleProminenceRaw:mixCombinedRoleProminenceRaw,normalizeScores:normalizeScores,computeNormalizedRoleBonuses:computeNormalizedRoleBonuses,computeNormalizedTierBonuses:computeNormalizedTierBonuses,mixPoolHeroes:mixPoolHeroes,mixSortedPoolHeroes:mixSortedPoolHeroes,renderMixHeroCard:renderMixHeroCard,renderMixSlots:renderMixSlots,renderMixGrid:renderMixGrid,renderMix:renderMix,syncMixFocusButtons:syncMixFocusButtons,syncMixModeButtons:syncMixModeButtons,buildMixHighlightMap:buildMixHighlightMap,getMixOverallReplacement:getMixOverallReplacement,closeMixContextMenu:closeMixContextMenu,openMixContextMenu:openMixContextMenu,openMixGridContextMenu:openMixGridContextMenu,removeHeroFromMixSlot:removeHeroFromMixSlot,initMixInteractions:initMixInteractions,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const tiers=window.AFKJ.tiers;const skills=window.AFKJ.skills;const markdown=window.AFKJ.markdown;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const BENEFIT_MAX_STARS=5;const BENEFIT_MIN_STARS=1;const BENEFIT_STAR="⭐";function clampBenefitRating(scoreRating){const rating=Number(scoreRating);if(!isFinite(rating)){return 0;}
+return Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,rating));}
+function boxedRatingIconCount(rating){const clamped=clampBenefitRating(rating);if(!clamped){return 0;}
+return Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,Math.round(clamped)));}
+function renderCompactRatingIcons(filledCount,glyph){const emptyCount=BENEFIT_MAX_STARS-filledCount;let html="";for(let i=0;i<BENEFIT_MAX_STARS;i++){if(i<emptyCount){html+='<span class="compact-rating-icon compact-rating-icon--empty" aria-hidden="true"></span>';}else{html+='<span class="compact-rating-icon" aria-hidden="true">'+
+glyph+"</span>";}}
+return html;}
+function renderBoxedCompactScore(filledCount,glyph,tooltip,modifierClass){if(!filledCount||!glyph){return"";}
+const classes="hero-compact-score hero-compact-score--boxed";return('<div class="'+
+classes+
+(modifierClass?" "+modifierClass:"")+'" title="'+
+escapeHtml(tooltip)+'" aria-label="'+
+escapeHtml(tooltip)+'">'+
+renderCompactRatingIcons(filledCount,glyph)+"</div>");}
+function formatBeneficiaryRatingDisplay(scoreRating){const count=boxedRatingIconCount(scoreRating);if(!count){return"";}
+return BENEFIT_STAR.repeat(count);}
+function beneficiaryScoreTooltip(scoreRating){const clamped=clampBenefitRating(scoreRating);if(!clamped){return"Benefit rating out of 5";}
+return"Benefit rating: "+clamped.toFixed(1)+" out of 5";}
+function renderBeneficiaryScore(scoreRating){const count=boxedRatingIconCount(scoreRating);return renderBoxedCompactScore(count,BENEFIT_STAR,beneficiaryScoreTooltip(scoreRating));}
+function replacementScoreRating(score){const value=Number(score);if(!isFinite(value)||value<=0){return BENEFIT_MIN_STARS;}
+return Math.max(BENEFIT_MIN_STARS,Math.min(BENEFIT_MAX_STARS,BENEFIT_MIN_STARS+(BENEFIT_MAX_STARS-BENEFIT_MIN_STARS)*value));}
+function replacementRatingIconCount(score){return boxedRatingIconCount(replacementScoreRating(score));}
+function replacementScoreTooltip(score){const value=Number(score);if(!isFinite(value)){return"Replacement fit";}
+return"Replacement fit: "+Math.round(value*100)+"%";}
+function renderReplacementScore(score,categoryLabel){const icon=replacementCategoryIcon(categoryLabel);const count=replacementRatingIconCount(score);const glyph=icon||"•";return renderBoxedCompactScore(count,glyph,replacementScoreTooltip(score),"hero-compact-score--replacement");}
 function renderHeroCompactCard(slug,name,bodyHtml,footerHtml,headerHtml){const hero=window.AFKJ.state.heroBySlug[slug];const factionKey=hero?utils.factionDataKey(hero.faction):"";const portraitHero=hero||{name:name,faction:""};const portraitHtml=gridView.renderHeroPortrait(portraitHero,"compact-portrait");return('<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="'+
 escapeHtml(slug)+'" data-faction="'+
 escapeHtml(factionKey)+'" tabindex="0" role="link" aria-label="'+
@@ -1294,7 +1311,8 @@ function renderReplacements(sections,mainHero){const reps=sections.replacements;
 replacementCategoryClass(cat.category)+'">';html+=renderReplacementCategoryHeading(cat.category);html+=renderHeroRowList(cat.entries.map(function(e){let body="";if(e.detail){body='<div class="hero-compact-detail">'+
 chips.renderInline(e.detail)+"</div>";}
 let footer="";const repHero=window.AFKJ.state.heroBySlug[e.slug];if(repHero){footer=tiers.renderPrydwenTierBoxes(tiers.getHeroPrydwenTiers(repHero),"compact",mainHero?tiers.getHeroPrydwenTiers(mainHero):null,mainHero&&mainHero.name);}
-return renderHeroCompactCard(e.slug,e.name,body,footer);}),"hero-compact-grid-3");html+="</div>";});html+="</div>";return html;}
+let header="";if(e.score!=null){header=renderReplacementScore(e.score,cat.category);}
+return renderHeroCompactCard(e.slug,e.name,body,footer,header);}),"hero-compact-grid-3");html+="</div>";});html+="</div>";return html;}
 function renderRoleCategoryIcon(roleCategory){const icon=config.ROLE_CATEGORY_ICONS[roleCategory];if(!icon){return"";}
 const parts=icon.viewBox.split(/\s+/).map(Number);const iconCx=parts[0]+parts[2]/2;const iconCy=parts[1]+parts[3]/2;const iconScale=13.5/Math.max(parts[2],parts[3]);return('<span class="role-category-icon" aria-hidden="true">'+'<svg class="role-category-icon-svg" viewBox="0 0 24 24" focusable="false">'+'<circle class="role-category-icon-bg" cx="12" cy="12" r="10.5"/>'+'<g transform="translate(12 12) scale('+
 iconScale+") translate("+

@@ -67,6 +67,23 @@ class RenderSiteTests(unittest.TestCase):
                 self.assertIn("reasons", ref)
                 self.assertIsInstance(ref["reasons"], list)
 
+    def test_replacement_entries_have_scores(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        found = 0
+        for hero in payload["heroes"]:
+            for cat in hero["sections"].get("replacements") or []:
+                if cat["category"] == "Energy provider":
+                    continue
+                for entry in cat.get("entries") or []:
+                    found += 1
+                    self.assertIn("score", entry)
+                    self.assertIn("scoreRating", entry)
+                    self.assertGreaterEqual(entry["scoreRating"], 1.0)
+                    self.assertLessEqual(entry["scoreRating"], 5.0)
+                    detail = entry.get("detail") or ""
+                    self.assertNotRegex(detail, r"\d+%")
+        self.assertGreater(found, 0)
+
     def test_sections_present(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
         for hero in payload["heroes"]:

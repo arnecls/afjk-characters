@@ -23,7 +23,6 @@ import heroes_io as io
 from render_overview import (
     REPLACEMENT_CATEGORY_LABELS,
     _format_benefit_stat_tags,
-    _format_replacement_line,
     _join_names,
     _load_module,
     _receiver_synergies,
@@ -90,15 +89,18 @@ def _provider_synergy_reasons(
     return []
 
 
-def _parse_replacement_detail(line: str, name: str) -> str:
-    """Strip leading '- Name (...)' to keep the parenthetical detail."""
-    prefix = f"- {name}"
-    if line.startswith(prefix):
-        rest = line[len(prefix) :].strip()
-        if rest.startswith("(") and rest.endswith(")"):
-            return rest[1:-1]
-        return rest
-    return ""
+def _format_replacement_detail_tags(entry: dict) -> str:
+    """Match tags only (no percent) for replacement card bodies."""
+    match_list = entry.get("matches", [])[:5]
+    return " ".join(f"`{tag}`" for tag in match_list)
+
+
+def _replacement_score_rating(score: float) -> float:
+    """Map a 0–1 replacement fit score to a 1–5 display rating."""
+    if score <= 0:
+        return 1.0
+    scaled = 1.0 + 4.0 * score
+    return min(5.0, max(1.0, scaled))
 
 
 def _build_synergy_sections(
@@ -258,20 +260,21 @@ def _build_replacements(
         if not entries:
             continue
         category_entries: list[dict] = []
+        show_score = key != "energy"
         for entry in entries[:max_rep]:
             name = entry["name"]
-            line = _format_replacement_line(
-                entry,
-                show_tags=(key != "energy"),
-                show_score=(key != "energy"),
-            )
-            category_entries.append(
-                {
-                    "name": name,
-                    "slug": slug_by_name.get(name, hero_slug(name)),
-                    "detail": _parse_replacement_detail(line, name),
-                }
-            )
+            item: dict = {
+                "name": name,
+                "slug": slug_by_name.get(name, hero_slug(name)),
+                "detail": _format_replacement_detail_tags(entry)
+                if show_score
+                else "",
+            }
+            if show_score:
+                score = float(entry["score"])
+                item["score"] = score
+                item["scoreRating"] = _replacement_score_rating(score)
+            category_entries.append(item)
         out.append({"category": label, "entries": category_entries})
     return out
 

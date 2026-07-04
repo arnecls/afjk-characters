@@ -14,45 +14,121 @@ window.AFKJ = window.AFKJ || {};
   const BENEFIT_MIN_STARS = 1;
   const BENEFIT_STAR = "⭐";
 
-  function formatBeneficiaryRatingDisplay(scoreRating) {
+  function clampBenefitRating(scoreRating) {
     const rating = Number(scoreRating);
     if (!isFinite(rating)) {
-      return "";
+      return 0;
     }
-    const clamped = Math.max(
+    return Math.max(
       BENEFIT_MIN_STARS,
       Math.min(BENEFIT_MAX_STARS, rating)
     );
-    const roundedStars = Math.max(
+  }
+
+  function boxedRatingIconCount(rating) {
+    const clamped = clampBenefitRating(rating);
+    if (!clamped) {
+      return 0;
+    }
+    return Math.max(
       BENEFIT_MIN_STARS,
       Math.min(BENEFIT_MAX_STARS, Math.round(clamped))
     );
-    return BENEFIT_STAR.repeat(roundedStars);
+  }
+
+  function renderCompactRatingIcons(filledCount, glyph) {
+    const emptyCount = BENEFIT_MAX_STARS - filledCount;
+    let html = "";
+    for (let i = 0; i < BENEFIT_MAX_STARS; i++) {
+      if (i < emptyCount) {
+        html +=
+          '<span class="compact-rating-icon compact-rating-icon--empty" aria-hidden="true"></span>';
+      } else {
+        html +=
+          '<span class="compact-rating-icon" aria-hidden="true">' +
+          glyph +
+          "</span>";
+      }
+    }
+    return html;
+  }
+
+  function renderBoxedCompactScore(filledCount, glyph, tooltip, modifierClass) {
+    if (!filledCount || !glyph) {
+      return "";
+    }
+    const classes = "hero-compact-score hero-compact-score--boxed";
+    return (
+      '<div class="' +
+      classes +
+      (modifierClass ? " " + modifierClass : "") +
+      '" title="' +
+      escapeHtml(tooltip) +
+      '" aria-label="' +
+      escapeHtml(tooltip) +
+      '">' +
+      renderCompactRatingIcons(filledCount, glyph) +
+      "</div>"
+    );
+  }
+
+  function formatBeneficiaryRatingDisplay(scoreRating) {
+    const count = boxedRatingIconCount(scoreRating);
+    if (!count) {
+      return "";
+    }
+    return BENEFIT_STAR.repeat(count);
   }
 
   function beneficiaryScoreTooltip(scoreRating) {
-    const rating = Number(scoreRating);
-    if (!isFinite(rating)) {
+    const clamped = clampBenefitRating(scoreRating);
+    if (!clamped) {
       return "Benefit rating out of 5";
     }
-    const clamped = Math.max(
-      BENEFIT_MIN_STARS,
-      Math.min(BENEFIT_MAX_STARS, rating)
-    );
     return "Benefit rating: " + clamped.toFixed(1) + " out of 5";
   }
 
   function renderBeneficiaryScore(scoreRating) {
-    const text = formatBeneficiaryRatingDisplay(scoreRating);
-    if (!text) {
-      return "";
+    const count = boxedRatingIconCount(scoreRating);
+    return renderBoxedCompactScore(
+      count,
+      BENEFIT_STAR,
+      beneficiaryScoreTooltip(scoreRating)
+    );
+  }
+
+  function replacementScoreRating(score) {
+    const value = Number(score);
+    if (!isFinite(value) || value <= 0) {
+      return BENEFIT_MIN_STARS;
     }
-    return (
-      '<div class="hero-compact-score" title="' +
-      escapeHtml(beneficiaryScoreTooltip(scoreRating)) +
-      '">' +
-      escapeHtml(text) +
-      "</div>"
+    return Math.max(
+      BENEFIT_MIN_STARS,
+      Math.min(BENEFIT_MAX_STARS, BENEFIT_MIN_STARS + (BENEFIT_MAX_STARS - BENEFIT_MIN_STARS) * value)
+    );
+  }
+
+  function replacementRatingIconCount(score) {
+    return boxedRatingIconCount(replacementScoreRating(score));
+  }
+
+  function replacementScoreTooltip(score) {
+    const value = Number(score);
+    if (!isFinite(value)) {
+      return "Replacement fit";
+    }
+    return "Replacement fit: " + Math.round(value * 100) + "%";
+  }
+
+  function renderReplacementScore(score, categoryLabel) {
+    const icon = replacementCategoryIcon(categoryLabel);
+    const count = replacementRatingIconCount(score);
+    const glyph = icon || "•";
+    return renderBoxedCompactScore(
+      count,
+      glyph,
+      replacementScoreTooltip(score),
+      "hero-compact-score--replacement"
     );
   }
 
@@ -956,7 +1032,11 @@ window.AFKJ = window.AFKJ || {};
               mainHero && mainHero.name
             );
           }
-          return renderHeroCompactCard(e.slug, e.name, body, footer);
+          let header = "";
+          if (e.score != null) {
+            header = renderReplacementScore(e.score, cat.category);
+          }
+          return renderHeroCompactCard(e.slug, e.name, body, footer, header);
         }),
         "hero-compact-grid-3"
       );
