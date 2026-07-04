@@ -42,14 +42,14 @@ window.AFKJ = window.AFKJ || {};
   };
 
   const QUALITY_TOOLTIPS = {
-    high: "Top third vs same-role peers for this effect.",
-    average: "Middle band vs same-role peers with the same effect label.",
-    low: "Below average vs same-role peers for this effect type.",
+    high: "Top third across the roster for this effect.",
+    average: "Middle band across the roster with the same effect label.",
+    low: "Below average across the roster for this effect type.",
   };
 
   const SPEED_TOOLTIPS = {
     slow: "Slow to cast: longer cooldown, initial delay, or ultimate energy fill time.",
-    average: "Typical cast timing for this skill group among same-role peers.",
+    average: "Typical cast timing for this skill group across the roster.",
     fast: "Quick to cast: short delay, low cooldown, or battle-start override.",
   };
 
