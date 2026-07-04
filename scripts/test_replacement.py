@@ -714,7 +714,7 @@ class HealingEffectSeparationTests(unittest.TestCase):
         skills = skills_by_title()
         display = {h.title: gen.short_name(h.title) for h in heroes}
         behavior = rs.build_behavior_for_heroes(
-            heroes, display, role_category_by_title=role_category_by_title
+            heroes, display
         )
         replacements = gen.compute_replacement_scores(
             heroes, behavior, {}, role_category_by_title, skills

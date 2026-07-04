@@ -3173,12 +3173,12 @@ def build_overview() -> str:
         list(block_by_title.values())
     )
     role_category_by_title = _role_category_by_title(heroes, block_by_title)
-    _rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+    _rs.assign_magnitudes(heroes, skills_by_title)
     enabler_matchers = _make_enabler_matchers(hero_class_by_title)
 
     display_by_title = {h.title: short_name(h.title) for h in heroes}
     behavior_by_title = _rs.build_behavior_for_heroes(
-        heroes, display_by_title, role_category_by_title=role_category_by_title,
+        heroes, display_by_title,
         hero_class_by_title=hero_class_by_title,
     )
     beneficiaries_index = build_beneficiaries_index(

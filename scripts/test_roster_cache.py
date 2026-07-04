@@ -148,7 +148,7 @@ def analyze_heroes_from_blocks(
         rs.analyze_hero(hero)
     role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
     skills = rs.load_skills_by_title_from_blocks(blocks)
-    rs.assign_magnitudes(heroes, skills, role_category_by_title)
+    rs.assign_magnitudes(heroes, skills)
     result = (heroes, block_by_title, role_category_by_title)
     _ANALYZE_FROM_BLOCKS[key] = result
     return result
@@ -173,14 +173,14 @@ def full_roster() -> tuple[list, Any, Any]:
         rs.analyze_hero(hero)
     skills = skills_by_title()
     role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
-    rs.assign_magnitudes(heroes, skills, role_category_by_title)
+    rs.assign_magnitudes(heroes, skills)
     classes = {
         h.title: gen._parse_hero_class(block_by_title[h.title]) for h in heroes
     }
     matchers = gen._make_enabler_matchers(classes)
     display = {h.title: gen.short_name(h.title) for h in heroes}
     behavior = rs.build_behavior_for_heroes(
-        heroes, display, role_category_by_title=role_category_by_title
+        heroes, display
     )
     _FULL_ROSTER = (heroes, matchers, behavior)
     return _FULL_ROSTER

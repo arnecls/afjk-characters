@@ -6188,14 +6188,6 @@ DEFAULT_ROLE_CATEGORY = "damage_dealer"
 _FALLBACK_DAMAGE_THRESHOLDS = (40.0, 120.0)
 
 
-def _hero_role(
-    title: str, role_category_by_title: dict[str, str] | None
-) -> str:
-    if not role_category_by_title:
-        return DEFAULT_ROLE_CATEGORY
-    return role_category_by_title.get(title, DEFAULT_ROLE_CATEGORY)
-
-
 def _quantile_thresholds(
     scores: list[float],
     *,
@@ -6395,28 +6387,23 @@ def _recompute_damage_scores(
                     )
 
 
-def assign_damage_magnitudes(
-    heroes: list[Hero],
-    role_category_by_title: dict[str, str] | None = None,
-) -> None:
-    by_role_type: dict[tuple[str, str], list[float]] = defaultdict(list)
+def assign_damage_magnitudes(heroes: list[Hero]) -> None:
+    by_type: dict[str, list[float]] = defaultdict(list)
     for hero in heroes:
-        role = _hero_role(hero.title, role_category_by_title)
         for dt, score in hero.damage_scores.items():
             if dt in TRUE_DAMAGE_TYPES:
-                by_role_type[(role, dt)].append(score)
+                by_type[dt].append(score)
 
-    thresholds: dict[tuple[str, str], tuple[float, float]] = {}
-    for key, scores in by_role_type.items():
-        thresholds[key] = _quantile_thresholds(scores)
+    thresholds: dict[str, tuple[float, float]] = {}
+    for dmg_type, scores in by_type.items():
+        thresholds[dmg_type] = _quantile_thresholds(scores)
 
     for hero in heroes:
-        role = _hero_role(hero.title, role_category_by_title)
         for dt in hero.damage_scores:
             if dt not in TRUE_DAMAGE_TYPES:
                 continue
             score = hero.damage_scores[dt]
-            t1, t2 = thresholds.get((role, dt), _FALLBACK_DAMAGE_THRESHOLDS)
+            t1, t2 = thresholds.get(dt, _FALLBACK_DAMAGE_THRESHOLDS)
             hero.damage_magnitudes[dt] = (
                 "low" if score <= t1 else "average" if score <= t2 else "high"
             )
@@ -6425,16 +6412,14 @@ def assign_damage_magnitudes(
 def assign_magnitudes(
     heroes: list[Hero],
     skills_by_title: dict[str, list[SkillMeta]] | None = None,
-    role_category_by_title: dict[str, str] | None = None,
 ):
     skills_map = skills_by_title or {}
     if skills_map:
         _recompute_damage_scores(heroes, skills_map)
     by_key: dict[str, list[tuple[Hero, Effect]]] = defaultdict(list)
     for hero in heroes:
-        role = _hero_role(hero.title, role_category_by_title)
         for eff in hero.effects + hero.summon_effects:
-            by_key[f"{role}:{eff.category}:{eff.label}"].append((hero, eff))
+            by_key[f"{eff.category}:{eff.label}"].append((hero, eff))
     for group in by_key.values():
         category = group[0][1].category
         label = group[0][1].label
@@ -6491,7 +6476,7 @@ def assign_magnitudes(
     for hero in heroes:
         for eff in hero.effects + hero.summon_effects:
             apply_conditional_magnitude(eff)
-    assign_damage_magnitudes(heroes, role_category_by_title)
+    assign_damage_magnitudes(heroes)
 
 
 def format_summary(hero: Hero, display_name: str | None = None) -> str:
@@ -7393,31 +7378,18 @@ def _casting_speed_label(score: float) -> str:
     return "average"
 
 
-def _casting_speed_thresholds_by_role(
+def _casting_speed_thresholds(
     scores: dict[str, float],
-    role_category_by_title: dict[str, str] | None,
-) -> dict[str, tuple[float, float]]:
-    by_role: dict[str, list[float]] = defaultdict(list)
-    for title, score in scores.items():
-        by_role[_hero_role(title, role_category_by_title)].append(score)
-    thresholds: dict[str, tuple[float, float]] = {}
+) -> tuple[float, float]:
     fallback = (CASTING_SPEED_FAST_THRESHOLD, CASTING_SPEED_SLOW_THRESHOLD)
-    for role, role_scores in by_role.items():
-        thresholds[role] = _quantile_thresholds(
-            role_scores,
-            fallback=fallback,
-        )
-    return thresholds
+    return _quantile_thresholds(list(scores.values()), fallback=fallback)
 
 
-def _casting_speed_label_for_role(
+def _casting_speed_label_for_thresholds(
     score: float,
-    role: str,
-    thresholds_by_role: dict[str, tuple[float, float]],
+    thresholds: tuple[float, float],
 ) -> str:
-    t_fast, t_slow = thresholds_by_role.get(
-        role, (CASTING_SPEED_FAST_THRESHOLD, CASTING_SPEED_SLOW_THRESHOLD)
-    )
+    t_fast, t_slow = thresholds
     if score <= t_fast:
         return "fast"
     if score >= t_slow:
@@ -7425,20 +7397,11 @@ def _casting_speed_label_for_role(
     return "average"
 
 
-def casting_speed_labels(
-    scores: dict[str, float],
-    role_category_by_title: dict[str, str] | None = None,
-) -> dict[str, str]:
-    """Classify heroes by role-peer composite-time quantiles."""
-    thresholds = _casting_speed_thresholds_by_role(
-        scores, role_category_by_title
-    )
+def casting_speed_labels(scores: dict[str, float]) -> dict[str, str]:
+    """Classify heroes by roster-wide composite-time quantiles."""
+    thresholds = _casting_speed_thresholds(scores)
     return {
-        title: _casting_speed_label_for_role(
-            score,
-            _hero_role(title, role_category_by_title),
-            thresholds,
-        )
+        title: _casting_speed_label_for_thresholds(score, thresholds)
         for title, score in scores.items()
     }
 
@@ -7469,7 +7432,6 @@ def _ult_casting_time(skills: list[SkillMeta]) -> float:
 
 def compute_per_skill_speeds(
     skills_by_title: dict[str, list[SkillMeta]],
-    role_category_by_title: dict[str, str] | None = None,
 ) -> dict[str, dict[str, str]]:
     """Per-hero speed labels for ult, non-ult composite, and each skill."""
     raw_scores: dict[str, dict[str, float]] = {}
@@ -7494,21 +7456,18 @@ def compute_per_skill_speeds(
             "ex": ex_t,
         }
 
-    thresholds_by_role: dict[str, dict[str, tuple[float, float]]] = {}
+    thresholds_by_metric: dict[str, tuple[float, float]] = {}
     for metric in ("ult", "non_ult", "skill1", "skill2", "ex"):
         metric_scores = {
             title: scores[metric] for title, scores in raw_scores.items()
         }
-        thresholds_by_role[metric] = _casting_speed_thresholds_by_role(
-            metric_scores, role_category_by_title
-        )
+        thresholds_by_metric[metric] = _casting_speed_thresholds(metric_scores)
 
     result: dict[str, dict[str, str]] = {}
     for title, scores in raw_scores.items():
-        role = _hero_role(title, role_category_by_title)
         result[title] = {
-            metric: _casting_speed_label_for_role(
-                score, role, thresholds_by_role[metric]
+            metric: _casting_speed_label_for_thresholds(
+                score, thresholds_by_metric[metric]
             )
             for metric, score in scores.items()
         }
@@ -8282,23 +8241,21 @@ def hero_replacement_damage_profile(
 def build_damage_type_thresholds(
     heroes: list[Hero],
     skills_by_title: dict[str, list[SkillMeta]] | None = None,
-    role_category_by_title: dict[str, str] | None = None,
-) -> dict[str, dict[str, tuple[float, float]]]:
+) -> dict[str, tuple[float, float]]:
     skills_map = skills_by_title or {}
-    by_role_type: dict[tuple[str, str], list[float]] = defaultdict(list)
+    by_type: dict[str, list[float]] = defaultdict(list)
     for hero in heroes:
-        role = _hero_role(hero.title, role_category_by_title)
         primary = hero.damage_type or "Physical"
         skills = skills_map.get(hero.title, [])
         for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
             for dmg_type, score in _section_damage_type_scores(
                 hero, section, primary, skills or None
             ).items():
-                by_role_type[(role, dmg_type)].append(score)
-    thresholds: dict[str, dict[str, tuple[float, float]]] = defaultdict(dict)
-    for (role, dmg_type), scores in by_role_type.items():
-        thresholds[role][dmg_type] = _quantile_thresholds(scores)
-    return dict(thresholds)
+                by_type[dmg_type].append(score)
+    return {
+        dmg_type: _quantile_thresholds(scores)
+        for dmg_type, scores in by_type.items()
+    }
 
 
 def _damage_type_scores_to_magnitudes(
@@ -8340,12 +8297,10 @@ def _damage_score_to_magnitude(score: float, thresholds: tuple[float, float]) ->
 def build_section_damage_thresholds(
     heroes: list[Hero],
     skills_by_title: dict[str, list[SkillMeta]] | None = None,
-    role_category_by_title: dict[str, str] | None = None,
-) -> dict[str, tuple[float, float]]:
+) -> tuple[float, float]:
     skills_map = skills_by_title or {}
-    by_role: dict[str, list[float]] = defaultdict(list)
+    scores: list[float] = []
     for hero in heroes:
-        role = _hero_role(hero.title, role_category_by_title)
         primary = hero.damage_type or "Physical"
         skills = skills_map.get(hero.title, [])
         for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
@@ -8353,11 +8308,8 @@ def build_section_damage_thresholds(
                 hero, section, primary, skills or None
             )
             if score > 0:
-                by_role[role].append(score)
-    return {
-        role: _quantile_thresholds(scores)
-        for role, scores in by_role.items()
-    }
+                scores.append(score)
+    return _quantile_thresholds(scores)
 
 
 def _section_speed_label(
@@ -8642,7 +8594,6 @@ def build_behavior_for_heroes(
     display_names: dict[str, str],
     heroes2_text: str | None = None,
     heroes_text: str | None = None,
-    role_category_by_title: dict[str, str] | None = None,
     hero_class_by_title: dict[str, str] | None = None,
 ) -> dict[str, HeroBehavior]:
     """Compute movement and casting speed for each hero title."""
@@ -8666,22 +8617,18 @@ def build_behavior_for_heroes(
         skills_by_title[hero.title] = load_skill_meta(block)
 
     casting_scores = compute_casting_scores(skills_by_title)
-    casting_labels = casting_speed_labels(
-        casting_scores, role_category_by_title
-    )
-    per_skill_speeds = compute_per_skill_speeds(
-        skills_by_title, role_category_by_title
-    )
+    casting_labels = casting_speed_labels(casting_scores)
+    per_skill_speeds = compute_per_skill_speeds(skills_by_title)
     signature_by_display = _load_signature_categories()
     placement_overrides = _load_placement_constraint_overrides()
     movement_overrides = _load_movement_overrides()
     behavior_tags = _load_behavior_tags()
     class_by_title = hero_class_by_title or {}
     damage_thresholds = build_section_damage_thresholds(
-        heroes, skills_by_title, role_category_by_title
+        heroes, skills_by_title
     )
     damage_type_thresholds = build_damage_type_thresholds(
-        heroes, skills_by_title, role_category_by_title
+        heroes, skills_by_title
     )
 
     result: dict[str, HeroBehavior] = {}
@@ -8721,14 +8668,13 @@ def build_behavior_for_heroes(
             placement_overrides,
             block_text=block_by_title[hero.title],
         )
-        role = _hero_role(hero.title, role_category_by_title)
         skill_overview = compute_skill_overview(
             hero,
             skills,
             speeds,
             defining,
-            damage_thresholds.get(role, _FALLBACK_DAMAGE_THRESHOLDS),
-            damage_type_thresholds.get(role, {}),
+            damage_thresholds,
+            damage_type_thresholds,
         )
 
         if defining:

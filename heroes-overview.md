@@ -242,7 +242,7 @@ Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to sing
 
 #### Debuffs provided by Alna
 
-- Haste — All units — `average`
+- Haste — All units — `low`
 - Haste — Area — `average`
 - Vitality (Supreme+) — Area — `low`
 
@@ -747,7 +747,7 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Ravion**.
 #### Debuffs provided by Atalanta
 
 - ATK (EX+10) — Single target — `low`
-- Phys DEF (EX+10) — Single target — `average`
+- Phys DEF (EX+10) — Single target — `high`
 
 #### Crowd Control provided by Atalanta
 
@@ -922,7 +922,7 @@ Common buffers are **Twins**, **Mehira**, or **Kazim**.
 
 ### Units benefitting most from Aurora
 
-Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `low`, and Damage taken (Mythic+) to all summons `average`.
+Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `low`, and Damage taken (Mythic+) to all summons `low`.
 
 **13** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -979,11 +979,11 @@ These are the **4** strongest pairings:
 
 - Haste — All summons — `high`
 - Damage dealt (Mythic+) — All summons — `low`
-- Damage taken (Mythic+) — All summons — `average`
+- Damage taken (Mythic+) — All summons — `low`
 
 #### Debuffs provided by Aurora
 
-- Haste — Single target — `average`
+- Haste — Single target — `low`
 
 #### Crowd Control provided by Aurora
 
@@ -1345,7 +1345,7 @@ Bonnie also requires units **dealing magic damage**
 
 #### Debuffs provided by Bonnie
 
-- ATK — Single target — `average`
+- ATK — Single target — `high`
 - Haste — Single target — `low`
 - Magic damage (Supreme+) — Single target — `low`
 
@@ -1932,7 +1932,7 @@ Cassadee also requires a unit **to bless**
 
 #### Debuffs provided by Cassadee
 
-- Magic DEF (Supreme+) — Area — `average`
+- Magic DEF (Supreme+) — Area — `low`
 
 #### Crowd Control provided by Cassadee
 
@@ -2192,7 +2192,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Contess
 
-Contess provides ATK to single targets `high`, Direct healing to multiple targets `high`, and Shield to single targets `high`.
+Contess provides ATK to single targets `high`, Direct healing to multiple targets `high`, and Shield to single targets `average`.
 
 **34** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -2257,12 +2257,12 @@ These are the **4** strongest pairings:
 
 - ATK — Single target — `high`
 - Direct healing — Multiple targets — `high`
-- Shield — Single target — `high`
+- Shield — Single target — `average`
 
 #### Debuffs provided by Contess
 
-- ATK — Multiple targets — `average`
-- Energy — Multiple targets — `average`
+- ATK — Multiple targets — `high`
+- Energy — Multiple targets — `low`
 - Max HP — Single target — `low`
 - ATK (Legendary+) — Single target — `low`
 - Energy (Legendary+) — Single target — `low`
@@ -2956,7 +2956,7 @@ Common buffers are **Twins**, **Contess**, or **Saida**.
 
 ### Units benefitting most from Dunlingr
 
-Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single targets `average`, ATK SPD (Supreme+) to all units `low`, and Lifedrain (Supreme+) to all units `average`.
+Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single targets `low`, ATK SPD (Supreme+) to all units `low`, and Lifedrain (Supreme+) to all units `low`.
 
 **52** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -3014,9 +3014,9 @@ These are the **4** strongest pairings:
 #### Buffs provided by Dunlingr
 
 - ATK (EX+5) — Single target — `low`
-- Haste (EX+15) — Single target — `average`
+- Haste (EX+15) — Single target — `low`
 - ATK SPD (Supreme+) — All units — `low`
-- Lifedrain (Supreme+) — All units — `average`
+- Lifedrain (Supreme+) — All units — `low`
 
 #### Debuffs provided by Dunlingr
 
@@ -3132,8 +3132,8 @@ Common buffers are **Thador**, **Ravion**, or **Twins**.
 
 #### Debuffs provided by Eironn
 
-- Haste — Arc — `high`
-- Magic DEF — Single target — `average`
+- Haste — Arc — `average`
+- Magic DEF — Single target — `high`
 
 #### Crowd Control provided by Eironn
 
@@ -3258,7 +3258,7 @@ These are the **4** strongest pairings:
 
 #### Debuffs provided by Evie
 
-- Magic DEF — Single target — `average`
+- Magic DEF — Single target — `low`
 - Magic DEF — All units — `average`
 - Damage dealt (Mythic+) — Single target — `average`
 - Debuff duration (Mythic+) — Multiple targets — `average`
@@ -3579,7 +3579,7 @@ Common buffers are **Ravion**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Florabelle
 
-Florabelle provides Shield (Mythic+) to all summons `high`.
+Florabelle provides Shield (Mythic+) to all summons `average`.
 
 **14** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -3631,7 +3631,7 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Florabelle
 
-- Shield (Mythic+) — All summons — `high`
+- Shield (Mythic+) — All summons — `average`
 
 #### Crowd Control provided by Florabelle
 
@@ -3942,7 +3942,7 @@ Common buffers are **Contess**, **Saida**, or **Thador**.
 
 ### Units benefitting most from Gerda
 
-Gerda provides Direct healing in an area `high` and Healing over time to single targets `average`.
+Gerda provides Direct healing in an area `average` and Healing over time to single targets `average`.
 
 - Lily May (2.4 / 5)
 - Silven (2.0 / 5)
@@ -3980,7 +3980,7 @@ Gerda provides Direct healing in an area `high` and Healing over time to single 
 
 #### Buffs provided by Gerda
 
-- Direct healing — Area — `high`
+- Direct healing — Area — `average`
 - Healing over time — Single target — `average`
 
 #### Crowd Control provided by Gerda
@@ -4106,8 +4106,8 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 #### Debuffs provided by Granny Dahnie
 
-- Energy — Single target — `average`
-- Haste — Single target — `average`
+- Energy — Single target — `low`
+- Haste — Single target — `high`
 
 #### Crowd Control provided by Granny Dahnie
 
@@ -4178,7 +4178,7 @@ Common buffers are **Hepler**, **Hugin**, or **Lorsan**.
 
 ### Units benefitting most from Gunnar
 
-Gunnar provides ATK to single targets `average`, ATK SPD to single targets `low`, Attack range to single targets `high`, Ranged DEF (Legendary+) to single targets `low`, and Vitality (Legendary+) to single targets `low`.
+Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, Attack range to single targets `high`, Ranged DEF (Legendary+) to single targets `low`, and Vitality (Legendary+) to single targets `low`.
 
 **9** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -4228,7 +4228,7 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Gunnar
 
-- ATK — Single target — `average`
+- ATK — Single target — `high`
 - ATK SPD — Single target — `low`
 - Attack range — Single target — `high`
 - Ranged DEF (Legendary+) — Single target — `low`
@@ -4695,7 +4695,7 @@ These are the **4** strongest pairings:
 
 #### Debuffs provided by Hepler
 
-- Haste — Single target — `average`
+- Haste — Single target — `high`
 
 #### Crowd Control provided by Hepler
 
@@ -5046,8 +5046,8 @@ Common buffers are **Ravion**, **Twins**, or **Smokey & Meerky**.
 
 #### Debuffs provided by Hodgkin
 
-- Energy — Arc — `average`
-- Energy (Mythic+) — Single target — `average`
+- Energy — Arc — `low`
+- Energy (Mythic+) — Single target — `high`
 - Phys DEF (Supreme+) — Single target — `low`
 - Vitality (Supreme+) — Single target — `low`
 
@@ -5353,7 +5353,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 #### Debuffs provided by Indris
 
-- Magic DEF — Single target — `average`
+- Magic DEF — Single target — `low`
 - Phys DEF — Single target — `average`
 
 #### Crowd Control provided by Indris
@@ -5611,7 +5611,7 @@ Common buffers are **Contess**, **Ravion**, or **Smokey & Meerky**.
 
 - Marked target (focus fire) — Single target — `average`
 - Phys DEF — Single target — `average`
-- Haste (Mythic+) — Single target — `average`
+- Haste (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Kafra
 
@@ -5827,7 +5827,7 @@ Common buffers are **Hugin**, **Ravion**, or **Rowan**.
 
 ### Units benefitting most from Koko
 
-Koko provides Damage taken to all units `low`, Lifedrain to multiple targets `average`, Shield (Mythic+) to all units `average`, and Vitality (Supreme+) to single targets `high`.
+Koko provides Damage taken to all units `low`, Lifedrain to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality (Supreme+) to single targets `high`.
 
 **13** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -5884,7 +5884,7 @@ These are the **4** strongest pairings:
 
 - Damage taken — All units — `low`
 - Lifedrain — Multiple targets — `average`
-- Shield (Mythic+) — All units — `average`
+- Shield (Mythic+) — All units — `low`
 - Vitality (Supreme+) — Single target — `high`
 
 #### Debuffs provided by Koko
@@ -6506,7 +6506,7 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Magic DEF (
 #### Debuffs provided by Laios
 
 - Magic DEF — Area — `low`
-- Phys DEF — Area — `average`
+- Phys DEF — Area — `high`
 
 #### Crowd Control provided by Laios
 
@@ -6862,7 +6862,7 @@ Lily May also requires units **buffing them**
 
 #### Debuffs provided by Lily May
 
-- Energy — Single target — `average`
+- Energy — Single target — `high`
 
 #### Crowd Control provided by Lily May
 
@@ -6991,7 +6991,7 @@ These are the **4** strongest pairings:
 
 #### Debuffs provided by Lorsan
 
-- Haste — Area — `average`
+- Haste — Area — `low`
 - Max HP (Supreme+) — Single target — `average`
 
 #### Crowd Control provided by Lorsan
@@ -7251,7 +7251,7 @@ These are the **4** strongest pairings:
 #### Debuffs provided by Lucius
 
 - ATK (Mythic+) — Area — `low`
-- ATK (EX+10) — Single target — `low`
+- ATK (EX+10) — Single target — `average`
 
 #### Crowd Control provided by Lucius
 
@@ -7432,7 +7432,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Ludovic
 
-Ludovic provides Direct healing to multiple targets `average` and Healing over time to single targets `average`.
+Ludovic provides Direct healing to multiple targets `average` and Healing over time to single targets `high`.
 
 - Talene (3.0 / 5)
 - Dunlingr (2.8 / 5)
@@ -7479,7 +7479,7 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 #### Buffs provided by Ludovic
 
 - Direct healing — Multiple targets — `average`
-- Healing over time — Single target — `average`
+- Healing over time — Single target — `high`
 
 #### Crowd Control provided by Ludovic
 
@@ -7608,7 +7608,7 @@ Lumont provides Phys DEF to multiple targets `low`.
 
 #### Debuffs provided by Lumont
 
-- ATK (Mythic+) — Single target — `average`
+- ATK (Mythic+) — Single target — `high`
 
 #### Crowd Control provided by Lumont
 
@@ -8195,7 +8195,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 ### Units benefitting most from Mikola
 
-Mikola provides ATK to all units `average`, DEF to multiple targets `average`, Direct healing to multiple targets `low`, Haste to multiple targets `average`, Magic DEF to multiple targets `average`, and Vitality (EX+10) to multiple targets `high`.
+Mikola provides ATK to all units `low`, DEF to multiple targets `average`, Direct healing to multiple targets `average`, Haste to multiple targets `average`, Magic DEF to multiple targets `average`, and Vitality (EX+10) to multiple targets `high`.
 
 **59** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -8230,9 +8230,9 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Mikola
 
-- ATK — All units — `average`
+- ATK — All units — `low`
 - DEF — Multiple targets — `average`
-- Direct healing — Multiple targets — `low`
+- Direct healing — Multiple targets — `average`
 - Haste — Multiple targets — `average`
 - Magic DEF — Multiple targets — `average`
 - Vitality (EX+10) — Multiple targets — `high`
@@ -8561,7 +8561,7 @@ Common buffers are **Mikola**, **Twins**, or **Kazim**.
 
 #### Debuffs provided by Natsu
 
-- Haste — Single target — `average`
+- Haste — Single target — `high`
 - Max HP (Mythic+) — Single target — `average`
 
 #### Crowd Control provided by Natsu
@@ -8795,7 +8795,7 @@ Nerion also requires units **applying crowd control** to enemies
 #### Debuffs provided by Nerion
 
 - ATK (Mythic+) — Single target — `low`
-- Haste (Mythic+) — Single target — `average`
+- Haste (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Nerion
 
@@ -9079,7 +9079,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Pandora
 
-Pandora provides Direct healing to single targets `high`, Invincible to single targets `high`, and Max HP (Legendary+) to single targets `average`.
+Pandora provides Direct healing to single targets `high`, Invincible to single targets `high`, and Max HP (Legendary+) to single targets `low`.
 
 **22** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -9138,7 +9138,7 @@ These are the **4** strongest pairings:
 
 - Direct healing — Single target — `high`
 - Invincible — Single target — `high`
-- Max HP (Legendary+) — Single target — `average`
+- Max HP (Legendary+) — Single target — `low`
 
 #### Debuffs provided by Pandora
 
@@ -9355,7 +9355,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Hugin**.
 
 ### Units benefitting most from Parisa
 
-Parisa provides ATK to multiple targets `high` and ATK SPD to multiple targets `average`.
+Parisa provides ATK to multiple targets `high` and ATK SPD to multiple targets `low`.
 
 **11** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -9402,7 +9402,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Parisa
 
 - ATK — Multiple targets — `high`
-- ATK SPD — Multiple targets — `average`
+- ATK SPD — Multiple targets — `low`
 
 ## Peggy
 
@@ -10040,7 +10040,7 @@ These are the **4** strongest pairings:
 #### Debuffs provided by Ravion
 
 - ATK — Single target — `low`
-- Phys DEF — Single target — `high`
+- Phys DEF — Single target — `average`
 
 #### Crowd Control provided by Ravion
 
@@ -10101,7 +10101,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Reinier
 
-Reinier provides Direct healing to single targets `low` and Damage taken (EX+10) to single targets `average`.
+Reinier provides Direct healing to single targets `low` and Damage taken (EX+10) to single targets `low`.
 
 - Phraesto (1.3 / 5)
 
@@ -10156,11 +10156,11 @@ Reinier provides Direct healing to single targets `low` and Damage taken (EX+10)
 #### Buffs provided by Reinier
 
 - Direct healing — Single target — `low`
-- Damage taken (EX+10) — Single target — `average`
+- Damage taken (EX+10) — Single target — `low`
 
 #### Debuffs provided by Reinier
 
-- ATK (Legendary+) — Single target — `low`
+- ATK (Legendary+) — Single target — `average`
 - Damage taken (Mythic+) — Single target — `average`
 
 #### Crowd Control provided by Reinier
@@ -10405,7 +10405,7 @@ These are the **4** strongest pairings:
 
 #### Debuffs provided by Rowan
 
-- Energy — Single target — `average`
+- Energy — Single target — `low`
 
 ## Saida
 
@@ -10518,7 +10518,7 @@ These are the **4** strongest pairings:
 
 #### Debuffs provided by Saida
 
-- Energy — Single target — `average`
+- Energy — Single target — `high`
 - Damage dealt (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Saida
@@ -11093,7 +11093,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 #### Debuffs provided by Shadewing
 
-- Magic DEF — Single target — `average`
+- Magic DEF — Single target — `low`
 - Phys DEF — Single target — `low`
 
 ## Shakir
@@ -11155,7 +11155,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Dunlingr**.
 
 ### Units benefitting most from Shakir
 
-Shakir provides Damage taken in an area `average` and Haste in an area `average`.
+Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 
 **8** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -11216,7 +11216,7 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Shakir
 
-- Damage taken — Area — `average`
+- Damage taken — Area — `low`
 - Haste — Area — `average`
 
 #### Debuffs provided by Shakir
@@ -11724,7 +11724,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Smokey & Meerky
 
-Smokey & Meerky provides ATK in an area `average`, Direct healing in an area `average`, Energy in an area `low`, Haste in an area `average`, and Healing over time in an area `average`.
+Smokey & Meerky provides ATK in an area `average`, Direct healing in an area `high`, Energy in an area `low`, Haste in an area `average`, and Healing over time in an area `high`.
 
 **83** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -11770,10 +11770,10 @@ These are the **4** strongest pairings:
 #### Buffs provided by Smokey & Meerky
 
 - ATK — Area — `average`
-- Direct healing — Area — `average`
+- Direct healing — Area — `high`
 - Energy — Area — `low`
 - Haste — Area — `average`
-- Healing over time — Area — `average`
+- Healing over time — Area — `high`
 
 #### Crowd Control provided by Smokey & Meerky
 
@@ -11831,7 +11831,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Solise
 
-Solise provides ATK to single targets `low`, Direct healing to all units `average`, Healing over time to single targets `low`, DEF (Mythic+) to single targets `low`, and Magic DEF (Mythic+) to single targets `low`.
+Solise provides ATK to single targets `low`, Direct healing to all units `high`, Healing over time to single targets `average`, DEF (Mythic+) to single targets `low`, and Magic DEF (Mythic+) to single targets `low`.
 
 **12** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -11885,8 +11885,8 @@ These are the **4** strongest pairings:
 #### Buffs provided by Solise
 
 - ATK — Single target — `low`
-- Direct healing — All units — `average`
-- Healing over time — Single target — `low`
+- Direct healing — All units — `high`
+- Healing over time — Single target — `average`
 - DEF (Mythic+) — Single target — `low`
 - Magic DEF (Mythic+) — Single target — `low`
 
@@ -11958,7 +11958,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 ### Units benefitting most from Sonja
 
-Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targets `average`.
+Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targets `low`.
 
 - Hepler (2.8 / 5)
 - Natsu (2.8 / 5)
@@ -12004,7 +12004,7 @@ Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targe
 #### Buffs provided by Sonja
 
 - ATK — Multiple targets — `average`
-- Magic DEF — Multiple targets — `average`
+- Magic DEF — Multiple targets — `low`
 
 #### Crowd Control provided by Sonja
 
@@ -12241,7 +12241,7 @@ Common buffers are **Twins**, **Mehira**, or **Kazim**.
 
 #### Debuffs provided by Sylphira
 
-- Energy — Single target — `low`
+- Energy — Single target — `average`
 - Max HP — Single target — `low`
 
 #### Crowd Control provided by Sylphira
@@ -12693,7 +12693,7 @@ These are the **4** strongest pairings:
 
 #### Debuffs provided by Thador
 
-- Magic DEF (Mythic+) — Single target — `average`
+- Magic DEF (Mythic+) — Single target — `high`
 - Phys DEF (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Thador
@@ -12860,7 +12860,7 @@ Common buffers are **Contess**, **Twins**, or **Saida**.
 
 ### Units benefitting most from Tilaya
 
-Tilaya provides DEF (EX+10) in an area `high` and Max HP (EX+10) in an area `average`.
+Tilaya provides DEF (EX+10) in an area `high` and Max HP (EX+10) in an area `high`.
 
 **9** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -12906,7 +12906,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Tilaya
 
 - DEF (EX+10) — Area — `high`
-- Max HP (EX+10) — Area — `average`
+- Max HP (EX+10) — Area — `high`
 
 #### Crowd Control provided by Tilaya
 
@@ -12980,7 +12980,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, or **Hepler**.
 
 ### Units benefitting most from Twins
 
-Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `low`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `high`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
+Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `average`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `average`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
 **89** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -13041,10 +13041,10 @@ These are the **4** strongest pairings:
 #### Buffs provided by Twins
 
 - ATK — Multiple targets — `high`
-- Direct healing — Multiple targets — `low`
+- Direct healing — Multiple targets — `average`
 - Energy — Multiple targets — `low`
 - Haste — All units — `high`
-- Max HP — Multiple targets — `high`
+- Max HP — Multiple targets — `average`
 - Vitality (Mythic+) — Multiple targets — `low`
 - Magic DEF (Supreme+) — Single target — `low`
 - Phys DEF (Supreme+) — Single target — `low`
@@ -13285,8 +13285,8 @@ Vala also requires enemies **to be defeated**
 
 #### Debuffs provided by Vala
 
-- Energy — Single target — `low`
-- Haste — Single target — `average`
+- Energy — Single target — `average`
+- Haste — Single target — `high`
 - Marked target (focus fire) — Single target — `average`
 - Damage dealt (Supreme+) — Single target — `average`
 
@@ -13594,7 +13594,7 @@ Common buffers are **Hugin**, **Contess**, or **Twins**.
 
 ### Units benefitting most from Velara
 
-Velara provides Basic stats to all units `average` and Direct healing to multiple targets `low`.
+Velara provides Basic stats to all units `average` and Direct healing to multiple targets `average`.
 
 - Indris (4.7 / 5)
 - Shadewing (3.4 / 5)
@@ -13647,15 +13647,15 @@ Velara provides Basic stats to all units `average` and Direct healing to multipl
 #### Buffs provided by Velara
 
 - Basic stats — All units — `average`
-- Direct healing — Multiple targets — `low`
+- Direct healing — Multiple targets — `average`
 
 #### Debuffs provided by Velara
 
 - Basic stats — All units — `average`
-- Haste — Area — `average`
+- Haste — Area — `low`
 - Haste — Multiple targets — `average`
 - Haste — Single target — `average`
-- Magic DEF — Single target — `average`
+- Magic DEF — Single target — `high`
 - Phys DEF — Single target — `low`
 
 #### Crowd Control provided by Velara
@@ -13769,7 +13769,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, or **Hepler**.
 
 #### Debuffs provided by Viperian
 
-- Energy — Single target — `low`
+- Energy — Single target — `average`
 
 #### Crowd Control provided by Viperian
 
@@ -13936,7 +13936,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Zandrok
 
-Zandrok provides Haste in an area `low` — conditional (frequent), Lifedrain in an area `average` — conditional (frequent), and Max HP to multiple targets `average`.
+Zandrok provides Haste in an area `low` — conditional (frequent), Lifedrain in an area `high` — conditional (frequent), and Max HP to multiple targets `low`.
 
 **12** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -13978,8 +13978,8 @@ These are the **4** strongest pairings:
 #### Buffs provided by Zandrok
 
 - Haste — Area — `low` — conditional (frequent)
-- Lifedrain — Area — `average` — conditional (frequent)
-- Max HP — Multiple targets — `average`
+- Lifedrain — Area — `high` — conditional (frequent)
+- Max HP — Multiple targets — `low`
 
 #### Crowd Control provided by Zandrok
 
@@ -14096,7 +14096,7 @@ Common buffers are **Ravion**, **Twins**, or **Mehira**.
 #### Debuffs provided by Zanie
 
 - ATK (Supreme+) — Single target — `average`
-- Phys DEF (Supreme+) — Single target — `high`
+- Phys DEF (Supreme+) — Single target — `average`
 
 #### Crowd Control provided by Zanie
 

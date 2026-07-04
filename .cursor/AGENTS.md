@@ -128,7 +128,7 @@ Synergy picks in `heroes-overview.md` skip rare conditional ally buffs.
 
 ## Fully ascended comparison
 
-Synergy ranking and same-role magnitude bands assume every hero is **fully
+Synergy ranking and roster-wide magnitude bands assume every hero is **fully
 ascended**: all skill slots unlock (Ultimate through Supreme+ / EX tiers), and
 numeric comparison uses the **strongest parseable value** per effect label
 across skill level lines — not the base unlock value. This is implemented in
@@ -139,16 +139,15 @@ use `(scaled)` placeholders in source text.
 ## Quality indicators
 
 Summary lines mark relative strength with **`high`**, **`average`**, or
-**`low`** (backticks in output). These rank an effect against **same-role
-peers** (Prydwen role category: damage dealer, specialist, support, tank),
-not the full roster.
+**`low`** (backticks in output). These rank an effect against the **full
+roster** (same effect label), not same-role peers only.
 
 - **Buffs / debuffs** — parsed % compared within the same label across
-  same-role heroes (quantiles when enough data); debuffs also reward
+  all heroes (quantiles when enough data); debuffs also reward
   `all enemies` reach. `assign_magnitudes()` in `rewrite-summaries.py`.
 - **Crowd control** — duration-based (≥5s → high, ≥2s → average).
 - **HP loss / max-HP / true damage** — composite score from %, targeting, and
-  frequency; same-role quantiles in `assign_damage_magnitudes()`.
+  frequency; roster-wide quantiles in `assign_damage_magnitudes()`.
 
 **Tier** in parentheses (`Mythic+`, `Level 3`, …) is unlock level, not
 strength. **Conditional (rare)** lowers magnitude by two steps; some labels
@@ -243,8 +242,8 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
   `rewrite-summaries.py`; stored in `behavior.skill_overview`. Speed uses
-  `compute_per_skill_speeds()` same-role quantiles. Damage scores per skill
-  section from chunk text (same-role quantiles). Heal/buffs/debuffs peak
+  `compute_per_skill_speeds()` roster-wide quantiles. Damage scores per skill
+  section from chunk text (roster-wide quantiles). Heal/buffs/debuffs peak
   magnitudes from `skill_slices` effects. Non-ultimate row aggregates
   Skill1/Skill2/Ex with **p75** per metric type. Synergy fuel still uses
   `signature_skill_speed` / `synergy_signature_speed` in processed JSON
@@ -337,10 +336,11 @@ are enumerated in `data/schema/tags.schema.json`. Tags drive **Similar Skills**
 replacement scoring (Jaccard overlap on shared tags in
 `generate-heroes-overview.py`). Any hero pair with at least one shared tag can
 appear; more shared tags score higher. Other replacement categories still use
-the global minimum score from `heroes_config.json`. **Synergy lines and chip
-magnitudes stay per-role** (`assign_magnitudes()`); **replacement profiles**
-(buff, healing, damage, debuff, cc) use **global raw throughput, numeric, or
-duration scores** so substitutes compare across roles on absolute kit strength.
+the global minimum score from `heroes_config.json`. **Chip magnitudes**
+(`assign_magnitudes()`) use **roster-wide per-label quantile bands**;
+**replacement profiles** (buff, healing, damage, debuff, cc) use **global raw
+throughput, numeric, or duration scores** so substitutes compare on absolute
+kit strength rather than percentile labels.
 **Replacement ranking** sorts by kit similarity first (coverage / Jaccard);
 Prydwen tier breaks ties only. For tier comparison, `dream_realm` and
 `dream_realm_endless` are merged to the **max** of both (three modes:

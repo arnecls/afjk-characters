@@ -269,20 +269,17 @@ def main() -> int:
     }
     analysis = ra.get_roster_analysis(raw, role_by_title)
 
-    per_skill_speeds = rs.compute_per_skill_speeds(
-        analysis.skills_by_title, role_by_title
-    )
+    per_skill_speeds = rs.compute_per_skill_speeds(analysis.skills_by_title)
     damage_thresholds = rs.build_section_damage_thresholds(
-        analysis.heroes, analysis.skills_by_title, role_by_title
+        analysis.heroes, analysis.skills_by_title
     )
     damage_type_thresholds = rs.build_damage_type_thresholds(
-        analysis.heroes, analysis.skills_by_title, role_by_title
+        analysis.heroes, analysis.skills_by_title
     )
 
     proposed: dict[str, list[str]] = {}
     for hero in analysis.heroes:
         short = gen.short_name(hero.title)
-        role = rs._hero_role(hero.title, role_by_title)
         skills = analysis.skills_by_title[hero.title]
         speeds = per_skill_speeds.get(hero.title, {})
         tags = frozenset(current_tags.get(short, []))
@@ -290,8 +287,8 @@ def main() -> int:
             hero,
             skills,
             speeds,
-            damage_thresholds.get(role, rs._FALLBACK_DAMAGE_THRESHOLDS),
-            damage_type_thresholds.get(role, {}),
+            damage_thresholds,
+            damage_type_thresholds,
             summaries_by_short.get(short, {}),
             tags,
         )

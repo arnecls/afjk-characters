@@ -31,7 +31,7 @@ Each section in [heroes-overview.md](heroes-overview.md) includes:
 - **Replacements** — similar heroes grouped by role (damage, crowd control, buffs, etc.)
 - **Summary** — structured breakdown of stats benefited, damage types, buffs, debuffs, crowd control, and special effects
 
-Magnitude labels (`high`, `average`, `low`) rank an effect against same-role peers (damage dealer, specialist, support, tank), not the full roster. See [`.cursor/AGENTS.md`](.cursor/AGENTS.md) for the full taxonomy.
+Magnitude labels (`high`, `average`, `low`) rank an effect against the full roster (same effect label), not same-role peers only. See [`.cursor/AGENTS.md`](.cursor/AGENTS.md) for the full taxonomy.
 
 ## How to use it
 

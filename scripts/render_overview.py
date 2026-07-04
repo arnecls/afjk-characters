@@ -120,12 +120,7 @@ def load_summary_heroes(
         damage_type = meta.get("damage_type", "Physical") or "Physical"
         summary_heroes[long_name] = hs.deserialize_hero(long_name, p, damage_type)
     summary_list = list(summary_heroes.values())
-    role_category_by_title = hs.role_category_by_title_from_processed(
-        summary_list, processed, gen.short_name
-    )
-    rs.assign_magnitudes(
-        summary_list, skills_by_title, role_category_by_title
-    )
+    rs.assign_magnitudes(summary_list, skills_by_title)
     return summary_heroes, skills_by_title
 
 

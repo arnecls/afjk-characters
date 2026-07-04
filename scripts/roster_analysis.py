@@ -125,7 +125,7 @@ def _build_roster_analysis(
         rs.analyze_hero(hero)
 
     skills_by_title = rs.load_skills_by_title_from_records(hero_records)
-    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+    rs.assign_magnitudes(heroes, skills_by_title)
 
     display_by_title = {hero.title: gen.short_name(hero.title) for hero in heroes}
     behavior_by_title = rs.build_behavior_for_heroes(
@@ -133,7 +133,6 @@ def _build_roster_analysis(
         display_by_title,
         heroes2_text=behavior_text,
         heroes_text=heroes_text,
-        role_category_by_title=role_category_by_title,
         hero_class_by_title=hero_class_by_title,
     )
 
@@ -154,30 +153,9 @@ def _finalize_cached(
     cached: RosterAnalysis,
     role_category_by_title: dict[str, str],
 ) -> RosterAnalysis:
-    """Re-apply role-dependent fields after a cache hit."""
-    rs, _gen = analysis_modules()
-    rs.assign_magnitudes(
-        cached.heroes, cached.skills_by_title, role_category_by_title
-    )
-    behavior_by_title = rs.build_behavior_for_heroes(
-        cached.heroes,
-        cached.display_by_title,
-        heroes2_text=cached.behavior_text,
-        heroes_text=cached.heroes_text,
-        role_category_by_title=role_category_by_title,
-        hero_class_by_title=cached.hero_class_by_title,
-    )
-    return RosterAnalysis(
-        heroes=cached.heroes,
-        block_by_title=cached.block_by_title,
-        hero_class_by_title=cached.hero_class_by_title,
-        heroes_text=cached.heroes_text,
-        behavior_text=cached.behavior_text,
-        skills_by_title=cached.skills_by_title,
-        behavior_by_title=behavior_by_title,
-        display_by_title=cached.display_by_title,
-        data_by_title=cached.data_by_title,
-    )
+    """Return cached analysis (quality indicators are roster-wide)."""
+    del role_category_by_title
+    return cached
 
 
 def get_roster_analysis(

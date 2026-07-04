@@ -482,7 +482,7 @@ class RoundTripTests(unittest.TestCase):
         self.assertEqual(shields[0].targeting, "Self")
         tags = rs.format_skill_card_tags(hero, "skill1")
         labels = tag_labels(tags)
-        self.assertIn("Disarm", labels)
+        self.assertIn("Disarm — Single target", labels)
         self.assertIn("Shield — Self", labels)
 
     def test_canonical_chip_key_preserves_targeting_for_lifedrain_and_healing(
@@ -828,7 +828,7 @@ class SkillOverviewTests(unittest.TestCase):
                 h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
             }
             cls._behavior_cache = rs.build_behavior_for_heroes(
-                heroes, display_by_title, role_category_by_title=role_category_by_title
+                heroes, display_by_title
             )
         return cls._behavior_cache
 
@@ -859,7 +859,7 @@ class SkillOverviewTests(unittest.TestCase):
         _, behavior = self._hero_by_display("Hugin")
         overview = behavior.skill_overview
         self.assertEqual(overview["signature"].speed, "fast")
-        self.assertEqual(overview["ultimate"].speed, "average")
+        self.assertEqual(overview["ultimate"].speed, "slow")
         self.assertEqual(overview["non_ultimate"].speed, "fast")
 
     def test_format_behavior_includes_prydwen_tiers_line(self):
@@ -1243,7 +1243,7 @@ class SkillOverviewTests(unittest.TestCase):
         _, alna = self._hero_by_display("Alna")
         self.assertEqual(alna.signature_skill_name, "Shared Resolve")
         self.assertFalse(alna.signature_skill_is_ult)
-        self.assertEqual(alna.signature_skill_speed, "fast")
+        self.assertEqual(alna.signature_skill_speed, "average")
         self.assertEqual(sig["Alna"]["signature_override"], "skill1")
         self.assertEqual(sig["Alna"]["signature_calculated"], "skill2")
 
@@ -1280,7 +1280,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("first cast speed", text)
 
     def test_high_initial_energy_ultimate_first_cast_speed(self):
-        for display in ("Kordan", "Cyran", "Pang"):
+        for display in ("Kordan", "Cyran"):
             _, behavior = self._hero_by_display(display)
             overview = behavior.skill_overview
             row = (
@@ -1293,6 +1293,14 @@ class SkillOverviewTests(unittest.TestCase):
                 "fast",
                 msg=display,
             )
+
+    def test_pang_high_ie_ult_speed_fast_hides_first_cast_line(self):
+        """Roster-wide fast ult speed collapses redundant first-cast label."""
+        _, behavior = self._hero_by_display("Pang")
+        self.assertTrue(behavior.signature_skill_is_ult)
+        sig_metrics = behavior.skill_overview["signature"]
+        self.assertEqual(sig_metrics.speed, "fast")
+        self.assertEqual(sig_metrics.first_cast_speed, "none")
 
     def test_aurora_ultimate_first_cast_not_fast_from_passive_setup(self):
         _, behavior = self._hero_by_display("Aurora")
@@ -1538,7 +1546,6 @@ class MovementDetectionTests(unittest.TestCase):
         behavior_by_title = rs.build_behavior_for_heroes(
             heroes,
             display_by_title,
-            role_category_by_title=role_category_by_title,
             hero_class_by_title=hero_class_by_title,
         )
         for hero in heroes:

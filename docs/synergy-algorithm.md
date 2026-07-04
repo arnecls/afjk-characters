@@ -27,7 +27,7 @@ Effects that hit more allies or cover a larger area are worth more:
 - **Single target**: 1.5
 
 ### 2. Magnitude Weight
-Effects are ranked against same-role peers (e.g., comparing a tank's shield to other tanks' shields):
+Effects are ranked across the full roster (same effect label; e.g. comparing one hero's shield to all shields):
 - **High**: 3.0
 - **Average**: 2.0
 - **Low**: 1.0

@@ -23,7 +23,7 @@ For each category, the algorithm returns the top 3 candidates that meet a minimu
 
 Replacement scoring relies on **Coverage**: how much of the Source Hero's output the Candidate Hero can replicate. 
 
-Unlike Synergy, which compares heroes to their same-role peers, Replacement uses **Absolute Global Strength**. This means a Support hero's healing is directly compared to a Tank's healing using raw throughput numbers, ensuring that a suggested replacement can actually output the required numbers.
+Unlike Synergy magnitude labels (roster-wide per-label quantiles), Replacement uses **Absolute Global Strength**. This means a Support hero's healing is directly compared to a Tank's healing using raw throughput numbers, ensuring that a suggested replacement can actually output the required numbers.
 
 ### 1. The Coverage Formula
 For any given category (e.g., Buffs), the algorithm builds a "Profile" for both the Source and the Candidate. The profile assigns a weight to every effect (e.g., ATK buff, DEF buff).

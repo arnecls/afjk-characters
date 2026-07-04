@@ -100,7 +100,7 @@ new_doc = ses.export_sidecar_from_hero(old, record)  # replace with your draft
 # Or: build draft manually, then compare processed output:
 new_hero = rs.hero_from_record(record)
 ses.apply_sidecar_to_hero(new_hero, new_doc)
-rs.assign_magnitudes([new_hero], {}, {})
+rs.assign_magnitudes([new_hero], {})
 print("OLD effects:", len(old.effects), "NEW slice effects:",
       sum(len(s.effects) for s in new_hero.skill_slices.values()))
 PY
