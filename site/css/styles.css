@@ -783,14 +783,12 @@ a:hover {
 .list-hero-hex {
   --list-hex-size: 36px;
   --list-hex-border-width: 2px;
-  --list-hex-clip: polygon(
-    50% 0%,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0% 75%,
-    0% 25%
-  );
+  --list-hex-clip: polygon(50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
   --list-hex-border: var(--border);
   flex: 0 0 var(--list-hex-size);
   width: var(--list-hex-size);
@@ -2158,14 +2156,12 @@ a:hover {
 
 .inline-hero-hex {
   --inline-hex-border-width: 1.5px;
-  --inline-hex-clip: polygon(
-    50% 0%,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0% 75%,
-    0% 25%
-  );
+  --inline-hex-clip: polygon(50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
   --inline-hex-border: var(--border);
   display: inline-block;
   position: relative;
@@ -2221,11 +2217,9 @@ a:hover {
   position: absolute;
   inset: var(--inline-hex-border-width);
   clip-path: var(--inline-hex-clip);
-  background: color-mix(
-    in srgb,
-    var(--inline-hex-border) 14%,
-    var(--surface-panel)
-  );
+  background: color-mix(in srgb,
+      var(--inline-hex-border) 14%,
+      var(--surface-panel));
   overflow: hidden;
   z-index: 1;
 }
@@ -3212,13 +3206,12 @@ html.welcome-warning-pending .welcome-warning,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.35em;
-  min-height: 1.35em;
-  padding: 0.14em 0.16em;
+  min-width: 2em;
+  min-height: 2em;
   border-radius: 0.22rem;
   background: var(--chip-generic-bg);
   border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
-  font-size: 0.68rem;
+  font-size: 0.5rem;
   line-height: 1;
   box-sizing: border-box;
 }
