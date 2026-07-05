@@ -105,7 +105,14 @@
           "summon_effects": [],
           "immunities": [],
           "special_provides": [],
-          "special_requires": []
+          "special_requires": [
+            {
+              "label": "Named ally on team",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK."
+            }
+          ]
         }
       }
     },

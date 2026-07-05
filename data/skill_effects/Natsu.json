@@ -317,7 +317,14 @@
           "summon_effects": [],
           "immunities": [],
           "special_provides": [],
-          "special_requires": []
+          "special_requires": [
+            {
+              "label": "Named ally on team",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "If the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5."
+            }
+          ]
         }
       }
     },

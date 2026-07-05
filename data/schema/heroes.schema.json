@@ -37,6 +37,7 @@
         "damage_entries",
         "damage_magnitudes",
         "benefit_stats",
+        "scalar_stat_shares",
         "behavior"
       ],
       "additionalProperties": false,
@@ -114,6 +115,23 @@
             "$ref": "#/$defs/benefitStat"
           },
           "description": "Stats the hero benefits from for synergy matching."
+        },
+        "scalar_stat_shares": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "atk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_hp": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "description": "Share of (ATK-based) vs (HP-based) damage/heal scalars in skill text."
         },
         "behavior": {
           "$ref": "#/$defs/behavior"
@@ -200,6 +218,32 @@
           "type": "string",
           "minLength": 1,
           "description": "Supporting skill text for this mechanic."
+        },
+        "grants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "magnitude"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "magnitude": {
+                "type": "string",
+                "enum": [
+                  "high",
+                  "average",
+                  "low"
+                ]
+              }
+            }
+          },
+          "description": "Curated buff grants for named-ally provides."
         }
       }
     },
@@ -255,6 +299,7 @@
         "Marked target (focus fire)",
         "Monster ingredients",
         "Multiple debuffs on target",
+        "Named ally on team",
         "Once per battle",
         "Party composition",
         "Passive with internal cooldown",

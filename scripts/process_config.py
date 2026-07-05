@@ -94,6 +94,12 @@ def apply_config(config: dict) -> None:
     if "provider_blacklist" in ps:
         _gen.PROXIMITY_PROVIDER_BLACKLIST = frozenset(ps["provider_blacklist"])
 
+    ss = config.get("scalar_synergy", {})
+    if "share_boost" in ss:
+        _gen.SCALAR_SHARE_BOOST = ss["share_boost"]
+    if "bound_threshold" in ss:
+        _gen.SCALAR_BOUND_THRESHOLD = ss["bound_threshold"]
+
     mt = config.get("magnitude_throughput", {})
     if "min_cycle_seconds" in mt:
         _rs.MIN_CYCLE_SECONDS = mt["min_cycle_seconds"]

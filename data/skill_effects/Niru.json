@@ -210,7 +210,24 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Named ally on team",
+              "tier": "supreme+",
+              "targeting": "Allies",
+              "description": "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.",
+              "grants": [
+                {
+                  "label": "Phys DEF",
+                  "magnitude": "high"
+                },
+                {
+                  "label": "Magic DEF",
+                  "magnitude": "high"
+                }
+              ]
+            }
+          ],
           "special_requires": []
         }
       }

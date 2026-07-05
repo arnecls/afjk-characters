@@ -92,6 +92,9 @@ PROXIMITY_RANGE_SLACK = 0.5
 PROXIMITY_RECEIVER_WHITELIST: frozenset[str] = frozenset()
 PROXIMITY_PROVIDER_BLACKLIST: frozenset[str] = frozenset()
 
+SCALAR_SHARE_BOOST = 0.75
+SCALAR_BOUND_THRESHOLD = 0.5
+
 FREQUENT_CONDITIONAL_SCORE = 0.85
 
 # Signature skill "casting fuel": boost Haste/ATK SPD synergies so a unit's
@@ -235,6 +238,7 @@ RANGED_DAMAGE_SUMMON_LABEL = "Ranged damage"
 SKIP_ENABLER_REQUIRES = frozenset(
     {
         "Debuff on target (Aging)",
+        "Ally blessing active",
         "Form or stance active",
         "Boss encounter",
         "Once per battle",
@@ -269,12 +273,12 @@ ENABLER_REQUIRE_HANDLERS = (
     "Ranged damage from allies",
     "Debuff on target",
     "Multiple debuffs on target",
-    "Ally blessing active",
     "Ally on positioning link",
     "Ally Ultimate casts",
     "Enemy defeat",
     "Adjacent allies",
     "Party composition",
+    "Named ally on team",
     "Ally stat buffs",
     "CC on enemies",
 )
@@ -934,12 +938,6 @@ def match_debuff_on_target(provider: _rs.Hero) -> tuple[float, str] | None:
     return max(candidates, key=lambda x: x[0])
 
 
-def match_blessed_ally(provider: _rs.Hero) -> tuple[float, str] | None:
-    if provider_has_special(provider, "Ally blessing"):
-        return 4.0, "Ally blessing"
-    return None
-
-
 def match_stellar_bond(provider: _rs.Hero) -> tuple[float, str] | None:
     if provider_has_special(provider, "Ally positioning link"):
         return 4.5, "Ally positioning link"
@@ -1012,6 +1010,54 @@ def match_party_composition(
     if hero_class not in PARTY_COMPOSITION_CLASSES:
         return None
     return 5.0, f"{hero_class} (party slot)"
+
+
+def match_named_ally_on_team(
+    provider: _rs.Hero,
+    req: _rs.SpecialEffect,
+) -> tuple[float, str] | None:
+    provider_name = short_name(provider.title)
+    if not _named_ally_text_mentions_hero(req.qualitative, provider_name):
+        return None
+    return 7.0, f"{provider_name} named in skill text"
+
+
+def _named_ally_text_mentions_hero(text: str, hero_name: str) -> bool:
+    return bool(
+        re.search(
+            rf"(?<![A-Za-z]){re.escape(hero_name)}(?![A-Za-z])",
+            text,
+        )
+    )
+
+
+def score_named_ally_provides(
+    provider: _rs.Hero,
+    receiver: _rs.Hero,
+) -> tuple[float, list[str]]:
+    """Score provider special_provides that buff a named receiver."""
+    receiver_name = short_name(receiver.title)
+    total = 0.0
+    reasons: list[str] = []
+    for se in provider.special_effects:
+        if se.kind != "provides" or se.label != "Named ally on team":
+            continue
+        if not _named_ally_text_mentions_hero(se.qualitative, receiver_name):
+            continue
+        grants = getattr(se, "grants", None) or []
+        if grants:
+            for label, magnitude in grants:
+                pts = TARGETING_WEIGHT["Single target"] * MAG_WEIGHT.get(
+                    magnitude, 1.0
+                )
+                total += pts
+                reasons.append(f"Named ally grant: {label} ({magnitude})")
+        else:
+            total += 7.0
+            reasons.append(
+                f"Named ally grant via {short_name(provider.title)}"
+            )
+    return total, reasons
 
 
 def _format_ally_stat_buff_grant(
@@ -1119,7 +1165,6 @@ def _make_enabler_matchers(
         "Ranged damage from allies": ranged,
         "Debuff on target": match_debuff_on_target,
         "Multiple debuffs on target": match_multiple_debuffs,
-        "Ally blessing active": match_blessed_ally,
         "Ally on positioning link": match_stellar_bond,
         "Ally Ultimate casts": match_ally_ultimate_casts,
         "Enemy defeat": match_enemy_defeat,
@@ -1144,12 +1189,12 @@ REQUIRE_SYNERGY_FRAGMENTS: dict[str, str] = {
     "Damage over time": "units **applying damage over time** to enemies",
     "Debuff on target": "units **putting debuffs** on enemies",
     "Multiple debuffs on target": "units **putting multiple debuffs** on enemies",
-    "Ally blessing active": "a unit **to bless**",
     "Ally on positioning link": "units **positioned on their link**",
     "Ally Ultimate casts": "allies **casting ultimates**",
     "Enemy defeat": "enemies **to be defeated**",
     "Adjacent allies": "allies **adjacent** to them",
     "Party composition": "a party **with the right composition**",
+    "Named ally on team": "specific **named allies**",
     "Ally stat buffs": "units **buffing them**",
     "CC on enemies": "units **applying crowd control** to enemies",
 }
@@ -1220,15 +1265,20 @@ def score_enabler_synergy(
             continue
         if req.label in seen:
             continue
-        matcher = enabler_matchers.get(req.label)
-        if not matcher:
-            continue
-        if req.label == "Ally stat buffs":
+        if req.label == "Named ally on team":
+            result = match_named_ally_on_team(provider, req)
+            if not result:
+                continue
+            pts, detail = result
+        elif req.label == "Ally stat buffs":
             result = _ally_stat_buff_synergy(provider, receiver_movement)
             if not result:
                 continue
             pts, buff_count, start_of_battle = result
         else:
+            matcher = enabler_matchers.get(req.label)
+            if not matcher:
+                continue
             result = matcher(provider)
             if not result:
                 continue
@@ -1255,8 +1305,45 @@ def _stat_synergy_reasons(reasons: list[str]) -> list[str]:
 
 
 def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
-    """Heroes with Shield in benefit stats value ally shield grants."""
-    return "Shield" in receiver_stats(receiver)
+    """True when a receiver explicitly benefits from external shield uptime."""
+    return receiver_benefits_from_external_shields(receiver)
+
+
+def receiver_benefits_from_external_shields(receiver: _rs.Hero) -> bool:
+    """Detect shield payoff wording that can plausibly use ally shields."""
+    for _tier, text, _section in getattr(receiver, "skill_chunks", ()):
+        t = text.lower()
+        if re.search(r"\bwhen gaining a shield\b", t):
+            return True
+        if re.search(r"\bwhenever\b[^.]{0,40}\bgains? a shield\b", t):
+            return True
+        if re.search(r"\bwhen receiving a shield\b", t):
+            return True
+        if re.search(r"\bwhenever\b[^.]{0,40}\breceives? a shield\b", t):
+            return True
+        if re.search(r"\bwhile shielded\b", t):
+            return True
+    return False
+
+
+def _receiver_scalar_share(receiver: _rs.Hero, stat: str) -> float:
+    shares = getattr(receiver, "scalar_stat_shares", None) or {}
+    return float(shares.get(stat, 0.0))
+
+
+def receiver_stat_bound(receiver: _rs.Hero, stat: str) -> bool:
+    """True when skill-text scalars show the kit is strongly tied to this stat."""
+    return _receiver_scalar_share(receiver, stat) >= SCALAR_BOUND_THRESHOLD
+
+
+def scalar_stat_score_mult(receiver: _rs.Hero, stat: str) -> float:
+    """Boost-only multiplier for ATK / Max HP buff synergy on scalar-bound kits."""
+    if stat not in ("ATK", "Max HP"):
+        return 1.0
+    share = _receiver_scalar_share(receiver, stat)
+    if share <= 0:
+        return 1.0
+    return 1.0 + SCALAR_SHARE_BOOST * share
 
 
 def _has_all_summons_buff_reason(reasons: list[str]) -> bool:
@@ -1272,8 +1359,12 @@ def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
 
     if stat and not has_enabler:
         if all(r.startswith("ATK via ") for r in stat):
+            if receiver_stat_bound(receiver, "ATK"):
+                return False
             return True
         if all(r.startswith("Max HP via ") for r in stat):
+            if receiver_stat_bound(receiver, "Max HP"):
+                return False
             return True
         if all(r.startswith("Shield via ") for r in stat):
             return not receiver_benefits_from_shields(receiver)
@@ -1405,6 +1496,8 @@ def score_synergy(
     for stat, is_implicit in _stats_for_synergy_scoring(receiver, signature_speed):
         if stat == "Haste" and "Haste" in credited_buffs:
             continue
+        if stat == "Shield" and not receiver_benefits_from_shields(receiver):
+            continue
         label_prefs = buff_labels_for_stat(stat)
         allowed = {label for label, _ in label_prefs}
         mult_by_label = dict(label_prefs)
@@ -1438,6 +1531,7 @@ def score_synergy(
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
             pts = tw * mw * mult_by_label[effect.label]
             pts *= _rs.effect_synergy_multiplier(effect)
+            pts *= scalar_stat_score_mult(receiver, stat)
             if pts <= 0:
                 continue
             if effect.label == "Energy":
@@ -1558,9 +1652,10 @@ def score_combined_synergy(
     en_score, en_reasons = score_enabler_synergy(
         provider, receiver, enabler_matchers, receiver_movement
     )
+    named_score, named_reasons = score_named_ally_provides(provider, receiver)
     return (
-        buff_score + early_score + summon_score + en_score,
-        buff_reasons + early_reasons + summon_reasons + en_reasons,
+        buff_score + early_score + summon_score + en_score + named_score,
+        buff_reasons + early_reasons + summon_reasons + en_reasons + named_reasons,
     )
 
 
@@ -1594,8 +1689,8 @@ def rank_synergy_entries(
 
     ranked.sort(
         key=lambda x: (
-            -_prydwen_tier_preference(receiver_tiers, tiers.get(x[2], {})),
             -x[0],
+            -_prydwen_tier_preference(receiver_tiers, tiers.get(x[2], {})),
             x[2],
         )
     )

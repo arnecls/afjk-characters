@@ -212,8 +212,28 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
-          "special_requires": []
+          "special_provides": [
+            {
+              "label": "Named ally on team",
+              "tier": "mythic+",
+              "targeting": "Allies",
+              "description": "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
+              "grants": [
+                {
+                  "label": "Penetration",
+                  "magnitude": "average"
+                }
+              ]
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Named ally on team",
+              "tier": "mythic+",
+              "targeting": "Allies",
+              "description": "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30."
+            }
+          ]
         }
       }
     },

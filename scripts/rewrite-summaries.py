@@ -1200,6 +1200,7 @@ class SpecialEffect:
     tier: str
     targeting: str = "—"
     qualitative: str = ""
+    grants: list[tuple[str, str]] = field(default_factory=list)
 
 
 @dataclass
@@ -1230,6 +1231,7 @@ class Hero:
     damage_scores: dict[str, float] = field(default_factory=dict)
     damage_magnitudes: dict[str, str] = field(default_factory=dict)
     benefit_stats: list[str] = field(default_factory=list)
+    scalar_stat_shares: dict[str, float] = field(default_factory=dict)
     default_range: int | None = None
     # Buff labels tied to a specific tile; lost if the ally moves off it.
     positional_tile_buff_labels: frozenset[str] = field(default_factory=frozenset)
@@ -3404,13 +3406,20 @@ def _merge_special_effect_records(
         cur = merged.get(key)
         if cur is None:
             merged[key] = SpecialEffect(
-                se.kind, se.label, se.tier, se.targeting, se.qualitative
+                se.kind,
+                se.label,
+                se.tier,
+                se.targeting,
+                se.qualitative,
+                list(se.grants),
             )
             continue
         if TIER_ORDER.get(se.tier, 99) < TIER_ORDER.get(cur.tier, 99):
             cur.tier = se.tier
         if se.qualitative and not cur.qualitative:
             cur.qualitative = se.qualitative
+        if se.grants and not cur.grants:
+            cur.grants = list(se.grants)
     return list(merged.values())
 
 
@@ -5647,6 +5656,30 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
     return False
 
 
+_SCALAR_ATK_ANNOTATION_RE = re.compile(r"\(ATK-based\)", re.I)
+_SCALAR_HP_ANNOTATION_RE = re.compile(r"\(HP-based\)", re.I)
+
+
+def compute_scalar_stat_shares(hero: Hero) -> dict[str, float]:
+    """Share of (ATK-based) vs (HP-based) scalars in skill text; SP ignored."""
+    atk_count = 0
+    hp_count = 0
+    for _tier, text, _section in hero.skill_chunks:
+        if _chunk_is_companion_focused(text):
+            continue
+        atk_count += len(_SCALAR_ATK_ANNOTATION_RE.findall(text))
+        hp_count += len(_SCALAR_HP_ANNOTATION_RE.findall(text))
+    total = atk_count + hp_count
+    if total == 0:
+        return {}
+    shares: dict[str, float] = {}
+    if atk_count:
+        shares["ATK"] = atk_count / total
+    if hp_count:
+        shares["Max HP"] = hp_count / total
+    return shares
+
+
 def refine_benefit_stats(hero: Hero) -> None:
     """Drop incidental pattern matches; keep stats the hero actually scales with."""
     from_buffs = _stats_from_self_buffs(hero)
@@ -6048,6 +6081,7 @@ def analyze_hero(hero: Hero) -> None:
     hero.damage_scores.clear()
     hero.damage_magnitudes.clear()
     hero.benefit_stats.clear()
+    hero.scalar_stat_shares.clear()
 
     sidecar = ses.load_sidecar(hero.title)
     if sidecar is None:
@@ -6116,6 +6150,7 @@ def _postprocess_analyzed_hero(hero: Hero, primary_dmg: str) -> None:
     _accumulate_true_damage_scores(hero, primary_dmg)
     _seed_benefit_stats_from_text(hero)
     refine_benefit_stats(hero)
+    hero.scalar_stat_shares = compute_scalar_stat_shares(hero)
     for e in hero.effects:
         if e.targeting != "Self" and effect_targets_self_only(
             e.qualitative.lower(), e.label, e.category

@@ -23,7 +23,7 @@ sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io
 
 CACHE_PATH = io.DATA / ".roster_analysis_cache.pkl"
-CACHE_VERSION = 56
+CACHE_VERSION = 59
 
 _rs: Any = None
 _gen: Any = None
@@ -74,6 +74,10 @@ def cache_fingerprint(raw: dict[str, Any]) -> str:
         if io.HEROES_CONFIG.exists()
         else ""
     )
+    sidecar_text = "\0".join(
+        f"{path.name}\0{path.read_text(encoding='utf-8')}"
+        for path in sorted((io.DATA / "skill_effects").glob("*.json"))
+    )
     payload = json.dumps(raw, sort_keys=True, ensure_ascii=False)
     digest = hashlib.sha256()
     digest.update(str(CACHE_VERSION).encode())
@@ -81,6 +85,8 @@ def cache_fingerprint(raw: dict[str, Any]) -> str:
     digest.update(payload.encode())
     digest.update(b"\0")
     digest.update(config_text.encode())
+    digest.update(b"\0")
+    digest.update(sidecar_text.encode())
     return digest.hexdigest()
 
 

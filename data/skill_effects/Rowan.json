@@ -267,7 +267,20 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Named ally on team",
+              "tier": "supreme+",
+              "targeting": "Allies",
+              "description": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
+              "grants": [
+                {
+                  "label": "Healing",
+                  "magnitude": "average"
+                }
+              ]
+            }
+          ],
           "special_requires": []
         }
       }

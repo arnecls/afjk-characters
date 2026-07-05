@@ -1055,18 +1055,28 @@ def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:
         out["targeting"] = se.targeting
     if se.qualitative:
         out["description"] = se.qualitative.strip()
+    if se.grants:
+        out["grants"] = [
+            {"label": label, "magnitude": magnitude}
+            for label, magnitude in se.grants
+        ]
     return out
 
 
 def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
     rs = _rs()
 
+    grants = [
+        (grant["label"], grant["magnitude"])
+        for grant in se.get("grants", [])
+    ]
     return rs.SpecialEffect(
         kind=kind,
         label=se["label"],
         tier=to_display_tier(se.get("tier", "base")),
         targeting=se.get("targeting", "—"),
         qualitative=se.get("description", ""),
+        grants=grants,
     )
 
 
@@ -1276,6 +1286,10 @@ def serialize_processed_hero(
         for dt, mag in hero.damage_magnitudes.items()
     }
     benefit_stats = [to_schema_stat(s) for s in hero.benefit_stats]
+    scalar_stat_shares = {
+        to_schema_stat(stat): share
+        for stat, share in getattr(hero, "scalar_stat_shares", {}).items()
+    }
     raw_range = hero_record.get("range")
     default_range = int(raw_range) if raw_range is not None else None
 
@@ -1296,6 +1310,7 @@ def serialize_processed_hero(
         "damage_entries": damage_entries,
         "damage_magnitudes": damage_magnitudes,
         "benefit_stats": benefit_stats,
+        "scalar_stat_shares": scalar_stat_shares,
         "behavior": behavior,
     }
 
@@ -1346,6 +1361,10 @@ def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) ->
     hero.benefit_stats = [
         to_display_stat(s) for s in processed.get("benefit_stats", [])
     ]
+    hero.scalar_stat_shares = {
+        to_display_stat(stat): float(share)
+        for stat, share in processed.get("scalar_stat_shares", {}).items()
+    }
     return hero
 
 

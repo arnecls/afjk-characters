@@ -31,6 +31,38 @@ def _hero(title: str) -> SimpleNamespace:
     return SimpleNamespace(title=title, effects=[])
 
 
+def _shield_receiver(text: str) -> SimpleNamespace:
+    return SimpleNamespace(
+        title="Tank - Hero",
+        benefit_stats=["Shield"],
+        skill_chunks=[("base", text, "Skill")],
+        effects=[],
+        summon_effects=[],
+        positional_tile_buff_labels=frozenset(),
+        proximity_aura_buff_labels=frozenset(),
+        proximity_aura_radius=None,
+    )
+
+
+def _shield_provider() -> SimpleNamespace:
+    return SimpleNamespace(
+        title="Guard - Hero",
+        effects=[
+            SimpleNamespace(
+                category="buff",
+                label="Shield",
+                targeting="Multiple targets",
+                magnitude="high",
+                conditional=None,
+            )
+        ],
+        summon_effects=[],
+        positional_tile_buff_labels=frozenset(),
+        proximity_aura_buff_labels=frozenset(),
+        proximity_aura_radius=None,
+    )
+
+
 class ShieldMaxHpSynergyTests(unittest.TestCase):
     def test_shield_does_not_score_for_max_hp_only_receiver(self) -> None:
         rs_spec = importlib.util.spec_from_file_location(
@@ -51,55 +83,52 @@ class ShieldMaxHpSynergyTests(unittest.TestCase):
             proximity_aura_buff_labels=frozenset(),
             proximity_aura_radius=None,
         )
-        provider = SimpleNamespace(
-            title="Guard - Hero",
-            effects=[
-                SimpleNamespace(
-                    category="buff",
-                    label="Shield",
-                    targeting="Multiple targets",
-                    magnitude="high",
-                    conditional=None,
-                )
-            ],
-            summon_effects=[],
-            positional_tile_buff_labels=frozenset(),
-            proximity_aura_buff_labels=frozenset(),
-            proximity_aura_radius=None,
-        )
+        provider = _shield_provider()
         score, reasons = gen.score_synergy(provider, receiver)
         self.assertEqual(score, 0.0)
         self.assertEqual(reasons, [])
 
-    def test_shield_scores_for_shield_beneficiary(self) -> None:
-        receiver = SimpleNamespace(
-            title="Tank - Hero",
-            benefit_stats=["Shield"],
-            effects=[],
-            summon_effects=[],
-            positional_tile_buff_labels=frozenset(),
-            proximity_aura_buff_labels=frozenset(),
-            proximity_aura_radius=None,
+    def test_shield_does_not_score_for_self_shield_only_receiver(self) -> None:
+        receiver = _shield_receiver(
+            "The hero gains a shield equal to 25% of max HP for 7s."
         )
-        provider = SimpleNamespace(
-            title="Guard - Hero",
-            effects=[
-                SimpleNamespace(
-                    category="buff",
-                    label="Shield",
-                    targeting="Multiple targets",
-                    magnitude="high",
-                    conditional=None,
-                )
-            ],
-            summon_effects=[],
-            positional_tile_buff_labels=frozenset(),
-            proximity_aura_buff_labels=frozenset(),
-            proximity_aura_radius=None,
+        score, reasons = gen.score_synergy(_shield_provider(), receiver)
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
+
+    def test_shield_does_not_score_for_battle_start_self_shield(self) -> None:
+        receiver = _shield_receiver(
+            "When a battle starts, Kruger gains a shield that blocks damage."
         )
-        score, reasons = gen.score_synergy(provider, receiver)
+        score, reasons = gen.score_synergy(_shield_provider(), receiver)
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
+
+    def test_shield_scores_for_when_gaining_shield_payoff(self) -> None:
+        receiver = _shield_receiver(
+            "When gaining a shield, Callan recovers HP equal to 15% "
+            "of the shield's max value."
+        )
+        score, reasons = gen.score_synergy(_shield_provider(), receiver)
         self.assertGreater(score, 0.0)
         self.assertTrue(any(r.startswith("Shield via ") for r in reasons))
+
+    def test_shield_scores_for_generic_while_shielded_payoff(self) -> None:
+        receiver = _shield_receiver(
+            "While shielded, he further reduces damage taken by an extra 5%."
+        )
+        score, reasons = gen.score_synergy(_shield_provider(), receiver)
+        self.assertGreater(score, 0.0)
+        self.assertTrue(any(r.startswith("Shield via ") for r in reasons))
+
+    def test_shield_does_not_score_for_named_self_skill_shield(self) -> None:
+        receiver = _shield_receiver(
+            "Ulmus knocks back adjacent enemies by 1 tile when the shield "
+            "granted by Verdant Barrier breaks or vanishes."
+        )
+        score, reasons = gen.score_synergy(_shield_provider(), receiver)
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
 
 
 class SynergyTierRankingTests(unittest.TestCase):

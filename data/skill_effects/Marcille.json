@@ -73,6 +73,12 @@
               "label": "Once per battle",
               "tier": "mythic+",
               "description": "However, if Laios is on the team, this skill can revive him one additional time (no position requirement and does not consume the skill's use limit), but this can only trigger once per battle."
+            },
+            {
+              "label": "Named ally on team",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "If Marcille receives the buff from Laios' cooked meal, she recovers an extra 300 Energy."
             }
           ]
         }

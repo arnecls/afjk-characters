@@ -107,6 +107,10 @@
     "receiver_whitelist": [],
     "provider_blacklist": []
   },
+  "scalar_synergy": {
+    "share_boost": 0.75,
+    "bound_threshold": 0.5
+  },
   "magnitude_throughput": {
     "min_cycle_seconds": 3.0,
     "passive_reference_cycle_seconds": 10.0
