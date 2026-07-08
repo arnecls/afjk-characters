@@ -75,8 +75,14 @@ category icons on pool cards.
 ## Character portrait
 
 When the project owner asks for a hero's **character portrait**, they
-mean the in-battle character art from the AFK Journey Fandom wiki, stored at
-`site/assets/portraits/<DisplayName>.png`.
+mean the **combat icon** from the hero's AFK Journey Fandom wiki gallery,
+stored at `site/assets/portraits/<DisplayName>.png`. Use the file named
+`Hero_<DisplayName>.png` from `https://afk-journey.fandom.com/wiki/<DisplayName>/Gallery`,
+not the page image or full character art.
+
+Download the original PNG revision URL with `format=original`; otherwise the
+Fandom CDN may return WebP bytes from a PNG-looking URL. For example, Peggy's
+combat icon is `File:Hero_Peggy.png`, not `File:Peggy.png`.
 
 Character portraits are used across grid cards, detail portraits, list-view
 hex thumbnails, compact synergy/replacement cards, and common-buffer inline

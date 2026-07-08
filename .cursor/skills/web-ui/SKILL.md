@@ -15,6 +15,13 @@ The browser lives in `site/`. JavaScript source files live in
 `site/css/styles.css`. Data: `site/data/heroes.json` and
 `site/data/heroes-overview.csv`.
 
+Character images live in `site/assets/portraits/<DisplayName>.png`. When
+replacing them, use the Fandom gallery combat icon named
+`Hero_<DisplayName>.png` from
+`https://afk-journey.fandom.com/wiki/<DisplayName>/Gallery`, not the page
+image or full character art. Download the original PNG revision URL with
+`format=original` so the CDN does not return WebP bytes.
+
 **Never hand-edit `site/js/app.js`.** Make JavaScript changes in
 `site/js/src/**`, then rebuild `site/js/app.js` with
 `python3 scripts/bundle_js.py` or `just render-site`.

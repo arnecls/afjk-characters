@@ -304,11 +304,15 @@ Fix hero-specific issues:
 Confirm for this hero:
 
 | Artifact | Path |
-|----------|------|
+| --- | --- |
 | Skill text | `Heroes.md` |
 | Synergies + behavior | `heroes-overview.md` |
 | Site bundle | `site/data/heroes.json` |
-| Character portrait (Fandom wiki) | `site/assets/portraits/<DisplayName>.png` (manual; see [CONTEXT.md](../../CONTEXT.md) — Character portrait) |
+| Character portrait | `site/assets/portraits/<DisplayName>.png` |
+
+For the character portrait, use the Fandom gallery combat icon named
+`Hero_<DisplayName>.png`; see [CONTEXT.md](../../CONTEXT.md) — Character
+portrait.
 
 If skill card chips look wrong despite correct processed JSON, see
 [web-ui](../web-ui/SKILL.md).
@@ -480,7 +484,7 @@ processed data, try both names if one fails.
 4. Curated: `signature_skills.json`, `hero_behavior_tags.json`,
    `heroes_data_skill_summary.json`
 5. `just views` → processed, synergies, overview, site
-6. Wiki character portrait in `site/assets/portraits/Kazim.png`
+6. Wiki combat icon in `site/assets/portraits/Kazim.png`
 7. `hero_play_overviews.json` added in follow-up commit
 
 Use this as a file-touch checklist, not a guarantee every new hero needs the
