@@ -632,10 +632,12 @@ window.AFKJ = window.AFKJ || {};
     );
   }
 
-  function renderSynergyPartnerExplanation(reasons) {
+  function renderSynergyPartnerExplanation(reasons, options) {
     if (!reasons || !reasons.length) {
       return "";
     }
+    options = options || {};
+    const prioritizeSignatureFuel = !!options.prioritizeSignatureFuel;
     const effects = [];
     const enables = [];
     const seen = Object.create(null);
@@ -656,20 +658,60 @@ window.AFKJ = window.AFKJ || {};
 
     let html = "";
     if (effects.length) {
-      html += '<div class="synergy-partner-pills">';
-      effects.forEach(function (effect) {
+      const hasSignatureFuel =
+        prioritizeSignatureFuel &&
+        effects.some(function (effect) {
+          return effect.signatureFuel;
+        });
+      const pillsClass =
+        "synergy-partner-pills" +
+        (hasSignatureFuel ? " synergy-partner-pills-has-signature-fuel" : "");
+
+      function renderEffectPill(effect, inlineSignatureFuel) {
         let pill = chips.renderMergedEffectPill(
           effect.base,
           effect.quality,
           effect.tier,
-          effect.conditional
+          ""
         );
-        if (effect.signatureFuel) {
+        if (inlineSignatureFuel && effect.signatureFuel) {
           pill += " " + chips.formatTag("signature fuel");
         }
-        html += '<span class="synergy-partner-pill">' + pill + "</span>";
-      });
-      html += "</div>";
+        return '<span class="synergy-partner-pill">' + pill + "</span>";
+      }
+
+      if (hasSignatureFuel) {
+        const fuelEffects = effects.filter(function (effect) {
+          return effect.signatureFuel;
+        });
+        const otherEffects = effects.filter(function (effect) {
+          return !effect.signatureFuel;
+        });
+        html += '<div class="' + pillsClass + '">';
+        html += '<div class="synergy-partner-fuel-row">';
+        html +=
+          '<span class="synergy-partner-signature-fuel">' +
+          chips.formatTag("signature fuel") +
+          "</span>";
+        fuelEffects.forEach(function (effect) {
+          html += renderEffectPill(effect, false);
+        });
+        html += "</div>";
+        if (otherEffects.length) {
+          html += '<div class="synergy-partner-other-pills">';
+          otherEffects.forEach(function (effect) {
+            html += renderEffectPill(effect, false);
+          });
+          html += "</div>";
+        }
+        html += "</div>";
+      } else {
+        html += '<div class="' + pillsClass + '">';
+        effects.forEach(function (effect) {
+          html += renderEffectPill(effect, true);
+        });
+        html += "</div>";
+      }
     }
     if (enables.length) {
       html += '<div class="synergy-partner-specials">';
@@ -867,7 +909,9 @@ window.AFKJ = window.AFKJ || {};
 
     if (syn.partners && syn.partners.length) {
       html += renderSynergyHeroGrid(syn.partners, function (partner) {
-        return renderSynergyPartnerExplanation(partner.reasons);
+        return renderSynergyPartnerExplanation(partner.reasons, {
+          prioritizeSignatureFuel: true,
+        });
       });
       html += renderSynergyPartnerOverflow(syn.more_partners);
     } else {

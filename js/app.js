@@ -1240,11 +1240,15 @@ const viaIdx=text.toLowerCase().indexOf(" via ");if(viaIdx===-1){return chipifyS
 const prefix=text.slice(0,viaIdx).trim();const effect=text.slice(viaIdx+5).trim();const enableMatch=prefix.match(/^Enables\s+(.+)$/i);const enableLabel=enableMatch?enableMatch[1].trim():prefix;return("Enables "+
 chipifySynergyEnableLabel(enableLabel)+" via "+
 chipifySynergyEnableDetail(effect));}
-function renderSynergyPartnerExplanation(reasons){if(!reasons||!reasons.length){return"";}
-const effects=[];const enables=[];const seen=Object.create(null);reasons.forEach(function(reason){const parsed=parseSynergyReason(reason);if(parsed.type==="enable"){enables.push(parsed.text);return;}
+function renderSynergyPartnerExplanation(reasons,options){if(!reasons||!reasons.length){return"";}
+options=options||{};const prioritizeSignatureFuel=!!options.prioritizeSignatureFuel;const effects=[];const enables=[];const seen=Object.create(null);reasons.forEach(function(reason){const parsed=parseSynergyReason(reason);if(parsed.type==="enable"){enables.push(parsed.text);return;}
 const key=synergyReasonKey(parsed);if(seen[key]){return;}
-seen[key]=true;effects.push(parsed);});let html="";if(effects.length){html+='<div class="synergy-partner-pills">';effects.forEach(function(effect){let pill=chips.renderMergedEffectPill(effect.base,effect.quality,effect.tier,effect.conditional);if(effect.signatureFuel){pill+=" "+chips.formatTag("signature fuel");}
-html+='<span class="synergy-partner-pill">'+pill+"</span>";});html+="</div>";}
+seen[key]=true;effects.push(parsed);});let html="";if(effects.length){const hasSignatureFuel=prioritizeSignatureFuel&&effects.some(function(effect){return effect.signatureFuel;});const pillsClass="synergy-partner-pills"+
+(hasSignatureFuel?" synergy-partner-pills-has-signature-fuel":"");function renderEffectPill(effect,inlineSignatureFuel){let pill=chips.renderMergedEffectPill(effect.base,effect.quality,effect.tier,"");if(inlineSignatureFuel&&effect.signatureFuel){pill+=" "+chips.formatTag("signature fuel");}
+return'<span class="synergy-partner-pill">'+pill+"</span>";}
+if(hasSignatureFuel){const fuelEffects=effects.filter(function(effect){return effect.signatureFuel;});const otherEffects=effects.filter(function(effect){return!effect.signatureFuel;});html+='<div class="'+pillsClass+'">';html+='<div class="synergy-partner-fuel-row">';html+='<span class="synergy-partner-signature-fuel">'+
+chips.formatTag("signature fuel")+"</span>";fuelEffects.forEach(function(effect){html+=renderEffectPill(effect,false);});html+="</div>";if(otherEffects.length){html+='<div class="synergy-partner-other-pills">';otherEffects.forEach(function(effect){html+=renderEffectPill(effect,false);});html+="</div>";}
+html+="</div>";}else{html+='<div class="'+pillsClass+'">';effects.forEach(function(effect){html+=renderEffectPill(effect,true);});html+="</div>";}}
 if(enables.length){html+='<div class="synergy-partner-specials">';enables.forEach(function(line){html+='<div class="synergy-partner-special">'+
 renderSynergyEnableLine(line)+"</div>";});html+="</div>";}
 return html;}
@@ -1279,7 +1283,7 @@ chips.renderInline(introText.replace(/\n/g," "))+"</div>";}
 html+=buffersHtml;html+="</div>";}}
 if(syn.requires&&syn.requires.text){html+='<div class="synergy-requires"><p>'+
 chips.renderInline(syn.requires.text)+"</p></div>";}
-if(syn.partners&&syn.partners.length){html+=renderSynergyHeroGrid(syn.partners,function(partner){return renderSynergyPartnerExplanation(partner.reasons);});html+=renderSynergyPartnerOverflow(syn.more_partners);}else{html+="<p><em>No synergy partners matched stat buffs or enablers.</em></p>";}
+if(syn.partners&&syn.partners.length){html+=renderSynergyHeroGrid(syn.partners,function(partner){return renderSynergyPartnerExplanation(partner.reasons,{prioritizeSignatureFuel:true,});});html+=renderSynergyPartnerOverflow(syn.more_partners);}else{html+="<p><em>No synergy partners matched stat buffs or enablers.</em></p>";}
 html+="</div>";if(syn.benefited_by){html+=renderBenefitedBySection(syn.benefited_by,heroName);}
 return html;}
 function joinIntroFragments(fragments){if(!fragments.length){return"";}
