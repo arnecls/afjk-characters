@@ -2261,6 +2261,24 @@ a:hover {
   margin-top: 0.2rem;
 }
 
+.synergy-partner-pills-has-signature-fuel {
+  flex-direction: column;
+}
+
+.synergy-partner-fuel-row,
+.synergy-partner-other-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.45rem;
+  align-items: center;
+}
+
+.synergy-partner-pills-has-signature-fuel
+  .synergy-partner-signature-fuel .chip {
+  margin: 0;
+  vertical-align: baseline;
+}
+
 .synergy-partner-pill .chip {
   margin: 0;
   vertical-align: baseline;
