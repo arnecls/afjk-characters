@@ -520,5 +520,41 @@ class UltimateEnergyPreferenceTests(unittest.TestCase):
         self.assertGreater(boosted, 0.0)
 
 
+class CommonStatBufferNamesTests(unittest.TestCase):
+    def _pick(self, provider: str, score: float) -> dict:
+        return {
+            "provider": provider,
+            "score": score,
+            "reasons": ["ATK via ATK (multiple targets, high)"],
+        }
+
+    def test_returns_up_to_four_common_buffers(self) -> None:
+        picks = [
+            self._pick("Rowan", 30.0),
+            self._pick("Lyca", 28.0),
+            self._pick("Ravion", 24.0),
+            self._pick("Thador", 20.0),
+            self._pick("Pandora", 16.0),
+        ]
+        counts = {
+            "Rowan": 43,
+            "Lyca": 30,
+            "Ravion": 95,
+            "Thador": 32,
+            "Pandora": 14,
+        }
+        names = gen.common_stat_buffer_names(picks, counts, threshold=20)
+        self.assertEqual(names, ["Rowan", "Lyca", "Ravion", "Thador"])
+
+    def test_stops_at_available_common_buffers(self) -> None:
+        picks = [
+            self._pick("Rowan", 30.0),
+            self._pick("Pandora", 16.0),
+        ]
+        counts = {"Rowan": 43, "Pandora": 14}
+        names = gen.common_stat_buffer_names(picks, counts, threshold=20)
+        self.assertEqual(names, ["Rowan"])
+
+
 if __name__ == "__main__":
     unittest.main()

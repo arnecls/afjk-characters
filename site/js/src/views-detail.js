@@ -853,6 +853,17 @@ window.AFKJ = window.AFKJ || {};
     }
     const overflowCount = morePartners.length;
     const unitLabel = overflowCount === 1 ? "unit" : "units";
+    const moreUnitsPhrase = overflowCount + " more " + unitLabel;
+    if (overflowCount <= 5) {
+      return (
+        '<p class="synergy-partner-overflow">There were ' +
+        '<span class="synergy-overflow-trigger chip-has-tip" data-tip-html="' +
+        escapeHtml(renderSynergyOverflowTooltipGrid(morePartners)) +
+        '" tabindex="0" role="button" aria-describedby="chip-tooltip">' +
+        moreUnitsPhrase +
+        "</span> detected.</p>"
+      );
+    }
     const highRated = morePartners.filter(function (ref) {
       return synergyPartnerScoreRating(ref) > 2;
     });

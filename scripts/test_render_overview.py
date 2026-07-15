@@ -57,5 +57,18 @@ class SummaryParityTests(unittest.TestCase):
             self.assertEqual(from_render, again, prefix)
 
 
+class JoinNamesTests(unittest.TestCase):
+    def test_four_name_oxford_comma(self) -> None:
+        joined = rov._join_names(["Rowan", "Lyca", "Ravion", "Thador"])
+        self.assertEqual(
+            joined,
+            "**Rowan**, **Lyca**, **Ravion**, or **Thador**",
+        )
+
+    def test_three_name_oxford_comma(self) -> None:
+        joined = rov._join_names(["Rowan", "Lyca", "Ravion"])
+        self.assertEqual(joined, "**Rowan**, **Lyca**, or **Ravion**")
+
+
 if __name__ == "__main__":
     unittest.main()

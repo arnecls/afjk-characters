@@ -103,7 +103,7 @@ def _join_names(names: list[str]) -> str:
         return bold[0]
     if len(bold) == 2:
         return f"{bold[0]} or {bold[1]}"
-    return f"{bold[0]}, {bold[1]}, or {bold[2]}"
+    return ", ".join(bold[:-1]) + f", or {bold[-1]}"
 
 
 def load_summary_heroes(

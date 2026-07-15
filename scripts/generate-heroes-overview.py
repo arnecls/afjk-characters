@@ -1427,7 +1427,7 @@ def common_stat_buffer_names(
     provider_beneficiary_count: dict[str, int],
     threshold: int,
     *,
-    limit: int = 3,
+    limit: int = 4,
 ) -> list[str]:
     """Providers that buff many heroes and match this receiver's stat needs."""
     names: list[str] = []
