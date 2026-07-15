@@ -554,6 +554,30 @@ window.AFKJ = window.AFKJ || {};
     }
   }
 
+  function initThemeToggle() {
+    const theme = window.AFKJ.theme;
+    const dom = window.AFKJ.state.dom;
+    const input = dom.themeToggle;
+    if (!input) {
+      return;
+    }
+
+    theme.syncToggleControl(input);
+
+    input.addEventListener("change", function () {
+      const next = input.checked ? "dark" : "light";
+      theme.applyThemeOverride(next);
+      theme.syncToggleControl(input);
+    });
+
+    const colorMq = window.matchMedia("(prefers-color-scheme: dark)");
+    colorMq.addEventListener("change", function () {
+      if (!theme.readStoredThemeOverride()) {
+        theme.syncToggleControl(input);
+      }
+    });
+  }
+
   // Export module API to window.AFKJ.ui
   window.AFKJ.ui = {
     updateListStickyOffset: updateListStickyOffset,
@@ -564,5 +588,6 @@ window.AFKJ = window.AFKJ || {};
     initWelcomeWarning: initWelcomeWarning,
     initChipTooltips: initChipTooltips,
     initSkillCardPopover: initSkillCardPopover,
+    initThemeToggle: initThemeToggle,
   };
 })();

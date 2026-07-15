@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="css/styles.css">
   <script>
     (function () {
+      var THEME_KEY = "afjk-theme-override";
+      try {
+        var stored = sessionStorage.getItem(THEME_KEY);
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.dataset.theme = stored;
+        }
+      } catch (e) {
+        /* ignore quota / private-mode errors */
+      }
+    })();
+  </script>
+  <script>
+    (function () {
       try {
         if (localStorage.getItem("afjk-welcome-dismissed") !== "1") {
           document.documentElement.classList.add("welcome-warning-pending");
@@ -37,6 +50,28 @@
         </div>
         <a class="submit-issue-btn" href="https://github.com/arnecls/afjk-characters/issues" target="_blank"
           rel="noopener noreferrer">Submit issue</a>
+      </div>
+      <div class="theme-toggle-wrap">
+        <label class="theme-toggle" for="theme-toggle">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            </svg>
+          </span>
+          <input type="checkbox" class="theme-toggle-input" id="theme-toggle" role="switch">
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" stroke="none">
+              <path
+                d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5Z" />
+            </svg>
+          </span>
+          <span class="visually-hidden" id="theme-toggle-label">Dark mode</span>
+        </label>
       </div>
       <div class="filters-panel" id="filters-panel">
         <div class="filters" id="filters"></div>

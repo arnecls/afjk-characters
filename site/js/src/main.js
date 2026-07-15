@@ -317,6 +317,7 @@ window.AFKJ = window.AFKJ || {};
       filtersToggleLabel: document.getElementById("filters-toggle-label"),
       headerBack: document.getElementById("header-back"),
       viewToggle: document.querySelector(".view-toggle"),
+      themeToggle: document.getElementById("theme-toggle"),
       siteHeader: document.querySelector(".site-header"),
     };
 
@@ -333,6 +334,7 @@ window.AFKJ = window.AFKJ || {};
     // Run UI Initializations
     window.AFKJ.ui.initWelcomeWarning();
     window.AFKJ.ui.initFiltersCollapse();
+    window.AFKJ.ui.initThemeToggle();
     window.AFKJ.ui.initChipTooltips();
     window.AFKJ.ui.initSkillCardPopover();
 

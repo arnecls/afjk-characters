@@ -75,6 +75,7 @@ window.AFKJ.state = {
     filtersToggleLabel: null,
     headerBack: null,
     viewToggle: null,
+    themeToggle: null,
     siteHeader: null,
   }
 };

@@ -3,6 +3,7 @@ window.AFKJ = window.AFKJ || {};
 window.AFKJ.config = {
   WELCOME_WARNING_KEY: "afjk-welcome-dismissed",
   VIEW_MODE_KEY: "afjk-view-mode",
+  THEME_OVERRIDE_KEY: "afjk-theme-override",
   MIX_SLOT_DOUBLE_TAP_MS: 400,
 
   TAG_DEFINITIONS: {

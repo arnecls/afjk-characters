@@ -31,6 +31,7 @@ DIST_FILE = ROOT / "site" / "js" / "app.js"  # site/js/app.js
 SRC_FILES = [
     "namespace.js",
     "config.js",
+    "theme.js",
     "utils.js",
     "state.js",
     "chips.js",

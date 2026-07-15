@@ -538,6 +538,20 @@ class RoundTripTests(unittest.TestCase):
             msg=result.stdout + result.stderr,
         )
 
+    def test_theme_toggle_resolution(self):
+        script = SCRIPTS / "test_theme.js"
+        result = subprocess.run(
+            ["node", str(script)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(
+            result.returncode,
+            0,
+            msg=result.stdout + result.stderr,
+        )
+
     def test_synergy_overflow_small_count_wording(self):
         script = SCRIPTS / "test_synergy_overflow.js"
         result = subprocess.run(
