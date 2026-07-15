@@ -60,7 +60,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -188,7 +189,8 @@
                   "type": "flat",
                   "value": 500.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -226,7 +228,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -249,7 +252,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

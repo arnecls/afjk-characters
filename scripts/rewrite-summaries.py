@@ -1174,6 +1174,8 @@ class Effect:
     target_count: int | None = None
     # Timed buff/debuff/shield duration in seconds when extractable.
     duration: float | None = None
+    # Stat buff lifetime: temporary, permanent, or unknown (sidecar only).
+    persistence: str | None = None
     # Buffs only: None = always relevant; frequent = often (>~50% of fights);
     # rare = situational (not every battle / kill-gated / limited procs).
     conditional: str | None = None
@@ -3296,6 +3298,7 @@ def _copy_effect(effect: Effect) -> Effect:
         area_count=effect.area_count,
         target_count=effect.target_count,
         duration=effect.duration,
+        persistence=getattr(effect, "persistence", None),
         conditional=effect.conditional,
         conditions=list(effect.conditions),
         area=effect.area,
@@ -3351,6 +3354,12 @@ def _merge_effect_records(into: Effect, src: Effect) -> None:
         into.duration is None or src.duration > into.duration
     ):
         into.duration = src.duration
+    src_persistence = getattr(src, "persistence", None)
+    if src_persistence and (
+        not getattr(into, "persistence", None)
+        or src_persistence != "unknown"
+    ):
+        into.persistence = src_persistence
     if src.source_section and not into.source_section:
         into.source_section = src.source_section
     if src.area is not None:

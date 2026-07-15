@@ -56,7 +56,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -138,23 +139,6 @@
               ],
               "duration": 6,
               "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Max HP",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 4.5
-                }
-              ]
             }
           ],
           "summon_effects": [],
@@ -179,7 +163,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

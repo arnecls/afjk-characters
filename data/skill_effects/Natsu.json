@@ -227,7 +227,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -255,7 +256,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -283,7 +285,8 @@
                   "type": "flat",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -311,7 +314,8 @@
                   "type": "flat",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -355,7 +359,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "legendary+",
@@ -378,7 +383,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

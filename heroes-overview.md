@@ -18,7 +18,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Signature skill**: Radiant Rain (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
-- **Behavior tags**: `ally-buffer` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility`
+- **Behavior tags**: `ally-buffer` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility` `temporary-stat-buffer`
 - **Ally composition**: grants Brightfeather to nearest ally in her row
 - **Damage types**: Physical `high`, DoT `low`, HP loss `average`
 
@@ -58,16 +58,16 @@ bonded ally feather threshold enhances ultimate with additional arrow volleys
 ### Units improving Aliceth
 
 Look for units providing: `ATK`  
-Common buffers are **Contess**, **Gwyneth**, or **Ravion**.
+Common buffers are **Contess**, **Ravion**, or **Evie**.
 
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Gunnar**
   - ATK (single target, low)
 - **Hammie**
@@ -77,24 +77,24 @@ Common buffers are **Contess**, **Gwyneth**, or **Ravion**.
 
 Aliceth provides Attack range to single targets `high`, DEF Penetration to multiple targets `high`, ATK (Legendary+) to multiple targets `average`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
 
-**17** units include this provider among their top 6 synergy partners. Why the match is common:
+**21** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
-- Nerion (4.4 / 5)
-- Lily May (4.0 / 5)
+- Nerion (4.6 / 5)
 - Shadewing (3.9 / 5)
-- Silven (3.6 / 5)
+- Carolina (3.7 / 5)
+- Lily May (3.0 / 5)
 
 ### Units that can act as a replacement for Aliceth
 
 **Similar Skills**
 
-- Scarlita (54% `execute` `hp-scaling` `non-ult-utility`)
-- Silven (42% `hp-scaling` `mark-target` `non-ult-utility`)
-- Athalia (34% `hp-scaling` `non-ult-utility`)
+- Scarlita (48% `execute` `hp-scaling` `non-ult-utility`)
+- Parisa (45% `ally-buffer` `mark-target` `temporary-stat-buffer`)
+- Kordan (40% `ally-buffer` `hp-scaling` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -153,7 +153,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Shared Resolve (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `cc-immunity` `invincibility`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `cc-immunity` `invincibility` `temporary-stat-buffer`
 - **Ally composition**: place ally in same row at battle prep (Winter Warrior buffs)
 - **Damage types**: Physical `high`, DoT `high`
 
@@ -201,35 +201,34 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Ravion**.
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Alna
 
 Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to single targets `low`.
 
-- Zandrok (5.0 / 5)
 - Shadewing (5.0 / 5)
-- Himmel (3.1 / 5)
+- Zandrok (3.5 / 5)
+- Himmel (3.3 / 5)
 
 ### Units that can act as a replacement for Alna
 
 **Buffs on allies**
 
 - Tilaya (79% `Max HP`)
-- Phraesto (67% `Max HP`)
 
 **Similar Skills**
 
-- Sonja (50% `ally-buffer` `aoe-damage`)
-- Perseus (50% `ally-buffer` `aoe-damage`)
-- Dunlingr (48% `ally-buffer` `aoe-damage`)
+- Dunlingr (61% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Sonja (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Perseus (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -328,27 +327,26 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Twins**.
 - **Pandora**
   - Max HP (single target, low)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Phraesto**
-  - Max HP (single target, high)
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Aliceth**
+- **Pang**
   - ATK (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
+- **Zandrok**
+  - Haste (area, low, conditional (frequent)) `signature fuel`
+  - Max HP (multiple targets, low)
+  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
+- **Mehira**
+  - Haste (multiple targets, low) `signature fuel`
+  - ATK SPD via Haste (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Alsa
 
 - Bonnie (2.7 / 5)
-- Carolina (1.9 / 5)
+- Carolina (2.0 / 5)
 - Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Alsa
@@ -454,28 +452,27 @@ Look for units providing: `Max HP` `Energy` `Physical DEF`
 Common buffers are **Twins**, **Rowan**, or **Ravion**.
 
 - **Tilaya**
-  - Max HP (area, average)
+  - Max HP (area, high)
   - DEF (area, high)
 - **Zandrok**
   - Max HP (multiple targets, low)
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
-- **Isabella**
-  - Phys DEF (single target, low)
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Lumont**
   - Phys DEF (multiple targets, low)
+- **Perseus**
+  - Phys DEF (multiple targets, low)
+- **Solise**
+  - DEF (single target, low)
 
 ### Units benefitting most from Antandra
 
 Antandra provides Damage taken (Mythic+) to single targets `low` — conditional (frequent).
 
-- Carolina (3.4 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (3.2 / 5)
-- Nerion (3.1 / 5)
 
 ### Units that can act as a replacement for Antandra
 
@@ -494,8 +491,8 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 **Similar Skills**
 
 - Valen (50% `aoe-damage` `mass-cc`)
-- Gunnar (48% `ally-shielder` `aoe-damage`)
 - Galahad (48% `ally-shielder` `aoe-damage`)
+- Brutus (41% `aoe-damage` `taunt`)
 
 **Damage**
 
@@ -591,9 +588,9 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -601,14 +598,13 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Arden
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Arden
@@ -617,13 +613,13 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - Frieren (57% `Damage`)
 - Faramor (55% `Damage`)
-- Lorsan (55% `Damage` `Similar Skills`)
+- Gwyneth (52% `Damage` `Similar Skills`)
 
 **Similar Skills**
 
-- Lorsan (80% `aoe-damage` `dot-specialist`)
 - Viperian (80% `aoe-damage` `dot-specialist`)
 - Valen (80% `aoe-damage` `mass-cc`)
+- Natsu (72% `aoe-damage` `dot-specialist` `mass-cc`)
 
 **Damage**
 
@@ -698,11 +694,9 @@ direct ultimate hit heals self
 Look for units providing: `ATK` `Haste` `Physical DEF`  
 Common buffers are **Ravion**, **Smokey & Meerky**, or **Mikola**.
 
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Perseus**
+  - ATK (multiple targets, average)
+  - Phys DEF (multiple targets, low)
 - **Shakir**
   - Haste (area, average) `signature fuel`
   - ATK SPD via Haste (area, average) `signature fuel`
@@ -710,25 +704,25 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Mikola**.
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
   - ATK (multiple targets, average)
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Tilaya**
+  - DEF (area, high)
+- **Solise**
+  - ATK (single target, low)
+  - DEF (single target, low)
 
 ### Units benefitting most from Atalanta
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (2.9 / 5)
 
 ### Units that can act as a replacement for Atalanta
 
 **Best overall replacement**
 
-- Perseus (78% `Damage` `Crowd Control`)
+- Perseus (77% `Damage` `Crowd Control`)
 - Gwyneth (68% `Damage`)
 - Valen (61% `Damage` `Crowd Control`)
 
@@ -834,7 +828,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Units benefitting most from Athalia
 
 - Shadewing (2.0 / 5)
-- Carolina (1.4 / 5)
+- Carolina (1.5 / 5)
 - Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Athalia
@@ -936,20 +930,19 @@ Common buffers are **Kazim**, **Ravion**, or **Smokey & Meerky**.
   - DEF via DEF (all summons, high)
 - **Florabelle**
   - Shield (all summons, average)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
 
 ### Units benefitting most from Aurora
 
-Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `low`, and Damage taken (Mythic+) to all summons `low`.
+Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `average`, and Damage taken (Mythic+) to all summons `low`.
 
 **14** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -957,10 +950,10 @@ Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summo
 
 These are the **4** strongest pairings: 
 
-- Berial (3.7 / 5)
-- Cecia (3.7 / 5)
-- Daimon (3.7 / 5)
-- Bryon (3.3 / 5)
+- Berial (5.0 / 5)
+- Cecia (5.0 / 5)
+- Daimon (5.0 / 5)
+- Bryon (4.4 / 5)
 
 ### Units that can act as a replacement for Aurora
 
@@ -1003,7 +996,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Aurora
 
 - Haste — All summons — `high`
-- Damage dealt (Mythic+) — All summons — `low`
+- Damage dealt (Mythic+) — All summons — `average`
 - Damage taken (Mythic+) — All summons — `low`
 
 #### Debuffs provided by Aurora
@@ -1067,22 +1060,19 @@ Common buffers are **Kazim**, **Ravion**, or **Smokey & Meerky**.
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Baelran
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Kazim (2.4 / 5)
 
 ### Units that can act as a replacement for Baelran
@@ -1182,26 +1172,26 @@ extend stealth duration after own defeat
 
 ### Units improving Berial
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Florabelle**
   - Shield (all summons, average)
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Dunlingr**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Berial
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (2.6 / 5)
 
 ### Units that can act as a replacement for Berial
@@ -1330,7 +1320,7 @@ Bonnie also requires units **dealing magic damage**
 ### Units benefitting most from Bonnie
 
 - Shadewing (2.9 / 5)
-- Carolina (1.9 / 5)
+- Carolina (2.0 / 5)
 - Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Bonnie
@@ -1343,7 +1333,7 @@ Bonnie also requires units **dealing magic damage**
 
 - Nerion (57% `battle-start-burst` `enemy-debuffer`)
 - Cassadee (48% `aoe-damage` `enemy-debuffer`)
-- Kazim (40% `aoe-damage` `battle-start-burst` `non-ult-utility`)
+- Kazim (36% `aoe-damage` `battle-start-burst` `non-ult-utility`)
 
 **Damage**
 
@@ -1440,7 +1430,7 @@ _No synergy partners matched stat buffs or enablers._
 
 **Best overall replacement**
 
-- Lumont (55% `Crowd Control`)
+- Lumont (54% `Crowd Control`)
 - Hepler (51% `Crowd Control`)
 
 **Similar Skills**
@@ -1540,18 +1530,18 @@ Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
   - DEF via DEF (all summons, high)
   - Ranged damage via Ranged damage (all summons, low)
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Florabelle**
   - Shield (all summons, average)
 - **Dunlingr**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
+- **Mehira**
+  - Haste (multiple targets, low) `signature fuel`
+  - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
 
@@ -1573,7 +1563,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
 - Saida (40% `cheat-death` `high-initial-energy`)
 - Berial (40% `cheat-death` `summoner`)
-- Laios (33% `high-initial-energy` `summoner`)
+- Lucy (33% `high-initial-energy` `summoner`)
 
 **Damage**
 
@@ -1662,7 +1652,7 @@ heal when gaining any shield
 ### Units improving Callan
 
 Look for units providing: `Shield`  
-Common buffers are **Contess**, **Thador**, or **Soren**.
+Common buffers are **Contess** or **Thador**.
 
 - **Saida**
   - Shield (multiple targets, high)
@@ -1674,10 +1664,12 @@ Common buffers are **Contess**, **Thador**, or **Soren**.
   - Shield (all units, low)
 - **Lucius**
   - Shield (area, low)
+- **Scarlita**
+  - Shield (single target, low)
 
 ### Units benefitting most from Callan
 
-- Carolina (4.0 / 5)
+- Carolina (4.3 / 5)
 
 ### Units that can act as a replacement for Callan
 
@@ -1687,9 +1679,9 @@ Common buffers are **Contess**, **Thador**, or **Soren**.
 
 **Similar Skills**
 
-- Pang (33% `ally-shielder`)
 - Korin (33% `ally-shielder`)
-- Gunnar (30% `ally-shielder`)
+- Hepler (30% `ally-shielder`)
+- Lucca (30% `ally-shielder`)
 
 **Damage**
 
@@ -1771,12 +1763,11 @@ stacking projectiles also apply DoT on impact
 ### Units improving Carolina
 
 Look for units providing: `CRIT`  
-Common buffers are **Hepler**, **Lorsan**, or **Twins**.
+Common buffers are **Lorsan**, **Twins**, or **Lyca**.
 
 Carolina also requires units **applying crowd control** to enemies
 
 - **Hepler**
-  - ATK SPD via Haste (single target, average) `signature fuel`
   - Enables CC on enemies via Blind (area, high)
 - **Kordan**
   - Enables CC on enemies via Bind (area, high)
@@ -1796,7 +1787,7 @@ Carolina also requires units **applying crowd control** to enemies
 
 - Shadewing (2.8 / 5)
 - Indris (2.5 / 5)
-- Nerion (2.2 / 5)
+- Nerion (2.3 / 5)
 
 ### Units that can act as a replacement for Carolina
 
@@ -1901,23 +1892,22 @@ ultimate reduces enemies' Magic DEF for a while
 Look for units providing: `Haste`  
 Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Gunnar**
   - ATK SPD (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Cassadee
 
@@ -1928,9 +1918,9 @@ Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
 **Similar Skills**
 
-- Sonja (80% `ally-buffer` `aoe-damage`)
-- Perseus (80% `ally-buffer` `aoe-damage`)
-- Parisa (60% `ally-buffer` `aoe-damage`)
+- Sonja (60% `ally-buffer` `aoe-damage`)
+- Perseus (60% `ally-buffer` `aoe-damage`)
+- Hodgkin (60% `aoe-damage` `enemy-debuffer`)
 
 **Damage**
 
@@ -2022,13 +2012,13 @@ reduce normal attacks needed to trigger enhanced attack
 Look for units providing: `ATK SPD / Haste` `DEF Penetration` `Physical DEF` `Magic DEF`  
 Common buffers are **Mikola**, **Twins**, or **Hugin**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
@@ -2036,16 +2026,14 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
   - Shield (all summons, average)
 - **Kordan**
   - DEF Penetration (area, high)
-  - Magic DEF (single target, low)
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
+- **Perseus**
+  - Phys DEF (multiple targets, low)
+  - Magic DEF (multiple targets, low)
 
 ### Units benefitting most from Cecia
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (2.3 / 5)
 
 ### Units that can act as a replacement for Cecia
@@ -2134,14 +2122,12 @@ rare chance for massive single normal attack damage
 
 ### Units improving Chippy
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Valka**
@@ -2149,7 +2135,7 @@ rare chance for massive single normal attack damage
 
 ### Units benefitting most from Chippy
 
-- Himmel (2.1 / 5)
+- Himmel (2.2 / 5)
 
 ### Units that can act as a replacement for Chippy
 
@@ -2179,7 +2165,7 @@ rare chance for massive single normal attack damage
 
 - **Signature skill**: Detention Pass (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `ally-shielder` `enemy-debuffer` `stealth` `untargetable`
+- **Behavior tags**: `ally-healer` `ally-shielder` `enemy-debuffer` `stealth` `temporary-stat-buffer` `untargetable`
 - **Damage types**: Magic `low`
 
 #### Play overview
@@ -2226,22 +2212,22 @@ _No synergy partners matched stat buffs or enablers._
 
 Contess provides ATK to single targets `high`, Direct healing to multiple targets `high`, and Shield to single targets `average`.
 
-**53** units include this provider among their top 6 synergy partners. Why the match is common:
+**52** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
+- Bonnie (4.6 / 5)
 - Indris (4.4 / 5)
 - Shadewing (4.2 / 5)
-- Lily May (4.0 / 5)
-- Faramor (4.0 / 5)
+- Himmel (4.2 / 5)
 
 ### Units that can act as a replacement for Contess
 
 **Best overall replacement**
 
-- Evie (59% `Healing` `Crowd Control`)
+- Evie (61% `Healing` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -2257,9 +2243,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Solise (40% `ally-healer` `ally-shielder`)
-- Velara (40% `ally-healer` `ally-shielder`)
-- Evie (40% `ally-healer` `stealth`)
+- Velara (51% `ally-healer` `ally-shielder` `temporary-stat-buffer`)
+- Evie (51% `ally-healer` `stealth` `temporary-stat-buffer`)
+- Twins (45% `ally-healer` `ally-shielder` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -2357,9 +2343,9 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -2367,9 +2353,8 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Cryonaia
 
@@ -2379,7 +2364,7 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 **Similar Skills**
 
-- Alna (33% `cc-immunity` `invincibility`)
+- Alna (28% `cc-immunity` `invincibility`)
 - Lily May (25% `cc-immunity` `invincibility`)
 - Kulu (24% `battlefield-modification`)
 
@@ -2466,35 +2451,34 @@ gain large initial energy bonus
 Look for units providing: `ATK` `ATK SPD / Haste` `CRIT`  
 Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Cyran
 
 - Shadewing (3.0 / 5)
 - Indris (2.9 / 5)
-- Carolina (2.2 / 5)
+- Carolina (2.3 / 5)
 
 ### Units that can act as a replacement for Cyran
 
 **Similar Skills**
 
 - Nara (40% `execute` `high-initial-energy`)
-- Mehira (34% `aoe-damage` `enemy-grouping`)
 - Eironn (34% `aoe-damage` `enemy-grouping`)
+- Scarlita (34% `aoe-damage` `execute`)
 
 **Damage**
 
@@ -2543,7 +2527,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
 - **Signature skill**: Buddy Barrier (Skill 2)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-shielder` `hp-scaling` `non-ult-utility` `summoner`
+- **Behavior tags**: `ally-shielder` `hp-scaling` `non-ult-utility` `summoner` `temporary-stat-buffer`
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
 - **Damage types**: Magic `low`, Max HP-based damage `high`
 
@@ -2586,13 +2570,13 @@ excess shield value converts to HP
 Look for units providing: `Max HP` `Shield`  
 Common buffers are **Contess**, **Hugin**, or **Thador**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Niru**
   - Named ally grant: Phys DEF (high)
   - Named ally grant: Magic DEF (high)
@@ -2607,7 +2591,7 @@ Common buffers are **Contess**, **Hugin**, or **Thador**.
 
 Daimon provides Lifedrain to single targets `low`.
 
-- Carolina (2.2 / 5)
+- Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
 - Shadewing (2.0 / 5)
 
@@ -2621,9 +2605,9 @@ Daimon provides Lifedrain to single targets `low`.
 
 **Similar Skills**
 
-- Scarlita (50% `ally-shielder` `hp-scaling` `non-ult-utility`)
-- Korin (50% `ally-shielder` `hp-scaling`)
-- Galahad (40% `ally-shielder` `summoner`)
+- Scarlita (42% `ally-shielder` `hp-scaling` `non-ult-utility`)
+- Korin (40% `ally-shielder` `hp-scaling`)
+- Gunnar (34% `ally-shielder` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -2664,7 +2648,7 @@ Daimon provides Lifedrain to single targets `low`.
 
 - **Signature skill**: Inventor's Will (Mythic+)
 - **Movement**: stationary (off battlefield)
-- **Behavior tags**: `ally-buffer` `ally-healer` `summoner`
+- **Behavior tags**: `ally-buffer` `ally-healer` `summoner` `temporary-stat-buffer`
 - **Damage types**: Magic `high`
 
 #### Play overview
@@ -2706,18 +2690,18 @@ blind extends while summon health is above half
 Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -2725,26 +2709,26 @@ Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Damian
 
-Damian provides Direct healing to single targets `average` and Haste (Mythic+) to multiple targets `average` — conditional (frequent).
+Damian provides Direct healing to single targets `average` and Haste (Mythic+) to multiple targets `high` — conditional (frequent).
 
-**19** units include this provider among their top 6 synergy partners. Why the match is common:
+**21** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
+- Carolina (4.0 / 5)
 - Dunlingr (4.0 / 5)
-- Nerion (3.8 / 5)
-- Carolina (3.7 / 5)
+- Nerion (3.9 / 5)
 - Lamentis (2.3 / 5)
 
 ### Units that can act as a replacement for Damian
 
 **Best overall replacement**
 
-- Twins (90% `Buffs on allies` `Healing` `Crowd Control`)
-- Smokey & Meerky (78% `Buffs on allies` `Healing`)
-- Mikola (60% `Healing` `Buffs on allies`)
+- Twins (91% `Buffs on allies` `Healing` `Crowd Control` `Similar Skills`)
+- Smokey & Meerky (81% `Buffs on allies` `Healing`)
+- Hewynn (69% `Healing`)
 
 **Buffs on allies**
 
@@ -2760,9 +2744,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Koko (80% `ally-buffer` `ally-healer`)
-- Isabella (80% `ally-buffer` `ally-healer`)
-- Laios (75% `ally-buffer` `ally-healer` `summoner`)
+- Koko (90% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Isabella (90% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Laios (80% `ally-buffer` `ally-healer` `summoner` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -2789,7 +2773,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Damian
 
 - Direct healing — Single target — `average`
-- Haste (Mythic+) — Multiple targets — `average` — conditional (frequent)
+- Haste (Mythic+) — Multiple targets — `high` — conditional (frequent)
 
 #### Crowd Control provided by Damian
 
@@ -2844,34 +2828,34 @@ execution bonus increases while active buff is in effect
 ### Units improving Dionel
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Shield` `Execution`  
-Common buffers are **Smokey & Meerky**, **Ravion**, or **Mikola**.
+Common buffers are **Ravion**, **Isabella**, or **Mikola**.
 
 Dionel also requires units **buffing them**
 
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-  - Grants 7 distinct stat buffs to Dionel
-- **Pandora**
-  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-  - Grants 3 distinct stat buffs to Dionel
-- **Aliceth**
-  - ATK (multiple targets, average)
-  - Grants 3 distinct stat buffs to Dionel
-- **Solise**
+- **Dunlingr**
   - ATK (single target, low)
-  - Grants 5 distinct stat buffs to Dionel
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - Grants 2 distinct stat buffs to Dionel
+  - ATK SPD via Haste (single target, low) `signature fuel`
+  - Grants 3 distinct temporary stat buffs to Dionel
+- **Perseus**
+  - ATK (multiple targets, average)
+  - Grants 3 distinct temporary stat buffs to Dionel
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-  - Grants 2 distinct stat buffs to Dionel
+  - Grants 1 distinct temporary stat buff to Dionel
+- **Koko**
+  - ATK (all units, low)
+  - Grants 2 distinct temporary stat buffs to Dionel
+- **Kordan**
+  - ATK (area, low)
+  - Grants 2 distinct temporary stat buffs to Dionel
+- **Pang**
+  - ATK (multiple targets, average)
+  - Grants 1 distinct temporary stat buff to Dionel
 
 ### Units benefitting most from Dionel
 
 - Kazim (2.4 / 5)
-- Carolina (1.4 / 5)
+- Carolina (1.5 / 5)
 - Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Dionel
@@ -2935,7 +2919,7 @@ Dionel also requires units **buffing them**
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: moving (melee class)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `interrupt`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `interrupt` `temporary-stat-buffer`
 - **Damage types**: Magic `average`, DoT `average`, HP loss `low`
 
 #### Play overview
@@ -2944,7 +2928,7 @@ Before battle, Dunlingr **chooses a field rule** that blocks all healing or all 
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -2974,14 +2958,8 @@ rule start grants allies ATK speed or life drain
 ### Units improving Dunlingr
 
 Look for units providing: `ATK SPD / Haste` `Max HP` `Shield` `Healing`  
-Common buffers are **Smokey & Meerky**, **Twins**, or **Lorsan**.
+Common buffers are **Smokey & Meerky**, **Twins**, or **Hewynn**.
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - Direct healing (single target, high)
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-  - Direct healing (single target, high)
 - **Pandora**
   - Max HP (single target, low)
   - Direct healing (single target, high)
@@ -2991,14 +2969,18 @@ Common buffers are **Smokey & Meerky**, **Twins**, or **Lorsan**.
   - Lifedrain (area, average, conditional (frequent))
 - **Fay**
   - Direct healing (arc, high)
-- **Hewynn**
-  - Direct healing (single target, high)
+- **Ludovic**
+  - Direct healing (multiple targets, high)
+- **Solise**
+  - Direct healing (all units, high)
+- **Gerda**
+  - Direct healing (area, average)
 
 ### Units benefitting most from Dunlingr
 
 Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single targets `low`, ATK SPD (Supreme+) to all units `low`, and Lifedrain (Supreme+) to all units `low`.
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**17** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -3006,8 +2988,8 @@ These are the **4** strongest pairings:
 
 - Indris (4.7 / 5)
 - Shadewing (4.3 / 5)
-- Baelran (2.6 / 5)
-- Viperian (2.2 / 5)
+- Lily May (3.3 / 5)
+- Silven (3.1 / 5)
 
 ### Units that can act as a replacement for Dunlingr
 
@@ -3018,9 +3000,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Sonja (50% `ally-buffer` `aoe-damage`)
-- Perseus (50% `ally-buffer` `aoe-damage`)
-- Alna (48% `ally-buffer` `aoe-damage`)
+- Alna (61% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Sonja (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Perseus (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -3120,30 +3102,29 @@ Common buffers are **Rowan**, **Twins**, or **Mikola**.
 
 - **Tilaya**
   - DEF (area, high)
-- **Isabella**
-  - Phys DEF (single target, low)
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Lumont**
   - Phys DEF (multiple targets, low)
 - **Perseus**
   - Phys DEF (multiple targets, low)
+- **Solise**
+  - DEF (single target, low)
+- **Dunlingr**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Eironn
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (2.8 / 5)
 
 ### Units that can act as a replacement for Eironn
 
 **Similar Skills**
 
-- Mehira (51% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Walker (51% `aoe-damage` `battle-start-burst` `mass-cc`)
+- Mehira (45% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Tasi (41% `aoe-damage` `mass-cc`)
 
 **Damage**
@@ -3189,7 +3170,7 @@ Common buffers are **Rowan**, **Twins**, or **Mikola**.
 
 - **Signature skill**: Intel Chase (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-healer` `self-repositioner` `stealth`
+- **Behavior tags**: `ally-healer` `self-repositioner` `stealth` `temporary-stat-buffer`
 - **Ally composition**: rearmost ally starts with healing quill; tracks highest damage dealer
 - **Damage types**: Magic `average`
 
@@ -3229,26 +3210,26 @@ full intel spawns an extra ally support quill
 ### Units improving Evie
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Ravion**, **Contess**, or **Gwyneth**.
+Common buffers are **Ravion**, **Contess**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Hammie**
   - ATK (single target, low)
+- **Koko**
+  - ATK (all units, low)
 
 ### Units benefitting most from Evie
 
 Evie provides ATK to single targets `average` and Direct healing to single targets `low`.
 
-**41** units include this provider among their top 6 synergy partners. Why the match is common:
+**40** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -3256,14 +3237,14 @@ These are the **4** strongest pairings:
 
 - Indris (5.0 / 5)
 - Shadewing (5.0 / 5)
-- Faramor (3.3 / 5)
-- Lily May (3.3 / 5)
+- Bonnie (4.6 / 5)
+- Himmel (4.2 / 5)
 
 ### Units that can act as a replacement for Evie
 
 **Best overall replacement**
 
-- Contess (53% `Healing`)
+- Contess (55% `Healing`)
 
 **Healing**
 
@@ -3273,9 +3254,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Contess (40% `ally-healer` `stealth`)
-- Vala (40% `self-repositioner` `stealth`)
-- Rowan (36% `ally-healer`)
+- Fay (57% `ally-healer` `temporary-stat-buffer`)
+- Contess (51% `ally-healer` `stealth` `temporary-stat-buffer`)
+- Smokey & Meerky (48% `ally-healer` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -3369,32 +3350,34 @@ reduce vitality of enemies revived inside circular area
 ### Units improving Faramor
 
 Look for units providing: `ATK` `Haste` `Shield`  
-Common buffers are **Mikola**, **Smokey & Meerky**, or **Twins**.
+Common buffers are **Mikola**, **Isabella**, or **Smokey & Meerky**.
 
 Faramor also requires units **buffing them**
 
-- **Aliceth**
+- **Perseus**
   - ATK (multiple targets, average)
-  - Grants 3 distinct stat buffs to Faramor
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - Grants 7 distinct stat buffs to Faramor
-- **Solise**
+  - Grants 3 distinct temporary stat buffs to Faramor
+- **Dunlingr**
   - ATK (single target, low)
-  - Grants 5 distinct stat buffs to Faramor
-- **Rowan**
-  - Grants 4 distinct stat buffs to Faramor
-- **Thador**
-  - Grants 3 distinct stat buffs to Faramor
+  - Haste (single target, low) `signature fuel`
+  - Grants 3 distinct temporary stat buffs to Faramor
+- **Koko**
+  - ATK (all units, low)
+  - Grants 2 distinct temporary stat buffs to Faramor
 - **Kordan**
   - ATK (area, low)
-  - Grants 4 distinct stat buffs to Faramor
+  - Grants 2 distinct temporary stat buffs to Faramor
+- **Pang**
+  - ATK (multiple targets, average)
+  - Grants 1 distinct temporary stat buff to Faramor
+- **Shakir**
+  - Haste (area, average) `signature fuel`
+  - Grants 1 distinct temporary stat buff to Faramor
 
 ### Units benefitting most from Faramor
 
+- Carolina (2.3 / 5)
 - Shadewing (2.3 / 5)
-- Carolina (2.2 / 5)
 - Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Faramor
@@ -3407,9 +3390,9 @@ Faramor also requires units **buffing them**
 
 **Similar Skills**
 
-- Perseus (60% `ally-buffer` `aoe-damage`)
-- Lorsan (60% `aoe-damage` `dot-specialist`)
 - Viperian (60% `aoe-damage` `dot-specialist`)
+- Arden (57% `aoe-damage` `dot-specialist`)
+- Perseus (48% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -3454,7 +3437,7 @@ Faramor also requires units **buffing them**
 
 - **Signature skill**: Vibrant Dance (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
-- **Behavior tags**: `ally-healer` `aoe-healing`
+- **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
 #### Play overview
@@ -3500,37 +3483,37 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
   - ATK (multiple targets, average)
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Perseus**
+  - ATK (multiple targets, average)
+- **Gunnar**
+  - ATK (single target, low)
+  - ATK SPD (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Fay
 
 Fay provides ATK to arc `low`, Direct healing to arc `high`, and Vitality (EX+5) to single targets `low`.
 
-- Lily May (2.5 / 5)
-- Faramor (2.4 / 5)
-- Silven (2.3 / 5)
+- Bonnie (3.1 / 5)
+- Himmel (2.9 / 5)
+- Shadewing (2.3 / 5)
 
 ### Units that can act as a replacement for Fay
 
 **Best overall replacement**
 
+- Evie (78% `Healing` `Buffs on allies`)
+- Isabella (76% `Healing` `Buffs on allies` `Similar Skills`)
 - Smokey & Meerky (76% `Healing` `Buffs on allies` `Similar Skills`)
-- Evie (75% `Healing` `Buffs on allies`)
-- Isabella (73% `Healing` `Buffs on allies`)
 
 **Buffs on allies**
 
 - Twins (100% `ATK` `Vitality`)
+- Koko (100% `ATK` `Vitality`)
 - Mikola (100% `ATK` `Vitality`)
-- Isabella (99% `ATK` `Vitality`)
 
 **Healing**
 
@@ -3540,9 +3523,9 @@ Fay provides ATK to arc `low`, Direct healing to arc `high`, and Vitality (EX+5)
 
 **Similar Skills**
 
-- Ludovic (100% `ally-healer` `aoe-healing`)
-- Smokey & Meerky (100% `ally-healer` `aoe-healing`)
-- Hewynn (100% `ally-healer` `aoe-healing`)
+- Smokey & Meerky (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Hewynn (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Velara (90% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -3616,25 +3599,24 @@ Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
   - DEF via DEF (all summons, high)
   - Ranged damage via Ranged damage (all summons, low)
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
 
 ### Units benefitting most from Florabelle
 
 Florabelle provides Shield (Mythic+) to all summons `average`.
 
-**6** units include this provider among their top 6 synergy partners. Why the match is common:
+**7** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -3642,22 +3624,22 @@ These are the **4** strongest pairings:
 
 - Kazim (4.8 / 5)
 - Berial (2.3 / 5)
+- Cecia (2.3 / 5)
 - Daimon (2.3 / 5)
-- Lamentis (2.0 / 5)
 
 ### Units that can act as a replacement for Florabelle
 
 **Best overall replacement**
 
 - Kazim (56% `Damage` `Crowd Control`)
-- Perseus (55% `Damage`)
 - Pang (55% `Damage`)
+- Perseus (53% `Damage`)
 
 **Similar Skills**
 
 - Galahad (80% `aoe-damage` `summoner`)
 - Hodgkin (66% `aoe-damage` `summoner`)
-- Tilaya (60% `aoe-damage`)
+- Zanie (50% `summoner`)
 
 **Damage**
 
@@ -3745,36 +3727,27 @@ Frieren also requires specific **named allies**
 - **Himmel**
   - Enables Named ally on team via Himmel named in skill text
   - Named ally grant: Penetration (average)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Gunnar**
+  - ATK (single target, low)
 
 ### Units benefitting most from Frieren
 
-Frieren provides ATK to single targets `low`.
-
-- Himmel (5.0 / 5)
+- Himmel (4.8 / 5)
 
 ### Units that can act as a replacement for Frieren
 
 **Best overall replacement**
 
 - Faramor (50% `Damage`)
-
-**Buffs on allies**
-
-- Gunnar (100% `ATK`)
-- Contess (100% `ATK`)
-- Gwyneth (100% `ATK`)
 
 **Similar Skills**
 
@@ -3801,10 +3774,6 @@ Frieren provides ATK to single targets `low`.
 - Magic — Area, Single target
 - DoT — All units, Area
 - True damage — All units — `high`
-
-#### Buffs provided by Frieren
-
-- ATK — Single target — `low`
 
 #### Debuffs provided by Frieren
 
@@ -3868,18 +3837,18 @@ external buff grants sustained energy and steadfast state
 Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -3901,7 +3870,7 @@ Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
 
 - Florabelle (80% `aoe-damage` `summoner`)
 - Phraesto (60% `ally-shielder` `aoe-damage` `summoner`)
-- Gunnar (50% `ally-shielder` `aoe-damage`)
+- Ulmus (50% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -3995,9 +3964,9 @@ _No synergy partners matched stat buffs or enablers._
 
 Gerda provides Direct healing in an area `average` and Healing over time to single targets `average`.
 
-- Silven (2.1 / 5)
-- Lily May (2.0 / 5)
-- Carolina (1.9 / 5)
+- Himmel (2.2 / 5)
+- Carolina (2.0 / 5)
+- Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Gerda
 
@@ -4010,7 +3979,7 @@ Gerda provides Direct healing in an area `average` and Healing over time to sing
 **Similar Skills**
 
 - Solise (50% `ally-healer` `ally-shielder` `aoe-healing`)
-- Velara (50% `ally-healer` `ally-shielder` `aoe-healing`)
+- Velara (42% `ally-healer` `ally-shielder` `aoe-healing`)
 - Hepler (41% `ally-healer` `ally-shielder`)
 
 **Damage**
@@ -4095,26 +4064,23 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
-- **Isabella**
-  - Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
 - **Perseus**
   - Phys DEF (multiple targets, low)
   - Magic DEF (multiple targets, low)
-- **Scarlita**
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
 - **Shakir**
   - Haste (area, average) `signature fuel`
 - **Solise**
   - DEF (single target, low)
   - DEF (single target, low)
+- **Dunlingr**
+  - Haste (single target, low) `signature fuel`
+- **Lucca**
+  - Magic DEF (area, low)
 
 ### Units benefitting most from Granny Dahnie
 
 - Shadewing (2.6 / 5)
-- Himmel (2.1 / 5)
+- Himmel (2.2 / 5)
 - Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Granny Dahnie
@@ -4174,7 +4140,7 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 - **Signature skill**: Annihilation Directive (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-shielder` `aoe-damage` `static-tile-buffer`
+- **Behavior tags**: `ally-shielder` `aoe-damage` `static-tile-buffer` `temporary-stat-buffer`
 - **Ally composition**: place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)
 - **Damage types**: Physical `high`, DoT `low`
 
@@ -4216,14 +4182,12 @@ scorched area enemies cannot heal or gain shields
 Look for units providing: `ATK SPD / Haste`  
 Common buffers are **Hugin**, **Lorsan**, or **Smokey & Meerky**.
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Valka**
@@ -4234,10 +4198,14 @@ Common buffers are **Hugin**, **Lorsan**, or **Smokey & Meerky**.
 Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, Attack range to single targets `high`, Ranged DEF (Legendary+) to single targets `low`, and Vitality (Legendary+) to single targets `low`.
 
 - Indris (3.3 / 5)
-- Silven (3.0 / 5)
 - Shadewing (2.8 / 5)
+- Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Gunnar
+
+**Best overall replacement**
+
+- Aliceth (50% `Crowd Control` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -4245,9 +4213,9 @@ Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, A
 
 **Similar Skills**
 
-- Galahad (50% `ally-shielder` `aoe-damage`)
-- Hugin (40% `ally-shielder` `static-tile-buffer`)
-- Florabelle (25% `aoe-damage`)
+- Hugin (50% `ally-shielder` `static-tile-buffer` `temporary-stat-buffer`)
+- Galahad (40% `ally-shielder` `aoe-damage`)
+- Thador (40% `ally-shielder` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -4335,44 +4303,31 @@ no nearby enemies reduces normal attack interval further
 
 ### Units improving Gwyneth
 
-Look for units providing: `ATK SPD / Haste`  
-Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
+Look for units providing: `ATK` `ATK SPD / Haste`  
+Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
 - **Dunlingr**
+  - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Mehira**
-  - ATK SPD via Haste (multiple targets, low) `signature fuel`
-- **Zandrok**
-  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Gunnar**
+  - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Gwyneth
 
-Gwyneth provides ATK to single targets `high`.
-
-**30** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- ally buffs or enablers that match many receivers' benefit stats or Requires labels
-
-These are the **4** strongest pairings: 
-
-- Evie (4.1 / 5)
-- Cyran (3.4 / 5)
-- Aurora (2.8 / 5)
-- Florabelle (2.5 / 5)
+- Carolina (2.3 / 5)
+- Shadewing (2.3 / 5)
+- Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Gwyneth
-
-**Buffs on allies**
-
-- Contess (100% `ATK`)
-- Twins (100% `ATK`)
-- Aliceth (100% `ATK`)
 
 **Similar Skills**
 
@@ -4403,10 +4358,6 @@ These are the **4** strongest pairings:
 - DoT — Single target
 - Max HP-based damage — Single target — `low`
 
-#### Buffs provided by Gwyneth
-
-- ATK — Single target — `high`
-
 #### Debuffs provided by Gwyneth
 
 - Vitality — Single target — `low`
@@ -4424,7 +4375,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Pretty Fireball (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
-- **Behavior tags**: `ally-buffer` `ally-healer`
+- **Behavior tags**: `ally-buffer` `ally-healer` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
 #### Play overview
@@ -4453,9 +4404,9 @@ self-heal
 Look for units providing: `ATK`  
 Common buffers are **Ravion**, **Kazim**, or **Mikola**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -4463,27 +4414,26 @@ Common buffers are **Ravion**, **Kazim**, or **Mikola**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Koko**
+  - ATK (all units, low)
 
 ### Units benefitting most from Hammie
 
 Hammie provides ATK to single targets `low`.
 
 - Bonnie (3.1 / 5)
-- Himmel (2.7 / 5)
-- Lily May (1.5 / 5)
+- Himmel (2.9 / 5)
+- Lily May (2.0 / 5)
 
 ### Units that can act as a replacement for Hammie
 
 **Best overall replacement**
 
+- Fay (55% `Buffs on allies` `Similar Skills`)
 - Isabella (55% `Buffs on allies` `Similar Skills`)
-- Fay (51% `Buffs on allies`)
-- Sonja (51% `Buffs on allies`)
+- Koko (55% `Buffs on allies` `Similar Skills`)
 
 **Buffs on allies**
 
@@ -4493,9 +4443,9 @@ Hammie provides ATK to single targets `low`.
 
 **Similar Skills**
 
-- Isabella (100% `ally-buffer` `ally-healer`)
-- Koko (100% `ally-buffer` `ally-healer`)
-- Damian (80% `ally-buffer` `ally-healer`)
+- Isabella (100% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Koko (100% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Damian (90% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -4568,14 +4518,12 @@ Common buffers are **Twins**, **Thador**, or **Smokey & Meerky**.
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Harak
 
@@ -4593,7 +4541,7 @@ Common buffers are **Twins**, **Thador**, or **Smokey & Meerky**.
 
 - Seth (80% `assassin` `life-drain`)
 - Nara (40% `assassin` `execute`)
-- Shakir (33% `life-drain`)
+- Odie (30% `execute`)
 
 **Damage**
 
@@ -4686,55 +4634,38 @@ Look for units providing: `ATK` `Haste` `Max HP` `Physical DEF` `Magic DEF`
 Common buffers are **Mikola**, **Twins**, or **Ravion**.
 
 - **Tilaya**
-  - Max HP (area, average)
+  - Max HP (area, high)
   - DEF (area, high)
   - DEF (area, high)
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
 - **Perseus**
-  - ATK (multiple targets, low)
+  - ATK (multiple targets, average)
   - Phys DEF (multiple targets, low)
   - Magic DEF (multiple targets, low)
 - **Solise**
   - ATK (single target, low)
   - DEF (single target, low)
   - DEF (single target, low)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
   - ATK (multiple targets, average)
+- **Dunlingr**
+  - ATK (single target, low)
+  - Haste (single target, low) `signature fuel`
+- **Lucca**
+  - ATK (single target, low)
+  - Magic DEF (area, low)
 
 ### Units benefitting most from Hepler
 
-Hepler provides Haste to single targets `high`.
-
-**31** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
-
-These are the **4** strongest pairings: 
-
 - Carolina (5.0 / 5)
-- Nerion (5.0 / 5)
-- Lumont (2.9 / 5)
-- Bryon (2.4 / 5)
+- Nerion (4.4 / 5)
 
 ### Units that can act as a replacement for Hepler
 
-**Buffs on allies**
-
-- Twins (100% `Haste`)
-- Hugin (100% `Haste`)
-- Ravion (100% `Haste`)
-
 **Similar Skills**
 
-- Pang (66% `ally-shielder` `high-initial-energy`)
 - Lucca (60% `ally-shielder` `high-initial-energy`)
 - Solise (50% `ally-healer` `ally-shielder`)
+- Saida (50% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -4758,10 +4689,6 @@ These are the **4** strongest pairings:
 
 - Physical — Area
 
-#### Buffs provided by Hepler
-
-- Haste — Single target — `high`
-
 #### Debuffs provided by Hepler
 
 - Haste — Single target — `high`
@@ -4780,7 +4707,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Rain Prayer (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `aoe-healing`
+- **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `low`
 
 #### Play overview
@@ -4823,9 +4750,9 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -4833,31 +4760,37 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Hewynn
 
-Hewynn provides Direct healing to single targets `high` and Damage taken (Mythic+) to all units `low`.
+Hewynn provides Direct healing to single targets `high`, Damage taken (Mythic+) to all units `low`, and Haste (Supreme+) to single targets `average`.
 
-- Silven (2.1 / 5)
-- Shadewing (2.0 / 5)
-- Lily May (2.0 / 5)
+**32** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
+
+These are the **4** strongest pairings: 
+
+- Dunlingr (4.3 / 5)
+- Koko (2.7 / 5)
+- Bryon (2.4 / 5)
+- Lamentis (2.4 / 5)
 
 ### Units that can act as a replacement for Hewynn
 
 **Best overall replacement**
 
-- Solise (59% `Healing` `Similar Skills`)
-- Ludovic (55% `Healing` `Similar Skills`)
-- Smokey & Meerky (55% `Healing` `Similar Skills`)
+- Smokey & Meerky (72% `Healing` `Similar Skills`)
+- Solise (55% `Healing` `Similar Skills`)
+- Fay (55% `Healing` `Similar Skills`)
 
 **Buffs on allies**
 
-- Koko (100% `Damage taken`)
-- Shakir (100% `Damage taken`)
-- Reinier (90% `Damage taken`)
+- Shakir (100% `Damage taken` `Haste`)
+- Hugin (75% `Haste` `Damage taken`)
+- Damian (68% `Haste`)
 
 **Healing**
 
@@ -4867,9 +4800,9 @@ Hewynn provides Direct healing to single targets `high` and Damage taken (Mythic
 
 **Similar Skills**
 
-- Ludovic (100% `ally-healer` `aoe-healing`)
-- Smokey & Meerky (100% `ally-healer` `aoe-healing`)
-- Fay (100% `ally-healer` `aoe-healing`)
+- Velara (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Smokey & Meerky (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Fay (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 
 ### Summary for Hewynn
 
@@ -4877,6 +4810,7 @@ Hewynn provides Direct healing to single targets `high` and Damage taken (Mythic
 
 - Direct healing — Single target — `high`
 - Damage taken (Mythic+) — All units — `low`
+- Haste (Supreme+) — Single target — `average`
 
 #### Crowd Control provided by Hewynn
 
@@ -4935,15 +4869,14 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 
 Himmel also requires a party **with the right composition** and/or specific **named allies**
 
-- **Frieren**
-  - ATK (single target, low)
-  - Enables Party composition via Mage (party slot)
-  - Enables Named ally on team via Frieren named in skill text
 - **Twins**
   - ATK (multiple targets, average)
   - Haste (all units, average) `signature fuel`
   - Max HP (multiple targets, average)
   - Enables Party composition via Support (party slot)
+- **Frieren**
+  - Enables Party composition via Mage (party slot)
+  - Enables Named ally on team via Frieren named in skill text
 - **Smokey & Meerky**
   - ATK (area, average)
   - Haste (area, high) `signature fuel`
@@ -4974,8 +4907,8 @@ Himmel provides Basic stats to single targets `low`.
 
 **Similar Skills**
 
-- Perseus (66% `ally-buffer` `aoe-damage`)
 - Dionel (50% `aoe-damage` `self-repositioner`)
+- Perseus (50% `ally-buffer` `aoe-damage`)
 - Frieren (48% `aoe-damage` `self-repositioner`)
 
 **Damage**
@@ -5069,18 +5002,18 @@ cannon hits reduce target Phys DEF
 Look for units providing: `ATK` `Energy`  
 Common buffers are **Ravion**, **Contess**, or **Evie**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -5137,7 +5070,7 @@ Common buffers are **Ravion**, **Contess**, or **Evie**.
 
 - **Signature skill**: Mechanized Bond (Skill 2)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-shielder` `energy-provider` `high-initial-energy` `static-tile-buffer`
+- **Behavior tags**: `ally-shielder` `energy-provider` `high-initial-energy` `static-tile-buffer` `temporary-stat-buffer`
 - **Self placement**: stays anchored to battle-prep tile; returns after displacement
 - **Ally composition**: put one ally 1 tile behind him (ATK bonus; buff ends if they leave the sigil)
 - **Damage types**: Physical `low`
@@ -5181,14 +5114,12 @@ shielded allies reduce their damage taken
 Look for units providing: `Haste` `Energy`  
 Common buffers are **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
 
@@ -5196,17 +5127,17 @@ Common buffers are **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
 Hugin provides ATK to multiple targets `low`, Energy to single targets `average` — conditional (frequent), Haste to multiple targets `high`, Shield to multiple targets `high`, and Damage taken (Supreme+) to single targets `low`.
 
-**27** units include this provider among their top 6 synergy partners. Why the match is common:
+**29** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 
 These are the **4** strongest pairings: 
 
-- Silven (4.4 / 5)
 - Koko (4.2 / 5)
 - Bryon (3.6 / 5)
 - Alsa (3.5 / 5)
+- Silven (3.2 / 5)
 
 ### Units that can act as a replacement for Hugin
 
@@ -5217,9 +5148,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Pang (50% `ally-shielder` `high-initial-energy`)
-- Lucca (48% `ally-shielder` `high-initial-energy`)
-- Gunnar (40% `ally-shielder` `static-tile-buffer`)
+- Pang (60% `ally-shielder` `high-initial-energy` `temporary-stat-buffer`)
+- Twins (51% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
+- Gunnar (50% `ally-shielder` `static-tile-buffer` `temporary-stat-buffer`)
 
 ### Summary for Hugin
 
@@ -5290,7 +5221,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Dionel (60% `aoe-damage` `self-repositioner` `untargetable`)
 - Tasi (60% `aoe-damage` `cheat-death` `self-repositioner`)
-- Mehira (51% `aoe-damage` `life-drain` `untargetable`)
+- Mehira (45% `aoe-damage` `life-drain` `untargetable`)
 
 **Damage**
 
@@ -5390,8 +5321,8 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 ### Units benefitting most from Indris
 
-- Carolina (2.3 / 5)
-- Nerion (2.2 / 5)
+- Carolina (2.5 / 5)
+- Nerion (2.3 / 5)
 - Shadewing (1.3 / 5)
 
 ### Units that can act as a replacement for Indris
@@ -5451,7 +5382,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 - **Signature skill**: Grimoire Pact (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-buffer` `ally-healer`
+- **Behavior tags**: `ally-buffer` `ally-healer` `temporary-stat-buffer`
 - **Ally composition**: frontmost ally becomes companion (stat stacks and ult buffs)
 - **Damage types**: Magic `low`
 
@@ -5493,9 +5424,9 @@ large enough buff grants extra debuff stack
 Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
 Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -5503,33 +5434,33 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Isabella
 
 Isabella provides ATK to single targets `low` — conditional (frequent), ATK SPD to single targets `low`, Direct healing to single targets `high`, Haste to single targets `low`, Magic DEF to single targets `low`, Phys DEF to single targets `low`, and Vitality to single targets `low`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**21** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
-- Silven (3.7 / 5)
-- Lily May (3.4 / 5)
-- Perseus (3.3 / 5)
-- Dionel (3.3 / 5)
+- Lily May (5.0 / 5)
+- Silven (5.0 / 5)
+- Perseus (5.0 / 5)
+- Dionel (4.7 / 5)
 
 ### Units that can act as a replacement for Isabella
 
 **Best overall replacement**
 
-- Smokey & Meerky (55% `Healing`)
-- Solise (53% `Healing`)
-- Twins (53% `Buffs on allies` `Similar Skills`)
+- Smokey & Meerky (58% `Healing` `Similar Skills`)
+- Fay (55% `Healing` `Similar Skills`)
+- Twins (55% `Buffs on allies` `Similar Skills`)
 
 **Buffs on allies**
 
@@ -5545,9 +5476,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Koko (100% `ally-buffer` `ally-healer`)
-- Damian (80% `ally-buffer` `ally-healer`)
-- Twins (60% `ally-buffer` `ally-healer`)
+- Koko (100% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Damian (90% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Twins (72% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
 
 **Debuffs on enemies**
 
@@ -5633,20 +5564,19 @@ first battle charge greatly boosts damage
 Look for units providing: `ATK` `Shield`  
 Common buffers are **Ravion**, **Kazim**, or **Mikola**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
+- **Hammie**
   - ATK (single target, low)
+- **Koko**
+  - ATK (all units, low)
 
 ### Units benefitting most from Kafra
 
@@ -5709,7 +5639,7 @@ Common buffers are **Ravion**, **Kazim**, or **Mikola**.
 
 - **Signature skill**: Soaring Falcon (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `high-initial-energy` `invincibility` `mark-target` `mass-cc` `non-ult-utility`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `high-initial-energy` `invincibility` `mark-target` `mass-cc` `non-ult-utility` `temporary-stat-buffer`
 - **Damage types**: Physical `high`, Max HP-based damage `average`
 
 #### Play overview
@@ -5771,18 +5701,22 @@ Kazim also requires units **providing knock up**
 
 Kazim provides Haste to multiple targets `average` and ATK (Mythic+) to single targets `high`.
 
-**74** units include this provider among their top 6 synergy partners. Why the match is common:
+**81** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
-- Nerion (3.9 / 5)
-- Dionel (3.6 / 5)
-- Faramor (3.5 / 5)
-- Perseus (3.5 / 5)
+- Nerion (4.1 / 5)
+- Dionel (3.7 / 5)
+- Alsa (3.6 / 5)
+- Lenya (3.4 / 5)
 
 ### Units that can act as a replacement for Kazim
+
+**Best overall replacement**
+
+- Zandrok (52% `Crowd Control` `Damage` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -5792,9 +5726,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Walker (75% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
-- Parisa (45% `ally-buffer` `aoe-damage` `mark-target`)
-- Bonnie (40% `aoe-damage` `battle-start-burst` `non-ult-utility`)
+- Walker (66% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
+- Parisa (53% `ally-buffer` `aoe-damage` `mark-target` `temporary-stat-buffer`)
+- Alna (40% `ally-buffer` `aoe-damage` `invincibility` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -5850,7 +5784,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Full Energy (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `ally-buffer` `ally-healer`
+- **Behavior tags**: `ally-buffer` `ally-healer` `temporary-stat-buffer`
 - **Damage types**: Physical `average`
 
 #### Play overview
@@ -5893,38 +5827,39 @@ Common buffers are **Ravion**, **Rowan**, or **Hugin**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
+- **Zandrok**
+  - Haste (area, low, conditional (frequent)) `signature fuel`
+  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Koko
 
-Koko provides Damage taken to all units `low`, Lifedrain to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality (Supreme+) to single targets `high`.
+Koko provides ATK to all units `low`, Damage taken to all units `low`, Lifedrain to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality (Supreme+) to single targets `high`.
 
+- Zandrok (2.4 / 5)
 - Callan (2.3 / 5)
 
 ### Units that can act as a replacement for Koko
 
 **Buffs on allies**
 
-- Mikola (71% `Vitality`)
+- Mikola (74% `Vitality` `ATK`)
 
 **Similar Skills**
 
-- Isabella (100% `ally-buffer` `ally-healer`)
-- Damian (80% `ally-buffer` `ally-healer`)
-- Twins (60% `ally-buffer` `ally-healer`)
+- Isabella (100% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Damian (90% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Twins (72% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -5956,6 +5891,7 @@ Koko provides Damage taken to all units `low`, Lifedrain to multiple targets `av
 
 #### Buffs provided by Koko
 
+- ATK — All units — `low`
 - Damage taken — All units — `low`
 - Lifedrain — Multiple targets — `average`
 - Shield (Mythic+) — All units — `low`
@@ -5977,7 +5913,7 @@ Koko provides Damage taken to all units `low`, Lifedrain to multiple targets `av
 
 - **Signature skill**: Dominance Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `high-initial-energy` `hp-scaling` `self-repositioner`
+- **Behavior tags**: `ally-buffer` `high-initial-energy` `hp-scaling` `self-repositioner` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -6018,47 +5954,51 @@ assist or defeat inside zone repositions caster and circle to new target
 Look for units providing: `ATK` `Shield` `DEF Penetration` `Physical DEF` `Magic DEF`  
 Common buffers are **Ravion**, **Rowan**, or **Mikola**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
-  - DEF Penetration (multiple targets, high)
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
-- **Pandora**
-  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Perseus**
-  - ATK (multiple targets, low)
+  - ATK (multiple targets, average)
   - Phys DEF (multiple targets, low)
   - Magic DEF (multiple targets, low)
+- **Pandora**
+  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Solise**
   - ATK (single target, low)
   - DEF (single target, low)
   - DEF (single target, low)
+- **Pang**
+  - ATK (multiple targets, average)
+- **Lucca**
+  - ATK (single target, low)
+  - Magic DEF (area, low)
 
 ### Units benefitting most from Kordan
 
-Kordan provides ATK in an area `low`, Lifedrain in an area `average`, Magic DEF (EX+10) to single targets `low`, and DEF Penetration (Supreme+) in an area `high`.
+Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Penetration (Supreme+) in an area `high`.
 
-- Nerion (4.8 / 5)
-- Carolina (4.6 / 5)
-- Lily May (3.2 / 5)
+**5** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **4** strongest pairings: 
+
+- Carolina (5.0 / 5)
+- Nerion (5.0 / 5)
+- Lily May (3.3 / 5)
+- Silven (2.8 / 5)
 
 ### Units that can act as a replacement for Kordan
 
 **Buffs on allies**
 
-- Aliceth (69% `DEF Penetration` `ATK`)
+- Aliceth (72% `DEF Penetration` `ATK`)
 
 **Similar Skills**
 
-- Marilee (50% `hp-scaling` `self-repositioner`)
-- Himmel (40% `ally-buffer` `self-repositioner`)
-- Athalia (40% `hp-scaling` `self-repositioner`)
+- Laios (42% `ally-buffer` `high-initial-energy` `temporary-stat-buffer`)
+- Zandrok (41% `hp-scaling` `temporary-stat-buffer`)
+- Marilee (40% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -6082,7 +6022,6 @@ Kordan provides ATK in an area `low`, Lifedrain in an area `average`, Magic DEF 
 
 - ATK — Area — `low`
 - Lifedrain — Area — `average`
-- Magic DEF (EX+10) — Single target — `low`
 - DEF Penetration (Supreme+) — Area — `high`
 
 #### Crowd Control provided by Kordan
@@ -6143,17 +6082,17 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Lorsan**.
 
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
 - **Dunlingr**
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Korin
 
@@ -6173,8 +6112,8 @@ Korin provides Shield to single targets `average`.
 **Similar Skills**
 
 - Baelran (60% `hp-scaling`)
-- Daimon (50% `ally-shielder` `hp-scaling`)
 - Scarlita (48% `ally-shielder` `hp-scaling`)
+- Daimon (40% `ally-shielder` `hp-scaling`)
 
 **Damage**
 
@@ -6256,14 +6195,10 @@ Common buffers are **Mikola**, **Rowan**, or **Twins**.
 
 - **Tilaya**
   - DEF (area, high)
-- **Isabella**
-  - Phys DEF (single target, low)
 - **Lumont**
   - Phys DEF (multiple targets, low)
 - **Perseus**
   - Phys DEF (multiple targets, low)
-- **Scarlita**
-  - Phys DEF (single target, low)
 - **Solise**
   - DEF (single target, low)
 
@@ -6271,13 +6206,13 @@ Common buffers are **Mikola**, **Rowan**, or **Twins**.
 
 - Indris (3.2 / 5)
 - Shadewing (1.8 / 5)
-- Carolina (1.4 / 5)
+- Carolina (1.5 / 5)
 
 ### Units that can act as a replacement for Kruger
 
 **Similar Skills**
 
-- Shakir (72% `life-drain`)
+- Shakir (48% `life-drain`)
 - Shadewing (40% `enemy-debuffer`)
 - Zorya (40% `life-drain`)
 
@@ -6369,21 +6304,19 @@ ATK speed and Ranged DEF scale with enemy count on own half
 Look for units providing: `ATK` `ATK SPD / Haste` `DEF Penetration`  
 Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
-  - DEF Penetration (multiple targets, high)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Kordan**
   - DEF Penetration (area, high)
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Kulu
 
@@ -6397,13 +6330,13 @@ Kulu provides ATK (Legendary+) to single targets `low`.
 
 **Best overall replacement**
 
-- Kordan (51% `Buffs on allies` `Crowd Control` `Damage`)
+- Kordan (50% `Buffs on allies` `Crowd Control` `Damage`)
 
 **Buffs on allies**
 
-- Frieren (100% `ATK`)
 - Gunnar (100% `ATK`)
 - Contess (100% `ATK`)
+- Solise (100% `ATK`)
 
 **Similar Skills**
 
@@ -6462,7 +6395,7 @@ Kulu provides ATK (Legendary+) to single targets `low`.
 
 - **Signature skill**: Dungeon Gourmet (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-buffer` `ally-healer` `high-initial-energy` `summoner`
+- **Behavior tags**: `ally-buffer` `ally-healer` `high-initial-energy` `summoner` `temporary-stat-buffer`
 - **Damage types**: Physical `low`
 
 #### Play overview
@@ -6504,22 +6437,21 @@ max HP permanently grows with each ingredient collected
 Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Energy`  
 Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
-- **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
-  - Damage taken via Damage taken (all summons, low)
 - **Tilaya**
-  - Max HP (area, average)
+  - Max HP (area, high)
   - DEF (area, high)
   - DEF (area, high)
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
+- **Perseus**
+  - ATK (multiple targets, average)
+  - Phys DEF (multiple targets, low)
+  - Magic DEF (multiple targets, low)
 - **Florabelle**
   - Shield (all summons, average)
 - **Shakir**
@@ -6527,7 +6459,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 ### Units benefitting most from Laios
 
-Laios provides ATK to multiple targets `low` — conditional (rare), Magic DEF (EX+10) to single targets `low` — conditional (rare), and Phys DEF (EX+10) to single targets `low` — conditional (rare).
+Laios provides ATK to multiple targets `low` — conditional (rare).
 
 - Marcille (4.8 / 5)
 - Shadewing (4.4 / 5)
@@ -6536,9 +6468,9 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Magic DEF (
 
 **Similar Skills**
 
-- Damian (75% `ally-buffer` `ally-healer` `summoner`)
-- Koko (50% `ally-buffer` `ally-healer`)
-- Isabella (50% `ally-buffer` `ally-healer`)
+- Damian (80% `ally-buffer` `ally-healer` `summoner` `temporary-stat-buffer`)
+- Koko (60% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Isabella (60% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
 
 **Crowd Control**
 
@@ -6556,8 +6488,6 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Magic DEF (
 #### Buffs provided by Laios
 
 - ATK — Multiple targets — `low` — conditional (rare)
-- Magic DEF (EX+10) — Single target — `low` — conditional (rare)
-- Phys DEF (EX+10) — Single target — `low` — conditional (rare)
 
 #### Debuffs provided by Laios
 
@@ -6614,7 +6544,7 @@ caster receives a portion of ally buffs applied to apostles
 ### Units improving Lamentis
 
 Look for units providing: `ATK SPD / Haste` `Healing` `Energy`  
-Common buffers are **Smokey & Meerky**, **Twins**, or **Ravion**.
+Common buffers are **Smokey & Meerky**, **Hewynn**, or **Twins**.
 
 - **Peggy**
   - Healing over time (multiple targets, average)
@@ -6622,25 +6552,23 @@ Common buffers are **Smokey & Meerky**, **Twins**, or **Ravion**.
   - DEF via DEF (all summons, high)
   - Ranged damage via Ranged damage (all summons, low)
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - Direct healing (single target, high)
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-  - Direct healing (single target, high)
 - **Florabelle**
   - Shield (all summons, average)
 - **Fay**
   - Direct healing (arc, high)
+- **Ludovic**
+  - Direct healing (multiple targets, high)
+- **Pandora**
+  - Direct healing (single target, high)
 
 ### Units benefitting most from Lamentis
 
 - Bonnie (3.4 / 5)
-- Carolina (2.5 / 5)
-- Nerion (2.3 / 5)
+- Carolina (2.7 / 5)
+- Nerion (2.4 / 5)
 
 ### Units that can act as a replacement for Lamentis
 
@@ -6741,27 +6669,25 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Twins**.
 - **Pandora**
   - Max HP (single target, low)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Phraesto**
-  - Max HP (single target, high)
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
+- **Zandrok**
+  - Haste (area, low, conditional (frequent)) `signature fuel`
+  - Max HP (multiple targets, low)
+  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Lenya
 
-- Carolina (2.2 / 5)
+- Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Lenya
@@ -6849,28 +6775,29 @@ first ultimate interrupt drains extra energy from target
 ### Units improving Lily May
 
 Look for units providing: `ATK` `DEF Penetration`  
-Common buffers are **Mikola**, **Twins**, or **Smokey & Meerky**.
+Common buffers are **Isabella**, **Mikola**, or **Sonja**.
 
 Lily May also requires units **buffing them**
 
-- **Aliceth**
+- **Perseus**
   - ATK (multiple targets, average)
-  - DEF Penetration (multiple targets, high)
-  - Grants 3 distinct stat buffs to Lily May
-- **Solise**
+  - Grants 3 distinct temporary stat buffs to Lily May
+- **Dunlingr**
   - ATK (single target, low)
-  - Grants 5 distinct stat buffs to Lily May
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Grants 7 distinct stat buffs to Lily May
+  - Grants 3 distinct temporary stat buffs to Lily May
 - **Kordan**
   - ATK (area, low)
   - DEF Penetration (area, high)
-  - Grants 4 distinct stat buffs to Lily May
-- **Rowan**
-  - Grants 4 distinct stat buffs to Lily May
-- **Thador**
-  - Grants 3 distinct stat buffs to Lily May
+  - Grants 2 distinct temporary stat buffs to Lily May
+- **Koko**
+  - ATK (all units, low)
+  - Grants 2 distinct temporary stat buffs to Lily May
+- **Pang**
+  - ATK (multiple targets, average)
+  - Grants 1 distinct temporary stat buff to Lily May
+- **Fay**
+  - ATK (arc, low)
+  - Grants 1 distinct temporary stat buff to Lily May
 
 ### Units benefitting most from Lily May
 
@@ -6931,7 +6858,7 @@ Lily May also requires units **buffing them**
 
 - **Signature skill**: Whispering Tempest (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `aoe-damage` `dot-specialist`
+- **Behavior tags**: `aoe-damage` `dot-specialist` `temporary-stat-buffer`
 - **Damage types**: Magic `low`, DoT `high`
 
 #### Play overview
@@ -6974,9 +6901,9 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -6984,23 +6911,22 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Lorsan
 
 Lorsan provides Haste to single targets `average`.
 
-**50** units include this provider among their top 6 synergy partners. Why the match is common:
+**52** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
-- Nerion (4.6 / 5)
+- Nerion (4.8 / 5)
+- Carolina (4.7 / 5)
 - Shadewing (4.4 / 5)
-- Carolina (4.3 / 5)
 - Indris (3.9 / 5)
 
 ### Units that can act as a replacement for Lorsan
@@ -7009,13 +6935,13 @@ These are the **4** strongest pairings:
 
 - Smokey & Meerky (100% `Haste`)
 - Shakir (100% `Haste`)
-- Soren (100% `Haste`)
+- Twins (90% `Haste`)
 
 **Similar Skills**
 
-- Viperian (100% `aoe-damage` `dot-specialist`)
-- Arden (80% `aoe-damage` `dot-specialist`)
-- Faramor (60% `aoe-damage` `dot-specialist`)
+- Tilaya (80% `aoe-damage` `temporary-stat-buffer`)
+- Viperian (66% `aoe-damage` `dot-specialist`)
+- Arden (60% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -7125,9 +7051,9 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 
 **Similar Skills**
 
-- Pang (66% `ally-shielder` `high-initial-energy`)
 - Hepler (60% `ally-shielder` `high-initial-energy`)
 - Saida (50% `ally-shielder` `high-initial-energy`)
+- Pang (50% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -7221,8 +7147,9 @@ Common buffers are **Rowan**, **Lyca**, or **Thador**.
   - Shield (single target, average)
 - **Lucy**
   - Shield (single target, average)
-- **Shakir**
-  - ATK SPD via Haste (area, average) `signature fuel`
+- **Soren**
+  - Shield (single target, low)
+  - ATK SPD via Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Lucius
 
@@ -7234,7 +7161,7 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 
 **Best overall replacement**
 
-- Lumont (80% `Crowd Control` `Damage` `Debuffs on enemies`)
+- Lumont (79% `Crowd Control` `Damage` `Debuffs on enemies`)
 - Antandra (64% `Damage` `Debuffs on enemies` `Crowd Control`)
 - Gerda (62% `Healing` `Damage` `Crowd Control`)
 
@@ -7252,9 +7179,9 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 
 **Similar Skills**
 
-- Contess (50% `ally-healer` `ally-shielder` `enemy-debuffer`)
-- Gunnar (48% `ally-shielder` `aoe-damage`)
-- Thador (48% `ally-shielder` `enemy-debuffer`)
+- Hepler (48% `ally-healer` `ally-shielder`)
+- Cassadee (48% `aoe-damage` `enemy-debuffer`)
+- Contess (42% `ally-healer` `ally-shielder` `enemy-debuffer`)
 
 **Damage**
 
@@ -7343,24 +7270,24 @@ reaching max energy while companion is active boosts companion ATK speed
 ### Units improving Lucy
 
 Look for units providing: `ATK SPD / Haste`  
-Common buffers are **Smokey & Meerky**, **Lorsan**, or **Soren**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, or **Twins**.
 
 - **Peggy**
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
   - Ranged damage via Ranged damage (all summons, low)
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste (single target, low) `signature fuel`
+- **Mehira**
+  - ATK SPD via Haste (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Lucy
 
@@ -7379,9 +7306,9 @@ Lucy provides Shield (Mythic+) to single targets `average`.
 
 **Similar Skills**
 
-- Pang (50% `ally-shielder` `high-initial-energy`)
 - Saida (48% `ally-shielder` `high-initial-energy`)
 - Galahad (40% `ally-shielder` `summoner`)
+- Hepler (40% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -7461,32 +7388,32 @@ enemies entering field take damage and are stunned
 
 ### Units improving Ludovic
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Gunnar**
   - ATK SPD (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Ludovic
 
 Ludovic provides Direct healing to multiple targets `average` and Healing over time to single targets `high`.
 
-- Silven (2.3 / 5)
-- Lily May (2.2 / 5)
-- Dionel (1.9 / 5)
+- Bonnie (2.7 / 5)
+- Carolina (2.0 / 5)
+- Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Ludovic
 
 **Best overall replacement**
 
-- Smokey & Meerky (57% `Healing` `Similar Skills`)
+- Smokey & Meerky (50% `Healing` `Similar Skills`)
 - Contess (50% `Healing` `Crowd Control`)
 
 **Healing**
@@ -7497,9 +7424,9 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 
 **Similar Skills**
 
-- Smokey & Meerky (100% `ally-healer` `aoe-healing`)
-- Fay (100% `ally-healer` `aoe-healing`)
-- Hewynn (100% `ally-healer` `aoe-healing`)
+- Solise (80% `ally-healer` `aoe-healing`)
+- Smokey & Meerky (80% `ally-healer` `aoe-healing`)
+- Fay (80% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -7538,7 +7465,7 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 
 - **Signature skill**: Lumont's Charge (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `enemy-debuffer` `non-ult-utility` `taunt`
+- **Behavior tags**: `enemy-debuffer` `non-ult-utility` `taunt` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -7577,24 +7504,24 @@ regenerate HP each second while shielded
 ### Units improving Lumont
 
 Look for units providing: `Haste` `Shield`  
-Common buffers are **Ravion**, **Soren**, or **Rowan**.
+Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
+  - Shield (single target, low)
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Saida**
   - Shield (multiple targets, high)
 - **Dunlingr**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Lumont
 
@@ -7607,7 +7534,7 @@ Lumont provides Phys DEF to multiple targets `low`.
 **Best overall replacement**
 
 - Hepler (55% `Crowd Control` `Damage`)
-- Perseus (52% `Buffs on allies` `Damage`)
+- Perseus (55% `Buffs on allies` `Damage`)
 - Antandra (52% `Damage`)
 
 **Buffs on allies**
@@ -7618,9 +7545,9 @@ Lumont provides Phys DEF to multiple targets `low`.
 
 **Similar Skills**
 
-- Bonnie (40% `enemy-debuffer` `non-ult-utility`)
-- Kafra (33% `enemy-debuffer` `non-ult-utility`)
-- Kruger (30% `enemy-debuffer`)
+- Thador (40% `enemy-debuffer` `temporary-stat-buffer`)
+- Daimon (34% `non-ult-utility` `temporary-stat-buffer`)
+- Bonnie (33% `enemy-debuffer` `non-ult-utility`)
 
 **Damage**
 
@@ -7670,7 +7597,7 @@ Lumont provides Phys DEF to multiple targets `low`.
 
 - **Signature skill**: Comet Archery (ultimate)
 - **Movement**: stationary (avg attack range 11.0 tiles)
-- **Behavior tags**: `ally-buffer` `energy-provider`
+- **Behavior tags**: `ally-buffer` `energy-provider` `temporary-stat-buffer`
 - **Damage types**: Physical `average`
 
 #### Play overview
@@ -7713,22 +7640,22 @@ Common buffers are **Ravion**, **Rowan**, or **Hugin**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Zandrok**
+  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Lyca
 
 Lyca provides ATK SPD to all units `low` and Energy to all units `low`.
 
-**27** units include this provider among their top 6 synergy partners. Why the match is common:
+**29** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -7737,11 +7664,15 @@ Lyca provides ATK SPD to all units `low` and Energy to all units `low`.
 These are the **4** strongest pairings: 
 
 - Indris (5.0 / 5)
-- Carolina (3.7 / 5)
+- Carolina (4.1 / 5)
+- Dionel (3.7 / 5)
 - Zorya (3.5 / 5)
-- Fay (3.5 / 5)
 
 ### Units that can act as a replacement for Lyca
+
+**Best overall replacement**
+
+- Ravion (53% `Buffs on allies` `Debuffs on enemies` `Damage`)
 
 **Buffs on allies**
 
@@ -7751,9 +7682,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Twins (50% `ally-buffer` `energy-provider`)
-- Phraesto (40% `ally-buffer` `energy-provider`)
-- Ravion (36% `energy-provider`)
+- Twins (60% `ally-buffer` `energy-provider` `temporary-stat-buffer`)
+- Ravion (57% `energy-provider` `temporary-stat-buffer`)
+- Parisa (57% `ally-buffer` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -7848,22 +7779,20 @@ Marcille also requires specific **named allies**
 
 - **Laios**
   - Enables Named ally on team via Laios named in skill text
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
+- **Gunnar**
+  - ATK SPD (single target, low) `signature fuel`
 
 ### Units benefitting most from Marcille
 
 - Bonnie (3.4 / 5)
-- Carolina (1.9 / 5)
-- Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Marcille
 
@@ -7955,28 +7884,27 @@ trigger ATK speed bonus condition more easily
 Look for units providing: `ATK` `ATK SPD / Haste` `CRIT`  
 Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
+- **Koko**
+  - ATK (all units, low)
 
 ### Units benefitting most from Marilee
 
 Marilee provides ATK (EX+10) to single targets `low`.
 
 - Nerion (1.8 / 5)
-- Faramor (1.6 / 5)
-- Lily May (1.5 / 5)
+- Carolina (1.5 / 5)
+- Alsa (1.4 / 5)
 
 ### Units that can act as a replacement for Marilee
 
@@ -7988,9 +7916,9 @@ Marilee provides ATK (EX+10) to single targets `low`.
 
 **Buffs on allies**
 
-- Frieren (100% `ATK`)
 - Gunnar (100% `ATK`)
 - Contess (100% `ATK`)
+- Solise (100% `ATK`)
 
 **Similar Skills**
 
@@ -8038,7 +7966,7 @@ Marilee provides ATK (EX+10) to single targets `low`.
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `aoe-damage` `enemy-grouping` `life-drain` `mass-cc` `untargetable`
+- **Behavior tags**: `aoe-damage` `enemy-grouping` `life-drain` `mass-cc` `temporary-stat-buffer` `untargetable`
 - **Damage types**: Magic `low`, DoT `average`
 
 #### Play overview
@@ -8082,15 +8010,9 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 - **Pandora**
   - Max HP (single target, low)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Phraesto**
-  - Max HP (single target, high)
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
@@ -8098,12 +8020,19 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 - **Dunlingr**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Mehira
 
 Mehira provides Haste to multiple targets `average`.
 
 - Niru (2.8 / 5)
+- Pippa (2.3 / 5)
+- Shakir (2.0 / 5)
 
 ### Units that can act as a replacement for Mehira
 
@@ -8115,9 +8044,9 @@ Mehira provides Haste to multiple targets `average`.
 
 **Similar Skills**
 
-- Eironn (51% `aoe-damage` `enemy-grouping` `mass-cc`)
-- Cyran (34% `aoe-damage` `enemy-grouping`)
-- Dionel (33% `aoe-damage` `untargetable`)
+- Eironn (45% `aoe-damage` `enemy-grouping` `mass-cc`)
+- Gunnar (30% `aoe-damage` `temporary-stat-buffer`)
+- Cyran (30% `aoe-damage` `enemy-grouping`)
 
 **Damage**
 
@@ -8170,7 +8099,7 @@ Mehira provides Haste to multiple targets `average`.
 
 - **Signature skill**: Dauntless Hymn (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-healing`
+- **Behavior tags**: `ally-buffer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Physical `low`
 
 #### Play overview
@@ -8216,40 +8145,39 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 - **Shakir**
   - Haste (area, average) `signature fuel`
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Aliceth**
+- **Pang**
   - ATK (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
+- **Mehira**
+  - Haste (multiple targets, low) `signature fuel`
+  - ATK SPD via Haste (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Mikola
 
-Mikola provides ATK to all units `low`, DEF to multiple targets `average`, Direct healing to multiple targets `average`, Haste to multiple targets `average`, Magic DEF to multiple targets `average`, and Vitality (EX+10) to multiple targets `high`.
+Mikola provides ATK to all units `low`, DEF to multiple targets `average`, Direct healing to multiple targets `average`, Haste to multiple targets `high`, Magic DEF to multiple targets `low`, and Vitality (EX+10) to multiple targets `high`.
 
-**61** units include this provider among their top 6 synergy partners. Why the match is common:
+**63** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
-- Lily May (5.0 / 5)
-- Silven (5.0 / 5)
-- Perseus (4.8 / 5)
-- Dionel (4.7 / 5)
+- Perseus (5.0 / 5)
+- Dionel (4.6 / 5)
+- Lily May (4.6 / 5)
+- Silven (4.1 / 5)
 
 ### Units that can act as a replacement for Mikola
 
 **Best overall replacement**
 
-- Smokey & Meerky (60% `Healing`)
+- Smokey & Meerky (64% `Healing` `Similar Skills`)
+- Evie (51% `Healing`)
 
 **Healing**
 
@@ -8259,9 +8187,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Smokey & Meerky (48% `aoe-healing`)
-- Koko (48% `ally-buffer`)
-- Ludovic (40% `aoe-healing`)
+- Smokey & Meerky (72% `aoe-healing` `temporary-stat-buffer`)
+- Koko (72% `ally-buffer` `temporary-stat-buffer`)
+- Sonja (60% `ally-buffer` `temporary-stat-buffer`)
 
 ### Summary for Mikola
 
@@ -8270,8 +8198,8 @@ These are the **4** strongest pairings:
 - ATK — All units — `low`
 - DEF — Multiple targets — `average`
 - Direct healing — Multiple targets — `average`
-- Haste — Multiple targets — `average`
-- Magic DEF — Multiple targets — `average`
+- Haste — Multiple targets — `high`
+- Magic DEF — Multiple targets — `low`
 - Vitality (EX+10) — Multiple targets — `high`
 
 #### Crowd Control provided by Mikola
@@ -8327,23 +8255,23 @@ extend burn DoT duration
 Look for units providing: `ATK SPD / Haste`  
 Common buffers are **Hugin**, **Lorsan**, or **Smokey & Meerky**.
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Gunnar**
   - ATK SPD (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Mirael
 
 - Bonnie (2.4 / 5)
-- Himmel (2.1 / 5)
+- Himmel (2.2 / 5)
 - Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Mirael
@@ -8422,23 +8350,23 @@ recover energy after defeating enemy with ultimate
 Look for units providing: `ATK` `Energy`  
 Common buffers are **Ravion**, **Contess**, or **Evie**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Gunnar**
+  - ATK (single target, low)
+- **Hammie**
   - ATK (single target, low)
 
 ### Units benefitting most from Nara
 
 - Kazim (2.4 / 5)
-- Carolina (1.9 / 5)
+- Carolina (2.0 / 5)
 - Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Nara
@@ -8542,28 +8470,26 @@ Natsu also requires specific **named allies**
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
-- **Lucy**
-  - Enables Named ally on team via Lucy named in skill text
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
 - **Perseus**
-  - ATK (multiple targets, low)
+  - ATK (multiple targets, average)
   - Phys DEF (multiple targets, low)
   - Magic DEF (multiple targets, low)
+- **Lucy**
+  - Enables Named ally on team via Lucy named in skill text
 - **Solise**
   - ATK (single target, low)
   - DEF (single target, low)
   - DEF (single target, low)
-- **Aliceth**
+- **Pang**
   - ATK (multiple targets, average)
+- **Dunlingr**
+  - ATK (single target, low)
+  - Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Natsu
 
-- Carolina (2.8 / 5)
-- Nerion (2.6 / 5)
+- Carolina (3.0 / 5)
+- Nerion (2.7 / 5)
 - Shadewing (2.6 / 5)
 
 ### Units that can act as a replacement for Natsu
@@ -8672,7 +8598,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Shadewing (2.6 / 5)
 - Indris (2.4 / 5)
-- Carolina (1.9 / 5)
+- Carolina (2.0 / 5)
 
 ### Units that can act as a replacement for Nazrik
 
@@ -8770,13 +8696,10 @@ all non-summon enemies drowning grants permanent empowerment and penetration inc
 ### Units improving Nerion
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Shield` `Energy` `DEF Penetration`  
-Common buffers are **Hepler**, **Twins**, or **Lorsan**.
+Common buffers are **Twins**, **Lorsan**, or **Ravion**.
 
 Nerion also requires units **applying crowd control** to enemies
 
-- **Hepler**
-  - ATK SPD via Haste (single target, average) `signature fuel`
-  - Enables CC on enemies via Blind (area, high)
 - **Twins**
   - ATK (multiple targets, average)
   - ATK SPD via Haste (all units, average) `signature fuel`
@@ -8798,6 +8721,8 @@ Nerion also requires units **applying crowd control** to enemies
   - ATK (multiple targets, average)
   - DEF Penetration (multiple targets, high)
   - Enables CC on enemies via Blind (area, average)
+- **Hepler**
+  - Enables CC on enemies via Blind (area, high)
 
 ### Units benefitting most from Nerion
 
@@ -8926,8 +8851,8 @@ Niru also requires enemies **to be defeated**
 **Similar Skills**
 
 - Ludovic (36% `ally-healer`)
-- Isabella (36% `ally-healer`)
 - Baelran (33% `hp-scaling`)
+- Shemira (30% `hp-scaling`)
 
 **Damage**
 
@@ -9009,18 +8934,18 @@ triple-shot deals bonus damage against poisoned targets
 Look for units providing: `ATK SPD / Haste`  
 Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Gunnar**
   - ATK SPD (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Odie
 
@@ -9131,10 +9056,10 @@ Pandora provides Direct healing to single targets `high`, Invincible to single t
 
 These are the **4** strongest pairings: 
 
-- Carolina (3.6 / 5)
+- Carolina (3.9 / 5)
 - Indris (3.6 / 5)
-- Mehira (3.3 / 5)
-- Dionel (3.2 / 5)
+- Alsa (2.5 / 5)
+- Lenya (2.4 / 5)
 
 ### Units that can act as a replacement for Pandora
 
@@ -9146,8 +9071,8 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Thador (50% `enemy-debuffer` `energy-provider`)
 - Cecia (50% `enemy-debuffer` `mass-cc`)
+- Thador (40% `enemy-debuffer` `energy-provider`)
 - Temesia (33% `enemy-debuffer` `mass-cc`)
 
 **Damage**
@@ -9203,7 +9128,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Sky Splitter (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-shielder` `high-initial-energy`
+- **Behavior tags**: `ally-shielder` `high-initial-energy` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -9244,36 +9169,43 @@ entering buff state immediately grants shield and penetration
 Look for units providing: `ATK` `Haste` `Shield` `Energy` `DEF Penetration`  
 Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
-  - DEF Penetration (multiple targets, high)
 - **Kordan**
   - ATK (area, low)
   - DEF Penetration (area, high)
+- **Perseus**
+  - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Pang
 
 Pang provides ATK (Mythic+) to multiple targets `average`.
 
-- Aliceth (3.7 / 5)
+**6** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **4** strongest pairings: 
+
+- Solise (3.7 / 5)
+- Evie (3.1 / 5)
+- Smokey & Meerky (3.1 / 5)
+- Ravion (2.9 / 5)
 
 ### Units that can act as a replacement for Pang
 
 **Best overall replacement**
 
-- Perseus (85% `Damage` `Crowd Control` `Buffs on allies`)
-- Lucca (80% `Damage` `Similar Skills` `Crowd Control`)
+- Perseus (92% `Damage` `Crowd Control` `Buffs on allies`)
 - Kafra (77% `Damage` `Crowd Control`)
+- Lucca (75% `Damage` `Crowd Control` `Similar Skills`)
 
 **Buffs on allies**
 
@@ -9283,9 +9215,9 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 
 **Similar Skills**
 
-- Saida (66% `ally-shielder` `high-initial-energy`)
-- Hepler (66% `ally-shielder` `high-initial-energy`)
-- Lucca (66% `ally-shielder` `high-initial-energy`)
+- Hugin (60% `ally-shielder` `high-initial-energy` `temporary-stat-buffer`)
+- Saida (50% `ally-shielder` `high-initial-energy`)
+- Hepler (50% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -9336,7 +9268,7 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 
 - **Signature skill**: Floral Splendor (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `mark-target`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `mark-target` `temporary-stat-buffer`
 - **Self placement**: nearest symmetrical enemy at battle start (Falling Blossom / First Strike openers)
 - **Damage types**: Magic `high`
 
@@ -9378,9 +9310,9 @@ fewer normal attacks needed to trigger periodic line attack
 Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
 Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
@@ -9388,26 +9320,25 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 - **Gunnar**
   - ATK (single target, low)
   - ATK SPD (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Parisa
 
 Parisa provides ATK to multiple targets `high` and ATK SPD to multiple targets `low`.
 
-**40** units include this provider among their top 6 synergy partners. Why the match is common:
+**47** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
-- Bonnie (4.6 / 5)
-- Himmel (3.8 / 5)
-- Vala (3.0 / 5)
-- Fay (2.9 / 5)
+- Perseus (3.8 / 5)
+- Faramor (3.6 / 5)
+- Dionel (3.6 / 5)
+- Lily May (3.4 / 5)
 
 ### Units that can act as a replacement for Parisa
 
@@ -9419,9 +9350,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Sonja (66% `ally-buffer` `aoe-damage`)
-- Perseus (66% `ally-buffer` `aoe-damage`)
-- Cassadee (60% `ally-buffer` `aoe-damage`)
+- Sonja (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Perseus (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Tilaya (60% `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -9493,21 +9424,20 @@ Look for units providing: `ATK` `Haste` `Shield`
 Common buffers are **Kazim**, **Ravion**, or **Smokey & Meerky**.
 
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
+- **Rowan**
+  - Named ally grant: Healing (average)
 
 ### Units benefitting most from Peggy
 
@@ -9534,9 +9464,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Laios (80% `ally-buffer` `ally-healer` `high-initial-energy` `summoner`)
-- Damian (60% `ally-buffer` `ally-healer` `summoner`)
+- Laios (66% `ally-buffer` `ally-healer` `high-initial-energy` `summoner`)
 - Hepler (60% `ally-healer` `ally-shielder` `high-initial-energy`)
+- Lucy (60% `ally-shielder` `high-initial-energy` `summoner`)
 
 **Damage**
 
@@ -9575,7 +9505,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Divine Rend (ultimate)
 - **Movement**: moving (avg attack range 2.9 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-damage`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -9614,44 +9544,53 @@ expand ally terrain buff area by one tile
 ### Units improving Perseus
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Shield`  
-Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
+Common buffers are **Mikola**, **Isabella**, or **Smokey & Meerky**.
 
 Perseus also requires units **buffing them**
 
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
-  - Grants 7 distinct stat buffs to Perseus
-- **Aliceth**
-  - ATK (multiple targets, average)
-  - Grants 3 distinct stat buffs to Perseus
-- **Solise**
-  - ATK (single target, low)
-  - Grants 5 distinct stat buffs to Perseus
-- **Kordan**
-  - ATK (area, low)
-  - Grants 4 distinct stat buffs to Perseus
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - Grants 2 distinct stat buffs to Perseus
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-  - Grants 4 distinct stat buffs to Perseus
+  - Grants 3 distinct temporary stat buffs to Perseus
+- **Koko**
+  - ATK (all units, low)
+  - Grants 2 distinct temporary stat buffs to Perseus
+- **Kordan**
+  - ATK (area, low)
+  - Grants 2 distinct temporary stat buffs to Perseus
+- **Pang**
+  - ATK (multiple targets, average)
+  - Grants 1 distinct temporary stat buff to Perseus
+- **Shakir**
+  - ATK SPD via Haste (area, average) `signature fuel`
+  - Grants 1 distinct temporary stat buff to Perseus
+- **Zandrok**
+  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
+  - Max HP (multiple targets, low)
+  - Grants 1 distinct temporary stat buff to Perseus (start of battle)
 
 ### Units benefitting most from Perseus
 
 Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `low`, and Phys DEF to multiple targets `low`.
 
-- Kruger (2.3 / 5)
+**11** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **4** strongest pairings: 
+
+- Nerion (4.0 / 5)
+- Faramor (3.7 / 5)
+- Lily May (3.6 / 5)
+- Silven (3.0 / 5)
 
 ### Units that can act as a replacement for Perseus
 
 **Best overall replacement**
 
 - Sonja (69% `Similar Skills` `Buffs on allies`)
+- Pang (64% `Damage`)
 - Lucca (63% `Damage` `Crowd Control`)
-- Gwyneth (63% `Damage`)
 
 **Buffs on allies**
 
@@ -9661,9 +9600,9 @@ Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `l
 
 **Similar Skills**
 
-- Sonja (100% `ally-buffer` `aoe-damage`)
-- Cassadee (80% `ally-buffer` `aoe-damage`)
-- Himmel (66% `ally-buffer` `aoe-damage`)
+- Sonja (100% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Parisa (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Tilaya (66% `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -9745,50 +9684,50 @@ both in same row gain initial shield at battle start
 ### Units improving Phraesto
 
 Look for units providing: `Healing` `Energy` `Magic DEF`  
-Common buffers are **Rowan**, **Mikola**, or **Twins**.
+Common buffers are **Rowan**, **Isabella**, or **Mikola**.
 
 - **Peggy**
   - Healing over time (multiple targets, average)
   - ATK (all summons, high)
   - DEF via DEF (all summons, high)
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
 - **Florabelle**
   - Shield (all summons, average)
-- **Isabella**
-  - Direct healing (single target, high)
-  - Magic DEF (single target, low)
 - **Solise**
   - Direct healing (all units, high)
   - DEF (single target, low)
-- **Damian**
-  - Direct healing (single target, high)
+- **Fay**
+  - Direct healing (arc, high)
+- **Ludovic**
+  - Direct healing (multiple targets, high)
 
 ### Units benefitting most from Phraesto
 
-Phraesto provides Damage taken to single targets `low` and Max HP to single targets `average`.
+Phraesto provides Damage taken to single targets `low`.
 
-- Zandrok (5.0 / 5)
-- Mehira (3.0 / 5)
+- Lucius (2.1 / 5)
 
 ### Units that can act as a replacement for Phraesto
 
 **Best overall replacement**
 
-- Alna (52% `Buffs on allies` `Debuffs on enemies`)
+- Antandra (64% `Crowd Control` `Buffs on allies`)
+- Satrana (54% `Buffs on allies` `Debuffs on enemies` `Damage`)
 
 **Buffs on allies**
 
-- Alna (100% `Max HP`)
-- Tilaya (100% `Max HP`)
+- Hugin (100% `Damage taken`)
+- Reinier (100% `Damage taken`)
+- Koko (100% `Damage taken`)
 
 **Similar Skills**
 
 - Galahad (60% `ally-shielder` `aoe-damage` `summoner`)
-- Twins (50% `ally-buffer` `ally-shielder` `energy-provider`)
-- Gunnar (48% `ally-shielder` `aoe-damage`)
+- Twins (42% `ally-buffer` `ally-shielder` `energy-provider`)
+- Gunnar (41% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -9822,7 +9761,6 @@ Phraesto provides Damage taken to single targets `low` and Max HP to single targ
 #### Buffs provided by Phraesto
 
 - Damage taken — Single target — `low`
-- Max HP — Single target — `average`
 
 #### Debuffs provided by Phraesto
 
@@ -9880,16 +9818,14 @@ teleported targets fall through portals, taking additional damage
 ### Units improving Pippa
 
 Look for units providing: `Haste`  
-Common buffers are **Lorsan**, **Smokey & Meerky**, or **Soren**.
+Common buffers are **Lorsan**, **Smokey & Meerky**, or **Twins**.
 
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
 
@@ -9956,7 +9892,7 @@ Common buffers are **Lorsan**, **Smokey & Meerky**, or **Soren**.
 
 - **Signature skill**: Killer Flush (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-shielder` `energy-provider` `self-repositioner`
+- **Behavior tags**: `ally-shielder` `energy-provider` `self-repositioner` `temporary-stat-buffer`
 - **Ally composition**: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
 - **Damage types**: Physical `low`, HP loss `average`
 
@@ -9998,26 +9934,25 @@ assigned ally tasks grant brief ATK boost and unaffected state
 Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are **Kazim**, **Smokey & Meerky**, or **Mikola**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Ravion
 
 Ravion provides ATK to multiple targets `high`, Energy to multiple targets `average`, Haste (Mythic+) to multiple targets `average`, and Lifedrain (EX+10) to single targets `low` — conditional (rare).
 
-**96** units include this provider among their top 6 synergy partners. Why the match is common:
+**95** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -10026,11 +9961,16 @@ Ravion provides ATK to multiple targets `high`, Energy to multiple targets `aver
 These are the **4** strongest pairings: 
 
 - Lenya (5.0 / 5)
+- Vala (5.0 / 5)
 - Indris (5.0 / 5)
-- Dionel (4.9 / 5)
-- Nerion (4.6 / 5)
+- Nerion (4.7 / 5)
 
 ### Units that can act as a replacement for Ravion
+
+**Best overall replacement**
+
+- Lyca (53% `Debuffs on enemies` `Energy provider`)
+- Thador (52% `Similar Skills` `Buffs on allies` `Energy provider`)
 
 **Buffs on allies**
 
@@ -10039,9 +9979,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Thador (60% `ally-shielder` `energy-provider`)
-- Twins (40% `ally-shielder` `energy-provider`)
-- Hugin (40% `ally-shielder` `energy-provider`)
+- Thador (72% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
+- Lyca (57% `energy-provider` `temporary-stat-buffer`)
+- Twins (50% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -10142,8 +10082,8 @@ _No synergy partners matched stat buffs or enablers._
 Reinier provides Direct healing to single targets `low` and Damage taken (EX+10) to single targets `low`.
 
 - Bonnie (2.4 / 5)
-- Himmel (2.1 / 5)
-- Lily May (1.5 / 5)
+- Himmel (2.2 / 5)
+- Shadewing (1.6 / 5)
 
 ### Units that can act as a replacement for Reinier
 
@@ -10263,20 +10203,20 @@ Common buffers are **Ravion**, **Lyca**, or **Rowan**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Zandrok**
+  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Rhys
 
-- Carolina (1.4 / 5)
+- Carolina (1.5 / 5)
 - Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Rhys
@@ -10284,8 +10224,8 @@ Common buffers are **Ravion**, **Lyca**, or **Rowan**.
 **Best overall replacement**
 
 - Atalanta (83% `Damage` `Similar Skills` `Crowd Control`)
-- Perseus (73% `Damage` `Crowd Control`)
 - Soren (73% `Damage` `Crowd Control`)
+- Perseus (71% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -10365,25 +10305,24 @@ place one extra heal at battle start
 Look for units providing: `ATK` `Haste` `Max HP` `Energy`  
 Common buffers are **Ravion**, **Twins**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
+- **Fay**
+  - ATK (arc, low)
 
 ### Units benefitting most from Rowan
 
-Rowan provides Direct healing in an area `low`, Energy in an area `high`, Magic DEF (Mythic+) to single targets `average`, and Phys DEF (Mythic+) to single targets `average`.
+Rowan provides Direct healing in an area `low`, Energy in an area `high`, Magic DEF (Mythic+) to single targets `low`, and Phys DEF (Mythic+) to single targets `average`.
 
 **43** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -10393,15 +10332,11 @@ Rowan provides Direct healing in an area `low`, Energy in an area `high`, Magic 
 These are the **4** strongest pairings: 
 
 - Kordan (5.0 / 5)
-- Dionel (4.0 / 5)
-- Silven (3.8 / 5)
+- Koko (4.5 / 5)
+- Arden (4.0 / 5)
 - Zorya (3.3 / 5)
 
 ### Units that can act as a replacement for Rowan
-
-**Best overall replacement**
-
-- Fay (51% `Healing`)
 
 **Buffs on allies**
 
@@ -10415,9 +10350,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Twins (60% `ally-healer` `energy-provider`)
-- Fay (48% `ally-healer`)
+- Twins (48% `ally-healer` `energy-provider`)
 - Ludovic (40% `ally-healer`)
+- Fay (36% `ally-healer`)
 
 **Damage**
 
@@ -10446,7 +10381,7 @@ These are the **4** strongest pairings:
 
 - Direct healing — Area — `low`
 - Energy — Area — `high`
-- Magic DEF (Mythic+) — Single target — `average`
+- Magic DEF (Mythic+) — Single target — `low`
 - Phys DEF (Mythic+) — Single target — `average`
 
 #### Debuffs provided by Rowan
@@ -10523,7 +10458,7 @@ Saida provides Shield (Supreme+) to multiple targets `high`.
 
 - Hepler (50% `ally-shielder` `high-initial-energy`)
 - Valka (48% `ally-shielder` `high-initial-energy`)
-- Hugin (40% `ally-shielder` `high-initial-energy`)
+- Hugin (33% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -10622,8 +10557,8 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Salazer
 
-- Carolina (2.3 / 5)
-- Nerion (2.2 / 5)
+- Carolina (2.5 / 5)
+- Nerion (2.3 / 5)
 - Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Salazer
@@ -10724,8 +10659,8 @@ Satrana provides Magic damage (Mythic+) to single targets `average` and Damage t
 **Similar Skills**
 
 - Zorya (60% `hp-scaling` `life-drain`)
-- Shakir (36% `life-drain`)
 - Brutus (34% `invincibility` `life-drain`)
+- Faramor (33% `dot-specialist` `hp-scaling`)
 
 **Damage**
 
@@ -10818,39 +10753,39 @@ shielding an ally also increases their Phys and Magic DEF
 Look for units providing: `ATK` `Execution` `Energy`  
 Common buffers are **Ravion**, **Contess**, or **Evie**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Hammie**
   - ATK (single target, low)
+- **Koko**
+  - ATK (all units, low)
 
 ### Units benefitting most from Scarlita
 
-Scarlita provides Magic DEF (Supreme+) to single targets `low` and Phys DEF (Supreme+) to single targets `low`.
+Scarlita provides Shield (Supreme+) to single targets `low`.
 
 - Kazim (3.7 / 5)
-- Kruger (2.3 / 5)
+- Callan (2.3 / 5)
 
 ### Units that can act as a replacement for Scarlita
 
 **Buffs on allies**
 
-- Twins (100% `Magic DEF` `Physical DEF`)
-- Rowan (100% `Magic DEF` `Physical DEF`)
-- Isabella (100% `Magic DEF` `Physical DEF`)
+- Contess (100% `Shield`)
+- Hugin (100% `Shield`)
+- Saida (100% `Shield`)
 
 **Similar Skills**
 
-- Aliceth (54% `execute` `hp-scaling` `non-ult-utility`)
-- Daimon (50% `ally-shielder` `hp-scaling` `non-ult-utility`)
 - Korin (48% `ally-shielder` `hp-scaling`)
+- Aliceth (48% `execute` `hp-scaling` `non-ult-utility`)
+- Daimon (42% `ally-shielder` `hp-scaling` `non-ult-utility`)
 
 **Damage**
 
@@ -10875,8 +10810,7 @@ Scarlita provides Magic DEF (Supreme+) to single targets `low` and Phys DEF (Sup
 
 #### Buffs provided by Scarlita
 
-- Magic DEF (Supreme+) — Single target — `low`
-- Phys DEF (Supreme+) — Single target — `low`
+- Shield (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Scarlita
 
@@ -10939,27 +10873,26 @@ Common buffers are **Mikola**, **Ravion**, or **Twins**.
 - **Tilaya**
   - DEF (area, high)
   - DEF (area, high)
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Magic DEF (single target, low)
 - **Perseus**
-  - ATK (multiple targets, low)
+  - ATK (multiple targets, average)
   - Phys DEF (multiple targets, low)
   - Magic DEF (multiple targets, low)
 - **Solise**
   - ATK (single target, low)
   - DEF (single target, low)
   - DEF (single target, low)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
   - ATK (multiple targets, average)
+- **Dunlingr**
+  - ATK (single target, low)
+  - Haste (single target, low) `signature fuel`
+- **Lucca**
+  - ATK (single target, low)
+  - Magic DEF (area, low)
 
 ### Units benefitting most from Seth
 
-- Carolina (1.4 / 5)
+- Carolina (1.5 / 5)
 - Nerion (1.4 / 5)
 - Shadewing (1.3 / 5)
 
@@ -10974,7 +10907,7 @@ Common buffers are **Mikola**, **Ravion**, or **Twins**.
 **Similar Skills**
 
 - Harak (80% `assassin` `life-drain`)
-- Shakir (60% `life-drain`)
+- Shakir (40% `life-drain`)
 - Kruger (40% `life-drain`)
 
 **Damage**
@@ -11141,7 +11074,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 - **Signature skill**: Ravaging Claws (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `life-drain`
+- **Behavior tags**: `life-drain` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -11185,20 +11118,18 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Lorsan**.
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Shakir
 
 Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 
-**7** units include this provider among their top 6 synergy partners. Why the match is common:
+**10** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -11206,26 +11137,28 @@ These are the **4** strongest pairings:
 
 - Soren (3.3 / 5)
 - Korin (3.2 / 5)
-- Sinbad (3.2 / 5)
-- Valka (2.9 / 5)
+- Mehira (2.9 / 5)
+- Lucy (1.7 / 5)
 
 ### Units that can act as a replacement for Shakir
 
 **Best overall replacement**
 
 - Nara (61% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Kordan (56% `Crowd Control` `Damage`)
+- Kazim (50% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
-- Soren (82% `Haste` `Damage taken`)
 - Smokey & Meerky (63% `Haste`)
 - Lorsan (63% `Haste`)
+- Twins (52% `Haste`)
 
 **Similar Skills**
 
-- Kruger (72% `life-drain`)
-- Zorya (60% `life-drain`)
-- Seth (60% `life-drain`)
+- Kruger (48% `life-drain`)
+- Mehira (40% `life-drain` `temporary-stat-buffer`)
+- Zorya (40% `life-drain`)
 
 **Damage**
 
@@ -11325,18 +11258,18 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
+- **Mehira**
+  - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
   - ATK SPD via Haste (single target, low) `signature fuel`
 
 ### Units benefitting most from Shemira
 
 - Bonnie (2.4 / 5)
 - Shadewing (2.3 / 5)
-- Himmel (2.1 / 5)
+- Himmel (2.2 / 5)
 
 ### Units that can act as a replacement for Shemira
 
@@ -11423,33 +11356,31 @@ deal bonus damage to enemies with high HP ratio
 ### Units improving Silven
 
 Look for units providing: `ATK SPD / Haste` `Energy` `DEF Penetration` `Physical DEF`  
-Common buffers are **Mikola**, **Smokey & Meerky**, or **Twins**.
+Common buffers are **Isabella**, **Mikola**, or **Hugin**.
 
 Silven also requires units **buffing them**
 
-- **Isabella**
+- **Dunlingr**
   - ATK SPD via Haste (single target, low) `signature fuel`
-  - Phys DEF (single target, low)
-  - Grants 7 distinct stat buffs to Silven
-- **Aliceth**
-  - DEF Penetration (multiple targets, high)
-  - Grants 3 distinct stat buffs to Silven
-- **Solise**
-  - DEF (single target, low)
-  - Grants 5 distinct stat buffs to Silven
-- **Contess**
-  - Grants 3 distinct stat buffs to Silven
+  - Grants 3 distinct temporary stat buffs to Silven
+- **Perseus**
+  - Phys DEF (multiple targets, low)
+  - Grants 3 distinct temporary stat buffs to Silven
 - **Kordan**
   - DEF Penetration (area, high)
-  - Grants 4 distinct stat buffs to Silven
-- **Gunnar**
-  - ATK SPD (single target, low) `signature fuel`
-  - Grants 5 distinct stat buffs to Silven
+  - Grants 2 distinct temporary stat buffs to Silven
+- **Koko**
+  - Grants 2 distinct temporary stat buffs to Silven
+- **Sonja**
+  - Grants 2 distinct temporary stat buffs to Silven
+- **Tilaya**
+  - DEF (area, high)
+  - Grants 1 distinct temporary stat buff to Silven
 
 ### Units benefitting most from Silven
 
 - Bonnie (2.4 / 5)
-- Carolina (1.9 / 5)
+- Carolina (2.0 / 5)
 - Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Silven
@@ -11461,8 +11392,8 @@ Silven also requires units **buffing them**
 **Similar Skills**
 
 - Athalia (48% `hp-scaling` `non-ult-utility`)
-- Aliceth (42% `hp-scaling` `mark-target` `non-ult-utility`)
-- Kordan (33% `high-initial-energy` `hp-scaling`)
+- Aliceth (37% `hp-scaling` `mark-target` `non-ult-utility`)
+- Kordan (28% `high-initial-energy` `hp-scaling`)
 
 **Damage**
 
@@ -11542,8 +11473,8 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Silvina
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (1.9 / 5)
 
 ### Units that can act as a replacement for Silvina
@@ -11557,8 +11488,8 @@ _No synergy partners matched stat buffs or enablers._
 **Similar Skills**
 
 - Sinbad (40% `assassin` `mark-target`)
-- Dunlingr (33% `battle-start-burst` `interrupt`)
 - Salazer (28% `interrupt`)
+- Dunlingr (28% `battle-start-burst` `interrupt`)
 
 **Damage**
 
@@ -11648,16 +11579,16 @@ Common buffers are **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Sinbad
 
@@ -11715,7 +11646,7 @@ Common buffers are **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
 - **Signature skill**: Special Aroma (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `aoe-healing`
+- **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `low`
 
 #### Play overview
@@ -11756,40 +11687,39 @@ extra healing on each aura use
 Look for units providing: `ATK` `Energy`  
 Common buffers are **Ravion**, **Contess**, or **Evie**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Gunnar**
+  - ATK (single target, low)
+- **Hammie**
   - ATK (single target, low)
 
 ### Units benefitting most from Smokey & Meerky
 
 Smokey & Meerky provides ATK in an area `average`, Direct healing in an area `high`, Energy in an area `low`, Haste in an area `average`, and Healing over time in an area `high`.
 
-**94** units include this provider among their top 6 synergy partners. Why the match is common:
+**96** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 
 These are the **4** strongest pairings: 
 
-- Dionel (5.0 / 5)
-- Silven (5.0 / 5)
-- Perseus (4.9 / 5)
-- Lily May (4.5 / 5)
+- Zorya (5.0 / 5)
+- Perseus (4.3 / 5)
+- Dionel (4.3 / 5)
+- Nerion (4.3 / 5)
 
 ### Units that can act as a replacement for Smokey & Meerky
 
 **Buffs on allies**
 
-- Soren (95% `Haste`)
 - Twins (63% `Haste` `ATK` `Energy`)
 
 **Healing**
@@ -11798,9 +11728,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Ludovic (100% `ally-healer` `aoe-healing`)
-- Fay (100% `ally-healer` `aoe-healing`)
-- Hewynn (100% `ally-healer` `aoe-healing`)
+- Fay (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Hewynn (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Velara (90% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 
 **Crowd Control**
 
@@ -11873,47 +11803,37 @@ companion damage scales on stored excess healing
 ### Units improving Solise
 
 Look for units providing: `ATK`  
-Common buffers are **Contess**, **Gwyneth**, or **Evie**.
+Common buffers are **Contess**, **Evie**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Gunnar**
+  - ATK (single target, low)
+- **Hammie**
   - ATK (single target, low)
 
 ### Units benefitting most from Solise
 
 Solise provides ATK to single targets `low`, Direct healing to all units `high`, Healing over time to single targets `average`, DEF (Mythic+) to single targets `low`, and Magic DEF (Mythic+) to single targets `low`.
 
-**7** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- ally buffs or enablers that match many receivers' benefit stats or Requires labels
-
-These are the **4** strongest pairings: 
-
-- Silven (3.5 / 5)
-- Lily May (3.5 / 5)
-- Faramor (3.2 / 5)
-- Perseus (3.1 / 5)
+- Bonnie (4.1 / 5)
+- Talene (3.3 / 5)
+- Kruger (2.3 / 5)
+- Phraesto (2.1 / 5)
 
 ### Units that can act as a replacement for Solise
-
-**Best overall replacement**
-
-- Smokey & Meerky (51% `Healing` `Similar Skills`)
 
 **Buffs on allies**
 
 - Twins (85% `ATK` `Magic DEF`)
 - Isabella (85% `ATK` `Magic DEF`)
-- Kordan (71% `ATK` `Magic DEF`)
+- Perseus (71% `ATK` `Magic DEF`)
 
 **Healing**
 
@@ -11922,7 +11842,7 @@ These are the **4** strongest pairings:
 **Similar Skills**
 
 - Velara (100% `ally-healer` `ally-shielder` `aoe-healing`)
-- Smokey & Meerky (80% `ally-healer` `aoe-healing`)
+- Smokey & Meerky (60% `ally-healer` `aoe-healing`)
 - Hepler (50% `ally-healer` `ally-shielder`)
 
 **Damage**
@@ -11961,7 +11881,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Crimson Covenant (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `aoe-damage`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `temporary-stat-buffer`
 - **Ally composition**: place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)
 - **Damage types**: Physical `average`
 
@@ -12004,43 +11924,42 @@ ultimate converts portion of damage dealt to self-healing
 Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are **Twins**, **Ravion**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
+- **Fay**
+  - ATK (arc, low)
 
 ### Units benefitting most from Sonja
 
 Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targets `low`.
 
-**22** units include this provider among their top 6 synergy partners. Why the match is common:
+**34** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
+- Faramor (3.6 / 5)
+- Perseus (3.5 / 5)
 - Hepler (3.4 / 5)
-- Natsu (3.4 / 5)
-- Seth (3.4 / 5)
-- Kordan (3.0 / 5)
+- Lily May (3.4 / 5)
 
 ### Units that can act as a replacement for Sonja
 
 **Best overall replacement**
 
 - Perseus (66% `Similar Skills` `Crowd Control`)
-- Mikola (51% `Buffs on allies`)
+- Mikola (55% `Buffs on allies` `Similar Skills`)
 
 **Buffs on allies**
 
@@ -12050,9 +11969,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Perseus (100% `ally-buffer` `aoe-damage`)
-- Himmel (80% `ally-buffer` `aoe-damage`)
-- Cassadee (80% `ally-buffer` `aoe-damage`)
+- Perseus (100% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Parisa (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Tilaya (66% `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -12133,9 +12052,6 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Lorsan**.
 - **Shakir**
   - Haste (area, average) `signature fuel`
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
@@ -12143,29 +12059,25 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Lorsan**.
 - **Dunlingr**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Soren
 
-Soren provides Damage taken to single targets `low`, Haste (Legendary+) to single targets `high`, and Shield (Supreme+) to single targets `low`.
+Soren provides Damage taken to single targets `low`, Haste (Legendary+) to single targets `low`, and Shield (Supreme+) to single targets `low`.
 
-**43** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
-
-These are the **4** strongest pairings: 
-
-- Lumont (4.2 / 5)
-- Nerion (3.8 / 5)
-- Carolina (3.4 / 5)
-- Alsa (2.9 / 5)
+- Callan (2.3 / 5)
 
 ### Units that can act as a replacement for Soren
+
+**Buffs on allies**
+
+- Hugin (100% `Shield` `Haste` `Damage taken`)
+- Saida (92% `Shield`)
+- Lucy (92% `Shield`)
 
 **Similar Skills**
 
@@ -12194,7 +12106,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Soren
 
 - Damage taken — Single target — `low`
-- Haste (Legendary+) — Single target — `high`
+- Haste (Legendary+) — Single target — `low`
 - Shield (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Soren
@@ -12252,25 +12164,24 @@ enhanced attacks true damage life drain
 Look for units providing: `ATK` `Haste`  
 Common buffers are **Kazim**, **Ravion**, or **Smokey & Meerky**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
 - **Shakir**
   - Haste (area, average) `signature fuel`
 - **Fay**
   - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Sylphira
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Bonnie (3.0 / 5)
 
 ### Units that can act as a replacement for Sylphira
@@ -12386,30 +12297,23 @@ Common buffers are **Contess**, **Evie**, or **Twins**.
 - **Solise**
   - ATK (single target, low)
   - Direct healing (all units, high)
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Direct healing (single target, high)
 - **Pandora**
   - Max HP (single target, low)
   - Direct healing (single target, high)
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
   - ATK (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
+- **Ludovic**
+  - Direct healing (multiple targets, high)
 
 ### Units benefitting most from Talene
 
-Talene provides ATK (EX+5) in an area `low`.
-
-- Bonnie (3.7 / 5)
+- Carolina (2.3 / 5)
+- Nerion (2.1 / 5)
+- Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Talene
-
-**Buffs on allies**
-
-- Contess (100% `ATK`)
-- Gwyneth (100% `ATK`)
-- Twins (100% `ATK`)
 
 **Similar Skills**
 
@@ -12440,10 +12344,6 @@ Talene provides ATK (EX+5) in an area `low`.
 #### Damage types dealt by Talene
 
 - Magic — Area
-
-#### Buffs provided by Talene
-
-- ATK (EX+5) — Area — `low`
 
 #### Crowd Control provided by Talene
 
@@ -12498,25 +12398,24 @@ extra secondary form use gained per assist or kill
 Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are **Twins**, **Ravion**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - Max HP (multiple targets, low)
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
+- **Gunnar**
+  - ATK (single target, low)
 
 ### Units benefitting most from Tasi
 
-- Carolina (4.0 / 5)
+- Carolina (4.3 / 5)
 
 ### Units that can act as a replacement for Tasi
 
@@ -12599,25 +12498,24 @@ charge hits reduce target Phys DEF
 Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
 Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Fay**
+  - ATK (arc, low)
+- **Hammie**
+  - ATK (single target, low)
 
 ### Units benefitting most from Temesia
 
 - Indris (2.5 / 5)
-- Carolina (2.2 / 5)
+- Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Temesia
@@ -12679,7 +12577,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
 - **Signature skill**: Darkmoon Pact (Skill 1)
 - **Movement**: moving (avg attack range 0.2 tiles)
-- **Behavior tags**: `ally-shielder` `enemy-debuffer` `energy-provider`
+- **Behavior tags**: `ally-shielder` `enemy-debuffer` `energy-provider` `temporary-stat-buffer`
 - **Ally composition**: place lieutenant 1 tile behind at battle prep (Crit + shared shields)
 - **Damage types**: Physical `average`, DoT `high`
 
@@ -12727,14 +12625,14 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Ravion**.
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Thador
 
@@ -12748,17 +12646,17 @@ Thador provides Crit to single targets `low`, Shield to multiple targets `averag
 These are the **4** strongest pairings: 
 
 - Lucius (4.5 / 5)
-- Silven (3.5 / 5)
-- Dionel (3.3 / 5)
+- Lumont (3.8 / 5)
+- Rhys (3.7 / 5)
 - Lenya (2.9 / 5)
 
 ### Units that can act as a replacement for Thador
 
 **Similar Skills**
 
-- Ravion (60% `ally-shielder` `energy-provider`)
-- Pandora (50% `enemy-debuffer` `energy-provider`)
-- Twins (40% `ally-shielder` `energy-provider`)
+- Ravion (72% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
+- Twins (50% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
+- Hugin (50% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -12849,7 +12747,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Thoran
 
-- Himmel (2.1 / 5)
+- Himmel (2.2 / 5)
 - Twins (2.0 / 5)
 - Shadewing (1.3 / 5)
 
@@ -12859,7 +12757,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Brutus (40% `cheat-death` `life-drain`)
 - Igor (40% `cheat-death` `life-drain`)
-- Shakir (33% `life-drain`)
+- Zorya (30% `life-drain`)
 
 **Damage**
 
@@ -12902,7 +12800,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Signature skill**: Wrath of the Wilds (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage`
+- **Behavior tags**: `aoe-damage` `temporary-stat-buffer`
 - **Damage types**: Physical `average`
 
 #### Play overview
@@ -12943,18 +12841,18 @@ shield regeneration speed increases while casting ultimate
 Look for units providing: `ATK` `Max HP` `Shield`  
 Common buffers are **Twins**, **Contess**, or **Evie**.
 
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
 - **Fay**
   - ATK (arc, low)
-- **Frieren**
-  - ATK (single target, low)
 - **Hammie**
   - ATK (single target, low)
+- **Koko**
+  - ATK (all units, low)
 
 ### Units benefitting most from Tilaya
 
@@ -12966,23 +12864,22 @@ Tilaya provides DEF (EX+10) in an area `high` and Max HP (EX+10) in an area `hig
 
 These are the **4** strongest pairings: 
 
-- Granny Dahnie (4.9 / 5)
-- Hepler (4.1 / 5)
-- Laios (3.6 / 5)
-- Cecia (3.0 / 5)
+- Antandra (5.0 / 5)
+- Hepler (4.5 / 5)
+- Laios (3.9 / 5)
+- Zandrok (3.5 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
 **Buffs on allies**
 
 - Alna (80% `Max HP`)
-- Phraesto (68% `Max HP`)
 
 **Similar Skills**
 
-- Florabelle (60% `aoe-damage`)
-- Lorsan (60% `aoe-damage`)
-- Sonja (50% `aoe-damage`)
+- Lorsan (80% `aoe-damage` `temporary-stat-buffer`)
+- Sonja (66% `aoe-damage` `temporary-stat-buffer`)
+- Perseus (66% `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -13018,7 +12915,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Starlight Waltz (ultimate)
 - **Movement**: moving / stationary (two units)
-- **Behavior tags**: `ally-buffer` `ally-healer` `ally-shielder` `energy-provider`
+- **Behavior tags**: `ally-buffer` `ally-healer` `ally-shielder` `energy-provider` `temporary-stat-buffer`
 - **Ally composition**: place allies on the Stellar Bond line between Elijah and Lailah
 - **Damage types**: Magic `low`
 
@@ -13062,20 +12959,19 @@ Common buffers are **Ravion**, **Rowan**, or **Hugin**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Thoran**
   - Enables Ally on positioning link via Ally positioning link
 - **Dunlingr**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Phraesto**
+  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Twins
 
@@ -13088,12 +12984,16 @@ Twins provides ATK to multiple targets `high`, Direct healing to multiple target
 
 These are the **4** strongest pairings: 
 
-- Perseus (5.0 / 5)
-- Silven (4.9 / 5)
-- Dionel (4.6 / 5)
-- Lily May (4.5 / 5)
+- Laios (5.0 / 5)
+- Nerion (5.0 / 5)
+- Zorya (4.6 / 5)
+- Carolina (4.2 / 5)
 
 ### Units that can act as a replacement for Twins
+
+**Best overall replacement**
+
+- Smokey & Meerky (50% `Healing` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -13108,9 +13008,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Koko (60% `ally-buffer` `ally-healer`)
-- Rowan (60% `ally-healer` `energy-provider`)
-- Phraesto (50% `ally-buffer` `ally-shielder` `energy-provider`)
+- Koko (72% `ally-buffer` `ally-healer` `temporary-stat-buffer`)
+- Velara (60% `ally-healer` `ally-shielder` `temporary-stat-buffer`)
+- Hugin (51% `ally-shielder` `energy-provider` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -13316,18 +13216,17 @@ Vala also requires enemies **to be defeated**
   - Enables Enemy defeat via HP threshold strike
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK (single target, low)
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
+- **Pang**
+  - ATK (multiple targets, average)
 
 ### Units benefitting most from Vala
 
 - Indris (2.1 / 5)
-- Carolina (1.9 / 5)
+- Carolina (2.0 / 5)
 - Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Vala
@@ -13438,37 +13337,36 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Aliceth**
-  - ATK (multiple targets, average)
 - **Pang**
+  - ATK (multiple targets, average)
+- **Perseus**
   - ATK (multiple targets, average)
 - **Dunlingr**
   - ATK (single target, low)
   - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
-  - ATK (single target, low, conditional (frequent))
-  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
+- **Shakir**
+  - ATK SPD via Haste (area, average) `signature fuel`
 
 ### Units benefitting most from Valen
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 
 ### Units that can act as a replacement for Valen
 
 **Best overall replacement**
 
-- Perseus (97% `Damage` `Crowd Control`)
+- Perseus (94% `Damage` `Crowd Control`)
 - Atalanta (78% `Damage` `Crowd Control`)
 - Antandra (72% `Damage` `Similar Skills` `Crowd Control`)
 
 **Similar Skills**
 
 - Arden (80% `aoe-damage` `mass-cc`)
-- Tilaya (50% `aoe-damage`)
 - Tasi (50% `aoe-damage` `mass-cc`)
+- Antandra (50% `aoe-damage` `mass-cc`)
 
 **Damage**
 
@@ -13545,14 +13443,15 @@ while shielded gain bonus energy from normal attacks
 ### Units improving Valka
 
 Look for units providing: `ATK SPD / Haste` `Shield` `Energy`  
-Common buffers are **Thador**, **Soren**, or **Smokey & Meerky**.
+Common buffers are **Thador**, **Smokey & Meerky**, or **Ravion**.
 
 - **Saida**
   - Shield (multiple targets, high)
 - **Shakir**
   - ATK SPD via Haste (area, average) `signature fuel`
-- **Damian**
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Soren**
+  - ATK SPD via Haste (single target, low) `signature fuel`
+  - Shield (single target, low)
 - **Korin**
   - Shield (single target, average)
 - **Lucy**
@@ -13564,8 +13463,8 @@ Common buffers are **Thador**, **Soren**, or **Smokey & Meerky**.
 
 Valka provides ATK SPD to multiple targets `low`.
 
-- Nerion (2.4 / 5)
-- Carolina (2.4 / 5)
+- Carolina (2.5 / 5)
+- Nerion (2.5 / 5)
 - Shadewing (2.3 / 5)
 
 ### Units that can act as a replacement for Valka
@@ -13578,9 +13477,9 @@ Valka provides ATK SPD to multiple targets `low`.
 
 **Similar Skills**
 
-- Pang (50% `ally-shielder` `high-initial-energy`)
 - Saida (48% `ally-shielder` `high-initial-energy`)
 - Hepler (40% `ally-shielder` `high-initial-energy`)
+- Lucca (40% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -13630,7 +13529,7 @@ Valka provides ATK SPD to multiple targets `low`.
 
 - **Signature skill**: Ruthless Rite (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing`
+- **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
 #### Play overview
@@ -13671,14 +13570,12 @@ all circles awakened extends battlefield coverage; subsequent casts make allies 
 Look for units providing: `Haste` `Shield` `Energy`  
 Common buffers are **Hugin**, **Smokey & Meerky**, or **Ravion**.
 
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
 
@@ -13692,9 +13589,9 @@ Velara provides Basic stats to all units `average` and Direct healing to multipl
 
 **Best overall replacement**
 
-- Solise (66% `Healing` `Similar Skills`)
-- Evie (60% `Healing` `Crowd Control`)
-- Hewynn (59% `Healing` `Similar Skills`)
+- Evie (63% `Healing` `Crowd Control`)
+- Solise (60% `Healing` `Similar Skills`)
+- Hewynn (60% `Healing` `Similar Skills`)
 
 **Healing**
 
@@ -13705,8 +13602,8 @@ Velara provides Basic stats to all units `average` and Direct healing to multipl
 **Similar Skills**
 
 - Solise (100% `ally-healer` `ally-shielder` `aoe-healing`)
-- Hewynn (96% `ally-healer` `aoe-healing`)
-- Ludovic (80% `ally-healer` `aoe-healing`)
+- Hewynn (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
+- Smokey & Meerky (90% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -13800,29 +13697,28 @@ summons return on possessed enemy defeat, restoring HP and energy
 Look for units providing: `Haste`  
 Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`
 - **Dunlingr**
-  - Haste (single target, low) `signature fuel`
-  - ATK SPD via Haste (single target, low) `signature fuel`
-- **Isabella**
   - Haste (single target, low) `signature fuel`
   - ATK SPD via Haste (single target, low) `signature fuel`
 - **Mehira**
   - Haste (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (multiple targets, low) `signature fuel`
+- **Soren**
+  - Haste (single target, low) `signature fuel`
+  - ATK SPD via Haste (single target, low) `signature fuel`
 - **Zandrok**
   - Haste (area, low, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
 - **Gunnar**
   - ATK SPD (single target, low) `signature fuel`
+- **Valka**
+  - ATK SPD (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Viperian
 
 - Bonnie (2.7 / 5)
 - Shadewing (2.6 / 5)
-- Himmel (2.1 / 5)
+- Himmel (2.2 / 5)
 
 ### Units that can act as a replacement for Viperian
 
@@ -13834,8 +13730,8 @@ Common buffers are **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
 **Similar Skills**
 
-- Lorsan (100% `aoe-damage` `dot-specialist`)
 - Arden (80% `aoe-damage` `dot-specialist`)
+- Lorsan (66% `aoe-damage` `dot-specialist`)
 - Frieren (60% `aoe-damage` `dot-specialist`)
 
 **Damage**
@@ -13917,19 +13813,15 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Walker
 
-- Carolina (2.8 / 5)
-- Nerion (2.6 / 5)
+- Carolina (3.0 / 5)
+- Nerion (2.7 / 5)
 - Shadewing (1.3 / 5)
 
 ### Units that can act as a replacement for Walker
 
-**Best overall replacement**
-
-- Kazim (51% `Similar Skills` `Damage` `Crowd Control`)
-
 **Similar Skills**
 
-- Kazim (75% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
+- Kazim (66% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
 - Bonnie (60% `aoe-damage` `battle-start-burst` `non-ult-utility`)
 - Eironn (51% `aoe-damage` `battle-start-burst` `mass-cc`)
 
@@ -13973,7 +13865,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Signature skill**: Rallying Roar (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `aoe-damage` `battlefield-modification` `hp-scaling`
+- **Behavior tags**: `aoe-damage` `battlefield-modification` `hp-scaling` `temporary-stat-buffer`
 - **Damage types**: Physical `low`
 
 #### Play overview
@@ -14015,20 +13907,28 @@ excess healing converts to permanent max HP gain
 Look for units providing: `Max HP`  
 Common buffers are **Twins**.
 
+Zandrok also requires units **buffing them**
+
+- **Isabella**
+  - Grants 6 distinct temporary stat buffs to Zandrok
+- **Mikola**
+  - Grants 4 distinct temporary stat buffs to Zandrok
 - **Alna**
   - Max HP (single target, high)
-- **Phraesto**
-  - Max HP (single target, high)
+  - Grants 1 distinct temporary stat buff to Zandrok
 - **Tilaya**
-  - Max HP (area, average)
-- **Pandora**
-  - Max HP (single target, low)
+  - Max HP (area, high)
+  - Grants 1 distinct temporary stat buff to Zandrok
+- **Dunlingr**
+  - Grants 3 distinct temporary stat buffs to Zandrok
+- **Perseus**
+  - Grants 3 distinct temporary stat buffs to Zandrok
 
 ### Units benefitting most from Zandrok
 
 Zandrok provides Haste in an area `low` — conditional (frequent), Lifedrain in an area `high` — conditional (frequent), and Max HP to multiple targets `low`.
 
-**9** units include this provider among their top 6 synergy partners. Why the match is common:
+**10** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -14043,9 +13943,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Faramor (40% `aoe-damage` `hp-scaling`)
-- Baelran (40% `hp-scaling`)
-- Scarlita (40% `aoe-damage` `hp-scaling`)
+- Tilaya (50% `aoe-damage` `temporary-stat-buffer`)
+- Lorsan (48% `aoe-damage` `temporary-stat-buffer`)
+- Kordan (41% `hp-scaling` `temporary-stat-buffer`)
 
 **Crowd Control**
 
@@ -14130,12 +14030,9 @@ Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
   - DEF via DEF (all summons, high)
   - Ranged damage via Ranged damage (all summons, low)
 - **Aurora**
-  - Haste (all summons, average)
-  - Damage dealt via Damage dealt (all summons, low)
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
   - Damage taken via Damage taken (all summons, low)
-- **Aliceth**
-  - ATK (multiple targets, average)
-  - DEF Penetration (multiple targets, high)
 - **Kordan**
   - ATK (area, low)
   - DEF Penetration (area, high)
@@ -14143,12 +14040,14 @@ Common buffers are **Ravion**, **Kazim**, or **Smokey & Meerky**.
   - Shield (all summons, average)
 - **Pang**
   - ATK (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
 
 ### Units benefitting most from Zanie
 
 - Shadewing (2.9 / 5)
 - Indris (1.6 / 5)
-- Carolina (1.4 / 5)
+- Carolina (1.5 / 5)
 
 ### Units that can act as a replacement for Zanie
 
@@ -14277,8 +14176,8 @@ Zorya also requires allies **casting ultimates**
 
 ### Units benefitting most from Zorya
 
-- Carolina (3.4 / 5)
-- Nerion (3.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 - Shadewing (2.6 / 5)
 
 ### Units that can act as a replacement for Zorya
@@ -14286,8 +14185,8 @@ Zorya also requires allies **casting ultimates**
 **Similar Skills**
 
 - Baelran (60% `hp-scaling`)
-- Shakir (60% `life-drain`)
 - Satrana (60% `hp-scaling` `life-drain`)
+- Shemira (40% `hp-scaling`)
 
 **Damage**
 

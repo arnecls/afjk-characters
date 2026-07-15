@@ -17,7 +17,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -34,7 +35,28 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
+              "duration": 12,
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -66,6 +88,25 @@
                   "value": 350.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
+              "duration": 5,
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -90,7 +131,8 @@
                   "type": "flat",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -177,7 +219,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -233,7 +276,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -265,7 +309,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -302,7 +347,8 @@
                   "type": "trigger_condition",
                   "trigger": "skill_cast"
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

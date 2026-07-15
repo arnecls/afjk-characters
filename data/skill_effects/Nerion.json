@@ -40,7 +40,8 @@
                   "type": "percentage",
                   "value": 22.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -57,7 +58,8 @@
                   "type": "flat",
                   "value": 68.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

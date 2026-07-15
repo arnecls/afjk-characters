@@ -164,7 +164,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -220,7 +221,8 @@
                   "type": "percentage",
                   "value": 29.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -251,7 +253,8 @@
                   "type": "percentage",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -370,7 +373,8 @@
               "area_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

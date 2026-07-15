@@ -128,7 +128,8 @@
                   "type": "percentage",
                   "value": 13.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -190,7 +191,8 @@
                   "type": "percentage",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -207,7 +209,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

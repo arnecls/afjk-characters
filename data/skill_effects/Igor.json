@@ -150,7 +150,8 @@
               ],
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

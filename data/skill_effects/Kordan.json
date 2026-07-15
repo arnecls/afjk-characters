@@ -65,7 +65,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -77,7 +78,8 @@
               "area_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -231,13 +233,14 @@
               ],
               "type": "buff",
               "name": "DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -248,7 +251,8 @@
               ],
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -280,7 +284,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

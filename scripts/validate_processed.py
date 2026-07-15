@@ -30,6 +30,7 @@ sys.path.insert(0, str(SCRIPTS))
 import hero_schema as hs
 import heroes_io as io
 import skill_effects_store as ses
+import buff_persistence as bp
 import summoner_registry as sr
 
 HEROES_MD = ROOT / "Heroes.md"
@@ -492,6 +493,8 @@ def check_skill_effects_sidecars(
             errors.append(f"sidecar schema {short}: {exc}")
             continue
         errors.extend(ses.verify_sidecar_hashes(doc, record))
+        errors.extend(bp.verify_sidecar_persistence(doc, hero_short=short))
+        errors.extend(bp.verify_sidecar_targeting(doc, record, hero_short=short))
         warnings.extend(ses.lint_hero_sidecar(doc, record))
 
     return errors, warnings
@@ -510,6 +513,18 @@ def check_summoner_registry(
     return errors
 
 
+def check_temporary_stat_buffer_tags(
+    raw: dict[str, Any],
+) -> list[str]:
+    tags_path = ROOT / "data" / "hero_behavior_tags.json"
+    behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
+    return bp.check_temporary_stat_buffer_consistency(
+        behavior_tags,
+        raw["heroes"],
+        ses.load_sidecar,
+    )
+
+
 def jsonschema_available() -> bool:
     try:
         import jsonschema  # noqa: F401
@@ -524,7 +539,7 @@ def main() -> int:
     parser.add_argument(
         "--fail-on",
         nargs="*",
-        default=["md_parity", "reanalysis", "schema", "skill_summary", "sidecar", "summoner", "semantic"],
+        default=["md_parity", "reanalysis", "schema", "skill_summary", "sidecar", "summoner", "temporary_stat_buffer", "semantic"],
         help="Check groups that cause a non-zero exit when failing",
     )
     parser.add_argument(
@@ -579,6 +594,17 @@ def main() -> int:
         summoner_errors = check_summoner_registry(raw)
         if summoner_errors:
             warnings["summoner"] = summoner_errors
+
+    if "temporary_stat_buffer" in fail_on:
+        tsb_errors = check_temporary_stat_buffer_tags(raw)
+        if tsb_errors:
+            errors.extend(tsb_errors)
+        else:
+            print("OK: temporary-stat-buffer tags and sidecars aligned")
+    else:
+        tsb_errors = check_temporary_stat_buffer_tags(raw)
+        if tsb_errors:
+            warnings["temporary_stat_buffer"] = tsb_errors
 
     if "reanalysis" in fail_on:
         drift = check_reanalysis_parity(stored, fresh)

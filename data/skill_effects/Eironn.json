@@ -168,7 +168,8 @@
                   "type": "percentage",
                   "value": 320.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -199,7 +200,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

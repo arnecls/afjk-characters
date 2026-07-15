@@ -31,7 +31,7 @@
           "special_provides": [],
           "special_requires": [
             {
-              "label": "Ally stat buffs",
+              "label": "Temporary ally stat buffs",
               "tier": "mythic+",
               "targeting": "Allies",
               "description": "When Silven receives a temporary stat buff from an ally, he immediately recovers 300 Energy and permanently gains 4 Penetration."
@@ -104,7 +104,8 @@
                   "type": "percentage",
                   "value": 3.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -166,7 +167,8 @@
                   "type": "flat",
                   "value": 4.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -183,7 +185,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -194,7 +197,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

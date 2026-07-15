@@ -22,7 +22,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -47,7 +48,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -121,7 +123,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -138,7 +141,8 @@
                   "type": "flat",
                   "value": 34.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -185,7 +189,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -196,7 +201,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -294,7 +300,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -325,7 +332,8 @@
                   "type": "flat",
                   "value": 14.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

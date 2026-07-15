@@ -194,7 +194,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "legendary+",
@@ -217,7 +218,8 @@
                   "type": "status_condition",
                   "status": "active_state"
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -255,7 +257,8 @@
                   "stacks": 2,
                   "stack_comparison": "up_to"
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -279,7 +282,8 @@
                   "stacks": 2,
                   "stack_comparison": "up_to"
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -311,7 +315,8 @@
                   "stacks": 2,
                   "stack_comparison": "up_to"
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

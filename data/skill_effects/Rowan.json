@@ -23,7 +23,8 @@
                   "type": "flat",
                   "value": 350.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -73,7 +74,8 @@
                   "type": "flat",
                   "value": 400.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -160,7 +162,8 @@
                   "type": "flat",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -191,7 +194,8 @@
                   "type": "percentage",
                   "value": 70.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -208,7 +212,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -225,7 +230,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -262,7 +268,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

@@ -157,7 +157,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -224,7 +225,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

@@ -129,7 +129,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -154,7 +155,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

@@ -208,7 +208,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Ranged DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -239,7 +240,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

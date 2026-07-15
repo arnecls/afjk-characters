@@ -104,7 +104,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -190,7 +191,8 @@
                   "type": "percentage",
                   "value": 8.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -201,7 +203,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

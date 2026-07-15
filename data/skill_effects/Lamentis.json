@@ -64,13 +64,16 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
-            },
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "summon_effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "ally",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -81,10 +84,10 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
-          "summon_effects": [],
           "immunities": [],
           "special_provides": [
             {
@@ -207,13 +210,16 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
-            },
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "summon_effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Single target",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "ally",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -224,10 +230,10 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
-          "summon_effects": [],
           "immunities": [],
           "special_provides": [],
           "special_requires": []
@@ -290,7 +296,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -316,7 +323,8 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "immunities": [],

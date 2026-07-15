@@ -139,7 +139,8 @@
                   "type": "flat",
                   "value": 33.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

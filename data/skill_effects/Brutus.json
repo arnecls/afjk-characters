@@ -122,7 +122,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -164,7 +165,8 @@
                   "type": "flat",
                   "value": 8.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -227,7 +229,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

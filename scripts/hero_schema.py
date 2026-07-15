@@ -505,6 +505,12 @@ def _effect_duration(effect: Any, label: str) -> float | None:
     return _rs().extract_timed_duration(text, label)
 
 
+def _apply_effect_persistence(out: dict[str, Any], effect: Any) -> None:
+    persistence = getattr(effect, "persistence", None)
+    if persistence:
+        out["persistence"] = persistence
+
+
 def _apply_effect_duration(
     out: dict[str, Any], effect: Any, label: str
 ) -> None:
@@ -600,6 +606,7 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
                     area_count=getattr(eff, "area_count", None),
                     target_count=getattr(eff, "target_count", None),
                     duration=getattr(eff, "duration", None),
+                    persistence=getattr(eff, "persistence", None),
                     conditional=eff.conditional,
                     conditions=list(getattr(eff, "conditions", None) or []),
                     area=getattr(eff, "area", None),
@@ -632,6 +639,12 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
             cur.duration is None or eff_duration > cur.duration
         ):
             cur.duration = eff_duration
+        eff_persistence = getattr(eff, "persistence", None)
+        if eff_persistence and (
+            not getattr(cur, "persistence", None)
+            or eff_persistence != "unknown"
+        ):
+            cur.persistence = eff_persistence
         eff_area = getattr(eff, "area", None)
         if eff_area is not None:
             cur.area = eff_area
@@ -830,6 +843,7 @@ def effect_to_schema(
                 out, _resolve_effect_numeric(effect, effect.label), effect.label
             )
             _apply_effect_duration(out, effect, effect.label)
+            _apply_effect_persistence(out, effect)
             out["label"] = _label_to_effect_label(
                 category, effect.label, summon=is_summon_buff
             )
@@ -873,6 +887,7 @@ def effect_to_schema(
             out, _resolve_effect_numeric(effect, effect.label), effect.label
         )
         _apply_effect_duration(out, effect, effect.label)
+        _apply_effect_persistence(out, effect)
         return out
 
     if category == "debuff":
@@ -936,6 +951,8 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
     conditional = _conditions_to_conditional(effect.get("conditions"))
     schema_conditions = list(effect.get("conditions") or [])
     spatial = _legacy_spatial_from_schema(effect)
+    duration = effect.get("duration")
+    persistence = effect.get("persistence")
 
     if etype == "crowd_control":
         label = to_display_cc(effect.get("cc-type", "stun"))
@@ -951,6 +968,8 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            persistence=persistence,
             **spatial,
         )
 
@@ -979,6 +998,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
 
     if etype in ("buff", "stat_mod", "shield", "heal"):
         name = normalize_healing_label(effect.get("name", "Buff"))
+        dur_val = float(duration) if duration is not None else None
         return rs.Effect(
             category="buff",
             label=name,
@@ -988,6 +1008,8 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
+            duration=dur_val,
+            persistence=persistence,
             **spatial,
         )
 

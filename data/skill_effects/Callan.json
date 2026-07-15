@@ -134,7 +134,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

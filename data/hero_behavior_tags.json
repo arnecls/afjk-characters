@@ -5,13 +5,15 @@
     "execute",
     "hp-scaling",
     "mark-target",
-    "non-ult-utility"
+    "non-ult-utility",
+    "temporary-stat-buffer"
   ],
   "Alna": [
     "ally-buffer",
     "aoe-damage",
     "cc-immunity",
-    "invincibility"
+    "invincibility",
+    "temporary-stat-buffer"
   ],
   "Alsa": [
     "battlefield-modification",
@@ -97,6 +99,7 @@
     "ally-shielder",
     "enemy-debuffer",
     "stealth",
+    "temporary-stat-buffer",
     "untargetable"
   ],
   "Cryonaia": [
@@ -114,13 +117,15 @@
   "Daimon": [
     "ally-shielder",
     "hp-scaling",
+    "non-ult-utility",
     "summoner",
-    "non-ult-utility"
+    "temporary-stat-buffer"
   ],
   "Damian": [
     "ally-buffer",
     "ally-healer",
-    "summoner"
+    "summoner",
+    "temporary-stat-buffer"
   ],
   "Dionel": [
     "aoe-damage",
@@ -131,7 +136,8 @@
     "ally-buffer",
     "aoe-damage",
     "battle-start-burst",
-    "interrupt"
+    "interrupt",
+    "temporary-stat-buffer"
   ],
   "Eironn": [
     "aoe-damage",
@@ -143,7 +149,8 @@
   "Evie": [
     "ally-healer",
     "self-repositioner",
-    "stealth"
+    "stealth",
+    "temporary-stat-buffer"
   ],
   "Faramor": [
     "ally-buffer",
@@ -153,7 +160,8 @@
   ],
   "Fay": [
     "ally-healer",
-    "aoe-healing"
+    "aoe-healing",
+    "temporary-stat-buffer"
   ],
   "Florabelle": [
     "aoe-damage",
@@ -185,7 +193,8 @@
   "Gunnar": [
     "ally-shielder",
     "aoe-damage",
-    "static-tile-buffer"
+    "static-tile-buffer",
+    "temporary-stat-buffer"
   ],
   "Gwyneth": [
     "dot-specialist",
@@ -194,7 +203,8 @@
   ],
   "Hammie": [
     "ally-buffer",
-    "ally-healer"
+    "ally-healer",
+    "temporary-stat-buffer"
   ],
   "Harak": [
     "assassin",
@@ -208,7 +218,8 @@
   ],
   "Hewynn": [
     "ally-healer",
-    "aoe-healing"
+    "aoe-healing",
+    "temporary-stat-buffer"
   ],
   "Himmel": [
     "ally-buffer",
@@ -224,7 +235,8 @@
     "ally-shielder",
     "energy-provider",
     "high-initial-energy",
-    "static-tile-buffer"
+    "static-tile-buffer",
+    "temporary-stat-buffer"
   ],
   "Igor": [
     "aoe-damage",
@@ -239,7 +251,8 @@
   ],
   "Isabella": [
     "ally-buffer",
-    "ally-healer"
+    "ally-healer",
+    "temporary-stat-buffer"
   ],
   "Kazim": [
     "ally-buffer",
@@ -249,7 +262,8 @@
     "invincibility",
     "mark-target",
     "mass-cc",
-    "non-ult-utility"
+    "non-ult-utility",
+    "temporary-stat-buffer"
   ],
   "Kafra": [
     "assassin",
@@ -260,13 +274,15 @@
   ],
   "Koko": [
     "ally-buffer",
-    "ally-healer"
+    "ally-healer",
+    "temporary-stat-buffer"
   ],
   "Kordan": [
     "ally-buffer",
     "high-initial-energy",
     "hp-scaling",
-    "self-repositioner"
+    "self-repositioner",
+    "temporary-stat-buffer"
   ],
   "Korin": [
     "ally-shielder",
@@ -284,7 +300,8 @@
     "ally-buffer",
     "ally-healer",
     "high-initial-energy",
-    "summoner"
+    "summoner",
+    "temporary-stat-buffer"
   ],
   "Lamentis": [
     "aoe-damage",
@@ -308,7 +325,8 @@
   ],
   "Lorsan": [
     "aoe-damage",
-    "dot-specialist"
+    "dot-specialist",
+    "temporary-stat-buffer"
   ],
   "Lucca": [
     "ally-shielder",
@@ -334,11 +352,13 @@
   "Lumont": [
     "enemy-debuffer",
     "non-ult-utility",
-    "taunt"
+    "taunt",
+    "temporary-stat-buffer"
   ],
   "Lyca": [
     "ally-buffer",
-    "energy-provider"
+    "energy-provider",
+    "temporary-stat-buffer"
   ],
   "Marcille": [
     "ally-healer",
@@ -356,11 +376,13 @@
     "enemy-grouping",
     "life-drain",
     "mass-cc",
+    "temporary-stat-buffer",
     "untargetable"
   ],
   "Mikola": [
     "ally-buffer",
-    "aoe-healing"
+    "aoe-healing",
+    "temporary-stat-buffer"
   ],
   "Mirael": [
     "dot-specialist"
@@ -403,16 +425,19 @@
   ],
   "Pang": [
     "ally-shielder",
-    "high-initial-energy"
+    "high-initial-energy",
+    "temporary-stat-buffer"
   ],
   "Parisa": [
     "ally-buffer",
     "aoe-damage",
-    "mark-target"
+    "mark-target",
+    "temporary-stat-buffer"
   ],
   "Perseus": [
     "ally-buffer",
-    "aoe-damage"
+    "aoe-damage",
+    "temporary-stat-buffer"
   ],
   "Peggy": [
     "ally-buffer",
@@ -435,7 +460,8 @@
   "Ravion": [
     "ally-shielder",
     "energy-provider",
-    "self-repositioner"
+    "self-repositioner",
+    "temporary-stat-buffer"
   ],
   "Reinier": [
     "enemy-grouping",
@@ -480,7 +506,8 @@
     "enemy-debuffer"
   ],
   "Shakir": [
-    "life-drain"
+    "life-drain",
+    "temporary-stat-buffer"
   ],
   "Shemira": [
     "high-damage-ult",
@@ -505,7 +532,8 @@
   ],
   "Smokey & Meerky": [
     "ally-healer",
-    "aoe-healing"
+    "aoe-healing",
+    "temporary-stat-buffer"
   ],
   "Solise": [
     "ally-healer",
@@ -514,7 +542,8 @@
   ],
   "Sonja": [
     "ally-buffer",
-    "aoe-damage"
+    "aoe-damage",
+    "temporary-stat-buffer"
   ],
   "Soren": [
     "counterattack",
@@ -547,7 +576,8 @@
   "Thador": [
     "ally-shielder",
     "enemy-debuffer",
-    "energy-provider"
+    "energy-provider",
+    "temporary-stat-buffer"
   ],
   "Thoran": [
     "cheat-death",
@@ -555,13 +585,15 @@
     "life-drain"
   ],
   "Tilaya": [
-    "aoe-damage"
+    "aoe-damage",
+    "temporary-stat-buffer"
   ],
   "Twins": [
     "ally-buffer",
     "ally-healer",
     "ally-shielder",
-    "energy-provider"
+    "energy-provider",
+    "temporary-stat-buffer"
   ],
   "Ulmus": [
     "ally-shielder",
@@ -588,7 +620,8 @@
   "Velara": [
     "ally-healer",
     "ally-shielder",
-    "aoe-healing"
+    "aoe-healing",
+    "temporary-stat-buffer"
   ],
   "Viperian": [
     "aoe-damage",
@@ -604,7 +637,8 @@
   "Zandrok": [
     "aoe-damage",
     "battlefield-modification",
-    "hp-scaling"
+    "hp-scaling",
+    "temporary-stat-buffer"
   ],
   "Zanie": [
     "summoner"

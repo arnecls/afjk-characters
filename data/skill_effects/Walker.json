@@ -120,7 +120,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -137,7 +138,8 @@
                   "type": "flat",
                   "value": 24.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -186,7 +188,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -279,7 +282,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -296,7 +300,8 @@
                   "type": "flat",
                   "value": 100.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

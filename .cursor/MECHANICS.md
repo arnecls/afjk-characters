@@ -74,7 +74,10 @@ For Baelran since his pure damage is capped by his HP% instead of his atk% incre
 
 ## Abilities that Applies Temporary Buffs
 
-This list is relevant for units benefitting from temporary buffs.
+This list seeded the roster audit for **temporary** ally stat-buff providers.
+Effect-level `persistence` in `data/skill_effects/*.json` is the source of
+truth; synergy matches only `persistence: temporary` buffs for receivers with
+`Temporary ally stat buffs` in `special_requires`.
 
 - Scarlita: Blessings at S+
 - Damian: M+

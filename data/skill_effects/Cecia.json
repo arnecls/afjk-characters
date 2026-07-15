@@ -77,7 +77,8 @@
                   "type": "percentage",
                   "value": 185.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "immunities": [],
@@ -121,7 +122,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [
@@ -140,7 +142,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -176,7 +179,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "immunities": [],
@@ -206,7 +210,8 @@
                   "type": "flat",
                   "value": 27.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -243,7 +248,8 @@
                   "type": "flat",
                   "value": 27.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "immunities": [],
@@ -267,7 +273,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

@@ -19,7 +19,7 @@ window.AFKJ.config = {
     "Debuff on target": { emoji: "🥀", cls: "chip-debuff" },
     "Multiple debuffs on target": { emoji: "🥀", cls: "chip-debuff" },
     "CC on enemies": { emoji: "🫯", cls: "chip-cc" },
-    "Ally stat buffs": { emoji: "💪", cls: "chip-role" },
+    "Temporary ally stat buffs": { emoji: "💪", cls: "chip-role" },
     "Party composition": { emoji: "👥", cls: "chip-role" },
     "Continuous damage on enemies": { emoji: "🔥", cls: "chip-debuff" },
     "Enemy defeat": { emoji: "💀", cls: "chip-role" },
@@ -108,6 +108,7 @@ window.AFKJ.config = {
     stealth: { emoji: "🥷", cls: "chip-role" },
     summoner: { emoji: "🐾", cls: "chip-role" },
     taunt: { emoji: "📣", cls: "chip-role" },
+    "temporary-stat-buffer": { emoji: "⏱️", cls: "chip-role" },
     "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
     untargetable: { emoji: "👻", cls: "chip-role" },
     Invincible: { emoji: "👑", cls: "chip-role" },
@@ -188,6 +189,8 @@ window.AFKJ.config = {
       "Fields persistent summons or companions that contribute in combat.",
     taunt:
       "Forces enemies to attack the hero or redirects enemy focus onto them.",
+    "temporary-stat-buffer":
+      "Grants at least one temporary ally stat buff that can end before battle does.",
     "ultimate-cancel":
       "Cancels or interrupts enemy ultimates when they begin casting.",
     untargetable:

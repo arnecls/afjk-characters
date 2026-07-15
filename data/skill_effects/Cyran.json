@@ -109,7 +109,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -253,7 +254,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -349,7 +351,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

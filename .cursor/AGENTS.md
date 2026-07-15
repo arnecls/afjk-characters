@@ -411,6 +411,12 @@ skill effect.
   Marcille Sky Fish) and passive objects (e.g. Pandora's box) do not. Curated
   roster and source skills live in `data/hero_summon_profiles.json`.
 - taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
+- temporary-stat-buffer: Grants at least one **temporary** ally stat buff
+  (`persistence: temporary` on an ally-targeted positive stat effect in the
+  skill-effects sidecar). Self-only and summon-only buffs do not qualify.
+  `just validate` cross-checks ally `target` against source skill text and
+  rejects summon-only/self-only mislabels; not inferred from `ally-buffer`
+  alone.
 - ultimate-cancel: Cancels or interrupts enemy ultimates when they begin casting.
 - untargetable: Routinely becomes untargetable by enemy skills during normal gameplay.
 
@@ -560,9 +566,12 @@ Line format (no Provides/Requires prefix on each bullet):
 - **Requires** — e.g. continuous damage on enemies, magic damage from allies,
   debuff on target (Aging), form or stance active, ally blessing active,
   passive with internal cooldown, enemy not CC-immune, party composition,
-  **Ally stat buffs** (needs temporary stat buffs from allies; matched by
-  providers granting many/wide ally buffs, start-of-battle preferred; see
-  `match_ally_stat_buffs` in `generate-heroes-overview.py`).
+  **Temporary ally stat buffs** (needs temporary stat buffs from allies;
+  matched only by providers whose ally stat effects have
+  `persistence: temporary`; start-of-battle preferred; see
+  `match_ally_stat_buffs` in `generate-heroes-overview.py`). Encode
+  persistence on every positive stat buff in sidecars (`temporary`,
+  `permanent`, or `unknown`; ally `unknown` fails validation).
 
 Special provides/requires are extracted into the skill effects sidecar
 (`special_provides` / `special_requires` per tier). When merging buffs from

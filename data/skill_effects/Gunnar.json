@@ -22,7 +22,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -39,7 +40,8 @@
                   "type": "percentage",
                   "value": 550.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -183,7 +185,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -208,7 +211,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Ranged DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -219,7 +223,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -293,7 +298,8 @@
                   "type": "percentage",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

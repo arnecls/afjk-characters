@@ -56,44 +56,6 @@
             }
           ],
           "special_requires": []
-        },
-        "supreme+": {
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "buff",
-              "name": "ATK SPD",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "buff",
-              "name": "Lifedrain",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 25.0
-                }
-              ]
-            }
-          ],
-          "summon_effects": [],
-          "immunities": [],
-          "special_provides": [],
-          "special_requires": []
         }
       }
     },
@@ -210,7 +172,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -235,7 +198,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -260,7 +224,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -276,6 +241,38 @@
       "tiers": {
         "supreme+": {
           "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "persistence": "temporary"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "temporary"
+            },
             {
               "tier": "supreme+",
               "targeting_label": "All units",

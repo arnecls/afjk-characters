@@ -40,7 +40,8 @@
                   "type": "percentage",
                   "value": 75.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "immunities": [],
@@ -173,7 +174,8 @@
                   "type": "percentage",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "immunities": [],
@@ -203,7 +205,8 @@
                   "type": "flat",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -272,7 +275,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "Damage dealt",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -304,7 +308,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -321,7 +326,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "immunities": [],

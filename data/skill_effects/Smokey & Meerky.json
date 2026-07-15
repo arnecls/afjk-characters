@@ -22,7 +22,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -78,7 +79,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -110,7 +112,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -134,7 +137,8 @@
                   "type": "flat",
                   "value": 8.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -197,7 +201,8 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

@@ -39,7 +39,8 @@
                   "type": "percentage",
                   "value": 320.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -94,7 +95,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "immunities": [],
@@ -209,7 +211,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -241,7 +244,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -258,7 +262,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "immunities": [

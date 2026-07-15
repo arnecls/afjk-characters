@@ -176,7 +176,8 @@
                   "type": "percentage",
                   "value": 500.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -301,7 +302,8 @@
                   "type": "flat",
                   "value": 55.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -373,7 +375,8 @@
                   "type": "percentage",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -390,7 +393,8 @@
                   "type": "percentage",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -467,7 +471,8 @@
                   "type": "percentage",
                   "value": 330.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -894,7 +899,8 @@
                   "type": "percentage",
                   "value": 400.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -1071,7 +1077,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -1202,7 +1209,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -1645,7 +1653,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -1712,7 +1721,8 @@
                   "type": "percentage",
                   "value": 55.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -1736,7 +1746,8 @@
                   "type": "percentage",
                   "value": 55.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -1930,7 +1941,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -2204,7 +2216,8 @@
                   "type": "percentage",
                   "value": 29.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -2272,7 +2285,8 @@
               ],
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -2317,7 +2331,8 @@
               ],
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -2678,7 +2693,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -2728,7 +2744,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -3086,7 +3103,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "supreme+",
@@ -3246,7 +3264,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -3308,7 +3327,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
@@ -3695,7 +3715,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Execution",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "type": "immunity",
@@ -3821,7 +3842,8 @@
               ],
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -4179,7 +4201,8 @@
                   "type": "percentage",
                   "value": 320.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -4214,7 +4237,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -4396,7 +4420,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -4457,7 +4482,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -4474,7 +4500,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -4958,7 +4985,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -5039,7 +5067,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -6033,7 +6062,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 10.0,
@@ -6508,7 +6538,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "type": "immunity",
@@ -6574,7 +6605,8 @@
                   "type": "flat",
                   "value": 8.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -6668,7 +6700,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "temporary"
             }
           ],
           "cooldown": 5.0,
@@ -7067,7 +7100,8 @@
                   "type": "flat",
                   "value": 17.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -7180,7 +7214,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -7505,7 +7540,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -8063,7 +8099,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -8574,7 +8611,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -8891,7 +8929,8 @@
                   "type": "percentage",
                   "value": 185.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "initial_energy": 0.0,
@@ -8960,7 +8999,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -8977,7 +9017,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -9013,7 +9054,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "cooldown": 12.0,
@@ -9082,7 +9124,8 @@
                   "type": "flat",
                   "value": 27.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -9117,7 +9160,8 @@
                   "type": "flat",
                   "value": 27.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 5,
@@ -9175,7 +9219,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -9767,7 +9812,8 @@
                   "type": "flat",
                   "value": 66.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -9857,7 +9903,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "type": "immunity",
@@ -10706,7 +10753,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -11053,7 +11101,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "initial_energy": 400.0,
@@ -11323,7 +11372,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -11400,7 +11450,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "type": "immunity",
@@ -11790,7 +11841,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -11837,7 +11889,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -12127,7 +12180,8 @@
                   "type": "flat",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "initial_energy": 200.0,
@@ -12209,7 +12263,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 7.0,
@@ -12383,7 +12438,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 3,
@@ -12739,7 +12795,8 @@
                   "type": "percentage",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -12763,7 +12820,8 @@
                   "type": "flat",
                   "value": 23.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "supreme+",
@@ -12774,7 +12832,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Execution",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "cooldown": 22.0,
@@ -12827,7 +12886,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -12956,7 +13016,7 @@
         ],
         "requires": [
           {
-            "label": "Ally stat buffs",
+            "label": "Temporary ally stat buffs",
             "tier": "base",
             "targeting": "Allies",
             "description": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally."
@@ -13125,36 +13185,6 @@
               ],
               "duration": 6,
               "tick": 1.0
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "buff",
-              "name": "ATK SPD",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "buff",
-              "name": "Lifedrain",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 25.0
-                }
-              ]
             }
           ],
           "skill_range": 10,
@@ -13162,14 +13192,6 @@
           "skill_card_tags": [
             {
               "label": "DoT"
-            },
-            {
-              "label": "ATK SPD — All units (Supreme+)",
-              "polarity": "buff"
-            },
-            {
-              "label": "Lifedrain — All units (Supreme+)",
-              "polarity": "buff"
             },
             {
               "label": "Silence — Single target"
@@ -13373,7 +13395,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -13425,7 +13448,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "ex+15",
@@ -13442,7 +13466,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 3,
@@ -13476,6 +13501,38 @@
             ]
           },
           "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "persistence": "temporary"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "temporary"
+            },
             {
               "tier": "supreme+",
               "targeting_label": "All units",
@@ -13526,6 +13583,14 @@
             }
           ],
           "skill_card_tags": [
+            {
+              "label": "ATK SPD — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Lifedrain — All units",
+              "polarity": "buff"
+            },
             {
               "label": "Energy — All units",
               "polarity": "debuff"
@@ -13604,7 +13669,7 @@
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
-            "buffs": "average",
+            "buffs": "none",
             "debuffs": "none",
             "damage_types": {
               "DoT": "average",
@@ -13616,7 +13681,7 @@
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
-            "buffs": "average",
+            "buffs": "none",
             "debuffs": "none",
             "damage_types": {
               "DoT": "average",
@@ -13924,7 +13989,8 @@
                   "type": "percentage",
                   "value": 320.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 10.0,
@@ -13985,7 +14051,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -14216,7 +14283,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -14241,7 +14309,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "initial_energy": 200.0,
@@ -14309,7 +14378,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -14326,7 +14396,8 @@
                   "type": "flat",
                   "value": 49.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -14354,7 +14425,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -14365,7 +14437,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -14556,7 +14629,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -14616,7 +14690,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -14833,7 +14908,8 @@
                   "type": "percentage",
                   "value": 180.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -15042,7 +15118,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -15571,7 +15648,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -15742,7 +15820,7 @@
         "provides": [],
         "requires": [
           {
-            "label": "Ally stat buffs",
+            "label": "Temporary ally stat buffs",
             "tier": "base",
             "description": "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage."
           },
@@ -15913,7 +15991,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -16161,7 +16240,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -16398,7 +16478,8 @@
                   "type": "flat",
                   "value": 66.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -16415,7 +16496,8 @@
                   "type": "flat",
                   "value": 100.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 12.0,
@@ -16535,7 +16617,8 @@
                   "type": "percentage",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -16610,7 +16693,8 @@
                   "type": "flat",
                   "value": 27.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "ex+10",
@@ -16627,7 +16711,8 @@
                   "type": "flat",
                   "value": 32.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -16924,27 +17009,12 @@
                   "value": 275.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
             }
           ],
           "skill_range": 7,
           "skill_card_tags": [
             {
               "label": "Magic"
-            },
-            {
-              "label": "ATK",
-              "polarity": "buff"
             },
             {
               "label": "Stun — Single target"
@@ -17112,7 +17182,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -17171,7 +17242,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -17429,7 +17501,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -17669,7 +17742,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -17745,7 +17819,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -18233,7 +18308,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -18786,7 +18862,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -18852,7 +18929,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -18876,7 +18954,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "ex+5",
@@ -18955,7 +19034,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -19112,7 +19192,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -19129,7 +19210,8 @@
                   "type": "percentage",
                   "value": 550.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -19344,7 +19426,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "cooldown": 12.0,
@@ -19393,7 +19476,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Ranged DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -19404,7 +19488,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -19501,7 +19586,8 @@
                   "type": "percentage",
                   "value": 1400.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 3,
@@ -19718,9 +19804,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -19731,7 +19817,8 @@
                   "type": "percentage",
                   "value": 0.1
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -19751,7 +19838,7 @@
               "label": "Physical"
             },
             {
-              "label": "ATK",
+              "label": "ATK — Self",
               "polarity": "buff"
             },
             {
@@ -19970,7 +20057,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -20019,20 +20107,21 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive",
+              "name": "Damage dealt",
+              "label": "buff_stat",
               "value": [
                 {
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -20070,7 +20159,7 @@
               "label": "Max HP-based damage"
             },
             {
-              "label": "ATK",
+              "label": "Damage dealt — Self",
               "polarity": "buff"
             },
             {
@@ -20115,6 +20204,7 @@
         "max_hp": "low"
       },
       "benefit_stats": [
+        "atk",
         "atk_spd"
       ],
       "scalar_stat_shares": {
@@ -20300,7 +20390,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 9.0,
@@ -20644,7 +20735,8 @@
                   "type": "percentage",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 15.0,
@@ -20708,7 +20800,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -20725,7 +20818,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -20810,7 +20904,8 @@
                   "type": "flat",
                   "value": 3.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -20903,7 +20998,8 @@
                   "type": "flat",
                   "value": 700.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -21205,23 +21301,6 @@
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 3.3
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 60.0
-                }
-              ]
             }
           ],
           "cooldown": 12.0,
@@ -21229,10 +21308,6 @@
           "skill_card_tags": [
             {
               "label": "Physical"
-            },
-            {
-              "label": "Haste",
-              "polarity": "buff"
             },
             {
               "label": "Haste",
@@ -21341,7 +21416,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -21403,7 +21479,8 @@
                   "type": "percentage",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -21445,7 +21522,8 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -21463,7 +21541,8 @@
               ],
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -21794,7 +21873,8 @@
                   "type": "percentage",
                   "value": 14.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -21849,7 +21929,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -21867,9 +21948,33 @@
               "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect."
             ]
           },
-          "effects": [],
-          "passive_only": true,
-          "skill_card_tags": []
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "duration": 6.0,
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Haste",
+              "polarity": "buff"
+            }
+          ]
         }
       },
       "synergy_profile": {
@@ -22164,7 +22269,8 @@
                   "type": "percentage",
                   "value": 13.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -22278,7 +22384,8 @@
                   "type": "percentage",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -22295,7 +22402,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 10,
@@ -22741,7 +22849,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -22910,7 +23019,8 @@
                   "type": "flat",
                   "value": 150.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -23094,7 +23204,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -23111,7 +23222,8 @@
                   "type": "flat",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 1.0,
@@ -23197,7 +23309,8 @@
                   "type": "flat",
                   "value": 75.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 6.0,
@@ -23256,7 +23369,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -23375,7 +23489,8 @@
               ],
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -23729,7 +23844,8 @@
               ],
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -24234,7 +24350,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -24294,7 +24411,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "ex+10",
@@ -24517,7 +24635,8 @@
               ],
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -24528,7 +24647,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -24539,7 +24659,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -24550,7 +24671,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -24561,7 +24683,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -24578,7 +24701,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "initial_energy": 0.0,
@@ -24908,7 +25032,8 @@
                   "type": "flat",
                   "value": 180.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -25328,7 +25453,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -25676,7 +25802,8 @@
                   "type": "percentage",
                   "value": 500.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -25788,7 +25915,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -25916,7 +26044,8 @@
                   "type": "percentage",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
@@ -26003,7 +26132,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -26026,7 +26156,8 @@
                   "type": "flat",
                   "value": 200.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -26212,7 +26343,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -26229,11 +26361,36 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
+              "duration": 12.0,
+              "persistence": "temporary"
             }
           ],
           "initial_energy": 0.0,
           "skill_card_tags": [
+            {
+              "label": "ATK — All units",
+              "polarity": "buff"
+            },
             {
               "label": "Damage taken — All units",
               "polarity": "buff"
@@ -26295,6 +26452,25 @@
               ]
             },
             {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
+              "duration": 5.0,
+              "persistence": "temporary"
+            },
+            {
               "tier": "supreme+",
               "targeting_label": "Single target",
               "is_max_known": true,
@@ -26309,7 +26485,8 @@
                   "type": "flat",
                   "value": 350.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 10.0,
@@ -26317,6 +26494,10 @@
           "skill_card_tags": [
             {
               "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK",
               "polarity": "buff"
             },
             {
@@ -26457,7 +26638,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -26532,7 +26714,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -26580,7 +26763,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -26780,7 +26964,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -26792,7 +26977,8 @@
               "area_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -27061,13 +27247,14 @@
               ],
               "type": "buff",
               "name": "DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -27078,7 +27265,8 @@
               ],
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -27091,7 +27279,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Magic DEF (EX+10)",
+              "label": "Magic DEF — Self (EX+10)",
               "polarity": "buff"
             },
             {
@@ -27126,7 +27314,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -27542,7 +27731,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -27973,7 +28163,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Ranged DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -28034,7 +28225,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -28344,7 +28536,8 @@
                   "type": "percentage",
                   "value": 210.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 11.0,
@@ -28496,7 +28689,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -28589,7 +28783,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -28917,7 +29112,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -28940,7 +29136,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -28963,7 +29160,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -28986,7 +29184,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -29009,7 +29208,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -29057,7 +29257,8 @@
                   "type": "percentage",
                   "value": 560.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 12.0,
@@ -29134,7 +29335,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 1.0,
@@ -29181,9 +29383,9 @@
           "effects": [
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -29205,13 +29407,14 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -29233,16 +29436,17 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
             {
-              "label": "Magic DEF (EX+10)",
+              "label": "Magic DEF — Self (EX+10)",
               "polarity": "buff"
             },
             {
-              "label": "Phys DEF (EX+10)",
+              "label": "Phys DEF — Self (EX+10)",
               "polarity": "buff"
             }
           ]
@@ -29464,7 +29668,26 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 0,
@@ -29475,6 +29698,10 @@
             },
             {
               "label": "ATK SPD — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK SPD — Owned",
               "polarity": "buff"
             },
             {
@@ -29670,13 +29897,36 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
           "skill_card_tags": [
             {
               "label": "ATK SPD — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK SPD — Owned",
               "polarity": "buff"
             }
           ]
@@ -29768,7 +30018,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -29785,7 +30036,8 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -30170,7 +30422,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -30294,7 +30547,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -30305,7 +30559,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -30322,7 +30577,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -30371,7 +30627,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -30410,7 +30667,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "supreme+",
@@ -30427,7 +30685,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -30646,7 +30905,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage dealt",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -30747,7 +31007,8 @@
                   "type": "percentage",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -30764,7 +31025,8 @@
                   "type": "flat",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "cooldown": 20.0,
@@ -30834,7 +31096,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -30978,7 +31241,7 @@
         ],
         "requires": [
           {
-            "label": "Ally stat buffs",
+            "label": "Temporary ally stat buffs",
             "tier": "mythic+",
             "targeting": "Allies",
             "description": "Lily May grows once upon receiving a non-permanent stats boost from an ally."
@@ -31248,7 +31511,8 @@
                   "type": "flat",
                   "value": 33.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -31339,7 +31603,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -31700,7 +31965,8 @@
                   "type": "percentage",
                   "value": 340.0
                 }
-              ]
+              ],
+              "duration": 8.0
             },
             {
               "tier": "base",
@@ -31803,7 +32069,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -31876,7 +32143,8 @@
                   "type": "percentage",
                   "value": 29.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -31936,7 +32204,8 @@
                   "type": "percentage",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -32023,7 +32292,8 @@
               "area_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -33777,7 +34047,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "temporary"
             }
           ],
           "cooldown": 15.0,
@@ -33912,7 +34183,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -34339,7 +34611,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -34357,7 +34630,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 12.0,
@@ -34743,7 +35017,8 @@
                   "type": "flat",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -34952,7 +35227,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -35389,7 +35665,8 @@
                   "type": "percentage",
                   "value": 17.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -35400,7 +35677,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -35503,7 +35781,8 @@
                   "type": "percentage",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -35549,7 +35828,8 @@
                   "type": "percentage",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -35833,7 +36113,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 10.0,
@@ -35969,7 +36250,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "unknown"
             },
             {
               "tier": "legendary+",
@@ -35986,7 +36268,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -36266,7 +36549,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -36349,7 +36633,8 @@
                   "type": "percentage",
                   "value": 14.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -36406,7 +36691,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -36423,7 +36709,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -36503,7 +36790,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -36562,7 +36850,8 @@
                   "type": "flat",
                   "value": 70.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 2,
@@ -36901,7 +37190,8 @@
                   "type": "flat",
                   "value": 33.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -37192,7 +37482,8 @@
                   "type": "flat",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -37444,7 +37735,8 @@
                   "type": "percentage",
                   "value": 14.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -37969,7 +38261,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -37997,7 +38290,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -38025,7 +38319,8 @@
                   "type": "flat",
                   "value": 5.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -38053,7 +38348,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 3,
@@ -38125,7 +38421,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "legendary+",
@@ -38148,7 +38445,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -38716,7 +39014,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -38999,7 +39298,8 @@
                   "type": "percentage",
                   "value": 22.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -39016,7 +39316,8 @@
                   "type": "flat",
                   "value": 68.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -39769,7 +40070,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "supreme+",
@@ -39786,7 +40088,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -40193,7 +40496,8 @@
                   "type": "flat",
                   "value": 33.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -40535,7 +40839,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -40546,7 +40851,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Energy",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -40739,7 +41045,8 @@
                   "type": "percentage",
                   "value": 24.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -40801,7 +41108,8 @@
                   "type": "flat",
                   "value": 65.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
@@ -41010,7 +41318,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -41027,7 +41336,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -41301,7 +41611,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -41360,7 +41671,8 @@
                   "type": "percentage",
                   "value": 19.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -41396,7 +41708,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -41613,7 +41926,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -41630,7 +41944,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 10.0,
@@ -41716,7 +42031,8 @@
                   "type": "flat",
                   "value": 70.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 5,
@@ -41770,7 +42086,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -42165,7 +42482,8 @@
                   "type": "percentage",
                   "value": 14.5
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -42176,7 +42494,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -42187,7 +42506,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -42219,7 +42539,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -42285,7 +42606,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -42341,7 +42663,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -42382,12 +42705,12 @@
         "provides": [],
         "requires": [
           {
-            "label": "Ally stat buffs",
+            "label": "Temporary ally stat buffs",
             "tier": "legendary+",
             "description": "Further increases his ATK by 6% when he has temporary stat buffs from allies."
           },
           {
-            "label": "Ally stat buffs",
+            "label": "Temporary ally stat buffs",
             "tier": "mythic+",
             "targeting": "Allies",
             "description": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%."
@@ -42554,7 +42877,8 @@
                   "type": "percentage",
                   "value": 75.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "initial_energy": 600.0,
@@ -42741,7 +43065,8 @@
                   "type": "percentage",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 12.0,
@@ -42802,7 +43127,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -42874,7 +43200,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "Damage dealt",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -42932,7 +43259,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -42949,7 +43277,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -43172,7 +43501,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -43289,23 +43619,6 @@
               ],
               "duration": 6,
               "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Max HP",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 50.0
-                }
-              ]
             }
           ],
           "cooldown": 11.0,
@@ -43316,10 +43629,6 @@
             },
             {
               "label": "DoT"
-            },
-            {
-              "label": "Max HP",
-              "polarity": "buff"
             },
             {
               "label": "Vitality",
@@ -43364,7 +43673,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -43898,7 +44208,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -44299,7 +44610,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -44316,7 +44628,8 @@
                   "type": "flat",
                   "value": 150.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -44560,7 +44873,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -44618,7 +44932,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -44635,7 +44950,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
@@ -44658,7 +44974,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -44701,7 +45018,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "type": "immunity",
@@ -45240,7 +45558,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -45476,7 +45795,8 @@
                   "type": "flat",
                   "value": 17.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "type": "immunity",
@@ -45610,7 +45930,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -45621,7 +45942,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit DMG boost",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -45681,7 +46003,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Movement speed",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "ex+5",
@@ -45741,7 +46064,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -45758,7 +46082,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -45910,7 +46235,8 @@
                   "type": "flat",
                   "value": 350.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "cooldown": 1.0,
@@ -45993,7 +46319,8 @@
                   "type": "flat",
                   "value": 400.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -46132,7 +46459,8 @@
                   "type": "flat",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -46191,7 +46519,8 @@
                   "type": "percentage",
                   "value": 70.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -46208,7 +46537,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -46225,7 +46555,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -46278,7 +46609,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -46721,7 +47053,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -47067,7 +47400,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "initial_energy": 0.0,
@@ -47272,7 +47606,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -47333,7 +47668,8 @@
                   "type": "flat",
                   "value": 52.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -47545,7 +47881,8 @@
                   "type": "percentage",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -47660,7 +47997,8 @@
                   "type": "flat",
                   "value": 100.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "cooldown": 6.0,
@@ -47767,7 +48105,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -47826,7 +48165,8 @@
                   "type": "percentage",
                   "value": 22.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
@@ -47837,7 +48177,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -48138,7 +48479,8 @@
                   "type": "percentage",
                   "value": 220.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -48155,7 +48497,8 @@
                   "type": "flat",
                   "value": 150.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -48291,20 +48634,14 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
-              "name": "Phys DEF",
-              "label": "buff_defensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Magic DEF",
-              "label": "buff_defensive"
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
             }
           ],
           "cooldown": 3.0,
@@ -48314,11 +48651,7 @@
               "label": "Physical"
             },
             {
-              "label": "Magic DEF (Supreme+)",
-              "polarity": "buff"
-            },
-            {
-              "label": "Phys DEF (Supreme+)",
+              "label": "Shield (Supreme+)",
               "polarity": "buff"
             },
             {
@@ -48360,7 +48693,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Execution",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -48624,7 +48958,8 @@
                   "type": "percentage",
                   "value": 180.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "initial_energy": 0.0,
@@ -48735,7 +49070,8 @@
                   "type": "flat",
                   "value": 200.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -48817,7 +49153,8 @@
                   "type": "flat",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -48828,7 +49165,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -48845,7 +49183,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -48862,7 +49201,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -49178,7 +49518,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 10,
@@ -49339,7 +49680,8 @@
                   "type": "percentage",
                   "value": 900.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -49463,7 +49805,8 @@
                   "type": "flat",
                   "value": 100.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 3,
@@ -49500,7 +49843,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -49730,7 +50074,8 @@
                   "type": "flat",
                   "value": 28.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -49748,7 +50093,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -49891,7 +50237,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "type": "immunity",
@@ -49951,7 +50298,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -50720,7 +51068,8 @@
                   "type": "percentage",
                   "value": 3.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -50830,7 +51179,8 @@
                   "type": "flat",
                   "value": 4.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -50847,7 +51197,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -50858,7 +51209,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 10,
@@ -50894,7 +51246,7 @@
         "provides": [],
         "requires": [
           {
-            "label": "Ally stat buffs",
+            "label": "Temporary ally stat buffs",
             "tier": "mythic+",
             "targeting": "Allies",
             "description": "When Silven receives a temporary stat buff from an ally, he immediately recovers 300 Energy and permanently gains 4 Penetration."
@@ -51974,7 +52326,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -52030,7 +52383,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 1.0,
@@ -52105,7 +52459,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -52129,7 +52484,8 @@
                   "type": "flat",
                   "value": 8.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 5,
@@ -52246,7 +52602,8 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -52599,7 +52956,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             },
             {
               "type": "immunity",
@@ -52768,7 +53126,8 @@
                   "type": "percentage",
                   "value": 8.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -52779,7 +53138,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Magic DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -52972,7 +53332,8 @@
               ],
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             }
           ],
           "skill_range": 3,
@@ -53038,7 +53399,8 @@
                   "type": "percentage",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -53055,7 +53417,8 @@
                   "type": "percentage",
                   "value": 21.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -53188,7 +53551,8 @@
                   "type": "flat",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -53249,7 +53613,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -53454,7 +53819,8 @@
                   "type": "flat",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "initial_energy": 0.0,
@@ -53556,7 +53922,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "cooldown": 11.0,
@@ -53619,7 +53986,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -53690,7 +54058,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -53757,34 +54126,14 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 60.0
-                }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
           "skill_card_tags": [
             {
               "label": "Haste — Self",
-              "polarity": "buff"
-            },
-            {
-              "label": "Haste — Single target (EX+10)",
               "polarity": "buff"
             }
           ]
@@ -53967,7 +54316,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -53984,7 +54334,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -54284,7 +54635,8 @@
                   "type": "flat",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -54353,7 +54705,8 @@
                   "type": "flat",
                   "value": 3.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -54425,7 +54778,8 @@
                   "type": "flat",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -54678,7 +55032,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "cooldown": 8.0,
@@ -54807,7 +55162,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_range": 1,
@@ -54853,26 +55209,9 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "ex+5",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
-            }
-          ],
-          "skill_card_tags": [
-            {
-              "label": "ATK — Area (EX+5)",
-              "polarity": "buff"
-            }
-          ]
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Enhance Force": {
           "category": "skill5",
@@ -55330,7 +55669,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -55390,7 +55730,8 @@
                   "type": "flat",
                   "value": 130.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -55401,7 +55742,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -55617,7 +55959,8 @@
                   "type": "flat",
                   "value": 180.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -55640,7 +55983,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage dealt",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",
@@ -55946,7 +56290,8 @@
                   "type": "percentage",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -56312,7 +56657,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -56459,7 +56805,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -56586,7 +56933,8 @@
                   "type": "flat",
                   "value": 350.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -56823,7 +57171,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "type": "immunity",
@@ -57027,7 +57376,8 @@
                   "type": "flat",
                   "value": 500.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 2,
@@ -57089,7 +57439,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -57424,7 +57775,8 @@
                   "type": "percentage",
                   "value": 70.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -57616,7 +57968,9 @@
                   "type": "percentage",
                   "value": 9.0
                 }
-              ]
+              ],
+              "duration": 10.0,
+              "persistence": "permanent"
             }
           ],
           "cooldown": 15.0,
@@ -57668,7 +58022,8 @@
                   "type": "flat",
                   "value": 19.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -57763,7 +58118,8 @@
                   "type": "percentage",
                   "value": 120.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "ex+10",
@@ -57787,7 +58143,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -58224,7 +58581,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -58344,7 +58702,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -58832,7 +59191,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -58891,7 +59251,9 @@
                   "type": "flat",
                   "value": 120.0
                 }
-              ]
+              ],
+              "duration": 10.0,
+              "persistence": "temporary"
             },
             {
               "type": "immunity",
@@ -59156,7 +59518,9 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "duration": 12.0,
+              "persistence": "temporary"
             }
           ],
           "cooldown": 1.0,
@@ -59368,7 +59732,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -59481,7 +59846,8 @@
                   "type": "flat",
                   "value": 500.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_card_tags": [
@@ -59878,7 +60244,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -59968,7 +60335,8 @@
                   "type": "flat",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
@@ -59979,7 +60347,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "unknown"
             },
             {
               "type": "immunity",
@@ -60035,7 +60404,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -60217,7 +60587,8 @@
                   "type": "percentage",
                   "value": 33.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -60489,7 +60860,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -60945,7 +61317,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -61376,7 +61749,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -61393,7 +61767,8 @@
                   "type": "flat",
                   "value": 24.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -61468,7 +61843,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -61610,7 +61986,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -61627,7 +62004,8 @@
                   "type": "flat",
                   "value": 100.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "skill_card_tags": [
@@ -61885,7 +62263,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -61909,7 +62288,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -61933,7 +62313,8 @@
                   "type": "flat",
                   "value": 44.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_card_tags": [
@@ -62073,7 +62454,8 @@
                   "type": "percentage",
                   "value": 24.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "skill_range": 1,
@@ -62150,7 +62532,13 @@
             "description": "Any excess healing Zandrok receives is converted into max HP, up to 50% of his initial max HP."
           }
         ],
-        "requires": []
+        "requires": [
+          {
+            "label": "Temporary ally stat buffs",
+            "tier": "legendary+",
+            "description": "While temporary Rallying Roar buffs from allies are active, Zandrok gains extra max HP."
+          }
+        ]
       },
       "damage_entries": [
         [
@@ -62289,7 +62677,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -62306,7 +62695,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -62323,7 +62713,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -62340,7 +62731,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "initial_energy": 9.0,
@@ -62577,7 +62969,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -62637,7 +63030,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "mythic+",
@@ -62654,7 +63048,8 @@
                   "type": "percentage",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "cooldown": 12.0,
@@ -62906,7 +63301,8 @@
                   "type": "flat",
                   "value": 85.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -63041,7 +63437,8 @@
                   "type": "percentage",
                   "value": 70.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -63144,7 +63541,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -63242,7 +63640,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "skill_range": 1,
@@ -63301,7 +63700,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",

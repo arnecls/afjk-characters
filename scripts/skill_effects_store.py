@@ -18,6 +18,8 @@ SCHEMA_PATH = DATA / "schema" / "skill_effects.schema.json"
 
 import hero_schema as hs
 
+import buff_persistence as bp
+
 _SCHEMA: dict[str, Any] | None = None
 
 # Coarse keyword lints: phrase in text but no matching effect category.

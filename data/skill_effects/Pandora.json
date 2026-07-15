@@ -86,7 +86,8 @@
               ],
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -97,7 +98,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Energy",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -222,7 +224,8 @@
                   "type": "percentage",
                   "value": 24.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -253,7 +256,8 @@
                   "type": "flat",
                   "value": 65.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

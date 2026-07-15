@@ -88,7 +88,8 @@
                   "type": "flat",
                   "value": 33.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -156,7 +157,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

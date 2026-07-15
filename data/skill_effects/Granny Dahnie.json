@@ -204,7 +204,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Vitality",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -242,7 +243,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -266,7 +268,8 @@
                   "type": "percentage",
                   "value": 50.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -336,7 +339,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

@@ -91,7 +91,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -171,7 +172,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "unknown"
             },
             {
               "tier": "legendary+",
@@ -188,7 +190,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

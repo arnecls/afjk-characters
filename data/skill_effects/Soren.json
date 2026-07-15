@@ -71,7 +71,8 @@
                   "type": "flat",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -135,7 +136,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -160,7 +162,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -215,7 +218,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -253,7 +257,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -262,19 +267,7 @@
           "special_requires": []
         },
         "ex+10": {
-          "effects": [
-            {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "summon_effects": [],
           "immunities": [],
           "special_provides": [],

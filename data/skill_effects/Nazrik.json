@@ -177,7 +177,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

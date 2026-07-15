@@ -166,7 +166,8 @@
                   "type": "percentage",
                   "value": 12.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

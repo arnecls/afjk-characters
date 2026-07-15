@@ -29,7 +29,8 @@
                   "value": 66.0
                 }
               ],
-              "tick": 1.0
+              "tick": 1.0,
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -119,7 +120,8 @@
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

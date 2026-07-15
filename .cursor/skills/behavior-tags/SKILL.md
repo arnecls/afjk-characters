@@ -160,6 +160,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 |-----|----------|-------------|
 | `mass-cc` | Reliable CC on **multiple** enemies or wide areas | Single-target stun/bind/knock |
 | `ally-buffer` / `ally-healer` / `ally-shielder` | Meaningful effect on **allies** | Self-only, or buffs/shields on summons/turrets |
+| `temporary-stat-buffer` | ≥1 ally-targeted stat buff with `persistence: temporary` in sidecar | Self/summon-only; permanent/rest-of-battle ally buffs only; tag must match sidecar exactly (`just validate`) |
 | `energy-provider` | Grants Energy to **allies** or accelerates ally ulimates | Self energy recovery only |
 | `enemy-debuffer` | Meaningful **enemy** stat or combat debuffs as a core pattern | Self debuffs; ally-only kits with no enemy penalties; one minor stat shave |
 | `battlefield-modification` | Physical obstacles or map layout changes | Buff/debuff/terrain **zones** alone |
@@ -229,8 +230,10 @@ Do not regenerate `heroes-overview.md` or the site unless the user asks.
 `mass-cc` (ult stun only on debuffed targets) or `dot-specialist` (debuff
 stacking ≠ DoT).
 
-**Perseus** — terrain tile buffs: `ally-buffer`, `aoe-damage`. Not
-`battlefield-modification` (buff zones do not count).
+**Perseus** — terrain tile buffs: `ally-buffer`, `aoe-damage`,
+`temporary-stat-buffer` (tile buffs are temporary). Temporary-buff synergy
+uses effect `persistence`, not this tag alone. Not `battlefield-modification`
+(buff zones do not count).
 
 **Cecia** — `summoner`, `mass-cc` (area entangle on summon), `enemy-debuffer`
 (stat steal). Not `life-drain` (stat absorb ≠ lifesteal).

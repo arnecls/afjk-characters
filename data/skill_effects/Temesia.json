@@ -42,7 +42,8 @@
                   "type": "flat",
                   "value": 180.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -64,7 +65,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage dealt",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -289,7 +291,8 @@
                   "type": "percentage",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

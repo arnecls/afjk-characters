@@ -124,7 +124,8 @@
                   "type": "percentage",
                   "value": 14.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -150,7 +151,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -164,8 +166,28 @@
       "source_hash": "695e330f0dd50eaeb58df20185cab9cbf5b6309337e7f93615d503c263403fc5",
       "is_max_known": true,
       "tiers": {
-        "base": {
-          "effects": [],
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "duration": 6,
+              "persistence": "temporary"
+            }
+          ],
           "summon_effects": [],
           "immunities": [],
           "special_provides": [],

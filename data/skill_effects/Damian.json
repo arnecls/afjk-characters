@@ -53,7 +53,8 @@
                   "type": "flat",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -108,7 +109,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -205,7 +207,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

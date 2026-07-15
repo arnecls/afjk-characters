@@ -279,7 +279,7 @@ ENABLER_REQUIRE_HANDLERS = (
     "Adjacent allies",
     "Party composition",
     "Named ally on team",
-    "Ally stat buffs",
+    "Temporary ally stat buffs",
     "CC on enemies",
 )
 
@@ -1066,7 +1066,7 @@ def _format_ally_stat_buff_grant(
     n: int, target_name: str, *, start_of_battle: bool = False
 ) -> str:
     detail = (
-        f"Grants {n} distinct stat buff{'s' if n != 1 else ''} "
+        f"Grants {n} distinct temporary stat buff{'s' if n != 1 else ''} "
         f"to {target_name}"
     )
     if start_of_battle:
@@ -1078,14 +1078,18 @@ def _ally_stat_buff_synergy(
     provider: _rs.Hero,
     receiver_movement: str = "",
 ) -> tuple[float, int, bool] | None:
-    """Providers that grant many/wide ally stat buffs (Perseus, Silven enabler)."""
-    ally_buffs = [
-        e
-        for e in provider.effects
-        if e.category == "buff"
-        and e.targeting in ALLY_TARGETINGS
-        and not _rs.effect_synergy_excluded(e)
-    ]
+    """Providers that grant temporary ally stat buffs (Perseus, Silven enabler)."""
+    import buff_persistence as bp
+
+    ally_buffs: list[_rs.Effect] = []
+    for sl in provider.skill_slices.values():
+        for effect in sl.effects:
+            if (
+                effect.targeting in ALLY_TARGETINGS
+                and bp.is_runtime_temporary_stat_buff(effect)
+                and not _rs.effect_synergy_excluded(effect)
+            ):
+                ally_buffs.append(effect)
     if not ally_buffs:
         return None
     best_by_label: dict[str, float] = {}
@@ -1172,7 +1176,7 @@ def _make_enabler_matchers(
         "Enemy defeat": match_enemy_defeat,
         "Adjacent allies": match_adjacent_allies,
         "Party composition": party,
-        "Ally stat buffs": match_ally_stat_buffs,
+        "Temporary ally stat buffs": match_ally_stat_buffs,
         "CC on enemies": match_cc_on_enemies,
     }
 
@@ -1197,7 +1201,7 @@ REQUIRE_SYNERGY_FRAGMENTS: dict[str, str] = {
     "Adjacent allies": "allies **adjacent** to them",
     "Party composition": "a party **with the right composition**",
     "Named ally on team": "specific **named allies**",
-    "Ally stat buffs": "units **buffing them**",
+    "Temporary ally stat buffs": "units **buffing them**",
     "CC on enemies": "units **applying crowd control** to enemies",
 }
 
@@ -1272,7 +1276,7 @@ def score_enabler_synergy(
             if not result:
                 continue
             pts, detail = result
-        elif req.label == "Ally stat buffs":
+        elif req.label == "Temporary ally stat buffs":
             result = _ally_stat_buff_synergy(provider, receiver_movement)
             if not result:
                 continue
@@ -1288,7 +1292,7 @@ def score_enabler_synergy(
         pts *= DEFINING_TIER_SCORE_MULT.get(req.tier, 1.0)
         seen.add(req.label)
         total += pts
-        if req.label == "Ally stat buffs":
+        if req.label == "Temporary ally stat buffs":
             reasons.append(
                 _format_ally_stat_buff_grant(
                     buff_count,

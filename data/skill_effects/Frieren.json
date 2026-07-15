@@ -89,17 +89,6 @@
                   "value": 275.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
             }
           ],
           "summon_effects": [],
@@ -214,7 +203,8 @@
                   "type": "percentage",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -245,7 +235,8 @@
                   "type": "flat",
                   "value": 35.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

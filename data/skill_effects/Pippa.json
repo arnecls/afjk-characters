@@ -178,7 +178,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -205,7 +206,8 @@
                   "type": "count",
                   "count": 4
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

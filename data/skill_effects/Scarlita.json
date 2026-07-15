@@ -97,7 +97,8 @@
                   "type": "percentage",
                   "value": 220.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -114,7 +115,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -217,20 +219,14 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
-              "name": "Phys DEF",
-              "label": "buff_defensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Magic DEF",
-              "label": "buff_defensive"
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
             }
           ],
           "summon_effects": [],
@@ -255,7 +251,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Execution",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

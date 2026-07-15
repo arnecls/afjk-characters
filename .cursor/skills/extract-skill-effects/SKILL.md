@@ -135,6 +135,20 @@ just validate
   units beyond the cast animation qualify; transient attacks/effects and
   passive objects do not.
 - **Immunities:** `type: immunity` in `immunities` array.
+- **Stat-buff persistence:** every positive stat buff (`buff_offensive`,
+  `buff_defensive`, `buff_stat`, `buff_healing`, summon variants, or
+  `stat_mod`) needs `persistence`: `temporary` when the bonus can cease
+  before battle end (finite duration, aura/zone exit, shield/form end);
+  `permanent` when it lasts through battle once applied; never leave ally
+  stat buffs as `unknown` (validation hard-fails). Later tiers inherit
+  unless text explicitly changes lifetime.
+- **Temporary-buff consumers:** use `special_requires` label
+  `Temporary ally stat buffs` (not the old generic label).
+- **Ally stat-buff targeting:** roster ally buffs use `target: ally` in
+  `effects`; owned-summon buffs use `summon_effects` with
+  `own_summons`/`all_summons`. Do not model caster+apostle/summon-only
+  clauses as `target: ally`. `just validate` flags self/summon/enemy
+  mislabels via source-text cross-check.
 - **Do not** edit `rewrite-summaries.py` regex tables for effect fixes (removed).
 
 ## Staleness

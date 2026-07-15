@@ -75,7 +75,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -87,7 +88,8 @@
               "area_count": -1,
               "type": "buff",
               "name": "Energy",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

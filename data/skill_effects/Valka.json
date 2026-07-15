@@ -157,7 +157,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "ATK SPD",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -201,7 +202,8 @@
                   "type": "flat",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -231,7 +233,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -256,7 +259,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Haste",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

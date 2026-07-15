@@ -67,7 +67,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage dealt",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -93,7 +94,7 @@
           ],
           "special_requires": [
             {
-              "label": "Ally stat buffs",
+              "label": "Temporary ally stat buffs",
               "tier": "mythic+",
               "targeting": "Allies",
               "description": "Lily May grows once upon receiving a non-permanent stats boost from an ally."
@@ -141,7 +142,8 @@
                   "type": "percentage",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -166,7 +168,8 @@
                   "type": "flat",
                   "value": 16.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -197,7 +200,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",

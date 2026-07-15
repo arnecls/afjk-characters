@@ -29,7 +29,8 @@
                   "type": "flat",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -181,7 +182,8 @@
                   "type": "flat",
                   "value": 18.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

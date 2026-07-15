@@ -56,7 +56,8 @@
                   "type": "flat",
                   "value": 17.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -134,7 +135,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             },
             {
               "tier": "legendary+",
@@ -145,7 +147,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit DMG boost",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -170,7 +173,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Movement speed",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -221,7 +225,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "tier": "supreme+",
@@ -238,7 +243,8 @@
                   "type": "flat",
                   "value": 60.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],

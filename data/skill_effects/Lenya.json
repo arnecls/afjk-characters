@@ -137,7 +137,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "tier": "base",
@@ -210,7 +211,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -221,7 +223,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit",
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "persistence": "unknown"
             },
             {
               "tier": "mythic+",
@@ -238,7 +241,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -263,7 +267,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -302,7 +307,8 @@
                   "type": "flat",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "supreme+",
@@ -319,7 +325,8 @@
                   "type": "flat",
                   "value": 300.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

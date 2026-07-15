@@ -42,7 +42,8 @@
                   "value": 20.0
                 }
               ],
-              "duration": 12.0
+              "duration": 12.0,
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -228,7 +229,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -315,7 +317,8 @@
                   "type": "flat",
                   "value": 500.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

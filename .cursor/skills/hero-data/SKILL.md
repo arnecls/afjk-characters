@@ -669,6 +669,9 @@ Highest impact on magnitude bands and synergy scoring:
 11. **Upgrade-tier magnitudes** not merged to max tier (incl. `N + M` scaled
    amounts on energy recovery and haste)
 12. **Spurious damage rows** (execute riders, shield absorb as Physical)
+13. **Missing `persistence` on stat buffs** — ally-targeted positive stat
+    buffs must be `temporary`, `permanent`, or (self/summon only) `unknown`;
+    ally `unknown` fails `just validate`. See `scripts/buff_persistence.py`.
 
 ## Definition guardrails
 

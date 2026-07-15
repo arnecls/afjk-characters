@@ -100,7 +100,8 @@
               "target_count": 3,
               "type": "buff",
               "name": "Phys DEF",
-              "label": "buff_defensive"
+              "label": "buff_defensive",
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -176,7 +177,8 @@
                   "type": "flat",
                   "value": 15.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

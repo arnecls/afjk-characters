@@ -27,9 +27,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -40,7 +40,8 @@
                   "type": "percentage",
                   "value": 0.1
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -184,7 +185,8 @@
                   "type": "flat",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -202,20 +204,21 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive",
+              "name": "Damage dealt",
+              "label": "buff_stat",
               "value": [
                 {
                   "type": "percentage",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "mythic+",

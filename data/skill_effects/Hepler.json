@@ -118,17 +118,6 @@
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 3.3
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive"
             }
           ],
           "summon_effects": [],
@@ -186,7 +175,8 @@
               "target_count": 1,
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -217,7 +207,8 @@
                   "type": "percentage",
                   "value": 80.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -255,7 +246,8 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "supreme+",
@@ -273,7 +265,8 @@
               ],
               "type": "buff",
               "name": "Damage taken",
-              "label": "buff_stat"
+              "label": "buff_stat",
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],

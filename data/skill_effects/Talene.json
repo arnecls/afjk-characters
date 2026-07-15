@@ -73,7 +73,8 @@
                   "type": "flat",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -148,7 +149,8 @@
                   "type": "percentage",
                   "value": 10.0
                 }
-              ]
+              ],
+              "persistence": "unknown"
             }
           ],
           "summon_effects": [],
@@ -163,20 +165,7 @@
       "is_max_known": true,
       "tiers": {
         "ex+5": {
-          "effects": [
-            {
-              "tier": "ex+5",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "summon_effects": [],
           "immunities": [],
           "special_provides": [],

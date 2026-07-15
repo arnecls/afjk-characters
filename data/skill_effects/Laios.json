@@ -127,7 +127,8 @@
                   "type": "flat",
                   "value": 250.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "base",
@@ -150,7 +151,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -173,7 +175,8 @@
                   "type": "flat",
                   "value": 30.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -196,7 +199,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -219,7 +223,8 @@
                   "type": "percentage",
                   "value": 40.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             },
             {
               "tier": "base",
@@ -275,7 +280,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],
@@ -306,7 +312,8 @@
                   "type": "percentage",
                   "value": 20.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
@@ -324,9 +331,9 @@
           "effects": [
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -348,13 +355,14 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -376,7 +384,8 @@
                   "type": "percentage",
                   "value": 25.0
                 }
-              ]
+              ],
+              "persistence": "permanent"
             }
           ],
           "summon_effects": [],
