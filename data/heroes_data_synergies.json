@@ -9647,12 +9647,20 @@
           "name": "Smokey & Meerky"
         },
         {
+          "score": 6.18,
+          "name": "Marcille"
+        },
+        {
           "score": 6.135299999999999,
           "name": "Cassadee"
         },
         {
           "score": 6.0,
           "name": "Shakir"
+        },
+        {
+          "score": 5.859,
+          "name": "Shemira"
         },
         {
           "score": 5.58,
@@ -9680,10 +9688,6 @@
         },
         {
           "score": 4.83,
-          "name": "Marcille"
-        },
-        {
-          "score": 4.83,
           "name": "Sinbad"
         },
         {
@@ -9693,10 +9697,6 @@
         {
           "score": 4.83,
           "name": "Valka"
-        },
-        {
-          "score": 4.104,
-          "name": "Shemira"
         },
         {
           "score": 4.08,
@@ -15865,6 +15865,14 @@
           "name": "Lyca"
         },
         {
+          "score": 9.756,
+          "name": "Marcille"
+        },
+        {
+          "score": 9.420300000000001,
+          "name": "Shemira"
+        },
+        {
           "score": 9.30501,
           "name": "Cassadee"
         },
@@ -15885,20 +15893,12 @@
           "name": "Cecia"
         },
         {
-          "score": 7.461,
-          "name": "Marcille"
-        },
-        {
           "score": 7.03125,
           "name": "Tasi"
         },
         {
           "score": 6.530010000000001,
           "name": "Hammie"
-        },
-        {
-          "score": 6.4368,
-          "name": "Shemira"
         },
         {
           "score": 6.336,
@@ -18283,10 +18283,6 @@
         {
           "score": 3.75,
           "name": "Lucy"
-        },
-        {
-          "score": 3.75,
-          "name": "Marcille"
         },
         {
           "score": 3.75,
@@ -21982,10 +21978,6 @@
           "name": "Lucius"
         },
         {
-          "score": 4.05,
-          "name": "Shemira"
-        },
-        {
           "score": 3.0375,
           "name": "Alna"
         },
@@ -23726,6 +23718,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 28.10507142857143,
+          "name": "Shemira"
+        },
+        {
           "score": 25.638942857142858,
           "name": "Indris"
         },
@@ -23760,10 +23756,6 @@
         {
           "score": 13.091142857142858,
           "name": "Lenya"
-        },
-        {
-          "score": 13.091142857142858,
-          "name": "Shemira"
         },
         {
           "score": 13.091142857142858,
@@ -23816,6 +23808,10 @@
         {
           "score": 12.318942857142858,
           "name": "Mikola"
+        },
+        {
+          "score": 3.93,
+          "name": "Marcille"
         },
         {
           "score": 2.3103,
@@ -23992,7 +23988,37 @@
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
             "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 7.461
+          "score": 9.756
+        },
+        {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+            "Energy via Energy (multiple targets, average) `signature fuel`"
+          ],
+          "score": 8.61
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "ATK SPD via Haste (area, high) `signature fuel`",
+            "Energy via Energy (area, low) `signature fuel`"
+          ],
+          "score": 8.055
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 7.289999999999999
+        },
+        {
+          "provider": "Thador",
+          "reasons": [
+            "Energy via Energy (single target, high) `signature fuel`"
+          ],
+          "score": 7.289999999999999
         },
         {
           "provider": "Laios",
@@ -24002,20 +24028,12 @@
           "score": 7.0
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Twins",
           "reasons": [
-            "ATK SPD via Haste (area, high) `signature fuel`",
-            "Energy via Energy (area, low) `signature fuel`"
+            "ATK SPD via Haste (all units, average) `signature fuel`",
+            "Energy via Energy (multiple targets, low) `signature fuel`"
           ],
-          "score": 6.705
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK SPD via Haste (multiple targets, average) `signature fuel`",
-            "Energy via Energy (multiple targets, average) `signature fuel`"
-          ],
-          "score": 5.91
+          "score": 6.18
         },
         {
           "provider": "Lorsan",
@@ -24025,12 +24043,12 @@
           "score": 5.625
         },
         {
-          "provider": "Twins",
+          "provider": "Lyca",
           "reasons": [
-            "ATK SPD via Haste (all units, average) `signature fuel`",
-            "Energy via Energy (multiple targets, low) `signature fuel`"
+            "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+            "Energy via Energy (all units, low) `signature fuel`"
           ],
-          "score": 4.83
+          "score": 3.93
         },
         {
           "provider": "Hewynn",
@@ -24047,33 +24065,11 @@
           "score": 3.75
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 3.2399999999999998
-        },
-        {
-          "provider": "Thador",
-          "reasons": [
-            "Energy via Energy (single target, high) `signature fuel`"
-          ],
-          "score": 3.2399999999999998
-        },
-        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 3.1875
-        },
-        {
-          "provider": "Lyca",
-          "reasons": [
-            "ATK SPD via ATK SPD (all units, low) `signature fuel`",
-            "Energy via Energy (all units, low) `signature fuel`"
-          ],
-          "score": 2.58
         },
         {
           "provider": "Dunlingr",
@@ -27977,6 +27973,10 @@
           "name": "Carolina"
         },
         {
+          "score": 16.923214285714288,
+          "name": "Shemira"
+        },
+        {
           "score": 16.521428571428572,
           "name": "Indris"
         },
@@ -28015,10 +28015,6 @@
         {
           "score": 7.521428571428572,
           "name": "Rhys"
-        },
-        {
-          "score": 7.521428571428572,
-          "name": "Shemira"
         },
         {
           "score": 7.521428571428572,
@@ -30172,6 +30168,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 7.59375,
+          "name": "Shemira"
+        },
+        {
           "score": 3.375,
           "name": "Lucius"
         }
@@ -30792,6 +30792,10 @@
           "name": "Dionel"
         },
         {
+          "score": 24.63942857142857,
+          "name": "Shemira"
+        },
+        {
           "score": 23.581457142857143,
           "name": "Alsa"
         },
@@ -30916,10 +30920,6 @@
           "name": "Seth"
         },
         {
-          "score": 12.450857142857142,
-          "name": "Shemira"
-        },
-        {
           "score": 11.625,
           "name": "Kulu"
         },
@@ -31020,6 +31020,10 @@
           "name": "Viperian"
         },
         {
+          "score": 8.61,
+          "name": "Marcille"
+        },
+        {
           "score": 7.893000000000001,
           "name": "Soren"
         },
@@ -31050,10 +31054,6 @@
         {
           "score": 5.91,
           "name": "Lamentis"
-        },
-        {
-          "score": 5.91,
-          "name": "Marcille"
         },
         {
           "score": 5.91,
@@ -31980,6 +31980,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 33.777,
+          "name": "Shemira"
+        },
+        {
           "score": 18.6954,
           "name": "Kordan"
         },
@@ -31998,10 +32002,6 @@
         {
           "score": 15.011999999999999,
           "name": "Lenya"
-        },
-        {
-          "score": 15.011999999999999,
-          "name": "Shemira"
         },
         {
           "score": 15.011999999999999,
@@ -32084,6 +32084,10 @@
           "name": "Cecia"
         },
         {
+          "score": 7.289999999999999,
+          "name": "Marcille"
+        },
+        {
           "score": 6.401999999999999,
           "name": "Antandra"
         },
@@ -32110,10 +32114,6 @@
         {
           "score": 3.2399999999999998,
           "name": "Hugin"
-        },
-        {
-          "score": 3.2399999999999998,
-          "name": "Marcille"
         },
         {
           "score": 3.2399999999999998,
@@ -34476,7 +34476,7 @@
             "Energy via Energy (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
-          "score": 15.011999999999999
+          "score": 33.777
         },
         {
           "provider": "Lyca",
@@ -34485,7 +34485,7 @@
             "ATK SPD via ATK SPD (all units, low) `signature fuel`",
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
           ],
-          "score": 13.091142857142858
+          "score": 28.10507142857143
         },
         {
           "provider": "Ravion",
@@ -34494,7 +34494,30 @@
             "ATK SPD via Haste (multiple targets, average) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 12.450857142857142
+          "score": 24.63942857142857
+        },
+        {
+          "provider": "Thador",
+          "reasons": [
+            "Energy via Energy (single target, high) `signature fuel`",
+            "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
+          ],
+          "score": 20.108249999999998
+        },
+        {
+          "provider": "Pandora",
+          "reasons": [
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 16.923214285714288
+        },
+        {
+          "provider": "Hugin",
+          "reasons": [
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.420300000000001
         },
         {
           "provider": "Niru",
@@ -34505,27 +34528,11 @@
           "score": 9.0
         },
         {
-          "provider": "Thador",
+          "provider": "Phraesto",
           "reasons": [
-            "Energy via Energy (single target, high) `signature fuel`",
-            "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
+            "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
           ],
-          "score": 8.937
-        },
-        {
-          "provider": "Pandora",
-          "reasons": [
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 7.521428571428572
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`"
-          ],
-          "score": 6.4368
+          "score": 7.59375
         },
         {
           "provider": "Smokey & Meerky",
@@ -34533,7 +34540,7 @@
             "Energy via Energy (area, low) `signature fuel`",
             "ATK SPD via Haste (area, high) `signature fuel`"
           ],
-          "score": 5.454
+          "score": 7.209
         },
         {
           "provider": "Twins",
@@ -34541,7 +34548,7 @@
             "Energy via Energy (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
-          "score": 4.104
+          "score": 5.859
         },
         {
           "provider": "Lorsan",
@@ -34549,13 +34556,6 @@
             "ATK SPD via Haste (single target, high) `signature fuel`"
           ],
           "score": 4.05
-        },
-        {
-          "provider": "Phraesto",
-          "reasons": [
-            "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
-          ],
-          "score": 3.375
         },
         {
           "provider": "Hewynn",
@@ -35950,6 +35950,10 @@
           "name": "Baelran"
         },
         {
+          "score": 8.055,
+          "name": "Marcille"
+        },
+        {
           "score": 7.2603,
           "name": "Cecia"
         },
@@ -35958,12 +35962,12 @@
           "name": "Korin"
         },
         {
-          "score": 6.705,
-          "name": "Kazim"
+          "score": 7.209,
+          "name": "Shemira"
         },
         {
           "score": 6.705,
-          "name": "Marcille"
+          "name": "Kazim"
         },
         {
           "score": 6.705,
@@ -36024,10 +36028,6 @@
         {
           "score": 5.58,
           "name": "Velara"
-        },
-        {
-          "score": 5.454,
-          "name": "Shemira"
         },
         {
           "score": 4.6818,
@@ -38672,6 +38672,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 20.108249999999998,
+          "name": "Shemira"
+        },
+        {
           "score": 11.937,
           "name": "Lenya"
         },
@@ -38697,10 +38701,6 @@
         },
         {
           "score": 8.937,
-          "name": "Shemira"
-        },
-        {
-          "score": 8.937,
           "name": "Twins"
         },
         {
@@ -38710,6 +38710,10 @@
         {
           "score": 7.74,
           "name": "Valka"
+        },
+        {
+          "score": 7.289999999999999,
+          "name": "Marcille"
         },
         {
           "score": 6.6204,
@@ -38746,10 +38750,6 @@
         {
           "score": 3.2399999999999998,
           "name": "Hugin"
-        },
-        {
-          "score": 3.2399999999999998,
-          "name": "Marcille"
         },
         {
           "score": 3.2399999999999998,

@@ -5701,7 +5701,7 @@ Kazim also requires units **providing knock up**
 
 Kazim provides Haste to multiple targets `average` and ATK (Mythic+) to single targets `high`.
 
-**81** units include this provider among their top 6 synergy partners. Why the match is common:
+**80** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -6461,8 +6461,8 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 Laios provides ATK to multiple targets `low` — conditional (rare).
 
-- Marcille (4.8 / 5)
 - Shadewing (4.4 / 5)
+- Marcille (3.9 / 5)
 
 ### Units that can act as a replacement for Laios
 
@@ -6918,7 +6918,7 @@ Common buffers are **Ravion**, **Rowan**, or **Lyca**.
 
 Lorsan provides Haste to single targets `average`.
 
-**52** units include this provider among their top 6 synergy partners. Why the match is common:
+**51** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -7655,7 +7655,7 @@ Common buffers are **Ravion**, **Rowan**, or **Hugin**.
 
 Lyca provides ATK SPD to all units `low` and Energy to all units `low`.
 
-**29** units include this provider among their top 6 synergy partners. Why the match is common:
+**30** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -7664,8 +7664,8 @@ Lyca provides ATK SPD to all units `low` and Energy to all units `low`.
 These are the **4** strongest pairings: 
 
 - Indris (5.0 / 5)
+- Shemira (4.3 / 5)
 - Carolina (4.1 / 5)
-- Dionel (3.7 / 5)
 - Zorya (3.5 / 5)
 
 ### Units that can act as a replacement for Lyca
@@ -7773,7 +7773,7 @@ recover extra energy while buffed by allies
 ### Units improving Marcille
 
 Look for units providing: `ATK SPD / Haste` `Energy`  
-Common buffers are **Hugin**, **Smokey & Meerky**, or **Ravion**.
+Common buffers are **Hugin**, **Ravion**, or **Smokey & Meerky**.
 
 Marcille also requires specific **named allies**
 
@@ -8843,8 +8843,8 @@ Niru also requires enemies **to be defeated**
 
 ### Units benefitting most from Niru
 
-- Shemira (3.4 / 5)
 - Daimon (3.0 / 5)
+- Shemira (2.1 / 5)
 
 ### Units that can act as a replacement for Niru
 
@@ -9058,8 +9058,8 @@ These are the **4** strongest pairings:
 
 - Carolina (3.9 / 5)
 - Indris (3.6 / 5)
+- Shemira (3.0 / 5)
 - Alsa (2.5 / 5)
-- Lenya (2.4 / 5)
 
 ### Units that can act as a replacement for Pandora
 
@@ -9709,6 +9709,7 @@ Common buffers are **Rowan**, **Isabella**, or **Mikola**.
 Phraesto provides Damage taken to single targets `low`.
 
 - Lucius (2.1 / 5)
+- Shemira (1.9 / 5)
 
 ### Units that can act as a replacement for Phraesto
 
@@ -10331,8 +10332,8 @@ Rowan provides Direct healing in an area `low`, Energy in an area `high`, Magic 
 
 These are the **4** strongest pairings: 
 
+- Shemira (5.0 / 5)
 - Kordan (5.0 / 5)
-- Koko (4.5 / 5)
 - Arden (4.0 / 5)
 - Zorya (3.3 / 5)
 
@@ -11251,11 +11252,11 @@ each hero defeat spawns an extra summon
 Look for units providing: `Shield` `Energy`  
 Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
+- **Pandora**
+  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Niru**
   - Named ally grant: Phys DEF (high)
   - Named ally grant: Magic DEF (high)
-- **Pandora**
-  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Phraesto**
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 - **Dunlingr**
@@ -12647,7 +12648,7 @@ These are the **4** strongest pairings:
 
 - Lucius (4.5 / 5)
 - Lumont (3.8 / 5)
-- Rhys (3.7 / 5)
+- Shemira (3.4 / 5)
 - Lenya (2.9 / 5)
 
 ### Units that can act as a replacement for Thador

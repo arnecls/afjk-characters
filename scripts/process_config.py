@@ -36,6 +36,10 @@ def apply_config(config: dict) -> None:
         ("signature_fuel_speed_mult", "SIGNATURE_FUEL_SPEED_MULT"),
         ("signature_fuel_energy_mult", "SIGNATURE_FUEL_ENERGY_MULT"),
         ("energy_synergy_score_mult", "ENERGY_SYNERGY_SCORE_MULT"),
+        (
+            "high_damage_ult_energy_pref_mult",
+            "HIGH_DAMAGE_ULT_ENERGY_PREF_MULT",
+        ),
         ("implicit_fuel_base", "IMPLICIT_FUEL_BASE"),
         ("early_battle_energy_ult_mult", "EARLY_BATTLE_ENERGY_ULT_MULT"),
         ("defining_tier_score_mult", "DEFINING_TIER_SCORE_MULT"),

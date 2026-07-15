@@ -359,5 +359,166 @@ class SynergySelfFilterTests(unittest.TestCase):
         self.assertEqual(reasons, [])
 
 
+class UltimateEnergyPreferenceTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self._saved_tags = gen._BEHAVIOR_TAGS
+        self._saved_pref = gen.HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
+
+    def tearDown(self) -> None:
+        gen._BEHAVIOR_TAGS = self._saved_tags
+        gen.HIGH_DAMAGE_ULT_ENERGY_PREF_MULT = self._saved_pref
+
+    def _behavior(self, *, ult_speed: str = "slow") -> SimpleNamespace:
+        return SimpleNamespace(
+            movement="moving",
+            movement_note="",
+            casting_speed=ult_speed,
+            signature_skill_name="Ultimate",
+            signature_skill_is_ult=True,
+            signature_skill_speed=ult_speed,
+            synergy_signature_speed=ult_speed,
+            synergy_signature_is_ult=True,
+            ult_speed=ult_speed,
+            non_ult_speed="average",
+            avg_attack_range=2.0,
+            placement_constraints=[],
+            skill_overview={},
+        )
+
+    def _receiver(self, name: str) -> SimpleNamespace:
+        return SimpleNamespace(
+            title=f"{name} - Mage",
+            benefit_stats=[],
+            effects=[],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+
+    def _buff_provider(self, label: str) -> SimpleNamespace:
+        return SimpleNamespace(
+            title="Buffer - Support",
+            benefit_stats=[],
+            effects=[
+                SimpleNamespace(
+                    category="buff",
+                    label=label,
+                    targeting="Multiple targets",
+                    magnitude="high",
+                    conditional=None,
+                    qualitative=f"grants allies {label.lower()}",
+                )
+            ],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+
+    def _battle_start_energy_provider(self) -> SimpleNamespace:
+        return SimpleNamespace(
+            title="Battery - Support",
+            benefit_stats=[],
+            effects=[],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+            skill_chunks=[
+                (
+                    "base",
+                    "When a battle starts, grants all allies 120 Energy.",
+                    "Skill1",
+                )
+            ],
+        )
+
+    def test_receiver_prefers_ultimate_energy_for_tagged_carries(self) -> None:
+        gen._BEHAVIOR_TAGS = {
+            "Frieren": frozenset({"high-damage-ult"}),
+            "Marcille": frozenset({"high-damage-ult"}),
+            "Shemira": frozenset({"high-damage-ult"}),
+            "Natsu": frozenset(
+                {"high-damage-ult", "high-initial-energy"}
+            ),
+        }
+        self.assertTrue(
+            gen.receiver_prefers_ultimate_energy(self._receiver("Frieren"))
+        )
+        self.assertTrue(
+            gen.receiver_prefers_ultimate_energy(self._receiver("Marcille"))
+        )
+        self.assertTrue(
+            gen.receiver_prefers_ultimate_energy(self._receiver("Shemira"))
+        )
+        self.assertFalse(
+            gen.receiver_prefers_ultimate_energy(self._receiver("Natsu"))
+        )
+
+    def test_battle_start_ult_excluded_from_ultimate_energy_preference(self) -> None:
+        gen._BEHAVIOR_TAGS = {
+            "Carry": frozenset({"high-damage-ult", "battle-start-ult"}),
+        }
+        self.assertFalse(
+            gen.receiver_prefers_ultimate_energy(self._receiver("Carry"))
+        )
+
+    def test_energy_beats_haste_for_qualifying_receiver(self) -> None:
+        gen._BEHAVIOR_TAGS = {"Carry": frozenset({"high-damage-ult"})}
+        receiver = self._receiver("Carry")
+        behavior = self._behavior(ult_speed="slow")
+        haste_score, _ = gen.score_synergy(
+            self._buff_provider("Haste"),
+            receiver,
+            signature_speed="slow",
+            receiver_behavior=behavior,
+        )
+        energy_score, _ = gen.score_synergy(
+            self._buff_provider("Energy"),
+            receiver,
+            signature_speed="slow",
+            receiver_behavior=behavior,
+        )
+        self.assertGreater(energy_score, haste_score)
+
+    def test_energy_preference_not_applied_without_tag(self) -> None:
+        receiver = self._receiver("Carry")
+        behavior = self._behavior(ult_speed="slow")
+        gen._BEHAVIOR_TAGS = {"Carry": frozenset({"high-damage-ult"})}
+        tagged_score, _ = gen.score_synergy(
+            self._buff_provider("Energy"),
+            receiver,
+            signature_speed="slow",
+            receiver_behavior=behavior,
+        )
+        gen._BEHAVIOR_TAGS = {}
+        untagged_score, _ = gen.score_synergy(
+            self._buff_provider("Energy"),
+            receiver,
+            signature_speed="slow",
+            receiver_behavior=behavior,
+        )
+        self.assertGreater(tagged_score, untagged_score)
+
+    def test_early_battle_energy_gets_ultimate_carry_boost(self) -> None:
+        gen._BEHAVIOR_TAGS = {"Carry": frozenset({"high-damage-ult"})}
+        receiver = self._receiver("Carry")
+        behavior = self._behavior(ult_speed="slow")
+        provider = self._battle_start_energy_provider()
+        boosted, _ = gen.score_early_battle_energy_synergy(
+            provider, receiver, behavior
+        )
+        gen.HIGH_DAMAGE_ULT_ENERGY_PREF_MULT = 1.0
+        baseline, _ = gen.score_early_battle_energy_synergy(
+            provider, receiver, behavior
+        )
+        self.assertGreater(boosted, baseline)
+        self.assertGreater(boosted, 0.0)
+
+
 if __name__ == "__main__":
     unittest.main()

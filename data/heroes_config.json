@@ -26,6 +26,7 @@
       "fast": 1.0
     },
     "energy_synergy_score_mult": 0.72,
+    "high_damage_ult_energy_pref_mult": 2.25,
     "implicit_fuel_base": 0.45,
     "early_battle_energy_ult_mult": {
       "slow": 1.25,

@@ -459,7 +459,11 @@ reviewing or fixing matches, work through both heroes in this order.
    receiver's effective synergy signature speed (`SIGNATURE_FUEL_SPEED_MULT`:
    slow 1.6×, average 1.2×, fast 1.0×). Energy recovery uses a lighter
    `SIGNATURE_FUEL_ENERGY_MULT` (slow 1.3×) plus `ENERGY_SYNERGY_SCORE_MULT`
-   (0.72×) so batteries do not dominate lists. Slow/average effective speeds
+   (0.72×) so batteries do not dominate lists. **High-damage ultimate
+   carries:** receivers tagged `high-damage-ult` without `high-initial-energy`
+   or `battle-start-ult` get `HIGH_DAMAGE_ULT_ENERGY_PREF_MULT` (2.25×) on
+   ally Energy (ongoing and battle-start) so comparable batteries outrank
+   Haste. Slow/average effective speeds
    also implicitly value Energy and ATK SPD at `IMPLICIT_FUEL_BASE` (0.45×)
    when not in benefit stats.    Buffability
    is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in

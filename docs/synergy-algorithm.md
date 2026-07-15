@@ -54,6 +54,11 @@ Heroes rely heavily on their "Signature Skill" (often their Ultimate). If a rece
 
 *Note: Energy recovery has a global 0.72× penalty to prevent "battery" heroes (like Rowan) from dominating every single synergy list.*
 
+### High-Damage Ultimate Carries
+Heroes tagged **`high-damage-ult`** whose ultimate is their main damage spike—but who lack **`high-initial-energy`** or **`battle-start-ult`**—benefit more from ally Energy than from comparable Haste. For these receivers only, ally Energy (ongoing buffs and battle-start grants) receives an extra **2.25×** multiplier so batteries rank above Haste providers when effects are otherwise similar. Stronger Haste buffs or multi-effect providers can still win overall.
+
+Current tagged examples: Frieren, Marcille, Shemira. Natsu has both `high-damage-ult` and `high-initial-energy`, so this preference does not apply.
+
 ### Implicit Fuel
 Even if a hero doesn't explicitly list Energy or ATK SPD as a needed stat, if their signature skill is slow or average, the algorithm will still value these buffs at a reduced rate (0.45× base) because every hero benefits from casting their main skill faster.
 

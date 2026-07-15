@@ -121,6 +121,13 @@ IMPLICIT_FUEL_STATS = ("Energy", "ATK SPD")
 # Ally energy granted at or right after battle start (Pandora box, Lyca, Thador).
 EARLY_BATTLE_ENERGY_ULT_MULT = {"slow": 1.25, "average": 1.0, "fast": 0.85}
 
+# High-damage-ultimate carries without fast initial energy prefer batteries over
+# Haste when effects are otherwise comparable (see receiver_prefers_ultimate_energy).
+HIGH_DAMAGE_ULT_TAG = "high-damage-ult"
+HIGH_INITIAL_ENERGY_TAG = "high-initial-energy"
+BATTLE_START_ULT_TAG = "battle-start-ult"
+HIGH_DAMAGE_ULT_ENERGY_PREF_MULT = 2.25
+
 _BATTLE_START_RE = re.compile(
     r"when a battle starts|at (?:the )?start of (?:a )?battle|"
     r"during battle preparation|"
@@ -566,6 +573,19 @@ def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
     )
 
 
+def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
+    """True when a high-damage ultimate carry still needs ally Energy to cast."""
+    curated = _rs.curated_display_name(short_name(receiver.title))
+    tags = _load_behavior_tags().get(curated, frozenset())
+    if HIGH_DAMAGE_ULT_TAG not in tags:
+        return False
+    if HIGH_INITIAL_ENERGY_TAG in tags:
+        return False
+    if BATTLE_START_ULT_TAG in tags:
+        return False
+    return True
+
+
 def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
     """True when Energy recovery is already scored via early-battle path."""
     if effect.label != "Energy":
@@ -606,6 +626,8 @@ def score_early_battle_energy_synergy(
     pts, detail = match
     pts *= EARLY_BATTLE_ENERGY_ULT_MULT.get(receiver_behavior.ult_speed, 1.0)
     pts *= ENERGY_SYNERGY_SCORE_MULT
+    if receiver_prefers_ultimate_energy(receiver):
+        pts *= HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
     fuel_tag = (
         SIGNATURE_FUEL_MARKER
         if receiver_behavior.synergy_signature_is_ult
@@ -1549,6 +1571,8 @@ def score_synergy(
                     continue
                 pts *= ENERGY_SYNERGY_SCORE_MULT
                 pts *= SIGNATURE_FUEL_ENERGY_MULT.get(signature_speed, 1.0)
+                if receiver_prefers_ultimate_energy(receiver):
+                    pts *= HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
                 if is_implicit:
                     pts *= IMPLICIT_FUEL_BASE
             elif effect.label in SIGNATURE_FUEL_LABELS:
