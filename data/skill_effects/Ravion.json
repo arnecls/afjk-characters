@@ -397,8 +397,8 @@
               "tier": "supreme+",
               "immunity_type": "unaffected",
               "timing": "conditional",
-              "targeting_label": "Self",
-              "target": "self",
+              "targeting_label": "Single target",
+              "target": "ally",
               "area": "single",
               "target_count": 1
             }

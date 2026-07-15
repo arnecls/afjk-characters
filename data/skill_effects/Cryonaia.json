@@ -103,7 +103,7 @@
                 }
               ],
               "duration": 6,
-              "tick": 1.0
+              "tick": 0.5
             }
           ],
           "summon_effects": [],

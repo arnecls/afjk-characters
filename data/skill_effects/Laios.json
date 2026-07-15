@@ -156,11 +156,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -180,11 +181,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -204,11 +206,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -228,11 +231,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",

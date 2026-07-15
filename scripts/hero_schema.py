@@ -606,6 +606,7 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
                     area_count=getattr(eff, "area_count", None),
                     target_count=getattr(eff, "target_count", None),
                     duration=getattr(eff, "duration", None),
+                    tick=getattr(eff, "tick", None),
                     persistence=getattr(eff, "persistence", None),
                     conditional=eff.conditional,
                     conditions=list(getattr(eff, "conditions", None) or []),
@@ -639,6 +640,9 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
             cur.duration is None or eff_duration > cur.duration
         ):
             cur.duration = eff_duration
+        eff_tick = getattr(eff, "tick", None)
+        if eff_tick is not None:
+            cur.tick = eff_tick
         eff_persistence = getattr(eff, "persistence", None)
         if eff_persistence and (
             not getattr(cur, "persistence", None)
@@ -866,12 +870,23 @@ def effect_to_schema(
                 out, _resolve_effect_numeric(effect, effect.label), effect.label
             )
             if out["type"] == "dot":
-                dur = _effect_duration(effect, effect.label)
-                if dur is not None:
-                    out["duration"] = max(1, int(float(dur)))
+                explicit_duration = getattr(effect, "duration", None)
+                if explicit_duration is not None:
+                    out["duration"] = explicit_duration
                 else:
-                    out["duration"] = _dot_duration_from_text(effect.qualitative)
-                out["tick"] = _dot_tick_from_text(effect.qualitative)
+                    dur = _effect_duration(effect, effect.label)
+                    if dur is not None:
+                        out["duration"] = max(1, int(float(dur)))
+                    else:
+                        out["duration"] = _dot_duration_from_text(
+                            effect.qualitative
+                        )
+                tick = getattr(effect, "tick", None)
+                out["tick"] = (
+                    tick
+                    if tick is not None
+                    else _dot_tick_from_text(effect.qualitative)
+                )
                 if "value" not in out:
                     out["type"] = "heal"
                     out.pop("tick", None)
@@ -917,10 +932,15 @@ def effect_to_schema(
         if out["type"] == "dot":
             dur = getattr(effect, "duration", None)
             if dur is not None:
-                out["duration"] = max(1, int(float(dur)))
+                out["duration"] = dur
             else:
                 out["duration"] = _dot_duration_from_text(effect.qualitative)
-            out["tick"] = _dot_tick_from_text(effect.qualitative)
+            tick = getattr(effect, "tick", None)
+            out["tick"] = (
+                tick
+                if tick is not None
+                else _dot_tick_from_text(effect.qualitative)
+            )
         return out
 
     out["type"] = "buff"
@@ -952,6 +972,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
     schema_conditions = list(effect.get("conditions") or [])
     spatial = _legacy_spatial_from_schema(effect)
     duration = effect.get("duration")
+    tick = effect.get("tick")
     persistence = effect.get("persistence")
 
     if etype == "crowd_control":
@@ -993,6 +1014,8 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
             **spatial,
         )
 
@@ -1051,6 +1074,8 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
             **spatial,
         )
 

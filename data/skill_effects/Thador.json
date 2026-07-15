@@ -209,7 +209,7 @@
                 }
               ],
               "duration": 2,
-              "tick": 1.0
+              "tick": 0.5
             },
             {
               "tier": "mythic+",

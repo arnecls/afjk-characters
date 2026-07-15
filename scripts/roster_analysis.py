@@ -23,7 +23,7 @@ sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io
 
 CACHE_PATH = io.DATA / ".roster_analysis_cache.pkl"
-CACHE_VERSION = 59
+CACHE_VERSION = 60
 
 _rs: Any = None
 _gen: Any = None
@@ -103,7 +103,12 @@ def _load_cache(fingerprint: str) -> RosterAnalysis | None:
 
 
 def _save_cache(fingerprint: str, analysis: RosterAnalysis) -> None:
-    CACHE_PATH.write_bytes(pickle.dumps((fingerprint, analysis)))
+    sys.modules["rewrite_summaries"] = analysis_modules()[0]
+    try:
+        payload = pickle.dumps((fingerprint, analysis))
+    except pickle.PicklingError:
+        return
+    CACHE_PATH.write_bytes(payload)
 
 
 def _build_roster_analysis(

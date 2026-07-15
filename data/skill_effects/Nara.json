@@ -49,33 +49,6 @@
           "special_provides": [],
           "special_requires": []
         },
-        "mythic+": {
-          "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 8.0
-                }
-              ]
-            }
-          ],
-          "summon_effects": [],
-          "immunities": [],
-          "special_provides": [],
-          "special_requires": []
-        },
         "supreme+": {
           "effects": [
             {
@@ -269,11 +242,31 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",

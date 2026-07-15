@@ -147,12 +147,12 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
             any("behavior tag not in sidecar: Pandora" in e for e in errors)
         )
 
-    def test_provider_membership_is_thirty_four(self):
+    def test_provider_membership_is_thirty_five(self):
         tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
         tagged = [
             name for name, vals in tags.items() if bp.TEMPORARY_STAT_BUFFER_TAG in vals
         ]
-        self.assertEqual(len(tagged), 34)
+        self.assertEqual(len(tagged), 35)
 
     def test_removed_false_positives_are_not_tagged(self):
         tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())

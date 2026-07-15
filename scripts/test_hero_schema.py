@@ -696,6 +696,33 @@ class RoundTripTests(unittest.TestCase):
         self.assertEqual(ult_req, [])
         self.assertTrue(ex_req)
 
+    def test_nara_eerie_execution_owns_max_hp_shockwave(self):
+        processed = io.load_processed()
+        eerie = processed["heroes"]["Nara"]["skills"]["Eerie Execution"]
+        max_hp = [
+            effect
+            for effect in eerie["effects"]
+            if effect.get("type") == "damage"
+            and effect.get("damage_type") == "max_hp"
+        ]
+        self.assertEqual(len(max_hp), 1)
+        self.assertEqual(max_hp[0]["tier"], "mythic+")
+        self.assertEqual(max_hp[0]["value"][0]["value"], 15.0)
+        self.assertEqual(max_hp[0]["targeting_label"], "Area")
+
+    def test_nara_crimson_vengeance_keeps_only_physical_true_branches(self):
+        processed = io.load_processed()
+        crimson = processed["heroes"]["Nara"]["skills"]["Crimson Vengeance"]
+        damage_types = {
+            effect["damage_type"]
+            for effect in crimson["effects"]
+            if effect.get("type") == "damage"
+        }
+        self.assertIn("physical", damage_types)
+        self.assertIn("true", damage_types)
+        self.assertNotIn("max_hp", damage_types)
+        self.assertFalse({"true", "max_hp"} <= damage_types)
+
     def test_contess_supreme_rule_triggers(self):
         data = io.load_heroes_data()
         record = next(r for r in data["heroes"] if r.get("name") == "Contess")

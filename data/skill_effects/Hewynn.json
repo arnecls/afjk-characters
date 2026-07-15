@@ -9,11 +9,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "All units",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",

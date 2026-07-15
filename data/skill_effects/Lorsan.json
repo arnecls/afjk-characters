@@ -44,7 +44,7 @@
                 }
               ],
               "duration": 5,
-              "tick": 1.0
+              "tick": 0.5
             }
           ],
           "summon_effects": [],
@@ -93,9 +93,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "dot",
@@ -125,8 +125,8 @@
               "tier": "supreme+",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Self",
-              "target": "self",
+              "targeting_label": "Single target",
+              "target": "ally",
               "area": "single",
               "target_count": 1
             }

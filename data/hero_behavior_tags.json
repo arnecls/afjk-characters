@@ -412,7 +412,8 @@
   "Niru": [
     "ally-healer",
     "battle-start-ult",
-    "hp-scaling"
+    "hp-scaling",
+    "temporary-stat-buffer"
   ],
   "Odie": [
     "dot-specialist",

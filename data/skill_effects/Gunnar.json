@@ -285,9 +285,9 @@
           "effects": [
             {
               "tier": "ex+15",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",

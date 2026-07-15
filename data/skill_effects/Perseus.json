@@ -267,10 +267,10 @@
               "tier": "ex+10",
               "immunity_type": "unaffected",
               "timing": "conditional",
-              "targeting_label": "Multiple targets",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
-              "target_count": 3
+              "target_count": 1
             }
           ],
           "special_provides": [],

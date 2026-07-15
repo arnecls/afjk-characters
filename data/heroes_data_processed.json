@@ -549,7 +549,7 @@
                   "value": 330.0
                 }
               ],
-              "duration": 1,
+              "duration": 1.5,
               "tick": 1.0
             }
           ],
@@ -809,8 +809,8 @@
                   "value": 60.0
                 }
               ],
-              "duration": 8,
-              "tick": 1.0
+              "duration": 8.0,
+              "tick": 0.5
             },
             {
               "tier": "base",
@@ -2529,7 +2529,7 @@
                   "value": 210.0
                 }
               ],
-              "duration": 7,
+              "duration": 7.0,
               "tick": 1.0
             }
           ],
@@ -2606,7 +2606,7 @@
                   "value": 65.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -4822,7 +4822,7 @@
                   "value": 2.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -5309,8 +5309,8 @@
                   "value": 320.0
                 }
               ],
-              "duration": 4,
-              "tick": 1.0
+              "duration": 5.0,
+              "tick": 0.25
             },
             {
               "tier": "base",
@@ -5973,7 +5973,7 @@
                   "value": 180.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             }
           ],
@@ -6375,7 +6375,7 @@
                   "value": 140.0
                 }
               ],
-              "duration": 4,
+              "duration": 4.0,
               "tick": 1.0
             },
             {
@@ -6918,7 +6918,7 @@
                   "value": 320.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             }
           ],
@@ -8911,7 +8911,7 @@
                   "value": 185.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -9296,7 +9296,7 @@
                   "value": 80.0
                 }
               ],
-              "duration": 4,
+              "duration": 4.0,
               "tick": 1.0
             },
             {
@@ -9856,7 +9856,7 @@
                   "value": 666.0
                 }
               ],
-              "duration": 2,
+              "duration": -1.0,
               "tick": 1.0
             },
             {
@@ -10315,7 +10315,7 @@
                   "value": 30.0
                 }
               ],
-              "duration": 2,
+              "duration": -1.0,
               "tick": 1.0
             }
           ],
@@ -10634,8 +10634,8 @@
                   "value": 70.0
                 }
               ],
-              "duration": 6,
-              "tick": 1.0
+              "duration": 6.0,
+              "tick": 0.5
             }
           ],
           "cooldown": 12.0,
@@ -11057,8 +11057,8 @@
                   "value": 600.0
                 }
               ],
-              "duration": 5,
-              "tick": 1.0
+              "duration": 5.0,
+              "tick": 0.25
             },
             {
               "tier": "base",
@@ -13183,7 +13183,7 @@
                   "value": 240.0
                 }
               ],
-              "duration": 6,
+              "duration": 6.0,
               "tick": 1.0
             }
           ],
@@ -15498,8 +15498,8 @@
                   "value": 250.0
                 }
               ],
-              "duration": 1,
-              "tick": 1.0
+              "duration": 1.0,
+              "tick": 0.5
             }
           ],
           "skill_range": 1,
@@ -16060,9 +16060,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "dot",
@@ -16074,14 +16074,14 @@
                   "value": 50.0
                 }
               ],
-              "duration": 2,
+              "duration": 5.0,
               "tick": 1.0
             }
           ],
           "cooldown": 11.0,
           "skill_card_tags": [
             {
-              "label": "HoT — Self",
+              "label": "HoT",
               "polarity": "buff"
             }
           ]
@@ -16932,7 +16932,7 @@
                   "value": 300.0
                 }
               ],
-              "duration": 3,
+              "duration": 3.0,
               "tick": 1.0
             }
           ],
@@ -17104,8 +17104,8 @@
                   "value": 300.0
                 }
               ],
-              "duration": 5,
-              "tick": 1.0
+              "duration": 5.0,
+              "tick": 0.5
             },
             {
               "tier": "base",
@@ -18149,7 +18149,7 @@
                   "value": 25.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -18620,7 +18620,7 @@
                   "value": 160.0
                 }
               ],
-              "duration": 3,
+              "duration": 3.0,
               "tick": 1.0
             },
             {
@@ -18973,7 +18973,7 @@
                   "value": 110.0
                 }
               ],
-              "duration": 12,
+              "duration": 12.0,
               "tick": 1.0
             },
             {
@@ -19260,7 +19260,7 @@
                   "value": 550.0
                 }
               ],
-              "duration": 15,
+              "duration": 15.0,
               "tick": 1.0
             }
           ],
@@ -19573,9 +19573,9 @@
             },
             {
               "tier": "ex+15",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -19600,7 +19600,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Invincible — Self (EX+15)",
+              "label": "Invincible (EX+15)",
               "polarity": "buff"
             }
           ]
@@ -19988,8 +19988,8 @@
                   "value": 550.0
                 }
               ],
-              "duration": 4,
-              "tick": 1.0
+              "duration": 4.0,
+              "tick": 0.25
             },
             {
               "tier": "base",
@@ -21353,9 +21353,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "dot",
@@ -21367,14 +21367,14 @@
                   "value": 160.0
                 }
               ],
-              "duration": 6,
+              "duration": 6.0,
               "tick": 1.0
             }
           ],
           "cooldown": 12.0,
           "skill_card_tags": [
             {
-              "label": "HoT — Self",
+              "label": "HoT",
               "polarity": "buff"
             }
           ]
@@ -21466,9 +21466,9 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -21486,7 +21486,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             {
-              "label": "Invincible — Self",
+              "label": "Invincible",
               "polarity": "buff"
             }
           ]
@@ -21694,11 +21694,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "All units",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -21708,7 +21709,7 @@
                   "value": 115.0
                 }
               ],
-              "duration": 9,
+              "duration": 9.0,
               "tick": 1.0
             },
             {
@@ -21726,7 +21727,7 @@
           "initial_energy": 200.0,
           "skill_card_tags": [
             {
-              "label": "HoT — Self",
+              "label": "HoT — All units",
               "polarity": "buff"
             },
             {
@@ -22709,7 +22710,7 @@
                   "value": 100.0
                 }
               ],
-              "duration": 2,
+              "duration": 8.0,
               "tick": 1.0
             }
           ],
@@ -26436,9 +26437,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -26493,7 +26494,7 @@
           "initial_cooldown": 4.0,
           "skill_card_tags": [
             {
-              "label": "Direct healing — Self",
+              "label": "Direct healing",
               "polarity": "buff"
             },
             {
@@ -29141,11 +29142,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -29165,11 +29167,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -29189,11 +29192,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -29213,11 +29217,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -29233,7 +29238,7 @@
                   "value": 100.0
                 }
               ],
-              "duration": 2,
+              "duration": 8.0,
               "tick": 1.0
             },
             {
@@ -29266,7 +29271,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             {
-              "label": "HoT — Self",
+              "label": "HoT — Area",
               "polarity": "buff"
             },
             {
@@ -29278,15 +29283,15 @@
               "polarity": "buff"
             },
             {
-              "label": "Haste — Self",
+              "label": "Haste — Area",
               "polarity": "buff"
             },
             {
-              "label": "Magic DEF — Self",
+              "label": "Magic DEF — Area",
               "polarity": "buff"
             },
             {
-              "label": "Phys DEF — Self",
+              "label": "Phys DEF — Area",
               "polarity": "buff"
             },
             {
@@ -31405,8 +31410,8 @@
                   "value": 70.0
                 }
               ],
-              "duration": 5,
-              "tick": 1.0
+              "duration": 5.0,
+              "tick": 0.5
             }
           ],
           "cooldown": 1.0,
@@ -31516,9 +31521,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "dot",
@@ -31530,7 +31535,7 @@
                   "value": 90.0
                 }
               ],
-              "duration": 6,
+              "duration": 6.0,
               "tick": 1.0
             },
             {
@@ -31538,8 +31543,8 @@
               "tier": "supreme+",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Self",
-              "target": "self",
+              "targeting_label": "Single target",
+              "target": "ally",
               "area": "single",
               "target_count": 1
             }
@@ -31548,7 +31553,7 @@
           "initial_cooldown": 3.0,
           "skill_card_tags": [
             {
-              "label": "HoT — Self",
+              "label": "HoT",
               "polarity": "buff"
             },
             {
@@ -31556,7 +31561,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Unaffected — Self (Supreme+)"
+              "label": "Unaffected (Supreme+)"
             }
           ]
         },
@@ -32603,9 +32608,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -32621,7 +32626,7 @@
           ],
           "skill_card_tags": [
             {
-              "label": "Direct healing — Self",
+              "label": "Direct healing",
               "polarity": "buff"
             }
           ]
@@ -33421,7 +33426,7 @@
                   "value": 150.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -34383,7 +34388,7 @@
                   "value": 7.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             }
           ],
@@ -35278,9 +35283,9 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -35330,7 +35335,7 @@
               "label": "Magic (EX+10)"
             },
             {
-              "label": "Direct healing — Self",
+              "label": "Direct healing",
               "polarity": "buff"
             },
             {
@@ -36355,7 +36360,7 @@
                   "value": 60.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.5,
               "tick": 1.0
             },
             {
@@ -37076,7 +37081,7 @@
                   "value": 45.0
                 }
               ],
-              "duration": 10,
+              "duration": 10.0,
               "tick": 1.0
             }
           ],
@@ -37449,25 +37454,6 @@
               ]
             },
             {
-              "tier": "mythic+",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 8.0
-                }
-              ]
-            },
-            {
               "tier": "supreme+",
               "targeting_label": "Self",
               "is_max_known": true,
@@ -37494,9 +37480,6 @@
             },
             {
               "label": "True damage"
-            },
-            {
-              "label": "Max HP-based damage (Mythic+)"
             },
             {
               "label": "Energy — Self (Supreme+)",
@@ -37783,11 +37766,31 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -37802,7 +37805,10 @@
           "skill_range": 3,
           "skill_card_tags": [
             {
-              "label": "Direct healing — Self",
+              "label": "Max HP-based damage"
+            },
+            {
+              "label": "Direct healing — Area",
               "polarity": "buff"
             }
           ]
@@ -38548,8 +38554,8 @@
                   "value": 20.0
                 }
               ],
-              "duration": 2,
-              "tick": 1.0
+              "duration": -1.0,
+              "tick": 0.5
             }
           ],
           "skill_range": 3,
@@ -38596,8 +38602,8 @@
                   "value": 80.0
                 }
               ],
-              "duration": 5,
-              "tick": 1.0
+              "duration": 5.0,
+              "tick": 0.5
             }
           ],
           "skill_card_tags": [
@@ -39612,7 +39618,7 @@
                   "value": 600.0
                 }
               ],
-              "duration": 1,
+              "duration": 1.0,
               "tick": 1.0
             },
             {
@@ -40057,9 +40063,9 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -40075,9 +40081,9 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -40094,11 +40100,11 @@
           ],
           "skill_card_tags": [
             {
-              "label": "Magic DEF — Self",
+              "label": "Magic DEF",
               "polarity": "buff"
             },
             {
-              "label": "Phys DEF — Self",
+              "label": "Phys DEF",
               "polarity": "buff"
             },
             {
@@ -40163,10 +40169,7 @@
       "damage_magnitudes": {
         "hp_loss": "low"
       },
-      "benefit_stats": [
-        "physical_def",
-        "magic_def"
-      ],
+      "benefit_stats": [],
       "scalar_stat_shares": {
         "atk": 1.0
       },
@@ -40311,7 +40314,7 @@
                   "value": 250.0
                 }
               ],
-              "duration": 2,
+              "duration": -1.0,
               "tick": 1.0
             }
           ],
@@ -40755,8 +40758,8 @@
                   "value": 70.0
                 }
               ],
-              "duration": 5,
-              "tick": 1.0
+              "duration": 5.0,
+              "tick": 0.5
             },
             {
               "tier": "base",
@@ -40844,9 +40847,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -40857,7 +40860,7 @@
           ],
           "skill_card_tags": [
             {
-              "label": "Energy — Self",
+              "label": "Energy",
               "polarity": "buff"
             },
             {
@@ -42671,10 +42674,10 @@
               "tier": "ex+10",
               "immunity_type": "unaffected",
               "timing": "conditional",
-              "targeting_label": "Multiple targets",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
-              "target_count": 3
+              "target_count": 1
             }
           ],
           "skill_range": 3,
@@ -42684,7 +42687,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Unaffected — Multiple targets (EX+10)"
+              "label": "Unaffected — Self (EX+10)"
             }
           ]
         },
@@ -42941,7 +42944,7 @@
                   "value": 180.0
                 }
               ],
-              "duration": 8,
+              "duration": 8.0,
               "tick": 1.0
             },
             {
@@ -42960,7 +42963,7 @@
                   "value": 180.0
                 }
               ],
-              "duration": 2,
+              "duration": 8.0,
               "tick": 1.0
             }
           ],
@@ -43617,7 +43620,7 @@
                   "value": 50.0
                 }
               ],
-              "duration": 6,
+              "duration": 6.0,
               "tick": 1.0
             }
           ],
@@ -45026,8 +45029,8 @@
               "tier": "supreme+",
               "immunity_type": "unaffected",
               "timing": "conditional",
-              "targeting_label": "Self",
-              "target": "self",
+              "targeting_label": "Single target",
+              "target": "ally",
               "area": "single",
               "target_count": 1
             }
@@ -45038,7 +45041,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Unaffected — Self"
+              "label": "Unaffected"
             }
           ]
         }
@@ -47158,7 +47161,7 @@
                   "value": 1200.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -49500,7 +49503,7 @@
                   "value": 80.0
                 }
               ],
-              "duration": 10,
+              "duration": 10.0,
               "tick": 1.0
             },
             {
@@ -49609,7 +49612,7 @@
                   "value": 140.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             }
           ],
@@ -52346,7 +52349,7 @@
                   "value": 170.0
                 }
               ],
-              "duration": 2,
+              "duration": -1.0,
               "tick": 1.0
             },
             {
@@ -52672,7 +52675,7 @@
                   "value": 14.0
                 }
               ],
-              "duration": 1,
+              "duration": 10.0,
               "tick": 1.0
             },
             {
@@ -52944,7 +52947,7 @@
                   "value": 100.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -53979,9 +53982,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -54009,7 +54012,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             {
-              "label": "Damage taken",
+              "label": "Damage taken — Self",
               "polarity": "buff"
             },
             {
@@ -54045,9 +54048,9 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -54065,7 +54068,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             {
-              "label": "Haste",
+              "label": "Haste — Self",
               "polarity": "buff"
             }
           ]
@@ -55436,7 +55439,7 @@
                   "value": 110.0
                 }
               ],
-              "duration": 5,
+              "duration": 5.0,
               "tick": 1.0
             }
           ],
@@ -55585,7 +55588,7 @@
                   "value": 120.0
                 }
               ],
-              "duration": 3,
+              "duration": 3.0,
               "tick": 1.0
             },
             {
@@ -55612,7 +55615,7 @@
                   "value": 130.0
                 }
               ],
-              "duration": 3,
+              "duration": 3.0,
               "tick": 1.0
             }
           ],
@@ -56897,8 +56900,8 @@
                   "value": 560.0
                 }
               ],
-              "duration": 2,
-              "tick": 1.0
+              "duration": 2.0,
+              "tick": 0.5
             },
             {
               "tier": "mythic+",
@@ -57751,7 +57754,7 @@
                   "value": 10.0
                 }
               ],
-              "duration": 2,
+              "duration": -1.0,
               "tick": 1.0
             },
             {
@@ -58194,7 +58197,7 @@
                   "value": 15.0
                 }
               ],
-              "duration": 2,
+              "duration": -1.0,
               "tick": 1.0
             }
           ],
@@ -58563,7 +58566,7 @@
                   "value": 3.5
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {
@@ -63110,7 +63113,7 @@
                   "value": 100.0
                 }
               ],
-              "duration": 5,
+              "duration": 5.0,
               "tick": 1.0
             },
             {
@@ -63320,7 +63323,7 @@
                   "value": 7.0
                 }
               ],
-              "duration": 2,
+              "duration": 2.0,
               "tick": 1.0
             },
             {

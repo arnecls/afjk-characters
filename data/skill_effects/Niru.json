@@ -175,9 +175,9 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -193,9 +193,9 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
