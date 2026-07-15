@@ -127,15 +127,16 @@ Two-pass plan for auditing the whole roster. Do not mix scopes in one report.
 
 ### Source files (read in this order)
 
-1. `.cursor/AGENTS.md` — damage types, targeting, CC, buffs, stats,
+1. `.cursor/GLOSSARY.md` — terms and implementation pointers 
+2. `.cursor/AGENTS.md` — damage types, targeting, CC, buffs, stats,
    **Validating detection algorithms**
-2. `data/heroes_data_processed.json` — detected effects per skill slot
-3. `data/heroes_data.json` — `description`, `description_lite` (sanity check)
-4. `data/hero_play_overviews.json` — curated playstyle blurbs per hero (quick
+3. `.cursor/MACHANICS.md` — curated lists and extensions over AGENTS.md
+4. `data/heroes_data_processed.json` — detected effects per skill slot
+5. `data/heroes_data.json` — `description`, `description_lite` (sanity check)
+6. `data/hero_play_overviews.json` — curated playstyle blurbs per hero (quick
    identity check when skill text is ambiguous; cross-check against
    `description`, not a substitute for it)
-5. `data/schema/skills.schema.json` — effect labels and enums
-6. Prior reports in `docs/validation-*.md` — baselines and resolved items
+7. `data/schema/skills.schema.json` — effect labels and enums
 
 Optional: `docs/skill-analysis-pipeline.md` (why NLP is hard),
 `data/skill_effects/` (effect sidecars),
