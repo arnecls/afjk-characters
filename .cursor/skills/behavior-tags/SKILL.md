@@ -163,7 +163,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `energy-provider` | Grants Energy to **allies** or accelerates ally ulimates | Self energy recovery only |
 | `enemy-debuffer` | Meaningful **enemy** stat or combat debuffs as a core pattern | Self debuffs; ally-only kits with no enemy penalties; one minor stat shave |
 | `battlefield-modification` | Physical obstacles or map layout changes | Buff/debuff/terrain **zones** alone |
-| `summoner` | **Persistent** companions on the battlefield (targetable, can be destroyed) | Brief ult animations (flying blades, swords); **spell-form** summons (Mehira voidlings, Shemira ghosts) that cannot be targeted or destroyed |
+| `summoner` | **Battlefield summons** — independently acting combat units placed on or remaining on the battlefield beyond the cast animation (registry in `hero_summon_profiles.json`) | Transient attacks/effects (Sky Fish, magic leaves, Smashy strike); passive objects (Pandora's box); **spell-form** damage (Mehira voidlings, Shemira ghosts) |
 | `dot-specialist` | Recurring tick damage as a **primary** pattern | Stat debuffs without DoT; bind damage alone |
 | `life-drain` | HP sustain tied to **dealing damage** | Stat steal, shield regen, heal-on-shield |
 | `revive` | Brings **defeated allies** back | Self-survival (`cheat-death` instead) |

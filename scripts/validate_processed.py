@@ -30,6 +30,7 @@ sys.path.insert(0, str(SCRIPTS))
 import hero_schema as hs
 import heroes_io as io
 import skill_effects_store as ses
+import summoner_registry as sr
 
 HEROES_MD = ROOT / "Heroes.md"
 PROCESSED = io.HEROES_DATA_PROCESSED
@@ -496,6 +497,19 @@ def check_skill_effects_sidecars(
     return errors, warnings
 
 
+def check_summoner_registry(
+    raw: dict[str, Any],
+) -> list[str]:
+    tags_path = ROOT / "data" / "hero_behavior_tags.json"
+    behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
+    errors, _warnings = sr.check_summoner_consistency(
+        behavior_tags,
+        raw["heroes"],
+        ses.load_sidecar,
+    )
+    return errors
+
+
 def jsonschema_available() -> bool:
     try:
         import jsonschema  # noqa: F401
@@ -510,7 +524,7 @@ def main() -> int:
     parser.add_argument(
         "--fail-on",
         nargs="*",
-        default=["md_parity", "reanalysis", "schema", "skill_summary", "sidecar", "semantic"],
+        default=["md_parity", "reanalysis", "schema", "skill_summary", "sidecar", "summoner", "semantic"],
         help="Check groups that cause a non-zero exit when failing",
     )
     parser.add_argument(
@@ -554,6 +568,17 @@ def main() -> int:
             warnings["sidecar"] = sidecar_errors
         if sidecar_warnings:
             warnings["sidecar_lint"] = sidecar_warnings
+
+    if "summoner" in fail_on:
+        summoner_errors = check_summoner_registry(raw)
+        if summoner_errors:
+            errors.extend(summoner_errors)
+        else:
+            print("OK: summoner registry, tags, and sidecars aligned")
+    else:
+        summoner_errors = check_summoner_registry(raw)
+        if summoner_errors:
+            warnings["summoner"] = summoner_errors
 
     if "reanalysis" in fail_on:
         drift = check_reanalysis_parity(stored, fresh)

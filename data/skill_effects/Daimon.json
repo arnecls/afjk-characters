@@ -47,7 +47,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Daimon's guardian spirit fights alongside him in battle with normal attacks."
+            }
+          ],
           "special_requires": []
         }
       }

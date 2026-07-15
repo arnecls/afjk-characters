@@ -42,12 +42,6 @@
           "immunities": [],
           "special_provides": [
             {
-              "label": "Summoning",
-              "tier": "mythic+",
-              "targeting": "Single target",
-              "description": "When a battle starts, Mehira summons 3 voidlings around her."
-            },
-            {
               "label": "HP threshold strike",
               "tier": "mythic+",
               "targeting": "Single target",

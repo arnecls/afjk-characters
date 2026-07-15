@@ -128,7 +128,12 @@ just validate
 - **Polarity:** buff vs debuff via effect `type`, not label suffix.
 - **Fully ascended values:** strongest parseable number per effect across tiers; tier on each effect.
 - **Conditional:** encode in `conditions[]`; use `conditional (frequent|rare)` semantics from AGENTS.md for magnitude (downstream).
-- **Summon buffs:** `target` `own_summons` / `all_summons`; put in `summon_effects` tier bucket.
+- **Summon buffs:** `target` `own_summons` / `all_summons`; put in
+  `summon_effects` tier bucket.
+- **Summoning provides:** only for curated summoners in
+  `data/hero_summon_profiles.json`, at the listed section/tier. Battlefield
+  units beyond the cast animation qualify; transient attacks/effects and
+  passive objects do not.
 - **Immunities:** `type: immunity` in `immunities` array.
 - **Do not** edit `rewrite-summaries.py` regex tables for effect fixes (removed).
 

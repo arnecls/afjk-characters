@@ -1268,14 +1268,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Galahad",
-            "score": 0.6,
-            "matches": [
-              "ally-shielder",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Valen",
             "score": 0.5,
             "matches": [
@@ -1285,6 +1277,14 @@
           },
           {
             "name": "Gunnar",
+            "score": 0.48,
+            "matches": [
+              "ally-shielder",
+              "aoe-damage"
+            ]
+          },
+          {
+            "name": "Galahad",
             "score": 0.48,
             "matches": [
               "ally-shielder",
@@ -2610,15 +2610,15 @@
       "beneficiaries": [
         {
           "score": 12.0,
+          "name": "Berial"
+        },
+        {
+          "score": 12.0,
           "name": "Bryon"
         },
         {
           "score": 12.0,
           "name": "Cecia"
-        },
-        {
-          "score": 12.0,
-          "name": "Chippy"
         },
         {
           "score": 12.0,
@@ -2634,6 +2634,10 @@
         },
         {
           "score": 12.0,
+          "name": "Galahad"
+        },
+        {
+          "score": 12.0,
           "name": "Hodgkin"
         },
         {
@@ -2646,7 +2650,7 @@
         },
         {
           "score": 12.0,
-          "name": "Marcille"
+          "name": "Lucy"
         },
         {
           "score": 12.0,
@@ -2996,6 +3000,14 @@
     "Berial": {
       "synergies": [
         {
+          "provider": "Peggy",
+          "reasons": [
+            "ATK via ATK (all summons, high)",
+            "DEF via DEF (all summons, high)"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy (area, high) `signature fuel`",
@@ -3011,6 +3023,15 @@
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
           ],
           "score": 12.318942857142858
+        },
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, average)",
+            "Damage dealt via Damage dealt (all summons, low)",
+            "Damage taken via Damage taken (all summons, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Ravion",
@@ -3035,6 +3056,13 @@
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
           ],
           "score": 6.6204
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Smokey & Meerky",
@@ -3167,24 +3195,25 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Seth",
-            "score": 0.3,
+            "name": "Bryon",
+            "score": 0.4,
             "matches": [
-              "assassin"
+              "cheat-death",
+              "summoner"
             ]
           },
           {
-            "name": "Harak",
-            "score": 0.288,
+            "name": "Zanie",
+            "score": 0.25,
             "matches": [
-              "assassin"
+              "summoner"
             ]
           },
           {
-            "name": "Saida",
+            "name": "Florabelle",
             "score": 0.24,
             "matches": [
-              "cheat-death"
+              "summoner"
             ]
           }
         ],
@@ -3257,7 +3286,7 @@
           },
           {
             "name": "Saida",
-            "score": 0.5561,
+            "score": 0.5451,
             "matches": [
               "Debuffs on enemies"
             ]
@@ -4206,17 +4235,18 @@
             ]
           },
           {
-            "name": "Laios",
-            "score": 0.3333,
+            "name": "Berial",
+            "score": 0.4,
             "matches": [
-              "high-initial-energy",
+              "cheat-death",
               "summoner"
             ]
           },
           {
-            "name": "Florabelle",
-            "score": 0.288,
+            "name": "Laios",
+            "score": 0.3333,
             "matches": [
+              "high-initial-energy",
               "summoner"
             ]
           }
@@ -4307,12 +4337,19 @@
             ]
           },
           {
-            "name": "Nerion",
-            "score": 0.5003,
+            "name": "Galahad",
+            "score": 0.5266,
             "matches": [
               "Damage",
-              "Crowd Control",
               "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Lucy",
+            "score": 0.5192,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -4392,13 +4429,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Galahad",
-            "score": 0.3333,
-            "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
             "name": "Pang",
             "score": 0.3333,
             "matches": [
@@ -4408,6 +4438,13 @@
           {
             "name": "Korin",
             "score": 0.3333,
+            "matches": [
+              "ally-shielder"
+            ]
+          },
+          {
+            "name": "Gunnar",
+            "score": 0.3,
             "matches": [
               "ally-shielder"
             ]
@@ -5904,9 +5941,10 @@
             ]
           },
           {
-            "name": "Zanie",
-            "score": 0.3333,
+            "name": "Lucy",
+            "score": 0.4,
             "matches": [
+              "mass-cc",
               "summoner"
             ]
           }
@@ -6017,30 +6055,6 @@
     },
     "Chippy": {
       "synergies": [
-        {
-          "provider": "Peggy",
-          "reasons": [
-            "ATK via ATK (all summons, high)",
-            "DEF via DEF (all summons, high)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Aurora",
-          "reasons": [
-            "Haste via Haste (all summons, average)",
-            "Damage dealt via Damage dealt (all summons, low)",
-            "Damage taken via Damage taken (all summons, low)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "Shield via Shield (all summons, average)"
-          ],
-          "score": 6.0
-        },
         {
           "provider": "Smokey & Meerky",
           "reasons": [
@@ -6187,22 +6201,22 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Zanie",
-            "score": 0.6,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
             "name": "Marilee",
-            "score": 0.4,
+            "score": 0.6,
             "matches": [
               "self-repositioner"
             ]
           },
           {
             "name": "Alsa",
-            "score": 0.3333,
+            "score": 0.5,
+            "matches": [
+              "self-repositioner"
+            ]
+          },
+          {
+            "name": "Kulu",
+            "score": 0.5,
             "matches": [
               "self-repositioner"
             ]
@@ -7535,11 +7549,11 @@
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Galahad",
             "score": 0.4,
             "matches": [
-              "hp-scaling",
-              "non-ult-utility"
+              "ally-shielder",
+              "summoner"
             ]
           }
         ],
@@ -7907,10 +7921,6 @@
         },
         {
           "score": 3.1875,
-          "name": "Lucy"
-        },
-        {
-          "score": 3.1875,
           "name": "Mirael"
         },
         {
@@ -7932,6 +7942,10 @@
         {
           "score": 1.72125,
           "name": "Alna"
+        },
+        {
+          "score": 1.72125,
+          "name": "Chippy"
         },
         {
           "score": 1.72125,
@@ -8954,10 +8968,6 @@
         },
         {
           "score": 1.875,
-          "name": "Lucy"
-        },
-        {
-          "score": 1.875,
           "name": "Mirael"
         },
         {
@@ -9923,10 +9933,6 @@
           "name": "Odie"
         },
         {
-          "score": 3.3318000000000003,
-          "name": "Berial"
-        },
-        {
           "score": 3.0,
           "name": "Pippa"
         },
@@ -10319,10 +10325,6 @@
         {
           "score": 7.875,
           "name": "Frieren"
-        },
-        {
-          "score": 7.875,
-          "name": "Galahad"
         },
         {
           "score": 7.875,
@@ -11797,7 +11799,7 @@
         },
         {
           "score": 6.0,
-          "name": "Chippy"
+          "name": "Berial"
         },
         {
           "score": 6.0,
@@ -11809,7 +11811,7 @@
         },
         {
           "score": 6.0,
-          "name": "Marcille"
+          "name": "Lucy"
         },
         {
           "score": 6.0,
@@ -11825,6 +11827,14 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Galahad",
+            "score": 0.8,
+            "matches": [
+              "aoe-damage",
+              "summoner"
+            ]
+          },
+          {
             "name": "Hodgkin",
             "score": 0.6667,
             "matches": [
@@ -11837,13 +11847,6 @@
             "score": 0.6,
             "matches": [
               "aoe-damage"
-            ]
-          },
-          {
-            "name": "Zanie",
-            "score": 0.5,
-            "matches": [
-              "summoner"
             ]
           }
         ],
@@ -12194,19 +12197,19 @@
             ]
           },
           {
+            "name": "Marcille",
+            "score": 0.4114,
+            "matches": [
+              "aoe-damage",
+              "high-damage-ult"
+            ]
+          },
+          {
             "name": "Faramor",
             "score": 0.4,
             "matches": [
               "aoe-damage",
               "dot-specialist"
-            ]
-          },
-          {
-            "name": "Marcille",
-            "score": 0.36,
-            "matches": [
-              "aoe-damage",
-              "high-damage-ult"
             ]
           }
         ],
@@ -12274,6 +12277,14 @@
     "Galahad": {
       "synergies": [
         {
+          "provider": "Peggy",
+          "reasons": [
+            "ATK via ATK (all summons, high)",
+            "DEF via DEF (all summons, high)"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -12281,6 +12292,15 @@
             "Energy via Energy (multiple targets, average) `signature fuel`"
           ],
           "score": 13.035
+        },
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, average)",
+            "Damage dealt via Damage dealt (all summons, low)",
+            "Damage taken via Damage taken (all summons, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Kazim",
@@ -12359,6 +12379,13 @@
             "ATK via ATK (multiple targets, high)"
           ],
           "score": 7.875
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Aliceth",
@@ -12539,24 +12566,25 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Gunnar",
-            "score": 0.6667,
+            "name": "Florabelle",
+            "score": 0.8,
             "matches": [
-              "ally-shielder",
-              "aoe-damage"
+              "aoe-damage",
+              "summoner"
             ]
           },
           {
-            "name": "Ulmus",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "aoe-damage"
-            ]
-          },
-          {
-            "name": "Antandra",
+            "name": "Phraesto",
             "score": 0.6,
+            "matches": [
+              "ally-shielder",
+              "aoe-damage",
+              "summoner"
+            ]
+          },
+          {
+            "name": "Gunnar",
+            "score": 0.5,
             "matches": [
               "ally-shielder",
               "aoe-damage"
@@ -12622,7 +12650,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.5705,
+            "score": 0.559,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -12630,7 +12658,7 @@
           },
           {
             "name": "Natsu",
-            "score": 0.5266,
+            "score": 0.52,
             "matches": [
               "Damage"
             ]
@@ -13248,7 +13276,7 @@
         "similar_skills": [
           {
             "name": "Galahad",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-shielder",
               "aoe-damage"
@@ -14661,6 +14689,10 @@
         {
           "score": 3.75,
           "name": "Lucy"
+        },
+        {
+          "score": 3.75,
+          "name": "Marcille"
         },
         {
           "score": 3.75,
@@ -18767,6 +18799,10 @@
         },
         {
           "score": 3.75,
+          "name": "Marcille"
+        },
+        {
+          "score": 3.75,
           "name": "Mirael"
         },
         {
@@ -21173,8 +21209,17 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Lucy",
+            "score": 0.6,
+            "matches": [
+              "high-initial-energy",
+              "mass-cc",
+              "summoner"
+            ]
+          },
+          {
             "name": "Natsu",
-            "score": 0.5143,
+            "score": 0.4286,
             "matches": [
               "aoe-damage",
               "high-initial-energy",
@@ -21183,41 +21228,32 @@
           },
           {
             "name": "Florabelle",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "summoner"
-            ]
-          },
-          {
-            "name": "Valen",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage",
-              "mass-cc"
             ]
           }
         ],
         "damage": [
           {
             "name": "Sylphira",
-            "score": 1.0,
+            "score": 0.9493,
             "matches": [
               "Magic",
               "True damage"
             ]
           },
           {
-            "name": "Pippa",
-            "score": 0.9207,
+            "name": "Nara",
+            "score": 0.8583,
             "matches": [
-              "Magic",
               "True damage"
             ]
           },
           {
-            "name": "Indris",
-            "score": 0.7996,
+            "name": "Korin",
+            "score": 0.8387,
             "matches": [
               "True damage"
             ]
@@ -21233,14 +21269,14 @@
           },
           {
             "name": "Lorsan",
-            "score": 0.6,
+            "score": 0.72,
             "matches": [
               "Max HP"
             ]
           },
           {
             "name": "Nara",
-            "score": 0.6,
+            "score": 0.72,
             "matches": [
               "Max HP"
             ]
@@ -21262,31 +21298,14 @@
             ]
           },
           {
-            "name": "Callan",
+            "name": "Bonnie",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Natsu",
-            "score": 0.7693,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Crowd Control"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 0.5726,
-            "matches": [
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Lenya": {
@@ -23226,19 +23245,19 @@
             ]
           },
           {
-            "name": "Galahad",
-            "score": 0.5,
+            "name": "Gunnar",
+            "score": 0.48,
             "matches": [
               "ally-shielder",
               "aoe-damage"
             ]
           },
           {
-            "name": "Gunnar",
+            "name": "Thador",
             "score": 0.48,
             "matches": [
               "ally-shielder",
-              "aoe-damage"
+              "enemy-debuffer"
             ]
           }
         ],
@@ -23347,6 +23366,31 @@
     },
     "Lucy": {
       "synergies": [
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "ATK via ATK (all summons, high)",
+            "DEF via DEF (all summons, high)",
+            "Ranged damage via Ranged damage (all summons, low)"
+          ],
+          "score": 21.0
+        },
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, average)",
+            "Damage dealt via Damage dealt (all summons, low)",
+            "Damage taken via Damage taken (all summons, low)"
+          ],
+          "score": 12.0
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
+        },
         {
           "provider": "Smokey & Meerky",
           "reasons": [
@@ -23509,7 +23553,7 @@
         "similar_skills": [
           {
             "name": "Pang",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-shielder",
               "high-initial-energy"
@@ -23517,18 +23561,18 @@
           },
           {
             "name": "Saida",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "ally-shielder",
               "high-initial-energy"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.5,
+            "name": "Galahad",
+            "score": 0.4,
             "matches": [
               "ally-shielder",
-              "high-initial-energy"
+              "summoner"
             ]
           }
         ],
@@ -23582,17 +23626,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Saida",
-            "score": 0.5143,
-            "matches": [
-              "Buffs on allies",
-              "Similar Skills",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Ludovic": {
@@ -24644,23 +24678,6 @@
     "Marcille": {
       "synergies": [
         {
-          "provider": "Peggy",
-          "reasons": [
-            "ATK via ATK (all summons, high)",
-            "DEF via DEF (all summons, high)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Aurora",
-          "reasons": [
-            "Haste via Haste (all summons, average)",
-            "Damage dealt via Damage dealt (all summons, low)",
-            "Damage taken via Damage taken (all summons, low)"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
@@ -24682,13 +24699,6 @@
             "Energy via Energy (area, low) `signature fuel`"
           ],
           "score": 6.705
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "Shield via Shield (all summons, average)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Ravion",
@@ -24843,16 +24853,8 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Florabelle",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
-              "summoner"
-            ]
-          },
-          {
             "name": "Frieren",
-            "score": 0.36,
+            "score": 0.4114,
             "matches": [
               "aoe-damage",
               "high-damage-ult"
@@ -24860,10 +24862,18 @@
           },
           {
             "name": "Atalanta",
-            "score": 0.3429,
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "battle-start-burst"
+            ]
+          },
+          {
+            "name": "Natsu",
+            "score": 0.36,
+            "matches": [
+              "aoe-damage",
+              "high-damage-ult"
             ]
           }
         ],
@@ -24917,7 +24927,7 @@
         "overall": [
           {
             "name": "Natsu",
-            "score": 0.6277,
+            "score": 0.6369,
             "matches": [
               "Damage"
             ]
@@ -29654,10 +29664,6 @@
         },
         {
           "score": 7.875,
-          "name": "Galahad"
-        },
-        {
-          "score": 7.875,
           "name": "Hodgkin"
         },
         {
@@ -30619,6 +30625,10 @@
         },
         {
           "score": 21.0,
+          "name": "Lucy"
+        },
+        {
+          "score": 21.0,
           "name": "Phraesto"
         },
         {
@@ -30631,11 +30641,11 @@
         },
         {
           "score": 18.0,
-          "name": "Cecia"
+          "name": "Berial"
         },
         {
           "score": 18.0,
-          "name": "Chippy"
+          "name": "Cecia"
         },
         {
           "score": 18.0,
@@ -30647,15 +30657,15 @@
         },
         {
           "score": 18.0,
+          "name": "Galahad"
+        },
+        {
+          "score": 18.0,
           "name": "Hodgkin"
         },
         {
           "score": 18.0,
           "name": "Laios"
-        },
-        {
-          "score": 18.0,
-          "name": "Marcille"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -30675,7 +30685,7 @@
           },
           {
             "name": "Solise",
-            "score": 1.0,
+            "score": 0.8833,
             "matches": [
               "Healing over time",
               "Healing"
@@ -30683,7 +30693,7 @@
           },
           {
             "name": "Evie",
-            "score": 0.936,
+            "score": 0.78,
             "matches": [
               "Healing"
             ]
@@ -30702,7 +30712,7 @@
           },
           {
             "name": "Damian",
-            "score": 0.72,
+            "score": 0.6,
             "matches": [
               "ally-buffer",
               "ally-healer",
@@ -31002,10 +31012,6 @@
         {
           "score": 7.875,
           "name": "Zandrok"
-        },
-        {
-          "score": 3.375,
-          "name": "Berial"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -31032,6 +31038,15 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Galahad",
+            "score": 0.6,
+            "matches": [
+              "ally-shielder",
+              "aoe-damage",
+              "summoner"
+            ]
+          },
+          {
             "name": "Twins",
             "score": 0.5,
             "matches": [
@@ -31043,14 +31058,6 @@
           {
             "name": "Gunnar",
             "score": 0.48,
-            "matches": [
-              "ally-shielder",
-              "aoe-damage"
-            ]
-          },
-          {
-            "name": "Galahad",
-            "score": 0.4,
             "matches": [
               "ally-shielder",
               "aoe-damage"
@@ -32948,6 +32955,10 @@
         },
         {
           "score": 3.2399999999999998,
+          "name": "Marcille"
+        },
+        {
+          "score": 3.2399999999999998,
           "name": "Pandora"
         },
         {
@@ -32969,6 +32980,10 @@
         {
           "score": 3.0,
           "name": "Kruger"
+        },
+        {
+          "score": 1.5309,
+          "name": "Chippy"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -35151,10 +35166,6 @@
         {
           "score": 4.5,
           "name": "Korin"
-        },
-        {
-          "score": 3.75,
-          "name": "Lucy"
         },
         {
           "score": 3.75,
@@ -38224,10 +38235,6 @@
           "name": "Velara"
         },
         {
-          "score": 4.05,
-          "name": "Berial"
-        },
-        {
           "score": 3.0375,
           "name": "Alna"
         },
@@ -38598,16 +38605,16 @@
             ]
           },
           {
-            "name": "Lucy",
-            "score": 0.4,
+            "name": "Natsu",
+            "score": 0.3429,
             "matches": [
               "high-initial-energy",
               "mass-cc"
             ]
           },
           {
-            "name": "Natsu",
-            "score": 0.3429,
+            "name": "Lucy",
+            "score": 0.3333,
             "matches": [
               "high-initial-energy",
               "mass-cc"
@@ -40021,6 +40028,10 @@
         },
         {
           "score": 1.5309,
+          "name": "Chippy"
+        },
+        {
+          "score": 1.5309,
           "name": "Ludovic"
         }
       ],
@@ -40513,7 +40524,7 @@
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Sonja",
             "score": 0.5,
             "matches": [
               "aoe-damage"
@@ -40608,14 +40619,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Galahad",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Saida",
             "score": 0.6,
             "matches": [
@@ -40626,6 +40629,14 @@
           {
             "name": "Talene",
             "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "cheat-death"
+            ]
+          },
+          {
+            "name": "Tasi",
+            "score": 0.576,
             "matches": [
               "aoe-damage",
               "cheat-death"
@@ -41798,8 +41809,8 @@
             ]
           },
           {
-            "name": "Lucy",
-            "score": 0.48,
+            "name": "Hepler",
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "high-initial-energy"
@@ -43025,7 +43036,7 @@
             ]
           },
           {
-            "name": "Aurora",
+            "name": "Galahad",
             "score": 0.3333,
             "matches": [
               "summoner"

@@ -81,7 +81,14 @@
             }
           ],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Cecia summons Mr. Carlyle to a selected tile to assist in battle."
+            }
+          ],
           "special_requires": [
             {
               "label": "Enemy not CC-immune",

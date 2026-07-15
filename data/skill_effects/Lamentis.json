@@ -88,12 +88,6 @@
           "immunities": [],
           "special_provides": [
             {
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Self",
-              "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles."
-            },
-            {
               "label": "Stacking",
               "tier": "mythic+",
               "targeting": "Single target",
@@ -180,7 +174,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles that fight on the battlefield."
+            }
+          ],
           "special_requires": []
         }
       }

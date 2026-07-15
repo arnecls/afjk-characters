@@ -4530,22 +4530,10 @@
             "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
           },
           {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Multiple targets",
-            "description": "Sonny inherits 140% + 20% of Aurora's HP and 120% + 10% of her other basic stats, then creates a rainbow aura that inspires allies."
-          },
-          {
             "label": "Invincibility",
             "tier": "base",
             "targeting": "Self",
             "description": "While asleep, Aurora stays invincible."
-          },
-          {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Area",
-            "description": "When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% damage to all adjacent enemies."
           }
         ],
         "requires": []
@@ -7212,12 +7200,6 @@
             "description": "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona."
           },
           {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Area",
-            "description": "Elona gains enhanced thunderbolt effects after s into a battle, reducing Haste of adjacent enemies by and dealing 40% (ATK-based) damage per second."
-          },
-          {
             "label": "Cheat death",
             "tier": "ex+5",
             "targeting": "Self",
@@ -9343,7 +9325,14 @@
         }
       },
       "synergy_profile": {
-        "provides": [],
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Cecia summons Mr. Carlyle to a selected tile to assist in battle."
+          }
+        ],
         "requires": [
           {
             "label": "Enemy not CC-immune",
@@ -11949,7 +11938,14 @@
         }
       },
       "synergy_profile": {
-        "provides": [],
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Daimon's guardian spirit fights alongside him in battle with normal attacks."
+          }
+        ],
         "requires": []
       },
       "damage_entries": [
@@ -16693,12 +16689,6 @@
             "tier": "base",
             "targeting": "Single target",
             "description": "Florabelle summons Spiny when a battle starts."
-          },
-          {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Area",
-            "description": "Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air."
           }
         ],
         "requires": []
@@ -17787,6 +17777,12 @@
             "tier": "ex+10",
             "targeting": "Single target",
             "description": "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer."
+          },
+          {
+            "label": "Summoning",
+            "tier": "mythic+",
+            "targeting": "Single target",
+            "description": "When Galahad's magic circle is fully formed, she summons a shadow ally that remains on the battlefield."
           }
         ],
         "requires": [
@@ -22947,16 +22943,16 @@
       "synergy_profile": {
         "provides": [
           {
-            "label": "Summoning",
-            "tier": "mythic+",
-            "targeting": "Single target",
-            "description": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks."
-          },
-          {
             "label": "Stacking",
             "tier": "supreme+",
             "targeting": "Single target",
             "description": "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s."
+          },
+          {
+            "label": "Summoning",
+            "tier": "mythic+",
+            "targeting": "Single target",
+            "description": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins."
           }
         ],
         "requires": []
@@ -29361,7 +29357,7 @@
       "long_name": "Lamentis - Cosmic Hellion",
       "faction": "hypogean",
       "class": "marksman",
-      "role_category": "damage_dealer",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
@@ -29826,16 +29822,16 @@
       "synergy_profile": {
         "provides": [
           {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Self",
-            "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles."
-          },
-          {
             "label": "Stacking",
             "tier": "mythic+",
             "targeting": "Single target",
             "description": "Lamentis can have up to 20 stacks of Growth."
+          },
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles that fight on the battlefield."
           }
         ],
         "requires": []
@@ -33009,7 +33005,14 @@
         }
       },
       "synergy_profile": {
-        "provides": [],
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle with normal attacks."
+          }
+        ],
         "requires": []
       },
       "damage_entries": [
@@ -36112,12 +36115,6 @@
       },
       "synergy_profile": {
         "provides": [
-          {
-            "label": "Summoning",
-            "tier": "mythic+",
-            "targeting": "Single target",
-            "description": "When a battle starts, Mehira summons 3 voidlings around her."
-          },
           {
             "label": "HP threshold strike",
             "tier": "mythic+",
@@ -40851,12 +40848,6 @@
             "tier": "base",
             "targeting": "Single target",
             "description": "Pandora herself is protected by hope and is not affected by Panic Projection."
-          },
-          {
-            "label": "Summoning",
-            "tier": "mythic+",
-            "targeting": "Self",
-            "description": "After Pandora is defeated, her box remains on the battlefield and recasts Panic Projection and Tainted Tribute."
           }
         ],
         "requires": []
@@ -42475,7 +42466,7 @@
       "long_name": "Peggy - Empire's Jewel",
       "faction": "lightbearer",
       "class": "support",
-      "role_category": "support",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
@@ -62766,7 +62757,7 @@
             "label": "Summoning",
             "tier": "base",
             "targeting": "Self",
-            "description": "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK."
+            "description": "When a battle starts, she deploys 2 laser turrets that inherit HP and ATK."
           },
           {
             "label": "Summoning",

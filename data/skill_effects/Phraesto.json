@@ -240,6 +240,20 @@
           "immunities": [],
           "special_provides": [],
           "special_requires": []
+        },
+        "ex+15": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "ex+15",
+              "targeting": "Self",
+              "description": "Phraesto summons a new Illusion if the previous Illusion is defeated before he is."
+            }
+          ],
+          "special_requires": []
         }
       }
     },

@@ -212,11 +212,18 @@
       "source_hash": "3011c0e0b1dc65fb5bcbb4903f36c618acefd3bd5b808fd7861163a2bb6ea0f7",
       "is_max_known": true,
       "tiers": {
-        "base": {
+        "mythic+": {
           "effects": [],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "mythic+",
+              "targeting": "Single target",
+              "description": "When Galahad's magic circle is fully formed, she summons a shadow ally that remains on the battlefield."
+            }
+          ],
           "special_requires": []
         }
       }

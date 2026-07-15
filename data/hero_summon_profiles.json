@@ -1,44 +1,96 @@
 {
   "Aurora": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"},
+      {"section": "Skill1", "tier": "base"}
+    ]
+  },
+  "Berial": {
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ex. Skill", "tier": "mythic+"}
+    ]
   },
   "Bryon": {
-    "has_ranged_summons": true
+    "has_ranged_summons": true,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Cecia": {
-    "has_ranged_summons": false
-  },
-  "Chippy": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Daimon": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Damian": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Florabelle": {
-    "has_ranged_summons": true
+    "has_ranged_summons": true,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"},
+      {"section": "Skill2", "tier": "base"}
+    ]
+  },
+  "Galahad": {
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ex. Skill", "tier": "mythic+"}
+    ]
   },
   "Hodgkin": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ex. Skill", "tier": "mythic+"}
+    ]
   },
   "Laios": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Lamentis": {
-    "has_ranged_summons": true
+    "has_ranged_summons": true,
+    "sources": [
+      {"section": "Skill2", "tier": "base"}
+    ]
   },
-  "Marcille": {
-    "has_ranged_summons": false
+  "Lucy": {
+    "has_ranged_summons": true,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Peggy": {
-    "has_ranged_summons": true
+    "has_ranged_summons": true,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"}
+    ]
   },
   "Phraesto": {
-    "has_ranged_summons": false
+    "has_ranged_summons": false,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"},
+      {"section": "Ex. Skill", "tier": "ex+15"}
+    ]
   },
   "Zanie": {
-    "has_ranged_summons": true
+    "has_ranged_summons": true,
+    "sources": [
+      {"section": "Ultimate", "tier": "base"},
+      {"section": "Skill1", "tier": "base"}
+    ]
   }
 }

@@ -356,13 +356,15 @@ SUMMON_TARGETING_WEIGHT = 3.0
 
 
 def receiver_has_summoner_tag(hero: _rs.Hero) -> bool:
-    tags = _load_behavior_tags().get(short_name(hero.title), frozenset())
-    return SUMMONER_BEHAVIOR_TAG in tags
+    from summoner_registry import summoner_heroes
+
+    return short_name(hero.title) in summoner_heroes()
 
 
 def receiver_has_ranged_summons(hero: _rs.Hero) -> bool:
-    profile = _load_summon_profiles().get(short_name(hero.title), {})
-    return bool(profile.get("has_ranged_summons"))
+    from summoner_registry import has_ranged_summons
+
+    return has_ranged_summons(short_name(hero.title))
 
 
 def format_reason_for_display(reason: str) -> str:

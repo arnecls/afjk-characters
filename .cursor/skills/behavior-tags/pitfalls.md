@@ -43,13 +43,17 @@ Faramor damage circle, Pandora's box.
 
 ## `summoner` vs skill VFX
 
-**Counts:** Mr. Carlyle, Sonny, turrets, persistent illusions (Phraesto),
-Florabelle Bulbsprites — units placed on the battlefield that can be targeted
-or destroyed and contribute over time.
+**Counts:** Mr. Carlyle, Sonny, turrets, apostles, royal guards, timed
+fighters with normal attacks (Aurora bunny, Galahad shadow) — independently
+acting units placed on or remaining on the battlefield beyond the cast
+animation. Semantic verbs (`builds`, `deploys`, `calls out`, `generate`)
+count when the unit fights on-field.
 
-**Does not count:** Flying swords (Salazer ult), flying blades (Silven ult),
-temporary blade volleys; **spell-form** summons that are untargetable,
-undestroyable, and brief (Mehira voidlings, Shemira ghosts).
+**Does not count:** Sky Fish dash, magic leaves, Smashy ground strike,
+royal marksman volleys; passive objects (Pandora's box); **spell-form**
+damage (Mehira voidlings, Shemira ghosts).
+
+Curated roster: `data/hero_summon_profiles.json`.
 
 ## `dot-specialist` vs debuffs
 
@@ -123,7 +127,8 @@ stretching definitions:
 
 - **Tilaya** — self-shield frontliner: `aoe-damage` only; no `ally-shielder`
   (self shields), no `hp-scaling` (shield-value scaling)
-- **Chippy** — `summoner`, `self-repositioner` (2 tags) is acceptable
+- **Chippy** — `self-repositioner` only; hamster friends are ult animation,
+  not battlefield summons
 
 If the user wants fuller coverage, propose a new grouped tag in
 `tags.schema.json` (e.g. `self-shield`) rather than misusing `ally-shielder`

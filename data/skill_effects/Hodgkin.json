@@ -31,12 +31,6 @@
           "immunities": [],
           "special_provides": [
             {
-              "label": "Summoning",
-              "tier": "mythic+",
-              "targeting": "Single target",
-              "description": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks."
-            },
-            {
               "label": "Stacking",
               "tier": "supreme+",
               "targeting": "Single target",
@@ -226,7 +220,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "mythic+",
+              "targeting": "Single target",
+              "description": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins."
+            }
+          ],
           "special_requires": []
         }
       }

@@ -46,12 +46,6 @@
               "tier": "base",
               "targeting": "Single target",
               "description": "Florabelle summons Spiny when a battle starts."
-            },
-            {
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Area",
-              "description": "Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air."
             }
           ],
           "special_requires": []
@@ -133,7 +127,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Florabelle summons Swifty in the back with a 6-tile attack range and normal attacks."
+            }
+          ],
           "special_requires": []
         }
       }

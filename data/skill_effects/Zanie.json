@@ -84,13 +84,7 @@
               "label": "Summoning",
               "tier": "base",
               "targeting": "Self",
-              "description": "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK."
-            },
-            {
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "description": "When a battle starts, Zanie builds a gun turret in front of her."
+              "description": "When a battle starts, she deploys 2 laser turrets that inherit HP and ATK."
             }
           ],
           "special_requires": []
@@ -145,7 +139,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "When a battle starts, Zanie builds a gun turret in front of her."
+            }
+          ],
           "special_requires": []
         }
       }

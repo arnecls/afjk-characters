@@ -88,23 +88,28 @@ class SummonSynergyTests(unittest.TestCase):
         self.assertGreater(flor_score, cecia_score)
 
     def test_untagged_summon_hero_scores_zero(self):
+        import summoner_registry as sr
+
         provider = rs.Hero("PeggyLike - Test", "Physical")
         receiver = rs.Hero("Incidental - Test", "Physical")
         provider.summon_effects = [_summon_effect("ATK", "low")]
 
-        original_tags = gen._load_behavior_tags()
-        gen._BEHAVIOR_TAGS = {
-            **original_tags,
-            gen.short_name(receiver.title): frozenset({"mark-target"}),
+        original_profiles = sr._profiles
+        sr._profiles = {
+            name: profile
+            for name, profile in sr.load_profiles().items()
+            if name != "Incidental"
         }
         try:
             score, reasons = gen.score_summon_synergy(provider, receiver)
             self.assertEqual(score, 0.0)
             self.assertEqual(reasons, [])
         finally:
-            gen._BEHAVIOR_TAGS = original_tags
+            sr._profiles = original_profiles
 
     def test_synthetic_provider_scores_all_summon_buff_labels(self):
+        import summoner_registry as sr
+
         provider = rs.Hero("Buffer - Test", "Physical")
         receiver = rs.Hero("Summoner - Test", "Physical")
         provider.summon_effects = [
@@ -114,13 +119,13 @@ class SummonSynergyTests(unittest.TestCase):
             _summon_effect("Ranged damage", "low"),
         ]
 
-        original_tags = gen._load_behavior_tags()
-        gen._BEHAVIOR_TAGS = {
-            **original_tags,
-            gen.short_name(receiver.title): frozenset({gen.SUMMONER_BEHAVIOR_TAG}),
-        }
-        gen._SUMMON_PROFILES = {
-            gen.short_name(receiver.title): {"has_ranged_summons": False},
+        original_profiles = sr._profiles
+        sr._profiles = {
+            **sr.load_profiles(),
+            "Summoner": {
+                "has_ranged_summons": False,
+                "sources": [{"section": "Ultimate", "tier": "base"}],
+            },
         }
         try:
             score, reasons = gen.score_summon_synergy(provider, receiver)
@@ -131,8 +136,25 @@ class SummonSynergyTests(unittest.TestCase):
             self.assertNotIn("Ranged damage", joined)
             self.assertGreater(score, 0.0)
         finally:
-            gen._BEHAVIOR_TAGS = original_tags
-            gen._SUMMON_PROFILES = None
+            sr._profiles = original_profiles
+
+    def test_marcille_no_longer_receives_summon_buffs(self):
+        heroes, _, _ = _full_roster()
+        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
+        marcille = next(h for h in heroes if h.title.startswith("Marcille"))
+
+        score, reasons = gen.score_summon_synergy(peggy, marcille)
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
+
+    def test_lucy_receives_summon_buffs(self):
+        heroes, _, _ = _full_roster()
+        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
+        lucy = next(h for h in heroes if h.title.startswith("Lucy"))
+
+        score, reasons = gen.score_summon_synergy(peggy, lucy)
+        self.assertGreater(score, 0.0)
+        self.assertTrue(any("(all summons" in r for r in reasons))
 
 
 if __name__ == "__main__":

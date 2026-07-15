@@ -112,22 +112,10 @@
               "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
             },
             {
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "description": "Sonny inherits 140% + 20% of Aurora's HP and 120% + 10% of her other basic stats, then creates a rainbow aura that inspires allies."
-            },
-            {
               "label": "Invincibility",
               "tier": "base",
               "targeting": "Self",
               "description": "While asleep, Aurora stays invincible."
-            },
-            {
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Area",
-              "description": "When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% damage to all adjacent enemies."
             }
           ],
           "special_requires": []
@@ -162,7 +150,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Aurora summons a magical bunny beside her that lasts for up to 12s and deals damage with normal attacks."
+            }
+          ],
           "special_requires": []
         }
       }

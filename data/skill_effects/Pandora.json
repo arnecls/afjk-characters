@@ -277,14 +277,7 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [
-            {
-              "label": "Summoning",
-              "tier": "mythic+",
-              "targeting": "Self",
-              "description": "After Pandora is defeated, her box remains on the battlefield and recasts Panic Projection and Tainted Tribute."
-            }
-          ],
+          "special_provides": [],
           "special_requires": []
         }
       }

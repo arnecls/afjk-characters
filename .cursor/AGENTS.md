@@ -405,7 +405,11 @@ skill effect.
 - self-repositioner: Regularly moves self across the grid via jumps, dashes, or teleports.
 - static-tile-buffer: Buffs an ally only while they remain on a specific placement tile.
 - stealth: Enters hidden or untargetable states to avoid focus or enable picks.
-- summoner: Fields persistent summons or companions that contribute in combat.
+- summoner: Fields battlefield summons — independently acting combat units
+  placed on or remaining on the battlefield beyond the cast animation.
+  Timed or untargetable fighters qualify; transient attacks/effects (e.g.
+  Marcille Sky Fish) and passive objects (e.g. Pandora's box) do not. Curated
+  roster and source skills live in `data/hero_summon_profiles.json`.
 - taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
 - ultimate-cancel: Cancels or interrupts enemy ultimates when they begin casting.
 - untargetable: Routinely becomes untargetable by enemy skills during normal gameplay.

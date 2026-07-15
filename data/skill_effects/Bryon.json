@@ -69,12 +69,6 @@
               "description": "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona."
             },
             {
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Area",
-              "description": "Elona gains enhanced thunderbolt effects after s into a battle, reducing Haste of adjacent enemies by and dealing 40% (ATK-based) damage per second."
-            },
-            {
               "label": "Cheat death",
               "tier": "ex+5",
               "targeting": "Self",

@@ -3737,12 +3737,16 @@ _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
     r"falcon elona|\belona\b",
     r"living armor",
     r"mr\. carlyle",
-    r"smashy|swifty|spiny",
+    r"\bswifty\b|\bspiny\b",
     r"\bsonny\b",
     r"magical bunny",
     r"dead tide warriors?",
-    r"voidlings?",
     r"identical illusion",
+    r"guardian spirit|\bstitchy\b",
+    r"toy chariot",
+    r"\baquarius\b|celestial spirit",
+    r"royal guards?",
+    r"\bapostles?\b",
 )
 
 _SUMMON_EFFECT_OBJECT = re.compile(
@@ -3751,7 +3755,8 @@ _SUMMON_EFFECT_OBJECT = re.compile(
     r"flying blades?|walls? of |light spear|ice storms?|blizzards?|vines?|"
     r"domains? of|quills?|sky fish|parasitic grass|doomfields?|"
     r"swirling snowstorms?|magical plants?|mount dawn|tombstones?|"
-    r"lightning|leaves to attack|doomfield at|bells? of order)",
+    r"lightning|leaves to attack|doomfield at|bells? of order|"
+    r"smashy|royal marksman|voidlings?)",
     re.I,
 )
 
@@ -3805,8 +3810,16 @@ def text_has_summon_unit(t: str) -> bool:
     ):
         return True
     if re.search(
-        r"\b(?:builds?|summons?|creates?) \d+ (?:royal )?(?:guards?|apostles?|marksman)\b",
+        r"\b(?:builds?|summons?|creates?) \d+ (?:royal )?guards?\b",
         tl,
+    ):
+        return True
+    if re.search(
+        r"\bcreate(?:s|d)? \d+ apostles\b", tl
+    ):
+        return True
+    if re.search(
+        r"\bcalls? out\b.{0,100}\b(?:celestial spirit|aquarius)\b", tl
     ):
         return True
     if re.search(
@@ -3850,6 +3863,14 @@ def text_has_summon_unit(t: str) -> bool:
 
 
 def hero_fields_summon_units(hero: Hero) -> bool:
+    short = hero.title.split(" - ", 1)[0].strip()
+    if short == "Elijah & Lailah":
+        short = "Twins"
+    profiles_path = ROOT / "data" / "hero_summon_profiles.json"
+    if profiles_path.exists():
+        profiles = json.loads(profiles_path.read_text(encoding="utf-8"))
+        if short in profiles:
+            return True
     text = " ".join(chunk for _, chunk, _ in hero.skill_chunks)
     return text_has_summon_unit(text)
 
