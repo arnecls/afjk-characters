@@ -186,6 +186,20 @@
       "source_hash": "a29510e79ea63ef815c7f50944d05a452ec74ae47edf50fad57c6f05375d5622",
       "is_max_known": true,
       "tiers": {
+        "mythic+": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally DoT on enemies",
+              "tier": "mythic+",
+              "targeting": "Area",
+              "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
+            }
+          ],
+          "special_requires": []
+        },
         "ex+10": {
           "effects": [
             {

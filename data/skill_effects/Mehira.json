@@ -224,26 +224,6 @@
                   "value": 60.0
                 }
               ]
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
-              "duration": 2,
-              "tick": 1.0
             }
           ],
           "summon_effects": [],

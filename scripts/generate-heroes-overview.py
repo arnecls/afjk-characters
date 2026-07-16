@@ -409,7 +409,7 @@ def provider_damage_types(hero: _rs.Hero) -> set[str]:
 
 
 def provider_best_enemy_targeting(hero: _rs.Hero, damage_type: str) -> str:
-    best = "single target"
+    best = "Single target"
     best_w = 0.0
     for dt, tgt in hero.damage_entries:
         if dt != damage_type:
@@ -420,7 +420,7 @@ def provider_best_enemy_targeting(hero: _rs.Hero, damage_type: str) -> str:
             w = TARGETING_WEIGHT.get(part, 1.0)
             if w > best_w:
                 best_w = w
-                best = part.lower()
+                best = part
     return best
 
 
@@ -837,10 +837,73 @@ def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
         pts *= 1.45
         tags.append("wide area")
     tgt = provider_best_enemy_targeting(provider, "Magic")
-    if tgt == "all units":
+    if tgt == "All units":
         pts *= 1.2
         tags.append("all enemies")
     return pts, f"{' + '.join(tags)} ({tgt})"
+
+
+_PERSISTENT_DAMAGE_DEBUFF_LABELS = frozenset({"Burn debuff", "DoT"})
+
+
+def _effect_is_enemy_persistent_damage(effect: _rs.Effect) -> bool:
+    """Structured enemy DoT, recurring HP loss, or burn-style debuffs."""
+    if effect.targeting == "Self" or effect.targeting not in ALLY_TARGETINGS:
+        return False
+    if effect.category == "damage":
+        if effect.label == "DoT":
+            return True
+        if effect.label in ("HP loss", "Max HP-based damage"):
+            return effect.tick is not None or (
+                effect.duration is not None and effect.duration > 0
+            )
+    if (
+        effect.category == "debuff"
+        and effect.label in _PERSISTENT_DAMAGE_DEBUFF_LABELS
+    ):
+        return True
+    return False
+
+
+def _provider_structured_persistent_damage(
+    provider: _rs.Hero,
+) -> list[_rs.Effect]:
+    return [
+        effect
+        for effect in provider.effects
+        if _effect_is_enemy_persistent_damage(effect)
+    ]
+
+
+def _format_persistent_damage_detail(effects: list[_rs.Effect]) -> str:
+    parts: list[str] = []
+    if any(
+        effect.category == "damage"
+        and effect.label == "DoT"
+        and getattr(effect, "area", None) == "zone"
+        for effect in effects
+    ):
+        parts.append("persistent zone")
+    if any(effect.category == "damage" and effect.label == "DoT" for effect in effects):
+        if "persistent zone" not in parts:
+            parts.append("DoT")
+    if any(
+        effect.category == "damage" and effect.label == "HP loss"
+        for effect in effects
+    ):
+        parts.append("recurring HP loss")
+    if any(
+        effect.category == "damage" and effect.label == "Max HP-based damage"
+        for effect in effects
+    ):
+        parts.append("recurring max-HP damage")
+    if any(
+        effect.category == "debuff"
+        and effect.label in _PERSISTENT_DAMAGE_DEBUFF_LABELS
+        for effect in effects
+    ):
+        parts.append("Burn")
+    return " + ".join(parts) if parts else "continuous damage"
 
 
 def match_ally_dot_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
@@ -859,32 +922,27 @@ def match_ally_debuff_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None
 
 def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
     ally_dot = match_ally_dot_on_enemies(provider)
-    text = provider_skill_text(provider)
-    has_dot = "DoT" in provider_damage_types(provider)
-    has_burn = any(
-        e.label in ("Burn debuff", "DoT") for e in provider_enemy_debuffs(provider)
-    )
-    has_tick = bool(
-        _rs._text_has_dot_damage(text)
-        or re.search(
-            r"(?:burn|poison|bleed|ignit)|per second for \d+",
-            text,
+    effects = _provider_structured_persistent_damage(provider)
+    if not effects and not ally_dot:
+        return None
+
+    structured_score = 0.0
+    structured_detail = ""
+    if effects:
+        best = max(
+            effects,
+            key=lambda effect: TARGETING_WEIGHT.get(effect.targeting, 1.0)
+            * MAG_WEIGHT.get(effect.magnitude or "average", 1.0),
         )
-    )
-    if not (has_dot or has_burn or has_tick):
+        tw = TARGETING_WEIGHT.get(best.targeting, 3.0)
+        structured_score = tw * 2.5
+        structured_detail = _format_persistent_damage_detail(effects)
+
+    if ally_dot and (not effects or ally_dot[0] >= structured_score):
         return ally_dot
-    tw = 3.0
-    if "DoT" in provider_damage_types(provider):
-        tw = TARGETING_WEIGHT.get(provider_best_enemy_targeting(provider, "DoT"), 3.0)
-    parts = []
-    if has_dot:
-        parts.append("DoT")
-    if has_burn:
-        parts.append("Burn")
-    if has_tick and not parts:
-        parts.append("tick damage")
-    detail = " + ".join(parts) if parts else "continuous damage"
-    return tw * 2.5, detail
+    if effects:
+        return structured_score, structured_detail
+    return ally_dot
 
 
 _CC_SUSTAINED_LABELS = frozenset(

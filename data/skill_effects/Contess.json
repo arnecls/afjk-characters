@@ -63,33 +63,6 @@
                   "comparison": "above"
                 }
               ],
-              "type": "dot",
-              "damage_type": "hp_loss",
-              "name": "HP loss",
-              "label": "damage_hp_loss",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 2.5
-                }
-              ],
-              "tick": 1.0,
-              "duration": -1
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.4,
-                  "comparison": "above"
-                }
-              ],
               "type": "shield",
               "name": "Shield",
               "value": [

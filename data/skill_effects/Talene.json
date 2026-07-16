@@ -164,6 +164,20 @@
       "source_hash": "02784a6160031f45fbf009f2e6c4cb0335c3f9161b49f5dee1a047ce6ccf2753",
       "is_max_known": true,
       "tiers": {
+        "mythic+": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally DoT on enemies",
+              "tier": "mythic+",
+              "targeting": "Area",
+              "description": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends."
+            }
+          ],
+          "special_requires": []
+        },
         "ex+5": {
           "effects": [],
           "summon_effects": [],

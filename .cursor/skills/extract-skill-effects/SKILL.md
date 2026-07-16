@@ -153,6 +153,13 @@ just validate
   `own_summons`/`all_summons`. Do not model caster+apostle/summon-only
   clauses as `target: ally`. `just validate` flags self/summon/enemy
   mislabels via source-text cross-check.
+- **Enemy DoT / persistent damage:** use `type: dot` only for genuine
+  enemy ailments, attached recurring HP loss, or persistent damaging zones.
+  Exclude channels, discrete multi-hit attacks, periodic normal/summon
+  attacks, healing ticks, and self/ally drains. Ally-granted burns (Sparks,
+  Pyre of Renewal, Combat Fury adjacency) need `Ally DoT on enemies` in
+  `special_provides` when the ally is the damage source. Wording like
+  `damage … each time` on cooldowns is **not** DoT.
 - **Do not** edit `rewrite-summaries.py` regex tables for effect fixes (removed).
 
 ## Staleness

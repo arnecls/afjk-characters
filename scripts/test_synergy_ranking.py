@@ -600,5 +600,100 @@ class DisplaySynergyFallbackTests(unittest.TestCase):
         self.assertEqual([p["provider"] for p in display], ["Bonnie"])
 
 
+class ContinuousDamageMatcherTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        rs_spec = importlib.util.spec_from_file_location(
+            "rewrite_summaries",
+            SCRIPTS / "rewrite-summaries.py",
+        )
+        cls.rs = importlib.util.module_from_spec(rs_spec)
+        sys.modules["rewrite_summaries"] = cls.rs
+        assert rs_spec.loader is not None
+        rs_spec.loader.exec_module(cls.rs)
+
+        import heroes_io as io
+
+        cls.heroes = {
+            record["name"]: record for record in io.load_heroes_data()["heroes"]
+        }
+
+    def _analyzed(self, name: str):
+        hero = self.rs.hero_from_record(self.heroes[name])
+        self.rs.analyze_hero(hero)
+        return hero
+
+    def test_perseus_does_not_match_tick_damage(self) -> None:
+        self.assertIsNone(gen.match_dot_damage(self._analyzed("Perseus")))
+
+    def test_healer_antandra_does_not_match(self) -> None:
+        self.assertIsNone(gen.match_dot_damage(self._analyzed("Antandra")))
+
+    def test_channel_berial_does_not_match(self) -> None:
+        self.assertIsNone(gen.match_dot_damage(self._analyzed("Berial")))
+
+    def test_legitimate_dot_providers_match(self) -> None:
+        for name in (
+            "Daimon",
+            "Ludovic",
+            "Mikola",
+            "Pippa",
+            "Satrana",
+            "Talene",
+            "Viperian",
+            "Contess",
+        ):
+            with self.subTest(hero=name):
+                match = gen.match_dot_damage(self._analyzed(name))
+                self.assertIsNotNone(match, msg=f"{name} should match")
+                self.assertNotIn("tick damage", match[1].lower())
+
+    def test_targeting_weights_produce_distinct_scores(self) -> None:
+        single = self.rs.Effect(
+            category="damage",
+            label="DoT",
+            tier="base",
+            targeting="Single target",
+            tick=1.0,
+            duration=5.0,
+        )
+        area = self.rs.Effect(
+            category="damage",
+            label="DoT",
+            tier="base",
+            targeting="Area",
+            tick=1.0,
+            duration=5.0,
+        )
+        all_units = self.rs.Effect(
+            category="damage",
+            label="DoT",
+            tier="base",
+            targeting="All units",
+            tick=1.0,
+            duration=5.0,
+        )
+
+        def score_for(effect: object) -> float:
+            provider = SimpleNamespace(
+                title="Provider - Hero",
+                effects=[effect],
+                special_effects=[],
+                damage_entries=[],
+            )
+            match = gen.match_dot_damage(provider)
+            assert match is not None
+            return match[0]
+
+        single_score = score_for(single)
+        area_score = score_for(area)
+        all_units_score = score_for(all_units)
+        self.assertGreater(area_score, single_score)
+        self.assertGreater(all_units_score, area_score)
+        self.assertAlmostEqual(single_score, 1.5 * 2.5)
+        self.assertAlmostEqual(area_score, 4.0 * 2.5)
+        self.assertAlmostEqual(all_units_score, 5.0 * 2.5)
+
+
 if __name__ == "__main__":
     unittest.main()

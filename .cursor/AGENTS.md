@@ -582,6 +582,12 @@ Line format (no Provides/Requires prefix on each bullet):
   `match_ally_stat_buffs` in `generate-heroes-overview.py`). Encode
   persistence on every positive stat buff in sidecars (`temporary`,
   `permanent`, or `unknown`; ally `unknown` fails validation).
+  **Continuous damage on enemies** providers are matched **only** from
+  structured sidecar data: enemy-targeted `dot` effects, recurring enemy
+  HP-loss/max-HP rows with `tick`/`duration`, burn-style debuffs, persistent
+  damaging zones, and `Ally DoT on enemies` special provides. Raw skill text
+  (`damage … each time`, cooldown wording, channels, periodic attacks) must
+  not drive `match_dot_damage()`.
 
 Special provides/requires are extracted into the skill effects sidecar
 (`special_provides` / `special_requires` per tier). When merging buffs from

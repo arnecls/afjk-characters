@@ -31,18 +31,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
               "value": [
                 {
                   "type": "percentage",
                   "value": 45.0
                 }
-              ],
-              "duration": 5,
-              "tick": 0.25
+              ]
             },
             {
               "tier": "base",

@@ -120,6 +120,27 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 140.0
+                }
+              ],
+              "duration": 3,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
               "type": "debuff",
               "name": "Energy",
               "label": "debuff_stat",

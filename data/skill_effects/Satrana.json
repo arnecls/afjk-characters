@@ -164,7 +164,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Ally DoT on enemies",
+              "tier": "base",
+              "targeting": "Area",
+              "description": "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s until the battle ends."
+            }
+          ],
           "special_requires": []
         }
       }

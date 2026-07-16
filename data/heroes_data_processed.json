@@ -5294,38 +5294,6 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 320.0
-                }
-              ],
-              "duration": 5.0,
-              "tick": 0.25
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "crowd_control",
-              "cc-type": "frighten",
-              "duration": 4.0
-            },
-            {
-              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
@@ -5342,6 +5310,18 @@
                   "value": 350.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "frighten",
+              "duration": 4.0
             }
           ],
           "cooldown": 1.0,
@@ -5349,9 +5329,6 @@
           "skill_range": 10,
           "initial_energy": 0.0,
           "skill_card_tags": [
-            {
-              "label": "DoT"
-            },
             {
               "label": "Magic"
             },
@@ -5698,10 +5675,6 @@
         [
           "magic",
           "Area, Single target"
-        ],
-        [
-          "dot",
-          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -6365,18 +6338,16 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 155.0
                 }
-              ],
-              "duration": 4.0,
-              "tick": 1.0
+              ]
             },
             {
               "type": "immunity",
@@ -6404,7 +6375,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             {
-              "label": "DoT"
+              "label": "Physical"
             },
             {
               "label": "Immune — Self"
@@ -6740,11 +6711,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc"
-        ],
-        [
-          "dot",
-          "Area"
+          "Arc, Area"
         ],
         [
           "max_hp",
@@ -9836,33 +9803,6 @@
               "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.4,
-                  "comparison": "above"
-                }
-              ],
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 666.0
-                }
-              ],
-              "duration": -1.0,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
               "target": "ally",
               "area": "single",
               "target_count": 1,
@@ -9919,9 +9859,6 @@
           ],
           "initial_energy": 300.0,
           "skill_card_tags": [
-            {
-              "label": "DoT"
-            },
             {
               "label": "Direct healing",
               "polarity": "buff"
@@ -11951,26 +11888,29 @@
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "duration": 2.0,
+              "tick": 0.5
             }
           ],
           "skill_card_tags": [
             {
-              "label": "Max HP-based damage (EX+10)"
+              "label": "DoT (EX+10)"
             },
             {
               "label": "Frighten — Area"
@@ -12007,8 +11947,12 @@
           "Single target"
         ],
         [
+          "dot",
+          "Area"
+        ],
+        [
           "max_hp",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {
@@ -13173,25 +13117,23 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 240.0
+                  "value": 260.0
                 }
-              ],
-              "duration": 6.0,
-              "tick": 1.0
+              ]
             }
           ],
           "skill_range": 10,
           "initial_energy": 0.0,
           "skill_card_tags": [
             {
-              "label": "DoT"
+              "label": "Magic"
             },
             {
               "label": "Silence — Single target"
@@ -13626,11 +13568,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area"
-        ],
-        [
-          "dot",
-          "All units"
+          "All units, Area"
         ],
         [
           "hp_loss",
@@ -33554,6 +33492,32 @@
                   "value": 350.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 55.0
+                }
+              ],
+              "duration": 4.0,
+              "tick": 1.0
             }
           ],
           "cooldown": 8.0,
@@ -33564,6 +33528,9 @@
             },
             {
               "label": "Magic"
+            },
+            {
+              "label": "DoT"
             }
           ]
         },
@@ -33805,6 +33772,10 @@
         [
           "magic",
           "All units, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ],
         [
           "max_hp",
@@ -36344,26 +36315,6 @@
               ]
             },
             {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
-              "duration": 2.5,
-              "tick": 1.0
-            },
-            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "untargetable",
@@ -36378,9 +36329,6 @@
           "skill_card_tags": [
             {
               "label": "Magic"
-            },
-            {
-              "label": "DoT"
             },
             {
               "label": "Untargetable — Self"
@@ -36416,10 +36364,6 @@
         [
           "magic",
           "Area, Single target"
-        ],
-        [
-          "dot",
-          "Single target"
         ],
         [
           "hp_loss",
@@ -36895,7 +36839,14 @@
         }
       },
       "synergy_profile": {
-        "provides": [],
+        "provides": [
+          {
+            "label": "Ally DoT on enemies",
+            "tier": "mythic+",
+            "targeting": "Area",
+            "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
+          }
+        ],
         "requires": []
       },
       "damage_entries": [],
@@ -44116,6 +44067,27 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ],
+              "duration": 3.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
               "type": "debuff",
               "name": "Energy",
               "label": "debuff_stat",
@@ -44149,6 +44121,9 @@
           "cooldown": 9.0,
           "initial_cooldown": 2.0,
           "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
             {
               "label": "Magic"
             },
@@ -44370,6 +44345,10 @@
         [
           "magic",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Area"
         ],
         [
           "max_hp",
@@ -48231,6 +48210,12 @@
             "tier": "base",
             "targeting": "Area",
             "description": "Satrana grants Sparks to allies within 2 tiles when a battle starts."
+          },
+          {
+            "label": "Ally DoT on enemies",
+            "tier": "base",
+            "targeting": "Area",
+            "description": "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s until the battle ends."
           }
         ],
         "requires": []
@@ -55276,6 +55261,12 @@
             "tier": "mythic+",
             "targeting": "Single target",
             "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
+          },
+          {
+            "label": "Ally DoT on enemies",
+            "tier": "mythic+",
+            "targeting": "Area",
+            "description": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends."
           }
         ],
         "requires": []
@@ -61106,6 +61097,27 @@
               ]
             },
             {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 320.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            },
+            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -61120,6 +61132,9 @@
           "skill_card_tags": [
             {
               "label": "Magic"
+            },
+            {
+              "label": "DoT"
             },
             {
               "label": "Unaffected — Self"
@@ -61451,6 +61466,10 @@
         [
           "magic",
           "All units, Single target"
+        ],
+        [
+          "dot",
+          "All units"
         ]
       ],
       "damage_magnitudes": {},

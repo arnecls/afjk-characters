@@ -193,12 +193,13 @@
           "effects": [
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "type": "dot",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -207,7 +208,9 @@
                   "type": "percentage",
                   "value": 6.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 0.5
             }
           ],
           "summon_effects": [],

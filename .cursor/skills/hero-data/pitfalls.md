@@ -91,11 +91,16 @@ hits (not generic True + Max HP).
 
 ### DoT false positives
 
-Self or summon HP drain, periodic auto-attacks, and on-entry bursts are not
-sustained enemy DoT.
+Self or summon HP drain, periodic auto-attacks, on-entry bursts, channels,
+and cooldown `each time` wording are not sustained enemy DoT.
 
 - Harak Vicious Bite — healing-lock cast drain (also spurious HoT)
 - Berial Shadow Reflection — Silhouette self HP cost (debatable)
+- Berial Scared Swamp — channeled shadow damage every 0.25s (Magic, not DoT)
+- Brutus Whirlwind Wrath — spin channel every second for 4s
+- Dunlingr Bell of Order — damage each time it is summoned
+- Mehira Total Devotion — voidling attacks every 1.5s
+- Perseus Fertile Ground — `damage … each time it's triggered` (cooldown)
 - Carolina Snowball Witchery — discrete auto-shot cooldown
 - Cryonaia Frozen in Time — domain-entry burst, not sustained DoT
 - Evie Intel Chase — channeled magic per second stays **Magic**, not DoT
@@ -106,6 +111,12 @@ Sustained `every Ns` / `per second` enemy damage without `dot` label.
 
 - Bonnie Decay's Reach — max-stack Aging `100% every 1s`
 - Arden vine skills (resolved in later pass but pattern recurs)
+- Daimon Guardian Howl EX+10 — max-HP shockwave ticks
+- Ludovic Lifeweaver's Blooms active — HP loss over 4s
+- Pippa Botanical Woe — persistent plant zone
+- Satrana Ignite Passions / Talene Pyre of Renewal — ally-granted burn
+- Mikola Passionate Opening — ally-adjacent damage aura
+- Viperian Spiritual Viper — possessed-enemy HP drain
 
 ### HoT false positives
 
