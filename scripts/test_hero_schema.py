@@ -514,6 +514,80 @@ class RoundTripTests(unittest.TestCase):
         self.assertIn("Lifedrain — Area", labels)
         self.assertNotIn("Lifedrain — Single target", labels)
 
+    def test_kordan_ultimate_challenge_bind_is_single_target(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if "Kordan" in r.get("title", ""))
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        labels = tag_labels(tags)
+        self.assertIn("Bind — Single target", labels)
+        self.assertNotIn("Bind — Area", labels)
+
+    def test_gwyneth_skill1_silence_is_single_target_splash_stun_area(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Gwyneth")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        labels = tag_labels(tags)
+        self.assertIn("Silence — Single target", labels)
+        self.assertNotIn("Silence — Area", labels)
+        self.assertIn("Stun — Area", labels)
+
+    def test_gwyneth_ultimate_rain_bind_is_area(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Gwyneth")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        labels = tag_labels(tags)
+        self.assertIn("Bind — Area", labels)
+        self.assertNotIn("Bind — Single target", labels)
+        ult = hero.skill_slices["Ultimate"]
+        rain_damage = [
+            e
+            for e in ult.effects
+            if e.category == "damage"
+            and e.label == "Physical"
+            and e.targeting == "Area"
+        ]
+        passive_damage = [
+            e
+            for e in ult.effects
+            if e.category == "damage"
+            and e.label == "Physical"
+            and e.targeting == "Single target"
+        ]
+        self.assertEqual(len(rain_damage), 1)
+        self.assertEqual(rain_damage[0].area_count, 2)
+        self.assertEqual(len(passive_damage), 1)
+
+    def test_lamentis_ultimate_apostle_cc_is_multiple_targets(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Lamentis")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        labels = tag_labels(tags)
+        self.assertIn("Stun — Multiple targets", labels)
+        self.assertIn("Max HP — Multiple targets", labels)
+        self.assertNotIn("Stun — All units", labels)
+        ult = hero.skill_slices["Ultimate"]
+        magic = [
+            e
+            for e in ult.effects
+            if e.category == "damage" and e.label == "Magic"
+        ]
+        self.assertEqual(len(magic), 1)
+        self.assertEqual(magic[0].targeting, "All units")
+        apostle_stun = [
+            e
+            for e in ult.effects
+            if e.category == "cc" and e.label == "Stun"
+        ]
+        self.assertEqual(apostle_stun[0].targeting, "Multiple targets")
+
     def test_daimon_skill1_shield_is_self_not_single_target(self):
         data = io.load_heroes_data()
         record = next(r for r in data["heroes"] if r.get("title", "").startswith("Daimon"))

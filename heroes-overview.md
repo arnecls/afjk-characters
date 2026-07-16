@@ -214,6 +214,7 @@ Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to sing
 
 - Zandrok (5.0 / 5)
 - Shadewing (4.1 / 5)
+- Carolina (3.7 / 5)
 
 ### Units that can act as a replacement for Alna
 
@@ -239,8 +240,8 @@ Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to sing
 
 **Crowd Control**
 
+- Gwyneth (100% `Bind`)
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 - Eironn (100% `Bind`)
 
 ### Summary for Alna
@@ -608,9 +609,9 @@ Common buffers are **Ravion**, **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 **Best overall replacement**
 
+- Gwyneth (59% `Damage` `Similar Skills` `Crowd Control`)
 - Frieren (57% `Damage`)
 - Faramor (55% `Damage`)
-- Gwyneth (52% `Damage` `Similar Skills`)
 
 **Similar Skills**
 
@@ -626,9 +627,9 @@ Common buffers are **Ravion**, **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 **Crowd Control**
 
-- Kordan (100% `Bind`)
 - Eironn (100% `Bind`)
 - Evie (85% `Bind`)
+- Laios (85% `Bind`)
 
 ### Summary for Arden
 
@@ -721,7 +722,7 @@ Common buffers are **Mikola**, **Ravion**, **Smokey & Meerky**, or **Kazim**.
 **Best overall replacement**
 
 - Perseus (77% `Damage` `Crowd Control`)
-- Gwyneth (68% `Damage`)
+- Gwyneth (70% `Damage`)
 - Valen (61% `Damage` `Crowd Control`)
 
 **Similar Skills**
@@ -975,9 +976,9 @@ These are the **4** strongest pairings:
 
 **Crowd Control**
 
+- Gwyneth (100% `Bind`)
 - Saida (100% `Bind`)
 - Alna (100% `Bind`)
-- Galahad (100% `Bind`)
 
 ### Summary for Aurora
 
@@ -1763,8 +1764,6 @@ Carolina also requires units **applying crowd control** to enemies
 
 - **Hepler**
   - Enables CC on enemies via Blind (area, high)
-- **Kordan**
-  - Enables CC on enemies via Bind (area, high)
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
   - Enables CC on enemies via Stun (multiple targets, high)
@@ -1776,6 +1775,11 @@ Carolina also requires units **applying crowd control** to enemies
   - Energy (multiple targets, low) `signature fuel`
   - ATK SPD via Haste (all units, average) `signature fuel`
   - Enables CC on enemies via Blind (area, average)
+- **Lyca**
+  - Energy (all units, low) `signature fuel`
+  - ATK SPD (all units, low) `signature fuel`
+  - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+  - Enables CC on enemies via Stun (single target, average)
 
 ### Units benefitting most from Carolina
 
@@ -1812,8 +1816,8 @@ Carolina also requires units **applying crowd control** to enemies
 **Crowd Control**
 
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 - Eironn (100% `Bind`)
+- Arden (100% `Bind`)
 
 ### Summary for Carolina
 
@@ -2032,7 +2036,7 @@ Common buffers are **Mikola**, **Twins**, **Hugin**, or **Rowan**.
 
 **Best overall replacement**
 
-- Gwyneth (70% `Damage` `Debuffs on enemies`)
+- Gwyneth (82% `Damage` `Crowd Control` `Debuffs on enemies`)
 - Alna (58% `Damage` `Crowd Control`)
 - Faramor (52% `Damage`)
 
@@ -2056,9 +2060,9 @@ Common buffers are **Mikola**, **Twins**, **Hugin**, or **Rowan**.
 
 **Crowd Control**
 
+- Gwyneth (100% `Bind`)
 - Alna (100% `Bind`)
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 
 ### Summary for Cecia
 
@@ -2252,7 +2256,6 @@ These are the **4** strongest pairings:
 **Crowd Control**
 
 - Evie (90% `Silence`)
-- Gwyneth (50% `Silence` `Stun`)
 
 ### Summary for Contess
 
@@ -3140,9 +3143,9 @@ Common buffers are **Mikola**, **Rowan**, **Twins**, or **Smokey & Meerky**.
 
 **Crowd Control**
 
-- Kordan (90% `Bind`)
 - Arden (90% `Bind`)
 - Carolina (90% `Bind`)
+- Evie (84% `Bind` `Displace`)
 
 ### Summary for Eironn
 
@@ -3881,9 +3884,9 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 **Crowd Control**
 
+- Gwyneth (100% `Bind`)
 - Alna (100% `Bind`)
 - Velara (100% `Bind`)
-- Evie (100% `Bind`)
 
 ### Summary for Galahad
 
@@ -4317,8 +4320,8 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 ### Units benefitting most from Gwyneth
 
 - Niru (4.2 / 5)
-- Carolina (2.3 / 5)
-- Nerion (2.1 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
 
 ### Units that can act as a replacement for Gwyneth
 
@@ -4340,8 +4343,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 **Crowd Control**
 
-- Evie (93% `Silence` `Bind`)
-- Contess (66% `Silence` `Stun`)
+- Evie (99% `Bind` `Silence`)
+- Arden (83% `Bind`)
+- Cecia (83% `Bind`)
 
 ### Summary for Gwyneth
 
@@ -4358,8 +4362,8 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 #### Crowd Control provided by Gwyneth
 
-- Bind — Single target — `average`
-- Silence — Area — `low`
+- Bind — Area — `average`
+- Silence — Single target — `low`
 - Stun — Area — `low`
 
 ## Hammie
@@ -6004,8 +6008,6 @@ Common buffers are **Ravion**, **Rowan**, **Mikola**, or **Lyca**.
 
 Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Penetration (Supreme+) in an area `high`.
 
-- Carolina (5.0 / 5)
-- Nerion (5.0 / 5)
 - Lily May (3.3 / 5)
 - Silven (2.8 / 5)
 
@@ -6029,9 +6031,9 @@ Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Pe
 
 **Crowd Control**
 
-- Eironn (53% `Bind`)
-- Carolina (53% `Bind`)
-- Arden (51% `Bind`)
+- Indris (79% `Bind` `Knock back`)
+- Eironn (62% `Bind`)
+- Carolina (62% `Bind`)
 
 ### Summary for Kordan
 
@@ -6047,7 +6049,7 @@ Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Pe
 
 #### Crowd Control provided by Kordan
 
-- Bind — Area — `high`
+- Bind — Single target — `high`
 - Knock back — Area — `low`
 - Knock down — Single target — `low`
 - Knock up (Mythic+) — Single target — `low`
@@ -6144,7 +6146,7 @@ Korin provides Shield to single targets `average`.
 
 - Kordan (100% `Bind` `Knock back`)
 - Indris (95% `Bind` `Knock back`)
-- Evie (80% `Bind`)
+- Gwyneth (80% `Bind`)
 
 ### Summary for Korin
 
@@ -6500,8 +6502,8 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Haste in an
 **Crowd Control**
 
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 - Eironn (100% `Bind`)
+- Arden (100% `Bind`)
 
 ### Summary for Laios
 
@@ -6616,15 +6618,15 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Hewynn**, or **Twins**.
 
 **Debuffs on enemies**
 
+- Lorsan (100% `Max HP`)
+- Nara (100% `Max HP`)
 - Natsu (100% `Max HP`)
-- Lorsan (72% `Max HP`)
-- Nara (72% `Max HP`)
 
 **Crowd Control**
 
-- Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
-- Bonnie (100% `Stun`)
+- Hepler (100% `Stun`)
+- Koko (100% `Stun`)
+- Lorsan (100% `Stun`)
 
 ### Summary for Lamentis
 
@@ -6641,11 +6643,11 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Hewynn**, or **Twins**.
 
 #### Debuffs provided by Lamentis
 
-- Max HP — All units — `low`
+- Max HP — Multiple targets — `low`
 
 #### Crowd Control provided by Lamentis
 
-- Stun — All units — `low`
+- Stun — Multiple targets — `average`
 
 ## Lenya
 
@@ -7688,7 +7690,7 @@ Common buffers are **Ravion**, **Rowan**, **Hugin**, or **Smokey & Meerky**.
 
 Lyca provides ATK SPD to all units `low` and Energy to all units `low`.
 
-**28** units include this provider among their top 6 synergy partners. Why the match is common:
+**29** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -7698,7 +7700,7 @@ These are the **4** strongest pairings:
 
 - Indris (4.9 / 5)
 - Shemira (4.3 / 5)
-- Carolina (4.1 / 5)
+- Nerion (3.8 / 5)
 - Vala (3.6 / 5)
 
 ### Units that can act as a replacement for Lyca
@@ -8775,9 +8777,6 @@ Nerion also requires units **applying crowd control** to enemies
   - ATK SPD via Haste (all units, average) `signature fuel`
   - Energy (multiple targets, low) `signature fuel`
   - Enables CC on enemies via Blind (area, average)
-- **Kordan**
-  - DEF Penetration (area, high)
-  - Enables CC on enemies via Bind (area, high)
 - **Lorsan**
   - ATK SPD via Haste (single target, high) `signature fuel`
   - Enables CC on enemies via Stun (multiple targets, high)
@@ -8793,6 +8792,11 @@ Nerion also requires units **applying crowd control** to enemies
   - Enables CC on enemies via Blind (area, average)
 - **Hepler**
   - Enables CC on enemies via Blind (area, high)
+- **Smokey & Meerky**
+  - ATK (area, average)
+  - ATK SPD via Haste (area, high) `signature fuel`
+  - Energy (area, low) `signature fuel`
+  - Enables CC on enemies via Stun (area, low)
 
 ### Units benefitting most from Nerion
 
@@ -10673,8 +10677,8 @@ _No synergy partners matched stat buffs or enablers._
 **Best overall replacement**
 
 - Cecia (73% `Damage` `Crowd Control`)
-- Kordan (64% `Damage` `Crowd Control`)
 - Nara (62% `Damage`)
+- Silvina (61% `Damage`)
 
 **Similar Skills**
 
@@ -10691,8 +10695,8 @@ _No synergy partners matched stat buffs or enablers._
 **Crowd Control**
 
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 - Eironn (100% `Bind`)
+- Arden (100% `Bind`)
 
 ### Summary for Salazer
 
@@ -13749,9 +13753,9 @@ Velara provides Basic stats to all units `average` and Direct healing to multipl
 
 **Crowd Control**
 
+- Gwyneth (100% `Bind`)
 - Alna (100% `Bind`)
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 
 ### Summary for Velara
 

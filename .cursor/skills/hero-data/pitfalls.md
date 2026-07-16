@@ -123,6 +123,20 @@ Sustained `every Ns` / `per second` enemy damage without `dot` label.
 Healing-lock wording (`cannot be healed while…`) with `0%` self tick → not
 Healing over time.
 
+### Targeting false merges
+
+Area/All units reach copied from a splash or summoner clause onto a different
+subject in the same sentence.
+
+- Kordan Dominance Ring — challenge Bind is **Single target**; circle damage
+  and ally buffs stay **Area**
+- Gwyneth Fulgur Arrow — Silence on the attack target is **Single target**;
+  splash stun/damage stay **Area**
+- Gwyneth Hailing Arrows — active rain Bind/damage are **Area** (2 tiles);
+  charged normal-attack hit stays **Single target**
+- Lamentis Malevolent Gaze — apostle Stun and Max HP debuff are **Multiple
+  targets (6)**; Lamentis' own damage stays **All units**
+
 ### Buff vs debuff swaps
 
 - Aliceth Hero Focus — focus-fire mark is **Marked target**, not ATK buff

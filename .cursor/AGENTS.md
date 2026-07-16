@@ -74,7 +74,9 @@ max HP` riders).
 
 To detect these targeting types, the text needs to be searched for wordings like
 "In an arc", "all", etc. This needs to be done by the Agent, as text are too
-fuzzy to define clear rules.
+fuzzy to define clear rules. **Per clause:** do not copy Area or All units
+reach from splash/AoE wording onto a primary-target or capped multi-target
+effect in the same sentence (e.g. silence on the target vs splash stun).
 
 ## Crowd Control
 

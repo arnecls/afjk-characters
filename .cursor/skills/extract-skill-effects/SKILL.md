@@ -121,7 +121,10 @@ just validate
 
 ## Extraction rules (critical)
 
-- **Targeting** from same sentence/clause as the effect.
+- **Targeting** from same sentence/clause as the effect. When one sentence
+  mixes a primary-target CC with splash/AoE (or summoner all-enemy damage
+  with capped summon multi-target CC), give each effect its own reach — do not
+  inherit Area/All units from a neighboring clause.
 - **True damage hierarchy:** keep HP loss / max-HP subtypes; drop generic True when subtype applies.
 - **Freeze/frozen** → Bind CC type.
 - **Disarm/disarming** → Disarm CC type.

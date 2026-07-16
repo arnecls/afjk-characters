@@ -9,26 +9,25 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 6,
               "type": "debuff",
               "name": "Max HP",
               "label": "debuff_stat"
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 6,
               "type": "crowd_control",
-              "cc-type": "stun"
+              "cc-type": "stun",
+              "duration": 3.5
             },
             {
               "tier": "base",

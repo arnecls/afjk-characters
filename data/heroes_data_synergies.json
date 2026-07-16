@@ -459,6 +459,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 16.0,
+          "name": "Carolina"
+        },
+        {
           "score": 12.5,
           "name": "Shadewing"
         },
@@ -548,14 +552,14 @@
         ],
         "cc": [
           {
-            "name": "Evie",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Evie",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -1685,13 +1689,6 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
             "name": "Eironn",
             "score": 1.0,
             "matches": [
@@ -1704,9 +1701,25 @@
             "matches": [
               "Bind"
             ]
+          },
+          {
+            "name": "Laios",
+            "score": 0.8571,
+            "matches": [
+              "Bind"
+            ]
           }
         ],
         "overall": [
+          {
+            "name": "Gwyneth",
+            "score": 0.594,
+            "matches": [
+              "Damage",
+              "Similar Skills",
+              "Crowd Control"
+            ]
+          },
           {
             "name": "Frieren",
             "score": 0.5723,
@@ -1719,14 +1732,6 @@
             "score": 0.553,
             "matches": [
               "Damage"
-            ]
-          },
-          {
-            "name": "Gwyneth",
-            "score": 0.5281,
-            "matches": [
-              "Damage",
-              "Similar Skills"
             ]
           }
         ]
@@ -2149,7 +2154,7 @@
           },
           {
             "name": "Gwyneth",
-            "score": 0.6841,
+            "score": 0.7078,
             "matches": [
               "Damage"
             ]
@@ -2643,6 +2648,13 @@
         ],
         "cc": [
           {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Saida",
             "score": 1.0,
             "matches": [
@@ -2651,13 +2663,6 @@
           },
           {
             "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Galahad",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -4429,13 +4434,6 @@
           "score": 24.0
         },
         {
-          "provider": "Kordan",
-          "reasons": [
-            "Enables CC on enemies via Bind (area, high)"
-          ],
-          "score": 24.0
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`",
@@ -4551,6 +4549,13 @@
         },
         {
           "provider": "Eironn",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Gwyneth",
           "reasons": [
             "Enables CC on enemies via Bind (area, average)"
           ],
@@ -4700,6 +4705,13 @@
           "score": 12.0
         },
         {
+          "provider": "Lamentis",
+          "reasons": [
+            "Enables CC on enemies via Stun (multiple targets, average)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Walker",
           "reasons": [
             "Enables CC on enemies via Stun (arc, average)"
@@ -4726,13 +4738,6 @@
           "provider": "Saida",
           "reasons": [
             "Enables CC on enemies via Bind (all units, low)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Lamentis",
-          "reasons": [
-            "Enables CC on enemies via Stun (all units, low)"
           ],
           "score": 10.0
         },
@@ -4768,6 +4773,13 @@
         },
         {
           "provider": "Indris",
+          "reasons": [
+            "Enables CC on enemies via Bind (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Kordan",
           "reasons": [
             "Enables CC on enemies via Bind (single target, high)"
           ],
@@ -4819,13 +4831,6 @@
           "provider": "Florabelle",
           "reasons": [
             "Enables CC on enemies via Knock up (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Gwyneth",
-          "reasons": [
-            "Enables CC on enemies via Stun (area, low)"
           ],
           "score": 8.0
         },
@@ -5243,14 +5248,14 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Eironn",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -5912,6 +5917,13 @@
         ],
         "cc": [
           {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
@@ -5924,21 +5936,15 @@
             "matches": [
               "Bind"
             ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
           }
         ],
         "overall": [
           {
             "name": "Gwyneth",
-            "score": 0.7092,
+            "score": 0.8246,
             "matches": [
               "Damage",
+              "Crowd Control",
               "Debuffs on enemies"
             ]
           },
@@ -6516,14 +6522,6 @@
             "score": 0.9,
             "matches": [
               "Silence"
-            ]
-          },
-          {
-            "name": "Gwyneth",
-            "score": 0.5,
-            "matches": [
-              "Silence",
-              "Stun"
             ]
           }
         ],
@@ -9216,13 +9214,6 @@
         ],
         "cc": [
           {
-            "name": "Kordan",
-            "score": 0.9,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
             "name": "Arden",
             "score": 0.9,
             "matches": [
@@ -9234,6 +9225,14 @@
             "score": 0.9,
             "matches": [
               "Bind"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.8438,
+            "matches": [
+              "Bind",
+              "Displace"
             ]
           }
         ],
@@ -12196,6 +12195,13 @@
         ],
         "cc": [
           {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
@@ -12204,13 +12210,6 @@
           },
           {
             "name": "Velara",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Evie",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -13143,11 +13142,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 8.0,
+          "score": 16.0,
           "name": "Carolina"
         },
         {
-          "score": 8.0,
+          "score": 16.0,
           "name": "Nerion"
         },
         {
@@ -13224,18 +13223,24 @@
         "cc": [
           {
             "name": "Evie",
-            "score": 0.9333,
+            "score": 0.9913,
             "matches": [
-              "Silence",
+              "Bind",
+              "Silence"
+            ]
+          },
+          {
+            "name": "Arden",
+            "score": 0.8348,
+            "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Contess",
-            "score": 0.6667,
+            "name": "Cecia",
+            "score": 0.8348,
             "matches": [
-              "Silence",
-              "Stun"
+              "Bind"
             ]
           }
         ],
@@ -19042,14 +19047,6 @@
       ],
       "beneficiaries": [
         {
-          "score": 28.5,
-          "name": "Nerion"
-        },
-        {
-          "score": 24.0,
-          "name": "Carolina"
-        },
-        {
           "score": 16.125,
           "name": "Lily May"
         },
@@ -19128,22 +19125,23 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Indris",
+            "score": 0.7931,
+            "matches": [
+              "Bind",
+              "Knock back"
+            ]
+          },
+          {
             "name": "Eironn",
-            "score": 0.5333,
+            "score": 0.6207,
             "matches": [
               "Bind"
             ]
           },
           {
             "name": "Carolina",
-            "score": 0.5333,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 0.5185,
+            "score": 0.6207,
             "matches": [
               "Bind"
             ]
@@ -19405,7 +19403,7 @@
             ]
           },
           {
-            "name": "Evie",
+            "name": "Gwyneth",
             "score": 0.8,
             "matches": [
               "Bind"
@@ -20301,14 +20299,14 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Eironn",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -20667,22 +20665,22 @@
         ],
         "debuff": [
           {
-            "name": "Natsu",
+            "name": "Lorsan",
             "score": 1.0,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Lorsan",
-            "score": 0.72,
+            "name": "Nara",
+            "score": 1.0,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Nara",
-            "score": 0.72,
+            "name": "Natsu",
+            "score": 1.0,
             "matches": [
               "Max HP"
             ]
@@ -20690,21 +20688,21 @@
         ],
         "cc": [
           {
-            "name": "Antandra",
+            "name": "Hepler",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Koko",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Lorsan",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -23664,6 +23662,10 @@
         {
           "score": 20.591142857142856,
           "name": "Vala"
+        },
+        {
+          "score": 20.411142857142856,
+          "name": "Nerion"
         },
         {
           "score": 18.318942857142858,
@@ -26696,14 +26698,6 @@
           "score": 28.654
         },
         {
-          "provider": "Kordan",
-          "reasons": [
-            "DEF Penetration via DEF Penetration (area, high)",
-            "Enables CC on enemies via Bind (area, high)"
-          ],
-          "score": 28.5
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`",
@@ -26860,6 +26854,13 @@
           "score": 16.0
         },
         {
+          "provider": "Gwyneth",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste (multiple targets, average) `signature fuel`",
@@ -26991,12 +26992,27 @@
           "score": 13.875
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "DEF Penetration via DEF Penetration (area, high)",
+            "Enables CC on enemies via Bind (single target, high)"
+          ],
+          "score": 13.5
+        },
+        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
             "Enables CC on enemies via Knock up (area, low)"
           ],
           "score": 13.100000000000001
+        },
+        {
+          "provider": "Lamentis",
+          "reasons": [
+            "Enables CC on enemies via Stun (multiple targets, average)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Natsu",
@@ -27065,13 +27081,6 @@
           "provider": "Saida",
           "reasons": [
             "Enables CC on enemies via Bind (all units, low)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Lamentis",
-          "reasons": [
-            "Enables CC on enemies via Stun (all units, low)"
           ],
           "score": 10.0
         },
@@ -27160,13 +27169,6 @@
           "provider": "Florabelle",
           "reasons": [
             "Enables CC on enemies via Knock up (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Gwyneth",
-          "reasons": [
-            "Enables CC on enemies via Stun (area, low)"
           ],
           "score": 8.0
         },
@@ -33242,14 +33244,14 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Eironn",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -33266,16 +33268,15 @@
             ]
           },
           {
-            "name": "Kordan",
-            "score": 0.6462,
+            "name": "Nara",
+            "score": 0.6203,
             "matches": [
-              "Damage",
-              "Crowd Control"
+              "Damage"
             ]
           },
           {
-            "name": "Nara",
-            "score": 0.6203,
+            "name": "Silvina",
+            "score": 0.6141,
             "matches": [
               "Damage"
             ]
@@ -41734,6 +41735,13 @@
         ],
         "cc": [
           {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
@@ -41742,13 +41750,6 @@
           },
           {
             "name": "Evie",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Bind"
