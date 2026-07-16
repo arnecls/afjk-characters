@@ -488,6 +488,10 @@ score) are listed, with a short note on why the provider matches widely.
 the **same sentence/clause** as the buff; do not treat self energy or self
 stats as ally buffs; enemy debuffs are not benefit stats; situational ally
 buffs (monster fights, ingredients, once per battle) should not rank.
+**Own-skill state gates** are not partner requires: e.g. Zandrok's extra max HP
+while **Rallying Roar** temp buffs are active is self-setup, not
+`Temporary ally stat buffs`. **Self-applied named debuffs/DoTs** (Crimson
+Venom tick text, Bonnie's Aging) are not generic `Debuff on target` requires.
 
 Regenerate: `python3 scripts/generate-heroes-overview.py`
 
@@ -498,7 +502,9 @@ combined score. **Units benefitting most from** (end of Synergies) lists heroes 
 include this unit in their top five. Display (`render_overview.py` /
 `render_site.py`) drops roster-wide **stat-buffer-only** partners
 (`obvious_provider_threshold`) but keeps **Enabler** matches (damage type,
-DoT, CC, etc.); top picks are then sorted by score for display.
+DoT, CC, etc.); top picks are then sorted by score for display. When every
+pick would be filtered as an obvious buffer, the **common-buffer** names are
+promoted into the partner list instead (no duplicate common-buffer row).
 
 1. **Stat buffs** — provider buffs match the hero's **Stats the unit benefits
    from** (magnitude, conditional weighting). Ally-buff **reach** (single vs

@@ -3726,10 +3726,14 @@ def _hero_combined_skill_text(hero: Hero) -> str:
 def _filter_self_satisfied_debuff_requires(hero: Hero) -> None:
     """Drop partner debuff requires satisfied by the hero's own kit."""
     combined = _hero_combined_skill_text(hero)
-    if not (
-        _SELF_APPLIED_AGING_RE.search(combined)
-        and re.search(r"afflicted by aging", combined, re.I)
-    ):
+    should_filter = (
+        (
+            _SELF_APPLIED_AGING_RE.search(combined)
+            and re.search(r"afflicted by aging", combined, re.I)
+        )
+        or _debuff_state_self_applied_in_text(combined)
+    )
+    if not should_filter:
         return
 
     def _keep(se: SpecialEffect) -> bool:

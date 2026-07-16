@@ -18,23 +18,6 @@ import skill_effects_store as ses
 CONSUMER_REQUIRE_LABEL = "Temporary ally stat buffs"
 OLD_REQUIRE_LABEL = "Ally stat buffs"
 
-CONSUMER_PATCHES: dict[str, list[dict]] = {
-    "Zandrok": [
-        {
-            "section": "Unlocks at Legendary+",
-            "tier": "legendary+",
-            "entry": {
-                "label": CONSUMER_REQUIRE_LABEL,
-                "tier": "legendary+",
-                "description": (
-                    "While temporary Rallying Roar buffs from allies are active, "
-                    "Zandrok gains extra max HP."
-                ),
-            },
-        }
-    ],
-}
-
 # Manual persistence for ally stat buffs the text classifier cannot resolve.
 PERSISTENCE_OVERRIDES: dict[tuple[str, str, str, str], str] = {
     ("Aliceth", "Skill1", "base", "Attack range"): "permanent",
@@ -85,40 +68,12 @@ def _rename_consumer_requires(doc: dict) -> bool:
     return changed
 
 
-def _apply_consumer_patches(doc: dict, hero_short: str) -> bool:
-    patches = CONSUMER_PATCHES.get(hero_short)
-    if not patches:
-        return False
-    changed = False
-    for patch in patches:
-        section = patch["section"]
-        tier_key = patch["tier"]
-        entry = patch["entry"]
-        skill_entry = doc["skills"].setdefault(section, {"tiers": {}})
-        tier_data = skill_entry.setdefault("tiers", {}).setdefault(
-            tier_key,
-            {
-                "effects": [],
-                "summon_effects": [],
-                "immunities": [],
-                "special_provides": [],
-                "special_requires": [],
-            },
-        )
-        reqs = tier_data.setdefault("special_requires", [])
-        if not any(r.get("label") == entry["label"] for r in reqs):
-            reqs.append(dict(entry))
-            changed = True
-    return changed
-
-
 def migrate_sidecar(doc: dict, hero_record: dict) -> bool:
     hero_short = ses.short_name(hero_record["title"])
     skills_by_section = {
         skill["section"]: skill for skill in hero_record.get("skills", [])
     }
     changed = _rename_consumer_requires(doc)
-    changed |= _apply_consumer_patches(doc, hero_short)
 
     for section, entry in doc.get("skills", {}).items():
         skill = skills_by_section.get(section)

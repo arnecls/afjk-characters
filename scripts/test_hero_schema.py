@@ -1520,6 +1520,26 @@ class PlacementConstraintTests(unittest.TestCase):
         ]
         self.assertEqual([e.label for e in debuff_requires], [], debuff_requires)
 
+    def test_zandrok_no_temporary_ally_buff_require(self):
+        hero, _data = self._hero_by_title_prefix("Zandrok")
+        requires = [e for e in hero.special_effects if e.kind == "requires"]
+        labels = [e.label for e in requires]
+        self.assertNotIn("Temporary ally stat buffs", labels)
+
+    def test_shadewing_no_debuff_partner_require(self):
+        hero, _data = self._hero_by_title_prefix("Shadewing")
+        requires = [e for e in hero.special_effects if e.kind == "requires"]
+        debuff_requires = [
+            e
+            for e in requires
+            if e.label in ("Debuff on target", "Debuff on target (Aging)")
+        ]
+        self.assertEqual([], debuff_requires)
+        dot_requires = [
+            e for e in requires if e.label == "Continuous damage on enemies"
+        ]
+        self.assertTrue(dot_requires)
+
     def test_twins_stellar_bond_placement(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Elijah & Lailah"), "Twins"

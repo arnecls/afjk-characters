@@ -147,30 +147,37 @@ def _format_synergies(
         stat_tags = " ".join(
             f"`{tag}`" for tag in _format_benefit_stat_tags(benefit_stats)
         )
+        look_line = f"Look for units providing: {stat_tags}"
         excluded = gen.common_stat_buffer_names(
             p["synergies"],
             provider_beneficiary_count,
             obvious_threshold,
         )
-        look_line = f"Look for units providing: {stat_tags}"
-        if excluded:
+        picks, from_common_buffers = gen.display_synergy_picks_for_receiver(
+            p["synergies"],
+            provider_beneficiary_count,
+            obvious_threshold,
+            max_syn=max_syn,
+        )
+        if excluded and not from_common_buffers:
             look_line += "  "
-        lines.append(look_line)
-        if excluded:
+            lines.append(look_line)
             lines.append(f"Common buffers are {_join_names(excluded)}.")
+        else:
+            lines.append(look_line)
         lines.append("")
+    else:
+        picks, from_common_buffers = gen.display_synergy_picks_for_receiver(
+            p["synergies"],
+            provider_beneficiary_count,
+            obvious_threshold,
+            max_syn=max_syn,
+        )
 
     requires_lines = gen.format_synergy_requires_markdown(hero, short)
     if requires_lines:
         lines.extend(requires_lines)
 
-    filtered = gen.filter_synergy_picks_for_display(
-        p["synergies"],
-        provider_beneficiary_count,
-        obvious_threshold,
-        max_syn,
-    )
-    picks = filtered
     if picks:
         for pick in picks:
             lines.append(f"- **{gen.short_name(pick['provider'])}**")

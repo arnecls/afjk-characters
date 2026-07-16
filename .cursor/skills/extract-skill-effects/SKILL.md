@@ -143,7 +143,11 @@ just validate
   stat buffs as `unknown` (validation hard-fails). Later tiers inherit
   unless text explicitly changes lifetime.
 - **Temporary-buff consumers:** use `special_requires` label
-  `Temporary ally stat buffs` (not the old generic label).
+  `Temporary ally stat buffs` (not the old generic label). Skill text must
+  name an **ally source** (`from an ally`, `from allies`, `from his allies`,
+  etc.). Do **not** use this label when the gate is **own-skill state** (e.g.
+  "while buffs granted by Rallying Roar are active") — model that with
+  `conditions[]` on the self effect instead.
 - **Ally stat-buff targeting:** roster ally buffs use `target: ally` in
   `effects`; owned-summon buffs use `summon_effects` with
   `own_summons`/`all_summons`. Do not model caster+apostle/summon-only

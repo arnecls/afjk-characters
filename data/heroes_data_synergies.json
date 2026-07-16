@@ -163,16 +163,16 @@
           "name": "Nerion"
         },
         {
-          "score": 21.75,
-          "name": "Shadewing"
-        },
-        {
           "score": 16.0,
           "name": "Carolina"
         },
         {
           "score": 14.25,
           "name": "Lily May"
+        },
+        {
+          "score": 12.75,
+          "name": "Shadewing"
         },
         {
           "score": 9.75,
@@ -467,11 +467,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 30.0,
-          "name": "Shadewing"
-        },
-        {
-          "score": 10.875,
+          "score": 7.875,
           "name": "Zandrok"
         }
       ],
@@ -1188,16 +1184,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.5,
-          "name": "Shadewing"
-        },
-        {
           "score": 16.0,
           "name": "Carolina"
         },
         {
           "score": 16.0,
           "name": "Nerion"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -2036,7 +2032,7 @@
           "name": "Nerion"
         },
         {
-          "score": 14.25,
+          "score": 7.5,
           "name": "Shadewing"
         }
       ],
@@ -3077,7 +3073,7 @@
           "name": "Nerion"
         },
         {
-          "score": 12.0,
+          "score": 7.5,
           "name": "Shadewing"
         }
       ],
@@ -3667,7 +3663,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 14.25,
+          "score": 7.5,
           "name": "Shadewing"
         },
         {
@@ -3784,8 +3780,12 @@
       "synergies": [],
       "beneficiaries": [
         {
-          "score": 19.5,
+          "score": 7.5,
           "name": "Shadewing"
+        },
+        {
+          "score": 2.0,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -4098,12 +4098,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 13.5,
-          "name": "Shadewing"
-        },
-        {
           "score": 9.6,
           "name": "Indris"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         },
         {
           "score": 5.0,
@@ -5135,16 +5135,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 13.5,
-          "name": "Shadewing"
-        },
-        {
           "score": 9.6,
           "name": "Indris"
         },
         {
           "score": 9.0,
           "name": "Nerion"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -5815,7 +5815,7 @@
           "name": "Nerion"
         },
         {
-          "score": 9.75,
+          "score": 7.5,
           "name": "Shadewing"
         }
       ],
@@ -6214,12 +6214,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 24.375,
-          "name": "Shadewing"
-        },
-        {
           "score": 22.275,
           "name": "Indris"
+        },
+        {
+          "score": 15.375,
+          "name": "Shadewing"
         },
         {
           "score": 12.875,
@@ -7143,16 +7143,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 15.0,
-          "name": "Shadewing"
-        },
-        {
           "score": 12.0,
           "name": "Indris"
         },
         {
           "score": 8.0,
           "name": "Carolina"
+        },
+        {
+          "score": 8.0,
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -8627,10 +8627,6 @@
           "name": "Indris"
         },
         {
-          "score": 25.125,
-          "name": "Shadewing"
-        },
-        {
           "score": 17.5125,
           "name": "Dionel"
         },
@@ -8663,8 +8659,8 @@
           "name": "Mikola"
         },
         {
-          "score": 9.0,
-          "name": "Zandrok"
+          "score": 10.125,
+          "name": "Shadewing"
         },
         {
           "score": 8.25,
@@ -9116,8 +9112,8 @@
           "name": "Nerion"
         },
         {
-          "score": 13.5,
-          "name": "Shadewing"
+          "score": 7.199999999999999,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -9609,10 +9605,6 @@
           "name": "Tilaya"
         },
         {
-          "score": 8.25,
-          "name": "Zandrok"
-        },
-        {
           "score": 8.141142857142857,
           "name": "Antandra"
         },
@@ -9715,6 +9707,10 @@
         {
           "score": 5.25,
           "name": "Solise"
+        },
+        {
+          "score": 5.25,
+          "name": "Zandrok"
         },
         {
           "score": 4.852941176470589,
@@ -10098,10 +10094,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 30.375,
-          "name": "Shadewing"
-        },
         {
           "score": 25.875,
           "name": "Indris"
@@ -10628,16 +10620,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 9.75,
-          "name": "Shadewing"
-        },
-        {
           "score": 8.0,
           "name": "Carolina"
         },
         {
           "score": 8.0,
           "name": "Nerion"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -11031,14 +11023,6 @@
         {
           "score": 10.125,
           "name": "Shadewing"
-        },
-        {
-          "score": 7.625,
-          "name": "Bonnie"
-        },
-        {
-          "score": 7.625,
-          "name": "Himmel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -12552,7 +12536,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 12.0,
+          "score": 7.5,
           "name": "Shadewing"
         },
         {
@@ -12810,12 +12794,12 @@
           "name": "Indris"
         },
         {
-          "score": 13.5,
-          "name": "Shadewing"
-        },
-        {
           "score": 8.025,
           "name": "Nerion"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -13147,16 +13131,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 9.75,
-          "name": "Shadewing"
-        },
-        {
           "score": 8.0,
           "name": "Carolina"
         },
         {
           "score": 8.0,
           "name": "Nerion"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -15568,10 +15552,6 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.75,
-          "name": "Shadewing"
-        },
-        {
           "score": 5.3999999999999995,
           "name": "Indris"
         }
@@ -15960,7 +15940,7 @@
       "synergies": [],
       "beneficiaries": [
         {
-          "score": 9.75,
+          "score": 7.5,
           "name": "Shadewing"
         },
         {
@@ -16762,10 +16742,6 @@
         {
           "score": 9.0,
           "name": "Nerion"
-        },
-        {
-          "score": 2.25,
-          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -17158,10 +17134,6 @@
         {
           "score": 21.28125,
           "name": "Faramor"
-        },
-        {
-          "score": 17.55,
-          "name": "Zandrok"
         },
         {
           "score": 16.03125,
@@ -18562,10 +18534,6 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.0,
-          "name": "Zandrok"
-        },
-        {
           "score": 1.5,
           "name": "Callan"
         }
@@ -19044,10 +19012,6 @@
         {
           "score": 13.5,
           "name": "Silven"
-        },
-        {
-          "score": 6.0,
-          "name": "Zandrok"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -19479,12 +19443,12 @@
           "name": "Indris"
         },
         {
-          "score": 6.0,
-          "name": "Shadewing"
+          "score": 3.0,
+          "name": "Carolina"
         },
         {
           "score": 3.0,
-          "name": "Carolina"
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -19797,12 +19761,12 @@
           "name": "Indris"
         },
         {
-          "score": 10.125,
-          "name": "Shadewing"
-        },
-        {
           "score": 5.625,
           "name": "Nerion"
+        },
+        {
+          "score": 5.4375,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -20248,10 +20212,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 25.5,
-          "name": "Shadewing"
-        },
         {
           "score": 7.0,
           "name": "Marcille"
@@ -21392,10 +21352,6 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.75,
-          "name": "Shadewing"
-        },
-        {
           "score": 5.0,
           "name": "Bonnie"
         },
@@ -21761,10 +21717,6 @@
         {
           "score": 27.0,
           "name": "Nerion"
-        },
-        {
-          "score": 25.5,
-          "name": "Shadewing"
         },
         {
           "score": 22.05,
@@ -25272,6 +25224,10 @@
         },
         {
           "score": 15.375,
+          "name": "Shadewing"
+        },
+        {
+          "score": 15.375,
           "name": "Vala"
         },
         {
@@ -25293,10 +25249,6 @@
         {
           "score": 12.375,
           "name": "Marilee"
-        },
-        {
-          "score": 12.0,
-          "name": "Zandrok"
         },
         {
           "score": 11.625,
@@ -26465,7 +26417,7 @@
           "name": "Nerion"
         },
         {
-          "score": 12.0,
+          "score": 7.5,
           "name": "Shadewing"
         }
       ],
@@ -26592,12 +26544,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 12.0,
-          "name": "Shadewing"
-        },
-        {
           "score": 9.0,
           "name": "Indris"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         },
         {
           "score": 6.0,
@@ -27709,10 +27661,6 @@
           "name": "Shemira"
         },
         {
-          "score": 8.399999999999999,
-          "name": "Zandrok"
-        },
-        {
           "score": 4.5,
           "name": "Antandra"
         },
@@ -28140,6 +28088,10 @@
           "name": "Valen"
         },
         {
+          "score": 8.58,
+          "name": "Shadewing"
+        },
+        {
           "score": 8.153228571428572,
           "name": "Berial"
         },
@@ -28186,6 +28138,10 @@
         {
           "score": 2.955,
           "name": "Thoran"
+        },
+        {
+          "score": 2.625,
+          "name": "Zandrok"
         },
         {
           "score": 1.08,
@@ -29578,8 +29534,8 @@
           "name": "Dionel"
         },
         {
-          "score": 9.0,
-          "name": "Zandrok"
+          "score": 12.75,
+          "name": "Shadewing"
         },
         {
           "score": 8.25,
@@ -30640,7 +30596,15 @@
       ],
       "beneficiaries": [
         {
-          "score": 19.5,
+          "score": 16.0,
+          "name": "Carolina"
+        },
+        {
+          "score": 16.0,
+          "name": "Nerion"
+        },
+        {
+          "score": 7.5,
           "name": "Shadewing"
         }
       ],
@@ -31027,10 +30991,6 @@
           "name": "Fay"
         },
         {
-          "score": 22.035,
-          "name": "Shadewing"
-        },
-        {
           "score": 20.325857142857142,
           "name": "Arden"
         },
@@ -31053,6 +31013,10 @@
         {
           "score": 18.781457142857143,
           "name": "Lorsan"
+        },
+        {
+          "score": 17.535,
+          "name": "Shadewing"
         },
         {
           "score": 17.250857142857143,
@@ -31514,8 +31478,8 @@
           "name": "Himmel"
         },
         {
-          "score": 4.5,
-          "name": "Shadewing"
+          "score": 3.75,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -33387,8 +33351,8 @@
           "name": "Nerion"
         },
         {
-          "score": 2.25,
-          "name": "Shadewing"
+          "score": 2.0,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -33521,113 +33485,21 @@
     "Shadewing": {
       "synergies": [
         {
-          "provider": "Evie",
+          "provider": "Ravion",
           "reasons": [
-            "ATK via ATK (single target, high)",
-            "Enables Debuff on target via Magic DEF (all units)"
-          ],
-          "score": 30.375
-        },
-        {
-          "provider": "Alna",
-          "reasons": [
-            "Enables Debuff on target via Haste (all units)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 30.0
-        },
-        {
-          "provider": "Laios",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (area)",
+            "ATK via ATK (multiple targets, high)",
+            "Energy via Energy (multiple targets, average) `signature fuel`",
             "Enables Continuous damage on enemies via tick damage"
           ],
-          "score": 25.5
-        },
-        {
-          "provider": "Lorsan",
-          "reasons": [
-            "Enables Debuff on target via Haste (area)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 25.5
-        },
-        {
-          "provider": "Dunlingr",
-          "reasons": [
-            "ATK via ATK (single target, low)",
-            "Enables Debuff on target via Energy (all units)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 25.125
+          "score": 17.535
         },
         {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK (single target, high)",
-            "Enables Debuff on target via ATK (multiple targets)",
             "Enables Continuous damage on enemies via DoT"
           ],
-          "score": 24.375
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK (multiple targets, high)",
-            "Energy via Energy (multiple targets, average) `signature fuel`",
-            "Enables Debuff on target via Phys DEF (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 22.035
-        },
-        {
-          "provider": "Aliceth",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Enables Debuff on target via Marked target (focus fire) (multiple targets)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 21.75
-        },
-        {
-          "provider": "Brutus",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (area)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 19.5
-        },
-        {
-          "provider": "Pippa",
-          "reasons": [
-            "Enables Debuff on target via Energy (area)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 19.5
-        },
-        {
-          "provider": "Galahad",
-          "reasons": [
-            "Enables Debuff on target via Haste (area)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Thador",
-          "reasons": [
-            "Energy via Energy (single target, high) `signature fuel`",
-            "Enables Debuff on target via Magic DEF (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 17.49
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Enables Debuff on target via ATK (arc)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 16.5
+          "score": 15.375
         },
         {
           "provider": "Mikola",
@@ -33636,69 +33508,6 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 15.375
-        },
-        {
-          "provider": "Velara",
-          "reasons": [
-            "Enables Debuff on target via Basic stats (all units)"
-          ],
-          "score": 15.0
-        },
-        {
-          "provider": "Cyran",
-          "reasons": [
-            "Enables Debuff on target via ATK SPD (all units)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 15.0
-        },
-        {
-          "provider": "Saida",
-          "reasons": [
-            "Enables Debuff on target via Energy (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "Enables Debuff on target via ATK (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Atalanta",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Bonnie",
-          "reasons": [
-            "Enables Debuff on target via Haste (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Kafra",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Enables Debuff on target via ATK (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 14.25
         },
         {
           "provider": "Smokey & Meerky",
@@ -33710,52 +33519,12 @@
           "score": 13.83
         },
         {
-          "provider": "Frieren",
+          "provider": "Aliceth",
           "reasons": [
-            "Enables Debuff on target via DoT (area)",
-            "Enables Continuous damage on enemies via DoT + Burn"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "Enables Debuff on target via Healing (area)",
+            "ATK via ATK (multiple targets, average)",
             "Enables Continuous damage on enemies via DoT"
           ],
-          "score": 13.5
-        },
-        {
-          "provider": "Bryon",
-          "reasons": [
-            "Enables Debuff on target via Haste (area)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Carolina",
-          "reasons": [
-            "Enables Debuff on target via Haste (area)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Enables Debuff on target via Haste (arc)"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Pandora",
-          "reasons": [
-            "Energy via Energy (single target, low) `signature fuel`",
-            "Enables Debuff on target via Vitality (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 13.08
+          "score": 12.75
         },
         {
           "provider": "Perseus",
@@ -33766,97 +33535,18 @@
           "score": 12.75
         },
         {
-          "provider": "Kazim",
+          "provider": "Thador",
           "reasons": [
-            "ATK via ATK (single target, high)",
-            "Enables Debuff on target via Marked target (focus fire) (single target)"
-          ],
-          "score": 12.375
-        },
-        {
-          "provider": "Berial",
-          "reasons": [
-            "Enables Debuff on target via Energy (single target)",
+            "Energy via Energy (single target, high) `signature fuel`",
             "Enables Continuous damage on enemies via DoT"
           ],
-          "score": 12.0
+          "score": 10.74
         },
         {
-          "provider": "Granny Dahnie",
-          "reasons": [
-            "Enables Debuff on target via Haste (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Hepler",
-          "reasons": [
-            "Enables Debuff on target via Haste (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Natsu",
-          "reasons": [
-            "Enables Debuff on target via Haste (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Nazrik",
-          "reasons": [
-            "Enables Debuff on target via Healing (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Odie",
-          "reasons": [
-            "Enables Debuff on target via DoT (single target)",
-            "Enables Continuous damage on enemies via DoT + Burn"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Peggy",
-          "reasons": [
-            "Enables Debuff on target via Ranged damage (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Satrana",
-          "reasons": [
-            "Enables Debuff on target via Vitality (multiple targets)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Viperian",
-          "reasons": [
-            "Enables Debuff on target via Energy (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Zorya",
-          "reasons": [
-            "Enables Debuff on target via Movement speed (area)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Kulu",
+          "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK (single target, low)",
-            "Enables Debuff on target via Damage taken (all units)"
+            "Enables Continuous damage on enemies via DoT"
           ],
           "score": 10.125
         },
@@ -33869,115 +33559,26 @@
           "score": 10.125
         },
         {
-          "provider": "Rowan",
+          "provider": "Pandora",
           "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Enables Debuff on target via Energy (single target)"
-          ],
-          "score": 9.99
-        },
-        {
-          "provider": "Faramor",
-          "reasons": [
-            "Enables Debuff on target via Vitality (single target)",
+            "Energy via Energy (single target, low) `signature fuel`",
             "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Gwyneth",
-          "reasons": [
-            "Enables Debuff on target via Vitality (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Mehira",
-          "reasons": [
-            "Enables Debuff on target via Damage taken (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Phraesto",
-          "reasons": [
-            "Enables Debuff on target via Vitality (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Shemira",
-          "reasons": [
-            "Enables Debuff on target via Max HP (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Cecia",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Cryonaia",
-          "reasons": [
-            "Enables Debuff on target via Damage taken (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Igor",
-          "reasons": [
-            "Enables Debuff on target via Healing (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Nerion",
-          "reasons": [
-            "Enables Debuff on target via Haste (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Niru",
-          "reasons": [
-            "Enables Debuff on target via Healing (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "Enables Debuff on target via Haste (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 9.75
-        },
-        {
-          "provider": "Sinbad",
-          "reasons": [
-            "Enables Debuff on target via Magic DEF (multiple targets)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Lyca",
-          "reasons": [
-            "Energy via Energy (all units, low) `signature fuel`",
-            "Enables Debuff on target via ATK (all units)"
           ],
           "score": 8.58
+        },
+        {
+          "provider": "Evie",
+          "reasons": [
+            "ATK via ATK (single target, high)"
+          ],
+          "score": 7.875
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK (single target, high)"
+          ],
+          "score": 7.875
         },
         {
           "provider": "Parisa",
@@ -33994,7 +33595,84 @@
           "score": 7.875
         },
         {
+          "provider": "Alna",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Athalia",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Faramor",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Frieren",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT + Burn"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Gwyneth",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Phraesto",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Saida",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Shemira",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Zanie",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Antandra",
           "reasons": [
             "Enables Continuous damage on enemies via tick damage"
           ],
@@ -34008,7 +33686,84 @@
           "score": 7.5
         },
         {
+          "provider": "Atalanta",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Berial",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Bonnie",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Brutus",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Bryon",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Carolina",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Cecia",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Cryonaia",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Cyran",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Daimon",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Granny Dahnie",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Hepler",
           "reasons": [
             "Enables Continuous damage on enemies via tick damage"
           ],
@@ -34022,9 +33777,37 @@
           "score": 7.5
         },
         {
-          "provider": "Lamentis",
+          "provider": "Igor",
           "reasons": [
-            "Enables Debuff on target via Max HP (all units)"
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Kafra",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Laios",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Lorsan",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 7.5
         },
@@ -34036,15 +33819,63 @@
           "score": 7.5
         },
         {
-          "provider": "Pang",
+          "provider": "Natsu",
           "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Enables Debuff on target via Energy (single target)"
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Nazrik",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Nerion",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Niru",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Odie",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT + Burn"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Pippa",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 7.5
         },
         {
           "provider": "Salazer",
+          "reasons": [
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Satrana",
           "reasons": [
             "Enables Continuous damage on enemies via tick damage"
           ],
@@ -34072,25 +33903,18 @@
           "score": 7.5
         },
         {
-          "provider": "Hodgkin",
+          "provider": "Valka",
           "reasons": [
-            "Enables Debuff on target via Energy (single target)"
+            "Enables Continuous damage on enemies via tick damage"
           ],
-          "score": 6.75
+          "score": 7.5
         },
         {
-          "provider": "Lily May",
+          "provider": "Viperian",
           "reasons": [
-            "Enables Debuff on target via Energy (single target)"
+            "Enables Continuous damage on enemies via tick damage"
           ],
-          "score": 6.75
-        },
-        {
-          "provider": "Silvina",
-          "reasons": [
-            "Enables Debuff on target via Energy (single target)"
-          ],
-          "score": 6.75
+          "score": 7.5
         },
         {
           "provider": "Twins",
@@ -34101,81 +33925,30 @@
           "score": 6.33
         },
         {
-          "provider": "Alsa",
+          "provider": "Pang",
           "reasons": [
-            "Enables Debuff on target via Movement speed (area)"
+            "ATK via ATK (multiple targets, average)"
           ],
-          "score": 6.0
+          "score": 5.25
         },
         {
-          "provider": "Cassadee",
+          "provider": "Rowan",
           "reasons": [
-            "Enables Debuff on target via Magic DEF (area)"
+            "Energy via Energy (area, high) `signature fuel`"
           ],
-          "score": 6.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Enables Debuff on target via ATK (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Temesia",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Koko",
-          "reasons": [
-            "ATK via ATK (all units, low)",
-            "Enables Debuff on target via Damage taken (single target)"
-          ],
-          "score": 4.875
-        },
-        {
-          "provider": "Reinier",
-          "reasons": [
-            "Enables Debuff on target via ATK (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Nara",
-          "reasons": [
-            "Enables Debuff on target via Max HP (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Vala",
-          "reasons": [
-            "Enables Debuff on target via Marked target (focus fire) (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Isabella",
-          "reasons": [
-            "ATK via ATK (single target, low, conditional (frequent))",
-            "Enables Debuff on target via ATK (single target)"
-          ],
-          "score": 4.481249999999999
+          "score": 3.2399999999999998
         },
         {
           "provider": "Kordan",
           "reasons": [
             "ATK via ATK (area, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "ATK via ATK (single target, low)"
           ],
           "score": 2.625
         },
@@ -34194,6 +33967,13 @@
           "score": 2.625
         },
         {
+          "provider": "Koko",
+          "reasons": [
+            "ATK via ATK (all units, low)"
+          ],
+          "score": 2.625
+        },
+        {
           "provider": "Lucca",
           "reasons": [
             "ATK via ATK (single target, low)"
@@ -34208,81 +33988,18 @@
           "score": 2.625
         },
         {
-          "provider": "Aurora",
+          "provider": "Isabella",
           "reasons": [
-            "Enables Debuff on target via Haste (single target)"
+            "ATK via ATK (single target, low, conditional (frequent))"
           ],
-          "score": 2.25
+          "score": 2.2312499999999997
         },
         {
-          "provider": "Baelran",
+          "provider": "Lyca",
           "reasons": [
-            "Enables Debuff on target via Max HP (single target)"
+            "Energy via Energy (all units, low) `signature fuel`"
           ],
-          "score": 2.25
-        },
-        {
-          "provider": "Himmel",
-          "reasons": [
-            "Enables Debuff on target via Damage taken (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Sylphira",
-          "reasons": [
-            "Enables Debuff on target via Max HP (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Dionel",
-          "reasons": [
-            "Enables Debuff on target via Vitality (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Harak",
-          "reasons": [
-            "Enables Debuff on target via Healing (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Indris",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Enables Debuff on target via Vitality (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Thoran",
-          "reasons": [
-            "Enables Debuff on target via Damage taken (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Walker",
-          "reasons": [
-            "Enables Debuff on target via Crit Resist (single target)"
-          ],
-          "score": 2.25
+          "score": 1.08
         }
       ],
       "beneficiaries": [
@@ -34797,7 +34514,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 9.75,
+          "score": 7.5,
           "name": "Shadewing"
         },
         {
@@ -35928,6 +35645,10 @@
         {
           "score": 14.197799999999999,
           "name": "Atalanta"
+        },
+        {
+          "score": 13.83,
+          "name": "Shadewing"
         },
         {
           "score": 12.654,
@@ -38875,6 +38596,10 @@
           "name": "Lumont"
         },
         {
+          "score": 10.74,
+          "name": "Shadewing"
+        },
+        {
           "score": 9.6204,
           "name": "Rhys"
         },
@@ -39125,8 +38850,8 @@
           "name": "Twins"
         },
         {
-          "score": 2.25,
-          "name": "Shadewing"
+          "score": 2.0,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -39379,10 +39104,6 @@
           "name": "Laios"
         },
         {
-          "score": 10.875,
-          "name": "Zandrok"
-        },
-        {
           "score": 9.723214285714285,
           "name": "Antandra"
         },
@@ -39401,6 +39122,10 @@
         {
           "score": 9.0,
           "name": "Seth"
+        },
+        {
+          "score": 7.875,
+          "name": "Zandrok"
         },
         {
           "score": 4.5,
@@ -40647,12 +40372,12 @@
           "name": "Nerion"
         },
         {
-          "score": 9.75,
-          "name": "Shadewing"
-        },
-        {
           "score": 9.08,
           "name": "Carolina"
+        },
+        {
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -41235,7 +40960,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 12.0,
+          "score": 7.5,
           "name": "Shadewing"
         },
         {
@@ -41375,8 +41100,8 @@
           "name": "Nerion"
         },
         {
-          "score": 2.25,
-          "name": "Shadewing"
+          "score": 2.0,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -41478,210 +41203,25 @@
     "Zandrok": {
       "synergies": [
         {
-          "provider": "Isabella",
-          "reasons": [
-            "Grants 6 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 17.55
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "Grants 4 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Alna",
           "reasons": [
-            "Max HP via Max HP (single target, high)",
-            "Grants 1 distinct temporary stat buff to Zandrok"
+            "Max HP via Max HP (single target, high)"
           ],
-          "score": 10.875
+          "score": 7.875
         },
         {
           "provider": "Tilaya",
           "reasons": [
-            "Max HP via Max HP (area, high)",
-            "Grants 1 distinct temporary stat buff to Zandrok"
+            "Max HP via Max HP (area, high)"
           ],
-          "score": 10.875
-        },
-        {
-          "provider": "Dunlingr",
-          "reasons": [
-            "Grants 3 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Perseus",
-          "reasons": [
-            "Grants 3 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Niru",
-          "reasons": [
-            "Grants 2 distinct temporary stat buffs to Zandrok (start of battle)"
-          ],
-          "score": 8.399999999999999
+          "score": 7.875
         },
         {
           "provider": "Twins",
           "reasons": [
-            "Max HP via Max HP (multiple targets, average)",
-            "Grants 1 distinct temporary stat buff to Zandrok"
+            "Max HP via Max HP (multiple targets, average)"
           ],
-          "score": 8.25
-        },
-        {
-          "provider": "Koko",
-          "reasons": [
-            "Grants 2 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Grants 2 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Grants 2 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Parisa",
-          "reasons": [
-            "Grants 2 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Grants 2 distinct temporary stat buffs to Zandrok"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Aliceth",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Contess",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Evie",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Mehira",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Thador",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Velara",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Hammie",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kazim",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lorsan",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lyca",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Pang",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 3.0
+          "score": 5.25
         },
         {
           "provider": "Pandora",
@@ -41689,13 +41229,6 @@
             "Max HP via Max HP (single target, low)"
           ],
           "score": 2.625
-        },
-        {
-          "provider": "Damian",
-          "reasons": [
-            "Grants 1 distinct temporary stat buff to Zandrok"
-          ],
-          "score": 2.55
         }
       ],
       "beneficiaries": [
@@ -42058,7 +41591,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 14.25,
+          "score": 7.5,
           "name": "Shadewing"
         },
         {
@@ -42457,8 +41990,8 @@
           "name": "Nerion"
         },
         {
-          "score": 12.0,
-          "name": "Shadewing"
+          "score": 9.6,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [

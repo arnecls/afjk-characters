@@ -556,5 +556,49 @@ class CommonStatBufferNamesTests(unittest.TestCase):
         self.assertEqual(names, ["Rowan"])
 
 
+class DisplaySynergyFallbackTests(unittest.TestCase):
+    def _pick(self, provider: str, score: float) -> dict:
+        return {
+            "provider": provider,
+            "score": score,
+            "reasons": ["Energy via Energy (single target, high)"],
+        }
+
+    def test_fallback_to_common_buffers_when_all_filtered(self) -> None:
+        picks = [
+            self._pick("Rowan", 3.24),
+            self._pick("Thador", 3.24),
+            self._pick("Ravion", 2.16),
+            self._pick("Hugin", 1.84),
+        ]
+        counts = {"Rowan": 37, "Thador": 28, "Ravion": 92, "Hugin": 29}
+        ranked = gen.rank_synergy_picks_for_display(picks, counts, threshold=20)
+        self.assertEqual(ranked, [])
+        display, from_fallback = gen.display_synergy_picks_for_receiver(
+            picks, counts, threshold=20, max_syn=6
+        )
+        self.assertTrue(from_fallback)
+        self.assertEqual(
+            [p["provider"] for p in display],
+            ["Rowan", "Thador", "Ravion", "Hugin"],
+        )
+
+    def test_no_fallback_when_enabler_pick_remains(self) -> None:
+        picks = [
+            {
+                "provider": "Bonnie",
+                "score": 12.0,
+                "reasons": ["Enables Magic damage from allies via Magic (area)"],
+            },
+            self._pick("Rowan", 3.0),
+        ]
+        counts = {"Bonnie": 50, "Rowan": 40}
+        display, from_fallback = gen.display_synergy_picks_for_receiver(
+            picks, counts, threshold=20, max_syn=6
+        )
+        self.assertFalse(from_fallback)
+        self.assertEqual([p["provider"] for p in display], ["Bonnie"])
+
+
 if __name__ == "__main__":
     unittest.main()

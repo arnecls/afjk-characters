@@ -495,6 +495,7 @@ def check_skill_effects_sidecars(
         errors.extend(ses.verify_sidecar_hashes(doc, record))
         errors.extend(bp.verify_sidecar_persistence(doc, hero_short=short))
         errors.extend(bp.verify_sidecar_targeting(doc, record, hero_short=short))
+        errors.extend(bp.verify_sidecar_special_requires(doc, record, hero_short=short))
         warnings.extend(ses.lint_hero_sidecar(doc, record))
 
     return errors, warnings

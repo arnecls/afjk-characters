@@ -138,6 +138,28 @@ class RenderSiteTests(unittest.TestCase):
         )
         self.assertNotIn("Requires", bonnie["sections"]["summary"])
 
+    def test_shadewing_synergy_requires_continuous_damage_only(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        shadewing = next(
+            h for h in payload["heroes"] if h["name"] == "Shadewing"
+        )
+        requires = shadewing["sections"]["benefits_from"]["requires"]
+        text = requires.get("text") or ""
+        self.assertIn("continuous damage", text.lower())
+        self.assertNotIn("putting debuffs", text.lower())
+
+    def test_contess_synergy_partners_from_common_buffers(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        contess = next(h for h in payload["heroes"] if h["name"] == "Contess")
+        bf = contess["sections"]["benefits_from"]
+        partners = bf["partners"]
+        self.assertTrue(partners)
+        names = {p["name"] for p in partners}
+        self.assertTrue(names & {"Rowan", "Thador", "Ravion", "Hugin"})
+        self.assertEqual(bf.get("common_buffers"), [])
+        intro = bf.get("intro") or ""
+        self.assertNotIn("Common buffers are", intro)
+
     def test_bonnie_shows_satrana_magic_enabler(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
         bonnie = next(h for h in payload["heroes"] if h["name"] == "Bonnie")

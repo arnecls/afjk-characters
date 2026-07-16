@@ -293,5 +293,50 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
         self.assertTrue(any("temporary stat buff" in r for r in reasons))
 
 
+class SpecialRequiresValidationTests(unittest.TestCase):
+    def test_zandrok_sidecar_lacks_ally_buff_require(self):
+        doc = ses.load_sidecar("Zandrok - Desert Ranger")
+        labels = {
+            req.get("label")
+            for entry in doc["skills"].values()
+            for tier in entry["tiers"].values()
+            for req in tier.get("special_requires", [])
+        }
+        self.assertNotIn(bp.CONSUMER_REQUIRE_LABEL, labels)
+
+    def test_own_skill_gate_rejected(self):
+        doc = {
+            "title": "Test - Hero",
+            "skills": {
+                "Unlocks at Legendary+": {
+                    "tiers": {
+                        "legendary+": {
+                            "special_requires": [
+                                {
+                                    "label": bp.CONSUMER_REQUIRE_LABEL,
+                                    "description": (
+                                        "While temporary Rallying Roar buffs "
+                                        "are active, gains extra max HP."
+                                    ),
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+        }
+        record = {"title": "Test - Hero", "skills": []}
+        errors = bp.verify_sidecar_special_requires(
+            doc, record, hero_short="Test"
+        )
+        self.assertTrue(errors)
+
+    def test_zandrok_remains_temporary_stat_buffer_provider(self):
+        tags = json.loads(
+            (ROOT / "data" / "hero_behavior_tags.json").read_text()
+        )
+        self.assertIn(bp.TEMPORARY_STAT_BUFFER_TAG, tags.get("Zandrok", []))
+
+
 if __name__ == "__main__":
     unittest.main()

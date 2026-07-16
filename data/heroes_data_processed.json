@@ -49887,12 +49887,6 @@
         ],
         "requires": [
           {
-            "label": "Debuff on target",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8%, plus extra damage equal to 5% of the enemy's lost HP."
-          },
-          {
             "label": "Continuous damage on enemies",
             "tier": "base",
             "targeting": "Enemies",
@@ -62535,13 +62529,7 @@
             "description": "Any excess healing Zandrok receives is converted into max HP, up to 50% of his initial max HP."
           }
         ],
-        "requires": [
-          {
-            "label": "Temporary ally stat buffs",
-            "tier": "legendary+",
-            "description": "While temporary Rallying Roar buffs from allies are active, Zandrok gains extra max HP."
-          }
-        ]
+        "requires": []
       },
       "damage_entries": [
         [

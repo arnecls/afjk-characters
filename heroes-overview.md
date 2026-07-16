@@ -212,8 +212,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
 Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to single targets `low`.
 
-- Shadewing (5.0 / 5)
-- Zandrok (3.5 / 5)
+- Zandrok (5.0 / 5)
 
 ### Units that can act as a replacement for Alna
 
@@ -469,7 +468,7 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (3.2 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Antandra
 
@@ -602,7 +601,7 @@ Common buffers are **Ravion**, **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (2.0 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Arden
 
@@ -714,7 +713,7 @@ Common buffers are **Mikola**, **Ravion**, **Smokey & Meerky**, or **Kazim**.
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (2.9 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Atalanta
 
@@ -818,14 +817,14 @@ charge and slashes also reduce enemy shield values
 
 ### Units improving Athalia
 
-Look for units providing: `Max HP` `CRIT` `Execution`  
-Common buffers are **Thador**.
+Look for units providing: `Max HP` `CRIT` `Execution`
 
-_No synergy partners matched stat buffs or enablers._
+- **Thador**
+  - Crit (single target, average)
 
 ### Units benefitting most from Athalia
 
-- Shadewing (2.0 / 5)
+- Shadewing (2.7 / 5)
 - Carolina (1.5 / 5)
 - Nerion (1.4 / 5)
 
@@ -1188,7 +1187,7 @@ extend stealth duration after own defeat
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (2.6 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Berial
 
@@ -1315,7 +1314,7 @@ Bonnie also requires units **dealing magic damage**
 
 ### Units benefitting most from Bonnie
 
-- Shadewing (2.9 / 5)
+- Shadewing (2.7 / 5)
 - Carolina (2.0 / 5)
 - Nerion (1.8 / 5)
 
@@ -1420,7 +1419,8 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Brutus
 
-- Shadewing (3.6 / 5)
+- Shadewing (2.7 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Brutus
 
@@ -1543,7 +1543,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 
 ### Units benefitting most from Bryon
 
-- Shadewing (2.8 / 5)
+- Shadewing (2.7 / 5)
 - Indris (2.4 / 5)
 - Bonnie (2.4 / 5)
 
@@ -1781,7 +1781,7 @@ Carolina also requires units **applying crowd control** to enemies
 
 ### Units benefitting most from Carolina
 
-- Shadewing (2.8 / 5)
+- Shadewing (2.7 / 5)
 - Indris (2.4 / 5)
 - Nerion (2.3 / 5)
 
@@ -2029,7 +2029,7 @@ Common buffers are **Mikola**, **Twins**, **Hugin**, or **Rowan**.
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (2.3 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Cecia
 
@@ -2196,10 +2196,16 @@ violations trigger stun or silence based on rule type
 
 ### Units improving Contess
 
-Look for units providing: `Energy`  
-Common buffers are **Rowan**, **Thador**, **Ravion**, or **Hugin**.
+Look for units providing: `Energy`
 
-_No synergy partners matched stat buffs or enablers._
+- **Rowan**
+  - Energy (area, high) `signature fuel`
+- **Thador**
+  - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+- **Hugin**
+  - Energy (single target, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Contess
 
@@ -2212,8 +2218,8 @@ Contess provides ATK to single targets `high`, Direct healing to multiple target
 These are the **4** strongest pairings: 
 
 - Bonnie (4.6 / 5)
+- Shadewing (4.5 / 5)
 - Indris (4.3 / 5)
-- Shadewing (4.2 / 5)
 - Himmel (4.2 / 5)
 
 ### Units that can act as a replacement for Contess
@@ -2461,9 +2467,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 ### Units benefitting most from Cyran
 
-- Shadewing (3.0 / 5)
 - Indris (2.8 / 5)
 - Carolina (2.3 / 5)
+- Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Cyran
 
@@ -2584,9 +2590,9 @@ Common buffers are **Contess**, **Hugin**, or **Thador**.
 
 Daimon provides Lifedrain to single targets `low`.
 
+- Shadewing (2.7 / 5)
 - Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
-- Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Daimon
 
@@ -2973,16 +2979,16 @@ Common buffers are **Lorsan**, **Smokey & Meerky**, **Twins**, or **Hewynn**.
 
 Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single targets `average`, ATK SPD (Supreme+) to all units `low`, and Lifedrain (Supreme+) to all units `low`.
 
-**48** units include this provider among their top 6 synergy partners. Why the match is common:
+**47** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
 - Indris (5.0 / 5)
-- Shadewing (4.3 / 5)
 - Dionel (3.7 / 5)
 - Silven (3.3 / 5)
+- Lily May (3.3 / 5)
 
 ### Units that can act as a replacement for Dunlingr
 
@@ -3111,7 +3117,7 @@ Common buffers are **Mikola**, **Rowan**, **Twins**, or **Smokey & Meerky**.
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (2.8 / 5)
+- Indris (2.1 / 5)
 
 ### Units that can act as a replacement for Eironn
 
@@ -3223,13 +3229,13 @@ Common buffers are **Ravion**, **Contess**, **Kazim**, or **Mikola**.
 
 Evie provides ATK to single targets `average` and Direct healing to single targets `low`.
 
-**34** units include this provider among their top 6 synergy partners. Why the match is common:
+**33** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
-- Shadewing (5.0 / 5)
+- Talene (5.0 / 5)
 - Indris (4.9 / 5)
 - Bonnie (4.6 / 5)
 - Himmel (4.2 / 5)
@@ -3369,8 +3375,8 @@ Faramor also requires units **buffing them**
 
 ### Units benefitting most from Faramor
 
+- Shadewing (2.7 / 5)
 - Carolina (2.3 / 5)
-- Shadewing (2.3 / 5)
 - Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Faramor
@@ -3489,9 +3495,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Mikola**, or **Kazim**.
 
 Fay provides ATK to arc `low`, Direct healing to arc `high`, Healing over time to single targets `average`, and Vitality (EX+5) to single targets `low`.
 
-- Bonnie (3.1 / 5)
-- Himmel (2.9 / 5)
-- Shadewing (2.3 / 5)
+- Shadewing (3.3 / 5)
 
 ### Units that can act as a replacement for Fay
 
@@ -4078,7 +4082,7 @@ Common buffers are **Rowan**, **Mikola**, **Twins**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Granny Dahnie
 
-- Shadewing (2.6 / 5)
+- Shadewing (2.7 / 5)
 - Himmel (2.2 / 5)
 - Indris (1.5 / 5)
 
@@ -4195,7 +4199,7 @@ Common buffers are **Hugin**, **Lorsan**, **Smokey & Meerky**, or **Dunlingr**.
 Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, Attack range to single targets `high`, Ranged DEF (Legendary+) to single targets `low`, Vitality (Legendary+) to single targets `low`, and Invincible (EX+15) to single targets `high`.
 
 - Indris (3.2 / 5)
-- Shadewing (2.8 / 5)
+- Shadewing (2.7 / 5)
 - Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Gunnar
@@ -4313,8 +4317,8 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 ### Units benefitting most from Gwyneth
 
+- Shadewing (2.7 / 5)
 - Carolina (2.3 / 5)
-- Shadewing (2.3 / 5)
 - Nerion (2.1 / 5)
 
 ### Units that can act as a replacement for Gwyneth
@@ -5026,7 +5030,6 @@ Common buffers are **Ravion**, **Contess**, **Evie**, or **Kazim**.
 
 ### Units benefitting most from Hodgkin
 
-- Shadewing (1.9 / 5)
 - Indris (1.8 / 5)
 
 ### Units that can act as a replacement for Hodgkin
@@ -5216,7 +5219,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Igor
 
-- Shadewing (2.3 / 5)
+- Shadewing (2.7 / 5)
 - Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Igor
@@ -5327,7 +5330,6 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 - Carolina (2.5 / 5)
 - Nerion (2.3 / 5)
-- Shadewing (1.3 / 5)
 
 ### Units that can act as a replacement for Indris
 
@@ -5446,7 +5448,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Mikola**, or **Kazim**.
 
 Isabella provides ATK to single targets `low` — conditional (frequent), ATK SPD to single targets `low`, Direct healing to single targets `high`, Haste to single targets `low`, Magic DEF to single targets `low`, Phys DEF to single targets `low`, and Vitality to single targets `low`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -5848,7 +5850,6 @@ Common buffers are **Ravion**, **Rowan**, **Hugin**, or **Lyca**.
 
 Koko provides ATK to all units `low`, Damage taken to all units `low`, Direct healing to single targets `high`, Lifedrain to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality (Supreme+) to single targets `high`.
 
-- Zandrok (2.4 / 5)
 - Callan (2.3 / 5)
 
 ### Units that can act as a replacement for Koko
@@ -5995,12 +5996,6 @@ Common buffers are **Ravion**, **Rowan**, **Mikola**, or **Lyca**.
 ### Units benefitting most from Kordan
 
 Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Penetration (Supreme+) in an area `high`.
-
-**5** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- ally buffs or enablers that match many receivers' benefit stats or Requires labels
-
-These are the **4** strongest pairings: 
 
 - Carolina (5.0 / 5)
 - Nerion (5.0 / 5)
@@ -6226,8 +6221,8 @@ Common buffers are **Mikola**, **Rowan**, or **Twins**.
 ### Units benefitting most from Kruger
 
 - Indris (3.2 / 5)
-- Shadewing (1.8 / 5)
 - Carolina (1.5 / 5)
+- Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Kruger
 
@@ -6345,7 +6340,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 Kulu provides ATK (Legendary+) to single targets `low`.
 
 - Indris (3.2 / 5)
-- Shadewing (2.3 / 5)
+- Kazim (2.3 / 5)
 - Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Kulu
@@ -6487,7 +6482,6 @@ Common buffers are **Mikola**, **Twins**, **Ravion**, or **Smokey & Meerky**.
 
 Laios provides ATK to multiple targets `low` — conditional (rare), Haste in an area `low` — conditional (rare), Healing over time in an area `low` — conditional (rare), Magic DEF in an area `low` — conditional (rare), and Phys DEF in an area `low` — conditional (rare).
 
-- Shadewing (4.4 / 5)
 - Marcille (3.9 / 5)
 
 ### Units that can act as a replacement for Laios
@@ -6835,7 +6829,6 @@ Lily May also requires units **buffing them**
 ### Units benefitting most from Lily May
 
 - Bonnie (2.4 / 5)
-- Shadewing (1.9 / 5)
 - Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Lily May
@@ -6951,7 +6944,7 @@ Common buffers are **Ravion**, **Rowan**, **Lyca**, or **Kazim**.
 
 Lorsan provides Haste to single targets `average` and Healing over time to single targets `average`.
 
-**48** units include this provider among their top 6 synergy partners. Why the match is common:
+**47** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -6959,8 +6952,8 @@ These are the **4** strongest pairings:
 
 - Nerion (4.8 / 5)
 - Carolina (4.7 / 5)
-- Shadewing (4.4 / 5)
 - Indris (3.8 / 5)
+- Alsa (2.9 / 5)
 
 ### Units that can act as a replacement for Lorsan
 
@@ -8324,9 +8317,9 @@ Common buffers are **Hugin**, **Lorsan**, **Smokey & Meerky**, or **Dunlingr**.
 
 ### Units benefitting most from Mirael
 
+- Shadewing (2.7 / 5)
 - Bonnie (2.4 / 5)
 - Himmel (2.2 / 5)
-- Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Mirael
 
@@ -8558,8 +8551,8 @@ Natsu also requires specific **named allies**
 ### Units benefitting most from Natsu
 
 - Carolina (3.0 / 5)
+- Shadewing (2.7 / 5)
 - Nerion (2.7 / 5)
-- Shadewing (2.6 / 5)
 
 ### Units that can act as a replacement for Natsu
 
@@ -8658,14 +8651,14 @@ each critical hit gains increased crit DMG boost
 
 ### Units improving Nazrik
 
-Look for units providing: `CRIT`  
-Common buffers are **Thador**.
+Look for units providing: `CRIT`
 
-_No synergy partners matched stat buffs or enablers._
+- **Thador**
+  - Crit (single target, average)
 
 ### Units benefitting most from Nazrik
 
-- Shadewing (2.6 / 5)
+- Shadewing (2.7 / 5)
 - Indris (2.4 / 5)
 - Carolina (2.0 / 5)
 
@@ -8910,7 +8903,7 @@ Niru also requires enemies **to be defeated**
 
 Niru provides Magic DEF (Supreme+) to single targets `high` and Phys DEF (Supreme+) to single targets `high`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -9125,16 +9118,22 @@ ally inside the box is unaffected by caster ultimate
 
 ### Units improving Pandora
 
-Look for units providing: `Energy`  
-Common buffers are **Rowan**, **Thador**, **Ravion**, or **Hugin**.
+Look for units providing: `Energy`
 
-_No synergy partners matched stat buffs or enablers._
+- **Rowan**
+  - Energy (area, high) `signature fuel`
+- **Thador**
+  - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+- **Hugin**
+  - Energy (single target, average, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Pandora
 
 Pandora provides Direct healing to single targets `high`, Energy to single targets `low`, Invincible to single targets `high`, and Max HP (Legendary+) to single targets `low`.
 
-**22** units include this provider among their top 6 synergy partners. Why the match is common:
+**24** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -9920,7 +9919,9 @@ Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
 
 ### Units benefitting most from Pippa
 
-- Shadewing (3.6 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Pippa
 
@@ -10172,7 +10173,7 @@ Reinier provides Direct healing to single targets `low` and Damage taken (EX+10)
 
 - Bonnie (2.4 / 5)
 - Himmel (2.2 / 5)
-- Shadewing (1.6 / 5)
+- Kazim (1.9 / 5)
 
 ### Units that can act as a replacement for Reinier
 
@@ -10645,9 +10646,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Salazer
 
+- Shadewing (2.7 / 5)
 - Carolina (2.5 / 5)
 - Nerion (2.3 / 5)
-- Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Salazer
 
@@ -10984,7 +10985,7 @@ Common buffers are **Mikola**, **Ravion**, **Twins**, or **Kazim**.
 
 - Carolina (1.5 / 5)
 - Nerion (1.4 / 5)
-- Shadewing (1.3 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Seth
 
@@ -11086,30 +11087,30 @@ drain ally HP at start for lasting ATK boost and shield
 ### Units improving Shadewing
 
 Look for units providing: `ATK` `Shield` `Energy`  
-Common buffers are **Evie**, **Dunlingr**, **Contess**, or **Ravion**.
+Common buffers are **Ravion**, **Contess**, **Mikola**, or **Smokey & Meerky**.
 
-Shadewing also requires units **dealing continuous damage** to enemies and/or units **putting debuffs** on enemies
+Shadewing also requires units **dealing continuous damage** to enemies
 
-- **Evie**
-  - ATK (single target, high)
-  - Enables Debuff on target via Magic DEF (all units)
-- **Alna**
-  - Enables Debuff on target via Haste (all units)
-  - Enables Continuous damage on enemies via DoT
-- **Laios**
-  - Enables Debuff on target via Phys DEF (area)
+- **Ravion**
+  - ATK (multiple targets, high)
+  - Energy (multiple targets, average) `signature fuel`
   - Enables Continuous damage on enemies via tick damage
-- **Lorsan**
-  - Enables Debuff on target via Haste (area)
-  - Enables Continuous damage on enemies via DoT
-- **Dunlingr**
-  - ATK (single target, low)
-  - Enables Debuff on target via Energy (all units)
-  - Enables Continuous damage on enemies via DoT
 - **Contess**
   - ATK (single target, high)
-  - Enables Debuff on target via ATK (multiple targets)
   - Enables Continuous damage on enemies via DoT
+- **Mikola**
+  - ATK (all units, high)
+  - Enables Continuous damage on enemies via tick damage
+- **Smokey & Meerky**
+  - ATK (area, average)
+  - Energy (area, low) `signature fuel`
+  - Enables Continuous damage on enemies via DoT
+- **Aliceth**
+  - ATK (multiple targets, average)
+  - Enables Continuous damage on enemies via DoT
+- **Perseus**
+  - ATK (multiple targets, average)
+  - Enables Continuous damage on enemies via tick damage
 
 ### Units benefitting most from Shadewing
 
@@ -11346,8 +11347,8 @@ Common buffers are **Rowan**, **Lyca**, **Ravion**, or **Thador**.
 
 ### Units benefitting most from Shemira
 
+- Shadewing (2.7 / 5)
 - Bonnie (2.4 / 5)
-- Shadewing (2.3 / 5)
 - Himmel (2.2 / 5)
 
 ### Units that can act as a replacement for Shemira
@@ -11547,10 +11548,10 @@ rapid attack hits also reduce target vitality
 
 ### Units improving Silvina
 
-Look for units providing: `Shield` `CRIT`  
-Common buffers are **Thador**.
+Look for units providing: `Shield` `CRIT`
 
-_No synergy partners matched stat buffs or enablers._
+- **Thador**
+  - Crit (single target, average)
 
 ### Units benefitting most from Silvina
 
@@ -11782,7 +11783,7 @@ Common buffers are **Ravion**, **Contess**, **Evie**, or **Kazim**.
 
 Smokey & Meerky provides ATK in an area `average`, Direct healing in an area `high`, Energy in an area `low`, Haste in an area `average`, and Healing over time in an area `high`.
 
-**95** units include this provider among their top 6 synergy partners. Why the match is common:
+**96** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -12391,9 +12392,9 @@ Common buffers are **Contess**, **Evie**, **Twins**, or **Mikola**.
 
 ### Units benefitting most from Talene
 
+- Shadewing (2.7 / 5)
 - Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
-- Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Talene
 
@@ -12718,7 +12719,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
 Thador provides Crit to single targets `low`, Shield to multiple targets `average`, and Energy (EX+10) to single targets `high`.
 
-**28** units include this provider among their top 6 synergy partners. Why the match is common:
+**29** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -12820,16 +12821,24 @@ ultimate additionally drains HP from enemy
 
 ### Units improving Thoran
 
-Look for units providing: `Max HP` `Energy`  
-Common buffers are **Twins**, **Thador**, **Rowan**, or **Pandora**.
+Look for units providing: `Max HP` `Energy`
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - Max HP (multiple targets, average)
+  - Energy (multiple targets, low) `signature fuel`
+- **Thador**
+  - Energy (single target, high) `signature fuel`
+- **Rowan**
+  - Energy (area, high) `signature fuel`
+- **Pandora**
+  - Max HP (single target, low)
+  - Energy (single target, low) `signature fuel`
 
 ### Units benefitting most from Thoran
 
 - Himmel (2.2 / 5)
 - Twins (2.0 / 5)
-- Shadewing (1.3 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Thoran
 
@@ -12947,7 +12956,7 @@ These are the **4** strongest pairings:
 - Antandra (5.0 / 5)
 - Hepler (4.2 / 5)
 - Laios (3.7 / 5)
-- Zandrok (3.5 / 5)
+- Cecia (3.0 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
@@ -13182,10 +13191,16 @@ shield break knock back adjacent enemies
 
 ### Units improving Ulmus
 
-Look for units providing: `Shield` `Energy`  
-Common buffers are **Rowan**, **Thador**, **Ravion**, or **Twins**.
+Look for units providing: `Shield` `Energy`
 
-_No synergy partners matched stat buffs or enablers._
+- **Rowan**
+  - Energy (area, high) `signature fuel`
+- **Thador**
+  - Energy (single target, high) `signature fuel`
+- **Ravion**
+  - Energy (multiple targets, average) `signature fuel`
+- **Twins**
+  - Energy (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Ulmus
 
@@ -13542,9 +13557,9 @@ Common buffers are **Thador**, **Smokey & Meerky**, **Ravion**, or **Lorsan**.
 
 Valka provides ATK SPD to multiple targets `low`.
 
+- Shadewing (2.7 / 5)
 - Carolina (2.5 / 5)
 - Nerion (2.5 / 5)
-- Shadewing (2.3 / 5)
 
 ### Units that can act as a replacement for Valka
 
@@ -13790,8 +13805,8 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 
 ### Units benefitting most from Viperian
 
+- Shadewing (2.7 / 5)
 - Bonnie (2.7 / 5)
-- Shadewing (2.6 / 5)
 - Himmel (2.2 / 5)
 
 ### Units that can act as a replacement for Viperian
@@ -13880,16 +13895,16 @@ gain a shield on first hit against the marked target
 
 ### Units improving Walker
 
-Look for units providing: `Max HP` `Shield` `CRIT`  
-Common buffers are **Thador**.
+Look for units providing: `Max HP` `Shield` `CRIT`
 
-_No synergy partners matched stat buffs or enablers._
+- **Thador**
+  - Crit (single target, average)
 
 ### Units benefitting most from Walker
 
 - Carolina (3.0 / 5)
 - Nerion (2.7 / 5)
-- Shadewing (1.3 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Walker
 
@@ -13981,22 +13996,10 @@ excess healing converts to permanent max HP gain
 Look for units providing: `Max HP`  
 Common buffers are **Twins** or **Pandora**.
 
-Zandrok also requires units **buffing them**
-
-- **Isabella**
-  - Grants 6 distinct temporary stat buffs to Zandrok
-- **Mikola**
-  - Grants 4 distinct temporary stat buffs to Zandrok
 - **Alna**
   - Max HP (single target, high)
-  - Grants 1 distinct temporary stat buff to Zandrok
 - **Tilaya**
   - Max HP (area, high)
-  - Grants 1 distinct temporary stat buff to Zandrok
-- **Dunlingr**
-  - Grants 3 distinct temporary stat buffs to Zandrok
-- **Perseus**
-  - Grants 3 distinct temporary stat buffs to Zandrok
 
 ### Units benefitting most from Zandrok
 
@@ -14120,7 +14123,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Zanie
 
-- Shadewing (2.9 / 5)
+- Shadewing (2.7 / 5)
 - Indris (1.5 / 5)
 - Carolina (1.5 / 5)
 
@@ -14253,7 +14256,7 @@ Zorya also requires allies **casting ultimates**
 
 - Carolina (3.7 / 5)
 - Nerion (3.2 / 5)
-- Shadewing (2.6 / 5)
+- Indris (2.4 / 5)
 
 ### Units that can act as a replacement for Zorya
 

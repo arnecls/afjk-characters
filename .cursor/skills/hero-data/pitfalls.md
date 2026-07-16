@@ -135,6 +135,23 @@ correctly while the site showed a buff-styled chip because
 `site/js/app.js` and ensure `DEBUFF_TYPES` + CSV map
 `Damage dealt` → `Damage dealt debuff` in `overview-to-csv.py`.
 
+### False partner requires (synergy)
+
+**Own-skill temporary state ≠ ally buff require:** Zandrok Legendary+ extra
+max HP while **Rallying Roar** temp buffs are active is self-setup. Do not
+emit `Temporary ally stat buffs` in `special_requires`; `just validate`
+rejects requires without ally-source wording (`from an ally`, `from allies`).
+
+**Self-applied debuff/DoT state ≠ debuff partner require:** Shadewing Crimson
+Venom tick text (`While affected by Crimson Venom…`) is not `Debuff on target`.
+Keep `Continuous damage on enemies` for Withering Curse; omit generic debuff
+requires when the hero inflicts the named state. `_filter_self_satisfied_debuff_requires`
+drops these after analyze when skill text applies and references the same state.
+
+**Common buffers with empty partner list:** receivers whose only matches are
+roster-wide stat buffers (Contess, Pandora, Thoran, etc.) get common-buffer
+names promoted into the partner grid when display filtering would leave none.
+
 ### DEF buff phrasing gaps
 
 Rules often match `increases … def by` but miss combined gains:

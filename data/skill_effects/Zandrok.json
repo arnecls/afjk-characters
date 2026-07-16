@@ -228,13 +228,7 @@
           "summon_effects": [],
           "immunities": [],
           "special_provides": [],
-          "special_requires": [
-            {
-              "label": "Temporary ally stat buffs",
-              "tier": "legendary+",
-              "description": "While temporary Rallying Roar buffs from allies are active, Zandrok gains extra max HP."
-            }
-          ]
+          "special_requires": []
         }
       }
     },

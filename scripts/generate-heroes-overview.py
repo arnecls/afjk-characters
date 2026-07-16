@@ -1474,6 +1474,33 @@ def filter_synergy_picks_for_display(
     )[:max_syn]
 
 
+def display_synergy_picks_for_receiver(
+    picks: list[dict],
+    provider_beneficiary_count: dict[str, int],
+    threshold: int,
+    *,
+    max_syn: int,
+) -> tuple[list[dict], bool]:
+    """Return display picks and whether they came from common-buffer fallback."""
+    ranked = rank_synergy_picks_for_display(
+        picks, provider_beneficiary_count, threshold
+    )
+    if ranked:
+        return ranked[:max_syn], False
+    common_names = common_stat_buffer_names(
+        picks, provider_beneficiary_count, threshold
+    )
+    if not common_names:
+        return [], False
+    by_provider = {pick["provider"]: pick for pick in picks}
+    fallback = [
+        by_provider[name]
+        for name in common_names
+        if name in by_provider
+    ]
+    return fallback[:max_syn], True
+
+
 def _stats_for_synergy_scoring(
     receiver: _rs.Hero, signature_speed: str
 ) -> list[tuple[str, bool]]:

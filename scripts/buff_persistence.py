@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from typing import Any
 
@@ -88,6 +89,13 @@ STATE_BOUND_CONDITION_TYPES = frozenset(
 )
 
 TEMPORARY_STAT_BUFFER_TAG = "temporary-stat-buffer"
+CONSUMER_REQUIRE_LABEL = "Temporary ally stat buffs"
+
+ALLY_STAT_BUFF_SOURCE_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bfrom (?:an ally|allies|his allies|her allies|their allies)\b", re.I),
+    re.compile(r"\bfrom a different ally\b", re.I),
+    re.compile(r"\breceiv(?:e|es|ing) .{0,60}from an ally\b", re.I),
+)
 
 SUMMON_TARGETS = frozenset({"summon", "own_summons", "all_summons"})
 
@@ -658,6 +666,50 @@ def is_runtime_temporary_stat_buff(effect: Any) -> bool:
         is_runtime_positive_stat_buff(effect)
         and getattr(effect, "persistence", None) == "temporary"
     )
+
+
+def _has_ally_stat_buff_source_wording(text: str) -> bool:
+    return any(pat.search(text) for pat in ALLY_STAT_BUFF_SOURCE_PATTERNS)
+
+
+def verify_sidecar_special_requires(
+    doc: dict[str, Any],
+    hero_record: dict[str, Any],
+    *,
+    hero_short: str | None = None,
+) -> list[str]:
+    """Reject ally-buff requires that gate on the hero's own skills."""
+    if hero_short is None:
+        from skill_effects_store import short_name
+
+        hero_short = short_name(doc.get("title", ""))
+    short = hero_short
+    skills_by_section = {
+        skill["section"]: skill for skill in hero_record.get("skills", [])
+    }
+    errors: list[str] = []
+    for section, entry in doc.get("skills", {}).items():
+        skill = skills_by_section.get(section)
+        skill_text = ""
+        if skill:
+            import skill_effects_store as ses
+
+            skill_text = json.dumps(
+                ses.canonical_skill_description(skill),
+                ensure_ascii=False,
+            )
+        for tier_data in entry.get("tiers", {}).values():
+            for req in tier_data.get("special_requires", []):
+                if req.get("label") != CONSUMER_REQUIRE_LABEL:
+                    continue
+                description = req.get("description") or ""
+                combined = f"{description}\n{skill_text}"
+                if not _has_ally_stat_buff_source_wording(combined):
+                    errors.append(
+                        f"{short} {section}: {CONSUMER_REQUIRE_LABEL!r} "
+                        "requires explicit ally-source wording"
+                    )
+    return errors
 
 
 def verify_sidecar_persistence(
