@@ -108,10 +108,10 @@
   --hero-hover-border: rgba(90, 110, 140, 0.25);
   --theme-toggle-track: #d4dde8;
   --theme-toggle-thumb: #fafbfd;
-  --theme-toggle-active-track: #4777a8;
-  --theme-toggle-active-thumb: #e8f0f8;
-  --theme-toggle-icon: #8a98a8;
-  --theme-toggle-icon-active: #4777a8;
+  --theme-toggle-icon-inactive: color-mix(in srgb, var(--theme-toggle-track) 58%, white);
+  --theme-toggle-icon-active: #2a3340;
+  --theme-toggle-glow-light: rgba(240, 176, 48, 0.85);
+  --theme-toggle-glow-dark: rgba(155, 115, 245, 0.9);
 }
 
 *,
@@ -3722,20 +3722,14 @@ html.welcome-warning-pending .welcome-warning,
 
 @media (max-width: 600px) {
   .header-shell {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto auto;
   }
 
-  .header-shell>.search {
-    width: 100%;
+  .header-shell>.logo {
+    grid-column: 1;
+    grid-row: 1;
     min-width: 0;
-    max-width: none;
-  }
-
-  .header-shell>.header-actions {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-self: start;
   }
 
   .header-shell>.theme-toggle-wrap {
@@ -3743,17 +3737,33 @@ html.welcome-warning-pending .welcome-warning,
     grid-row: 1;
     justify-self: end;
     align-self: center;
-    z-index: 1;
+  }
+
+  .header-shell>.search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .header-shell>.header-actions {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    min-width: 0;
   }
 
   .header-shell>.filters-panel.filters-collapsed {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 3;
     justify-self: end;
+    align-self: center;
   }
 
   .header-shell>.filters-panel:not(.filters-collapsed) {
-    grid-row: 3;
+    grid-column: 1 / -1;
+    grid-row: 4;
   }
 
   .hero-grid {
@@ -4224,12 +4234,12 @@ html.welcome-warning-pending .welcome-warning,
 .theme-toggle-wrap {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .theme-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
   cursor: pointer;
   user-select: none;
 }
@@ -4246,19 +4256,13 @@ html.welcome-warning-pending .welcome-warning,
   border: 0;
 }
 
-.theme-toggle-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--theme-toggle-icon);
-  line-height: 0;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
 .theme-toggle-track {
   position: relative;
-  width: 2.35rem;
-  height: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 3.4rem;
+  height: 1.5rem;
   border-radius: 999px;
   background: var(--theme-toggle-track);
   border: 1px solid var(--border);
@@ -4267,39 +4271,44 @@ html.welcome-warning-pending .welcome-warning,
 
 .theme-toggle-thumb {
   position: absolute;
-  top: 50%;
-  left: 0.12rem;
-  width: 0.95rem;
-  height: 0.95rem;
-  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  width: calc(50% - 3px);
+  height: calc(100% - 4px);
+  border-radius: 999px;
   background: var(--theme-toggle-thumb);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
-  transform: translateY(-50%);
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.14),
+    0 0 10px 2px var(--theme-toggle-glow-light);
+  transform: translateX(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  pointer-events: none;
 }
 
-.theme-toggle-input:checked+.theme-toggle-track {
-  background: var(--theme-toggle-active-track);
-  border-color: color-mix(in srgb, var(--theme-toggle-active-track) 70%, var(--border));
+.theme-toggle-icon {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  color: var(--theme-toggle-icon-inactive);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.theme-toggle-input:not(:checked)+.theme-toggle-track .theme-toggle-sun {
+  color: var(--theme-toggle-icon-active);
+}
+
+.theme-toggle-input:checked+.theme-toggle-track .theme-toggle-moon {
+  color: var(--theme-toggle-icon-active);
 }
 
 .theme-toggle-input:checked+.theme-toggle-track .theme-toggle-thumb {
-  transform: translate(1.05rem, -50%);
-  background: var(--theme-toggle-active-thumb);
-}
-
-.theme-toggle-input:checked~.theme-toggle-sun {
-  opacity: 0.45;
-}
-
-.theme-toggle-input:not(:checked)~.theme-toggle-moon {
-  opacity: 0.45;
-}
-
-.theme-toggle-input:checked~.theme-toggle-moon,
-.theme-toggle-input:not(:checked)~.theme-toggle-sun {
-  color: var(--theme-toggle-icon-active);
-  opacity: 1;
+  transform: translateX(calc(100% + 2px));
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.22),
+    0 0 10px 2px var(--theme-toggle-glow-dark);
 }
 
 .theme-toggle-input:focus-visible+.theme-toggle-track {
@@ -4427,11 +4436,11 @@ html.welcome-warning-pending .welcome-warning,
     --card-hover-shadow: rgba(0, 0, 0, 0.28);
     --hero-hover-border: rgba(120, 150, 190, 0.35);
     --theme-toggle-track: #2e3644;
-    --theme-toggle-thumb: #9aa8b8;
-    --theme-toggle-active-track: #3a5070;
-    --theme-toggle-active-thumb: #c8dcf0;
-    --theme-toggle-icon: #8a98a8;
-    --theme-toggle-icon-active: #c8dcf0;
+    --theme-toggle-thumb: #e8ecf2;
+    --theme-toggle-icon-inactive: color-mix(in srgb, var(--theme-toggle-track) 58%, white);
+    --theme-toggle-icon-active: #1e2430;
+    --theme-toggle-glow-light: rgba(240, 176, 48, 0.82);
+    --theme-toggle-glow-dark: rgba(175, 140, 255, 0.92);
   }
 }
 
@@ -4527,11 +4536,11 @@ html.welcome-warning-pending .welcome-warning,
   --card-hover-shadow: rgba(0, 0, 0, 0.28);
   --hero-hover-border: rgba(120, 150, 190, 0.35);
   --theme-toggle-track: #2e3644;
-  --theme-toggle-thumb: #9aa8b8;
-  --theme-toggle-active-track: #3a5070;
-  --theme-toggle-active-thumb: #c8dcf0;
-  --theme-toggle-icon: #8a98a8;
-  --theme-toggle-icon-active: #c8dcf0;
+  --theme-toggle-thumb: #e8ecf2;
+  --theme-toggle-icon-inactive: color-mix(in srgb, var(--theme-toggle-track) 58%, white);
+  --theme-toggle-icon-active: #1e2430;
+  --theme-toggle-glow-light: rgba(240, 176, 48, 0.82);
+  --theme-toggle-glow-dark: rgba(175, 140, 255, 0.92);
 }
 
 @media (prefers-color-scheme: dark) {
