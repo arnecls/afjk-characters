@@ -167,6 +167,15 @@ class RenderSiteTests(unittest.TestCase):
             OVERVIEW_CSV.read_text(encoding="utf-8"),
         )
 
+    def test_build_mix_config_exposes_composition_scoring(self) -> None:
+        config_path = ROOT / "data" / "heroes_config.json"
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        mix_cfg = render_site.build_mix_config(config)
+        comp = mix_cfg["compositionScoring"]
+        self.assertEqual(comp["baseBonus"], 10.0)
+        self.assertEqual(comp["urgencyPerFilledSlot"], 0.25)
+        self.assertEqual(comp["maxHyperCarryPremium"], 0.5)
+
 
 if __name__ == "__main__":
     unittest.main()

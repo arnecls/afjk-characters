@@ -300,6 +300,7 @@ def build_mix_config(config: dict) -> dict:
     """Subset of heroes_config.json for mix-mode scoring in the browser."""
     mix = config.get("mix_mode", {})
     synergy = config.get("synergy_weights", {})
+    comp = mix.get("composition_scoring", {})
     return {
         "factionBonus": mix.get("faction_bonus", 3.0),
         "focusTags": mix.get("focus_tags", {}),
@@ -309,6 +310,11 @@ def build_mix_config(config: dict) -> dict:
         ),
         "roleProminenceTierWeight": mix.get("role_prominence_tier_weight", 7),
         "markSynergyMultiplier": mix.get("mark_synergy_multiplier", 2.0),
+        "compositionScoring": {
+            "baseBonus": comp.get("base_bonus", 10.0),
+            "urgencyPerFilledSlot": comp.get("urgency_per_filled_slot", 0.25),
+            "maxHyperCarryPremium": comp.get("max_hyper_carry_premium", 0.5),
+        },
     }
 
 

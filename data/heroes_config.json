@@ -175,6 +175,11 @@
       "Arc": 1.6,
       "Multiple targets": 1.6,
       "Single target": 1.0
+    },
+    "composition_scoring": {
+      "base_bonus": 10.0,
+      "urgency_per_filled_slot": 0.25,
+      "max_hyper_carry_premium": 0.5
     }
   }
 }

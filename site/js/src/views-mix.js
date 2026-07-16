@@ -9,6 +9,7 @@ window.AFKJ = window.AFKJ || {};
   const escapeHtml = utils.escapeHtml.bind(utils);
 
   const MIX_SLOT_COUNT = 5;
+  const MIX_CORE_ROLES = ["tank", "damage_dealer", "support", "specialist"];
 
   const MIX_CROWN_BODY =
     "M3.5 17.5 L2 10.5 Q1.5 7.5 3.5 10 Q6.5 13.5 9 11" +
@@ -233,6 +234,134 @@ window.AFKJ = window.AFKJ || {};
     }
     renderMix();
     return true;
+  }
+
+  function getMixCompositionConfig() {
+    const state = window.AFKJ.state;
+    const cfg =
+      state.mixConfig && state.mixConfig.compositionScoring
+        ? state.mixConfig.compositionScoring
+        : {};
+    return {
+      baseBonus: cfg.baseBonus != null ? cfg.baseBonus : 10.0,
+      urgencyPerFilledSlot:
+        cfg.urgencyPerFilledSlot != null ? cfg.urgencyPerFilledSlot : 0.25,
+      maxHyperCarryPremium:
+        cfg.maxHyperCarryPremium != null ? cfg.maxHyperCarryPremium : 0.5,
+    };
+  }
+
+  function getMixSlottedCoreRoles() {
+    const state = window.AFKJ.state;
+    const roles = {};
+    MIX_CORE_ROLES.forEach(function (role) {
+      roles[role] = false;
+    });
+    state.mixSlots.forEach(function (slug) {
+      if (!slug) {
+        return;
+      }
+      const hero = state.heroBySlug[slug];
+      if (!hero || !hero.roleCategory) {
+        return;
+      }
+      if (Object.prototype.hasOwnProperty.call(roles, hero.roleCategory)) {
+        roles[hero.roleCategory] = true;
+      }
+    });
+    return roles;
+  }
+
+  function getMixMissingCoreRoles() {
+    const slotted = getMixSlottedCoreRoles();
+    return MIX_CORE_ROLES.filter(function (role) {
+      return !slotted[role];
+    });
+  }
+
+  function mixCompositionUrgencyMultiplier(filledSlots) {
+    const cfg = getMixCompositionConfig();
+    return 1 + cfg.urgencyPerFilledSlot * filledSlots;
+  }
+
+  function computeDamageDealerCarryScores(pool) {
+    const damageDealers = pool.filter(function (h) {
+      return h.roleCategory === "damage_dealer";
+    });
+    if (!damageDealers.length) {
+      return {};
+    }
+    const scored = damageDealers.map(function (h) {
+      const tierRank = resolvePrydwenTierRank(h);
+      const prominence = mixRawRoleProminence(h.slug, "damage_dealer");
+      return {
+        slug: h.slug,
+        tierRank: tierRank < 0 ? -1 : tierRank,
+        prominence: prominence,
+      };
+    });
+    let minTier = Infinity;
+    let maxTier = -Infinity;
+    let minProm = Infinity;
+    let maxProm = -Infinity;
+    scored.forEach(function (s) {
+      if (s.tierRank < minTier) {
+        minTier = s.tierRank;
+      }
+      if (s.tierRank > maxTier) {
+        maxTier = s.tierRank;
+      }
+      if (s.prominence < minProm) {
+        minProm = s.prominence;
+      }
+      if (s.prominence > maxProm) {
+        maxProm = s.prominence;
+      }
+    });
+    const out = {};
+    scored.forEach(function (s) {
+      const tierNorm =
+        maxTier === minTier ? 1 : (s.tierRank - minTier) / (maxTier - minTier);
+      const promNorm =
+        maxProm === minProm
+          ? 1
+          : (s.prominence - minProm) / (maxProm - minProm);
+      out[s.slug] = tierNorm * 1000 + promNorm;
+    });
+    const composites = Object.keys(out).map(function (slug) {
+      return out[slug];
+    });
+    const cMin = Math.min.apply(null, composites);
+    const cMax = Math.max.apply(null, composites);
+    Object.keys(out).forEach(function (slug) {
+      if (cMax === cMin) {
+        out[slug] = 1;
+      } else {
+        out[slug] = (out[slug] - cMin) / (cMax - cMin);
+      }
+    });
+    return out;
+  }
+
+  function computeMixCompositionBonus(slug, missingRoles, filledSlots, carryScores) {
+    const state = window.AFKJ.state;
+    if (!missingRoles.length) {
+      return 0;
+    }
+    const hero = state.heroBySlug[slug];
+    if (!hero || !hero.roleCategory) {
+      return 0;
+    }
+    if (missingRoles.indexOf(hero.roleCategory) === -1) {
+      return 0;
+    }
+    const cfg = getMixCompositionConfig();
+    let bonus = cfg.baseBonus * mixCompositionUrgencyMultiplier(filledSlots);
+    if (hero.roleCategory === "damage_dealer" && carryScores) {
+      const carryNorm = carryScores[slug] || 0;
+      bonus *= 1 + cfg.maxHyperCarryPremium * carryNorm;
+    }
+    return bonus;
   }
 
   function synergyScoreForPair(providerSlug, receiverSlug) {
@@ -651,6 +780,12 @@ window.AFKJ = window.AFKJ || {};
     const state = window.AFKJ.state;
     const pool = mixPoolHeroes();
     const candidates = [];
+    const filledSlots = state.mixSlots.filter(Boolean).length;
+    const missingRoles = getMixMissingCoreRoles();
+    const carryScores =
+      missingRoles.indexOf("damage_dealer") >= 0
+        ? computeDamageDealerCarryScores(pool)
+        : null;
 
     const modeTiers = computeNormalizedTierBonuses(pool);
     const roleTiers = state.activeRole ? computeNormalizedRoleBonuses(pool, state.activeRole) : {};
@@ -663,7 +798,13 @@ window.AFKJ = window.AFKJ || {};
       } else {
         promBonus = modeTiers[h.slug] || 0;
       }
-      const finalScore = score + promBonus;
+      const compBonus = computeMixCompositionBonus(
+        h.slug,
+        missingRoles,
+        filledSlots,
+        carryScores
+      );
+      const finalScore = score + promBonus + compBonus;
       candidates.push({ hero: h, score: finalScore });
     });
 
@@ -1479,6 +1620,12 @@ window.AFKJ = window.AFKJ || {};
     computeMixSpeedBonus: computeMixSpeedBonus,
     computeMixFocusBonus: computeMixFocusBonus,
     computeMixScore: computeMixScore,
+    getMixCompositionConfig: getMixCompositionConfig,
+    getMixSlottedCoreRoles: getMixSlottedCoreRoles,
+    getMixMissingCoreRoles: getMixMissingCoreRoles,
+    mixCompositionUrgencyMultiplier: mixCompositionUrgencyMultiplier,
+    computeDamageDealerCarryScores: computeDamageDealerCarryScores,
+    computeMixCompositionBonus: computeMixCompositionBonus,
     mixRawRoleProminence: mixRawRoleProminence,
     resolvePrydwenTierRank: resolvePrydwenTierRank,
     roleProminenceTierPoints: roleProminenceTierPoints,
