@@ -379,6 +379,7 @@ class UltimateEnergyPreferenceTests(unittest.TestCase):
             synergy_signature_speed=ult_speed,
             synergy_signature_is_ult=True,
             ult_speed=ult_speed,
+            signature_first_cast_needs_energy=False,
             non_ult_speed="average",
             avg_attack_range=2.0,
             placement_constraints=[],
@@ -626,6 +627,83 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
         )[hero.title]
         self.assertTrue(behavior.signature_first_cast_needs_energy)
         self.assertTrue(behavior.signature_skill_is_ult)
+
+
+class ThadorEarlyEnergyTests(unittest.TestCase):
+    def _provider(self, text: str) -> SimpleNamespace:
+        return SimpleNamespace(
+            skill_chunks=[("base", text, "Skill1")],
+        )
+
+    def _receiver_behavior(self, *, first_cast: bool = False) -> SimpleNamespace:
+        return SimpleNamespace(
+            signature_skill_is_ult=True,
+            synergy_signature_is_ult=True,
+            synergy_signature_speed="slow",
+            signature_first_cast_needs_energy=first_cast,
+            ult_speed="slow",
+        )
+
+    def test_lieutenant_350_beats_all_allies_120(self) -> None:
+        lieutenant = self._provider(
+            "Grants Thador's lieutenant 350 Energy when a battle starts."
+        )
+        lyca = self._provider(
+            "When a battle starts, grants all allies 120 Energy."
+        )
+        lt_pts, _ = gen.provider_early_battle_ally_energy(lieutenant)
+        lyca_pts, _ = gen.provider_early_battle_ally_energy(lyca)
+        self.assertGreater(lt_pts, lyca_pts)
+
+    def test_lieutenant_beats_lyca_for_high_damage_ult_receiver(self) -> None:
+        gen._BEHAVIOR_TAGS = {"Carry": frozenset({"high-damage-ult"})}
+        receiver = SimpleNamespace(title="Carry - Mage")
+        behavior = self._receiver_behavior()
+        lieutenant = SimpleNamespace(
+            title="Thador - Tank",
+            skill_chunks=[
+                (
+                    "ex+10",
+                    "Grants Thador's lieutenant 350 Energy when a battle starts.",
+                    "Ex. Skill",
+                )
+            ],
+        )
+        lyca = SimpleNamespace(
+            title="Lyca - Support",
+            skill_chunks=[
+                (
+                    "base",
+                    "When a battle starts, grants all allies 120 Energy.",
+                    "Skill1",
+                )
+            ],
+        )
+        thador_score, _ = gen.score_early_battle_energy_synergy(
+            lieutenant, receiver, behavior
+        )
+        lyca_score, _ = gen.score_early_battle_energy_synergy(
+            lyca, receiver, behavior
+        )
+        self.assertGreater(thador_score, lyca_score)
+
+    def test_early_battle_energy_not_filtered_as_obvious_buffer(self) -> None:
+        pick = {
+            "provider": "Thador",
+            "score": 25.0,
+            "reasons": [
+                "Energy via Energy recovery (350 at battle start, lieutenant) "
+                "`signature fuel`"
+            ],
+        }
+        counts = {"Thador": 50}
+        self.assertFalse(
+            gen.should_filter_obvious_stat_buffer_pick(pick, counts, 20)
+        )
+        ranked = gen.rank_synergy_picks_for_display(
+            [pick], counts, threshold=20
+        )
+        self.assertEqual(len(ranked), 1)
 
 
 class CommonStatBufferNamesTests(unittest.TestCase):

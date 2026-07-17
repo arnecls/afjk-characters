@@ -465,7 +465,11 @@ reviewing or fixing matches, work through both heroes in this order.
    speed is fast after post-ult Haste (e.g. Tasi). Units whose identity is
    a battle-start Skill1/Skill2 (Bonnie, Kulu, etc.) are excluded even if
    their side ultimate is slow. First-cast receivers use the slow early-battle
-   multiplier even when `ult_speed` is fast.
+   multiplier even when `ult_speed` is fast. Early-battle Energy scoring uses
+   flat single-target reach for all providers; lieutenant grants parse their
+   numeric amount (e.g. Thador EX+10: 350 Energy) so focused batteries can
+   outrank diluted team-wide grants. Display keeps early-battle Energy picks
+   visible even when the provider is a roster-wide common buffer.
    **Signature-skill fuel:** Haste/ATK SPD ally buffs are boosted by the
    receiver's effective synergy signature speed (`SIGNATURE_FUEL_SPEED_MULT`:
    slow 1.6×, average 1.2×, fast 1.0×). Energy recovery uses a lighter

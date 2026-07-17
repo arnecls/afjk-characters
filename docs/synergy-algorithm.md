@@ -71,6 +71,13 @@ massive score boost. Recurring ult speed can still be fast after post-ult Haste
 (e.g. Tasi); those receivers use the slow early-battle multiplier for the
 first-cast path.
 
+Early-battle Energy uses **flat single-target reach** for every provider (Units
+improving scores one receiver, not roster-wide AoE). Numeric grants scale by
+amount — lieutenant Energy at battle start (e.g. Thador's 350) uses the same
+formula as other start-of-battle batteries. Picks with battle-start Energy
+reasons stay visible in Units improving even when the provider is otherwise a
+common roster-wide buffer.
+
 ### Positional & Proximity Restrictions
 - **Positional Tiles**: Buffs that require standing on a specific tile are ignored for highly mobile receivers.
 - **Proximity Auras & Ground Zones**: Buffs tied to an aura around the provider (e.g., Shakir's Lupine Aura) or to ground the provider anchors (e.g., Perseus fertile ground — `standing on` / `within N tiles around`) only score for receivers who fight in melee range (attack range ≤ 3.5).

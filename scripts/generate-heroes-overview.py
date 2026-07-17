@@ -120,6 +120,8 @@ IMPLICIT_FUEL_STATS = ("Energy", "ATK SPD")
 
 # Ally energy granted at or right after battle start (Pandora box, Lyca, Thador).
 EARLY_BATTLE_ENERGY_ULT_MULT = {"slow": 1.25, "average": 1.0, "fast": 0.85}
+# Units-improving early Energy uses flat reach — one receiver, not roster-wide AoE.
+EARLY_BATTLE_ENERGY_REACH_WEIGHT = TARGETING_WEIGHT["Single target"]
 
 # High-damage-ultimate carries without fast initial energy prefer batteries over
 # Haste when effects are otherwise comparable (see receiver_prefers_ultimate_energy).
@@ -452,6 +454,7 @@ def provider_early_battle_ally_energy(
 ) -> tuple[float, str] | None:
     """Score ally-facing energy granted at or immediately after battle start."""
     best: tuple[float, str] | None = None
+    tw = EARLY_BATTLE_ENERGY_REACH_WEIGHT
 
     from heroes_io import joined_skill_chunks
 
@@ -465,7 +468,6 @@ def provider_early_battle_ally_energy(
         m = re.search(r"(?:the )?ally gains? (\d+) energy", text, re.I)
         if m:
             energy = int(m.group(1))
-            tw = TARGETING_WEIGHT["Single target"]
             pts = tw * (2.0 + energy / 280)
             detail = (
                 f"Energy recovery ({energy} at battle start, single target)"
@@ -477,8 +479,7 @@ def provider_early_battle_ally_energy(
         m = re.search(r"grants? all allies (\d+) energy", text, re.I)
         if m:
             energy = int(m.group(1))
-            tw = TARGETING_WEIGHT["All units"]
-            pts = tw * (1.5 + energy / 140)
+            pts = tw * (2.0 + energy / 280)
             detail = (
                 f"Energy recovery ({energy} at battle start, all units)"
             )
@@ -486,11 +487,24 @@ def provider_early_battle_ally_energy(
             if best is None or cand[0] > best[0]:
                 best = cand
 
-        if re.search(
+        m = re.search(
+            r"grants? .{0,80}lieutenant.{0,40}?(\d+) energy when a battle starts",
+            text,
+            re.I,
+        )
+        if m:
+            energy = int(m.group(1))
+            pts = tw * (2.0 + energy / 280)
+            detail = (
+                f"Energy recovery ({energy} at battle start, lieutenant)"
+            )
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+        elif re.search(
             r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
             t,
         ):
-            tw = TARGETING_WEIGHT["Single target"]
             pts = tw * 3.5
             detail = "Energy recovery (lieutenant, start of battle)"
             cand = (pts, detail)
@@ -498,7 +512,6 @@ def provider_early_battle_ally_energy(
                 best = cand
 
         if re.search(r"energy potion when a battle starts", t):
-            tw = TARGETING_WEIGHT["Area"]
             pts = tw * 3.0
             detail = "Energy recovery (energy potion, start of battle)"
             cand = (pts, detail)
@@ -508,8 +521,7 @@ def provider_early_battle_ally_energy(
         m = re.search(r"ally recovers? (\d+) energy", text, re.I)
         if m and "when a battle starts" in t:
             energy = int(m.group(1))
-            tw = TARGETING_WEIGHT["Multiple targets"]
-            pts = tw * (1.5 + energy / 140)
+            pts = tw * (2.0 + energy / 280)
             detail = (
                 f"Energy recovery ({energy} early objective, multiple targets)"
             )
@@ -520,7 +532,6 @@ def provider_early_battle_ally_energy(
         if re.search(
             r"increases? the recipient'?s? energy recovery speed", t
         ):
-            tw = TARGETING_WEIGHT["Single target"]
             pts = tw * 2.5
             detail = (
                 "Energy recovery speed (contract ally, start of battle)"
@@ -1473,6 +1484,25 @@ def synergy_pick_has_stat_buff_reason(pick: dict) -> bool:
     return bool(_stat_synergy_reasons(pick.get("reasons", ())))
 
 
+def synergy_pick_has_early_battle_energy_reason(pick: dict) -> bool:
+    """True when a pick's value is battle-start Energy for one receiver."""
+    for reason in pick.get("reasons", ()):
+        if not reason.startswith("Energy via "):
+            continue
+        detail = reason.removeprefix("Energy via ").split("`", 1)[0]
+        lowered = detail.lower()
+        if (
+            "at battle start" in lowered
+            or "start of battle" in lowered
+            or "lieutenant" in lowered
+            or "energy potion" in lowered
+            or "early objective" in lowered
+            or "contract ally, start of battle" in lowered
+        ):
+            return True
+    return False
+
+
 def should_filter_obvious_stat_buffer_pick(
     pick: dict,
     provider_beneficiary_count: dict[str, int],
@@ -1483,6 +1513,8 @@ def should_filter_obvious_stat_buffer_pick(
     if provider_beneficiary_count.get(provider, 0) <= threshold:
         return False
     if synergy_pick_has_enabler_reason(pick):
+        return False
+    if synergy_pick_has_early_battle_energy_reason(pick):
         return False
     return synergy_pick_has_stat_buff_reason(pick)
 
