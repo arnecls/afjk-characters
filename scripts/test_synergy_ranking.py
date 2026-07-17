@@ -520,6 +520,114 @@ class UltimateEnergyPreferenceTests(unittest.TestCase):
         self.assertGreater(boosted, 0.0)
 
 
+class SlowFirstCastEnergyTests(unittest.TestCase):
+    def _behavior(
+        self,
+        *,
+        synergy_speed: str = "fast",
+        first_cast_needs_energy: bool = True,
+    ) -> SimpleNamespace:
+        return SimpleNamespace(
+            movement="stationary",
+            movement_note="",
+            casting_speed=synergy_speed,
+            signature_skill_name="Ultimate",
+            signature_skill_is_ult=True,
+            signature_skill_speed=synergy_speed,
+            synergy_signature_speed=synergy_speed,
+            synergy_signature_is_ult=True,
+            signature_first_cast_needs_energy=first_cast_needs_energy,
+            ult_speed=synergy_speed,
+            non_ult_speed="fast",
+            avg_attack_range=10.0,
+            placement_constraints=[],
+            skill_overview={},
+        )
+
+    def _receiver(self, name: str) -> SimpleNamespace:
+        return SimpleNamespace(
+            title=f"{name} - Mage",
+            benefit_stats=["ATK"],
+            effects=[],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+
+    def _battle_start_energy_provider(self) -> SimpleNamespace:
+        return SimpleNamespace(
+            title="Battery - Support",
+            benefit_stats=[],
+            effects=[],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+            skill_chunks=[
+                (
+                    "base",
+                    "When a battle starts, grants all allies 120 Energy.",
+                    "Skill1",
+                )
+            ],
+        )
+
+    def test_receiver_wants_early_battle_energy_for_slow_first_cast(self) -> None:
+        behavior = self._behavior(synergy_speed="fast")
+        self.assertTrue(gen.receiver_wants_early_battle_energy(behavior))
+
+    def test_receiver_skips_early_battle_energy_without_first_cast_need(
+        self,
+    ) -> None:
+        behavior = self._behavior(
+            synergy_speed="fast", first_cast_needs_energy=False
+        )
+        self.assertFalse(gen.receiver_wants_early_battle_energy(behavior))
+
+    def test_early_battle_energy_scores_for_slow_first_cast_ult(self) -> None:
+        receiver = self._receiver("Tasi")
+        behavior = self._behavior(synergy_speed="fast")
+        provider = self._battle_start_energy_provider()
+        score, reasons = gen.score_early_battle_energy_synergy(
+            provider, receiver, behavior
+        )
+        self.assertGreater(score, 0.0)
+        self.assertTrue(any("Energy via" in r for r in reasons))
+
+    def test_tasi_behavior_flags_slow_first_cast(self) -> None:
+        import importlib.util
+
+        spec = importlib.util.spec_from_file_location(
+            "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+        )
+        rs = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(rs)
+        text = (Path(__file__).resolve().parent.parent / "Heroes.md").read_text(
+            encoding="utf-8"
+        )
+        blocks = {}
+        for block in text.split("\n## "):
+            if block.startswith("## "):
+                block = block[3:]
+            elif not block.startswith("Tasi"):
+                continue
+            if block.startswith("Tasi"):
+                blocks["Tasi"] = "## " + block
+                break
+        hero = rs.parse_hero_block(blocks["Tasi"])
+        rs.analyze_hero(hero)
+        display = {hero.title: "Tasi"}
+        behavior = rs.build_behavior_for_heroes(
+            [hero], display, heroes_text=text
+        )[hero.title]
+        self.assertTrue(behavior.signature_first_cast_needs_energy)
+        self.assertTrue(behavior.signature_skill_is_ult)
+
+
 class CommonStatBufferNamesTests(unittest.TestCase):
     def _pick(self, provider: str, score: float) -> dict:
         return {

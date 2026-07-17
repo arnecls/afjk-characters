@@ -68,6 +68,15 @@ class ProximityDetectionTests(unittest.TestCase):
     def test_twins_global_haste_not_proximity(self) -> None:
         self.assertNotIn("Haste", self.twins.proximity_aura_buff_labels)
 
+    def test_perseus_detects_fertile_ground_proximity(self) -> None:
+        blocks = _hero_blocks()
+        perseus = self.rs.parse_hero_block(blocks["Perseus"])
+        self.rs.analyze_hero(perseus)
+        self.assertIn("ATK", perseus.proximity_aura_buff_labels)
+        self.assertIn("Phys DEF", perseus.proximity_aura_buff_labels)
+        self.assertIn("Magic DEF", perseus.proximity_aura_buff_labels)
+        self.assertEqual(perseus.proximity_aura_radius, 1.0)
+
 
 class ProximityReachGateTests(unittest.TestCase):
     @classmethod
@@ -100,10 +109,20 @@ class ProximityReachGateTests(unittest.TestCase):
         cls.by_title = {h.title: h for h in cls.heroes}
         display = {h.title: cls.gen.short_name(h.title) for h in cls.heroes}
         text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+        perseus = cls.rs.parse_hero_block(blocks["Perseus"])
+        cls.rs.analyze_hero(perseus)
+        cls.perseus = perseus
+        tasi = cls.rs.parse_hero_block(blocks["Tasi"])
+        cls.rs.analyze_hero(tasi)
+        cls.tasi = tasi
+        cls.heroes.extend([perseus, tasi])
+        display[perseus.title] = "Perseus"
+        display[tasi.title] = "Tasi"
         cls.behavior = cls.rs.build_behavior_for_heroes(
             cls.heroes, display, heroes_text=text
         )
         cls.shakir = cls.by_title["Shakir - Furious Howl"]
+        cls.hepler = cls.by_title["Hepler - Master of Forms"]
 
     def _score(self, provider_title: str, receiver_title: str) -> float:
         provider = self.by_title[provider_title]
@@ -166,6 +185,28 @@ class ProximityReachGateTests(unittest.TestCase):
         self.assertTrue(
             self.gen.receiver_can_reach_proximity_aura(1.0, 2.0)
         )
+
+    def test_perseus_excludes_long_range_tasi(self) -> None:
+        behavior = self.behavior[self.tasi.title]
+        score, _ = self.gen.score_synergy(
+            self.perseus,
+            self.tasi,
+            behavior.movement,
+            behavior.synergy_signature_speed or "average",
+            behavior,
+        )
+        self.assertEqual(score, 0.0)
+
+    def test_perseus_includes_melee_hepler(self) -> None:
+        behavior = self.behavior[self.hepler.title]
+        score, _ = self.gen.score_synergy(
+            self.perseus,
+            self.hepler,
+            behavior.movement,
+            behavior.synergy_signature_speed or "average",
+            behavior,
+        )
+        self.assertGreater(score, 0.0)
 
 
 class PositionalTileRegressionTests(unittest.TestCase):

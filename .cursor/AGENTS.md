@@ -458,11 +458,14 @@ reviewing or fixing matches, work through both heroes in this order.
    `EX+n`) and `Supreme+` skills are unit-defining and score higher via
    `DEFINING_TIER_SCORE_MULT` in `generate-heroes-overview.py`.
    **Early-battle energy:** providers that grant ally Energy at or right
-   after battle start score extra only when the hero's **curated signature
-   skill is a slow Ultimate** (`receiver_wants_early_battle_energy` in
-   `generate-heroes-overview.py`). Units whose identity is a battle-start
-   Skill1/Skill2 (Bonnie, Kulu, etc.) are excluded even if their side
-   ultimate is slow.
+   after battle start score extra when the hero's **curated signature is a
+   slow Ultimate** or when **`signature_first_cast_needs_energy`** is set
+   (`receiver_wants_early_battle_energy` in `generate-heroes-overview.py`).
+   The first-cast flag covers slow-opening ultimates whose recurring cast
+   speed is fast after post-ult Haste (e.g. Tasi). Units whose identity is
+   a battle-start Skill1/Skill2 (Bonnie, Kulu, etc.) are excluded even if
+   their side ultimate is slow. First-cast receivers use the slow early-battle
+   multiplier even when `ult_speed` is fast.
    **Signature-skill fuel:** Haste/ATK SPD ally buffs are boosted by the
    receiver's effective synergy signature speed (`SIGNATURE_FUEL_SPEED_MULT`:
    slow 1.6×, average 1.2×, fast 1.0×). Energy recovery uses a lighter
@@ -477,10 +480,11 @@ reviewing or fixing matches, work through both heroes in this order.
    is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in
    `rewrite-summaries.py`).
    **Proximity aura buffs:** provider-attached auras/circles (e.g. Shakir's
-   Lupine Aura) are detected in `rewrite-summaries.py`
-   (`PROVIDER_PROXIMITY_AURA_PATTERNS`). Ally buffs tied to those zones only
-   score for receivers whose **weighted attack range** is melee-close enough
-   to stand in the aura (`receiver_can_reach_proximity_aura` in
+   Lupine Aura) and **provider-anchored ground zones** (e.g. Perseus fertile
+   ground — allies standing on ground within N tiles of the provider) are
+   detected in `rewrite-summaries.py` (`PROVIDER_PROXIMITY_AURA_PATTERNS`).
+   Ally buffs tied to those zones only score for receivers whose **weighted
+   attack range** is melee-close enough to stand in the zone (`receiver_can_reach_proximity_aura` in
    `generate-heroes-overview.py`; tunables in `heroes_config.json` →
    `proximity_synergy`). Global buffs (Twins dance, etc.) are unaffected.
    Complements the existing rule that skips **positional tile** buffs and

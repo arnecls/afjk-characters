@@ -53,12 +53,20 @@ Normally, a hero only scores synergy points for stats they explicitly benefit fr
 Even if a hero's stat profile doesn't explicitly list Energy or ATK SPD as a needed stat, if their signature skill is Slow or Average, the algorithm will implicitly value these stats at a baseline of **0.45×**. This ensures slow heroes always appreciate a battery or haste-buffer, even if their damage doesn't scale directly with those stats.
 
 ### 3. Early Battle Energy
-If a hero's signature skill is a **Slow Ultimate**, getting to that first cast is the most dangerous part of the fight. 
+If a hero's signature skill is a **Slow Ultimate**, or the **first ultimate cast**
+is slow while recurring cast speed is faster, getting to that first cast is the
+most dangerous part of the fight.
 
-Providers who grant energy *immediately at the start of battle* (or right after) receive a massive, specialized score boost when paired with these heroes:
-- **Slow Ultimate**: 1.25× multiplier
+Providers who grant energy *immediately at the start of battle* (or right after)
+receive a specialized score boost when paired with these heroes:
+- **Slow Ultimate / slow first cast**: 1.25× multiplier
 - **Average Ultimate**: 1.0× multiplier
-- **Fast Ultimate**: 0.85× multiplier (penalty, as they don't need the early rush)
+- **Fast Ultimate** (recurring only, without slow-first-cast flag): 0.85×
+  multiplier (penalty, as they don't need the early rush)
+
+The `signature_first_cast_needs_energy` behavior flag captures slow-opening
+ultimates (e.g. Tasi with IE 0) even when post-ult Haste makes recurring
+`ult_speed` fast.
 
 ---
 

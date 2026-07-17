@@ -566,11 +566,13 @@ def is_healing_provider(provider: _rs.Hero) -> bool:
 
 def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
     """Early Energy helps when the curated signature Ultimate is slow."""
-    return (
+    if (
         behavior.signature_skill_is_ult
         and behavior.synergy_signature_is_ult
         and behavior.synergy_signature_speed == "slow"
-    )
+    ):
+        return True
+    return behavior.signature_first_cast_needs_energy
 
 
 def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
@@ -624,7 +626,12 @@ def score_early_battle_energy_synergy(
         return 0.0, []
 
     pts, detail = match
-    pts *= EARLY_BATTLE_ENERGY_ULT_MULT.get(receiver_behavior.ult_speed, 1.0)
+    if receiver_behavior.signature_first_cast_needs_energy:
+        pts *= EARLY_BATTLE_ENERGY_ULT_MULT["slow"]
+    else:
+        pts *= EARLY_BATTLE_ENERGY_ULT_MULT.get(
+            receiver_behavior.ult_speed, 1.0
+        )
     pts *= ENERGY_SYNERGY_SCORE_MULT
     if receiver_prefers_ultimate_energy(receiver):
         pts *= HIGH_DAMAGE_ULT_ENERGY_PREF_MULT

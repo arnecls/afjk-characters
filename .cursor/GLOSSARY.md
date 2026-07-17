@@ -932,9 +932,11 @@ Also see:
 ## early-battle energy
 
 Special synergy bonus for providers that grant Energy at or right after battle
-start, but only when the receiver's curated signature is a slow Ultimate. This
-prevents early batteries from dominating heroes whose identity is already a
-fast battle-start non-ultimate.
+start when the receiver's curated signature is a slow Ultimate **or** when
+`signature_first_cast_needs_energy` is set (slow first ultimate cast despite
+fast recurring ult speed after post-ult Haste). This prevents early batteries
+from dominating heroes whose identity is already a fast battle-start
+non-ultimate.
 
 Used in:
 
@@ -1094,7 +1096,8 @@ Also see:
 
 ## proximity aura
 
-Provider-attached aura or zone that only helps receivers close enough to stand
+Provider-attached aura, circle, or **anchored ground zone** (e.g. fertile
+ground allies must stand on) that only helps receivers close enough to stand
 inside it. Synergy scoring checks receiver movement and weighted attack range
 before counting these buffs.
 

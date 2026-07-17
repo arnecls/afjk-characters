@@ -63,11 +63,17 @@ Current tagged examples: Frieren, Marcille, Shemira. Natsu has both `high-damage
 Even if a hero doesn't explicitly list Energy or ATK SPD as a needed stat, if their signature skill is slow or average, the algorithm will still value these buffs at a reduced rate (0.45× base) because every hero benefits from casting their main skill faster.
 
 ### Early Battle Energy
-If a receiver's signature skill is a **slow Ultimate**, providers who grant energy *immediately at the start of battle* (e.g., Lyca) receive a massive score boost.
+If a receiver's signature skill is a **slow Ultimate**, or its **first ultimate
+cast** is slow (low effective Initial Energy, fill time above the fast
+threshold, and not battle-start / free first cast), providers who grant energy
+*immediately at the start of battle* (e.g., Lyca, Pandora, Thador) receive a
+massive score boost. Recurring ult speed can still be fast after post-ult Haste
+(e.g. Tasi); those receivers use the slow early-battle multiplier for the
+first-cast path.
 
 ### Positional & Proximity Restrictions
 - **Positional Tiles**: Buffs that require standing on a specific tile are ignored for highly mobile receivers.
-- **Proximity Auras**: Buffs tied to an aura around the provider (e.g., Shakir's Lupine Aura) only score for receivers who fight in melee range (attack range ≤ 3.5).
+- **Proximity Auras & Ground Zones**: Buffs tied to an aura around the provider (e.g., Shakir's Lupine Aura) or to ground the provider anchors (e.g., Perseus fertile ground — `standing on` / `within N tiles around`) only score for receivers who fight in melee range (attack range ≤ 3.5).
 
 ---
 

@@ -2834,6 +2834,9 @@ PROVIDER_PROXIMITY_AURA_PATTERNS: tuple[str, ...] = (
     r"non-summoned all(?:y|ies) within (?:lupine aura|.{0,20}aura)",
     r"damage taken within lupine aura",
     r"buffed by (?:his|her|their) lupine aura",
+    r"allies standing on (?:this |the )?(?:fertile )?ground",
+    r"standing on (?:this |the )?(?:fertile )?ground",
+    r"ground within \d+(?:\.\d+)? tiles? around",
 )
 
 PROXIMITY_AURA_EXCLUDE_PATTERNS: tuple[str, ...] = (
@@ -2850,7 +2853,11 @@ POSITIONAL_CHUNK_BUFF_HINTS: tuple[tuple[str, str], ...] = (
     (r"\batk bonus\b", "ATK"),
     (r"\batk by\b", "ATK"),
     (r"increas(?:e|es|ing).{0,50}\batk\b", "ATK"),
+    (r"\batk increased\b", "ATK"),
     (r"\batk spd\b", "ATK SPD"),
+    (r"\bphys\s*&\s*magic def\b", "Phys DEF"),
+    (r"\bphys(?:ical)? def\b", "Phys DEF"),
+    (r"\bmagic def\b", "Magic DEF"),
     (r"\bhaste\b", "Haste"),
     (r"extra \d+ energy", "Energy"),
     (r"\bshield\b", "Shield"),
@@ -3670,11 +3677,19 @@ def parse_proximity_aura_radius(text: str, *, default: float = 2.0) -> float:
     for pat in (
         r"range of (\d+(?:\.\d+)?)[-\s]*tile",
         r"within a (\d+(?:\.\d+)?)[-\s]*tile radius",
+        r"ground within (\d+(?:\.\d+)?) tiles? around",
+        r"within (\d+(?:\.\d+)?) tiles? around (?:him|her|them)",
         r"within (\d+(?:\.\d+)?) tiles",
     ):
         m = re.search(pat, t)
         if m:
             return float(m.group(1))
+    if re.search(
+        r"standing on (?:this |the )?(?:fertile )?ground|"
+        r"allies standing on (?:this |the )?(?:fertile )?ground",
+        t,
+    ):
+        return 1.0
     return default
 
 
@@ -3687,6 +3702,9 @@ def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float
         radius = parse_proximity_aura_radius(text)
         max_radius = radius if max_radius is None else max(max_radius, radius)
         t = text.lower()
+        if re.search(r"\bphys\s*&\s*magic def\b", t):
+            labels.add("Phys DEF")
+            labels.add("Magic DEF")
         for hint_pat, label in POSITIONAL_CHUNK_BUFF_HINTS:
             if re.search(hint_pat, t):
                 labels.add(label)
@@ -6884,6 +6902,7 @@ class HeroBehavior:
     signature_skill_speed: str = ""
     synergy_signature_speed: str = ""
     synergy_signature_is_ult: bool = False
+    signature_first_cast_needs_energy: bool = False
     ult_speed: str = ""
     non_ult_speed: str = ""
     avg_attack_range: float | None = None
@@ -8500,6 +8519,24 @@ def _section_has_fast_first_cast(
     return False
 
 
+def _signature_first_cast_needs_energy(
+    skills: list[SkillMeta],
+    defining: dict | None,
+    synergy_is_ult: bool,
+) -> bool:
+    """True when a slow first ultimate cast needs early-battle Energy."""
+    if not defining or not defining.get("is_ultimate") or not synergy_is_ult:
+        return False
+    if defining.get("section", "Ultimate") != "Ultimate":
+        return False
+    skill = _skill_by_section(skills, "Ultimate")
+    text = skill.text if skill else ""
+    if _section_has_fast_first_cast(text, "Ultimate", skill, skills):
+        return False
+    first_cast = _ultimate_first_cast_seconds(skill, skills)
+    return first_cast > CASTING_SPEED_FAST_THRESHOLD
+
+
 def _normalize_first_cast_speed(speed: str, first_cast_speed: str) -> str:
     if first_cast_speed == "none" or first_cast_speed == speed:
         return "none"
@@ -8755,6 +8792,9 @@ def build_behavior_for_heroes(
             synergy_speed, synergy_is_ult = _effective_synergy_signature(
                 defining, alternative, skills, speeds
             )
+            first_cast_needs_energy = _signature_first_cast_needs_energy(
+                skills, defining, synergy_is_ult
+            )
             result[hero.title] = HeroBehavior(
                 movement=movement,
                 movement_note=note,
@@ -8769,6 +8809,7 @@ def build_behavior_for_heroes(
                 ),
                 synergy_signature_speed=synergy_speed,
                 synergy_signature_is_ult=synergy_is_ult,
+                signature_first_cast_needs_energy=first_cast_needs_energy,
                 ult_speed=speeds.get("ult", "average"),
                 non_ult_speed=speeds.get("non_ult", "average"),
                 avg_attack_range=avg_range,

@@ -390,6 +390,9 @@
         "synergy_signature_is_ult": {
           "type": "boolean"
         },
+        "signature_first_cast_needs_energy": {
+          "type": "boolean"
+        },
         "ult_speed": {
           "$ref": "#/$defs/castingSpeed"
         },
