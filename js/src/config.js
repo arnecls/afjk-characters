@@ -20,6 +20,7 @@ window.AFKJ.config = {
     "Debuff on target": { emoji: "🥀", cls: "chip-debuff" },
     "Multiple debuffs on target": { emoji: "🥀", cls: "chip-debuff" },
     "CC on enemies": { emoji: "🫯", cls: "chip-cc" },
+    "Enemy grouping": { emoji: "🧲", cls: "chip-role" },
     "Temporary ally stat buffs": { emoji: "💪", cls: "chip-role" },
     "Party composition": { emoji: "👥", cls: "chip-role" },
     "Continuous damage on enemies": { emoji: "🔥", cls: "chip-debuff" },
