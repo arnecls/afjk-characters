@@ -2457,6 +2457,11 @@ a:hover {
 
 .chip.chip-merged:has(.chip-tip-active) {
   overflow: visible;
+  position: relative;
+  z-index: 1;
+  outline: none;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .chip.chip-stacked.chip-tip-active {
@@ -2467,11 +2472,9 @@ a:hover {
   box-shadow: 0 0 0 2px var(--accent);
 }
 
+.chip-merged-left.chip-has-tip.chip-tip-active,
 .chip-merged-right.chip-has-tip.chip-tip-active {
-  position: relative;
-  z-index: 1;
   outline: none;
-  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .chip-tooltip {
@@ -2494,6 +2497,23 @@ a:hover {
 
 .chip-tooltip--html {
   max-width: 22rem;
+  text-align: left;
+}
+
+.stat-category-covers-tip__heading {
+  margin: 0 0 0.2rem;
+}
+
+.stat-category-covers-tip__list {
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 1.15em;
+  list-style: disc outside;
+}
+
+.stat-category-covers-tip__list li {
+  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
@@ -3364,6 +3384,10 @@ html.welcome-warning-pending .welcome-warning,
 
 .skill-overview-section .skill-overview-metrics {
   margin-bottom: 1rem;
+}
+
+.stats-overview-section .stats-overview-row + .stats-overview-row {
+  margin-top: 0.5rem;
 }
 
 .skill-overview-section .skill-overview-list {

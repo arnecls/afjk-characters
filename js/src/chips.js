@@ -47,6 +47,12 @@ window.AFKJ = window.AFKJ || {};
     low: "Below average across the roster for this effect type.",
   };
 
+  const CLASS_RANK_TOOLTIPS = {
+    high: "Top third within this hero's class.",
+    average: "Middle third within this hero's class.",
+    low: "Bottom third within this hero's class.",
+  };
+
   const SPEED_TOOLTIPS = {
     slow: "Slow to cast: longer cooldown, initial delay, or ultimate energy fill time.",
     average: "Typical cast timing for this skill group across the roster.",
@@ -173,6 +179,17 @@ window.AFKJ = window.AFKJ || {};
     return (
       ' data-tip="' +
       escapeHtml(tooltip) +
+      '" tabindex="0" role="button" aria-describedby="chip-tooltip"'
+    );
+  }
+
+  function chipTipHtmlAttrs(tooltipHtml) {
+    if (!tooltipHtml) {
+      return "";
+    }
+    return (
+      ' data-tip-html="' +
+      escapeHtml(tooltipHtml) +
       '" tabindex="0" role="button" aria-describedby="chip-tooltip"'
     );
   }
@@ -858,8 +875,15 @@ window.AFKJ = window.AFKJ || {};
         formatMergedTierSuffix(left.tierSuffix) +
         "</span>";
     } else {
+      const leftTipAttrs = left.tooltipHtml
+        ? ' chip-has-tip"' + chipTipHtmlAttrs(left.tooltipHtml)
+        : left.tooltip
+          ? ' chip-has-tip"' + chipTipAttrs(left.tooltip)
+          : '"';
       leftHtml =
-        '<span class="chip-merged-left chip-merged-label">' +
+        '<span class="chip-merged-left chip-merged-label' +
+        leftTipAttrs +
+        ">" +
         escapeHtml(chipDisplayLabel(left.textOnly)) +
         formatMergedTierSuffix(left.tierSuffix) +
         "</span>";
@@ -955,6 +979,98 @@ window.AFKJ = window.AFKJ || {};
     }
     return formatMergedIndicator(
       { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
+      qualityMeta,
+      true
+    );
+  }
+
+  function classRankIndicatorMeta(value) {
+    const lower = (value || "").trim().toLowerCase();
+    if (!QUALITY_CLASS[lower]) {
+      return null;
+    }
+    return {
+      cls: "chip-quality " + QUALITY_CLASS[lower],
+      label: lower,
+      tooltip: CLASS_RANK_TOOLTIPS[lower],
+      emoji: "",
+    };
+  }
+
+  function statCategoryCoversHeading(label) {
+    return (label || "").replace(/ Stats$/, " stats") + " cover:";
+  }
+
+  function formatStatCategoryCoversTooltip(label, covers) {
+    if (!covers || !covers.length) {
+      return "";
+    }
+    const items = covers
+      .map(function (stat) {
+        return "<li>" + escapeHtml(stat) + "</li>";
+      })
+      .join("");
+    return (
+      '<div class="stat-category-covers-tip">' +
+      '<p class="stat-category-covers-tip__heading">' +
+      escapeHtml(statCategoryCoversHeading(label)) +
+      "</p>" +
+      '<ul class="stat-category-covers-tip__list">' +
+      items +
+      "</ul>" +
+      "</div>"
+    );
+  }
+
+  function renderClassRankCategoryPill(entry) {
+    const qualityMeta = classRankIndicatorMeta(entry.rank);
+    if (!qualityMeta) {
+      return "";
+    }
+    return formatMergedIndicator(
+      {
+        textOnly: entry.label,
+        tierSuffix: "",
+        tooltipHtml: formatStatCategoryCoversTooltip(
+          entry.label,
+          entry.covers
+        ),
+      },
+      qualityMeta,
+      true
+    );
+  }
+
+  function renderClassRankMergedPill(label, rank, polarity, withIcon) {
+    const qualityMeta = classRankIndicatorMeta(rank);
+    if (!qualityMeta) {
+      return "";
+    }
+    if (withIcon === false) {
+      return formatMergedIndicator(
+        { textOnly: label, tierSuffix: "" },
+        qualityMeta,
+        true
+      );
+    }
+    const leading = resolveLeadingChip(label, polarity);
+    if (leading.emoji) {
+      return (
+        formatMergedIndicator(
+          {
+            hasIcon: true,
+            emoji: leading.emoji,
+            text: leading.text,
+            cls: leading.cls,
+            tierSuffix: "",
+          },
+          qualityMeta,
+          false
+        ) + escapeHtml(effectChipRemainder(leading.remainder))
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: label, tierSuffix: "" },
       qualityMeta,
       true
     );
@@ -2299,6 +2415,7 @@ window.AFKJ = window.AFKJ || {};
     SPEED_EMOJI: SPEED_EMOJI,
     QUALITY_EMOJI: QUALITY_EMOJI,
     QUALITY_TOOLTIPS: QUALITY_TOOLTIPS,
+    CLASS_RANK_TOOLTIPS: CLASS_RANK_TOOLTIPS,
     SPEED_TOOLTIPS: SPEED_TOOLTIPS,
     SIGNATURE_FUEL_TOOLTIP: SIGNATURE_FUEL_TOOLTIP,
     MOVEMENT_DEFINITIONS: MOVEMENT_DEFINITIONS,
@@ -2311,6 +2428,7 @@ window.AFKJ = window.AFKJ || {};
     renderInline: renderInline,
     conditionalTooltip: conditionalTooltip,
     chipTipAttrs: chipTipAttrs,
+    chipTipHtmlAttrs: chipTipHtmlAttrs,
     normalizeToken: normalizeToken,
     normalizeSummaryText: normalizeSummaryText,
     splitSummarySegments: splitSummarySegments,
@@ -2353,6 +2471,10 @@ window.AFKJ = window.AFKJ || {};
     formatMergedIndicator: formatMergedIndicator,
     mergeLabelWithIndicator: mergeLabelWithIndicator,
     mergeEffectWithQuality: mergeEffectWithQuality,
+    classRankIndicatorMeta: classRankIndicatorMeta,
+    renderClassRankMergedPill: renderClassRankMergedPill,
+    renderClassRankCategoryPill: renderClassRankCategoryPill,
+    formatStatCategoryCoversTooltip: formatStatCategoryCoversTooltip,
     mergeEffectWithTargeting: mergeEffectWithTargeting,
     tryChipify: tryChipify,
     tokenToHtml: tokenToHtml,
