@@ -1,5 +1,10 @@
 # AFK Journey context
 
+## Temporary files
+
+When generating ephemeral files only required for a single agent run, create
+these files in the directory called `tmp`.
+
 ## Factions
 
 - Wilders
@@ -8,6 +13,7 @@
 - Lightbearer
 - Celestials
 - Hypogeans
+- Dimensional
 
 **Celestial–Hypogean pairing** — for faction-bonus counting, Celestial
 and Hypogean heroes are treated as one faction (in-game dimensional
@@ -694,7 +700,7 @@ Crit DMG Boost" is an offensive buff; "Crit" alone refers to crit rate.
 
 ## Anti Crowd-control
 
-- Unaffected (immune to all control effects)
+- Unaffected (immune to _all_ control effects, including silence)
 - Steadfast (immune to knock down/up/back and displacement)
 - Dispell ("removes all their dispellable debuffs"; summaries label **Cleanse**)
 - Untargetable (cannot be targeted by spells)
@@ -739,8 +745,3 @@ New exlusive skills are unlocked at the following levels:
 - Ex25
 - R2 (Paragon 2)
 - R4 (Paragon 4)
-
-## Temporary files
-
-When generating ephemeral files only required for a single agent run, create
-these files in the directory called `tmp`.
