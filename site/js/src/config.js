@@ -37,6 +37,7 @@ window.AFKJ.config = {
     HoT: { emoji: "💚", cls: "chip-heal" },
     "Healing over time": { emoji: "💚", cls: "chip-heal" },
     Shield: { emoji: "🛡️", cls: "chip-stat" },
+    HP: { emoji: "❤️", cls: "chip-stat" },
     "Max HP": { emoji: "❤️", cls: "chip-stat" },
     Energy: { emoji: "🔋", cls: "chip-stat" },
     "DEF Penetration": { emoji: "🎯", cls: "chip-stat" },

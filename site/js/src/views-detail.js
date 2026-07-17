@@ -1325,6 +1325,45 @@ window.AFKJ = window.AFKJ || {};
     return md.replace(/\n- \*\*Damage types\*\*:[^\n]*/gi, "");
   }
 
+  function renderStatsOverviewRow(entries, withIcon) {
+    if (!entries || !entries.length) {
+      return "";
+    }
+    return entries
+      .map(function (entry) {
+        return chips.renderClassRankMergedPill(
+          entry.label,
+          entry.rank,
+          "buff",
+          withIcon
+        );
+      })
+      .join("");
+  }
+
+  function renderStatsOverview(statsOverview) {
+    if (!statsOverview) {
+      return "";
+    }
+    const categories = renderStatsOverviewRow(statsOverview.categories, false);
+    const stats = renderStatsOverviewRow(statsOverview.stats, true);
+    if (!categories && !stats) {
+      return "";
+    }
+    let html =
+      '<div class="detail-section summary-section skill-overview-section stats-overview-section">';
+    html += "<h2>Stats overview</h2>";
+    html += '<div class="skill-overview-metrics stats-overview-pills">';
+    if (categories) {
+      html += '<div class="stats-overview-row">' + categories + "</div>";
+    }
+    if (stats) {
+      html += '<div class="stats-overview-row">' + stats + "</div>";
+    }
+    html += "</div></div>";
+    return html;
+  }
+
   function highlightSkillCard(category) {
     const state = window.AFKJ.state;
     if (!category || !state.dom.heroDetail) {
@@ -1411,6 +1450,9 @@ window.AFKJ = window.AFKJ || {};
           html += "</div>";
         }
         html += "</div>";
+      }
+      if (hero.sections.statsOverview) {
+        html += renderStatsOverview(hero.sections.statsOverview);
       }
       if (
         parts.skillOverview ||
@@ -1504,6 +1546,7 @@ window.AFKJ = window.AFKJ || {};
     splitBehavior: splitBehavior,
     splitBehaviorHeading: splitBehaviorHeading,
     renderSkillOverviewMetrics: renderSkillOverviewMetrics,
+    renderStatsOverview: renderStatsOverview,
     highlightSkillCard: highlightSkillCard,
     showDetail: showDetail,
   };

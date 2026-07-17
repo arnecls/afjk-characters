@@ -21,6 +21,17 @@ from healing_types import (
 )
 
 ROOT = Path(__file__).resolve().parent.parent
+SCRIPTS = ROOT / "scripts"
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from character_stat_ranks import (
+    build_slug_ranks_map,
+    hero_slug,
+    load_character_stat_ranks,
+    stats_overview_for_short,
+)
+
 HEROES_MD = ROOT / "Heroes.md"
 OVERVIEW_MD = ROOT / "heroes-overview.md"
 HEROES_DATA = ROOT / "data" / "heroes_data.json"
@@ -3484,6 +3495,9 @@ def build_overview() -> str:
         heroes, enabler_matchers, behavior_by_title
     )
 
+    roster_slugs = {hero_slug(short_name(h.title)) for h in heroes}
+    slug_ranks = build_slug_ranks_map(load_character_stat_ranks(), roster_slugs)
+
     parts = [
         "# Heroes Overview",
         "",
@@ -3527,6 +3541,7 @@ def build_overview() -> str:
                 prydwen_tiers=tiers_by_title.get(hero.title),
                 hero=hero,
                 behavior_tags=sorted(behavior_tags_map.get(hero_name, ())),
+                stats_overview=stats_overview_for_short(hero_name, slug_ranks),
             )
         )
         parts.append(f"### Units improving {hero_name}")

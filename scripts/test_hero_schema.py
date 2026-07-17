@@ -1072,6 +1072,41 @@ class SkillOverviewTests(unittest.TestCase):
         )
         self.assertNotIn("#### Play overview", text)
 
+    def test_stats_overview_before_skill_overview(self) -> None:
+        _, behavior = self._hero_by_display("Eironn")
+        stats_overview = {
+            "categories": [{"label": "Basic Stats", "rank": "high"}],
+            "stats": [{"label": "HP", "rank": "low"}],
+        }
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Eironn",
+                behavior,
+                stats_overview=stats_overview,
+            )
+        )
+        stats_idx = text.index("#### Stats overview")
+        skill_idx = text.index("#### Skill overview")
+        self.assertLess(stats_idx, skill_idx)
+        self.assertIn("- **Categories**: Basic Stats `high`", text)
+        self.assertIn("- **Stats**: HP `low`", text)
+
+    def test_stats_overview_omitted_when_disabled(self) -> None:
+        _, behavior = self._hero_by_display("Eironn")
+        stats_overview = {
+            "categories": [{"label": "Basic Stats", "rank": "high"}],
+            "stats": [{"label": "HP", "rank": "low"}],
+        }
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Eironn",
+                behavior,
+                stats_overview=stats_overview,
+                include_stats_overview=False,
+            )
+        )
+        self.assertNotIn("#### Stats overview", text)
+
     def test_skill_summary_subsections_after_overview_metrics(self):
         _, behavior = self._hero_by_display("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})

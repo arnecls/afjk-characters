@@ -3366,6 +3366,10 @@ html.welcome-warning-pending .welcome-warning,
   margin-bottom: 1rem;
 }
 
+.stats-overview-section .stats-overview-row + .stats-overview-row {
+  margin-top: 0.5rem;
+}
+
 .skill-overview-section .skill-overview-list {
   display: table;
   width: 100%;

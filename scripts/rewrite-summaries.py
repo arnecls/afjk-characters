@@ -9435,10 +9435,12 @@ def format_behavior_section(
     skill_summaries: dict[str, str] | None = None,
     hero_categories: set[str] | None = None,
     include_skill_summaries: bool = True,
+    include_stats_overview: bool = True,
     prydwen_tiers: dict[str, str] | None = None,
     hero: Hero | None = None,
     behavior_tags: list[str] | None = None,
     play_overview: str | None = None,
+    stats_overview: dict | None = None,
 ) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     if prydwen_tiers:
@@ -9482,6 +9484,10 @@ def format_behavior_section(
         lines.append("#### Play overview")
         lines.append("")
         lines.append(play_overview.strip())
+    if include_stats_overview and stats_overview:
+        from character_stat_ranks import format_stats_overview_markdown
+
+        lines.extend(format_stats_overview_markdown(stats_overview))
     overview = behavior.skill_overview or {}
     lines.append("")
     lines.append("#### Skill overview")

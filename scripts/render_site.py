@@ -20,6 +20,11 @@ sys.path.insert(0, str(SCRIPTS))
 
 import hero_schema as hs
 import heroes_io as io
+from character_stat_ranks import (
+    build_slug_ranks_map,
+    load_character_stat_ranks,
+    stats_overview_for_short,
+)
 from render_overview import (
     REPLACEMENT_CATEGORY_LABELS,
     _format_benefit_stat_tags,
@@ -350,6 +355,9 @@ def build_site_data(
     for short in sorted(processed["heroes"]):
         slug_by_name[short] = hero_slug(short)
 
+    roster_slugs = set(slug_by_name.values())
+    slug_ranks = build_slug_ranks_map(load_character_stat_ranks(), roster_slugs)
+
     summary_heroes, skills_by_title = load_summary_heroes(data, processed)
 
     heroes_out: list[dict] = []
@@ -376,6 +384,7 @@ def build_site_data(
                 skill_summaries=skill_summaries,
                 hero_categories=hero_categories,
                 include_skill_summaries=False,
+                include_stats_overview=False,
                 prydwen_tiers=prydwen_tiers,
                 hero=hero,
                 behavior_tags=sorted(behavior_tags_map.get(short, ())),
@@ -420,10 +429,23 @@ def build_site_data(
                 "category": sig_category,
             }
 
+        hero_slug_val = slug_by_name[short]
+        stats_overview = slug_ranks.get(hero_slug_val)
+        sections: dict = {
+            "behavior": behavior_md,
+            "damageTypes": damage_types,
+            "skillCards": skill_cards,
+            "benefits_from": synergy,
+            "replacements": replacements,
+            "summary": summary_md,
+        }
+        if stats_overview:
+            sections["statsOverview"] = stats_overview
+
         heroes_out.append(
             {
                 "name": short,
-                "slug": slug_by_name[short],
+                "slug": hero_slug_val,
                 "title": meta.get("title", long_name),
                 "faction": meta.get("faction"),
                 "class": meta.get("class"),
@@ -437,14 +459,7 @@ def build_site_data(
                 "portrait": f"assets/portraits/{short}.png",
                 "signatureSkill": signature_skill,
                 "prydwenTiers": prydwen_tiers,
-                "sections": {
-                    "behavior": behavior_md,
-                    "damageTypes": damage_types,
-                    "skillCards": skill_cards,
-                    "benefits_from": synergy,
-                    "replacements": replacements,
-                    "summary": summary_md,
-                },
+                "sections": sections,
             }
         )
 

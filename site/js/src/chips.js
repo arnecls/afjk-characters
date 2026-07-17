@@ -47,6 +47,12 @@ window.AFKJ = window.AFKJ || {};
     low: "Below average across the roster for this effect type.",
   };
 
+  const CLASS_RANK_TOOLTIPS = {
+    high: "Top third within this hero's class.",
+    average: "Middle third within this hero's class.",
+    low: "Bottom third within this hero's class.",
+  };
+
   const SPEED_TOOLTIPS = {
     slow: "Slow to cast: longer cooldown, initial delay, or ultimate energy fill time.",
     average: "Typical cast timing for this skill group across the roster.",
@@ -955,6 +961,54 @@ window.AFKJ = window.AFKJ || {};
     }
     return formatMergedIndicator(
       { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
+      qualityMeta,
+      true
+    );
+  }
+
+  function classRankIndicatorMeta(value) {
+    const lower = (value || "").trim().toLowerCase();
+    if (!QUALITY_CLASS[lower]) {
+      return null;
+    }
+    return {
+      cls: "chip-quality " + QUALITY_CLASS[lower],
+      label: lower,
+      tooltip: CLASS_RANK_TOOLTIPS[lower],
+      emoji: "",
+    };
+  }
+
+  function renderClassRankMergedPill(label, rank, polarity, withIcon) {
+    const qualityMeta = classRankIndicatorMeta(rank);
+    if (!qualityMeta) {
+      return "";
+    }
+    if (withIcon === false) {
+      return formatMergedIndicator(
+        { textOnly: label, tierSuffix: "" },
+        qualityMeta,
+        true
+      );
+    }
+    const leading = resolveLeadingChip(label, polarity);
+    if (leading.emoji) {
+      return (
+        formatMergedIndicator(
+          {
+            hasIcon: true,
+            emoji: leading.emoji,
+            text: leading.text,
+            cls: leading.cls,
+            tierSuffix: "",
+          },
+          qualityMeta,
+          false
+        ) + escapeHtml(effectChipRemainder(leading.remainder))
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: label, tierSuffix: "" },
       qualityMeta,
       true
     );
@@ -2299,6 +2353,7 @@ window.AFKJ = window.AFKJ || {};
     SPEED_EMOJI: SPEED_EMOJI,
     QUALITY_EMOJI: QUALITY_EMOJI,
     QUALITY_TOOLTIPS: QUALITY_TOOLTIPS,
+    CLASS_RANK_TOOLTIPS: CLASS_RANK_TOOLTIPS,
     SPEED_TOOLTIPS: SPEED_TOOLTIPS,
     SIGNATURE_FUEL_TOOLTIP: SIGNATURE_FUEL_TOOLTIP,
     MOVEMENT_DEFINITIONS: MOVEMENT_DEFINITIONS,
@@ -2353,6 +2408,8 @@ window.AFKJ = window.AFKJ || {};
     formatMergedIndicator: formatMergedIndicator,
     mergeLabelWithIndicator: mergeLabelWithIndicator,
     mergeEffectWithQuality: mergeEffectWithQuality,
+    classRankIndicatorMeta: classRankIndicatorMeta,
+    renderClassRankMergedPill: renderClassRankMergedPill,
     mergeEffectWithTargeting: mergeEffectWithTargeting,
     tryChipify: tryChipify,
     tokenToHtml: tokenToHtml,

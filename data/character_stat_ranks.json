@@ -1,0 +1,1963 @@
+{
+  "meta": {
+    "season": "Starter Story",
+    "category_method": "mean_within_class_percentile_rank",
+    "bucket_method": "within_class_tertile",
+    "stat_catalog": "data/stat_catalog.json",
+    "source": "data/character_stats"
+  },
+  "characters": {
+    "aliceth": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "alna": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "alsa": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "antandra": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "arden": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "atalanta": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "athalia": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "aurora": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "baelran": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "berial": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "bonnie": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "brutus": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "bryon": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "callan": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "carolina": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "cassadee": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "cecia": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "chippy": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "contess": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "cryonaia": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    },
+    "cyran": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "daimon": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "damian": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "dionel": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    },
+    "dunlingr": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "eironn": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "elijah-lailah": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "evie": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "faramor": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "fay": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "florabelle": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "frieren": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "galahad": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "gerda": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "granny-dahnie": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "gunnar": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "guywin": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "gwyneth": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "hammie": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "harak": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "hepler": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "hewynn": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "himmel": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "hodgkin": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "hugin": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "igor": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "indris": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "isabella": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "joey": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "kafra": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "kazim": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "koko": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "kordan": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "korin": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "kruger": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "kulu": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "laios": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "lamentis": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "lenya": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    },
+    "lily-may": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "lorsan": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "lucca": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "lucius": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "lucy": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "ludovic": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "lumont": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "lyca": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "marcille": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "marilee": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    },
+    "mehira": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "mikola": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "mirael": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "nara": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "natsu": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "nazrik": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "nerion": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "niru": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "odie": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "orion": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "pandora": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "pang": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "parisa": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "peggy": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "perseus": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "phraesto": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "pippa": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "ravion": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "reinier": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "rhys": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "rowan": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "saida": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "salazer": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "satrana": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "scarlita": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "seth": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "shadewing": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "shakir": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "shemira": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "silven": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "silvina": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "sinbad": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "smokey-meerky": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "low"
+      }
+    },
+    "solise": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "sonja": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "soren": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "sylphira": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "talene": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "tasi": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    },
+    "temesia": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "thador": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "thoran": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    },
+    "tilaya": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "ulmus": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    },
+    "vala": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    },
+    "valen": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "valka": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "velara": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
+    "viperian": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "low"
+      }
+    },
+    "walker": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "zandrok": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    },
+    "zanie": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
+    "zorya": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

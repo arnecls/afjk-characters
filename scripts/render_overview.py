@@ -22,6 +22,12 @@ sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
 import hero_schema as hs
+from character_stat_ranks import (
+    build_slug_ranks_map,
+    hero_slug,
+    load_character_stat_ranks,
+    stats_overview_for_short,
+)
 
 OVERVIEW_MD = io.ROOT / "heroes-overview.md"
 OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
@@ -248,6 +254,11 @@ def build_overview(
     data_by_title = {h["title"]: h for h in data["heroes"]}
     parts = list(OVERVIEW_HEADER)
 
+    slug_by_name = {short: hero_slug(short) for short in processed["heroes"]}
+    slug_ranks = build_slug_ranks_map(
+        load_character_stat_ranks(), set(slug_by_name.values())
+    )
+
     summary_heroes, _skills_by_title = load_summary_heroes(data, processed)
     behavior_tags_map = gen._load_behavior_tags()
     play_overviews = rs._load_play_overviews()
@@ -288,6 +299,7 @@ def build_overview(
                 hero=hero,
                 behavior_tags=sorted(behavior_tags_map.get(short, ())),
                 play_overview=play_overviews.get(short),
+                stats_overview=stats_overview_for_short(short, slug_ranks),
             )
         )
         parts.append(f"### Units improving {short}")

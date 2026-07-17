@@ -550,6 +550,26 @@ Also see:
 - [skill cards](#skill-cards)
 - [curated metadata](#curated-metadata)
 
+## stats overview
+
+Class-relative tertile ranks for stat categories and individual stats,
+derived from `data/character_stat_ranks.json`. Shown on the character
+sheet as merged pills and in `heroes-overview.md` as text between Play
+overview and Skill overview. Quality tooltips compare within the hero's
+class, not the full roster. Not shown in list view.
+
+Used in:
+
+- [Character stat ranks](data/character_stat_ranks.json)
+- [Detail view rendering](site/js/src/views-detail.js)
+- [Behavior formatting](scripts/rewrite-summaries.py)
+
+Also see:
+
+- [play overview](#play-overview)
+- [skill overview](#skill-overview)
+- [detail view](#detail-view)
+
 ## play overview
 
 Short curated combat blurb per hero covering setup requirements, strengths, and

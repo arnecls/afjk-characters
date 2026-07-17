@@ -44,6 +44,20 @@ class RenderSiteTests(unittest.TestCase):
         twins = [h for h in payload["heroes"] if h["name"] == "Twins"]
         self.assertEqual(len(twins), 1)
         self.assertEqual(twins[0]["slug"], "twins")
+        stats = twins[0]["sections"].get("statsOverview")
+        self.assertIsNotNone(stats)
+        assert stats is not None
+        self.assertTrue(stats.get("categories"))
+        self.assertTrue(stats.get("stats"))
+
+    def test_eironn_has_stats_overview(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        eironn = next(h for h in payload["heroes"] if h["slug"] == "eironn")
+        stats = eironn["sections"].get("statsOverview")
+        self.assertIsNotNone(stats)
+        assert stats is not None
+        self.assertEqual(stats["categories"][0]["label"], "Basic Stats")
+        self.assertIn(stats["categories"][0]["rank"], ("high", "average", "low"))
 
     def test_synergy_partners_have_slugs(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
