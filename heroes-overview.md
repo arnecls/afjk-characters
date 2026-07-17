@@ -2553,8 +2553,8 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 ### Units benefitting most from Cyran
 
-- Shadewing (3.4 / 5)
 - Bonnie (3.4 / 5)
+- Faramor (3.2 / 5)
 - Indris (2.8 / 5)
 
 ### Units that can act as a replacement for Cyran
@@ -3206,9 +3206,7 @@ Common buffers are **Mikola**, **Rowan**, **Twins**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Eironn
 
-- Carolina (3.7 / 5)
-- Nerion (3.2 / 5)
-- Bonnie (2.6 / 5)
+- Faramor (3.5 / 5)
 
 ### Units that can act as a replacement for Eironn
 
@@ -3448,28 +3446,28 @@ reduce vitality of enemies revived inside circular area
 Look for units providing: `ATK` `Haste` `Shield`  
 Common buffers are **Mikola**, **Ravion**, **Smokey & Meerky**, or **Dunlingr**.
 
-Faramor also requires units **buffing them**
+Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 - **Isabella**
   - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
   - Grants 6 distinct temporary stat buffs to Faramor
+- **Mehira**
+  - Haste (multiple targets, average) `signature fuel`
+  - Enables Enemy grouping via Displace (all units, low)
+  - Grants 1 distinct temporary stat buff to Faramor
 - **Ravion**
   - ATK (multiple targets, high)
   - Haste (multiple targets, average) `signature fuel`
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
   - Grants 1 distinct temporary stat buff to Faramor
+- **Eironn**
+  - Enables Enemy grouping via Displace (area, low), battle start
 - **Perseus**
   - ATK (multiple targets, average)
   - Grants 3 distinct temporary stat buffs to Faramor
-- **Koko**
-  - ATK (all units, low)
-  - Grants 2 distinct temporary stat buffs to Faramor
-- **Kordan**
-  - ATK (area, low)
-  - Grants 2 distinct temporary stat buffs to Faramor
-- **Niru**
-  - Grants 2 distinct temporary stat buffs to Faramor (start of battle)
+- **Cyran**
+  - Enables Enemy grouping via Displace (all units, low)
 
 ### Units benefitting most from Faramor
 
@@ -8321,14 +8319,14 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Twins**.
 
 Mehira provides Haste to multiple targets `average`.
 
-**13** units include this provider among their top 6 synergy partners. Why the match is common:
+**14** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
+- Faramor (4.1 / 5)
 - Lumont (3.5 / 5)
-- Viperian (3.4 / 5)
 - Koko (3.2 / 5)
 - Bryon (2.4 / 5)
 
@@ -10478,7 +10476,7 @@ _No synergy partners matched stat buffs or enablers._
 
 Reinier provides Direct healing to single targets `low` and Damage taken (EX+10) to single targets `low`.
 
-- Niru (3.4 / 5)
+- Faramor (2.8 / 5)
 - Bonnie (2.2 / 5)
 - Himmel (2.2 / 5)
 
@@ -12393,15 +12391,15 @@ Common buffers are **Twins**, **Mikola**, **Ravion**, or **Kazim**.
 
 Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targets `low`.
 
-**33** units include this provider among their top 6 synergy partners. Why the match is common:
+**32** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
-- Faramor (3.4 / 5)
 - Lily May (3.4 / 5)
 - Perseus (3.3 / 5)
+- Dionel (3.1 / 5)
 - Vala (3.0 / 5)
 
 ### Units that can act as a replacement for Sonja
@@ -13469,7 +13467,7 @@ Common buffers are **Ravion**, **Hugin**, **Smokey & Meerky**, or **Lorsan**.
 
 Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `average`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `average`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**95** units include this provider among their top 6 synergy partners. Why the match is common:
+**94** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner

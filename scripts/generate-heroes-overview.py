@@ -285,6 +285,7 @@ ENABLER_REQUIRE_HANDLERS = (
     "Ally on positioning link",
     "Ally Ultimate casts",
     "Enemy defeat",
+    "Enemy grouping",
     "Adjacent allies",
     "Party composition",
     "Named ally on team",
@@ -980,6 +981,53 @@ _CC_SUSTAINED_LABELS = frozenset(
 )
 
 
+_GROUPING_CC_LABELS = frozenset(
+    {"Displace", "Bind", "Stun", "Sleep", "Knock down"}
+)
+
+
+def match_enemy_grouping(provider: _rs.Hero) -> tuple[float, str] | None:
+    """Score curated enemy-grouping providers for zone/AoE receivers."""
+    tags = _load_behavior_tags().get(short_name(provider.title), frozenset())
+    if "enemy-grouping" not in tags:
+        return None
+
+    grouping_cc = [
+        e
+        for e in provider.effects
+        if e.category == "cc"
+        and e.label in _GROUPING_CC_LABELS
+        and e.targeting in ALLY_TARGETINGS
+    ]
+
+    pts = 7.0
+    detail_parts: list[str] = ["enemy grouping"]
+
+    if grouping_cc:
+        best = max(
+            grouping_cc,
+            key=lambda e: (
+                2 if e.label == "Displace" else 1,
+                TARGETING_WEIGHT.get(e.targeting, 1.0),
+                MAG_WEIGHT.get(e.magnitude or "average", 1.0),
+            ),
+        )
+        tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
+        pts += tw * 0.75
+        mag = best.magnitude or "average"
+        detail_parts[0] = f"{best.label} ({best.targeting.lower()}, {mag})"
+        if any(e.label == "Displace" for e in grouping_cc):
+            pts += 1.0
+        if any(e.label in {"Bind", "Stun", "Sleep"} for e in grouping_cc):
+            pts += 1.0
+
+    if "battle-start-burst" in tags or "battle-start-ult" in tags:
+        pts *= 1.2
+        detail_parts.append("battle start")
+
+    return pts, ", ".join(detail_parts)
+
+
 def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
     cc_effects = [
         e
@@ -1272,6 +1320,7 @@ def _make_enabler_matchers(
         "Ally on positioning link": match_stellar_bond,
         "Ally Ultimate casts": match_ally_ultimate_casts,
         "Enemy defeat": match_enemy_defeat,
+        "Enemy grouping": match_enemy_grouping,
         "Adjacent allies": match_adjacent_allies,
         "Party composition": party,
         "Temporary ally stat buffs": match_ally_stat_buffs,
@@ -1296,6 +1345,7 @@ REQUIRE_SYNERGY_FRAGMENTS: dict[str, str] = {
     "Ally on positioning link": "units **positioned on their link**",
     "Ally Ultimate casts": "allies **casting ultimates**",
     "Enemy defeat": "enemies **to be defeated**",
+    "Enemy grouping": "units **grouping enemies**",
     "Adjacent allies": "allies **adjacent** to them",
     "Party composition": "a party **with the right composition**",
     "Named ally on team": "specific **named allies**",

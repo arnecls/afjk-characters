@@ -706,6 +706,75 @@ class ThadorEarlyEnergyTests(unittest.TestCase):
         self.assertEqual(len(ranked), 1)
 
 
+class FaramorEnemyGroupingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        rs_spec = importlib.util.spec_from_file_location(
+            "rewrite_summaries",
+            SCRIPTS / "rewrite-summaries.py",
+        )
+        cls.rs = importlib.util.module_from_spec(rs_spec)
+        sys.modules["rewrite_summaries"] = cls.rs
+        assert rs_spec.loader is not None
+        rs_spec.loader.exec_module(cls.rs)
+
+        import heroes_io as io
+
+        cls.heroes = {
+            record["name"]: record for record in io.load_heroes_data()["heroes"]
+        }
+
+    def _analyzed(self, name: str):
+        hero = self.rs.hero_from_record(self.heroes[name])
+        self.rs.analyze_hero(hero)
+        return hero
+
+    def test_tagged_grouper_matches(self) -> None:
+        match = gen.match_enemy_grouping(self._analyzed("Eironn"))
+        self.assertIsNotNone(match)
+        self.assertGreater(match[0], 0.0)
+        self.assertIn("Displace", match[1])
+
+    def test_untagged_displace_does_not_match(self) -> None:
+        self.assertIsNone(gen.match_enemy_grouping(self._analyzed("Nara")))
+
+    def test_faramor_ranks_grouper_in_display_set(self) -> None:
+        faramor = self._analyzed("Faramor")
+        heroes = [self._analyzed(name) for name in ("Eironn", "Isabella")]
+        matchers = gen._make_enabler_matchers({})
+        behavior = self.rs.build_behavior_for_heroes(
+            [faramor], {faramor.title: "Faramor"}, heroes_text=""
+        )[faramor.title]
+        ranked = gen.rank_synergy_entries(
+            faramor,
+            heroes,
+            matchers,
+            {faramor.title: behavior},
+        )
+        providers = {title for _score, _reasons, title in ranked}
+        self.assertIn("Eironn - Stormsword", providers)
+        eironn_entry = next(
+            entry for entry in ranked if entry[2] == "Eironn - Stormsword"
+        )
+        self.assertTrue(
+            any("Enemy grouping" in reason for reason in eironn_entry[1])
+        )
+        display, _fallback = gen.display_synergy_picks_for_receiver(
+            [
+                {
+                    "provider": gen.short_name(title),
+                    "score": score,
+                    "reasons": reasons,
+                }
+                for score, reasons, title in ranked
+            ],
+            {"Eironn": 30, "Isabella": 40},
+            threshold=20,
+            max_syn=6,
+        )
+        self.assertIn("Eironn", [p["provider"] for p in display])
+
+
 class CommonStatBufferNamesTests(unittest.TestCase):
     def _pick(self, provider: str, score: float) -> dict:
         return {

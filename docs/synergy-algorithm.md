@@ -98,6 +98,11 @@ Some heroes have unique mechanics listed under **"Requires"** (e.g., "Requires m
 
 The algorithm scans the provider's kit to see if they fulfill these requirements. The score depends on how reliably and widely the provider applies the effect.
 
+**Enemy grouping:** receivers with an **Enemy grouping** require (e.g. Faramor's
+Sanctified Circle) value curated providers tagged `enemy-grouping`. Matching uses
+structured displacement or area control reach, with extra weight for battle-start
+openers. Untagged displacement alone does not qualify.
+
 ### Defining Tier Multipliers
 If the receiver's requirement is unlocked at a high ascension tier (Ex-Weapon or Supreme+), it is considered a "unit-defining" mechanic and the synergy score is multiplied:
 - **Mythic+ / EX+5**: 1.5×

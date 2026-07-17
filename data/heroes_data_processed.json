@@ -15786,13 +15786,18 @@
         "provides": [],
         "requires": [
           {
+            "label": "Enemy grouping",
+            "tier": "base",
+            "description": "Enemies must enter and stay inside Faramor's magic circle for his sustained area true damage and anti-heal to pay off."
+          },
+          {
             "label": "Temporary ally stat buffs",
             "tier": "base",
             "description": "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage."
           },
           {
             "label": "Once per battle",
-            "tier": "ex+10",
+            "tier": "mythic+",
             "description": "This effect can only trigger once per battle."
           }
         ]

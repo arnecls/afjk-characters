@@ -387,6 +387,10 @@ skill effect.
 - dot-specialist: Relies on damage over time or recurring tick damage as a primary pattern.
 - enemy-debuffer: Applies meaningful stat or combat debuffs to enemies as a core output.
 - enemy-grouping: Pulls, pushes, or clusters enemies to set up follow-up damage or CC.
+  Providers with this tag satisfy receiver **Enemy grouping** requires when
+  their displacement or area control is strong enough (`match_enemy_grouping`
+  in `generate-heroes-overview.py`). Zone anchors such as Faramor use the
+  require label; they are not tagged as groupers themselves.
 - energy-provider: Grants Energy to allies or routinely accelerates ally ultimates.
 - execute: Finishes low-HP enemies or scales damage strongly on wounded targets.
 - high-damage-ult: Ultimate is the main damage spike and a large share of total output.
@@ -447,7 +451,8 @@ reviewing or fixing matches, work through both heroes in this order.
      (e.g. `Haste buff` → Haste or ATK SPD; `Shield` → Shield only, not Max HP)
    - **Summon buffs** — summon buffs for heroes who field summons
    - **Enablers** — provider satisfies a receiver **Requires** label
-     (DoT on enemies, magic damage from allies, party composition, etc.)
+     (DoT on enemies, magic damage from allies, party composition,
+     **Enemy grouping** for zone receivers, etc.)
 
 3. **Score and rank** — broader targeting and higher magnitude win; skip
    **rare conditional** ally buffs; sum stat + summon + enabler scores; keep

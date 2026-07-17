@@ -7309,12 +7309,12 @@
           "name": "Bonnie"
         },
         {
-          "score": 12.0,
-          "name": "Indris"
+          "score": 12.75,
+          "name": "Faramor"
         },
         {
-          "score": 10.0,
-          "name": "Shadewing"
+          "score": 12.0,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -9249,16 +9249,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.0,
-          "name": "Carolina"
-        },
-        {
-          "score": 16.0,
-          "name": "Nerion"
-        },
-        {
-          "score": 10.0,
-          "name": "Bonnie"
+          "score": 14.399999999999999,
+          "name": "Faramor"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -9613,10 +9605,6 @@
         {
           "score": 11.581800000000001,
           "name": "Kordan"
-        },
-        {
-          "score": 11.25,
-          "name": "Faramor"
         },
         {
           "score": 11.25,
@@ -10503,6 +10491,15 @@
           "score": 21.28125
         },
         {
+          "provider": "Mehira",
+          "reasons": [
+            "Haste via Haste (multiple targets, average) `signature fuel`",
+            "Enables Enemy grouping via Displace (all units, low)",
+            "Grants 1 distinct temporary stat buff to Faramor"
+          ],
+          "score": 17.75
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -10529,6 +10526,13 @@
             "Grants 3 distinct temporary stat buffs to Faramor"
           ],
           "score": 14.625
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Enables Enemy grouping via Displace (area, low), battle start"
+          ],
+          "score": 14.399999999999999
         },
         {
           "provider": "Perseus",
@@ -10564,11 +10568,25 @@
           "score": 13.875
         },
         {
+          "provider": "Cyran",
+          "reasons": [
+            "Enables Enemy grouping via Displace (all units, low)"
+          ],
+          "score": 12.75
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK (multiple targets, average)",
             "Haste via Haste (all units, average) `signature fuel`",
             "Grants 1 distinct temporary stat buff to Faramor"
+          ],
+          "score": 11.25
+        },
+        {
+          "provider": "Pippa",
+          "reasons": [
+            "Enables Enemy grouping via Displace (multiple targets, low)"
           ],
           "score": 11.25
         },
@@ -10587,6 +10605,13 @@
             "Grants 1 distinct temporary stat buff to Faramor"
           ],
           "score": 10.875
+        },
+        {
+          "provider": "Reinier",
+          "reasons": [
+            "Enables Enemy grouping via Displace (multiple targets, low)"
+          ],
+          "score": 10.25
         },
         {
           "provider": "Koko",
@@ -10665,14 +10690,6 @@
             "Grants 1 distinct temporary stat buff to Faramor (start of battle)"
           ],
           "score": 6.119999999999999
-        },
-        {
-          "provider": "Mehira",
-          "reasons": [
-            "Haste via Haste (multiple targets, average) `signature fuel`",
-            "Grants 1 distinct temporary stat buff to Faramor"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Hewynn",
@@ -25062,6 +25079,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 17.75,
+          "name": "Faramor"
+        },
+        {
           "score": 7.500000000000001,
           "name": "Bryon"
         },
@@ -32723,16 +32744,16 @@
       "synergies": [],
       "beneficiaries": [
         {
+          "score": 10.25,
+          "name": "Faramor"
+        },
+        {
           "score": 7.5,
           "name": "Bonnie"
         },
         {
           "score": 5.0,
           "name": "Himmel"
-        },
-        {
-          "score": 4.5,
-          "name": "Niru"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -37846,10 +37867,6 @@
         {
           "score": 16.875,
           "name": "Lily May"
-        },
-        {
-          "score": 13.875,
-          "name": "Faramor"
         },
         {
           "score": 13.875,
