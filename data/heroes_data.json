@@ -13380,7 +13380,13 @@
       ],
       "range": 7,
       "release_date": "2026-07-02",
-      "role_category": "damage_dealer"
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "C",
+        "dream_realm": "A+",
+        "dream_realm_endless": "B"
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Lenya - Wild Cyclone",
@@ -18210,6 +18216,243 @@
       "role_category": "damage_dealer"
     },
     {
+      "title": "Orion - Golden Prince",
+      "name": "Orion",
+      "tags": "Lightbearer · Warrior · Magic",
+      "faction": "Lightbearer",
+      "class": "Warrior",
+      "damage_type": "Magic",
+      "description": "",
+      "skills": [
+        {
+          "section": "Ultimate",
+          "name": "Fatal Waltz",
+          "unlock": "Unlocks at Level 1",
+          "meta": {
+            "Skill Range": "Global",
+            "Initial Energy": "300"
+          },
+          "description": {
+            "raw": "Orion summons a magical rapier at a designated location. For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times. After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s.",
+            "active": [
+              "Orion summons a magical rapier at a designated location.",
+              "For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times.",
+              "After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases rapier slash damage to 70% (ATK-based) + 10% (SP-based), and the final magic burst damage to 460% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases rapier slash damage to 80% (ATK-based) + 10% (SP-based), and the final magic burst damage to 500% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases rapier slash damage to 90% (ATK-based) + 10% (SP-based), and the final magic burst damage to 540% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases rapier slash damage to 100% (ATK-based) + 10% (SP-based), and the final magic burst damage to 600% (ATK-based)+ 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Orion summons a magical rapier at a designated location, dealing damage multiple times and stunning enemies."
+        },
+        {
+          "section": "Skill1",
+          "name": "Fervent Flurry",
+          "unlock": "Unlocks at Level 11",
+          "meta": {
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Passive. When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s. While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s. Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it. Active. Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust.",
+            "passive": [
+              "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s.",
+              "While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s.",
+              "Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it."
+            ],
+            "active": [
+              "Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases thrust damage to 100% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases thrust damage to 110% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases thrust damage to 120% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "When a battle starts, Orion enchants his rapier. When this skill is used actively, he deals damage multiple times to the target."
+        },
+        {
+          "section": "Skill2",
+          "name": "Velvet Glove",
+          "unlock": "Unlocks at Level 31",
+          "meta": {
+            "Cooldown": "8s",
+            "Initial Cooldown": "2s",
+            "Skill Range": "10 tiles"
+          },
+          "description": {
+            "raw": "Passive. Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter. Active. Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s. All his Supporters gain 60% of the shield Orion gains.",
+            "passive": [
+              "Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter."
+            ],
+            "active": [
+              "Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s.",
+              "All his Supporters gain 60% of the shield Orion gains."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases magical slash damage to 360% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases magical slash damage to 380% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases magical slash damage to 400% (ATK-based) + 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Orion recruits Supporters during battle to empower himself. When this skill is used actively, he strikes enemies in a frontal arc with magical slashes and gains a shield."
+        },
+        {
+          "section": "Unlocks at Legendary+",
+          "name": "Hero Focus",
+          "unlock": "Unlocks at Legendary+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "Orion increases his ATK by 9% during battle. If he has Supporters on the battlefield, his ATK increases by an extra 6%.",
+            "active": [
+              "Orion increases his ATK by 9% during battle.",
+              "If he has Supporters on the battlefield, his ATK increases by an extra 6%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Orion increases his ATK by 12% during battle.",
+                  "If he has Supporters on the battlefield, his ATK increases by an extra 8%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Orion increases his ATK by 15% during battle.",
+                  "If he has Supporters on the battlefield.",
+                  "his ATK increases by an extra 10%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Increases ATK, with an extra ATK increase when Supporters are present."
+        },
+        {
+          "section": "Ex. Skill",
+          "name": "Royal Prerogative",
+          "unlock": "Unlocks at Mythic+",
+          "meta": {
+            "Skill Range": "10 tiles"
+          },
+          "description": {
+            "raw": "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks. Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s.",
+            "active": [
+              "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks.",
+              "Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage dealt bonus Orion gains from each Authority stack to 16%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "At 3 Authority stacks, Orion unleashes his full power, permanently activating his rapier enchantment.",
+                  "In addition, his Sear effect is upgraded for the rest of the battle: enemies afflicted for 3s are silenced and have their Vitality reduced by 60 until Sear expires."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage dealt bonus Orion gains from each Authority stack to 18%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Orion gains Authority from his Supporters. Each stack of Authority increases Orion's damage dealt and reduces his damage taken."
+        },
+        {
+          "section": "Unlocks at Supreme+",
+          "name": "Enhance Force",
+          "unlock": "Unlocks at Supreme+",
+          "meta": {},
+          "description": {
+            "raw": "After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt.",
+            "active": [
+              "After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt."
+            ]
+          },
+          "description_lite": "After gaining a certain number of Authority stacks, Orion becomes unaffected, and the Sear effect he inflicts deals extra true damage."
+        }
+      ],
+      "range": 1,
+      "release_date": "2026-07-17",
+      "role_category": "damage_dealer"
+    },
+    {
       "title": "Pandora - Hope Unleashed",
       "name": "Pandora",
       "tags": "Dimensional · Support · Magic",
@@ -19420,7 +19663,13 @@
       ],
       "range": 6,
       "release_date": "2026-07-02",
-      "role_category": "support"
+      "prydwen_tiers": {
+        "afk_stages": "A+",
+        "pvp": "B",
+        "dream_realm": "A+",
+        "dream_realm_endless": "A+"
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Phraesto - Misty Scorpion",

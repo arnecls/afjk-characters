@@ -420,6 +420,13 @@
     "dot-specialist",
     "execute"
   ],
+  "Orion": [
+    "aoe-damage",
+    "dot-specialist",
+    "enemy-debuffer",
+    "high-damage-ult",
+    "cc-immunity"
+  ],
   "Pandora": [
     "enemy-debuffer",
     "energy-provider",

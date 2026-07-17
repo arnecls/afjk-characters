@@ -1853,14 +1853,6 @@
           "score": 7.875
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via Phys DEF (multiple targets, low)"
-          ],
-          "score": 6.75
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -1954,6 +1946,14 @@
             "Physical DEF via DEF (area, high)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 4.125
         },
         {
           "provider": "Solise",
@@ -2970,6 +2970,13 @@
             "matches": [
               "Max HP"
             ]
+          },
+          {
+            "name": "Lamentis",
+            "score": 1.0,
+            "matches": [
+              "Max HP"
+            ]
           }
         ],
         "cc": [
@@ -3448,6 +3455,13 @@
         },
         {
           "provider": "Nerion",
+          "reasons": [
+            "Enables Magic damage from allies via Magic damage + wide area (Area)"
+          ],
+          "score": 14.5
+        },
+        {
+          "provider": "Orion",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + wide area (Area)"
           ],
@@ -4425,6 +4439,13 @@
           "score": 3.0
         },
         {
+          "provider": "Lucius",
+          "reasons": [
+            "Shield via Shield (area, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -4439,9 +4460,9 @@
           "score": 1.5
         },
         {
-          "provider": "Lucius",
+          "provider": "Orion",
           "reasons": [
-            "Shield via Shield (area, low)"
+            "Shield via Shield (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -4775,6 +4796,13 @@
           "score": 16.0
         },
         {
+          "provider": "Orion",
+          "reasons": [
+            "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Valen",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
@@ -4809,6 +4837,13 @@
           "score": 12.282900000000001
         },
         {
+          "provider": "Lamentis",
+          "reasons": [
+            "Enables CC on enemies via Stun (multiple targets, average)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Natsu",
           "reasons": [
             "Enables CC on enemies via Stun (arc, average)"
@@ -4817,13 +4852,6 @@
         },
         {
           "provider": "Soren",
-          "reasons": [
-            "Enables CC on enemies via Stun (multiple targets, average)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Lamentis",
           "reasons": [
             "Enables CC on enemies via Stun (multiple targets, average)"
           ],
@@ -6415,6 +6443,10 @@
         },
         {
           "score": 10.875,
+          "name": "Orion"
+        },
+        {
+          "score": 10.875,
           "name": "Perseus"
         },
         {
@@ -7342,15 +7374,23 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Lamentis",
             "score": 0.3429,
             "matches": [
               "aoe-damage",
-              "execute"
+              "high-initial-energy"
             ]
           }
         ],
         "damage": [
+          {
+            "name": "Lamentis",
+            "score": 1.0,
+            "matches": [
+              "Magic",
+              "True damage"
+            ]
+          },
           {
             "name": "Korin",
             "score": 0.9697,
@@ -7362,15 +7402,6 @@
             "name": "Temesia",
             "score": 0.9363,
             "matches": [
-              "True damage"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.9303,
-            "matches": [
-              "DoT",
-              "Magic",
               "True damage"
             ]
           }
@@ -7476,6 +7507,13 @@
           "score": 3.0
         },
         {
+          "provider": "Lucius",
+          "reasons": [
+            "Shield via Shield (area, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -7490,9 +7528,9 @@
           "score": 1.5
         },
         {
-          "provider": "Lucius",
+          "provider": "Orion",
           "reasons": [
-            "Shield via Shield (area, low)"
+            "Shield via Shield (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -8141,14 +8179,6 @@
           "score": 14.6568
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Grants 3 distinct temporary stat buffs to Dionel"
-          ],
-          "score": 14.025
-        },
-        {
           "provider": "Sonja",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -8163,6 +8193,14 @@
             "Grants 1 distinct temporary stat buff to Dionel"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Grants 3 distinct temporary stat buffs to Dionel"
+          ],
+          "score": 11.5125
         },
         {
           "provider": "Contess",
@@ -8709,6 +8747,13 @@
           "score": 3.375
         },
         {
+          "provider": "Peggy",
+          "reasons": [
+            "Healing via Healing over time (multiple targets, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Direct healing (area, average)"
@@ -8726,13 +8771,6 @@
           "provider": "Lucius",
           "reasons": [
             "Healing via Direct healing (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Peggy",
-          "reasons": [
-            "Healing via Healing over time (multiple targets, average)"
           ],
           "score": 3.0
         },
@@ -8818,6 +8856,10 @@
         {
           "score": 14.625,
           "name": "Faramor"
+        },
+        {
+          "score": 11.625,
+          "name": "Orion"
         },
         {
           "score": 10.625,
@@ -9583,6 +9625,10 @@
           "name": "Hepler"
         },
         {
+          "score": 13.68,
+          "name": "Orion"
+        },
+        {
           "score": 13.381800000000002,
           "name": "Mikola"
         },
@@ -10238,6 +10284,10 @@
           "name": "Talene"
         },
         {
+          "score": 10.875,
+          "name": "Orion"
+        },
+        {
           "score": 7.875,
           "name": "Aurora"
         },
@@ -10264,6 +10314,10 @@
         {
           "score": 7.875,
           "name": "Hammie"
+        },
+        {
+          "score": 7.875,
+          "name": "Hepler"
         },
         {
           "score": 7.875,
@@ -10300,6 +10354,10 @@
         {
           "score": 7.875,
           "name": "Nara"
+        },
+        {
+          "score": 7.875,
+          "name": "Natsu"
         },
         {
           "score": 7.875,
@@ -10535,14 +10593,6 @@
           "score": 14.399999999999999
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Grants 3 distinct temporary stat buffs to Faramor"
-          ],
-          "score": 14.25
-        },
-        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK (single target, high)",
@@ -10573,6 +10623,14 @@
             "Enables Enemy grouping via Displace (all units, low)"
           ],
           "score": 12.75
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Grants 3 distinct temporary stat buffs to Faramor"
+          ],
+          "score": 11.625
         },
         {
           "provider": "Twins",
@@ -14230,15 +14288,6 @@
           "score": 9.0
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK (single target, high)"
@@ -14291,6 +14340,15 @@
             "ATK via ATK (single target, low)",
             "Physical DEF via DEF (single target, low)",
             "Magic DEF via DEF (single target, low)"
+          ],
+          "score": 5.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 5.625
         },
@@ -14468,6 +14526,15 @@
         ],
         "similar_skills": [
           {
+            "name": "Peggy",
+            "score": 0.6,
+            "matches": [
+              "ally-healer",
+              "ally-shielder",
+              "high-initial-energy"
+            ]
+          },
+          {
             "name": "Lucca",
             "score": 0.6,
             "matches": [
@@ -14481,14 +14548,6 @@
             "matches": [
               "ally-healer",
               "ally-shielder"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 0.5,
-            "matches": [
-              "ally-shielder",
-              "high-initial-energy"
             ]
           }
         ],
@@ -15143,13 +15202,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Gunnar",
           "reasons": [
             "Enables Party composition via Tank (party slot)"
@@ -15457,6 +15509,13 @@
             "ATK via ATK (single target, low)"
           ],
           "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
+          ],
+          "score": 2.625
         }
       ],
       "beneficiaries": [
@@ -15721,13 +15780,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
@@ -15788,6 +15840,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -16943,6 +17002,13 @@
           "score": 2.0
         },
         {
+          "provider": "Lamentis",
+          "reasons": [
+            "Enables Multiple debuffs on target via Max HP"
+          ],
+          "score": 2.0
+        },
+        {
           "provider": "Lily May",
           "reasons": [
             "Enables Multiple debuffs on target via Energy"
@@ -16960,6 +17026,13 @@
           "provider": "Niru",
           "reasons": [
             "Enables Multiple debuffs on target via Healing"
+          ],
+          "score": 2.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "Enables Multiple debuffs on target via Ranged damage"
           ],
           "score": 2.0
         },
@@ -17006,13 +17079,6 @@
           "score": 2.0
         },
         {
-          "provider": "Lamentis",
-          "reasons": [
-            "Enables Multiple debuffs on target via Max HP"
-          ],
-          "score": 2.0
-        },
-        {
           "provider": "Lumont",
           "reasons": [
             "Enables Multiple debuffs on target via ATK"
@@ -17020,9 +17086,9 @@
           "score": 2.0
         },
         {
-          "provider": "Peggy",
+          "provider": "Orion",
           "reasons": [
-            "Enables Multiple debuffs on target via Ranged damage"
+            "Enables Multiple debuffs on target via Vitality"
           ],
           "score": 2.0
         },
@@ -17448,6 +17514,10 @@
           "name": "Faramor"
         },
         {
+          "score": 19.78125,
+          "name": "Orion"
+        },
+        {
           "score": 16.03125,
           "name": "Indris"
         },
@@ -17739,13 +17809,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK (single target, low)",
@@ -17823,6 +17886,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -19120,15 +19190,6 @@
           "score": 8.955
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Pandora",
           "reasons": [
             "Energy via Energy (single target, low) `signature fuel`",
@@ -19174,6 +19235,15 @@
             "ATK via ATK (single target, low)",
             "Physical DEF via DEF (single target, low)",
             "Magic DEF via DEF (single target, low)"
+          ],
+          "score": 5.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 5.625
         },
@@ -19634,6 +19704,13 @@
         ],
         "damage": [
           {
+            "name": "Lamentis",
+            "score": 1.0,
+            "matches": [
+              "True damage"
+            ]
+          },
+          {
             "name": "Nara",
             "score": 1.0,
             "matches": [
@@ -19648,14 +19725,6 @@
             "matches": [
               "Physical",
               "True damage"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 0.9641,
-            "matches": [
-              "True damage",
-              "Physical"
             ]
           }
         ],
@@ -20363,15 +20432,6 @@
           "score": 8.625
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -20430,6 +20490,15 @@
             "ATK SPD via Haste (single target, average) `signature fuel`"
           ],
           "score": 6.0
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 5.625
         },
         {
           "provider": "Solise",
@@ -20574,16 +20643,17 @@
             ]
           },
           {
-            "name": "Koko",
-            "score": 0.6,
+            "name": "Peggy",
+            "score": 0.6667,
             "matches": [
               "ally-buffer",
               "ally-healer",
-              "temporary-stat-buffer"
+              "high-initial-energy",
+              "summoner"
             ]
           },
           {
-            "name": "Isabella",
+            "name": "Koko",
             "score": 0.6,
             "matches": [
               "ally-buffer",
@@ -20761,20 +20831,6 @@
           "score": 4.5
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "Healing via Direct healing (arc, high)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Hepler",
-          "reasons": [
-            "Healing via Healing over time (single target, high)"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Ludovic",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
@@ -20796,11 +20852,18 @@
           "score": 4.5
         },
         {
-          "provider": "Kazim",
+          "provider": "Fay",
           "reasons": [
-            "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+            "Healing via Direct healing (arc, high)"
           ],
-          "score": 3.75
+          "score": 4.5
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "Healing via Healing over time (single target, high)"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Mehira",
@@ -20817,6 +20880,13 @@
           "score": 3.75
         },
         {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+          ],
+          "score": 3.75
+        },
+        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`"
@@ -20824,16 +20894,16 @@
           "score": 3.2399999999999998
         },
         {
-          "provider": "Gerda",
+          "provider": "Koko",
           "reasons": [
-            "Healing via Direct healing (area, average)"
+            "Healing via Direct healing (single target, average)"
           ],
           "score": 3.0
         },
         {
-          "provider": "Koko",
+          "provider": "Gerda",
           "reasons": [
-            "Healing via Direct healing (single target, average)"
+            "Healing via Direct healing (area, average)"
           ],
           "score": 3.0
         },
@@ -20867,6 +20937,20 @@
           "score": 1.5
         },
         {
+          "provider": "Reinier",
+          "reasons": [
+            "Healing via Direct healing (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Healing via Direct healing (multiple targets, low)"
+          ],
+          "score": 1.5
+        },
+        {
           "provider": "Nara",
           "reasons": [
             "Healing via Direct healing (area, low)"
@@ -20881,23 +20965,9 @@
           "score": 1.5
         },
         {
-          "provider": "Reinier",
-          "reasons": [
-            "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Velara",
-          "reasons": [
-            "Healing via Direct healing (multiple targets, low)"
           ],
           "score": 1.5
         }
@@ -20906,6 +20976,10 @@
         {
           "score": 21.75,
           "name": "Bonnie"
+        },
+        {
+          "score": 7.5,
+          "name": "Niru"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -20969,13 +21043,6 @@
         ],
         "debuff": [
           {
-            "name": "Lorsan",
-            "score": 1.0,
-            "matches": [
-              "Max HP"
-            ]
-          },
-          {
             "name": "Nara",
             "score": 1.0,
             "matches": [
@@ -20988,16 +21055,16 @@
             "matches": [
               "Max HP"
             ]
+          },
+          {
+            "name": "Lorsan",
+            "score": 1.0,
+            "matches": [
+              "Max HP"
+            ]
           }
         ],
         "cc": [
-          {
-            "name": "Hepler",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
           {
             "name": "Koko",
             "score": 1.0,
@@ -21006,7 +21073,14 @@
             ]
           },
           {
-            "name": "Lorsan",
+            "name": "Hepler",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -21214,13 +21288,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Phraesto",
           "reasons": [
             "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
@@ -21266,6 +21333,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -21435,14 +21509,6 @@
           "score": 25.875
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Grants 3 distinct temporary stat buffs to Lily May"
-          ],
-          "score": 18.75
-        },
-        {
           "provider": "Sonja",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -21472,6 +21538,14 @@
             "ATK via ATK (area, low)",
             "DEF Penetration via DEF Penetration (area, high)",
             "Grants 2 distinct temporary stat buffs to Lily May"
+          ],
+          "score": 16.125
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Grants 3 distinct temporary stat buffs to Lily May"
           ],
           "score": 16.125
         },
@@ -22078,6 +22152,10 @@
           "name": "Indris"
         },
         {
+          "score": 12.0,
+          "name": "Dionel"
+        },
+        {
           "score": 11.25,
           "name": "Alsa"
         },
@@ -22272,7 +22350,7 @@
             ]
           },
           {
-            "name": "Smokey & Meerky",
+            "name": "Peggy",
             "score": 1.0,
             "matches": [
               "Healing over time",
@@ -22280,7 +22358,7 @@
             ]
           },
           {
-            "name": "Hepler",
+            "name": "Smokey & Meerky",
             "score": 1.0,
             "matches": [
               "Healing over time",
@@ -22364,8 +22442,8 @@
             ]
           },
           {
-            "name": "Koko",
-            "score": 0.8,
+            "name": "Lamentis",
+            "score": 0.84,
             "matches": [
               "Stun"
             ]
@@ -22676,6 +22754,13 @@
           "score": 1.5
         },
         {
+          "provider": "Orion",
+          "reasons": [
+            "Shield via Shield (multiple targets, low)"
+          ],
+          "score": 1.5
+        },
+        {
           "provider": "Soren",
           "reasons": [
             "Shield via Shield (single target, low)"
@@ -22706,16 +22791,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.0,
-          "name": "Niru"
+          "score": 3.0,
+          "name": "Callan"
         },
         {
-          "score": 6.0,
-          "name": "Vala"
-        },
-        {
-          "score": 5.0,
-          "name": "Himmel"
+          "score": 3.0,
+          "name": "Daimon"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -23046,14 +23127,6 @@
         {
           "score": 21.75,
           "name": "Bonnie"
-        },
-        {
-          "score": 3.0,
-          "name": "Callan"
-        },
-        {
-          "score": 3.0,
-          "name": "Daimon"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -23087,24 +23160,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Saida",
-            "score": 0.48,
+            "name": "Peggy",
+            "score": 0.6,
             "matches": [
               "ally-shielder",
-              "high-initial-energy"
-            ]
-          },
-          {
-            "name": "Galahad",
-            "score": 0.4,
-            "matches": [
-              "ally-shielder",
+              "high-initial-energy",
               "summoner"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.4,
+            "name": "Lamentis",
+            "score": 0.6,
+            "matches": [
+              "high-initial-energy",
+              "mass-cc",
+              "summoner"
+            ]
+          },
+          {
+            "name": "Saida",
+            "score": 0.48,
             "matches": [
               "ally-shielder",
               "high-initial-energy"
@@ -23406,7 +23481,7 @@
             ]
           },
           {
-            "name": "Natsu",
+            "name": "Lamentis",
             "score": 0.9934,
             "matches": [
               "Magic"
@@ -23622,6 +23697,13 @@
           "score": 3.0
         },
         {
+          "provider": "Lucius",
+          "reasons": [
+            "Shield via Shield (area, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -23636,13 +23718,6 @@
           "score": 1.5
         },
         {
-          "provider": "Lucius",
-          "reasons": [
-            "Shield via Shield (area, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, low)"
@@ -23653,6 +23728,13 @@
           "provider": "Soren",
           "reasons": [
             "Shield via Shield (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Orion",
+          "reasons": [
+            "Shield via Shield (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -25175,19 +25257,19 @@
             ]
           },
           {
+            "name": "Lamentis",
+            "score": 0.32,
+            "matches": [
+              "aoe-damage",
+              "mass-cc"
+            ]
+          },
+          {
             "name": "Gunnar",
             "score": 0.3,
             "matches": [
               "aoe-damage",
               "temporary-stat-buffer"
-            ]
-          },
-          {
-            "name": "Cyran",
-            "score": 0.3,
-            "matches": [
-              "aoe-damage",
-              "enemy-grouping"
             ]
           }
         ],
@@ -25427,13 +25509,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
@@ -25506,6 +25581,13 @@
           "score": 2.625
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
+          ],
+          "score": 2.625
+        },
+        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
@@ -25537,6 +25619,10 @@
         {
           "score": 19.875,
           "name": "Laios"
+        },
+        {
+          "score": 19.875,
+          "name": "Orion"
         },
         {
           "score": 16.875,
@@ -26223,13 +26309,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK (multiple targets, low)",
@@ -26304,6 +26383,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -26443,6 +26529,13 @@
         ],
         "debuff": [
           {
+            "name": "Lamentis",
+            "score": 0.8,
+            "matches": [
+              "Max HP"
+            ]
+          },
+          {
             "name": "Lorsan",
             "score": 0.8,
             "matches": [
@@ -26455,13 +26548,6 @@
             "matches": [
               "Max HP",
               "Vitality"
-            ]
-          },
-          {
-            "name": "Natsu",
-            "score": 0.6667,
-            "matches": [
-              "Max HP"
             ]
           }
         ],
@@ -26565,15 +26651,6 @@
           "score": 9.0
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK (single target, high)"
@@ -26624,6 +26701,15 @@
           "reasons": [
             "ATK via ATK (single target, low)",
             "Haste via Haste (single target, average) `signature fuel`"
+          ],
+          "score": 5.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 5.625
         },
@@ -26877,6 +26963,14 @@
             "score": 0.6281,
             "matches": [
               "Damage"
+            ]
+          },
+          {
+            "name": "Lamentis",
+            "score": 0.5822,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -27274,6 +27368,13 @@
           "provider": "Laios",
           "reasons": [
             "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Orion",
+          "reasons": [
+            "Enables CC on enemies via Stun (area, average)"
           ],
           "score": 16.0
         },
@@ -27976,6 +28077,13 @@
           "score": 7.5
         },
         {
+          "provider": "Lamentis",
+          "reasons": [
+            "Enables Enemy defeat via AoE magic (kills)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Ludovic",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
@@ -28014,13 +28122,6 @@
           "provider": "Igor",
           "reasons": [
             "Enables Enemy defeat via AoE physical (kills)"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Lamentis",
-          "reasons": [
-            "Enables Enemy defeat via AoE magic (kills)"
           ],
           "score": 7.5
         },
@@ -28168,6 +28269,13 @@
           "provider": "Nerion",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "Enables Enemy defeat via AoE physical (kills)"
           ],
           "score": 6.0
         },
@@ -28389,14 +28497,14 @@
           "score": 6.0
         },
         {
-          "provider": "Pang",
+          "provider": "Orion",
           "reasons": [
-            "Enables Enemy defeat via AoE physical (kills)"
+            "Enables Enemy defeat via AoE magic (kills)"
           ],
           "score": 6.0
         },
         {
-          "provider": "Peggy",
+          "provider": "Pang",
           "reasons": [
             "Enables Enemy defeat via AoE physical (kills)"
           ],
@@ -28983,6 +29091,429 @@
         ]
       }
     },
+    "Orion": {
+      "synergies": [
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK (all units, high)",
+            "Grants 4 distinct temporary stat buffs to Orion"
+          ],
+          "score": 19.875
+        },
+        {
+          "provider": "Isabella",
+          "reasons": [
+            "ATK via ATK (single target, low, conditional (frequent))",
+            "Grants 6 distinct temporary stat buffs to Orion"
+          ],
+          "score": 19.78125
+        },
+        {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK (multiple targets, high)",
+            "Energy via Energy (multiple targets, average) `signature fuel`",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 15.735
+        },
+        {
+          "provider": "Parisa",
+          "reasons": [
+            "ATK via ATK (multiple targets, high)",
+            "Grants 2 distinct temporary stat buffs to Orion"
+          ],
+          "score": 13.875
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK (multiple targets, high)",
+            "Grants 2 distinct temporary stat buffs to Orion"
+          ],
+          "score": 13.875
+        },
+        {
+          "provider": "Twins",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
+            "Max HP via Max HP (multiple targets, average)",
+            "Energy via Energy (multiple targets, low) `signature fuel`",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 13.68
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "ATK via ATK (area, average)",
+            "Energy via Energy (area, low) `signature fuel`",
+            "Grants 2 distinct temporary stat buffs to Orion"
+          ],
+          "score": 13.68
+        },
+        {
+          "provider": "Dunlingr",
+          "reasons": [
+            "ATK via ATK (single target, low)",
+            "Grants 3 distinct temporary stat buffs to Orion"
+          ],
+          "score": 11.625
+        },
+        {
+          "provider": "Contess",
+          "reasons": [
+            "ATK via ATK (single target, high)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 10.875
+        },
+        {
+          "provider": "Evie",
+          "reasons": [
+            "ATK via ATK (single target, high)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 10.875
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK (single target, high)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 10.875
+        },
+        {
+          "provider": "Thador",
+          "reasons": [
+            "Energy via Energy (single target, high) `signature fuel`",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 10.29
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "Grants 3 distinct temporary stat buffs to Orion"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Koko",
+          "reasons": [
+            "ATK via ATK (all units, low)",
+            "Grants 2 distinct temporary stat buffs to Orion"
+          ],
+          "score": 8.625
+        },
+        {
+          "provider": "Niru",
+          "reasons": [
+            "Grants 2 distinct temporary stat buffs to Orion (start of battle)"
+          ],
+          "score": 8.399999999999999
+        },
+        {
+          "provider": "Aliceth",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 8.25
+        },
+        {
+          "provider": "Pang",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 8.25
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 7.289999999999999
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "Grants 2 distinct temporary stat buffs to Orion"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK (arc, low)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 5.625
+        },
+        {
+          "provider": "Hammie",
+          "reasons": [
+            "ATK via ATK (single target, low)",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 5.625
+        },
+        {
+          "provider": "Lyca",
+          "reasons": [
+            "Energy via Energy (all units, low) `signature fuel`",
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 5.43
+        },
+        {
+          "provider": "Pandora",
+          "reasons": [
+            "Max HP via Max HP (single target, low)",
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 3.93
+        },
+        {
+          "provider": "Hewynn",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Lorsan",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Marilee",
+          "reasons": [
+            "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Damian",
+          "reasons": [
+            "Grants 1 distinct temporary stat buff to Orion"
+          ],
+          "score": 2.55
+        }
+      ],
+      "beneficiaries": [
+        {
+          "score": 16.0,
+          "name": "Carolina"
+        },
+        {
+          "score": 16.0,
+          "name": "Nerion"
+        },
+        {
+          "score": 14.5,
+          "name": "Bonnie"
+        }
+      ],
+      "beneficiary_overflow_reasons": [
+        "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": {
+        "buff": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Shield"
+            ]
+          },
+          {
+            "name": "Hugin",
+            "score": 1.0,
+            "matches": [
+              "Shield"
+            ]
+          },
+          {
+            "name": "Korin",
+            "score": 1.0,
+            "matches": [
+              "Shield"
+            ]
+          }
+        ],
+        "energy": [],
+        "healing": [],
+        "similar_skills": [
+          {
+            "name": "Frieren",
+            "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "dot-specialist",
+              "high-damage-ult"
+            ]
+          },
+          {
+            "name": "Natsu",
+            "score": 0.5143,
+            "matches": [
+              "aoe-damage",
+              "dot-specialist",
+              "high-damage-ult"
+            ]
+          },
+          {
+            "name": "Viperian",
+            "score": 0.48,
+            "matches": [
+              "aoe-damage",
+              "dot-specialist"
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "name": "Cyran",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Lamentis",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          }
+        ],
+        "debuff": [
+          {
+            "name": "Pandora",
+            "score": 0.9375,
+            "matches": [
+              "Vitality"
+            ]
+          },
+          {
+            "name": "Dunlingr",
+            "score": 0.5556,
+            "matches": [
+              "Vitality"
+            ]
+          }
+        ],
+        "cc": [
+          {
+            "name": "Valen",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Hepler",
+            "score": 0.7273,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Koko",
+            "score": 0.7273,
+            "matches": [
+              "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Frieren",
+            "score": 0.619,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.574,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.5187,
+            "matches": [
+              "Damage"
+            ]
+          }
+        ]
+      }
+    },
     "Pandora": {
       "synergies": [
         {
@@ -29558,13 +30089,6 @@
           "score": 5.625
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -29646,6 +30170,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -30119,6 +30650,10 @@
         {
           "score": 13.875,
           "name": "Faramor"
+        },
+        {
+          "score": 13.875,
+          "name": "Orion"
         },
         {
           "score": 12.875,
@@ -30672,28 +31207,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 18.75,
+          "score": 16.125,
           "name": "Lily May"
-        },
-        {
-          "score": 14.25,
-          "name": "Faramor"
-        },
-        {
-          "score": 14.025,
-          "name": "Dionel"
         },
         {
           "score": 13.5,
           "name": "Silven"
-        },
-        {
-          "score": 8.25,
-          "name": "Hepler"
-        },
-        {
-          "score": 8.25,
-          "name": "Natsu"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -30845,6 +31364,14 @@
           "score": 18.0
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK (multiple targets, high)",
+            "Haste via Haste (multiple targets, average) `signature fuel`"
+          ],
+          "score": 10.875
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK (single target, high)",
@@ -30856,14 +31383,6 @@
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK (all units, high)",
-            "Haste via Haste (multiple targets, average) `signature fuel`"
-          ],
-          "score": 10.875
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK (multiple targets, high)",
             "Haste via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 10.875
@@ -30965,16 +31484,16 @@
           "score": 3.7312499999999997
         },
         {
-          "provider": "Hewynn",
+          "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, average) `signature fuel`"
+            "Haste via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 3.0
         },
         {
-          "provider": "Mehira",
+          "provider": "Hewynn",
           "reasons": [
-            "Haste via Haste (multiple targets, average) `signature fuel`"
+            "Haste via Haste (single target, average) `signature fuel`"
           ],
           "score": 3.0
         },
@@ -30986,16 +31505,23 @@
           "score": 3.0
         },
         {
-          "provider": "Fay",
+          "provider": "Gunnar",
           "reasons": [
-            "ATK via ATK (arc, low)"
+            "ATK via ATK (single target, low)"
           ],
           "score": 2.625
         },
         {
-          "provider": "Gunnar",
+          "provider": "Solise",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK (arc, low)"
           ],
           "score": 2.625
         },
@@ -31029,13 +31555,6 @@
         },
         {
           "provider": "Marilee",
-          "reasons": [
-            "ATK via ATK (single target, low)"
-          ],
-          "score": 2.625
-        },
-        {
-          "provider": "Solise",
           "reasons": [
             "ATK via ATK (single target, low)"
           ],
@@ -31122,6 +31641,14 @@
         "energy": [],
         "healing": [
           {
+            "name": "Smokey & Meerky",
+            "score": 1.0,
+            "matches": [
+              "Healing over time",
+              "Healing"
+            ]
+          },
+          {
             "name": "Hepler",
             "score": 1.0,
             "matches": [
@@ -31131,14 +31658,6 @@
           },
           {
             "name": "Hewynn",
-            "score": 1.0,
-            "matches": [
-              "Healing over time",
-              "Healing"
-            ]
-          },
-          {
-            "name": "Lorsan",
             "score": 1.0,
             "matches": [
               "Healing over time",
@@ -31167,32 +31686,32 @@
             ]
           },
           {
-            "name": "Lucy",
+            "name": "Valka",
             "score": 0.6,
             "matches": [
+              "ally-buffer",
               "ally-shielder",
-              "high-initial-energy",
-              "summoner"
+              "high-initial-energy"
             ]
           }
         ],
         "damage": [
           {
-            "name": "Aliceth",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Alna",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -31594,11 +32113,12 @@
             ]
           },
           {
-            "name": "Gunnar",
-            "score": 0.4114,
+            "name": "Peggy",
+            "score": 0.4286,
             "matches": [
+              "ally-buffer",
               "ally-shielder",
-              "aoe-damage"
+              "summoner"
             ]
           }
         ],
@@ -31871,17 +32391,17 @@
             ]
           },
           {
-            "name": "Indris",
-            "score": 0.9391,
+            "name": "Lamentis",
+            "score": 1.0,
             "matches": [
+              "Magic",
               "True damage"
             ]
           },
           {
-            "name": "Frieren",
-            "score": 0.81,
+            "name": "Indris",
+            "score": 0.9391,
             "matches": [
-              "Magic",
               "True damage"
             ]
           }
@@ -32055,13 +32575,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -32165,6 +32678,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -32291,6 +32811,10 @@
         {
           "score": 15.798214285714286,
           "name": "Lily May"
+        },
+        {
+          "score": 15.735,
+          "name": "Orion"
         },
         {
           "score": 15.261814285714285,
@@ -33312,13 +33836,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -33430,6 +33947,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -33806,8 +34330,8 @@
             ]
           },
           {
-            "name": "Hugin",
-            "score": 0.3333,
+            "name": "Peggy",
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "high-initial-energy"
@@ -34222,13 +34746,6 @@
           "score": 4.5
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Pang",
           "reasons": [
             "ATK via ATK (multiple targets, average)"
@@ -34281,6 +34798,13 @@
           "provider": "Kulu",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.25
         },
@@ -34544,15 +35068,6 @@
           "score": 8.601428571428572
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK (single target, high)"
@@ -34588,6 +35103,15 @@
           "reasons": [
             "ATK via ATK (single target, low)",
             "Haste via Haste (single target, average) `signature fuel`"
+          ],
+          "score": 5.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 5.625
         },
@@ -35064,13 +35588,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Satrana",
           "reasons": [
             "Enables Continuous damage on enemies via Ally grant (Sparks)"
@@ -35169,6 +35686,13 @@
           "score": 3.75
         },
         {
+          "provider": "Orion",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 3.75
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy (area, high) `signature fuel`"
@@ -35235,6 +35759,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -35918,10 +36449,11 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.5159,
+            "name": "Lamentis",
+            "score": 0.5761,
             "matches": [
-              "Damage"
+              "Damage",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -36967,6 +37499,10 @@
           "name": "Atalanta"
         },
         {
+          "score": 13.68,
+          "name": "Orion"
+        },
+        {
           "score": 12.654,
           "name": "Bryon"
         },
@@ -37557,10 +38093,6 @@
           "name": "Bonnie"
         },
         {
-          "score": 7.5,
-          "name": "Niru"
-        },
-        {
           "score": 6.0,
           "name": "Phraesto"
         }
@@ -37749,13 +38281,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -37856,6 +38381,13 @@
           "score": 2.625
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
+          ],
+          "score": 2.625
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
@@ -37867,6 +38399,14 @@
         {
           "score": 16.875,
           "name": "Lily May"
+        },
+        {
+          "score": 13.875,
+          "name": "Faramor"
+        },
+        {
+          "score": 13.875,
+          "name": "Orion"
         },
         {
           "score": 13.875,
@@ -38508,13 +39048,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -38607,6 +39140,13 @@
           "score": 2.625
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
+          ],
+          "score": 2.625
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
@@ -38685,9 +39225,10 @@
             ]
           },
           {
-            "name": "Nara",
-            "score": 0.7938,
+            "name": "Lamentis",
+            "score": 0.8882,
             "matches": [
+              "Magic",
               "True damage"
             ]
           }
@@ -38887,13 +39428,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Ludovic",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
@@ -38981,6 +39515,13 @@
           "score": 3.278571428571428
         },
         {
+          "provider": "Peggy",
+          "reasons": [
+            "Healing via Healing over time (multiple targets, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Direct healing (area, average)"
@@ -38991,13 +39532,6 @@
           "provider": "Lucius",
           "reasons": [
             "Healing via Direct healing (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Peggy",
-          "reasons": [
-            "Healing via Healing over time (multiple targets, average)"
           ],
           "score": 3.0
         },
@@ -39026,6 +39560,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -39612,13 +40153,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -39707,6 +40241,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -40532,13 +41073,6 @@
           "score": 4.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 4.25
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
@@ -40619,6 +41153,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.125
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.125
         },
@@ -41182,6 +41723,13 @@
           "score": 7.5
         },
         {
+          "provider": "Lamentis",
+          "reasons": [
+            "Enables Enemy defeat via AoE magic (kills)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Lucy",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
@@ -41225,13 +41773,6 @@
         },
         {
           "provider": "Alsa",
-          "reasons": [
-            "Enables Enemy defeat via AoE magic (kills)"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Lamentis",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
           ],
@@ -41429,6 +41970,13 @@
           "score": 6.0
         },
         {
+          "provider": "Peggy",
+          "reasons": [
+            "Enables Enemy defeat via AoE physical (kills)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Perseus",
           "reasons": [
             "Enables Enemy defeat via AoE physical (kills)"
@@ -41548,9 +42096,9 @@
           "score": 6.0
         },
         {
-          "provider": "Peggy",
+          "provider": "Orion",
           "reasons": [
-            "Enables Enemy defeat via AoE physical (kills)"
+            "Enables Enemy defeat via AoE magic (kills)"
           ],
           "score": 6.0
         },
@@ -41952,13 +42500,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`"
@@ -42040,6 +42581,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -42328,6 +42876,13 @@
           "score": 3.0
         },
         {
+          "provider": "Lucius",
+          "reasons": [
+            "Shield via Shield (area, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -42357,9 +42912,9 @@
           "score": 1.5
         },
         {
-          "provider": "Lucius",
+          "provider": "Orion",
           "reasons": [
-            "Shield via Shield (area, low)"
+            "Shield via Shield (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -42437,6 +42992,15 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Peggy",
+            "score": 0.6,
+            "matches": [
+              "ally-buffer",
+              "ally-shielder",
+              "high-initial-energy"
+            ]
+          },
+          {
             "name": "Saida",
             "score": 0.48,
             "matches": [
@@ -42446,14 +43010,6 @@
           },
           {
             "name": "Hepler",
-            "score": 0.4,
-            "matches": [
-              "ally-shielder",
-              "high-initial-energy"
-            ]
-          },
-          {
-            "name": "Lucca",
             "score": 0.4,
             "matches": [
               "ally-shielder",
@@ -43547,13 +44103,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD (all units, low) `signature fuel`",
@@ -43671,6 +44220,13 @@
           "provider": "Marilee",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },
@@ -43972,13 +44528,6 @@
           "score": 5.25
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)"
-          ],
-          "score": 5.25
-        },
-        {
           "provider": "Pang",
           "reasons": [
             "ATK via ATK (multiple targets, average)"
@@ -44034,6 +44583,13 @@
           "provider": "Kulu",
           "reasons": [
             "ATK via ATK (single target, low)"
+          ],
+          "score": 2.625
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)"
           ],
           "score": 2.625
         },

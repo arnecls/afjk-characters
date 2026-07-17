@@ -9,6 +9,9 @@ from pathlib import Path
 STAT_RANKS_PATH = (
     Path(__file__).resolve().parent.parent / "data" / "character_stat_ranks.json"
 )
+STAT_CATALOG_PATH = (
+    Path(__file__).resolve().parent.parent / "data" / "stat_catalog.json"
+)
 
 CATEGORY_LABELS = {
     "basic": "Basic Stats",
@@ -42,14 +45,33 @@ def load_character_stat_ranks(path: Path | None = None) -> dict:
     return json.loads(source.read_text(encoding="utf-8"))
 
 
-def _format_entry(entry: dict) -> dict:
-    categories = [
-        {
-            "label": CATEGORY_LABELS.get(key, key.replace("_", " ").title()),
-            "rank": rank,
-        }
-        for key, rank in entry.get("categories", {}).items()
-    ]
+def load_stat_catalog(path: Path | None = None) -> dict:
+    """Load stat category definitions."""
+    source = path or STAT_CATALOG_PATH
+    return json.loads(source.read_text(encoding="utf-8"))
+
+
+def category_covers_by_label(catalog: dict | None = None) -> dict[str, list[str]]:
+    """Map display category label to the stats it includes."""
+    payload = catalog if catalog is not None else load_stat_catalog()
+    out: dict[str, list[str]] = {}
+    for key, entry in payload.get("categories", {}).items():
+        label = CATEGORY_LABELS.get(key, entry.get("label", key))
+        out[label] = list(entry.get("stats", []))
+    return out
+
+
+def _format_entry(entry: dict, covers_by_label: dict[str, list[str]]) -> dict:
+    categories = []
+    for key, rank in entry.get("categories", {}).items():
+        label = CATEGORY_LABELS.get(key, key.replace("_", " ").title())
+        categories.append(
+            {
+                "label": label,
+                "rank": rank,
+                "covers": covers_by_label.get(label, []),
+            }
+        )
     stats = [
         {"label": label, "rank": rank}
         for label, rank in entry.get("stats", {}).items()
@@ -60,14 +82,17 @@ def _format_entry(entry: dict) -> dict:
 def build_slug_ranks_map(
     ranks_payload: dict,
     roster_slugs: set[str],
+    *,
+    catalog: dict | None = None,
 ) -> dict[str, dict]:
     """Map site slug to structured stats overview for roster heroes."""
+    covers_by_label = category_covers_by_label(catalog)
     out: dict[str, dict] = {}
     for rank_key, entry in ranks_payload.get("characters", {}).items():
         slug = RANK_KEY_ALIASES.get(rank_key, rank_key)
         if slug not in roster_slugs:
             continue
-        out[slug] = _format_entry(entry)
+        out[slug] = _format_entry(entry, covers_by_label)
     return out
 
 

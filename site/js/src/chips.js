@@ -183,6 +183,17 @@ window.AFKJ = window.AFKJ || {};
     );
   }
 
+  function chipTipHtmlAttrs(tooltipHtml) {
+    if (!tooltipHtml) {
+      return "";
+    }
+    return (
+      ' data-tip-html="' +
+      escapeHtml(tooltipHtml) +
+      '" tabindex="0" role="button" aria-describedby="chip-tooltip"'
+    );
+  }
+
   function normalizeToken(text) {
     return text.replace(/\u200b/g, "").trim();
   }
@@ -864,8 +875,15 @@ window.AFKJ = window.AFKJ || {};
         formatMergedTierSuffix(left.tierSuffix) +
         "</span>";
     } else {
+      const leftTipAttrs = left.tooltipHtml
+        ? ' chip-has-tip"' + chipTipHtmlAttrs(left.tooltipHtml)
+        : left.tooltip
+          ? ' chip-has-tip"' + chipTipAttrs(left.tooltip)
+          : '"';
       leftHtml =
-        '<span class="chip-merged-left chip-merged-label">' +
+        '<span class="chip-merged-left chip-merged-label' +
+        leftTipAttrs +
+        ">" +
         escapeHtml(chipDisplayLabel(left.textOnly)) +
         formatMergedTierSuffix(left.tierSuffix) +
         "</span>";
@@ -977,6 +995,50 @@ window.AFKJ = window.AFKJ || {};
       tooltip: CLASS_RANK_TOOLTIPS[lower],
       emoji: "",
     };
+  }
+
+  function statCategoryCoversHeading(label) {
+    return (label || "").replace(/ Stats$/, " stats") + " cover:";
+  }
+
+  function formatStatCategoryCoversTooltip(label, covers) {
+    if (!covers || !covers.length) {
+      return "";
+    }
+    const items = covers
+      .map(function (stat) {
+        return "<li>" + escapeHtml(stat) + "</li>";
+      })
+      .join("");
+    return (
+      '<div class="stat-category-covers-tip">' +
+      '<p class="stat-category-covers-tip__heading">' +
+      escapeHtml(statCategoryCoversHeading(label)) +
+      "</p>" +
+      '<ul class="stat-category-covers-tip__list">' +
+      items +
+      "</ul>" +
+      "</div>"
+    );
+  }
+
+  function renderClassRankCategoryPill(entry) {
+    const qualityMeta = classRankIndicatorMeta(entry.rank);
+    if (!qualityMeta) {
+      return "";
+    }
+    return formatMergedIndicator(
+      {
+        textOnly: entry.label,
+        tierSuffix: "",
+        tooltipHtml: formatStatCategoryCoversTooltip(
+          entry.label,
+          entry.covers
+        ),
+      },
+      qualityMeta,
+      true
+    );
   }
 
   function renderClassRankMergedPill(label, rank, polarity, withIcon) {
@@ -2366,6 +2428,7 @@ window.AFKJ = window.AFKJ || {};
     renderInline: renderInline,
     conditionalTooltip: conditionalTooltip,
     chipTipAttrs: chipTipAttrs,
+    chipTipHtmlAttrs: chipTipHtmlAttrs,
     normalizeToken: normalizeToken,
     normalizeSummaryText: normalizeSummaryText,
     splitSummarySegments: splitSummarySegments,
@@ -2410,6 +2473,8 @@ window.AFKJ = window.AFKJ || {};
     mergeEffectWithQuality: mergeEffectWithQuality,
     classRankIndicatorMeta: classRankIndicatorMeta,
     renderClassRankMergedPill: renderClassRankMergedPill,
+    renderClassRankCategoryPill: renderClassRankCategoryPill,
+    formatStatCategoryCoversTooltip: formatStatCategoryCoversTooltip,
     mergeEffectWithTargeting: mergeEffectWithTargeting,
     tryChipify: tryChipify,
     tokenToHtml: tokenToHtml,

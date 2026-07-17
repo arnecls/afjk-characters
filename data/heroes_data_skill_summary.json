@@ -601,6 +601,14 @@
     "skill4": "instantly defeat poisoned enemies below HP threshold",
     "skill5": "triple-shot deals bonus damage against poisoned targets"
   },
+  "Orion": {
+    "ultimate": "summon ground rapier that slashes enemies in area repeatedly, then erupts with magic damage and stun",
+    "skill1": "Passive: battle-start rapier enchant speeds energy and applies stacking Sear on hit. Active: multi-hit magic thrusts",
+    "skill2": "Passive: ally temp buffs extend enchantment and mark Supporters. Active: arc slash with self shield shared to Supporters",
+    "skill3": "battle ATK increase, with extra ATK when Supporters are present",
+    "skill4": "Authority from Supporters boosts damage, reduces damage taken, and extends Sear; max stacks upgrade Sear with silence",
+    "skill5": "after enough Authority stacks, become unaffected and add true damage to Sear ticks"
+  },
   "Pandora": {
     "ultimate": "AoE CC on all units, friend and foe; caster alone is unaffected",
     "skill1": "at battle start, pull an ally into the box and restore their energy",

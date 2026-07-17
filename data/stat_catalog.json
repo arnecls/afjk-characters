@@ -1,0 +1,57 @@
+{
+  "categories": {
+    "basic": {
+      "label": "Basic Stats",
+      "stats": ["HP", "ATK", "Phys DEF", "Magic DEF"]
+    },
+    "offensive": {
+      "label": "Offensive Stats",
+      "stats": [
+        "ATK SPD",
+        "Crit",
+        "Haste",
+        "DEF Penetration",
+        "Execution",
+        "Crit DMG Boost"
+      ]
+    },
+    "defensive": {
+      "label": "Defensive Stats",
+      "stats": [
+        "Vitality",
+        "Life Drain",
+        "Crit Resist",
+        "Ranged DEF",
+        "Crit DMG DEF"
+      ]
+    },
+    "other": {
+      "label": "Other Stats",
+      "stats": [
+        "Healing",
+        "Assistance",
+        "Energy on Hit",
+        "Debuff Focus",
+        "Resilience",
+        "Proficiency",
+        "Skill Power",
+        "Ultimate Power"
+      ]
+    },
+    "rivalry": {
+      "label": "Rivalry Stats",
+      "stats": [
+        "Crit DMG Boost",
+        "Crit DMG DEF",
+        "Energy Regen Reduction",
+        "Energy on Hit",
+        "Debuff Focus",
+        "Resilience",
+        "DMG Boost",
+        "DMG Reduction",
+        "Inspiration",
+        "Intimidation"
+      ]
+    }
+  }
+}

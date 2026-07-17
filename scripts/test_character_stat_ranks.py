@@ -15,6 +15,14 @@ import character_stat_ranks as csr
 
 class CharacterStatRanksTests(unittest.TestCase):
     def test_alias_mapping_to_roster_slugs(self) -> None:
+        catalog = {
+            "categories": {
+                "basic": {
+                    "label": "Basic Stats",
+                    "stats": ["HP", "ATK"],
+                }
+            }
+        }
         payload = {
             "characters": {
                 "elijah-lailah": {
@@ -28,11 +36,12 @@ class CharacterStatRanksTests(unittest.TestCase):
             }
         }
         roster = {"twins", "eironn"}
-        mapped = csr.build_slug_ranks_map(payload, roster)
+        mapped = csr.build_slug_ranks_map(payload, roster, catalog=catalog)
         self.assertIn("twins", mapped)
         self.assertNotIn("guywin", mapped)
         self.assertNotIn("elijah-lailah", mapped)
         self.assertEqual(mapped["twins"]["categories"][0]["label"], "Basic Stats")
+        self.assertEqual(mapped["twins"]["categories"][0]["covers"], ["HP", "ATK"])
         self.assertEqual(mapped["twins"]["stats"][0]["label"], "HP")
 
     def test_format_stats_overview_markdown(self) -> None:

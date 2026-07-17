@@ -4589,7 +4589,7 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Starlit Slumber",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
@@ -40697,6 +40697,678 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "low"
+            }
+          }
+        }
+      }
+    },
+    "Orion": {
+      "long_name": "Orion - Golden Prince",
+      "faction": "lightbearer",
+      "class": "warrior",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-07-17",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Fatal Waltz": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Orion summons a magical rapier at a designated location. For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times. After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s.",
+            "active": [
+              "Orion summons a magical rapier at a designated location.",
+              "For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times.",
+              "After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases rapier slash damage to 70% (ATK-based) + 10% (SP-based), and the final magic burst damage to 460% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases rapier slash damage to 80% (ATK-based) + 10% (SP-based), and the final magic burst damage to 500% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases rapier slash damage to 90% (ATK-based) + 10% (SP-based), and the final magic burst damage to 540% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases rapier slash damage to 100% (ATK-based) + 10% (SP-based), and the final magic burst damage to 600% (ATK-based)+ 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 640.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.0
+            }
+          ],
+          "initial_energy": 300.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Stun — Area"
+            }
+          ]
+        },
+        "Fervent Flurry": {
+          "category": "skill1",
+          "description": {
+            "raw": "Passive. When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s. While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s. Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it. Active. Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust.",
+            "passive": [
+              "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s.",
+              "While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s.",
+              "Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it."
+            ],
+            "active": [
+              "Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases thrust damage to 100% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases thrust damage to 110% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases thrust damage to 120% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ],
+              "duration": 3.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 130.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Velvet Glove": {
+          "category": "skill2",
+          "description": {
+            "raw": "Passive. Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter. Active. Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s. All his Supporters gain 60% of the shield Orion gains.",
+            "passive": [
+              "Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter."
+            ],
+            "active": [
+              "Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s.",
+              "All his Supporters gain 60% of the shield Orion gains."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases magical slash damage to 360% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases magical slash damage to 380% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases magical slash damage to 400% (ATK-based) + 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_direction": "front",
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 440.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ],
+              "duration": 6.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ],
+              "duration": 6.0
+            }
+          ],
+          "cooldown": 8.0,
+          "initial_cooldown": 2.0,
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Shield — Multiple targets",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Orion increases his ATK by 9% during battle. If he has Supporters on the battlefield, his ATK increases by an extra 6%.",
+            "active": [
+              "Orion increases his ATK by 9% during battle.",
+              "If he has Supporters on the battlefield, his ATK increases by an extra 6%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Orion increases his ATK by 12% during battle.",
+                  "If he has Supporters on the battlefield, his ATK increases by an extra 8%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Orion increases his ATK by 15% during battle.",
+                  "If he has Supporters on the battlefield.",
+                  "his ATK increases by an extra 10%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Royal Prerogative": {
+          "category": "skill4",
+          "description": {
+            "raw": "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks. Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s.",
+            "active": [
+              "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks.",
+              "Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage dealt bonus Orion gains from each Authority stack to 16%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "At 3 Authority stacks, Orion unleashes his full power, permanently activating his rapier enchantment.",
+                  "In addition, his Sear effect is upgraded for the rest of the battle: enemies afflicted for 3s are silenced and have their Vitality reduced by 60 until Sear expires."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage dealt bonus Orion gains from each Authority stack to 18%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
+              "type": "buff",
+              "name": "Damage dealt",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 18.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 18.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "silence",
+              "duration": 3.0
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Damage dealt — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Vitality (EX+10)",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Silence — Single target (EX+10)"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt.",
+            "active": [
+              "After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "supreme+",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "True damage"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Continuous damage on enemies",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s."
+          },
+          {
+            "label": "Enhanced form",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s."
+          },
+          {
+            "label": "Named ally on team",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Whenever an ally grants Orion a temporary stat buff, that ally becomes his Supporter."
+          },
+          {
+            "label": "Stacking",
+            "tier": "mythic+",
+            "targeting": "Self",
+            "description": "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks."
+          }
+        ],
+        "requires": [
+          {
+            "label": "Temporary ally stat buffs",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Whenever Orion receives a temporary stat buff from an ally, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter."
+          }
+        ]
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Arc, Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
+        ],
+        [
+          "true",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "true": "low"
+      },
+      "benefit_stats": [
+        "atk",
+        "max_hp",
+        "shield",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "melee class",
+        "casting_speed": "fast",
+        "signature_skill_name": "Fervent Flurry",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 10.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "average"
             }
           }
         }

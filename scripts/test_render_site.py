@@ -57,6 +57,10 @@ class RenderSiteTests(unittest.TestCase):
         self.assertIsNotNone(stats)
         assert stats is not None
         self.assertEqual(stats["categories"][0]["label"], "Basic Stats")
+        self.assertEqual(
+            stats["categories"][0]["covers"],
+            ["HP", "ATK", "Phys DEF", "Magic DEF"],
+        )
         self.assertIn(stats["categories"][0]["rank"], ("high", "average", "low"))
 
     def test_synergy_partners_have_slugs(self) -> None:

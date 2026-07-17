@@ -6231,6 +6231,85 @@ Odie immediately defeats poisoned enemies when their HP drops below a threshold 
 
 Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart Poison damage per second.
 
+## Orion - Golden Prince
+
+*Lightbearer · Warrior · Magic*
+
+### Ultimate
+
+**Fatal Waltz**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 300
+
+Orion summons a magical rapier at a designated location. For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times. After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s.
+
+- Level 2 — Unlocks at Level 51: Increases rapier slash damage to 70% (ATK-based) + 10% (SP-based), and the final magic burst damage to 460% (ATK-based) + 40% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases rapier slash damage to 80% (ATK-based) + 10% (SP-based), and the final magic burst damage to 500% (ATK-based) + 40% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases rapier slash damage to 90% (ATK-based) + 10% (SP-based), and the final magic burst damage to 540% (ATK-based) + 40% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases rapier slash damage to 100% (ATK-based) + 10% (SP-based), and the final magic burst damage to 600% (ATK-based)+ 40% (SP-based).
+
+### Skill1
+
+**Fervent Flurry**
+*Unlocks at Level 11*
+
+- Skill Range: Global
+
+Passive. When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s. While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s. Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it. Active. Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust.
+
+- Level 2 — Unlocks at Level 71: Increases thrust damage to 100% (ATK-based) + 10% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases thrust damage to 110% (ATK-based) + 10% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases thrust damage to 120% (ATK-based) + 10% (SP-based).
+
+### Skill2
+
+**Velvet Glove**
+*Unlocks at Level 31*
+
+- Cooldown: 8s
+- Initial Cooldown: 2s
+- Skill Range: 10 tiles
+
+Passive. Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter. Active. Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s. All his Supporters gain 60% of the shield Orion gains.
+
+- Level 2 — Unlocks at Level 91: Increases magical slash damage to 360% (ATK-based) + 40% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases magical slash damage to 380% (ATK-based) + 40% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases magical slash damage to 400% (ATK-based) + 40% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Orion increases his ATK by 9% during battle. If he has Supporters on the battlefield, his ATK increases by an extra 6%.
+
+- Level 2: Orion increases his ATK by 12% during battle. If he has Supporters on the battlefield, his ATK increases by an extra 8%.
+- Level 3: Orion increases his ATK by 15% during battle. If he has Supporters on the battlefield. his ATK increases by an extra 10%.
+
+### Ex. Skill
+
+**Royal Prerogative**
+*Unlocks at Mythic+*
+
+- Skill Range: 10 tiles
+
+Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks. Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s.
+
+- Level 2 — Unlocks at EX. +5: Increases the damage dealt bonus Orion gains from each Authority stack to 16%.
+- Level 3 — Unlocks at EX. +10: At 3 Authority stacks, Orion unleashes his full power, permanently activating his rapier enchantment. In addition, his Sear effect is upgraded for the rest of the battle: enemies afflicted for 3s are silenced and have their Vitality reduced by 60 until Sear expires.
+- Level 4 — Unlocks at EX. +15: Increases the damage dealt bonus Orion gains from each Authority stack to 18%.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt.
+
 ## Pandora - Hope Unleashed
 
 *Dimensional · Support · Magic*

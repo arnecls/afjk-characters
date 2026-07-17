@@ -112,7 +112,7 @@ HERO_NAMES = [
     "Lamentis", "Lenya",
     "Lily May", "Lorsan", "Lucca", "Lucius", "Lucy", "Ludovic", "Lumont",
     "Lyca", "Marcille", "Marilee", "Mehira", "Mikola", "Mirael", "Nara",
-    "Natsu", "Nazrik", "Nerion", "Niru", "Odie", "Pandora", "Pang", "Parisa",
+    "Natsu", "Nazrik", "Nerion", "Niru", "Odie", "Orion", "Pandora", "Pang", "Parisa",
     "Perseus", "Peggy", "Phraesto", "Pippa", "Ravion", "Reinier", "Rhys", "Rowan",
     "Saida", "Salazer", "Satrana", "Scarlita", "Seth", "Shadewing", "Shakir",
     "Shemira", "Silven", "Silvina", "Sinbad", "Smokey & Meerky", "Solise",

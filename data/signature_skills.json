@@ -262,6 +262,10 @@
   "Odie": {
     "signature_calculated": "skill4"
   },
+  "Orion": {
+    "signature_calculated": "skill1",
+    "speed_override": "fast"
+  },
   "Pandora": {
     "signature_calculated": "ultimate",
     "signature_override": "skill1",

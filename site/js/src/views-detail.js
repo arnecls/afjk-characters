@@ -1325,17 +1325,20 @@ window.AFKJ = window.AFKJ || {};
     return md.replace(/\n- \*\*Damage types\*\*:[^\n]*/gi, "");
   }
 
-  function renderStatsOverviewRow(entries, withIcon) {
+  function renderStatsOverviewRow(entries, rowKind) {
     if (!entries || !entries.length) {
       return "";
     }
     return entries
       .map(function (entry) {
+        if (rowKind === "category") {
+          return chips.renderClassRankCategoryPill(entry);
+        }
         return chips.renderClassRankMergedPill(
           entry.label,
           entry.rank,
           "buff",
-          withIcon
+          true
         );
       })
       .join("");
@@ -1345,8 +1348,11 @@ window.AFKJ = window.AFKJ || {};
     if (!statsOverview) {
       return "";
     }
-    const categories = renderStatsOverviewRow(statsOverview.categories, false);
-    const stats = renderStatsOverviewRow(statsOverview.stats, true);
+    const categories = renderStatsOverviewRow(
+      statsOverview.categories,
+      "category"
+    );
+    const stats = renderStatsOverviewRow(statsOverview.stats, "stat");
     if (!categories && !stats) {
       return "";
     }
