@@ -807,13 +807,9 @@ window.AFKJ = window.AFKJ || {};
     if (!buffers || !buffers.length) {
       return "";
     }
+    const chips = window.AFKJ.chips;
     const items = buffers.map(function (ref) {
-      return (
-        '<span class="synergy-common-buffer">' +
-        renderInlineHeroPortrait(ref.slug, ref.name) +
-        utils.linkifyHero(ref.name, ref.slug) +
-        "</span>"
-      );
+      return chips.renderCharacterPill(ref.name);
     });
     return (
       '<div class="synergy-common-buffers">Common buffers are ' +

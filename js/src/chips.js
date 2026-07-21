@@ -137,21 +137,64 @@ window.AFKJ = window.AFKJ || {};
     return escapeHtml(prefix) + merged;
   }
 
+  function renderCharacterPill(name) {
+    const utils = window.AFKJ.utils;
+    const state = window.AFKJ.state;
+    const hero = state.heroByName[name];
+    if (!hero) {
+      return escapeHtml(name);
+    }
+    const factionKey = utils.factionDataKey(hero.faction);
+    const factionClass = utils.factionClass(hero.faction);
+    const portraitSrc = utils.assetUrl(utils.characterPortraitPath(hero));
+    const href = utils.escapeHtml(utils.heroUrl(hero.slug));
+    const slugAttr = utils.escapeHtml(hero.slug);
+    const nameHtml = utils.escapeHtml(name);
+    return (
+      '<a href="' +
+      href +
+      '" class="character-pill hero-link ' +
+      factionClass +
+      '" data-faction="' +
+      utils.escapeHtml(factionKey) +
+      '" data-slug="' +
+      slugAttr +
+      '">' +
+      '<span class="character-pill-hex" aria-hidden="true">' +
+      '<span class="character-pill-hex-wrap">' +
+      '<span class="character-pill-hex-inner">' +
+      '<img class="character-pill-hex-icon" src="' +
+      utils.escapeHtml(portraitSrc) +
+      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
+      "</span></span></span>" +
+      '<span class="character-pill-name">' +
+      nameHtml +
+      "</span></a>"
+    );
+  }
+
   function renderInline(text) {
     const parts = [];
     let last = 0;
-    const re = /`([^`]+)`/g;
+    const re = /`([^`]+)`|\[\[([^\]]+)\]\]/g;
     let match;
     while ((match = re.exec(text))) {
-      const merged = tryMergeTrailingLabel(
-        text.slice(last, match.index),
-        match[1]
-      );
-      if (merged) {
-        parts.push(merged);
+      const backtickLabel = match[1];
+      const heroName = match[2];
+      if (backtickLabel !== undefined) {
+        const merged = tryMergeTrailingLabel(
+          text.slice(last, match.index),
+          backtickLabel
+        );
+        if (merged) {
+          parts.push(merged);
+        } else {
+          parts.push(escapeHtml(text.slice(last, match.index)));
+          parts.push(window.AFKJ.chips.formatTag(backtickLabel));
+        }
       } else {
         parts.push(escapeHtml(text.slice(last, match.index)));
-        parts.push(window.AFKJ.chips.formatTag(match[1]));
+        parts.push(renderCharacterPill(heroName));
       }
       last = match.index + match[0].length;
     }
@@ -2425,6 +2468,7 @@ window.AFKJ = window.AFKJ || {};
     HEAL_CHIP_KEYS: HEAL_CHIP_KEYS,
     healingChipDisplay: healingChipDisplay,
     tryMergeTrailingLabel: tryMergeTrailingLabel,
+    renderCharacterPill: renderCharacterPill,
     renderInline: renderInline,
     conditionalTooltip: conditionalTooltip,
     chipTipAttrs: chipTipAttrs,

@@ -2198,13 +2198,6 @@ a:hover {
   margin: 0;
 }
 
-.synergy-common-buffer {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35em;
-  vertical-align: baseline;
-}
-
 .inline-hero-hex {
   --inline-hex-border-width: 1.5px;
   --inline-hex-clip: polygon(50% 0%,
@@ -2285,6 +2278,118 @@ a:hover {
   object-fit: cover;
   object-position: center center;
   transform: translate(-50%, -50%) scale(1.32);
+}
+
+.character-pill {
+  --character-pill-hex-size: 1.35em;
+  --character-pill-hex-overhang: 0.18em;
+  --character-pill-hex-clip: polygon(50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
+  --character-pill-faction: var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  position: relative;
+  margin: 0 0.12em;
+  padding: 0.12em 0.45em 0.12em
+    calc(var(--character-pill-hex-size) - var(--character-pill-hex-overhang) + 0.2em);
+  border-radius: 0.35em;
+  font-weight: 600;
+  font-size: 0.92em;
+  line-height: 1.2;
+  vertical-align: baseline;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.character-pill:hover {
+  text-decoration: none;
+  filter: brightness(0.97);
+}
+
+.character-pill[data-faction="lightbearer"] {
+  --character-pill-faction: #4a6b8a;
+}
+
+.character-pill[data-faction="wilder"] {
+  --character-pill-faction: #4a8860;
+}
+
+.character-pill[data-faction="mauler"] {
+  --character-pill-faction: #a06637;
+}
+
+.character-pill[data-faction="graveborn"] {
+  --character-pill-faction: #2f4238;
+}
+
+.character-pill[data-faction="celestial"] {
+  --character-pill-faction: #d99a3d;
+}
+
+.character-pill[data-faction="hypogean"] {
+  --character-pill-faction: #4b4282;
+}
+
+.character-pill[data-faction="dimensional"] {
+  --character-pill-faction: #5090e8;
+}
+
+.character-pill-hex {
+  position: absolute;
+  left: calc(-1 * var(--character-pill-hex-overhang));
+  top: 50%;
+  width: calc(var(--character-pill-hex-size) / 1.1547);
+  height: var(--character-pill-hex-size);
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.character-pill-hex-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.character-pill-hex-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--character-pill-faction);
+  clip-path: var(--character-pill-hex-clip);
+  z-index: 0;
+}
+
+.character-pill-hex-inner {
+  position: absolute;
+  inset: 1.5px;
+  clip-path: var(--character-pill-hex-clip);
+  background: color-mix(in srgb,
+      var(--character-pill-faction) 14%,
+      var(--surface-panel));
+  overflow: hidden;
+  z-index: 1;
+}
+
+.character-pill-hex-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: translate(-50%, -50%) scale(1.32);
+}
+
+.character-pill-name {
+  position: relative;
+  z-index: 1;
 }
 
 .synergy-requires {
