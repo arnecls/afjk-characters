@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/counter_overview.schema.json",
+  "title": "Hero counter overviews",
+  "description": "AI-curated short PVP counter advice per hero.",
+  "type": "object",
+  "minProperties": 1,
+  "additionalProperties": {
+    "$ref": "#/$defs/overviewText"
+  },
+  "$defs": {
+    "overviewText": {
+      "type": "string",
+      "minLength": 80,
+      "maxLength": 1000,
+      "description": "Three to five sentences on threat, fight flow, and counter comps. May use **bold** and [[Display Name]] hero markers."
+    }
+  }
+}

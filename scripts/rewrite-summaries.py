@@ -50,6 +50,7 @@ MOVEMENT_OVERRIDES_FILE = ROOT / "data" / "movement_overrides.json"
 MELEE_OVERRIDES_FILE = ROOT / "data" / "melee_overrides.json"
 BEHAVIOR_TAGS_FILE = ROOT / "data" / "hero_behavior_tags.json"
 PLAY_OVERVIEW_FILE = ROOT / "data" / "hero_play_overviews.json"
+COUNTER_OVERVIEW_FILE = ROOT / "data" / "hero_counter_overviews.json"
 
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
@@ -7736,6 +7737,12 @@ def _load_play_overviews() -> dict[str, str]:
     return json.loads(PLAY_OVERVIEW_FILE.read_text(encoding="utf-8"))
 
 
+def _load_counter_overviews() -> dict[str, str]:
+    if not COUNTER_OVERVIEW_FILE.exists():
+        return {}
+    return json.loads(COUNTER_OVERVIEW_FILE.read_text(encoding="utf-8"))
+
+
 def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint]]:
     if not PLACEMENT_CONSTRAINT_OVERRIDES_FILE.exists():
         return {}
@@ -9440,6 +9447,7 @@ def format_behavior_section(
     hero: Hero | None = None,
     behavior_tags: list[str] | None = None,
     play_overview: str | None = None,
+    counter_overview: str | None = None,
     stats_overview: dict | None = None,
 ) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
@@ -9484,6 +9492,11 @@ def format_behavior_section(
         lines.append("#### Play overview")
         lines.append("")
         lines.append(play_overview.strip())
+    if counter_overview and counter_overview.strip():
+        lines.append("")
+        lines.append("#### Counter proposal")
+        lines.append("")
+        lines.append(counter_overview.strip())
     if include_stats_overview and stats_overview:
         from character_stat_ranks import format_stats_overview_markdown
 

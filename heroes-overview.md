@@ -18,13 +18,17 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Signature skill**: Radiant Rain (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
-- **Behavior tags**: `ally-buffer` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility` `temporary-stat-buffer`
+- **Behavior tags**: `ally-buffer` `backline-assassin` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility` `temporary-stat-buffer`
 - **Ally composition**: grants Brightfeather to nearest ally in her row
 - **Damage types**: Physical `high`, DoT `low`, HP loss `average`
 
 #### Play overview
 
 Aliceth **bonds one ally at battle start**, empowering their strikes so follow-up attacks land after a set number of hits. Her active skill delivers a **heavy strike with knockback and stun** on a focused target when activated. She marks the **farthest enemy**, and she and bonded allies **prioritize that target** until it falls, then her battle ATK climbs for the rest of the fight. Her ultimate fires **arrow volleys** at a single foe, growing heavier when her partner meets feather thresholds. She also blocks the **first fatal blow** on herself or her bonded ally. Against **spread formations**, the mark and focus fire fail to concentrate damage. If the bonded ally dies early, much of her buffing and ultimate scaling is lost entirely.
+
+#### Counter proposal
+
+When facing Aliceth in PVP, expect her to **bond a hypercarry** such as [[Lily May]] or [[Athalia]] and **mark your farthest unit** for focused burst. The fight is a race to **kill or delay the bonded partner** before arrow volleys stack. Delete the partner early with [[Ravion]]'s teleports or [[Athalia]]'s true-damage dive, or **Aging-inhibit** them with [[Bonnie]] while you speed your own carry with [[Thador]], [[Hugin]], or [[Rowan]].
 
 #### Stats overview
 
@@ -168,6 +172,10 @@ These are the **4** strongest pairings:
 
 Before battle, Alna **requires a Winter Warrior in her row**, chosen during prep, who gains extra max HP and shared healing while resisting her opening frost. At fight start she blankets the field in frost, **cutting Haste and attack range** for nearly everyone, then cycles **damage and control immunity** windows that can extend to her partner as well. Her blizzard strips enemy Haste buffs and deals steady damage over time. Damage she or the Winter Warrior takes is then converted into **delayed healing**. Against **targets immune to Haste or range reduction**, much of her control is wasted while allies still suffer the frost penalty. She also needs **sustained fight time** to reapply her ultimate and periodic immunity cycles.
 
+#### Counter proposal
+
+Alna blankets the field in **opening frost** that cuts Haste and range, then cycles **damage and control immunity** with her **Winter Warrior** — often [[Sylphira]] or [[Frieren]]. Attrition favours her unless you **break the partner** during vulnerable windows before immunity returns. Hit the Winter Warrior with [[Himmel]]'s high-damage dashes or [[Bonnie]]'s Aging inhibit, or race her slowed line by **speeding your carry** with [[Thador]] or [[Hugin]]. For grouping, use **[[Eironn]]'s battle-start pull** or [[Mehira]]'s **fast pull** — not slow setup groupers — to punish her row before frost and immunity lock the pace.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `average`, Other Stats `average`
@@ -302,6 +310,10 @@ Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to sing
 #### Play overview
 
 Alsa enters a **combat stance** that boosts damage and dodge, then fights from that posture for the rest of the fight. Her ultimate curls into a ball, **damaging nearby enemies** and creating terrain obstacles that reshape paths across the field. She punishes **recently controlled foes** with AoE strikes and gains haste as the battle wears on. In stance she slams for extra hits and **evades incoming blows**, rolling away with a shield when pressed. Bonus damage also lands on **multiply-controlled targets**, rewarding teams that chain crowd control together. Terrain obstacles can block enemy movement and funnel foes into follow-up strikes. Against **immune or ungrouped targets**, her control payoff and obstacle value shrink sharply. Her habit of **rolling out of position** also leaves her exposed when enemies focus her down.
+
+#### Counter proposal
+
+Alsa's Arena threat is **Combat Stance** dodge and slam loops, **terrain pillars** that reshape paths, and **boulder dumps on recently controlled** foes. Fights drag into her favor once obstacles funnel your line and control chains feed those boulders. End the fight before pillars lock pathing — race with [[Thador]] or [[Hugin]] — and answer her **high-damage ultimate** with [[Lily May]]. When she rolls out of place, keep pressure with lasting [[Shemira]] or [[Frieren]] coverage rather than a single assassin pin, and blunt control chains with [[Callan]] so her boulder payoff never stacks.
 
 #### Stats overview
 
@@ -440,6 +452,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Twins**, or **Kazim**.
 #### Play overview
 
 Antandra guards one ally with **shields and damage reduction**, then rushes to their side when they are threatened. Her ultimate first **cuts incoming damage**, then stuns surrounding enemies and swings for damage and self-heal that scales with foes hit. Repeated frontal strikes **lower enemy ATK** while her battle max HP grows over time. Landing ultimate hits also **raises her Phys DEF** permanently for the rest of the fight. She works best as a **secondary frontliner** beside another tank who can hold primary aggro and absorb burst. Her shield skill has a **long cooldown**, so mistimed casts leave allies exposed. Without a partner to guard or **dense enemy clusters**, her stun swing and heal scaling underdeliver.
+
+#### Counter proposal
+
+Antandra **shields a frontmost ally**, then **rushes to them** with damage reduction when they dip low, while her ultimate **taunts, goes Unaffected**, and stuns the clump for a self-heal swing. Do not bank on crowd control during that Unaffected window. Bypass the peel by deleting the **soft carry behind her** with [[Ravion]] or [[Himmel]], or Aging-inhibit that slot with [[Bonnie]], and race your own carry with [[Thador]] or [[Rowan]] before her Phys DEF stacks from repeated ultimates.
 
 #### Stats overview
 
@@ -588,6 +604,10 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 
 Arden builds damage around **crowd control on himself or allies**, cycling energy whenever enemies are controlled. His roots bind multiple foes with **continuous damage**, feeding faster skill use in control-heavy teams. His ultimate drops a **persistent lightning zone** that strikes controlled enemies more often than free targets. After casting, he can **bind every target** under the dark cloud at once for a chained lockdown. Strike intervals also **tighten on repeat hits** within the zone, letting damage tick up fast over the full duration. He needs **consistent control sources** from himself or teammates to fuel his rotation and keep the zone active. Against **control-immune or fast-cleansing teams**, his energy loop and lightning ticks never ramp up meaningfully. Pair him with allies who can chain stuns or roots to maximize lightning ticks.
 
+#### Counter proposal
+
+Arden drops a **persistent lightning cloud** that strikes **controlled enemies** harder and can **bind everyone under it**, while enemy control refunds his energy. Attrition snowballs if his team keeps landing CC. Starve the loop with control-stable frontline like [[Callan]], cancel his slow high-damage ultimate with [[Lily May]], and delete him with [[Ravion]] or [[Nerion]] before the cloud's strike interval tightens.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -707,6 +727,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 #### Play overview
 
 Atalanta opens with **rapid chained casts** of her knockback and explosive shots before settling into normal pacing. Her ultimate dashes forward, then fires a **penetrating line shot** that can clip several foes. Hitting different enemies **raises her haste**, rewarding wide target access early. A direct ultimate hit also **heals herself**. Splash from her explosives only carries **partial damage**, so grouped hits feel weaker than the main strike. She struggles when **frontlines block her line** or when burst windows end before she can line up a clean shot.
+
+#### Counter proposal
+
+Atalanta opens with **chained battle-start knockbacks and explosives**, then **dashes** into a penetrating ultimate line that heals on a clean hit. She relocates too often for single-target assassin pins — answer with lasting [[Shemira]] or [[Frieren]] coverage, and blunt the ultimate with [[Lily May]]. Soak the opener with [[Callan]]'s battle-start shields, and keep a thick frontline so her line shot never finds a clean lane.
 
 #### Stats overview
 
@@ -843,12 +867,16 @@ Common buffers are **Ravion**, **Mikola**, **Smokey & Meerky**, or **Kazim**.
 
 - **Signature skill**: Unbroken Retribution (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `hp-scaling` `non-ult-utility` `self-repositioner`
+- **Behavior tags**: `backline-assassin` `hp-scaling` `non-ult-utility` `self-repositioner`
 - **Damage types**: Physical `high`, True damage `high`
 
 #### Play overview
 
 Athalia **dives behind the highest damage dealer**, slashing foes in her path while healing herself. Her ultimate deals **massive true damage** to whoever has dealt the most cumulative damage. Repeated dashes trigger **extra area slashes** that also **strip enemy shields**. She excels at **bursting isolated carries** but offers little when fights demand sustained pressure.
+
+#### Counter proposal
+
+In Arena and PVP, Athalia **dives behind your highest damage dealer** and delivers **true damage** tied to their output, so fights hinge on whether she deletes that carry before you stabilize. **Spread damage** or shield the backline early so her target choice matters less. Race her with a sped-up carry — [[Thador]], [[Hugin]], or [[Rowan]] — or peel the dive with [[Evie]]'s enemy-side intel and inhibit, or [[Himmel]]'s dash onto high-damage threats, before she chains into her ultimate.
 
 #### Stats overview
 
@@ -970,6 +998,10 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 #### Play overview
 
 Aurora summons a companion that **attacks and detonates for AoE damage**, then falls asleep to become **invincible** while buffing allied summons. Nearby enemies who linger are **transformed into harmless forms**, and her ATK scales with **summon variety** on the field. While asleep, allied summons are **enhanced** and her companion becomes unaffected. She shines beside **summon-heavy teams** but adds little when allies field few bodies or fights end before her sleep cycle.
+
+#### Counter proposal
+
+Aurora **sleeps from battle start** and is **invincible** while dreaming — never bank burst on her sleep form. **Sonny and allied summons** do the damage, focusing the **Nightmare-marked** frontliner while Dream Veil amps the summon line. Delete or shred the **summon providers** with lasting [[Shemira]] or [[Gwyneth]] coverage, and race with [[Thador]] or [[Hugin]] before plush fields and summon ATK stacks take over.
 
 #### Stats overview
 
@@ -1110,6 +1142,10 @@ These are the **4** strongest pairings:
 
 Baelran leans on a **massive HP pool** and passive regeneration, then transforms when shields decay or bonus HP triggers. In enhanced form he gains **unaffected status** and his ultimate deals **frontal true damage** with HP restore. Each form shift raises haste over time. His hits also **permanently shave enemy max HP** while transformed. He needs **reliable single-target healing** to cycle forms safely.
 
+#### Counter proposal
+
+Baelran banks a huge HP cushion and **transforms when healed to full**, entering Celestial Form and eventually **permanent Unaffected** with frontal true damage and max-HP shred. He is **Unaffected** during the bonus-HP window and form transitions — do not bank on CC there. **Delete him early** with [[Ravion]] or [[Himmel]] before Celestial Form locks in, or **deny the heal-to-transform** with [[Dunlingr]]'s no-heal order. Once enhanced and Unaffected, lean on lasting [[Shemira]] or [[Gwyneth]] damage rather than control.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -1238,6 +1274,10 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 Berial hunts **isolated enemies** with no allies within one tile, bouncing in stealth to drain energy and frighten nearby foes. If no one is isolated, he **heals and retreats** instead of pressing the attack. He can **revive from a newly defeated enemy** after his own death, and stealth duration **extends after he falls**. Isolated targets also suffer **penalized damage dealt and taken**, and may spawn decaying decoy summons. He dominates **scattered backlines** but does little when enemies stay **packed together**. Teams that protect rear targets or deny isolated picks waste his assassin kit.
 
+#### Counter proposal
+
+Berial **selectively hunts isolated targets**, draining energy and **reviving from kills** if left unchecked. Keep allies **within one tile** — tight rows and clustered backlines deny his picks and force him to **heal and retreat** instead of pressing. Avoid wide spreads and solo backliners; once nobody is alone, finish with **long, wide ultimates** from [[Shemira]] or [[Frieren]], or [[Pandora]]'s area package — do not chase his shadow hops with single-target assassins.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -1361,12 +1401,16 @@ extend stealth duration after own defeat
 
 - **Signature skill**: Decay's Reach (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `battle-start-burst` `enemy-debuffer` `non-ult-utility`
+- **Behavior tags**: `aoe-damage` `backline-inhibit` `battle-start-burst` `enemy-debuffer` `non-ult-utility`
 - **Damage types**: Magic `average`
 
 #### Play overview
 
 Bonnie opens by placing an **Aging debuff** on the rearmost enemy, slowing haste and stacking when allies deal magic damage to that target. Her ultimate hits AoE for **bonus damage and stun** against debuffed targets. She can **turn to mist and reposition** when threatened, and the debuff **spreads on max stack or death**. Max-stack victims also take **increased magic damage**, making magic dealers ideal partners. Battle ATK growth adds steady personal damage over time. She deals **less raw damage** than top burst dealers but excels when debuffs can spread across multiple targets. Against **immune or cleanse-heavy lines**, her debuff chain and ultimate payoff never build.
+
+#### Counter proposal
+
+Bonnie opens by **Aging your rearmost** unit — her **magic allies** stack the haste cut further — then her ultimate pays off with bonus damage and stun on Aged foes while she **mists to safety** (invincible). Do not dump burst into mist form. She relocates too often for assassin pins — answer with lasting [[Shemira]] or [[Frieren]] coverage, and blunt her ultimate with [[Lily May]]. Stop the chain by pressuring **Bonnie or her magic partners** before Aging maxes and spreads. **Cleanse** the Aged target with [[Hewynn]], or shorten enemy dispellable debuffs with [[Evie]]'s full-intel briefing.
 
 #### Stats overview
 
@@ -1496,6 +1540,10 @@ Bonnie also requires units **dealing magic damage**
 
 Brutus taunts nearby enemies while **shredding their Phys DEF**, then spins for sustained damage to adjacent foes. He **survives the first fatal blow** and gains temporary immunity, with extended immunity when triggered. Life drain rises during his spin, and taking **adjacent physical hits** feeds more drain after his frontal cleave. His ultimate spin also grants **brief invincibility** while active. His kit is built to **stall and soften frontlines** while he absorbs pressure. He adds little when enemies **ignore taunt** or burst him before Indomitable triggers. Without **melee traffic** around him, his spin and drain scaling stay flat.
 
+#### Counter proposal
+
+Brutus **taunts and shreds Phys DEF**, then **spins Unaffected** with life drain while **Indomitable** cheats the first fatal blow into a temporary immunity. Do not dump your opener into that save or spin window. Soften him with **magic** pressure after immunity fades — lasting [[Shemira]] or amp'd [[Frieren]] — and race past the stall with [[Thador]] or [[Hugin]]. Physical frontline trades feed his cleave drain; keep melee traffic light around him.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `average`, Other Stats `high`
@@ -1604,6 +1652,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Play overview
 
 Bryon opens with a **battle-start companion summon** that fights beside him and gains haste while she remains on the field. His projectiles **drain enemy energy** on hit, and his companion **counterattacks and stuns** when he is controlled or struck hard, also blocking fatal blows. Casting his projectile skill also **spawns leaves near the companion** for extra pressure. He deals strong **multi-target magic damage** when enemies are grouped. He underperforms when the companion **dies early** or when foes are **spread beyond projectile reach**.
+
+#### Counter proposal
+
+Bryon **opens with a battle-start falcon** that fights untargetable beside him, **drains energy** on hits, and can **block a fatal blow** before making him briefly untargetable. Do not waste [[Lily May]]'s cancel on his opener if you need it for their real carry — he is a classic catcher. Kill **Bryon himself** with sustained mid-fight pressure from [[Evie]] or [[Bonnie]] once the falcon's save is spent, race energy with [[Thador]] or [[Hugin]], and keep lines **spread** so his multi-target leaves never chain.
 
 #### Stats overview
 
@@ -1742,6 +1794,10 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 
 Callan grants **shields at battle start and on ultimate cast**, absorbing damage meant for nearby allies at the opening of fights. His multi-hit skill **knocks down** the target and nearby enemies, while absorbed damage is **stored for a burst release** on his second skill. Once per battle, low HP triggers an **AoE burst and stun** on nearby foes. He also heals whenever he gains any shield, and battle vitality **grows over time** to keep him standing through long engagements. He is a **strong opening protector** but offers weak retaliation compared to dedicated counter tanks. His stored burst also **underwhelms against heavily armored targets** that shrug off the release. He provides no offensive buffs for allies once shields fall. Fights that **bypass or strip shields** leave him with little damage and no team buffs to contribute once his protection windows end.
 
+#### Counter proposal
+
+Callan blankets nearby allies with **opening shields** that soak and **store damage for a later burst**, then can once **Unaffected howl** for AoE stun at low HP. Early trades bounce off the shield wall while vitality keeps him standing. Bypass or strip the soak and delete the **carry behind him** with [[Himmel]] or [[Ravion]] before stored might dumps, or Aging-inhibit that slot with [[Bonnie]]. Do not bank on interrupting the once-per-battle wrath cast.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `high`
@@ -1862,6 +1918,10 @@ Common buffers are **Thador**, **Pandora**, **Contess**, or **Rowan**.
 #### Play overview
 
 Carolina stacks **DoT on area hits**, then freezes a target and lays an **arctic field** that keeps burning foes inside. Orbiting projectiles **auto-attack controlled enemies**, and repeated casts widen projectile AoE while **shaving Magic DEF**. Stacking projectiles also **apply DoT on impact**, and her crit grows with cast count over long fights. She peaks when **allies supply steady control** and magic damage can exploit lowered defenses. Her freeze and field reward extended engagements where stacks can compound. Against **control-immune targets**, her orbiting damage and freeze setup never activate. Short fights that end **before DoT and cast stacks** build also waste her kit entirely.
+
+#### Counter proposal
+
+Carolina **freezes a dense clump**, lays an **arctic DoT field**, and grows **orbiting snowballs that auto-hit controlled** foes while shaving Magic DEF. She needs long fights and ally control to ramp. Starve the snowball loop with control-stable frontline like [[Callan]], cancel her slow ultimate with [[Lily May]], and race with [[Thador]] or [[Rowan]] before Frostbite and cast stacks mature — or delete her early with [[Ravion]] before the field settles.
 
 #### Stats overview
 
@@ -1996,6 +2056,10 @@ Carolina also requires units **applying crowd control** to enemies
 
 Cassadee blesses one ally so their attacks **deal bonus magic damage** to struck enemies, keeping haste high while that ally lives. Her heavy single-target strike adds direct pressure, and her ultimate **knocks back foes in a line** while temporarily blessing allies it touches. The ultimate path also **lowers enemy Magic DEF** for a window after impact. She blends **damage, soft control, and ally amplification** in one slot. She falters when the **blessed ally dies early** or when enemies **dodge the line attack**. Without a **partner who attacks often**, her blessing contributes little sustained value over the fight. Her haste growth rewards keeping the blessed ally alive through sustained exchanges.
 
+#### Counter proposal
+
+Cassadee **blesses one ally** so their hits add **bonus magic damage** and keep her haste high, then softens Magic DEF with a **knockback ultimate line**. Kill or delay the **blessed carry** before blessings compound — [[Bonnie]] to Aging-inhibit the partner, or [[Athalia]] for a fast true-damage dive. Peel the blessed slot with [[Callan]] or [[Contess]] if you need time for your own burst.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -2122,6 +2186,10 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 #### Play overview
 
 Cecia fights alongside a **permanent companion**, raising both their attack speeds and landing periodic **enhanced heavy strikes**. She binds an enemy to **drain their stats**, and attack speed scales while the companion stays on the field. Her ultimate **re-summons the companion** for another burst of pressure. She is a **solid carry** with bind and steady DPS but struggles against **tanky single targets** that resist bind.
+
+#### Counter proposal
+
+Cecia and her **permanent companion** stack attack speed and **enhanced heavy strikes**, while she **binds a target to drain defenses** into both of them. The fight is a race to remove her before the companion's uptime and bind steal snowball. Delete Cecia with [[Himmel]] or [[Nerion]] mid-fight pressure, or Aging-inhibit her with [[Bonnie]], and keep a **tanky single target** absorbing the bind so the drain never finds a soft carry.
 
 #### Stats overview
 
@@ -2259,6 +2327,10 @@ Common buffers are **Rowan**, **Mikola**, **Ravion**, or **Pandora**.
 
 Chippy **summons two companions** at battle start to fight beside him, then leaps at a single target for direct damage. His normal attacks have a **rare chance to spike** into massive single-hit damage when luck lands. He is a **lightweight early summon** who adds bodies and occasional burst. Without **companions surviving** or fights long enough for crit spikes, his output stays modest. He offers little when enemies **wipe his summons immediately** or outscale his basic damage.
 
+#### Counter proposal
+
+Chippy's Arena threat is **early companion bodies** plus a **leap onto a single target**, with rare normal-attack spikes if the fight drags. Wipe the hamsters before they pad his front, then keep pressure on Chippy himself — he **relocates too often** for a clean assassin pin. Answer with **long, wide ultimates** from [[Shemira]] or [[Frieren]], or race the fight with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]) so his luck spikes never matter.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `low`, Other Stats `low`
@@ -2341,7 +2413,11 @@ rare chance for massive single normal attack damage
 
 #### Play overview
 
-Contess starts **hidden while recovering energy**, then emerges to heal an ally, grant rule immunity, and **convert their HP into shield**. She punishes foes who deal **large HP or shield loss**, healing weakest allies and cutting high-damage enemies' ATK. She also **slows ultimate casters' energy recovery** and stacks permanent ATK and energy penalties on repeat violations. Severe violations can trigger **permanent silence** and increased HP-loss effects that bypass unaffected. She needs **long fights** to cycle rules and punishments. Teams that **burst her before she emerges** or ignore her conduct rules see little from her kit.
+Contess starts **hidden while recovering energy**, then emerges to heal an ally, grant rule immunity, and **convert their HP into shield**. She punishes foes who deal **large HP or shield loss**, healing weakest allies and cutting high-damage enemies' ATK. She also **slows ultimate casters' energy recovery** and stacks permanent ATK and energy penalties on repeat violations. Severe violations can trigger **permanent silence** and increased HP-loss effects that bypass unaffected. She needs **long fights** to cycle rules and punishments. While hidden she **cannot be targeted**, so teams that avoid conduct violations and punish her **after she emerges** see the most success.
+
+#### Counter proposal
+
+Contess stays **hidden and untargetable at fight start** while she charges energy, then emerges to **shield a top damage dealer** and punish heavy hits with ATK cuts and **energy penalties**. You **cannot burst her while hidden** — avoid conduct-rule violations that let her surface on her terms, and do not stack ult spam into silence. When she emerges, punish **her or the Exemption ally** with **mid-fight** pressure — sustained [[Gwyneth]], lasting [[Shemira]] coverage, or [[Bonnie]]'s Aging inhibit — not opener burst that spends itself while she is still hidden.
 
 #### Stats overview
 
@@ -2499,6 +2575,10 @@ These are the **4** strongest pairings:
 
 Cryonaia traps several enemies in a **separate winter domain**, gaining shields, control immunity, haste, and attack while it lasts. Only she can cast her ultimate inside, and **weakened foes inside can be instantly defeated**. Enemies entering the domain take **massive damage**, while her sweeping AoE crosses the entire battlefield and her projectiles chip priority targets. Her attack **grows the longer her shield holds**, rewarding teams that help her survive the setup phase. She is devastating once the domain is up but **vulnerable until her first ultimate** lands. Teams must **protect her during the wind-up** or she never reaches her peak. Fights that **break her shield quickly** or deny grouping end the domain before her execute can trigger. Once inside, she alone controls the pace and can chain ultimates while enemies are trapped.
 
+#### Counter proposal
+
+Cryonaia needs a **wind-up** before her **winter domain** traps several foes and enables **execute thresholds**; inside, only she casts ultimate and weakened targets fall. Until the domain is up she is **vulnerable** — blunt her **high-damage ultimate** with [[Lily May]], using [[Pandora]] if they bait her cancel with [[Niru]] or [[Bryon]]. Kill her in that **early setup window** with [[Ravion]]'s early teleports or [[Athalia]]'s dive; once trapped, lean on **non-ult damage** from [[Gwyneth]] rather than feeding her domain.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `average`, Other Stats `average`
@@ -2622,6 +2702,10 @@ Common buffers are **Ravion**, **Pandora**, **Thador**, or **Rowan**.
 #### Play overview
 
 Cyran opens with **sequential battle-start spells** and a large initial energy bonus for fast ultimate access. His orbs chip multiple foes, and he **throws the nearest enemy** into the densest cluster to set up AoE follow-through. His ultimate places a **pull zone** that damages and executes low-HP enemies at the center. Battle crit growth rewards repeated casts on grouped targets. He excels at **disrupting clustered lines** and finishing wounded foes. His opening spell chain gives him **immediate board impact** before enemies can spread out. He adds little when enemies **stay spread** or resist grouping and execute thresholds.
+
+#### Counter proposal
+
+Cyran's Arena threat is a **battle-start spell chain** — **unaffected** with haste for several seconds — then a throw into densest foes and a **fast black-hole ultimate** that **pulls the whole field** and **executes** low-HP units at the center. **Spread does not stop the black hole** — blunt displacement with **Steadfast** or **Unaffected**: self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. Keep HP above execute thresholds. Do not dump opener burst into his **unaffected** window; after it ends, pressure him with mid-fight inhibit/DoT from [[Nerion]] or [[Bonnie]], or lasting [[Shemira]] / [[Gwyneth]] coverage, and cancel the hole with [[Lily May]] once he is interruptible.
 
 #### Stats overview
 
@@ -2747,6 +2831,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 Daimon fights with an **untargetable companion** named Stitchy that frightens nearby enemies and joins his ultimate for true damage based on enemy HP. At battle start the companion attacks alongside him, dealing damage with basic attacks. He converts **enemy HP-loss into personal shield**, shares a portion of received shield with a **bonded ally**, and gains damage reduction while shielded. Excess shield value also **converts to HP** when overflowing, turning overheal into sustain. He blends **tanking, shielding, and sub-DPS** in one slot. He struggles as a **solo frontliner** without enough shield generation or a dedicated healer beside him. Teams that **deny HP-loss triggers** or kill his companion early blunt his sustain loop entirely. He pairs best with allies who generate frequent shields or trigger steady HP-loss on enemies.
 
+#### Counter proposal
+
+Daimon banks **max-HP drains and Stitchy hits into personal shields**, shares shield with a **bonded ally**, and gains damage reduction while shielded — Stitchy itself is **untargetable**. Break the loop by **deleting Daimon early** before shields stack — [[Ravion]]'s teleports or [[Himmel]]'s dashes — or peel the bonded partner with [[Bonnie]]'s Aging inhibit. Once the shield cycle is online, lean on lasting [[Gwyneth]] or [[Shemira]] pressure rather than hoping Stitchy dies first.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `average`, Other Stats `average`
@@ -2867,12 +2955,16 @@ Daimon provides Lifedrain to single targets `low`.
 
 - **Signature skill**: Inventor's Will (Mythic+)
 - **Movement**: stationary (off battlefield)
-- **Behavior tags**: `ally-buffer` `ally-healer` `summoner` `temporary-stat-buffer`
+- **Behavior tags**: `ally-buffer` `ally-healer` `backline-assassin` `backline-inhibit` `summoner` `temporary-stat-buffer`
 - **Damage types**: Magic `high`
 
 #### Play overview
 
 Damian summons toys that **heal weakest allies, restore energy, stun distant foes, and blind enemies** from a chariot he can control. His summon aura grants **haste to adjacent allies**, and battle ATK rises over time. Blinds last longer while **summon health stays above half**. He mixes **healing, buffing, and soft control** through multiple summons. Fights that **focus and kill his toys early** remove his healing, control, and blind extension.
+
+#### Counter proposal
+
+Damian **never enters the field** — he is **unhittable** while toy chariots heal, haste adjacent allies, blind, and a plane **stuns your farthest unit**. You cannot delete Damian; **collapse the chariot** so healing, blinds, and plane stuns stop. Answer the toys with **area packages** from [[Shemira]], [[Frieren]], or [[Pandora]], and protect the backline so the plane stun wastes itself. Rebuild windows are his soft phase — finish the fight before a second chariot comes online.
 
 #### Stats overview
 
@@ -3015,6 +3107,10 @@ Damian provides Direct healing to single targets `average` and Haste (Mythic+) t
 
 Dionel's normal attacks become **long-range penetrating lines**, and he permanently gains attack speed with each strike. He stacks buffs from **allied boosts**, then spikes ATK and attack speed on active sip; at max stacks he unleashes a **true damage burst**. His ultimate soars untargetable, raining AoE hits that end with **bonus damage and knock-up**. Execution bonuses rise while his active buff is live. He needs **frequent ally buffs** to reach peak stacks and cycle his sip cleanly. Teams built around **continuous buffing** unlock his full damage ceiling. His attack speed snowballs over time, so longer fights favor his scaling pattern. Without buff support or **grouped enemies**, his line attacks and aerial burst underperform over the course of a long fight.
 
+#### Counter proposal
+
+Dionel **snowballs ATK SPD** from ally buffs into penetrating lines and a **true-damage sip burst**, then his ultimate **soars untargetable** while raining AoE and knock-up. Do **not** dump burst into the aerial window. He relocates and goes airborne too often for assassin pins — use lasting [[Shemira]] or [[Frieren]] coverage, and blunt the soar with [[Lily May]] when he starts casting. **Pressure his buffer partners** with [[Bonnie]] or [[Himmel]] so Nectar stacks never peak.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `average`, Other Stats `average`
@@ -3156,6 +3252,10 @@ Dionel also requires units **buffing them**
 #### Play overview
 
 Before battle, Dunlingr **chooses a field rule** that blocks all healing or all ultimates for both sides. A bell enforces the rule at start, and casting his ultimate **extends the order** for more duration. He gains shields when order conditions are met and can **shield one ally from the rule** while granting allies attack speed or life drain at rule start. Frontal multi-hits add **rule-based bonus effects** on top of damage. Battle damage taken reduction keeps him standing while the order is active. He is oppressive against **heal-reliant or ultimate-reliant teams** but **handicaps his own side** with the same restriction. Enemies that **ignore the order** or burst teams that end fights inside the window waste his setup entirely. Choosing the right rule before battle is essential, since both options hurt allies too.
+
+#### Counter proposal
+
+In Arena, Dunlingr **locks the battlefield** before fight start — either **no healing** or **no ultimates for both teams** — then **extends the order** with his own ultimate. Ult-heavy or heal-heavy comps **handicap themselves** for as long as the rule lasts. Answer with **non-ult pressure** on the **exempt carry** he shields from the order — [[Gwyneth]] or [[Ravion]], or [[Athalia]]'s non-ult dive. **Fast damage** before he re-enforces the rule shortens the window both sides suffer.
 
 #### Stats overview
 
@@ -3307,6 +3407,10 @@ These are the **4** strongest pairings:
 
 Eironn can **cast his ultimate on any tile at battle start**, pulling nearby enemies to the center for damage and immobilization. His dual-sword sweep **reduces enemy haste and Magic DEF**, and he shields himself with high dodge when pressed. Ranged defense **scales up at low HP**, and immobilized targets take **extra Magic DEF reduction**. He is a premier **opener for control and magic damage teams**. His value drops against **pull-immune or unaffected targets**.
 
+#### Counter proposal
+
+Eironn's Arena threat is the **battle-start pull** that groups your line for magic damage and immobilize chains. If it lands, formation collapses into his **Magic DEF shred**. Answer on the **same opening beat** with **[[Lily May]]** — her interrupt must land immediately; **[[Pandora]]** is too slow for this window. **Steadfast** or **Unaffected** blunt the displace — self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. If the pull still connects, punish the clustered follow-up with lasting [[Shemira]] or [[Gwyneth]] coverage.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -3416,13 +3520,17 @@ Common buffers are **Mikola**, **Rowan**, **Twins**, or **Smokey & Meerky**.
 
 - **Signature skill**: Intel Chase (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-healer` `self-repositioner` `stealth` `temporary-stat-buffer`
+- **Behavior tags**: `ally-healer` `backline-assassin` `backline-inhibit` `self-repositioner` `stealth` `temporary-stat-buffer`
 - **Ally composition**: rearmost ally starts with healing quill; tracks highest damage dealer
 - **Damage types**: Magic `average`
 
 #### Play overview
 
 Evie begins **concealed on the enemy side**, gathering intel on nearby foes to reduce their Magic DEF and fuel her ultimate. She sends a quill to **follow an ally for buffs and healing**, and full intel on all enemies **inflicts debuffs** across the line. A completed investigation can **silence her immobilize target** and spawn an extra support quill. Battle healing growth keeps her sustain relevant over long fights. She loses intel when **allies cast ultimates**, slowing her setup considerably. She works best when enemies cluster so she can investigate most of the line quickly. Spread enemy lines or **fast burst** that ends fights before intel completes waste her debuff package entirely. She offers broad utility but lacks a single standout specialty.
+
+#### Counter proposal
+
+Evie opens **concealed and invincible** on your side while she **gathers intel**, shredding Magic DEF and fueling a late immobilize/silence — ally ultimates on *her* team slow Detection, not yours. You **cannot burst her while concealed**; end the fight before full intel, or wait until she **reveals and returns**. After reveal she still **dashes often** — prefer lasting [[Shemira]] or [[Frieren]] coverage and mid-fight [[Gwyneth]] pressure over an opener assassin dump into concealment.
 
 #### Stats overview
 
@@ -3575,6 +3683,10 @@ These are the **4** strongest pairings:
 
 Faramor drops a **circular zone that blocks healing** and deals sustained true damage to enemies inside. He shields on strike, blesses an ally to **boost both their ATK**, then stuns nearby foes around each of them. While the circle is active he **enhances his own skills** and grants allies bonus true damage inside. Enemies revived within the zone also suffer **reduced vitality**. Battle haste growth keeps his rotation moving through longer fights. He needs **survival time** to maintain the circle and energy to sustain it. **High burst teams** that kill him early or enemies that **never enter the zone** negate his anti-heal and true damage payoff. Allies who fight inside his circle gain the most from his true damage amplification.
 
+#### Counter proposal
+
+Faramor's Arena threat is the **healing-block circle** of sustained true damage he locks onto a target — he **burns energy to keep it up**, and allies fighting inside deal bonus true damage. **Kill him early** so the circle and his ATK pledge both collapse — [[Ravion]]'s early teleports or [[Athalia]]'s dive — or **step out of the zone** (it ends after a second with nobody inside). Heal-heavy comps that stand in the circle feed his anti-heal payoff; once he is dead the zone stops.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `high`, Other Stats `high`
@@ -3706,6 +3818,10 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 Fay heals and buffs **allies within ultimate range**, with steady single-target healing and an AoE burst that damages foes while healing friends. She opens battle by **healing and buffing the ally in front of her tile**, and combat max HP rises over time. Low-HP allies also trigger an **emergency heal** for clutch saves. She is a **reliable early support** when stronger healers are unavailable. Her healing output and buffs are **modest compared to top supports**.
 
+#### Counter proposal
+
+Fay is a **modest front-tile healer/buffer** — battle-start heal on the ally ahead, HoT, and an AoE splash that heals friends while chipping foes. She rarely wins alone; the threat is **keeping a carry alive** long enough to snowball. **Stop her sustain** with early [[Ravion]] or [[Himmel]], or [[Dunlingr]]'s no-heal order so clutch saves never land. Race the fight with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]) before her rotation stabilizes.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -3833,6 +3949,10 @@ Fay provides ATK to arc `low`, Direct healing to arc `high`, Healing over time t
 #### Play overview
 
 Florabelle opens with a **battle-start tank summon**, then smashes adjacent tiles on ultimate while buffing ally summons with **haste and life drain**. She can summon a **ranged ally**, and combat ATK rises with multiple summons on the field. Each allied summon gains a **permanent shield on entry**, and large summons gain **control immunity and ATK boost**. She peaks in **summon-heavy compositions** that keep bodies on the board. Against teams that **wipe her critters early**, her scaling and shields never build.
+
+#### Counter proposal
+
+Florabelle opens with a **battle-start tank summon**, then grows Bulbsprites with **haste, life drain, and entry shields** while her ultimate **smashes adjacent tiles**. Wipe the summons before Overgrowth and permanent shields stack — her damage collapses without bodies. Clear the board with lasting [[Shemira]] or [[Gwyneth]] coverage, cancel the smash with [[Lily May]], or delete Florabelle herself with [[Ravion]] before the second summon wave.
 
 #### Stats overview
 
@@ -3969,6 +4089,10 @@ These are the **4** strongest pairings:
 
 Frieren begins **concealed and low-priority**, then needs about 15 seconds to **amplify her magic**. With **Himmel adjacent**, she skips the wait and gains a permanent ATK bonus from his stats. After ramping, her damage jumps from enhanced normal attacks and a **vitality-reducing burn**. Her rectangle ultimate adds **split true damage**. She shines in **long fights**, with damage reduction for herself and the frontmost ally buying time to cast. **Burst before amplification** shuts her down early, and **short fights** never develop her burn or ultimate.
 
+#### Counter proposal
+
+Frieren starts **concealed and low-priority**, then needs about **15 seconds** to amplify — unless [[Himmel]] fights beside her, which **skips the wait** and adds permanent ATK. After amplify she becomes a **high-damage ultimate** carry with vitality burn and split true damage. That pre-amp stretch is an **early delete window** — burst her then with [[Ravion]]'s early teleports or [[Athalia]]'s true-damage dive (not slow intel setups); with their Himmel present the window is much shorter. Once she is live, blunt her ultimate with [[Lily May]] and **race** with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]) so the fight never reaches her peak.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `high`, Other Stats `high`
@@ -4090,6 +4214,10 @@ Frieren also requires specific **named allies**
 #### Play overview
 
 Galahad needs her **circular zone to fill** with energy before clones and enhanced casts come online, so early timing matters. Her ultimate immobilizes the **top cumulative damage dealer** with HP-loss tied to healing received, then lashes a wider area. Weakest allies gain **exploding shields** that detonate for area damage on expiry. Once the zone completes, a **shadow duplicate** of an ally fights beside her while battle ATK climbs. External buffs grant **sustained energy and steadfast** status to keep the zone growing. She excels in **long attrition fights** where energy-fed clones stack pressure. **Early burst** that kills her before the zone matures, or teams that cannot protect the circle while it charges, blunt her payoff.
+
+#### Counter proposal
+
+Galahad needs time for her **energy circle to fill** before clones and enhanced casts come online — her ultimate also immobilizes your top damage dealer with heal-tied HP loss. **Kill her early** before the zone matures with [[Ravion]] or [[Himmel]], or starve the energy soak so the circle never completes. Avoid pumping excess heals into whoever she binds. Once the zone is up, attrition favours her — end the fight before shadow duplicates stack.
 
 #### Stats overview
 
@@ -4220,6 +4348,10 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 Gerda opens with a **battle-start leap** that interrupts nearby enemies and drops a **healing zone** where she lands. Her ultimate sleeps foes in range while **healing allies**, turning clustered lines into a stall window. A stun skill adds a personal shield, and battle damage taken reduction keeps her standing through the opener. Enhanced zone healing and **cooldown reduction on zone heals** keep her rotation moving as allies stand inside. At higher tiers the opening leap **stuns instead of interrupting**, tightening control on grouped targets. She is a **strong early tank-healer** when enemies bunch up and can be caught in the zone. **Spread formations** and foes immune to sleep or interrupt waste her leap and zone value entirely.
 
+#### Counter proposal
+
+Gerda **leaps at battle start** (Unaffected mid-cast) to interrupt and drop a **healing hot spring**, then her ultimate **sleeps** clustered foes while healing allies. Do not bank on interrupting the leap. **Spread** so the stomp and spring cover fewer tiles, blunt the sleep with [[Lily May]], and **cut spring sustain** with early [[Ravion]] or [[Himmel]], or [[Dunlingr]]'s no-heal order. She relocates into the line — lasting [[Shemira]] coverage beats a single assassin pin.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `high`
@@ -4332,6 +4464,10 @@ Gerda provides Direct healing in an area `average` and Healing over time to sing
 #### Play overview
 
 Granny Dahnie taunts a foe and **recovers HP**, then retaliates with projectiles when damage thresholds are crossed, slowing attacker haste. Her ultimate immobilizes nearby enemies while **draining HP and energy**, staying unaffected during the channel. Low HP triggers **Phys and Magic DEF boosts** plus recovery, and triggered shots grant instant self-heals. Vitality scales with **ultimate casting** over longer fights. She stalls **melee-heavy lines** that keep feeding her retaliations and taunt cycles. **Burst before her ultimate** lands, or taunt-immune targets, leave her as a slow frontliner with modest team utility.
+
+#### Counter proposal
+
+Granny Dahnie **taunts and retaliates** when damage thresholds trip, then her ultimate **immobilizes nearby foes** while draining HP and energy — she is **Unaffected** for that channel. Do not dump CC into the grass window. **Burst her before the ultimate** with [[Ravion]] or [[Himmel]], and avoid slow chip that only feeds Seed Cannon retaliations. Once she is channeling, lean on lasting [[Gwyneth]] or [[Shemira]] damage rather than control, and keep melee carries from camping her taunt cycle.
 
 #### Stats overview
 
@@ -4466,6 +4602,10 @@ Common buffers are **Rowan**, **Mikola**, **Pandora**, or **Ravion**.
 
 Gunnar anchors a **rear ally on a passive field** that empowers their range and ATK, then shields everyone behind himself on active cast. Cannon volleys pepper targeted areas, and his **scorched ultimate** deals massive AoE while denying heals and shields inside the burn. Ranged DEF and vitality **scale with allied positioning**, and ally damage thresholds trigger **self-healing missiles** when the line takes pressure. He wants a protected rear partner and enemies walking into sustained fire across multiple casts. **Anti-shield or heal-immune foes** shrug off his zone denial entirely. Without **clustered enemies** in cannon and burn range, his damage and suppression stay modest for the slot.
 
+#### Counter proposal
+
+Gunnar anchors a **Doomfield** on the ally one tile behind him — that partner gains range and ATK, both stay **Steadfast**, and his cannons plus **scorched ultimate** deny heals and shields in the burn. Fights drag into sustained fire unless you break the **field ally** before the meteor owns the mid-fight. Delete that parked carry with [[Ravion]]'s early teleports or [[Evie]]'s inhibit dive — not Gunnar through the shields first — and blunt the meteor with [[Lily May]]. Keep your line out of the fire so his heal and shield denial never locks the attrition.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `high`
@@ -4591,6 +4731,10 @@ Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, A
 
 Gwyneth alternates **splash CC arrows** and **high-damage burn shots**, then fires both at once so every effect lands together on priority targets. Her ultimate rains arrows across range, and **empty nearby tiles** raise her attack speed while also tightening normal attack intervals when foes cannot close. Burn DoT and control stack on targets over time rather than in one burst, rewarding safe spacing throughout the fight. She peaks when **enemies cannot reach her** and she keeps casting from a protected rear tile without interruption. **Melee rush** or cleanse-heavy lines shut down her burn and CC chain before damage ramps meaningfully. Her kit relies on **sustained casting rhythm**, not a single opening burst window. Against **spread formations** her splash and rain cover too little area to justify the slot. She needs safe rear spacing to cycle both arrow types.
 
+#### Counter proposal
+
+Gwyneth stacks **splash CC** and **burn** from a protected rear tile, then rains arrows once her casting rhythm is live — she rewards safe spacing, not an opener dump. Melee that reaches her breaks the attack-speed bonus from empty nearby tiles and stalls the burn chain. Dive her before that chain matures with [[Himmel]]'s high-damage dashes or [[Bonnie]]'s Aging inhibit, and cancel the rain with [[Lily May]]. Race a sped-up carry ([[Thador]] or [[Rowan]]) so her sustained pressure never outlasts yours.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `high`, Other Stats `high`
@@ -4714,6 +4858,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 Hammie **heals the weakest ally** and buffs them, then sustains herself with a simple self-heal skill. Her ultimate is a **single-target fireball** for modest burst damage. She is an **early support** who keeps fragile allies alive with light healing and buffs. Her numbers stay **modest compared to top healers**, and she brings little beyond sustain. Fights that need **strong shields, damage reduction, or teamwide healing** leave her underwhelming.
 
+#### Counter proposal
+
+Hammie is a **light early healer** — she tops the weakest ally, self-heals, and only adds a modest fireball for damage. She rarely wins Arena on her own; the real threat is whatever **fragile carry** she keeps upright through the opener. Outpace her sustain by racing your carry with [[Thador]] or [[Hugin]], or delete the ally she keeps healing with [[Ravion]] before her buffs matter. Skip heavy anti-heal packages built only for Hammie — her numbers stay modest next to real sustain cores.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `low`, Other Stats `low`
@@ -4819,6 +4967,10 @@ Hammie provides ATK to single targets `low`.
 #### Play overview
 
 Harak enters an **enhanced battle-start state** that extends with assists and defeats, then devours a non-summoned unit when the state ends. He dashes to the **weakest enemy**, knocks them up, and his ultimate blocks **target HP recovery** with sustained multi-strikes. Life drain and **ATK plus max HP** grow with each takedown across the fight. Enough assists or defeats also **refund ultimate energy** for another execute window. He snowballs hardest in **chaotic multi-kill fights** where bodies feed his ramp and devour timing. **Single-target stalls** or teams that deny assists keep him from growing or force bad devour targets on allies.
+
+#### Counter proposal
+
+Harak opens in **feast mode**, dashing to weak targets and snowballing ATK/HP off assists and kills; when feast ends he **uncontrollably devours** the weakest non-summoned unit — ally or enemy — if they sit under his devour threshold. Deny the multi-kill chaos that extends feast and refunds his ultimate, and keep your weakest **above devour range**. He relocates too often for assassin pins — answer with **long, wide ultimates** from [[Shemira]] or [[Frieren]], or stall so feast expires into a bad devour. He is **unaffected** during Vicious Bite and the devour — do not bank on interrupting those casts.
 
 #### Stats overview
 
@@ -4950,6 +5102,10 @@ Common buffers are **Twins**, **Thador**, **Smokey & Meerky**, or **Ravion**.
 #### Play overview
 
 Hepler toggles between **true-form offense** and an alternate **taunt form** that heals and shields multiple allies. His ultimate consumes taunt stacks for **AoE damage and blind** on revert. Charge spending **permanently stacks DEF** and damage reduction over the fight. He can **block a fatal blow** on the frontmost ally by transforming to safety. Alternate form also carries **higher damage taken reduction** than his human stance. **Fast burst** that skips his charge cycle leaves little defensive value.
+
+#### Counter proposal
+
+Hepler toggles **taunt form** for multi-ally heals and shields, spends charges into **permanent DEF and damage reduction**, blinds on revert, and **saves the frontmost ally** from a fatal blow by briefly turning them invincible as an animal. Attrition favors him once those stacks pile up. Burst him and the protected ally **before charges mature** with [[Ravion]] or [[Himmel]], and cancel Form Shift with [[Lily May]] on a fast window. Do not dump the finishing hit into the animal-form invulnerability — wait for that brief safety to end, then finish.
 
 #### Stats overview
 
@@ -5092,6 +5248,10 @@ Hepler provides Healing over time to single targets `high` and Invincible (Mythi
 
 Hewynn sustains allies with **single-target heals** and a cleanse that strips dispellable debuffs from multiple friends. Her ultimate delivers **AoE heal over time** while she stays unaffected and all allies gain **damage reduction** during the channel. Battle ATK rises after her **first ultimate**, and cleansed allies receive a **haste boost** for quicker rotations through the rest of the fight. She is a reliable healer when stronger options are unavailable on the roster. Output is **modest next to top supports** and she offers little beyond healing. Fights needing **shields or hard mitigation** rather than steady regeneration underuse her kit.
 
+#### Counter proposal
+
+Hewynn stitches the line with **single-target heals**, a multi-ally **cleanse**, and a slow Rain Prayer that keeps her **unaffected** while allies take less damage. She extends fights rather than ending them — do not bank on interrupting Rain Prayer mid-channel. Race past her sustain by pressuring her carries with [[Ravion]] or [[Evie]], or deny healing with [[Dunlingr]]'s no-heal order, and blunt her first ultimate timing with [[Lily May]]. Once her cleanses are spent, Aging packages like [[Bonnie]] stick longer into the mid-fight.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `low`, Other Stats `high`
@@ -5210,13 +5370,17 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Hero Party (Skill 2)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `self-repositioner`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`
 - **Ally composition**: place Mage, Tank, and Support within 1 tile at battle start (Hero Party)
 - **Damage types**: Physical `high`
 
 #### Play overview
 
 Himmel opens with a **battle-start formation** beside allies, granting petals that bless everyone on the field with sustained bonuses. He dashes to two high-damage foes, knocks them down, then slashes in a **repeated frontal ultimate** with a massive finishing sweep across the line. Formation strikes add **extra HP-loss on boss targets**, and battle haste keeps his rotation brisk through long fights. He pairs strongly with **Frieren adjacent** so she skips her ramp wait and shares ATK from his stats for the whole fight. He offers **soft buffs and line pressure**, not standalone carry damage or hard mitigation. **Spread lines** or burst that ends before formation and petal value builds waste his setup entirely. Without **adjacent allies** in formation, his petals and HP-loss bonuses contribute far less to the team.
+
+#### Counter proposal
+
+Himmel's Arena threat is a **battle-start formation** and petals that buff the party, then **dashes onto two high-damage foes** before a sweeping frontal ultimate — often beside [[Frieren]], who skips her amplify wait. He relocates too often for a clean assassin pin. Answer with lasting [[Shemira]] or [[Frieren]] coverage that keeps hitting wherever he lands, blunt the slash with [[Lily May]], and peel his dive victims with [[Bonnie]]'s Aging inhibit or by racing your carry ([[Thador]], [[Rowan]]). If their Frieren is adjacent, treat her pre-amp window as much shorter and pressure that pairing early.
 
 #### Stats overview
 
@@ -5361,6 +5525,10 @@ Himmel provides Basic stats to single targets `low`.
 
 Hodgkin phases **physically immune** with sustained regeneration, then fires cannons for **AoE damage** while ATK climbs during intangibility. Arc strikes **steal enemy energy**, and defeated minions **explode for AoE** while draining more energy from nearby foes. Cannon hits also **shave Phys DEF** on targets, softening them for follow-up physical damage from allies. Summoned bodies give him **extra detonation points** across the field when they fall in clusters. During intangible phase his ATK climbs higher, making cannon windows the main damage spike. He shines when enemies bunch for cannon fire and minion pops chain together. **Magic damage** or teams that kill minions before they explode blunt his energy drain and DEF shred loop.
 
+#### Counter proposal
+
+Hodgkin phases **physically immune** with regeneration, then cannons for AoE while ATK climbs, steals energy, and pops minions for more drain plus Phys DEF shred. Do not dump physical burst into the ethereal window — wait for it to end or answer with **magic** pressure. Keep hitting through intangibility with lasting [[Shemira]] or [[Frieren]] magic coverage, and cancel Cannon Fire with [[Lily May]] once he is interruptible. Kill or scatter minions before they detonate so the energy-drain chain never snowballs.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -5484,6 +5652,10 @@ Common buffers are **Ravion**, **Pandora**, **Contess**, or **Evie**.
 
 Hugin shields the **weakest ally** with large barriers, then boosts the **highest cumulative damage dealer's ATK and Haste** on ultimate. The ally directly behind gains **ATK**, and recovers energy whenever he shields anyone on the field. Shielded allies also **reduce damage taken**, and his ultimate adds shields to weak targets alongside the buff. He is a **strong buffer for a rear carry** positioned behind him on the board. Value drops when the **rear partner dies** or when no ally clearly leads damage dealt. He adds **little personal damage** if buff targets are misaligned or the top dealer changes mid-fight.
 
+#### Counter proposal
+
+Hugin parks a **rear ATK battery** behind himself, shields the weakest, and ultimates the **highest cumulative damage dealer** with ATK and Haste — often early thanks to a fast first cast. The matchup hinges on whether that **buffed carry** snowballs, not on killing Hugin through shields. Delete or inhibit the partner tile and top dealer with [[Evie]] or [[Bonnie]] before Unstoppable locks in, and race your own carry with [[Thador]] or [[Rowan]]. [[Lily May]] can blunt his opening buff ultimate when that spike is their win button.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `high`
@@ -5590,6 +5762,10 @@ These are the **4** strongest pairings:
 
 Igor places **battle-start markers** and leaps to them for **AoE explosions**, with an extra marker from his opening ultimate cast. Fatal blows trigger a **dodge leap** with HP recovery, and life drain rises after the first dodge proc. High HP ratio **widens explosion range**, letting him kite through danger while staying aggressive. His ultimate hits **all enemies** once markers are spent in sequence. He excels as a **mobile opener** that survives focus fire through repositioning. **Immobilize or marker denial** before he leaps leaves him exposed with modest sustained output.
 
+#### Counter proposal
+
+Igor seeds **battle-start tombstones**, leaps for AoE explosions while **Steadfast** on markers, and dodges fatal blows with damage-immune hops — untargetable mid-jump. Single-target assassins miss him as he relocates. Answer with lasting [[Shemira]] or [[Frieren]] coverage that keeps hitting wherever he lands, and cancel Funereal Ring with [[Lily May]] on the opening beat. Immobilize or clear markers between leaps so Specter Guard has nowhere safe to jump.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `low`
@@ -5690,6 +5866,10 @@ battle-start ultimate summons an extra marker
 #### Play overview
 
 Indris opens **exposed weakness** windows with penetrating normal attacks that add **true damage** on marked foes. She pushes back close enemies, immobilizes the nearest, then fires a **silencing arrow** that blocks stat gains and permanently cuts DEF. ATK and **attack speed spike** whenever weakness bonuses trigger during the fight. Immobilize also grants a **no-cooldown weakness window** for rapid follow-up on chained targets. She dismantles **buff-reliant carries** over sustained engagements where DEF shred compounds. **Silence-immune or ungrouped targets** deny her DEF shred and speed ramp before she snowballs. Penetrating attacks prioritize multiple foes, but isolated single targets take less bonus from her weakness triggers.
+
+#### Counter proposal
+
+Indris opens **exposed weakness** with penetrating shots and true damage when she and her **allies' debuffs** stack, then silences with a permanent DEF cut that snowballs her attack speed. Pressure **Indris and the debuff partners** that feed exposure — those stacks come from their side, not yours. Delete or inhibit her before Spellbane Shot lands with [[Ravion]] or [[Himmel]], and cancel that silence ultimate with [[Lily May]]. Once DEF shred sticks, race a sped-up carry ([[Thador]] or [[Hugin]]) before her weakness windows chain.
 
 #### Stats overview
 
@@ -5823,6 +6003,10 @@ Indris also requires units **putting multiple debuffs** on enemies
 #### Play overview
 
 Isabella bonds the **frontmost ally as companion**, buffing them heavily whenever she casts ultimate on that partner. She heals the companion while **damaging adjacent foes**, and makes them **unaffected after control** when they take a disabling hit. Companion damage taken **cuts attacker ATK**, and large buffs add **extra debuff stacks** on enemies during ultimate. Battle assistance stat growth rewards long support play beside a durable frontliner. She needs a **tanky front partner** to justify the bond and survive her setup phase. If the companion **dies early**, her healing and buff package collapses quickly. Her ultimate also debuffs an enemy hero on cast when buff stacks are large enough to add soft control.
+
+#### Counter proposal
+
+In Arena, Isabella **bonds the frontmost ally as companion**, pouring ultimate buffs and adjacent healing onto that partner while cutting ATK from anyone who hits them hard. The fight is a race to **delete or inhibit the companion** before spell notes and unaffected windows lock them in — do not bank on lasting CC once Hexward fires. Hit the companion early with [[Ravion]]'s teleports or [[Himmel]]'s dash, or **Aging-inhibit** them with [[Bonnie]], and race your own carry with [[Thador]] or [[Hugin]] before her slow ultimate package matures.
 
 #### Stats overview
 
@@ -5976,6 +6160,10 @@ These are the **4** strongest pairings:
 
 Kafra marks an enemy, then **charges out-of-range targets** to stun them on approach for a reliable pick. Marks **shave Phys DEF**, and defeating a marked foe grants **self buffs** that keep his momentum going through the fight. His ultimate knocks back and reapplies the mark, while he **interrupts heals** on anyone treating the marked target. First battle charge greatly **boosts damage** for an opening assassination window against backliners. He excels at **hunting marked targets** in melee-heavy teams that can follow his picks. **Immune or heavily shielded marks** waste his charge, and spread lines deny follow-up kills on secondary targets. In melee-oriented teams with frequent picks, his mark-and-charge loop sustains pressure and can match support healing when marked foes die near grouped allies.
 
+#### Counter proposal
+
+Kafra **marks a target**, then **charges out of range** for a stun and Phys DEF shred — his first chase hits hardest, and he **jumps healers** treating the mark while Unaffected. He relocates too often for a clean assassin pin; keep marked carries and healers from feeding his chase-heal loop. Answer with lasting [[Shemira]] or [[Frieren]] coverage, or soft-inhibit his prey path with [[Bonnie]], and finish before mark kills refund his sustain.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `low`
@@ -6104,6 +6292,10 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 #### Play overview
 
 Kazim opens **invincible in Soaring**, diving at airborne enemies to **mark prey** and stunning them after he lands. His ultimate chains **arc knock-ups** into sustained volleys that scale with attack speed. Marked prey takes **bonus normal-attack damage** and periodic max-HP true damage with knock-up. Allies in his zone gain **haste stacks from prey marks**, which he can absorb doubled after his aerial phase. He shines when **enemies can be kept airborne or marked** for follow-up focus. Fights with **grounded, spread, or knock-up-immune targets** deny his mark loop and aerial payoff.
+
+#### Counter proposal
+
+Kazim opens **invincible and untargetable in Soaring** for about 10s — do not dump burst into that window. He marks airborne prey, then lands into stun volleys and team Haste from marks; **Steadfast** or **Unaffected** blunt his knock-up setup. After Soaring ends, punish with mid-fight [[Gwyneth]] or lasting [[Shemira]] coverage — not opener assassins into the air. Self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and a parked ally, deny the prey loop that fuels his ultimate.
 
 #### Stats overview
 
@@ -6255,6 +6447,10 @@ These are the **4** strongest pairings:
 #### Play overview
 
 Koko feeds allies or herself to **recover HP and raise stats**, then inspires everyone with **damage reduction and buffs** on ultimate. Her strike skill deals heavy damage with debuffs, and fed allies gain a **temporary vitality boost** after each meal. Ultimate also grants her an **extra shield**, and battle haste keeps casts flowing. She blends **healing, buffing, and soft offense** in one slot. Healing is **modest compared to top supports**. Fights that **burst her before ultimate** see little team-wide value. She needs fight length for her ultimate to matter.
+
+#### Counter proposal
+
+Koko's Arena threat is a **slow team-wide ultimate** that blankets **damage reduction and stats**, while her feast heals and buffs the weakest ally between casts. Burst her or her key carry **before Full Energy** lands — once the DR window is up, attrition favours her line. Delete early with [[Ravion]] or [[Himmel]], blunt the ultimate with [[Lily May]], or race a sped-up carry with [[Thador]] or [[Rowan]] so the fight never reaches her shield-and-inspire payoff.
 
 #### Stats overview
 
@@ -6409,6 +6605,10 @@ Koko provides ATK to all units `low`, Damage taken to all units `low`, Direct he
 
 Kordan drops a **hunting zone** that cuts damage taken and outside healing while allies inside gain **ATK and life drain**. His slash grants a **proportional self-shield**, and knockdown strikes add direct pressure on isolated targets. First takedown inside the circle **permanently enhances skills**, and further kills **reposition the zone** to chase new prey across the field. He wants **melee allies** fighting inside his ring for the full buff package. His circle denies outside healing to enemies beyond the ring when the zone stays active. **Enemies that never enter the zone** or burst that ends before enhancements trigger waste his setup entirely. Ranged foes outside the circle avoid his damage reduction and healing denial. He needs committed melee allies inside the ring for the full payoff.
 
+#### Counter proposal
+
+Kordan drops a **hunting circle** that cuts outside healing and damage into the ring while buffing allies inside, then **enhances and leaps** after the first kill to chase prey. Keep your line out of the ring or end him before Rage Unleashed — outside healers cannot top up allies parked in the zone. Blunt his fast first ultimate with [[Lily May]], delete early with [[Ravion]] or [[Himmel]], and once he starts leaping use lasting [[Shemira]] or [[Gwyneth]] coverage rather than chasing each reposition.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `high`
@@ -6537,6 +6737,10 @@ Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Pe
 
 Korin jumps to an ally, **shielding them** while dealing **true damage** to nearby enemies on landing. His ultimate sweeps adjacent foes with **immobilize and knockback**, disrupting packed frontlines. Distant targets eat guaranteed crits on his strike skill for reliable burst. Accumulated team ultimates trigger a **true damage buff** that spikes his follow-up hits. He also **reduces incoming ranged damage** for safer positioning in the back half. He is a flexible **front-to-back protector** with burst true damage. Value falls when **no ally needs a jump shield** or enemies stay outside sweep range. Team ultimate accumulation turns his jump-and-sweep combo into reliable burst against large HP targets when allies cast often.
 
+#### Counter proposal
+
+Korin **jumps to the weakest ally** with a shared shield, then dashes for **true damage**, and his ultimate **immobilizes and knocks back** packed fronts. Team ultimate volume later enchants his spear with max-HP true damage, so long ult-spam fights favour him. Keep fronts from clustering into the sweep, and pressure him or the shielded ally before Vine Arms stacks — mid-fight [[Bonnie]] inhibit or lasting [[Gwyneth]] / [[Shemira]] coverage works better than chasing every jump.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `low`
@@ -6664,6 +6868,10 @@ Korin provides Shield to single targets `average`.
 
 Kruger shreds **Phys DEF** on single-target hits, then slashes to knock down foes and cut DEF further on ultimate. Low-DEF enemies take **Vulnerable** with increased physical damage and life drain on follow-up strikes. Isolated positioning grants a **battle-start shield** and extra drain for safer opening trades. Killing vulnerable foes **permanently stacks ATK** across the fight. He softens targets for **physical damage dealers** better than anyone in his niche. **Magic-heavy teams** gain little from his DEF shred, and **spread lines** deny his vulnerable execute chain. His battle ranged DEF increase helps him survive at distance while stacking vulnerable kills for permanent ATK.
 
+#### Counter proposal
+
+Kruger stacks **Phys DEF shred into Vulnerable**, then drains and amplifies physical hits while permanent ATK rises on Vulnerable kills. Isolated placement also gives him a **battle-start shield with control immunity** — do not open with soft CC into that window. Magic lines deny his shred payoff — lasting [[Shemira]] or amp'd [[Frieren]] — and **spread** so Vital Strike never chains. Prefer magic pressure over Phys DEF-shred partners when racing him.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `low`
@@ -6784,6 +6992,10 @@ Common buffers are **Pandora**, **Rowan**, **Thador**, or **Ravion**.
 #### Play overview
 
 Kulu opens by **blocking enemy lanes with debris**, then uses skills that **splash to both sides**—allies take reduced friendly-fire damage, but tight formations still suffer. Her ultimate bombards the enemy half with random strikes. Defeated foes can leave **explosive traps**, and her ATK climbs as she damages enemies. She shines when **enemies cluster on their side** and movement paths are contested. **Low raw multipliers** and a modest damage-taken debuff make her a weak pure DPS pick. **Single-target races** or splash-intolerant teams underperform badly.
+
+#### Counter proposal
+
+Kulu **bombs border tiles into debris** at battle start, then **teleports** for knock-ups and dumps frontliners with Boomboom while her ultimate **bombards the enemy half** — she is **invincible** on the teleport cast and **Unaffected** during the ult channel. Do not bank on interrupts there, and do not pin her with single-target assassins as she relocates. Answer with lasting [[Shemira]] or [[Frieren]] coverage, blunt the bombardment with [[Lily May]], and keep formations loose enough that friendly-fire splash and dense bomb tiles waste themselves.
 
 #### Stats overview
 
@@ -6923,6 +7135,10 @@ Kulu provides ATK (Legendary+) to single targets `low`.
 
 Laios summons a **self-regenerating armor construct** on ultimate and confuses enemies in a frontal area to open space. Defeated foes drop **ingredients** that buff allies, with battle-start analysis raising drop rates on early kills. Each ingredient also **permanently grows max HP** over the fight for scaling durability. He blends **summon pressure, debuff, and stacking buffs** in one tank slot. He peaks when **enemies die often** inside his ingredient loop. **Slow fights with few defeats** never stack HP or buffs, and burst that kills the construct early removes his frontline.
 
+#### Counter proposal
+
+Laios summons a **self-regenerating Living Armor** that soaks focus until its energy collapses, then confuses a frontal cone while hoping for ingredient snowballs. In hero PVP, monster ingredients rarely fuel him — the real threat is the **armor construct** and frontal confuse. Big hits drain the armor's energy faster; collapse it, then finish Laios with mid-fight [[Gwyneth]] or lasting [[Shemira]] before he re-summons. Keep key casters out of the frontal confuse cone rather than banking on soft control through the armor.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `high`, Other Stats `high`
@@ -7046,6 +7262,10 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Haste in an
 
 Lamentis fights through **apostle summons** that inherit his stats, attack his target, and feed a **Growth stack loop** that eventually unlocks Six Eyes for free apostle waves and stronger Starcrusher hits. His ultimate **stuns front targets** and deals heavy **AoE magic damage** while shaving max HP on controlled foes. Apostles extend his reach but **die easily** and need uninterrupted uptime to reach full ramp; stuns on apostles stall Growth gains. He struggles when **no targets are available** to attack or when burst kills him before Six Eyes activates. The kit peaks in **long fights with summon support** that buys time for apostle stacking and merge healing.
 
+#### Counter proposal
+
+Lamentis floods the field with **apostles** that stack **Growth into Six Eyes**, while his fast ultimate **stuns fronts** and deals heavy AoE magic with max-HP shred. Kill apostles and interrupt their uptime so Growth never maxes — once Six Eyes opens, free apostles and true-damage Starcrushers snowball. Blunt the opening ultimate with [[Lily May]], clear waves with lasting [[Shemira]] or [[Gwyneth]], and delete him early with [[Ravion]] or [[Himmel]] before the merge-heal loop stabilizes. If enemy buffers pad the apostles, pressure those **providers** too — their buffs partially feed Lamentis.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `high`
@@ -7168,12 +7388,16 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Mikola**.
 
 - **Signature skill**: Wild Duel (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `assassin` `counterattack` `self-repositioner`
+- **Behavior tags**: `backline-assassin` `backline-inhibit` `counterattack` `self-repositioner`
 - **Damage types**: Physical `average`
 
 #### Play overview
 
 Lenya dodges normal attacks, then **counter-kicks** surrounding foes for AoE damage when pressured. Crits trigger a **power kick with stun**, and her ultimate isolates the **top attacker in a duel**. During the duel she gains **stat boosts and enhanced kicks**, while non-duel opponents deal **reduced damage** to her. Battle haste keeps her rotation quick through repeated counters. She shuts down **high-damage carries** locked in the duel. **Duel-immune targets** or teams that focus her outside the duel waste her isolation payoff.
+
+#### Counter proposal
+
+Lenya **isolates your top damage dealer in a duel**, dodging normals into **AoE counter-kicks** while non-duel foes deal **reduced damage** to her. Once the duel locks she snowballs with **stat boosts and enhanced kicks**, and she relocates too often for a clean assassin pin. Answer with **lasting coverage** from [[Shemira]] or [[Frieren]], or **Aging-inhibit** her with [[Bonnie]] before the duel starts. **Spread damage** across your line so her top-attacker select is unclear, and **race** with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]).
 
 #### Stats overview
 
@@ -7299,6 +7523,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Twins**, or **Kazim**.
 
 Lily May enters a **defensive ultimate** that interrupts the enemy's cast, draining extra energy on the first stop. She strikes multiple times while **invincible**, then grows stronger in stages that **raise ATK and hit count** on each growth. Ally buffs trigger growth and **expand enhanced attacks** for wider pressure across the line. Battle penetration rises over time so later hits bite harder on armored targets. She counters **enemy ultimate timing** and scales into a carry role. **Interrupt-immune casts** or burst that kills her before growth cycles complete blunt her entire kit.
 
+#### Counter proposal
+
+Lily May opens with a **defensive ultimate** that **interrupts your first enemy ultimate**, then strikes while **invincible** and **scales through growth** into a carry. The matchup hinges on **where her cancel lands** — waste it on a bait cast rather than your real win button. Frontline a **battle-start ultimate** with [[Niru]] or [[Bryon]] so her interrupt fires on the wrong target, or pressure her before growth finishes with **lasting coverage** from [[Shemira]] or [[Frieren]], sustained [[Gwyneth]], or [[Mehira]]'s area package — she relocates too often for a clean assassin pin.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `high`, Defensive Stats `average`, Other Stats `high`
@@ -7420,12 +7648,16 @@ Lily May also requires units **buffing them**
 
 - **Signature skill**: Whispering Tempest (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `aoe-damage` `dot-specialist` `temporary-stat-buffer`
+- **Behavior tags**: `aoe-damage` `backline-inhibit` `dot-specialist` `temporary-stat-buffer`
 - **Damage types**: Magic `low`, DoT `high`
 
 #### Play overview
 
 Lorsan links the **nearest and farthest enemy** at battle start, forcing shared damage and control across opposite ends of the line. He then summons a storm that **cuts Haste** and deals sustained damage to everyone within range. Breaking the chain **heals allies** and can reset for another cast within the same fight, rewarding repeated disruption. He shields the weakest ally with **dodge, haste, and regeneration**, and at higher tiers they also gain unaffected status during the protection window. ATK scales after the **first chain break**, so each successful unlink raises his damage ceiling. He mixes **control, healing, and AoE pressure** across a long engagement where the storm can tick for full duration. **Immune or unlinked targets** deny chain payoff entirely, and short fights end before storm damage ramps. Spread enemy lines unlock the full chain-and-storm payoff.
+
+#### Counter proposal
+
+Lorsan **links nearest and farthest** at battle start so damage and control **share across the chain**, then drops a **Haste-cutting storm** while shielding the **weakest ally** — later with **Unaffected**. Chain breaks **heal his team** and can reset, so long storms snowball. **Delete the protected ally** early with [[Ravion]] or [[Himmel]] (Unaffected blocks control, not damage), and blunt the storm with [[Lily May]]. End the fight before repeated chain resets refill their line.
 
 #### Stats overview
 
@@ -7575,6 +7807,10 @@ These are the **4** strongest pairings:
 
 Lucca gains a shield, then **interrupts and disarms** an enemy while cleansing her own debuffs for brief **damage reduction**. Her ultimate slams a target to origin or **stuns adjacent tiles** when they cannot be returned. She stays steadfast and stacks **shields for each ally behind** her in formation. Cleansing also **recovers HP**, and battle max HP grows over time for durability. She is a **durable disruptor** for packed frontlines that need control. **Disarm-immune foes** or enemies that never cluster for the slam see limited control value. Her cleanse skill also recovers HP when used, giving her a self-sustain loop between disruption casts on the frontline. Steadfast status protects her while stacking shields behind allies.
 
+#### Counter proposal
+
+Lucca is a **frontline disruptor** — she **interrupts and disarms**, cleanses herself, and stays **Steadfast** while stacking **shields from allies behind her**. Her **fast Quake Slam** stuns clustered tiles or returns a target to origin, so packed lines feed her control. You **cannot displace her** — kill through the shields with lasting [[Shemira]] or sustained [[Gwyneth]], and cancel the slam window with [[Lily May]]. Keep spacing so the adjacent stun and return slam waste themselves.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `high`, Other Stats `average`
@@ -7687,6 +7923,10 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 #### Play overview
 
 Lucius knocks back melee foes for a **personal shield**, then heals an ally whenever he gains any shield. His ultimate grants **AoE shields** around a chosen tile for team protection. Frontal strikes deal damage while **cutting enemy ATK**, and battle healing stat rises over time. Each cast **heals one extra ally** beyond the primary target. He mixes **shielding, healing, and soft debuff** in one tank slot. Output is **modest next to dedicated healers** when shield triggers are sparse.
+
+#### Counter proposal
+
+Lucius mixes **personal and tile shields** with **ally heals on every shield gain** and a soft **frontal ATK cut**. He rarely ends fights alone — the danger is the **extra sustain** keeping their carry alive through your burst window. **Deny healing** with [[Dunlingr]]'s no-heal order, or **delete their carry early** with [[Ravion]] or [[Himmel]]. **Race** past his shields with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]) so heal triggers never catch up.
 
 #### Stats overview
 
@@ -7829,12 +8069,16 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 
 - **Signature skill**: Star Dress: Aquarius Form (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-shielder` `high-initial-energy` `mass-cc` `summoner`
+- **Behavior tags**: `ally-shielder` `backline-assassin` `backline-inhibit` `high-initial-energy` `mass-cc` `summoner`
 - **Damage types**: Magic `high`
 
 #### Play overview
 
 Lucy stuns the **highest cumulative damage dealer**, then summons a companion whose ultimate triggers **AoE knock-up and stun** across the field. The companion **shields the weakest ally** with a large barrier while active on the board. Max energy during companion uptime **boosts companion attack speed** for faster follow-up. Ultimate also drives **transformation swirls** for extra AoE between casts. Battle haste keeps her rotation moving through control cycles. She blends **control and protection** around her summon. **Burst that kills her companion early** removes shields and stun follow-up. Reaching max energy while the companion is active accelerates stun and shield cycles for the weakest ally under pressure.
+
+#### Counter proposal
+
+Lucy **stuns your top damage dealer**, then summons **Aquarius** for repeating **AoE knock-up and stun** while **shielding the weakest ally**. Burst that **kills the companion early** removes both the swirls and the barrier loop. Answer the displace with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield — and cancel companion ultimates with [[Lily May]]. Finish Lucy with mid-fight [[Bonnie]] inhibit or lasting [[Shemira]] coverage once Aquarius is down.
 
 #### Stats overview
 
@@ -7960,6 +8204,10 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 #### Play overview
 
 Ludovic anchors a **movable healing field** that restores HP for allies inside and damages or stuns **enemies who enter** the zone. He shifts the field to allies or **absorbs nearby enemy HP** to refill stored healing when the pool runs low. Damage skills targeting the top attacker add **HP-loss pressure** alongside the field's passive refill when foes lose HP. Stored healing **scales his battle healing stat**, while periodic berries **explode for damage and ally heals** in range. Field healing restores when enemies lose HP, so sustained enemy damage keeps his pool topped. He excels in **long attrition fights** with steady enemy traffic through the field. Burst that skips the field or enemies that never step inside waste his heal-damage loop. Enemies entering the field take damage and stun, punishing anyone who walks through his shifted zone.
+
+#### Counter proposal
+
+Ludovic anchors a **movable healing field** that restores allies inside, **stuns enemies who enter**, and refills when foes lose HP — long attrition fights are his win condition. **Pressure Ludovic** and collapse the field before berries and HP-loss on your top attacker snowball. **Deny healing** with [[Dunlingr]]'s no-heal order, or **burst past the zone** with early [[Ravion]] or [[Himmel]] deletes. Comps that never stand in the field waste his heal-damage loop.
 
 #### Stats overview
 
@@ -8087,6 +8335,10 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 #### Play overview
 
 Lumont charges in a line, **knocking enemies back** toward a chosen tile while building **large shields that grow per adjacent foe**. His stomp adds AoE damage, and **battle haste scales with nearby enemy count** so he swings faster the more bodies crowd him. Sustained damage taken triggers **multi-ring slams** that slash ATK from surrounding enemies, while shielded moments **regenerate HP each second** to stretch his frontline time. He excels as a **tank that thickens with crowd pressure**, punishing swarms that sit on him and feed his haste loop. Against **sparse lines or burst that breaks shields fast**, his regen, counter-slam scaling, and haste buildup never fully ramp.
+
+#### Counter proposal
+
+Lumont **charges a line**, **knocking foes toward a tile**, while **shields and haste grow** from adjacent enemies and sustained hits trigger **ATK-cutting slams**. Crowded fronts feed his entire kit; sparse lines leave the shields and haste flat. Blunt the charge with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield — and break shields with lasting [[Shemira]] or [[Gwyneth]] pressure. Avoid swarming him so Totem Ward never fully ramps.
 
 #### Stats overview
 
@@ -8232,6 +8484,10 @@ Lumont provides Phys DEF to multiple targets `low`.
 #### Play overview
 
 Lyca opens by **buffing all allies' attack speed** and fueling the first cast with bonus energy for quick tempo. Her line shot lets nearby allies **summon meteors on normal attacks**, stacking area pressure alongside her ultimate volleys. AoE meteor rain also **shaves enemy Phys DEF**, and passive meteors assist throughout the fight while battle haste keeps her rotation moving. Ultimate hits **deepen the DEF shred**, letting dealers exploit softened targets over time. She shines when **allies stay within ultimate range** and attack often enough to proc meteors on every cycle. Spread formations or **allies outside her line** waste her attack-speed package and meteor summons.
+
+#### Counter proposal
+
+Lyca **buffs all allies' attack speed**, fuels the opener with **bonus energy**, and layers **meteor pressure plus Phys DEF shred** so physical carries spike. The fight snowballs once meteors and shred are online — end her package early. **Delete Lyca** before the first blessing cycle with [[Ravion]]'s teleports or [[Himmel]]'s dashes, or **Aging-inhibit** her with [[Bonnie]]. **Race** your own carry with [[Thador]] or [[Hugin]] so her tempo buff never decides the pace.
 
 #### Stats overview
 
@@ -8381,6 +8637,10 @@ These are the **4** strongest pairings:
 
 Marcille must **channel every skill**, trading instant casts for heavy payoff once each completes without interruption. Her ultimate **continuously summons companions** while active, and channeled AoE blasts and blinds **heal allies** mid-fight when channels land cleanly. Channeling the ultimate also **raises battle haste**, and she can **revive one fallen ally** after a completed cast. She needs **protection and time** so channels finish before control cancels them. Fights that **interrupt her setup** leave much of her heal and summon value unrealized.
 
+#### Counter proposal
+
+Marcille **channels every skill** — companions, AoE blasts, blinds, heals, and a **revive** — so payoff only lands if casts finish. Interrupt or burst her **during chant** before summons and revive complete; she is not unaffected mid-channel. Blunt the **high-damage ultimate** with [[Lily May]] (add [[Pandora]] if they front a [[Niru]]/[[Bryon]] catcher), and **delete her early** with [[Ravion]] or [[Himmel]] before the first channels resolve. Once companions are flooding, lasting [[Shemira]] coverage still pressures the stationary caster.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `high`
@@ -8515,6 +8775,10 @@ Marcille provides Direct healing (Mythic+) to single targets `high`.
 #### Play overview
 
 Marilee **leaps to distant tiles** while firing on targets, then strings **stunning enhanced shots** every few normal attacks for steady control from range. She gains ATK and attack speed **when no enemy sits adjacent**, rewarding rear or isolated placement away from melee pressure. Each ally ultimate **stacks her ATK**, culminating in **true damage at max stacks** that spikes her burst window late. Battle crit damage climbs over time, and easier bonus-attack triggers **keep her DPS scaling** through longer engagements. She falters when **enemies close distance** or when few allies cycle ultimates to feed her stacks.
+
+#### Counter proposal
+
+Marilee **leaps across the field** while shooting, stuns on enhanced normals, and **stacks ATK from ally ultimates** until normals deal **true damage**. Isolation (no adjacent foe) fuels her ATK and attack speed — **close the gap** to deny that bonus. She relocates too often for assassin pins — use lasting [[Shemira]] or [[Frieren]] coverage, or mid-fight [[Bonnie]] inhibit. End fights before max ATK stacks convert her shots into true damage.
 
 #### Stats overview
 
@@ -8652,6 +8916,10 @@ Marilee provides ATK (EX+10) to single targets `low`.
 #### Play overview
 
 Mehira charms an area with **multi-hit AoE**, then whips a frontal arc that **costs HP from all units** but grants allies haste when caught in the lash. She **pulls enemies to a tile**, drains life while scaling ATK from healing received, and summons **voidlings that attack for her**. In danger she can **sacrifice a summon to become untargetable** and heal, while charmed foes take increased damage. She peaks against **clustered targets** that absorb whip pulls and charm setups. Teams that **kill voidlings early** or spread lines blunt her drain payoff.
+
+#### Counter proposal
+
+Mehira's Arena threat is a **fast pull that groups enemies** onto a tile, then **charm AoE** and a whip that **costs HP from all units** while haste-buffing allies caught in the lash. Voidlings keep hitting until she **sacrifices one to become untargetable** and heal — do not dump burst into that window. Blunt the displace with **Steadfast** — self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. Kill voidlings early, cancel the charm with [[Lily May]], and punish the clump she creates with lasting [[Shemira]] or [[Gwyneth]] coverage.
 
 #### Stats overview
 
@@ -8802,6 +9070,10 @@ These are the **4** strongest pairings:
 
 Mikola generates a **Courage Sphere** that buffs nearby allies and **heals everyone in range** once damage thresholds trip during the fight. She places a **central zone** that empowers allies while her side controls it, and heals two weakest allies with DEF boosts to keep fragile carries standing. The sphere grows over time, dealing **continuous DoT to enemies** adjacent to buffed allies, and zone control **freezes aura duration** so the buff window does not decay early. She needs **map control and grouped allies** inside Courage range to maximize healing, DoT aura, and zone bonuses. Fights that **deny zone ownership** or keep allies scattered shrink her buff and sustain impact.
 
+#### Counter proposal
+
+Mikola's PVP threat is the **Courage Sphere** that buffs and heals allies in range once damage thresholds trip, plus a **central Honor Arena** that freezes aura duration while her side holds it. Fights snowball if her line clusters inside the sphere and keeps zone control. Deny arena ownership and scatter her allies so the DoT aura and heals shrink. **Delete her early** with [[Ravion]] or [[Himmel]] before the sphere matures, or **deny healing** with [[Dunlingr]]'s no-heal order.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `high`
@@ -8933,6 +9205,10 @@ These are the **4** strongest pairings:
 
 Mirael lays a **wide frontal burn line** that hits harder on already burning foes, then maintains **sustained single-target burn** between ultimates to keep pressure on priority marks. Magic burst adds **adjacent splash**, battle attack speed rises, and after the first ultimate her **normal attacks become area fireballs** permanently for the rest of the fight. She also **extends burn DoT duration** so flames linger longer on targets her team keeps controlled. Her kit rewards **grouped enemies** where splash, fireball normals, and burn bonuses chain together every cycle. Against **spread or cleanse-heavy lines**, burns fail to stack and her transformed attack pattern underdelivers for much of the fight.
 
+#### Counter proposal
+
+Mirael's Arena package is a **fast burn-line ultimate** that hits harder on already burning foes, then **sustained single-target burn** and permanent **area fireball normals** after the first ult. Grouped lines feed splash and burn bonuses every cycle. Stop the chain by pressuring the **burn provider** — delete her early with [[Ravion]] or [[Himmel]] — and **cleanse** flames before they stack. Blunt the line with [[Lily May]], and spread so her splash and fireball payoff starve.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `low`
@@ -9034,6 +9310,10 @@ Common buffers are **Pandora**, **Ravion**, **Hugin**, or **Lorsan**.
 #### Play overview
 
 Nara strikes a hero for **scaling damage against low HP ratios**, then yanks out-of-range foes **into melee** for a knock-up combo and rapid follow-up attacks. Each assist or defeat **grows her ATK**, and an ultimate kill **releases a shockwave** that damages enemies and heals allies while refunding energy on the finisher. She blends **assassin burst with team sustain** when fights produce kills and wounded targets she can reach. Pulling isolated carries and chaining knock-up strikes define her win condition against backline-heavy formations that leave squishy targets exposed. She needs **access to wounded or isolated targets** and enough energy to cycle her pull-strike loop repeatedly through the fight. **Tanky frontlines or foes that stay in range** deny her execute angle, shockwave value, and the energy refund that keeps her assassin tempo alive through longer trades.
+
+#### Counter proposal
+
+Nara yanks **out-of-range heroes into melee** for knock-up follow-ups, then **executes low-HP targets** with a fast ultimate that can shockwave-heal and refund energy on the finisher. She snowballs ATK off assists and kills. Keep fragile carries **inside her attack range** so the pull never arms, or blunt the displace with self-Steadfast [[Igor]]. Kill her before the execute loop with [[Ravion]] or [[Himmel]], and cancel Crimson Vengeance with [[Lily May]] when she winds up on a wounded mark.
 
 #### Stats overview
 
@@ -9168,6 +9448,10 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 #### Play overview
 
 Natsu chooses modes between **stun-heavy frontal AoE** or **greater raw damage**, adapting each cast to the fight state. The first ally defeat **boosts his ATK and DEF**, with extra crit if a bonded ally falls, while every damage tick also **shaves target max HP**. Sustained burns apply when foes lose HP from **non-normal sources**, feeding his combat scaling. He peaks in **long fights with ally casualties** that unlock his spikes. Early burst or **lines that deny mode setup** leave his burn package thin.
+
+#### Counter proposal
+
+Natsu adapts between **stun-heavy frontal AoE** and **raw damage modes**, shaving **max HP** on every hit and applying burns when foes lose HP from non-normal sources. The **first ally defeat** spikes his ATK and DEF — and a bonded [[Lucy]] death adds crit — so attrition tilts his way. Deny easy first blood and keep Lucy alive if they bond her. Blunt his high-damage roar with [[Lily May]], and answer the frontal package with lasting [[Shemira]] or [[Gwyneth]] coverage rather than standing in the arc.
 
 #### Stats overview
 
@@ -9306,6 +9590,10 @@ Natsu also requires specific **named allies**
 
 Nazrik marks prey and **detonates all Rend stacks** with a spear throw, while crit throws **apply Rend that ticks when prey casts ultimate**. He stuns the **highest healer** with anti-heal, grows crit from accumulated debuff stacks, and lets **allies add Rend on prey damage** so the whole team feeds the detonation. Each critical hit also **raises crit damage** for snowballing finishes once stacks are high. He needs **time to stack Rend** and allies who can proc it reliably before the spear detonates. **Cleanse or prey targets that never ult** waste his mark-and-detonate loop and stall his crit growth.
 
+#### Counter proposal
+
+Nazrik marks **Prey**, stacks **Rend** that ticks when victims cast ultimate, and lets **his allies add Rend** on hits into the mark before a spear **detonates** the pile. Crits snowball his damage. Stop the chain by pressuring **Nazrik or his Rend partners** before stacks peak, and **cleanse** Rend when you can; protect your top healer from his anti-heal stun. Delete him early with [[Ravion]] or [[Himmel]], or cancel the detonation with [[Lily May]].
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `high`, Other Stats `high`
@@ -9423,12 +9711,16 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 
 - **Signature skill**: Drowning Doom (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `battle-start-burst` `dot-specialist` `enemy-debuffer`
+- **Behavior tags**: `backline-assassin` `backline-inhibit` `battle-start-burst` `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `average`, DoT `high`
 
 #### Play overview
 
 Nerion applies **drowning DoT to controlled enemies**, then bounces attacks between drowning targets after an ATK boost on ultimate for chained magic pressure. Enhanced normals **knock back and stun**, projectiles erupt with **delayed knock-up**, and battle start **drowns the rearmost foe** with ATK and haste cuts before control even lands. When every non-summon enemy drowns he gains **permanent empowerment and penetration**, spiking his damage for the rest of the fight. He excels beside **consistent control** that keeps drowning active across multiple targets. **Control-immune or fast-moving lines** never feed his bounce damage or empowerment spike.
+
+#### Counter proposal
+
+Nerion opens by **drowning your rearmost** with ATK and Haste cuts, then spreads drowning through **control** so his attacks **bounce** and his ultimate amps the chain — full-field drowning unlocks **permanent empowerment**. Control-immune or hard-to-lock lines starve the bounce and the empowerment spike. Kill him in the **early window** before every non-summon drowns — [[Ravion]]'s teleports or [[Himmel]]'s dashes — or **Aging-inhibit** him with [[Bonnie]] while you race with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]).
 
 #### Stats overview
 
@@ -9565,6 +9857,10 @@ Nerion also requires units **applying crowd control** to enemies
 
 Niru stores an ally soul at battle start so they **keep fighting in spirit form** after a fatal blow, preserving output from a key carry. She strikes the weakest foe for **bonus damage at low HP**, drains enemy HP to **heal the weakest ally**, and grows battle max HP to stay relevant on the field. Her opening ultimate **costs no energy**, letting the spirit safeguard trigger immediately. Attacks also briefly **block target healing**, adding soft anti-sustain on her pressure target. She is a **battle-start safety net** for one ally with drain-based sustain for the team. Without a **worthy soul target** or fights that end before spirit triggers, much of her protection sits idle.
 
+#### Counter proposal
+
+Niru's Arena threat is a **battle-start ultimate** that stores an ally soul so they keep fighting in **spirit form** after a fatal blow, plus drain heals into the weakest ally and brief heal-block on her pressure target. Expect her free opener to **soak a Lily May cancel** meant for someone else — if you need a wind-up interrupt, pair [[Pandora]] with [[Lily May]] rather than banking the first cancel. Finish the **spirit-protected carry** through the spirit window with lasting [[Shemira]] or [[Gwyneth]] coverage, or race before the fatal blow matters by speeding your carry with [[Thador]] or [[Hugin]].
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `low`
@@ -9696,6 +9992,10 @@ These are the **4** strongest pairings:
 
 Odie plants a **persistent DoT** with his ultimate, then triple-shot normals that **stack poison base damage** on already poisoned targets for escalating tick pressure. Battle attack speed rises, and he can **instantly defeat poisoned foes below a HP threshold** once the venom has softened them enough. Bonus damage also lands on **poisoned triple-shots**, rewarding repeated focus on a single marked victim. He needs **time to layer poison** and enough shots on the same mark to reach execute range. **Cleanse or spread targets** that slip the threshold kill waste his execute angle and poison stacking loop.
 
+#### Counter proposal
+
+Odie plants a **persistent poison**, stacks its tick damage with repeated triple-shots on the same mark, then **instantly defeats** poisoned foes below a HP threshold. He needs time on one victim. Stop the loop by pressuring the **poison provider** — delete him early with [[Ravion]] or [[Himmel]] — and **cleanse** poison before the execute arms. Blunt Corrosive Dart with [[Lily May]], and keep soft targets above the threshold so Heart Crusher never pays off.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `low`
@@ -9810,6 +10110,10 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Dunlingr**.
 #### Play overview
 
 Orion opens by **enchanting his rapier** for faster energy fill and **stacking Sear DoT** on every hit during the window. **Temporary ally buffs** extend the enchantment and recruit **Supporters** who share shields from his arc slash. **Authority stacks** from each Supporter raise his damage, cut damage taken, and lengthen Sear; at three stacks his enchantment stays permanent and Sear can **silence and shred Vitality**. His ultimate **deploys a rapier zone** for repeated slashes and a stunning burst. He peaks when **buffers feed Supporters** and fights run long enough to stack Authority and Sear. **Short fights without ally buffs** or cleanses on Sear leave his scaling loop idle.
+
+#### Counter proposal
+
+Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack, and delete him early with [[Ravion]] or [[Himmel]]. Cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -9961,6 +10265,10 @@ Orion provides Shield to multiple targets `low`.
 
 Pandora's ultimate **CCs every unit except herself**, freezing the entire field while she alone keeps acting, while at battle start she **pulls an ally into her box** and restores their energy for an early tempo spike. Corruption stacks **drive debuffs on enemies** as the fight wears on, battle max HP grows especially after box corruption, and the **indestructible box persists** even after she falls to keep her setup alive. Allies inside the box **ignore her ultimate**, turning the global pause into a controlled window for one protected partner. She demands careful **ally selection for the box** and patience to build corruption before debuffs peak on the enemy line. Teams that **punish her before corruption ramps** or exploit the global CC window blunt her upside, box value, and late-fight max HP scaling.
 
+#### Counter proposal
+
+Pandora's Arena threat is a **global CC ultimate** that freezes everyone while she alone keeps acting, after boxing an ally at battle start for energy and ramping **Corruption** debuffs. Attrition favours her once stacks peak and the **indestructible box** outlives her. **Delete her early** before corruption matures with [[Himmel]] or [[Ravion]], and cancel the freeze with [[Lily May]]. Pressure the **boxed partner** — they still act through her ultimate — so that free window cannot snowball.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `low`
@@ -10110,6 +10418,10 @@ These are the **4** strongest pairings:
 
 Pang channels then **bursts AoE**, entering a stance with ATK and haste where strikes **block enemy energy recovery** to stall opposing ultimates across the field. Heavy single-target hits add direct pressure, a shield keeps him **unaffected while active**, and shield break or expiry deals retaliation damage to punish focus fire on his frontline slot. Any shielded ally gains **ATK from his passive**, and entering the buff state **instantly grants shield and penetration** for an immediate power spike before the stance fully settles. Battle ATK rises over time, blending **burst damage with energy denial** once stance is online and retaliation triggers are armed. Fights that **break shields before stance** or deny melee access cut his retaliation loop, energy denial, and team ATK sharing.
 
+#### Counter proposal
+
+Pang channels an **Unaffected ultimate** into a stance that **blocks enemy energy recovery**, while his Chi Barrier keeps him **Unaffected** and retaliates when broken or expired. Do not dump CC or interrupts into those Unaffected windows. Break or wait out the barrier, then pressure him with lasting [[Shemira]] or [[Gwyneth]] coverage. **Shatter the barrier before Unyielding Force starts**, or keep him out of melee so the energy-block strikes never land.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `average`
@@ -10249,6 +10561,10 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 
 Parisa marks with flowers for **AoE ultimate damage**, then boosts **attack speed and normal attack damage** for herself and one ally to accelerate their output together. Periodic line attacks sweep after several normals, battle ATK climbs, and marks at start let normals **hit extra targets after enough stacks** accumulate on the field. Fewer normals are needed to **trigger the line attack** at higher tiers, tightening her proc rhythm in longer fights. She shines beside **another high-attack ally** who can share her speed buff. Without **frequent normal attacks** or clustered marks, her line procs stay flat.
 
+#### Counter proposal
+
+Parisa marks for **AoE ultimate damage** and **speeds herself plus one ally**, so normals and path shots snowball together. Once marks stack, the fight becomes a dual-tempo race. **Delete Parisa or her buff partner** early with [[Ravion]] or [[Himmel]], or Aging-inhibit the pair with [[Bonnie]] while you race your own carry with [[Thador]] or [[Hugin]].
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -10375,6 +10691,10 @@ These are the **4** strongest pairings:
 #### Play overview
 
 Peggy opens with **two royal guards** and reaches her ultimate quickly thanks to high starting energy. Her ultimate **heals guards to full** then routes most ally damage through them while **reducing HP-loss damage** they take, giving broad protection once it lands. Royal Scroll provides **strong healing over time** on guards and the weakest allies, while Royal Barrage adds a marksman that **amplifies ranged damage** on front targets and boosts summon output. Ex aura and Supreme buffs also make her a **summon-team amplifier** beside her protector role. Protection **depends on the ultimate window** and living guards — burst that kills her or denies the cast leaves allies exposed.
+
+#### Counter proposal
+
+Peggy opens with **two royal guards** and a **fast first ultimate** that heals them and routes ally damage through the summons while she heals and amps ranged and summon lines. Once the absorb window lands, hero focus fire wastes itself on guards. Cancel that opening ultimate with [[Lily May]], or **delete Peggy** before guards stabilize with [[Himmel]] or [[Ravion]]. Spread pressure across **guards and Peggy** so the protection package never locks.
 
 #### Stats overview
 
@@ -10504,6 +10824,10 @@ These are the **4** strongest pairings:
 #### Play overview
 
 Perseus **marches through packed frontlines**, dealing repeated AoE hits, knockback, and a finishing stun while he stays unaffected. Before heavy damage lands, he turns nearby tiles **fertile**, buffing allies who stand on them with ATK and DEF until the ground withers. He also **amplifies temporary ally buffs** into extra ATK for himself, then gains a one-time max HP surge and heal once he drops below 40% HP. Against **isolated or spread targets**, his march and tile buffs fail to connect. Teams that burst him early or **keep allies off his fertile ground** get little value from his kit.
+
+#### Counter proposal
+
+Perseus **marches through packed lines** with AoE, knockback, and stun while **unaffected**, seeding **fertile ground** that buffs nearby allies and converting temporary buffs into his own ATK. Do not bank on CC during the march. Keep units **off his fertile tiles** and answer with lasting [[Shemira]] or [[Gwyneth]] coverage. Starve the ATK loop by pressuring temporary-buff providers — [[Bonnie]]'s Aging or [[Evie]]'s intel on those buffers — before his surge.
 
 #### Stats overview
 
@@ -10646,6 +10970,10 @@ Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `l
 #### Play overview
 
 Phraesto sacrifices max HP to **summon an Illusion that casts all his skills**, duplicating his kit while his active ultimate **heals per nearby hit** to recover the cost over time. He and the clone **grant rear allies stat contracts**, apply DoT and reductions on strike, share DEF and cross-transfer energy on damage so both bodies stay fueled through the fight. Row allies start with **shields at battle open**, and if the Illusion dies first he **damages and stuns an enemy** for a punish window. He needs **HP to feed the clone** and allies behind him positioned to honor contracts and benefit from rear buffs. Losing the Illusion early or **denying rear positioning** shrinks his buff, duplication value, and sustain loop across the fight.
+
+#### Counter proposal
+
+Phraesto sacrifices HP to field an **Illusion that copies his kit**, while both grant **rear-ally contracts**, DoT shred, and battle-start row shields. Prefer killing **Phraesto himself** — defeating the Illusion first triggers his stun punish. Delete him with [[Himmel]] or [[Ravion]], and soften rear-buffed carries with [[Bonnie]]'s Aging or [[Nerion]]'s mid-fight pressure so contracts cannot snowball the backline.
 
 #### Stats overview
 
@@ -10791,12 +11119,16 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `enemy-grouping` `hp-scaling`
+- **Behavior tags**: `backline-assassin` `backline-inhibit` `enemy-grouping` `hp-scaling`
 - **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `low`
 
 #### Play overview
 
 Pippa **immobilizes and teleports enemies** on ultimate, then sprays **rapid magic missiles** and seeds magical growth on **the densest enemy cluster** to damage and drain energy. Consecutive casts **scale battle haste**, random mutations can surprise on skill use, and teleported foes **take extra portal fall damage** after repositioning. She excels when **enemies group** for growth, teleport setups, and missile volleys. Sparse lines or **RNG mutations that miss** leave her damage inconsistent.
+
+#### Counter proposal
+
+Pippa **immobilizes and teleports** foes on ultimate, then dumps missiles and magical growth on the **densest clump** while draining energy. Sparse lines blunt growth and portal follow-ups. Blunt the displace with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield — and answer her relocating kit with lasting [[Shemira]] or [[Frieren]] coverage rather than assassin pins. Cancel the teleport ultimate with [[Lily May]].
 
 #### Stats overview
 
@@ -10918,13 +11250,17 @@ Common buffers are **Pandora**, **Ravion**, **Lorsan**, or **Smokey & Meerky**.
 
 - **Signature skill**: Killer Flush (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-shielder` `energy-provider` `self-repositioner` `temporary-stat-buffer`
+- **Behavior tags**: `ally-shielder` `backline-assassin` `energy-provider` `self-repositioner` `temporary-stat-buffer`
 - **Ally composition**: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
 - **Damage types**: Physical `low`, HP loss `average`
 
 #### Play overview
 
 Ravion assigns **objectives to allies**; completing them grants energy, ATK, and unlocks a knock-down strike for coordinated burst windows across the fight. His ultimate **scales with target HP-loss** across multi-hits, while repeated teleports **deal early jump damage** then reposition away from foes to stay safe through longer engagements. First enhanced strike **activates ATK bonus**, and unlocking it permanently **grants haste and ATK to self and allies** for a lasting team spike. Assigned tasks also give brief ATK boost and unaffected state while allies work objectives across the board. He needs **allies who finish objectives** and room to teleport safely through longer engagements. **Static teams or burst that pins him** before enhanced strikes land waste his coordination package and team buffs.
+
+#### Counter proposal
+
+Ravion **assigns objectives** that fuel allies with energy and ATK, then **teleports** for early jump damage before resetting while his ultimate scales on target HP-loss. He relocates too often for a clean assassin pin. Answer with lasting [[Shemira]] or [[Frieren]] coverage, and blunt his ultimate with [[Lily May]]. Pressure **objective runners** with [[Bonnie]]'s Aging or [[Evie]]'s intel so the team-buff unlock never lands cleanly.
 
 #### Stats overview
 
@@ -11070,13 +11406,17 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `enemy-grouping` `interrupt`
+- **Behavior tags**: `backline-assassin` `enemy-grouping` `interrupt`
 - **Ally composition**: symmetrical ally-enemy tile pairs at battle start for Dynamic Balance swaps
 - **Damage types**: Magic `average`
 
 #### Play overview
 
 Reinier swaps **symmetrical ally-enemy positions at battle start**, disrupting enemy lines before the first cast, then can **remove himself and one foe** from the field with his ultimate dimension trip for a temporary duel outside the main fight. Multi-hit attacks **knock targets airborne**, swaps **boost ally ATK or cut enemy ATK**, wound swapped enemies to take more damage, and grant damage reduction to a swapped ally for survivability. Symmetrical allies also gain **ATK while holding position**, rewarding clean mirror setups when enemy layout matches yours across the board. He is devastating when **enemy layout mirrors yours** for clean swaps, wound chains, and dimension removal on a high-value target. Misaligned formations or **targets immune to displacement** negate his opener, wound setups, and the dimension removal that defines his late-fight control.
+
+#### Counter proposal
+
+Reinier's Arena opener **swaps symmetrical ally-enemy positions**, wounding and ATK-swinging the mirrors, then his ultimate can **remove himself and a key foe** into a private duel. **Steadfast** or **Unaffected** blunt the displace — self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. Do not bank on hitting him during the dimension trip. After swaps settle, mid-fight [[Bonnie]] or [[Nerion]] pressure the wounded line, and cancel the removal ultimate with [[Lily May]].
 
 #### Stats overview
 
@@ -11209,6 +11549,10 @@ Reinier provides Direct healing to single targets `low` and Damage taken (EX+10)
 
 Rhys **moves while attacking**, loading **Blast Ammo** on ultimate to enhance follow-up normals into area shots that hit multiple tiles across the field. Control immunity and crit **trigger when he takes CC**, knockback clears nearby foes, and crit damage **scales with equipped splash shots** as he kites away from melee pressure on the board. Movement loads splash shots for enhanced area attacks, and immunity skill **cooldown drops** for faster recovery between control windows so he can re-engage safely. He needs **space to kite** and time to load ammo between bursts for maximum splash output on grouped targets throughout the fight. **Pinned melee lines** or fights without movement deny his splash scaling, crit ramp, and the ammo-enhanced normals that carry his sustained damage through longer trades on the field.
 
+#### Counter proposal
+
+Rhys **kites while attacking**, loading **Blast Ammo** on a slow ultimate into splash-enhanced normals, and gains **control immunity when hit by CC**. He relocates too often for assassin pins. Answer with lasting [[Shemira]] or [[Frieren]] coverage that keeps hitting wherever he moves, and blunt the ammo ultimate with [[Lily May]]. Collapse kite space early with [[Eironn]]'s battle-start pull so splash normals never find open ground.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -11326,6 +11670,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Thador**, or **Lorsan**.
 #### Play overview
 
 Rowan restores **energy to surrounding allies** on ultimate and places **consumable heals** that trigger when ally HP drops low for passive safety. His companion **drains enemy energy** while attacks restock heals when depleted, battle haste bonuses apply before first heal restock, and a **super heal permanently raises Phys and Magic DEF** on one ally. He places one extra heal at battle start for early protection. He is a **steady sustain and energy battery** for grouped teams that stay near his consumables. **Spread allies** or enemies that **burn heals before triggers** waste his consumable package.
+
+#### Counter proposal
+
+Rowan is a **steady energy battery** — his ultimate fuels nearby allies while consumable heals and a **super heal** raise DEF, and his companion **drains enemy energy**. Grouped hypercarries snowball once the battery loops. **Delete him early** with [[Himmel]] or [[Athalia]] before the first energy dump, or Aging-inhibit with [[Bonnie]]. Race opposing carries with [[Thador]] or [[Hugin]] so his battery never decides the tempo.
 
 #### Stats overview
 
@@ -11470,6 +11818,10 @@ These are the **4** strongest pairings:
 
 Saida teleports to an enemy, planting a **marker that deals periodic damage and drains energy** to soften and stall the target over time. Damage dealt **heals her with excess becoming shield**, strikes **trigger nearby markers on the target**, and she can **consume a marker to revive** after defeat for a second life in longer fights on the board. Damage reduction grows with active markers, each ultimate **shortens marker DoT interval**, and battle start plants markers on nearby allies to seed the field early. She blends sustain, **energy drain, and cheat-death** when markers stay live across the fight and allies keep hers planted on the board. Teams that **clear markers or burst her before planting** deny her shield loop, revival safety, and the damage reduction scaling that keeps her standing through focused burst damage.
 
+#### Counter proposal
+
+Saida **teleports in**, plants **Drain Seeds** that chip and **drain Energy**, then snowballs **shields, damage reduction, and a seed-fueled revive** while markers stay live. Assassin pins **miss her hops** — answer with lasting [[Shemira]] or [[Frieren]] coverage that keeps hitting wherever she lands. Pressure **Saida before seeds multiply** with mid-fight inhibit from [[Bonnie]] or [[Evie]], and race her sustain loop by **speeding your carry** with [[Thador]] or [[Hugin]].
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `high`
@@ -11598,6 +11950,10 @@ These are the **4** strongest pairings:
 
 Salazer summons **flying swords** on ultimate while arc strikes **add bonus hits on low-HP targets** for finisher pressure against wounded marks. He deals **massive damage and imprisons** very low foes, gains battle damage reduction, and at battle start or after imprison **arc skill has no cooldown** with a guaranteed extra use for chained finishers. Imprisoning also **heals himself**, keeping him in the fight through execute windows when victims are caged. He is a **finisher who chains arcs** once a victim is imprisoned and the team has softened HP totals across the line. Without **wounded targets** or early imprison windows, his reset loop, bonus hits, and self-heal on cage never activate.
 
+#### Counter proposal
+
+Salazer is a **low-HP finisher** — arcs hit harder on wounded foes, then **imprison** cages a soft target, **heals him**, and **resets his whip** for chained executes. Keep your line **above imprison thresholds** with early sustain so his reset loop never starts. Delete him before the first cage with [[Ravion]] or [[Himmel]], or blunt follow-up with lasting [[Shemira]] / [[Gwyneth]] once he is committed to a mark.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -11697,6 +12053,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Play overview
 
 Satrana goes **invincible during ultimate** while dealing continuous AoE, then arc attacks with **life drain** and Sparks that **ignite enemies for Vitality cuts and DoT** shared with allies. Battle damage reduction helps her stand through the burn setup, ignited foes **lower magic damage taken** for her team, and when all enemies burn her strike **has no cooldown limit**. She peaks once **ignites spread across the line** and her team can exploit the magic mitigation. **Cleanse or short fights** before full ignite leave her cooldown relief inactive.
+
+#### Counter proposal
+
+Satrana's ultimate makes her **invincible** while she burns the field, and **Sparks** let her allies **ignite** your line for Vitality cuts, DoT, and team-wide magic mitigation once burns stick. Do **not** dump burst into Fiery Dance. After invulnerability ends, pressure **Satrana and her Sparks partners** — the ignite providers — with mid-fight [[Bonnie]] or [[Nerion]], or lasting [[Shemira]] / [[Frieren]] coverage, before every foe is ignited and her arc cooldown drops.
 
 #### Stats overview
 
@@ -11825,6 +12185,10 @@ Satrana provides Magic damage (Mythic+) to single targets `average` and Damage t
 
 Scarlita slashes the ground to **send a wave that knocks foes to the edge**, then charges to **knock down survivors** for a two-step displacement combo across the battlefield. Airborne charges **build power for landing AoE stun**, weakest allies gain shields while she is airborne, and each shield sent **stacks execution potential** for later burst. Enough living allies let her **deal true damage**, and shielded allies also gain Phys and Magic DEF from her protection during air time. She needs **clustered enemies for the wave** and air time to charge before landing on grouped targets across the battlefield. **Sparse formations or burst that grounds her early** waste her knockdown follow-through, execution stacks, and true damage payoff.
 
+#### Counter proposal
+
+Scarlita **blinks airborne and stays invincible** for up to about 15 seconds, shielding allies and stacking execution, then descends with AoE stun — her ultimate also **knocks lines to the edge**. You **cannot burst her while airborne**. Answer the displace with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield — and punish on **descend** with mid-fight [[Gwyneth]] or lasting [[Shemira]]. Sparse formations blunt the rock wave; collapsing her living allies can force an earlier landing.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `low`
@@ -11947,6 +12311,10 @@ Scarlita provides Shield (Supreme+) to single targets `low`.
 #### Play overview
 
 Seth flashes to a foe for **multi-hit ultimate damage**, then pounces on the **weakest nearby enemy** for repeated assassin pressure between casts. Low enemy HP **grants stat bonuses**, battle ATK rises, and each non-summon defeat **resets pounce cooldown and refunds energy** to chain kills across the fight. Pounce also **shreds extra Phys DEF** when he carries a specific buff, opening tankier targets for follow-up from allies. He chains **assassin resets** in fights with frequent kills and accessible weak marks on the board. Without **finishes or accessible weak targets**, his pounce loop and stat spikes stall out before he can snowball through the enemy line in longer fights.
+
+#### Counter proposal
+
+Seth **flashes and pounces** onto weak marks, then **resets on kills** to chain across your line. Single-target assassins **struggle to pin** him as he relocates. Answer with lasting [[Shemira]] or [[Frieren]] coverage, keep your weakest **above easy pounce range**, and blunt his multi-hit ultimate with [[Lily May]] when it comes online.
 
 #### Stats overview
 
@@ -12085,6 +12453,10 @@ Common buffers are **Mikola**, **Ravion**, **Rowan**, or **Twins**.
 
 Shadewing applies **sustained DoT scaling on target lost HP** with his ultimate, then dual strikes plus **wound DoT** while converting enemy damage taken into **curse value for a heavy lash** at threshold. Battle ATK climbs, trigger hits **build energy and permanent damage**, and at start he **drains ally HP for lasting ATK and shield** to front-load his scaling. He needs **allies willing to pay the opening HP cost** and sustained damage across the team to fill curse quickly enough for the lash to land on priority targets in longer fights. **Short fights or allies that cannot spare HP** blunt his scaling lash, energy buildup, and self-buff loop across longer fights on the board.
 
+#### Counter proposal
+
+Shadewing stacks **lost-HP DoT** and converts **continuous damage on enemies** into a **curse lash**, front-loading ATK by draining an ally at battle start. Short fights blunt the curse fill. Pressure **Shadewing and their DoT partners** — the providers that feed the curse — with [[Bonnie]]'s inhibit or [[Ravion]]'s early teleports, or race him with a sped-up carry ([[Thador]], [[Hugin]]) before the lash threshold.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `average`, Other Stats `high`
@@ -12203,6 +12575,10 @@ Shadewing also requires units **dealing continuous damage** to enemies
 #### Play overview
 
 Shakir **transforms into Wolf Form** to reshape his combat kit, trading single-target strikes for **frontal AoE cleaves** and sustained pressure. In form he gains **Ranged DEF and Life Drain**, helping him survive ranged fire while staying on enemies. His **damage reduction scales with aura allies**, so he peaks when teammates cluster inside his influence zone. A lower **energy threshold sustains transformation** longer, keeping wolf pressure online through extended fights. Third hit also **shaves enemy vitality**, softening targets for follow-up damage. Against **spread lines** or teams that deny his landing zone, wolf uptime and aura scaling stall out.
+
+#### Counter proposal
+
+Shakir **transforms into Wolf Form** for frontal cleaves with **Life Drain** and **Ranged DEF**, and his damage reduction **scales with aura allies** clustered on him. Spread your line and deny a tight landing zone so aura uptime and DR stall. Pressure him in form with lasting [[Shemira]] or [[Gwyneth]], or **Aging-inhibit** the wolf with [[Bonnie]] before the vitality shred snowballs.
 
 #### Stats overview
 
@@ -12345,6 +12721,10 @@ Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 
 Shemira **sacrifices HP to fuel damage**, firing orb lines and AoE bursts as her health pool shrinks. She **summons ghosts** to bombard random enemies, and each hero defeat **spawns an extra summon** to widen pressure. Energy recovery from attacks **scales with summon count**, rewarding teams that keep bodies on the field. When summons expire, **remaining power converts to all-enemy damage** for a closing burst. She needs **healing to cycle sacrifices** safely. Without sustain or summons, her HP costs leave her exposed quickly.
 
+#### Counter proposal
+
+Shemira **burns her own HP** to fire orbs, then her **slow ultimate** floods the board with **random ghost bombardment** that widens as heroes fall. Attrition and summon count favour her unless you **end the fight early**. Delete her before the procession locks in with [[Ravion]] or [[Himmel]], blunt the ultimate with [[Lily May]], or **deny the healing** that fuels her sacrifices with [[Dunlingr]]'s no-heal order — and race her with a sped-up carry ([[Thador]], [[Hugin]]).
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `high`
@@ -12464,6 +12844,10 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 
 Silven builds damage around **flying blade summons** and marks that detonate when she knocks foes down. Her ultimate launches **blade volleys** at enemies, while a field skill **enhances blade output** for sustained AoE pressure. Receiving ally buffs grants her **energy, penetration, and ATK SPD**, so she rewards supportive teammates. She deals **bonus damage to high-HP-ratio targets**, making her strong against bulky frontliners. Battle **ATK speed growth** adds steady personal scaling over long fights. Against **immune or unmarked targets**, her detonation chain and blade field underdeliver.
 
+#### Counter proposal
+
+Silven sits **stationary** behind a **blade field**, launching volleys and detonating **Blademarks** on knock-downs while **ally buffs** refund Energy, Penetration, and ATK SPD. Kill or delay him before the field and buff loop peak — [[Ravion]]'s teleports or [[Bonnie]]'s Aging inhibit — and pressure **his buffers** so ally-buff refunds never fuel the blades. Race a sped-up carry with [[Thador]] or [[Hugin]] if the duel goes long.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `high`
@@ -12582,6 +12966,10 @@ Silven also requires units **buffing them**
 
 Silvina opens by **dashing to the closest symmetrical enemy**, landing burst damage before normal pacing resumes. At battle start she swaps to **rapid strikes** briefly and gains a shield for early survivability. Her ultimate strikes the **highest-energy enemy**, dealing damage and **draining their energy** to disrupt casters before they can fire. Battle crit growth adds finishing pressure, and rapid hits **reduce target vitality** for softer kills. She excels as an **opening assassin** who punishes backline energy hoarders and symmetrical formations. She falters when symmetrical targets are absent, when burst windows end before she reaches priority foes, or when enemies deny her opening dash entirely.
 
+#### Counter proposal
+
+Silvina **opens by flashing** to a symmetrical foe, then her ultimate strikes the **highest-Energy** enemy to **drain their cast**. Protect Energy-heavy carries and avoid leaving an easy symmetrical dive mark on the opening beat. She relocates for the opener — do not bank on a clean assassin pin; answer with lasting [[Shemira]] or [[Frieren]] coverage, and peel the threatened caster with [[Evie]]'s inhibit or blunt the dump with [[Lily May]].
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `low`
@@ -12696,6 +13084,10 @@ Look for units providing: `Shield` `CRIT`
 #### Play overview
 
 Sinbad **marks the top attacker and top damage-taker**, then focuses fire on those roles with **enhanced damage against marked roles**. His ultimate delivers **multiple rapid hits** to a single target for concentrated burst pressure. A skill attacks the target twice, and his debuff **adapts to enemy combat role** for flexible disruption on each mark. Battle **ATK speed growth** keeps his rotation moving through longer fights. He is a **role-targeting specialist** who shines when enemy teams have clear carries to isolate. Against evenly distributed damage or mark-immune lines, his priority targeting adds little value.
+
+#### Counter proposal
+
+Sinbad **marks your top attacker and top damage-taker**, then focuses those roles with **adapted debuffs** and a multi-hit ultimate. Spread damage so no single carry owns both marks, and keep priority units from sitting isolated. He relocates too often for assassin pins — answer with lasting [[Shemira]] or [[Frieren]] coverage, or Aging-inhibit the marked carry with [[Bonnie]] while you race with [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -12819,6 +13211,10 @@ Common buffers are **Ravion**, **Pandora**, **Thador**, or **Rowan**.
 #### Play overview
 
 Smokey and Meerky anchor fights with a **continuous healing aura** that levels up with each active cast, deepening recovery over time. Allies inside gain **ATK and energy recovery**, while a separate skill **instant-heals everyone** within the zone on demand. ATK boost **grows with ally count inside the aura**, rewarding clustered formations that stay in range. The third aura upgrade also **increases damage dealt to enemies**, blending offense with sustain in one slot. Extra healing on each aura use **stacks recovery** over repeated casts. They underperform when allies **cannot stay inside the zone** or when fights end before aroma levels build.
+
+#### Counter proposal
+
+Smokey & Meerky's Arena threat is a **leveling healing aura** that also feeds ATK and energy while allies stay packed inside. Attrition favours them once aroma stacks and the team refuses to leave the zone. **Delete them early** with [[Ravion]] or [[Himmel]] before the aura peaks, or **deny healing** with [[Dunlingr]]'s no-heal order. Then **race** with a sped-up carry ([[Thador]], [[Hugin]], or [[Rowan]]); **spread** or pull their line out of the aroma so the ATK and heal bonuses waste themselves.
 
 #### Stats overview
 
@@ -12950,6 +13346,10 @@ These are the **4** strongest pairings:
 
 Solise attaches **healing companions** to each non-summoned ally, then blooms them into **enhanced forms** for extra pressure. Her ultimate **continuously heals all allies** while companions deal **damage to all enemies**. Weakest allies receive direct heals and shields when a companion is present on them. Excess healing is **absorbed by companions** to unlock additional buffs for their hosts. Companion damage **scales on stored excess healing**, turning overheal into offense. She needs **clustered allies and fight time**; spread lines or early burst waste her companion setup.
 
+#### Counter proposal
+
+Solise attaches **healing companions** at battle start and snowballs **overheal into blooms**, shields, and companion damage — her ultimate **heals the whole team** while companions hit every foe. She is **unaffected while casting**, so do not bank on interrupting Life's Embrace mid-channel. **Delete key carries before blooms** with [[Ravion]] or [[Himmel]], or **deny healing** with [[Dunlingr]]'s no-heal order. **Spread** lines and early kills waste her companion setup before excess healing unlocks.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `average`
@@ -13072,6 +13472,10 @@ Solise provides ATK to single targets `low`, Direct healing to all units `high`,
 #### Play overview
 
 Sonja forms a **pact with left and right allies at battle start**, continuously raising their stats while all three remain alive. Her ultimate delivers **multi-hit damage** then charges through a frontal area, converting a portion of damage dealt to **self-healing**. She also **stuns nearby enemies twice** with her area skill for soft control at the front. Enhanced bond accumulates bonuses over time while partners survive, and battle **haste growth** keeps her rotation fluid. She is a **frontline buffer** who needs flanking allies to realize her pact value. Without adjacent partners or dense enemy clusters, her buffs and stun swings underwhelm.
+
+#### Counter proposal
+
+Sonja's Arena threat is the **battle-start pact** that continuously buffs her **left and right allies** while all three live — her own multi-hit charge is secondary. The fight hinges on whether those **flanking partners** survive long enough for bond bonuses to snowball. **Priority-delete or inhibit the pact allies** with [[Ravion]]'s teleports or [[Bonnie]]'s Aging, then blunt her frontal ultimate with [[Lily May]] if needed. **Race** your own carry with [[Thador]] or [[Hugin]] before her haste growth locks the front.
 
 #### Stats overview
 
@@ -13205,6 +13609,10 @@ These are the **4** strongest pairings:
 
 Soren rushes targets with **knockback and stun on collision**, using melee strikes to shove enemies into walls or allies for extra damage and control. His block skill **absorbs a powerful incoming attack** and resets knockback cooldown, enabling repeated displacement chains through the fight. Low HP triggers a **haste boost plus HP and energy recovery**, helping him recover after heavy trades and stay in the brawl longer. When block triggers, his next melee skill gains **extended knockback and bonus damage** for a punishing follow-up strike on clustered foes. Battle **haste growth** keeps his repositioning active through longer engagements without slowing down. He struggles against **knockback-immune targets** or enemies who burst him down before his block cycle can activate and reset his knockback pressure entirely.
 
+#### Counter proposal
+
+Soren's Arena threat is **knockback-and-stun collision chains** that reset whenever his block absorbs a big hit, so clustered lines feed his follow-ups. He **repositions to maximize collisions** and recovers with a low-HP haste surge. Blunt the displace with **Steadfast** — self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. **Burst him before the block cycle** with [[Ravion]] or [[Himmel]], or finish with lasting [[Shemira]] / [[Gwyneth]] coverage once he is soft.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -13336,6 +13744,10 @@ Soren provides Shield (Supreme+) to single targets `low`.
 #### Play overview
 
 Sylphira builds an **active score** that raises ATK and Haste, then unleashes a **silencing domain** followed by multi-hit strikes on her target. Her three-hit skill **drains enemy energy** on each connect, and a separate skill chains **control into area knockdown** for crowd disruption across grouped foes. Once score activates, auto-play **cleanses debuffs and recovers HP and energy**, keeping her self-sufficient through extended fights without external support. Enhanced attacks also deal **true damage life drain** for sustained personal pressure between ultimate windows. She blends control, silence, and self-sustain in one slot for attrition-heavy teams. Against **unaffected or silence-immune foes**, her domain, energy drain, and knockdown chain lose much of their disruptive value.
+
+#### Counter proposal
+
+Sylphira opens with a **fast silencing domain** and multi-hit follow-ups, then **activates her score** for huge ATK/Haste plus self-cleanse and energy refunds. Until that score lights she is still killable; after it, attrition and silence favour her. **Delete her early** with [[Ravion]] or [[Himmel]] before the score peaks, and blunt the domain ultimate with [[Lily May]]. **Race** a sped-up carry ([[Thador]], [[Hugin]], or [[Rowan]]); **Unaffected** windows blunt her silence and knockdown chain.
 
 #### Stats overview
 
@@ -13470,6 +13882,10 @@ Common buffers are **Kazim**, **Mikola**, **Ravion**, or **Smokey & Meerky**.
 
 Talene **consumes HP to shoot flames** at enemies, and her ATK **scales with cumulative HP spent** over the course of the fight. HP loss passively **heals allies while damaging enemies**, turning her self-harm into team-wide value whenever she trades health for offense. On defeat she **transforms and regenerates to resurrect**, with faster recovery on the first fall to rejoin the battle quickly. She also **enhances the frontmost ally** to deal sustained damage to adjacent enemies, extending her sacrifice into allied pressure over long engagements where she can cycle flame bursts multiple times. She is a **self-sacrificing specialist** who needs reliable healing to survive her own HP consumption safely across repeated flame cycles. Without sustain or enough fight time to trigger resurrection, her flame scaling and ally enhancement never reach their peak.
 
+#### Counter proposal
+
+Talene **burns her own HP** into flames that scale ATK and heal allies, then **resurrects as an unhittable flame** when defeated — do not dump burst into that form. She also buffs the **frontmost ally** with adjacent pressure. **Delete her early** with [[Ravion]] or [[Himmel]] before flame scaling and the first revive, or **deny her sustain** with [[Dunlingr]]'s no-heal order. Once she falls, wait out the flame, then finish with lasting [[Shemira]] or [[Gwyneth]]; pressure the **frontmost enhanced ally** so kindling never stacks.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -13588,6 +14004,10 @@ Common buffers are **Pandora**, **Contess**, **Evie**, or **Ravion**.
 
 Tasi opens with **AoE sleep** that damages all enemies, then leaps to a distant foe to **deal damage and stun again**. HP sacrifice triggers **transformation that recovers HP** while damaging nearby enemies in her alternate form. ATK **grows after sleep casts**, and post-ultimate haste **tightens her rotation** between cycles. She gains **extra secondary form uses** on assists or kills for extended pressure windows. Against **sleep-immune targets**, her control package stalls before forms can cycle.
 
+#### Counter proposal
+
+Tasi's Arena threat is **team-wide sleep** from a **late ultimate**, while she **leaps across the field** stunning and ramping after each dream. At half HP she **transforms into an invincible butterfly** — do not dump burst into that form. Single-target backline assassins **struggle to pin her** as she relocates. Answer with **long, wide ultimates** that keep hitting wherever she lands — [[Shemira]]'s ghost barrage or [[Frieren]]'s rectangular channel — and blunt the sleep with [[Lily May]] when her ultimate comes online.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `high`, Defensive Stats `average`, Other Stats `average`
@@ -13691,12 +14111,16 @@ Common buffers are **Ravion**, **Twins**, **Mikola**, or **Kazim**.
 
 - **Signature skill**: Knight's Heart (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `enemy-debuffer` `interrupt` `mass-cc` `self-repositioner`
+- **Behavior tags**: `aoe-damage` `backline-inhibit` `enemy-debuffer` `interrupt` `mass-cc` `self-repositioner`
 - **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `low`
 
 #### Play overview
 
 Temesia charges through the field, dealing **path damage passively** and **knocking down enemies** on her mounted leap ultimate. Direction changes trigger **interrupting kicks** that weaken foes in her path. Sword attacks on adjacent tiles **scale on target ATK**, punishing high-damage frontliners. After repeated charges she gains **unaffected status and true damage**, and charge hits shave enemy Phys DEF. Battle ATK **grows after first ultimate**, adding scaling through longer fights. She underperforms when **charge paths are blocked** or enemies resist knockdown and displacement.
+
+#### Counter proposal
+
+Temesia **charges the farthest enemy** with path damage and **mounted knockdown leaps**, then gains **permanent Unaffected** and true damage after enough charges. She relocates too often for assassin pins, and late-fight Unaffected wastes CC. Answer with **long, wide ultimates** from [[Shemira]] or [[Frieren]], blunt the leap with [[Lily May]], and use **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield — against the knockdown. End the fight before her charge count locks Unaffected.
 
 #### Stats overview
 
@@ -13832,6 +14256,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 Thador designates a **rear ally bond** that grants crit, then shields both partners when his active skill fires at the start of engagements. His ultimate deals **AoE damage and ritual debuffs** on affected enemies, layering disruption across the whole line. A frontal arc skill **knocks down** nearby foes, and battle **damage taken reduction** keeps him standing as a durable frontliner through sustained trades. When the bonded ally casts ultimate, he triggers **AoE damage plus Phys and Magic DEF reduction** on all enemies, amplifying team follow-up. Passive **HP regeneration** continues while the bonded ally lives, giving both partners staying power. He needs a **reliable rear partner** in formation; if the bond target dies early, much of his shielding, crit grant, and debuff payoff is lost for the rest of the fight.
 
+#### Counter proposal
+
+Thador's Arena threat is the **rear ally bond** that grants crit, shared shields, and — when that partner ultimates — **team-wide Phys and Magic DEF shred**. Kill or delay the **bonded carry** before that payoff, not Thador alone. **Priority-delete the bond partner** with [[Ravion]] or [[Bonnie]]'s Aging inhibit, and blunt Thador's own ultimate with [[Lily May]] if it is their win button. **Race** your carry with [[Hugin]] or [[Rowan]] so their bond never dictates the pace.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `high`
@@ -13961,6 +14389,10 @@ These are the **4** strongest pairings:
 
 Thoran **charges up a slash** that adds a portion of damage taken during the charge, then gains **life drain** on the release for sustain. He drains HP from the **highest-HP enemy** to swell his own pool, and **revives once at partial HP** after his first defeat. Energy recovery from attacks is **higher before revive triggers**, fueling faster early ultimates while he still has his first life. He absorbs a portion of damage for a bonded ally, and on defeat the ally can sacrifice HP to revive him. His ultimate also **drains HP from enemies** on impact. He is a **durable frontliner** but offers weak output when enemies deny his drain targets and burst him before revive can matter.
 
+#### Counter proposal
+
+Thoran **plunders the highest-HP enemy**, banks a revive, and while charging his ultimate is **Unaffected** — do not bank on interrupting Soul Retaliation mid-channel. A **pact ally behind him** can also spend HP to bring him back once. Push through the first life with lasting [[Shemira]] or [[Gwyneth]] coverage, then finish the revive window before he re-plunders. **Inhibit or delete the pact partner** with [[Bonnie]] or [[Nerion]] so the sacrifice revive never fires, and keep your tankiest unit from feeding Soul Plunder.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `low`
@@ -14073,6 +14505,10 @@ Look for units providing: `Max HP` `Energy`
 #### Play overview
 
 Tilaya fights behind an **auto-regenerating shield** that fuels both defense and offense throughout the fight. Her ultimate delivers **repeated frontal greatsword attacks**, and shield regeneration **speeds up while casting** to keep her barrier topped. A powerful strike **restores shield value**, while normal attacks gain extra damage proportional to current shield for scaling burst. First shield break **permanently increases shield recovery**, and battle vitality growth keeps her standing through long frontline trades. She is a **shield-scaling tank** who peaks when allowed to maintain and rebuild her barrier repeatedly. Fights that **strip or bypass shields** leave her damage scaling and sustain flat.
+
+#### Counter proposal
+
+Tilaya opens by converting most of her HP into **Vine Ward** — she is **Unaffected while the shield holds**, and her damage scales off current shield value. Do not bank on CC or interrupts during Ward; attrition favours her if the barrier keeps rebuilding. **Strip the Ward** with focused pressure from [[Gwyneth]] or lasting [[Shemira]], then punish the brief cooldown gap before it restores. **Race** with a sped-up carry ([[Thador]], [[Hugin]]) so the fight ends before Verdant Growth locks her sustain.
 
 #### Stats overview
 
@@ -14197,6 +14633,10 @@ These are the **4** strongest pairings:
 #### Play overview
 
 The Twins inspire allied **haste through a linked duo performance**, and linked allies become **unaffected** during the ultimate. They form **line links** that recover linked allies' energy and HP over sustained casts. One twin **shields allies** while the other **damages and blinds** nearby enemies in the same beat. Linked allies **borrow best stats from each other**, and haste grows with each repeated performance. They need **multiple linked partners** in formation; sparse lineups waste their buff and healing channels.
+
+#### Counter proposal
+
+The Twins **link a line** for energy and healing, then **Starlight Waltz** haste-buffs allies and makes **linked partners Unaffected** for the channel. Attrition and immune windows favor them once bonds are set. **Race** their carry with [[Thador]], [[Hugin]], or [[Rowan]], and inhibit the **linked hypercarry** with [[Bonnie]]'s Aging or [[Himmel]]'s dash pressure before the waltz locks them. Cancel the dance with [[Lily May]] when it comes online — do not bank on CC during the Unaffected window.
 
 #### Stats overview
 
@@ -14356,6 +14796,10 @@ These are the **4** strongest pairings:
 
 Ulmus gains a **shield that damages surrounding enemies when it breaks**, and retreats to **take root at low HP** for survival when pressured. While rooted he shifts to energy regeneration instead of HP regen, and grants **shield to the frontmost ally** after his own shield breaks. His ultimate **knocks up a target and adjacent enemies**, and displacement **extends knockdown duration with bonus damage**. Battle max HP growth adds durability over time, and shield break knocks back adjacent foes for extra control. He blends **tanking, control, and ally protection** in one slot. He struggles when enemies **focus him before rooting** or deny displacement setups entirely.
 
+#### Counter proposal
+
+Ulmus tanks behind a **breakable shield**, then at low HP **retreats and takes root** — **Unaffected** while rooted, shifting to energy regen and ally shields. You can still damage him through the root; do not waste CC there. Blunt his knock-up and displacement extension with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield. **Burst him before the root** with [[Ravion]] or [[Himmel]], or finish the rooted phase with lasting [[Shemira]] / [[Gwyneth]] once he is planted and soft.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `average`
@@ -14458,12 +14902,16 @@ Look for units providing: `Shield` `Energy`
 
 - **Signature skill**: Swift Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `hp-scaling` `mark-target` `self-repositioner` `stealth` `untargetable`
+- **Behavior tags**: `assassin` `hp-scaling` `mark-target` `self-repositioner` `stealth` `untargetable`
 - **Damage types**: Physical `average`, True damage `average`
 
 #### Play overview
 
 Vala **marks an enemy** and prioritizes them, **absorbing their energy** on each focused attack to starve their rotation. Her ultimate switches between **ranged stun mode** and **melee true damage mode** depending on positioning needs in the fight. Mode-based skills either reduce enemy haste or deliver multi-hit burst for flexible offense. ATK **grows with each non-summoned enemy defeated**, and marked enemy defeat boosts her movement speed and haste. She deals **bonus damage to marked targets** for reliable focus fire on priority carries. Against **mark-immune or stealth-heavy lines**, her energy drain and mode switching add little sustained pressure.
+
+#### Counter proposal
+
+In Arena, Vala **marks your farthest unit** at battle start, **drains their Energy** on each hit, and flips between **ranged stun** and **melee true-damage** modes as she relocates. After a marked kill she **blends into darkness and becomes untargetable** — do not dump burst into that window. She moves too often for a clean assassin pin; answer with **long, wide ultimates** from [[Shemira]] or [[Frieren]], blunt her stun-mode ultimate with [[Lily May]], and peel or race the marked carry with [[Bonnie]]'s Aging inhibit or a sped-up line ([[Thador]], [[Hugin]], [[Rowan]]).
 
 #### Stats overview
 
@@ -14616,6 +15064,10 @@ Vala also requires enemies **to be defeated**
 
 Valen launches **multiple strikes within range** and enters a permanent **Invigoration buff state** that defines his entire rotation. Three-hit consecutive strikes **chain lightning to nearby foes** while buffed, and a separate skill delivers **AoE lightning burst** only during the buff window for spread damage. Buff activations **stack ATK bonus** over repeated casts, compounding personal damage through the fight, and lightning AoE also stuns enemies for control alongside raw burst output. He is a buff-gated damage dealer who needs Invigoration uptime to access his best skills. Without **grouped enemies for chain lightning**, his burst and stun payoff shrink sharply.
 
+#### Counter proposal
+
+Valen's Arena threat is **Thunder Swordwork** — he is **invincible while striking**, then rides **Invigoration** into chain lightning and an **AoE stun** that snowballs ATK stacks. You **cannot burst him during the invincible cast**; after it ends the fight hinges on Invigoration uptime and how tightly you are clumped for forked lightning. Cancel the ultimate with [[Lily May]], **spread** so chains waste themselves, and pressure him mid-fight with [[Bonnie]]'s Aging or sustained [[Gwyneth]] once he is hittable.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `low`
@@ -14740,6 +15192,10 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 Valka applies **Panic stacks through normal attacks**, then slashes panicked targets for **damage and self-healing** on ultimate for sustain at the front. She wields **multiple sword techniques** at appropriate range, each costing energy for flexible offense across melee and mid-range. At battle start she gains a **shield and raises ally ATK SPD**, supporting nearby partners while she pressures enemies. Battle ATK speed growth keeps her rotation fluid, and she **counters incoming ultimate damage** with a free parry counter when threatened. While shielded she gains **bonus energy from normal attacks**, fueling faster technique use. She underperforms when enemies **never accumulate Panic** or burst her before stacks complete.
 
+#### Counter proposal
+
+Valka opens with a **battle-start shield and ally ATK SPD**, stacks **Panic** into a **fast true-damage ultimate** that heals her while she is **Unaffected**, and **parries ultimate damage** in range with a free counter. Do not bank on interrupting Blooming Terror mid-cast, and avoid feeding Soulshock Riposte with ultimates into her face. Blunt the ultimate with [[Lily May]], delete her **before Panic completes** with [[Ravion]] or [[Himmel]], or lean on lasting [[Gwyneth]] / [[Shemira]] pressure from outside her riposte range.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `high`, Offensive Stats `average`, Defensive Stats `average`, Other Stats `low`
@@ -14863,12 +15319,16 @@ Valka provides ATK SPD to multiple targets `low`.
 
 - **Signature skill**: Ruthless Rite (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing` `temporary-stat-buffer`
+- **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing` `backline-inhibit` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
 #### Play overview
 
 Velara summons **magic circles** that awaken to affect nearby units, extending to the **entire battlefield** once all circles are active across the field. She **immobilizes the highest cumulative damage dealer** and reduces their stats, blunting the enemy's main damage source early. One circle **awakens immediately at battle start**, and nearby debuffed enemies **charge circle energy** for faster full activation. Haste **grows with awakened circle count**, and awakened circles periodically buff weakest allies with healing and protection. Full awakening makes allies unaffected and boosts their damage on subsequent ultimate casts. She needs **fight time and enemy clustering** near circles to reach full coverage; fast burst that ends fights before all circles awaken wastes her scaling and team-wide buff package.
+
+#### Counter proposal
+
+Velara **plants magic circles** that awaken into healing, haste cuts, and eventually **battlefield-wide** coverage — once all are live, later casts grant allies **Unaffected** and damage. She also **immobilizes your top damage dealer**. Circles **charge faster from her allies' debuffs** on nearby foes — pressure **Velara and those debuffer partners**, not your own composition. End the fight in the **early window** before full awakening with [[Ravion]] or [[Himmel]], or race with a sped-up carry ([[Thador]], [[Hugin]], [[Rowan]]); mid-fight [[Bonnie]] Aging helps stall her channel.
 
 #### Stats overview
 
@@ -15012,6 +15472,10 @@ Velara provides Basic stats to all units `average` and Direct healing to multipl
 
 Viperian **spends HP to send possessing summons** onto all enemies, spreading pressure across the entire enemy line at once. She drains HP from the **healthiest foe** to refill herself, and possessed summons **periodically damage their hosts** for sustained DoT attrition. A high HP threshold triggers a **large AoE damage burst**, punishing healthy enemy formations. Battle **haste growth** keeps her rotation moving between possession cycles and drain windows, and when possessed enemies fall, summons **return to restore her HP and energy** for the next wave. She is a **DoT and life-drain specialist** who needs healing to cycle HP costs safely. Without sustain or long fights, her possession loop and burst threshold never fully activate.
 
+#### Counter proposal
+
+Viperian **burns HP at battle start** while **Unaffected** to possess the whole enemy line with DoT summons, then sustains through drains and returns — a late **Crimson Waltz** AoE also leaves them **Unaffected** if they stay healthy. Do not dump opener burst into the deploy window or the Waltz cast. End the sustain loop with early [[Ravion]] or [[Himmel]] pressure, or [[Dunlingr]]'s no-heal order; lasting [[Gwyneth]] or [[Shemira]] coverage outpaces the possession DoT before Crimson Waltz.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `low`, Offensive Stats `average`, Defensive Stats `low`, Other Stats `average`
@@ -15131,6 +15595,10 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 
 Walker fires **sequential frontal shots** that stun each target hit, and his normal attacks deal **AoE damage** for spread pressure. He **prioritizes the highest-damage-dealt enemy**, gaining a buff on focus, and throws **grenades at battle start** for AoE damage and stun. Battle **crit damage growth** adds scaling over time, and first hit against the marked target grants a shield for survivability. He excels as a **battle-start burst specialist** with sustained stun pressure on priority targets. Against **stun-immune targets** or lines that deny his opening grenade angles, his control chain stalls early.
 
+#### Counter proposal
+
+Walker's Arena threat is **battle-start grenades** that stun and shred Phys DEF, then a **fast Six-Shot ultimate** that keeps stunning while he later **bounties your top damage dealer**. The opening stun chain decides whether your carry ever acts. Answer the ultimate with [[Lily May]], kill him early with [[Ravion]] or [[Himmel]] before bounty locks, or Aging-inhibit the focus with [[Bonnie]] while you race your own carry ([[Thador]], [[Hugin]], [[Rowan]]).
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `high`, Defensive Stats `low`, Other Stats `average`
@@ -15247,6 +15715,10 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 
 At battle start, Zandrok sends **illusions charging forward** that **destroy obstacles** in their path and **inspire passing allies** with extra max HP, **Life Drain**, and **Haste**. His axe slam **clears leftover obstacles** near the target while dealing **HP-based area damage**. A ground stomp hits **adjacent enemies** with damage that **scales on max HP**, and his max HP **grows over the fight**, especially while his inspire buffs are active. Normal attacks add **bonus damage from max HP**, and excess healing **converts to permanent max HP**, so sustain feeds his scaling loop. He is a **max HP specialist** who peaks on obstacle-heavy fields with healing support. On **open boards without obstacles**, much of his terrain value and illusion pathing is wasted.
 
+#### Counter proposal
+
+Zandrok's Arena threat is the **battle-start illusion charge** that **inspires allies** with huge max HP, Life Drain, and Haste, then **HP-scaling** slams and stomps as excess healing **converts into more max HP**. Long fights favour his snowball — pressure **Zandrok and his heal providers** before the pool balloons. Cut him down early with [[Ravion]] or [[Himmel]], or deny the heal-to-max-HP loop with [[Dunlingr]]'s no-heal order; lasting [[Gwyneth]] or [[Shemira]] coverage finishes once the inspire window is spent.
+
 #### Stats overview
 
 - **Categories**: Basic Stats `average`, Offensive Stats `low`, Defensive Stats `high`, Other Stats `average`
@@ -15359,6 +15831,10 @@ These are the **4** strongest pairings:
 #### Play overview
 
 Zanie **deploys laser turrets at reduced max HP**, then boosts **ATK and ATK speed** for herself and her turrets on ultimate. A gun turret **targets enemies near laser turrets** at battle start, and she **repairs turrets** to restore HP and grant shields to keep them on the field. One turret can be upgraded for more power, and laser attacks apply burn to enemies hit for steady pressure. Battle penetration growth helps her damage pierce defenses over time. She is a **summon-dependent specialist** who needs turrets alive to realize her kit. Fights that **destroy turrets early** or deny her setup window leave her weakened.
+
+#### Counter proposal
+
+Zanie **deploys unaffected laser turrets and a gun turret** at battle start, then buffs their ATK and ATK speed on ultimate while repairs and upgrades keep the field alive. The matchup is a race to **collapse the turret line** before linked lasers and burns melt your backline. Clear the summons with lasting [[Shemira]] or [[Frieren]] coverage, then delete Zanie with [[Ravion]] or [[Himmel]] before Field Repairs and Precision Overload restabilize; blunt her power ult with [[Lily May]] if the buff window is their win condition.
 
 #### Stats overview
 
@@ -15483,6 +15959,10 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 #### Play overview
 
 Zorya cycles **dormant and awake states**, jumping to nearby enemies for **AoE damage** on each awakening. While awake she gains **life drain and damage reduction**, and her aura **slows enemy haste** while boosting her own. Damage dealt **scales with nearby enemy count**, rewarding clustered foes. A fatal blow **forces immediate dormancy**, ending her active window. She needs **clustered enemies**; spread lines waste her cycles.
+
+#### Counter proposal
+
+Zorya begins **dormant and invincible**, banking energy until she awakens and **jumps into the densest enemy clump** for AoE, life drain, and a haste-slow aura. You **cannot damage her while dormant**. After she wakes she still has **fading 70% stone skin** for ~10s — that is a **late delete window**, not an opener dump. Prefer **sustained or long ultimates** from [[Gwyneth]], [[Shemira]], or amp'd [[Frieren]] once the reduction fades; **spread** so her jump and nearby-enemy bonus waste themselves. One fatal blow forces dormancy again — use that reset rather than overcommitting into her first awake window.
 
 #### Stats overview
 

@@ -55,11 +55,11 @@ Do not adjust the detection script.
 
 ### Content
 
-Contains an array of curated combat-role tags (e.g., `aoe-damage`, `summoner`, `cheat-death`) for each hero. The allowed tags are strictly defined in `data/schema/tags.schema.json`.
+Contains an array of curated combat-role tags (e.g., `aoe-damage`, `summoner`, `cheat-death`, `backline-assassin`, `backline-inhibit`) for each hero. The allowed tags are strictly defined in `data/schema/tags.schema.json`.
 
 ### Purpose
 
-Drives the **Similar Skills** category in the replacement algorithm. By comparing the overlap of these tags (Jaccard similarity), the algorithm can suggest substitute heroes that fulfill the same strategic role and playstyle in combat.
+Drives the **Similar Skills** category in the replacement algorithm. By comparing the overlap of these tags (Jaccard similarity), the algorithm can suggest substitute heroes that fulfill the same strategic role and playstyle in combat. Backline pressure is split: `backline-assassin` (substantial rear/far/highest-damage kills) vs `backline-inhibit` (soften/slow that same selector); plain `assassin` is non-positional selective picks.
 
 ### Prompt to Update
 
@@ -134,4 +134,36 @@ RULES:
 4. Do NOT mention game modes (AFK, PvP, Dream Realm, Arena, etc.), class, faction, rarity, level breakpoints, or investment/dupes.
 5. Match each hero's existing entry length within ±30 characters when refreshing in place.
 6. Keys use display names from heroes-overview.md (e.g. Twins, Galahad).
+```
+
+---
+
+## 5. `hero_counter_overviews.json`
+
+### Content
+
+Maps each hero's display name to a short PVP counter summary (3–5 sentences, up to ~900 characters). Named units use `[[Display Name]]` markers (e.g. `[[Athalia]]`) for character pills in the site viewer.
+
+### Purpose
+
+Shown in the behavior section as **Counter proposal** (immediately after **Play overview**, before **Skill overview**) in `heroes-overview.md` and the site viewer. Explains what to watch for in PVP/Arena and suggests short counter-comp directions.
+
+### Prompt to Update
+
+```markdown
+Regenerate entries in @data/hero_counter_overviews.json using hero skill data from @data/heroes_data_processed.json and @data/heroes_data_skill_summary.json. Use player-facing combat knowledge from afkj-data docs (faq-pvp, combat-*-pvp) but do NOT copy internal engine terms or implementation jargon into public text.
+
+RULES:
+1. Three to five sentences per hero; one idea per sentence. Keep under ~900 characters.
+2. Cover: PVP threat pattern, how the fight tends to play out, then short counter-comp hints with [[Hero]] markers for named units.
+3. Use **bold markdown** sparingly for key threats and counter levers.
+4. PVP and Arena may be named; do NOT mention class, faction, rarity, level breakpoints, or investment/dupes.
+5. For single-ally buffers (Aliceth, Alna, Cassadee, etc.), assume they buff a hypercarry — often high-ultimate-damage dealers. Alna is more generic; typical partners include [[Sylphira]] and [[Frieren]].
+6. Keys use display names from heroes-overview.md. Every [[Name]] must match a roster display name exactly.
+7. Prefer Prydwen PVP tier **S+** and **S** heroes for named examples and counter units; use **A+** when needed, **A** only for matchup-specific picks (e.g. [[Lily May]] vs early-battle ultimates). Avoid B/C-tier names unless listed in Explicit counters or the user asks otherwise.
+8. Early-battle / battle-start ultimates are usually answered with [[Lily May]] on the opening beat (not [[Pandora]] — too slow); see `.cursor/skills/counter-overview/SKILL.md` **Explicit counters** for wind-up high-damage ults (Lily May + [[Pandora]] vs catchers), hypercarry speed-race buffers ([[Thador]], [[Hugin]], [[Rowan]]), and [[Dunlingr]] (non-ult kits + backline assassin on the **exempt carry**).
+9. Against ranged / backline hypercarries, prefer heroes tagged `backline-assassin` or `backline-inhibit` — but pick **1–2 kit-fit** names (see counter-overview skill kit-fit cheat sheet), never a stock Athalia/Evie/Nerion list. Use tags only to choose [[pills]] — never put tag names in public prose.
+10. If any suggested **counter** is Celestial or Hypogean, also name a **non-Celestial, non-Hypogean** alternative for that lever **in the same clause**, prefer leading with the non-C/H name, and do not stack two C/H units for one lever.
+11. Enemy-side-only buff/debuff amplification (stacks from *their* allies’ hits, etc.) is countered by pressuring the **providers** — never by telling the reader to “not feed” it with their own team composition.
+12. Run the five **validation gates** in `.cursor/skills/counter-overview/SKILL.md` before writing: (1) phase/hittability, (2) role match for kill/burst, (3) protected/exempt allies, (4) timing — **4a** threat window (counter ready when they fire) and **4b** delete window (damage curve peaks when they are killable: early assassins vs late/sustained coverage), (5) high-mobility / late-ult targets need lasting wide ultimates (e.g. [[Shemira]], [[Frieren]]) — not single-target assassin pins. Against **enemy-grouping / displacement**, prefer **Steadfast** / **Unaffected** (e.g. [[Gunnar]] Doomfield) — formation spread does not stop global pulls like Cyran’s black hole.
 ```

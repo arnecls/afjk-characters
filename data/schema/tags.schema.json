@@ -23,6 +23,8 @@
         "aoe-damage",
         "aoe-healing",
         "assassin",
+        "backline-assassin",
+        "backline-inhibit",
         "battle-start-burst",
         "battle-start-ult",
         "battlefield-modification",

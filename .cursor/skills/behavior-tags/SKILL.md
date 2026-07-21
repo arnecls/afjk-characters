@@ -171,7 +171,9 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `cheat-death` | Self-survival at fatal blow or **critical HP threshold** via recovery/form | Ally revive (`revive` instead); form swap alone without a survival trigger |
 | `aoe-damage` | Substantial multi-target damage **regularly** | Occasional summon detonation |
 | `aoe-healing` | Heals **wide ally groups** | Single-target or post-channel one-off heal |
-| `assassin` | Picks isolated/backline with burst | General focus-fire marksmen |
+| `assassin` | Selective attack by **non-positional** criteria (weakest, marked, highest energy, isolated, role marks) so the pick can be any row | Rear/far/highest-damage selectors (`backline-assassin` / `backline-inhibit`); general focus-fire without selective pick |
+| `backline-assassin` | Explicit rear/far/highest-damage (or force-focus / teleport onto that target) with damage that can kill within ~10s; Skill Range Global or >5 tiles unless teleport/dash-to-target | Soft poke; DoT-only without ~10s kill; self-retreat; taunt; prefer-only AI; melee walk/charge without teleport |
+| `backline-inhibit` | Same selectors as `backline-assassin`, but CC / slow / DEF cut / damage-taken amp / DoT that softens that unit | Ally-only buffs; frontline-only taunt; selectors without soften/slow |
 | `self-repositioner` | **Regularly** jumps/dashes/teleports self | One incidental leap |
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
 | `invincibility` | Meaningful immunity windows | Do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
@@ -226,9 +228,18 @@ Do not regenerate `heroes-overview.md` or the site unless the user asks.
 ## Examples
 
 **Bonnie** — debuff-spread mage with opening hit: `enemy-debuffer`,
-`aoe-damage`, `battle-start-burst` (Aging deals damage at battle start). Not
-`mass-cc` (ult stun only on debuffed targets) or `dot-specialist` (debuff
-stacking ≠ DoT).
+`aoe-damage`, `battle-start-burst`, `backline-inhibit` (Aging on rearmost:
+Haste cut / soften, not a ~10s kill). Not `backline-assassin`, `mass-cc`
+(ult stun only on debuffed targets), or `dot-specialist` (debuff stacking ≠
+DoT).
+
+**Athalia** — `backline-assassin` (dash behind highest cumulative damage
+dealer with substantial damage). Not plain `assassin` (selector is
+positional/highest-damage, not any-row criteria).
+
+**Vala** — `assassin` (selective mark-and-hunt play). Not `backline-assassin`
+despite farthest-enemy notice (curated as any-row assassin, not backline
+tags).
 
 **Perseus** — terrain tile buffs: `ally-buffer`, `aoe-damage`,
 `temporary-stat-buffer` (tile buffs are temporary). Temporary-buff synergy

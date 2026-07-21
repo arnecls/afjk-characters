@@ -85,6 +85,8 @@ window.AFKJ.config = {
     "aoe-damage": { emoji: "💥", cls: "chip-role" },
     "aoe-healing": { emoji: "💚", cls: "chip-role" },
     "assassin": { emoji: "🎯", cls: "chip-role" },
+    "backline-assassin": { emoji: "🔪", cls: "chip-role" },
+    "backline-inhibit": { emoji: "🪤", cls: "chip-role" },
     "battle-start-burst": { emoji: "🚀", cls: "chip-role" },
     "battle-start-ult": { emoji: "⚡", cls: "chip-role" },
     "battlefield-modification": { emoji: "🗺️", cls: "chip-role" },
@@ -140,7 +142,11 @@ window.AFKJ.config = {
     "aoe-healing":
       "Heals multiple allies or wide ally groups, not only single-target.",
     "assassin":
-      "Built to pick off isolated or backline targets with burst damage.",
+      "Selectively attacks a chosen enemy by non-positional criteria (weakest, marked, isolated, etc.) on any row.",
+    "backline-assassin":
+      "Targets rear/far/highest-damage enemies with substantial damage that can kill within ~10s (dash, teleport, or long range).",
+    "backline-inhibit":
+      "Targets rear/far/highest-damage enemies with CC, slow, DEF cuts, damage-taken amp, or DoT that softens that unit.",
     "battle-start-burst":
       "Deals damage to one or more units in the first ~2–3s of battle.",
     "battle-start-ult":

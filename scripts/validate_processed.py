@@ -39,6 +39,9 @@ SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
 SKILL_SUMMARY_SCHEMA = ROOT / "data" / "schema" / "skill_summary.schema.json"
 PLAY_OVERVIEW = ROOT / "data" / "hero_play_overviews.json"
 PLAY_OVERVIEW_SCHEMA = ROOT / "data" / "schema" / "play_overview.schema.json"
+COUNTER_OVERVIEW = ROOT / "data" / "hero_counter_overviews.json"
+COUNTER_OVERVIEW_SCHEMA = ROOT / "data" / "schema" / "counter_overview.schema.json"
+HERO_MARKER_RE = re.compile(r"\[\[([^\]]+)\]\]")
 
 _CC_KEYWORDS: dict[str, str] = {
     "stun": r"\bstun(?:s|ned|ning)?\b",
@@ -473,6 +476,73 @@ def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str
     return errors, warnings
 
 
+def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str]]:
+    """Validate hero_counter_overviews.json schema and hero markers."""
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if not COUNTER_OVERVIEW.exists():
+        warnings.append("missing hero_counter_overviews.json")
+        return errors, warnings
+
+    try:
+        overviews = json.loads(COUNTER_OVERVIEW.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"counter overview JSON parse error: {exc}"], warnings
+
+    if jsonschema_available():
+        try:
+            schema = json.loads(
+                COUNTER_OVERVIEW_SCHEMA.read_text(encoding="utf-8")
+            )
+            import jsonschema
+
+            store: dict[str, object] = {}
+            for sibling in COUNTER_OVERVIEW_SCHEMA.parent.glob("*.schema.json"):
+                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
+                sid = sibling_schema.get("$id")
+                if sid:
+                    store[sid] = sibling_schema
+            schema_dir = COUNTER_OVERVIEW_SCHEMA.parent.resolve().as_uri() + "/"
+            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
+            jsonschema.validate(overviews, schema, resolver=resolver)
+        except Exception as exc:
+            errors.append(f"counter overview schema validation failed: {exc}")
+
+    expected = set(processed["heroes"])
+    for short, text in overviews.items():
+        if short not in expected:
+            errors.append(f"counter overview unknown hero: {short}")
+            continue
+        if not isinstance(text, str) or not text.strip():
+            errors.append(f"counter overview empty {short}")
+            continue
+        sentence_count = _count_sentences(text)
+        if sentence_count < 3 or sentence_count > 6:
+            warnings.append(
+                "counter overview sentence count "
+                f"{short}: {sentence_count} (expected 3-6)"
+            )
+        if len(text) > 1000:
+            warnings.append(
+                f"counter overview length {short}: {len(text)} chars "
+                "(expected <=1000)"
+            )
+        for marker in HERO_MARKER_RE.findall(text):
+            if marker not in expected:
+                errors.append(
+                    f"counter overview unknown marker {short}: [[{marker}]]"
+                )
+
+    missing = sorted(expected - set(overviews))
+    if missing:
+        warnings.append(
+            f"counter overview missing {len(missing)} heroes (pilot OK)"
+        )
+
+    return errors, warnings
+
+
 def check_skill_effects_sidecars(
     raw: dict[str, Any],
 ) -> tuple[list[str], list[str]]:
@@ -655,6 +725,21 @@ def main() -> int:
             warnings["play_overview_errors"] = overview_errors
         if overview_warnings:
             warnings["play_overview"] = overview_warnings
+
+    if "counter_overview" in fail_on:
+        counter_errors, counter_warnings = check_counter_overviews(stored)
+        if counter_errors:
+            errors.extend(counter_errors)
+        elif not counter_warnings:
+            print("OK: counter overviews valid")
+        if counter_warnings:
+            warnings["counter_overview"] = counter_warnings
+    else:
+        counter_errors, counter_warnings = check_counter_overviews(stored)
+        if counter_errors:
+            warnings["counter_overview_errors"] = counter_errors
+        if counter_warnings:
+            warnings["counter_overview"] = counter_warnings
 
     semantic = check_semantic(fresh)
     for category, items in sorted(semantic.items()):

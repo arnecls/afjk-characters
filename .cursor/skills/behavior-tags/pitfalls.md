@@ -120,6 +120,21 @@ Brutus Indomitable is **both**: `cheat-death` for the fatal-blow save, then
 `invincibility` for the follow-up window ("immune to all damage and becomes
 unaffected"). Read prose immunity phrasing even when not labeled Invincible.
 
+## `assassin` vs `backline-assassin` / `backline-inhibit`
+
+- `assassin` — non-positional selective pick (weakest, marked, highest
+  energy, isolated, role marks) that can hit any row.
+- `backline-assassin` — explicit rearmost / farthest / highest-damage
+  (or ally teleport onto that target) with a ~10s kill window. Range must
+  be Global or > 5 tiles unless the skill teleports/dashes to the target.
+- `backline-inhibit` — same selectors, but CC / slow / DEF cut /
+  damage-taken amp / DoT. Both tags when damage and inhibit share the
+  clause (e.g. Damian plane: damage + stun).
+
+**Not backline tags:** soft leap poke (Tasi), prefer-only AI (Walker),
+self-retreat to allied backline (Ulmus, Scarlita), taunt, minor/slow
+clauses that cannot delete a backliner in ~10s (Cyran one-spell openers).
+
 ## Undertagged kits
 
 Some identities lack a precise enum tag. Prefer an honest small set over

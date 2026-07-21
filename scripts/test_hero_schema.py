@@ -1072,6 +1072,41 @@ class SkillOverviewTests(unittest.TestCase):
         )
         self.assertNotIn("#### Play overview", text)
 
+    def test_counter_overview_after_play_overview(self):
+        hero, behavior = self._hero_by_display("Aliceth")
+        play = "First sentence. Second sentence. Third sentence. "
+        play += "Fourth sentence. Fifth sentence."
+        counter = (
+            "Threat one. Threat two. Counter hint with [[Athalia]] "
+            "and [[Berial]]."
+        )
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Aliceth",
+                behavior,
+                hero=hero,
+                play_overview=play,
+                counter_overview=counter,
+            )
+        )
+        play_idx = text.index("#### Play overview")
+        counter_idx = text.index("#### Counter proposal")
+        skill_idx = text.index("#### Skill overview")
+        self.assertLess(play_idx, counter_idx)
+        self.assertLess(counter_idx, skill_idx)
+        self.assertIn(counter, text)
+
+    def test_counter_overview_omitted_when_blank(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Aliceth",
+                behavior,
+                counter_overview="",
+            )
+        )
+        self.assertNotIn("#### Counter proposal", text)
+
     def test_stats_overview_before_skill_overview(self) -> None:
         _, behavior = self._hero_by_display("Eironn")
         stats_overview = {

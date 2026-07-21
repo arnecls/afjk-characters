@@ -366,7 +366,22 @@ skill effect.
 - ally-shielder: Grants shields to allies as a significant part of the kit.
 - aoe-damage: Deals substantial multi-target or area damage on a regular basis.
 - aoe-healing: Heals multiple allies or wide ally groups, not only single-target sustain.
-- assassin: Built to pick off isolated or backline targets with burst damage.
+- assassin: Selectively attacks a chosen enemy by **non-positional** combat
+  criteria (weakest, marked, highest energy, isolated, role marks, etc.) so
+  the pick can be any row. Not rear/far/highest-damage selectors (use
+  `backline-assassin` / `backline-inhibit` instead).
+- backline-assassin: Enemy-facing pressure that **selects rear/far/highest-
+  damage** (or equivalent) and can kill that target within ~10s via
+  substantial damage. Qualifies: explicit rearmost/farthest/greatest-distance
+  or highest cumulative damage dealer; forcing allies to attack such a target;
+  teleport/dash self or an ally onto that target or into the backline. If the
+  skill does not teleport/dash-to-target, Skill Range must be **Global or
+  > 5 tiles**. Not soft poke, DoT-only (unless the kit can still delete a
+  backliner in ~10s), self-retreat to allied backline, taunt, prefer-only AI
+  without explicit select, or melee walk/charge without teleport.
+- backline-inhibit: Same **target selectors** as `backline-assassin`, but the
+  effect slows or softens that unit (CC, Haste/slow, DEF cuts, damage-taken
+  amp, DoT, etc.). Damage plus inhibit on the same clause → both tags.
 - battle-start-burst: Deals damage to one or more units in the first ~2–3s of
   battle. Primary signal: skill text with "when a battle starts" / "at battle
   start" combined with damage dealt (e.g. Gerda Skill 1, Nerion Mythic+,

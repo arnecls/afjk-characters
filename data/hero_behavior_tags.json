@@ -1,6 +1,7 @@
 {
   "Aliceth": [
     "ally-buffer",
+    "backline-assassin",
     "cheat-death",
     "execute",
     "hp-scaling",
@@ -36,6 +37,7 @@
     "self-repositioner"
   ],
   "Athalia": [
+    "backline-assassin",
     "hp-scaling",
     "non-ult-utility",
     "self-repositioner"
@@ -56,6 +58,7 @@
   ],
   "Bonnie": [
     "aoe-damage",
+    "backline-inhibit",
     "battle-start-burst",
     "enemy-debuffer",
     "non-ult-utility"
@@ -125,6 +128,8 @@
   "Damian": [
     "ally-buffer",
     "ally-healer",
+    "backline-assassin",
+    "backline-inhibit",
     "summoner",
     "temporary-stat-buffer"
   ],
@@ -149,6 +154,8 @@
   ],
   "Evie": [
     "ally-healer",
+    "backline-assassin",
+    "backline-inhibit",
     "self-repositioner",
     "stealth",
     "temporary-stat-buffer"
@@ -225,6 +232,8 @@
   "Himmel": [
     "ally-buffer",
     "aoe-damage",
+    "backline-assassin",
+    "backline-inhibit",
     "self-repositioner"
   ],
   "Hodgkin": [
@@ -312,7 +321,8 @@
     "summoner"
   ],
   "Lenya": [
-    "assassin",
+    "backline-assassin",
+    "backline-inhibit",
     "counterattack",
     "self-repositioner"
   ],
@@ -326,6 +336,7 @@
   ],
   "Lorsan": [
     "aoe-damage",
+    "backline-inhibit",
     "dot-specialist",
     "temporary-stat-buffer"
   ],
@@ -342,6 +353,8 @@
   ],
   "Lucy": [
     "ally-shielder",
+    "backline-assassin",
+    "backline-inhibit",
     "high-initial-energy",
     "mass-cc",
     "summoner"
@@ -406,6 +419,8 @@
     "mark-target"
   ],
   "Nerion": [
+    "backline-assassin",
+    "backline-inhibit",
     "battle-start-burst",
     "dot-specialist",
     "enemy-debuffer"
@@ -463,16 +478,20 @@
     "summoner"
   ],
   "Pippa": [
+    "backline-assassin",
+    "backline-inhibit",
     "enemy-grouping",
     "hp-scaling"
   ],
   "Ravion": [
     "ally-shielder",
+    "backline-assassin",
     "energy-provider",
     "self-repositioner",
     "temporary-stat-buffer"
   ],
   "Reinier": [
+    "backline-assassin",
     "enemy-grouping",
     "interrupt"
   ],
@@ -577,6 +596,7 @@
   ],
   "Temesia": [
     "aoe-damage",
+    "backline-inhibit",
     "enemy-debuffer",
     "interrupt",
     "mass-cc",
@@ -610,6 +630,7 @@
     "cheat-death"
   ],
   "Vala": [
+    "assassin",
     "hp-scaling",
     "mark-target",
     "self-repositioner",
@@ -630,6 +651,7 @@
     "ally-healer",
     "ally-shielder",
     "aoe-healing",
+    "backline-inhibit",
     "temporary-stat-buffer"
   ],
   "Viperian": [
