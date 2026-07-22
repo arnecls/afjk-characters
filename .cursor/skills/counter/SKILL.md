@@ -92,6 +92,33 @@ Example: Bonnie — invincible in mist form; lasting coverage, not mist-dump bur
 Example: Baelran / Pang — Unaffected during key channels/forms; do not bank on CC or interrupts there.
 Example: Galahad — early delete before the energy circle matures (Gate 4b early).
 
+**Channel / chant maintenance (control CC)** — separate from Gate 4a ultimate
+**Interrupt** ([[Lily May]] on discrete ult wind-ups). When a kit’s payoff
+depends on **finishing or maintaining** a chant/channel, control CC that
+**breaks the cast** is a primary counter — unless the threatening cast is
+immune.
+
+Read skill text for the **threatening cast** in this order:
+
+1. **Unaffected** / **immune to control** while casting or channeling? → do
+   **not** suggest control CC interrupt (examples above).
+2. Effect **cannot be maintained** under control, or **recreate cooldown**
+   after interrupt? → **S1** — name control CC ([[Lily May]] sleep,
+   stun/sleep packages).
+3. **Chanting** passive (all or key skills require chant) and the threatening
+   cast has **no** immunity clause? → **S2** — control CC during chant.
+4. Ongoing **`while channeling`** effect with **no** immunity on that cast? →
+   infer breakable — same control CC lever.
+5. Else → do not suggest generic control CC interrupt ([[Lily May]] may still
+   apply via Gate 4a / Explicit for a discrete ultimate wind-up only).
+
+Example: [[Smokey & Meerky]] (S1) — aroma drops under Control Effects with a
+4s recreate lockout; break the channel with [[Lily May]] or stun/sleep CC (Gate
+6b displacement is complementary, not a substitute).
+
+Example: [[Marcille]] (S2) — every skill requires chanting and she is not
+unaffected mid-channel; CC during chant before companions or revive land.
+
 #### Gate 2 — Role match for “kill / burst”
 
 If the advice is to **delete** a unit, pick from `backline-assassin` then
@@ -229,7 +256,7 @@ Stellar Bond line, Thador / Thoran prep placement). Those are not Gate 6.
 If the subject is tagged `static-tile-buffer` (today [[Hugin]], [[Gunnar]]),
 counter by **displacing the buffed ally off the tile** so the mid-fight buff
 drops. Lead with [[Eironn]] or [[Lumont]]; rotate other mid-fight displacers
-([[Cyran]], [[Mehira]], [[Reinier]], [[Pippa]]) — still name at most two, with
+([[Temesia]], [[Mehira]], [[Reinier]], [[Pippa]]) — still name at most two, with
 C/H same-clause rules.
 
 If the parked ally is **Steadfast** or **Unaffected**, displacement does not
@@ -299,7 +326,8 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | Low Magic DEF / higher Phys DEF | Magic assassins ([[Evie]], [[Nerion]], [[Pippa]], …) | Physical dump into the strong DEF |
 | Both DEF high and/or heavy shields | True-damage assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
 | Damage immunity (e.g. phys ethereal) | Opposite damage type / lasting Magic coverage | Matching the immune type |
-| Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Cyran]], [[Lumont]], [[Eironn]], …) | Battle-start-only placement advice; shove Steadfast allies |
+| Channel / chant maintenance (no cast immunity) | Control CC ([[Lily May]], stun/sleep packages) | Control CC vs unaffected casts; Lily May ult-Interrupt only (Gate 4a) |
+| Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Temesia]], [[Lumont]], [[Eironn]], …) | Battle-start-only placement advice; shove Steadfast allies |
 | Moving proximity aura | Shove **receivers** out, then peel provider (same displacer pool) | Treating global team buffs as positional |
 
 Do not put tag names (`backline-assassin`, etc.) in public counter prose —
@@ -315,7 +343,8 @@ use them only to select which heroes to name as `[[pills]]`.
 | Any-row priority kill | `assassin` | 2 |
 | High-mobility / leap / teleport (esp. late ult) | Long lasting wide/retargeting ultimates ([[Shemira]], [[Frieren]]); not assassin pin | 5 |
 | Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — not spread vs global pulls | 4a note |
-| Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Cyran]], [[Lumont]], [[Eironn]], …); Steadfast → delete/inhibit | 6a |
+| Channel / chant breaks under control | Control CC during chant/channel ([[Lily May]], stun/sleep) | Control CC vs immune/unaffected casts (Gate 1) |
+| Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Temesia]], [[Lumont]], [[Eironn]], …); Steadfast → delete/inhibit | 6a |
 | Moving / provider-attached aura | Displace receivers out of aura, then peel provider | 6b |
 | DEF skew / high both DEF + shields | Match assassin `damage_type`; true damage when both high | 2 |
 | Early / high-damage ultimate | See Explicit counters | 4a |
@@ -341,8 +370,10 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | [[Berial]] / [[Lily May]] / [[Harak]] (mobile finish) | Lasting coverage ([[Shemira]], [[Frieren]]) or area packages; do not chase shadow hops / relocates / dashes with assassin pin |
 | [[Harak]] (feast / devour) | Deny assists that extend feast; keep weakest above devour HP threshold; Gate 5 lasting coverage |
 | Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — [[Gunnar]] Doomfield (self+ally), self-Steadfast [[Igor]]; spread does **not** beat global pulls ([[Cyran]] black hole) |
-| `static-tile-buffer` (mid-fight tile buff) | Displace the **buffed ally** off the tile — [[Cyran]] / [[Lumont]] / [[Eironn]] (rotate [[Mehira]], [[Reinier]], [[Pippa]]); if parked ally is Steadfast/Unaffected, delete/inhibit instead (Gate 6a) |
+| `static-tile-buffer` (mid-fight tile buff) | Displace the **buffed ally** off the tile — [[Temesia]] / [[Lumont]] / [[Eironn]] (rotate [[Mehira]], [[Reinier]], [[Pippa]]); if parked ally is Steadfast/Unaffected, delete/inhibit instead (Gate 6a) |
 | Moving proximity aura (e.g. [[Perseus]]) | Shove **receivers** out of the aura, then peel the provider — same displacer pool (Gate 6b) |
+| [[Smokey & Meerky]] (channeling aroma) | Break channel with control CC ([[Lily May]], stun/sleep) — aroma drops under Control Effects; 4s recreate lockout; also Gate 6b shove + early delete |
+| [[Marcille]] (chanting kit) | Control CC during chant before companions/revive; [[Lily May]] on ultimate wind-up only (Gate 4a) — not unaffected mid-channel |
 | [[Bonnie]] (Aging cleanse) | Ally cleanse: [[Hewynn]] (C OK here); soft team shorten: [[Evie]] full-intel. Self-only cleanses ([[Lucca]], [[Sylphira]]) only help if *they* are the Aged rearmost |
 | [[Damian]] (off-field / unhittable) | Collapse chariot/toys with area packages ([[Shemira]], [[Frieren]], [[Pandora]]); never pin Damian |
 | [[Evie]] (conceal invincible intel) | No opener dump into concealment; punish after reveal with lasting [[Shemira]] / [[Frieren]] or mid-fight [[Gwyneth]] |
@@ -381,11 +412,13 @@ Display: `[[Hero]]` → character pills in `site/js/src/chips.js` `renderInline(
 - Pilot / partial roster: missing keys are OK (warning only)
 - Site: `#hero/<slug>` — Counter proposal under Play overview; pills link correctly
 - Spot-check: gates 1–6 applied (no unhittable burst, no tier-only “burst”,
-  exempt carry if relevant, 4a threat timing + 4b delete-window curve, no
-  assassin pin on high-movers, Gate 6 positional displace vs Steadfast fallback,
-  DEF skew / true-damage variance on delete picks, immunity overrides DEF,
-  no stock Athalia/Evie/Nerion trio — kit-fit 1–2, every Celestial/Hypogean
-  counter has a non-C/H alternative)
+  exempt carry if relevant, channel/chant maintenance — control CC only when
+  S1/S2/inferred channeling and cast is not immune; Lily May ult-Interrupt stays
+  Gate 4a, 4a threat timing + 4b delete-window curve, no assassin pin on
+  high-movers, Gate 6 positional displace vs Steadfast fallback, DEF skew /
+  true-damage variance on delete picks, immunity overrides DEF, no stock
+  Athalia/Evie/Nerion trio — kit-fit 1–2, every Celestial/Hypogean counter has
+  a non-C/H alternative)
 
 ## Related skills
 

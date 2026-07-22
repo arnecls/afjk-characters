@@ -13216,7 +13216,7 @@ Smokey and Meerky anchor fights with a **continuous healing aura** that levels u
 
 #### Counter proposal
 
-Smokey & Meerky's Arena threat is a **channeling healing aroma** that also feeds ATK and energy while allies stay packed inside. Attrition favours them once aroma stacks and the team refuses to leave the zone. **Shove receivers out of the aroma** with [[Temesia]] or [[Lumont]], **delete them early** with [[Ravion]] or [[Himmel]] before the aura peaks, or **deny healing** with [[Dunlingr]]'s no-heal paired with [[Ravion]] or [[Himmel]]. **Race** with a sped-up carry ([[Thador]], [[Hugin]], or [[Rowan]]).
+Smokey & Meerky's Arena threat is a **channeling healing aroma** that also feeds ATK and energy while allies stay packed inside — they **cannot maintain it under Control Effects** and face a **4s recreate lockout** after interrupt. **Break the channel** with [[Lily May]] sleep or stun/sleep CC, **shove receivers out** with [[Temesia]] or [[Lumont]], or **delete them early** with [[Ravion]] or [[Himmel]] before the aura peaks. **Deny healing** with [[Dunlingr]]'s no-heal paired with [[Ravion]] or [[Himmel]], and **race** with [[Thador]], [[Hugin]], or [[Rowan]].
 
 #### Stats overview
 
