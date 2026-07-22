@@ -3025,6 +3025,27 @@ html.welcome-warning-pending .welcome-warning,
   font-size: 0.82em;
 }
 
+.chip-filter-column {
+  background: var(--chip-behavior-tag-bg);
+  color: var(--chip-behavior-tag-fg);
+  font-size: 0.82em;
+}
+
+a.chip-filter-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.chip-filter-link:hover .chip,
+a.chip-filter-link:focus-visible .chip {
+  outline: 2px solid var(--accent, #3b6fc0);
+  outline-offset: 1px;
+}
+
+.chip-filter-link + .chip-filter-link {
+  margin-left: 0.2rem;
+}
+
 .col-behavior-tags .effect-cell-stack,
 .col-behavior-tags .behavior-tags-cell {
   max-width: 14rem;

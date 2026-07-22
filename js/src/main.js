@@ -43,6 +43,8 @@ window.AFKJ = window.AFKJ || {};
     });
   }
 
+  window.AFKJ.main.syncViewToggleButtons = syncViewToggleButtons;
+
   function filterContextClass(filterType, value) {
     if (filterType === "faction") {
       return "filter-btn-faction-" + utils.factionDataKey(value);
@@ -197,6 +199,9 @@ window.AFKJ = window.AFKJ || {};
     state.columnWidthsLocked = false;
     window.AFKJ.tiers.augmentCsvWithTiers();
     list.buildColumnFilterOptions();
+    if (window.AFKJ.listFilters.tryApplyPendingListFilters()) {
+      syncViewToggleButtons();
+    }
     if (!dom.detailView.classList.contains("hidden")) {
       return;
     }
@@ -255,6 +260,25 @@ window.AFKJ = window.AFKJ || {};
       byId[col.id] = col;
     });
     state.listColumnsById = byId;
+  }
+
+  function loadCounterFilterCombos() {
+    if (location.protocol === "file:") {
+      return;
+    }
+    fetch(utils.assetUrl("data/counter_filter_combos.json"))
+      .then(function (r) {
+        if (!r.ok) {
+          return {};
+        }
+        return r.json();
+      })
+      .then(function (data) {
+        state.counterFilterCombos = data || {};
+      })
+      .catch(function () {
+        state.counterFilterCombos = {};
+      });
   }
 
   function loadCsvData() {
@@ -588,6 +612,7 @@ window.AFKJ = window.AFKJ || {};
 
     // Load actual data
     loadHeroData();
+    loadCounterFilterCombos();
     loadCsvData();
   });
 })();

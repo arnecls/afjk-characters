@@ -39,6 +39,10 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function navigateHome(replace) {
+    const state = window.AFKJ.state;
+    state.csvColumnFilters = {};
+    state.csvColumnFilterCombine = {};
+    state.pendingListFilterMap = null;
     const home = utils.homeUrl();
     if (replace) {
       history.replaceState(null, "", home);
@@ -59,6 +63,25 @@ window.AFKJ = window.AFKJ || {};
 
   function route() {
     const state = window.AFKJ.state;
+    const listFilters = window.AFKJ.listFilters;
+
+    if (listFilters.isListFilterHash()) {
+      const filterMap = listFilters.parseListFilterHash();
+      if (filterMap) {
+        state.pendingListFilterMap = filterMap;
+      }
+      if (state.csvHeaders.length && state.pendingListFilterMap) {
+        listFilters.tryApplyPendingListFilters();
+        showGrid();
+        return;
+      }
+      if (filterMap) {
+        state.viewMode = "list";
+        showGrid();
+        return;
+      }
+    }
+
     const slug = utils.slugFromLocation();
     if (slug) {
       const hero = state.heroBySlug[slug];

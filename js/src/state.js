@@ -9,6 +9,8 @@ window.AFKJ.state = {
   heroesMeta: {},
   heroBySlug: {},
   heroByName: {},
+  counterFilterCombos: {},
+  pendingListFilterMap: null,
   activeFaction: "",
   activeClass: "",
   activeRole: "",
