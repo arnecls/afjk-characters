@@ -97,6 +97,14 @@
       "Behavior tags": { "values": ["energy-provider"] }
     }
   },
+  "heal-inhibitor": {
+    "chips": [
+      { "label": "heal inhibitors", "style": "behavior-tag" }
+    ],
+    "filters": {
+      "Behavior tags": { "values": ["heal-inhibitor"] }
+    }
+  },
   "high-damage-ult": {
     "chips": [
       { "label": "high-damage ultimates", "style": "behavior-tag" }
