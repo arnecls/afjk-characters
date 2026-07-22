@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/counter_filter_combos.schema.json",
+  "title": "Counter filter combos",
+  "description": "Registry of list-view filter sets for [[filter:id]] markers in counter overviews.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "type": "string",
+    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/combo"
+  },
+  "$defs": {
+    "chip": {
+      "type": "object",
+      "required": ["label", "style"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "style": {
+          "type": "string",
+          "enum": ["behavior-tag", "column"]
+        }
+      }
+    },
+    "columnFilter": {
+      "type": "object",
+      "required": ["values"],
+      "additionalProperties": false,
+      "properties": {
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "combine": {
+          "type": "string",
+          "enum": ["and", "or"]
+        }
+      }
+    },
+    "combo": {
+      "type": "object",
+      "required": ["chips", "filters"],
+      "additionalProperties": false,
+      "properties": {
+        "chips": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/chip"
+          }
+        },
+        "filters": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "$ref": "#/$defs/columnFilter"
+          }
+        }
+      }
+    }
+  }
+}

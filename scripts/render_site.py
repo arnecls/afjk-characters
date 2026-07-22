@@ -531,6 +531,14 @@ def main() -> None:
                 encoding="utf-8",
             )
             print(f"Wrote {list_columns_dst.relative_to(io.ROOT)}")
+        counter_combos_src = io.ROOT / "data" / "counter_filter_combos.json"
+        counter_combos_dst = SITE_DIR / "data" / "counter_filter_combos.json"
+        if counter_combos_src.is_file():
+            counter_combos_dst.write_text(
+                counter_combos_src.read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            print(f"Wrote {counter_combos_dst.relative_to(io.ROOT)}")
     else:
         print(
             f"Warning: {OVERVIEW_CSV.name} missing; "

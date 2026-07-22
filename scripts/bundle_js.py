@@ -41,6 +41,7 @@ SRC_FILES = [
     "ui-widgets.js",
     "views-grid.js",
     "views-list.js",
+    "list-filters.js",
     "views-mix.js",
     "views-detail.js",
     "router.js",

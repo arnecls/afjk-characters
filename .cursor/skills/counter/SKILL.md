@@ -340,8 +340,25 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Lumont]], [[Eironn]], [[Pippa]], …) | Battle-start-only placement advice; shove Steadfast allies; [[Temesia]] |
 | Moving proximity aura | Shove **receivers** ([[Lumont]], [[Pippa]], [[Reinier]], [[Mehira]]); peel provider only if not Steadfast/Unaffected | [[Cyran]] / [[Eironn]] enemy pulls; global buffs as positional |
 
-Do not put tag names (`backline-assassin`, etc.) in public counter prose —
-use them only to select which heroes to name as `[[pills]]`.
+#### Filter combos and `like` examples
+
+When a counter lever has **≥1 other high-PVP kit-fit** alternative under
+today’s gates and naming rules, wrap named examples as
+**`[[filter:combo-id]] like [[Hero]]` or `[[Hero]]`** — the filter chips show
+that the named units are examples, not an exhaustive list.
+
+- **No alternative** (e.g. only [[Lily May]] for battle-start interrupt) →
+  bare `[[Hero]]`, no filter combo.
+- **Nothing filterable** (e.g. lasting wide ultimates with no precise list
+  column) → free descriptive phrase, **no link**:
+  `lasting wide ultimates like [[Shemira]] or [[Frieren]]`.
+- Registry: every `[[filter:id]]` must exist in
+  `data/counter_filter_combos.json` before use; add a row in the same change
+  set when introducing a new combo.
+- Prefer **behavior tags**; refine with other list-view columns when it
+  sharpens the set (e.g. Magic DEF skew → `magic-backline-assassin`).
+- Chips render as humanized labels; clicks open **list view** with column
+  filters applied (deep-link from counter chips only).
 
 ### 5. Tag heuristics (quick reference)
 
@@ -414,12 +431,16 @@ after Play overview via `format_behavior_section()` in `rewrite-summaries.py`.
 just render-site
 ```
 
-Display: `[[Hero]]` → character pills in `site/js/src/chips.js` `renderInline()`.
+Display: `[[Hero]]` → character pills; `[[filter:id]]` → linked filter chips
+(all chips share the same list filter set) in `site/js/src/chips.js`
+`renderInline()`.
 
 ### 8. Verify
 
 - Entry length 80–1000 chars; 3–6 sentences
-- All `[[markers]]` resolve to roster names (`just validate` counter overview)
+- All `[[Hero]]` markers resolve to roster names; all `[[filter:id]]` resolve
+  to `data/counter_filter_combos.json` (`just validate` counter overview)
+- Example heroes after `like` must match the combo’s filter set
 - Pilot / partial roster: missing keys are OK (warning only)
 - Site: `#hero/<slug>` — Counter proposal under Play overview; pills link correctly
 - Spot-check: gates 1–6 applied (no unhittable burst, no tier-only “burst”,

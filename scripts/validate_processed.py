@@ -41,7 +41,13 @@ PLAY_OVERVIEW = ROOT / "data" / "hero_play_overviews.json"
 PLAY_OVERVIEW_SCHEMA = ROOT / "data" / "schema" / "play_overview.schema.json"
 COUNTER_OVERVIEW = ROOT / "data" / "hero_counter_overviews.json"
 COUNTER_OVERVIEW_SCHEMA = ROOT / "data" / "schema" / "counter_overview.schema.json"
+COUNTER_FILTER_COMBOS = ROOT / "data" / "counter_filter_combos.json"
+COUNTER_FILTER_COMBOS_SCHEMA = (
+    ROOT / "data" / "schema" / "counter_filter_combos.schema.json"
+)
+OVERVIEW_CSV = ROOT / "heroes-overview.csv"
 HERO_MARKER_RE = re.compile(r"\[\[([^\]]+)\]\]")
+FILTER_MARKER_RE = re.compile(r"\[\[filter:([a-z0-9-]+)\]\]")
 
 _CC_KEYWORDS: dict[str, str] = {
     "stun": r"\bstun(?:s|ned|ning)?\b",
@@ -476,10 +482,134 @@ def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str
     return errors, warnings
 
 
+def _load_overview_csv_rows() -> dict[str, dict[str, str]]:
+    """Map hero display name to CSV row dict."""
+    path = OVERVIEW_CSV
+    if not path.is_file():
+        site_path = ROOT / "site" / "data" / "heroes-overview.csv"
+        if site_path.is_file():
+            path = site_path
+        else:
+            return {}
+    import csv
+
+    with path.open(encoding="utf-8", newline="") as fh:
+        reader = csv.DictReader(fh)
+        return {row["Name"]: dict(row) for row in reader}
+
+
+def _cell_filter_atoms(column: str, cell_value: str) -> set[str]:
+    raw = (cell_value or "").strip()
+    if not raw:
+        return set()
+    if column == "Behavior tags":
+        return {part.strip() for part in raw.split(";") if part.strip()}
+    atoms: set[str] = set()
+    for entry in raw.split(";"):
+        entry = entry.strip()
+        if not entry:
+            continue
+        atoms.add(entry)
+        for token in entry.split(","):
+            token = token.strip()
+            if token:
+                atoms.add(token)
+    return atoms
+
+
+def _cell_matches_column_filter(
+    column: str,
+    cell_value: str,
+    selected: list[str],
+    *,
+    combine: str = "or",
+) -> bool:
+    if not selected:
+        return True
+    raw = (cell_value or "").strip()
+    if not raw:
+        return False
+    if len(selected) == 1 and selected[0] == "all":
+        return True
+    atoms = _cell_filter_atoms(column, raw)
+    mode = combine if combine in ("and", "or") else "or"
+    if column == "Behavior tags":
+        if mode == "and":
+            return all(value in atoms for value in selected)
+        return any(value in atoms for value in selected)
+    return any(value in atoms for value in selected)
+
+
+def _hero_matches_combo_filters(
+    row: dict[str, str], filters: dict[str, Any]
+) -> bool:
+    for column, spec in filters.items():
+        values = list(spec.get("values") or [])
+        combine = spec.get("combine", "or")
+        if not _cell_matches_column_filter(
+            column, row.get(column, ""), values, combine=combine
+        ):
+            return False
+    return True
+
+
+def _extract_like_heroes(text: str, combo_id: str) -> list[str]:
+    pattern = (
+        rf"\[\[filter:{re.escape(combo_id)}\]\]\s+like\s+"
+        r"((?:\[\[[^\]]+\]\]\s*(?:(?:,|or)\s*)?)+)"
+    )
+    match = re.search(pattern, text, flags=re.IGNORECASE)
+    if not match:
+        return []
+    clause = match.group(1)
+    heroes: list[str] = []
+    for marker in HERO_MARKER_RE.findall(clause):
+        if marker.startswith("filter:"):
+            continue
+        heroes.append(marker)
+    return heroes
+
+
+def check_counter_filter_combos() -> tuple[list[str], list[str]]:
+    """Validate counter filter combo registry schema."""
+    errors: list[str] = []
+    warnings: list[str] = []
+    if not COUNTER_FILTER_COMBOS.exists():
+        warnings.append("missing counter_filter_combos.json")
+        return errors, warnings
+    try:
+        combos = json.loads(COUNTER_FILTER_COMBOS.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"counter filter combos JSON parse error: {exc}"], warnings
+    if jsonschema_available() and COUNTER_FILTER_COMBOS_SCHEMA.is_file():
+        try:
+            schema = json.loads(
+                COUNTER_FILTER_COMBOS_SCHEMA.read_text(encoding="utf-8")
+            )
+            import jsonschema
+
+            jsonschema.validate(combos, schema)
+        except Exception as exc:
+            errors.append(f"counter filter combos schema failed: {exc}")
+    csv_rows = _load_overview_csv_rows()
+    headers = list(next(iter(csv_rows.values())).keys()) if csv_rows else []
+    for combo_id, combo in combos.items():
+        for column in combo.get("filters", {}):
+            if headers and column not in headers:
+                errors.append(
+                    f"counter filter combo unknown column {combo_id}: {column}"
+                )
+    return errors, warnings
+
+
 def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str]]:
     """Validate hero_counter_overviews.json schema and hero markers."""
     errors: list[str] = []
     warnings: list[str] = []
+
+    combo_errors, combo_warnings = check_counter_filter_combos()
+    errors.extend(combo_errors)
+    warnings.extend(combo_warnings)
 
     if not COUNTER_OVERVIEW.exists():
         warnings.append("missing hero_counter_overviews.json")
@@ -529,10 +659,51 @@ def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[
                 "(expected <=1000)"
             )
         for marker in HERO_MARKER_RE.findall(text):
+            if marker.startswith("filter:"):
+                continue
             if marker not in expected:
                 errors.append(
                     f"counter overview unknown marker {short}: [[{marker}]]"
                 )
+        combos: dict[str, Any] = {}
+        if COUNTER_FILTER_COMBOS.is_file():
+            try:
+                combos = json.loads(
+                    COUNTER_FILTER_COMBOS.read_text(encoding="utf-8")
+                )
+            except json.JSONDecodeError:
+                combos = {}
+        csv_rows = _load_overview_csv_rows()
+        for combo_id in FILTER_MARKER_RE.findall(text):
+            if combo_id not in combos:
+                errors.append(
+                    f"counter overview unknown filter {short}: "
+                    f"[[filter:{combo_id}]]"
+                )
+                continue
+            like_heroes = _extract_like_heroes(text, combo_id)
+            if not like_heroes:
+                warnings.append(
+                    f"counter overview filter without like examples "
+                    f"{short}: [[filter:{combo_id}]]"
+                )
+                continue
+            combo = combos[combo_id]
+            for hero_name in like_heroes:
+                if hero_name not in expected:
+                    continue
+                row = csv_rows.get(hero_name)
+                if not row:
+                    warnings.append(
+                        f"counter overview filter validate skip {short}: "
+                        f"no CSV row for {hero_name}"
+                    )
+                    continue
+                if not _hero_matches_combo_filters(row, combo.get("filters", {})):
+                    errors.append(
+                        f"counter overview filter mismatch {short}: "
+                        f"{hero_name} does not match [[filter:{combo_id}]]"
+                    )
 
     missing = sorted(expected - set(overviews))
     if missing:

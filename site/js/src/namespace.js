@@ -34,3 +34,9 @@ window.AFKJ.views = {
 
 // Router
 window.AFKJ.router = {};
+
+// List-view filter deep-links (counter proposal chips)
+window.AFKJ.listFilters = {};
+
+// Bootstrap hooks exposed for other modules
+window.AFKJ.main = {};

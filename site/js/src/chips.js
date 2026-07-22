@@ -194,7 +194,11 @@ window.AFKJ = window.AFKJ || {};
         }
       } else {
         parts.push(escapeHtml(text.slice(last, match.index)));
-        parts.push(renderCharacterPill(heroName));
+        if (heroName.indexOf("filter:") === 0) {
+          parts.push(renderFilterComboChips(heroName.slice(7)));
+        } else {
+          parts.push(renderCharacterPill(heroName));
+        }
       }
       last = match.index + match[0].length;
     }
@@ -558,6 +562,77 @@ window.AFKJ = window.AFKJ || {};
     const emoji = def ? def.emoji : "🏷️";
     const tooltip = withTooltip ? behaviorTagTooltip(tag) : "";
     return chipSpan(emoji, tag.trim(), "chip-behavior-tag", tooltip);
+  }
+
+  function filterColumnEmoji(columnLabel) {
+    const key = exactTagDefinitionKey(columnLabel);
+    if (key && config.TAG_DEFINITIONS[key]) {
+      return config.TAG_DEFINITIONS[key].emoji;
+    }
+    const dmgEmojis = {
+      "Magic DMG": config.TAG_DEFINITIONS.Magic.emoji,
+      "Physical DMG": config.TAG_DEFINITIONS.Physical.emoji,
+      "True DMG": config.TAG_DEFINITIONS["True damage"].emoji,
+    };
+    return dmgEmojis[columnLabel] || "";
+  }
+
+  function behaviorTagIdForComboChip(combo, chipIndex) {
+    const spec = combo.filters && combo.filters["Behavior tags"];
+    if (!spec || !spec.values || !spec.values.length) {
+      return null;
+    }
+    const chip = combo.chips[chipIndex];
+    if (!chip || chip.style !== "behavior-tag") {
+      return null;
+    }
+    let behaviorIdx = 0;
+    for (let i = 0; i < chipIndex; i++) {
+      if (combo.chips[i].style === "behavior-tag") {
+        behaviorIdx += 1;
+      }
+    }
+    const values = spec.values;
+    return values[Math.min(behaviorIdx, values.length - 1)];
+  }
+
+  function renderFilterComboChip(chip, combo, chipIndex) {
+    const cls =
+      chip.style === "behavior-tag" ? "chip-behavior-tag" : "chip-filter-column";
+    let emoji = "";
+    let tooltip = "";
+    if (chip.style === "behavior-tag") {
+      const tagId = behaviorTagIdForComboChip(combo, chipIndex);
+      const def = tagId ? behaviorTagDefinition(tagId) : null;
+      emoji = def ? def.emoji : "🏷️";
+      tooltip = tagId ? behaviorTagTooltip(tagId) : "";
+    } else {
+      emoji = filterColumnEmoji(chip.label);
+    }
+    return chipSpan(emoji, chip.label, cls, tooltip);
+  }
+
+  function renderFilterComboChips(comboId) {
+    const combos = window.AFKJ.state.counterFilterCombos || {};
+    const combo = combos[comboId];
+    if (!combo || !combo.chips || !combo.chips.length) {
+      return escapeHtml("[[filter:" + comboId + "]]");
+    }
+    const listFilters = window.AFKJ.listFilters;
+    const href = listFilters ? listFilters.comboDeepLinkById(comboId) : "#";
+    const hrefAttr = escapeHtml(href);
+    return combo.chips
+      .map(function (chip, chipIndex) {
+        const inner = renderFilterComboChip(chip, combo, chipIndex);
+        return (
+          '<a href="' +
+          hrefAttr +
+          '" class="chip-filter-link">' +
+          inner +
+          "</a>"
+        );
+      })
+      .join(" ");
   }
 
   function isSpeedMetricLabel(label) {
@@ -2495,6 +2570,8 @@ window.AFKJ = window.AFKJ || {};
     behaviorTagTooltip: behaviorTagTooltip,
     behaviorTagDefinition: behaviorTagDefinition,
     behaviorTagChip: behaviorTagChip,
+    renderFilterComboChip: renderFilterComboChip,
+    renderFilterComboChips: renderFilterComboChips,
     isSpeedMetricLabel: isSpeedMetricLabel,
     qualityIndicatorMeta: qualityIndicatorMeta,
     targetingIndicatorMeta: targetingIndicatorMeta,
