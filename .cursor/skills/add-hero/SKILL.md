@@ -269,7 +269,7 @@ AGENTS.md: 4–6 sentences, ~900 chars, no game modes, bold sparingly.
 
 ### C5. Counter proposal — `data/hero_counter_overviews.json`
 
-Follow [counter-overview](../counter-overview/SKILL.md): 3–5 sentences, PVP/Arena
+Follow [counter](../counter/SKILL.md): 3–5 sentences, PVP/Arena
 OK, `[[Hero]]` markers for named units, prefer high Prydwen PVP tiers.
 
 ---

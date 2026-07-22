@@ -1,5 +1,5 @@
 ---
-name: counter-overview
+name: counter
 description: >-
   Writes or refreshes PVP counter overviews in data/hero_counter_overviews.json
   for one hero, a named subset, or the full roster. Use when a new hero is added,
@@ -24,8 +24,10 @@ Phase C.
 4. `data/hero_play_overviews.json` — how the hero plays (threat context)
 5. `data/hero_behavior_tags.json` — pick counter units by combat role
 6. `data/heroes_data_processed.json` + `data/heroes_data_skill_summary.json`
-7. `data/heroes_data.json` — `prydwen_tiers.pvp` for named-unit preference
-8. `afkj-data/docs` (faq-pvp, combat-*-pvp) — private grounding only; never copy
+7. `data/heroes_data.json` — `prydwen_tiers.pvp` + `damage_type` for assassin pick
+8. `data/character_stat_ranks.json` — Phys DEF / Magic DEF ranks (`low` /
+   `average` / `high`) for Gate 2 damage-type bias
+9. `afkj-data/docs` (faq-pvp, combat-*-pvp) — private grounding only; never copy
    implementation jargon into public counter text
 
 ## Workflow
@@ -33,8 +35,8 @@ Phase C.
 ```
 Task progress:
 - [ ] 1. Scope — which heroes (single / subset / missing / all)
-- [ ] 2. Read play overview, skills, tags, PVP tiers for each hero
-- [ ] 3. Run validation gates 1–5
+- [ ] 2. Read play overview, skills, tags, PVP tiers, DEF ranks for each hero
+- [ ] 3. Run validation gates 1–6
 - [ ] 4. Apply Explicit counters + high-PVP naming for [[pills]]
 - [ ] 5. Write 3–5 sentences with [[Display Name]] markers
 - [ ] 6. Update hero_counter_overviews.json
@@ -99,6 +101,27 @@ they also fit the kill tags.
 
 Then apply **kit-fit** (Naming rules §4) — name **1–2** best-fit units, never the
 stock [[Athalia]] / [[Evie]] / [[Nerion]] trio as a default list.
+
+**DEF skew + true damage (variance):** after the role pool is set, read the
+target’s Phys DEF and Magic DEF ranks in `data/character_stat_ranks.json`. Any
+asymmetry biases `damage_type` among tagged assassins:
+
+- Phys DEF **lower** than Magic DEF → prefer **Physical** assassins
+- Magic DEF **lower** than Phys DEF → prefer **Magic** assassins
+- Equal ranks → no DEF bias; keep timing / kit-fit only
+
+**Damage immunities override** DEF bias (e.g. Hodgkin ethereal / phys immune →
+Magic pressure, not Physical dump into intangibility).
+
+When **both** Phys DEF and Magic DEF are **high**, and/or the kit leans on
+**heavy shields**, prefer assassins whose skill text includes **true damage**
+first (rotate among fits such as [[Himmel]], [[Nara]], [[Vala]], [[Pippa]],
+[[Athalia]] — do **not** re-center every high-DEF delete on Athalia). Allow
+non-assassin true-damage pressure only when Gate 5 / timing already selected
+that class (e.g. lasting [[Frieren]] / [[Sylphira]] coverage).
+
+Goal: meaningful variance in delete pills — DEF and true damage break the
+repeated stock trio, not replace it with a new single default.
 
 Example: Cryonaia wind-up (**early** delete) — [[Athalia]] or [[Ravion]], not
 slow investigators like Evie, and not generic S-tier names like Mehira/Saida.
@@ -193,6 +216,36 @@ Gate 2 — Gate 5 applies to pinning the **mobile unit itself**.
 Example: Tasi — [[Shemira]] / [[Frieren]] lasting coverage + [[Lily May]] for
 sleep; not a backline-assassin pin.
 
+#### Gate 6 — Mid-fight position dependence
+
+Use displacement when a kit needs an ally to **stay** somewhere **during** the
+fight — not merely at battle start.
+
+**Out of scope:** battle-start-only placement / bonding / linking (e.g. Twins
+Stellar Bond line, Thador / Thoran prep placement). Those are not Gate 6.
+
+##### 6a — `static-tile-buffer`
+
+If the subject is tagged `static-tile-buffer` (today [[Hugin]], [[Gunnar]]),
+counter by **displacing the buffed ally off the tile** so the mid-fight buff
+drops. Lead with [[Temesia]] or [[Lumont]]; rotate other mid-fight displacers
+([[Eironn]], [[Mehira]], [[Reinier]], [[Pippa]]) — still name at most two, with
+C/H same-clause rules.
+
+If the parked ally is **Steadfast** or **Unaffected**, displacement does not
+move them — fall back to **delete / inhibit** that ally instead (see Explicit
+counters [[Gunnar]] Doomfield).
+
+##### 6b — Moving / provider-attached aura
+
+If skill text or play overview shows a buff zone that **follows the caster**
+(proximity aura / circle around the provider — e.g. [[Perseus]]), prefer
+**shoving receivers out of the aura** first, then peeling the provider away
+from his carries. Same displacer pool as 6a ([[Temesia]], [[Lumont]],
+[[Eironn]], …); high-movement chargers that also displace fit well.
+
+Do **not** treat global / non-positional team buffs as Gate 6b.
+
 ### 4. Naming rules for [[pills]]
 
 - Prefer Prydwen PVP **S+** then **S**, then **A+** for example and counter units
@@ -208,6 +261,11 @@ sleep; not a backline-assassin pin.
   damage type, inhibit vs burst, non-ult, etc.). Rotate A+/S alternatives
   ([[Himmel]], [[Ravion]], [[Bonnie]]) when fit is equal so the roster file
   does not repeat the same pair on every entry.
+- **DEF / true-damage bias (Gate 2):** use Phys DEF vs Magic DEF ranks and
+  true-damage kit text to diversify delete picks — prefer the matching
+  `damage_type`, then true-damage assassins when both DEFs are high or shields
+  are thick. Immunities override. Still rotate among fit names; do not collapse
+  every Physical-skew or high-DEF case onto [[Athalia]] alone.
 - **Celestial / Hypogean alternatives:** if any suggested **counter** unit is
   Celestial or Hypogean, always also name a **non-Celestial, non-Hypogean**
   alternative for that same lever in the **same clause** (e.g. `[[Athalia]] or
@@ -237,6 +295,12 @@ sleep; not a backline-assassin pin.
 | Peel a diver / mark partner | Match the *victim* slot: inhibit ([[Bonnie]], [[Evie]]) or race buffers | Listing three assassins |
 | Steadfast vs pulls | [[Gunnar]] (H — pair with [[Igor]]) | Spread vs global pulls |
 | Heal denial | [[Dunlingr]] (C — pair with a non-C/H early-delete path) | Heal denial with no non-C/H fallback |
+| Low Phys DEF / higher Magic DEF | Physical assassins ([[Ravion]], [[Himmel]], [[Vala]], …) | Magic dump into the strong DEF |
+| Low Magic DEF / higher Phys DEF | Magic assassins ([[Evie]], [[Nerion]], [[Pippa]], …) | Physical dump into the strong DEF |
+| Both DEF high and/or heavy shields | True-damage assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
+| Damage immunity (e.g. phys ethereal) | Opposite damage type / lasting Magic coverage | Matching the immune type |
+| Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Temesia]], [[Lumont]], [[Eironn]], …) | Battle-start-only placement advice; shove Steadfast allies |
+| Moving proximity aura | Shove **receivers** out, then peel provider (same displacer pool) | Treating global team buffs as positional |
 
 Do not put tag names (`backline-assassin`, etc.) in public counter prose —
 use them only to select which heroes to name as `[[pills]]`.
@@ -251,11 +315,14 @@ use them only to select which heroes to name as `[[pills]]`.
 | Any-row priority kill | `assassin` | 2 |
 | High-mobility / leap / teleport (esp. late ult) | Long lasting wide/retargeting ultimates ([[Shemira]], [[Frieren]]); not assassin pin | 5 |
 | Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — not spread vs global pulls | 4a note |
+| Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Temesia]], [[Lumont]], [[Eironn]], …); Steadfast → delete/inhibit | 6a |
+| Moving / provider-attached aura | Displace receivers out of aura, then peel provider | 6b |
+| DEF skew / high both DEF + shields | Match assassin `damage_type`; true damage when both high | 2 |
 | Early / high-damage ultimate | See Explicit counters | 4a |
 
 ### 6. Explicit counters
 
-Consult this table **after** gates 1–5. Keep **named combos** here. When a run
+Consult this table **after** gates 1–6. Keep **named combos** here. When a run
 confirms a new reusable **named** combo (not already covered by a gate),
 **append a row in the same change set**.
 
@@ -274,12 +341,14 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | [[Berial]] / [[Lily May]] / [[Harak]] (mobile finish) | Lasting coverage ([[Shemira]], [[Frieren]]) or area packages; do not chase shadow hops / relocates / dashes with assassin pin |
 | [[Harak]] (feast / devour) | Deny assists that extend feast; keep weakest above devour HP threshold; Gate 5 lasting coverage |
 | Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — [[Gunnar]] Doomfield (self+ally), self-Steadfast [[Igor]]; spread does **not** beat global pulls ([[Cyran]] black hole) |
+| `static-tile-buffer` (mid-fight tile buff) | Displace the **buffed ally** off the tile — [[Temesia]] / [[Lumont]] / [[Eironn]] (rotate [[Mehira]], [[Reinier]], [[Pippa]]); if parked ally is Steadfast/Unaffected, delete/inhibit instead (Gate 6a) |
+| Moving proximity aura (e.g. [[Perseus]]) | Shove **receivers** out of the aura, then peel the provider — same displacer pool (Gate 6b) |
 | [[Bonnie]] (Aging cleanse) | Ally cleanse: [[Hewynn]] (C OK here); soft team shorten: [[Evie]] full-intel. Self-only cleanses ([[Lucca]], [[Sylphira]]) only help if *they* are the Aged rearmost |
 | [[Damian]] (off-field / unhittable) | Collapse chariot/toys with area packages ([[Shemira]], [[Frieren]], [[Pandora]]); never pin Damian |
 | [[Evie]] (conceal invincible intel) | No opener dump into concealment; punish after reveal with lasting [[Shemira]] / [[Frieren]] or mid-fight [[Gwyneth]] |
 | [[Dionel]] (untargetable soar + relocating late ult) | Lasting [[Shemira]] / [[Frieren]] + [[Lily May]] on soar; pressure buffer partners — not assassin pin mid-air |
-| [[Gunnar]] Doomfield | Priority-delete the **parked rear ally** ([[Ravion]] / [[Evie]]); not Gunnar through shields first |
-| [[Hodgkin]] ethereal (phys immune) | **Magic** lasting coverage ([[Shemira]] / [[Frieren]]); no physical dump into intangibility |
+| [[Gunnar]] Doomfield | Priority-delete the **parked rear ally** ([[Ravion]] / [[Evie]]); not Gunnar through shields first — Steadfast parked ally means displace fails (Gate 6a) |
+| [[Hodgkin]] ethereal (phys immune) | **Magic** lasting coverage ([[Shemira]] / [[Frieren]]); no physical dump into intangibility — immunity overrides DEF skew (Gate 2) |
 | [[Phraesto]] (Illusion) | Prefer deleting **Phraesto** over the Illusion — Illusion-first triggers his stun punish |
 | [[Pandora]] (boxed ally) | Pressure the **boxed partner** (acts through her global CC); early delete before Corruption + [[Lily May]] on the freeze |
 | [[Saida]] (seed/revive + teleports) | Lasting [[Shemira]] / [[Frieren]]; inhibit before seeds multiply — not assassin pin (Gate 5) |
@@ -311,10 +380,12 @@ Display: `[[Hero]]` → character pills in `site/js/src/chips.js` `renderInline(
 - All `[[markers]]` resolve to roster names (`just validate` counter overview)
 - Pilot / partial roster: missing keys are OK (warning only)
 - Site: `#hero/<slug>` — Counter proposal under Play overview; pills link correctly
-- Spot-check: gates 1–5 applied (no unhittable burst, no tier-only “burst”,
+- Spot-check: gates 1–6 applied (no unhittable burst, no tier-only “burst”,
   exempt carry if relevant, 4a threat timing + 4b delete-window curve, no
-  assassin pin on high-movers, no stock Athalia/Evie/Nerion trio — kit-fit 1–2,
-  every Celestial/Hypogean counter has a non-C/H alternative)
+  assassin pin on high-movers, Gate 6 positional displace vs Steadfast fallback,
+  DEF skew / true-damage variance on delete picks, immunity overrides DEF,
+  no stock Athalia/Evie/Nerion trio — kit-fit 1–2, every Celestial/Hypogean
+  counter has a non-C/H alternative)
 
 ## Related skills
 
