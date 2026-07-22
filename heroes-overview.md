@@ -1144,7 +1144,7 @@ Baelran leans on a **massive HP pool** and passive regeneration, then transforms
 
 #### Counter proposal
 
-Baelran banks a huge HP cushion and **transforms when healed to full**, entering Celestial Form and eventually **permanent Unaffected** with frontal true damage and max-HP shred. He is **Unaffected** during the bonus-HP window and form transitions — do not bank on CC there. **Delete him early** with [[filter:phys-backline-assassin]] like [[Himmel]] or [[Ravion]] before Celestial Form locks in; [[Dunlingr]]'s Curelock only blocks healing *others*, not his own regen and ult restore. Once enhanced and Unaffected, lean on lasting wide ultimates like [[Shemira]] or [[Gwyneth]] damage rather than control.
+Baelran banks a huge HP cushion and **transforms when healed to full**, entering Celestial Form and eventually **permanent Unaffected** with frontal true damage and max-HP shred. He is **Unaffected** during the bonus-HP window and form transitions — do not bank on CC there. **Cut his Vitality or healing received early** with [[Frieren]] or [[Gwyneth]] so heal-to-full and form change stall; softly pressure **heal providers** if they pocket him. **Delete him early** with high-damage melee like [[Himmel]] or [[Shakir]] before Celestial Form locks in — [[Dunlingr]]'s Curelock only blocks healing *others*, not his own regen and ult restore. Once enhanced and Unaffected, lean on lasting wide ultimates like [[Shemira]] or [[Gwyneth]] damage rather than control.
 
 #### Stats overview
 
@@ -4349,7 +4349,7 @@ Gerda opens with a **battle-start leap** that interrupts nearby enemies and drop
 
 #### Counter proposal
 
-Gerda **leaps at battle start** (Unaffected mid-cast) to interrupt and drop a **healing hot spring**, then her ultimate **sleeps** clustered foes while healing allies. Do not bank on interrupting the leap. **Spread** so the stomp and spring cover fewer tiles, blunt the sleep with [[Lily May]], and **cut spring sustain** with early [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], or [[Dunlingr]]'s no-heal order. She relocates into the line — lasting [[Shemira]] coverage beats a single assassin pin.
+Gerda **leaps at battle start** (Unaffected mid-cast) to interrupt and drop a **healing hot spring**, then her ultimate **sleeps** clustered foes while healing allies. Do not bank on interrupting the leap. **Spread** so the stomp and spring cover fewer tiles, blunt the sleep with [[Lily May]], and **cut spring sustain** with early high-damage melee like [[Himmel]] or [[Zorya]], or [[Dunlingr]]'s no-heal order. She relocates into the line — lasting [[Shemira]] coverage beats a single assassin pin.
 
 #### Stats overview
 
@@ -4466,7 +4466,7 @@ Granny Dahnie taunts a foe and **recovers HP**, then retaliates with projectiles
 
 #### Counter proposal
 
-Granny Dahnie **taunts and retaliates** when damage thresholds trip, then her ultimate **immobilizes nearby foes** while draining HP and energy — she is **Unaffected** for that channel. Do not dump CC into the grass window. **Burst her before the ultimate** with [[filter:backline-assassin]] like [[Ravion]] or [[Evie]], and avoid slow chip that only feeds Seed Cannon retaliations. Once she is channeling, lean on lasting wide ultimates like [[Gwyneth]] or [[Shemira]] damage rather than control, and keep melee carries from camping her taunt cycle.
+Granny Dahnie **taunts and retaliates** when damage thresholds trip, then her ultimate **immobilizes nearby foes** while draining HP and energy — she is **Unaffected** for that channel. Do not dump CC into the grass window. **Burst her before the ultimate** with high-damage melee like [[Himmel]] or [[Zorya]], and avoid slow chip that only feeds Seed Cannon retaliations. Once she is channeling, lean on lasting wide ultimates like [[Gwyneth]] or [[Shemira]] damage rather than control, and keep melee carries from camping her taunt cycle.
 
 #### Stats overview
 
@@ -5104,7 +5104,7 @@ Hepler toggles between **true-form offense** and an alternate **taunt form** tha
 
 #### Counter proposal
 
-Hepler toggles **taunt form** for multi-ally heals and shields, spends charges into **permanent DEF and damage reduction**, blinds on revert, and **saves the frontmost ally** from a fatal blow by briefly turning them invincible as an animal. Attrition favors him once those stacks pile up. Burst him and the protected ally **before charges mature** with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]], and cancel Form Shift with [[Lily May]] on a fast window. Do not dump the finishing hit into the animal-form invulnerability — wait for that brief safety to end, then finish.
+Hepler toggles **taunt form** for multi-ally heals and shields, spends charges into **permanent DEF and damage reduction**, blinds on revert, and **saves the frontmost ally** from a fatal blow by briefly turning them invincible as an animal. Attrition favors him once those stacks pile up. Burst him and the protected ally **before charges mature** with high-damage melee like [[Himmel]] or [[Zorya]], and cancel Form Shift with [[Lily May]] on a fast window. Do not dump the finishing hit into the animal-form invulnerability — wait for that brief safety to end, then finish.
 
 #### Stats overview
 
@@ -6606,7 +6606,7 @@ Kordan drops a **hunting zone** that cuts damage taken and outside healing while
 
 #### Counter proposal
 
-Kordan drops a **hunting circle** that cuts outside healing and damage into the ring while buffing allies inside, then **enhances and leaps** after the first kill to chase prey. Keep your line out of the ring or end him before Rage Unleashed — outside healers cannot top up allies parked in the zone. Blunt his fast first ultimate with [[Lily May]], delete early with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], and once he starts leaping use lasting wide ultimates like [[Shemira]] or [[Gwyneth]] rather than chasing each reposition.
+Kordan drops a **hunting circle** that cuts outside healing and damage into the ring while buffing allies inside, then **enhances and leaps** after the first kill to chase prey. Keep your line out of the ring or end him before Rage Unleashed — outside healers cannot top up allies parked in the zone. Blunt his fast first ultimate with [[Lily May]], delete early with high-damage melee like [[Himmel]] or [[Perseus]], and once he starts leaping use lasting wide ultimates like [[Shemira]] or [[Gwyneth]] rather than chasing each reposition.
 
 #### Stats overview
 
@@ -9312,7 +9312,7 @@ Nara strikes a hero for **scaling damage against low HP ratios**, then yanks out
 
 #### Counter proposal
 
-Nara yanks **out-of-range heroes into melee** for knock-up follow-ups, then **executes low-HP targets** with a fast ultimate that can shockwave-heal and refund energy on the finisher. She snowballs ATK off assists and kills. Keep fragile carries **inside her attack range** so the pull never arms, or blunt the displace with self-Steadfast [[Igor]]. Kill her before the execute loop with [[filter:assassin-delete]] like [[Ravion]] or [[Vala]], and cancel Crimson Vengeance with [[Lily May]] when she winds up on a wounded mark.
+Nara yanks **out-of-range heroes into melee** for knock-up follow-ups, then **executes low-HP targets** with a fast ultimate that can shockwave-heal and refund energy on the finisher. She snowballs ATK off assists and kills. Keep fragile carries **inside her attack range** so the pull never arms, or blunt the displace with self-Steadfast [[Igor]]. Kill her before the execute loop with high-damage melee like [[Himmel]] or [[Shakir]], and cancel Crimson Vengeance with [[Lily May]] when she winds up on a wounded mark.
 
 #### Stats overview
 
@@ -10116,7 +10116,7 @@ Orion opens by **enchanting his rapier** for faster energy fill and **stacking S
 
 #### Counter proposal
 
-Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack; if they bring **heavy healers or fatal-blow saves**, add **Vitality or healing-received cuts** with [[Frieren]] or [[Gwyneth]] (or [[Satrana]] / [[Igor]]). Delete him early with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
+Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack; if they bring **heavy healers or fatal-blow saves**, add **Vitality or healing-received cuts** with [[Frieren]] or [[Gwyneth]] (or [[Satrana]] / [[Igor]]). Delete him early with high-damage melee like [[Himmel]] or [[Zorya]], cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -10976,7 +10976,7 @@ Phraesto sacrifices max HP to **summon an Illusion that casts all his skills**, 
 
 #### Counter proposal
 
-Phraesto sacrifices HP to field an **Illusion that copies his kit**, while both grant **rear-ally contracts**, DoT shred, and battle-start row shields. Prefer killing **Phraesto himself** — defeating the Illusion first triggers his stun punish. Delete him with [[filter:backline-assassin]] like [[Pippa]] or [[Ravion]], and soften rear-buffed carries with [[Bonnie]]'s Aging or [[Nerion]]'s mid-fight pressure so contracts cannot snowball the backline.
+Phraesto sacrifices HP to field an **Illusion that copies his kit**, while both grant **rear-ally contracts**, DoT shred, and battle-start row shields. Prefer killing **Phraesto himself** — defeating the Illusion first triggers his stun punish. Delete him with high-damage melee like [[Himmel]] or [[Shakir]], and soften rear-buffed carries with [[Bonnie]]'s Aging or [[Nerion]]'s mid-fight pressure so contracts cannot snowball the backline.
 
 #### Stats overview
 
@@ -11954,7 +11954,7 @@ Salazer summons **flying swords** on ultimate while arc strikes **add bonus hits
 
 #### Counter proposal
 
-Salazer is a **low-HP finisher** — arcs hit harder on wounded foes, then **imprison** cages a soft target, **heals him**, and **resets his whip** for chained executes. Keep your line **above imprison thresholds** with early sustain so his reset loop never starts. Delete him before the first cage with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], or blunt follow-up with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] once he is committed to a mark.
+Salazer is a **low-HP finisher** — arcs hit harder on wounded foes, then **imprison** cages a soft target, **heals him**, and **resets his whip** for chained executes. Keep your line **above imprison thresholds** with early sustain so his reset loop never starts. Delete him before the first cage with high-damage melee like [[Himmel]] or [[Zorya]], or blunt follow-up with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] once he is committed to a mark.
 
 #### Stats overview
 
@@ -13613,7 +13613,7 @@ Soren rushes targets with **knockback and stun on collision**, using melee strik
 
 #### Counter proposal
 
-Soren's Arena threat is **knockback-and-stun collision chains** that reset whenever his block absorbs a big hit, so clustered lines feed his follow-ups. He **repositions to maximize collisions** and recovers with a low-HP haste surge. Blunt the displace with **Steadfast** — self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. **Burst him before the block cycle** with [[filter:backline-assassin]] like [[Ravion]] or [[Nerion]], or finish with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] coverage once he is soft.
+Soren's Arena threat is **knockback-and-stun collision chains** that reset whenever his block absorbs a big hit, so clustered lines feed his follow-ups. He **repositions to maximize collisions** and recovers with a low-HP haste surge. Blunt the displace with **Steadfast** — self-Steadfast [[Igor]], or [[Gunnar]]'s Doomfield for him and the parked ally. **Burst him before the block cycle** with high-damage melee like [[Sylphira]] or [[Eironn]], or finish with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] coverage once he is soft.
 
 #### Stats overview
 
@@ -13749,7 +13749,7 @@ Sylphira builds an **active score** that raises ATK and Haste, then unleashes a 
 
 #### Counter proposal
 
-Sylphira opens with a **fast silencing domain** and multi-hit follow-ups, then **activates her score** for huge ATK/Haste plus self-cleanse and energy refunds. Until that score lights she is still killable; after it, attrition and silence favour her. **Delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Vala]] before the score peaks, and blunt the domain ultimate with [[Lily May]]. **Race** a sped-up carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]); **Unaffected** windows blunt her silence and knockdown chain.
+Sylphira opens with a **fast silencing domain** and multi-hit follow-ups, then **activates her score** for huge ATK/Haste plus self-cleanse and energy refunds. Until that score lights she is still killable; after it, attrition and silence favour her. **Delete her early** with high-damage melee like [[Himmel]] or [[Eironn]] before the score peaks, and blunt the domain ultimate with [[Lily May]]. **Race** a sped-up carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]); **Unaffected** windows blunt her silence and knockdown chain.
 
 #### Stats overview
 
@@ -14800,7 +14800,7 @@ Ulmus gains a **shield that damages surrounding enemies when it breaks**, and re
 
 #### Counter proposal
 
-Ulmus tanks behind a **breakable shield**, then at low HP **retreats and takes root** — **Unaffected** while rooted, shifting to energy regen and ally shields. You can still damage him through the root; do not waste CC there. Blunt his knock-up and displacement extension with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield. **Burst him before the root** with [[filter:assassin-delete]] like [[Ravion]] or [[Vala]], or finish the rooted phase with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] once he is planted and soft.
+Ulmus tanks behind a **breakable shield**, then at low HP **retreats and takes root** — **Unaffected** while rooted, shifting to energy regen and ally shields. You can still damage him through the root; do not waste CC there. Blunt his knock-up and displacement extension with **Steadfast** — [[Igor]], or [[Gunnar]]'s Doomfield. **Burst him before the root** with high-damage melee like [[Himmel]] or [[Shakir]], or finish the rooted phase with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] once he is planted and soft.
 
 #### Stats overview
 
@@ -15196,7 +15196,7 @@ Valka applies **Panic stacks through normal attacks**, then slashes panicked tar
 
 #### Counter proposal
 
-Valka opens with a **battle-start shield and ally ATK SPD**, stacks **Panic** into a **fast true-damage ultimate** that heals her while she is **Unaffected**, and **parries ultimate damage** in range with a free counter. Do not bank on interrupting Blooming Terror mid-cast, and avoid feeding Soulshock Riposte with ultimates into her face. Blunt the ultimate with [[Lily May]], delete her **before Panic completes** with [[filter:phys-backline-assassin]] like [[Ravion]] or [[Himmel]], or lean on lasting [[Gwyneth]] / [[Shemira]] pressure from outside her riposte range.
+Valka opens with a **battle-start shield and ally ATK SPD**, stacks **Panic** into a **fast true-damage ultimate** that heals her while she is **Unaffected**, and **parries ultimate damage** in range with a free counter. Do not bank on interrupting Blooming Terror mid-cast, and avoid feeding Soulshock Riposte with ultimates into her face. Blunt the ultimate with [[Lily May]], delete her **before Panic completes** with high-damage melee like [[Himmel]] or [[Zorya]], or lean on lasting [[Gwyneth]] / [[Shemira]] pressure from outside her riposte range.
 
 #### Stats overview
 
@@ -15599,7 +15599,7 @@ Walker fires **sequential frontal shots** that stun each target hit, and his nor
 
 #### Counter proposal
 
-Walker's Arena threat is **battle-start grenades** that stun and shred Phys DEF, then a **fast Six-Shot ultimate** that keeps stunning while he later **bounties your top damage dealer**. The opening stun chain decides whether your carry ever acts. Answer the ultimate with [[Lily May]], kill him early with [[filter:backline-assassin]] like [[Ravion]] or [[Evie]] before bounty locks, or Aging-inhibit the focus with [[Bonnie]] while you race your own carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]).
+Walker's Arena threat is **battle-start grenades** that stun and shred Phys DEF, then a **fast Six-Shot ultimate** that keeps stunning while he later **bounties your top damage dealer**. The opening stun chain decides whether your carry ever acts. Answer the ultimate with [[Lily May]], kill him early with high-damage melee like [[Shakir]] or [[Himmel]] before bounty locks, or Aging-inhibit the focus with [[Bonnie]] while you race your own carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]).
 
 #### Stats overview
 
@@ -15719,7 +15719,7 @@ At battle start, Zandrok sends **illusions charging forward** that **destroy obs
 
 #### Counter proposal
 
-Zandrok's Arena threat is the **battle-start illusion charge** that **inspires allies** with huge max HP, Life Drain, and Haste, then **HP-scaling** slams and stomps as excess healing **converts into more max HP**. Long fights favour his snowball — pressure **Zandrok and his heal providers** before the pool balloons. Cut him down early with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]], or deny the heal-to-max-HP loop with [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]]; lasting wide ultimates like [[Gwyneth]] or [[Shemira]] coverage finishes once the inspire window is spent.
+Zandrok's Arena threat is the **battle-start illusion charge** that **inspires allies** with huge max HP, Life Drain, and Haste, then **HP-scaling** slams and stomps as excess healing **converts into more max HP**. Long fights favour his snowball — pressure **Zandrok and his heal providers** before the pool balloons. Cut him down early with high-damage melee like [[Himmel]] or [[Perseus]], or deny the heal-to-max-HP loop with [[Dunlingr]]'s no-heal paired with [[Himmel]] or [[Perseus]]; lasting wide ultimates like [[Gwyneth]] or [[Shemira]] coverage finishes once the inspire window is spent.
 
 #### Stats overview
 

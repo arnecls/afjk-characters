@@ -122,9 +122,26 @@ unaffected mid-channel; CC during chant before companions or revive land.
 #### Gate 2 — Role match for “kill / burst”
 
 If the advice is to **delete** a unit, pick from `backline-assassin` then
-`assassin` (prefer faster damage). Do **not** invent “burst” from high Prydwen
-PVP tier alone — S-tier AoE, CC, or shield heroes are not delete tools unless
-they also fit the kill tags.
+`assassin` (prefer faster damage) — **only when the delete target is a rear /
+far hypercarry**. Do **not** invent “burst” from high Prydwen PVP tier alone —
+S-tier AoE, CC, or shield heroes are not delete tools unless they also fit the
+kill tags.
+
+**Frontline / melee delete target:** when the unit you are deleting is on the
+**melee floor** (Warrior / Rogue / Tank class, plus `is_melee` in
+`data/melee_overrides.json`), do **not** use `backline-assassin` filters or
+`backline-assassin`-tagged picks for that target. Name **1–2 high-damage melee**
+from the Explicit pool below, still applying DEF / shield bias. If the delete
+target is a **rear carry behind a melee tank**, keep `backline-assassin` /
+`backline-inhibit` for that partner.
+
+**Explicit high-damage melee pool** (rotate; C/H same-clause):
+
+- **Physical:** [[Himmel]], [[Athalia]] (C — pair non-C/H), [[Shakir]],
+  [[Perseus]], [[Zandrok]]
+- **Magic:** [[Sylphira]], [[Eironn]], [[Saida]]
+- **True / both DEF high and/or heavy shields / huge HP:** [[Himmel]],
+  [[Athalia]], [[Zorya]]
 
 Then apply **kit-fit** (Naming rules §4) — name **1–2** best-fit units, never the
 stock [[Athalia]] / [[Evie]] / [[Nerion]] trio as a default list.
@@ -334,6 +351,7 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | HP-recovery sustain (**strong**) — life-drain, self-sacrifice heals, cheat-death / revive top-up | Vitality / healing-received cut: [[Frieren]] / [[Gwyneth]]; matchup A OK [[Satrana]] / [[Igor]] (Explicit) | [[Dunlingr]] Curelock alone vs self-heal / life-drain |
 | Ally-heal snowball — heal-others cores, companion blooms | [[Dunlingr]] Curelock (C — pair non-C/H delete path) | Curelock as substitute for Vitality cut vs self-sustain |
 | Buffer-fed bruiser (**soft**) — partner sustain / fatal-blow saves (e.g. Orion) | Soft clause: Vitality / healing-received cut if they run heavy healers or fatal-blow saves; still pressure buffers / Supporters | Treating partner sustain as optional |
+| Frontline / melee delete target | Explicit high-damage melee pool (DEF-biased) — see Gate 2 | `[[filter:backline-assassin]]` on the frontliner themselves |
 | Low Phys DEF / higher Magic DEF | Physical assassins ([[Ravion]], [[Himmel]], [[Vala]], …) | Magic dump into the strong DEF |
 | Low Magic DEF / higher Phys DEF | Magic assassins ([[Evie]], [[Nerion]], [[Pippa]], …) | Physical dump into the strong DEF |
 | Both DEF high and/or heavy shields | True-damage assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
@@ -367,6 +385,7 @@ that the named units are examples, not an exhaustive list.
 | Threat | Prefer counters tagged… | Gate |
 | --- | --- | --- |
 | Ranged / far hypercarry | `backline-assassin`, then `backline-inhibit` | 2 |
+| Frontline / melee delete target | Explicit high-damage melee pool (Gate 2) — not `backline-assassin` | `backline-assassin` on the frontliner |
 | Kill before wind-up / domain / invuln (**early** delete window) | `backline-assassin`, then `assassin` | 2 + 4b |
 | Delayed vulnerability (**late** delete window) | Sustained / long ultimates ([[Shemira]], [[Gwyneth]], amp’d [[Frieren]]) | 4b |
 | Any-row priority kill | `assassin` | 2 |
@@ -399,6 +418,8 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | HP-recovery sustain (**strong**) — life-drain, self-sacrifice heals, cheat-death / revive top-up (e.g. [[Saida]], [[Shemira]], [[Talene]], [[Shakir]], [[Brutus]], [[Thoran]]) | Vitality / healing-received cut: lead [[Frieren]] / [[Gwyneth]]; matchup A OK [[Satrana]] / [[Igor]] (Explicit exception). Keep other Gates (e.g. Gate 5 on [[Saida]] hops). **Not** [[Dunlingr]] Curelock alone vs self-heal / life-drain. |
 | Ally-heal snowball / heal-others cores (e.g. [[Solise]] blooms, dedicated healers fueling a carry) | [[Dunlingr]] Curelock (C — always pair non-C/H delete path). Do **not** treat Curelock as a substitute for Vitality cut vs self-heal / life-drain. [[Solise]] is unaffected mid-ult (Gate 1). |
 | Buffer-fed bruiser (**soft**) — partner sustain / fatal-blow saves (e.g. [[Orion]]) | Soft clause only: if they bring **heavy healers or fatal-blow saves**, add Vitality / healing-received cut ([[Frieren]] / [[Gwyneth]], or [[Satrana]] / [[Igor]]); still pressure buffers / Supporters and keep timing Gates. |
+| Delete a **melee / frontline** unit (melee floor) | High-damage melee from Gate 2 pool — DEF-biased Physical / Magic / true; **not** `backline-assassin` on that target | `[[filter:backline-assassin]]` deleting the frontliner |
+| [[Baelran]] (heal-to-full form) | **Strong** Vitality / healing-received cut ([[Frieren]] / [[Gwyneth]]) delays form change; **soft** pressure on heal providers. Early melee delete ([[Himmel]], [[Shakir]]). Curelock alone does not stop self-regen / ult restore. Unaffected during bonus-HP window (Gate 1). |
 | High-mobility / late-ult leaper (e.g. [[Tasi]]) | [[Shemira]] / [[Frieren]] lasting coverage; [[Lily May]] for sleep — not assassin pin (Gate 5). [[Sylphira]] domain only if mover stays in densest clump |
 | [[Berial]] / [[Lily May]] / [[Harak]] (mobile finish) | Lasting coverage ([[Shemira]], [[Frieren]]) or area packages; do not chase shadow hops / relocates / dashes with assassin pin |
 | [[Harak]] (feast / devour) | Deny assists that extend feast; keep weakest above devour HP threshold; Gate 5 lasting coverage |
