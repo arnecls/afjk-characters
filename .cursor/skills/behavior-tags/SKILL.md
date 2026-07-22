@@ -176,6 +176,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `backline-inhibit` | Same selectors as `backline-assassin`, but CC / slow / DEF cut / damage-taken amp / DoT that softens that unit | Ally-only buffs; frontline-only taunt; selectors without soften/slow |
 | `self-repositioner` | **Regularly** jumps/dashes/teleports self | One incidental leap |
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
+| `heal-inhibitor` | Meaningful **enemy** Vitality cut, healing-received cut, or heal block (zone cannot heal, prevent HP recovery, Curelock heal-others lock) | Ally Vitality buffs; tiny one-off shaves (Cecia absorb 1); one-shot riders (Alna leave-presence) |
 | `invincibility` | Meaningful immunity windows | Do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
 | `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris); sequential battle-start cycles where damage is not the first effect (Cyran Mythic+) |
 | `high-initial-energy` | **Effective IE ≥ 500** on the ultimate when fully built (meta + max ascension bonus) | IE below 500; free/guaranteed early ult without IE fill (`battle-start-ult` instead, e.g. Eironn, Niru) |

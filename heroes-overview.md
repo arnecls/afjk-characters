@@ -1144,7 +1144,7 @@ Baelran leans on a **massive HP pool** and passive regeneration, then transforms
 
 #### Counter proposal
 
-Baelran banks a huge HP cushion and **transforms when healed to full**, entering Celestial Form and eventually **permanent Unaffected** with frontal true damage and max-HP shred. He is **Unaffected** during the bonus-HP window and form transitions — do not bank on CC there. **Cut his Vitality or healing received early** with [[Frieren]] or [[Gwyneth]] so heal-to-full and form change stall; softly pressure **heal providers** if they pocket him. **Delete him early** with high-damage melee like [[Himmel]] or [[Shakir]] before Celestial Form locks in — [[Dunlingr]]'s Curelock only blocks healing *others*, not his own regen and ult restore. Once enhanced and Unaffected, lean on lasting wide ultimates like [[Shemira]] or [[Gwyneth]] damage rather than control.
+Baelran banks a huge HP cushion and **transforms when healed to full**, entering Celestial Form and eventually **permanent Unaffected** with frontal true damage and max-HP shred. He is **Unaffected** during the bonus-HP window and form transitions — do not bank on CC there. **Cut his Vitality or healing received early** with [[filter:heal-inhibitor]] like [[Frieren]] or [[Gwyneth]] so heal-to-full and form change stall; softly pressure **heal providers** if they pocket him. **Delete him early** with high-damage melee like [[Himmel]] or [[Shakir]] before Celestial Form locks in — [[Dunlingr]]'s Curelock only blocks healing *others*, not his own regen and ult restore. Once enhanced and Unaffected, lean on lasting wide ultimates like [[Shemira]] or [[Gwyneth]] damage rather than control.
 
 #### Stats overview
 
@@ -1542,7 +1542,7 @@ Brutus taunts nearby enemies while **shredding their Phys DEF**, then spins for 
 
 #### Counter proposal
 
-Brutus **taunts and shreds Phys DEF**, then **spins Unaffected** with life drain while **Indomitable** cheats the first fatal blow into a temporary immunity. Do not dump your opener into that save or spin window. **Cut Vitality or healing received** with [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so spin drain and post-save top-up stay weak, then finish with lasting wide ultimates like [[Shemira]] or amp'd [[Frieren]]. Race past the stall with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] — physical frontline trades feed his cleave drain.
+Brutus **taunts and shreds Phys DEF**, then **spins Unaffected** with life drain while **Indomitable** cheats the first fatal blow into a temporary immunity. Do not dump your opener into that save or spin window. **Cut Vitality or healing received** with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so spin drain and post-save top-up stay weak, then finish with lasting wide ultimates like [[Shemira]] or amp'd [[Frieren]]. Race past the stall with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] — physical frontline trades feed his cleave drain.
 
 #### Stats overview
 
@@ -3099,7 +3099,7 @@ Damian provides Direct healing to single targets `average` and Haste (Mythic+) t
 
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles)
-- **Behavior tags**: `aoe-damage` `self-repositioner` `untargetable`
+- **Behavior tags**: `aoe-damage` `heal-inhibitor` `self-repositioner` `untargetable`
 - **Damage types**: Physical `average`, True damage `average`
 
 #### Play overview
@@ -3245,7 +3245,7 @@ Dionel also requires units **buffing them**
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: moving (melee class)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `interrupt` `temporary-stat-buffer`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `heal-inhibitor` `interrupt` `temporary-stat-buffer`
 - **Damage types**: Magic `average`, HP loss `low`
 
 #### Play overview
@@ -3674,7 +3674,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Sanctified Circle (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `dot-specialist` `hp-scaling`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `dot-specialist` `heal-inhibitor` `hp-scaling`
 - **Ally composition**: bless adjacent ally at battle prep; prioritizes tile behind
 - **Damage types**: Physical `high`, DoT `high`, HP loss `high`, True damage `high`
 
@@ -3819,7 +3819,7 @@ Fay heals and buffs **allies within ultimate range**, with steady single-target 
 
 #### Counter proposal
 
-Fay is a **modest front-tile healer/buffer** — battle-start heal on the ally ahead, HoT, and an AoE splash that heals friends while chipping foes. She rarely wins alone; the threat is **keeping a carry alive** long enough to snowball. **Stop her sustain** with early [[filter:assassin-delete]] like [[Ravion]] or [[Vala]], or [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Vala]] so clutch saves never land. Race the fight with a sped-up carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]) before her rotation stabilizes.
+Fay is a **modest front-tile healer/buffer** — battle-start heal on the ally ahead, HoT, and an AoE splash that heals friends while chipping foes. She rarely wins alone; the threat is **keeping a carry alive** long enough to snowball. **Stop her sustain** with early [[filter:assassin-delete]] like [[Ravion]] or [[Vala]], or [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Vala]] so clutch saves never land. Race the fight with a sped-up carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]) before her rotation stabilizes.
 
 #### Stats overview
 
@@ -4080,7 +4080,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Zoltraak (ultimate)
 - **Movement**: stationary (avg attack range 7.0 tiles)
-- **Behavior tags**: `aoe-damage` `dot-specialist` `high-damage-ult` `self-repositioner`
+- **Behavior tags**: `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult` `self-repositioner`
 - **Ally composition**: frontmost ally shares damage reduction with this hero
 - **Damage types**: Magic `high`, DoT `high`, True damage `high`
 
@@ -4349,7 +4349,7 @@ Gerda opens with a **battle-start leap** that interrupts nearby enemies and drop
 
 #### Counter proposal
 
-Gerda **leaps at battle start** (Unaffected mid-cast) to interrupt and drop a **healing hot spring**, then her ultimate **sleeps** clustered foes while healing allies. Do not bank on interrupting the leap. **Spread** so the stomp and spring cover fewer tiles, blunt the sleep with [[Lily May]], and **cut spring sustain** with early high-damage melee like [[Himmel]] or [[Zorya]], or [[Dunlingr]]'s no-heal order. She relocates into the line — lasting [[Shemira]] coverage beats a single assassin pin.
+Gerda **leaps at battle start** (Unaffected mid-cast) to interrupt and drop a **healing hot spring**, then her ultimate **sleeps** clustered foes while healing allies. Do not bank on interrupting the leap. **Spread** so the stomp and spring cover fewer tiles, blunt the sleep with [[Lily May]], and **cut spring sustain** with early high-damage melee like [[Himmel]] or [[Zorya]], or [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal order. She relocates into the line — lasting [[Shemira]] coverage beats a single assassin pin.
 
 #### Stats overview
 
@@ -4593,7 +4593,7 @@ Common buffers are **Rowan**, **Mikola**, **Pandora**, or **Ravion**.
 
 - **Signature skill**: Annihilation Directive (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-shielder` `aoe-damage` `static-tile-buffer` `temporary-stat-buffer`
+- **Behavior tags**: `ally-shielder` `aoe-damage` `heal-inhibitor` `static-tile-buffer` `temporary-stat-buffer`
 - **Ally composition**: place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)
 - **Damage types**: Physical `high`, DoT `low`
 
@@ -4723,7 +4723,7 @@ Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, A
 
 - **Signature skill**: Hailing Arrows (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
-- **Behavior tags**: `dot-specialist` `mass-cc` `non-ult-utility`
+- **Behavior tags**: `dot-specialist` `heal-inhibitor` `mass-cc` `non-ult-utility`
 - **Damage types**: Physical `high`, DoT `high`, Max HP-based damage `low`
 
 #### Play overview
@@ -4960,7 +4960,7 @@ Hammie provides ATK to single targets `low`.
 
 - **Signature skill**: Flesh Feast (Skill 2)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `assassin` `execute` `life-drain`
+- **Behavior tags**: `assassin` `execute` `heal-inhibitor` `life-drain`
 - **Damage types**: Physical `low`, HP loss `average`
 
 #### Play overview
@@ -5249,7 +5249,7 @@ Hewynn sustains allies with **single-target heals** and a cleanse that strips di
 
 #### Counter proposal
 
-Hewynn stitches the line with **single-target heals**, a multi-ally **cleanse**, and a slow Rain Prayer that keeps her **unaffected** while allies take less damage. She extends fights rather than ending them — do not bank on interrupting Rain Prayer mid-channel. Race past her sustain by pressuring her carries with [[filter:backline-assassin]] like [[Ravion]] or [[Evie]], or deny healing with [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Evie]], and blunt her first ultimate timing with [[Lily May]]. Once her cleanses are spent, Aging packages like [[Bonnie]] stick longer into the mid-fight.
+Hewynn stitches the line with **single-target heals**, a multi-ally **cleanse**, and a slow Rain Prayer that keeps her **unaffected** while allies take less damage. She extends fights rather than ending them — do not bank on interrupting Rain Prayer mid-channel. Race past her sustain by pressuring her carries with [[filter:backline-assassin]] like [[Ravion]] or [[Evie]], or deny healing with [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Evie]], and blunt her first ultimate timing with [[Lily May]]. Once her cleanses are spent, Aging packages like [[Bonnie]] stick longer into the mid-fight.
 
 #### Stats overview
 
@@ -5517,7 +5517,7 @@ Himmel provides Basic stats to single targets `low`.
 
 - **Signature skill**: Cannon Fire (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles)
-- **Behavior tags**: `aoe-damage` `enemy-debuffer` `summoner`
+- **Behavior tags**: `aoe-damage` `enemy-debuffer` `heal-inhibitor` `summoner`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -5754,7 +5754,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Funereal Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `cheat-death` `life-drain` `self-repositioner` `untargetable`
+- **Behavior tags**: `aoe-damage` `cheat-death` `heal-inhibitor` `life-drain` `self-repositioner` `untargetable`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -5995,7 +5995,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 - **Signature skill**: Grimoire Pact (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-buffer` `ally-healer` `temporary-stat-buffer`
+- **Behavior tags**: `ally-buffer` `ally-healer` `heal-inhibitor` `temporary-stat-buffer`
 - **Ally composition**: frontmost ally becomes companion (stat stacks and ult buffs)
 - **Damage types**: Magic `low`
 
@@ -7925,7 +7925,7 @@ Lucius knocks back melee foes for a **personal shield**, then heals an ally when
 
 #### Counter proposal
 
-Lucius mixes **personal and tile shields** with **ally heals on every shield gain** and a soft **frontal ATK cut**. He rarely ends fights alone — the danger is the **extra sustain** keeping their carry alive through your burst window. **Deny healing** with [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]], or **delete their carry early** with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]]. **Race** past his shields with a sped-up carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]) so heal triggers never catch up.
+Lucius mixes **personal and tile shields** with **ally heals on every shield gain** and a soft **frontal ATK cut**. He rarely ends fights alone — the danger is the **extra sustain** keeping their carry alive through your burst window. **Deny healing** with [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]], or **delete their carry early** with [[filter:backline-assassin]] like [[Ravion]] or [[Pippa]]. **Race** past his shields with a sped-up carry ([[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]]) so heal triggers never catch up.
 
 #### Stats overview
 
@@ -8206,7 +8206,7 @@ Ludovic anchors a **movable healing field** that restores HP for allies inside a
 
 #### Counter proposal
 
-Ludovic anchors a **movable healing field** that restores allies inside, **stuns enemies who enter**, and refills when foes lose HP — long attrition fights are his win condition. **Pressure Ludovic** and collapse the field before berries and HP-loss on your top attacker snowball. **Deny healing** with [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], or **burst past the zone** with early [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] deletes. Comps that never stand in the field waste his heal-damage loop.
+Ludovic anchors a **movable healing field** that restores allies inside, **stuns enemies who enter**, and refills when foes lose HP — long attrition fights are his win condition. **Pressure Ludovic** and collapse the field before berries and HP-loss on your top attacker snowball. **Deny healing** with [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], or **burst past the zone** with early [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] deletes. Comps that never stand in the field waste his heal-damage loop.
 
 #### Stats overview
 
@@ -9071,7 +9071,7 @@ Mikola generates a **Courage Sphere** that buffs nearby allies and **heals every
 
 #### Counter proposal
 
-Mikola's PVP threat is the **Courage Sphere** that follows her, buffing and healing allies in range once damage thresholds trip, plus a **central Honor Arena** that freezes aura duration while her side holds it. Fights snowball if her line clusters inside the sphere and keeps zone control. **Shove allies out of the sphere** with targeted displacement with [[Lumont]] or [[Pippa]], deny arena ownership, and **delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before it matures, or **deny healing** with [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]].
+Mikola's PVP threat is the **Courage Sphere** that follows her, buffing and healing allies in range once damage thresholds trip, plus a **central Honor Arena** that freezes aura duration while her side holds it. Fights snowball if her line clusters inside the sphere and keeps zone control. **Shove allies out of the sphere** with targeted displacement with [[Lumont]] or [[Pippa]], deny arena ownership, and **delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before it matures, or **deny healing** with [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]].
 
 #### Stats overview
 
@@ -9303,7 +9303,7 @@ Common buffers are **Pandora**, **Ravion**, **Hugin**, or **Lorsan**.
 
 - **Signature skill**: Phantom Chains (Skill 1)
 - **Movement**: mostly stationary (pulls enemies; moves on failed pull)
-- **Behavior tags**: `ally-healer` `assassin` `execute` `high-initial-energy`
+- **Behavior tags**: `ally-healer` `assassin` `execute` `heal-inhibitor` `high-initial-energy`
 - **Damage types**: Physical `high`, Max HP-based damage `average`, True damage `high`
 
 #### Play overview
@@ -9582,7 +9582,7 @@ Natsu also requires specific **named allies**
 
 - **Signature skill**: Rend Rupture (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
-- **Behavior tags**: `hp-scaling` `mark-target`
+- **Behavior tags**: `heal-inhibitor` `hp-scaling` `mark-target`
 - **Damage types**: Physical `high`, True damage `high`
 
 #### Play overview
@@ -9852,7 +9852,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 - **Signature skill**: Soul Shepherd (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `battle-start-ult` `hp-scaling` `temporary-stat-buffer`
+- **Behavior tags**: `ally-healer` `battle-start-ult` `heal-inhibitor` `hp-scaling` `temporary-stat-buffer`
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
 - **Damage types**: Magic `high`, HP loss `low`
 
@@ -10107,7 +10107,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Dunlingr**.
 
 - **Signature skill**: Fervent Flurry (Skill 1)
 - **Movement**: moving (melee class)
-- **Behavior tags**: `aoe-damage` `cc-immunity` `dot-specialist` `enemy-debuffer` `high-damage-ult`
+- **Behavior tags**: `aoe-damage` `cc-immunity` `dot-specialist` `enemy-debuffer` `heal-inhibitor` `high-damage-ult`
 - **Damage types**: Magic `high`, True damage `low`
 
 #### Play overview
@@ -10116,7 +10116,7 @@ Orion opens by **enchanting his rapier** for faster energy fill and **stacking S
 
 #### Counter proposal
 
-Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack; if they bring **heavy healers or fatal-blow saves**, add **Vitality or healing-received cuts** with [[Frieren]] or [[Gwyneth]] (or [[Satrana]] / [[Igor]]). Delete him early with high-damage melee like [[Himmel]] or [[Zorya]], cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
+Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack; if they bring **heavy healers or fatal-blow saves**, add **Vitality or healing-received cuts** with [[filter:heal-inhibitor]] like [[Frieren]] or [[Gwyneth]] (or [[Satrana]] / [[Igor]]). Delete him early with high-damage melee like [[Himmel]] or [[Zorya]], cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -10260,7 +10260,7 @@ Orion provides Shield to multiple targets `low`.
 
 - **Signature skill**: Boxed Blessing (Skill 1)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `enemy-debuffer` `energy-provider` `mass-cc`
+- **Behavior tags**: `enemy-debuffer` `energy-provider` `heal-inhibitor` `mass-cc`
 - **Ally composition**: rearmost ally enters invincible box, then gains Energy and ATK
 - **Damage types**: Magic `high`, DoT `average`
 
@@ -10965,7 +10965,7 @@ Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `l
 
 - **Signature skill**: Crimson Contract (Skill 1)
 - **Movement**: moving (avg attack range 1.8 tiles)
-- **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `energy-provider` `summoner`
+- **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `energy-provider` `heal-inhibitor` `summoner`
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
 - **Damage types**: Magic `high`
@@ -11822,7 +11822,7 @@ Saida teleports to an enemy, planting a **marker that deals periodic damage and 
 
 #### Counter proposal
 
-Saida **teleports in**, plants **Drain Seeds** that chip and **drain Energy**, then snowballs **shields, damage reduction, and a seed-fueled revive** while markers stay live. Assassin pins **miss her hops** — answer with lasting wide ultimates like [[Shemira]] or [[Frieren]] that keep hitting wherever she lands. **Cut her Vitality or healing received** with [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so self-heal and post-revive top-up stay weak — [[Dunlingr]]'s Curelock alone does not shut off her own sustain. Pressure **Saida before seeds multiply** with mid-fight inhibit from [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]], and race the loop with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
+Saida **teleports in**, plants **Drain Seeds** that chip and **drain Energy**, then snowballs **shields, damage reduction, and a seed-fueled revive** while markers stay live. Assassin pins **miss her hops** — answer with lasting wide ultimates like [[Shemira]] or [[Frieren]] that keep hitting wherever she lands. **Cut her Vitality or healing received** with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so self-heal and post-revive top-up stay weak — [[Dunlingr]]'s Curelock alone does not shut off her own sustain. Pressure **Saida before seeds multiply** with mid-fight inhibit from [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]], and race the loop with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -12048,7 +12048,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Signature skill**: Fiery Dance (ultimate)
 - **Movement**: moving (avg attack range 1.5 tiles)
-- **Behavior tags**: `dot-specialist` `hp-scaling` `invincibility` `life-drain`
+- **Behavior tags**: `dot-specialist` `heal-inhibitor` `hp-scaling` `invincibility` `life-drain`
 - **Ally composition**: place allies within 2 tiles at battle start (Sparks grant)
 - **Damage types**: Magic `high`
 
@@ -12571,7 +12571,7 @@ Shadewing also requires units **dealing continuous damage** to enemies
 
 - **Signature skill**: Ravaging Claws (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `life-drain` `temporary-stat-buffer`
+- **Behavior tags**: `heal-inhibitor` `life-drain` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -12580,7 +12580,7 @@ Shakir **transforms into Wolf Form** to reshape his combat kit, trading single-t
 
 #### Counter proposal
 
-Shakir **transforms into Wolf Form** for frontal cleaves with **Life Drain** and **Ranged DEF**, and his **Lupine Aura** damage reduction scales with allies clustered on him. **Shove aura receivers out of the zone** with targeted displacement with [[Lumont]] or [[Pippa]] — enemy pulls like [[Cyran]] or [[Eironn]] group **your** line, they do not evict his packed allies. He is **Unaffected in Wolf Form**, so do not bank on peeling him off the cluster. **Cut Vitality or healing received** with [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so Life Drain cannot out-bruise you, and pressure him with lasting wide ultimates like [[Shemira]] or [[Gwyneth]].
+Shakir **transforms into Wolf Form** for frontal cleaves with **Life Drain** and **Ranged DEF**, and his **Lupine Aura** damage reduction scales with allies clustered on him. **Shove aura receivers out of the zone** with targeted displacement with [[Lumont]] or [[Pippa]] — enemy pulls like [[Cyran]] or [[Eironn]] group **your** line, they do not evict his packed allies. He is **Unaffected in Wolf Form**, so do not bank on peeling him off the cluster. **Cut Vitality or healing received** with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so Life Drain cannot out-bruise you, and pressure him with lasting wide ultimates like [[Shemira]] or [[Gwyneth]].
 
 #### Stats overview
 
@@ -12725,7 +12725,7 @@ Shemira **sacrifices HP to fuel damage**, firing orb lines and AoE bursts as her
 
 #### Counter proposal
 
-Shemira **burns her own HP** to fire orbs, then her **slow ultimate** floods the board with **random ghost bombardment** that widens as heroes fall. Attrition and summon count favour her unless you **end the fight early**. Delete her before the procession locks in with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], blunt the ultimate with [[Lily May]], and **deny the HP recovery** that fuels her sacrifices — [[Dunlingr]]'s Curelock blocks ally heals into her, while [[Frieren]] / [[Gwyneth]] Vitality cuts blunt her self-top-up. Race her with a sped-up carry ([[filter:energy-provider]] like [[Thador]] or [[Hugin]]).
+Shemira **burns her own HP** to fire orbs, then her **slow ultimate** floods the board with **random ghost bombardment** that widens as heroes fall. Attrition and summon count favour her unless you **end the fight early**. Delete her before the procession locks in with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], blunt the ultimate with [[Lily May]], and **deny the HP recovery** that fuels her sacrifices — [[filter:heal-inhibitor]] like [[Dunlingr]]'s Curelock blocks ally heals into her, while Vitality cuts from [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] blunt her self-top-up. Race her with a sped-up carry ([[filter:energy-provider]] like [[Thador]] or [[Hugin]]).
 
 #### Stats overview
 
@@ -12960,7 +12960,7 @@ Silven also requires units **buffing them**
 
 - **Signature skill**: First Strike (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `assassin` `battle-start-burst` `interrupt` `mark-target`
+- **Behavior tags**: `assassin` `battle-start-burst` `heal-inhibitor` `interrupt` `mark-target`
 - **Self placement**: nearest symmetrical enemy at battle start (Falling Blossom / First Strike openers)
 - **Damage types**: Physical `average`
 
@@ -13080,7 +13080,7 @@ Look for units providing: `Shield` `CRIT`
 
 - **Signature skill**: Whizzing Edge (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `assassin` `enemy-debuffer` `mark-target`
+- **Behavior tags**: `assassin` `enemy-debuffer` `heal-inhibitor` `mark-target`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -13216,7 +13216,7 @@ Smokey and Meerky anchor fights with a **continuous healing aura** that levels u
 
 #### Counter proposal
 
-Smokey & Meerky's Arena threat is a **channeling healing aroma** that also feeds ATK and energy while allies stay packed inside — they **cannot maintain it under Control Effects** and face a **4s recreate lockout** after interrupt. **Break the channel** with [[Lily May]] sleep or stun/sleep CC, **shove receivers out** with targeted displacement with [[Lumont]] or [[Pippa]], or **delete them early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before the aura peaks. **Deny healing** with [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], and **race** with [[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]].
+Smokey & Meerky's Arena threat is a **channeling healing aroma** that also feeds ATK and energy while allies stay packed inside — they **cannot maintain it under Control Effects** and face a **4s recreate lockout** after interrupt. **Break the channel** with [[Lily May]] sleep or stun/sleep CC, **shove receivers out** with targeted displacement with [[Lumont]] or [[Pippa]], or **delete them early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before the aura peaks. **Deny healing** with [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], and **race** with [[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]].
 
 #### Stats overview
 
@@ -13350,7 +13350,7 @@ Solise attaches **healing companions** to each non-summoned ally, then blooms th
 
 #### Counter proposal
 
-Solise attaches **healing companions** at battle start and snowballs **overheal into blooms**, shields, and companion damage — her ultimate **heals the whole team** while companions hit every foe. She is **unaffected while casting**, so do not bank on interrupting Life's Embrace mid-channel. **Lock ally healing** with [[Dunlingr]]'s Curelock (C — pair [[Ravion]] / [[Himmel]] for early delete), then **delete key carries before blooms** with [[filter:phys-backline-assassin]] like [[Ravion]] or [[Himmel]]. **Spread** lines and early kills waste her companion setup; Vitality cuts from [[Frieren]] / [[Gwyneth]] are secondary once Curelock is up.
+Solise attaches **healing companions** at battle start and snowballs **overheal into blooms**, shields, and companion damage — her ultimate **heals the whole team** while companions hit every foe. She is **unaffected while casting**, so do not bank on interrupting Life's Embrace mid-channel. **Lock ally healing** with [[filter:heal-inhibitor]] like [[Dunlingr]]'s Curelock (C — pair [[Ravion]] / [[Himmel]] for early delete), then **delete key carries before blooms** with [[filter:phys-backline-assassin]] like [[Ravion]] or [[Himmel]]. **Spread** lines and early kills waste her companion setup; Vitality cuts from [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] are secondary once Curelock is up.
 
 #### Stats overview
 
@@ -13886,7 +13886,7 @@ Talene **consumes HP to shoot flames** at enemies, and her ATK **scales with cum
 
 #### Counter proposal
 
-Talene **burns her own HP** into flames that scale ATK and heal allies, then **resurrects as an unhittable flame** when defeated — do not dump burst into that form. She also buffs the **frontmost ally** with adjacent pressure. **Delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before flame scaling and the first revive. **Dual sustain denial**: [[Dunlingr]] Curelock (C — pair [[Ravion]] / [[Nara]]) blocks ally heals she pumps; **Vitality / healing-received cuts** from [[Frieren]] / [[Gwyneth]] blunt her own recovery and post-revive top-up. After the flame fades, finish with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] and pressure the **frontmost enhanced ally**.
+Talene **burns her own HP** into flames that scale ATK and heal allies, then **resurrects as an unhittable flame** when defeated — do not dump burst into that form. She also buffs the **frontmost ally** with adjacent pressure. **Delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before flame scaling and the first revive. **Dual sustain denial**: [[filter:heal-inhibitor]] like [[Dunlingr]] Curelock (C — pair [[Ravion]] / [[Nara]]) blocks ally heals she pumps; **Vitality / healing-received cuts** from [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] blunt her own recovery and post-revive top-up. After the flame fades, finish with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] and pressure the **frontmost enhanced ally**.
 
 #### Stats overview
 
@@ -14393,7 +14393,7 @@ Thoran **charges up a slash** that adds a portion of damage taken during the cha
 
 #### Counter proposal
 
-Thoran **plunders the highest-HP enemy**, banks a revive, and while charging his ultimate is **Unaffected** — do not bank on interrupting Soul Retaliation mid-channel. A **pact ally behind him** can also spend HP to bring him back once. **Cut Vitality or healing received** with [[Frieren]] / [[Gwyneth]] through the first life and revive window so plunder-and-revive top-ups stay thin. Push through with lasting wide ultimates like [[Shemira]] or [[Gwyneth]], **inhibit or delete the pact partner** with [[filter:backline-inhibit]] like [[Bonnie]] or [[Nerion]] so the sacrifice revive never fires, and keep your tankiest unit from feeding Soul Plunder.
+Thoran **plunders the highest-HP enemy**, banks a revive, and while charging his ultimate is **Unaffected** — do not bank on interrupting Soul Retaliation mid-channel. A **pact ally behind him** can also spend HP to bring him back once. **Cut Vitality or healing received** with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] through the first life and revive window so plunder-and-revive top-ups stay thin. Push through with lasting wide ultimates like [[Shemira]] or [[Gwyneth]], **inhibit or delete the pact partner** with [[filter:backline-inhibit]] like [[Bonnie]] or [[Nerion]] so the sacrifice revive never fires, and keep your tankiest unit from feeding Soul Plunder.
 
 #### Stats overview
 
@@ -15476,7 +15476,7 @@ Viperian **spends HP to send possessing summons** onto all enemies, spreading pr
 
 #### Counter proposal
 
-Viperian **burns HP at battle start** while **Unaffected** to possess the whole enemy line with DoT summons, then sustains through drains and returns — a late **Crimson Waltz** AoE also leaves them **Unaffected** if they stay healthy. Do not dump opener burst into the deploy window or the Waltz cast. End the sustain loop with early [[filter:backline-assassin]] like [[Ravion]] or [[Nerion]] pressure, or [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Nerion]]; lasting wide ultimates like [[Gwyneth]] or [[Shemira]] coverage outpaces the possession DoT before Crimson Waltz.
+Viperian **burns HP at battle start** while **Unaffected** to possess the whole enemy line with DoT summons, then sustains through drains and returns — a late **Crimson Waltz** AoE also leaves them **Unaffected** if they stay healthy. Do not dump opener burst into the deploy window or the Waltz cast. End the sustain loop with early [[filter:backline-assassin]] like [[Ravion]] or [[Nerion]] pressure, or [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[filter:backline-assassin]] like [[Ravion]] or [[Nerion]]; lasting wide ultimates like [[Gwyneth]] or [[Shemira]] coverage outpaces the possession DoT before Crimson Waltz.
 
 #### Stats overview
 
@@ -15719,7 +15719,7 @@ At battle start, Zandrok sends **illusions charging forward** that **destroy obs
 
 #### Counter proposal
 
-Zandrok's Arena threat is the **battle-start illusion charge** that **inspires allies** with huge max HP, Life Drain, and Haste, then **HP-scaling** slams and stomps as excess healing **converts into more max HP**. Long fights favour his snowball — pressure **Zandrok and his heal providers** before the pool balloons. Cut him down early with high-damage melee like [[Himmel]] or [[Perseus]], or deny the heal-to-max-HP loop with [[Dunlingr]]'s no-heal paired with [[Himmel]] or [[Perseus]]; lasting wide ultimates like [[Gwyneth]] or [[Shemira]] coverage finishes once the inspire window is spent.
+Zandrok's Arena threat is the **battle-start illusion charge** that **inspires allies** with huge max HP, Life Drain, and Haste, then **HP-scaling** slams and stomps as excess healing **converts into more max HP**. Long fights favour his snowball — pressure **Zandrok and his heal providers** before the pool balloons. Cut him down early with high-damage melee like [[Himmel]] or [[Perseus]], or deny the heal-to-max-HP loop with [[filter:heal-inhibitor]] like [[Dunlingr]]'s no-heal paired with [[Himmel]] or [[Perseus]]; lasting wide ultimates like [[Gwyneth]] or [[Shemira]] coverage finishes once the inspire window is spent.
 
 #### Stats overview
 

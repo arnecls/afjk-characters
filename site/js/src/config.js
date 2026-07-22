@@ -99,6 +99,7 @@ window.AFKJ.config = {
     "enemy-grouping": { emoji: "🧲", cls: "chip-role" },
     "energy-provider": { emoji: "🔋", cls: "chip-role" },
     "execute": { emoji: "☠️", cls: "chip-role" },
+    "heal-inhibitor": { emoji: "🚫", cls: "chip-role" },
     "high-damage-ult": { emoji: "💣", cls: "chip-role" },
     "high-initial-energy": { emoji: "🔋", cls: "chip-role" },
     "hp-scaling": { emoji: "❤️", cls: "chip-role" },
@@ -171,6 +172,8 @@ window.AFKJ.config = {
       "Grants Energy to allies or routinely accelerates ally ultimates.",
     execute:
       "Finishes low-HP enemies or scales damage strongly on wounded targets.",
+    "heal-inhibitor":
+      "Reduces enemy Vitality and/or blocks or cuts healing received as a meaningful combat pattern.",
     "high-damage-ult":
       "Ultimate is the main damage spike and a large share of total output.",
     "high-initial-energy":

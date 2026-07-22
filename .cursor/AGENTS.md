@@ -409,6 +409,10 @@ skill effect.
 - energy-provider: Grants Energy to allies or routinely accelerates ally ultimates.
 - execute: Finishes low-HP enemies or scales damage strongly on wounded targets.
 - high-damage-ult: Ultimate is the main damage spike and a large share of total output.
+- heal-inhibitor: Reduces enemy Vitality and/or blocks or cuts healing
+  received (including hard "cannot heal" / prevent HP recovery zones and
+  Curelock-style heal-others locks) as a meaningful combat pattern. Not ally
+  Vitality buffs; not tiny one-off shaves.
 - high-initial-energy: Ultimate starts with **≥ 500 effective Initial Energy**
   when fully built (Ultimate `Initial Energy` meta plus the highest ascension
   bonus such as "Gains extra N initial Energy"). Aligns with fast ult fill

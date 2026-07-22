@@ -135,6 +135,7 @@
   ],
   "Dionel": [
     "aoe-damage",
+    "heal-inhibitor",
     "self-repositioner",
     "untargetable"
   ],
@@ -142,6 +143,7 @@
     "ally-buffer",
     "aoe-damage",
     "battle-start-burst",
+    "heal-inhibitor",
     "interrupt",
     "temporary-stat-buffer"
   ],
@@ -164,6 +166,7 @@
     "ally-buffer",
     "aoe-damage",
     "dot-specialist",
+    "heal-inhibitor",
     "hp-scaling"
   ],
   "Fay": [
@@ -178,6 +181,7 @@
   "Frieren": [
     "aoe-damage",
     "dot-specialist",
+    "heal-inhibitor",
     "high-damage-ult",
     "self-repositioner"
   ],
@@ -201,11 +205,13 @@
   "Gunnar": [
     "ally-shielder",
     "aoe-damage",
+    "heal-inhibitor",
     "static-tile-buffer",
     "temporary-stat-buffer"
   ],
   "Gwyneth": [
     "dot-specialist",
+    "heal-inhibitor",
     "mass-cc",
     "non-ult-utility"
   ],
@@ -217,6 +223,7 @@
   "Harak": [
     "assassin",
     "execute",
+    "heal-inhibitor",
     "life-drain"
   ],
   "Hepler": [
@@ -239,6 +246,7 @@
   "Hodgkin": [
     "aoe-damage",
     "enemy-debuffer",
+    "heal-inhibitor",
     "summoner"
   ],
   "Hugin": [
@@ -251,6 +259,7 @@
   "Igor": [
     "aoe-damage",
     "cheat-death",
+    "heal-inhibitor",
     "life-drain",
     "self-repositioner",
     "untargetable"
@@ -262,6 +271,7 @@
   "Isabella": [
     "ally-buffer",
     "ally-healer",
+    "heal-inhibitor",
     "temporary-stat-buffer"
   ],
   "Kazim": [
@@ -405,6 +415,7 @@
     "ally-healer",
     "assassin",
     "execute",
+    "heal-inhibitor",
     "high-initial-energy"
   ],
   "Natsu": [
@@ -415,6 +426,7 @@
     "mass-cc"
   ],
   "Nazrik": [
+    "heal-inhibitor",
     "hp-scaling",
     "mark-target"
   ],
@@ -428,6 +440,7 @@
   "Niru": [
     "ally-healer",
     "battle-start-ult",
+    "heal-inhibitor",
     "hp-scaling",
     "temporary-stat-buffer"
   ],
@@ -439,12 +452,14 @@
     "aoe-damage",
     "dot-specialist",
     "enemy-debuffer",
+    "heal-inhibitor",
     "high-damage-ult",
     "cc-immunity"
   ],
   "Pandora": [
     "enemy-debuffer",
     "energy-provider",
+    "heal-inhibitor",
     "mass-cc"
   ],
   "Pang": [
@@ -475,6 +490,7 @@
     "ally-shielder",
     "aoe-damage",
     "energy-provider",
+    "heal-inhibitor",
     "summoner"
   ],
   "Pippa": [
@@ -514,6 +530,7 @@
   ],
   "Satrana": [
     "dot-specialist",
+    "heal-inhibitor",
     "hp-scaling",
     "invincibility",
     "life-drain"
@@ -534,6 +551,7 @@
     "enemy-debuffer"
   ],
   "Shakir": [
+    "heal-inhibitor",
     "life-drain",
     "temporary-stat-buffer"
   ],
@@ -550,12 +568,14 @@
   "Silvina": [
     "assassin",
     "battle-start-burst",
+    "heal-inhibitor",
     "interrupt",
     "mark-target"
   ],
   "Sinbad": [
     "assassin",
     "enemy-debuffer",
+    "heal-inhibitor",
     "mark-target"
   ],
   "Smokey & Meerky": [
