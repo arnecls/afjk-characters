@@ -1542,7 +1542,7 @@ Brutus taunts nearby enemies while **shredding their Phys DEF**, then spins for 
 
 #### Counter proposal
 
-Brutus **taunts and shreds Phys DEF**, then **spins Unaffected** with life drain while **Indomitable** cheats the first fatal blow into a temporary immunity. Do not dump your opener into that save or spin window. Soften him with **magic** pressure after immunity fades — lasting wide ultimates like [[Shemira]] or amp'd [[Frieren]] — and race past the stall with [[filter:energy-provider]] like [[Thador]] or [[Hugin]]. Physical frontline trades feed his cleave drain; keep melee traffic light around him.
+Brutus **taunts and shreds Phys DEF**, then **spins Unaffected** with life drain while **Indomitable** cheats the first fatal blow into a temporary immunity. Do not dump your opener into that save or spin window. **Cut Vitality or healing received** with [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so spin drain and post-save top-up stay weak, then finish with lasting wide ultimates like [[Shemira]] or amp'd [[Frieren]]. Race past the stall with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] — physical frontline trades feed his cleave drain.
 
 #### Stats overview
 
@@ -10116,7 +10116,7 @@ Orion opens by **enchanting his rapier** for faster energy fill and **stacking S
 
 #### Counter proposal
 
-Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack, and delete him early with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]]. Cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
+Orion opens with a **battle-start rapier enchant** that stacks **Sear** on hit, then recruits **Supporters** from temporary ally buffs to grow **Authority** — at peak stacks he turns **Unaffected** and Sear can silence. Do not bank on CC once Authority locks in. Cut the loop by pressuring **Orion or his buffer partners** before Supporters stack; if they bring **heavy healers or fatal-blow saves**, add **Vitality or healing-received cuts** with [[Frieren]] or [[Gwyneth]] (or [[Satrana]] / [[Igor]]). Delete him early with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], cancel Fatal Waltz with [[Lily May]], or outpace the enchant window by speeding your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -11822,7 +11822,7 @@ Saida teleports to an enemy, planting a **marker that deals periodic damage and 
 
 #### Counter proposal
 
-Saida **teleports in**, plants **Drain Seeds** that chip and **drain Energy**, then snowballs **shields, damage reduction, and a seed-fueled revive** while markers stay live. Assassin pins **miss her hops** — answer with lasting wide ultimates like [[Shemira]] or [[Frieren]] that keeps hitting wherever she lands. Pressure **Saida before seeds multiply** with mid-fight inhibit from [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]], and race her sustain loop by **speeding your carry** with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
+Saida **teleports in**, plants **Drain Seeds** that chip and **drain Energy**, then snowballs **shields, damage reduction, and a seed-fueled revive** while markers stay live. Assassin pins **miss her hops** — answer with lasting wide ultimates like [[Shemira]] or [[Frieren]] that keep hitting wherever she lands. **Cut her Vitality or healing received** with [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so self-heal and post-revive top-up stay weak — [[Dunlingr]]'s Curelock alone does not shut off her own sustain. Pressure **Saida before seeds multiply** with mid-fight inhibit from [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]], and race the loop with [[filter:energy-provider]] like [[Thador]] or [[Hugin]].
 
 #### Stats overview
 
@@ -12580,7 +12580,7 @@ Shakir **transforms into Wolf Form** to reshape his combat kit, trading single-t
 
 #### Counter proposal
 
-Shakir **transforms into Wolf Form** for frontal cleaves with **Life Drain** and **Ranged DEF**, and his **Lupine Aura** damage reduction scales with allies clustered on him. **Shove aura receivers out of the zone** with targeted displacement with [[Lumont]] or [[Pippa]] — enemy pulls like [[Cyran]] or [[Eironn]] group **your** line, they do not evict his packed allies. He is **Unaffected in Wolf Form**, so do not bank on peeling him off the cluster; break the aura by moving receivers. Pressure him with lasting wide ultimates like [[Shemira]] or [[Gwyneth]], or **Aging-inhibit** with [[Bonnie]] before vitality shred snowballs.
+Shakir **transforms into Wolf Form** for frontal cleaves with **Life Drain** and **Ranged DEF**, and his **Lupine Aura** damage reduction scales with allies clustered on him. **Shove aura receivers out of the zone** with targeted displacement with [[Lumont]] or [[Pippa]] — enemy pulls like [[Cyran]] or [[Eironn]] group **your** line, they do not evict his packed allies. He is **Unaffected in Wolf Form**, so do not bank on peeling him off the cluster. **Cut Vitality or healing received** with [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so Life Drain cannot out-bruise you, and pressure him with lasting wide ultimates like [[Shemira]] or [[Gwyneth]].
 
 #### Stats overview
 
@@ -12725,7 +12725,7 @@ Shemira **sacrifices HP to fuel damage**, firing orb lines and AoE bursts as her
 
 #### Counter proposal
 
-Shemira **burns her own HP** to fire orbs, then her **slow ultimate** floods the board with **random ghost bombardment** that widens as heroes fall. Attrition and summon count favour her unless you **end the fight early**. Delete her before the procession locks in with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], blunt the ultimate with [[Lily May]], or **deny the healing** that fuels her sacrifices with [[Dunlingr]]'s no-heal order — and race her with a sped-up carry ([[Thador]], [[Hugin]]).
+Shemira **burns her own HP** to fire orbs, then her **slow ultimate** floods the board with **random ghost bombardment** that widens as heroes fall. Attrition and summon count favour her unless you **end the fight early**. Delete her before the procession locks in with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]], blunt the ultimate with [[Lily May]], and **deny the HP recovery** that fuels her sacrifices — [[Dunlingr]]'s Curelock blocks ally heals into her, while [[Frieren]] / [[Gwyneth]] Vitality cuts blunt her self-top-up. Race her with a sped-up carry ([[filter:energy-provider]] like [[Thador]] or [[Hugin]]).
 
 #### Stats overview
 
@@ -13350,7 +13350,7 @@ Solise attaches **healing companions** to each non-summoned ally, then blooms th
 
 #### Counter proposal
 
-Solise attaches **healing companions** at battle start and snowballs **overheal into blooms**, shields, and companion damage — her ultimate **heals the whole team** while companions hit every foe. She is **unaffected while casting**, so do not bank on interrupting Life's Embrace mid-channel. **Delete key carries before blooms** with [[filter:phys-backline-assassin]] like [[Ravion]] or [[Himmel]], or **deny healing** with [[Dunlingr]]'s no-heal paired with [[filter:phys-backline-assassin]] like [[Ravion]] or [[Himmel]]. **Spread** lines and early kills waste her companion setup before excess healing unlocks.
+Solise attaches **healing companions** at battle start and snowballs **overheal into blooms**, shields, and companion damage — her ultimate **heals the whole team** while companions hit every foe. She is **unaffected while casting**, so do not bank on interrupting Life's Embrace mid-channel. **Lock ally healing** with [[Dunlingr]]'s Curelock (C — pair [[Ravion]] / [[Himmel]] for early delete), then **delete key carries before blooms** with [[filter:phys-backline-assassin]] like [[Ravion]] or [[Himmel]]. **Spread** lines and early kills waste her companion setup; Vitality cuts from [[Frieren]] / [[Gwyneth]] are secondary once Curelock is up.
 
 #### Stats overview
 
@@ -13886,7 +13886,7 @@ Talene **consumes HP to shoot flames** at enemies, and her ATK **scales with cum
 
 #### Counter proposal
 
-Talene **burns her own HP** into flames that scale ATK and heal allies, then **resurrects as an unhittable flame** when defeated — do not dump burst into that form. She also buffs the **frontmost ally** with adjacent pressure. **Delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before flame scaling and the first revive, or **deny her sustain** with [[Dunlingr]]'s no-heal paired with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]]. Once she falls, wait out the flame, then finish with lasting wide ultimates like [[Shemira]] or [[Gwyneth]]; pressure the **frontmost enhanced ally** so kindling never stacks.
+Talene **burns her own HP** into flames that scale ATK and heal allies, then **resurrects as an unhittable flame** when defeated — do not dump burst into that form. She also buffs the **frontmost ally** with adjacent pressure. **Delete her early** with [[filter:assassin-delete]] like [[Ravion]] or [[Nara]] before flame scaling and the first revive. **Dual sustain denial**: [[Dunlingr]] Curelock (C — pair [[Ravion]] / [[Nara]]) blocks ally heals she pumps; **Vitality / healing-received cuts** from [[Frieren]] / [[Gwyneth]] blunt her own recovery and post-revive top-up. After the flame fades, finish with lasting wide ultimates like [[Shemira]] or [[Gwyneth]] and pressure the **frontmost enhanced ally**.
 
 #### Stats overview
 
@@ -14393,7 +14393,7 @@ Thoran **charges up a slash** that adds a portion of damage taken during the cha
 
 #### Counter proposal
 
-Thoran **plunders the highest-HP enemy**, banks a revive, and while charging his ultimate is **Unaffected** — do not bank on interrupting Soul Retaliation mid-channel. A **pact ally behind him** can also spend HP to bring him back once. Push through the first life with lasting wide ultimates like [[Shemira]] or [[Gwyneth]], then finish the revive window before he re-plunders. **Inhibit or delete the pact partner** with [[filter:backline-inhibit]] like [[Bonnie]] or [[Nerion]] so the sacrifice revive never fires, and keep your tankiest unit from feeding Soul Plunder.
+Thoran **plunders the highest-HP enemy**, banks a revive, and while charging his ultimate is **Unaffected** — do not bank on interrupting Soul Retaliation mid-channel. A **pact ally behind him** can also spend HP to bring him back once. **Cut Vitality or healing received** with [[Frieren]] / [[Gwyneth]] through the first life and revive window so plunder-and-revive top-ups stay thin. Push through with lasting wide ultimates like [[Shemira]] or [[Gwyneth]], **inhibit or delete the pact partner** with [[filter:backline-inhibit]] like [[Bonnie]] or [[Nerion]] so the sacrifice revive never fires, and keep your tankiest unit from feeding Soul Plunder.
 
 #### Stats overview
 

@@ -331,7 +331,9 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | Non-ult damage (e.g. Dunlingr ban) | [[Athalia]] (C — pair with [[Gwyneth]] / [[Ravion]]) | Ult-dependent carries; Aliceth-only (also C) |
 | Peel a diver / mark partner | Match the *victim* slot: inhibit ([[Bonnie]], [[Evie]]) or race buffers | Listing three assassins |
 | Steadfast vs pulls | [[Gunnar]] (H — pair with [[Igor]]) | Spread vs global pulls |
-| Heal denial | [[Dunlingr]] (C — pair with a non-C/H early-delete path) | Heal denial with no non-C/H fallback |
+| HP-recovery sustain (**strong**) — life-drain, self-sacrifice heals, cheat-death / revive top-up | Vitality / healing-received cut: [[Frieren]] / [[Gwyneth]]; matchup A OK [[Satrana]] / [[Igor]] (Explicit) | [[Dunlingr]] Curelock alone vs self-heal / life-drain |
+| Ally-heal snowball — heal-others cores, companion blooms | [[Dunlingr]] Curelock (C — pair non-C/H delete path) | Curelock as substitute for Vitality cut vs self-sustain |
+| Buffer-fed bruiser (**soft**) — partner sustain / fatal-blow saves (e.g. Orion) | Soft clause: Vitality / healing-received cut if they run heavy healers or fatal-blow saves; still pressure buffers / Supporters | Treating partner sustain as optional |
 | Low Phys DEF / higher Magic DEF | Physical assassins ([[Ravion]], [[Himmel]], [[Vala]], …) | Magic dump into the strong DEF |
 | Low Magic DEF / higher Phys DEF | Magic assassins ([[Evie]], [[Nerion]], [[Pippa]], …) | Physical dump into the strong DEF |
 | Both DEF high and/or heavy shields | True-damage assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
@@ -374,6 +376,8 @@ that the named units are examples, not an exhaustive list.
 | Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Lumont]], [[Eironn]], [[Pippa]], …); Steadfast → delete/inhibit | 6a |
 | Moving / provider-attached aura | Shove receivers ([[Lumont]], [[Pippa]], …); peel provider if not Steadfast/Unaffected | Enemy-grouping pulls ([[Cyran]], [[Eironn]]) for aura break | 6b |
 | DEF skew / high both DEF + shields | Match assassin `damage_type`; true damage when both high | 2 |
+| HP-recovery sustain (`life-drain`, cheat-death / revive top-up, play-overview heal need) | Vitality / healing-received cut ([[Frieren]], [[Gwyneth]], [[Satrana]], [[Igor]]) — see Explicit | [[Dunlingr]] Curelock alone vs self-heal |
+| Ally-heal snowball (heal-others, team blooms) | [[Dunlingr]] Curelock — see Explicit | Vitality cut instead of ally-heal lock |
 | Early / high-damage ultimate | See Explicit counters | 4a |
 
 ### 6. Explicit counters
@@ -392,7 +396,9 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | [[Dunlingr]] (ult/heal denial) | Non-ult kits on the **exempt carry** — [[Athalia]] (C) **or** [[Gwyneth]] / [[Ravion]] (non-C/H); see Gate 3 |
 | [[Frieren]] (pre-amp / **early** delete window) | [[Athalia]] or [[Himmel]] / [[Ravion]] before ~15s amplify; if [[Himmel]] is *their* adjacent partner, amp skips the wait — shorter window. Not Evie intel delay (Gate 4b) |
 | Delayed vulnerability (**late** delete window) | Sustained / long ultimates ([[Shemira]], [[Gwyneth]], amp’d [[Frieren]]); not opener assassins (Gate 4b) — e.g. [[Zorya]] awake+stone fade, [[Contess]] emerge, [[Cyran]] post-unaffected opener |
-| [[Solise]] (heal snowball) | [[Dunlingr]] no-heal (C — also give non-C/H early delete [[Ravion]] / [[Himmel]]); she is unaffected mid-ult (Gate 1) |
+| HP-recovery sustain (**strong**) — life-drain, self-sacrifice heals, cheat-death / revive top-up (e.g. [[Saida]], [[Shemira]], [[Talene]], [[Shakir]], [[Brutus]], [[Thoran]]) | Vitality / healing-received cut: lead [[Frieren]] / [[Gwyneth]]; matchup A OK [[Satrana]] / [[Igor]] (Explicit exception). Keep other Gates (e.g. Gate 5 on [[Saida]] hops). **Not** [[Dunlingr]] Curelock alone vs self-heal / life-drain. |
+| Ally-heal snowball / heal-others cores (e.g. [[Solise]] blooms, dedicated healers fueling a carry) | [[Dunlingr]] Curelock (C — always pair non-C/H delete path). Do **not** treat Curelock as a substitute for Vitality cut vs self-heal / life-drain. [[Solise]] is unaffected mid-ult (Gate 1). |
+| Buffer-fed bruiser (**soft**) — partner sustain / fatal-blow saves (e.g. [[Orion]]) | Soft clause only: if they bring **heavy healers or fatal-blow saves**, add Vitality / healing-received cut ([[Frieren]] / [[Gwyneth]], or [[Satrana]] / [[Igor]]); still pressure buffers / Supporters and keep timing Gates. |
 | High-mobility / late-ult leaper (e.g. [[Tasi]]) | [[Shemira]] / [[Frieren]] lasting coverage; [[Lily May]] for sleep — not assassin pin (Gate 5). [[Sylphira]] domain only if mover stays in densest clump |
 | [[Berial]] / [[Lily May]] / [[Harak]] (mobile finish) | Lasting coverage ([[Shemira]], [[Frieren]]) or area packages; do not chase shadow hops / relocates / dashes with assassin pin |
 | [[Harak]] (feast / devour) | Deny assists that extend feast; keep weakest above devour HP threshold; Gate 5 lasting coverage |
@@ -410,7 +416,7 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | [[Hodgkin]] ethereal (phys immune) | **Magic** lasting coverage ([[Shemira]] / [[Frieren]]); no physical dump into intangibility — immunity overrides DEF skew (Gate 2) |
 | [[Phraesto]] (Illusion) | Prefer deleting **Phraesto** over the Illusion — Illusion-first triggers his stun punish |
 | [[Pandora]] (boxed ally) | Pressure the **boxed partner** (acts through her global CC); early delete before Corruption + [[Lily May]] on the freeze |
-| [[Saida]] (seed/revive + teleports) | Lasting [[Shemira]] / [[Frieren]]; inhibit before seeds multiply — not assassin pin (Gate 5) |
+| [[Saida]] (seed/revive + teleports) | Vitality / healing-received cut ([[Frieren]] / [[Gwyneth]]; [[Satrana]] / [[Igor]] OK) — Curelock alone weak vs her self-heal. Lasting [[Shemira]] / [[Frieren]]; inhibit before seeds multiply — not assassin pin (Gate 5) |
 | [[Satrana]] (invuln ult + Sparks) | No burst into Fiery Dance (Gate 1); pressure **Satrana + Sparks partners** |
 | [[Kulu]] (teleport invuln + Unaffected ult) | Lasting [[Shemira]] / [[Frieren]]; [[Lily May]] for ult — not assassin pin (Gate 5) |
 | [[Valka]] ult-parry (Soulshock Riposte) | Don’t ult into her range; [[Lily May]] + early [[Ravion]] / [[Himmel]]; lasting coverage from outside range |
@@ -421,6 +427,10 @@ Gate-covered examples (Contess hittability + late emerge, Cryonaia early
 hunters, Alna/Eironn threat timing, Zorya late delete) live in **Validation
 gates** above; do not duplicate them here unless a new **named** unit combo is
 confirmed.
+
+**Deferred:** a `heal-denial` behavior tag and `[[filter:heal-denial]]` combo
+may be added later once kits are audited in behavior-tags; until then use the
+Explicit table and kit-fit cheat sheet above.
 
 ### 7. Write and render
 
