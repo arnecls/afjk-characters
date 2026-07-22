@@ -255,9 +255,10 @@ Stellar Bond line, Thador / Thoran prep placement). Those are not Gate 6.
 
 If the subject is tagged `static-tile-buffer` (today [[Hugin]], [[Gunnar]]),
 counter by **displacing the buffed ally off the tile** so the mid-fight buff
-drops. Lead with [[Eironn]] or [[Lumont]]; rotate other mid-fight displacers
-([[Temesia]], [[Mehira]], [[Reinier]], [[Pippa]]) — still name at most two, with
-C/H same-clause rules.
+drops. Lead with [[Lumont]] or [[Eironn]]; rotate other mid-fight displacers
+([[Mehira]], [[Reinier]], [[Pippa]]) — still name at most two, with C/H
+same-clause rules. **Not** [[Temesia]] — she charges enemies and knockdowns;
+she does not shove allies off tiles or out of auras.
 
 If the parked ally is **Steadfast** or **Unaffected**, displacement does not
 move them — fall back to **delete / inhibit** that ally instead (see Explicit
@@ -266,10 +267,19 @@ counters [[Gunnar]] Doomfield).
 ##### 6b — Moving / provider-attached aura
 
 If skill text or play overview shows a buff zone that **follows the caster**
-(proximity aura / circle around the provider — e.g. [[Perseus]]), prefer
-**shoving receivers out of the aura** first, then peeling the provider away
-from his carries. Same displacer pool as 6a ([[Mehira]], [[Lumont]],
-[[Eironn]], …); high-movement chargers that also displace fit well.
+(proximity aura / circle around the provider — e.g. [[Perseus]], [[Shakir]]
+Lupine Aura), prefer **shoving receivers out of the aura** first with
+**targeted foe displacement** — [[Lumont]], [[Pippa]], [[Reinier]], [[Mehira]]
+(rotate 1–2).
+
+**Not** enemy-grouping pulls ([[Cyran]] black hole, [[Eironn]] battle-start
+pull): those are displacement, but they **group/pull enemies** — they do **not**
+evict enemy **allies** packed in the provider’s aura. Clustering on [[Shakir]]
+is the problem, not the fix.
+
+**Peel the provider** away from his carries only when the provider is **not**
+**Steadfast** or **Unaffected** on that cast (e.g. [[Shakir]] is **Unaffected
+in Wolf Form** — peeling him fails; shove receivers instead).
 
 Do **not** treat global / non-positional team buffs as Gate 6b.
 
@@ -327,8 +337,8 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | Both DEF high and/or heavy shields | True-damage assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
 | Damage immunity (e.g. phys ethereal) | Opposite damage type / lasting Magic coverage | Matching the immune type |
 | Channel / chant maintenance (no cast immunity) | Control CC ([[Lily May]], stun/sleep packages) | Control CC vs unaffected casts; Lily May ult-Interrupt only (Gate 4a) |
-| Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Temesia]], [[Lumont]], [[Eironn]], …) | Battle-start-only placement advice; shove Steadfast allies |
-| Moving proximity aura | Shove **receivers** out, then peel provider (same displacer pool) | Treating global team buffs as positional |
+| Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Lumont]], [[Eironn]], [[Pippa]], …) | Battle-start-only placement advice; shove Steadfast allies; [[Temesia]] |
+| Moving proximity aura | Shove **receivers** ([[Lumont]], [[Pippa]], [[Reinier]], [[Mehira]]); peel provider only if not Steadfast/Unaffected | [[Cyran]] / [[Eironn]] enemy pulls; global buffs as positional |
 
 Do not put tag names (`backline-assassin`, etc.) in public counter prose —
 use them only to select which heroes to name as `[[pills]]`.
@@ -344,8 +354,8 @@ use them only to select which heroes to name as `[[pills]]`.
 | High-mobility / leap / teleport (esp. late ult) | Long lasting wide/retargeting ultimates ([[Shemira]], [[Frieren]]); not assassin pin | 5 |
 | Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — not spread vs global pulls | 4a note |
 | Channel / chant breaks under control | Control CC during chant/channel ([[Lily May]], stun/sleep) | Control CC vs immune/unaffected casts (Gate 1) |
-| Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Temesia]], [[Lumont]], [[Eironn]], …); Steadfast → delete/inhibit | 6a |
-| Moving / provider-attached aura | Displace receivers out of aura, then peel provider | 6b |
+| Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Lumont]], [[Eironn]], [[Pippa]], …); Steadfast → delete/inhibit | 6a |
+| Moving / provider-attached aura | Shove receivers ([[Lumont]], [[Pippa]], …); peel provider if not Steadfast/Unaffected | Enemy-grouping pulls ([[Cyran]], [[Eironn]]) for aura break | 6b |
 | DEF skew / high both DEF + shields | Match assassin `damage_type`; true damage when both high | 2 |
 | Early / high-damage ultimate | See Explicit counters | 4a |
 
@@ -370,8 +380,9 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | [[Berial]] / [[Lily May]] / [[Harak]] (mobile finish) | Lasting coverage ([[Shemira]], [[Frieren]]) or area packages; do not chase shadow hops / relocates / dashes with assassin pin |
 | [[Harak]] (feast / devour) | Deny assists that extend feast; keep weakest above devour HP threshold; Gate 5 lasting coverage |
 | Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — [[Gunnar]] Doomfield (self+ally), self-Steadfast [[Igor]]; spread does **not** beat global pulls ([[Cyran]] black hole) |
-| `static-tile-buffer` (mid-fight tile buff) | Displace the **buffed ally** off the tile — [[Temesia]] / [[Lumont]] / [[Eironn]] (rotate [[Mehira]], [[Reinier]], [[Pippa]]); if parked ally is Steadfast/Unaffected, delete/inhibit instead (Gate 6a) |
-| Moving proximity aura (e.g. [[Perseus]]) | Shove **receivers** out of the aura, then peel the provider — same displacer pool (Gate 6b) |
+| `static-tile-buffer` (mid-fight tile buff) | Displace the **buffed ally** off the tile — [[Lumont]] / [[Eironn]] / [[Pippa]] (rotate [[Mehira]], [[Reinier]]); not [[Temesia]]; Steadfast/Unaffected parked → delete/inhibit (Gate 6a) |
+| Moving proximity aura (e.g. [[Perseus]], [[Shakir]]) | Shove **receivers** with [[Lumont]] / [[Pippa]] / [[Reinier]] — **not** [[Cyran]] / [[Eironn]] enemy pulls; peel provider only if not Steadfast/Unaffected (Gate 6b) |
+| [[Shakir]] (Lupine Aura, wolf Unaffected) | [[Lumont]] / [[Pippa]] to shove receivers out — not [[Cyran]] / [[Eironn]] pulls; **Unaffected in Wolf Form** — cannot peel him off the pack |
 | [[Smokey & Meerky]] (channeling aroma) | Break channel with control CC ([[Lily May]], stun/sleep) — aroma drops under Control Effects; 4s recreate lockout; also Gate 6b shove + early delete |
 | [[Marcille]] (chanting kit) | Control CC during chant before companions/revive; [[Lily May]] on ultimate wind-up only (Gate 4a) — not unaffected mid-channel |
 | [[Bonnie]] (Aging cleanse) | Ally cleanse: [[Hewynn]] (C OK here); soft team shorten: [[Evie]] full-intel. Self-only cleanses ([[Lucca]], [[Sylphira]]) only help if *they* are the Aged rearmost |
