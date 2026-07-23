@@ -512,7 +512,7 @@ def parse_hero_block(
     hero_obj = (analyzed_heroes or {}).get(name)
     if hero_obj is not None:
         rs = _load_rewrite_summaries()
-        for effect in rs.collect_hero_buff_effects(hero_obj):
+        for effect in rs.collect_hero_buff_effects(hero_obj, include_self=True):
             apply_buff_effect_to_row(row, effect)
 
     return row

@@ -75,16 +75,12 @@ BUFF_EFFECT_TYPES: list[str] = [
     "Invincible",
     "Lifedrain",
     "Max HP",
-    "Ally empower",
     "Attack range",
-    "Healing",
     "Ranged DEF",
     "Crit DMG boost",
     "Vitality",
     "Dodge chance",
     "Movement speed",
-    "Exemption",
-    "Tidal Strength",
 ]
 
 DEBUFF_EFFECT_TYPES: list[str] = [

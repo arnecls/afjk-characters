@@ -6359,19 +6359,21 @@ def format_effect_magnitude(effect: Effect) -> str:
     return f"`{effect.magnitude}`"
 
 
-def collect_hero_buff_effects(hero: Hero) -> list[Effect]:
+def collect_hero_buff_effects(
+    hero: Hero, *, include_self: bool = False
+) -> list[Effect]:
     items = [
         e
         for e in hero.effects
         if e.category == "buff"
-        and e.targeting != "Self"
+        and (include_self or e.targeting != "Self")
         and not is_own_summon_buff_targeting(e.targeting)
     ]
     items.extend(
         e
         for e in hero.summon_effects
         if e.category == "buff"
-        and e.targeting != "Self"
+        and (include_self or e.targeting != "Self")
         and not is_own_summon_buff_targeting(e.targeting)
     )
     return sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label))
