@@ -186,6 +186,34 @@ class RoundTripTests(unittest.TestCase):
         ]
         self.assertIn(("Untargetable", "Self"), imms)
 
+    def test_merge_cc_immunities_keeps_distinct_targeting(self):
+        records = [
+            rs.CcImmunity("Steadfast", "base", "Self", "Conditional"),
+            rs.CcImmunity("Steadfast", "base", "Single target", "Conditional"),
+            rs.CcImmunity("Steadfast", "Mythic+", "Self", "Permanent"),
+        ]
+        merged = rs._merge_cc_immunity_records(records)
+        by_tgt = {(i.immunity_type, i.targeting): i for i in merged}
+        self.assertEqual(len(merged), 2)
+        self.assertIn(("Steadfast", "Self"), by_tgt)
+        self.assertIn(("Steadfast", "Single target"), by_tgt)
+        # Earliest unlock tier wins; stronger timing preferred.
+        self.assertEqual(by_tgt[("Steadfast", "Self")].tier, "base")
+        self.assertEqual(by_tgt[("Steadfast", "Self")].timing, "Permanent")
+        self.assertEqual(
+            by_tgt[("Steadfast", "Single target")].timing, "Conditional"
+        )
+
+    def test_merge_immunities_schema_keeps_distinct_targeting(self):
+        records = [
+            rs.CcImmunity("Unaffected", "base", "Self", "On skill"),
+            rs.CcImmunity("Unaffected", "Supreme+", "Single target", "Conditional"),
+            rs.CcImmunity("Unaffected", "base", "Self", "On ultimate"),
+        ]
+        merged = hs._merge_immunities(records)
+        pairs = {(i.immunity_type, i.targeting) for i in merged}
+        self.assertEqual(pairs, {("Unaffected", "Self"), ("Unaffected", "Single target")})
+
     def test_antandra_shield_assault_unaffected_self(self):
         hero, _data = self._hero_by_title_prefix("Antandra")
         section = rs.CATEGORY_TO_SECTION["ultimate"]

@@ -209,10 +209,31 @@ formation.
 **Steadfast** and **Unaffected** counter enemy-grouping / displacement (pulls,
 throws, knocks). Prefer them over “spread formation” when the pull is **global**
 or otherwise ignores spacing (e.g. Cyran’s black hole pulls the whole field —
-spread does nothing). Named steadfast tools: [[Gunnar]] Doomfield (self + the
-ally parked on it stay Steadfast), self-Steadfast [[Igor]] (and awake [[Zorya]]).
-Unaffected windows (self or granted) block the same displace class. Cyran’s
-throw also **skips** unaffected/steadfast targets when choosing whom to hurl.
+spread does nothing).
+
+**Equivalence rule:** whenever Steadfast is a valid displacement counter, an
+**active Unaffected window** that overlaps the same threat timing is also
+valid. Author **separate** filter links — never a combined OR chip:
+
+`[[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]]
+like [[Callan]] or [[Sylphira]] on the opening beat`
+
+Named steadfast tools: [[Gunnar]] Doomfield (self + the ally parked on it stay
+Steadfast), self-Steadfast [[Igor]] (and awake [[Zorya]]). Unaffected windows
+(self or granted) block the same displace class — match the example to the
+threat window:
+
+| Threat timing | Prefer `[[filter:unaffected]]` examples |
+| --- | --- |
+| Battle-start pull / throw / swap | [[Callan]] (`Start of battle`); [[Ravion]] Supreme+ ally grant |
+| Mid-fight on-skill knock / pull / charge | [[Sylphira]], [[Solise]], [[Shakir]] (Wolf Form), [[Perseus]] march |
+| Fast ult teleport / knock | [[Sylphira]] / [[Solise]] channels; [[Athalia]] or [[Kulu]] only with a non-C/H pair |
+
+Do **not** treat permanent or late-lock Unaffected (e.g. Temesia charge lock)
+as a general displacement answer unless the threat falls inside that window.
+Prose must name the window next to Unaffected examples — the filter chip lists
+every Unaffected hero, not only timing-matched ones. Cyran’s throw also
+**skips** unaffected/steadfast targets when choosing whom to hurl.
 
 ##### 4b — Delete window (does my damage peak when *they* are killable?)
 
@@ -347,7 +368,8 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | Inhibit / delay a hypercarry | [[Evie]], [[Himmel]], [[Nerion]], [[Bonnie]] | Burst-only names with no stall |
 | Non-ult damage (e.g. Dunlingr ban) | [[Athalia]] (C — pair with [[Gwyneth]] / [[Ravion]]) | Ult-dependent carries; Aliceth-only (also C) |
 | Peel a diver / mark partner | Match the *victim* slot: inhibit ([[Bonnie]], [[Evie]]) or race buffers | Listing three assassins |
-| Steadfast vs pulls | [[Gunnar]] (H — pair with [[Igor]]) | Spread vs global pulls |
+| Steadfast vs pulls | `[[filter:steadfast]] like [[Igor]]` / [[Gunnar]] (H — pair non-C/H) | Spread vs global pulls |
+| Unaffected vs pulls (same class as Steadfast) | `[[filter:unaffected]]` with **timing-matched** examples ([[Callan]] opener; [[Sylphira]] / [[Shakir]] mid-fight) | Permanent / late-lock Unaffected as a generic displace answer; Steadfast-only when Unaffected also fits |
 | HP-recovery sustain (**strong**) — life-drain, self-sacrifice heals, cheat-death / revive top-up | `heal-inhibitor` Vitality / healing-received cut: `[[filter:heal-inhibitor]] like [[Frieren]]` / [[Gwyneth]]; matchup A OK [[Satrana]] / [[Igor]] (Explicit) | [[Dunlingr]] Curelock alone vs self-heal / life-drain |
 | Ally-heal snowball — heal-others cores, companion blooms | `heal-inhibitor` [[Dunlingr]] Curelock (C — pair non-C/H delete path) | Curelock as substitute for Vitality cut vs self-sustain |
 | Buffer-fed bruiser (**soft**) — partner sustain / fatal-blow saves (e.g. Orion) | Soft clause: `[[filter:heal-inhibitor]]` Vitality / healing-received cut if they run heavy healers or fatal-blow saves; still pressure buffers / Supporters | Treating partner sustain as optional |
@@ -379,6 +401,12 @@ that the named units are examples, not an exhaustive list.
   sharpens the set (e.g. Magic DEF skew → `magic-backline-assassin`).
 - Chips render as humanized labels; clicks open **list view** with column
   filters applied (deep-link from counter chips only).
+- **Displacement immunities:** when Steadfast answers a pull / throw / knock,
+  also add a separate `[[filter:unaffected]] like [[Hero]]` clause with
+  examples whose Unaffected window overlaps that threat. Separate complete
+  filter phrases with punctuation so each `like` clause stays tied to its
+  own filter (do not nest `or [[filter:unaffected]]` inside a steadfast
+  `like` list). Never write “Steadfast / Unaffected” without both links.
 
 ### 5. Tag heuristics (quick reference)
 
@@ -390,7 +418,7 @@ that the named units are examples, not an exhaustive list.
 | Delayed vulnerability (**late** delete window) | Sustained / long ultimates ([[Shemira]], [[Gwyneth]], amp’d [[Frieren]]) | 4b |
 | Any-row priority kill | `assassin` | 2 |
 | High-mobility / leap / teleport (esp. late ult) | Long lasting wide/retargeting ultimates ([[Shemira]], [[Frieren]]); not assassin pin | 5 |
-| Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — not spread vs global pulls | 4a note |
+| Enemy-grouping / displacement (pull, throw, knock) | Separate `[[filter:steadfast]]` + timing-matched `[[filter:unaffected]]` — not spread vs global pulls | 4a note |
 | Channel / chant breaks under control | Control CC during chant/channel ([[Lily May]], stun/sleep) | Control CC vs immune/unaffected casts (Gate 1) |
 | Mid-fight tile buff (`static-tile-buffer`) | Displace buffed ally ([[Lumont]], [[Eironn]], [[Pippa]], …); Steadfast → delete/inhibit | 6a |
 | Moving / provider-attached aura | Shove receivers ([[Lumont]], [[Pippa]], …); peel provider if not Steadfast/Unaffected | Enemy-grouping pulls ([[Cyran]], [[Eironn]]) for aura break | 6b |
@@ -423,7 +451,7 @@ confirms a new reusable **named** combo (not already covered by a gate),
 | High-mobility / late-ult leaper (e.g. [[Tasi]]) | [[Shemira]] / [[Frieren]] lasting coverage; [[Lily May]] for sleep — not assassin pin (Gate 5). [[Sylphira]] domain only if mover stays in densest clump |
 | [[Berial]] / [[Lily May]] / [[Harak]] (mobile finish) | Lasting coverage ([[Shemira]], [[Frieren]]) or area packages; do not chase shadow hops / relocates / dashes with assassin pin |
 | [[Harak]] (feast / devour) | Deny assists that extend feast; keep weakest above devour HP threshold; Gate 5 lasting coverage |
-| Enemy-grouping / displacement (pull, throw, knock) | **Steadfast** / **Unaffected** — [[Gunnar]] Doomfield (self+ally), self-Steadfast [[Igor]]; spread does **not** beat global pulls ([[Cyran]] black hole) |
+| Enemy-grouping / displacement (pull, throw, knock) | Separate `[[filter:steadfast]] like [[Igor]]` / [[Gunnar]] (Doomfield) **and** timing-matched `[[filter:unaffected]] like [[Callan]]` / [[Sylphira]] / [[Shakir]]; spread does **not** beat global pulls ([[Cyran]] black hole) |
 | `static-tile-buffer` (mid-fight tile buff) | Displace the **buffed ally** off the tile — [[Lumont]] / [[Eironn]] / [[Pippa]] (rotate [[Mehira]], [[Reinier]]); not [[Temesia]]; Steadfast/Unaffected parked → delete/inhibit (Gate 6a) |
 | Moving proximity aura (e.g. [[Perseus]], [[Shakir]]) | Shove **receivers** with [[Lumont]] / [[Pippa]] / [[Reinier]] — **not** [[Cyran]] / [[Eironn]] enemy pulls; peel provider only if not Steadfast/Unaffected (Gate 6b) |
 | [[Shakir]] (Lupine Aura, wolf Unaffected) | [[Lumont]] / [[Pippa]] to shove receivers out — not [[Cyran]] / [[Eironn]] pulls; **Unaffected in Wolf Form** — cannot peel him off the pack |
@@ -480,10 +508,11 @@ Display: `[[Hero]]` → character pills; `[[filter:id]]` → linked filter chips
   exempt carry if relevant, channel/chant maintenance — control CC only when
   S1/S2/inferred channeling and cast is not immune; Lily May ult-Interrupt stays
   Gate 4a, 4a threat timing + 4b delete-window curve, no assassin pin on
-  high-movers, Gate 6 positional displace vs Steadfast fallback, DEF skew /
-  true-damage variance on delete picks, immunity overrides DEF, no stock
-  Athalia/Evie/Nerion trio — kit-fit 1–2, every Celestial/Hypogean counter has
-  a non-C/H alternative)
+  high-movers, Gate 6 positional displace vs Steadfast fallback, displacement
+  advice with Steadfast also has a separate timing-matched
+  `[[filter:unaffected]]` link, DEF skew / true-damage variance on delete
+  picks, immunity overrides DEF, no stock Athalia/Evie/Nerion trio — kit-fit
+  1–2, every Celestial/Hypogean counter has a non-C/H alternative)
 
 ## Related skills
 

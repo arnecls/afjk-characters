@@ -77,7 +77,9 @@ TIER_ORDER = {
     "Supreme+": 6,
 }
 
-# Narrower targeting wins when merging CC / immunities from multiple chunks.
+# Narrower targeting wins when merging CC from multiple chunks. Immunities
+# keep distinct targeting rows (Self vs Single target) and do not use this
+# to collapse across targets.
 _TARGETING_PRIORITY = {
     "Self": 0,
     "Single target": 1,
@@ -3404,17 +3406,18 @@ def _merge_effects_from_list(effects: list[Effect]) -> list[Effect]:
 
 
 def _merge_cc_immunity_records(records: list[CcImmunity]) -> list[CcImmunity]:
-    merged: dict[str, CcImmunity] = {}
+    # Keep distinct targeting (Self vs ally Single target) as separate rows.
+    merged: dict[tuple[str, str], CcImmunity] = {}
     for imm in records:
-        cur = merged.get(imm.immunity_type)
+        key = (imm.immunity_type, imm.targeting)
+        cur = merged.get(key)
         if cur is None:
-            merged[imm.immunity_type] = CcImmunity(
+            merged[key] = CcImmunity(
                 imm.immunity_type, imm.tier, imm.targeting, imm.timing
             )
             continue
         if TIER_ORDER.get(imm.tier, 99) < TIER_ORDER.get(cur.tier, 99):
             cur.tier = imm.tier
-        cur.targeting = _prefer_targeting(imm.targeting, cur.targeting)
         cur.timing = _prefer_timing(imm.timing, cur.timing)
     return list(merged.values())
 

@@ -667,9 +667,15 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
 def _merge_immunities(items: list[Any]) -> list[Any]:
     rs = _rs()
 
+    # Keep distinct targeting as separate rows (Self vs Single target).
     merged: list[Any] = []
     for imm in items:
-        existing = [c for c in merged if c.immunity_type == imm.immunity_type]
+        existing = [
+            c
+            for c in merged
+            if c.immunity_type == imm.immunity_type
+            and c.targeting == imm.targeting
+        ]
         if not existing:
             merged.append(
                 type(imm)(
@@ -683,7 +689,6 @@ def _merge_immunities(items: list[Any]) -> list[Any]:
         cur = existing[0]
         if rs.TIER_ORDER.get(imm.tier, 99) < rs.TIER_ORDER.get(cur.tier, 99):
             cur.tier = imm.tier
-        cur.targeting = rs._prefer_targeting(imm.targeting, cur.targeting)
         cur.timing = rs._prefer_timing(imm.timing, cur.timing)
     return merged
 

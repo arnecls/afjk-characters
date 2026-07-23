@@ -19240,6 +19240,26 @@
               ],
               "duration": 15.0,
               "tick": 1.0
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "steadfast",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "steadfast",
+              "timing": "conditional",
+              "targeting_label": "Single target",
+              "target": "ally",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "initial_energy": 0.0,
@@ -19261,6 +19281,12 @@
             {
               "label": "Vitality",
               "polarity": "debuff"
+            },
+            {
+              "label": "Steadfast — Self"
+            },
+            {
+              "label": "Steadfast — Single target"
             }
           ]
         },
@@ -23629,6 +23655,16 @@
                   "value": 290.0
                 }
               ]
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "steadfast",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "skill_range": 10,
@@ -23636,6 +23672,9 @@
           "skill_card_tags": [
             {
               "label": "Physical"
+            },
+            {
+              "label": "Steadfast — Self"
             }
           ]
         },
@@ -45972,26 +46011,6 @@
                   "value": 500.0
                 }
               ]
-            },
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "unaffected",
-              "timing": "conditional",
-              "targeting_label": "Self",
-              "target": "self",
-              "area": "single",
-              "target_count": 1
-            },
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "steadfast",
-              "timing": "conditional",
-              "targeting_label": "Self",
-              "target": "self",
-              "area": "single",
-              "target_count": 1
             }
           ],
           "cooldown": 1.25,
@@ -46003,12 +46022,6 @@
             },
             {
               "label": "Displace — Multiple targets"
-            },
-            {
-              "label": "Steadfast — Self"
-            },
-            {
-              "label": "Unaffected — Self"
             }
           ]
         },
@@ -64162,7 +64175,7 @@
               "type": "immunity",
               "tier": "base",
               "immunity_type": "steadfast",
-              "timing": "on_skill",
+              "timing": "form",
               "targeting_label": "Self",
               "target": "self",
               "area": "single",

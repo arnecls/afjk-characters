@@ -28,7 +28,18 @@
             }
           ],
           "summon_effects": [],
-          "immunities": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "steadfast",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
           "special_provides": [],
           "special_requires": []
         }
