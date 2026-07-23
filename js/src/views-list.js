@@ -7,7 +7,7 @@ window.AFKJ = window.AFKJ || {};
   const gridView = window.AFKJ.views.grid;
   const escapeHtml = utils.escapeHtml.bind(utils);
 
-  const EFFECT_CC_COLUMNS = [
+  const CC_EFFECT_TYPES = [
     "Stun",
     "Knock down",
     "Knock up",
@@ -21,15 +21,43 @@ window.AFKJ = window.AFKJ || {};
     "Interrupt",
     "Taunt",
     "Blind",
+    "Disarm",
   ];
 
-  const EFFECT_ANTI_CC_COLUMNS = [
+  const ANTI_CC_EFFECT_TYPES = [
     "Unaffected",
     "Steadfast",
     "Immune",
     "Untargetable",
     "Cleanse",
   ];
+
+  const EFFECT_CC_COLUMN = "Crowd Control";
+  const EFFECT_ANTI_CC_COLUMN = "Crowd Control Counter";
+  const EFFECT_CC_COLUMNS = [EFFECT_CC_COLUMN];
+  const EFFECT_ANTI_CC_COLUMNS = [EFFECT_ANTI_CC_COLUMN];
+
+  const CC_EFFECT_TYPE_SET = {};
+  CC_EFFECT_TYPES.forEach(function (label) {
+    CC_EFFECT_TYPE_SET[label.toLowerCase()] = label;
+  });
+  const ANTI_CC_EFFECT_TYPE_SET = {};
+  ANTI_CC_EFFECT_TYPES.forEach(function (label) {
+    ANTI_CC_EFFECT_TYPE_SET[label.toLowerCase()] = label;
+  });
+
+  function canonicalCcEffectType(label) {
+    const trimmed = (label || "").trim();
+    if (!trimmed) {
+      return "";
+    }
+    const lower = trimmed.toLowerCase();
+    return CC_EFFECT_TYPE_SET[lower] || ANTI_CC_EFFECT_TYPE_SET[lower] || "";
+  }
+
+  function isMergedCcColumn(column) {
+    return column === EFFECT_CC_COLUMN || column === EFFECT_ANTI_CC_COLUMN;
+  }
 
   const TIMING_RANK = {
     permanent: 50,
@@ -163,9 +191,18 @@ window.AFKJ = window.AFKJ || {};
 
   function parseEffectCellPart(text) {
     const segments = chips.splitSummarySegments(text);
+    let effect = "";
     let quality = "";
     let conditional = "";
     let timing = "";
+
+    if (segments.length) {
+      const leading = canonicalCcEffectType(segments[0]);
+      if (leading) {
+        effect = leading;
+        segments.shift();
+      }
+    }
 
     function popTrailingQuality() {
       if (!segments.length) {
@@ -208,6 +245,7 @@ window.AFKJ = window.AFKJ || {};
 
     const targeting = segments.join(" — ");
     return {
+      effect: effect,
       targeting: targeting,
       quality: quality,
       conditional: conditional,
@@ -238,6 +276,7 @@ window.AFKJ = window.AFKJ || {};
     }
     const colMeta = parseEffectColumnLabel(column);
     const parsed = parseEffectCellPart(text.trim());
+    const pillBase = parsed.effect || colMeta.base;
     let conditionalParam = "";
     if (parsed.conditional) {
       const condMatch = parsed.conditional.match(/conditional\s*\(([^)]+)\)/i);
@@ -247,7 +286,7 @@ window.AFKJ = window.AFKJ || {};
     }
 
     let html = chips.renderMergedEffectPill(
-      colMeta.base,
+      pillBase,
       parsed.quality,
       colMeta.tier || "",
       conditionalParam,
@@ -296,12 +335,33 @@ window.AFKJ = window.AFKJ || {};
     { id: "other", label: "Other" },
   ];
 
+  function filterGroupMetaForColumn(column) {
+    if (column === EFFECT_CC_COLUMN) {
+      return [
+        { id: "effect", label: "Effect" },
+        { id: "targeting", label: "Targeting" },
+        { id: "quality", label: "Magnitude" },
+      ];
+    }
+    if (column === EFFECT_ANTI_CC_COLUMN) {
+      return [
+        { id: "effect", label: "Effect" },
+        { id: "targeting", label: "Targeting" },
+        { id: "timing", label: "Timing" },
+      ];
+    }
+    return FILTER_GROUP_META;
+  }
+
   function classifyFilterAtom(value) {
     const trimmed = (value || "").trim();
     if (!trimmed) {
       return "other";
     }
     const lower = trimmed.toLowerCase();
+    if (canonicalCcEffectType(trimmed)) {
+      return "effect";
+    }
     if (chips.QUALITY_CLASS[lower]) {
       return "quality";
     }
@@ -311,11 +371,13 @@ window.AFKJ = window.AFKJ || {};
     if (/conditional/i.test(trimmed)) {
       return "conditional";
     }
-    if (config.TARGETING_DEFINITIONS[lower]) {
-      return "targeting";
-    }
+    // Timing before targeting: labels like "On skill" also exist in
+    // TARGETING_DEFINITIONS for chip styling, but are anti-CC timings.
     if (isTimingSegment(trimmed)) {
       return "timing";
+    }
+    if (config.TARGETING_DEFINITIONS[lower]) {
+      return "targeting";
     }
     return "other";
   }
@@ -332,12 +394,13 @@ window.AFKJ = window.AFKJ || {};
     return groups;
   }
 
-  function atomSetMatchesGroupedSelection(atomSet, selectedByGroup) {
+  function atomSetMatchesGroupedSelection(atomSet, selectedByGroup, groupMeta) {
+    const metas = groupMeta || FILTER_GROUP_META;
     const normalized = {};
     atomSet.forEach(function (atom) {
       normalized[atom.toLowerCase()] = atom;
     });
-    return FILTER_GROUP_META.every(function (meta) {
+    return metas.every(function (meta) {
       const groupSelected = selectedByGroup[meta.id];
       if (!groupSelected || !groupSelected.size) {
         return true;
@@ -369,6 +432,16 @@ window.AFKJ = window.AFKJ || {};
         return rankA - rankB;
       });
     }
+    if (
+      values.length &&
+      values.every(function (value) {
+        return !!canonicalCcEffectType(value);
+      })
+    ) {
+      return values.slice().sort(function (a, b) {
+        return ccEffectFilterSortRank(a) - ccEffectFilterSortRank(b);
+      });
+    }
     return values.slice().sort();
   }
 
@@ -377,8 +450,21 @@ window.AFKJ = window.AFKJ || {};
     return idx >= 0 ? idx : 99;
   }
 
+  function ccEffectFilterSortRank(value) {
+    const ccIdx = CC_EFFECT_TYPES.indexOf(value);
+    if (ccIdx >= 0) {
+      return ccIdx;
+    }
+    const antiIdx = ANTI_CC_EFFECT_TYPES.indexOf(value);
+    if (antiIdx >= 0) {
+      return antiIdx;
+    }
+    return 99;
+  }
+
   function buildEffectColumnFilterGroups(col, idx) {
     const state = window.AFKJ.state;
+    const groupMeta = filterGroupMetaForColumn(col);
     const byGroup = {};
     state.csvRows.forEach(function (row) {
       const raw = getListCellRawValue(row, idx, col);
@@ -393,16 +479,18 @@ window.AFKJ = window.AFKJ || {};
         byGroup[kind].add(v);
       });
     });
-    return FILTER_GROUP_META.map(function (meta) {
-      const values = byGroup[meta.id];
-      return {
-        id: meta.id,
-        label: meta.label,
-        values: values ? sortFilterOptionValues(Array.from(values)) : [],
-      };
-    }).filter(function (group) {
-      return group.values.length;
-    });
+    return groupMeta
+      .map(function (meta) {
+        const values = byGroup[meta.id];
+        return {
+          id: meta.id,
+          label: meta.label,
+          values: values ? sortFilterOptionValues(Array.from(values), col) : [],
+        };
+      })
+      .filter(function (group) {
+        return group.values.length;
+      });
   }
 
   function filterOptionGroupsHasChoices(groups) {
@@ -432,6 +520,9 @@ window.AFKJ = window.AFKJ || {};
       return atoms;
     }
     const parsed = parseEffectCellPart(trimmed);
+    if (parsed.effect) {
+      atoms.add(parsed.effect);
+    }
     if (parsed.targeting) {
       parsed.targeting.split(/\s*,\s*/).forEach(function (token) {
         const t = token.trim();
@@ -551,9 +642,14 @@ window.AFKJ = window.AFKJ || {};
 
     if (isEffectSortColumn(column)) {
       const selectedByGroup = splitSelectedByFilterGroup(selected);
+      const groupMeta = filterGroupMetaForColumn(column);
       const entrySets = effectEntryAtomSets(rawVal);
       return entrySets.some(function (atomSet) {
-        return atomSetMatchesGroupedSelection(atomSet, selectedByGroup);
+        return atomSetMatchesGroupedSelection(
+          atomSet,
+          selectedByGroup,
+          groupMeta
+        );
       });
     }
 
@@ -934,10 +1030,7 @@ window.AFKJ = window.AFKJ || {};
     if (listColumnMeta(column)) {
       return true;
     }
-    if (EFFECT_CC_COLUMNS.indexOf(column) !== -1) {
-      return true;
-    }
-    if (EFFECT_ANTI_CC_COLUMNS.indexOf(column) !== -1) {
+    if (isMergedCcColumn(column)) {
       return true;
     }
     return false;
@@ -973,16 +1066,21 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function targetingRank(text) {
-    const trimmed = text.trim();
+    const trimmed = (text || "").trim();
     if (!trimmed) {
       return 0;
     }
-    const lower = trimmed.toLowerCase();
-    if (Object.prototype.hasOwnProperty.call(TARGETING_RANK, lower)) {
-      return TARGETING_RANK[lower];
+    const meta = chips.targetingTokenMeta(trimmed);
+    if (meta) {
+      return meta.rank || 0;
     }
     if (trimmed.indexOf(",") !== -1) {
       return trimmed.split(/\s*,\s*/).reduce(function (max, part) {
+        return Math.max(max, targetingRank(part));
+      }, 0);
+    }
+    if (/\s*(?:—|–)\s*/.test(trimmed)) {
+      return chips.splitSummarySegments(trimmed).reduce(function (max, part) {
         return Math.max(max, targetingRank(part));
       }, 0);
     }
@@ -1020,11 +1118,12 @@ window.AFKJ = window.AFKJ || {};
     if (!cellMeta) {
       return { label: entry, targetRank: 0, timeRank: 0, strengthRank: 0 };
     }
+    const quality = (cellMeta.quality || "").toLowerCase();
     return {
-      label: cellMeta.label,
-      targetRank: targetingRank(cellMeta.timing),
+      label: cellMeta.effect || cellMeta.targeting || entry,
+      targetRank: targetingRank(cellMeta.targeting),
       timeRank: timingRank(cellMeta.timing),
-      strengthRank: STRENGTH_RANK[cellMeta.quality.toLowerCase()] || 0,
+      strengthRank: STRENGTH_RANK[quality] || 0,
     };
   }
 
