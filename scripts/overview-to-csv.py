@@ -86,6 +86,9 @@ ROLE_CATEGORY_LABELS: dict[str, str] = {
     "tank": "Tank",
 }
 
+CC_COLUMN = "Crowd Control"
+ANTI_CC_COLUMN = "Crowd Control Counter"
+
 COLUMNS: list[str] = (
     [
         "Name",
@@ -106,9 +109,7 @@ COLUMNS: list[str] = (
         "Energy provider",
     ]
     + [col for _, col in DAMAGE_TYPES]
-    + ["Healing", "Shields"]
-    + CC_TYPES
-    + ANTI_CC_TYPES
+    + ["Healing", "Shields", CC_COLUMN, ANTI_CC_COLUMN]
     + BUFF_TYPES
     + DEBUFF_TYPES
 )
@@ -194,20 +195,35 @@ def format_cell_value(targeting: str, trailing: str) -> str:
     return targeting or trailing
 
 
-def cc_column_name(label: str) -> str | None:
+def cc_effect_name(label: str) -> str | None:
+    """Map a Crowd Control bullet label to its canonical effect type."""
     base = base_label(label)
     if base.endswith(" immunity"):
-        return base[: -len(" immunity")]
-    if base in CC_COLUMN_SET:
+        base = base[: -len(" immunity")]
+    if base in CC_COLUMN_SET or base in ANTI_CC_COLUMN_SET:
         return base
-    if base in ANTI_CC_COLUMN_SET:
-        return base
+    return None
+
+
+def cc_merged_column(effect: str) -> str | None:
+    if effect in CC_COLUMN_SET:
+        return CC_COLUMN
+    if effect in ANTI_CC_COLUMN_SET:
+        return ANTI_CC_COLUMN
     return None
 
 
 def add_cell(row: HeroRow, column: str, value: str) -> None:
     if value:
         row.cells[column].append(value)
+
+
+def add_cc_cell(row: HeroRow, effect: str, value: str) -> None:
+    column = cc_merged_column(effect)
+    if not column:
+        return
+    entry = f"{effect} — {value}" if value else effect
+    add_cell(row, column, entry)
 
 
 def apply_buff_effect_to_row(row: HeroRow, effect) -> None:
@@ -487,9 +503,9 @@ def parse_hero_block(
                 if column:
                     add_cell(row, column, value)
             elif kind == "cc":
-                column = cc_column_name(label)
-                if column:
-                    add_cell(row, column, value)
+                effect = cc_effect_name(label)
+                if effect:
+                    add_cc_cell(row, effect, value)
             elif kind == "provides" and base_label(label).startswith("Summoning"):
                 row.flags["Summons"] = True
 
@@ -542,6 +558,19 @@ def join_cell(values: list[str]) -> str:
     return "; ".join(values)
 
 
+def join_cc_cell(values: list[str], type_order: list[str]) -> str:
+    """Join CC entries grouped by canonical effect type order."""
+    order_index = {name: i for i, name in enumerate(type_order)}
+    indexed = list(enumerate(values))
+    indexed.sort(
+        key=lambda pair: (
+            order_index.get(pair[1].split(" — ", 1)[0].strip(), 999),
+            pair[0],
+        )
+    )
+    return "; ".join(entry for _, entry in indexed)
+
+
 def row_to_csv(row: HeroRow) -> list[str]:
     out = [
         row.name,
@@ -564,7 +593,9 @@ def row_to_csv(row: HeroRow) -> list[str]:
         out.append(join_cell(row.cells.get(col, [])))
     out.append(join_cell(row.cells.get("Healing", [])))
     out.append(join_cell(row.cells.get("Shields", [])))
-    for col in CC_TYPES + ANTI_CC_TYPES + BUFF_TYPES + DEBUFF_TYPES:
+    out.append(join_cc_cell(row.cells.get(CC_COLUMN, []), CC_TYPES))
+    out.append(join_cc_cell(row.cells.get(ANTI_CC_COLUMN, []), ANTI_CC_TYPES))
+    for col in BUFF_TYPES + DEBUFF_TYPES:
         out.append(join_cell(row.cells.get(col, [])))
     return out
 

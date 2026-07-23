@@ -694,7 +694,10 @@ cardHtml+
 opts.chromeHtml+"</div>");}
 return cardHtml;}
 function renderGrid(){const state=window.AFKJ.state;const list=window.AFKJ.router.filteredHeroes();state.dom.heroGrid.innerHTML=list.map(function(h){return buildHeroCardHtml(h,{role:"link"});}).join("");state.dom.emptyState.classList.toggle("hidden",list.length>0);scheduleFitHeroCardNames();}
-window.AFKJ.views.grid={renderHeroPortrait:renderHeroPortrait,renderListHeroPortrait:renderListHeroPortrait,renderGridCardFactionIcon:renderGridCardFactionIcon,renderGridCardClassIcon:renderGridCardClassIcon,renderGridCardFactionStack:renderGridCardFactionStack,renderGridCardRole:renderGridCardRole,renderHeroCardWave:renderHeroCardWave,renderCompactCardWave:renderCompactCardWave,buildHeroCardHtml:buildHeroCardHtml,scheduleFitHeroCardNames:scheduleFitHeroCardNames,renderGrid:renderGrid,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const EFFECT_CC_COLUMNS=["Stun","Knock down","Knock up","Knock back","Frighten","Silence","Charm","Sleep","Displace","Bind","Interrupt","Taunt","Blind",];const EFFECT_ANTI_CC_COLUMNS=["Unaffected","Steadfast","Immune","Untargetable","Cleanse",];const TIMING_RANK={permanent:50,"start of battle":40,form:35,"on ultimate":30,"on skill":25,once:20,"conditional (frequent)":15,conditional:10,"conditional (rare)":5,};const STRENGTH_RANK={high:3,average:2,low:1,};const DMG_COLUMN_BASE={Magic:"Magic",Physical:"Physical",Ranged:"Ranged",True:"True damage","HP Loss":"HP loss","Max HP":"Max HP damage",};let columnFilterPointerHandler=null;function parseCsv(text){const rows=[];let row=[];let field="";let inQuotes=false;for(let i=0;i<text.length;i++){const c=text[i];if(inQuotes){if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{inQuotes=false;}}else{field+=c;}}else if(c==='"'){inQuotes=true;}else if(c===","){row.push(field);field="";}else if(c==="\n"||(c==="\r"&&text[i+1]==="\n")){row.push(field);if(row.some(function(cell){return cell.length>0;})){rows.push(row);}
+window.AFKJ.views.grid={renderHeroPortrait:renderHeroPortrait,renderListHeroPortrait:renderListHeroPortrait,renderGridCardFactionIcon:renderGridCardFactionIcon,renderGridCardClassIcon:renderGridCardClassIcon,renderGridCardFactionStack:renderGridCardFactionStack,renderGridCardRole:renderGridCardRole,renderHeroCardWave:renderHeroCardWave,renderCompactCardWave:renderCompactCardWave,buildHeroCardHtml:buildHeroCardHtml,scheduleFitHeroCardNames:scheduleFitHeroCardNames,renderGrid:renderGrid,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const CC_EFFECT_TYPES=["Stun","Knock down","Knock up","Knock back","Frighten","Silence","Charm","Sleep","Displace","Bind","Interrupt","Taunt","Blind","Disarm",];const ANTI_CC_EFFECT_TYPES=["Unaffected","Steadfast","Immune","Untargetable","Cleanse",];const EFFECT_CC_COLUMN="Crowd Control";const EFFECT_ANTI_CC_COLUMN="Crowd Control Counter";const EFFECT_CC_COLUMNS=[EFFECT_CC_COLUMN];const EFFECT_ANTI_CC_COLUMNS=[EFFECT_ANTI_CC_COLUMN];const CC_EFFECT_TYPE_SET={};CC_EFFECT_TYPES.forEach(function(label){CC_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const ANTI_CC_EFFECT_TYPE_SET={};ANTI_CC_EFFECT_TYPES.forEach(function(label){ANTI_CC_EFFECT_TYPE_SET[label.toLowerCase()]=label;});function canonicalCcEffectType(label){const trimmed=(label||"").trim();if(!trimmed){return"";}
+const lower=trimmed.toLowerCase();return CC_EFFECT_TYPE_SET[lower]||ANTI_CC_EFFECT_TYPE_SET[lower]||"";}
+function isMergedCcColumn(column){return column===EFFECT_CC_COLUMN||column===EFFECT_ANTI_CC_COLUMN;}
+const TIMING_RANK={permanent:50,"start of battle":40,form:35,"on ultimate":30,"on skill":25,once:20,"conditional (frequent)":15,conditional:10,"conditional (rare)":5,};const STRENGTH_RANK={high:3,average:2,low:1,};const DMG_COLUMN_BASE={Magic:"Magic",Physical:"Physical",Ranged:"Ranged",True:"True damage","HP Loss":"HP loss","Max HP":"Max HP damage",};let columnFilterPointerHandler=null;function parseCsv(text){const rows=[];let row=[];let field="";let inQuotes=false;for(let i=0;i<text.length;i++){const c=text[i];if(inQuotes){if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{inQuotes=false;}}else{field+=c;}}else if(c==='"'){inQuotes=true;}else if(c===","){row.push(field);field="";}else if(c==="\n"||(c==="\r"&&text[i+1]==="\n")){row.push(field);if(row.some(function(cell){return cell.length>0;})){rows.push(row);}
 row=[];field="";if(c==="\r"){i++;}}else if(c!=="\r"){field+=c;}}
 if(field.length||row.length){row.push(field);rows.push(row);}
 return rows;}
@@ -709,51 +712,61 @@ if(lower.indexOf("on ultimate")!==-1){return true;}
 if(lower.indexOf("on skill")!==-1){return true;}
 if(lower.indexOf("permanent")!==-1){return true;}
 return false;}
-function parseEffectCellPart(text){const segments=chips.splitSummarySegments(text);let quality="";let conditional="";let timing="";function popTrailingQuality(){if(!segments.length){return;}
+function parseEffectCellPart(text){const segments=chips.splitSummarySegments(text);let effect="";let quality="";let conditional="";let timing="";if(segments.length){const leading=canonicalCcEffectType(segments[0]);if(leading){effect=leading;segments.shift();}}
+function popTrailingQuality(){if(!segments.length){return;}
 const last=chips.unwrapBackticks(segments[segments.length-1]);const lower=last.toLowerCase();if(chips.QUALITY_CLASS[lower]){quality=last;segments.pop();}}
 function popTrailingConditional(){if(!segments.length){return;}
 const last=segments[segments.length-1];if(/conditional/i.test(last)){conditional=last;segments.pop();}}
 function popTrailingTiming(){if(!segments.length){return;}
 const last=segments[segments.length-1];if(isTimingSegment(last)){timing=last;segments.pop();}}
-popTrailingConditional();popTrailingQuality();popTrailingConditional();popTrailingTiming();const targeting=segments.join(" — ");return{targeting:targeting,quality:quality,conditional:conditional,timing:timing,};}
+popTrailingConditional();popTrailingQuality();popTrailingConditional();popTrailingTiming();const targeting=segments.join(" — ");return{effect:effect,targeting:targeting,quality:quality,conditional:conditional,timing:timing,};}
 function renderEffectConditionalChip(conditionalText){if(!conditionalText){return"";}
 const condMatch=conditionalText.match(/conditional\s*\(([^)]+)\)/i);if(condMatch){return"";}
 return(' <span class="chip chip-generic chip-has-tip"'+
 chips.chipTipAttrs(chips.conditionalTooltip(conditionalText))+">🎲 "+
 escapeHtml(conditionalText)+"</span>");}
 function renderEffectCellPart(column,text){if(!text||!text.trim()){return"";}
-const colMeta=parseEffectColumnLabel(column);const parsed=parseEffectCellPart(text.trim());let conditionalParam="";if(parsed.conditional){const condMatch=parsed.conditional.match(/conditional\s*\(([^)]+)\)/i);if(condMatch){conditionalParam=condMatch[1].trim();}}
-let html=chips.renderMergedEffectPill(colMeta.base,parsed.quality,colMeta.tier||"",conditionalParam,colMeta.polarity);if(parsed.targeting){html+=" "+chips.renderBuffTargetingChip(parsed.targeting);}
+const colMeta=parseEffectColumnLabel(column);const parsed=parseEffectCellPart(text.trim());const pillBase=parsed.effect||colMeta.base;let conditionalParam="";if(parsed.conditional){const condMatch=parsed.conditional.match(/conditional\s*\(([^)]+)\)/i);if(condMatch){conditionalParam=condMatch[1].trim();}}
+let html=chips.renderMergedEffectPill(pillBase,parsed.quality,colMeta.tier||"",conditionalParam,colMeta.polarity);if(parsed.targeting){html+=" "+chips.renderBuffTargetingChip(parsed.targeting);}
 if(parsed.timing){const timingChip=chips.tryChipify(parsed.timing);html+=" "+
 (timingChip!==null?timingChip:chips.formatTag(parsed.timing));}
 html+=renderEffectConditionalChip(parsed.conditional);return html;}
 function getListCellRawValue(row,colIdx,col){const state=window.AFKJ.state;const tiers=window.AFKJ.tiers;let cellValue=row[colIdx]||"";const hero=state.heroByName[row[0]||""];if(col==="Role"&&!String(cellValue||"").trim()&&hero){const roleMeta=tiers.roleCategoryMeta(hero.roleCategory);if(roleMeta){cellValue=roleMeta.label;}}
 if(hero&&tiers.TIER_CSV_HEADERS[col]&&!String(cellValue||"").trim()){const tierCol=tiers.TIER_CSV_COLUMNS.find(function(t){return t.header===col;});if(tierCol){cellValue=tiers.getHeroPrydwenTiers(hero)[tierCol.key]||"?";}}
 return String(cellValue||"").trim();}
-const FILTER_GROUP_META=[{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},{id:"timing",label:"Timing"},{id:"conditional",label:"Conditional"},{id:"other",label:"Other"},];function classifyFilterAtom(value){const trimmed=(value||"").trim();if(!trimmed){return"other";}
-const lower=trimmed.toLowerCase();if(chips.QUALITY_CLASS[lower]){return"quality";}
+const FILTER_GROUP_META=[{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},{id:"timing",label:"Timing"},{id:"conditional",label:"Conditional"},{id:"other",label:"Other"},];function filterGroupMetaForColumn(column){if(column===EFFECT_CC_COLUMN){return[{id:"effect",label:"Effect"},{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},];}
+if(column===EFFECT_ANTI_CC_COLUMN){return[{id:"effect",label:"Effect"},{id:"targeting",label:"Targeting"},{id:"timing",label:"Timing"},];}
+return FILTER_GROUP_META;}
+function classifyFilterAtom(value){const trimmed=(value||"").trim();if(!trimmed){return"other";}
+const lower=trimmed.toLowerCase();if(canonicalCcEffectType(trimmed)){return"effect";}
+if(chips.QUALITY_CLASS[lower]){return"quality";}
 if(chips.SPEED_CLASS[lower]){return"quality";}
 if(/conditional/i.test(trimmed)){return"conditional";}
-if(config.TARGETING_DEFINITIONS[lower]){return"targeting";}
 if(isTimingSegment(trimmed)){return"timing";}
+if(config.TARGETING_DEFINITIONS[lower]){return"targeting";}
 return"other";}
 function splitSelectedByFilterGroup(selected){const groups={};selected.forEach(function(value){const kind=classifyFilterAtom(value);if(!groups[kind]){groups[kind]=new Set();}
 groups[kind].add(value);});return groups;}
-function atomSetMatchesGroupedSelection(atomSet,selectedByGroup){const normalized={};atomSet.forEach(function(atom){normalized[atom.toLowerCase()]=atom;});return FILTER_GROUP_META.every(function(meta){const groupSelected=selectedByGroup[meta.id];if(!groupSelected||!groupSelected.size){return true;}
+function atomSetMatchesGroupedSelection(atomSet,selectedByGroup,groupMeta){const metas=groupMeta||FILTER_GROUP_META;const normalized={};atomSet.forEach(function(atom){normalized[atom.toLowerCase()]=atom;});return metas.every(function(meta){const groupSelected=selectedByGroup[meta.id];if(!groupSelected||!groupSelected.size){return true;}
 let groupMatched=false;groupSelected.forEach(function(value){if(normalized[value.toLowerCase()]){groupMatched=true;}});return groupMatched;});}
 function sortFilterOptionValues(values,column){const isTier=window.AFKJ.tiers.TIER_CSV_HEADERS[column];const isRole=column==="Role";if(isTier){return values.slice().sort(function(a,b){return tierFilterSortRank(a)-tierFilterSortRank(b);});}
 if(isRole){return values.slice().sort(function(a,b){const metaA=window.AFKJ.tiers.roleCategoryMeta(a)||config.ROLE_CATEGORY_META[a];const metaB=window.AFKJ.tiers.roleCategoryMeta(b)||config.ROLE_CATEGORY_META[b];const rankA=metaA?config.ROLE_FILTER_ORDER.indexOf(a):99;const rankB=metaB?config.ROLE_FILTER_ORDER.indexOf(b):99;return rankA-rankB;});}
+if(values.length&&values.every(function(value){return!!canonicalCcEffectType(value);})){return values.slice().sort(function(a,b){return ccEffectFilterSortRank(a)-ccEffectFilterSortRank(b);});}
 return values.slice().sort();}
 function tierFilterSortRank(value){const idx=window.AFKJ.tiers.TIER_FILTER_ORDER.indexOf(value);return idx>=0?idx:99;}
-function buildEffectColumnFilterGroups(col,idx){const state=window.AFKJ.state;const byGroup={};state.csvRows.forEach(function(row){const raw=getListCellRawValue(row,idx,col);if(!raw){return;}
+function ccEffectFilterSortRank(value){const ccIdx=CC_EFFECT_TYPES.indexOf(value);if(ccIdx>=0){return ccIdx;}
+const antiIdx=ANTI_CC_EFFECT_TYPES.indexOf(value);if(antiIdx>=0){return antiIdx;}
+return 99;}
+function buildEffectColumnFilterGroups(col,idx){const state=window.AFKJ.state;const groupMeta=filterGroupMetaForColumn(col);const byGroup={};state.csvRows.forEach(function(row){const raw=getListCellRawValue(row,idx,col);if(!raw){return;}
 extractCellFilterAtoms(col,raw).forEach(function(v){const kind=classifyFilterAtom(v);if(!byGroup[kind]){byGroup[kind]=new Set();}
-byGroup[kind].add(v);});});return FILTER_GROUP_META.map(function(meta){const values=byGroup[meta.id];return{id:meta.id,label:meta.label,values:values?sortFilterOptionValues(Array.from(values)):[],};}).filter(function(group){return group.values.length;});}
+byGroup[kind].add(v);});});return groupMeta.map(function(meta){const values=byGroup[meta.id];return{id:meta.id,label:meta.label,values:values?sortFilterOptionValues(Array.from(values),col):[],};}).filter(function(group){return group.values.length;});}
 function filterOptionGroupsHasChoices(groups){return groups.some(function(group){return group.values&&group.values.length;});}
 function columnFilterCombineMode(colIdx){return window.AFKJ.state.csvColumnFilterCombine[colIdx]||"or";}
 function toggleColumnFilterCombine(colIdx){const state=window.AFKJ.state;if(columnFilterCombineMode(colIdx)==="and"){delete state.csvColumnFilterCombine[colIdx];}else{state.csvColumnFilterCombine[colIdx]="and";}
 renderList();}
 function atomsFromEffectEntry(entry){const atoms=new Set();const trimmed=entry.trim();if(!trimmed){return atoms;}
-const parsed=parseEffectCellPart(trimmed);if(parsed.targeting){parsed.targeting.split(/\s*,\s*/).forEach(function(token){const t=token.trim();if(t){atoms.add(t);}});}
+const parsed=parseEffectCellPart(trimmed);if(parsed.effect){atoms.add(parsed.effect);}
+if(parsed.targeting){parsed.targeting.split(/\s*,\s*/).forEach(function(token){const t=token.trim();if(t){atoms.add(t);}});}
 if(parsed.quality){atoms.add(parsed.quality);}
 if(parsed.conditional){atoms.add(parsed.conditional);}
 if(parsed.timing){atoms.add(parsed.timing);}
@@ -772,7 +785,7 @@ if(isEffectSortColumn(col)){filterOptions.push(buildEffectColumnFilterGroups(col
 const vals=new Set();state.csvRows.forEach(function(row){const raw=getListCellRawValue(row,idx,col);if(!raw)return;const atoms=extractCellFilterAtoms(col,raw);atoms.forEach(vals.add,vals);});const uniqueVals=Array.from(vals);filterOptions.push([{id:"value",label:"",values:sortFilterOptionValues(uniqueVals,col),},]);});state.csvColumnFilterOptions=filterOptions;}
 function cellMatchesColumnFilter(column,cellValue,selected,combineMode){if(selected.length===0){return true;}
 const rawVal=(cellValue||"").trim();if(!rawVal){return false;}
-if(isEffectSortColumn(column)){const selectedByGroup=splitSelectedByFilterGroup(selected);const entrySets=effectEntryAtomSets(rawVal);return entrySets.some(function(atomSet){return atomSetMatchesGroupedSelection(atomSet,selectedByGroup);});}
+if(isEffectSortColumn(column)){const selectedByGroup=splitSelectedByFilterGroup(selected);const groupMeta=filterGroupMetaForColumn(column);const entrySets=effectEntryAtomSets(rawVal);return entrySets.some(function(atomSet){return atomSetMatchesGroupedSelection(atomSet,selectedByGroup,groupMeta);});}
 const atoms=extractCellFilterAtoms(column,rawVal);const mode=combineMode==="and"?"and":"or";if(mode==="and"){return selected.every(function(value){return atoms.has(value);});}
 return selected.some(function(value){return atoms.has(value);});}
 function rowMatchesColumnFilters(row){const state=window.AFKJ.state;for(let i=1;i<state.csvHeaders.length;i++){const col=state.csvHeaders[i];const selected=state.csvColumnFilters[i]||[];if(selected.length>0){const combine=columnFilterCombineMode(i);const cellValue=row[i];if(!cellMatchesColumnFilter(col,cellValue,selected,combine)){return false;}}}
@@ -855,8 +868,7 @@ function isEffectSortColumn(column){if(!column){return false;}
 if(isDmgColumn(column)){return true;}
 if(column==="Healing"||column==="Shields"){return true;}
 if(listColumnMeta(column)){return true;}
-if(EFFECT_CC_COLUMNS.indexOf(column)!==-1){return true;}
-if(EFFECT_ANTI_CC_COLUMNS.indexOf(column)!==-1){return true;}
+if(isMergedCcColumn(column)){return true;}
 return false;}
 function listColumnClass(col){const tiers=window.AFKJ.tiers;if(col==="Name"){return"col-name";}
 if(col==="Faction"){return"col-faction";}
@@ -867,9 +879,10 @@ if(col==="Movement"){return"col-movement";}
 if(col==="Behavior tags"){return"col-behavior-tags";}
 if(isEffectSortColumn(col)){return"col-effect-stack";}
 return"col-general";}
-function targetingRank(text){const trimmed=text.trim();if(!trimmed){return 0;}
-const lower=trimmed.toLowerCase();if(Object.prototype.hasOwnProperty.call(TARGETING_RANK,lower)){return TARGETING_RANK[lower];}
+function targetingRank(text){const trimmed=(text||"").trim();if(!trimmed){return 0;}
+const meta=chips.targetingTokenMeta(trimmed);if(meta){return meta.rank||0;}
 if(trimmed.indexOf(",")!==-1){return trimmed.split(/\s*,\s*/).reduce(function(max,part){return Math.max(max,targetingRank(part));},0);}
+if(/\s*(?:—|–)\s*/.test(trimmed)){return chips.splitSummarySegments(trimmed).reduce(function(max,part){return Math.max(max,targetingRank(part));},0);}
 return 0;}
 function timingRank(text){const lower=text.trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(TIMING_RANK,lower)){return TIMING_RANK[lower];}
 if(lower.indexOf("conditional (frequent)")!==-1){return TIMING_RANK["conditional (frequent)"];}
@@ -880,7 +893,7 @@ if(lower.indexOf("on skill")!==-1){return TIMING_RANK["on skill"];}
 if(lower.indexOf("permanent")!==-1){return TIMING_RANK.permanent;}
 return 0;}
 function parseEffectEntry(entry){const cellMeta=parseEffectCellPart(entry);if(!cellMeta){return{label:entry,targetRank:0,timeRank:0,strengthRank:0};}
-return{label:cellMeta.label,targetRank:targetingRank(cellMeta.timing),timeRank:timingRank(cellMeta.timing),strengthRank:STRENGTH_RANK[cellMeta.quality.toLowerCase()]||0,};}
+const quality=(cellMeta.quality||"").toLowerCase();return{label:cellMeta.effect||cellMeta.targeting||entry,targetRank:targetingRank(cellMeta.targeting),timeRank:timingRank(cellMeta.timing),strengthRank:STRENGTH_RANK[quality]||0,};}
 function effectSortKey(cellValue){const trimmed=(cellValue||"").trim();if(!trimmed){return null;}
 const parts=trimmed.split(/\s*;\s*/).map(function(s){return s.trim();}).filter(Boolean);const parsed=parts.map(parseEffectEntry);parsed.sort(compareEffectSortKeys);return parsed[0]||null;}
 function compareEffectSortKeys(ka,kb){if(ka.strengthRank!==kb.strengthRank){return kb.strengthRank-ka.strengthRank;}
