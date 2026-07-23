@@ -102,20 +102,8 @@
     "group": "buff"
   },
   {
-    "id": "ally_empower_buff",
-    "label": "Ally empower",
-    "polarity": "buff",
-    "group": "buff"
-  },
-  {
     "id": "attack_range_buff",
     "label": "Attack range",
-    "polarity": "buff",
-    "group": "buff"
-  },
-  {
-    "id": "healing_buff",
-    "label": "Healing",
     "polarity": "buff",
     "group": "buff"
   },
@@ -146,18 +134,6 @@
   {
     "id": "movement_speed_buff",
     "label": "Movement speed",
-    "polarity": "buff",
-    "group": "buff"
-  },
-  {
-    "id": "exemption_buff",
-    "label": "Exemption",
-    "polarity": "buff",
-    "group": "buff"
-  },
-  {
-    "id": "tidal_strength_buff",
-    "label": "Tidal Strength",
     "polarity": "buff",
     "group": "buff"
   },
