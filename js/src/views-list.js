@@ -32,10 +32,64 @@ window.AFKJ = window.AFKJ || {};
     "Cleanse",
   ];
 
+  // Keep in sync with scripts/effect_labels.py BUFF_EFFECT_TYPES.
+  const BUFF_EFFECT_TYPES = [
+    "ATK",
+    "Basic stats",
+    "ATK SPD",
+    "Haste",
+    "Crit",
+    "DEF Penetration",
+    "DEF",
+    "Damage taken",
+    "Damage dealt",
+    "Ranged damage",
+    "Magic damage",
+    "Energy",
+    "Execution",
+    "Fatal blow immunity",
+    "Invincible",
+    "Lifedrain",
+    "Max HP",
+    "Attack range",
+    "Ranged DEF",
+    "Crit DMG boost",
+    "Vitality",
+    "Dodge chance",
+    "Movement speed",
+  ];
+
+  // Keep in sync with scripts/effect_labels.py DEBUFF_EFFECT_TYPES.
+  const DEBUFF_EFFECT_TYPES = [
+    "ATK",
+    "Basic stats",
+    "DoT",
+    "Damage taken",
+    "Damage dealt",
+    "Debuff duration",
+    "Magic damage",
+    "Energy",
+    "Execution",
+    "Haste",
+    "Magic DEF",
+    "Max HP",
+    "Movement speed",
+    "Phys DEF",
+    "Vitality",
+    "Healing",
+    "Crit Resist",
+    "Vulnerable",
+    "ATK SPD",
+  ];
+
   const EFFECT_CC_COLUMN = "Crowd Control";
   const EFFECT_ANTI_CC_COLUMN = "Crowd Control Counter";
+  const EFFECT_BUFF_COLUMN = "Buffs";
+  const EFFECT_DEBUFF_COLUMN = "Debuffs";
   const EFFECT_CC_COLUMNS = [EFFECT_CC_COLUMN];
   const EFFECT_ANTI_CC_COLUMNS = [EFFECT_ANTI_CC_COLUMN];
+  const EFFECT_BUFF_COLUMNS = [EFFECT_BUFF_COLUMN];
+  const EFFECT_DEBUFF_COLUMNS = [EFFECT_DEBUFF_COLUMN];
 
   const CC_EFFECT_TYPE_SET = {};
   CC_EFFECT_TYPES.forEach(function (label) {
@@ -44,6 +98,14 @@ window.AFKJ = window.AFKJ || {};
   const ANTI_CC_EFFECT_TYPE_SET = {};
   ANTI_CC_EFFECT_TYPES.forEach(function (label) {
     ANTI_CC_EFFECT_TYPE_SET[label.toLowerCase()] = label;
+  });
+  const BUFF_EFFECT_TYPE_SET = {};
+  BUFF_EFFECT_TYPES.forEach(function (label) {
+    BUFF_EFFECT_TYPE_SET[label.toLowerCase()] = label;
+  });
+  const DEBUFF_EFFECT_TYPE_SET = {};
+  DEBUFF_EFFECT_TYPES.forEach(function (label) {
+    DEBUFF_EFFECT_TYPE_SET[label.toLowerCase()] = label;
   });
 
   function canonicalCcEffectType(label) {
@@ -55,8 +117,29 @@ window.AFKJ = window.AFKJ || {};
     return CC_EFFECT_TYPE_SET[lower] || ANTI_CC_EFFECT_TYPE_SET[lower] || "";
   }
 
+  function canonicalBuffDebuffEffectType(label) {
+    const trimmed = (label || "").trim();
+    if (!trimmed) {
+      return "";
+    }
+    const lower = trimmed.toLowerCase();
+    return BUFF_EFFECT_TYPE_SET[lower] || DEBUFF_EFFECT_TYPE_SET[lower] || "";
+  }
+
+  function canonicalMergedEffectType(label) {
+    return canonicalCcEffectType(label) || canonicalBuffDebuffEffectType(label);
+  }
+
   function isMergedCcColumn(column) {
     return column === EFFECT_CC_COLUMN || column === EFFECT_ANTI_CC_COLUMN;
+  }
+
+  function isMergedBuffDebuffColumn(column) {
+    return column === EFFECT_BUFF_COLUMN || column === EFFECT_DEBUFF_COLUMN;
+  }
+
+  function isMergedEffectColumn(column) {
+    return isMergedCcColumn(column) || isMergedBuffDebuffColumn(column);
   }
 
   const TIMING_RANK = {
@@ -145,6 +228,12 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function parseEffectColumnLabel(column) {
+    if (column === EFFECT_BUFF_COLUMN) {
+      return { base: column, polarity: "buff", tier: "" };
+    }
+    if (column === EFFECT_DEBUFF_COLUMN) {
+      return { base: column, polarity: "debuff", tier: "" };
+    }
     const meta = listColumnMeta(column);
     if (meta) {
       return {
@@ -197,7 +286,7 @@ window.AFKJ = window.AFKJ || {};
     let timing = "";
 
     if (segments.length) {
-      const leading = canonicalCcEffectType(segments[0]);
+      const leading = canonicalMergedEffectType(segments[0]);
       if (leading) {
         effect = leading;
         segments.shift();
@@ -350,6 +439,14 @@ window.AFKJ = window.AFKJ || {};
         { id: "timing", label: "Timing" },
       ];
     }
+    if (isMergedBuffDebuffColumn(column)) {
+      return [
+        { id: "effect", label: "Effect" },
+        { id: "targeting", label: "Targeting" },
+        { id: "quality", label: "Magnitude" },
+        { id: "conditional", label: "Conditional" },
+      ];
+    }
     return FILTER_GROUP_META;
   }
 
@@ -359,7 +456,7 @@ window.AFKJ = window.AFKJ || {};
       return "other";
     }
     const lower = trimmed.toLowerCase();
-    if (canonicalCcEffectType(trimmed)) {
+    if (canonicalMergedEffectType(trimmed)) {
       return "effect";
     }
     if (chips.QUALITY_CLASS[lower]) {
@@ -435,11 +532,12 @@ window.AFKJ = window.AFKJ || {};
     if (
       values.length &&
       values.every(function (value) {
-        return !!canonicalCcEffectType(value);
+        return !!canonicalMergedEffectType(value);
       })
     ) {
       return values.slice().sort(function (a, b) {
-        return ccEffectFilterSortRank(a) - ccEffectFilterSortRank(b);
+        return mergedEffectFilterSortRank(a, column) -
+          mergedEffectFilterSortRank(b, column);
       });
     }
     return values.slice().sort();
@@ -450,7 +548,15 @@ window.AFKJ = window.AFKJ || {};
     return idx >= 0 ? idx : 99;
   }
 
-  function ccEffectFilterSortRank(value) {
+  function mergedEffectFilterSortRank(value, column) {
+    if (column === EFFECT_BUFF_COLUMN) {
+      const buffIdx = BUFF_EFFECT_TYPES.indexOf(value);
+      return buffIdx >= 0 ? buffIdx : 99;
+    }
+    if (column === EFFECT_DEBUFF_COLUMN) {
+      const debuffIdx = DEBUFF_EFFECT_TYPES.indexOf(value);
+      return debuffIdx >= 0 ? debuffIdx : 99;
+    }
     const ccIdx = CC_EFFECT_TYPES.indexOf(value);
     if (ccIdx >= 0) {
       return ccIdx;
@@ -1030,7 +1136,7 @@ window.AFKJ = window.AFKJ || {};
     if (listColumnMeta(column)) {
       return true;
     }
-    if (isMergedCcColumn(column)) {
+    if (isMergedEffectColumn(column)) {
       return true;
     }
     return false;
@@ -1588,6 +1694,8 @@ window.AFKJ = window.AFKJ || {};
   window.AFKJ.views.list = {
     EFFECT_CC_COLUMNS: EFFECT_CC_COLUMNS,
     EFFECT_ANTI_CC_COLUMNS: EFFECT_ANTI_CC_COLUMNS,
+    EFFECT_BUFF_COLUMNS: EFFECT_BUFF_COLUMNS,
+    EFFECT_DEBUFF_COLUMNS: EFFECT_DEBUFF_COLUMNS,
     TIMING_RANK: TIMING_RANK,
     parseCsv: parseCsv,
     parseEffectColumnLabel: parseEffectColumnLabel,
