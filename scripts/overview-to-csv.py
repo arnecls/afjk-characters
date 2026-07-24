@@ -61,23 +61,12 @@ ANTI_CC_TYPES: list[str] = [
 ]
 
 LIST_COLUMNS = build_list_columns()
-BUFF_COLUMN_BY_LABEL = {
-    col["label"]: col["id"] for col in LIST_COLUMNS if col["group"] == "buff"
-}
-DEBUFF_COLUMN_BY_LABEL = {
-    col["label"]: col["id"] for col in LIST_COLUMNS if col["group"] == "debuff"
-}
-
-BUFF_TYPES: list[str] = [col["id"] for col in LIST_COLUMNS if col["group"] == "buff"]
-DEBUFF_TYPES: list[str] = [
-    col["id"] for col in LIST_COLUMNS if col["group"] == "debuff"
-]
+BUFF_EFFECT_TYPE_SET = frozenset(BUFF_EFFECT_TYPES)
+DEBUFF_EFFECT_TYPE_SET = frozenset(DEBUFF_EFFECT_TYPES)
 
 DAMAGE_LABEL_TO_COLUMN = {label: col for label, col in DAMAGE_TYPES}
 CC_COLUMN_SET = frozenset(CC_TYPES)
 ANTI_CC_COLUMN_SET = frozenset(ANTI_CC_TYPES)
-BUFF_COLUMN_SET = frozenset(BUFF_COLUMN_BY_LABEL)
-DEBUFF_COLUMN_SET = frozenset(DEBUFF_COLUMN_BY_LABEL)
 
 ROLE_CATEGORY_LABELS: dict[str, str] = {
     "damage_dealer": "Damage dealer",
@@ -88,6 +77,8 @@ ROLE_CATEGORY_LABELS: dict[str, str] = {
 
 CC_COLUMN = "Crowd Control"
 ANTI_CC_COLUMN = "Crowd Control Counter"
+BUFF_COLUMN = "Buffs"
+DEBUFF_COLUMN = "Debuffs"
 
 COLUMNS: list[str] = (
     [
@@ -109,9 +100,7 @@ COLUMNS: list[str] = (
         "Energy provider",
     ]
     + [col for _, col in DAMAGE_TYPES]
-    + ["Healing", "Shields", CC_COLUMN, ANTI_CC_COLUMN]
-    + BUFF_TYPES
-    + DEBUFF_TYPES
+    + ["Healing", "Shields", CC_COLUMN, ANTI_CC_COLUMN, BUFF_COLUMN, DEBUFF_COLUMN]
 )
 
 SUMMARY_RE = re.compile(r"^### Summary for ", re.M)
@@ -226,6 +215,12 @@ def add_cc_cell(row: HeroRow, effect: str, value: str) -> None:
     add_cell(row, column, entry)
 
 
+def add_effect_cell(row: HeroRow, column: str, effect: str, value: str) -> None:
+    """Store a buff/debuff entry prefixed with its canonical effect type."""
+    entry = f"{effect} — {value}" if value else effect
+    add_cell(row, column, entry)
+
+
 def apply_buff_effect_to_row(row: HeroRow, effect) -> None:
     label = (
         f"{effect.label} ({effect.tier})"
@@ -245,8 +240,8 @@ def apply_buff_effect_to_row(row: HeroRow, effect) -> None:
         add_cell(row, "Healing", value)
     elif buff_label == "Shield":
         add_cell(row, "Shields", value)
-    elif buff_label in BUFF_COLUMN_SET:
-        add_cell(row, BUFF_COLUMN_BY_LABEL[buff_label], value)
+    elif buff_label in BUFF_EFFECT_TYPE_SET:
+        add_effect_cell(row, BUFF_COLUMN, buff_label, value)
 
 
 def _load_rewrite_summaries():
@@ -495,13 +490,12 @@ def parse_hero_block(
                     add_cell(row, "Healing", value)
                 elif buff_label == "Shield":
                     add_cell(row, "Shields", value)
-                elif buff_label in BUFF_COLUMN_SET:
-                    add_cell(row, BUFF_COLUMN_BY_LABEL[buff_label], value)
+                elif buff_label in BUFF_EFFECT_TYPE_SET:
+                    add_effect_cell(row, BUFF_COLUMN, buff_label, value)
             elif kind == "debuffs":
                 debuff_label = base_label(label)
-                column = DEBUFF_COLUMN_BY_LABEL.get(debuff_label)
-                if column:
-                    add_cell(row, column, value)
+                if debuff_label in DEBUFF_EFFECT_TYPE_SET:
+                    add_effect_cell(row, DEBUFF_COLUMN, debuff_label, value)
             elif kind == "cc":
                 effect = cc_effect_name(label)
                 if effect:
@@ -595,8 +589,8 @@ def row_to_csv(row: HeroRow) -> list[str]:
     out.append(join_cell(row.cells.get("Shields", [])))
     out.append(join_cc_cell(row.cells.get(CC_COLUMN, []), CC_TYPES))
     out.append(join_cc_cell(row.cells.get(ANTI_CC_COLUMN, []), ANTI_CC_TYPES))
-    for col in BUFF_TYPES + DEBUFF_TYPES:
-        out.append(join_cell(row.cells.get(col, [])))
+    out.append(join_cc_cell(row.cells.get(BUFF_COLUMN, []), BUFF_EFFECT_TYPES))
+    out.append(join_cc_cell(row.cells.get(DEBUFF_COLUMN, []), DEBUFF_EFFECT_TYPES))
     return out
 
 

@@ -89,21 +89,75 @@ window.AFKJ = window.AFKJ || {};
     return values.slice();
   }
 
+  function legacyEffectColumnAlias(column) {
+    const meta = (window.AFKJ.state.listColumnsById || {})[column];
+    if (!meta || !meta.label) {
+      return null;
+    }
+    if (meta.group === "buff" || meta.polarity === "buff") {
+      return { column: "Buffs", effect: meta.label };
+    }
+    if (meta.group === "debuff" || meta.polarity === "debuff") {
+      return { column: "Debuffs", effect: meta.label };
+    }
+    return null;
+  }
+
+  function expandLegacyFilterMap(filterMap) {
+    const expanded = {};
+    Object.keys(filterMap || {}).forEach(function (column) {
+      const values = filterMap[column] || [];
+      const alias = legacyEffectColumnAlias(column);
+      if (alias) {
+        if (!expanded[alias.column]) {
+          expanded[alias.column] = [];
+        }
+        expanded[alias.column].push(alias.effect);
+        if (!(values.length === 1 && values[0] === "all")) {
+          values.forEach(function (value) {
+            if (value) {
+              expanded[alias.column].push(value);
+            }
+          });
+        }
+        return;
+      }
+      if (!expanded[column]) {
+        expanded[column] = [];
+      }
+      values.forEach(function (value) {
+        expanded[column].push(value);
+      });
+    });
+    Object.keys(expanded).forEach(function (column) {
+      const seen = {};
+      expanded[column] = expanded[column].filter(function (value) {
+        if (!value || seen[value]) {
+          return false;
+        }
+        seen[value] = true;
+        return true;
+      });
+    });
+    return expanded;
+  }
+
   function applyListFilterMap(filterMap) {
     const state = window.AFKJ.state;
     state.csvColumnFilters = {};
     state.csvColumnFilterCombine = {};
-    Object.keys(filterMap).forEach(function (column) {
+    const expanded = expandLegacyFilterMap(filterMap);
+    Object.keys(expanded).forEach(function (column) {
       const colIdx = columnIndex(column);
       if (colIdx === -1) {
         return;
       }
-      const resolved = resolveFilterValues(column, colIdx, filterMap[column]);
+      const resolved = resolveFilterValues(column, colIdx, expanded[column]);
       if (!resolved.length) {
         return;
       }
       state.csvColumnFilters[colIdx] = resolved;
-      if (column === "Behavior tags" && filterMap[column].length > 1) {
+      if (column === "Behavior tags" && expanded[column].length > 1) {
         state.csvColumnFilterCombine[colIdx] = "and";
       }
     });
@@ -160,6 +214,7 @@ window.AFKJ = window.AFKJ || {};
     comboDeepLinkById: comboDeepLinkById,
     parseListFilterHash: parseListFilterHash,
     parseFilterQuery: parseFilterQuery,
+    expandLegacyFilterMap: expandLegacyFilterMap,
     applyListFilterMap: applyListFilterMap,
     applyComboFilters: applyComboFilters,
     tryApplyPendingListFilters: tryApplyPendingListFilters,
