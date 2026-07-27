@@ -150,7 +150,9 @@ const labelLower=trimmed.toLowerCase();if(labelLower==="max hp-based damage"||la
 for(const key of Object.keys(config.TAG_DEFINITIONS)){if(key.toLowerCase()===labelLower){return key;}}
 return null;}
 function isStatModifierLabel(label){const t=(label||"").trim();return(t==="Damage taken"||t==="Magic damage"||t==="Damage dealt"||t==="Energy");}
-function effectLabelPolarity(label){return null;}
+function effectLabelPolarity(label){const trimmed=(label||"").trim().toLowerCase();if(trimmed.endsWith(" debuff")){return"debuff";}
+if(trimmed.endsWith(" buff")){return"buff";}
+return null;}
 const BUFF_DISPLAY_EFFECT_CHIPS={"Damage taken":{emoji:"🛡️",cls:"chip-stat"},"Magic damage":{emoji:"🪄",cls:"chip-stat"},"Damage dealt":{emoji:"⚔️",cls:"chip-stat"},"Ranged damage":{emoji:"🏹",cls:"chip-stat"},"Basic stats":{emoji:"📈",cls:"chip-stat"},};function effectChipClassForPolarity(polarity,fallbackCls){if(polarity==="debuff"){return"chip-debuff";}
 if(polarity==="buff"){if(fallbackCls&&fallbackCls.indexOf("chip-debuff")!==-1){return"chip-stat";}
 if(!fallbackCls||fallbackCls==="chip-generic"||fallbackCls.indexOf("chip-stat")!==-1){return"chip-stat";}
@@ -1345,7 +1347,7 @@ const behaviorTags=renderBehaviorTagsLine(text);if(behaviorTags!==null){return b
 const damageTypes=renderDamageTypesOverviewLine(text);if(damageTypes!==null){return damageTypes;}
 const colonMatch=text.match(/^\*\*(.+?)\*\*:\s*(.+)$/);if(colonMatch){const label=colonMatch[1].trim();return formatSkillOverviewRow("<strong>"+escapeHtml(label)+"</strong>",chips.renderInline(colonMatch[2].trim()));}
 return chips.renderInline(text);}
-const SYNERGY_TARGETING_TOKENS={"single target":true,"multiple targets":true,"all units":true,area:true,arc:true,global:true,self:true,allies:true,enemies:true,"on skill":true,"all summons":true,"owned summons":true,"summons only":true,};const SYNERGY_QUALITY_TOKENS={low:true,average:true,high:true,};function splitSynergyReasonDetail(text){const match=text.match(/^(.+?)\s*\((.+)\)\s*$/);if(!match){return{label:text.trim(),quality:"",conditional:"",modifiers:[],};}
+const SYNERGY_TARGETING_TOKENS={"single target":true,"multiple targets":true,"all units":true,area:true,arc:true,global:true,self:true,allies:true,enemies:true,"on skill":true,"all summons":true,"owned summons":true,"summons only":true,};const SYNERGY_QUALITY_TOKENS={low:true,average:true,high:true,};const SYNERGY_KEPT_REASON_PREFIXES={"enemy defense":true,};function splitSynergyReasonDetail(text){const match=text.match(/^(.+?)\s*\((.+)\)\s*$/);if(!match){return{label:text.trim(),quality:"",conditional:"",modifiers:[],};}
 let label=match[1].trim();let inner=match[2].trim();let conditional="";const condMatch=inner.match(/(?:,\s*)?conditional\s*\(([^)]+)\)\s*$/i);if(condMatch){conditional=condMatch[1].trim();inner=inner.slice(0,condMatch.index).replace(/,\s*$/,"").trim();}
 let quality="";const modifiers=[];inner.split(/\s*,\s*/).forEach(function(part){const trimmed=part.trim();if(!trimmed){return;}
 const lower=trimmed.toLowerCase();if(SYNERGY_QUALITY_TOKENS[lower]){quality=lower;return;}
@@ -1357,7 +1359,8 @@ if(!kept.length){return detail.label;}
 return detail.label+" ("+kept.join(", ")+")";}
 function parseSynergyReason(reason){let text=chips.normalizeSummaryText(reason);let signatureFuel=false;if(/`signature fuel`\s*$/i.test(text)){signatureFuel=true;text=text.replace(/`signature fuel`\s*$/i,"").trim();}
 if(/^Enables /i.test(text)||/^Grants /i.test(text)){return{type:"enable",text:stripSynergyReasonTargeting(text),};}
-const viaIdx=text.toLowerCase().indexOf(" via ");if(viaIdx!==-1){text=text.slice(viaIdx+5).trim();}
+const viaIdx=text.toLowerCase().indexOf(" via ");if(viaIdx!==-1){const prefix=text.slice(0,viaIdx).trim().toLowerCase();if(SYNERGY_KEPT_REASON_PREFIXES[prefix]){return{type:"enable",text:stripSynergyReasonTargeting(text),};}
+text=text.slice(viaIdx+5).trim();}
 const detail=splitSynergyReasonDetail(text);const parsed=chips.parseEffectLabelParts(detail.label);return{type:"effect",base:parsed.base,tier:parsed.tier,quality:detail.quality,conditional:detail.conditional,signatureFuel:signatureFuel,};}
 function synergyReasonKey(parsed){return[parsed.base,parsed.tier,parsed.quality,parsed.conditional,parsed.signatureFuel?"1":"0",].join("|");}
 function chipifySynergyEnableLabel(text){const direct=chips.tryChipify(text);if(direct){return direct;}
@@ -1367,7 +1370,7 @@ if(parts.length===1){return renderPart(parts[0],true);}
 return parts.map(function(part,idx){const applyQuality=idx===parts.length-1&&!!detail.quality;return renderPart(part,applyQuality);}).join(" + ");}
 function renderSynergyEnableLine(text){if(/^Grants /i.test(text)){return escapeHtml(text);}
 const viaIdx=text.toLowerCase().indexOf(" via ");if(viaIdx===-1){return chipifySynergyEnableLabel(text);}
-const prefix=text.slice(0,viaIdx).trim();const effect=text.slice(viaIdx+5).trim();const enableMatch=prefix.match(/^Enables\s+(.+)$/i);const enableLabel=enableMatch?enableMatch[1].trim():prefix;return("Enables "+
+const prefix=text.slice(0,viaIdx).trim();const effect=text.slice(viaIdx+5).trim();const enableMatch=prefix.match(/^Enables\s+(.+)$/i);const enableLabel=enableMatch?enableMatch[1].trim():prefix;return((enableMatch?"Enables ":"")+
 chipifySynergyEnableLabel(enableLabel)+" via "+
 chipifySynergyEnableDetail(effect));}
 function renderSynergyPartnerExplanation(reasons,options){if(!reasons||!reasons.length){return"";}

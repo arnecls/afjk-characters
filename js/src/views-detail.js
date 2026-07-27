@@ -486,6 +486,13 @@ window.AFKJ = window.AFKJ || {};
     high: true,
   };
 
+  // "<stat> via <buff>" reasons collapse to the effect pill alone, because the
+  // stat and the buff say the same thing. These lead-ins carry extra meaning
+  // the pill cannot express, so they survive rendering.
+  const SYNERGY_KEPT_REASON_PREFIXES = {
+    "enemy defense": true,
+  };
+
   function splitSynergyReasonDetail(text) {
     const match = text.match(/^(.+?)\s*\((.+)\)\s*$/);
     if (!match) {
@@ -561,6 +568,13 @@ window.AFKJ = window.AFKJ || {};
 
     const viaIdx = text.toLowerCase().indexOf(" via ");
     if (viaIdx !== -1) {
+      const prefix = text.slice(0, viaIdx).trim().toLowerCase();
+      if (SYNERGY_KEPT_REASON_PREFIXES[prefix]) {
+        return {
+          type: "enable",
+          text: stripSynergyReasonTargeting(text),
+        };
+      }
       text = text.slice(viaIdx + 5).trim();
     }
 
@@ -637,7 +651,7 @@ window.AFKJ = window.AFKJ || {};
     const enableMatch = prefix.match(/^Enables\s+(.+)$/i);
     const enableLabel = enableMatch ? enableMatch[1].trim() : prefix;
     return (
-      "Enables " +
+      (enableMatch ? "Enables " : "") +
       chipifySynergyEnableLabel(enableLabel) +
       " via " +
       chipifySynergyEnableDetail(effect)

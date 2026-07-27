@@ -863,6 +863,13 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function effectLabelPolarity(label) {
+    const trimmed = (label || "").trim().toLowerCase();
+    if (trimmed.endsWith(" debuff")) {
+      return "debuff";
+    }
+    if (trimmed.endsWith(" buff")) {
+      return "buff";
+    }
     return null;
   }
 
