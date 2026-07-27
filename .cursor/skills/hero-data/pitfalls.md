@@ -220,8 +220,21 @@ or `Damage dealt debuff` but the user reports a buff chip:
 2. Grep `TAG_DEFINITIONS` in `site/js/app.js` for the full debuff label.
 3. Fix chip resolution before adding new detection rules.
 
-`resolveLeadingChip` with `polarity === "debuff"` only styles correctly when
-the debuff key exists in `TAG_DEFINITIONS`.
+The usual cause is a **missing polarity**, not a missing key: renderers fall
+back to `effectLabelPolarity(base) || "buff"`, and `resolveLeadingChip` strips
+a trailing ` debuff` when matching stat prefixes. `effectLabelPolarity` reads
+polarity off a `… buff` / `… debuff` suffix, so a label carrying the suffix
+styles correctly without its own `TAG_DEFINITIONS` entry; a bare label
+(`Magic DEF`) needs the caller to pass `polarity` explicitly.
+
+### Synergy reason prefixes
+
+Synergy reasons render through `parseSynergyReason` in `views-detail.js`. A
+`<stat> via <buff>` reason drops everything before ` via ` because the stat
+and the buff say the same thing. Reasons whose lead-in carries extra meaning
+(`Enemy defense via Magic DEF debuff (…)`) must be listed in
+`SYNERGY_KEPT_REASON_PREFIXES`, or the prefix vanishes and the reason reads as
+an ally buff.
 
 ### Self-debuff false positives (always verify)
 

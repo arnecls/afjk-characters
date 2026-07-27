@@ -668,6 +668,20 @@ class RoundTripTests(unittest.TestCase):
             msg=result.stdout + result.stderr,
         )
 
+    def test_synergy_reason_chip_polarity(self):
+        script = SCRIPTS / "test_synergy_reason_chips.js"
+        result = subprocess.run(
+            ["node", str(script)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(
+            result.returncode,
+            0,
+            msg=result.stdout + result.stderr,
+        )
+
     def test_evie_skill1_magic_def_shows_both_targetings(self):
         data = io.load_heroes_data()
         record = next(r for r in data["heroes"] if r.get("name") == "Evie")
