@@ -684,6 +684,15 @@ window.AFKJ = window.AFKJ || {};
       });
       return values;
     }
+    if (column === "Movement") {
+      raw.split(/\s*\|\s*/).forEach(function (part) {
+        const trimmed = part.trim();
+        if (trimmed) {
+          values.add(trimmed);
+        }
+      });
+      return values;
+    }
     if (isEffectSortColumn(column)) {
       raw.split(/\s*;\s*/).forEach(function (entry) {
         atomsFromEffectEntry(entry).forEach(function (atom) {
@@ -1004,6 +1013,13 @@ window.AFKJ = window.AFKJ || {};
     const trimmed = text.trim();
     if (!trimmed) {
       return null;
+    }
+    const parts = trimmed.split(/\s*\|\s*/);
+    if (parts.length === 2) {
+      const merged = chips.mergeMovementWithWalkSpeed(parts[0], parts[1]);
+      if (merged) {
+        return merged;
+      }
     }
     const lower = trimmed.toLowerCase();
     for (let i = 0; i < chips.MOVEMENT_KEYS.length; i++) {
