@@ -98,6 +98,7 @@ window.AFKJ.config = {
     "enemy-debuffer": { emoji: "🥀", cls: "chip-role" },
     "enemy-grouping": { emoji: "🧲", cls: "chip-role" },
     "energy-provider": { emoji: "🔋", cls: "chip-role" },
+    "energy-inhibitor": { emoji: "🪫", cls: "chip-role" },
     "execute": { emoji: "☠️", cls: "chip-role" },
     "heal-inhibitor": { emoji: "🚫", cls: "chip-role" },
     "high-damage-ult": { emoji: "💣", cls: "chip-role" },
@@ -170,6 +171,8 @@ window.AFKJ.config = {
       "Pulls, pushes, or clusters enemies to set up follow-up damage or CC.",
     "energy-provider":
       "Grants Energy to allies or routinely accelerates ally ultimates.",
+    "energy-inhibitor":
+      "Meaningfully reduces enemy Energy and/or Energy recovery as a combat pattern.",
     execute:
       "Finishes low-HP enemies or scales damage strongly on wounded targets.",
     "heal-inhibitor":
