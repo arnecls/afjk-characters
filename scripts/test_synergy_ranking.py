@@ -950,5 +950,122 @@ class ContinuousDamageMatcherTests(unittest.TestCase):
         self.assertAlmostEqual(all_units_score, 5.0 * 2.5)
 
 
+class EnemyDefenseSynergyTests(unittest.TestCase):
+    def _receiver(
+        self,
+        *,
+        title: str = "Alsa - Desert Flare",
+        damage_type: str = "Magic",
+        damage_magnitudes: dict | None = None,
+        effects: list | None = None,
+    ) -> SimpleNamespace:
+        return SimpleNamespace(
+            title=title,
+            damage_type=damage_type,
+            damage_magnitudes=damage_magnitudes or {},
+            effects=effects or [],
+            benefit_stats=[],
+            summon_effects=[],
+            special_effects=[],
+            skill_chunks=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+
+    def _debuff(
+        self, label: str, targeting: str = "Area", magnitude: str = "high"
+    ) -> SimpleNamespace:
+        return SimpleNamespace(
+            category="debuff",
+            label=label,
+            targeting=targeting,
+            magnitude=magnitude,
+            conditional=None,
+        )
+
+    def test_magic_dd_scores_magic_def_not_phys_def(self) -> None:
+        receiver = self._receiver()
+        magic_provider = SimpleNamespace(
+            title="Eironn - Hero",
+            effects=[self._debuff("Magic DEF")],
+            summon_effects=[],
+            special_effects=[],
+        )
+        phys_provider = SimpleNamespace(
+            title="Brutus - Hero",
+            effects=[self._debuff("Phys DEF")],
+            summon_effects=[],
+            special_effects=[],
+        )
+        magic_match = gen.match_enemy_defense_reduction(
+            magic_provider, receiver
+        )
+        phys_match = gen.match_enemy_defense_reduction(phys_provider, receiver)
+        self.assertIsNotNone(magic_match)
+        self.assertIsNone(phys_match)
+        score, reasons = gen.score_enemy_defense_synergy(
+            magic_provider, receiver, gen.DAMAGE_DEALER_ROLE
+        )
+        self.assertGreater(score, 0)
+        self.assertTrue(
+            any(r.startswith("Enemy defense via") for r in reasons)
+        )
+
+    def test_high_true_damage_disqualifies(self) -> None:
+        receiver = self._receiver(
+            damage_type="Physical",
+            damage_magnitudes={"True damage": "high"},
+        )
+        provider = SimpleNamespace(
+            title="Provider - Hero",
+            effects=[self._debuff("Phys DEF")],
+            summon_effects=[],
+            special_effects=[],
+        )
+        score, reasons = gen.score_enemy_defense_synergy(
+            provider, receiver, gen.DAMAGE_DEALER_ROLE
+        )
+        self.assertEqual(score, 0)
+        self.assertEqual(reasons, [])
+
+    def test_low_true_damage_still_qualifies(self) -> None:
+        receiver = self._receiver(
+            damage_type="Physical",
+            damage_magnitudes={"True damage": "low"},
+        )
+        provider = SimpleNamespace(
+            title="Provider - Hero",
+            effects=[self._debuff("Phys DEF")],
+            summon_effects=[],
+            special_effects=[],
+        )
+        score, _reasons = gen.score_enemy_defense_synergy(
+            provider, receiver, gen.DAMAGE_DEALER_ROLE
+        )
+        self.assertGreater(score, 0)
+
+    def test_self_shred_halves_score(self) -> None:
+        base = self._receiver(damage_type="Magic")
+        self_shred = self._receiver(
+            damage_type="Magic",
+            effects=[self._debuff("Magic DEF", targeting="Single target")],
+        )
+        provider = SimpleNamespace(
+            title="Provider - Hero",
+            effects=[self._debuff("Magic DEF")],
+            summon_effects=[],
+            special_effects=[],
+        )
+        base_score, _ = gen.score_enemy_defense_synergy(
+            provider, base, gen.DAMAGE_DEALER_ROLE
+        )
+        half_score, _ = gen.score_enemy_defense_synergy(
+            provider, self_shred, gen.DAMAGE_DEALER_ROLE
+        )
+        self.assertGreater(base_score, 0)
+        self.assertAlmostEqual(half_score, base_score * 0.5)
+
+
 if __name__ == "__main__":
     unittest.main()

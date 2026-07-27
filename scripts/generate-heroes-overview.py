@@ -85,6 +85,26 @@ TARGETING_WEIGHT = {
 
 MAG_WEIGHT = {"high": 3.0, "average": 2.0, "low": 1.0}
 
+# Damage dealers with absent/minor true damage score partners who lower enemy
+# defenses (type-matched DEF shred, Damage taken amp, ally DEF Penetration).
+DAMAGE_DEALER_ROLE = "damage_dealer"
+ENEMY_DEFENSE_BASE_MULT = 2.0
+ENEMY_DEFENSE_SELF_SHRED_MULT = 0.5
+_TRUE_FAMILY_DAMAGE_KEYS = frozenset(
+    {
+        "True damage",
+        "Max HP-based damage",
+        "HP loss",
+        "true",
+        "max_hp",
+        "hp_loss",
+    }
+)
+_DEF_DEBUFF_PHYS = frozenset({"Phys DEF"})
+_DEF_DEBUFF_MAGIC = frozenset({"Magic DEF"})
+_DEF_DEBUFF_SHARED = frozenset({"DEF", "Damage taken"})
+_DEF_PENETRATION_BUFF = "DEF Penetration"
+
 # Haste increases attack speed; prefer Haste buff over ATK SPD buff for ATK SPD
 # beneficiaries (multiplier breaks ties at equal targeting/magnitude).
 HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
@@ -1060,6 +1080,103 @@ def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
     return tw * mw * 2.0, detail
 
 
+def receiver_primary_damage_kind(receiver: _rs.Hero) -> str:
+    """Return ``physical`` or ``magic`` from the hero's primary damage type."""
+    raw = (getattr(receiver, "damage_type", None) or "Physical").strip().lower()
+    if raw.startswith("magic"):
+        return "magic"
+    return "physical"
+
+
+def _matching_enemy_def_debuff_labels(kind: str) -> frozenset[str]:
+    if kind == "magic":
+        return _DEF_DEBUFF_MAGIC | _DEF_DEBUFF_SHARED
+    return _DEF_DEBUFF_PHYS | _DEF_DEBUFF_SHARED
+
+
+def receiver_wants_enemy_defense_reduction(
+    receiver: _rs.Hero, role_category: str | None
+) -> bool:
+    """True when a damage dealer lacks meaningful true-family damage."""
+    if role_category != DAMAGE_DEALER_ROLE:
+        return False
+    mags = getattr(receiver, "damage_magnitudes", None) or {}
+    for key in _TRUE_FAMILY_DAMAGE_KEYS:
+        if mags.get(key) in ("average", "high"):
+            return False
+    return True
+
+
+def receiver_self_shreds_defense(receiver: _rs.Hero) -> bool:
+    """True when the receiver already applies matching enemy DEF amps."""
+    labels = _matching_enemy_def_debuff_labels(
+        receiver_primary_damage_kind(receiver)
+    )
+    return any(
+        e.category == "debuff"
+        and e.targeting in ALLY_TARGETINGS
+        and e.label in labels
+        for e in receiver.effects
+    )
+
+
+def match_enemy_defense_reduction(
+    provider: _rs.Hero, receiver: _rs.Hero
+) -> tuple[float, str] | None:
+    """Score type-matched DEF shred / Damage taken / ally DEF Penetration."""
+    kind = receiver_primary_damage_kind(receiver)
+    allowed_debuffs = _matching_enemy_def_debuff_labels(kind)
+    candidates: list[tuple[float, str]] = []
+    for effect in provider.effects:
+        if effect.targeting not in ALLY_TARGETINGS:
+            continue
+        if effect.category == "debuff" and effect.label in allowed_debuffs:
+            tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
+            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+            pts = tw * mw * ENEMY_DEFENSE_BASE_MULT
+            detail = (
+                f"{effect.label} debuff ({effect.targeting.lower()}, "
+                f"{effect.magnitude})"
+            )
+            candidates.append((pts, detail))
+        elif (
+            effect.category == "buff"
+            and effect.label == _DEF_PENETRATION_BUFF
+            and not _rs.effect_synergy_excluded(effect)
+        ):
+            tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
+            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+            pts = tw * mw * ENEMY_DEFENSE_BASE_MULT
+            detail = (
+                f"DEF Penetration ({effect.targeting.lower()}, "
+                f"{effect.magnitude})"
+            )
+            candidates.append((pts, detail))
+    if not candidates:
+        return None
+    pts, detail = max(candidates, key=lambda item: item[0])
+    if receiver_self_shreds_defense(receiver):
+        pts *= ENEMY_DEFENSE_SELF_SHRED_MULT
+    return pts, detail
+
+
+def score_enemy_defense_synergy(
+    provider: _rs.Hero,
+    receiver: _rs.Hero,
+    role_category: str | None,
+) -> tuple[float, list[str]]:
+    """Automatic DEF-shred synergy for qualifying damage dealers."""
+    if _is_same_hero(provider, receiver):
+        return 0.0, []
+    if not receiver_wants_enemy_defense_reduction(receiver, role_category):
+        return 0.0, []
+    matched = match_enemy_defense_reduction(provider, receiver)
+    if not matched:
+        return 0.0, []
+    pts, detail = matched
+    return pts, [f"Enemy defense via {detail}"]
+
+
 def match_ranged_damage_allies(
     provider: _rs.Hero, hero_class: str = ""
 ) -> tuple[float, str] | None:
@@ -1850,6 +1967,7 @@ def score_combined_synergy(
     receiver_behavior: _rs.HeroBehavior,
     receiver_movement: str = "",
     signature_speed: str = "average",
+    role_category: str | None = None,
 ) -> tuple[float, list[str]]:
     if _is_same_hero(provider, receiver):
         return 0.0, []
@@ -1867,10 +1985,23 @@ def score_combined_synergy(
     en_score, en_reasons = score_enabler_synergy(
         provider, receiver, enabler_matchers, receiver_movement
     )
+    def_score, def_reasons = score_enemy_defense_synergy(
+        provider, receiver, role_category
+    )
     named_score, named_reasons = score_named_ally_provides(provider, receiver)
     return (
-        buff_score + early_score + summon_score + en_score + named_score,
-        buff_reasons + early_reasons + summon_reasons + en_reasons + named_reasons,
+        buff_score
+        + early_score
+        + summon_score
+        + en_score
+        + def_score
+        + named_score,
+        buff_reasons
+        + early_reasons
+        + summon_reasons
+        + en_reasons
+        + def_reasons
+        + named_reasons,
     )
 
 
@@ -1880,12 +2011,15 @@ def rank_synergy_entries(
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
     tiers_by_title: dict[str, dict[str, str]] | None = None,
+    role_category_by_title: dict[str, str] | None = None,
 ) -> list[tuple[float, list[str], str]]:
     receiver_behavior = behavior_by_title[receiver.title]
     receiver_movement = receiver_behavior.movement
     signature_speed = receiver_behavior.synergy_signature_speed or "average"
     tiers = tiers_by_title if tiers_by_title is not None else _load_prydwen_tiers_by_title()
     receiver_tiers = tiers.get(receiver.title, {})
+    role_map = role_category_by_title or {}
+    receiver_role = role_map.get(receiver.title)
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
         if _is_same_hero(provider, receiver):
@@ -1897,6 +2031,7 @@ def rank_synergy_entries(
             receiver_behavior,
             receiver_movement,
             signature_speed,
+            role_category=receiver_role,
         )
         if score <= 0 or not reasons:
             continue
@@ -1921,11 +2056,16 @@ def rank_synergies(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
+    role_category_by_title: dict[str, str] | None = None,
 ) -> list[tuple[str, list[str], float]]:
     return [
         (title, reasons, score)
         for score, reasons, title in rank_synergy_entries(
-            receiver, heroes, enabler_matchers, behavior_by_title
+            receiver,
+            heroes,
+            enabler_matchers,
+            behavior_by_title,
+            role_category_by_title=role_category_by_title,
         )[:MAX_SYNERGIES]
     ]
 
@@ -3197,6 +3337,7 @@ def build_synergy_entries_by_receiver(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
+    role_category_by_title: dict[str, str] | None = None,
 ) -> dict[str, list[tuple[float, list[str], str]]]:
     """Full synergy ranking per receiver (no top-N cap)."""
     tiers_by_title = _load_prydwen_tiers_by_title()
@@ -3207,6 +3348,7 @@ def build_synergy_entries_by_receiver(
             enabler_matchers,
             behavior_by_title,
             tiers_by_title,
+            role_category_by_title=role_category_by_title,
         )
         for receiver in heroes
     }
@@ -3232,11 +3374,15 @@ def build_beneficiaries_index(
     synergy_entries_by_receiver: (
         dict[str, list[tuple[float, list[str], str]]] | None
     ) = None,
+    role_category_by_title: dict[str, str] | None = None,
 ) -> dict[str, list[tuple[float, str]]]:
     """Provider title -> (score, receiver short name), strongest matches first."""
     if synergy_entries_by_receiver is None:
         synergy_entries_by_receiver = build_synergy_entries_by_receiver(
-            heroes, enabler_matchers, behavior_by_title
+            heroes,
+            enabler_matchers,
+            behavior_by_title,
+            role_category_by_title=role_category_by_title,
         )
     primary: dict[str, list[tuple[float, str]]] = defaultdict(list)
     full: dict[str, list[tuple[float, str]]] = defaultdict(list)
@@ -3268,6 +3414,7 @@ def format_synergies(
     enabler_matchers: dict[str, callable],
     beneficiaries_index: dict[str, list[tuple[float, str]]],
     behavior_by_title: dict[str, _rs.HeroBehavior],
+    role_category_by_title: dict[str, str] | None = None,
 ) -> list[str]:
     lines: list[str] = []
     receiver_name = short_name(receiver.title)
@@ -3275,7 +3422,11 @@ def format_synergies(
     if requires_lines:
         lines.extend(requires_lines)
     picks = rank_synergies(
-        receiver, heroes, enabler_matchers, behavior_by_title
+        receiver,
+        heroes,
+        enabler_matchers,
+        behavior_by_title,
+        role_category_by_title=role_category_by_title,
     )
     if picks:
         for title, reasons, _score in picks:
@@ -3322,6 +3473,7 @@ def format_synergies(
                         heroes,
                         enabler_matchers,
                         behavior_by_title,
+                        role_category_by_title=role_category_by_title,
                     )
                 ]
             return (
@@ -3341,6 +3493,7 @@ def format_synergies(
                         heroes,
                         enabler_matchers,
                         behavior_by_title,
+                        role_category_by_title=role_category_by_title,
                     )
                 ]
             lines.append(
@@ -3492,7 +3645,10 @@ def build_overview() -> str:
         hero_class_by_title=hero_class_by_title,
     )
     beneficiaries_index = build_beneficiaries_index(
-        heroes, enabler_matchers, behavior_by_title
+        heroes,
+        enabler_matchers,
+        behavior_by_title,
+        role_category_by_title=role_category_by_title,
     )
 
     roster_slugs = {hero_slug(short_name(h.title)) for h in heroes}
@@ -3526,7 +3682,12 @@ def build_overview() -> str:
 
     for hero in heroes:
         syn_lines = format_synergies(
-            hero, heroes, enabler_matchers, beneficiaries_index, behavior_by_title
+            hero,
+            heroes,
+            enabler_matchers,
+            beneficiaries_index,
+            behavior_by_title,
+            role_category_by_title=role_category_by_title,
         )
         summary = _rs.format_summary(hero, short_name(hero.title)).rstrip()
 

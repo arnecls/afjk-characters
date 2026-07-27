@@ -597,6 +597,13 @@ promoted into the partner list instead (no duplicate common-buffer row).
    defining-tier multiplier (`DEFINING_TIER_SCORE_MULT`). Synergy text uses
    `Enables {label} via {detail}`. Ally-stat-buff enabler scoring uses the
    same movement / static-tile rules as stat-buff synergy lines.
+   **Enemy defense (automatic):** `damage_dealer` receivers whose true-family
+   damage (`True damage` / `Max HP-based damage` / `HP loss`) is absent or
+   only `low` also score providers who lower enemy defenses — type-matched
+   Phys/Magic DEF debuffs, combined DEF, Damage taken debuffs, and ally DEF
+   Penetration buffs (`score_enemy_defense_synergy`). No sidecar require and
+   no overview “also requires” sentence. Receivers who already self-apply a
+   matching DEF / Damage taken debuff get half weight on this bonus.
 
 Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
 `main()` prints an enabler pattern scan for skill phrases not yet matched by

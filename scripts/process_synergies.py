@@ -86,13 +86,17 @@ def build_synergies(raw: dict, processed: dict) -> dict:
     enabler_matchers = analysis.enabler_matchers
 
     synergy_entries_by_receiver = gen.build_synergy_entries_by_receiver(
-        heroes, enabler_matchers, behavior_by_title
+        heroes,
+        enabler_matchers,
+        behavior_by_title,
+        role_category_by_title=role_category_by_title,
     )
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes,
         enabler_matchers,
         behavior_by_title,
         synergy_entries_by_receiver=synergy_entries_by_receiver,
+        role_category_by_title=role_category_by_title,
     )
     faction_by_title = {
         hero.title: processed["heroes"][gen.short_name(hero.title)]["faction"]
