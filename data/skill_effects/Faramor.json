@@ -160,6 +160,24 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 12.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",

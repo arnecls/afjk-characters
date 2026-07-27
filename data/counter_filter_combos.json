@@ -1,188 +1,393 @@
 {
   "backline-assassin": {
     "chips": [
-      { "label": "backline assassins", "style": "behavior-tag" }
+      {
+        "label": "backline assassins",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-assassin"] }
+      "Behavior tags": {
+        "values": [
+          "backline-assassin"
+        ]
+      }
     }
   },
   "backline-inhibit": {
     "chips": [
-      { "label": "backline inhibitors", "style": "behavior-tag" }
+      {
+        "label": "backline inhibitors",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-inhibit"] }
+      "Behavior tags": {
+        "values": [
+          "backline-inhibit"
+        ]
+      }
     }
   },
   "assassin": {
     "chips": [
-      { "label": "assassins", "style": "behavior-tag" }
+      {
+        "label": "assassins",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["assassin"] }
+      "Behavior tags": {
+        "values": [
+          "assassin"
+        ]
+      }
     }
   },
   "assassin-delete": {
     "chips": [
-      { "label": "assassins", "style": "behavior-tag" }
+      {
+        "label": "assassins",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-assassin", "assassin"] }
+      "Behavior tags": {
+        "values": [
+          "backline-assassin",
+          "assassin"
+        ]
+      }
     }
   },
   "magic-backline-assassin": {
     "chips": [
-      { "label": "backline assassins", "style": "behavior-tag" },
-      { "label": "Magic DMG", "style": "column" }
+      {
+        "label": "backline assassins",
+        "style": "behavior-tag"
+      },
+      {
+        "label": "Magic DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-assassin"] },
-      "Magic DMG": { "values": ["all"] }
+      "Behavior tags": {
+        "values": [
+          "backline-assassin"
+        ]
+      },
+      "Magic DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "phys-backline-assassin": {
     "chips": [
-      { "label": "backline assassins", "style": "behavior-tag" },
-      { "label": "Physical DMG", "style": "column" }
+      {
+        "label": "backline assassins",
+        "style": "behavior-tag"
+      },
+      {
+        "label": "Physical DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-assassin"] },
-      "Physical DMG": { "values": ["all"] }
+      "Behavior tags": {
+        "values": [
+          "backline-assassin"
+        ]
+      },
+      "Physical DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "true-dmg-backline-assassin": {
     "chips": [
-      { "label": "backline assassins", "style": "behavior-tag" },
-      { "label": "True DMG", "style": "column" }
+      {
+        "label": "backline assassins",
+        "style": "behavior-tag"
+      },
+      {
+        "label": "True DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-assassin"] },
-      "True DMG": { "values": ["all"] }
+      "Behavior tags": {
+        "values": [
+          "backline-assassin"
+        ]
+      },
+      "True DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "magic-backline-inhibit": {
     "chips": [
-      { "label": "backline inhibitors", "style": "behavior-tag" },
-      { "label": "Magic DMG", "style": "column" }
+      {
+        "label": "backline inhibitors",
+        "style": "behavior-tag"
+      },
+      {
+        "label": "Magic DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-inhibit"] },
-      "Magic DMG": { "values": ["all"] }
+      "Behavior tags": {
+        "values": [
+          "backline-inhibit"
+        ]
+      },
+      "Magic DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "phys-backline-inhibit": {
     "chips": [
-      { "label": "backline inhibitors", "style": "behavior-tag" },
-      { "label": "Physical DMG", "style": "column" }
+      {
+        "label": "backline inhibitors",
+        "style": "behavior-tag"
+      },
+      {
+        "label": "Physical DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["backline-inhibit"] },
-      "Physical DMG": { "values": ["all"] }
+      "Behavior tags": {
+        "values": [
+          "backline-inhibit"
+        ]
+      },
+      "Physical DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "enemy-grouping": {
     "chips": [
-      { "label": "enemy grouping", "style": "behavior-tag" }
+      {
+        "label": "enemy grouping",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["enemy-grouping"] }
+      "Behavior tags": {
+        "values": [
+          "enemy-grouping"
+        ]
+      }
     }
   },
   "energy-provider": {
     "chips": [
-      { "label": "energy providers", "style": "behavior-tag" }
+      {
+        "label": "energy providers",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["energy-provider"] }
+      "Behavior tags": {
+        "values": [
+          "energy-provider"
+        ]
+      }
+    }
+  },
+  "energy-inhibitor": {
+    "chips": [
+      {
+        "label": "energy inhibitors",
+        "style": "behavior-tag"
+      }
+    ],
+    "filters": {
+      "Behavior tags": {
+        "values": [
+          "energy-inhibitor"
+        ]
+      }
     }
   },
   "heal-inhibitor": {
     "chips": [
-      { "label": "heal inhibitors", "style": "behavior-tag" }
+      {
+        "label": "heal inhibitors",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["heal-inhibitor"] }
+      "Behavior tags": {
+        "values": [
+          "heal-inhibitor"
+        ]
+      }
     }
   },
   "high-damage-ult": {
     "chips": [
-      { "label": "high-damage ultimates", "style": "behavior-tag" }
+      {
+        "label": "high-damage ultimates",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["high-damage-ult"] }
+      "Behavior tags": {
+        "values": [
+          "high-damage-ult"
+        ]
+      }
     }
   },
   "interrupt": {
     "chips": [
-      { "label": "Interrupt", "style": "column" }
+      {
+        "label": "Interrupt",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Interrupt": { "values": ["all"] }
+      "Interrupt": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "sleep": {
     "chips": [
-      { "label": "Sleep", "style": "column" }
+      {
+        "label": "Sleep",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Sleep": { "values": ["all"] }
+      "Sleep": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "steadfast": {
     "chips": [
-      { "label": "Steadfast", "style": "column" }
+      {
+        "label": "Steadfast",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Steadfast": { "values": ["all"] }
+      "Steadfast": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "unaffected": {
     "chips": [
-      { "label": "Unaffected", "style": "column" }
+      {
+        "label": "Unaffected",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Unaffected": { "values": ["all"] }
+      "Unaffected": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "ally-healer": {
     "chips": [
-      { "label": "ally healers", "style": "behavior-tag" }
+      {
+        "label": "ally healers",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["ally-healer"] }
+      "Behavior tags": {
+        "values": [
+          "ally-healer"
+        ]
+      }
     }
   },
   "aoe-damage": {
     "chips": [
-      { "label": "AoE damage", "style": "behavior-tag" }
+      {
+        "label": "AoE damage",
+        "style": "behavior-tag"
+      }
     ],
     "filters": {
-      "Behavior tags": { "values": ["aoe-damage"] }
+      "Behavior tags": {
+        "values": [
+          "aoe-damage"
+        ]
+      }
     }
   },
   "magic-dmg": {
     "chips": [
-      { "label": "Magic DMG", "style": "column" }
+      {
+        "label": "Magic DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Magic DMG": { "values": ["all"] }
+      "Magic DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "phys-dmg": {
     "chips": [
-      { "label": "Physical DMG", "style": "column" }
+      {
+        "label": "Physical DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "Physical DMG": { "values": ["all"] }
+      "Physical DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   },
   "true-dmg": {
     "chips": [
-      { "label": "True DMG", "style": "column" }
+      {
+        "label": "True DMG",
+        "style": "column"
+      }
     ],
     "filters": {
-      "True DMG": { "values": ["all"] }
+      "True DMG": {
+        "values": [
+          "all"
+        ]
+      }
     }
   }
 }

@@ -162,6 +162,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `ally-buffer` / `ally-healer` / `ally-shielder` | Meaningful effect on **allies** | Self-only, or buffs/shields on summons/turrets |
 | `temporary-stat-buffer` | ≥1 ally-targeted stat buff with `persistence: temporary` in sidecar | Self/summon-only; permanent/rest-of-battle ally buffs only; tag must match sidecar exactly (`just validate`) |
 | `energy-provider` | Grants Energy to **allies** or accelerates ally ulimates | Self energy recovery only |
+| `energy-inhibitor` | Meaningful enemy Energy drain, Energy steal, or Energy recovery cut/block as a core pattern | Ally Energy grants; self Energy costs; Ult lockout alone (`ultimate-cancel` / `interrupt`); tiny one-off riders |
 | `enemy-debuffer` | Meaningful **enemy** stat or combat debuffs as a core pattern | Self debuffs; ally-only kits with no enemy penalties; one minor stat shave |
 | `battlefield-modification` | Physical obstacles or map layout changes | Buff/debuff/terrain **zones** alone |
 | `summoner` | **Battlefield summons** — independently acting combat units placed on or remaining on the battlefield beyond the cast animation (registry in `hero_summon_profiles.json`) | Transient attacks/effects (Sky Fish, magic leaves, Smashy strike); passive objects (Pandora's box); **spell-form** damage (Mehira voidlings, Shemira ghosts) |

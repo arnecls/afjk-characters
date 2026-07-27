@@ -100,6 +100,24 @@
               "name": "Energy",
               "label": "buff_stat",
               "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ],
+              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

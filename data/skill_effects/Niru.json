@@ -172,42 +172,6 @@
               "name": "Healing",
               "label": "healing",
               "duration": 8.0
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Phys DEF",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
-              "persistence": "temporary"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Magic DEF",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
-              "persistence": "temporary"
             }
           ],
           "summon_effects": [],

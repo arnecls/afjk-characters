@@ -36,6 +36,7 @@
         "enemy-debuffer",
         "enemy-grouping",
         "energy-provider",
+        "energy-inhibitor",
         "execute",
         "high-damage-ult",
         "heal-inhibitor",

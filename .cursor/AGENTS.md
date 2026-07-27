@@ -417,6 +417,11 @@ skill effect.
   in `generate-heroes-overview.py`). Zone anchors such as Faramor use the
   require label; they are not tagged as groupers themselves.
 - energy-provider: Grants Energy to allies or routinely accelerates ally ultimates.
+- energy-inhibitor: Meaningfully reduces enemy Energy and/or Energy
+  recovery as a combat pattern (flat Energy loss, Energy steal, or
+  recovery-efficiency / recovery-block). Not ally Energy grants; not
+  self Energy costs; not Ultimate lockout alone (`ultimate-cancel` /
+  `interrupt`).
 - execute: Finishes low-HP enemies or scales damage strongly on wounded targets.
 - high-damage-ult: Ultimate is the main damage spike and a large share of total output.
 - heal-inhibitor: Reduces enemy Vitality and/or blocks or cuts healing
