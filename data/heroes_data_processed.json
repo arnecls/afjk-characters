@@ -1814,7 +1814,14 @@
             "description": "Afterward, she enters Combat Stance until the battle ends."
           }
         ],
-        "requires": []
+        "requires": [
+          {
+            "label": "CC on enemies",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Alsa senses the vibrations of leylines to locate all enemies recently affected by control effects, then drops boulders on them, dealing 250% (ATK-based) + 25% (SP-based) damage."
+          }
+        ]
       },
       "damage_entries": [
         [
