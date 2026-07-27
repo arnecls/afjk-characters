@@ -14308,6 +14308,16 @@
                 }
               ],
               "persistence": "temporary"
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_ultimate",
+              "targeting_label": "Multiple targets",
+              "target": "ally",
+              "area": "single",
+              "target_count": 3
             }
           ],
           "initial_energy": 200.0,
@@ -14319,6 +14329,9 @@
             {
               "label": "Max HP — Multiple targets",
               "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Multiple targets"
             }
           ]
         },
@@ -14436,16 +14449,6 @@
               "name": "Magic DEF",
               "label": "buff_defensive",
               "persistence": "permanent"
-            },
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "unaffected",
-              "timing": "on_skill",
-              "targeting_label": "Multiple targets",
-              "target": "ally",
-              "area": "single",
-              "target_count": 3
             }
           ],
           "cooldown": 12.0,
@@ -14470,9 +14473,6 @@
             {
               "label": "Phys DEF (Supreme+)",
               "polarity": "buff"
-            },
-            {
-              "label": "Unaffected — Multiple targets"
             }
           ]
         },

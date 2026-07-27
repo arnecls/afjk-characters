@@ -14927,7 +14927,7 @@ These are the **4** strongest pairings:
 
 #### Crowd Control provided by Twins
 
-- Unaffected — Multiple targets — On skill
+- Unaffected — Multiple targets — On ultimate
 - Unaffected — Self — On skill
 - Blind — Area — `average`
 - Knock back — Area — `low`

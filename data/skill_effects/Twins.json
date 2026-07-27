@@ -53,7 +53,18 @@
             }
           ],
           "summon_effects": [],
-          "immunities": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_ultimate",
+              "targeting_label": "Multiple targets",
+              "target": "ally",
+              "area": "single",
+              "target_count": 3
+            }
+          ],
           "special_provides": [
             {
               "label": "Shared HP and Energy",
@@ -163,18 +174,7 @@
             }
           ],
           "summon_effects": [],
-          "immunities": [
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "unaffected",
-              "timing": "on_skill",
-              "targeting_label": "Multiple targets",
-              "target": "ally",
-              "area": "single",
-              "target_count": 3
-            }
-          ],
+          "immunities": [],
           "special_provides": [],
           "special_requires": []
         },

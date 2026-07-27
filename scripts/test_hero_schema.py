@@ -223,6 +223,20 @@ class RoundTripTests(unittest.TestCase):
         ]
         self.assertIn(("Unaffected", "Self"), imms)
 
+    def test_twins_ally_unaffected_on_ultimate_only(self):
+        hero, _data = self._hero_by_title_prefix("Elijah & Lailah")
+        ult = rs.CATEGORY_TO_SECTION["ultimate"]
+        bond = rs.CATEGORY_TO_SECTION["skill1"]
+        ult_imms = [
+            (i.immunity_type, i.targeting)
+            for i in hero.skill_slices[ult].cc_immunities
+        ]
+        bond_imms = [
+            i.immunity_type for i in hero.skill_slices[bond].cc_immunities
+        ]
+        self.assertIn(("Unaffected", "Multiple targets"), ult_imms)
+        self.assertNotIn("Unaffected", bond_imms)
+
     def test_alna_shared_resolve_ally_buffs_no_spurious_max_hp_debuff(self):
         hero, _data = self._hero_by_title_prefix("Alna")
         section = rs.CATEGORY_TO_SECTION["skill1"]
