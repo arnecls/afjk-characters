@@ -59,6 +59,31 @@ window.AFKJ = window.AFKJ || {};
     fast: "Quick to cast: short delay, low cooldown, or battle-start override.",
   };
 
+  // Base Unit.WalkSpeed tiers (orthogonal to cast-speed pills above).
+  const WALK_SPEED_STYLE = {
+    zero: "chip-s-slow",
+    slow: "chip-s-slow",
+    normal: "chip-s-normal",
+    fast: "chip-s-fast",
+    veryfast: "chip-s-fast",
+  };
+
+  const WALK_SPEED_EMOJI = {
+    zero: "🛑",
+    slow: "🐢",
+    normal: "🚶",
+    fast: "💨",
+    veryfast: "⚡",
+  };
+
+  const WALK_SPEED_TOOLTIPS = {
+    zero: "Base walk speed: zero (does not walk).",
+    slow: "Base walk speed: slow.",
+    normal: "Base walk speed: normal.",
+    fast: "Base walk speed: fast.",
+    veryfast: "Base walk speed: very fast.",
+  };
+
   const SIGNATURE_FUEL_TOOLTIP = "Signature skill casts slowly; Haste and Energy recovery buffs are especially valuable.";
 
   const TARGETING_RANK = {
@@ -684,11 +709,11 @@ window.AFKJ = window.AFKJ || {};
             ? "All units"
             : lower === "multiple targets"
               ? "Multiple targets"
-            : lower === "single target"
-              ? "Single target"
-              : lower === "path"
-                ? "path"
-                : targeting.trim();
+              : lower === "single target"
+                ? "Single target"
+                : lower === "path"
+                  ? "path"
+                  : targeting.trim();
       return {
         cls: def.cls,
         label: label,
@@ -723,6 +748,67 @@ window.AFKJ = window.AFKJ || {};
       tooltip: SPEED_TOOLTIPS[lower],
       emoji: SPEED_EMOJI[lower],
     };
+  }
+
+  function walkSpeedIndicatorMeta(value) {
+    const lower = String(value || "")
+      .trim()
+      .toLowerCase();
+    if (!WALK_SPEED_STYLE[lower]) {
+      return null;
+    }
+    return {
+      cls: "chip-speed " + WALK_SPEED_STYLE[lower],
+      label: lower,
+      tooltip: WALK_SPEED_TOOLTIPS[lower],
+      emoji: WALK_SPEED_EMOJI[lower],
+    };
+  }
+
+  function movementChipMeta(label) {
+    const trimmed = String(label || "").trim();
+    if (!trimmed) {
+      return null;
+    }
+    const lower = trimmed.toLowerCase();
+    for (let i = 0; i < MOVEMENT_KEYS.length; i++) {
+      const key = MOVEMENT_KEYS[i];
+      if (lower === key.toLowerCase()) {
+        const def = MOVEMENT_DEFINITIONS[key];
+        return {
+          emoji: def.emoji,
+          text: trimmed,
+          cls: def.cls,
+        };
+      }
+    }
+    return null;
+  }
+
+  function mergeMovementWithWalkSpeed(movementLabel, walkSpeed) {
+    const walkMeta = walkSpeedIndicatorMeta(walkSpeed);
+    if (!walkMeta) {
+      return null;
+    }
+    const moveMeta = movementChipMeta(movementLabel);
+    if (moveMeta) {
+      return formatMergedIndicator(
+        {
+          hasIcon: true,
+          emoji: moveMeta.emoji,
+          text: moveMeta.text,
+          cls: moveMeta.cls,
+          tierSuffix: "",
+        },
+        walkMeta,
+        false
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: movementLabel, tierSuffix: "" },
+      walkMeta,
+      true
+    );
   }
 
   function isCcChipClass(cls) {
@@ -1029,8 +1115,8 @@ window.AFKJ = window.AFKJ || {};
       emojiPart +
       (showLabel
         ? escapeHtml(
-            targetingDisplayLabel(indicatorMeta.label, skillCardDisplay)
-          )
+          targetingDisplayLabel(indicatorMeta.label, skillCardDisplay)
+        )
         : "") +
       "</span>";
 
@@ -1441,7 +1527,7 @@ window.AFKJ = window.AFKJ || {};
 
   function renderSummaryEffectChip(base, tier, quality, polarity) {
     const merged = mergeEffectWithQuality(base, quality, tier, polarity) ||
-                   mergeLabelWithIndicator(base, quality, tier, polarity);
+      mergeLabelWithIndicator(base, quality, tier, polarity);
     if (merged) {
       return merged;
     }
@@ -1634,7 +1720,7 @@ window.AFKJ = window.AFKJ || {};
     const leading = resolveLeadingChip(baseLabel, resolvedPolarity);
     const qMeta = qualityIndicatorMeta(quality, leading.isCc);
     let merged = mergeEffectWithQuality(baseLabel, quality, tier, resolvedPolarity) ||
-                 mergeLabelWithIndicator(baseLabel, quality, tier, resolvedPolarity);
+      mergeLabelWithIndicator(baseLabel, quality, tier, resolvedPolarity);
     if (!merged && qMeta) {
       merged = formatMergedIndicator(
         { textOnly: baseLabel, tierSuffix: tier || "" },
@@ -2045,12 +2131,12 @@ window.AFKJ = window.AFKJ || {};
       if (index === 0) {
         parts.push(
           '<span class="chip-merged-left ' +
-            meta.cls +
-            '">' +
-            meta.emoji +
-            " " +
-            escapeHtml(chipDisplayLabel(meta.text || meta.label)) +
-            "</span>"
+          meta.cls +
+          '">' +
+          meta.emoji +
+          " " +
+          escapeHtml(chipDisplayLabel(meta.text || meta.label)) +
+          "</span>"
         );
         return;
       }
@@ -2071,18 +2157,18 @@ window.AFKJ = window.AFKJ || {};
     if (leading.emoji) {
       bodyParts.push(
         '<span class="chip-merged-left ' +
-          leading.cls +
-          '">' +
-          leading.emoji +
-          " " +
-          escapeHtml(chipDisplayLabel(leading.text)) +
-          "</span>"
+        leading.cls +
+        '">' +
+        leading.emoji +
+        " " +
+        escapeHtml(chipDisplayLabel(leading.text)) +
+        "</span>"
       );
     } else {
       bodyParts.push(
         '<span class="chip-merged-left chip-merged-label">' +
-          escapeHtml(chipDisplayLabel(first.base)) +
-          "</span>"
+        escapeHtml(chipDisplayLabel(first.base)) +
+        "</span>"
       );
     }
 
@@ -2187,17 +2273,17 @@ window.AFKJ = window.AFKJ || {};
     if (variant.timing) {
       parts.push(
         '<span class="chip chip-generic">' +
-          escapeHtml(variant.timing) +
-          "</span>"
+        escapeHtml(variant.timing) +
+        "</span>"
       );
     }
     if (variant.conditional) {
       parts.push(
         '<span class="chip chip-generic chip-has-tip"' +
-          chipTipAttrs(conditionalTooltip(variant.conditional)) +
-          ">🎲 " +
-          escapeHtml(variant.conditional) +
-          "</span>"
+        chipTipAttrs(conditionalTooltip(variant.conditional)) +
+        ">🎲 " +
+        escapeHtml(variant.conditional) +
+        "</span>"
       );
     }
     return parts;
@@ -2226,14 +2312,14 @@ window.AFKJ = window.AFKJ || {};
     const label = compact
       ? ""
       : escapeHtml(
-          targetingDisplayLabel(meta.text || meta.label, skillCardDisplay)
-        );
+        targetingDisplayLabel(meta.text || meta.label, skillCardDisplay)
+      );
     const spacer = compact || !label ? "" : " ";
     const titleAttr =
       compact && (meta.text || meta.label)
         ? ' title="' +
-          escapeHtml(meta.text || meta.label) +
-          '"'
+        escapeHtml(meta.text || meta.label) +
+        '"'
         : "";
     return (
       '<span class="chip-merged-right ' +
@@ -2535,6 +2621,9 @@ window.AFKJ = window.AFKJ || {};
     QUALITY_TOOLTIPS: QUALITY_TOOLTIPS,
     CLASS_RANK_TOOLTIPS: CLASS_RANK_TOOLTIPS,
     SPEED_TOOLTIPS: SPEED_TOOLTIPS,
+    WALK_SPEED_STYLE: WALK_SPEED_STYLE,
+    WALK_SPEED_EMOJI: WALK_SPEED_EMOJI,
+    WALK_SPEED_TOOLTIPS: WALK_SPEED_TOOLTIPS,
     SIGNATURE_FUEL_TOOLTIP: SIGNATURE_FUEL_TOOLTIP,
     MOVEMENT_DEFINITIONS: MOVEMENT_DEFINITIONS,
     MOVEMENT_KEYS: MOVEMENT_KEYS,
@@ -2577,6 +2666,9 @@ window.AFKJ = window.AFKJ || {};
     targetingIndicatorMeta: targetingIndicatorMeta,
     resolveIndicatorMeta: resolveIndicatorMeta,
     speedIndicatorMeta: speedIndicatorMeta,
+    walkSpeedIndicatorMeta: walkSpeedIndicatorMeta,
+    movementChipMeta: movementChipMeta,
+    mergeMovementWithWalkSpeed: mergeMovementWithWalkSpeed,
     isCcChipClass: isCcChipClass,
     isCcFamilyChipClass: isCcFamilyChipClass,
     ccFamilyChipKeys: ccFamilyChipKeys,

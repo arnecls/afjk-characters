@@ -45,6 +45,8 @@ COUNTER_FILTER_COMBOS = ROOT / "data" / "counter_filter_combos.json"
 COUNTER_FILTER_COMBOS_SCHEMA = (
     ROOT / "data" / "schema" / "counter_filter_combos.schema.json"
 )
+WALK_SPEEDS = ROOT / "data" / "hero_walk_speeds.json"
+WALK_SPEEDS_SCHEMA = ROOT / "data" / "schema" / "hero_walk_speeds.schema.json"
 OVERVIEW_CSV = ROOT / "heroes-overview.csv"
 HERO_MARKER_RE = re.compile(r"\[\[([^\]]+)\]\]")
 FILTER_MARKER_RE = re.compile(r"\[\[filter:([a-z0-9-]+)\]\]")
@@ -331,6 +333,56 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                         )
 
     return issues
+
+
+def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
+    """Validate hero_walk_speeds.json schema and exact roster coverage."""
+    errors: list[str] = []
+    if not WALK_SPEEDS.exists():
+        return ["missing hero_walk_speeds.json"]
+
+    try:
+        speeds = json.loads(WALK_SPEEDS.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"walk speed JSON parse error: {exc}"]
+
+    if jsonschema_available() and WALK_SPEEDS_SCHEMA.is_file():
+        try:
+            schema = json.loads(WALK_SPEEDS_SCHEMA.read_text(encoding="utf-8"))
+            import jsonschema
+
+            store: dict[str, object] = {}
+            for sibling in WALK_SPEEDS_SCHEMA.parent.glob("*.schema.json"):
+                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
+                sid = sibling_schema.get("$id")
+                if sid:
+                    store[sid] = sibling_schema
+            schema_dir = WALK_SPEEDS_SCHEMA.parent.resolve().as_uri() + "/"
+            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
+            jsonschema.validate(speeds, schema, resolver=resolver)
+        except Exception as exc:
+            errors.append(f"walk speed schema validation failed: {exc}")
+
+    expected = set(processed["heroes"])
+    found = set(speeds) if isinstance(speeds, dict) else set()
+    for short in sorted(expected - found):
+        errors.append(f"walk speed missing for {short}")
+    for short in sorted(found - expected):
+        errors.append(f"walk speed unknown hero {short}")
+
+    for short, hero in processed["heroes"].items():
+        behavior = hero.get("behavior") or {}
+        walk = behavior.get("walk_speed")
+        if not walk:
+            errors.append(f"processed walk_speed missing for {short}")
+            continue
+        expected_walk = speeds.get(short) if isinstance(speeds, dict) else None
+        if expected_walk and walk != expected_walk:
+            errors.append(
+                f"processed walk_speed mismatch for {short}: "
+                f"{walk!r} != {expected_walk!r}"
+            )
+    return errors
 
 
 def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
@@ -781,7 +833,7 @@ def main() -> int:
     parser.add_argument(
         "--fail-on",
         nargs="*",
-        default=["md_parity", "reanalysis", "schema", "skill_summary", "sidecar", "summoner", "temporary_stat_buffer", "semantic"],
+        default=["md_parity", "reanalysis", "schema", "skill_summary", "walk_speed", "sidecar", "summoner", "temporary_stat_buffer", "semantic"],
         help="Check groups that cause a non-zero exit when failing",
     )
     parser.add_argument(
@@ -881,6 +933,17 @@ def main() -> int:
         summary_errors = check_skill_summaries(stored)
         if summary_errors:
             warnings["skill_summary"] = summary_errors
+
+    if "walk_speed" in fail_on:
+        walk_errors = check_walk_speeds(stored)
+        if walk_errors:
+            errors.extend(walk_errors)
+        else:
+            print("OK: walk speeds complete and valid")
+    else:
+        walk_errors = check_walk_speeds(stored)
+        if walk_errors:
+            warnings["walk_speed"] = walk_errors
 
     if "play_overview" in fail_on:
         overview_errors, overview_warnings = check_play_overviews(stored)

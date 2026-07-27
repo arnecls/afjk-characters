@@ -17,7 +17,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 `AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [S+]`, `PVP [S]`
 
 - **Signature skill**: Radiant Rain (ultimate)
-- **Movement**: stationary (avg attack range 8.0 tiles)
+- **Movement**: stationary (avg attack range 8.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `backline-assassin` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility` `temporary-stat-buffer`
 - **Ally composition**: grants Brightfeather to nearest ally in her row
 - **Damage types**: Physical `high`, DoT `low`, HP loss `average`
@@ -163,7 +163,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Shared Resolve (Skill 1)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `cc-immunity` `invincibility` `temporary-stat-buffer`
 - **Ally composition**: place ally in same row at battle prep (Winter Warrior buffs)
 - **Damage types**: Physical `high`, DoT `high`
@@ -303,7 +303,7 @@ Alna provides Max HP to single targets `high` and Basic stats (Supreme+) to sing
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Twirling Rocks (ultimate)
-- **Movement**: mostly stationary (avg attack range 6.0 tiles)
+- **Movement**: mostly stationary (avg attack range 6.0 tiles); walk speed normal
 - **Behavior tags**: `battlefield-modification` `self-repositioner`
 - **Damage types**: Magic `high`
 
@@ -444,7 +444,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Twins**, or **Kazim**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Shield Assault (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-shielder` `aoe-damage` `mass-cc` `taunt`
 - **Ally composition**: frontmost ally becomes guarded ally (shared shields)
 - **Damage types**: Physical `high`
@@ -596,7 +596,7 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Force of Nature (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `aoe-damage` `dot-specialist` `mass-cc`
 - **Damage types**: Magic `average`, DoT `average`
 
@@ -720,7 +720,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Wild Sniper (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `aoe-damage` `battle-start-burst` `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -866,7 +866,7 @@ Common buffers are **Ravion**, **Mikola**, **Smokey & Meerky**, or **Kazim**.
 `AFK Stages [A+]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [S]`
 
 - **Signature skill**: Unbroken Retribution (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `backline-assassin` `hp-scaling` `non-ult-utility` `self-repositioner`
 - **Damage types**: Physical `high`, True damage `high`
 
@@ -991,7 +991,7 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 `AFK Stages [A+]`, `Dream Realm [A+]`, `Dream Realm (Endless) [S+]`, `PVP [B]`
 
 - **Signature skill**: Starlit Slumber (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `invincibility` `mark-target` `summoner`
 - **Damage types**: Magic `high`
 
@@ -1134,7 +1134,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S]`, `Dream Realm [A]`, `Dream Realm (Endless) [S]`, `PVP [A+]`
 
 - **Signature skill**: Celestial Rise (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `hp-scaling`
 - **Damage types**: Physical `high`, True damage `average`
 
@@ -1266,7 +1266,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Scared Swamp (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `cheat-death` `stealth` `summoner`
 - **Damage types**: Magic `high`
 
@@ -1400,7 +1400,7 @@ extend stealth duration after own defeat
 `AFK Stages [A]`, `Dream Realm [A]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Decay's Reach (Skill 1)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `aoe-damage` `backline-inhibit` `battle-start-burst` `enemy-debuffer` `non-ult-utility`
 - **Damage types**: Magic `average`
 
@@ -1532,7 +1532,7 @@ Bonnie also requires units **dealing magic damage**
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Indomitable (Skill 2)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `cheat-death` `invincibility` `life-drain` `taunt`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
@@ -1645,7 +1645,7 @@ _No synergy partners matched stat buffs or enablers._
 `AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Shadow Flash (Skill 2)
-- **Movement**: stationary (summon moves)
+- **Movement**: stationary (summon moves); walk speed normal
 - **Behavior tags**: `battle-start-ult` `cheat-death` `high-initial-energy` `summoner`
 - **Damage types**: Magic `high`, DoT `average`
 
@@ -1786,7 +1786,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 `AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Restless Guardian (ultimate)
-- **Movement**: moving (inactive while ultimate is running)
+- **Movement**: moving (inactive while ultimate is running); walk speed normal
 - **Behavior tags**: `ally-shielder` `cc-immunity`
 - **Damage types**: Magic `average`
 
@@ -1911,7 +1911,7 @@ Common buffers are **Thador**, **Pandora**, **Contess**, or **Rowan**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Frozen Grave (ultimate)
-- **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed slow
 - **Behavior tags**: `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `average`
 
@@ -2046,7 +2046,7 @@ Carolina also requires units **applying crowd control** to enemies
 `AFK Stages [C]`, `Dream Realm [A]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Tidal Strength (Skill 2)
-- **Movement**: stationary (avg attack range 10.0 tiles)
+- **Movement**: stationary (avg attack range 10.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `aoe-damage` `enemy-debuffer`
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
 - **Damage types**: Magic `high`
@@ -2178,7 +2178,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 `AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Queen's Summons (ultimate)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
 - **Behavior tags**: `enemy-debuffer` `mass-cc` `summoner`
 - **Damage types**: Physical `high`, DoT `average`
 
@@ -2269,8 +2269,8 @@ Common buffers are **Rowan**, **Mikola**, **Ravion**, or **Pandora**.
 
 **Similar Skills**
 
+- Pandora (60% `enemy-debuffer` `mass-cc` `summoner`)
 - Hodgkin (48% `enemy-debuffer` `summoner`)
-- Pandora (40% `enemy-debuffer` `mass-cc`)
 - Zanie (33% `summoner`)
 
 **Damage**
@@ -2318,7 +2318,7 @@ Common buffers are **Rowan**, **Mikola**, **Ravion**, or **Pandora**.
 ### Chippy's behavior
 
 - **Signature skill**: Brothers-in-arms (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -2406,7 +2406,7 @@ rare chance for massive single normal attack damage
 `AFK Stages [A+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S+]`
 
 - **Signature skill**: Detention Pass (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-healer` `ally-shielder` `enemy-debuffer` `stealth` `temporary-stat-buffer` `untargetable`
 - **Damage types**: Magic `low`
 
@@ -2566,7 +2566,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [B]`, `PVP [S]`
 
 - **Signature skill**: Frostveil Domain (ultimate)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
 - **Behavior tags**: `battlefield-modification` `cc-immunity` `execute` `high-damage-ult` `invincibility`
 - **Damage types**: Magic `high`, DoT `high`
 
@@ -2694,7 +2694,7 @@ Common buffers are **Ravion**, **Pandora**, **Thador**, or **Rowan**.
 `AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Gravitic Requiem (ultimate)
-- **Movement**: mostly stationary (avg attack range 6.0 tiles)
+- **Movement**: mostly stationary (avg attack range 6.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `enemy-grouping` `execute` `high-initial-energy`
 - **Damage types**: Magic `high`, DoT `high`, True damage `average`
 
@@ -2821,7 +2821,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 `AFK Stages [A+]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Buddy Barrier (Skill 2)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-shielder` `hp-scaling` `non-ult-utility` `summoner` `temporary-stat-buffer`
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
 - **Damage types**: Magic `low`, Max HP-based damage `high`
@@ -2953,7 +2953,7 @@ Daimon provides Lifedrain to single targets `low`.
 `AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Inventor's Will (Mythic+)
-- **Movement**: stationary (off battlefield)
+- **Movement**: stationary (off battlefield); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `backline-assassin` `backline-inhibit` `summoner` `temporary-stat-buffer`
 - **Damage types**: Magic `high`
 
@@ -3098,7 +3098,7 @@ Damian provides Direct healing to single targets `average` and Haste (Mythic+) t
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Dawn Light (ultimate)
-- **Movement**: moving (avg attack range 0.0 tiles)
+- **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `heal-inhibitor` `self-repositioner` `untargetable`
 - **Damage types**: Physical `average`, True damage `average`
 
@@ -3244,7 +3244,7 @@ Dionel also requires units **buffing them**
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Echo of Silence (ultimate)
-- **Movement**: moving (melee class)
+- **Movement**: moving (melee class); walk speed normal
 - **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `heal-inhibitor` `interrupt` `temporary-stat-buffer`
 - **Damage types**: Magic `average`, HP loss `low`
 
@@ -3398,7 +3398,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Verdant Cyclone (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `battle-start-burst` `battle-start-ult` `enemy-grouping` `mass-cc`
 - **Damage types**: Magic `high`
 
@@ -3518,7 +3518,7 @@ Common buffers are **Mikola**, **Rowan**, **Twins**, or **Smokey & Meerky**.
 `AFK Stages [B]`, `Dream Realm [A+]`, `Dream Realm (Endless) [B]`, `PVP [S]`
 
 - **Signature skill**: Intel Chase (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-healer` `backline-assassin` `backline-inhibit` `self-repositioner` `stealth` `temporary-stat-buffer`
 - **Ally composition**: rearmost ally starts with healing quill; tracks highest damage dealer
 - **Damage types**: Magic `average`
@@ -3673,7 +3673,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Sanctified Circle (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `dot-specialist` `heal-inhibitor` `hp-scaling`
 - **Ally composition**: bless adjacent ally at battle prep; prioritizes tile behind
 - **Damage types**: Physical `high`, DoT `high`, HP loss `high`, True damage `high`
@@ -3809,7 +3809,7 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 `AFK Stages [C]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [C]`
 
 - **Signature skill**: Vibrant Dance (ultimate)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
 - **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
@@ -3941,7 +3941,7 @@ Fay provides ATK to arc `low`, Direct healing to arc `high`, Healing over time t
 `AFK Stages [A]`, `Dream Realm [A+]`, `Dream Realm (Endless) [S]`, `PVP [C]`
 
 - **Signature skill**: Pounding Blow (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `aoe-damage` `summoner`
 - **Damage types**: Physical `high`
 
@@ -4079,7 +4079,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S+]`
 
 - **Signature skill**: Zoltraak (ultimate)
-- **Movement**: stationary (avg attack range 7.0 tiles)
+- **Movement**: stationary (avg attack range 7.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult` `self-repositioner`
 - **Ally composition**: frontmost ally shares damage reduction with this hero
 - **Damage types**: Magic `high`, DoT `high`, True damage `high`
@@ -4205,7 +4205,7 @@ Frieren also requires specific **named allies**
 `AFK Stages [S]`, `Dream Realm [A+]`, `Dream Realm (Endless) [S+]`, `PVP [B]`
 
 - **Signature skill**: Time Recast (Mythic+)
-- **Movement**: stationary (avg attack range 10.0 tiles)
+- **Movement**: stationary (avg attack range 10.0 tiles); walk speed normal
 - **Behavior tags**: `ally-shielder` `aoe-damage` `summoner`
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
 - **Damage types**: Magic `high`
@@ -4339,7 +4339,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Spring Therapy (Skill 1)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing` `battle-start-burst` `mass-cc` `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -4456,7 +4456,7 @@ Gerda provides Direct healing in an area `average` and Healing over time to sing
 `AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Threshold of Jade (ultimate)
-- **Movement**: moving (melee class)
+- **Movement**: moving (melee class); walk speed normal
 - **Behavior tags**: `hp-scaling` `taunt`
 - **Damage types**: Physical `low`, DoT `low`
 
@@ -4592,7 +4592,7 @@ Common buffers are **Rowan**, **Mikola**, **Pandora**, or **Ravion**.
 `AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S+]`
 
 - **Signature skill**: Annihilation Directive (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-shielder` `aoe-damage` `heal-inhibitor` `static-tile-buffer` `temporary-stat-buffer`
 - **Ally composition**: place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)
 - **Damage types**: Physical `high`, DoT `low`
@@ -4724,7 +4724,7 @@ Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, A
 `AFK Stages [A]`, `Dream Realm [S+]`, `Dream Realm (Endless) [?]`, `PVP [S+]`
 
 - **Signature skill**: Hailing Arrows (ultimate)
-- **Movement**: stationary (avg attack range 8.0 tiles)
+- **Movement**: stationary (avg attack range 8.0 tiles); walk speed normal
 - **Behavior tags**: `dot-specialist` `heal-inhibitor` `mass-cc` `non-ult-utility`
 - **Damage types**: Physical `high`, DoT `high`, Max HP-based damage `low`
 
@@ -4851,7 +4851,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 ### Hammie's behavior
 
 - **Signature skill**: Pretty Fireball (ultimate)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
@@ -4961,7 +4961,7 @@ Hammie provides ATK to single targets `low`.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Flesh Feast (Skill 2)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `assassin` `execute` `heal-inhibitor` `life-drain`
 - **Damage types**: Physical `low`, HP loss `average`
 
@@ -5095,7 +5095,7 @@ Common buffers are **Twins**, **Thador**, **Smokey & Meerky**, or **Ravion**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Form Shift (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-healer` `ally-shielder` `high-initial-energy`
 - **Ally composition**: frontmost adjacent ally gets fatal-blow protection
 - **Damage types**: Physical `high`
@@ -5241,7 +5241,7 @@ Hepler provides Healing over time to single targets `high` and Invincible (Mythi
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Rain Prayer (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `low`
 
@@ -5370,7 +5370,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S]`, `Dream Realm [S+]`, `Dream Realm (Endless) [A+]`, `PVP [A+]`
 
 - **Signature skill**: Hero Party (Skill 2)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`
 - **Ally composition**: place Mage, Tank, and Support within 1 tile at battle start (Hero Party)
 - **Damage types**: Physical `high`
@@ -5518,7 +5518,7 @@ Himmel provides Basic stats to single targets `low`.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Cannon Fire (ultimate)
-- **Movement**: moving (avg attack range 3.0 tiles)
+- **Movement**: moving (avg attack range 3.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `enemy-debuffer` `heal-inhibitor` `summoner`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
@@ -5602,8 +5602,8 @@ Common buffers are **Ravion**, **Pandora**, **Contess**, or **Evie**.
 **Similar Skills**
 
 - Florabelle (50% `aoe-damage` `summoner`)
+- Pandora (50% `enemy-debuffer` `heal-inhibitor` `summoner`)
 - Cassadee (48% `aoe-damage` `enemy-debuffer`)
-- Cecia (48% `enemy-debuffer` `summoner`)
 
 **Damage**
 
@@ -5643,7 +5643,7 @@ Common buffers are **Ravion**, **Pandora**, **Contess**, or **Evie**.
 `AFK Stages [S+]`, `Dream Realm [A+]`, `Dream Realm (Endless) [S]`, `PVP [A]`
 
 - **Signature skill**: Mechanized Bond (Skill 2)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-shielder` `energy-provider` `high-initial-energy` `static-tile-buffer` `temporary-stat-buffer`
 - **Self placement**: stays anchored to battle-prep tile; returns after displacement
 - **Ally composition**: put one ally 1 tile behind him (ATK bonus; buff ends if they leave the sigil)
@@ -5755,7 +5755,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Funereal Ring (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `aoe-damage` `cheat-death` `heal-inhibitor` `life-drain` `self-repositioner` `untargetable`
 - **Damage types**: Physical `high`
 
@@ -5864,7 +5864,7 @@ battle-start ultimate summons an extra marker
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Spellbane Shot (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed fast
 - **Behavior tags**: `enemy-debuffer` `interrupt`
 - **Damage types**: Physical `low`, Max HP-based damage `low`, True damage `low`
 
@@ -6000,7 +6000,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 `AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [A+]`, `PVP [C]`
 
 - **Signature skill**: Grimoire Pact (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `heal-inhibitor` `temporary-stat-buffer`
 - **Ally composition**: frontmost ally becomes companion (stat stacks and ult buffs)
 - **Damage types**: Magic `low`
@@ -6157,7 +6157,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Gale Thrust (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `assassin` `enemy-debuffer` `mark-target` `non-ult-utility` `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -6290,7 +6290,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Soaring Falcon (Skill 1)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `high-initial-energy` `invincibility` `mark-target` `mass-cc` `non-ult-utility` `temporary-stat-buffer`
 - **Damage types**: Physical `high`, Max HP-based damage `average`
 
@@ -6445,7 +6445,7 @@ These are the **4** strongest pairings:
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Full Energy (ultimate)
-- **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `temporary-stat-buffer`
 - **Damage types**: Physical `average`
 
@@ -6602,7 +6602,7 @@ Koko provides ATK to all units `low`, Damage taken to all units `low`, Direct he
 `AFK Stages [A]`, `Dream Realm [A]`, `Dream Realm (Endless) [S]`, `PVP [A]`
 
 - **Signature skill**: Dominance Ring (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `high-initial-energy` `hp-scaling` `self-repositioner` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
@@ -6734,7 +6734,7 @@ Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Pe
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Demonseal Spear (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-shielder` `hp-scaling`
 - **Damage types**: Physical `low`, Max HP-based damage `low`, True damage `average`
 
@@ -6865,7 +6865,7 @@ Korin provides Shield to single targets `average`.
 `AFK Stages [C]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A]`, `PVP [C]`
 
 - **Signature skill**: Devastating Axe (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `enemy-debuffer` `life-drain`
 - **Damage types**: Physical `high`
 
@@ -6990,7 +6990,7 @@ Common buffers are **Pandora**, **Rowan**, **Thador**, or **Ravion**.
 `AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Demolition Zone (Skill 1)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `battlefield-modification` `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -7132,7 +7132,7 @@ Kulu provides ATK (Legendary+) to single targets `low`.
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Dungeon Gourmet (Skill 2)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `high-initial-energy` `summoner` `temporary-stat-buffer`
 - **Damage types**: Physical `low`
 
@@ -7259,7 +7259,7 @@ Laios provides ATK to multiple targets `low` — conditional (rare), Haste in an
 `AFK Stages [B]`, `Dream Realm [A+]`, `Dream Realm (Endless) [B]`, `PVP [C]`
 
 - **Signature skill**: Omnisight (Mythic+)
-- **Movement**: moving (avg attack range 0.0 tiles)
+- **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `high-initial-energy` `hp-scaling` `mass-cc` `summoner`
 - **Damage types**: Magic `high`, True damage `average`
 
@@ -7392,7 +7392,7 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Mikola**.
 `AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Wild Duel (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `backline-assassin` `backline-inhibit` `counterattack` `self-repositioner`
 - **Damage types**: Physical `average`
 
@@ -7520,7 +7520,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Twins**, or **Kazim**.
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Tempest Shot (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `cc-immunity` `hp-scaling` `invincibility` `non-ult-utility` `self-repositioner` `ultimate-cancel`
 - **Damage types**: Magic `low`
 
@@ -7652,7 +7652,7 @@ Lily May also requires units **buffing them**
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Whispering Tempest (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `aoe-damage` `backline-inhibit` `dot-specialist` `temporary-stat-buffer`
 - **Damage types**: Magic `low`, DoT `high`
 
@@ -7802,7 +7802,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Quake Slam (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-shielder` `high-initial-energy` `interrupt`
 - **Ally composition**: place adjacent allies behind at battle prep (DEF buff)
 - **Ally composition**: place allies on adjacent tiles behind at battle start (shields and ATK boost)
@@ -7921,7 +7921,7 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Divine Light Aegis (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `ally-healer` `ally-shielder` `aoe-damage` `enemy-debuffer`
 - **Damage types**: Physical `low`
 
@@ -8073,7 +8073,7 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Star Dress: Aquarius Form (Skill 2)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-shielder` `backline-assassin` `backline-inhibit` `high-initial-energy` `mass-cc` `summoner`
 - **Damage types**: Magic `high`
 
@@ -8202,7 +8202,7 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [A]`, `PVP [A]`
 
 - **Signature skill**: Eternal Serenity (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-healer` `aoe-healing`
 - **Damage types**: Magic `high`, Max HP-based damage `average`
 
@@ -8333,7 +8333,7 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Lumont's Charge (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `enemy-debuffer` `non-ult-utility` `taunt` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
@@ -8482,7 +8482,7 @@ Lumont provides Phys DEF to multiple targets `low`.
 `AFK Stages [C]`, `Dream Realm [A]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Comet Archery (ultimate)
-- **Movement**: stationary (avg attack range 11.0 tiles)
+- **Movement**: stationary (avg attack range 11.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `energy-provider` `temporary-stat-buffer`
 - **Damage types**: Physical `average`
 
@@ -8633,7 +8633,7 @@ These are the **4** strongest pairings:
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
 
 - **Signature skill**: Silver-White Wings that Streak Across the Skies (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-healer` `aoe-damage` `battle-start-burst` `high-damage-ult` `revive`
 - **Ally composition**: place ally 1 tile in front at battle prep (revive target)
 - **Damage types**: Magic `high`
@@ -8773,7 +8773,7 @@ Marcille provides Direct healing (Mythic+) to single targets `high`.
 `AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Mid-Air Shot (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `hp-scaling` `self-repositioner`
 - **Damage types**: Physical `low`, True damage `low`
 
@@ -8914,7 +8914,7 @@ Marilee provides ATK (EX+10) to single targets `low`.
 `AFK Stages [S+]`, `Dream Realm [B]`, `Dream Realm (Endless) [A+]`, `PVP [S]`
 
 - **Signature skill**: Euphoric Rush (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `enemy-grouping` `life-drain` `mass-cc` `temporary-stat-buffer` `untargetable`
 - **Damage types**: Magic `low`
 
@@ -9067,7 +9067,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [A]`, `PVP [B]`
 
 - **Signature skill**: Dauntless Hymn (ultimate)
-- **Movement**: moving (avg attack range 2.0 tiles)
+- **Movement**: moving (avg attack range 2.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Physical `low`
 
@@ -9202,7 +9202,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Winged Flame (ultimate)
-- **Movement**: stationary (avg attack range 10.1 tiles)
+- **Movement**: stationary (avg attack range 10.1 tiles); walk speed normal
 - **Behavior tags**: `dot-specialist`
 - **Damage types**: Magic `high`, DoT `low`
 
@@ -9308,7 +9308,7 @@ Common buffers are **Pandora**, **Ravion**, **Hugin**, or **Lorsan**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Phantom Chains (Skill 1)
-- **Movement**: mostly stationary (pulls enemies; moves on failed pull)
+- **Movement**: mostly stationary (pulls enemies; moves on failed pull); walk speed fast
 - **Behavior tags**: `ally-healer` `assassin` `execute` `heal-inhibitor` `high-initial-energy`
 - **Damage types**: Physical `high`, Max HP-based damage `average`, True damage `high`
 
@@ -9446,7 +9446,7 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate)
-- **Movement**: moving (avg attack range 3.0 tiles)
+- **Movement**: moving (avg attack range 3.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `dot-specialist` `high-damage-ult` `high-initial-energy` `mass-cc`
 - **Damage types**: Magic `high`
 
@@ -9587,7 +9587,7 @@ Natsu also requires specific **named allies**
 `AFK Stages [A]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [B]`
 
 - **Signature skill**: Rend Rupture (ultimate)
-- **Movement**: stationary (avg attack range 10.0 tiles)
+- **Movement**: stationary (avg attack range 10.0 tiles); walk speed normal
 - **Behavior tags**: `heal-inhibitor` `hp-scaling` `mark-target`
 - **Damage types**: Physical `high`, True damage `high`
 
@@ -9714,7 +9714,7 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Drowning Doom (ultimate)
-- **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed normal
 - **Behavior tags**: `backline-assassin` `backline-inhibit` `battle-start-burst` `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `average`, DoT `high`
 
@@ -9856,7 +9856,7 @@ Nerion also requires units **applying crowd control** to enemies
 `AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Soul Shepherd (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-healer` `battle-start-ult` `heal-inhibitor` `hp-scaling` `temporary-stat-buffer`
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
 - **Damage types**: Magic `high`, HP loss `low`
@@ -9992,7 +9992,7 @@ These are the **4** strongest pairings:
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Heart Crusher (Mythic+)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
 - **Behavior tags**: `dot-specialist` `execute`
 - **Damage types**: Magic `average`, DoT `low`
 
@@ -10111,7 +10111,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Dunlingr**.
 ### Orion's behavior
 
 - **Signature skill**: Fervent Flurry (Skill 1)
-- **Movement**: moving (melee class)
+- **Movement**: moving (melee class); walk speed fast
 - **Behavior tags**: `aoe-damage` `cc-immunity` `dot-specialist` `enemy-debuffer` `heal-inhibitor` `high-damage-ult`
 - **Damage types**: Magic `high`, True damage `low`
 
@@ -10264,8 +10264,8 @@ Orion provides Shield to multiple targets `low`.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
 
 - **Signature skill**: Boxed Blessing (Skill 1)
-- **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `enemy-debuffer` `energy-provider` `heal-inhibitor` `mass-cc`
+- **Movement**: stationary (no finite attack range); walk speed normal
+- **Behavior tags**: `enemy-debuffer` `energy-provider` `heal-inhibitor` `mass-cc` `summoner`
 - **Ally composition**: rearmost ally enters invincible box, then gains Energy and ATK
 - **Damage types**: Magic `high`, DoT `average`
 
@@ -10361,9 +10361,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Cecia (40% `enemy-debuffer` `mass-cc`)
-- Gwyneth (33% `heal-inhibitor` `mass-cc`)
-- Thador (33% `enemy-debuffer` `energy-provider`)
+- Cecia (60% `enemy-debuffer` `mass-cc` `summoner`)
+- Hodgkin (50% `enemy-debuffer` `heal-inhibitor` `summoner`)
+- Phraesto (37% `energy-provider` `heal-inhibitor` `summoner`)
 
 **Damage**
 
@@ -10418,7 +10418,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Sky Splitter (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `ally-shielder` `high-initial-energy` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
@@ -10560,7 +10560,7 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Floral Splendor (ultimate)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `aoe-damage` `mark-target` `temporary-stat-buffer`
 - **Self placement**: nearest symmetrical enemy at battle start (Falling Blossom / First Strike openers)
 - **Damage types**: Magic `high`
@@ -10692,7 +10692,7 @@ These are the **4** strongest pairings:
 `AFK Stages [A+]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Princess Rally (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `ally-shielder` `high-initial-energy` `summoner`
 - **Damage types**: Physical `average`
 
@@ -10825,7 +10825,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Divine Rend (ultimate)
-- **Movement**: moving (avg attack range 2.9 tiles)
+- **Movement**: moving (avg attack range 2.9 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
@@ -10969,7 +10969,7 @@ Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `l
 `AFK Stages [A+]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Crimson Contract (Skill 1)
-- **Movement**: moving (avg attack range 1.8 tiles)
+- **Movement**: moving (avg attack range 1.8 tiles); walk speed slow
 - **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `energy-provider` `heal-inhibitor` `summoner`
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
@@ -11126,7 +11126,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Wild Shift (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `backline-assassin` `backline-inhibit` `enemy-grouping` `hp-scaling`
 - **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `low`
 
@@ -11257,7 +11257,7 @@ Common buffers are **Pandora**, **Ravion**, **Lorsan**, or **Smokey & Meerky**.
 `AFK Stages [A+]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
 
 - **Signature skill**: Killer Flush (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-shielder` `backline-assassin` `energy-provider` `self-repositioner` `temporary-stat-buffer`
 - **Ally composition**: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
 - **Damage types**: Physical `low`, HP loss `average`
@@ -11413,7 +11413,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [S]`, `Dream Realm (Endless) [A]`, `PVP [B]`
 
 - **Signature skill**: Dynamic Balance (Skill 1)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `backline-assassin` `enemy-grouping` `interrupt`
 - **Ally composition**: symmetrical ally-enemy tile pairs at battle start for Dynamic Balance swaps
 - **Damage types**: Magic `average`
@@ -11547,7 +11547,7 @@ Reinier provides Direct healing to single targets `low` and Damage taken (EX+10)
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Flame Barrage (ultimate)
-- **Movement**: high movement (moves while attacking)
+- **Movement**: high movement (moves while attacking); walk speed normal
 - **Behavior tags**: `aoe-damage` `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -11669,7 +11669,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Thador**, or **Lorsan**.
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Fatal Greed (ultimate)
-- **Movement**: moving (repositions on cast)
+- **Movement**: moving (repositions on cast); walk speed normal
 - **Behavior tags**: `ally-healer` `energy-provider`
 - **Damage types**: Magic `high`
 
@@ -11816,7 +11816,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S+]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [S]`
 
 - **Signature skill**: Seed Siphon (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-shielder` `cheat-death` `high-initial-energy`
 - **Damage types**: Magic `high`, DoT `average`
 
@@ -11948,7 +11948,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Spirit Shackles (Skill 2)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `execute` `interrupt`
 - **Damage types**: Physical `high`
 
@@ -12051,7 +12051,7 @@ _No synergy partners matched stat buffs or enablers._
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Fiery Dance (ultimate)
-- **Movement**: moving (avg attack range 1.5 tiles)
+- **Movement**: moving (avg attack range 1.5 tiles); walk speed normal
 - **Behavior tags**: `dot-specialist` `heal-inhibitor` `hp-scaling` `invincibility` `life-drain`
 - **Ally composition**: place allies within 2 tiles at battle start (Sparks grant)
 - **Damage types**: Magic `high`
@@ -12183,7 +12183,7 @@ Satrana provides Magic damage (Mythic+) to single targets `average` and Damage t
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Divine Wrath (Mythic+)
-- **Movement**: moving (brief reposition)
+- **Movement**: moving (brief reposition); walk speed fast
 - **Behavior tags**: `ally-shielder` `aoe-damage` `execute` `hp-scaling` `non-ult-utility`
 - **Damage types**: Physical `high`
 
@@ -12310,7 +12310,7 @@ Scarlita provides Shield (Supreme+) to single targets `low`.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Shadow Strike (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `life-drain`
 - **Damage types**: Physical `average`, HP loss `high`
 
@@ -12451,7 +12451,7 @@ Common buffers are **Mikola**, **Ravion**, **Rowan**, or **Twins**.
 `AFK Stages [A+]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Withering Curse (Skill 2)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `low`, DoT `low`, HP loss `low`
 
@@ -12574,7 +12574,7 @@ Shadewing also requires units **dealing continuous damage** to enemies
 `AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Ravaging Claws (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `heal-inhibitor` `life-drain` `temporary-stat-buffer`
 - **Damage types**: Physical `high`
 
@@ -12719,7 +12719,7 @@ Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 `AFK Stages [A+]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [A]`
 
 - **Signature skill**: Phantom Procession (ultimate)
-- **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed normal
 - **Behavior tags**: `high-damage-ult` `hp-scaling`
 - **Damage types**: Magic `high`, Max HP-based damage `low`
 
@@ -12842,7 +12842,7 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 `AFK Stages [S]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [A+]`
 
 - **Signature skill**: Gravity Collapse (Skill 1)
-- **Movement**: stationary (avg attack range 12.0 tiles)
+- **Movement**: stationary (avg attack range 12.0 tiles); walk speed normal
 - **Behavior tags**: `high-initial-energy` `hp-scaling` `mark-target` `non-ult-utility`
 - **Damage types**: Magic `high`
 
@@ -12963,7 +12963,7 @@ Silven also requires units **buffing them**
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: First Strike (Skill 1)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `assassin` `battle-start-burst` `heal-inhibitor` `interrupt` `mark-target`
 - **Self placement**: nearest symmetrical enemy at battle start (Falling Blossom / First Strike openers)
 - **Damage types**: Physical `average`
@@ -13083,7 +13083,7 @@ Look for units providing: `Shield` `CRIT`
 `AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Whizzing Edge (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `assassin` `enemy-debuffer` `heal-inhibitor` `mark-target`
 - **Damage types**: Physical `high`
 
@@ -13210,7 +13210,7 @@ Common buffers are **Ravion**, **Pandora**, **Thador**, or **Rowan**.
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [S]`, `PVP [C]`
 
 - **Signature skill**: Special Aroma (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
 - **Damage types**: Magic `low`
 
@@ -13344,7 +13344,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S]`, `Dream Realm [S]`, `Dream Realm (Endless) [S]`, `PVP [S]`
 
 - **Signature skill**: Life's Embrace (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing`
 - **Damage types**: Magic `low`
 
@@ -13470,7 +13470,7 @@ Solise provides ATK to single targets `low`, Direct healing to all units `high`,
 `AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [B]`
 
 - **Signature skill**: Crimson Covenant (Skill 1)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `temporary-stat-buffer`
 - **Ally composition**: place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)
 - **Damage types**: Physical `average`
@@ -13607,7 +13607,7 @@ These are the **4** strongest pairings:
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Whirlwind Swing (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `counterattack` `self-repositioner`
 - **Damage types**: Physical `high`
 
@@ -13743,7 +13743,7 @@ Soren provides Shield (Supreme+) to single targets `low`.
 `AFK Stages [A]`, `Dream Realm [A+]`, `Dream Realm (Endless) [?]`, `PVP [S+]`
 
 - **Signature skill**: Grand Finale (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `high-initial-energy` `interrupt` `life-drain` `mass-cc`
 - **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `low`
 
@@ -13879,7 +13879,7 @@ Common buffers are **Kazim**, **Mikola**, **Ravion**, or **Smokey & Meerky**.
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [A]`, `PVP [B]`
 
 - **Signature skill**: Divine Conflagration (ultimate)
-- **Movement**: moving (avg attack range 3.0 tiles)
+- **Movement**: moving (avg attack range 3.0 tiles); walk speed normal
 - **Behavior tags**: `ally-healer` `aoe-damage` `cheat-death`
 - **Ally composition**: frontmost ally carries Pyre of Renewal (AoE damage and healing)
 - **Damage types**: Magic `high`
@@ -14002,7 +14002,7 @@ Common buffers are **Pandora**, **Contess**, **Evie**, or **Ravion**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Eternal Dreamscape (ultimate)
-- **Movement**: stationary (avg attack range 10.0 tiles)
+- **Movement**: stationary (avg attack range 10.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `cheat-death` `mass-cc` `self-repositioner`
 - **Damage types**: Magic `average`, DoT `average`
 
@@ -14116,7 +14116,7 @@ Common buffers are **Ravion**, **Twins**, **Mikola**, or **Kazim**.
 `AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Knight's Heart (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `aoe-damage` `backline-inhibit` `enemy-debuffer` `interrupt` `mass-cc` `self-repositioner`
 - **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `low`
 
@@ -14253,7 +14253,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 `AFK Stages [S]`, `Dream Realm [A+]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Darkmoon Pact (Skill 1)
-- **Movement**: moving (avg attack range 0.2 tiles)
+- **Movement**: moving (avg attack range 0.2 tiles); walk speed fast
 - **Behavior tags**: `ally-shielder` `enemy-debuffer` `energy-provider` `temporary-stat-buffer`
 - **Ally composition**: place lieutenant 1 tile behind at battle prep (Crit + shared shields)
 - **Damage types**: Physical `average`, DoT `high`
@@ -14386,7 +14386,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A]`, `PVP [B]`
 
 - **Signature skill**: Resurrection (Skill 2)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `cheat-death` `counterattack` `life-drain`
 - **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
 - **Damage types**: Physical `average`
@@ -14504,7 +14504,7 @@ Look for units providing: `Max HP` `Energy`
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Wrath of the Wilds (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `aoe-damage` `temporary-stat-buffer`
 - **Damage types**: Physical `average`
 
@@ -14631,7 +14631,7 @@ These are the **4** strongest pairings:
 `AFK Stages [S]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [A+]`
 
 - **Signature skill**: Starlight Waltz (ultimate)
-- **Movement**: moving / stationary (two units)
+- **Movement**: moving / stationary (two units); walk speed normal
 - **Behavior tags**: `ally-buffer` `ally-healer` `ally-shielder` `energy-provider` `temporary-stat-buffer`
 - **Ally composition**: place allies on the Stellar Bond line between Elijah and Lailah
 - **Damage types**: Magic `low`
@@ -14794,7 +14794,7 @@ These are the **4** strongest pairings:
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Way of the Forest (Skill 2)
-- **Movement**: moving (stationary when rooted)
+- **Movement**: moving (stationary when rooted); walk speed slow
 - **Behavior tags**: `ally-shielder` `aoe-damage` `cheat-death`
 - **Ally composition**: when rooted, shields frontmost ally instead of self
 - **Damage types**: Physical `high`
@@ -14908,7 +14908,7 @@ Look for units providing: `Shield` `Energy`
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Swift Shift (ultimate)
-- **Movement**: high movement (repositioning skills)
+- **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `hp-scaling` `mark-target` `self-repositioner` `stealth` `untargetable`
 - **Damage types**: Physical `average`, True damage `average`
 
@@ -15063,7 +15063,7 @@ Vala also requires enemies **to be defeated**
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Thunder Swordwork (ultimate)
-- **Movement**: moving (avg attack range 1.4 tiles)
+- **Movement**: moving (avg attack range 1.4 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `mass-cc`
 - **Damage types**: Physical `average`
 
@@ -15191,7 +15191,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 `AFK Stages [C]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [B]`
 
 - **Signature skill**: Phantom Slasher (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `ally-shielder` `counterattack` `high-initial-energy`
 - **Damage types**: Physical `high`
 
@@ -15325,7 +15325,7 @@ Valka provides ATK SPD to multiple targets `low`.
 `AFK Stages [S+]`, `Dream Realm [S]`, `Dream Realm (Endless) [S]`, `PVP [B]`
 
 - **Signature skill**: Ruthless Rite (ultimate)
-- **Movement**: stationary (no finite attack range)
+- **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing` `backline-inhibit` `temporary-stat-buffer`
 - **Damage types**: Magic `average`
 
@@ -15471,7 +15471,7 @@ Velara provides Basic stats to all units `average` and Direct healing to multipl
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Crimson Waltz (Mythic+)
-- **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed slow
 - **Behavior tags**: `aoe-damage` `dot-specialist`
 - **Damage types**: Magic `average`
 
@@ -15594,7 +15594,7 @@ Common buffers are **Hugin**, **Smokey & Meerky**, **Lorsan**, or **Ravion**.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Six-Shot (ultimate)
-- **Movement**: moving (avg attack range 2.0 tiles)
+- **Movement**: moving (avg attack range 2.0 tiles); walk speed slow
 - **Behavior tags**: `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`
 - **Damage types**: Physical `average`
 
@@ -15714,7 +15714,7 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 `AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Rallying Roar (Skill 1)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `battlefield-modification` `hp-scaling` `temporary-stat-buffer`
 - **Damage types**: Physical `low`
 
@@ -15831,7 +15831,7 @@ These are the **4** strongest pairings:
 `AFK Stages [A+]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Vein Pulse (ultimate)
-- **Movement**: moving (avg attack range 1.0 tiles)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `summoner`
 - **Damage types**: Physical `low`
 
@@ -15959,7 +15959,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 `AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Guardian's Ring (ultimate)
-- **Movement**: moving (inactive while dormant)
+- **Movement**: moving (inactive while dormant); walk speed slow
 - **Behavior tags**: `hp-scaling` `life-drain`
 - **Damage types**: Magic `high`, HP loss `high`
 

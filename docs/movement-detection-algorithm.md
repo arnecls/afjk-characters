@@ -60,6 +60,9 @@ If all automated detections fail or produce an inaccurate result due to a unique
 - **`data/movement_overrides.json`** — force a movement label and note (e.g. Nara pulling enemies to her).
 - **`data/melee_overrides.json`** — set `is_melee` or `is_dual_range` when the melee class floor or weighted range math is wrong.
 
+Base **walk speed** (`data/hero_walk_speeds.json`) is a separate game-data--derived
+attribute and is **not** part of movement detection or overrides.
+
 Example movement override:
 
 ```json

@@ -136,7 +136,9 @@ Two-pass plan for auditing the whole roster. Do not mix scopes in one report.
 6. `data/hero_play_overviews.json` — curated playstyle blurbs per hero (quick
    identity check when skill text is ambiguous; cross-check against
    `description`, not a substitute for it)
-7. `data/schema/skills.schema.json` — effect labels and enums
+7. `data/hero_walk_speeds.json` — base walk-speed tiers; every processed
+   hero short name must have a matching key (`just validate` → `walk_speed`)
+8. `data/schema/skills.schema.json` — effect labels and enums
 
 Optional: `docs/skill-analysis-pipeline.md` (why NLP is hard),
 `data/skill_effects/` (effect sidecars),
@@ -151,7 +153,7 @@ Run **high-level** first, then **detailed**. Do not mix scopes in one report.
 Task progress:
 - [ ] 1. Baseline — read latest docs/validation-*.md; note resolved items
 - [ ] 2. Pre-scan — ally-target, reverse ally-buff, **self-debuff**, debuff-chip, immunity/silence, true/max-HP triage; note counts
-- [ ] 3. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
+- [ ] 3. Inventory — hero/skill counts; confirm walk-speed key parity with processed roster; pick batch boundaries (~25–35 heroes)
 - [ ] 4. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
 - [ ] 5. Write docs/validation-high-level-YYYY-MM-DD.md
 - [ ] 6. Detailed pass — targeting (incl. ally misalignment), area, timings, magnitudes

@@ -68,8 +68,8 @@ output. The analysis entry point is `analyze_hero()` in
 This processed data is saved to
 [`data/heroes_data_processed.json`](../data/heroes_data_processed.json).
 Curated inputs (`signature_skills.json`, `hero_behavior_tags.json`,
-placement/movement/melee overrides) are read during this step but not
-overwritten.
+`hero_walk_speeds.json`, placement/movement/melee overrides) are read during
+this step but not overwritten.
 
 ### Stage 3: Synergy & Replacement Scoring (Analyze — pass 2)
 [`scripts/process_synergies.py`](../scripts/process_synergies.py) evaluates every possible pair of heroes using matchers from [`scripts/generate-heroes-overview.py`](../scripts/generate-heroes-overview.py) (shared scoring library, not a separate render step).

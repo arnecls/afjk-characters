@@ -205,6 +205,16 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   Data from
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah).
+  Each Movement bullet also includes **base walk speed** from
+  `data/hero_walk_speeds.json` (`zero` / `slow` / `normal` / `fast` /
+  `veryfast`), sourced from afkj-data `Unit.WalkSpeed`. Stored as
+  `behavior.walk_speed`. Markdown form:
+  `Movement: {label} ({note}); walk speed {tier}`. Site and list view
+  render a merged pill `{label} | {tier}`. Walk speed is informational
+  only — synergy / proximity / static-tile rules still key off the
+  tactical movement label. Distinct from skill-effect **Movement speed**
+  buffs/debuffs. Missing walk-speed rows fail `just validate`
+  (`walk_speed` check group); do not invent provisional values.
 - **Signature skill** — the one skill that most characterises how the
   hero is played. Stored in `data/signature_skills.json` (key =
   display name from `heroes-overview.md`). Each entry has

@@ -24,7 +24,7 @@ pipeline output, use [web-ui](../web-ui/SKILL.md).
 |-------|------|-------------|
 | **A — Register + download** | Hero name in sources; raw skill text in repo | `data/heroes_data.json` |
 | **B — Detection gaps** | New flavor text parsed into effects | `scripts/rewrite-summaries.py`, tests, `heroes_data_processed.json` |
-| **C — Curated metadata** | Identity skill, tags, summaries, play blurb | 4 AI JSON files under `data/` |
+| **C — Curated metadata** | Identity skill, tags, walk speed, summaries, play blurb | AI JSON files under `data/` + `hero_walk_speeds.json` |
 | **D — Overrides** | Fix auto-detect edge cases only when wrong | `placement_constraint_overrides.json`, `movement_overrides.json`, `melee_overrides.json` |
 | **E — Validate + verify** | Schema, semantics, character portrait, site | `just validate`, `site/assets/portraits/` |
 
@@ -54,8 +54,10 @@ Task progress:
 - [ ] B5. Run just views; re-check this hero until gaps closed or user stops
 - [ ] C1. Add signature_skills.json entry
 - [ ] C2. Add hero_behavior_tags.json entry (behavior-tags skill rules)
-- [ ] C3. Add heroes_data_skill_summary.json entries per skill category
-- [ ] C4. Add hero_play_overviews.json entry
+- [ ] C3. Add hero_walk_speeds.json entry from afkj-data walking_speed.md
+- [ ] C4. Add heroes_data_skill_summary.json entries per skill category
+- [ ] C5. Add hero_play_overviews.json entry
+- [ ] C6. Add hero_counter_overviews.json entry (counter skill)
 - [ ] D1. Check placement / movement / melee; add overrides only if wrong
 - [ ] E1. Run just validate; fix hero-specific issues
 - [ ] E2. Confirm character portrait and site/data/heroes.json for this hero
@@ -246,7 +248,20 @@ Follow [behavior-tags](../behavior-tags/SKILL.md) in full:
 - Describe playstyle identity, not every minor effect
 - Do not invent new enum values without user approval
 
-### C3. Skill summaries — `data/heroes_data_skill_summary.json`
+### C3. Walk speed — `data/hero_walk_speeds.json`
+
+Required for every hero. Look up the **display name** in sibling
+`afkj-data/docs/walking_speed.md` (afkj-data `Unit.WalkSpeed`) and copy the
+textual tier:
+
+- Allowed: `zero`, `slow`, `normal`, `fast`, `veryfast`
+- Keys use overview display names (`Twins`, not `Elijah & Lailah`)
+- **Do not invent or default** a value — if the hero is missing from
+  `walking_speed.md`, stop and ask the user to regenerate game data first.
+  `just validate` fails (`walk_speed` check) when any roster hero lacks a
+  row.
+
+### C4. Skill summaries — `data/heroes_data_skill_summary.json`
 
 One entry per skill category that exists (`ultimate`, `skill1`–`skill5`).
 Authoring rules in `.cursor/AGENTS.md` **Skill summary authoring** and
@@ -256,7 +271,7 @@ Authoring rules in `.cursor/AGENTS.md` **Skill summary authoring** and
 - Cross-check `description_lite` in `heroes_data.json`
 - Use schema vocabulary (`HP-loss`, `knock down`, `AoE`, etc.)
 
-### C4. Play overview — `data/hero_play_overviews.json`
+### C5. Play overview — `data/hero_play_overviews.json`
 
 Bootstrap from Prydwen when available:
 
@@ -267,7 +282,7 @@ python3 scripts/generate_play_overviews.py
 Then edit the new hero's entry per `docs/ai-generated-data.md` section 4 and
 AGENTS.md: 4–6 sentences, ~900 chars, no game modes, bold sparingly.
 
-### C5. Counter proposal — `data/hero_counter_overviews.json`
+### C6. Counter proposal — `data/hero_counter_overviews.json`
 
 Follow [counter](../counter/SKILL.md): 3–5 sentences, PVP/Arena
 OK, `[[Hero]]` markers for named units, prefer high Prydwen PVP tiers.
@@ -282,7 +297,7 @@ this hero. Add override entries **only** when auto-detection is visibly wrong.
 | File | When |
 |------|------|
 | `data/placement_constraint_overrides.json` | Ally composition or tile placement rules detection cannot parse |
-| `data/movement_overrides.json` | Movement label wrong (stationary vs moving, dual units, etc.) |
+| `data/movement_overrides.json` | Tactical movement label wrong (stationary vs moving, dual units, etc.) — not base walk speed |
 | `data/melee_overrides.json` | `is_melee` or `is_dual_range` wrong for synergy range scoring |
 
 Do not add overrides preemptively — prefer detection fixes in Phase B.
@@ -302,7 +317,8 @@ Fix hero-specific issues:
 - `cc_missing` / `anti_cc_missing` — return to Phase B
 - `empty_effects` — missing detection or passive-only mis-flag
 - `skill_summary` lint — hero names or digits in summaries
-- Missing play overview — warning for new hero until C4 complete
+- `walk_speed` missing/unknown — return to C3; regenerate game data walk table first
+- Missing play overview — warning for new hero until C5 complete
 
 ### E2. Verify outputs
 
@@ -487,7 +503,7 @@ processed data, try both names if one fails.
 2. `just download` → `heroes_data.json` skill text
 3. Detection patches in `rewrite-summaries.py` + tests for new phrasing
 4. Curated: `signature_skills.json`, `hero_behavior_tags.json`,
-   `heroes_data_skill_summary.json`
+   `hero_walk_speeds.json`, `heroes_data_skill_summary.json`
 5. `just views` → processed, synergies, overview, site
 6. Wiki combat icon in `site/assets/portraits/Kazim.png`
 7. `hero_play_overviews.json` added in follow-up commit

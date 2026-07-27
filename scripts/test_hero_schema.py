@@ -1829,6 +1829,74 @@ class MovementDetectionTests(unittest.TestCase):
         self.assertIn("inactive while dormant", behavior.movement_note)
 
 
+class WalkSpeedTests(unittest.TestCase):
+    def test_load_walk_speeds_covers_roster(self):
+        speeds = rs._load_walk_speeds()
+        self.assertEqual(speeds["Arden"], "slow")
+        self.assertEqual(speeds["Aliceth"], "normal")
+        self.assertEqual(speeds["Alna"], "fast")
+        self.assertEqual(speeds["Twins"], "normal")
+        self.assertIn(speeds["Zorya"], rs.WALK_SPEED_VALUES)
+
+    def test_twins_alias_resolves_walk_speed(self):
+        speeds = rs._load_walk_speeds()
+        self.assertEqual(
+            rs.walk_speed_for_display("Elijah & Lailah", speeds),
+            "normal",
+        )
+        self.assertEqual(rs.walk_speed_for_display("Twins", speeds), "normal")
+
+    def test_missing_walk_speed_raises(self):
+        with self.assertRaises(KeyError):
+            rs.walk_speed_for_display("NotAHero", {})
+
+    def test_behavior_includes_walk_speed(self):
+        from test_roster_cache import analyze_heroes_from_blocks, hero_blocks
+
+        heroes, block_by_title, _ = analyze_heroes_from_blocks(hero_blocks())
+        display_by_title = {
+            h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+        }
+        # Map Elijah & Lailah display to Twins curated key via short_name path
+        for title, display in list(display_by_title.items()):
+            display_by_title[title] = rs.curated_display_name(display)
+        hero_class_by_title = {
+            h.title: gen._parse_hero_class(block_by_title[h.title]).lower()
+            for h in heroes
+        }
+        behavior_by_title = rs.build_behavior_for_heroes(
+            heroes,
+            display_by_title,
+            hero_class_by_title=hero_class_by_title,
+        )
+        speeds = rs._load_walk_speeds()
+        for hero in heroes:
+            curated = display_by_title[hero.title]
+            behavior = behavior_by_title[hero.title]
+            self.assertEqual(behavior.walk_speed, speeds[curated])
+
+    def test_format_behavior_includes_walk_speed(self):
+        behavior = rs.HeroBehavior(
+            movement="stationary",
+            movement_note="avg attack range 8.0 tiles",
+            casting_speed="average",
+            walk_speed="fast",
+            signature_skill_name="Test",
+            signature_skill_is_ult=True,
+            signature_skill_speed="average",
+            synergy_signature_speed="average",
+            synergy_signature_is_ult=True,
+            ult_speed="average",
+            non_ult_speed="average",
+        )
+        text = "\n".join(rs.format_behavior_section("Alna", behavior))
+        self.assertIn(
+            "- **Movement**: stationary (avg attack range 8.0 tiles); "
+            "walk speed fast",
+            text,
+        )
+
+
 class ConditionParsingTests(unittest.TestCase):
     def test_hp_threshold_below(self):
         conds = rs.parse_conditions_from_text(

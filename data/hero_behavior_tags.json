@@ -460,7 +460,8 @@
     "enemy-debuffer",
     "energy-provider",
     "heal-inhibitor",
-    "mass-cc"
+    "mass-cc",
+    "summoner"
   ],
   "Pang": [
     "ally-shielder",

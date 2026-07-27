@@ -12,6 +12,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [heroes_data_synergies.json](heroes_data_synergies.json) | **Script-generated** | Roster-wide synergy rankings, beneficiaries, and replacements. Regenerate with `just analyze` or `just analyze-synergies`. Do not edit by hand. |
 | [signature_skills.json](signature_skills.json) | **AI-generated** | Signature skill per hero by category (`signature_calculated`, optional `signature_override`, optional `speed_override`). Skill names come from `heroes_data.json`; edit when a hero’s identity skill is wrong. |
 | [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
+| [hero_walk_speeds.json](hero_walk_speeds.json) | **Curated ()** | Base `Unit.WalkSpeed` tier per hero (`zero`/`slow`/`normal`/`fast`/`veryfast`). Keys match overview display names. |
 | [heroes_data_skill_summary.json](heroes_data_skill_summary.json) | **AI-generated** | Short mechanic summary per hero and skill category (`ultimate`, `skill1`–`skill5`). Joined to processed skills by `category`; shown in Skill overview subsections. |
 | [hero_play_overviews.json](hero_play_overviews.json) | **AI-generated** | Short playstyle summary per hero (4–6 sentences, ~900 chars max). Focuses on setup requirements, strengths, and weaknesses; uses **bold** for key phrases. Shown in the behavior section before Skill overview. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
@@ -57,6 +58,9 @@ Edit these when tuning scoring, fixing edge cases, or extending validation:
   `{kind, text}` placement constraints; bypasses text detection for that hero.
 - **`movement_overrides.json`** — map display name → `{movement, note}` when
   automatic movement detection is wrong.
+- **`hero_walk_speeds.json`** — map display name → base walk-speed tier from
+  game data (`afkj-data/docs/walking_speed.md`). Required for every roster
+  hero; missing keys fail validation.
 - **`melee_overrides.json`** — map display name → `{is_melee}` and/or
   `{is_dual_range}` for melee-floor and weighted-range edge cases.
 - **`schema/`** — contract for processed JSON and allowed behavior-tag values.
@@ -69,6 +73,7 @@ heroes_data.json
     + heroes_config.json
     + signature_skills.json
     + hero_behavior_tags.json
+    + hero_walk_speeds.json
     + placement_constraint_overrides.json
     + movement_overrides.json
     + melee_overrides.json

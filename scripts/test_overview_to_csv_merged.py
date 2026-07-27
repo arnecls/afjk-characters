@@ -102,6 +102,31 @@ class MergedBuffDebuffColumnsTests(unittest.TestCase):
             len(registry), len(BUFF_EFFECT_TYPES) + len(DEBUFF_EFFECT_TYPES)
         )
 
+    def test_parse_movement_csv_value_merges_walk_speed(self) -> None:
+        self.assertEqual(
+            self.csv_mod.parse_movement_csv_value(
+                "stationary (avg attack range 8.0 tiles); walk speed fast"
+            ),
+            "stationary | fast",
+        )
+        self.assertEqual(
+            self.csv_mod.parse_movement_csv_value(
+                "high movement (repositioning skills)"
+            ),
+            "high movement",
+        )
+
+    def test_parse_behavior_includes_walk_speed(self) -> None:
+        block = (
+            "### Alna's behavior\n\n"
+            "- **Movement**: high movement (repositioning); "
+            "walk speed fast\n"
+            "- **Behavior tags**: `aoe-damage`\n"
+        )
+        movement, tags, _, _ = self.csv_mod.parse_behavior(block)
+        self.assertEqual(movement, "high movement | fast")
+        self.assertEqual(tags, "aoe-damage")
+
 
 if __name__ == "__main__":
     unittest.main()

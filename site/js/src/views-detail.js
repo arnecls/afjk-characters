@@ -304,11 +304,23 @@ window.AFKJ = window.AFKJ || {};
     if (!match) {
       return null;
     }
-    const rest = match[1].trim();
+    let rest = match[1].trim();
+    let walkSpeed = "";
+    const walkMatch = rest.match(/;\s*walk speed\s+(\S+)\s*$/i);
+    if (walkMatch) {
+      walkSpeed = walkMatch[1].trim();
+      rest = rest.slice(0, walkMatch.index).trim();
+    }
     const paren = rest.match(/^(.+?)\s*(\([^)]+\))\s*$/);
     const base = paren ? paren[1].trim() : rest;
     const suffix = paren ? " " + escapeHtml(paren[2]) : "";
-    const chip = formatMovementChip(base);
+    let chip = null;
+    if (walkSpeed) {
+      chip = chips.mergeMovementWithWalkSpeed(base, walkSpeed);
+    }
+    if (!chip) {
+      chip = formatMovementChip(base);
+    }
     return formatSkillOverviewRow(
       "<strong>Movement</strong>",
       (chip !== null ? chip : escapeHtml(base)) + suffix

@@ -294,6 +294,23 @@ def section_kind(heading: str, hero_name: str) -> str | None:
     return None
 
 
+def parse_movement_csv_value(raw: str) -> str:
+    """Convert a Movement markdown body into list-column text.
+
+    ``stationary (avg …); walk speed fast`` → ``stationary | fast``.
+    When walk speed is absent, keep the tactical label only.
+    """
+    text = raw.strip()
+    walk = ""
+    if "; walk speed " in text:
+        text, walk = text.rsplit("; walk speed ", 1)
+        walk = walk.strip()
+    tactical = text.split(" (", 1)[0].strip()
+    if tactical and walk:
+        return f"{tactical} | {walk}"
+    return tactical
+
+
 def parse_behavior(block: str) -> tuple[str, str, str, str]:
     """Return movement, behavior tags, signature skill speed, non-ult speed."""
     movement = ""
@@ -301,8 +318,7 @@ def parse_behavior(block: str) -> tuple[str, str, str, str]:
     defining_skill_speed = ""  # local name kept for legacy fallback logic
     non_ult_speed = ""
     if m := MOVEMENT_RE.search(block):
-        # "stationary (no finite attack range)" -> "stationary"
-        movement = m.group(1).split(" (", 1)[0].strip()
+        movement = parse_movement_csv_value(m.group(1))
     if m := BEHAVIOR_TAGS_RE.search(block):
         tags = re.findall(r"`([^`]+)`", m.group(1))
         behavior_tags = "; ".join(sorted(tags))

@@ -1110,9 +1110,31 @@ Used in:
 
 Also see:
 
+- [walk speed](#walk-speed)
 - [overrides](#overrides)
 - [proximity aura](#proximity-aura)
 - [static-tile-buffer](#static-tile-buffer)
+
+## walk speed
+
+Qualitative base walking-speed tier from afkj-data `Unit.WalkSpeed`: `zero`,
+`slow`, `normal`, `fast`, or `veryfast`. Stored in
+`data/hero_walk_speeds.json` and copied onto `behavior.walk_speed`. It is
+shown on the existing Movement line as a merged pill
+(`stationary | fast`) and is informational only — synergy scoring still
+uses tactical [movement](#movement). Distinct from skill-effect
+**Movement speed** buffs or debuffs.
+
+Used in:
+
+- [Walk speeds data](data/hero_walk_speeds.json)
+- [Behavior rules](.cursor/AGENTS.md)
+- [Chip helpers](site/js/src/chips.js)
+
+Also see:
+
+- [movement](#movement)
+- [merged pills](#merged-pills)
 
 ## proximity aura
 

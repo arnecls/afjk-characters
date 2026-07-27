@@ -72,6 +72,31 @@ When creating new tags, try to build groups of tags over single-use tags.
 
 ---
 
+## 2b. `hero_walk_speeds.json`
+
+### Content
+
+Maps each hero display name to a qualitative base walk-speed tier from game data
+`Unit.WalkSpeed`: `zero`, `slow`, `normal`, `fast`, or `veryfast`. Source
+table: sibling `afkj-data/docs/walking_speed.md`.
+
+### Purpose
+
+Feeds `behavior.walk_speed` and the Movement merged pill
+(`stationary | fast`) on the character sheet and list view. Informational
+only — does not affect synergy scoring (tactical movement still does).
+
+### Prompt to Update
+
+```markdown
+Copy textual WalkSpeed values from @../afkj-data/docs/walking_speed.md into
+@data/hero_walk_speeds.json for any new or changed heroes. Keys must match
+overview display names (Twins, not Elijah & Lailah). Do not invent values;
+regenerate the afkj-data/docs/walking_speed.md first when a hero is missing.
+```
+
+---
+
 ## 3. `heroes_data_skill_summary.json`
 
 ### Content

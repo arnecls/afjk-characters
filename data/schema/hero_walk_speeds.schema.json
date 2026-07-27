@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/hero_walk_speeds.schema.json",
+  "title": "Hero walk speeds",
+  "description": "Base walking-speed tiers from Unit.WalkSpeed, keyed by curated display name.",
+  "type": "object",
+  "minProperties": 1,
+  "additionalProperties": {
+    "$ref": "#/$defs/walkSpeed"
+  },
+  "$defs": {
+    "walkSpeed": {
+      "type": "string",
+      "enum": [
+        "zero",
+        "slow",
+        "normal",
+        "fast",
+        "veryfast"
+      ]
+    }
+  }
+}

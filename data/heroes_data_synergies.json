@@ -6007,19 +6007,20 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Pandora",
+            "score": 0.6,
+            "matches": [
+              "enemy-debuffer",
+              "mass-cc",
+              "summoner"
+            ]
+          },
+          {
             "name": "Hodgkin",
             "score": 0.48,
             "matches": [
               "enemy-debuffer",
               "summoner"
-            ]
-          },
-          {
-            "name": "Pandora",
-            "score": 0.4,
-            "matches": [
-              "enemy-debuffer",
-              "mass-cc"
             ]
           },
           {
@@ -15905,19 +15906,20 @@
             ]
           },
           {
+            "name": "Pandora",
+            "score": 0.5,
+            "matches": [
+              "enemy-debuffer",
+              "heal-inhibitor",
+              "summoner"
+            ]
+          },
+          {
             "name": "Cassadee",
             "score": 0.48,
             "matches": [
               "aoe-damage",
               "enemy-debuffer"
-            ]
-          },
-          {
-            "name": "Cecia",
-            "score": 0.48,
-            "matches": [
-              "enemy-debuffer",
-              "summoner"
             ]
           }
         ],
@@ -29899,26 +29901,29 @@
         "similar_skills": [
           {
             "name": "Cecia",
-            "score": 0.4,
+            "score": 0.6,
             "matches": [
               "enemy-debuffer",
-              "mass-cc"
+              "mass-cc",
+              "summoner"
             ]
           },
           {
-            "name": "Gwyneth",
-            "score": 0.3333,
+            "name": "Hodgkin",
+            "score": 0.5,
             "matches": [
+              "enemy-debuffer",
               "heal-inhibitor",
-              "mass-cc"
+              "summoner"
             ]
           },
           {
-            "name": "Thador",
-            "score": 0.3333,
+            "name": "Phraesto",
+            "score": 0.375,
             "matches": [
-              "enemy-debuffer",
-              "energy-provider"
+              "energy-provider",
+              "heal-inhibitor",
+              "summoner"
             ]
           }
         ],

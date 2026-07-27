@@ -118,6 +118,39 @@ if (
 if (failed) {
   process.exit(1);
 }
+
+const walkCases = [
+  ["stationary", "slow", ["chip-merged", "chip-movement", "chip-s-slow", "slow"]],
+  ["moving", "normal", ["chip-merged", "chip-s-normal", "normal"]],
+  ["mostly stationary", "fast", ["chip-merged", "chip-s-fast", "fast"]],
+  ["high movement", "zero", ["chip-merged", "chip-s-slow", "zero"]],
+  ["moving / stationary", "veryfast", ["chip-merged", "chip-s-fast", "veryfast"]],
+];
+for (const [movement, walk, needles] of walkCases) {
+  try {
+    const html = context.window.AFKJ.chips.mergeMovementWithWalkSpeed(
+      movement,
+      walk
+    );
+    if (!html) {
+      throw new Error(`empty merge for ${movement} | ${walk}`);
+    }
+    for (const needle of needles) {
+      if (!html.includes(needle)) {
+        throw new Error(
+          `expected ${JSON.stringify(needle)} in ${movement} | ${walk}: ${html}`
+        );
+      }
+    }
+  } catch (err) {
+    failed += 1;
+    console.error(err.message);
+  }
+}
+
+if (failed) {
+  process.exit(1);
+}
 console.log(
-  `OK: ${singleTargetCases.length} single-target and 2 multi-target skill-card checks`
+  `OK: ${singleTargetCases.length} single-target, 2 multi-target, and ${walkCases.length} walk-speed checks`
 );

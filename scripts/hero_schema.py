@@ -1455,7 +1455,11 @@ def _validate_with_schema(data: dict[str, Any], schema: dict[str, Any]) -> None:
     store: dict[str, Any] = {
         schema["$id"]: schema,
     }
-    for name in ("skills.schema.json", "game_properties.schema.json"):
+    for name in (
+        "skills.schema.json",
+        "game_properties.schema.json",
+        "hero_walk_speeds.schema.json",
+    ):
         doc = json.loads((SCHEMA_DIR / name).read_text(encoding="utf-8"))
         store[doc["$id"]] = doc
     resolver = jsonschema.RefResolver.from_schema(schema, store=store)

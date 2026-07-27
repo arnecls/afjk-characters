@@ -48,9 +48,14 @@ PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
 )
 MOVEMENT_OVERRIDES_FILE = ROOT / "data" / "movement_overrides.json"
 MELEE_OVERRIDES_FILE = ROOT / "data" / "melee_overrides.json"
+WALK_SPEEDS_FILE = ROOT / "data" / "hero_walk_speeds.json"
 BEHAVIOR_TAGS_FILE = ROOT / "data" / "hero_behavior_tags.json"
 PLAY_OVERVIEW_FILE = ROOT / "data" / "hero_play_overviews.json"
 COUNTER_OVERVIEW_FILE = ROOT / "data" / "hero_counter_overviews.json"
+
+WALK_SPEED_VALUES = frozenset(
+    {"zero", "slow", "normal", "fast", "veryfast"}
+)
 
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
@@ -6902,6 +6907,7 @@ class HeroBehavior:
     movement: str
     movement_note: str
     casting_speed: str
+    walk_speed: str = ""
     signature_skill_name: str = ""
     signature_skill_is_ult: bool = False
     signature_skill_section: str = ""
@@ -7361,6 +7367,44 @@ def _load_movement_overrides() -> dict[str, dict[str, str]]:
     if not MOVEMENT_OVERRIDES_FILE.exists():
         return {}
     return json.loads(MOVEMENT_OVERRIDES_FILE.read_text(encoding="utf-8"))
+
+
+def _load_walk_speeds() -> dict[str, str]:
+    """Load curated base walk-speed tiers keyed by display name."""
+    if not WALK_SPEEDS_FILE.exists():
+        raise FileNotFoundError(
+            f"missing walk-speed data: {WALK_SPEEDS_FILE}"
+        )
+    raw = json.loads(WALK_SPEEDS_FILE.read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError(f"{WALK_SPEEDS_FILE.name} must be an object")
+    result: dict[str, str] = {}
+    for key, value in raw.items():
+        if not isinstance(key, str) or not isinstance(value, str):
+            raise ValueError(
+                f"invalid walk-speed entry {key!r}: {value!r}"
+            )
+        if value not in WALK_SPEED_VALUES:
+            raise ValueError(
+                f"unknown walk speed for {key}: {value!r}"
+            )
+        result[key] = value
+    return result
+
+
+def walk_speed_for_display(display_name: str, speeds: dict[str, str] | None = None) -> str:
+    """Resolve walk speed for a curated or wiki display name."""
+    table = speeds if speeds is not None else _load_walk_speeds()
+    curated = curated_display_name(display_name)
+    if curated in table:
+        return table[curated]
+    if display_name in table:
+        return table[display_name]
+    raise KeyError(
+        f"missing walk speed for {display_name!r} "
+        f"(curated key {curated!r})"
+    )
+
 
 
 def _load_behavior_tags() -> dict[str, frozenset[str]]:
@@ -8745,6 +8789,7 @@ def build_behavior_for_heroes(
     signature_by_display = _load_signature_categories()
     placement_overrides = _load_placement_constraint_overrides()
     movement_overrides = _load_movement_overrides()
+    walk_speeds = _load_walk_speeds()
     behavior_tags = _load_behavior_tags()
     class_by_title = hero_class_by_title or {}
     damage_thresholds = build_section_damage_thresholds(
@@ -8761,6 +8806,7 @@ def build_behavior_for_heroes(
         avg_range = _weighted_attack_range(skills, default_range=hero.default_range)
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         curated = curated_display_name(display)
+        walk_speed = walk_speed_for_display(curated, walk_speeds)
         hero_class = class_by_title.get(hero.title, "").lower()
         tags = behavior_tags.get(curated, frozenset())
         movement, note = _apply_melee_movement_floor(
@@ -8811,6 +8857,7 @@ def build_behavior_for_heroes(
                 movement=movement,
                 movement_note=note,
                 casting_speed=casting_labels.get(hero.title, "average"),
+                walk_speed=walk_speed,
                 signature_skill_name=_skill_name_for_category(
                     curated, _effective_signature_category(raw_sig)
                 ),
@@ -8833,6 +8880,7 @@ def build_behavior_for_heroes(
                 movement=movement,
                 movement_note=note,
                 casting_speed=casting_labels.get(hero.title, "average"),
+                walk_speed=walk_speed,
                 synergy_signature_speed="average",
                 ult_speed=speeds.get("ult", "average"),
                 non_ult_speed=speeds.get("non_ult", "average"),
@@ -9440,6 +9488,14 @@ def _hero_skill_overview_damage_types(
     return result
 
 
+def format_movement_behavior_body(behavior: HeroBehavior) -> str:
+    """Format the Movement bullet body including base walk speed."""
+    body = f"{behavior.movement} ({behavior.movement_note})"
+    if behavior.walk_speed:
+        body = f"{body}; walk speed {behavior.walk_speed}"
+    return body
+
+
 def format_behavior_section(
     display_name: str,
     behavior: HeroBehavior,
@@ -9470,7 +9526,8 @@ def format_behavior_section(
         )
     lines.append(
         _behavior_bullet(
-            "Movement", f"{behavior.movement} ({behavior.movement_note})"
+            "Movement",
+            format_movement_behavior_body(behavior),
         )
     )
     if tag_line := _format_behavior_tags_line(behavior_tags):

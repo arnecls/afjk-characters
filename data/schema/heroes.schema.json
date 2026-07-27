@@ -69,19 +69,31 @@
           "description": "True when the hero alternates between ranged and melee combat."
         },
         "default_range": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "description": "Default attack range in tiles from the wiki infobox."
         },
         "release_date": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "Hero release date (YYYY-MM-DD) from the wiki infobox."
         },
         "season": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "AFK Journey season when the hero was released."
         },
         "season_number": {
-          "type": ["integer", "null"],
+          "type": [
+            "integer",
+            "null"
+          ],
           "description": "Zero-based season index (Starter Story = 0)."
         },
         "skills": {
@@ -348,6 +360,7 @@
       "required": [
         "movement",
         "movement_note",
+        "walk_speed",
         "casting_speed",
         "signature_skill_name",
         "signature_skill_is_ult",
@@ -371,6 +384,10 @@
         },
         "movement_note": {
           "type": "string"
+        },
+        "walk_speed": {
+          "$ref": "hero_walk_speeds.schema.json#/$defs/walkSpeed",
+          "description": "Game data Unit.WalkSpeed qualitative tier (informational; not used in synergy scoring)."
         },
         "casting_speed": {
           "$ref": "#/$defs/castingSpeed"

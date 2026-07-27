@@ -107,10 +107,18 @@ the right, separated by `|`. Used for:
 - Quality: `Haste buff | high`
 - Self on skill cards: `Ranged DEF | Self`
 - CC duration: `Stun | long` (not raw `(low)` text)
+- Movement + walk speed: `stationary | fast` via
+  `mergeMovementWithWalkSpeed` (tactical movement left, base walk-speed
+  right; tooltips from `WALK_SPEED_TOOLTIPS`, not cast-speed tooltips)
 
 Helpers: `formatMergedIndicator`, `mergeEffectWithQuality`,
-`mergeEffectWithTargeting`, `renderMergedEffectPill`,
-`renderBuffProvidedEntry`.
+`mergeEffectWithTargeting`, `mergeMovementWithWalkSpeed`,
+`renderMergedEffectPill`, `renderBuffProvidedEntry`.
+
+**List Movement column:** CSV cells are `tactical | walk` (e.g.
+`stationary | fast`). Filters expose tactical labels and walk-speed tiers
+as **separate atoms** (`extractCellFilterAtoms` splits on `|`). Do not
+confuse with skill-effect **Movement speed** buff/debuff columns.
 
 **Polarity:** buff vs debuff affects which suffix is stripped and which chip
 class applies. Debuffs must not reuse buff chip paths (e.g. Energy recovery
@@ -121,7 +129,7 @@ class applies. Debuffs must not reuse buff chip paths (e.g. Energy recovery
 | Surface | Data source | Render entry |
 | --- | --- | --- |
 | Grid hero cards | `heroes.json` metadata | `renderGrid` |
-| Character sheet — behavior | `sections.behavior` markdown | `renderInline`, `renderBehaviorTagsLine` |
+| Character sheet — behavior | `sections.behavior` markdown | `renderInline`, `renderBehaviorTagsLine`, `renderMovementLine` |
 | Skill overview pills | behavior markdown metrics | `renderSkillOverviewMetric` |
 | Skill cards | `sections.skillCards` | `renderSkillCards`, skill popover |
 | Synergy — improving | `sections.synergy` markdown | `renderBuffProvidedEntry`, `chipifyEffectName` |
