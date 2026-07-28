@@ -15,16 +15,18 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
                   "value": 140.0
                 }
-              ]
+              ],
+              "duration": 4,
+              "tick": 1.0
             }
           ],
           "summon_effects": [],

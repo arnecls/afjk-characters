@@ -263,9 +263,9 @@
       }
     ],
     "filters": {
-      "Interrupt": {
+      "Crowd Control": {
         "values": [
-          "all"
+          "Interrupt"
         ]
       }
     }
@@ -278,9 +278,9 @@
       }
     ],
     "filters": {
-      "Sleep": {
+      "Crowd Control": {
         "values": [
-          "all"
+          "Sleep"
         ]
       }
     }
@@ -293,9 +293,9 @@
       }
     ],
     "filters": {
-      "Steadfast": {
+      "Crowd Control Counter": {
         "values": [
-          "all"
+          "Steadfast"
         ]
       }
     }
@@ -308,9 +308,9 @@
       }
     ],
     "filters": {
-      "Unaffected": {
+      "Crowd Control Counter": {
         "values": [
-          "all"
+          "Unaffected"
         ]
       }
     }

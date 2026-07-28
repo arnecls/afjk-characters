@@ -630,6 +630,12 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
 
 
 class ThadorEarlyEnergyTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self._saved_tags = gen._BEHAVIOR_TAGS
+
+    def tearDown(self) -> None:
+        gen._BEHAVIOR_TAGS = self._saved_tags
+
     def _provider(self, text: str) -> SimpleNamespace:
         return SimpleNamespace(
             skill_chunks=[("base", text, "Skill1")],
@@ -709,6 +715,8 @@ class ThadorEarlyEnergyTests(unittest.TestCase):
 class FaramorEnemyGroupingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        # Earlier tests may stub the cache; force a fresh load from disk.
+        gen._BEHAVIOR_TAGS = None
         rs_spec = importlib.util.spec_from_file_location(
             "rewrite_summaries",
             SCRIPTS / "rewrite-summaries.py",
@@ -884,8 +892,13 @@ class ContinuousDamageMatcherTests(unittest.TestCase):
     def test_healer_antandra_does_not_match(self) -> None:
         self.assertIsNone(gen.match_dot_damage(self._analyzed("Antandra")))
 
-    def test_channel_berial_does_not_match(self) -> None:
-        self.assertIsNone(gen.match_dot_damage(self._analyzed("Berial")))
+    def test_interval_channels_match(self) -> None:
+        # Berial ticks every 0.25s, Brutus every second: both are real DoT.
+        for name in ("Berial", "Brutus"):
+            with self.subTest(hero=name):
+                self.assertIsNotNone(
+                    gen.match_dot_damage(self._analyzed(name))
+                )
 
     def test_legitimate_dot_providers_match(self) -> None:
         for name in (

@@ -44,24 +44,51 @@ Faramor damage circle, Pandora's box.
 ## `summoner` vs skill VFX
 
 **Counts:** Mr. Carlyle, Sonny, turrets, apostles, royal guards, timed
-fighters with normal attacks (Aurora bunny, Galahad shadow) — independently
+fighters with normal attacks (Aurora bunny, Galahad shadow), and
+post-defeat units that keep casting (Pandora's box) — independently
 acting units placed on or remaining on the battlefield beyond the cast
 animation. Semantic verbs (`builds`, `deploys`, `calls out`, `generate`)
 count when the unit fights on-field.
 
 **Does not count:** Sky Fish dash, magic leaves, Smashy ground strike,
-royal marksman volleys; passive objects (Pandora's box); **spell-form**
-damage (Mehira voidlings, Shemira ghosts).
+royal marksman volleys; **spell-form** damage (Mehira voidlings, Shemira
+ghosts).
 
 Curated roster: `data/hero_summon_profiles.json`.
 
-## `dot-specialist` vs debuffs
+## `dot-specialist` vs debuffs / HoT / channels
 
-**Counts:** Arden lightning zone, Shadewing lost-HP lash, Odie poison,
-Nerion drowning DoT while controlled.
+Detect from **skill text only** (see SKILL.md detection block). Treat as
+recurring **enemy damage ticks**, not every use of “continuous.”
 
-**Does not count:** Bonnie haste-reduction debuff stacking, enemy ATK
-reduction without ticks.
+**Counts:**
+
+- Odie Dart Poison (`damage every second`)
+- Shadewing Crimson Venom / wound (`takes damage every second`, continuous
+  damage identity)
+- Arden vines (`damage every 1s`) and dark-cloud lightning (repeated
+  strikes on an interval)
+- Nerion drowning DoT while controlled
+- Cecia reinforced Thorns (`damage every second` while entangled)
+- Evie ult DoT ticks (enemy damage over time — not quill ally heals)
+- Gunnar Doom / Scorched field ticks
+- Silvina Holy DoT riders that tick over time
+- Rowan kits with a lasting enemy damage tick (not Energy-recovery ult alone)
+- Satrana / Mirael / Orion / Gwyneth / Natsu burn or DoT loops when they are
+  core output
+
+**Does not count:**
+
+- Bonnie Aging / Haste cut without damage ticks
+- Ally or self HoT (`recovers HP every second`, Zephyr-style protect heals)
+- Bind / sleep / petrify / silence without periodic damage
+- One-shot HP-loss riders or short channels of discrete strikes with no
+  lingering tick (do not tag solely from “for 3s” multi-hit ults)
+- Flavor “continuous” wording when the skills only burst or heal
+
+**Primary bar:** DoT must be how the hero is played. A single minor
+every-second rider on an otherwise non-DoT kit is not enough; a defining
+poison/burn/wound/zone loop is.
 
 ## `enemy-debuffer` on support / hybrid kits
 

@@ -5339,6 +5339,76 @@ def _cc_sleep_is_caster_owned(clause: str) -> bool:
     )
 
 
+def _cc_sleep_targets_hypnotized(scope: str) -> bool:
+    """True when Sleep wording only selects an already-hypnotized enemy."""
+    t = scope.lower()
+    if not re.search(
+        r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem",
+        t,
+    ):
+        return False
+    return not bool(re.search(r"hypnotiz(?:ing|es)? (?:all )?enem", t))
+
+
+def cc_described_on_referenced_skill(
+    text: str,
+    current_skill: str,
+    skill_names: list[str],
+) -> bool:
+    """True when CC/immunity in this skill text belongs on another named skill."""
+    if re.search(
+        r"strengthens? the conditional (?:atk spd|energy|vitality|phys|magic)\b",
+        text,
+        re.I,
+    ):
+        return False
+    for name in sorted(skill_names, key=len, reverse=True):
+        if name == current_skill:
+            continue
+        escaped = re.escape(name)
+        patterns = (
+            rf"with (?:his|her|their) {escaped}\b",
+            rf"(?:while|when) casting {escaped}\b",
+            rf"\bif {escaped} knocks?\b",
+            rf"(?:directly )?hit by {escaped}\b",
+            rf"leaves? the {escaped} state\b",
+            rf"while {escaped} is active\b",
+            rf"(?:his|her|their) {escaped} skill\b",
+            rf"enhanc\w+ {escaped}\b",
+            rf"granted by {escaped}\b",
+        )
+        if any(re.search(pat, text, re.I) for pat in patterns):
+            return True
+    return False
+
+
+def cc_keyword_has_real_match(
+    label: str,
+    pattern: str,
+    text: str,
+    *,
+    current_skill: str = "",
+    skill_names: list[str] | None = None,
+) -> bool:
+    """True when a CC keyword matches a non-spurious clause in skill text."""
+    names = skill_names or []
+    if current_skill and names and cc_described_on_referenced_skill(
+        text, current_skill, names
+    ):
+        return False
+    t = text.lower()
+    for m in re.finditer(pattern, t):
+        scope = _clause_around(t, m.start())
+        if _cc_match_is_spurious(scope, label, text):
+            continue
+        if label == "Sleep" and _cc_sleep_is_caster_owned(scope):
+            continue
+        if label == "Sleep" and _cc_sleep_targets_hypnotized(scope):
+            continue
+        return True
+    return False
+
+
 def _cc_match_is_ally_targeted(clause: str, label: str) -> bool:
     """True when a CC effect is applied to an ally rather than an enemy.
 
@@ -5438,9 +5508,7 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         r"stuns them for s\b", t
     ) and re.search(r"<[^>]+>|&(?:lt|gt);", full):
         return True
-    if label == "Sleep" and re.search(
-        r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem", t
-    ) and not re.search(r"hypnotiz(?:ing|es)? (?:all )?enem", t):
+    if label == "Sleep" and _cc_sleep_targets_hypnotized(scope):
         return True
     if label == "Sleep" and re.search(r"hypnotized enem", full):
         if not re.search(
@@ -5448,7 +5516,13 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
             full,
         ):
             return True
-    if label == "Silence" and re.search(r"silencing arrow", t):
+    if label == "Silence" and re.search(
+        r"silenc\w+ (?:arrow|shot|bolt)\b", t
+    ) and not re.search(
+        r"(?:cannot|prevent(?:ing|s)?|unable to).{0,40}"
+        r"(?:cast|casting|use skills|using skills)",
+        t,
+    ):
         return True
     if label == "Silence" and re.search(
         r"after silence ends|"

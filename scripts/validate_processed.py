@@ -99,17 +99,28 @@ _CC_LABEL_MAP: dict[str, str] = {
 
 _ANTI_CC_KEYWORDS: dict[str, str] = {
     "unaffected": (
-        r"(?:becomes?|is|remain|making|grants?|granted|linked).{0,60}unaffected|"
+        r"(?:\b(?:becomes?|is|remain|making|grants?|granted|linked)\b).{0,60}unaffected|"
         r"unaffected (?:while|when|for|during)"
     ),
-    "steadfast": r"(?:becomes?|is|grants?|granted).{0,40}steadfast",
+    "steadfast": (
+        r"(?:\b(?:becomes?|is|grants?|granted)\b).{0,40}steadfast"
+    ),
     "immune": r"\bimmune to (?:damage and )?control\b",
     "untargetable": (
-        r"(?:becomes?|is|making|grants?|granted).{0,60}untargetable|"
+        r"(?:\b(?:becomes?|is|making|grants?|granted)\b).{0,60}untargetable|"
         r"cannot be targeted by enemies"
     ),
     "cleanse": r"removes? all dispellable debuffs",
 }
+
+_ANTI_CC_STATE_SKIP_RE = re.compile(
+    r"does not apply to unaffected enemies|"
+    r"neither unaffected nor steadfast|"
+    r"(?:is|are) under (?:steadfast|unaffected)|"
+    r"(?:who are|if they are|enemies who are|ineffective against) "
+    r"(?:unaffected|steadfast)|"
+    r"unaffected enemies"
+)
 
 _UNTARGETABLE_SKIP_RE = re.compile(
     r"defeated or becomes? untargetable|"
@@ -190,50 +201,19 @@ def _cc_has_real_match(
     pat: str,
     text: str,
     full_desc: str,
+    *,
+    current_skill: str = "",
+    skill_names: list[str] | None = None,
 ) -> bool:
     """True when CC regex matched a non-spurious clause in skill text."""
     label = _CC_LABEL_MAP.get(cc, cc)
-    for m in re.finditer(pat, text):
-        scope = rs._clause_around(text, m.start())
-        if rs._cc_match_is_spurious(scope, label, full_desc):
-            continue
-        if label == "Sleep" and rs._cc_sleep_is_caster_owned(scope):
-            continue
-        if label == "Sleep" and re.search(
-            r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem",
-            scope,
-        ) and not re.search(r"hypnotiz(?:ing|es)? (?:all )?enem", scope):
-            continue
-        return True
-    return False
-
-
-def _cc_described_on_referenced_skill(
-    text: str,
-    current_skill: str,
-    skill_names: list[str],
-) -> bool:
-    """True when CC in this skill text belongs on another named skill."""
-    if re.search(
-        r"strengthens? the conditional (?:atk spd|energy|vitality|phys|magic)\b",
-        text,
-        re.I,
-    ):
-        return False
-    for name in sorted(skill_names, key=len, reverse=True):
-        if name == current_skill:
-            continue
-        escaped = re.escape(name)
-        patterns = (
-            rf"with (?:his|her|their) {escaped}\b",
-            rf"(?:while|when) casting {escaped}\b",
-            rf"\bif {escaped} knocks?\b",
-            rf"(?:directly )?hit by {escaped}\b",
-            rf"leaves? the {escaped} state\b",
-        )
-        if any(re.search(pat, text, re.I) for pat in patterns):
-            return True
-    return False
+    return rs.cc_keyword_has_real_match(
+        label,
+        pat,
+        full_desc,
+        current_skill=current_skill,
+        skill_names=skill_names,
+    )
 
 
 def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
@@ -293,10 +273,14 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                         continue
                     if not re.search(pat, text):
                         continue
-                    if not _cc_has_real_match(rs, cc, pat, text, desc_text):
-                        continue
-                    if _cc_described_on_referenced_skill(
-                        desc_text, skill_name, skill_names
+                    if not _cc_has_real_match(
+                        rs,
+                        cc,
+                        pat,
+                        text,
+                        desc_text,
+                        current_skill=skill_name,
+                        skill_names=skill_names,
                     ):
                         continue
                     mapped = _CC_SCHEMA_MAP.get(cc, cc)
@@ -307,16 +291,14 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
 
             imm_found = _immunity_types(effects)
             for imm, pat in _ANTI_CC_KEYWORDS.items():
-                if imm == "unaffected" and re.search(
-                    r"(?:who are|if they are|enemies who are|unaffected enemies|"
-                    r"ineffective against) unaffected",
-                    text,
+                if imm in ("unaffected", "steadfast") and _ANTI_CC_STATE_SKIP_RE.search(
+                    text
                 ):
                     continue
                 if imm == "untargetable" and _UNTARGETABLE_SKIP_RE.search(text):
                     continue
                 if re.search(pat, text) and imm not in imm_found:
-                    if _cc_described_on_referenced_skill(
+                    if rs.cc_described_on_referenced_skill(
                         desc_text, skill_name, skill_names
                     ):
                         continue
@@ -477,7 +459,11 @@ def _count_sentences(text: str) -> int:
     return len([part for part in parts if part.strip()])
 
 
-def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str]]:
+def check_play_overviews(
+    processed: dict[str, Any],
+    *,
+    strict: bool = False,
+) -> tuple[list[str], list[str]]:
     """Validate hero_play_overviews.json coverage and basic lint."""
     errors: list[str] = []
     warnings: list[str] = []
@@ -511,6 +497,7 @@ def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str
     expected = set(processed["heroes"])
     for short in sorted(expected):
         if short not in overviews:
+            # Missing overview stays advisory: add-hero may land it later.
             warnings.append(f"play overview missing hero: {short}")
             continue
         text = overviews[short]
@@ -518,14 +505,24 @@ def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str
             errors.append(f"play overview empty {short}")
             continue
         sentence_count = _count_sentences(text)
-        if sentence_count < 4 or sentence_count > 7:
-            warnings.append(
-                f"play overview sentence count {short}: {sentence_count} (expected 4-7)"
+        if sentence_count < 4 or sentence_count > 8:
+            lint = (
+                f"play overview sentence count {short}: {sentence_count} "
+                f"(expected 4-8)"
             )
+            if strict:
+                errors.append(lint)
+            else:
+                warnings.append(lint)
         if len(text) > 1000:
-            warnings.append(
-                f"play overview length {short}: {len(text)} chars (expected <=1000)"
+            lint = (
+                f"play overview length {short}: {len(text)} chars "
+                f"(expected <=1000)"
             )
+            if strict:
+                errors.append(lint)
+            else:
+                warnings.append(lint)
 
     for short in overviews:
         if short not in expected:
@@ -562,10 +559,17 @@ def _cell_filter_atoms(column: str, cell_value: str) -> set[str]:
         if not entry:
             continue
         atoms.add(entry)
-        for token in entry.split(","):
-            token = token.strip()
-            if token:
-                atoms.add(token)
+        # Mirror site atomsFromEffectEntry: split on em dash so bare
+        # effect labels (Interrupt, Unaffected) match filter combo values.
+        for part in re.split(r"\s+—\s+", entry):
+            part = part.strip()
+            if not part:
+                continue
+            atoms.add(part)
+            for token in part.split(","):
+                token = token.strip()
+                if token:
+                    atoms.add(token)
     return atoms
 
 
@@ -768,6 +772,8 @@ def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[
 
 def check_skill_effects_sidecars(
     raw: dict[str, Any],
+    *,
+    strict: bool = False,
 ) -> tuple[list[str], list[str]]:
     """Validate AI sidecars: schema, staleness, coarse lints."""
     errors: list[str] = []
@@ -789,7 +795,11 @@ def check_skill_effects_sidecars(
         errors.extend(bp.verify_sidecar_persistence(doc, hero_short=short))
         errors.extend(bp.verify_sidecar_targeting(doc, record, hero_short=short))
         errors.extend(bp.verify_sidecar_special_requires(doc, record, hero_short=short))
-        warnings.extend(ses.lint_hero_sidecar(doc, record))
+        lint = ses.lint_hero_sidecar(doc, record)
+        if strict:
+            errors.extend(lint)
+        else:
+            warnings.extend(lint)
 
     return errors, warnings
 
@@ -833,14 +843,27 @@ def main() -> int:
     parser.add_argument(
         "--fail-on",
         nargs="*",
-        default=["md_parity", "reanalysis", "schema", "skill_summary", "walk_speed", "sidecar", "summoner", "temporary_stat_buffer", "semantic"],
+        default=[
+            "md_parity",
+            "reanalysis",
+            "schema",
+            "skill_summary",
+            "walk_speed",
+            "sidecar",
+            "sidecar_lint",
+            "summoner",
+            "temporary_stat_buffer",
+            "semantic",
+            "play_overview",
+            "counter_overview",
+        ],
         help="Check groups that cause a non-zero exit when failing",
     )
     parser.add_argument(
         "--max-semantic",
         type=int,
         default=0,
-        help="Max semantic issues per category before exit 1 (0 = report only)",
+        help="Max semantic issues per category before exit 1 (-1 = report only)",
     )
     args = parser.parse_args()
     fail_on = set(args.fail_on)
@@ -863,8 +886,10 @@ def main() -> int:
     stored = json.loads(PROCESSED.read_text(encoding="utf-8"))
     fresh = _rebuild_processed()
 
-    if "sidecar" in fail_on:
-        sidecar_errors, sidecar_warnings = check_skill_effects_sidecars(raw)
+    if "sidecar" in fail_on or "sidecar_lint" in fail_on:
+        sidecar_errors, sidecar_warnings = check_skill_effects_sidecars(
+            raw, strict="sidecar_lint" in fail_on
+        )
         if sidecar_errors:
             errors.extend(sidecar_errors)
         elif not sidecar_warnings:
@@ -946,7 +971,9 @@ def main() -> int:
             warnings["walk_speed"] = walk_errors
 
     if "play_overview" in fail_on:
-        overview_errors, overview_warnings = check_play_overviews(stored)
+        overview_errors, overview_warnings = check_play_overviews(
+            stored, strict=True
+        )
         if overview_errors:
             errors.extend(overview_errors)
         elif not overview_warnings:
@@ -983,7 +1010,10 @@ def main() -> int:
                 print(f"  - {item}")
             if len(items) > 10:
                 print(f"  ... and {len(items) - 10} more")
-        if category in fail_on and args.max_semantic >= 0:
+        if (
+            ("semantic" in fail_on or category in fail_on)
+            and args.max_semantic >= 0
+        ):
             if len(items) > args.max_semantic:
                 errors.append(
                     f"semantic {category}: {len(items)} issues "

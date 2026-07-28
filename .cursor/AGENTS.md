@@ -409,7 +409,11 @@ skill effect.
   etc.).
 - counterattack: Punishes enemies for attacking the hero with reactive damage or effects.
 - interrupt: Applies hard shutdown effects such as Silence or Interrupt beyond routine CC.
-- dot-specialist: Relies on damage over time or recurring tick damage as a primary pattern.
+- dot-specialist: Relies on recurring **enemy damage ticks** (poison, burn,
+  drown, wound, thorns DPS, interval damage, persistent damaging zones) as a
+  primary pattern. Not ally/self HoT, not debuffs without ticks, not
+  one-shot or channel multi-hit without a lingering tick. Text-only detection
+  rules: `.cursor/skills/behavior-tags/SKILL.md`.
 - enemy-debuffer: Applies meaningful stat or combat debuffs to enemies as a core output.
 - enemy-grouping: Pulls, pushes, or clusters enemies to set up follow-up damage or CC.
   Providers with this tag satisfy receiver **Enemy grouping** requires when
@@ -454,8 +458,8 @@ skill effect.
 - summoner: Fields battlefield summons — independently acting combat units
   placed on or remaining on the battlefield beyond the cast animation.
   Timed or untargetable fighters qualify; transient attacks/effects (e.g.
-  Marcille Sky Fish) and passive objects (e.g. Pandora's box) do not. Curated
-  roster and source skills live in `data/hero_summon_profiles.json`.
+  Marcille Sky Fish) do not. Curated roster and source skills live in
+  `data/hero_summon_profiles.json`.
 - taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
 - temporary-stat-buffer: Grants at least one **temporary** ally stat buff
   (`persistence: temporary` on an ally-targeted positive stat effect in the
@@ -648,8 +652,9 @@ Line format (no Provides/Requires prefix on each bullet):
   structured sidecar data: enemy-targeted `dot` effects, recurring enemy
   HP-loss/max-HP rows with `tick`/`duration`, burn-style debuffs, persistent
   damaging zones, and `Ally DoT on enemies` special provides. Raw skill text
-  (`damage … each time`, cooldown wording, channels, periodic attacks) must
-  not drive `match_dot_damage()`.
+  (`damage … each time`, cooldown wording, periodic unit attacks) must not
+  drive `match_dot_damage()`. Channelled damage on a stated interval
+  (`every 0.25s`, `every second`) is a real `dot` row in the sidecar.
 
 Special provides/requires are extracted into the skill effects sidecar
 (`special_provides` / `special_requires` per tier). When merging buffs from

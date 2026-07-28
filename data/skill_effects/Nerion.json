@@ -97,6 +97,16 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
+              "cc-type": "knock_back"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
             },

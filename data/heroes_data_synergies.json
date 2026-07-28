@@ -984,6 +984,13 @@
           "score": 16.0
         },
         {
+          "provider": "Lumont",
+          "reasons": [
+            "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Orion",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
@@ -1261,13 +1268,6 @@
           "provider": "Ulmus",
           "reasons": [
             "Enables CC on enemies via Knock up (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -1960,15 +1960,15 @@
             ]
           },
           {
-            "name": "Callan",
-            "score": 0.9,
+            "name": "Lumont",
+            "score": 1.0,
             "matches": [
               "Stun",
-              "Knock down"
+              "Taunt"
             ]
           },
           {
-            "name": "Lucca",
+            "name": "Callan",
             "score": 0.9,
             "matches": [
               "Stun",
@@ -1979,7 +1979,7 @@
         "overall": [
           {
             "name": "Lumont",
-            "score": 0.7529,
+            "score": 0.8393,
             "matches": [
               "Crowd Control",
               "Damage",
@@ -3551,6 +3551,10 @@
         },
         {
           "score": 18.0,
+          "name": "Pandora"
+        },
+        {
+          "score": 18.0,
           "name": "Peggy"
         },
         {
@@ -4389,6 +4393,13 @@
           "score": 24.375
         },
         {
+          "provider": "Satrana",
+          "reasons": [
+            "Enables Magic damage from allies via Ally grant (Sparks); allies within 2 tiles deal magic damage via hits + battle start + wide area"
+          ],
+          "score": 24.15
+        },
+        {
           "provider": "Galahad",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + wide area + all enemies (All units)"
@@ -4438,6 +4449,13 @@
             "Enables Magic damage from allies via Magic damage + all enemies (All units)"
           ],
           "score": 17.625
+        },
+        {
+          "provider": "Cassadee",
+          "reasons": [
+            "Enables Magic damage from allies via Ally blessing; allied hits deal magic damage + battle start"
+          ],
+          "score": 17.4
         },
         {
           "provider": "Twins",
@@ -4553,13 +4571,6 @@
           "score": 14.5
         },
         {
-          "provider": "Satrana",
-          "reasons": [
-            "Enables Magic damage from allies via Ally grant (Sparks); allies within 2 tiles deal magic damage via hits + battle start + wide area"
-          ],
-          "score": 14.489999999999998
-        },
-        {
           "provider": "Fay",
           "reasons": [
             "ATK via ATK (arc, low)",
@@ -4613,13 +4624,6 @@
             "Enables Magic damage from allies via Magic damage + wide area (Single target)"
           ],
           "score": 10.6875
-        },
-        {
-          "provider": "Cassadee",
-          "reasons": [
-            "Enables Magic damage from allies via Ally blessing; allied hits deal magic damage + battle start"
-          ],
-          "score": 10.2
         },
         {
           "provider": "Aurora",
@@ -5731,10 +5735,6 @@
           "name": "Nerion"
         },
         {
-          "score": 15.0,
-          "name": "Bonnie"
-        },
-        {
           "score": 7.5,
           "name": "Niru"
         }
@@ -6036,6 +6036,13 @@
           "score": 16.0
         },
         {
+          "provider": "Lumont",
+          "reasons": [
+            "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Orion",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
@@ -6272,13 +6279,6 @@
           "provider": "Ulmus",
           "reasons": [
             "Enables CC on enemies via Knock up (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -6859,6 +6859,10 @@
           "name": "Alsa"
         },
         {
+          "score": 17.4,
+          "name": "Bonnie"
+        },
+        {
           "score": 8.0,
           "name": "Mirael"
         },
@@ -6961,20 +6965,21 @@
             ]
           },
           {
+            "name": "Nerion",
+            "score": 0.6429,
+            "matches": [
+              "Knock up",
+              "Stun",
+              "Knock back"
+            ]
+          },
+          {
             "name": "Lumont",
             "score": 0.6071,
             "matches": [
               "Knock back",
               "Stun",
               "Knock up"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.6,
-            "matches": [
-              "Knock back",
-              "Stun"
             ]
           }
         ],
@@ -11031,10 +11036,6 @@
           "name": "Himmel"
         },
         {
-          "score": 15.25,
-          "name": "Bonnie"
-        },
-        {
           "score": 14.6568,
           "name": "Dionel"
         },
@@ -13215,6 +13216,10 @@
         {
           "score": 6.0,
           "name": "Lucy"
+        },
+        {
+          "score": 6.0,
+          "name": "Pandora"
         },
         {
           "score": 6.0,
@@ -16416,7 +16421,16 @@
             ]
           }
         ],
-        "cc": [],
+        "cc": [
+          {
+            "name": "Lumont",
+            "score": 0.5684,
+            "matches": [
+              "Taunt",
+              "Stun"
+            ]
+          }
+        ],
         "overall": []
       }
     },
@@ -19832,7 +19846,7 @@
             ]
           },
           {
-            "name": "Perseus",
+            "name": "Nerion",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -19840,7 +19854,7 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -22165,7 +22179,7 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Nerion",
             "score": 1.0,
             "matches": [
               "Knock back",
@@ -22173,7 +22187,7 @@
             ]
           },
           {
-            "name": "Ulmus",
+            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Knock back",
@@ -25013,7 +25027,7 @@
             ]
           },
           {
-            "name": "Perseus",
+            "name": "Nerion",
             "score": 1.0,
             "matches": [
               "Knock back",
@@ -25021,7 +25035,7 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Knock back",
@@ -25825,15 +25839,15 @@
       ],
       "beneficiaries": [
         {
-          "score": 8.0,
+          "score": 16.0,
           "name": "Alsa"
         },
         {
-          "score": 8.0,
+          "score": 16.0,
           "name": "Carolina"
         },
         {
-          "score": 8.0,
+          "score": 16.0,
           "name": "Nerion"
         }
       ],
@@ -25941,16 +25955,16 @@
             ]
           },
           {
-            "name": "Phraesto",
-            "score": 0.6267,
+            "name": "Antandra",
+            "score": 0.6521,
             "matches": [
-              "Taunt",
-              "Stun"
+              "Stun",
+              "Taunt"
             ]
           },
           {
-            "name": "Antandra",
-            "score": 0.576,
+            "name": "Phraesto",
+            "score": 0.6113,
             "matches": [
               "Stun",
               "Taunt"
@@ -25960,7 +25974,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.5588,
+            "score": 0.5758,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -25968,7 +25982,7 @@
           },
           {
             "name": "Perseus",
-            "score": 0.5547,
+            "score": 0.5716,
             "matches": [
               "Buffs on allies",
               "Damage"
@@ -25976,7 +25990,7 @@
           },
           {
             "name": "Antandra",
-            "score": 0.5214,
+            "score": 0.5457,
             "matches": [
               "Damage"
             ]
@@ -30013,6 +30027,13 @@
           "score": 16.0
         },
         {
+          "provider": "Lumont",
+          "reasons": [
+            "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Orion",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
@@ -30286,13 +30307,6 @@
         },
         {
           "provider": "Lenya",
-          "reasons": [
-            "Enables CC on enemies via Knock back (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Lumont",
           "reasons": [
             "Enables CC on enemies via Knock back (area, low)"
           ],
@@ -30647,19 +30661,12 @@
         ],
         "cc": [
           {
-            "name": "Zandrok",
-            "score": 1.0,
-            "matches": [
-              "Knock up",
-              "Stun"
-            ]
-          },
-          {
             "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Knock up",
-              "Stun"
+              "Stun",
+              "Knock back"
             ]
           },
           {
@@ -30667,19 +30674,20 @@
             "score": 1.0,
             "matches": [
               "Knock up",
+              "Stun",
+              "Knock back"
+            ]
+          },
+          {
+            "name": "Zandrok",
+            "score": 0.9882,
+            "matches": [
+              "Knock up",
               "Stun"
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Bonnie",
-            "score": 0.5055,
-            "matches": [
-              "Debuffs on enemies"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Niru": {
@@ -31028,13 +31036,6 @@
           "score": 6.0
         },
         {
-          "provider": "Brutus",
-          "reasons": [
-            "Enables Enemy defeat via AoE physical (kills)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Carolina",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
@@ -31262,6 +31263,13 @@
           "provider": "Reinier",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Brutus",
+          "reasons": [
+            "Enables Enemy defeat via AoE physical (kills)"
           ],
           "score": 4.5
         },
@@ -32374,6 +32382,30 @@
     },
     "Pandora": {
       "synergies": [
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Haste via Haste (all summons, high)",
+            "Damage dealt via Damage dealt (all summons, average)",
+            "Damage taken via Damage taken (all summons, low)"
+          ],
+          "score": 18.0
+        },
+        {
+          "provider": "Peggy",
+          "reasons": [
+            "ATK via ATK (all summons, high)",
+            "DEF via DEF (all summons, high)"
+          ],
+          "score": 18.0
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "Shield via Shield (all summons, average)"
+          ],
+          "score": 6.0
+        },
         {
           "provider": "Rowan",
           "reasons": [
@@ -34532,10 +34564,11 @@
             ]
           },
           {
-            "name": "Valen",
-            "score": 0.96,
+            "name": "Lumont",
+            "score": 1.0,
             "matches": [
-              "Stun"
+              "Stun",
+              "Knock back"
             ]
           }
         ],
@@ -34557,10 +34590,11 @@
             ]
           },
           {
-            "name": "Pang",
-            "score": 0.6358,
+            "name": "Lumont",
+            "score": 0.6362,
             "matches": [
-              "Damage"
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -34852,6 +34886,10 @@
         {
           "score": 18.0,
           "name": "Laios"
+        },
+        {
+          "score": 18.0,
+          "name": "Pandora"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -38135,16 +38173,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 14.489999999999998,
+          "score": 24.15,
           "name": "Bonnie"
-        },
-        {
-          "score": 6.0,
-          "name": "Alsa"
-        },
-        {
-          "score": 6.0,
-          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -38529,6 +38559,15 @@
               "Stun",
               "Knock up",
               "Knock down"
+            ]
+          },
+          {
+            "name": "Lumont",
+            "score": 0.5179,
+            "matches": [
+              "Stun",
+              "Knock back",
+              "Knock up"
             ]
           }
         ],
@@ -39036,6 +39075,13 @@
           "score": 10.0
         },
         {
+          "provider": "Brutus",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 10.0
+        },
+        {
           "provider": "Bryon",
           "reasons": [
             "Enables Continuous damage on enemies via DoT"
@@ -39194,6 +39240,13 @@
         },
         {
           "provider": "Zanie",
+          "reasons": [
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 3.75
+        },
+        {
+          "provider": "Berial",
           "reasons": [
             "Enables Continuous damage on enemies via DoT"
           ],
@@ -42967,7 +43020,7 @@
           },
           {
             "name": "Lumont",
-            "score": 0.9391,
+            "score": 1.0,
             "matches": [
               "Stun",
               "Knock back"
@@ -45896,13 +45949,6 @@
           "score": 6.0
         },
         {
-          "provider": "Brutus",
-          "reasons": [
-            "Enables Enemy defeat via AoE physical (kills)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Cassadee",
           "reasons": [
             "Enables Enemy defeat via AoE magic (kills)"
@@ -46188,6 +46234,13 @@
             "Enables Enemy defeat via Instant defeat"
           ],
           "score": 5.0
+        },
+        {
+          "provider": "Brutus",
+          "reasons": [
+            "Enables Enemy defeat via AoE physical (kills)"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Cecia",
@@ -48673,7 +48726,7 @@
             ]
           },
           {
-            "name": "Perseus",
+            "name": "Nerion",
             "score": 1.0,
             "matches": [
               "Knock back",
@@ -48681,7 +48734,7 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Knock back",

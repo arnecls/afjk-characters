@@ -91,13 +91,13 @@ hits (not generic True + Max HP).
 
 ### DoT false positives
 
-Self or summon HP drain, periodic auto-attacks, on-entry bursts, channels,
-and cooldown `each time` wording are not sustained enemy DoT.
+Self or summon HP drain, periodic auto-attacks, on-entry bursts, and cooldown
+`each time` wording are not sustained enemy DoT. A channel **is** DoT when the
+text states a fixed interval (`every 0.25s`, `every second`) — the interval
+wins over the channel framing.
 
 - Harak Vicious Bite — healing-lock cast drain (also spurious HoT)
 - Berial Shadow Reflection — Silhouette self HP cost (debatable)
-- Berial Scared Swamp — channeled shadow damage every 0.25s (Magic, not DoT)
-- Brutus Whirlwind Wrath — spin channel every second for 4s
 - Dunlingr Bell of Order — damage each time it is summoned
 - Mehira Total Devotion — voidling attacks every 1.5s
 - Perseus Fertile Ground — `damage … each time it's triggered` (cooldown)
@@ -109,6 +109,8 @@ and cooldown `each time` wording are not sustained enemy DoT.
 
 Sustained `every Ns` / `per second` enemy damage without `dot` label.
 
+- Berial Scared Swamp — shadow damage `every 0.25s` for up to 5s
+- Brutus Whirlwind Wrath — spin damage `every second` for 4s
 - Bonnie Decay's Reach — max-stack Aging `100% every 1s`
 - Arden vine skills (resolved in later pass but pattern recurs)
 - Daimon Guardian Howl EX+10 — max-HP shockwave ticks

@@ -165,8 +165,8 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `energy-inhibitor` | Meaningful enemy Energy drain, Energy steal, or Energy recovery cut/block as a core pattern | Ally Energy grants; self Energy costs; Ult lockout alone (`ultimate-cancel` / `interrupt`); tiny one-off riders |
 | `enemy-debuffer` | Meaningful **enemy** stat or combat debuffs as a core pattern | Self debuffs; ally-only kits with no enemy penalties; one minor stat shave |
 | `battlefield-modification` | Physical obstacles or map layout changes | Buff/debuff/terrain **zones** alone |
-| `summoner` | **Battlefield summons** — independently acting combat units placed on or remaining on the battlefield beyond the cast animation (registry in `hero_summon_profiles.json`) | Transient attacks/effects (Sky Fish, magic leaves, Smashy strike); passive objects (Pandora's box); **spell-form** damage (Mehira voidlings, Shemira ghosts) |
-| `dot-specialist` | Recurring tick damage as a **primary** pattern | Stat debuffs without DoT; bind damage alone |
+| `summoner` | **Battlefield summons** — independently acting combat units placed on or remaining on the battlefield beyond the cast animation (registry in `hero_summon_profiles.json`) | Transient attacks/effects (Sky Fish, magic leaves, Smashy strike); **spell-form** damage (Mehira voidlings, Shemira ghosts) |
+| `dot-specialist` | Recurring **enemy damage ticks** as a **primary** pattern (see detection below) | HoT; debuffs without ticks; CC alone; one-shot / channel multi-hit without a lingering tick |
 | `life-drain` | HP sustain tied to **dealing damage** | Stat steal, shield regen, heal-on-shield |
 | `revive` | Brings **defeated allies** back | Self-survival (`cheat-death` instead) |
 | `cheat-death` | Self-survival at fatal blow or **critical HP threshold** via recovery/form | Ally revive (`revive` instead); form swap alone without a survival trigger |
@@ -215,6 +215,40 @@ slice damage; has `battle-start-burst` and (`aoe-damage` or `enemy-debuffer`).
 **Path B_hp_shield** (e.g. Daimon): same utility/damage thresholds as B_burst;
 has `hp-scaling`, buff utility pts ≥ 3, total damage pts ≥ 2.
 
+## `dot-specialist` (skill-text detection)
+
+Operate on skill text (`heroes_data.json` descriptions /
+`description_lite`, summaries, play overviews).
+
+Tag when recurring **enemy damage ticks** are a **primary** combat pattern —
+the same idea players see as “continuous damage” / DoT.
+
+**Count (any strong primary signal):**
+
+- Interval damage on enemies: `every second`, `per second`, `every Ns`,
+  `continues to take … damage`, `damage … for Xs` as a lasting tick
+- Named damaging statuses: poison, burn, drown, wound, thorns (DPS), Dart
+  Poison, Crimson Venom, Doom / Scorched-style ticks
+- Persistent zones / clouds that **repeatedly** damage over a duration
+  (e.g. lightning that strikes again every Ns, burning area that ticks)
+- Kit blurb or skill lite that defines the hero via **continuous damage**
+  and the skills deliver lingering ticks (not only a flavor word)
+
+**Do not count:**
+
+- Heal-over-time: `recovers` / `restores` / `heals` HP every second or every
+  Ns (ally or self) — even if the buff is “continuous”
+- Stat / combat debuffs with **no** damage ticks (Haste cut, ATK down, Aging
+  stacks without DPS)
+- Bind / stun / sleep / entangle **alone** — only count if the same clause
+  deals periodic damage (`damage every 1s` while entangled)
+- One-shot hits, multi-hit channels, or repeated casts **without** a
+  lingering tick status (e.g. a 3s rectangular channel of discrete strikes)
+- Tiny one-off riders that are not how the hero is played
+
+**Primary-pattern bar:** prefer heroes where DoT is a defining loop (ult /
+core skill identity), not a single minor rider on an otherwise burst kit.
+
 ## Reporting
 
 Summarize for the user:
@@ -249,7 +283,16 @@ uses effect `persistence`, not this tag alone. Not `battlefield-modification`
 (buff zones do not count).
 
 **Cecia** — `summoner`, `mass-cc` (area entangle on summon), `enemy-debuffer`
-(stat steal). Not `life-drain` (stat absorb ≠ lifesteal).
+(stat steal), `dot-specialist` (reinforced Thorns: damage every second while
+entangled). Not `life-drain` (stat absorb ≠ lifesteal).
+
+**Odie / Shadewing / Arden** — clear `dot-specialist`: poison / wound+venom /
+vines+lightning ticks as core output.
+
+**Lorsan** — storm may say “continuous damage,” but kit identity is link +
+ally sustain; Zephyr heal-every-second is HoT, not DoT. Prefer
+`ally-healer` / `enemy-debuffer` over `dot-specialist` unless enemy ticks
+are truly primary.
 
 **Contess** — `ally-healer`, `ally-shielder`, `enemy-debuffer`, `stealth`,
 `untargetable`. Enemy debuffs are the kit's other half: ATK and energy

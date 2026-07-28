@@ -33,15 +33,15 @@ rs = _load_rs()
 
 
 class SummonerRegistryTests(unittest.TestCase):
-    def test_registry_has_fifteen_summoners(self):
+    def test_registry_has_sixteen_summoners(self):
         heroes = sr.summoner_heroes()
-        self.assertEqual(len(heroes), 15)
+        self.assertEqual(len(heroes), 16)
         self.assertIn("Lucy", heroes)
         self.assertIn("Galahad", heroes)
         self.assertIn("Berial", heroes)
+        self.assertIn("Pandora", heroes)
         self.assertNotIn("Marcille", heroes)
         self.assertNotIn("Chippy", heroes)
-        self.assertNotIn("Pandora", heroes)
 
     def test_registry_matches_behavior_tags(self):
         tags = json.loads(

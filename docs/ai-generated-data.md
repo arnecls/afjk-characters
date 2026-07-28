@@ -141,7 +141,7 @@ The @data/heroes_data.json contains a field "description_lite", which provides a
 
 ### Content
 
-Maps each hero's display name to a short playstyle summary (4–6 sentences, up to ~900 characters).
+Maps each hero's display name to a short playstyle summary (4–8 sentences, up to ~900 characters).
 
 ### Purpose
 
@@ -153,7 +153,7 @@ Shown in the behavior section as **Play overview** (before **Skill overview**) i
 Regenerate entries in @data/hero_play_overviews.json using hero skill data from @data/heroes_data_processed.json and @data/heroes_data_skill_summary.json. Prydwen reviews (via `python3 scripts/generate_play_overviews.py`) may inform tone but must not be copied verbatim.
 
 RULES:
-1. Four to six sentences per hero; one idea per sentence — avoid dense multi-clause sentences. Keep under ~900 characters so the block fits 5–6 lines in the web UI.
+1. Four to eight sentences per hero; one idea per sentence — avoid dense multi-clause sentences. Keep under ~900 characters so the block fits 5–6 lines in the web UI.
 2. Cover: special requirements (placement, timing, pairing), strengths (situations where they shine), weaknesses (when they underperform).
 3. Use **bold markdown** sparingly (about 5–7 phrases per hero) for setup requirements, signature strengths, and clear failure conditions. Rendered as bold in the site viewer.
 4. Do NOT mention game modes (AFK, PvP, Dream Realm, Arena, etc.), class, faction, rarity, level breakpoints, or investment/dupes.

@@ -319,6 +319,9 @@ Fix hero-specific issues:
 - `skill_summary` lint — hero names or digits in summaries
 - `walk_speed` missing/unknown — return to C3; regenerate game data walk table first
 - Missing play overview — warning for new hero until C5 complete
+- Sidecar CC lint (`sidecar_lint`) — keyword in skill text without a matching
+  CC effect; now a hard error. Fix the sidecar or confirm a shared-text guard
+  covers cross-skill / spurious phrasing.
 
 ### E2. Verify outputs
 

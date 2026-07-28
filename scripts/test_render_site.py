@@ -166,17 +166,21 @@ class RenderSiteTests(unittest.TestCase):
         self.assertIn("continuous damage", text.lower())
         self.assertNotIn("putting debuffs", text.lower())
 
-    def test_contess_synergy_partners_from_common_buffers(self) -> None:
+    def test_contess_synergy_partners_keep_early_energy_buffers(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
         contess = next(h for h in payload["heroes"] if h["name"] == "Contess")
         bf = contess["sections"]["benefits_from"]
         partners = bf["partners"]
         self.assertTrue(partners)
         names = {p["name"] for p in partners}
-        self.assertTrue(names & {"Rowan", "Thador", "Ravion", "Hugin"})
-        self.assertEqual(bf.get("common_buffers"), [])
+        # Early-battle Energy keeps these out of the common-buffer filter.
+        self.assertTrue(names & {"Rowan", "Thador", "Ravion", "Pandora"})
+        common = {p["name"] for p in bf.get("common_buffers") or []}
+        # Filtered roster-wide buffers stay out of the partner list.
+        self.assertTrue(common)
+        self.assertFalse(common & names)
         intro = bf.get("intro") or ""
-        self.assertNotIn("Common buffers are", intro)
+        self.assertIn("Common buffers are", intro)
 
     def test_bonnie_shows_satrana_magic_enabler(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))

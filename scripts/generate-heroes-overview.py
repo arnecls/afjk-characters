@@ -832,19 +832,21 @@ def match_ally_enabled_magic_damage(
         return None
 
     grant = _ally_grant_detail(provider, "Ally grant")
-    pts = 9.5
+    # Ally-grant conversion outranks generic Magic dealers for receivers that
+    # require Magic damage from allies (Bonnie / Sparks path).
+    pts = 16.0
     range_match = re.search(
         r"allies within (\d+) tiles when a battle starts", text, re.I
     )
     if range_match:
-        pts = 10.5
+        pts = 17.5
         detail = (
             f"{grant}; allies within {range_match.group(1)} tiles "
             "deal magic damage via hits"
         )
     elif _ALLY_HIT_MAGIC_DAMAGE_RE.search(text):
         detail = f"{grant}; allied hits deal magic damage"
-        pts = 8.5
+        pts = 14.5
     else:
         detail = f"{grant}; allied hits enable magic damage on enemies"
 
@@ -1704,15 +1706,14 @@ def common_stat_buffer_names(
     *,
     limit: int = 4,
 ) -> list[str]:
-    """Providers that buff many heroes and match this receiver's stat needs."""
+    """Roster-wide stat buffers that top picks hide from this receiver."""
     names: list[str] = []
     for pick in picks:
-        provider = pick.get("provider", "")
-        if provider_beneficiary_count.get(provider, 0) <= threshold:
+        if not should_filter_obvious_stat_buffer_pick(
+            pick, provider_beneficiary_count, threshold
+        ):
             continue
-        if not synergy_pick_has_stat_buff_reason(pick):
-            continue
-        names.append(short_name(provider))
+        names.append(short_name(pick.get("provider", "")))
         if len(names) >= limit:
             break
     return names

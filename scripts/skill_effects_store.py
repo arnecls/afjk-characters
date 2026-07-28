@@ -321,11 +321,19 @@ def apply_sidecar_to_hero(hero: Any, doc: dict[str, Any]) -> None:
 def lint_sidecar_skill_text(
     skill: dict[str, Any],
     entry: dict[str, Any],
+    *,
+    hero_short: str = "",
+    skill_names: list[str] | None = None,
 ) -> list[str]:
     """Coarse keyword-vs-effect checks for one skill sidecar entry."""
+    from heroes_io import skill_description_text
+
     warnings: list[str] = []
-    desc = canonical_skill_description(skill)
-    text = json.dumps(desc, ensure_ascii=False).lower()
+    desc_text = skill_description_text(skill)
+    text = desc_text.lower()
+    prefix = f"{hero_short} / " if hero_short else ""
+    current_name = str(skill.get("name") or skill.get("section") or "")
+    names = skill_names or []
 
     all_effects: list[dict[str, Any]] = []
     for tier_data in entry.get("tiers", {}).values():
@@ -340,7 +348,8 @@ def lint_sidecar_skill_text(
         )
         if not has_heal:
             warnings.append(
-                f"{skill.get('section')}: healing phrase in text, no heal effect"
+                f"{prefix}{skill.get('section')}: healing phrase in text, "
+                f"no heal effect"
             )
 
     cc_labels = {
@@ -348,13 +357,22 @@ def lint_sidecar_skill_text(
         for e in all_effects
         if e.get("type") == "crowd_control"
     }
+    rs = hs._rs()
     for label, pattern in _CC_HINT_RES:
-        if pattern.search(text) and label.lower() not in cc_labels:
-            if label == "knock back" and "knock back" in cc_labels:
-                continue
-            warnings.append(
-                f"{skill.get('section')}: {label} phrase in text, no CC effect"
-            )
+        if label.lower() in cc_labels:
+            continue
+        if not rs.cc_keyword_has_real_match(
+            label.title() if label != "knock back" else "Knock back",
+            pattern.pattern,
+            desc_text,
+            current_skill=current_name,
+            skill_names=names,
+        ):
+            continue
+        warnings.append(
+            f"{prefix}{skill.get('section')}: {label} phrase in text, "
+            f"no CC effect"
+        )
 
     return warnings
 
@@ -366,9 +384,22 @@ def lint_hero_sidecar(
     skills_by_section = {
         skill["section"]: skill for skill in hero_record.get("skills", [])
     }
+    skill_names = [
+        str(skill.get("name") or "")
+        for skill in hero_record.get("skills", [])
+        if skill.get("name")
+    ]
+    hero_short = short_name(hero_record.get("title", ""))
     warnings: list[str] = []
     for section, entry in doc.get("skills", {}).items():
         skill = skills_by_section.get(section)
         if skill:
-            warnings.extend(lint_sidecar_skill_text(skill, entry))
+            warnings.extend(
+                lint_sidecar_skill_text(
+                    skill,
+                    entry,
+                    hero_short=hero_short,
+                    skill_names=skill_names,
+                )
+            )
     return warnings

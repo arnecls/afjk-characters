@@ -5319,6 +5319,38 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 320.0
+                }
+              ],
+              "duration": 5.0,
+              "tick": 0.25
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "frighten",
+              "duration": 4.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
@@ -5335,18 +5367,6 @@
                   "value": 350.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "crowd_control",
-              "cc-type": "frighten",
-              "duration": 4.0
             }
           ],
           "cooldown": 1.0,
@@ -5354,6 +5374,9 @@
           "skill_range": 10,
           "initial_energy": 0.0,
           "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
             {
               "label": "Magic"
             },
@@ -5700,6 +5723,10 @@
         [
           "magic",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -6367,16 +6394,18 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 155.0
+                  "value": 140.0
                 }
-              ]
+              ],
+              "duration": 4.0,
+              "tick": 1.0
             },
             {
               "type": "immunity",
@@ -6404,7 +6433,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             {
-              "label": "Physical"
+              "label": "DoT"
             },
             {
               "label": "Immune — Self"
@@ -6740,7 +6769,11 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area"
+          "Arc"
+        ],
+        [
+          "dot",
+          "Area"
         ],
         [
           "max_hp",
@@ -34258,7 +34291,7 @@
               "area_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
-              "duration": 1.25
+              "duration": 2.25
             },
             {
               "tier": "base",
@@ -34289,6 +34322,9 @@
             },
             {
               "label": "Stun — Area"
+            },
+            {
+              "label": "Stun — Area (Supreme+)"
             }
           ]
         },
@@ -39530,6 +39566,16 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
+              "cc-type": "knock_back"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
             },
@@ -39556,6 +39602,9 @@
           "skill_card_tags": [
             {
               "label": "Magic"
+            },
+            {
+              "label": "Knock back — Single target"
             },
             {
               "label": "Stun — Single target"
@@ -41963,6 +42012,12 @@
             "tier": "base",
             "targeting": "Single target",
             "description": "Pandora herself is protected by hope and is not affected by Panic Projection."
+          },
+          {
+            "label": "Summoning",
+            "tier": "mythic+",
+            "targeting": "Self",
+            "description": "After Pandora is defeated, the box stays on the battlefield, casting her skills on its own Energy cycle."
           }
         ],
         "requires": []

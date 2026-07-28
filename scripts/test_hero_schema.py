@@ -237,6 +237,17 @@ class RoundTripTests(unittest.TestCase):
         self.assertIn(("Unaffected", "Multiple targets"), ult_imms)
         self.assertNotIn("Unaffected", bond_imms)
 
+    def test_nerion_tidal_rebuke_knock_back_and_stun(self):
+        hero, _data = self._hero_by_title_prefix("Nerion")
+        section = rs.CATEGORY_TO_SECTION["skill1"]
+        ccs = {
+            (e.label, e.targeting)
+            for e in hero.skill_slices[section].effects
+            if e.category == "cc"
+        }
+        self.assertIn(("Knock back", "Single target"), ccs)
+        self.assertIn(("Stun", "Single target"), ccs)
+
     def test_alna_shared_resolve_ally_buffs_no_spurious_max_hp_debuff(self):
         hero, _data = self._hero_by_title_prefix("Alna")
         section = rs.CATEGORY_TO_SECTION["skill1"]

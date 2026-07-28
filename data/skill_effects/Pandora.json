@@ -280,7 +280,14 @@
           ],
           "summon_effects": [],
           "immunities": [],
-          "special_provides": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "mythic+",
+              "targeting": "Self",
+              "description": "After Pandora is defeated, the box stays on the battlefield, casting her skills on its own Energy cycle."
+            }
+          ],
           "special_requires": []
         },
         "ex+10": {

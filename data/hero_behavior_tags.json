@@ -83,7 +83,6 @@
     "cc-immunity"
   ],
   "Carolina": [
-    "dot-specialist",
     "enemy-debuffer"
   ],
   "Cassadee": [
@@ -92,6 +91,7 @@
     "enemy-debuffer"
   ],
   "Cecia": [
+    "dot-specialist",
     "enemy-debuffer",
     "mass-cc",
     "summoner"
@@ -357,7 +357,6 @@
   "Lorsan": [
     "aoe-damage",
     "backline-inhibit",
-    "dot-specialist",
     "temporary-stat-buffer"
   ],
   "Lucca": [
@@ -430,7 +429,6 @@
   ],
   "Natsu": [
     "aoe-damage",
-    "dot-specialist",
     "high-damage-ult",
     "high-initial-energy",
     "mass-cc"

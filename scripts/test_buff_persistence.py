@@ -136,7 +136,8 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
         self.assertTrue(any("missing behavior tag: Koko" in e for e in errors))
 
     def test_extra_tag_detected(self):
-        tags = {"Pandora": ["ally-buffer", bp.TEMPORARY_STAT_BUFFER_TAG]}
+        # Lamentis only buffs his apostles, so the tag has no sidecar backing.
+        tags = {"Lamentis": ["ally-buffer", bp.TEMPORARY_STAT_BUFFER_TAG]}
         raw = io.load_heroes_data()
         errors = bp.check_temporary_stat_buffer_consistency(
             tags,
@@ -144,15 +145,19 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
             ses.load_sidecar,
         )
         self.assertTrue(
-            any("behavior tag not in sidecar: Pandora" in e for e in errors)
+            any("behavior tag not in sidecar: Lamentis" in e for e in errors)
         )
 
-    def test_provider_membership_is_thirty_five(self):
+    def test_pandora_counts_as_temporary_provider(self):
+        # Boxed Blessing grants the released ally ATK for the next 10s.
         tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
-        tagged = [
-            name for name, vals in tags.items() if bp.TEMPORARY_STAT_BUFFER_TAG in vals
-        ]
-        self.assertEqual(len(tagged), 35)
+        self.assertIn(bp.TEMPORARY_STAT_BUFFER_TAG, tags.get("Pandora", []))
+        raw = io.load_heroes_data()
+        record = next(r for r in raw["heroes"] if r["name"] == "Pandora")
+        doc = ses.load_sidecar(record["title"])
+        self.assertTrue(
+            bp.sidecar_has_validated_temporary_ally_stat_buff(doc, record)
+        )
 
     def test_removed_false_positives_are_not_tagged(self):
         tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
@@ -271,10 +276,18 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
                 return hero
         raise AssertionError(f"hero not found: {prefix}")
 
-    def test_pandora_permanent_buffs_do_not_count_for_perseus(self):
+    def test_rowan_permanent_buffs_do_not_count_for_perseus(self):
+        # Rowan's potion permanently raises ally DEF, so it never expires.
+        rowan = self._hero("Rowan")
+        result = self.go._ally_stat_buff_synergy(rowan, "")
+        self.assertIsNone(result)
+
+    def test_pandora_temporary_buff_counts_for_perseus(self):
         pandora = self._hero("Pandora")
         result = self.go._ally_stat_buff_synergy(pandora, "")
-        self.assertIsNone(result)
+        self.assertIsNotNone(result)
+        _pts, count, _start = result
+        self.assertGreater(count, 0)
 
     def test_koko_temporary_buffs_count_for_perseus(self):
         koko = self._hero("Koko")

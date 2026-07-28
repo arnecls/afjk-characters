@@ -113,6 +113,7 @@ class ExplicitPeriodicTickTests(unittest.TestCase):
     EXPECTED_TICKS = {
         ("Alna", "Ultimate", "base"): 0.5,
         ("Berial", "Ultimate", "base"): 0.25,
+        ("Brutus", "Ultimate", "base"): 1.0,
         ("Cryonaia", "Skill1", "base"): 0.5,
         ("Cyran", "Ultimate", "base"): 0.25,
         ("Faramor", "Ultimate", "base"): 0.5,
@@ -135,7 +136,8 @@ class ExplicitPeriodicTickTests(unittest.TestCase):
                     if effect.get("type") == "dot" and "tick" in effect
                 ]
                 self.assertEqual(ticks, [expected_tick])
-                self.assertNotEqual(ticks, [1.0])
+                if expected_tick != 1.0:
+                    self.assertNotEqual(ticks, [1.0])
 
 
 class ConfirmedTargetInversionTests(unittest.TestCase):
@@ -191,8 +193,6 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
             "self",
         ),
         ("Nara", "Ex. Skill", "mythic+", "effects", "heal", "Direct healing", "ally", "self"),
-        ("Niru", "Unlocks at Supreme+", "supreme+", "effects", "buff", "Phys DEF", "ally", "self"),
-        ("Niru", "Unlocks at Supreme+", "supreme+", "effects", "buff", "Magic DEF", "ally", "self"),
         ("Pandora", "Skill1", "base", "effects", "buff", "Energy", "ally", "self"),
         (
             "Perseus",
@@ -254,6 +254,28 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
                 self.assertEqual(len(matches), 1)
                 self.assertEqual(matches[0]["target"], expected_target)
                 self.assertNotEqual(matches[0]["target"], old_target)
+
+    def test_niru_named_ally_def_buffs_stay_conditional(self):
+        # The DEF boost only lands when Shemira or Daimon is on the team, so
+        # it belongs in special_provides.grants, not in unconditional effects.
+        sidecar = json.loads(
+            (ROOT / "data" / "skill_effects" / "Niru.json").read_text()
+        )
+        tier = sidecar["skills"]["Unlocks at Supreme+"]["tiers"]["supreme+"]
+        buff_names = {
+            row.get("name")
+            for row in tier["effects"]
+            if row.get("type") == "buff"
+        }
+        self.assertNotIn("Phys DEF", buff_names)
+        self.assertNotIn("Magic DEF", buff_names)
+        granted = {
+            grant.get("label")
+            for provide in tier["special_provides"]
+            for grant in provide.get("grants", [])
+        }
+        self.assertIn("Phys DEF", granted)
+        self.assertIn("Magic DEF", granted)
 
     def test_edited_sidecars_are_schema_valid(self):
         for hero in sorted(self.EDITED_SIDECARS):

@@ -68,7 +68,7 @@ bonded ally feather threshold enhances ultimate with additional arrow volleys
 ### Units improving Aliceth
 
 Look for units providing: `ATK`  
-Common buffers are **Pandora**, **Ravion**, **Contess**, or **Evie**.
+Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -354,7 +354,7 @@ bonus damage against multiply-controlled targets
 ### Units improving Alsa
 
 Look for units providing: `ATK` `Haste` `Max HP` `Shield`  
-Common buffers are **Evie**, **Aliceth**, **Kordan**, or **Twins**.
+Common buffers are **Mikola** or **Parisa**.
 
 Alsa also requires units **applying crowd control** to enemies
 
@@ -504,7 +504,7 @@ hitting with ultimate boosts own Phys DEF
 ### Units improving Antandra
 
 Look for units providing: `Max HP` `Energy` `Physical DEF`  
-Common buffers are **Rowan**, **Pandora**, **Twins**, or **Thador**.
+Common buffers are **Twins**, **Mikola**, **Smokey & Meerky**, or **Lorsan**.
 
 - **Rowan**
   - Energy (area, high) `signature fuel`
@@ -539,7 +539,7 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 
 **Best overall replacement**
 
-- Lumont (75% `Crowd Control` `Damage` `Debuffs on enemies`)
+- Lumont (83% `Crowd Control` `Damage` `Debuffs on enemies`)
 - Hepler (61% `Crowd Control` `Damage`)
 - Phraesto (59% `Buffs on allies` `Crowd Control`)
 
@@ -570,8 +570,8 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 **Crowd Control**
 
 - Hepler (100% `Stun` `Taunt`)
+- Lumont (100% `Stun` `Taunt`)
 - Callan (90% `Stun` `Knock down`)
-- Lucca (90% `Stun` `Knock down`)
 
 ### Summary for Antandra
 
@@ -655,7 +655,7 @@ reduce lightning strike interval for same target within AoE zone
 ### Units improving Arden
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Pandora**.
+Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Smokey & Meerky**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -782,7 +782,7 @@ direct ultimate hit heals self
 ### Units improving Atalanta
 
 Look for units providing: `ATK` `Haste` `Physical DEF`  
-Common buffers are **Ravion**, **Pandora**, **Mikola**, or **Kordan**.
+Common buffers are **Mikola**, **Kordan**, **Aliceth**, or **Smokey & Meerky**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -931,8 +931,7 @@ charge and slashes also reduce enemy shield values
 
 ### Units improving Athalia
 
-Look for units providing: `Max HP` `CRIT` `Execution`  
-Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
+Look for units providing: `Max HP` `CRIT` `Execution`
 
 - **Pandora**
   - Max HP (single target, low)
@@ -1057,7 +1056,7 @@ high energy during sleep expands transformation field radius
 ### Units improving Aurora
 
 Look for units providing: `ATK` `Haste`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Twins**.
 
 - **Peggy**
   - ATK (all summons, high)
@@ -1080,7 +1079,7 @@ Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
 
 Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `average`, and Damage taken (Mythic+) to all summons `low`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**15** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -1201,7 +1200,7 @@ true damage per hit also reduces enemy max HP permanently
 ### Units improving Baelran
 
 Look for units providing: `ATK` `Haste` `Shield`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Twins**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -1286,7 +1285,7 @@ Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
 - **Signature skill**: Scared Swamp (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `cheat-death` `energy-inhibitor` `stealth` `summoner`
-- **Damage types**: Magic `high`
+- **Damage types**: Magic `high`, DoT `average`
 
 #### Play overview
 
@@ -1402,6 +1401,7 @@ extend stealth duration after own defeat
 #### Damage types dealt by Berial
 
 - Magic — Area, Single target
+- DoT — Single target
 
 #### Debuffs provided by Berial
 
@@ -1471,13 +1471,15 @@ max-stack debuffed targets suffer increased magic damage
 ### Units improving Bonnie
 
 Look for units providing: `ATK`  
-Common buffers are **Parisa**, **Dunlingr**, **Twins**, or **Contess**.
+Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Sonja**.
 
 Bonnie also requires units **dealing magic damage**
 
 - **Solise**
   - ATK (single target, low)
   - Enables Magic damage from allies via Magic damage + wide area + all enemies (All units)
+- **Satrana**
+  - Enables Magic damage from allies via Ally grant (Sparks); allies within 2 tiles deal magic damage via hits + battle start + wide area
 - **Galahad**
   - Enables Magic damage from allies via Magic damage + wide area + all enemies (All units)
 - **Lamentis**
@@ -1486,8 +1488,6 @@ Bonnie also requires units **dealing magic damage**
   - Enables Magic damage from allies via Magic damage + wide area + all enemies (All units)
 - **Marcille**
   - Enables Magic damage from allies via Magic damage + wide area + all enemies (All units)
-- **Niru**
-  - Enables Magic damage from allies via Magic damage + early battle + all enemies (All units)
 
 ### Units benefitting most from Bonnie
 
@@ -1554,7 +1554,7 @@ Bonnie also requires units **dealing magic damage**
 - **Signature skill**: Indomitable (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `cheat-death` `invincibility` `life-drain` `taunt`
-- **Damage types**: Physical `high`, Max HP-based damage `high`
+- **Damage types**: Physical `high`, DoT `average`, Max HP-based damage `high`
 
 #### Play overview
 
@@ -1652,7 +1652,8 @@ These are the **4** strongest pairings:
 
 #### Damage types dealt by Brutus
 
-- Physical — Arc, Area
+- Physical — Arc
+- DoT — Area
 - Max HP-based damage — Arc — `high`
 
 #### Debuffs provided by Brutus
@@ -1863,7 +1864,7 @@ heal when gaining any shield
 ### Units improving Callan
 
 Look for units providing: `Shield`  
-Common buffers are **Thador**, **Pandora**, **Contess**, or **Rowan**.
+Common buffers are **Contess**.
 
 - **Thador**
   - Shield (multiple targets, high)
@@ -1884,7 +1885,6 @@ Common buffers are **Thador**, **Pandora**, **Contess**, or **Rowan**.
 - Niru (5.0 / 5)
 - Carolina (4.3 / 5)
 - Nerion (3.8 / 5)
-- Bonnie (3.5 / 5)
 
 ### Units that can act as a replacement for Callan
 
@@ -1988,7 +1988,7 @@ stacking projectiles also apply DoT on impact
 ### Units improving Carolina
 
 Look for units providing: `CRIT`  
-Common buffers are **Lorsan**, **Twins**, **Pandora**, or **Smokey & Meerky**.
+Common buffers are **Mikola** or **Parisa**.
 
 Carolina also requires units **applying crowd control** to enemies
 
@@ -2148,8 +2148,14 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Cassadee
 
+**5** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **4** strongest pairings: 
+
+- Bonnie (3.9 / 5)
 - Alsa (3.0 / 5)
-- Kazim (2.8 / 5)
 - Mirael (2.1 / 5)
 - Odie (2.1 / 5)
 
@@ -2176,8 +2182,8 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Ravion**, or **Twins**.
 **Crowd Control**
 
 - Scarlita (94% `Knock back` `Knock up` `Stun`)
+- Nerion (64% `Knock up` `Stun` `Knock back`)
 - Lumont (60% `Knock back` `Stun` `Knock up`)
-- Perseus (60% `Knock back` `Stun`)
 
 ### Summary for Cassadee
 
@@ -2259,7 +2265,7 @@ reduce normal attacks needed to trigger enhanced attack
 ### Units improving Cecia
 
 Look for units providing: `ATK SPD / Haste` `DEF Penetration` `Physical DEF` `Magic DEF`  
-Common buffers are **Kordan**, **Aliceth**, **Rowan**, or **Ravion**.
+Common buffers are **Kordan**, **Aliceth**, **Mikola**, or **Twins**.
 
 - **Aurora**
   - Haste (all summons, high)
@@ -2489,7 +2495,7 @@ violations trigger stun or silence based on rule type
 ### Units improving Contess
 
 Look for units providing: `Energy`  
-Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
+Common buffers are **Twins** or **Smokey & Meerky**.
 
 - **Pandora**
   - Energy (single target, low) `signature fuel`
@@ -2649,7 +2655,7 @@ instantly defeat weakened enemies inside domain
 ### Units improving Cryonaia
 
 Look for units providing: `ATK` `Shield`  
-Common buffers are **Pandora**, **Evie**, **Ravion**, or **Thador**.
+Common buffers are **Evie**, **Aliceth**, **Kordan**, or **Smokey & Meerky**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -3190,7 +3196,7 @@ execution bonus increases while active buff is in effect
 ### Units improving Dionel
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Shield` `Execution`  
-Common buffers are **Mikola**, **Ravion**, **Smokey & Meerky**, or **Pandora**.
+Common buffers are **Mikola**, **Smokey & Meerky**, **Dunlingr**, or **Kazim**.
 
 Dionel also requires units **buffing them**
 
@@ -3338,7 +3344,7 @@ rule start grants allies ATK speed or life drain
 ### Units improving Dunlingr
 
 Look for units providing: `ATK SPD / Haste` `Max HP` `Shield` `Healing`  
-Common buffers are **Pandora**, **Lorsan**, **Smokey & Meerky**, or **Twins**.
+Common buffers are **Lorsan**, **Smokey & Meerky**, **Twins**, or **Mikola**.
 
 - **Pandora**
   - Max HP (single target, low)
@@ -3613,7 +3619,7 @@ full intel spawns an extra ally support quill
 ### Units improving Evie
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Pandora**, **Ravion**, **Contess**, or **Kazim**.
+Common buffers are **Contess**, **Kazim**, **Mikola**, or **Parisa**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -3770,7 +3776,7 @@ reduce vitality of enemies revived inside circular area
 ### Units improving Faramor
 
 Look for units providing: `ATK` `Haste` `Shield`  
-Common buffers are **Mikola**, **Pandora**, **Ravion**, or **Smokey & Meerky**.
+Common buffers are **Mikola**, **Smokey & Meerky**, **Dunlingr**, or **Kazim**.
 
 Faramor also requires units **grouping enemies** and/or units **buffing them**
 
@@ -3906,7 +3912,7 @@ low HP ally triggers emergency heal
 ### Units improving Fay
 
 Look for units providing: `ATK` `ATK SPD / Haste`  
-Common buffers are **Ravion**, **Pandora**, **Smokey & Meerky**, or **Mikola**.
+Common buffers are **Smokey & Meerky**, **Mikola**, **Kazim**, or **Twins**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -4041,7 +4047,7 @@ large summons gain control immunity and ATK boost
 ### Units improving Florabelle
 
 Look for units providing: `ATK` `Haste`  
-Common buffers are **Kordan**, **Aliceth**, **Ravion**, or **Pandora**.
+Common buffers are **Kordan**, **Aliceth**, **Kazim**, or **Mikola**.
 
 - **Laios**
   - Enemy defense via Phys DEF debuff (area, high)
@@ -4069,7 +4075,7 @@ Common buffers are **Kordan**, **Aliceth**, **Ravion**, or **Pandora**.
 
 Florabelle provides Shield (Mythic+) to all summons `average`.
 
-**6** units include this provider among their top 6 synergy partners. Why the match is common:
+**7** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -4183,7 +4189,7 @@ knock up then knock down the highest cumulative damage dealer
 ### Units improving Frieren
 
 Look for units providing: `ATK` `Haste`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Twins**.
 
 Frieren also requires specific **named allies**
 
@@ -4557,7 +4563,7 @@ triggered projectiles grant instant self HP recovery
 ### Units improving Granny Dahnie
 
 Look for units providing: `Haste` `Energy` `Physical DEF` `Magic DEF`  
-Common buffers are **Rowan**, **Mikola**, **Pandora**, or **Ravion**.
+Common buffers are **Mikola**, **Twins**, **Smokey & Meerky**, or **Lorsan**.
 
 - **Rowan**
   - Energy (area, high) `signature fuel`
@@ -4695,7 +4701,7 @@ scorched area enemies cannot heal or gain shields
 ### Units improving Gunnar
 
 Look for units providing: `ATK SPD / Haste`  
-Common buffers are **Pandora**, **Ravion**, **Lorsan**, or **Smokey & Meerky**.
+Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
@@ -4826,7 +4832,7 @@ no nearby enemies reduces normal attack interval further
 ### Units improving Gwyneth
 
 Look for units providing: `ATK` `ATK SPD / Haste`  
-Common buffers are **Ravion**, **Pandora**, **Aliceth**, or **Smokey & Meerky**.
+Common buffers are **Aliceth**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -4945,7 +4951,7 @@ self-heal
 ### Units improving Hammie
 
 Look for units providing: `ATK`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -5269,6 +5275,10 @@ Hepler provides Healing over time to single targets `high` and Invincible (Mythi
 - Galahad (100% `Haste`)
 - Velara (100% `Haste`)
 
+**Crowd Control**
+
+- Lumont (56% `Taunt` `Stun`)
+
 ### Summary for Hepler
 
 #### Hepler Provides
@@ -5351,7 +5361,7 @@ haste boost for ally when cleansed
 ### Units improving Hewynn
 
 Look for units providing: `ATK`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -5485,7 +5495,7 @@ formation deals extra HP-loss on boss targets
 ### Units improving Himmel
 
 Look for units providing: `ATK` `Haste` `Max HP`  
-Common buffers are **Twins**, **Mikola**, **Smokey & Meerky**, or **Pandora**.
+Common buffers are **Kazim**, **Ravion**, **Sonja**, or **Aliceth**.
 
 Himmel also requires a party **with the right composition** and/or specific **named allies**
 
@@ -5632,7 +5642,7 @@ cannon hits reduce target Phys DEF
 ### Units improving Hodgkin
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Pandora**, **Ravion**, **Contess**, or **Evie**.
+Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 
 - **Aurora**
   - Haste (all summons, high)
@@ -5979,7 +5989,7 @@ immobilize opens a window with no-cooldown weakness trigger
 ### Units improving Indris
 
 Look for units providing: `ATK` `ATK SPD / Haste`  
-Common buffers are **Dunlingr**, **Evie**, **Pandora**, or **Contess**.
+Common buffers are **Smokey & Meerky**, **Mikola**, **Twins**, or **Parisa**.
 
 Indris also requires units **putting multiple debuffs** on enemies
 
@@ -6116,7 +6126,7 @@ large enough buff grants extra debuff stack
 ### Units improving Isabella
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
-Common buffers are **Ravion**, **Pandora**, **Smokey & Meerky**, or **Mikola**.
+Common buffers are **Smokey & Meerky**, **Mikola**, **Kazim**, or **Twins**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -6275,7 +6285,7 @@ first battle charge greatly boosts damage
 ### Units improving Kafra
 
 Look for units providing: `ATK` `Shield`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -6327,8 +6337,8 @@ Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
 **Crowd Control**
 
 - Aliceth (100% `Stun` `Knock back`)
+- Nerion (100% `Stun` `Knock back`)
 - Perseus (100% `Stun` `Knock back`)
-- Scarlita (100% `Stun` `Knock back`)
 
 ### Summary for Kafra
 
@@ -6565,7 +6575,7 @@ ally fed by heal gains temporary vitality boost
 ### Units improving Koko
 
 Look for units providing: `Haste` `Shield` `Resilience` `Energy`  
-Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Pandora**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 - **Ravion**
   - Haste (multiple targets, average) `signature fuel`
@@ -6723,7 +6733,7 @@ assist or defeat inside zone repositions caster and circle to new target
 ### Units improving Kordan
 
 Look for units providing: `ATK` `Shield` `DEF Penetration` `Physical DEF` `Magic DEF`  
-Common buffers are **Mikola**, **Pandora**, **Ravion**, or **Rowan**.
+Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -6866,7 +6876,7 @@ reduce incoming ranged damage taken
 ### Units improving Korin
 
 Look for units providing: `ATK SPD / Haste` `Max HP`  
-Common buffers are **Pandora**, **Ravion**, **Twins**, or **Smokey & Meerky**.
+Common buffers are **Twins**, **Smokey & Meerky**, **Lorsan**, or **Dunlingr**.
 
 - **Pandora**
   - Max HP (single target, low)
@@ -6997,7 +7007,7 @@ permanent ATK boost stacks on vulnerable enemy kills
 ### Units improving Kruger
 
 Look for units providing: `Shield` `Physical DEF`  
-Common buffers are **Pandora**, **Rowan**, **Thador**, or **Ravion**.
+Common buffers are **Mikola** or **Twins**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
@@ -7185,8 +7195,8 @@ These are the **4** strongest pairings:
 **Crowd Control**
 
 - Kordan (100% `Knock back` `Knock up`)
+- Nerion (100% `Knock back` `Knock up`)
 - Scarlita (100% `Knock back` `Knock up`)
-- Ulmus (100% `Knock back` `Knock up`)
 
 ### Summary for Kulu
 
@@ -7539,7 +7549,7 @@ reduce damage taken from non-duel opponents
 ### Units improving Lenya
 
 Look for units providing: `ATK` `Haste` `Max HP` `Shield` `CRIT`  
-Common buffers are **Ravion**, **Kordan**, **Aliceth**, or **Pandora**.
+Common buffers are **Kordan**, **Aliceth**, **Smokey & Meerky**, or **Twins**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -7670,7 +7680,7 @@ first ultimate interrupt drains extra energy from target
 ### Units improving Lily May
 
 Look for units providing: `ATK` `DEF Penetration`  
-Common buffers are **Mikola**, **Pandora**, **Sonja**, or **Parisa**.
+Common buffers are **Mikola**, **Sonja**, **Parisa**, or **Dunlingr**.
 
 Lily May also requires units **buffing them**
 
@@ -7806,7 +7816,7 @@ protected ally also gains unaffected status
 ### Units improving Lorsan
 
 Look for units providing: `ATK`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -8078,7 +8088,7 @@ heal one extra ally per cast
 ### Units improving Lucius
 
 Look for units providing: `Shield`  
-Common buffers are **Thador**, **Pandora**, **Ravion**, or **Rowan**.
+Common buffers are **Smokey & Meerky**, **Contess**, **Lorsan**, or **Twins**.
 
 - **Thador**
   - Shield (multiple targets, high)
@@ -8149,8 +8159,8 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 **Crowd Control**
 
 - Aliceth (100% `Knock back` `Stun`)
+- Nerion (100% `Knock back` `Stun`)
 - Perseus (100% `Knock back` `Stun`)
-- Scarlita (100% `Knock back` `Stun`)
 
 ### Summary for Lucius
 
@@ -8490,7 +8500,7 @@ regenerate HP each second while shielded
 ### Units improving Lumont
 
 Look for units providing: `Haste` `Shield`  
-Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Thador**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 - **Ravion**
   - Haste (multiple targets, average) `signature fuel`
@@ -8518,17 +8528,17 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Thador**.
 
 Lumont provides Phys DEF to multiple targets `low`.
 
-- Carolina (2.3 / 5)
-- Nerion (2.1 / 5)
-- Alsa (1.7 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.2 / 5)
+- Alsa (2.4 / 5)
 
 ### Units that can act as a replacement for Lumont
 
 **Best overall replacement**
 
-- Hepler (55% `Crowd Control` `Damage`)
-- Perseus (55% `Buffs on allies` `Damage`)
-- Antandra (52% `Damage`)
+- Hepler (57% `Crowd Control` `Damage`)
+- Perseus (57% `Buffs on allies` `Damage`)
+- Antandra (54% `Damage`)
 
 **Buffs on allies**
 
@@ -8556,8 +8566,8 @@ Lumont provides Phys DEF to multiple targets `low`.
 **Crowd Control**
 
 - Hepler (100% `Taunt` `Stun`)
-- Phraesto (62% `Taunt` `Stun`)
-- Antandra (57% `Stun` `Taunt`)
+- Antandra (65% `Stun` `Taunt`)
+- Phraesto (61% `Stun` `Taunt`)
 
 ### Summary for Lumont
 
@@ -8577,7 +8587,7 @@ Lumont provides Phys DEF to multiple targets `low`.
 
 - Unaffected — Self — On skill
 - Knock back — Area — `low`
-- Stun — Area — `low`
+- Stun — Area — `average`
 - Taunt — Area — `average`
 - Knock up (Mythic+) — Single target — `low`
 - Stun (Supreme+) — Single target — `low`
@@ -8639,7 +8649,7 @@ ultimate hit reduces target Phys DEF
 ### Units improving Lyca
 
 Look for units providing: `ATK SPD / Haste`  
-Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Pandora**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 - **Ravion**
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
@@ -8791,7 +8801,7 @@ recover extra energy while buffed by allies
 ### Units improving Marcille
 
 Look for units providing: `ATK SPD / Haste` `Energy`  
-Common buffers are **Evie**, **Thador**, **Kordan**, or **Pandora**.
+Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Smokey & Meerky**.
 
 Marcille also requires specific **named allies**
 
@@ -8931,7 +8941,7 @@ trigger ATK speed bonus condition more easily
 ### Units improving Marilee
 
 Look for units providing: `ATK` `ATK SPD / Haste` `CRIT`  
-Common buffers are **Kordan**, **Aliceth**, **Ravion**, or **Pandora**.
+Common buffers are **Kordan**, **Aliceth**, **Smokey & Meerky**, or **Kazim**.
 
 - **Laios**
   - Enemy defense via Phys DEF debuff (area, high)
@@ -9074,7 +9084,7 @@ charmed or bewitched enemies take increased damage
 ### Units improving Mehira
 
 Look for units providing: `Haste` `Max HP`  
-Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Twins**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 - **Ravion**
   - Haste (multiple targets, average) `signature fuel`
@@ -9227,7 +9237,7 @@ aura duration frozen when own side controls arena
 ### Units improving Mikola
 
 Look for units providing: `ATK` `Haste`  
-Common buffers are **Ravion**, **Smokey & Meerky**, **Pandora**, or **Kazim**.
+Common buffers are **Smokey & Meerky**, **Kazim**, **Twins**, or **Lorsan**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -9363,7 +9373,7 @@ extend burn DoT duration
 ### Units improving Mirael
 
 Look for units providing: `ATK SPD / Haste`  
-Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Thador**.
+Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Lorsan**.
 
 - **Thador**
   - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
@@ -9745,8 +9755,7 @@ each critical hit gains increased crit DMG boost
 
 ### Units improving Nazrik
 
-Look for units providing: `CRIT`  
-Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
+Look for units providing: `CRIT`
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
@@ -9873,7 +9882,7 @@ all non-summon enemies drowning grants permanent empowerment and penetration inc
 ### Units improving Nerion
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Shield` `Energy` `DEF Penetration`  
-Common buffers are **Twins**, **Lorsan**, **Pandora**, or **Aliceth**.
+Common buffers are **Mikola** or **Parisa**.
 
 Nerion also requires units **applying crowd control** to enemies
 
@@ -9908,10 +9917,6 @@ Nerion also requires units **applying crowd control** to enemies
 
 ### Units that can act as a replacement for Nerion
 
-**Best overall replacement**
-
-- Bonnie (50% `Debuffs on enemies`)
-
 **Similar Skills**
 
 - Bonnie (61% `backline-inhibit` `battle-start-burst` `enemy-debuffer`)
@@ -9932,9 +9937,9 @@ Nerion also requires units **applying crowd control** to enemies
 
 **Crowd Control**
 
-- Zandrok (100% `Knock up` `Stun`)
-- Scarlita (100% `Knock up` `Stun`)
-- Cassadee (100% `Knock up` `Stun`)
+- Scarlita (100% `Knock up` `Stun` `Knock back`)
+- Cassadee (100% `Knock up` `Stun` `Knock back`)
+- Zandrok (98% `Knock up` `Stun`)
 
 ### Summary for Nerion
 
@@ -9954,6 +9959,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 #### Crowd Control provided by Nerion
 
+- Knock back — Single target — `low`
 - Knock up — Area — `low`
 - Stun — Single target — `average`
 
@@ -10408,6 +10414,15 @@ ally inside the box is unaffected by caster ultimate
 Look for units providing: `Energy`  
 Common buffers are **Rowan**, **Thador**, **Ravion**, or **Twins**.
 
+- **Aurora**
+  - Haste (all summons, high)
+  - Damage dealt via Damage dealt (all summons, average)
+  - Damage taken via Damage taken (all summons, low)
+- **Peggy**
+  - ATK (all summons, high)
+  - DEF via DEF (all summons, high)
+- **Florabelle**
+  - Shield (all summons, average)
 - **Hugin**
   - Energy (single target, average, conditional (frequent)) `signature fuel`
 
@@ -10468,6 +10483,7 @@ These are the **4** strongest pairings:
 #### Pandora Provides
 
 - Invincibility — Single target
+- Summoning (Mythic+) — Self
 
 #### Damage types dealt by Pandora
 
@@ -10691,7 +10707,7 @@ fewer normal attacks needed to trigger periodic line attack
 ### Units improving Parisa
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
-Common buffers are **Ravion**, **Pandora**, **Smokey & Meerky**, or **Kazim**.
+Common buffers are **Smokey & Meerky**, **Kazim**, **Mikola**, or **Twins**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -10848,7 +10864,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 Peggy provides Healing over time to multiple targets `high`, Ranged damage to all summons `low`, Damage dealt (EX+10) to multiple targets `low`, ATK (Supreme+) to all summons `high`, and DEF (Supreme+) to all summons `average`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**15** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -10959,7 +10975,7 @@ expand ally terrain buff area by one tile
 ### Units improving Perseus
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Shield`  
-Common buffers are **Kordan**, **Aliceth**, **Ravion**, or **Mikola**.
+Common buffers are **Kordan**, **Aliceth**, **Mikola**, or **Smokey & Meerky**.
 
 Perseus also requires units **buffing them**
 
@@ -11006,7 +11022,7 @@ Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `l
 
 - Sonja (69% `Similar Skills` `Buffs on allies`)
 - Lucca (63% `Damage` `Crowd Control`)
-- Pang (63% `Damage`)
+- Lumont (63% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -11030,7 +11046,7 @@ Perseus provides ATK to multiple targets `low`, Magic DEF to multiple targets `l
 
 - Scarlita (100% `Stun` `Knock back`)
 - Atalanta (100% `Stun` `Knock back`)
-- Valen (96% `Stun`)
+- Lumont (100% `Stun` `Knock back`)
 
 ### Summary for Perseus
 
@@ -11264,7 +11280,7 @@ teleported targets fall through portals, taking additional damage
 ### Units improving Pippa
 
 Look for units providing: `Haste`  
-Common buffers are **Pandora**, **Ravion**, **Lorsan**, or **Smokey & Meerky**.
+Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
 
 - **Pandora**
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
@@ -11396,7 +11412,7 @@ assigned ally tasks grant brief ATK boost and unaffected state
 ### Units improving Ravion
 
 Look for units providing: `ATK` `Haste` `Energy`  
-Common buffers are **Pandora**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Twins**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -11688,7 +11704,7 @@ control immunity skill cooldown reduced
 ### Units improving Rhys
 
 Look for units providing: `ATK SPD / Haste` `CRIT` `CRIT DMG Boost`  
-Common buffers are **Kordan**, **Aliceth**, **Ravion**, or **Lyca**.
+Common buffers are **Kordan**, **Aliceth**, **Smokey & Meerky**, or **Lorsan**.
 
 - **Laios**
   - Enemy defense via Phys DEF debuff (area, high)
@@ -11814,7 +11830,7 @@ place one extra heal at battle start
 ### Units improving Rowan
 
 Look for units providing: `ATK` `Haste` `Max HP` `Energy`  
-Common buffers are **Pandora**, **Ravion**, **Twins**, or **Kazim**.
+Common buffers are **Twins**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -12210,8 +12226,7 @@ strike has no cooldown limit when all enemies are ignited
 
 ### Units improving Satrana
 
-Look for units providing: `Max HP`  
-Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
+Look for units providing: `Max HP`
 
 - **Pandora**
   - Max HP (single target, low)
@@ -12231,9 +12246,7 @@ Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
 
 Satrana provides Magic damage (Mythic+) to single targets `average` and Damage taken (EX+10) to single targets `low`.
 
-- Bonnie (3.4 / 5)
-- Carolina (2.0 / 5)
-- Alsa (1.5 / 5)
+- Bonnie (5.0 / 5)
 
 ### Units that can act as a replacement for Satrana
 
@@ -12388,6 +12401,7 @@ Scarlita provides Shield (Supreme+) to single targets `low`.
 
 - Lorsan (64% `Stun`)
 - Lucca (53% `Stun` `Knock up` `Knock down`)
+- Lumont (51% `Stun` `Knock back` `Knock up`)
 
 ### Summary for Scarlita
 
@@ -12469,7 +12483,7 @@ pounce reduces extra Phys DEF when carrying specific buff
 ### Units improving Seth
 
 Look for units providing: `ATK` `Haste` `CRIT` `Energy` `Physical DEF`  
-Common buffers are **Mikola**, **Pandora**, **Ravion**, or **Rowan**.
+Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -12614,7 +12628,7 @@ drain ally HP at start for lasting ATK boost and shield
 ### Units improving Shadewing
 
 Look for units providing: `ATK` `Shield` `Energy`  
-Common buffers are **Pandora**, **Smokey & Meerky**, **Mikola**, or **Contess**.
+Common buffers are **Ravion**, **Evie**, **Kazim**, or **Parisa**.
 
 Shadewing also requires units **dealing continuous damage** to enemies
 
@@ -12738,7 +12752,7 @@ third hit reduces target vitality
 ### Units improving Shakir
 
 Look for units providing: `Haste` `Max HP`  
-Common buffers are **Pandora**, **Ravion**, **Twins**, or **Smokey & Meerky**.
+Common buffers are **Twins**, **Smokey & Meerky**, **Lorsan**, or **Dunlingr**.
 
 - **Pandora**
   - Max HP (single target, low)
@@ -12883,7 +12897,7 @@ each hero defeat spawns an extra summon
 ### Units improving Shemira
 
 Look for units providing: `Shield` `Energy`  
-Common buffers are **Evie**, **Thador**, **Kordan**, or **Pandora**.
+Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Smokey & Meerky**.
 
 - **Thador**
   - Energy (single target, high) `signature fuel`
@@ -13262,7 +13276,7 @@ enhanced damage against marked enemy roles
 ### Units improving Sinbad
 
 Look for units providing: `ATK SPD / Haste` `Energy`  
-Common buffers are **Ravion**, **Pandora**, **Thador**, or **Rowan**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 - **Ravion**
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
@@ -13398,7 +13412,7 @@ extra healing on each aura use
 ### Units improving Smokey & Meerky
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Pandora**, **Ravion**, **Contess**, or **Evie**.
+Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -13534,7 +13548,7 @@ companion damage scales on stored excess healing
 ### Units improving Solise
 
 Look for units providing: `ATK`  
-Common buffers are **Pandora**, **Ravion**, **Contess**, or **Evie**.
+Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -13799,7 +13813,7 @@ extended knock back on next melee skill when block triggers, dealing extra damag
 ### Units improving Soren
 
 Look for units providing: `Haste` `Max HP` `Energy`  
-Common buffers are **Ravion**, **Pandora**, **Twins**, or **Smokey & Meerky**.
+Common buffers are **Twins**, **Smokey & Meerky**, **Lorsan**, or **Dunlingr**.
 
 - **Ravion**
   - Haste (multiple targets, average) `signature fuel`
@@ -13860,7 +13874,7 @@ Soren provides Shield (Supreme+) to single targets `low`.
 
 - Perseus (100% `Stun` `Knock back`)
 - Scarlita (100% `Stun` `Knock back`)
-- Lumont (93% `Stun` `Knock back`)
+- Lumont (100% `Stun` `Knock back`)
 
 ### Summary for Soren
 
@@ -14071,7 +14085,7 @@ regeneration rate increased when defeated for the first time
 ### Units improving Talene
 
 Look for units providing: `ATK` `Max HP` `Healing`  
-Common buffers are **Pandora**, **Contess**, **Evie**, or **Ravion**.
+Common buffers are **Contess**, **Evie**, **Twins**, or **Mikola**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -14194,7 +14208,7 @@ extra secondary form use gained per assist or kill
 ### Units improving Tasi
 
 Look for units providing: `ATK` `Haste` `Max HP`  
-Common buffers are **Pandora**, **Ravion**, **Twins**, or **Mikola**.
+Common buffers are **Twins**, **Mikola**, **Kazim**, or **Smokey & Meerky**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -14309,7 +14323,7 @@ charge hits reduce target Phys DEF
 ### Units improving Temesia
 
 Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
-Common buffers are **Ravion**, **Pandora**, **Smokey & Meerky**, or **Kazim**.
+Common buffers are **Smokey & Meerky**, **Kazim**, **Mikola**, or **Twins**.
 
 - **Ravion**
   - ATK (multiple targets, high)
@@ -14697,7 +14711,7 @@ shield regeneration speed increases while casting ultimate
 ### Units improving Tilaya
 
 Look for units providing: `ATK` `Max HP` `Shield`  
-Common buffers are **Pandora**, **Ravion**, **Twins**, or **Contess**.
+Common buffers are **Twins**, **Contess**, **Evie**, or **Mikola**.
 
 - **Pandora**
   - ATK (single target, high)
@@ -14826,7 +14840,7 @@ linked allies borrow best stats from each other
 ### Units improving Twins
 
 Look for units providing: `Haste` `Energy`  
-Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Pandora**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Dunlingr**, or **Kazim**.
 
 - **Ravion**
   - Haste (multiple targets, average) `signature fuel`
@@ -14854,7 +14868,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Lorsan**, or **Pandora**.
 
 Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `average`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `average`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**78** units include this provider among their top 6 synergy partners. Why the match is common:
+**77** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -15103,7 +15117,7 @@ deal bonus damage to marked enemy
 ### Units improving Vala
 
 Look for units providing: `ATK` `Haste` `Energy`  
-Common buffers are **Ravion**, **Kazim**, **Twins**, or **Smokey & Meerky**.
+Common buffers are **Smokey & Meerky**, **Mikola**, **Lorsan**, or **Contess**.
 
 Vala also requires enemies **to be defeated**
 
@@ -15259,7 +15273,7 @@ lightning AoE also stuns enemies
 ### Units improving Valen
 
 Look for units providing: `ATK` `Energy`  
-Common buffers are **Kordan**, **Aliceth**, **Ravion**, or **Pandora**.
+Common buffers are **Kordan**, **Aliceth**, **Smokey & Meerky**, or **Kazim**.
 
 - **Laios**
   - Enemy defense via Phys DEF debuff (area, high)
@@ -15524,7 +15538,7 @@ all circles awakened extends battlefield coverage; subsequent casts make allies 
 ### Units improving Velara
 
 Look for units providing: `Haste` `Shield` `Energy`  
-Common buffers are **Pandora**, **Ravion**, **Thador**, or **Rowan**.
+Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 - **Pandora**
   - Energy (single target, low) `signature fuel`
@@ -15792,8 +15806,7 @@ gain a shield on first hit against the marked target
 
 ### Units improving Walker
 
-Look for units providing: `Max HP` `Shield` `CRIT`  
-Common buffers are **Pandora**, **Thador**, **Rowan**, or **Ravion**.
+Look for units providing: `Max HP` `Shield` `CRIT`
 
 - **Pandora**
   - Max HP (single target, low)
@@ -16030,7 +16043,7 @@ laser turret attacks apply burn to enemies hit
 ### Units improving Zanie
 
 Look for units providing: `ATK` `ATK SPD / Haste` `DEF Penetration`  
-Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
+Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Aliceth**.
 
 - **Peggy**
   - ATK (all summons, high)
@@ -16075,8 +16088,8 @@ Common buffers are **Pandora**, **Ravion**, **Kazim**, or **Mikola**.
 **Crowd Control**
 
 - Aliceth (100% `Knock back` `Stun`)
+- Nerion (100% `Knock back` `Stun`)
 - Perseus (100% `Knock back` `Stun`)
-- Scarlita (100% `Knock back` `Stun`)
 
 ### Summary for Zanie
 
@@ -16157,7 +16170,7 @@ fatal blow triggers immediate transition to dormant state
 ### Units improving Zorya
 
 Look for units providing: `ATK` `Haste` `Max HP` `Energy`  
-Common buffers are **Smokey & Meerky**, **Ravion**, **Twins**, or **Lyca**.
+Common buffers are **Mikola**, **Kazim**, **Parisa**, or **Lorsan**.
 
 Zorya also requires allies **casting ultimates**
 
