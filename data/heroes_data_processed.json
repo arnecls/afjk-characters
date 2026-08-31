@@ -5689,6 +5689,17 @@
             "raw": "Increases the hiding duration after being defeated by 10s.",
             "active": [
               "Increases the hiding duration after being defeated by 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with ): Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s.",
+                  "After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%.",
+                  "Once 3 Silhouettes have been summoned, they no longer lose HP over time."
+                ]
+              }
             ]
           },
           "effects": [],
@@ -8317,9 +8328,9 @@
         "Running Tide": {
           "category": "ultimate",
           "description": {
-            "raw": "Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies on the path and knocking them back for 2s.",
+            "raw": "Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies in the path and knocking them back for 2 tiles.",
             "active": [
-              "Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies on the path and knocking them back for 2s."
+              "Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies in the path and knocking them back for 2 tiles."
             ],
             "upgrades": [
               {
@@ -8791,7 +8802,7 @@
         "synergy_signature_speed": "average",
         "synergy_signature_is_ult": false,
         "signature_first_cast_needs_energy": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "average",
         "avg_attack_range": 10.0,
         "placement_constraints": [
@@ -8813,7 +8824,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -9401,6 +9412,19 @@
             "raw": "Reduces the required normal attacks to trigger Agonizing Puncture by 1.",
             "active": [
               "Reduces the required normal attacks to trigger Agonizing Puncture by 1."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with ): Cecia gains 500 initial Energy.",
+                  "When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies.",
+                  "The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat.",
+                  "Cecia shares all stolen stats with Mr.",
+                  "Carlyle."
+                ]
+              }
             ]
           },
           "effects": [],
@@ -16336,7 +16360,7 @@
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow",
+        "non_ult_speed": "average",
         "avg_attack_range": 5.000000000000001,
         "placement_constraints": [],
         "skill_overview": {
@@ -19795,7 +19819,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
@@ -27484,7 +27508,7 @@
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": false,
         "ult_speed": "slow",
-        "non_ult_speed": "slow",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -27939,7 +27963,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -39956,7 +39980,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "average",
-              "DoT": "high"
+              "DoT": "average"
             }
           }
         }
@@ -40375,7 +40399,7 @@
             "debuffs": "none",
             "damage_types": {
               "HP loss": "low",
-              "Magic": "high"
+              "Magic": "average"
             }
           }
         }
@@ -43106,7 +43130,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average"
             }
           }
         }
@@ -43252,21 +43276,21 @@
                 "level": "2",
                 "unlock": "Unlocks at Level 71",
                 "text": [
-                  "Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield damage to 150% (ATK-based) + 10% (SP-based)."
+                  "Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield swing damage to 150% (ATK-based) + 10% (SP-based)."
                 ]
               },
               {
                 "level": "3",
                 "unlock": "Unlocks at Level 131",
                 "text": [
-                  "Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield damage to 160% (ATK-based) + 10% (SP-based)."
+                  "Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield swing damage to 160% (ATK-based) + 10% (SP-based)."
                 ]
               },
               {
                 "level": "4",
                 "unlock": "Unlocks at Level 191",
                 "text": [
-                  "Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield damage to 170% (ATK-based) + 10% (SP-based)."
+                  "Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield swing damage to 170% (ATK-based) + 10% (SP-based)."
                 ]
               }
             ]
@@ -43315,21 +43339,21 @@
                 "level": "2",
                 "unlock": "Unlocks at Level 91",
                 "text": [
-                  "Allies standing on the fertile ground now have their TK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based)."
+                  "Allies standing on the fertile ground now have their ATK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based)."
                 ]
               },
               {
                 "level": "3",
                 "unlock": "Unlocks at Level 151",
                 "text": [
-                  "Allies standing on the fertile ground now have their TK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based)."
+                  "Allies standing on the fertile ground now have their ATK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based)."
                 ]
               },
               {
                 "level": "4",
                 "unlock": "Unlocks at Level 211",
                 "text": [
-                  "Allies standing on the fertile ground now have their TK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based)."
+                  "Allies standing on the fertile ground now have their ATK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based)."
                 ]
               }
             ]
@@ -43348,7 +43372,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 14.5
+                  "value": 17.5
                 }
               ],
               "persistence": "temporary"
@@ -47018,7 +47042,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -47029,7 +47053,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -47585,6 +47609,688 @@
             "heal": "average",
             "buffs": "average",
             "debuffs": "average",
+            "damage_types": {
+              "Magic": "high"
+            }
+          }
+        }
+      }
+    },
+    "Rolan": {
+      "long_name": "Rolan - First Crown",
+      "faction": "celestial",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 10,
+      "release_date": "2026-08-06",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Oath in the Stone": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage. He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP. The max HP gained from this skill gradually decays over 12s. Casting this skill also grants Rolan's allies 15% Morale.",
+            "active": [
+              "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage.",
+              "He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP.",
+              "The max HP gained from this skill gradually decays over 12s.",
+              "Casting this skill also grants Rolan's allies 15% Morale."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases HP restored to 1050% (ATK-based) + 80% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases HP restored to 1100% (ATK-based) + 80% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases HP restored to 1150% (ATK-based) + 80% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases HP restored to 1200% (ATK-based) + 80% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Cleanse",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200.0
+                }
+              ],
+              "duration": 0.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200.0
+                }
+              ],
+              "duration": 12.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200.0
+                }
+              ]
+            }
+          ],
+          "initial_energy": 400.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Cleanse — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — All units",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Undying Valor": {
+          "category": "skill1",
+          "description": {
+            "raw": "Passive. When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale. For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK. The team's Morale is capped at 100%. During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate. Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount. If Rolan is defeated, all Morale is permanently lost. Active. Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK. If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active.",
+            "passive": [
+              "When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale.",
+              "For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK.",
+              "The team's Morale is capped at 100%.",
+              "During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate.",
+              "Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount.",
+              "If Rolan is defeated, all Morale is permanently lost."
+            ],
+            "active": [
+              "Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK.",
+              "If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the ATK bonus from the blessing to 20% + 2% (SP-based) of Rolan's ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the ATK bonus from the blessing to 22% + 2% (SP-based) of Rolan's ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the ATK bonus from the blessing to 24% + 2% (SP-based) of Rolan's ATK."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 24.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ],
+              "duration": 10.0,
+              "persistence": "temporary"
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Single target",
+              "target": "ally",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 4.0,
+          "skill_card_tags": [
+            {
+              "label": "ATK — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Haste",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected"
+            }
+          ]
+        },
+        "Clemency's Edge": {
+          "category": "skill2",
+          "description": {
+            "raw": "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s. If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s.",
+            "active": [
+              "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s.",
+              "If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the HP restored to 260% (ATK-based) + 30% (SP-based) and the damage dealt to 260% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the HP restored to 280% (ATK-based) + 30% (SP-based) and the damage dealt to 280% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the HP restored to 300% (ATK-based) + 30% (SP-based) and the damage dealt to 300% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 36.0
+                }
+              ],
+              "duration": 10.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 330.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.0
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 1.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Direct healing — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Stun — Area"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Healing by 9 and reduces damage taken by 9%. For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%.",
+            "active": [
+              "Increases Healing by 9 and reduces damage taken by 9%.",
+              "For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Healing by 12 and reduces damage taken by 12%.",
+                  "For every 20% Morale the allied team has, Rolan gains an extra 4 Healing and further reduces his damage taken by 4%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Healing by 15 and reduces damage taken by 15%.",
+                  "For every 20% Morale the allied team has, Rolan gains an extra 5 Healing and further reduces his damage taken by 5%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Radiant Reign": {
+          "category": "skill4",
+          "description": {
+            "raw": "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward. When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again. While the ward is active, Morale will not decrease unless Rolan is defeated. In non-Boss battles, allies inside the ward are immune to stat reductions.",
+            "active": [
+              "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward.",
+              "When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again.",
+              "While the ward is active, Morale will not decrease unless Rolan is defeated.",
+              "In non-Boss battles, allies inside the ward are immune to stat reductions."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "The radiant clone now inherits 90% of the ally's basic stats."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "The radiant clone now inherits 100% of the ally's basic stats."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Allies within the radiant ward recover 80% (ATK-based) HP every second.",
+                  "while all enemies within it lose 40% (ATK-based) HP every second."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "HoT — Area",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes. If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s.",
+            "active": [
+              "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes.",
+              "If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "DEF Penetration",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ],
+              "duration": 8.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ],
+              "duration": 8.0,
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "DEF Penetration — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — All units",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Stacked resource",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Casting the Ultimate grants allied Morale."
+          },
+          {
+            "label": "Ally empower",
+            "tier": "base",
+            "targeting": "Multiple targets",
+            "description": "Rolan blesses the two allies with the highest cumulative damage."
+          },
+          {
+            "label": "Ally Ultimate casts",
+            "tier": "mythic+",
+            "targeting": "Allies",
+            "description": "A radiant clone repeats an ally Ultimate after Morale reaches its cap."
+          },
+          {
+            "label": "Party composition",
+            "tier": "supreme+",
+            "targeting": "Allies",
+            "description": "The strongest deployed faction changes the battle-start Morale and faction bonuses."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area"
+        ],
+        [
+          "dot",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "haste",
+        "max_hp",
+        "def_penetration"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "average",
+        "walk_speed": "slow",
+        "signature_skill_name": "Oath in the Stone",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 10.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
             "damage_types": {
               "Magic": "high"
             }
@@ -48194,7 +48900,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "high",
-              "DoT": "average"
+              "DoT": "low"
             }
           }
         }
@@ -55102,17 +55808,17 @@
         "walk_speed": "fast",
         "signature_skill_name": "Whirlwind Swing",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -55123,7 +55829,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -55817,6 +56523,583 @@
             "damage_types": {
               "Magic": "average",
               "True damage": "low"
+            }
+          }
+        }
+      }
+    },
+    "Taichi & Agumon": {
+      "long_name": "Taichi & Agumon - Courage Duo",
+      "faction": "dimensional",
+      "class": "warrior",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-08-18",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Gaia Force": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy. The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills. When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area. Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based). Wargreymon is unaffected while casting this skill. Passive. Taichi does not directly ioin the battle, remaining invincible on the sidelines. Everv 3s. Taichi cheers for Agumon, restoring 150 Energy for him. If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250.",
+            "passive": [
+              "Taichi does not directly ioin the battle, remaining invincible on the sidelines.",
+              "Everv 3s.",
+              "Taichi cheers for Agumon, restoring 150 Energy for him.",
+              "If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250."
+            ],
+            "active": [
+              "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy.",
+              "The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills.",
+              "When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area.",
+              "Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based).",
+              "Wargreymon is unaffected while casting this skill."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases Gaia Force's damage per hit to 170% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 240% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases Gaia Force's damage per hit to 180% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 260% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases Gaia Force's damage per hit to 190% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 280% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases Gaia Force's damage per hit to 200% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 300% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 400.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 330.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "initial_energy": 500.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Brave Tornado": {
+          "category": "skill1",
+          "description": {
+            "raw": "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position. He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s. Wargreymon is invincible while casting this skill. Damage from this skill gains 60 extra DEF Penetration.",
+            "active": [
+              "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position.",
+              "He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s.",
+              "Wargreymon is invincible while casting this skill.",
+              "Damage from this skill gains 60 extra DEF Penetration."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases damage dealt to every enemy in his path to 440% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage dealt to every enemy in his path to 460% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage dealt to every enemy in his path to 480% (ATK-based) + 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 520.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 3.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Stun — path"
+            }
+          ]
+        },
+        "Recovery Shield": {
+          "category": "skill2",
+          "description": {
+            "raw": "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s. While the shield is active, Wargreymon remains unaffected. When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value. When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill.",
+            "active": [
+              "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s.",
+              "While the shield is active, Wargreymon remains unaffected.",
+              "When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value.",
+              "When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the shield value granted by this skill to 800% (ATK-based) + 100% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the shield value granted by this skill to 900% (ATK-based) + 100% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the shield value granted by this skill to 1000% (ATK-based) + 100% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1000.0
+                }
+              ],
+              "duration": 10.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "cooldown": 14.0,
+          "initial_cooldown": 9.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases ATK by 9% during battle. After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%.",
+            "active": [
+              "Increases ATK by 9% during battle.",
+              "After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases ATK by 12% during battle.",
+                  "After assisting or defeating a non-summoned enemy, increases ATK by an extra 8%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases ATK by 15% during battle.",
+                  "After assisting or defeating a non-summoned enemy, increases ATK by an extra 10%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Dramon Killer": {
+          "category": "skill4",
+          "description": {
+            "raw": "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP. If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them.",
+            "active": [
+              "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP.",
+              "If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  ":Increases the HP loss caused to 160% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "When Wargreymon deals damage to an enemy with a skill or normal attack, he deals extra damage equal to 15% of the enemy's lost HP.",
+                  "This extra damage cannot exceed Wargreymon's 180% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the HP loss caused to 180% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 180.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 650.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 4.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "HP loss"
+            },
+            {
+              "label": "Physical"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s. If Gabumon receives the power of courage, he gains 300 extra Energy.",
+            "active": [
+              "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s.",
+              "If Gabumon receives the power of courage, he gains 300 extra Energy."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "path",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "duration": 20.0,
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "ATK — path",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area, Single target"
+        ],
+        [
+          "hp_loss",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {
+        "hp_loss": "average"
+      },
+      "benefit_stats": [
+        "atk",
+        "shield",
+        "energy",
+        "def_penetration"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "average",
+        "walk_speed": "veryfast",
+        "signature_skill_name": "Gaia Force",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 7.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average",
+              "HP loss": "average"
             }
           }
         }
@@ -60358,7 +61641,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
@@ -62490,6 +63773,560 @@
         }
       }
     },
+    "Voracia": {
+      "long_name": "Voracia - Feastweaver",
+      "faction": "mauler",
+      "class": "mage",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 10,
+      "release_date": "2026-08-06",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "The Main Course": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill. Active. Voracia remains unaffected. She summons a plate covering a 1-tile radius on a target tile. She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s. Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt. If enhanced by Fervor, this skill gains 70 Penetration when dealing damage. In Auto Battle, this skill prioritizes the area with the most enemies.",
+            "passive": [
+              "When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill."
+            ],
+            "active": [
+              "Voracia remains unaffected.",
+              "She summons a plate covering a 1-tile radius on a target tile.",
+              "She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s.",
+              "Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt.",
+              "If enhanced by Fervor, this skill gains 70 Penetration when dealing damage.",
+              "In Auto Battle, this skill prioritizes the area with the most enemies."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt to 850% (ATK-based) + 100% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt to 900% (ATK-based) + 100% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt to 950% (ATK-based) + 100% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt to 1000% (ATK-based) + 100% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "displace"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_down",
+              "duration": 4.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1100.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 45.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "initial_energy": 600.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Displace — Area"
+            },
+            {
+              "label": "Knock down — Area"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Prime Cut": {
+          "category": "skill1",
+          "description": {
+            "raw": "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles. If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage.",
+            "active": [
+              "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles.",
+              "If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases basic slash damage to 460% (ATK-based) + 50% (SP-based) and the extra slash's damage to 230% (ATK-based) + 25% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases basic slash damage to 470% (ATK-based) + 50% (SP-based) and the extra slash's damage to 240% (ATK-based) + 25% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases basic slash damage to 480% (ATK-based) + 50% (SP-based) and the extra slash's damage to 250% (ATK-based) + 25% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 7,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 730.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 5.0,
+          "initial_cooldown": 5.0,
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Vino Inferno": {
+          "category": "skill2",
+          "description": {
+            "raw": "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies. She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s. If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range.",
+            "active": [
+              "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies.",
+              "She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s.",
+              "If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases roast damage to 50% (ATK-based) + 6% (SP-based) and the extra flame damage to 260% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases roast damage to 55% (ATK-based) + 6% (SP-based) and the extra flame damage to 280% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases roast damage to 60% (ATK-based) + 6% (SP-based) and the extra flame damage to 300% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ],
+              "duration": 5.0,
+              "tick": 0.5
+            }
+          ],
+          "cooldown": 7.0,
+          "initial_cooldown": 2.0,
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Voracia increases her ATK by 9% during battle. Once her appetite awakens, she increases her ATK further by 6%.",
+            "active": [
+              "Voracia increases her ATK by 9% during battle.",
+              "Once her appetite awakens, she increases her ATK further by 6%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Voracia increases her ATK by 12% during battle.",
+                  "Once her appetite awakens, she increases her ATK further by 8%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Voracia increases her ATK by 15% during battle.",
+                  "Once her appetite awakens, she increases her ATK further by 10%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Chef's Choice": {
+          "category": "skill4",
+          "description": {
+            "raw": "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats. For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value. If the target is not a boss, they also permanently lose all Energy.",
+            "active": [
+              "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats.",
+              "For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value.",
+              "If the target is not a boss, they also permanently lose all Energy."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the basic stats absorbed per devour to 37.5%, and raises the cap for each absorbed stat to 55% of the initial value of Voracia's corresponding stat."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "When casting this skill, Voracia devours an additional enemy with the next highest cumulative damage dealt."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the basic stats absorbed per devour to 40%, and raises the cap for each absorbed stat to 60% of the initial value of Voracia's corresponding stat."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 900.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Basic stats — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt.",
+            "active": [
+              "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 35.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Max HP — Area",
+              "polarity": "debuff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Enemy grouping",
+            "tier": "base",
+            "targeting": "Enemies",
+            "description": "Voracia pulls nearby enemies to the target plate."
+          },
+          {
+            "label": "Enhanced form",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Damaging enough enemies grants Fervor to a skill."
+          },
+          {
+            "label": "Stat steal",
+            "tier": "mythic+",
+            "targeting": "Self",
+            "description": "After all skills gain Fervor, Voracia devours high-damage enemies and gains their basic stats."
+          },
+          {
+            "label": "Energy steal",
+            "tier": "mythic+",
+            "targeting": "Enemies",
+            "description": "A devoured non-boss enemy permanently loses all Energy."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area"
+        ],
+        [
+          "dot",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "max_hp",
+        "def_penetration",
+        "physical_def",
+        "magic_def"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "avg attack range 10.0 tiles",
+        "casting_speed": "fast",
+        "walk_speed": "normal",
+        "signature_skill_name": "The Main Course",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
+        "avg_attack_range": 10.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "high",
+              "DoT": "high"
+            }
+          }
+        }
+      }
+    },
     "Walker": {
       "long_name": "Walker - Wildland Outlaw",
       "faction": "lightbearer",
@@ -63066,6 +64903,504 @@
             "debuffs": "average",
             "damage_types": {
               "Physical": "average"
+            }
+          }
+        }
+      }
+    },
+    "Yamato & Gabumon": {
+      "long_name": "Yamato & Gabumon - Cool Duo",
+      "faction": "dimensional",
+      "class": "mage",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2026-08-18",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Cocytus Breath": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Gabumon uses Petit Fire as his normal attack, dealing 100% (ATK-based) damage to an enemy. The first time Gabumon casts his Ultimate, he Digivolves into Metalgarurumon, permanently increasing his ATK by 40% and Haste by 25, and unlocking new skills. When casting Ultimate as Metalgarurumon, he jumps to a target tile and unleashes Cocytus Breath in an area (4-tile long, 3-tile wide). This causes enemies within the area to lose 28% (ATK-based) + 2% (SP-based) HP every 0.5s and freezes them for 3s. Passive. Yamato does not directly join the battle, remaining invincible on the sidelines. When a battle starts and whenever Gabumon casts his Ultimate, Yamato cheers for Gabumon, increasing Gabumon's ATK bv 15% for 5s. While this effect is active, Gabumon recovers an extra 150 Energy every second if he has not yet Digivolved into Metalgarurumon.",
+            "passive": [
+              "Yamato does not directly join the battle, remaining invincible on the sidelines.",
+              "When a battle starts and whenever Gabumon casts his Ultimate, Yamato cheers for Gabumon, increasing Gabumon's ATK bv 15% for 5s.",
+              "While this effect is active, Gabumon recovers an extra 150 Energy every second if he has not yet Digivolved into Metalgarurumon."
+            ],
+            "active": [
+              "Gabumon uses Petit Fire as his normal attack, dealing 100% (ATK-based) damage to an enemy.",
+              "The first time Gabumon casts his Ultimate, he Digivolves into Metalgarurumon, permanently increasing his ATK by 40% and Haste by 25, and unlocking new skills.",
+              "When casting Ultimate as Metalgarurumon, he jumps to a target tile and unleashes Cocytus Breath in an area (4-tile long, 3-tile wide).",
+              "This causes enemies within the area to lose 28% (ATK-based) + 2% (SP-based) HP every 0.5s and freezes them for 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Enemies affected by Cocytus Breath lose 30% (ATK-based) + 2% (SP-based) HP every 0.5s."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Enemies affected by Cocytus Breath lose 32% (ATK-based) + 2% (SP-based) HP every 0.5s."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Enemies affected by Cocytus Breath lose 34% (ATK-based) + 2% (SP-based) HP every 0.5s."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Enemies affected by Cocytus Breath lose 36% (ATK-based) + 2% (SP-based) HP every 0.5s."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "rectangle",
+              "target_count": -1,
+              "area_count": 4,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ],
+              "duration": 5.0,
+              "tick": 0.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "rectangle",
+              "target_count": -1,
+              "area_count": 4,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 3.0
+            }
+          ],
+          "skill_range": 1,
+          "initial_energy": 400.0,
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Bind — Area"
+            }
+          ]
+        },
+        "Garuru Tomahawk": {
+          "category": "skill1",
+          "description": {
+            "raw": "Metalgarurumon fires a massive Freeze Bomber. Upon hitting the main target, it deals 360% (ATK-based) + 48% (SP-based) damage to them and 180% (ATK-based) + 24% (SP-based) damage to other enemies within 1 tile.",
+            "active": [
+              "Metalgarurumon fires a massive Freeze Bomber.",
+              "Upon hitting the main target, it deals 360% (ATK-based) + 48% (SP-based) damage to them and 180% (ATK-based) + 24% (SP-based) damage to other enemies within 1 tile."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases damage to the main target to 400% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 200% (ATK-based) + 24% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage to the main target to 440% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 220% (ATK-based) + 24% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage to the main target to 480% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 240% (ATK-based) + 24% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 528.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 9.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Garuru Howling": {
+          "category": "skill2",
+          "description": {
+            "raw": "Metalgarurumon howls, increasing his ATK by 19% + 2.5% (SP-based) and Haste by 40 for 16s.",
+            "active": [
+              "Metalgarurumon howls, increasing his ATK by 19% + 2.5% (SP-based) and Haste by 40 for 16s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases bonus ATK to 21% + 2.5% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases bonus ATK to 23% + 2.5% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases bonus ATK to 25% + 2.5% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 40.0
+                }
+              ],
+              "duration": 16.0,
+              "persistence": "temporary"
+            }
+          ],
+          "cooldown": 25.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Haste — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Energy recovery from attacks by 18% during battle. After Digivolving, increases Energy recovery from attacks by an extra 12%.",
+            "active": [
+              "Increases Energy recovery from attacks by 18% during battle.",
+              "After Digivolving, increases Energy recovery from attacks by an extra 12%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Energy recovery from attacks by 24% during battle.",
+                  "After Digivolving, increases Energy recovery from attacks by an extra 16%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Energy recovery from attacks by 30% during battle.",
+                  "After Digivolving, increases Energy recovery from attacks by an extra 20%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy Regen on Hit",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Energy Regen on Hit — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Grace Cross Freezer": {
+          "category": "skill4",
+          "description": {
+            "raw": "Metalgarurumon fires 10 small missiles, distributed evenly among all enemies. When a missile hits, it deals 60% (ATK-based) damage to all enemies within 1 tile of the target. During a single cast, if the same enemy has taken 4 hits from this skill, all subsequent hits on that enemy deal 50% less damage. During battle preparation, for each ally deployed within 1 tile of Gabumon, this skill permanently fires 2 more missiles, up to 6 extra missiles.",
+            "active": [
+              "Metalgarurumon fires 10 small missiles, distributed evenly among all enemies.",
+              "When a missile hits, it deals 60% (ATK-based) damage to all enemies within 1 tile of the target.",
+              "During a single cast, if the same enemy has taken 4 hits from this skill, all subsequent hits on that enemy deal 50% less damage.",
+              "During battle preparation, for each ally deployed within 1 tile of Gabumon, this skill permanently fires 2 more missiles, up to 6 extra missiles."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "When a missile hits, it deals 70% (ATK-based) damage to all enemies within 1 tile of the target."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "During a single cast, if an enemy has taken 4 hits from this skill, that enemy is immediately frozen for 2s and takes 360% (ATK-based) extra damage."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "When a missile hits, it deals 80% (ATK-based) damage to all enemies within 1 tile of the target."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 360.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 2.0
+            }
+          ],
+          "cooldown": 12.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Bind — Area"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When Gabumon Digivolves, his Bond of Friendship activates. Gabumon and allies who were initially deployed within 1 tiles of him recover 150% (ATK-based) HP per second for 8s. If Agumon receives this effect, the duration is extended to 12s. For each ally affected, Gabumon permanently increases his ATK by 5%, up to 15%.",
+            "active": [
+              "When Gabumon Digivolves, his Bond of Friendship activates.",
+              "Gabumon and allies who were initially deployed within 1 tiles of him recover 150% (ATK-based) HP per second for 8s.",
+              "If Agumon receives this effect, the duration is extended to 12s.",
+              "For each ally affected, Gabumon permanently increases his ATK by 5%, up to 15%."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ],
+              "duration": 8.0,
+              "tick": 1.0
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "HoT — Area",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area"
+        ],
+        [
+          "dot",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "haste",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "slow",
+        "walk_speed": "fast",
+        "signature_skill_name": "Cocytus Breath",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "average",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "low",
+              "DoT": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "low",
+              "DoT": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "average",
+            "first_cast_speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "high"
             }
           }
         }
@@ -64846,7 +67181,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",

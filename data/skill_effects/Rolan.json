@@ -1,0 +1,436 @@
+{
+  "title": "Rolan - First Crown",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "0c0644722666db0461aabb17d20e936ade2f8f5e498e89fff0fec85474e0ccff",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Cleanse",
+              "label": "buff_stat",
+              "persistence": "temporary",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 1
+                }
+              ],
+              "duration": 0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150
+                }
+              ],
+              "persistence": "temporary",
+              "duration": 12
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "heal",
+              "name": "Direct healing",
+              "healing_type": "direct",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Stacked resource",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "Casting the Ultimate grants allied Morale."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "2e4a730f08a07e6ae199c6264e10353369b1ae625ffa557e772ccc80d2d7fa9f",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 24
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 2,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 24
+                }
+              ],
+              "persistence": "temporary",
+              "duration": 10
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 2,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50
+                }
+              ],
+              "persistence": "temporary",
+              "duration": 10
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 2,
+              "type": "immunity",
+              "immunity_type": "unaffected",
+              "timing": "on_skill"
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Ally empower",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "description": "Rolan blesses the two allies with the highest cumulative damage."
+            },
+            {
+              "label": "Stacked resource",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "Morale increases at battle start, after allied Ultimate casts, and after enemy defeats."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "1952b74648234f1060568258449d0a729e526f9532be795eacdc18e0e97eb961",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "heal",
+              "name": "Direct healing",
+              "healing_type": "direct",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 36
+                }
+              ],
+              "persistence": "temporary",
+              "duration": 10
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "name": "Magic",
+              "damage_type": "magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "879f4210db3700166d4127095bc4424a864fbed74c9339fca706d70fc0833e4b",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Healing",
+              "label": "buff_healing",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 15
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "101da07773a3a8e4ef461fa7d7036a5eae0b0c1bf941c64c3601ae432cd97ad1",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "name": "Healing over time",
+              "healing_type": "over_time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80
+                }
+              ],
+              "duration": -1,
+              "tick": 1
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "name": "DoT",
+              "damage_type": "dot",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40
+                }
+              ],
+              "duration": -1,
+              "tick": 1
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally Ultimate casts",
+              "tier": "mythic+",
+              "targeting": "Allies",
+              "description": "A radiant clone repeats an ally Ultimate after Morale reaches its cap."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "772bdc34bedd953b9bc3887aededc728cd2b9f52435a865ec54c9d8a68e9ff8b",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "DEF Penetration",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20
+                }
+              ],
+              "persistence": "temporary",
+              "duration": 8
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50
+                }
+              ],
+              "persistence": "temporary",
+              "duration": 8
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Party composition",
+              "tier": "supreme+",
+              "targeting": "Allies",
+              "description": "The strongest deployed faction changes the battle-start Morale and faction bonuses."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

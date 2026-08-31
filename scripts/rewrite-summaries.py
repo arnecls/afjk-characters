@@ -5455,6 +5455,8 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         return True
     if label == "Bind" and re.search(r"\bbinds the (?:target|enemy|them)\b", t):
         return False
+    if label == "Bind" and re.search(r"\bfreeze bomber\b", t):
+        return True
     if label == "Bind" and re.search(r"immobilized target if", t):
         return True
     if label == "Charm" and re.search(

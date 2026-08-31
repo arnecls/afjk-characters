@@ -41,9 +41,9 @@
     },
     "alsa": {
       "categories": {
-        "basic": "average",
+        "basic": "low",
         "offensive": "high",
-        "defensive": "average",
+        "defensive": "low",
         "other": "average"
       },
       "stats": {
@@ -52,7 +52,7 @@
         "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "high",
-        "ATK SPD": "average"
+        "ATK SPD": "low"
       }
     },
     "antandra": {
@@ -74,7 +74,7 @@
     "arden": {
       "categories": {
         "basic": "average",
-        "offensive": "average",
+        "offensive": "low",
         "defensive": "low",
         "other": "low"
       },
@@ -185,7 +185,7 @@
     },
     "brutus": {
       "categories": {
-        "basic": "average",
+        "basic": "low",
         "offensive": "low",
         "defensive": "average",
         "other": "high"
@@ -240,7 +240,7 @@
       },
       "stats": {
         "HP": "average",
-        "ATK": "high",
+        "ATK": "average",
         "Phys DEF": "low",
         "Magic DEF": "low",
         "Haste": "high",
@@ -249,8 +249,8 @@
     },
     "cassadee": {
       "categories": {
-        "basic": "high",
-        "offensive": "average",
+        "basic": "average",
+        "offensive": "high",
         "defensive": "low",
         "other": "low"
       },
@@ -320,7 +320,7 @@
       },
       "stats": {
         "HP": "high",
-        "ATK": "average",
+        "ATK": "low",
         "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "low",
@@ -428,7 +428,7 @@
         "basic": "high",
         "offensive": "average",
         "defensive": "average",
-        "other": "high"
+        "other": "average"
       },
       "stats": {
         "HP": "high",
@@ -513,7 +513,7 @@
       "stats": {
         "HP": "high",
         "ATK": "high",
-        "Phys DEF": "high",
+        "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "average",
         "ATK SPD": "high"
@@ -683,7 +683,7 @@
       "categories": {
         "basic": "high",
         "offensive": "high",
-        "defensive": "average",
+        "defensive": "low",
         "other": "high"
       },
       "stats": {
@@ -705,10 +705,10 @@
       "stats": {
         "HP": "low",
         "ATK": "low",
-        "Phys DEF": "average",
+        "Phys DEF": "low",
         "Magic DEF": "high",
-        "Haste": "average",
-        "ATK SPD": "average"
+        "Haste": "low",
+        "ATK SPD": "low"
       }
     },
     "hugin": {
@@ -799,10 +799,10 @@
         "other": "low"
       },
       "stats": {
-        "HP": "average",
+        "HP": "low",
         "ATK": "high",
         "Phys DEF": "high",
-        "Magic DEF": "high",
+        "Magic DEF": "average",
         "Haste": "low",
         "ATK SPD": "low"
       }
@@ -831,7 +831,7 @@
         "other": "average"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "low",
         "Phys DEF": "high",
         "Magic DEF": "high",
@@ -844,7 +844,7 @@
         "basic": "high",
         "offensive": "average",
         "defensive": "average",
-        "other": "high"
+        "other": "average"
       },
       "stats": {
         "HP": "average",
@@ -906,13 +906,13 @@
     "laios": {
       "categories": {
         "basic": "average",
-        "offensive": "average",
+        "offensive": "low",
         "defensive": "high",
         "other": "high"
       },
       "stats": {
         "HP": "high",
-        "ATK": "average",
+        "ATK": "low",
         "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "high",
@@ -970,7 +970,7 @@
     "lorsan": {
       "categories": {
         "basic": "low",
-        "offensive": "high",
+        "offensive": "average",
         "defensive": "average",
         "other": "low"
       },
@@ -979,7 +979,7 @@
         "ATK": "high",
         "Phys DEF": "low",
         "Magic DEF": "low",
-        "Haste": "high",
+        "Haste": "average",
         "ATK SPD": "average"
       }
     },
@@ -1023,7 +1023,7 @@
         "other": "average"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "low",
         "Phys DEF": "high",
         "Magic DEF": "high",
@@ -1083,7 +1083,7 @@
       "categories": {
         "basic": "average",
         "offensive": "high",
-        "defensive": "high",
+        "defensive": "average",
         "other": "high"
       },
       "stats": {
@@ -1124,12 +1124,12 @@
         "Phys DEF": "high",
         "Magic DEF": "average",
         "Haste": "low",
-        "ATK SPD": "high"
+        "ATK SPD": "average"
       }
     },
     "mikola": {
       "categories": {
-        "basic": "high",
+        "basic": "average",
         "offensive": "average",
         "defensive": "average",
         "other": "high"
@@ -1275,7 +1275,7 @@
       "categories": {
         "basic": "low",
         "offensive": "high",
-        "defensive": "high",
+        "defensive": "average",
         "other": "low"
       },
       "stats": {
@@ -1313,7 +1313,7 @@
       "stats": {
         "HP": "low",
         "ATK": "high",
-        "Phys DEF": "average",
+        "Phys DEF": "low",
         "Magic DEF": "high",
         "Haste": "low",
         "ATK SPD": "high"
@@ -1404,7 +1404,7 @@
         "basic": "average",
         "offensive": "low",
         "defensive": "high",
-        "other": "average"
+        "other": "high"
       },
       "stats": {
         "HP": "average",
@@ -1429,6 +1429,22 @@
         "Magic DEF": "average",
         "Haste": "low",
         "ATK SPD": "low"
+      }
+    },
+    "rolan": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
       }
     },
     "rowan": {
@@ -1506,7 +1522,7 @@
         "HP": "low",
         "ATK": "high",
         "Phys DEF": "low",
-        "Magic DEF": "average",
+        "Magic DEF": "low",
         "Haste": "low",
         "ATK SPD": "low"
       }
@@ -1564,7 +1580,7 @@
         "basic": "average",
         "offensive": "low",
         "defensive": "high",
-        "other": "high"
+        "other": "average"
       },
       "stats": {
         "HP": "low",
@@ -1632,7 +1648,7 @@
       },
       "stats": {
         "HP": "average",
-        "ATK": "high",
+        "ATK": "average",
         "Phys DEF": "low",
         "Magic DEF": "high",
         "Haste": "average",
@@ -1657,10 +1673,10 @@
     },
     "sonja": {
       "categories": {
-        "basic": "high",
-        "offensive": "high",
+        "basic": "average",
+        "offensive": "average",
         "defensive": "average",
-        "other": "average"
+        "other": "low"
       },
       "stats": {
         "HP": "low",
@@ -1703,6 +1719,22 @@
         "ATK SPD": "high"
       }
     },
+    "taichi-agumon": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    },
     "talene": {
       "categories": {
         "basic": "low",
@@ -1715,7 +1747,7 @@
         "ATK": "average",
         "Phys DEF": "low",
         "Magic DEF": "low",
-        "Haste": "average",
+        "Haste": "low",
         "ATK SPD": "average"
       }
     },
@@ -1727,10 +1759,10 @@
         "other": "average"
       },
       "stats": {
-        "HP": "average",
+        "HP": "low",
         "ATK": "average",
         "Phys DEF": "average",
-        "Magic DEF": "average",
+        "Magic DEF": "low",
         "Haste": "low",
         "ATK SPD": "average"
       }
@@ -1796,7 +1828,7 @@
         "Phys DEF": "high",
         "Magic DEF": "high",
         "Haste": "average",
-        "ATK SPD": "high"
+        "ATK SPD": "average"
       }
     },
     "ulmus": {
@@ -1840,7 +1872,7 @@
       },
       "stats": {
         "HP": "low",
-        "ATK": "high",
+        "ATK": "average",
         "Phys DEF": "average",
         "Magic DEF": "low",
         "Haste": "low",
@@ -1876,7 +1908,7 @@
         "Phys DEF": "low",
         "Magic DEF": "low",
         "Haste": "high",
-        "ATK SPD": "high"
+        "ATK SPD": "average"
       }
     },
     "viperian": {
@@ -1884,7 +1916,7 @@
         "basic": "low",
         "offensive": "average",
         "defensive": "low",
-        "other": "average"
+        "other": "low"
       },
       "stats": {
         "HP": "high",
@@ -1893,6 +1925,22 @@
         "Magic DEF": "low",
         "Haste": "average",
         "ATK SPD": "low"
+      }
+    },
+    "voracia": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
       }
     },
     "walker": {
@@ -1908,6 +1956,22 @@
         "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "low",
+        "ATK SPD": "high"
+      }
+    },
+    "yamato-gabumon": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "high",
         "ATK SPD": "high"
       }
     },
@@ -1951,11 +2015,11 @@
         "other": "high"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "average",
-        "Phys DEF": "high",
+        "Phys DEF": "average",
         "Magic DEF": "average",
-        "Haste": "high",
+        "Haste": "average",
         "ATK SPD": "high"
       }
     }

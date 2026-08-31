@@ -114,11 +114,12 @@ HERO_NAMES = [
     "Lyca", "Marcille", "Marilee", "Mehira", "Mikola", "Mirael", "Nara",
     "Natsu", "Nazrik", "Nerion", "Niru", "Odie", "Orion", "Pandora", "Pang", "Parisa",
     "Perseus", "Peggy", "Phraesto", "Pippa", "Ravion", "Reinier", "Rhys", "Rowan",
-    "Saida", "Salazer", "Satrana", "Scarlita", "Seth", "Shadewing", "Shakir",
+    "Rolan", "Saida", "Salazer", "Satrana", "Scarlita", "Seth", "Shadewing",
+    "Shakir",
     "Shemira", "Silven", "Silvina", "Sinbad", "Smokey & Meerky", "Solise",
-    "Sonja", "Soren", "Sylphira", "Talene", "Tasi", "Temesia", "Thador",
+    "Sonja", "Soren", "Sylphira", "Taichi & Agumon", "Talene", "Tasi", "Temesia", "Thador",
     "Thoran", "Tilaya", "Ulmus", "Vala", "Valen", "Valka", "Velara",
-    "Viperian", "Walker", "Zandrok", "Zanie", "Zorya",
+    "Viperian", "Voracia", "Walker", "Yamato & Gabumon", "Zandrok", "Zanie", "Zorya",
 ]
 
 SKILL_TYPE_MAP = {

@@ -303,6 +303,10 @@
   "Rhys": {
     "signature_calculated": "ultimate"
   },
+  "Rolan": {
+    "signature_calculated": "ultimate",
+    "speed_override": "average"
+  },
   "Rowan": {
     "signature_calculated": "ultimate"
   },
@@ -409,6 +413,10 @@
   "Viperian": {
     "signature_calculated": "skill4"
   },
+  "Voracia": {
+    "signature_calculated": "ultimate",
+    "speed_override": "average"
+  },
   "Walker": {
     "signature_calculated": "ultimate"
   },
@@ -424,5 +432,13 @@
   "Zorya": {
     "signature_calculated": "skill1",
     "signature_override": "ultimate"
+  },
+  "Taichi & Agumon": {
+    "signature_calculated": "ultimate",
+    "speed_override": "average"
+  },
+  "Yamato & Gabumon": {
+    "signature_calculated": "ultimate",
+    "speed_override": "average"
   }
 }

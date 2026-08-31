@@ -689,6 +689,14 @@
     "skill4": "movement loads splash shots for enhanced area attacks",
     "skill5": "control immunity skill cooldown reduced"
   },
+  "Rolan": {
+    "ultimate": "cleanse allies, equalize their HP percentage, increase max HP, and grant Morale",
+    "skill1": "build Morale and bless high-damage allies with ATK and control immunity",
+    "skill2": "heal allies and reduce their damage taken; at high Morale, stun enemies",
+    "skill3": "create a ward that repeats allied Ultimates through radiant clones",
+    "skill4": "radiant ward heals allies and damages enemies over time",
+    "skill5": "start-of-battle Morale and faction-composition bonuses"
+  },
   "Rowan": {
     "ultimate": "restore energy to surrounding allies",
     "skill1": "place consumable heals triggered when ally HP drops low",
@@ -921,6 +929,14 @@
     "skill4": "high HP threshold triggers large AoE damage burst",
     "skill5": "summons return on possessed enemy defeat, restoring HP and energy"
   },
+  "Voracia": {
+    "ultimate": "pull enemies together, knock them down, deal area damage, and heal herself",
+    "skill1": "slash enemies in the area with an extra Fervor slash",
+    "skill2": "roast enemies in an area with continuous magic damage",
+    "skill3": "devour the highest-damage enemy to absorb stats and drain Energy",
+    "skill4": "devour an enemy and reduce its max HP when The Main Course deals damage",
+    "skill5": "increase ATK, with an extra increase after appetite awakens"
+  },
   "Walker": {
     "ultimate": "fire sequential shots at frontal enemies, stunning each",
     "skill1": "normal attacks deal AoE damage",
@@ -952,5 +968,21 @@
     "skill3": "battle damage dealt grows with surrounding enemy count",
     "skill4": "awaken creates aura reducing enemy haste and movement speed, boosting own haste",
     "skill5": "fatal blow triggers immediate transition to dormant state"
+  },
+  "Taichi & Agumon": {
+    "ultimate": "Passive energy recovery; transformation unlocks repeated area damage and battle stat growth.",
+    "skill1": "Dash through all enemies, dealing damage and stun while invincible.",
+    "skill2": "Gain a temporary shield and unaffected status, then recover HP from its remainder.",
+    "skill3": "Permanently increase ATK after assists or defeats.",
+    "skill4": "Inflict HP-loss with an execute against a lone weakened enemy.",
+    "skill5": "Temporarily increase allied ATK behind the caster and grant a named ally Energy."
+  },
+  "Yamato & Gabumon": {
+    "ultimate": "Transform, then leap to an area that inflicts recurring HP-loss and bind.",
+    "skill1": "Deal heavy single-target magic damage with smaller adjacent splash damage.",
+    "skill2": "Temporarily increase self ATK and Haste.",
+    "skill3": "Permanently increase Energy regeneration from attacks after transformation.",
+    "skill4": "Distribute area missiles that eventually bind repeatedly hit targets.",
+    "skill5": "Heal nearby allies over time after transformation and gain permanent ATK per ally."
   }
 }

@@ -1,0 +1,312 @@
+{
+  "title": "Voracia - Feastweaver",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "56e03cf8271475c759a7b37acd201aabd1658c7dec8da61e1a12ad94825fbc6a",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "type": "crowd_control",
+              "area_count": 2,
+              "cc-type": "displace"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "type": "crowd_control",
+              "area_count": 2,
+              "cc-type": "knock_down",
+              "duration": 4
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "type": "damage",
+              "area_count": 1,
+              "name": "Magic",
+              "damage_type": "magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1000
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "name": "Direct healing",
+              "healing_type": "direct",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 45
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "immunity",
+              "immunity_type": "unaffected",
+              "timing": "on_skill"
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Enemy grouping",
+              "tier": "base",
+              "targeting": "Enemies",
+              "description": "Voracia pulls nearby enemies to the target plate."
+            },
+            {
+              "label": "Enhanced form",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Damaging enough enemies grants Fervor to a skill."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "9e8ecf3b5d8ee9780961bc6f61b599a5f0e9bc2280b30ab952e72e6e4514f027",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "type": "damage",
+              "area_count": 7,
+              "name": "Magic",
+              "damage_type": "magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 730
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Enhanced form",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Fervor grants an extra area slash."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "5a98aa58f89f2613f9c2d5d02408b8033d5d728bd2388b00bb958a090d6be393",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "type": "dot",
+              "area_count": 1,
+              "name": "DoT",
+              "damage_type": "dot",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60
+                }
+              ],
+              "duration": 5,
+              "tick": 0.5
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Enhanced form",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Fervor ends the damaging zone with an additional area hit."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "395e5d8bfef3f94bd38892b9f266fba38efa29a81096c1cca833614d8382d2e3",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "722cea5b941badb5a96643aa3e57d2d05919776ab7fc5b59d22a92247f408925",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "name": "Magic",
+              "damage_type": "magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 900
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40
+                }
+              ],
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Stat steal",
+              "tier": "mythic+",
+              "targeting": "Self",
+              "description": "After all skills gain Fervor, Voracia devours high-damage enemies and gains their basic stats."
+            },
+            {
+              "label": "Energy steal",
+              "tier": "mythic+",
+              "targeting": "Enemies",
+              "description": "A devoured non-boss enemy permanently loses all Energy."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "013e2f75a46164c2ed00c6855522582a1d36c29990c1891e32ed5188b4d84126",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "type": "debuff",
+              "area_count": 1,
+              "name": "Max HP",
+              "label": "debuff_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 35
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

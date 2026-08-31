@@ -527,6 +527,13 @@
     "aoe-damage",
     "self-repositioner"
   ],
+  "Rolan": [
+    "ally-buffer",
+    "ally-healer",
+    "cc-immunity",
+    "non-ult-utility",
+    "temporary-stat-buffer"
+  ],
   "Rowan": [
     "ally-healer",
     "energy-provider"
@@ -696,6 +703,13 @@
     "dot-specialist",
     "energy-inhibitor"
   ],
+  "Voracia": [
+    "aoe-damage",
+    "dot-specialist",
+    "energy-inhibitor",
+    "enemy-grouping",
+    "life-drain"
+  ],
   "Walker": [
     "aoe-damage",
     "battle-start-burst",
@@ -716,5 +730,19 @@
     "cheat-death",
     "hp-scaling",
     "life-drain"
+  ],
+  "Taichi & Agumon": [
+    "execute",
+    "high-damage-ult",
+    "invincibility",
+    "non-ult-utility",
+    "temporary-stat-buffer"
+  ],
+  "Yamato & Gabumon": [
+    "aoe-damage",
+    "aoe-healing",
+    "mass-cc",
+    "non-ult-utility",
+    "self-repositioner"
   ]
 }

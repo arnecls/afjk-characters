@@ -827,6 +827,8 @@ If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and ge
 
 Increases the hiding duration after being defeated by 10s.
 
+- Level 2: Level 2 (Unlocks with ): Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s. After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%. Once 3 Silhouettes have been summoned, they no longer lose HP over time.
+
 ## Bonnie - Obsidian Claws
 
 *Graveborn · Marksman · Magic*
@@ -1258,7 +1260,7 @@ A Mage who is skilled at dealing AoE damage and imbuing buffs to allies.
 - Skill Range: 5 tiles
 - Initial Energy: 0
 
-Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies on the path and knocking them back for 2s.
+Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies in the path and knocking them back for 2 tiles.
 
 - Level 2 — Unlocks at Level 51: Increases damage to 300% (ATK-based) + 30% (SP-based).
 - Level 3 — Unlocks at Level 111: Increases damage to 320% (ATK-based) + 30% (SP-based).
@@ -1407,6 +1409,8 @@ Cecia entangles an enemy with reinforced Thorns, dealing 60% (ATK-based) damage 
 *Unlocks at Supreme+*
 
 Reduces the required normal attacks to trigger Agonizing Puncture by 1.
+
+- Level 2: Level 2 (Unlocks with ): Cecia gains 500 initial Energy. When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies. The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat. Cecia shares all stolen stats with Mr. Carlyle.
 
 ## Chippy - Acorn Knight
 
@@ -6235,6 +6239,8 @@ Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart
 
 *Lightbearer · Warrior · Magic*
 
+The Prince of the Lightbearer Empire who fights with masterful swordplay and enchantments.
+
 ### Ultimate
 
 **Fatal Waltz**
@@ -6587,9 +6593,9 @@ Perseus chooses a direction and marches 3 tiles forward with dazzling spearwork.
 
 Perseus swings both his spear and shield in a circle to strike nearby enemies. With his spear, he deals 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies. With his shield, he deals 140% (ATK-based) + 10% (SP-based) damage to adjacent enemies while gaining a shield value equal to 360% (ATK-based) of his ATK plus 80% of the damage dealt for 6s. While the shield lasts, his ATK SPD increases by 35.
 
-- Level 2 — Unlocks at Level 71: Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield damage to 150% (ATK-based) + 10% (SP-based).
-- Level 3 — Unlocks at Level 131: Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield damage to 160% (ATK-based) + 10% (SP-based).
-- Level 4 — Unlocks at Level 191: Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield damage to 170% (ATK-based) + 10% (SP-based).
+- Level 2 — Unlocks at Level 71: Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield swing damage to 150% (ATK-based) + 10% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield swing damage to 160% (ATK-based) + 10% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield swing damage to 170% (ATK-based) + 10% (SP-based).
 
 ### Skill2
 
@@ -6600,9 +6606,9 @@ Perseus swings both his spear and shield in a circle to strike nearby enemies. W
 
 Before Perseus takes heavy damage, the ground within 1 tile around him turns fertile. Allies standing on this fertile ground have their ATK increased by 14.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 19% + 2.5% (SP-based). When Perseus' HP drops below 40% of his initial HP for the first time, he draws power from the fertile ground, increasing his max HP permanently by 60% + 6% (SP-based) and healing for the same amount. Once this power is drawn the fertile ground withers away permanently.
 
-- Level 2 — Unlocks at Level 91: Allies standing on the fertile ground now have their TK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based).
-- Level 3 — Unlocks at Level 151: Allies standing on the fertile ground now have their TK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based).
-- Level 4 — Unlocks at Level 211: Allies standing on the fertile ground now have their TK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based).
+- Level 2 — Unlocks at Level 91: Allies standing on the fertile ground now have their ATK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based).
+- Level 3 — Unlocks at Level 151: Allies standing on the fertile ground now have their ATK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based).
+- Level 4 — Unlocks at Level 211: Allies standing on the fertile ground now have their ATK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based).
 
 ### Unlocks at Legendary+
 
@@ -7215,6 +7221,87 @@ After selling 3 health potions, Rowan places a super health potion that recovers
 Rowan places 1 more health potion when a battle starts using Smart Stall.
 
 - Level 2: Level 2 (Unlocks with ): Rowan upgrades his Energy potion into a super Energy potion. It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s. If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.
+
+## Rolan - First Crown
+
+*Celestial · Support · Magic*
+
+### Ultimate
+
+**Oath in the Stone**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 400
+
+Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage. He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP. The max HP gained from this skill gradually decays over 12s. Casting this skill also grants Rolan's allies 15% Morale.
+
+- Level 2 — Unlocks at Level 51: Increases HP restored to 1050% (ATK-based) + 80% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases HP restored to 1100% (ATK-based) + 80% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases HP restored to 1150% (ATK-based) + 80% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases HP restored to 1200% (ATK-based) + 80% (SP-based).
+
+### Skill1
+
+**Undying Valor**
+*Unlocks at Level 11*
+
+- Cooldown: 10s
+- Initial Cooldown: 4s
+- Skill Range: Global
+
+Passive. When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale. For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK. The team's Morale is capped at 100%. During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate. Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount. If Rolan is defeated, all Morale is permanently lost. Active. Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK. If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active.
+
+- Level 2 — Unlocks at Level 71: Increases the ATK bonus from the blessing to 20% + 2% (SP-based) of Rolan's ATK.
+- Level 3 — Unlocks at Level 131: Increases the ATK bonus from the blessing to 22% + 2% (SP-based) of Rolan's ATK.
+- Level 4 — Unlocks at Level 191: Increases the ATK bonus from the blessing to 24% + 2% (SP-based) of Rolan's ATK.
+
+### Skill2
+
+**Clemency's Edge**
+*Unlocks at Level 31*
+
+- Cooldown: 10s
+- Initial Cooldown: 1s
+- Skill Range: Global
+
+Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s. If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s.
+
+- Level 2 — Unlocks at Level 91: Increases the HP restored to 260% (ATK-based) + 30% (SP-based) and the damage dealt to 260% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the HP restored to 280% (ATK-based) + 30% (SP-based) and the damage dealt to 280% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the HP restored to 300% (ATK-based) + 30% (SP-based) and the damage dealt to 300% (ATK-based) + 30% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases Healing by 9 and reduces damage taken by 9%. For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%.
+
+- Level 2: Increases Healing by 12 and reduces damage taken by 12%. For every 20% Morale the allied team has, Rolan gains an extra 4 Healing and further reduces his damage taken by 4%.
+- Level 3: Increases Healing by 15 and reduces damage taken by 15%. For every 20% Morale the allied team has, Rolan gains an extra 5 Healing and further reduces his damage taken by 5%.
+
+### Ex. Skill
+
+**Radiant Reign**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+Once the allied team's Morale reaches 100%, Rolan creates a radiant ward. When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again. While the ward is active, Morale will not decrease unless Rolan is defeated. In non-Boss battles, allies inside the ward are immune to stat reductions.
+
+- Level 2 — Unlocks at EX. +5: The radiant clone now inherits 90% of the ally's basic stats.
+- Level 3 — Unlocks at EX. +10: The radiant clone now inherits 100% of the ally's basic stats.
+- Level 4 — Unlocks at EX. +15: Allies within the radiant ward recover 80% (ATK-based) HP every second. while all enemies within it lose 40% (ATK-based) HP every second.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes. If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s.
 
 ## Saida - Vampiric Vine
 
@@ -8517,6 +8604,89 @@ Once her score is activated, Sylphira starts playing it. The score then plays 1 
 
 Once her score is activated, Sylphira performs Tremolo to enhance her normal attacks. The enhanced normal attacks gain 50 Life Drain and deal extra true damage equal to 18% of the target's max HP. The extra true damage dealt cannot exceed 600% (ATK-based).
 
+## Taichi & Agumon - Courage Duo
+
+*Dimensional · Warrior · Physical*
+
+### Ultimate
+
+**Gaia Force**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 500
+
+Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy. The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills. When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area. Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based). Wargreymon is unaffected while casting this skill. Passive. Taichi does not directly ioin the battle, remaining invincible on the sidelines. Everv 3s. Taichi cheers for Agumon, restoring 150 Energy for him. If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250.
+
+- Level 2 — Unlocks at Level 51: Increases Gaia Force's damage per hit to 170% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 240% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases Gaia Force's damage per hit to 180% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 260% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases Gaia Force's damage per hit to 190% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 280% (ATK-based) + 30% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases Gaia Force's damage per hit to 200% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 300% (ATK-based) + 30% (SP-based).
+
+### Skill1
+
+**Brave Tornado**
+*Unlocks at Level 11*
+
+- Cooldown: 10s
+- Initial Cooldown: 3s
+- Skill Range: Global
+
+Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position. He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s. Wargreymon is invincible while casting this skill. Damage from this skill gains 60 extra DEF Penetration.
+
+- Level 2 — Unlocks at Level 71: Increases damage dealt to every enemy in his path to 440% (ATK-based) + 40% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases damage dealt to every enemy in his path to 460% (ATK-based) + 40% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases damage dealt to every enemy in his path to 480% (ATK-based) + 40% (SP-based).
+
+### Skill2
+
+**Recovery Shield**
+*Unlocks at Level 31*
+
+- Cooldown: 14s
+- Initial Cooldown: 9s
+- Skill Range: Global
+
+Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s. While the shield is active, Wargreymon remains unaffected. When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value. When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill.
+
+- Level 2 — Unlocks at Level 91: Increases the shield value granted by this skill to 800% (ATK-based) + 100% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the shield value granted by this skill to 900% (ATK-based) + 100% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the shield value granted by this skill to 1000% (ATK-based) + 100% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases ATK by 9% during battle. After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%.
+
+- Level 2: Increases ATK by 12% during battle. After assisting or defeating a non-summoned enemy, increases ATK by an extra 8%.
+- Level 3: Increases ATK by 15% during battle. After assisting or defeating a non-summoned enemy, increases ATK by an extra 10%.
+
+### Ex. Skill
+
+**Dramon Killer**
+*Unlocks at Mythic+*
+
+- Cooldown: 10s
+- Initial Cooldown: 4s
+- Skill Range: 1 tile
+
+Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP. If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them.
+
+- Level 2 — Unlocks at EX. +5: :Increases the HP loss caused to 160% (ATK-based).
+- Level 3 — Unlocks at EX. +10: When Wargreymon deals damage to an enemy with a skill or normal attack, he deals extra damage equal to 15% of the enemy's lost HP. This extra damage cannot exceed Wargreymon's 180% (ATK-based).
+- Level 4 — Unlocks at EX. +15: Increases the HP loss caused to 180% (ATK-based).
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s. If Gabumon receives the power of courage, he gains 300 extra Energy.
+
 ## Talene - Resurging Flame
 
 *Celestial · Mage · Magic*
@@ -9506,6 +9676,87 @@ Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%,
 
 Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.
 
+## Voracia - Feastweaver
+
+*Mauler · Mage · Magic*
+
+### Ultimate
+
+**The Main Course**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 600
+
+Passive. When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill. Active. Voracia remains unaffected. She summons a plate covering a 1-tile radius on a target tile. She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s. Voracia then samples the "food" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt. If enhanced by Fervor, this skill gains 70 Penetration when dealing damage. In Auto Battle, this skill prioritizes the area with the most enemies.
+
+- Level 2 — Unlocks at Level 51: Increases the damage dealt to 850% (ATK-based) + 100% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases the damage dealt to 900% (ATK-based) + 100% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases the damage dealt to 950% (ATK-based) + 100% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases the damage dealt to 1000% (ATK-based) + 100% (SP-based).
+
+### Skill1
+
+**Prime Cut**
+*Unlocks at Level 11*
+
+- Cooldown: 5s
+- Initial Cooldown: 5s
+- Skill Range: 10 tiles
+
+Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles. If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage.
+
+- Level 2 — Unlocks at Level 71: Increases basic slash damage to 460% (ATK-based) + 50% (SP-based) and the extra slash's damage to 230% (ATK-based) + 25% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases basic slash damage to 470% (ATK-based) + 50% (SP-based) and the extra slash's damage to 240% (ATK-based) + 25% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases basic slash damage to 480% (ATK-based) + 50% (SP-based) and the extra slash's damage to 250% (ATK-based) + 25% (SP-based).
+
+### Skill2
+
+**Vino Inferno**
+*Unlocks at Level 31*
+
+- Cooldown: 7s
+- Initial Cooldown: 2s
+- Skill Range: 10 tiles
+
+Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies. She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s. If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range.
+
+- Level 2 — Unlocks at Level 91: Increases roast damage to 50% (ATK-based) + 6% (SP-based) and the extra flame damage to 260% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases roast damage to 55% (ATK-based) + 6% (SP-based) and the extra flame damage to 280% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases roast damage to 60% (ATK-based) + 6% (SP-based) and the extra flame damage to 300% (ATK-based) + 30% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Voracia increases her ATK by 9% during battle. Once her appetite awakens, she increases her ATK further by 6%.
+
+- Level 2: Voracia increases her ATK by 12% during battle. Once her appetite awakens, she increases her ATK further by 8%.
+- Level 3: Voracia increases her ATK by 15% during battle. Once her appetite awakens, she increases her ATK further by 10%.
+
+### Ex. Skill
+
+**Chef's Choice**
+*Unlocks at Mythic+*
+
+- Skill Range: 10 tiles
+
+Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats. For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value. If the target is not a boss, they also permanently lose all Energy.
+
+- Level 2 — Unlocks at EX. +5: Increases the basic stats absorbed per devour to 37.5%, and raises the cap for each absorbed stat to 55% of the initial value of Voracia's corresponding stat.
+- Level 3 — Unlocks at EX. +10: When casting this skill, Voracia devours an additional enemy with the next highest cumulative damage dealt.
+- Level 4 — Unlocks at EX. +15: Increases the basic stats absorbed per devour to 40%, and raises the cap for each absorbed stat to 60% of the initial value of Voracia's corresponding stat.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt.
+
 ## Walker - Wildland Outlaw
 
 *Lightbearer · Rogue · Physical*
@@ -9586,6 +9837,86 @@ Walker throws a grenade at each of the 3 enemies when a battle starts, then uses
 Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time. This shield lasts till the target is defeated.
 
 - Level 2: Level 2 (Unlocks with ): Walker increases his Crit by 20. When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain.
+
+## Yamato & Gabumon - Cool Duo
+
+*Dimensional · Mage · Magic*
+
+### Ultimate
+
+**Cocytus Breath**
+*Unlocks at Level 1*
+
+- Skill Range: 1 tile
+- Initial Energy: 400
+
+Gabumon uses Petit Fire as his normal attack, dealing 100% (ATK-based) damage to an enemy. The first time Gabumon casts his Ultimate, he Digivolves into Metalgarurumon, permanently increasing his ATK by 40% and Haste by 25, and unlocking new skills. When casting Ultimate as Metalgarurumon, he jumps to a target tile and unleashes Cocytus Breath in an area (4-tile long, 3-tile wide). This causes enemies within the area to lose 28% (ATK-based) + 2% (SP-based) HP every 0.5s and freezes them for 3s. Passive. Yamato does not directly join the battle, remaining invincible on the sidelines. When a battle starts and whenever Gabumon casts his Ultimate, Yamato cheers for Gabumon, increasing Gabumon's ATK bv 15% for 5s. While this effect is active, Gabumon recovers an extra 150 Energy every second if he has not yet Digivolved into Metalgarurumon.
+
+- Level 2 — Unlocks at Level 51: Enemies affected by Cocytus Breath lose 30% (ATK-based) + 2% (SP-based) HP every 0.5s.
+- Level 3 — Unlocks at Level 111: Enemies affected by Cocytus Breath lose 32% (ATK-based) + 2% (SP-based) HP every 0.5s.
+- Level 4 — Unlocks at Level 171: Enemies affected by Cocytus Breath lose 34% (ATK-based) + 2% (SP-based) HP every 0.5s.
+- Level 5 — Unlocks at Level 231: Enemies affected by Cocytus Breath lose 36% (ATK-based) + 2% (SP-based) HP every 0.5s.
+
+### Skill1
+
+**Garuru Tomahawk**
+*Unlocks at Level 11*
+
+- Cooldown: 9s
+- Skill Range: Global
+
+Metalgarurumon fires a massive Freeze Bomber. Upon hitting the main target, it deals 360% (ATK-based) + 48% (SP-based) damage to them and 180% (ATK-based) + 24% (SP-based) damage to other enemies within 1 tile.
+
+- Level 2 — Unlocks at Level 71: Increases damage to the main target to 400% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 200% (ATK-based) + 24% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases damage to the main target to 440% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 220% (ATK-based) + 24% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases damage to the main target to 480% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 240% (ATK-based) + 24% (SP-based).
+
+### Skill2
+
+**Garuru Howling**
+*Unlocks at Level 31*
+
+- Cooldown: 25s
+- Skill Range: 1 tile
+
+Metalgarurumon howls, increasing his ATK by 19% + 2.5% (SP-based) and Haste by 40 for 16s.
+
+- Level 2 — Unlocks at Level 91: Increases bonus ATK to 21% + 2.5% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases bonus ATK to 23% + 2.5% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases bonus ATK to 25% + 2.5% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases Energy recovery from attacks by 18% during battle. After Digivolving, increases Energy recovery from attacks by an extra 12%.
+
+- Level 2: Increases Energy recovery from attacks by 24% during battle. After Digivolving, increases Energy recovery from attacks by an extra 16%.
+- Level 3: Increases Energy recovery from attacks by 30% during battle. After Digivolving, increases Energy recovery from attacks by an extra 20%.
+
+### Ex. Skill
+
+**Grace Cross Freezer**
+*Unlocks at Mythic+*
+
+- Cooldown: 12s
+- Skill Range: Global
+
+Metalgarurumon fires 10 small missiles, distributed evenly among all enemies. When a missile hits, it deals 60% (ATK-based) damage to all enemies within 1 tile of the target. During a single cast, if the same enemy has taken 4 hits from this skill, all subsequent hits on that enemy deal 50% less damage. During battle preparation, for each ally deployed within 1 tile of Gabumon, this skill permanently fires 2 more missiles, up to 6 extra missiles.
+
+- Level 2 — Unlocks at EX. +5: When a missile hits, it deals 70% (ATK-based) damage to all enemies within 1 tile of the target.
+- Level 3 — Unlocks at EX. +10: During a single cast, if an enemy has taken 4 hits from this skill, that enemy is immediately frozen for 2s and takes 360% (ATK-based) extra damage.
+- Level 4 — Unlocks at EX. +15: When a missile hits, it deals 80% (ATK-based) damage to all enemies within 1 tile of the target.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When Gabumon Digivolves, his Bond of Friendship activates. Gabumon and allies who were initially deployed within 1 tiles of him recover 150% (ATK-based) HP per second for 8s. If Agumon receives this effect, the duration is extended to 12s. For each ally affected, Gabumon permanently increases his ATK by 5%, up to 15%.
 
 ## Zandrok - Watchful Edge
 
