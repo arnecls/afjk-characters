@@ -3,56 +3,80 @@
 from __future__ import annotations
 
 import copy
-from typing import Any, Mapping
+from typing import Any, Mapping, cast
+
+from character_stat_ranks import hero_slug
+
+from ..contracts import (
+    CalibratedAnalysis,
+    GeneratedSynergies,
+    HeroSource,
+    PresentationHero,
+    PresentationRoster,
+)
+
+
+def _source_for_entry(
+    entry: Mapping[str, Any],
+    bundle: Mapping[str, Any],
+) -> dict[str, Any]:
+    source = copy.deepcopy(bundle["generated"]["source"])
+    if not source:
+        raise ValueError(f"missing source for hero {entry['id']}")
+    return source
 
 
 def project_roster(
     inputs: Mapping[str, Any],
-    processed: Mapping[str, Any],
-    synergies: Mapping[str, Any],
-) -> dict[str, Any]:
+    processed: Mapping[str, Any] | None = None,
+    synergies: Mapping[str, Any] | None = None,
+    policy: Mapping[str, Any] | None = None,
+) -> PresentationRoster:
     """Return a structured roster view for all output adapters."""
     manifest = copy.deepcopy(inputs["manifest"])
-    source_by_name = {
-        hero["name"]: copy.deepcopy(hero)
-        for hero in inputs["raw"]["heroes"]
-    }
+    processed = processed or inputs.get("processed") or {"heroes": {}}
+    synergies = synergies or inputs.get("synergies") or {"heroes": {}}
+    heroes: list[PresentationHero] = []
+    for entry in manifest["heroes"]:
+        bundle = inputs["bundles"][entry["id"]]
+        name = entry["display_name"]
+        analysis = copy.deepcopy(
+            processed["heroes"].get(name)
+            or (bundle["generated"].get("derived") or {}).get("analysis")
+            or {}
+        )
+        stored = copy.deepcopy(
+            synergies["heroes"].get(name)
+            or bundle["generated"].get("synergies")
+            or {}
+        )
+        curated = {
+            "behavior_tags": copy.deepcopy(
+                bundle["ai"].get("behavior_tags") or []
+            ),
+            "skill_summaries": copy.deepcopy(
+                bundle["ai"].get("skill_summaries") or {}
+            ),
+            "play_overview": bundle["ai"].get("play_overview"),
+            "counter_overview": bundle["ai"].get("counter_overview"),
+            "stat_ranks": copy.deepcopy(
+                (bundle["generated"].get("external") or {}).get("stat_ranks")
+            ),
+        }
+        heroes.append(
+            {
+                "id": entry["id"],
+                "display_name": name,
+                "slug": hero_slug(name),
+                "source": cast(HeroSource, _source_for_entry(entry, bundle)),
+                "analysis": cast(CalibratedAnalysis, analysis),
+                "synergies": cast(GeneratedSynergies, stored),
+                "curated": curated,
+            }
+        )
     return {
         "schema_version": 1,
         "manifest": manifest,
-        "heroes": [
-            {
-                "id": entry["id"],
-                "display_name": entry["display_name"],
-                "source": source_by_name.get(entry["display_name"])
-                or source_by_name.get("Elijah & Lailah"),
-                "analysis": copy.deepcopy(
-                    processed["heroes"][entry["display_name"]]
-                ),
-                "synergies": copy.deepcopy(
-                    synergies["heroes"][entry["display_name"]]
-                ),
-                "curated": {
-                    "behavior_tags": copy.deepcopy(
-                        inputs["curated"]["behavior_tags"].get(
-                            entry["display_name"],
-                            [],
-                        )
-                    ),
-                    "skill_summaries": copy.deepcopy(
-                        inputs["curated"]["skill_summaries"].get(
-                            entry["display_name"],
-                            {},
-                        )
-                    ),
-                    "play_overview": inputs["curated"][
-                        "play_overviews"
-                    ].get(entry["display_name"]),
-                    "counter_overview": inputs["curated"][
-                        "counter_overviews"
-                    ].get(entry["display_name"]),
-                },
-            }
-            for entry in manifest["heroes"]
-        ],
+        "policy": policy or {},
+        "heroes": heroes,
     }

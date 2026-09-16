@@ -864,8 +864,6 @@ def check_temporary_stat_buffer_tags(
 
 def check_per_hero_layout() -> list[str]:
     """Validate the manifest, three-file bundles, and freshness hashes."""
-    if not (ROOT / "data" / "roster.json").exists():
-        return []
     from hero_pipeline.storage import (
         load_bundles,
         load_manifest,

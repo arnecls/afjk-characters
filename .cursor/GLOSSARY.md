@@ -407,6 +407,32 @@ Stable lowercase kebab-case identifier used for hero directories and structured
 cross-hero references. Punctuation is omitted; the downloaded `Elijah & Lailah`
 record uses the `Twins` ID.
 
+## roster snapshot
+
+In-memory ID-keyed view of the manifest plus every hero bundle. Analysis,
+scoring, and presentation load this snapshot instead of rebuilding
+roster-keyed aggregate files.
+
+## local analysis
+
+Hero-only derived facts computed from one bundle: effects, benefit stats,
+movement, placement, and other values that do not need the rest of the roster.
+
+## roster calibration
+
+Roster-wide pass that assigns magnitude bands, true-damage labels, and casting
+speed labels by comparing local analyses to each other.
+
+## policy
+
+Immutable tunables for one pipeline run, split into local, calibration,
+synergy, replacement, and presentation sections.
+
+## presentation model
+
+Fully resolved, ID-aware roster view used by Markdown, CSV, and site
+serializers. Display names and URL slugs are applied here, not in storage.
+
 ## processed data
 
 Generated analysis output derived from raw hero data and curated inputs. It

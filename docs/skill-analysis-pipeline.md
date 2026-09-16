@@ -40,9 +40,10 @@ Use the
 skill when adding a hero or when skill text changes.
 
 [`scripts/hero_pipeline_cli.py`](../scripts/hero_pipeline_cli.py) runs offline
-per-hero analysis and roster calibration. The analysis implementation is
-organized behind `scripts/hero_pipeline/analysis/`; its legacy effect engine
-still provides the semantic implementation while the migration is staged:
+per-hero analysis and roster calibration. Local analysis reads one hero
+bundle. Roster calibration then assigns magnitude and speed labels. Synergy
+scoring uses those calibrated records and writes ID-based results in the same
+publication as analysis (see [ADR 0004](adr/0004-staged-publication.md)).
 
 1. **Load sidecar** — `scripts/skill_effects_store.py` reads the hero's JSON;
    missing or stale sidecars fail `just validate`.

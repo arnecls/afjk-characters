@@ -40,13 +40,9 @@ def _load_module(name: str, filename: str) -> Any:
 
 def analysis_modules() -> tuple[Any, Any]:
     """Return shared rewrite-summaries and overview modules (single load)."""
-    global _rs, _gen
-    if _rs is None:
-        _gen = _load_module("gen_overview", "generate-heroes-overview.py")
-        # generate-heroes-overview.py loads rewrite_summaries; reuse that
-        # instance so Hero class identity stays stable for disk cache.
-        _rs = _gen._rs
-    return _rs, _gen
+    from hero_pipeline.engine import overview, rewrite_summaries
+
+    return rewrite_summaries(), overview()
 
 
 @dataclass

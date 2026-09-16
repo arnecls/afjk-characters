@@ -4,33 +4,18 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
+from ..presentation.site_payload import build_site_payload
+
 
 def render_site_data(
     view: Mapping[str, Any],
     config: Mapping[str, Any],
+    *,
+    generated_at: str | None = None,
 ) -> dict[str, Any]:
-    """Build site data from the structured roster view."""
-    import render_site as legacy
-
-    data = {
-        "heroes_header": view["manifest"]
-        .get("headers", {})
-        .get("heroes_header", ""),
-        "heroes": [hero["source"] for hero in view["heroes"]],
-    }
-    processed = {
-        "heroes": {
-            hero["display_name"]: hero["analysis"] for hero in view["heroes"]
-        }
-    }
-    synergies = {
-        "heroes": {
-            hero["display_name"]: hero["synergies"] for hero in view["heroes"]
-        }
-    }
-    return legacy.build_site_data(
-        data,
-        processed,
-        synergies,
-        dict(config),
+    """Serialize site JSON from the presentation model."""
+    return build_site_payload(
+        view,
+        config,
+        generated_at=generated_at,
     )

@@ -10,14 +10,11 @@ from .policy import make_policy
 
 
 def analyze_roster(
-    inputs: Mapping[str, Any],
+    snapshot: Mapping[str, Any],
     config: Mapping[str, Any] | None = None,
-) -> dict[str, Any]:
-    """Analyze and calibrate a roster represented by schema mappings."""
-    if config is None:
-        import heroes_io as io
-
-        config = io.load_config()
+) -> tuple[dict[str, Any], list[Any], dict[str, Any], Mapping[str, Any]]:
+    """Analyze and calibrate a roster snapshot."""
     policy = make_policy(config)
-    local = analyze_local(inputs["raw"], policy)
-    return calibrate_roster(local, policy)
+    heroes = analyze_local(snapshot, policy)
+    processed, heroes, context = calibrate_roster(heroes, snapshot, policy)
+    return processed, heroes, context, policy

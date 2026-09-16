@@ -91,22 +91,12 @@ def build_processed(data: dict) -> dict:
 
 
 def main() -> None:
-    config = io.load_config()
-    apply_config(config)
-    raw = io.load_heroes_data()
-    processed = build_processed(raw)
-    if (io.DATA / "roster.json").exists():
-        from hero_pipeline.storage import write_processed_output
+    from hero_pipeline.pipeline import analyze
 
-        write_processed_output(processed)
-        output = io.DATA / "heroes"
-    else:
-        io.save_json(io.HEROES_DATA_PROCESSED, processed)
-        output = io.HEROES_DATA_PROCESSED
+    processed, synergies = analyze()
     print(
-        f"Wrote {output.relative_to(io.ROOT)} "
-        f"({len(processed['heroes'])} heroes, "
-        f"{sum(1 for p in processed['heroes'].values() if p['is_energy_provider'])} energy providers)"
+        f"Wrote analysis for {len(processed['heroes'])} heroes "
+        f"({sum(1 for p in processed['heroes'].values() if p['is_energy_provider'])} energy providers)"
     )
 
 

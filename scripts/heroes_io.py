@@ -352,31 +352,24 @@ def save_json(path: Path, data: Any) -> None:
 
 
 def load_heroes_data() -> dict:
-    if (DATA / "roster.json").exists():
-        from hero_pipeline.storage import load_raw_roster
+    from hero_pipeline.storage import load_raw_roster
 
-        data = load_raw_roster()
-    else:
-        data = load_json(HEROES_DATA)
+    data = load_raw_roster()
     for hero in data.get("heroes", []):
         normalize_hero_skills(hero)
     return data
 
 
 def load_processed() -> dict:
-    if (DATA / "roster.json").exists():
-        from hero_pipeline.storage import load_processed as load_per_hero
+    from hero_pipeline.storage import load_processed as load_per_hero
 
-        return load_per_hero()
-    return load_json(HEROES_DATA_PROCESSED)
+    return load_per_hero()
 
 
 def load_synergies() -> dict:
-    if (DATA / "roster.json").exists():
-        from hero_pipeline.storage import load_synergies as load_per_hero
+    from hero_pipeline.storage import load_synergies as load_per_hero
 
-        return load_per_hero()
-    return load_json(HEROES_DATA_SYNERGIES)
+    return load_per_hero()
 
 
 def load_config() -> dict:

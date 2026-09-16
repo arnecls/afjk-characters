@@ -7,19 +7,29 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
-ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "data"
-HEROES_DIR = DATA / "heroes"
-MANIFEST_PATH = DATA / "roster.json"
+from .repository import DEFAULT_REPOSITORY, current_repository
+
+ROOT = DEFAULT_REPOSITORY.root
+DATA = DEFAULT_REPOSITORY.data
+HEROES_DIR = DEFAULT_REPOSITORY.heroes_dir
+MANIFEST_PATH = DEFAULT_REPOSITORY.manifest_path
 
 GENERATED_NAME = "generated.json"
 AI_NAME = "ai.json"
 OVERRIDES_NAME = "overrides.json"
 
 _TWINS_TITLE = "Elijah & Lailah - Celestial Twins"
-_JSON_SCHEMA_DIR = DATA / "schema"
+CURRENT_GENERATED_SCHEMA = 2
+
+
+def _repo():
+    return current_repository()
+
+
+def _schema_dir() -> Path:
+    return _repo().schema_dir
 
 
 def load_json(path: Path) -> Any:
@@ -81,6 +91,8 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
     entries = _manifest_entries(manifest)
     ids: set[str] = set()
     orders: set[int] = set()
+    names: set[str] = set()
+    titles: set[str] = set()
     for entry in entries:
         if not isinstance(entry, dict):
             raise ValueError("roster heroes must be objects")
@@ -89,29 +101,38 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
         if missing:
             raise ValueError(f"roster entry missing fields: {missing}")
         hero_id = entry["id"]
-        if hero_id != hero_id_for_display(entry["display_name"]):
-            raise ValueError(f"roster ID does not match display name: {hero_id}")
         if hero_id in ids:
             raise ValueError(f"duplicate roster ID: {hero_id}")
         if entry["order"] in orders:
             raise ValueError(f"duplicate roster order: {entry['order']}")
+        if entry["display_name"] in names:
+            raise ValueError(
+                f"duplicate display name: {entry['display_name']}"
+            )
+        if entry["title"] in titles:
+            raise ValueError(f"duplicate source title: {entry['title']}")
         ids.add(hero_id)
         orders.add(entry["order"])
+        names.add(entry["display_name"])
+        titles.add(entry["title"])
 
 
-def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, Any]:
-    manifest = load_json(path)
+def load_manifest(path: Path | None = None) -> dict[str, Any]:
+    manifest_path = path or _repo().manifest_path
+    if not manifest_path.is_file():
+        raise FileNotFoundError(
+            f"missing roster manifest: {manifest_path}"
+        )
+    manifest = load_json(manifest_path)
     if not isinstance(manifest, dict):
-        raise ValueError(f"{path} must contain an object")
+        raise ValueError(f"{manifest_path} must contain an object")
     validate_manifest(manifest)
     return manifest
 
 
 def _path_for(manifest_entry: dict[str, Any], name: str) -> Path:
     hero_id = manifest_entry["id"]
-    if hero_id != hero_id_for_display(manifest_entry["display_name"]):
-        raise ValueError(f"invalid hero ID in manifest: {hero_id}")
-    return HEROES_DIR / hero_id / name
+    return _repo().heroes_dir / hero_id / name
 
 
 def _load_bundle(entry: dict[str, Any]) -> dict[str, Any]:
@@ -363,6 +384,99 @@ def to_generated_synergies(
     return result
 
 
+def roster_generation_hash(
+    processed: dict[str, Any],
+    synergies: dict[str, Any],
+    manifest: dict[str, Any],
+) -> str:
+    """Return one hash covering every hero's published derived output."""
+    payload = {
+        "ids": [entry["id"] for entry in _manifest_entries(manifest)],
+        "processed": processed,
+        "synergies": synergies,
+    }
+    return canonical_hash(payload)
+
+
+def publish_documents(documents: list[tuple[Path, Any]]) -> None:
+    """Stage JSON documents, then replace destinations with rollback."""
+    repo = _repo()
+    stage_root = repo.tmp_dir / "roster-publish"
+    backups: dict[Path, bytes | None] = {}
+    staged: list[tuple[Path, Path]] = []
+    try:
+        if stage_root.exists():
+            for leftover in stage_root.rglob("*"):
+                if leftover.is_file():
+                    leftover.unlink()
+        for destination, value in documents:
+            relative = destination.name
+            if repo.root in destination.parents:
+                relative = str(destination.relative_to(repo.root))
+            staged_path = stage_root / relative
+            write_json_atomic(staged_path, value)
+            staged.append((destination, staged_path))
+        published: list[Path] = []
+        try:
+            for destination, staged_path in staged:
+                backups[destination] = (
+                    destination.read_bytes() if destination.exists() else None
+                )
+                write_json_atomic(
+                    destination,
+                    load_json(staged_path),
+                )
+                published.append(destination)
+        except Exception:
+            for destination in published:
+                original = backups.get(destination)
+                if original is None:
+                    if destination.exists():
+                        destination.unlink()
+                else:
+                    destination.write_bytes(original)
+            raise
+    finally:
+        if stage_root.exists():
+            for leftover in stage_root.rglob("*"):
+                if leftover.is_file():
+                    leftover.unlink()
+
+
+def _prepared_generated(
+    generated: dict[str, Any],
+    *,
+    analysis: dict[str, Any] | None,
+    synergies: dict[str, Any] | None,
+    ai: dict[str, Any],
+    overrides: dict[str, Any],
+    stage: str,
+    generation_hash: str | None,
+) -> dict[str, Any]:
+    result = copy.deepcopy(generated)
+    result["schema_version"] = CURRENT_GENERATED_SCHEMA
+    if analysis is not None:
+        result.setdefault("derived", {})["analysis"] = copy.deepcopy(analysis)
+    if synergies is not None:
+        result["synergies"] = copy.deepcopy(synergies)
+    provenance = result.setdefault("provenance", {})
+    provenance["ai_hash"] = canonical_hash(ai)
+    provenance["overrides_hash"] = canonical_hash(overrides)
+    provenance["source_hash"] = canonical_hash(result.get("source"))
+    if analysis is not None:
+        provenance["analysis_inputs_hash"] = canonical_hash(
+            {
+                "source": result.get("source"),
+                "ai": ai,
+                "overrides": overrides,
+            }
+        )
+    provenance["stage"] = stage
+    if generation_hash is not None:
+        provenance["generation_hash"] = generation_hash
+    return result
+
+
 def write_analysis_outputs(
     processed: dict[str, Any],
     synergies: dict[str, Any],
@@ -373,31 +487,30 @@ def write_analysis_outputs(
     """Persist analysis and synergy results inside each generated file."""
     manifest = manifest or load_manifest()
     bundles = bundles or load_bundles(manifest)
+    generation = roster_generation_hash(processed, synergies, manifest)
+    documents: list[tuple[Path, Any]] = []
+    prepared: dict[str, dict[str, Any]] = {}
     for entry in _manifest_entries(manifest):
         hero_id = entry["id"]
         name = entry["display_name"]
-        generated = copy.deepcopy(bundles[hero_id]["generated"])
-        generated.setdefault("derived", {})["analysis"] = copy.deepcopy(
-            processed["heroes"][name]
+        generated = _prepared_generated(
+            bundles[hero_id]["generated"],
+            analysis=processed["heroes"][name],
+            synergies=to_generated_synergies(
+                synergies["heroes"][name],
+                manifest,
+            ),
+            ai=bundles[hero_id]["ai"],
+            overrides=bundles[hero_id]["overrides"],
+            stage="scored",
+            generation_hash=generation,
         )
-        generated["synergies"] = to_generated_synergies(
-            synergies["heroes"][name],
-            manifest,
-        )
-        generated.setdefault("provenance", {})["analysis_inputs_hash"] = (
-            canonical_hash(
-                {
-                    "source": generated.get("source"),
-                    "ai": bundles[hero_id]["ai"],
-                    "overrides": bundles[hero_id]["overrides"],
-                }
-            )
-        )
-        generated["provenance"]["stage"] = "analyzed"
-        write_json_atomic(
-            _path_for(entry, GENERATED_NAME),
-            generated,
-        )
+        generated["id"] = hero_id
+        generated["display_name"] = entry["display_name"]
+        prepared[hero_id] = generated
+        documents.append((_path_for(entry, GENERATED_NAME), generated))
+    publish_documents(documents)
+    for hero_id, generated in prepared.items():
         bundles[hero_id]["generated"] = generated
 
 
@@ -456,30 +569,55 @@ def write_source_roster(data: dict[str, Any]) -> None:
     manifest = load_manifest()
     bundles = load_bundles(manifest)
     by_id = {entry["id"]: entry for entry in _manifest_entries(manifest)}
-    new_entries: list[dict[str, Any]] = []
+    downloaded: list[tuple[dict[str, Any], dict[str, Any], int]] = []
+    seen_ids: set[str] = set()
     for order, source in enumerate(data.get("heroes", [])):
         display_name = display_name_for_title(source["title"])
-        hero_id = hero_id_for_display(display_name)
-        entry = by_id.get(hero_id)
-        if entry is None:
+        matched = None
+        for entry in _manifest_entries(manifest):
+            if (
+                entry["title"] == source["title"]
+                or entry["display_name"] == display_name
+                or display_name in (entry.get("aliases") or [])
+                or source.get("name") in (entry.get("aliases") or [])
+            ):
+                matched = entry
+                break
+        if matched is None:
+            hero_id = hero_id_for_display(display_name)
+            matched = by_id.get(hero_id)
+        if matched is None:
             raise ValueError(
-                f"download found new hero without an initialized bundle: "
+                "download found new hero without an initialized bundle: "
                 f"{display_name}"
             )
-        entry = dict(entry)
-        entry["order"] = order
-        entry["title"] = source["title"]
-        entry["display_name"] = display_name
-        new_entries.append(entry)
+        seen_ids.add(matched["id"])
+        downloaded.append((matched, source, order))
+    missing = sorted(set(by_id) - seen_ids)
+    if missing:
+        raise ValueError(
+            "download omitted existing heroes: " + ", ".join(missing)
+        )
+    documents: list[tuple[Path, Any]] = []
+    new_entries: list[dict[str, Any]] = []
+    for entry, source, order in downloaded:
+        hero_id = entry["id"]
+        updated = dict(entry)
+        updated["order"] = order
+        updated["title"] = source["title"]
+        updated["display_name"] = display_name_for_title(source["title"])
+        new_entries.append(updated)
         generated = copy.deepcopy(bundles[hero_id]["generated"])
         generated["source"] = copy.deepcopy(source)
+        generated["id"] = hero_id
+        generated["display_name"] = updated["display_name"]
         provenance = generated.setdefault("provenance", {})
         provenance["source_hash"] = canonical_hash(source)
         provenance["analysis_inputs_hash"] = None
         provenance["stage"] = "source_changed"
-        write_json_atomic(
-            HEROES_DIR / hero_id / GENERATED_NAME,
-            generated,
+        provenance.pop("generation_hash", None)
+        documents.append(
+            (_repo().heroes_dir / hero_id / GENERATED_NAME, generated)
         )
     updated_manifest = dict(manifest)
     updated_manifest["headers"] = {
@@ -487,7 +625,8 @@ def write_source_roster(data: dict[str, Any]) -> None:
         for key, value in (manifest.get("headers") or {}).items()
     }
     updated_manifest["heroes"] = new_entries
-    write_json_atomic(MANIFEST_PATH, updated_manifest)
+    documents.append((_repo().manifest_path, updated_manifest))
+    publish_documents(documents)
 
 
 def update_ai_field(field: str, values: dict[str, Any]) -> None:
@@ -532,9 +671,10 @@ def validate_bundle_documents(
     bundles = bundles or load_bundles(manifest)
     errors: list[str] = []
     expected_ids = {entry["id"] for entry in _manifest_entries(manifest)}
+    heroes_dir = _repo().heroes_dir
     actual_ids = {
-        path.name for path in HEROES_DIR.iterdir() if path.is_dir()
-    } if HEROES_DIR.exists() else set()
+        path.name for path in heroes_dir.iterdir() if path.is_dir()
+    } if heroes_dir.exists() else set()
     for orphan in sorted(actual_ids - expected_ids):
         errors.append(f"orphan hero directory: {orphan}")
     for missing in sorted(expected_ids - actual_ids):
@@ -558,8 +698,13 @@ def validate_bundle_documents(
             errors.append(f"unsupported ai schema: {hero_id}")
         if bundle["overrides"].get("schema_version") != 1:
             errors.append(f"unsupported override schema: {hero_id}")
-        if generated.get("schema_version") != 1:
+        schema_version = generated.get("schema_version")
+        if schema_version not in (1, CURRENT_GENERATED_SCHEMA):
             errors.append(f"unsupported generated schema: {hero_id}")
+        if generated.get("id") != hero_id:
+            errors.append(f"generated id mismatch: {hero_id}")
+        if generated.get("display_name") != entry["display_name"]:
+            errors.append(f"generated display-name mismatch: {hero_id}")
         provenance = generated.get("provenance") or {}
         expected_source_hash = canonical_hash(source)
         expected_ai_hash = canonical_hash(bundle["ai"])
@@ -581,6 +726,30 @@ def validate_bundle_documents(
         if generated.get("derived", {}).get("analysis") is not None:
             if actual != expected_inputs:
                 errors.append(f"stale analysis inputs: {hero_id}")
+        stored_synergies = generated.get("synergies") or {}
+        known_ids = {item["id"] for item in _manifest_entries(manifest)}
+        for row in stored_synergies.get("synergies") or []:
+            provider = row.get("provider_id")
+            if provider and provider not in known_ids:
+                errors.append(
+                    f"unknown synergy provider_id {provider} on {hero_id}"
+                )
+        for row in stored_synergies.get("beneficiaries") or []:
+            other = row.get("hero_id")
+            if other and other not in known_ids:
+                errors.append(
+                    f"unknown beneficiary hero_id {other} on {hero_id}"
+                )
+    hashes = {
+        (bundles[entry["id"]]["generated"].get("provenance") or {}).get(
+            "generation_hash"
+        )
+        for entry in _manifest_entries(manifest)
+        if (bundles.get(entry["id"]) or {}).get("generated")
+    }
+    hashes.discard(None)
+    if len(hashes) > 1:
+        errors.append("mixed roster generation hashes")
     return errors
 
 
@@ -597,16 +766,16 @@ def validate_schema_documents(
         return ["jsonschema is required for per-hero schema validation"]
 
     schema_paths = {
-        "roster": _JSON_SCHEMA_DIR / "roster.schema.json",
-        "generated": _JSON_SCHEMA_DIR / "hero_generated.schema.json",
-        "ai": _JSON_SCHEMA_DIR / "hero_ai.schema.json",
-        "overrides": _JSON_SCHEMA_DIR / "hero_overrides.schema.json",
+        "roster": _schema_dir() / "roster.schema.json",
+        "generated": _schema_dir() / "hero_generated.schema.json",
+        "ai": _schema_dir() / "hero_ai.schema.json",
+        "overrides": _schema_dir() / "hero_overrides.schema.json",
     }
     schemas = {
         key: load_json(path) for key, path in schema_paths.items()
     }
     errors: list[str] = []
-    documents: Iterable[tuple[str, Any, dict[str, Any]]] = [
+    documents: list[tuple[str, Any, dict[str, Any]]] = [
         ("roster", manifest, {}),
     ]
     for entry in _manifest_entries(manifest):

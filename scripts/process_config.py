@@ -3,30 +3,13 @@
 
 from __future__ import annotations
 
-import importlib.util
-import sys
-from pathlib import Path
-
-SCRIPTS = Path(__file__).resolve().parent
-sys.path.insert(0, str(SCRIPTS))
-
-
-def _load_module(name: str, filename: str):
-    spec = importlib.util.spec_from_file_location(name, SCRIPTS / filename)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
-
-
-_rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
-_gen = _load_module("gen_overview", "generate-heroes-overview.py")
-
 
 def apply_config(config: dict) -> None:
-    """Push configurable weights/thresholds onto the analysis modules."""
-    rs, gen = _rs, _gen
+    """Push configurable weights onto the shared analysis modules."""
+    from hero_pipeline.engine import overview, rewrite_summaries
+
+    rs = rewrite_summaries()
+    gen = overview()
     sw = config.get("synergy_weights", {})
     for key, attr in [
         ("targeting_weight", "TARGETING_WEIGHT"),
@@ -54,7 +37,9 @@ def apply_config(config: dict) -> None:
     if "max_beneficiaries_display" in dl:
         gen.MAX_BENEFICIARIES_DISPLAY = dl["max_beneficiaries_display"]
     if "fallback_beneficiaries_display" in dl:
-        gen.FALLBACK_BENEFICIARIES_DISPLAY = dl["fallback_beneficiaries_display"]
+        gen.FALLBACK_BENEFICIARIES_DISPLAY = dl[
+            "fallback_beneficiaries_display"
+        ]
 
     bt = config.get("behavior_thresholds", {})
     for key, attr in [
@@ -76,7 +61,9 @@ def apply_config(config: dict) -> None:
     if "same_faction_mult" in rs_cfg:
         gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
     if "same_role_category_mult" in rs_cfg:
-        gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg["same_role_category_mult"]
+        gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg[
+            "same_role_category_mult"
+        ]
     if "same_melee_mult" in rs_cfg:
         gen.REPLACEMENT_SAME_MELEE_MULT = rs_cfg["same_melee_mult"]
     if "category_weights_by_role" in rs_cfg:
@@ -109,14 +96,18 @@ def apply_config(config: dict) -> None:
     if "min_cycle_seconds" in mt:
         rs.MIN_CYCLE_SECONDS = mt["min_cycle_seconds"]
     if "passive_reference_cycle_seconds" in mt:
-        rs.PASSIVE_REFERENCE_CYCLE_SECONDS = mt["passive_reference_cycle_seconds"]
+        rs.PASSIVE_REFERENCE_CYCLE_SECONDS = mt[
+            "passive_reference_cycle_seconds"
+        ]
 
     cs = config.get("condition_strength", {})
     if "frequent_score" in cs:
         rs.CONDITION_FREQUENT_SCORE = cs["frequent_score"]
         gen.FREQUENT_CONDITIONAL_SCORE = cs["frequent_score"]
     if "cooldown_reference_seconds" in cs:
-        rs.CONDITION_COOLDOWN_REFERENCE_SECONDS = cs["cooldown_reference_seconds"]
+        rs.CONDITION_COOLDOWN_REFERENCE_SECONDS = cs[
+            "cooldown_reference_seconds"
+        ]
     if "cooldown_floor_mult" in cs:
         rs.CONDITION_COOLDOWN_FLOOR_MULT = cs["cooldown_floor_mult"]
     if "rare_downgrade_steps" in cs:

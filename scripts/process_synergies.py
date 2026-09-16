@@ -141,30 +141,11 @@ def build_synergies(raw: dict, processed: dict) -> dict:
 
 
 def main() -> None:
-    if not io.HEROES_DATA_PROCESSED.exists() and not (
-        io.DATA / "roster.json"
-    ).exists():
-        raise SystemExit(
-            f"Missing {io.HEROES_DATA_PROCESSED.relative_to(io.ROOT)}; "
-            "run process_heroes.py first."
-        )
+    from hero_pipeline.pipeline import analyze
 
-    config = io.load_config()
-    apply_config(config)
-    processed = io.load_processed()
-    raw = io.load_heroes_data()
-    synergies = build_synergies(raw, processed)
-    if (io.DATA / "roster.json").exists():
-        from hero_pipeline.storage import write_synergies_output
-
-        write_synergies_output(synergies)
-        output = io.DATA / "heroes"
-    else:
-        io.save_json(io.HEROES_DATA_SYNERGIES, synergies)
-        output = io.HEROES_DATA_SYNERGIES
+    processed, synergies = analyze()
     print(
-        f"Wrote {output.relative_to(io.ROOT)} "
-        f"({len(synergies['heroes'])} heroes)"
+        f"Wrote {len(synergies['heroes'])} scored heroes"
     )
 
 

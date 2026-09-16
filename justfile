@@ -31,6 +31,10 @@ download:
 validate: ensure-venv
     .venv/bin/python scripts/validate_processed.py
 
+# Strict types for the schema-first pipeline package only.
+typecheck: ensure-venv
+    .venv/bin/python -m mypy --config-file mypy.ini scripts/hero_pipeline
+
 # Parallel pytest (~2–3 min after caching). Uses -n auto when peak RSS ≤ 1.5 GB.
 test: ensure-venv
     #!/usr/bin/env bash

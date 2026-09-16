@@ -15,7 +15,7 @@
     "provenance"
   ],
   "properties": {
-    "schema_version": { "type": "integer", "const": 1 },
+        "schema_version": { "type": "integer", "enum": [1, 2] },
     "id": { "type": "string", "minLength": 1 },
     "display_name": { "type": "string", "minLength": 1 },
     "source": { "$ref": "#/$defs/source" },
@@ -74,7 +74,14 @@
           "type": ["string", "null"],
           "pattern": "^[a-f0-9]{64}$"
         },
-        "stage": { "type": "string" }
+        "generation_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "stage": {
+          "type": "string",
+          "enum": ["source_changed", "analyzed", "scored"]
+        }
       }
     }
   },

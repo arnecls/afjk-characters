@@ -63,8 +63,6 @@ _PER_HERO_CURATED_CACHE: dict[str, dict] | None = None
 def _per_hero_curated(name: str) -> dict | None:
     """Read curated inputs from hero-local files when they are available."""
     global _PER_HERO_CURATED_CACHE
-    if not (ROOT / "data" / "roster.json").exists():
-        return None
     if _PER_HERO_CURATED_CACHE is None:
         from hero_pipeline.storage import load_roster_inputs
 

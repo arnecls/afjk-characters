@@ -63,5 +63,8 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
 - Stable IDs add a manifest migration when a display name changes.
 - Public output can stay byte-compatible while internal aggregate inputs are
   removed.
+- Generated documents may use schema version 2 for additive scoring facts and
+  a roster generation hash. Hero IDs are immutable and are not recomputed from
+  display names.
 - The old analysis and synergy implementations need staged migration before
   their compatibility adapters can be removed.

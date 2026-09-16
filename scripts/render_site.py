@@ -475,40 +475,33 @@ def build_site_data(
 
 
 def main() -> None:
-    per_hero_view = None
-    if (io.DATA / "roster.json").exists():
-        from hero_pipeline.presentation.project import project_roster
-        from hero_pipeline.render.site import render_site_data
-        from hero_pipeline.storage import load_roster_inputs
+    from hero_pipeline.analysis.policy import make_policy
+    from hero_pipeline.presentation.project import project_roster
+    from hero_pipeline.render.overview import _summary_heroes
+    from hero_pipeline.render.site import render_site_data
+    from hero_pipeline.storage import load_roster_inputs
 
-        inputs = load_roster_inputs()
-        data = inputs["raw"]
-        processed = inputs["processed"]
-        synergies = inputs["synergies"]
-        per_hero_view = project_roster(
-            inputs,
-            processed,
-            synergies,
-        )
-    else:
-        data = io.load_heroes_data()
-        processed = io.load_processed()
-        synergies = io.load_synergies()
+    inputs = load_roster_inputs()
+    processed = inputs["processed"]
+    synergies = inputs["synergies"]
     config = io.load_config()
-
+    view = project_roster(
+        inputs,
+        processed,
+        synergies,
+        make_policy(config),
+    )
     slug_by_name: dict[str, str] = {}
     for short in sorted(processed["heroes"]):
         slug_by_name[short] = hero_slug(short)
 
-    summary_heroes, skills_by_title = load_summary_heroes(data, processed)
+    summary_heroes = _summary_heroes(view)
+    skills_by_title = rs.load_skills_by_title_from_records(inputs["raw"]["heroes"])
     mix_role_prominence = gen.build_mix_role_prominence_index(
         summary_heroes, skills_by_title, slug_by_name
     )
 
-    if per_hero_view is None:
-        payload = build_site_data(data, processed, synergies, config)
-    else:
-        payload = render_site_data(per_hero_view, config)
+    payload = render_site_data(view, config)
     mix_index = build_mix_synergy_index(synergies, slug_by_name)
     mix_config = build_mix_config(config)
 
