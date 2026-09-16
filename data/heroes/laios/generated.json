@@ -1,0 +1,1388 @@
+{
+  "schema_version": 1,
+  "id": "laios",
+  "display_name": "Laios",
+  "source": {
+    "title": "Laios - Dungeon Adventurer",
+    "name": "Laios",
+    "tags": "Dimensional · Warrior · Physical",
+    "faction": "Dimensional",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "An adventurer who loves monsters. He's able to collect ingredients from them and cook meals to provide buffs to allies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Living Armor - Kensuke",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "Laios summons a slow-moving armor with infinate HP, controlled by Kensuke. This Living Armor starts with 1,000 Energy and deals damage equal to 300% + 30% (SP-based) of Laios' ATK. It loses 25 Energy per second while it exists. Whenever it takes base damage exceeding 250% + 20% (SP-based) of the caster's ATK, it loses an extra 100 Energy. At zero Energy, the armor crumbles on the spot but regains 125 Energy per second until its Energy is full again, and then it returns to combat. When casting this skill again, Laios recovers 1,000 Energy for Kensuke, grants it control immunity and increases its ATK SPD by 120 + 10 (SP-based) over the next 10s.",
+          "active": [
+            "Laios summons a slow-moving armor with infinate HP, controlled by Kensuke.",
+            "This Living Armor starts with 1,000 Energy and deals damage equal to 300% + 30% (SP-based) of Laios' ATK.",
+            "It loses 25 Energy per second while it exists.",
+            "Whenever it takes base damage exceeding 250% + 20% (SP-based) of the caster's ATK, it loses an extra 100 Energy.",
+            "At zero Energy, the armor crumbles on the spot but regains 125 Energy per second until its Energy is full again, and then it returns to combat.",
+            "When casting this skill again, Laios recovers 1,000 Energy for Kensuke, grants it control immunity and increases its ATK SPD by 120 + 10 (SP-based) over the next 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the Living Armor's ATK to 320% + 30% (SP-based) of Laios' ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the Living Armor's ATK to 340% + 30% (SP-based) of Laios' ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the Living Armor's ATK to 360% + 30% (SP-based) of Laios' ATK."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the Living Armor's ATK to 380% + 30% (SP-based) of Laios' ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Laios summons a Living Armor that can self-regenerate after defeat to assist."
+      },
+      {
+        "section": "Skill1",
+        "name": "Intimidate",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Laios spreads his limbs to appear larger and lets out an intimidating roar. Enemies within 3 adjacent tiles in front become confused, unable to move or act and suffer a 44% + 5% (SP-based) reduction in both Phys DEF and Magic DEF for 3s. If the targets are monsters, the confusion effect extends for an additional 4 + 1 (SP-based)s after the skill ends.",
+          "active": [
+            "Laios spreads his limbs to appear larger and lets out an intimidating roar.",
+            "Enemies within 3 adjacent tiles in front become confused, unable to move or act and suffer a 44% + 5% (SP-based) reduction in both Phys DEF and Magic DEF for 3s.",
+            "If the targets are monsters, the confusion effect extends for an additional 4 + 1 (SP-based)s after the skill ends."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the Phy DEF and Magic DEF reduction to 46% + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the Phy DEF and Magic DEF reduction to 48% + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the Phy DEF and Magic DEF reduction to 50% + 5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Laios intimidates enemies in a frontal area, confusing them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Dungeon Gourmet",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Passive. Whenever an enemy monster is defeated, Laios collects an ingredient from it and instantly recovers 250 Energy and 500% (ATK-based) HP. Laios uses the collected ingredients and cooks on the spot, recovering 500% (ATK-based) HP for allies within 2 tiles and increasing their ATK by 20%| + 5% (SP-based) for 8 + 0.5 (SP-based)s. When activly used, for each ingredient Laios has collected, the cooked meal randomly grants one of the following extra buffs: Increases Phys DEF and Magic DEF by 40%, increases Haste by 30, or recovers 100% (ATK-based) HP per second. Extra buffs can only be triggered up to 3 times. If Marcille recives the buff, she recovers an extra 300 Energy.",
+          "passive": [
+            "Whenever an enemy monster is defeated, Laios collects an ingredient from it and instantly recovers 250 Energy and 500% (ATK-based) HP.",
+            "Laios uses the collected ingredients and cooks on the spot, recovering 500% (ATK-based) HP for allies within 2 tiles and increasing their ATK by 20%| + 5% (SP-based) for 8 + 0.5 (SP-based)s.",
+            "When activly used, for each ingredient Laios has collected, the cooked meal randomly grants one of the following extra buffs: Increases Phys DEF and Magic DEF by 40%, increases Haste by 30, or recovers 100% (ATK-based) HP per second.",
+            "Extra buffs can only be triggered up to 3 times.",
+            "If Marcille recives the buff, she recovers an extra 300 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP recovery amount from cooking to 520% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP recovery amount from cooking to 540% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP recovery amount from cooking to 560% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Laios collects ingredients from defeated monsters to cook meals that grant buffs to allies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Laios increases his ATK by 12% during battle.",
+          "active": [
+            "Laios increases his ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Laios increases his ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Laios increases his ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Laios increases his ATK during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Ingredient Analysis",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, if there are monsters among the enemies, Laios takes out his Dungeon Gourmet Guide and starts analyzing those monsters to make them drop more ingredients. Each monster will prematurely drop an extra ingredient the first time it loses 30% of its max HP. Each monster can only drop 1 extra ingredient this way.",
+          "active": [
+            "When a battle starts, if there are monsters among the enemies, Laios takes out his Dungeon Gourmet Guide and starts analyzing those monsters to make them drop more ingredients.",
+            "Each monster will prematurely drop an extra ingredient the first time it loses 30% of its max HP.",
+            "Each monster can only drop 1 extra ingredient this way."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage Laios deals to monsters (excuding heros and their summoned units) by 50%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Permenantly increases Laios' Phys DEF and Magic DEf by 25% for each ingredient collected from monsters, up to 3 stacks."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage Laios deals to monsters (excuding heros and their summoned units) by 80%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Laios analyzes monsters when a battle starts, making them drop more ingredients."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Laios permanently increases his max HP by 20% each time he collects a different ingredient using Dungeon Gourmet. This effect can be triggered up to 3 times.",
+          "active": [
+            "Laios permanently increases his max HP by 20% each time he collects a different ingredient using Dungeon Gourmet.",
+            "This effect can be triggered up to 3 times."
+          ]
+        },
+        "description_lite": "Laios permanently increases his max HP after collecting ingredents."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-11-28",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Laios - Dungeon Adventurer",
+      "faction": "dimensional",
+      "class": "warrior",
+      "role_category": "tank",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-11-28",
+      "season": "Thorns of Devotion",
+      "season_number": 5,
+      "skills": {
+        "Living Armor - Kensuke": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Laios summons a slow-moving armor with infinate HP, controlled by Kensuke. This Living Armor starts with 1,000 Energy and deals damage equal to 300% + 30% (SP-based) of Laios' ATK. It loses 25 Energy per second while it exists. Whenever it takes base damage exceeding 250% + 20% (SP-based) of the caster's ATK, it loses an extra 100 Energy. At zero Energy, the armor crumbles on the spot but regains 125 Energy per second until its Energy is full again, and then it returns to combat. When casting this skill again, Laios recovers 1,000 Energy for Kensuke, grants it control immunity and increases its ATK SPD by 120 + 10 (SP-based) over the next 10s.",
+            "active": [
+              "Laios summons a slow-moving armor with infinate HP, controlled by Kensuke.",
+              "This Living Armor starts with 1,000 Energy and deals damage equal to 300% + 30% (SP-based) of Laios' ATK.",
+              "It loses 25 Energy per second while it exists.",
+              "Whenever it takes base damage exceeding 250% + 20% (SP-based) of the caster's ATK, it loses an extra 100 Energy.",
+              "At zero Energy, the armor crumbles on the spot but regains 125 Energy per second until its Energy is full again, and then it returns to combat.",
+              "When casting this skill again, Laios recovers 1,000 Energy for Kensuke, grants it control immunity and increases its ATK SPD by 120 + 10 (SP-based) over the next 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the Living Armor's ATK to 320% + 30% (SP-based) of Laios' ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the Living Armor's ATK to 340% + 30% (SP-based) of Laios' ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the Living Armor's ATK to 360% + 30% (SP-based) of Laios' ATK."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the Living Armor's ATK to 380% + 30% (SP-based) of Laios' ATK."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 1,
+          "initial_energy": 600.0,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Intimidate": {
+          "category": "skill1",
+          "description": {
+            "raw": "Laios spreads his limbs to appear larger and lets out an intimidating roar. Enemies within 3 adjacent tiles in front become confused, unable to move or act and suffer a 44% + 5% (SP-based) reduction in both Phys DEF and Magic DEF for 3s. If the targets are monsters, the confusion effect extends for an additional 4 + 1 (SP-based)s after the skill ends.",
+            "active": [
+              "Laios spreads his limbs to appear larger and lets out an intimidating roar.",
+              "Enemies within 3 adjacent tiles in front become confused, unable to move or act and suffer a 44% + 5% (SP-based) reduction in both Phys DEF and Magic DEF for 3s.",
+              "If the targets are monsters, the confusion effect extends for an additional 4 + 1 (SP-based)s after the skill ends."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the Phy DEF and Magic DEF reduction to 46% + 5% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the Phy DEF and Magic DEF reduction to 48% + 5% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the Phy DEF and Magic DEF reduction to 50% + 5% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 49.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 3.0
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Magic DEF — Area",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Phys DEF — Area",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Bind — Area"
+            }
+          ]
+        },
+        "Dungeon Gourmet": {
+          "category": "skill2",
+          "description": {
+            "raw": "Passive. Whenever an enemy monster is defeated, Laios collects an ingredient from it and instantly recovers 250 Energy and 500% (ATK-based) HP. Laios uses the collected ingredients and cooks on the spot, recovering 500% (ATK-based) HP for allies within 2 tiles and increasing their ATK by 20%| + 5% (SP-based) for 8 + 0.5 (SP-based)s. When activly used, for each ingredient Laios has collected, the cooked meal randomly grants one of the following extra buffs: Increases Phys DEF and Magic DEF by 40%, increases Haste by 30, or recovers 100% (ATK-based) HP per second. Extra buffs can only be triggered up to 3 times. If Marcille recives the buff, she recovers an extra 300 Energy.",
+            "passive": [
+              "Whenever an enemy monster is defeated, Laios collects an ingredient from it and instantly recovers 250 Energy and 500% (ATK-based) HP.",
+              "Laios uses the collected ingredients and cooks on the spot, recovering 500% (ATK-based) HP for allies within 2 tiles and increasing their ATK by 20%| + 5% (SP-based) for 8 + 0.5 (SP-based)s.",
+              "When activly used, for each ingredient Laios has collected, the cooked meal randomly grants one of the following extra buffs: Increases Phys DEF and Magic DEF by 40%, increases Haste by 30, or recovers 100% (ATK-based) HP per second.",
+              "Extra buffs can only be triggered up to 3 times.",
+              "If Marcille recives the buff, she recovers an extra 300 Energy."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases HP recovery amount from cooking to 520% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases HP recovery amount from cooking to 540% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases HP recovery amount from cooking to 560% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 300.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Phys DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ],
+              "duration": 8.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "cooldown": 12.0,
+          "initial_cooldown": 3.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "HoT — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK — Multiple targets",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Haste — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — Self (Supreme+)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Laios increases his ATK by 12% during battle.",
+            "active": [
+              "Laios increases his ATK by 12% during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Laios increases his ATK by 16% during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Laios increases his ATK by 20% during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "cooldown": 1.0,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Ingredient Analysis": {
+          "category": "skill4",
+          "description": {
+            "raw": "When a battle starts, if there are monsters among the enemies, Laios takes out his Dungeon Gourmet Guide and starts analyzing those monsters to make them drop more ingredients. Each monster will prematurely drop an extra ingredient the first time it loses 30% of its max HP. Each monster can only drop 1 extra ingredient this way.",
+            "active": [
+              "When a battle starts, if there are monsters among the enemies, Laios takes out his Dungeon Gourmet Guide and starts analyzing those monsters to make them drop more ingredients.",
+              "Each monster will prematurely drop an extra ingredient the first time it loses 30% of its max HP.",
+              "Each monster can only drop 1 extra ingredient this way."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage Laios deals to monsters (excuding heros and their summoned units) by 50%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Permenantly increases Laios' Phys DEF and Magic DEf by 25% for each ingredient collected from monsters, up to 3 stacks."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage Laios deals to monsters (excuding heros and their summoned units) by 80%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Phys DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Magic DEF — Self (EX+10)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF — Self (EX+10)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Laios permanently increases his max HP by 20% each time he collects a different ingredient using Dungeon Gourmet. This effect can be triggered up to 3 times.",
+            "active": [
+              "Laios permanently increases his max HP by 20% each time he collects a different ingredient using Dungeon Gourmet.",
+              "This effect can be triggered up to 3 times."
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "This Living Armor starts with 1,000 Energy and deals damage equal to 300% + 30% of Laios' ATK."
+          },
+          {
+            "label": "Stacking",
+            "tier": "ex+10",
+            "targeting": "Single target",
+            "description": "Permenantly increases Laios' Phys DEF and Magic DEf by 25% for each ingredient collected from monsters, up to 3 stacks."
+          }
+        ],
+        "requires": [
+          {
+            "label": "Monster ingredients",
+            "tier": "base",
+            "targeting": "Enemies",
+            "description": "Whenever an enemy monster is defeated, Laios collects an ingredient from it and instantly recovers 250 Energy and 500% (ATK-based) HP."
+          },
+          {
+            "label": "Monster ingredients",
+            "tier": "base",
+            "description": "Laios uses the collected ingredients and cooks on the spot, recovering 500% (ATK-based) HP for allies within 2 tiles and increasing their ATK by 20%| + 5% for 8 + 0.5s."
+          },
+          {
+            "label": "Stacked resource",
+            "tier": "base",
+            "description": "When activly used, for each ingredient Laios has collected, the cooked meal randomly grants one of the following extra buffs: Increases Phys DEF and Magic DEF by 40%, increases Haste by 30, or recovers 100% (ATK-based) HP per second."
+          }
+        ]
+      },
+      "damage_entries": [],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "atk_spd",
+        "haste",
+        "max_hp",
+        "energy",
+        "physical_def",
+        "magic_def"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 1.0 tiles",
+        "casting_speed": "fast",
+        "walk_speed": "normal",
+        "signature_skill_name": "Dungeon Gourmet",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {}
+          }
+        }
+      }
+    },
+    "signature_calculated": "skill2"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Physical DEF via DEF (multiple targets, average)",
+          "Magic DEF via DEF (multiple targets, average)"
+        ],
+        "score": 19.875,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "ATK SPD via Haste (all units, average) `signature fuel`",
+          "Max HP via Max HP (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "Physical DEF via Phys DEF (single target, low)",
+          "Magic DEF via Magic DEF (single target, low)"
+        ],
+        "score": 18.654,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (all summons, high)",
+          "Damage dealt via Damage dealt (all summons, average)",
+          "Damage taken via Damage taken (all summons, low)"
+        ],
+        "score": 18.0,
+        "provider_id": "aurora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all summons, high)",
+          "DEF via DEF (all summons, high)"
+        ],
+        "score": 18.0,
+        "provider_id": "peggy"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`"
+        ],
+        "score": 16.683,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)",
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Max HP via Max HP (all units, high)"
+        ],
+        "score": 15.75,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)",
+          "ATK SPD via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 15.654,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 13.875,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "Max HP via Max HP (area, average)",
+          "Physical DEF via DEF (area, high)",
+          "Magic DEF via DEF (area, high)"
+        ],
+        "score": 12.0,
+        "provider_id": "tilaya"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Physical DEF via Phys DEF (single target, average)",
+          "Magic DEF via Magic DEF (single target, high)"
+        ],
+        "score": 11.712,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Max HP via Max HP (single target, low)",
+          "Energy via Energy (single target, low) `signature fuel`"
+        ],
+        "score": 10.779,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 10.275,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Magic DEF via Magic DEF (multiple targets, low)"
+        ],
+        "score": 9.375,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 9.0,
+        "provider_id": "shakir"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 9.0,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 8.625,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Physical DEF via Phys DEF (multiple targets, low)",
+          "Magic DEF via Magic DEF (multiple targets, low)"
+        ],
+        "score": 8.25,
+        "provider_id": "perseus"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))",
+          "ATK SPD via Haste (single target, low) `signature fuel`",
+          "Physical DEF via Phys DEF (single target, low)",
+          "Magic DEF via Magic DEF (single target, low)"
+        ],
+        "score": 8.23125,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
+          "Max HP via Max HP (multiple targets, low)"
+        ],
+        "score": 6.6000000000000005,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Shield via Shield (all summons, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "florabelle"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 6.0,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 6.0,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "Physical DEF via DEF (single target, low)",
+          "Magic DEF via DEF (single target, low)"
+        ],
+        "score": 5.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 5.1000000000000005,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`"
+        ],
+        "score": 4.212,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "Magic DEF via Magic DEF (area, low)"
+        ],
+        "score": 4.125,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy (all units, low) `signature fuel`"
+        ],
+        "score": 3.8040000000000003,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 2.4000000000000004,
+        "provider_id": "valka"
+      },
+      {
+        "reasons": [
+          "Physical DEF via Phys DEF (multiple targets, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "lumont"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 26.0,
+        "hero_id": "eryndor"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "florabelle"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "lenya"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "marilee"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "pang"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "perseus"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "rhys"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "salazer"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "silvina"
+      },
+      {
+        "score": 24.0,
+        "hero_id": "valen"
+      },
+      {
+        "score": 15.0,
+        "hero_id": "marcille"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "atalanta"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "cecia"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "gwyneth"
+      },
+      {
+        "score": 8.0,
+        "hero_id": "odie"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6667,
+          "matches": [
+            "ally-buffer",
+            "ally-healer",
+            "high-initial-energy",
+            "summoner"
+          ],
+          "hero_id": "peggy"
+        },
+        {
+          "score": 0.6,
+          "matches": [
+            "ally-buffer",
+            "ally-healer",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "koko"
+        },
+        {
+          "score": 0.5714,
+          "matches": [
+            "ally-buffer",
+            "ally-healer",
+            "summoner",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "damian"
+        }
+      ],
+      "damage": [],
+      "debuff": [],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Bind"
+          ],
+          "hero_id": "evie"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Bind"
+          ],
+          "hero_id": "eironn"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Bind"
+          ],
+          "hero_id": "arden"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "673d35cca4265d81dcb3aa4eaec3af00f76c0f7c5f774dd3fb528866c8b8256c",
+    "ai_hash": "0351e44185c44175421467cfd72c79f8264563dd6b61a2aac175bd072314911b",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "152009478cb40ee316a718b24fb6bd633da2748faeaf39faa2cf2eee8dae2efd",
+    "stage": "scored"
+  }
+}

@@ -18,12 +18,27 @@ HEROES_OUT = io.HEROES_MD
 
 
 def main() -> None:
-    data = io.load_heroes_data()
-    content = io.reconstruct_heroes_md(data)
+    if (io.DATA / "roster.json").exists():
+        from hero_pipeline.presentation.project import project_roster
+        from hero_pipeline.render.markdown import render_heroes
+        from hero_pipeline.storage import load_roster_inputs
+
+        inputs = load_roster_inputs()
+        view = project_roster(
+            inputs,
+            inputs["processed"],
+            inputs["synergies"],
+        )
+        content = render_heroes(view)
+        hero_count = len(inputs["manifest"]["heroes"])
+    else:
+        data = io.load_heroes_data()
+        content = io.reconstruct_heroes_md(data)
+        hero_count = len(data["heroes"])
     HEROES_OUT.write_text(content, encoding="utf-8")
     print(
         f"Wrote {HEROES_OUT.relative_to(io.ROOT)} "
-        f"({len(content.splitlines())} lines, {len(data['heroes'])} heroes)"
+        f"({len(content.splitlines())} lines, {hero_count} heroes)"
     )
 
 

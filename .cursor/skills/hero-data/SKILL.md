@@ -1,8 +1,8 @@
 ---
 name: validate-hero-data
 description: >-
-  Audits detected skill effects in data/heroes_data_processed.json against hero
-  skill descriptions and data/hero_play_overviews.json. Use when asked to
+  Audits detected skill effects in per-hero generated.json against hero
+  skill descriptions and ai.json play overviews. Use when asked to
   validate, audit, or review detection quality; fix detection for one hero or
   skill (e.g. wrong buff/debuff, missing damage type, wrong targeting); run
   high-level or detailed roster validation; or follow AGENTS.md validation
@@ -12,7 +12,7 @@ description: >-
 # Validate hero data
 
 Manual audit of the detection pipeline output. Compare each skill's parsed
-`effects` in `data/heroes_data_processed.json` against its full `description`
+`effects` in a hero's `generated.json` against its full `description`
 (raw text plus active/passive and max-tier upgrade lines).
 
 **Do not** automate this audit with a one-off script or bulk unittest. Read
@@ -42,12 +42,12 @@ end-to-end like a mini validation pass — do not only patch JSON by hand.
 ```
 Task progress (single hero):
 - [ ] 1. Symptom — note what user saw (processed JSON, skill card, overview, synergy)
-- [ ] 2. Read skill text — heroes_data.json or processed description (active + max-tier upgrades)
+- [ ] 2. Read skill text — hero `generated.json` description (active + max-tier upgrades)
 - [ ] 3. Read detected output — effects[], skill_card_tags, benefit_stats (if relevant)
 - [ ] 4. Cross-check display — site/data/heroes.json skillCards; chip polarity in site/js/app.js if tags look right in JSON but wrong on site
 - [ ] 5. Reproduce — hero_from_record + analyze_hero (see debug snippet below)
 - [ ] 6. Classify — missing label / spurious label / wrong label / wrong target / wrong magnitude / display-only
-- [ ] 7. Fix — update `data/skill_effects/<short_name>.json` via
+- [ ] 7. Fix — update the hero's `ai.json` via
   [extract-skill-effects](../extract-skill-effects/SKILL.md); hero_schema.py,
   site/js/app.js (chip defs), overview-to-csv.py (column maps) as needed
 - [ ] 8. Regenerate — just views; re-read that hero in processed JSON + site
@@ -85,8 +85,8 @@ for sec, sl in sorted(hero.skill_slices.items()):
 PY
 ```
 
-For one clause in isolation, edit the matching tier in
-`data/skill_effects/<short_name>.json`, then re-run `rs.analyze_hero(hero)`.
+For one clause in isolation, edit the matching tier in the hero's
+`ai.json`, then re-run the analysis.
 
 ### Detection vs display
 
@@ -94,7 +94,7 @@ For one clause in isolation, edit the matching tier in
 
 | Layer | Where to look |
 |-------|----------------|
-| Detection | `data/heroes_data_processed.json` → `effects`, `skill_card_tags` |
+| Detection | hero `generated.json` → `analysis.skills` effects and tags |
 | Site cards | `site/data/heroes.json` → `sections.skillCards[].tags` |
 | Chip styling | `site/js/app.js` → `TAG_DEFINITIONS` (debuff labels need explicit entries, e.g. `Haste debuff`, `Phys DEF debuff`, `Damage dealt debuff`) |
 | Overview CSV | `heroes-overview.csv` debuff columns; label `Damage dealt` maps to column `Damage dealt debuff` |

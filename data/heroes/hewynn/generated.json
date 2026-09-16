@@ -1,0 +1,1091 @@
+{
+  "schema_version": 1,
+  "id": "hewynn",
+  "display_name": "Hewynn",
+  "source": {
+    "title": "Hewynn - Tender Leaf",
+    "name": "Hewynn",
+    "tags": "Wilder · Support · Magic",
+    "faction": "Wilder",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A tender water spirit who is skilled at continuous healing.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Rain Prayer",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "Global",
+          "Initial Energy": "200"
+        },
+        "description": {
+          "raw": "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s.",
+          "active": [
+            "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Healing amount per second is increased to 100% (ATK-based) + 5% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Healing amount per second is increased to 105% (ATK-based) + 5% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Healing amount per second is increased to 110% (ATK-based) + 5% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Healing amount per second is increased to 115% (ATK-based) + 5% (SP-based) HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn continuously heals all allies for a duration of time."
+      },
+      {
+        "section": "Skill1",
+        "name": "Healing Wave",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "5s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP.",
+          "active": [
+            "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases HP recovery to 290% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases HP recovery to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Hewynn's skill grants this effect once every 3s to 1 weakest ally while casting her Ultimate."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn heals an ally for a small amount of HP."
+      },
+      {
+        "section": "Skill2",
+        "name": "Revitalize",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%. This effect can trigger once every 8 - 1 (SP-based)s per ally.",
+          "active": [
+            "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%.",
+            "This effect can trigger once every 8 - 1 (SP-based)s per ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Heals an ally and removes all their dispellable debuffs, triggering once every 6 - 1 (SP-based)s per ally."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Heals once every 6 - 1 (SP-based)s per ally, and removes dispellable debuffs once every 4 - 1 (SP-based)s per ally."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the extra healing amount to 130% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn heals allies and removes their dispellable debuffs."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Hewynn increases her ATK by 9% during battle. She gains an extra 6% ATK after casting Rain Prayer for the first time.",
+          "active": [
+            "Hewynn increases her ATK by 9% during battle.",
+            "She gains an extra 6% ATK after casting Rain Prayer for the first time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Hewynn increases her ATK by 12% during battle.",
+                "She gains an extra 8% ATK after casting Rain Prayer for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Hewynn increases her ATK by 14% during battle.",
+                "She gains an extra 10% ATK after casting Rain Prayer for the first time."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn increases her ATK during battle. She gains extra ATK after casting Rain Prayer for the first time."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Tranquility",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hewynn is unaffected for 6s while casting Rain Prayer. During this time, all allies take 30% less damage.",
+          "active": [
+            "Hewynn is unaffected for 6s while casting Rain Prayer.",
+            "During this time, all allies take 30% less damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Hewynn has 300 Initial Energy.",
+                "While Rain Prayer is effective, all allies take 32% less damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "While Rain Prayer is effective, all allies take 34% less damage and receive buffs from Revitalize."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "While Rain Prayer is effective, all allies take 36% less damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn is immune to control effects and reduces damage taken by allies while casting Rain Prayer."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect.",
+          "active": [
+            "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect."
+          ]
+        },
+        "description_lite": "Hewynn increases the target's Haste for seconds when Revitalize is in effect."
+      }
+    ],
+    "range": 4,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Hewynn - Tender Leaf",
+      "faction": "wilder",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Rain Prayer": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s.",
+            "active": [
+              "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Healing amount per second is increased to 100% (ATK-based) + 5% (SP-based) HP."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Healing amount per second is increased to 105% (ATK-based) + 5% (SP-based) HP."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Healing amount per second is increased to 110% (ATK-based) + 5% (SP-based) HP."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Healing amount per second is increased to 115% (ATK-based) + 5% (SP-based) HP."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 115.0
+                }
+              ],
+              "duration": 9.0,
+              "tick": 1.0
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "initial_cooldown": 1.25,
+          "initial_energy": 200.0,
+          "skill_card_tags": [
+            {
+              "label": "HoT — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self (Mythic+)"
+            }
+          ]
+        },
+        "Healing Wave": {
+          "category": "skill1",
+          "description": {
+            "raw": "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP.",
+            "active": [
+              "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases HP recovery to 290% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases HP recovery to 300% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Hewynn's skill grants this effect once every 3s to 1 weakest ally while casting her Ultimate."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 280.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 5.0,
+          "initial_cooldown": 1.25,
+          "skill_range": 4,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Revitalize": {
+          "category": "skill2",
+          "description": {
+            "raw": "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%. This effect can trigger once every 8 - 1 (SP-based)s per ally.",
+            "active": [
+              "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%.",
+              "This effect can trigger once every 8 - 1 (SP-based)s per ally."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Heals an ally and removes all their dispellable debuffs, triggering once every 6 - 1 (SP-based)s per ally."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Heals once every 6 - 1 (SP-based)s per ally, and removes dispellable debuffs once every 4 - 1 (SP-based)s per ally."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the extra healing amount to 130% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Hewynn increases her ATK by 9% during battle. She gains an extra 6% ATK after casting Rain Prayer for the first time.",
+            "active": [
+              "Hewynn increases her ATK by 9% during battle.",
+              "She gains an extra 6% ATK after casting Rain Prayer for the first time."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Hewynn increases her ATK by 12% during battle.",
+                  "She gains an extra 8% ATK after casting Rain Prayer for the first time."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Hewynn increases her ATK by 14% during battle.",
+                  "She gains an extra 10% ATK after casting Rain Prayer for the first time."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 14.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Tranquility": {
+          "category": "skill4",
+          "description": {
+            "raw": "Hewynn is unaffected for 6s while casting Rain Prayer. During this time, all allies take 30% less damage.",
+            "active": [
+              "Hewynn is unaffected for 6s while casting Rain Prayer.",
+              "During this time, all allies take 30% less damage."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Hewynn has 300 Initial Energy.",
+                  "While Rain Prayer is effective, all allies take 32% less damage."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "While Rain Prayer is effective, all allies take 34% less damage and receive buffs from Revitalize."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "While Rain Prayer is effective, all allies take 36% less damage."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Damage taken — All units",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect.",
+            "active": [
+              "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "duration": 6.0,
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Haste",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": [
+          {
+            "label": "Passive with internal cooldown",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "This effect can trigger once every 8 - 1s per ally."
+          }
+        ]
+      },
+      "damage_entries": [],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "slow",
+        "walk_speed": "normal",
+        "signature_skill_name": "Rain Prayer",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "slow",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 4.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 16.02822857142857,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 15.261814285714285,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 10.575,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 10.575,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)",
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 9.931799999999999,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 8.955,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 8.581800000000001,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 7.95,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, low)",
+          "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+        ],
+        "score": 7.74906,
+        "provider_id": "hugin"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 6.2829,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 5.945399999999999,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 5.325,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 4.990371428571429,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 4.05,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via ATK SPD (single target, low) `signature fuel`"
+        ],
+        "score": 3.705,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))",
+          "ATK SPD via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 3.58125,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.7,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.2950000000000004,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.2950000000000004,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 8.25,
+        "hero_id": "dunlingr"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "lamentis"
+      },
+      {
+        "score": 7.500000000000001,
+        "hero_id": "lumont"
+      },
+      {
+        "score": 7.500000000000001,
+        "hero_id": "mehira"
+      },
+      {
+        "score": 7.500000000000001,
+        "hero_id": "twins"
+      },
+      {
+        "score": 5.625,
+        "hero_id": "cassadee"
+      },
+      {
+        "score": 3.75,
+        "hero_id": "lucy"
+      },
+      {
+        "score": 3.75,
+        "hero_id": "valka"
+      },
+      {
+        "score": 3.0,
+        "hero_id": "hugin"
+      },
+      {
+        "score": 2.025,
+        "hero_id": "alna"
+      },
+      {
+        "score": 2.025,
+        "hero_id": "thador"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
+    ],
+    "replacements": {
+      "buff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken",
+            "Haste"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken",
+            "Haste"
+          ],
+          "hero_id": "shakir"
+        },
+        {
+          "score": 0.7579,
+          "matches": [
+            "Haste",
+            "Damage taken"
+          ],
+          "hero_id": "hugin"
+        }
+      ],
+      "energy": [],
+      "healing": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "solise"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing over time",
+            "Direct healing",
+            "Healing"
+          ],
+          "hero_id": "smokey-meerky"
+        },
+        {
+          "score": 0.9051,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "rolan"
+        }
+      ],
+      "similar_skills": [
+        {
+          "score": 1.0,
+          "matches": [
+            "ally-healer",
+            "aoe-healing",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "smokey-meerky"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "ally-healer",
+            "aoe-healing",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "fay"
+        },
+        {
+          "score": 0.864,
+          "matches": [
+            "ally-healer",
+            "aoe-healing",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "velara"
+        }
+      ],
+      "damage": [],
+      "debuff": [],
+      "cc": [],
+      "overall": [
+        {
+          "score": 0.7157,
+          "matches": [
+            "Healing",
+            "Similar Skills"
+          ],
+          "hero_id": "smokey-meerky"
+        },
+        {
+          "score": 0.7092,
+          "matches": [
+            "Buffs on allies",
+            "Healing"
+          ],
+          "hero_id": "rolan"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "fd6452370d9cd887f4ad7b1654eef3e65b4feb336253cd5cdd223a2bdf0787ed",
+    "ai_hash": "473c15c619ff4d150ce4876b14239708505beec6469fe373d0da54b46e4997f9",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "ef9c97ad79e09fef9716c846864961986199ed7047534693e91aaffe9c78b479",
+    "stage": "scored"
+  }
+}

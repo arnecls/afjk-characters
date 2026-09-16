@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/hero-generated.schema.json",
+  "title": "Generated per-hero data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "display_name",
+    "source",
+    "external",
+    "derived",
+    "synergies",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "source": { "$ref": "#/$defs/source" },
+    "external": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["walk_speed", "stat_ranks"],
+      "properties": {
+        "walk_speed": {
+          "type": ["string", "null"],
+          "enum": ["zero", "slow", "normal", "fast", "veryfast", null]
+        },
+        "stat_ranks": {
+          "type": ["object", "null"],
+          "additionalProperties": true
+        }
+      }
+    },
+    "derived": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["analysis", "signature_calculated"],
+      "properties": {
+        "analysis": { "type": ["object", "null"] },
+        "signature_calculated": { "type": ["string", "null"] }
+      }
+    },
+    "synergies": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "synergies",
+        "beneficiaries",
+        "beneficiary_overflow_reasons",
+        "replacements"
+      ],
+      "properties": {
+        "synergies": { "type": "array" },
+        "beneficiaries": { "type": "array" },
+        "beneficiary_overflow_reasons": { "type": "array" },
+        "replacements": { "type": "object" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["source_hash", "ai_hash", "overrides_hash"],
+      "properties": {
+        "source_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "ai_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "overrides_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "analysis_inputs_hash": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "stage": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title", "name", "skills"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "skills": { "type": "array", "minItems": 1 },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}

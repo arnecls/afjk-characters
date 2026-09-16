@@ -1,0 +1,966 @@
+{
+  "schema_version": 1,
+  "id": "hugin",
+  "display_name": "Hugin",
+  "source": {
+    "title": "Hugin - Maverick Smith",
+    "name": "Hugin",
+    "tags": "Lightbearer · Support · Physical",
+    "faction": "Lightbearer",
+    "class": "Support",
+    "damage_type": "Physical",
+    "description": "A Support capable of enhancing allies and wielding an anvil.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Unstoppable!",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "600",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Passive. Hugin sets his anvil on the tile where he is placed during battle preparation. As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced. Active. Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength. The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s.",
+          "passive": [
+            "Hugin sets his anvil on the tile where he is placed during battle preparation.",
+            "As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced."
+          ],
+          "active": [
+            "Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength.",
+            "The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the ATK boost to 7% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the ATK boost to 8% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the ATK boost to 9% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the ATK boost to 10% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hugin increases the ATK and Haste of the ally with the highest cumulative damage dealt."
+      },
+      {
+        "section": "Skill1",
+        "name": "Titan's Aegis",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s.",
+          "active": [
+            "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value to 620% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value to 660% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hugin grants a shield to the weakest ally."
+      },
+      {
+        "section": "Skill2",
+        "name": "Mechanized Bond",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK. The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis. This buff disappears when the ally leaves the sigil.",
+          "active": [
+            "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK.",
+            "The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis.",
+            "This buff disappears when the ally leaves the sigil."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the ATK boost to 16% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the ATK boost to 18% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the ATK boost to 20% + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hugin increases the ATK of the ally 1 tile behind him. The buffed ally also recovers Energy whenever Hugin casts Titan's Aegis."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus Hugin",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Steelbound Kinship",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s.",
+          "active": [
+            "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield value to 850%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Grants control immunity to allies protected by an enhanced cogshield while it's active."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield value to 900%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When casting Unstoppable!, Hugin grants shields to the 2 weakest allies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force Hugin",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage.",
+          "active": [
+            "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage."
+          ]
+        },
+        "description_lite": "While active, the shield Hugin grants also reduces the protected ally's damage taken."
+      }
+    ],
+    "range": 20,
+    "release_date": "2024-12-17",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "A",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Hugin - Maverick Smith",
+      "faction": "lightbearer",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": true,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 20,
+      "release_date": "2024-12-17",
+      "season": "Waves of Intrigue",
+      "season_number": 2,
+      "skills": {
+        "Unstoppable!": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. Hugin sets his anvil on the tile where he is placed during battle preparation. As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced. Active. Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength. The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s.",
+            "passive": [
+              "Hugin sets his anvil on the tile where he is placed during battle preparation.",
+              "As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced."
+            ],
+            "active": [
+              "Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength.",
+              "The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the ATK boost to 7% + 1% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the ATK boost to 8% + 1% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the ATK boost to 9% + 1% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the ATK boost to 10% + 1% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 80.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "cooldown": 1.0,
+          "initial_cooldown": 1.0,
+          "initial_energy": 600.0,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Multiple targets",
+              "polarity": "buff"
+            },
+            {
+              "label": "Haste — Multiple targets",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Titan's Aegis": {
+          "category": "skill1",
+          "description": {
+            "raw": "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s.",
+            "active": [
+              "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the shield value to 620% (ATK-based) + 60% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the shield value to 640% (ATK-based) + 60% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the shield value to 660% (ATK-based) + 60% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 660.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 75.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "cooldown": 6.0,
+          "initial_cooldown": 2.0,
+          "skill_card_tags": [
+            {
+              "label": "Energy",
+              "polarity": "buff"
+            },
+            {
+              "label": "Shield",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Mechanized Bond": {
+          "category": "skill2",
+          "description": {
+            "raw": "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK. The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis. This buff disappears when the ally leaves the sigil.",
+            "active": [
+              "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK.",
+              "The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis.",
+              "This buff disappears when the ally leaves the sigil."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the ATK boost to 16% + 2% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the ATK boost to 18% + 2% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the ATK boost to 20% + 2% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "ATK",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus Hugin": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Haste by 12 during battle.",
+            "active": [
+              "Increases Haste by 12 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 16 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 20 during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 1,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Steelbound Kinship": {
+          "category": "skill4",
+          "description": {
+            "raw": "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s.",
+            "active": [
+              "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the shield value to 850%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Grants control immunity to allies protected by an enhanced cogshield while it's active."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the shield value to 900%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 800.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Shield — Multiple targets",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force Hugin": {
+          "category": "skill5",
+          "description": {
+            "raw": "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage.",
+            "active": [
+              "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Damage taken",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "haste",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "average",
+        "walk_speed": "slow",
+        "signature_skill_name": "Mechanized Bond",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "slow",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 20.0,
+        "placement_constraints": [
+          {
+            "kind": "self_placement",
+            "text": "stays anchored to battle-prep tile; returns after displacement"
+          },
+          {
+            "kind": "ally_placement",
+            "text": "put one ally 1 tile behind him (ATK bonus; buff ends if they leave the sigil)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          }
+        }
+      }
+    },
+    "signature_calculated": "skill1"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Haste via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 5.58,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`"
+        ],
+        "score": 5.16,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 4.5,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (all units, average) `signature fuel`",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 4.08,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.0,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.0,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.0,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.0,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.0,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.0,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.55,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.55,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 1.5,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`"
+        ],
+        "score": 1.08,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, low) `signature fuel`"
+        ],
+        "score": 1.08,
+        "provider_id": "pandora"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 16.461,
+        "hero_id": "silven"
+      },
+      {
+        "score": 13.636800000000001,
+        "hero_id": "bryon"
+      },
+      {
+        "score": 13.636800000000001,
+        "hero_id": "koko"
+      },
+      {
+        "score": 13.636800000000001,
+        "hero_id": "twins"
+      },
+      {
+        "score": 12.69906,
+        "hero_id": "fay"
+      },
+      {
+        "score": 12.69906,
+        "hero_id": "gwyneth"
+      },
+      {
+        "score": 12.32406,
+        "hero_id": "viperian"
+      },
+      {
+        "score": 11.930009999999998,
+        "hero_id": "rolan"
+      },
+      {
+        "score": 10.24251,
+        "hero_id": "cyran"
+      },
+      {
+        "score": 10.086,
+        "hero_id": "isabella"
+      },
+      {
+        "score": 10.086,
+        "hero_id": "parisa"
+      },
+      {
+        "score": 10.07406,
+        "hero_id": "lyca"
+      },
+      {
+        "score": 9.30501,
+        "hero_id": "cassadee"
+      },
+      {
+        "score": 8.961,
+        "hero_id": "damian"
+      },
+      {
+        "score": 6.336,
+        "hero_id": "velara"
+      },
+      {
+        "score": 5.625,
+        "hero_id": "gunnar"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "daimon"
+      },
+      {
+        "score": 3.90501,
+        "hero_id": "ludovic"
+      },
+      {
+        "score": 1.8359999999999999,
+        "hero_id": "contess"
+      },
+      {
+        "score": 1.8359999999999999,
+        "hero_id": "pandora"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight",
+      "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner"
+    ],
+    "replacements": {
+      "buff": [
+        {
+          "score": 0.8678,
+          "matches": [
+            "Shield"
+          ],
+          "hero_id": "saida"
+        },
+        {
+          "score": 0.543,
+          "matches": [
+            "Shield",
+            "Energy"
+          ],
+          "hero_id": "thador"
+        }
+      ],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.5143,
+          "matches": [
+            "ally-shielder",
+            "energy-provider",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "twins"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "ally-shielder",
+            "energy-provider",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "thador"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "ally-shielder",
+            "high-initial-energy",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "pang"
+        }
+      ],
+      "damage": [],
+      "debuff": [],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "3abe75e9f6b4fa02f01cf9c76c650bef31ee4087cb0d49e7d16a4c44216c105e",
+    "ai_hash": "02a5948f0625bd4a64ad5e437bd3ef996f91d92c2924a02eb5a01c74ab6e780c",
+    "overrides_hash": "82fbbd30a8454b9d09c10d2a2a797f97e63559db8301a7c5c5142e5fbc90886c",
+    "analysis_inputs_hash": "6658614462fa3e4ca1bb70ebae3eae5ea762d5e0bab07a2e3565bcfb8bb197cd",
+    "stage": "scored"
+  }
+}

@@ -1,0 +1,1136 @@
+{
+  "schema_version": 1,
+  "headers": {
+    "heroes_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\nMeta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
+    "yaphalla_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\nMeta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
+    "fandom_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n"
+  },
+  "heroes": [
+    {
+      "id": "aliceth",
+      "display_name": "Aliceth",
+      "title": "Aliceth - Radiant Wings",
+      "order": 0,
+      "aliases": [
+        "Aliceth"
+      ]
+    },
+    {
+      "id": "alna",
+      "display_name": "Alna",
+      "title": "Alna - Frozen Mother",
+      "order": 1,
+      "aliases": [
+        "Alna"
+      ]
+    },
+    {
+      "id": "alsa",
+      "display_name": "Alsa",
+      "title": "Alsa - Desert Flare",
+      "order": 2,
+      "aliases": [
+        "Alsa"
+      ]
+    },
+    {
+      "id": "antandra",
+      "display_name": "Antandra",
+      "title": "Antandra - Desert Fury",
+      "order": 3,
+      "aliases": [
+        "Antandra"
+      ]
+    },
+    {
+      "id": "arden",
+      "display_name": "Arden",
+      "title": "Arden - Oak Sage",
+      "order": 4,
+      "aliases": [
+        "Arden"
+      ]
+    },
+    {
+      "id": "atalanta",
+      "display_name": "Atalanta",
+      "title": "Atalanta - Fortune Finder",
+      "order": 5,
+      "aliases": [
+        "Atalanta"
+      ]
+    },
+    {
+      "id": "athalia",
+      "display_name": "Athalia",
+      "title": "Athalia - Harbinger of Justice",
+      "order": 6,
+      "aliases": [
+        "Athalia"
+      ]
+    },
+    {
+      "id": "aurora",
+      "display_name": "Aurora",
+      "title": "Aurora - Celestial of Dreams",
+      "order": 7,
+      "aliases": [
+        "Aurora"
+      ]
+    },
+    {
+      "id": "baelran",
+      "display_name": "Baelran",
+      "title": "Baelran - Dawnblade",
+      "order": 8,
+      "aliases": [
+        "Baelran"
+      ]
+    },
+    {
+      "id": "berial",
+      "display_name": "Berial",
+      "title": "Berial - Sinister Jester",
+      "order": 9,
+      "aliases": [
+        "Berial"
+      ]
+    },
+    {
+      "id": "bonnie",
+      "display_name": "Bonnie",
+      "title": "Bonnie - Obsidian Claws",
+      "order": 10,
+      "aliases": [
+        "Bonnie"
+      ]
+    },
+    {
+      "id": "brutus",
+      "display_name": "Brutus",
+      "title": "Brutus - Blood Claw",
+      "order": 11,
+      "aliases": [
+        "Brutus"
+      ]
+    },
+    {
+      "id": "bryon",
+      "display_name": "Bryon",
+      "title": "Bryon - Evergreen Sentinel",
+      "order": 12,
+      "aliases": [
+        "Bryon"
+      ]
+    },
+    {
+      "id": "callan",
+      "display_name": "Callan",
+      "title": "Callan - Grim Soulkeeper",
+      "order": 13,
+      "aliases": [
+        "Callan"
+      ]
+    },
+    {
+      "id": "carolina",
+      "display_name": "Carolina",
+      "title": "Carolina - Candlelight Specter",
+      "order": 14,
+      "aliases": [
+        "Carolina"
+      ]
+    },
+    {
+      "id": "cassadee",
+      "display_name": "Cassadee",
+      "title": "Cassadee - Azure Prodigy",
+      "order": 15,
+      "aliases": [
+        "Cassadee"
+      ]
+    },
+    {
+      "id": "cecia",
+      "display_name": "Cecia",
+      "title": "Cecia - Requiem of Thorns",
+      "order": 16,
+      "aliases": [
+        "Cecia"
+      ]
+    },
+    {
+      "id": "chippy",
+      "display_name": "Chippy",
+      "title": "Chippy - Acorn Knight",
+      "order": 17,
+      "aliases": [
+        "Chippy"
+      ]
+    },
+    {
+      "id": "contess",
+      "display_name": "Contess",
+      "title": "Contess - Abyssal Rulekeeper",
+      "order": 18,
+      "aliases": [
+        "Contess"
+      ]
+    },
+    {
+      "id": "cryonaia",
+      "display_name": "Cryonaia",
+      "title": "Cryonaia - Arctic Revenant",
+      "order": 19,
+      "aliases": [
+        "Cryonaia"
+      ]
+    },
+    {
+      "id": "cyran",
+      "display_name": "Cyran",
+      "title": "Cyran - Umbral Weaver",
+      "order": 20,
+      "aliases": [
+        "Cyran"
+      ]
+    },
+    {
+      "id": "daimon",
+      "display_name": "Daimon",
+      "title": "Daimon - Forsaken Child",
+      "order": 21,
+      "aliases": [
+        "Daimon"
+      ]
+    },
+    {
+      "id": "damian",
+      "display_name": "Damian",
+      "title": "Damian - Woody Wonder",
+      "order": 22,
+      "aliases": [
+        "Damian"
+      ]
+    },
+    {
+      "id": "dionel",
+      "display_name": "Dionel",
+      "title": "Dionel - Venus of Dawn",
+      "order": 23,
+      "aliases": [
+        "Dionel"
+      ]
+    },
+    {
+      "id": "dunlingr",
+      "display_name": "Dunlingr",
+      "title": "Dunlingr - Eternal Voice",
+      "order": 24,
+      "aliases": [
+        "Dunlingr"
+      ]
+    },
+    {
+      "id": "eironn",
+      "display_name": "Eironn",
+      "title": "Eironn - Stormsword",
+      "order": 25,
+      "aliases": [
+        "Eironn"
+      ]
+    },
+    {
+      "id": "twins",
+      "display_name": "Twins",
+      "title": "Elijah & Lailah - Celestial Twins",
+      "order": 26,
+      "aliases": [
+        "Elijah & Lailah",
+        "Twins"
+      ]
+    },
+    {
+      "id": "eryndor",
+      "display_name": "Eryndor",
+      "title": "Eryndor - Veiled Viceroy",
+      "order": 27,
+      "aliases": [
+        "Eryndor"
+      ]
+    },
+    {
+      "id": "evie",
+      "display_name": "Evie",
+      "title": "Evie - Royal Envoy",
+      "order": 28,
+      "aliases": [
+        "Evie"
+      ]
+    },
+    {
+      "id": "faramor",
+      "display_name": "Faramor",
+      "title": "Faramor - Silverfang Mantle",
+      "order": 29,
+      "aliases": [
+        "Faramor"
+      ]
+    },
+    {
+      "id": "fay",
+      "display_name": "Fay",
+      "title": "Fay - Colorful Dancer",
+      "order": 30,
+      "aliases": [
+        "Fay"
+      ]
+    },
+    {
+      "id": "florabelle",
+      "display_name": "Florabelle",
+      "title": "Florabelle - Blooming Maiden",
+      "order": 31,
+      "aliases": [
+        "Florabelle"
+      ]
+    },
+    {
+      "id": "frieren",
+      "display_name": "Frieren",
+      "title": "Frieren - The Legendary Mage",
+      "order": 32,
+      "aliases": [
+        "Frieren"
+      ]
+    },
+    {
+      "id": "galahad",
+      "display_name": "Galahad",
+      "title": "Galahad - Daughter of Dawn",
+      "order": 33,
+      "aliases": [
+        "Galahad"
+      ]
+    },
+    {
+      "id": "gerda",
+      "display_name": "Gerda",
+      "title": "Gerda - Soothing Siren",
+      "order": 34,
+      "aliases": [
+        "Gerda"
+      ]
+    },
+    {
+      "id": "granny-dahnie",
+      "display_name": "Granny Dahnie",
+      "title": "Granny Dahnie - Forest Guardian",
+      "order": 35,
+      "aliases": [
+        "Granny Dahnie"
+      ]
+    },
+    {
+      "id": "gunnar",
+      "display_name": "Gunnar",
+      "title": "Gunnar - Iron Doom",
+      "order": 36,
+      "aliases": [
+        "Gunnar"
+      ]
+    },
+    {
+      "id": "gwyneth",
+      "display_name": "Gwyneth",
+      "title": "Gwyneth - Dragonslayer Knight",
+      "order": 37,
+      "aliases": [
+        "Gwyneth"
+      ]
+    },
+    {
+      "id": "hammie",
+      "display_name": "Hammie",
+      "title": "Hammie - Acorn Mage",
+      "order": 38,
+      "aliases": [
+        "Hammie"
+      ]
+    },
+    {
+      "id": "harak",
+      "display_name": "Harak",
+      "title": "Harak - Deepsea Ravager",
+      "order": 39,
+      "aliases": [
+        "Harak"
+      ]
+    },
+    {
+      "id": "hepler",
+      "display_name": "Hepler",
+      "title": "Hepler - Master of Forms",
+      "order": 40,
+      "aliases": [
+        "Hepler"
+      ]
+    },
+    {
+      "id": "hewynn",
+      "display_name": "Hewynn",
+      "title": "Hewynn - Tender Leaf",
+      "order": 41,
+      "aliases": [
+        "Hewynn"
+      ]
+    },
+    {
+      "id": "himmel",
+      "display_name": "Himmel",
+      "title": "Himmel - The Legendary Hero",
+      "order": 42,
+      "aliases": [
+        "Himmel"
+      ]
+    },
+    {
+      "id": "hodgkin",
+      "display_name": "Hodgkin",
+      "title": "Hodgkin - Reviled Captain",
+      "order": 43,
+      "aliases": [
+        "Hodgkin"
+      ]
+    },
+    {
+      "id": "hugin",
+      "display_name": "Hugin",
+      "title": "Hugin - Maverick Smith",
+      "order": 44,
+      "aliases": [
+        "Hugin"
+      ]
+    },
+    {
+      "id": "igor",
+      "display_name": "Igor",
+      "title": "Igor - Mad Dagger",
+      "order": 45,
+      "aliases": [
+        "Igor"
+      ]
+    },
+    {
+      "id": "indris",
+      "display_name": "Indris",
+      "title": "Indris - Chain Breaker",
+      "order": 46,
+      "aliases": [
+        "Indris"
+      ]
+    },
+    {
+      "id": "isabella",
+      "display_name": "Isabella",
+      "title": "Isabella - The Taken Soul",
+      "order": 47,
+      "aliases": [
+        "Isabella"
+      ]
+    },
+    {
+      "id": "kafra",
+      "display_name": "Kafra",
+      "title": "Kafra - Gale Rider",
+      "order": 48,
+      "aliases": [
+        "Kafra"
+      ]
+    },
+    {
+      "id": "kazim",
+      "display_name": "Kazim",
+      "title": "Kazim - Falcon's Vow",
+      "order": 49,
+      "aliases": [
+        "Kazim"
+      ]
+    },
+    {
+      "id": "koko",
+      "display_name": "Koko",
+      "title": "Koko - Wild Child",
+      "order": 50,
+      "aliases": [
+        "Koko"
+      ]
+    },
+    {
+      "id": "kordan",
+      "display_name": "Kordan",
+      "title": "Kordan - Ironblood Chieftain",
+      "order": 51,
+      "aliases": [
+        "Kordan"
+      ]
+    },
+    {
+      "id": "korin",
+      "display_name": "Korin",
+      "title": "Korin - Wood Warden",
+      "order": 52,
+      "aliases": [
+        "Korin"
+      ]
+    },
+    {
+      "id": "kruger",
+      "display_name": "Kruger",
+      "title": "Kruger - Dauntless Warrior",
+      "order": 53,
+      "aliases": [
+        "Kruger"
+      ]
+    },
+    {
+      "id": "kulu",
+      "display_name": "Kulu",
+      "title": "Kulu - Blast Master",
+      "order": 54,
+      "aliases": [
+        "Kulu"
+      ]
+    },
+    {
+      "id": "laios",
+      "display_name": "Laios",
+      "title": "Laios - Dungeon Adventurer",
+      "order": 55,
+      "aliases": [
+        "Laios"
+      ]
+    },
+    {
+      "id": "lamentis",
+      "display_name": "Lamentis",
+      "title": "Lamentis - Cosmic Hellion",
+      "order": 56,
+      "aliases": [
+        "Lamentis"
+      ]
+    },
+    {
+      "id": "lenya",
+      "display_name": "Lenya",
+      "title": "Lenya - Wild Cyclone",
+      "order": 57,
+      "aliases": [
+        "Lenya"
+      ]
+    },
+    {
+      "id": "lily-may",
+      "display_name": "Lily May",
+      "title": "Lily May - Twilight Tracker",
+      "order": 58,
+      "aliases": [
+        "Lily May"
+      ]
+    },
+    {
+      "id": "lorsan",
+      "display_name": "Lorsan",
+      "title": "Lorsan - Windweaver Protector",
+      "order": 59,
+      "aliases": [
+        "Lorsan"
+      ]
+    },
+    {
+      "id": "lucca",
+      "display_name": "Lucca",
+      "title": "Lucca - Stalwart Fighter",
+      "order": 60,
+      "aliases": [
+        "Lucca"
+      ]
+    },
+    {
+      "id": "lucius",
+      "display_name": "Lucius",
+      "title": "Lucius - The Lightbringer",
+      "order": 61,
+      "aliases": [
+        "Lucius"
+      ]
+    },
+    {
+      "id": "lucy",
+      "display_name": "Lucy",
+      "title": "Lucy - Celestial Spirit Mage",
+      "order": 62,
+      "aliases": [
+        "Lucy"
+      ]
+    },
+    {
+      "id": "ludovic",
+      "display_name": "Ludovic",
+      "title": "Ludovic - Wreathed Eternalist",
+      "order": 63,
+      "aliases": [
+        "Ludovic"
+      ]
+    },
+    {
+      "id": "lumont",
+      "display_name": "Lumont",
+      "title": "Lumont - Benign Horn",
+      "order": 64,
+      "aliases": [
+        "Lumont"
+      ]
+    },
+    {
+      "id": "lyca",
+      "display_name": "Lyca",
+      "title": "Lyca - Keeper of Glades",
+      "order": 65,
+      "aliases": [
+        "Lyca"
+      ]
+    },
+    {
+      "id": "marcille",
+      "display_name": "Marcille",
+      "title": "Marcille - Elven Mage",
+      "order": 66,
+      "aliases": [
+        "Marcille"
+      ]
+    },
+    {
+      "id": "marilee",
+      "display_name": "Marilee",
+      "title": "Marilee - Forest's Arrow",
+      "order": 67,
+      "aliases": [
+        "Marilee"
+      ]
+    },
+    {
+      "id": "mehira",
+      "display_name": "Mehira",
+      "title": "Mehira - Mind Cager",
+      "order": 68,
+      "aliases": [
+        "Mehira"
+      ]
+    },
+    {
+      "id": "mikola",
+      "display_name": "Mikola",
+      "title": "Mikola - Warbeat Compere",
+      "order": 69,
+      "aliases": [
+        "Mikola"
+      ]
+    },
+    {
+      "id": "mirael",
+      "display_name": "Mirael",
+      "title": "Mirael - Scarlet Sorceress",
+      "order": 70,
+      "aliases": [
+        "Mirael"
+      ]
+    },
+    {
+      "id": "nara",
+      "display_name": "Nara",
+      "title": "Nara - Wrathful Wraith",
+      "order": 71,
+      "aliases": [
+        "Nara"
+      ]
+    },
+    {
+      "id": "natsu",
+      "display_name": "Natsu",
+      "title": "Natsu - Fire Dragon Slayer Mage",
+      "order": 72,
+      "aliases": [
+        "Natsu"
+      ]
+    },
+    {
+      "id": "nazrik",
+      "display_name": "Nazrik",
+      "title": "Nazrik - Soulstalker",
+      "order": 73,
+      "aliases": [
+        "Nazrik"
+      ]
+    },
+    {
+      "id": "nerion",
+      "display_name": "Nerion",
+      "title": "Nerion - Bereaved Tide",
+      "order": 74,
+      "aliases": [
+        "Nerion"
+      ]
+    },
+    {
+      "id": "niru",
+      "display_name": "Niru",
+      "title": "Niru - Soul Collector",
+      "order": 75,
+      "aliases": [
+        "Niru"
+      ]
+    },
+    {
+      "id": "odie",
+      "display_name": "Odie",
+      "title": "Odie - Desert Defender",
+      "order": 76,
+      "aliases": [
+        "Odie"
+      ]
+    },
+    {
+      "id": "orion",
+      "display_name": "Orion",
+      "title": "Orion - Golden Prince",
+      "order": 77,
+      "aliases": [
+        "Orion"
+      ]
+    },
+    {
+      "id": "pandora",
+      "display_name": "Pandora",
+      "title": "Pandora - Hope Unleashed",
+      "order": 78,
+      "aliases": [
+        "Pandora"
+      ]
+    },
+    {
+      "id": "pang",
+      "display_name": "Pang",
+      "title": "Pang - Bamboo Guardian",
+      "order": 79,
+      "aliases": [
+        "Pang"
+      ]
+    },
+    {
+      "id": "parisa",
+      "display_name": "Parisa",
+      "title": "Parisa - Ode to Flowers",
+      "order": 80,
+      "aliases": [
+        "Parisa"
+      ]
+    },
+    {
+      "id": "perseus",
+      "display_name": "Perseus",
+      "title": "Perseus - Chosen Champion",
+      "order": 81,
+      "aliases": [
+        "Perseus"
+      ]
+    },
+    {
+      "id": "peggy",
+      "display_name": "Peggy",
+      "title": "Peggy - Empire's Jewel",
+      "order": 82,
+      "aliases": [
+        "Peggy"
+      ]
+    },
+    {
+      "id": "phraesto",
+      "display_name": "Phraesto",
+      "title": "Phraesto - Misty Scorpion",
+      "order": 83,
+      "aliases": [
+        "Phraesto"
+      ]
+    },
+    {
+      "id": "pippa",
+      "display_name": "Pippa",
+      "title": "Pippa - The Muddled Magician",
+      "order": 84,
+      "aliases": [
+        "Pippa"
+      ]
+    },
+    {
+      "id": "ravion",
+      "display_name": "Ravion",
+      "title": "Ravion - Twilight's Burden",
+      "order": 85,
+      "aliases": [
+        "Ravion"
+      ]
+    },
+    {
+      "id": "reinier",
+      "display_name": "Reinier",
+      "title": "Reinier - Symmetric Sin",
+      "order": 86,
+      "aliases": [
+        "Reinier"
+      ]
+    },
+    {
+      "id": "rhys",
+      "display_name": "Rhys",
+      "title": "Rhys - Fiery Cavalier",
+      "order": 87,
+      "aliases": [
+        "Rhys"
+      ]
+    },
+    {
+      "id": "rowan",
+      "display_name": "Rowan",
+      "title": "Rowan - The Roamer",
+      "order": 88,
+      "aliases": [
+        "Rowan"
+      ]
+    },
+    {
+      "id": "rolan",
+      "display_name": "Rolan",
+      "title": "Rolan - First Crown",
+      "order": 89,
+      "aliases": [
+        "Rolan"
+      ]
+    },
+    {
+      "id": "saida",
+      "display_name": "Saida",
+      "title": "Saida - Vampiric Vine",
+      "order": 90,
+      "aliases": [
+        "Saida"
+      ]
+    },
+    {
+      "id": "salazer",
+      "display_name": "Salazer",
+      "title": "Salazer - Lash of Bantus",
+      "order": 91,
+      "aliases": [
+        "Salazer"
+      ]
+    },
+    {
+      "id": "satrana",
+      "display_name": "Satrana",
+      "title": "Satrana - Ember Enchantress",
+      "order": 92,
+      "aliases": [
+        "Satrana"
+      ]
+    },
+    {
+      "id": "scarlita",
+      "display_name": "Scarlita",
+      "title": "Scarlita - Herald of Compassion",
+      "order": 93,
+      "aliases": [
+        "Scarlita"
+      ]
+    },
+    {
+      "id": "seth",
+      "display_name": "Seth",
+      "title": "Seth - Swift Shadow",
+      "order": 94,
+      "aliases": [
+        "Seth"
+      ]
+    },
+    {
+      "id": "shadewing",
+      "display_name": "Shadewing",
+      "title": "Shadewing - Undying Vow",
+      "order": 95,
+      "aliases": [
+        "Shadewing"
+      ]
+    },
+    {
+      "id": "shakir",
+      "display_name": "Shakir",
+      "title": "Shakir - Furious Howl",
+      "order": 96,
+      "aliases": [
+        "Shakir"
+      ]
+    },
+    {
+      "id": "shemira",
+      "display_name": "Shemira",
+      "title": "Shemira - Corpsemaker",
+      "order": 97,
+      "aliases": [
+        "Shemira"
+      ]
+    },
+    {
+      "id": "silven",
+      "display_name": "Silven",
+      "title": "Silven - Heir of Glory",
+      "order": 98,
+      "aliases": [
+        "Silven"
+      ]
+    },
+    {
+      "id": "silvina",
+      "display_name": "Silvina",
+      "title": "Silvina - The Taken Breath",
+      "order": 99,
+      "aliases": [
+        "Silvina"
+      ]
+    },
+    {
+      "id": "sinbad",
+      "display_name": "Sinbad",
+      "title": "Sinbad - Seaside Savant",
+      "order": 100,
+      "aliases": [
+        "Sinbad"
+      ]
+    },
+    {
+      "id": "smokey-meerky",
+      "display_name": "Smokey & Meerky",
+      "title": "Smokey & Meerky - Wasteland Apothecary",
+      "order": 101,
+      "aliases": [
+        "Smokey & Meerky"
+      ]
+    },
+    {
+      "id": "solise",
+      "display_name": "Solise",
+      "title": "Solise - Floral Wonder",
+      "order": 102,
+      "aliases": [
+        "Solise"
+      ]
+    },
+    {
+      "id": "sonja",
+      "display_name": "Sonja",
+      "title": "Sonja - Crimson Queenpin",
+      "order": 103,
+      "aliases": [
+        "Sonja"
+      ]
+    },
+    {
+      "id": "soren",
+      "display_name": "Soren",
+      "title": "Soren - Silent Fury",
+      "order": 104,
+      "aliases": [
+        "Soren"
+      ]
+    },
+    {
+      "id": "sylphira",
+      "display_name": "Sylphira",
+      "title": "Sylphira - Sovereign of Song",
+      "order": 105,
+      "aliases": [
+        "Sylphira"
+      ]
+    },
+    {
+      "id": "taichi-agumon",
+      "display_name": "Taichi & Agumon",
+      "title": "Taichi & Agumon - Courage Duo",
+      "order": 106,
+      "aliases": [
+        "Taichi & Agumon"
+      ]
+    },
+    {
+      "id": "talene",
+      "display_name": "Talene",
+      "title": "Talene - Resurging Flame",
+      "order": 107,
+      "aliases": [
+        "Talene"
+      ]
+    },
+    {
+      "id": "tasi",
+      "display_name": "Tasi",
+      "title": "Tasi - Fairy of Dreams",
+      "order": 108,
+      "aliases": [
+        "Tasi"
+      ]
+    },
+    {
+      "id": "temesia",
+      "display_name": "Temesia",
+      "title": "Temesia - Lightsavior",
+      "order": 109,
+      "aliases": [
+        "Temesia"
+      ]
+    },
+    {
+      "id": "thador",
+      "display_name": "Thador",
+      "title": "Thador - Ironsworn General",
+      "order": 110,
+      "aliases": [
+        "Thador"
+      ]
+    },
+    {
+      "id": "thoran",
+      "display_name": "Thoran",
+      "title": "Thoran - Fallen King",
+      "order": 111,
+      "aliases": [
+        "Thoran"
+      ]
+    },
+    {
+      "id": "tilaya",
+      "display_name": "Tilaya",
+      "title": "Tilaya - Wild Blade",
+      "order": 112,
+      "aliases": [
+        "Tilaya"
+      ]
+    },
+    {
+      "id": "ulmus",
+      "display_name": "Ulmus",
+      "title": "Ulmus - Grove Keeper",
+      "order": 113,
+      "aliases": [
+        "Ulmus"
+      ]
+    },
+    {
+      "id": "vala",
+      "display_name": "Vala",
+      "title": "Vala - Phantom of Oakenfell",
+      "order": 114,
+      "aliases": [
+        "Vala"
+      ]
+    },
+    {
+      "id": "valen",
+      "display_name": "Valen",
+      "title": "Valen - Roving Swordsman",
+      "order": 115,
+      "aliases": [
+        "Valen"
+      ]
+    },
+    {
+      "id": "valka",
+      "display_name": "Valka",
+      "title": "Valka - Forsaken Blade",
+      "order": 116,
+      "aliases": [
+        "Valka"
+      ]
+    },
+    {
+      "id": "velara",
+      "display_name": "Velara",
+      "title": "Velara - Pale Votary",
+      "order": 117,
+      "aliases": [
+        "Velara"
+      ]
+    },
+    {
+      "id": "viperian",
+      "display_name": "Viperian",
+      "title": "Viperian - Shadow Serpent",
+      "order": 118,
+      "aliases": [
+        "Viperian"
+      ]
+    },
+    {
+      "id": "voracia",
+      "display_name": "Voracia",
+      "title": "Voracia - Feastweaver",
+      "order": 119,
+      "aliases": [
+        "Voracia"
+      ]
+    },
+    {
+      "id": "walker",
+      "display_name": "Walker",
+      "title": "Walker - Wildland Outlaw",
+      "order": 120,
+      "aliases": [
+        "Walker"
+      ]
+    },
+    {
+      "id": "yamato-gabumon",
+      "display_name": "Yamato & Gabumon",
+      "title": "Yamato & Gabumon - Cool Duo",
+      "order": 121,
+      "aliases": [
+        "Yamato & Gabumon"
+      ]
+    },
+    {
+      "id": "zandrok",
+      "display_name": "Zandrok",
+      "title": "Zandrok - Watchful Edge",
+      "order": 122,
+      "aliases": [
+        "Zandrok"
+      ]
+    },
+    {
+      "id": "zanie",
+      "display_name": "Zanie",
+      "title": "Zanie - Timeless Tinkerer",
+      "order": 123,
+      "aliases": [
+        "Zanie"
+      ]
+    },
+    {
+      "id": "zorya",
+      "display_name": "Zorya",
+      "title": "Zorya - Watcher in Stone",
+      "order": 124,
+      "aliases": [
+        "Zorya"
+      ]
+    }
+  ]
+}

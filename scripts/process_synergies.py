@@ -79,7 +79,11 @@ def build_synergies(raw: dict, processed: dict) -> dict:
     role_category_by_title = hs.role_category_by_title_from_processed(
         heroes_stub, processed, gen.short_name
     )
-    analysis = get_roster_analysis(raw, role_category_by_title)
+    analysis = get_roster_analysis(
+        raw,
+        role_category_by_title,
+        use_cache=False,
+    )
     heroes = analysis.heroes
     behavior_by_title = analysis.behavior_by_title
     skills_by_title = analysis.skills_by_title
@@ -137,7 +141,9 @@ def build_synergies(raw: dict, processed: dict) -> dict:
 
 
 def main() -> None:
-    if not io.HEROES_DATA_PROCESSED.exists():
+    if not io.HEROES_DATA_PROCESSED.exists() and not (
+        io.DATA / "roster.json"
+    ).exists():
         raise SystemExit(
             f"Missing {io.HEROES_DATA_PROCESSED.relative_to(io.ROOT)}; "
             "run process_heroes.py first."
@@ -148,9 +154,16 @@ def main() -> None:
     processed = io.load_processed()
     raw = io.load_heroes_data()
     synergies = build_synergies(raw, processed)
-    io.save_json(io.HEROES_DATA_SYNERGIES, synergies)
+    if (io.DATA / "roster.json").exists():
+        from hero_pipeline.storage import write_synergies_output
+
+        write_synergies_output(synergies)
+        output = io.DATA / "heroes"
+    else:
+        io.save_json(io.HEROES_DATA_SYNERGIES, synergies)
+        output = io.HEROES_DATA_SYNERGIES
     print(
-        f"Wrote {io.HEROES_DATA_SYNERGIES.relative_to(io.ROOT)} "
+        f"Wrote {output.relative_to(io.ROOT)} "
         f"({len(synergies['heroes'])} heroes)"
     )
 

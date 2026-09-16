@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Fay - Colorful Dancer",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "bb218825deb193093397d08306ad24f5158730d194e9c830e7dd4fe737ef03e3",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "arc",
+                "target_count": -1,
+                "area_direction": "front",
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "arc",
+                "target_count": -1,
+                "area_direction": "front",
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "3d97e4b475481c135cbbaf76cc977a6c91855636b46c2af28523c6a0abf5989c",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "duration": 5,
+                "tick": 1.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "24edf08ee57bc071369b5d97e62646e7d15f021bc18f847289d2e8bed0a641db",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 175.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "fff6820b1f57bb839a003ae90d6944ab8514352a2cc662f2529c39b886ed388b",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "46a4e6efa8e252f95b1e228ce061e5ab45169d53580ad4443c113d62eb10c1b2",
+        "is_max_known": true,
+        "tiers": {
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Vitality",
+                "label": "buff_defensive",
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "e65d13a57da1596c235c366ab5289d787f7a4042814f171ecb9295867e267471",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "ally-healer",
+    "aoe-healing",
+    "temporary-stat-buffer"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "heal and buff allies within range",
+    "skill1": "heal one ally over time",
+    "skill2": "AoE burst damages foes and heals allies",
+    "skill3": "combat max HP increase",
+    "skill4": "battle-start heal and buff the ally on tile in front",
+    "skill5": "low HP ally triggers emergency heal"
+  },
+  "play_overview": "Fay heals and buffs **allies within ultimate range**, with steady single-target healing and an AoE burst that damages foes while healing friends. She opens battle by **healing and buffing the ally in front of her tile**, and combat max HP rises over time. Low-HP allies also trigger an **emergency heal** for clutch saves. She is a **reliable early support** when stronger healers are unavailable. Her healing output and buffs are **modest compared to top supports**.",
+  "counter_overview": "Fay is a **modest healer/buffer** — battle-start heal on the ally ahead, steady HoT, and an AoE splash that heals friends while chipping foes. She rarely wins alone; the threat is whatever **carry she keeps upright**. Outpace her modest sustain by racing your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]], or delete that partner with [[filter:assassin-delete]] like [[Ravion]] or [[Vala]] before her rotation stabilizes. Skip heavy anti-heal packages built only for Fay — her numbers stay modest next to real sustain cores."
+}

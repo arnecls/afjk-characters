@@ -20,6 +20,16 @@ import heroes_io as io
 import skill_effects_store as ses
 
 
+def _load_tags() -> dict[str, list[str]]:
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
+
+        return load_roster_inputs()["curated"]["behavior_tags"]
+    return json.loads(
+        (ROOT / "data" / "hero_behavior_tags.json").read_text()
+    )
+
+
 def _load_rewrite_summaries():
     if "rewrite_summaries" in sys.modules:
         return sys.modules["rewrite_summaries"]
@@ -116,7 +126,7 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
         self.assertFalse(bp.is_temporary_ally_stat_buff_effect(no_summon))
 
     def test_roster_tag_parity(self):
-        tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
+        tags = _load_tags()
         raw = io.load_heroes_data()
         errors = bp.check_temporary_stat_buffer_consistency(
             tags,
@@ -150,7 +160,7 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
 
     def test_pandora_counts_as_temporary_provider(self):
         # Boxed Blessing grants the released ally ATK for the next 10s.
-        tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
+        tags = _load_tags()
         self.assertIn(bp.TEMPORARY_STAT_BUFFER_TAG, tags.get("Pandora", []))
         raw = io.load_heroes_data()
         record = next(r for r in raw["heroes"] if r["name"] == "Pandora")
@@ -160,7 +170,7 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
         )
 
     def test_removed_false_positives_are_not_tagged(self):
-        tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
+        tags = _load_tags()
         for hero in (
             "Frieren",
             "Gwyneth",
@@ -345,9 +355,7 @@ class SpecialRequiresValidationTests(unittest.TestCase):
         self.assertTrue(errors)
 
     def test_zandrok_remains_temporary_stat_buffer_provider(self):
-        tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text()
-        )
+        tags = _load_tags()
         self.assertIn(bp.TEMPORARY_STAT_BUFFER_TAG, tags.get("Zandrok", []))
 
 

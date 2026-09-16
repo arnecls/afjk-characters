@@ -124,6 +124,18 @@ def skill_has_scaled_placeholder(skill: dict[str, Any]) -> bool:
 
 
 def load_sidecar(title: str) -> dict[str, Any] | None:
+    if (DATA / "roster.json").exists():
+        from hero_pipeline.storage import (
+            HEROES_DIR,
+            display_name_for_title,
+            hero_id_for_display,
+        )
+
+        display_name = display_name_for_title(title)
+        path = HEROES_DIR / hero_id_for_display(display_name) / "ai.json"
+        if path.exists():
+            document = json.loads(path.read_text(encoding="utf-8"))
+            return document.get("skill_effects")
     path = sidecar_path(title)
     if not path.exists():
         return None
@@ -131,6 +143,23 @@ def load_sidecar(title: str) -> dict[str, Any] | None:
 
 
 def save_sidecar(title: str, doc: dict[str, Any]) -> Path:
+    if (DATA / "roster.json").exists():
+        from hero_pipeline.storage import (
+            HEROES_DIR,
+            display_name_for_title,
+            hero_id_for_display,
+            load_json,
+            write_json_atomic,
+        )
+
+        validate_sidecar_doc(doc)
+        display_name = display_name_for_title(title)
+        path = HEROES_DIR / hero_id_for_display(display_name) / "ai.json"
+        if path.exists():
+            ai = load_json(path)
+            ai["skill_effects"] = doc
+            write_json_atomic(path, ai)
+            return path
     SKILL_EFFECTS_DIR.mkdir(parents=True, exist_ok=True)
     validate_sidecar_doc(doc)
     path = sidecar_path(title)

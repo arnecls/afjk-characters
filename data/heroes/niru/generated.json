@@ -1,0 +1,1494 @@
+{
+  "schema_version": 1,
+  "id": "niru",
+  "display_name": "Niru",
+  "source": {
+    "title": "Niru - Soul Collector",
+    "name": "Niru",
+    "tags": "Graveborn · Support · Magic",
+    "faction": "Graveborn",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A Support who is well-versed in enchantments that can ensure allies remain helpful in the field in spirit form.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Soul Shepherd",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP. The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second. Once its HP runs out, the Spirit will be defeated.",
+          "active": [
+            "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP.",
+            "The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second.",
+            "Once its HP runs out, the Spirit will be defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Ally in Spirit form deals 55% + 5% (SP-based)} of the original damage."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Ally in Spirit form deals 65% + 5% (SP-based)} of the original damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Niru stores 1 ally's soul, allowing them to continue fighting on the battlefield in Spirit form after taking a fatal blow."
+      },
+      {
+        "section": "Skill1",
+        "name": "Soul Reaping",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "6s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP. The additional damage cannot exceed 450% (ATK-based).",
+          "active": [
+            "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP.",
+            "The additional damage cannot exceed 450% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases additional damage to 0.35 times of the target's lost HP, up to 525% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases additional damage to 0.4 times of the target's lost HP, up to 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases additional damage to 0.45 times of the target's lost HP, up to 600% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Niru deals damage to the weakest enemy. The lower the target's HP, the higher the damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Spirit Devour",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based). He then restores an equal amount of HP to the weakest ally.",
+          "active": [
+            "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based).",
+            "He then restores an equal amount of HP to the weakest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "The damage dealt to each enemy is increased to 160% (ATK-based) + 15% (SP-based), plus 3,5% of the target's max HP, up to 80% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The damage dealt to each enemy is increased to 170% (ATK-based) + 15% (SP-based), plus 3% of the target's max HP, up to 90% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The damage dealt to each enemy is increased to 180% (ATK-based) + 15% (SP-based), plus 5% of the target's max HP, up to 100% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Niru drains the life force of all enemies to heal the weakest ally."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Increases HP by 17% during battle.",
+          "active": [
+            "Increases HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases HP during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Ethereal Form",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 Tiles"
+        },
+        "description": {
+          "raw": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself.",
+          "active": [
+            "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Until all allies enter Spirit form for 10s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Until all allies enter Spirit form for 12s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Niru casts Ultimate without consuming Energy when a battle starts."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Niru's Soul Reaping prevents the enemy from recovering HP for 8s.",
+          "active": [
+            "Niru's Soul Reaping prevents the enemy from recovering HP for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Niru's Soul Reaping briefly prevents the enemy from recovering HP."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Niru - Soul Collector",
+      "faction": "graveborn",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Soul Shepherd": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP. The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second. Once its HP runs out, the Spirit will be defeated.",
+            "active": [
+              "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP.",
+              "The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second.",
+              "Once its HP runs out, the Spirit will be defeated."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 171: Ally in Spirit form deals 55% + 5% (SP-based)} of the original damage."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 231: Ally in Spirit form deals 65% + 5% (SP-based)} of the original damage."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "cooldown": 1.0,
+          "initial_energy": 0.0,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Soul Reaping": {
+          "category": "skill1",
+          "description": {
+            "raw": "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP. The additional damage cannot exceed 450% (ATK-based).",
+            "active": [
+              "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP.",
+              "The additional damage cannot exceed 450% (ATK-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases additional damage to 0.35 times of the target's lost HP, up to 525% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases additional damage to 0.4 times of the target's lost HP, up to 600% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases additional damage to 0.45 times of the target's lost HP, up to 600% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 0.45
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 600.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 12.0,
+          "initial_cooldown": 6.0,
+          "skill_card_tags": [
+            {
+              "label": "HP loss"
+            },
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Spirit Devour": {
+          "category": "skill2",
+          "description": {
+            "raw": "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based). He then restores an equal amount of HP to the weakest ally.",
+            "active": [
+              "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based).",
+              "He then restores an equal amount of HP to the weakest ally."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "The damage dealt to each enemy is increased to 160% (ATK-based) + 15% (SP-based), plus 3,5% of the target's max HP, up to 80% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "The damage dealt to each enemy is increased to 170% (ATK-based) + 15% (SP-based), plus 3% of the target's max HP, up to 90% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "The damage dealt to each enemy is increased to 180% (ATK-based) + 15% (SP-based), plus 5% of the target's max HP, up to 100% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 195.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 8.0,
+          "initial_cooldown": 3.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases HP by 17% during battle.",
+            "active": [
+              "Increases HP by 17% during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases HP by 23% during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases HP by 29% during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 1,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Ethereal Form": {
+          "category": "skill4",
+          "description": {
+            "raw": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself.",
+            "active": [
+              "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Until all allies enter Spirit form for 10s."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Until all allies enter Spirit form for 12s."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 3,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Niru's Soul Reaping prevents the enemy from recovering HP for 8s.",
+            "active": [
+              "Niru's Soul Reaping prevents the enemy from recovering HP for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Healing",
+              "label": "healing",
+              "duration": 8.0
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Direct healing",
+              "polarity": "debuff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Spirit form protection",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+          },
+          {
+            "label": "Start-of-battle cast",
+            "tier": "mythic+",
+            "targeting": "Self",
+            "description": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+          },
+          {
+            "label": "Spirit form protection",
+            "tier": "ex+5",
+            "targeting": "All units",
+            "description": "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+          },
+          {
+            "label": "Named ally on team",
+            "tier": "supreme+",
+            "targeting": "Allies",
+            "description": "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s."
+          }
+        ],
+        "requires": [
+          {
+            "label": "Ally blessing active",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+          },
+          {
+            "label": "Enemy defeat",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+          }
+        ]
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "All units, Single target"
+        ],
+        [
+          "hp_loss",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "hp_loss": "low"
+      },
+      "benefit_stats": [],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "slow",
+        "walk_speed": "slow",
+        "signature_skill_name": "Soul Shepherd",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "nearest ally auto-selected at battle start; prioritizes ally behind"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "HP loss": "low",
+              "Magic": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "callan"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "eryndor"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "galahad"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "himmel"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "lamentis"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "ludovic"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "marcille"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "saida"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "alsa"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "igor"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "lucy"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "rhys"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "scarlita"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 7.5,
+        "provider_id": "viperian"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "alna"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "athalia"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "aurora"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "baelran"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "bonnie"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "cassadee"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "cyran"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "eironn"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "faramor"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "florabelle"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "frieren"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "gwyneth"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "hepler"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "kruger"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "nerion"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "orion"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "peggy"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "satrana"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "shakir"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "shemira"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "sylphira"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "talene"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "thoran"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "valka"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "antandra"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "arden"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "atalanta"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "berial"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "carolina"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "dionel"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "gerda"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "hodgkin"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "korin"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "lenya"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "lucius"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "lumont"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "mirael"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "perseus"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "pippa"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "soren"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "tasi"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "temesia"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "ulmus"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "valen"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "voracia"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "yamato-gabumon"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 6.0,
+        "provider_id": "zorya"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Instant defeat"
+        ],
+        "score": 5.0,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Instant defeat"
+        ],
+        "score": 5.0,
+        "provider_id": "cryonaia"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Instant defeat"
+        ],
+        "score": 5.0,
+        "provider_id": "odie"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Instant defeat"
+        ],
+        "score": 5.0,
+        "provider_id": "harak"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "brutus"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "tilaya"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "cecia"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE magic (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "natsu"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "salazer"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via AoE physical (kills)"
+        ],
+        "score": 4.5,
+        "provider_id": "walker"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via HP threshold strike"
+        ],
+        "score": 4.0,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Marked target (focus fire)"
+        ],
+        "score": 3.5,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Marked target (focus fire)"
+        ],
+        "score": 3.5,
+        "provider_id": "sinbad"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Marked target (focus fire)"
+        ],
+        "score": 3.5,
+        "provider_id": "kafra"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Marked target (focus fire)"
+        ],
+        "score": 3.5,
+        "provider_id": "silvina"
+      },
+      {
+        "reasons": [
+          "Enables Enemy defeat via Marked target (focus fire)"
+        ],
+        "score": 3.5,
+        "provider_id": "vala"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 20.25,
+        "hero_id": "bonnie"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "daimon"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.5143,
+          "matches": [
+            "ally-healer",
+            "assassin",
+            "heal-inhibitor"
+          ],
+          "hero_id": "nara"
+        },
+        {
+          "score": 0.4114,
+          "matches": [
+            "ally-healer",
+            "heal-inhibitor"
+          ],
+          "hero_id": "isabella"
+        },
+        {
+          "score": 0.3333,
+          "matches": [
+            "heal-inhibitor",
+            "hp-scaling"
+          ],
+          "hero_id": "nazrik"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "HP loss"
+          ],
+          "hero_id": "dunlingr"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "HP loss"
+          ],
+          "hero_id": "shadewing"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "HP loss"
+          ],
+          "hero_id": "zorya"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing"
+          ],
+          "hero_id": "nazrik"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing"
+          ],
+          "hero_id": "igor"
+        }
+      ],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "f55cb455665813c9eb96583bbae12233aa6924b8b3354104421cc4ab9f323965",
+    "ai_hash": "bd14f2fe7d600f65a8148dabd231b2968cb66b5d9d5b413d48374cbc7b1f28a7",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "4b2fb17371c915e0e1fdada6f7fe5d037b2fec253d3a8e034f9e12e9c0405e39",
+    "stage": "scored"
+  }
+}

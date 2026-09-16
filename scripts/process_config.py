@@ -26,6 +26,7 @@ _gen = _load_module("gen_overview", "generate-heroes-overview.py")
 
 def apply_config(config: dict) -> None:
     """Push configurable weights/thresholds onto the analysis modules."""
+    rs, gen = _rs, _gen
     sw = config.get("synergy_weights", {})
     for key, attr in [
         ("targeting_weight", "TARGETING_WEIGHT"),
@@ -45,15 +46,15 @@ def apply_config(config: dict) -> None:
         ("defining_tier_score_mult", "DEFINING_TIER_SCORE_MULT"),
     ]:
         if key in sw:
-            setattr(_gen, attr, sw[key])
+            setattr(gen, attr, sw[key])
 
     dl = config.get("display_limits", {})
     if "max_synergies" in dl:
-        _gen.MAX_SYNERGIES = dl["max_synergies"]
+        gen.MAX_SYNERGIES = dl["max_synergies"]
     if "max_beneficiaries_display" in dl:
-        _gen.MAX_BENEFICIARIES_DISPLAY = dl["max_beneficiaries_display"]
+        gen.MAX_BENEFICIARIES_DISPLAY = dl["max_beneficiaries_display"]
     if "fallback_beneficiaries_display" in dl:
-        _gen.FALLBACK_BENEFICIARIES_DISPLAY = dl["fallback_beneficiaries_display"]
+        gen.FALLBACK_BENEFICIARIES_DISPLAY = dl["fallback_beneficiaries_display"]
 
     bt = config.get("behavior_thresholds", {})
     for key, attr in [
@@ -65,58 +66,58 @@ def apply_config(config: dict) -> None:
         ("casting_speed_slow_threshold", "CASTING_SPEED_SLOW_THRESHOLD"),
     ]:
         if key in bt:
-            setattr(_rs, attr, bt[key])
+            setattr(rs, attr, bt[key])
 
     rs_cfg = config.get("replacement_scoring", {})
     if "min_score" in rs_cfg:
-        _gen.REPLACEMENT_MIN_SCORE = rs_cfg["min_score"]
+        gen.REPLACEMENT_MIN_SCORE = rs_cfg["min_score"]
     if "max_replacements" in rs_cfg:
-        _gen.REPLACEMENT_MAX = rs_cfg["max_replacements"]
+        gen.REPLACEMENT_MAX = rs_cfg["max_replacements"]
     if "same_faction_mult" in rs_cfg:
-        _gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
+        gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
     if "same_role_category_mult" in rs_cfg:
-        _gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg["same_role_category_mult"]
+        gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg["same_role_category_mult"]
     if "same_melee_mult" in rs_cfg:
-        _gen.REPLACEMENT_SAME_MELEE_MULT = rs_cfg["same_melee_mult"]
+        gen.REPLACEMENT_SAME_MELEE_MULT = rs_cfg["same_melee_mult"]
     if "category_weights_by_role" in rs_cfg:
-        _gen.REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE = rs_cfg[
+        gen.REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE = rs_cfg[
             "category_weights_by_role"
         ]
 
     ps = config.get("proximity_synergy", {})
     if "melee_max_range" in ps:
-        _gen.PROXIMITY_MELEE_MAX_RANGE = ps["melee_max_range"]
-        _rs.MELEE_MAX_RANGE = ps["melee_max_range"]
+        gen.PROXIMITY_MELEE_MAX_RANGE = ps["melee_max_range"]
+        rs.MELEE_MAX_RANGE = ps["melee_max_range"]
     if "non_melee_melee_max_range" in ps:
-        _rs.NON_MELEE_MELEE_MAX_RANGE = ps["non_melee_melee_max_range"]
+        rs.NON_MELEE_MELEE_MAX_RANGE = ps["non_melee_melee_max_range"]
     if "default_aura_radius" in ps:
-        _gen.PROXIMITY_DEFAULT_AURA_RADIUS = ps["default_aura_radius"]
+        gen.PROXIMITY_DEFAULT_AURA_RADIUS = ps["default_aura_radius"]
     if "range_slack" in ps:
-        _gen.PROXIMITY_RANGE_SLACK = ps["range_slack"]
+        gen.PROXIMITY_RANGE_SLACK = ps["range_slack"]
     if "receiver_whitelist" in ps:
-        _gen.PROXIMITY_RECEIVER_WHITELIST = frozenset(ps["receiver_whitelist"])
+        gen.PROXIMITY_RECEIVER_WHITELIST = frozenset(ps["receiver_whitelist"])
     if "provider_blacklist" in ps:
-        _gen.PROXIMITY_PROVIDER_BLACKLIST = frozenset(ps["provider_blacklist"])
+        gen.PROXIMITY_PROVIDER_BLACKLIST = frozenset(ps["provider_blacklist"])
 
     ss = config.get("scalar_synergy", {})
     if "share_boost" in ss:
-        _gen.SCALAR_SHARE_BOOST = ss["share_boost"]
+        gen.SCALAR_SHARE_BOOST = ss["share_boost"]
     if "bound_threshold" in ss:
-        _gen.SCALAR_BOUND_THRESHOLD = ss["bound_threshold"]
+        gen.SCALAR_BOUND_THRESHOLD = ss["bound_threshold"]
 
     mt = config.get("magnitude_throughput", {})
     if "min_cycle_seconds" in mt:
-        _rs.MIN_CYCLE_SECONDS = mt["min_cycle_seconds"]
+        rs.MIN_CYCLE_SECONDS = mt["min_cycle_seconds"]
     if "passive_reference_cycle_seconds" in mt:
-        _rs.PASSIVE_REFERENCE_CYCLE_SECONDS = mt["passive_reference_cycle_seconds"]
+        rs.PASSIVE_REFERENCE_CYCLE_SECONDS = mt["passive_reference_cycle_seconds"]
 
     cs = config.get("condition_strength", {})
     if "frequent_score" in cs:
-        _rs.CONDITION_FREQUENT_SCORE = cs["frequent_score"]
-        _gen.FREQUENT_CONDITIONAL_SCORE = cs["frequent_score"]
+        rs.CONDITION_FREQUENT_SCORE = cs["frequent_score"]
+        gen.FREQUENT_CONDITIONAL_SCORE = cs["frequent_score"]
     if "cooldown_reference_seconds" in cs:
-        _rs.CONDITION_COOLDOWN_REFERENCE_SECONDS = cs["cooldown_reference_seconds"]
+        rs.CONDITION_COOLDOWN_REFERENCE_SECONDS = cs["cooldown_reference_seconds"]
     if "cooldown_floor_mult" in cs:
-        _rs.CONDITION_COOLDOWN_FLOOR_MULT = cs["cooldown_floor_mult"]
+        rs.CONDITION_COOLDOWN_FLOOR_MULT = cs["cooldown_floor_mult"]
     if "rare_downgrade_steps" in cs:
-        _rs.CONDITION_RARE_DOWNGRADE_STEPS = cs["rare_downgrade_steps"]
+        rs.CONDITION_RARE_DOWNGRADE_STEPS = cs["rare_downgrade_steps"]

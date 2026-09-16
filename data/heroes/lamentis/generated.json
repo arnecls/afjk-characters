@@ -1,0 +1,1297 @@
+{
+  "schema_version": 1,
+  "id": "lamentis",
+  "display_name": "Lamentis",
+  "source": {
+    "title": "Lamentis - Cosmic Hellion",
+    "name": "Lamentis",
+    "tags": "Hypogean · Marksman · Magic",
+    "faction": "Hypogean",
+    "class": "Marksman",
+    "damage_type": "Magic",
+    "description": "A trigger-happy Marksman who calls on apostles to help him tear through the enemy.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Malevolent Gaze",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "0 tiles",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+          "active": [
+            "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+            "Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+            "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 680% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 720% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 760% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lamentis commands his apostles to control enemies, then deals heavy damage to all enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Starcrusher",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based).",
+          "active": [
+            "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP.",
+            "The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases base damage to 220% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases base damage to 230% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases base damage to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Every third normal attack, Lamentis deals heavy extra damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Astral Fission",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+          "active": [
+            "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+            "The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP.",
+            "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+            "Up to 6 apostles can exist on the battlefield at the same time.",
+            "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 50% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 55% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 60% + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lamentis sacrifices HP to summon apostles to fight alongside him."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+          "active": [
+            "Lamentis and his apostles gain 20 ATK SPD.",
+            "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Lamentis and his apostles gain 25 ATK SPD.",
+                "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Lamentis and his apostles gain 30 ATK SPD.",
+                "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Omnisight",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.",
+          "active": [
+            "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+            "Each stack of Growth increases basic stats by 4%.",
+            "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+            "Lamentis can have up to 20 stacks of Growth."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the basic stats granted by each stack of Growth to 5%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the basic stats granted by each stack of Growth to 6%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+                "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+                "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The apostles gain basic stat buffs when using normal attacks, and pass those buffs on to Lamentis when they merge back into him."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+          "active": [
+            "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs."
+          ]
+        },
+        "description_lite": "Lamentis gains part of the buffs applied to his apostles."
+      }
+    ],
+    "range": 7,
+    "release_date": "2026-07-02",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Lamentis - Cosmic Hellion",
+      "faction": "hypogean",
+      "class": "marksman",
+      "role_category": "specialist",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-07-02",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Malevolent Gaze": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+            "active": [
+              "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+              "Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+              "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt to 640% (ATK-based) + 60% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt to 680% (ATK-based) + 60% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt to 720% (ATK-based) + 60% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt to 760% (ATK-based) + 60% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 820.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "skill_range": 0,
+          "initial_energy": 600.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "ATK SPD — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK SPD — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — Multiple targets",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Stun — Multiple targets"
+            }
+          ]
+        },
+        "Starcrusher": {
+          "category": "skill1",
+          "description": {
+            "raw": "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based).",
+            "active": [
+              "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP.",
+              "The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases base damage to 220% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases base damage to 230% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases base damage to 240% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 22.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 270.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Max HP-based damage"
+            },
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Astral Fission": {
+          "category": "skill2",
+          "description": {
+            "raw": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+            "active": [
+              "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+              "The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP.",
+              "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+              "Up to 6 apostles can exist on the battlefield at the same time.",
+              "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 50% + 6% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 55% + 6% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 60% + 6% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 10.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+            "active": [
+              "Lamentis and his apostles gain 20 ATK SPD.",
+              "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Lamentis and his apostles gain 25 ATK SPD.",
+                  "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Lamentis and his apostles gain 30 ATK SPD.",
+                  "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK SPD — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK SPD — Owned",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Omnisight": {
+          "category": "skill4",
+          "description": {
+            "raw": "Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.",
+            "active": [
+              "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+              "Each stack of Growth increases basic stats by 4%.",
+              "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+              "Lamentis can have up to 20 stacks of Growth."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the basic stats granted by each stack of Growth to 5%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Increases the basic stats granted by each stack of Growth to 6%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+                  "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+                  "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "ex+15",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Basic stats",
+              "label": "buff_summon_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.0
+                }
+              ],
+              "persistence": "unknown"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "True damage (EX+15)"
+            },
+            {
+              "label": "Direct healing — Self (EX+15)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Basic stats — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Self (EX+15)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+            "active": [
+              "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs."
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Stacking",
+            "tier": "mythic+",
+            "targeting": "Single target",
+            "description": "Lamentis can have up to 20 stacks of Growth."
+          },
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles that fight on the battlefield."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "All units, Single target"
+        ],
+        [
+          "max_hp",
+          "Single target"
+        ],
+        [
+          "true",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "true": "average"
+      },
+      "benefit_stats": [
+        "atk_spd",
+        "healing",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 0.0 tiles",
+        "casting_speed": "average",
+        "walk_speed": "normal",
+        "signature_skill_name": "Omnisight",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "slow",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 0.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "True damage": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "average",
+              "True damage": "average"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Healing via Healing over time (multiple targets, average)",
+          "ATK via ATK (all summons, high)",
+          "DEF via DEF (all summons, high)",
+          "Ranged damage via Ranged damage (all summons, low)"
+        ],
+        "score": 24.0,
+        "provider_id": "peggy"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (all summons, high)",
+          "Damage dealt via Damage dealt (all summons, average)",
+          "Damage taken via Damage taken (all summons, low)"
+        ],
+        "score": 18.0,
+        "provider_id": "aurora"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`",
+          "Healing via Healing over time (area, high)",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 11.205,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`",
+          "Healing via Healing over time (single target, high)"
+        ],
+        "score": 10.125,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Healing via Direct healing (all units, high)"
+        ],
+        "score": 8.25,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Healing via Healing over time (all units, high)"
+        ],
+        "score": 8.25,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (all units, average) `signature fuel`",
+          "Healing via Direct healing (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 7.83,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 7.6875,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Healing via Direct healing (multiple targets, average)"
+        ],
+        "score": 6.75,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, low) `signature fuel`",
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Shield via Shield (all summons, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "florabelle"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`"
+        ],
+        "score": 5.91,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
+          "Healing via Lifedrain (area, average, conditional (frequent))"
+        ],
+        "score": 5.7375,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "shakir"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`"
+        ],
+        "score": 5.58,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Healing via Lifedrain (all units, low)"
+        ],
+        "score": 5.25,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (area, low)",
+          "Energy via Energy (area, high) `signature fuel`"
+        ],
+        "score": 4.74,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (all units, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (arc, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "hepler"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (multiple targets, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "ludovic"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "marcille"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (area, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "yamato-gabumon"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (area, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "gerda"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "lucius"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy (all units, low) `signature fuel`"
+        ],
+        "score": 2.58,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Healing via Lifedrain (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "daimon"
+      },
+      {
+        "reasons": [
+          "Healing via Lifedrain (area, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (multiple targets, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "velara"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (area, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "nara"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.5,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.5,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 21.75,
+        "hero_id": "bonnie"
+      },
+      {
+        "score": 7.5,
+        "hero_id": "niru"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.5,
+          "matches": [
+            "aoe-damage",
+            "high-initial-energy",
+            "mass-cc"
+          ],
+          "hero_id": "natsu"
+        },
+        {
+          "score": 0.45,
+          "matches": [
+            "high-initial-energy",
+            "mass-cc",
+            "summoner"
+          ],
+          "hero_id": "lucy"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "aoe-damage",
+            "summoner"
+          ],
+          "hero_id": "florabelle"
+        }
+      ],
+      "damage": [
+        {
+          "score": 0.9493,
+          "matches": [
+            "Magic",
+            "True damage"
+          ],
+          "hero_id": "sylphira"
+        },
+        {
+          "score": 0.8583,
+          "matches": [
+            "True damage"
+          ],
+          "hero_id": "nara"
+        },
+        {
+          "score": 0.8387,
+          "matches": [
+            "True damage"
+          ],
+          "hero_id": "korin"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "eryndor"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "nara"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "natsu"
+        }
+      ],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "koko"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "orion"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "727ae239e3bf3b14c21eff3569c19f731d87202da5a887f77c5c85b5bd178916",
+    "ai_hash": "0a0792a6faea56ae51ac5b881e57b5d8dec9564e789bd804a4a0cd9eeeee4119",
+    "overrides_hash": "9b0af27010ddf64ec02cb643fe9389531748a5bb2c807086217eeb81e6acc44e",
+    "analysis_inputs_hash": "db13ad9ba5783b16dc5f8b8354939916a1b2ab62e62f2ebcb5664fb91be6a306",
+    "stage": "scored"
+  }
+}

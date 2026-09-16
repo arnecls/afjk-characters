@@ -1,0 +1,1387 @@
+{
+  "schema_version": 1,
+  "id": "shadewing",
+  "display_name": "Shadewing",
+  "source": {
+    "title": "Shadewing - Undying Vow",
+    "name": "Shadewing",
+    "tags": "Graveborn · Rogue · Magic",
+    "faction": "Graveborn",
+    "class": "Rogue",
+    "damage_type": "Magic",
+    "description": "A Rogue who fights with instinct and curse, he deals continuous damage that slowly pushes his enemies toward death.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Crimson Venom",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Shadewing inflicts Crimson Venom on an enemy for 10s. While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP. The extra damage cannot exceed 100% (ATK-based).",
+          "active": [
+            "Shadewing inflicts Crimson Venom on an enemy for 10s.",
+            "While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP.",
+            "The extra damage cannot exceed 100% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 65% (ATK-based) + 8% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 70% (ATK-based) + 8% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 75% (ATK-based) + 8% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 80% (ATK-based) + 8% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing deals heavy continuous damage to an enemy, and each hit deals extra damage based on the enemy's lost HP."
+      },
+      {
+        "section": "Skill1",
+        "name": "Razor Talons",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "1 tile",
+          "Initial Cooldown": "3s"
+        },
+        "description": {
+          "raw": "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage. He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again. The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s.",
+          "active": [
+            "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage.",
+            "He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again.",
+            "The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage of the two claw strikes to 75% (ATK-based) and the damage dealt per second from the resulting wound to 140% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage of the two claw strikes to 80% (ATK-based) and the damage dealt per second from the resulting wound to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage of the two claw strikes to 85% (ATK-based) and the damage dealt per second from the resulting wound to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing deals minor damage to an enemy, followed by more continuous damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Withering Curse",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.",
+          "active": [
+            "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies.",
+            "During the flight, Shadewing is invincible.",
+            "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
+            "When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP.",
+            "This damage cannot exceed 600% (ATK-based) + 90% (SP-based).",
+            "The curse lashes out at most once every 3s per enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt when the curse lashes out to 30% + 4% (SP-based) of the enemy's max HP.",
+                "This damage cannot exceed 700% (ATK-based) + 90% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt when the curse lashes out to 35% + 4% (SP-based) of the enemy's max HP.",
+                "This damage cannot exceed 800% (ATK-based) + 90% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt when the curse lashes out to 40% + 4% (SP-based) of the enemy's max HP.",
+                "This damage cannot exceed 900% (ATK-based) + 90% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing converts any continuous damage enemies take into curse value. Once the curse value reaches a set threshold, it lashes out, dealing heavy damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Curse Feast",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%. When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration.",
+          "active": [
+            "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%.",
+            "When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 42%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Converts 85% of the damage dealt by Withering Curse's lash into true damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 48%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing recovers Energy and gains a permanent damage boost whenever Withering Curse lashes out or an enemy with Crimson Venom is defeated."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP. He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK. The effects last until the end of the battle.",
+          "active": [
+            "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
+            "He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK.",
+            "The effects last until the end of the battle."
+          ]
+        },
+        "description_lite": "When a battle starts, Shadewing drains HP from the ally 1 tile in front of him to gain a shield and stat bonuses."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-11-13",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Shadewing - Undying Vow",
+      "faction": "graveborn",
+      "class": "rogue",
+      "role_category": "specialist",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-11-13",
+      "season": "Thorns of Devotion",
+      "season_number": 5,
+      "skills": {
+        "Crimson Venom": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Shadewing inflicts Crimson Venom on an enemy for 10s. While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP. The extra damage cannot exceed 100% (ATK-based).",
+            "active": [
+              "Shadewing inflicts Crimson Venom on an enemy for 10s.",
+              "While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP.",
+              "The extra damage cannot exceed 100% (ATK-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases Crimson Venom's base damage per second to 65% (ATK-based) + 8% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases Crimson Venom's base damage per second to 70% (ATK-based) + 8% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases Crimson Venom's base damage per second to 75% (ATK-based) + 8% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases Crimson Venom's base damage per second to 80% (ATK-based) + 8% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 5.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 88.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": 10.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 10,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "HP loss"
+            },
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "Energy — Self (Mythic+)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Razor Talons": {
+          "category": "skill1",
+          "description": {
+            "raw": "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage. He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again. The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s.",
+            "active": [
+              "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage.",
+              "He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again.",
+              "The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the damage of the two claw strikes to 75% (ATK-based) and the damage dealt per second from the resulting wound to 140% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the damage of the two claw strikes to 80% (ATK-based) and the damage dealt per second from the resulting wound to 160% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the damage of the two claw strikes to 85% (ATK-based) and the damage dealt per second from the resulting wound to 180% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 140.0
+                }
+              ],
+              "duration": 2.0,
+              "tick": 1.0
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 3.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "DoT"
+            }
+          ]
+        },
+        "Withering Curse": {
+          "category": "skill2",
+          "description": {
+            "raw": "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.",
+            "active": [
+              "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies.",
+              "During the flight, Shadewing is invincible.",
+              "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
+              "When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP.",
+              "This damage cannot exceed 600% (ATK-based) + 90% (SP-based).",
+              "The curse lashes out at most once every 3s per enemy."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the damage dealt when the curse lashes out to 30% + 4% (SP-based) of the enemy's max HP.",
+                  "This damage cannot exceed 700% (ATK-based) + 90% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the damage dealt when the curse lashes out to 35% + 4% (SP-based) of the enemy's max HP.",
+                  "This damage cannot exceed 800% (ATK-based) + 90% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the damage dealt when the curse lashes out to 40% + 4% (SP-based) of the enemy's max HP.",
+                  "This damage cannot exceed 900% (ATK-based) + 90% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Invincible",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 900.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Invincible — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases ATK by 12% during battle.",
+            "active": [
+              "Increases ATK by 12% during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases ATK by 16% during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases ATK by 20% during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 1,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Curse Feast": {
+          "category": "skill4",
+          "description": {
+            "raw": "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%. When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration.",
+            "active": [
+              "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%.",
+              "When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 42%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Converts 85% of the damage dealt by Withering Curse's lash into true damage."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 48%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 100.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 3,
+          "skill_card_tags": [
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP. He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK. The effects last until the end of the battle.",
+            "active": [
+              "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
+              "He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK.",
+              "The effects last until the end of the battle."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Lifedrain — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Debuff application",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Shadewing inflicts Crimson Venom on an enemy for 10s."
+          },
+          {
+            "label": "Invincibility",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "During the flight, Shadewing is invincible."
+          },
+          {
+            "label": "DoT conversion",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value."
+          },
+          {
+            "label": "Damage leech from allies",
+            "tier": "supreme+",
+            "targeting": "Single target",
+            "description": "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP."
+          }
+        ],
+        "requires": [
+          {
+            "label": "Continuous damage on enemies",
+            "tier": "base",
+            "targeting": "Enemies",
+            "description": "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value."
+          }
+        ]
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Single target"
+        ],
+        [
+          "dot",
+          "Single target"
+        ],
+        [
+          "hp_loss",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "hp_loss": "low",
+        "true": "low"
+      },
+      "benefit_stats": [
+        "atk",
+        "shield",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 1.0 tiles",
+        "casting_speed": "slow",
+        "walk_speed": "fast",
+        "signature_skill_name": "Withering Curse",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "slow",
+        "non_ult_speed": "average",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "HP loss": "low",
+              "Magic": "low",
+              "DoT": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "low",
+              "DoT": "low"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Enables Continuous damage on enemies via persistent zone"
+        ],
+        "score": 21.455,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)",
+          "Energy via Energy (area, low) `signature fuel`",
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 16.33,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)",
+          "Enables Continuous damage on enemies via persistent zone"
+        ],
+        "score": 15.25,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via persistent zone"
+        ],
+        "score": 12.5,
+        "provider_id": "alna"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT + Burn"
+        ],
+        "score": 12.5,
+        "provider_id": "frieren"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 12.5,
+        "provider_id": "tasi"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via persistent zone"
+        ],
+        "score": 12.5,
+        "provider_id": "viperian"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)",
+          "Enables Continuous damage on enemies via Ally-granted DoT"
+        ],
+        "score": 11.875,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 11.625,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Energy via Energy (multiple targets, average) `signature fuel`"
+        ],
+        "score": 10.035,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "faramor"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "brutus"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "bryon"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "cecia"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "cryonaia"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "cyran"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "daimon"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "pippa"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "voracia"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 10.0,
+        "provider_id": "yamato-gabumon"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 9.0,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 7.5,
+        "provider_id": "arden"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 6.99,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 6.33,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "perseus"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via Ally grant (Sparks)"
+        ],
+        "score": 4.0,
+        "provider_id": "satrana"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via Ally-granted DoT"
+        ],
+        "score": 4.0,
+        "provider_id": "talene"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "gwyneth"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "saida"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "zanie"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "berial"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "bonnie"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "granny-dahnie"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "ludovic"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "mirael"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "natsu"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "nerion"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT + Burn"
+        ],
+        "score": 3.75,
+        "provider_id": "odie"
+      },
+      {
+        "reasons": [
+          "Enables Continuous damage on enemies via DoT"
+        ],
+        "score": 3.75,
+        "provider_id": "orion"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))"
+        ],
+        "score": 2.2312499999999997,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`"
+        ],
+        "score": 1.08,
+        "provider_id": "lyca"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 10.5,
+        "hero_id": "eryndor"
+      },
+      {
+        "score": 6.0,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 6.0,
+        "hero_id": "arden"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6,
+          "matches": [
+            "dot-specialist",
+            "enemy-debuffer"
+          ],
+          "hero_id": "cecia"
+        },
+        {
+          "score": 0.576,
+          "matches": [
+            "dot-specialist",
+            "enemy-debuffer"
+          ],
+          "hero_id": "nerion"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "enemy-debuffer"
+          ],
+          "hero_id": "kruger"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "DoT"
+          ],
+          "hero_id": "mehira"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "HP loss"
+          ],
+          "hero_id": "dunlingr"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "HP loss"
+          ],
+          "hero_id": "niru"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic DEF",
+            "Phys DEF"
+          ],
+          "hero_id": "thador"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic DEF"
+          ],
+          "hero_id": "eironn"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic DEF",
+            "Phys DEF"
+          ],
+          "hero_id": "sinbad"
+        }
+      ],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "fb1bf41329e770f20ffc7095a7a9dbb3c241da67cca78ea2d10112b2bb9ba4fe",
+    "ai_hash": "1272c64a2eb304021961135ab1b2235fa451dc1fac1020dc1863fc564d043f5a",
+    "overrides_hash": "12b7bf5945cc37e13a3adb6b3e2bfc82094037f68f971d10144829d2d9fa0dfb",
+    "analysis_inputs_hash": "7643f8a9ff6d63fc98c7f40535edee402f2cbdd799f6d67d2a23f5cb99a9160d",
+    "stage": "scored"
+  }
+}

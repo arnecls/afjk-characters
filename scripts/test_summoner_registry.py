@@ -18,6 +18,26 @@ import summoner_registry as sr
 ROOT = SCRIPTS.parent
 
 
+def _load_roster_inputs() -> tuple[dict, dict[str, list[str]]]:
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
+
+        inputs = load_roster_inputs()
+        return inputs["raw"], inputs["curated"]["behavior_tags"]
+    return (
+        json.loads(
+            (ROOT / "data" / "heroes_data.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+        json.loads(
+            (ROOT / "data" / "hero_behavior_tags.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    )
+
+
 def _load_rs():
     spec = importlib.util.spec_from_file_location(
         "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
@@ -44,19 +64,12 @@ class SummonerRegistryTests(unittest.TestCase):
         self.assertNotIn("Chippy", heroes)
 
     def test_registry_matches_behavior_tags(self):
-        tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text(encoding="utf-8")
-        )
+        _raw, tags = _load_roster_inputs()
         tagged = {name for name, t in tags.items() if "summoner" in t}
         self.assertEqual(tagged, set(sr.summoner_heroes()))
 
     def test_sidecars_align_with_registry(self):
-        raw = json.loads(
-            (ROOT / "data" / "heroes_data.json").read_text(encoding="utf-8")
-        )
-        tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text(encoding="utf-8")
-        )
+        raw, tags = _load_roster_inputs()
         errors, _warnings = sr.check_summoner_consistency(
             tags, raw["heroes"], ses.load_sidecar
         )

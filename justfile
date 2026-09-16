@@ -1,9 +1,9 @@
 # AFK Journey hero data pipeline.
 # Run `just` (or `just -l`) to list recipes.
 #
-# Pipeline: download -> process -> render
-#   download : data/heroes_data.json          (Fandom baseline + Yaphalla gaps)
-#   process  : data/heroes_data_processed.json + heroes_data_synergies.json
+# Pipeline: download -> analyze -> render
+#   download : data/roster.json + data/heroes/*/generated.json
+#   analyze  : data/heroes/*/generated.json analysis and synergies
 #   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
 
 default:
@@ -23,7 +23,7 @@ ensure-venv:
       .venv/bin/pip install -q -r requirements.txt
     fi
 
-# Refresh data/heroes_data.json from live sources (Fandom, Yaphalla, Prydwen).
+# Refresh per-hero generated source files from live sources.
 download:
     python3 scripts/download_heroes.py
 
@@ -42,16 +42,15 @@ test: ensure-venv
 test-serial: ensure-venv
     .venv/bin/python -m unittest discover -s scripts -p 'test_*.py' -v
 
-# Analyse data/heroes_data.json -> processed + synergies JSON.
+# Analyse per-hero source files -> per-hero generated analysis and synergies.
 analyze: ensure-venv
-    .venv/bin/python scripts/process_heroes.py
-    .venv/bin/python scripts/process_synergies.py
+    .venv/bin/python scripts/hero_pipeline_cli.py analyze
 
-# Recompute roster-wide synergies from existing processed data.
+# Recompute roster-wide synergies from per-hero generated analysis.
 analyze-synergies: ensure-venv
     .venv/bin/python scripts/process_synergies.py
 
-# Render Heroes.md from data/heroes_data.json.
+# Render Heroes.md from the manifest and hero-local generated source.
 render-heroes:
     python3 scripts/render_heroes.py
 
@@ -69,7 +68,7 @@ render-site: render-overview
 # Render all view files.
 render: render-heroes render-site
 
-# Regenerate views from the committed data/heroes_data.json (no network).
+# Regenerate views from committed hero bundles (no network).
 views: analyze render
 
 # Full pipeline: refresh data from the web, then regenerate views.

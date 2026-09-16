@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Chippy - Acorn Knight",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "4662dac1ccfb8b3dcd84fea3127ac0c29287d3f6ff2c7a947ea3559c5e6c187a",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "90fd95170a59aca10b5334a353b08f17045ceadfa4f9844d39a0f49a87ac6611",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 270.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "d7088f30fa16b0cb77d0c5539650d64ca378d5fe683e6106287d5f674cd873ff",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 1000.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "self-repositioner"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "summon two companion units to join the battle",
+    "skill1": "leap at single target, dealing damage",
+    "skill2": "rare chance for massive single normal attack damage"
+  },
+  "play_overview": "Chippy **summons two companions** at battle start to fight beside him, then leaps at a single target for direct damage. His normal attacks have a **rare chance to spike** into massive single-hit damage when luck lands. He is a **lightweight early summon** who adds bodies and occasional burst. Without **companions surviving** or fights long enough for crit spikes, his output stays modest. He offers little when enemies **wipe his summons immediately** or outscale his basic damage.",
+  "counter_overview": "Chippy's Arena threat is **early companion bodies** at battle start plus **leaps onto a single target**, with rare normal-attack spikes if the fight drags. Wipe the hamsters early, then pressure Chippy himself — he **relocates too often** for a clean assassin pin. Answer with lasting wide ultimates like [[Shemira]] or [[Frieren]], or race the fight with [[filter:energy-provider]] like [[Thador]], [[Hugin]], or [[Rowan]] so his luck spikes never matter."
+}

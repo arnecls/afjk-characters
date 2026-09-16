@@ -1,0 +1,1144 @@
+{
+  "schema_version": 1,
+  "id": "shemira",
+  "display_name": "Shemira",
+  "source": {
+    "title": "Shemira - Corpsemaker",
+    "name": "Shemira",
+    "tags": "Graveborn · Mage · Magic",
+    "faction": "Graveborn",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A mage skilled in commanding ghosts, capable of stealing health during combat.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Phantom Procession",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Passive. Any ghosts summoned by Ghostly Tribute join the bombardment. Active. Shemira summons 10 ghosts to bombard random enemies for 10s. Each ghost deals 110% (ATK-based) + 15% (SP-based) damage to an enemy target. When a ghost deals damage, Shemira heals herself for 50% + 5% (SP-based) of the damage dealt. When the ghost returns to her, she heals herself again for 50% + 5% (SP-based) of that damage. The percentage of the ghosts' damage drops to 50% once any enemy has been struck 15 times or more by the ghosts. The strike count resets whenever Shemira casts her Ultimate.",
+          "passive": [
+            "Any ghosts summoned by Ghostly Tribute join the bombardment."
+          ],
+          "active": [
+            "Shemira summons 10 ghosts to bombard random enemies for 10s.",
+            "Each ghost deals 110% (ATK-based) + 15% (SP-based) damage to an enemy target.",
+            "When a ghost deals damage, Shemira heals herself for 50% + 5% (SP-based) of the damage dealt.",
+            "When the ghost returns to her, she heals herself again for 50% + 5% (SP-based) of that damage.",
+            "The percentage of the ghosts' damage drops to 50% once any enemy has been struck 15 times or more by the ghosts.",
+            "The strike count resets whenever Shemira casts her Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by each ghost to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by each ghost to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by each ghost to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by each ghost to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Summons ghosts to bombard random enemies on the battlefield."
+      },
+      {
+        "section": "Skill1",
+        "name": "Sacrificial Orb",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Shemira sacrifices 10% of her current HP to summon the Wailing Orb from the spectral rift 4 tiles away, dealing 320% (ATK-based) + 40% (SP-based) damage to enemies in its path.",
+          "active": [
+            "Shemira sacrifices 10% of her current HP to summon the Wailing Orb from the spectral rift 4 tiles away, dealing 320% (ATK-based) + 40% (SP-based) damage to enemies in its path."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 340% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 380% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira sacrifices her HP to deal damage to enemies in a straight line."
+      },
+      {
+        "section": "Skill2",
+        "name": "Ghastly Tribute",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Whenever allies' HP or shield value loss reaches 50% of Shemira's max HP, she summons 1 ghost to her side. Shemira can summon up to 5 ghosts outside her Ultimate. Active. Shemira sacrifices 15% of her current HP to deal true damage to a single enemy equal to 24% + 3% (SP-based) of their max HP. This damage cannot exceed 800% (ATK-based). If Shemira has any ghost summoned, she sacrifices one to strike the target and enemies within 1 tile of the target, dealing true damage equal to 20% + 2% (SP-based) of their max HP. The damage each enemy takes cannot exceed 500% (ATK-based).",
+          "passive": [
+            "Whenever allies' HP or shield value loss reaches 50% of Shemira's max HP, she summons 1 ghost to her side.",
+            "Shemira can summon up to 5 ghosts outside her Ultimate."
+          ],
+          "active": [
+            "Shemira sacrifices 15% of her current HP to deal true damage to a single enemy equal to 24% + 3% (SP-based) of their max HP.",
+            "This damage cannot exceed 800% (ATK-based).",
+            "If Shemira has any ghost summoned, she sacrifices one to strike the target and enemies within 1 tile of the target, dealing true damage equal to 20% + 2% (SP-based) of their max HP.",
+            "The damage each enemy takes cannot exceed 500% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to a single enemy to 26% + 3% (SP-based) of their max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to a single enemy to 28% + 3% (SP-based) of their max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to a single enemy to 30% + 3% (SP-based) of their max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira sacrifices her HP to deal damage. She can also sacrifice ghosts to deal extra AoE damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Shemira's Energy recovery from attacks increases by 24% during battle. After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 6%.",
+          "active": [
+            "Shemira's Energy recovery from attacks increases by 24% during battle.",
+            "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Shemira's Energy recovery from attacks increases by 32% during battle.",
+                "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Shemira's Energy recovery from attacks increases by 40% during battle.",
+                "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira's Energy recovery from attacks increases. After summoning 3 ghosts, her Energy recovery from attacks increases even further."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Spectral Barrier",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Whenever Shemira takes a total of 30% of her max HP in damage or reaches the max number of summoned ghosts, she sacrifices 1 ghost to gain a shield that lasts for 5s. The shield can absorb 250% (ATK-based) damage. When the shield expires, Shemira unleashes its remaining power again all enemies, dealing damage equal to the shield's remaining value.",
+          "active": [
+            "Whenever Shemira takes a total of 30% of her max HP in damage or reaches the max number of summoned ghosts, she sacrifices 1 ghost to gain a shield that lasts for 5s.",
+            "The shield can absorb 250% (ATK-based) damage.",
+            "When the shield expires, Shemira unleashes its remaining power again all enemies, dealing damage equal to the shield's remaining value."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield's value to 270% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When a ghost attacks its target during Shemira's Ultimate, it deals extra true damage equal to 3% of the target's max HP.",
+                "This damage cannot exceed 90% (ATK-based).",
+                "The attack also inflicts Max HP Reduction, lowering the target's max HP by the amount of damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield's value to 300% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira sacrifices a ghost to gain a shield. When the shield expires, she unleashes the remaining power of the shield to deal damage to all enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Each time a hero is defeated, Shemira summons 1 ghost.",
+          "active": [
+            "Each time a hero is defeated, Shemira summons 1 ghost."
+          ]
+        },
+        "description_lite": "Each time a hero is defeated, Shemira summons a ghost."
+      }
+    ],
+    "range": 4,
+    "release_date": "2025-04-24",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Shemira - Corpsemaker",
+      "faction": "graveborn",
+      "class": "mage",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2025-04-24",
+      "season": "Chains of Eternity",
+      "season_number": 3,
+      "skills": {
+        "Phantom Procession": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. Any ghosts summoned by Ghostly Tribute join the bombardment. Active. Shemira summons 10 ghosts to bombard random enemies for 10s. Each ghost deals 110% (ATK-based) + 15% (SP-based) damage to an enemy target. When a ghost deals damage, Shemira heals herself for 50% + 5% (SP-based) of the damage dealt. When the ghost returns to her, she heals herself again for 50% + 5% (SP-based) of that damage. The percentage of the ghosts' damage drops to 50% once any enemy has been struck 15 times or more by the ghosts. The strike count resets whenever Shemira casts her Ultimate.",
+            "passive": [
+              "Any ghosts summoned by Ghostly Tribute join the bombardment."
+            ],
+            "active": [
+              "Shemira summons 10 ghosts to bombard random enemies for 10s.",
+              "Each ghost deals 110% (ATK-based) + 15% (SP-based) damage to an enemy target.",
+              "When a ghost deals damage, Shemira heals herself for 50% + 5% (SP-based) of the damage dealt.",
+              "When the ghost returns to her, she heals herself again for 50% + 5% (SP-based) of that damage.",
+              "The percentage of the ghosts' damage drops to 50% once any enemy has been struck 15 times or more by the ghosts.",
+              "The strike count resets whenever Shemira casts her Ultimate."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt by each ghost to 120% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt by each ghost to 130% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt by each ghost to 140% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt by each ghost to 150% (ATK-based) + 15% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 165.0
+                }
+              ]
+            }
+          ],
+          "initial_energy": 300.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Sacrificial Orb": {
+          "category": "skill1",
+          "description": {
+            "raw": "Shemira sacrifices 10% of her current HP to summon the Wailing Orb from the spectral rift 4 tiles away, dealing 320% (ATK-based) + 40% (SP-based) damage to enemies in its path.",
+            "active": [
+              "Shemira sacrifices 10% of her current HP to summon the Wailing Orb from the spectral rift 4 tiles away, dealing 320% (ATK-based) + 40% (SP-based) damage to enemies in its path."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the damage dealt to 340% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the damage dealt to 360% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the damage dealt to 380% (ATK-based) + 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 420.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 12.0,
+          "initial_cooldown": 2.0,
+          "skill_range": 4,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Ghastly Tribute": {
+          "category": "skill2",
+          "description": {
+            "raw": "Passive. Whenever allies' HP or shield value loss reaches 50% of Shemira's max HP, she summons 1 ghost to her side. Shemira can summon up to 5 ghosts outside her Ultimate. Active. Shemira sacrifices 15% of her current HP to deal true damage to a single enemy equal to 24% + 3% (SP-based) of their max HP. This damage cannot exceed 800% (ATK-based). If Shemira has any ghost summoned, she sacrifices one to strike the target and enemies within 1 tile of the target, dealing true damage equal to 20% + 2% (SP-based) of their max HP. The damage each enemy takes cannot exceed 500% (ATK-based).",
+            "passive": [
+              "Whenever allies' HP or shield value loss reaches 50% of Shemira's max HP, she summons 1 ghost to her side.",
+              "Shemira can summon up to 5 ghosts outside her Ultimate."
+            ],
+            "active": [
+              "Shemira sacrifices 15% of her current HP to deal true damage to a single enemy equal to 24% + 3% (SP-based) of their max HP.",
+              "This damage cannot exceed 800% (ATK-based).",
+              "If Shemira has any ghost summoned, she sacrifices one to strike the target and enemies within 1 tile of the target, dealing true damage equal to 20% + 2% (SP-based) of their max HP.",
+              "The damage each enemy takes cannot exceed 500% (ATK-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the damage dealt to a single enemy to 26% + 3% (SP-based) of their max HP."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the damage dealt to a single enemy to 28% + 3% (SP-based) of their max HP."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the damage dealt to a single enemy to 30% + 3% (SP-based) of their max HP."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 33.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 8.0,
+          "initial_cooldown": 4.0,
+          "skill_card_tags": [
+            {
+              "label": "Max HP-based damage"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Shemira's Energy recovery from attacks increases by 24% during battle. After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 6%.",
+            "active": [
+              "Shemira's Energy recovery from attacks increases by 24% during battle.",
+              "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 6%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Shemira's Energy recovery from attacks increases by 32% during battle.",
+                  "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 8%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Shemira's Energy recovery from attacks increases by 40% during battle.",
+                  "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 10%."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 1,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Spectral Barrier": {
+          "category": "skill4",
+          "description": {
+            "raw": "Whenever Shemira takes a total of 30% of her max HP in damage or reaches the max number of summoned ghosts, she sacrifices 1 ghost to gain a shield that lasts for 5s. The shield can absorb 250% (ATK-based) damage. When the shield expires, Shemira unleashes its remaining power again all enemies, dealing damage equal to the shield's remaining value.",
+            "active": [
+              "Whenever Shemira takes a total of 30% of her max HP in damage or reaches the max number of summoned ghosts, she sacrifices 1 ghost to gain a shield that lasts for 5s.",
+              "The shield can absorb 250% (ATK-based) damage.",
+              "When the shield expires, Shemira unleashes its remaining power again all enemies, dealing damage equal to the shield's remaining value."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the shield's value to 270% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "When a ghost attacks its target during Shemira's Ultimate, it deals extra true damage equal to 3% of the target's max HP.",
+                  "This damage cannot exceed 90% (ATK-based).",
+                  "The attack also inflicts Max HP Reduction, lowering the target's max HP by the amount of damage dealt."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the shield's value to 300% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 3.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Max HP-based damage (EX+10)"
+            },
+            {
+              "label": "Max HP (EX+10)",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Each time a hero is defeated, Shemira summons 1 ghost.",
+            "active": [
+              "Each time a hero is defeated, Shemira summons 1 ghost."
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area, Single target"
+        ],
+        [
+          "max_hp",
+          "Area, Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "max_hp": "low"
+      },
+      "benefit_stats": [
+        "shield",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "mostly stationary",
+        "movement_note": "avg attack range 4.0 tiles",
+        "casting_speed": "slow",
+        "walk_speed": "normal",
+        "signature_skill_name": "Phantom Procession",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "slow",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 4.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "high",
+              "Max HP-based damage": "low"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (all units, high)"
+        ],
+        "score": 30.0,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`",
+          "Enemy defense via Magic DEF debuff (single target, high)"
+        ],
+        "score": 28.348875,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (area, high)"
+        ],
+        "score": 24.0,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 23.082214285714286,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 18.5895,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (multiple targets, high)"
+        ],
+        "score": 18.0,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 16.720232142857142,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Enemy defense via DEF Penetration (all units, low)"
+        ],
+        "score": 12.7,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (multiple targets, average)"
+        ],
+        "score": 12.0,
+        "provider_id": "sinbad"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 11.615785714285714,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (all units, low)"
+        ],
+        "score": 10.0,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+        ],
+        "score": 9.420300000000001,
+        "provider_id": "hugin"
+      },
+      {
+        "reasons": [
+          "Named ally grant: Phys DEF (high)",
+          "Named ally grant: Magic DEF (high)"
+        ],
+        "score": 9.0,
+        "provider_id": "niru"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "carolina"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "cassadee"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "laios"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 7.59375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 7.209,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "shadewing"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "velara"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "eironn"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 5.859,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 5.7,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, low) `signature fuel`",
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 4.35,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 4.05,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "himmel"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "berial"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "cecia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "cryonaia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "indris"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "kruger"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "nazrik"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "thoran"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.7,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.7,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.7,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.7,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.2950000000000004,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.2950000000000004,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (single target, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 10.0,
+        "hero_id": "bonnie"
+      },
+      {
+        "score": 6.0,
+        "hero_id": "niru"
+      },
+      {
+        "score": 6.0,
+        "hero_id": "vala"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.5,
+          "matches": [
+            "hp-scaling"
+          ],
+          "hero_id": "baelran"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "hp-scaling"
+          ],
+          "hero_id": "marilee"
+        },
+        {
+          "score": 0.3,
+          "matches": [
+            "hp-scaling"
+          ],
+          "hero_id": "nazrik"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "silven"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "sylphira"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic",
+            "Max HP-based damage"
+          ],
+          "hero_id": "ludovic"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "sylphira"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "baelran"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "eryndor"
+        }
+      ],
+      "cc": [],
+      "overall": [
+        {
+          "score": 0.7006,
+          "matches": [
+            "Damage",
+            "Debuffs on enemies"
+          ],
+          "hero_id": "natsu"
+        },
+        {
+          "score": 0.6452,
+          "matches": [
+            "Damage",
+            "Debuffs on enemies"
+          ],
+          "hero_id": "sylphira"
+        },
+        {
+          "score": 0.5761,
+          "matches": [
+            "Damage",
+            "Debuffs on enemies"
+          ],
+          "hero_id": "lamentis"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "c6937ba6216725c3bb39c6007a8e317cca2cab7c111ef7cea6f561c13b3be991",
+    "ai_hash": "23eadb0e9031d21ec8002a3e8b538a2adceb7cd28d1fa94a1b6e3dba6de5ff2f",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "af2961f3075a98bd35af2da2b77ddfa6acc1ddc32a7d5bca489b49c9129f6430",
+    "stage": "scored"
+  }
+}

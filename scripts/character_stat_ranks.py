@@ -41,6 +41,30 @@ def stats_overview_for_short(short: str, slug_ranks: dict[str, dict]) -> dict | 
 
 def load_character_stat_ranks(path: Path | None = None) -> dict:
     """Load raw character stat ranks JSON."""
+    if path is None and (STAT_RANKS_PATH.parent / "roster.json").exists():
+        from hero_pipeline.storage import load_manifest, load_bundles
+
+        manifest = load_manifest()
+        bundles = load_bundles(manifest)
+        characters = {}
+        for entry in manifest["heroes"]:
+            ranks = (
+                bundles[entry["id"]]["generated"]
+                .get("external", {})
+                .get("stat_ranks")
+            )
+            if ranks is not None:
+                characters[entry["id"]] = ranks
+        return {
+            "meta": {
+                "season": "Starter Story",
+                "category_method": "mean_within_class_percentile_rank",
+                "bucket_method": "within_class_tertile",
+                "stat_catalog": "data/stat_catalog.json",
+                "source": "afkj-data",
+            },
+            "characters": characters,
+        }
     source = path or STAT_RANKS_PATH
     return json.loads(source.read_text(encoding="utf-8"))
 

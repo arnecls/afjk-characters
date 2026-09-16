@@ -1,0 +1,1268 @@
+{
+  "schema_version": 1,
+  "id": "thador",
+  "display_name": "Thador",
+  "source": {
+    "title": "Thador - Ironsworn General",
+    "name": "Thador",
+    "tags": "Wilder · Tank · Physical",
+    "faction": "Wilder",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A tough and reliable Tank who can summon ritual zones.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Moonveil Manifest",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "0 tiles",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Thador slams the ground with his shield, dealing 320% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and conjuring a ritual zone for the Moonveil Rite. The ritual zone lasts for 12s and reduces the Crit DMG DEF of enemies within by 40. When enemies have accumulated damage totaling 1500% of Thador's initial ATK while inside the zone, he unleashes a shadow eruption dealing 160% of Team ATK damage to each enemy inside the zone. Each ally is then healed for 80% of the eruption's total damage dealt. The eruption can trigger once per Moonveil Rite.",
+          "active": [
+            "Thador slams the ground with his shield, dealing 320% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and conjuring a ritual zone for the Moonveil Rite.",
+            "The ritual zone lasts for 12s and reduces the Crit DMG DEF of enemies within by 40.",
+            "When enemies have accumulated damage totaling 1500% of Thador's initial ATK while inside the zone, he unleashes a shadow eruption dealing 160% of Team ATK damage to each enemy inside the zone.",
+            "Each ally is then healed for 80% of the eruption's total damage dealt.",
+            "The eruption can trigger once per Moonveil Rite."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage of the eruption to 170% of the Team ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of the eruption to 180% of the Team ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of the eruption to 190% of the Team ATK."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of the eruption to 200% of the Team ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thador deals AoE damage and performs the Moonveil Rite, inflicting debuffs on affected enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Darkmoon Pact",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Passive. During battle preparation, Thador designates the ally placed 1 tile behind him as his lieutenant. While Thador remains alive, his lieutenant gains 15 + 1.5 (SP-based) Crit. Active. Thador grants both himself and his lieutenant a shield that absorbs 350% (ATK-based) + 35% (SP-based) damage for 8s.",
+          "passive": [
+            "During battle preparation, Thador designates the ally placed 1 tile behind him as his lieutenant.",
+            "While Thador remains alive, his lieutenant gains 15 + 1.5 (SP-based) Crit."
+          ],
+          "active": [
+            "Thador grants both himself and his lieutenant a shield that absorbs 350% (ATK-based) + 35% (SP-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value granted by this skill to 360% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value granted by this skill to 370% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value granted by this skill to 380% (ATK-based) + 35% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thador designates an ally as his lieutenant, increasing their Crit. When casting this skill, Thador grants a shield to both himself and his lieutenant."
+      },
+      {
+        "section": "Skill2",
+        "name": "Crescent Cleave",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Thador swings his curved blade in a 2-tile crescent arc, dealing 310% (ATK-based) + 30% (SP-based) damage to enemies in front of him and knocking them down for 1.5s.",
+          "active": [
+            "Thador swings his curved blade in a 2-tile crescent arc, dealing 310% (ATK-based) + 30% (SP-based) damage to enemies in front of him and knocking them down for 1.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 340% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thador swings his blade, dealing damage to enemies in front of him and knocking them down."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Reduces damage taken by 12% during battle.",
+          "active": [
+            "Reduces damage taken by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Umbral Descent",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When Thador's lieutenant casts Ultimate for the first time, Thador summons the Darkmoon over the battlefield. While active, the Darkmoon deals 80% (ATK-based) damage to each enemy every 0.5s and reduces their Phys & Magic DEF by 55%. After 6s, the Darkmoon fades, dealing 520% (ATK-based) damage to each enemy. This effect can trigger once per battle.",
+          "active": [
+            "When Thador's lieutenant casts Ultimate for the first time, Thador summons the Darkmoon over the battlefield.",
+            "While active, the Darkmoon deals 80% (ATK-based) damage to each enemy every 0.5s and reduces their Phys & Magic DEF by 55%.",
+            "After 6s, the Darkmoon fades, dealing 520% (ATK-based) damage to each enemy.",
+            "This effect can trigger once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage when the effect ends to 540% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Grants Thador's lieutenant 350 Energy when a battle starts."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage when the effect ends to 560% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Thador's lieutenant casts Ultimate for the first time, Thador deals damage to all enemies and reduces their Phys & Magic DEF."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Thador restores 5% of his max HP every second as long as his lieutenant is alive.",
+          "active": [
+            "Thador restores 5% of his max HP every second as long as his lieutenant is alive."
+          ]
+        },
+        "description_lite": "Thador continuously restores his own HP while his lieutenant is alive."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-07-10",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "A+",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Thador - Ironsworn General",
+      "faction": "wilder",
+      "class": "tank",
+      "role_category": "tank",
+      "is_energy_provider": true,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-07-10",
+      "season": "Echoes of Dissent",
+      "season_number": 4,
+      "skills": {
+        "Moonveil Manifest": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Thador slams the ground with his shield, dealing 320% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and conjuring a ritual zone for the Moonveil Rite. The ritual zone lasts for 12s and reduces the Crit DMG DEF of enemies within by 40. When enemies have accumulated damage totaling 1500% of Thador's initial ATK while inside the zone, he unleashes a shadow eruption dealing 160% of Team ATK damage to each enemy inside the zone. Each ally is then healed for 80% of the eruption's total damage dealt. The eruption can trigger once per Moonveil Rite.",
+            "active": [
+              "Thador slams the ground with his shield, dealing 320% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and conjuring a ritual zone for the Moonveil Rite.",
+              "The ritual zone lasts for 12s and reduces the Crit DMG DEF of enemies within by 40.",
+              "When enemies have accumulated damage totaling 1500% of Thador's initial ATK while inside the zone, he unleashes a shadow eruption dealing 160% of Team ATK damage to each enemy inside the zone.",
+              "Each ally is then healed for 80% of the eruption's total damage dealt.",
+              "The eruption can trigger once per Moonveil Rite."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage of the eruption to 170% of the Team ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage of the eruption to 180% of the Team ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage of the eruption to 190% of the Team ATK."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage of the eruption to 200% of the Team ATK."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 350.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 0,
+          "initial_energy": 400.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            }
+          ]
+        },
+        "Darkmoon Pact": {
+          "category": "skill1",
+          "description": {
+            "raw": "Passive. During battle preparation, Thador designates the ally placed 1 tile behind him as his lieutenant. While Thador remains alive, his lieutenant gains 15 + 1.5 (SP-based) Crit. Active. Thador grants both himself and his lieutenant a shield that absorbs 350% (ATK-based) + 35% (SP-based) damage for 8s.",
+            "passive": [
+              "During battle preparation, Thador designates the ally placed 1 tile behind him as his lieutenant.",
+              "While Thador remains alive, his lieutenant gains 15 + 1.5 (SP-based) Crit."
+            ],
+            "active": [
+              "Thador grants both himself and his lieutenant a shield that absorbs 350% (ATK-based) + 35% (SP-based) damage for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the shield value granted by this skill to 360% (ATK-based) + 35% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the shield value granted by this skill to 370% (ATK-based) + 35% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the shield value granted by this skill to 380% (ATK-based) + 35% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 15.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 380.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 8.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Crit",
+              "polarity": "buff"
+            },
+            {
+              "label": "Shield — Multiple targets",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Crescent Cleave": {
+          "category": "skill2",
+          "description": {
+            "raw": "Thador swings his curved blade in a 2-tile crescent arc, dealing 310% (ATK-based) + 30% (SP-based) damage to enemies in front of him and knocking them down for 1.5s.",
+            "active": [
+              "Thador swings his curved blade in a 2-tile crescent arc, dealing 310% (ATK-based) + 30% (SP-based) damage to enemies in front of him and knocking them down for 1.5s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases damage to 320% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases damage to 330% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases damage to 340% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_down",
+              "duration": 1.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 370.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 6.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 2,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Knock down — Single target"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Reduces damage taken by 12% during battle.",
+            "active": [
+              "Reduces damage taken by 12% during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Reduces damage taken by 16% during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Reduces damage taken by 20% during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Umbral Descent": {
+          "category": "skill4",
+          "description": {
+            "raw": "When Thador's lieutenant casts Ultimate for the first time, Thador summons the Darkmoon over the battlefield. While active, the Darkmoon deals 80% (ATK-based) damage to each enemy every 0.5s and reduces their Phys & Magic DEF by 55%. After 6s, the Darkmoon fades, dealing 520% (ATK-based) damage to each enemy. This effect can trigger once per battle.",
+            "active": [
+              "When Thador's lieutenant casts Ultimate for the first time, Thador summons the Darkmoon over the battlefield.",
+              "While active, the Darkmoon deals 80% (ATK-based) damage to each enemy every 0.5s and reduces their Phys & Magic DEF by 55%.",
+              "After 6s, the Darkmoon fades, dealing 520% (ATK-based) damage to each enemy.",
+              "This effect can trigger once per battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases damage when the effect ends to 540% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Grants Thador's lieutenant 350 Energy when a battle starts."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases damage when the effect ends to 560% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 55.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ],
+              "duration": 2.0,
+              "tick": 0.5
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 350.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Physical (EX+5)"
+            },
+            {
+              "label": "Physical (EX+15)"
+            },
+            {
+              "label": "Energy (EX+10)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Thador restores 5% of his max HP every second as long as his lieutenant is alive.",
+            "active": [
+              "Thador restores 5% of his max HP every second as long as his lieutenant is alive."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 5.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1.0
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "HoT — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "max_hp",
+        "crit"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 0.2 tiles",
+        "casting_speed": "slow",
+        "walk_speed": "fast",
+        "signature_skill_name": "Darkmoon Pact",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "slow",
+        "non_ult_speed": "average",
+        "avg_attack_range": 0.15384615384615385,
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place lieutenant 1 tile behind at battle prep (Crit + shared shields)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "average",
+            "first_cast_speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "average",
+              "DoT": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Max HP via Max HP (all units, high)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 6.525,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Max HP via Max HP (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 5.535299999999999,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 3.5478,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "Max HP via Max HP (multiple targets, low)",
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 3.22125,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.0456000000000003,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 3.0375,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 3.0375,
+        "provider_id": "shakir"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "Max HP via Max HP (single target, low)",
+          "Energy via Energy (single target, low) `signature fuel`"
+        ],
+        "score": 2.0103,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 1.72125,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`"
+        ],
+        "score": 1.5309,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`"
+        ],
+        "score": 1.3203,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 1.0125,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 0.8099999999999999,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 0.8099999999999999,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 28.348875,
+        "hero_id": "shemira"
+      },
+      {
+        "score": 26.161875000000002,
+        "hero_id": "marcille"
+      },
+      {
+        "score": 19.29,
+        "hero_id": "orion"
+      },
+      {
+        "score": 18.636525000000002,
+        "hero_id": "cryonaia"
+      },
+      {
+        "score": 17.5995,
+        "hero_id": "arden"
+      },
+      {
+        "score": 16.7895,
+        "hero_id": "yamato-gabumon"
+      },
+      {
+        "score": 16.740000000000002,
+        "hero_id": "silven"
+      },
+      {
+        "score": 13.3875,
+        "hero_id": "mirael"
+      },
+      {
+        "score": 13.212,
+        "hero_id": "bryon"
+      },
+      {
+        "score": 12.282900000000001,
+        "hero_id": "rhys"
+      },
+      {
+        "score": 12.24,
+        "hero_id": "galahad"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "natsu"
+      },
+      {
+        "score": 11.599499999999999,
+        "hero_id": "valen"
+      },
+      {
+        "score": 10.8954,
+        "hero_id": "viperian"
+      },
+      {
+        "score": 10.782900000000001,
+        "hero_id": "lucius"
+      },
+      {
+        "score": 10.782900000000001,
+        "hero_id": "lumont"
+      },
+      {
+        "score": 10.7829,
+        "hero_id": "berial"
+      },
+      {
+        "score": 10.627500000000001,
+        "hero_id": "seth"
+      },
+      {
+        "score": 9.871875000000001,
+        "hero_id": "frieren"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "odie"
+      },
+      {
+        "score": 8.8875,
+        "hero_id": "callan"
+      },
+      {
+        "score": 8.599499999999999,
+        "hero_id": "antandra"
+      },
+      {
+        "score": 8.599499999999999,
+        "hero_id": "koko"
+      },
+      {
+        "score": 8.599499999999999,
+        "hero_id": "soren"
+      },
+      {
+        "score": 8.599499999999999,
+        "hero_id": "twins"
+      },
+      {
+        "score": 7.6274999999999995,
+        "hero_id": "contess"
+      },
+      {
+        "score": 7.6274999999999995,
+        "hero_id": "evie"
+      },
+      {
+        "score": 7.6274999999999995,
+        "hero_id": "sinbad"
+      },
+      {
+        "score": 7.6274999999999995,
+        "hero_id": "smokey-meerky"
+      },
+      {
+        "score": 7.6274999999999995,
+        "hero_id": "velara"
+      },
+      {
+        "score": 7.3875,
+        "hero_id": "athalia"
+      },
+      {
+        "score": 7.3875,
+        "hero_id": "nazrik"
+      },
+      {
+        "score": 7.3875,
+        "hero_id": "walker"
+      },
+      {
+        "score": 6.2829,
+        "hero_id": "korin"
+      },
+      {
+        "score": 6.2829,
+        "hero_id": "lyca"
+      },
+      {
+        "score": 6.24,
+        "hero_id": "harak"
+      },
+      {
+        "score": 5.9184,
+        "hero_id": "chippy"
+      },
+      {
+        "score": 5.9184,
+        "hero_id": "ludovic"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "daimon"
+      },
+      {
+        "score": 4.3875,
+        "hero_id": "gunnar"
+      },
+      {
+        "score": 4.3875,
+        "hero_id": "igor"
+      },
+      {
+        "score": 4.3875,
+        "hero_id": "kruger"
+      },
+      {
+        "score": 4.3875,
+        "hero_id": "pippa"
+      },
+      {
+        "score": 4.3875,
+        "hero_id": "satrana"
+      },
+      {
+        "score": 4.3875,
+        "hero_id": "shakir"
+      },
+      {
+        "score": 3.2399999999999998,
+        "hero_id": "hugin"
+      },
+      {
+        "score": 3.2399999999999998,
+        "hero_id": "pandora"
+      },
+      {
+        "score": 3.2399999999999998,
+        "hero_id": "thoran"
+      },
+      {
+        "score": 3.2399999999999998,
+        "hero_id": "ulmus"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
+      "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6,
+          "matches": [
+            "ally-shielder",
+            "energy-provider",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "ravion"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "ally-shielder",
+            "energy-provider",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "twins"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "ally-shielder",
+            "energy-provider",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "hugin"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "DoT",
+            "Physical"
+          ],
+          "hero_id": "gwyneth"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "DoT",
+            "Physical"
+          ],
+          "hero_id": "alna"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "DoT",
+            "Physical"
+          ],
+          "hero_id": "faramor"
+        }
+      ],
+      "debuff": [],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down"
+          ],
+          "hero_id": "frieren"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down"
+          ],
+          "hero_id": "himmel"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down"
+          ],
+          "hero_id": "silven"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "487817baf536a87a76541676695757e14de9f5a816f474043ad260e414df781c",
+    "ai_hash": "2e3b8a65938834a20ffc96f20608687fde5a09ef936705a9ba708ee131e69087",
+    "overrides_hash": "c2d73508cd39d1583d5725cee810311327abcbe934632b453d4c2ea85bffc5de",
+    "analysis_inputs_hash": "ed680c673dce4a01a7b4e62a796277823ca1be22b3304288e31ebdb173b6d63b",
+    "stage": "scored"
+  }
+}

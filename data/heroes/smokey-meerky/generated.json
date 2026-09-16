@@ -1,0 +1,1435 @@
+{
+  "schema_version": 1,
+  "id": "smokey-meerky",
+  "display_name": "Smokey & Meerky",
+  "source": {
+    "title": "Smokey & Meerky - Wasteland Apothecary",
+    "name": "Smokey & Meerky",
+    "tags": "Mauler · Support · Magic",
+    "faction": "Mauler",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A Support who can heal and imbue buffs to nearby allies continuously.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Special Aroma",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0",
+          "Cooldown": "1s",
+          "Initial Cooldown": "1s"
+        },
+        "description": {
+          "raw": "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling. While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second. Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted. Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile. - Improved Aroma II: Grants 30 haste to all allies within the aroma.",
+          "active": [
+            "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
+            "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
+            "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
+            "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
+            "- Improved Aroma II: Grants 30 haste to all allies within the aroma."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 24% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 27% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 29% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 31% (ATK-based) per second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky create an aroma and provide continuous healing. Actively using the skill levels up the aroma."
+      },
+      {
+        "section": "Skill1",
+        "name": "Energizing Formula",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based). Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
+          "active": [
+            "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
+            "Additionally, for each non-summoned ally affected, they recover 5 Energy per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "ATK buff increases to 18% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Energy recovery increases to 8 per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "ATK buff increases to 20% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky increase the ATK of allies within the aroma and recover Energy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Quick Recovery",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "5s",
+          "Skill Range": "2 tiles",
+          "Initial Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
+          "active": [
+            "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Healing increases to 100% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Healing increases to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Healing increases to 120% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky recover HP for allies within the aroma."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Smokey & Meerky passively increase their ATK by 6%. If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+          "active": [
+            "Smokey & Meerky passively increase their ATK by 6%.",
+            "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky increase their ATK, and the ATK bonus is further increased when there are 3 or more non-summoned allies within the aroma."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Withering Potion",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile. Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second. However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
+          "active": [
+            "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
+            "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
+            "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky gain Improved Aroma III, dealing more damage to enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
+          "active": [
+            "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based)."
+          ]
+        },
+        "description_lite": "Smokey & Meerky use Special Aroma to recover more HP."
+      }
+    ],
+    "range": 8,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Smokey & Meerky - Wasteland Apothecary",
+      "faction": "mauler",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": true,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 8,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Special Aroma": {
+          "category": "ultimate",
+          "description": {
+            "raw": "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling. While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second. Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted. Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile. - Improved Aroma II: Grants 30 haste to all allies within the aroma.",
+            "active": [
+              "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
+              "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
+              "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
+              "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
+              "- Improved Aroma II: Grants 30 haste to all allies within the aroma."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "HP recovery increases to 24% (ATK-based) per second."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "HP recovery increases to 27% (ATK-based) per second."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "HP recovery increases to 29% (ATK-based) per second."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": null,
+                "text": [
+                  "HP recovery increases to 31% (ATK-based) per second."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 170.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 170.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "cooldown": 1.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 2,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "HoT — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Haste — Area",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Energizing Formula": {
+          "category": "skill1",
+          "description": {
+            "raw": "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based). Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
+            "active": [
+              "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
+              "Additionally, for each non-summoned ally affected, they recover 5 Energy per second."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "ATK buff increases to 18% + 1% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Energy recovery increases to 8 per second."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "ATK buff increases to 20% + 1% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 8.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 5,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Area",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Quick Recovery": {
+          "category": "skill2",
+          "description": {
+            "raw": "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
+            "active": [
+              "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Healing increases to 100% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Healing increases to 110% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Healing increases to 120% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 5.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 2,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Area",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Smokey & Meerky passively increase their ATK by 6%. If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+            "active": [
+              "Smokey & Meerky passively increase their ATK by 6%.",
+              "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.0
+                }
+              ],
+              "persistence": "unknown"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Withering Potion": {
+          "category": "skill4",
+          "description": {
+            "raw": "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile. Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second. However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
+            "active": [
+              "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
+              "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
+              "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 14.0
+                }
+              ],
+              "duration": 10.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 0.1
+            }
+          ],
+          "skill_range": 4,
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "Stun — Area"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
+            "active": [
+              "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based)."
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "dot",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "fast",
+        "walk_speed": "slow",
+        "signature_skill_name": "Special Aroma",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "average",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 8.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          }
+        }
+      }
+    },
+    "signature_calculated": "skill1"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 16.47642857142857,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 13.458214285714286,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 7.6274999999999995,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 7.289999999999999,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 6.33,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, low)",
+          "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 4.461,
+        "provider_id": "hugin"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 4.3585714285714285,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))"
+        ],
+        "score": 2.2312499999999997,
+        "provider_id": "isabella"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 26.8215,
+        "hero_id": "zorya"
+      },
+      {
+        "score": 25.1318,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 23.654,
+        "hero_id": "nerion"
+      },
+      {
+        "score": 20.8818,
+        "hero_id": "dionel"
+      },
+      {
+        "score": 20.8818,
+        "hero_id": "perseus"
+      },
+      {
+        "score": 17.904,
+        "hero_id": "lenya"
+      },
+      {
+        "score": 17.1318,
+        "hero_id": "atalanta"
+      },
+      {
+        "score": 17.1318,
+        "hero_id": "mikola"
+      },
+      {
+        "score": 17.1318,
+        "hero_id": "vala"
+      },
+      {
+        "score": 16.33,
+        "hero_id": "shadewing"
+      },
+      {
+        "score": 15.75,
+        "hero_id": "faramor"
+      },
+      {
+        "score": 15.705,
+        "hero_id": "silven"
+      },
+      {
+        "score": 15.654,
+        "hero_id": "laios"
+      },
+      {
+        "score": 14.8818,
+        "hero_id": "fay"
+      },
+      {
+        "score": 14.8818,
+        "hero_id": "gwyneth"
+      },
+      {
+        "score": 14.821499999999999,
+        "hero_id": "yamato-gabumon"
+      },
+      {
+        "score": 14.75,
+        "hero_id": "himmel"
+      },
+      {
+        "score": 14.197799999999999,
+        "hero_id": "rolan"
+      },
+      {
+        "score": 12.654,
+        "hero_id": "bryon"
+      },
+      {
+        "score": 12.654,
+        "hero_id": "koko"
+      },
+      {
+        "score": 12.654,
+        "hero_id": "soren"
+      },
+      {
+        "score": 12.654,
+        "hero_id": "twins"
+      },
+      {
+        "score": 12.5103,
+        "hero_id": "cyran"
+      },
+      {
+        "score": 12.5103,
+        "hero_id": "marilee"
+      },
+      {
+        "score": 11.955,
+        "hero_id": "isabella"
+      },
+      {
+        "score": 11.955,
+        "hero_id": "parisa"
+      },
+      {
+        "score": 11.955,
+        "hero_id": "temesia"
+      },
+      {
+        "score": 11.8818,
+        "hero_id": "lumont"
+      },
+      {
+        "score": 11.8818,
+        "hero_id": "mehira"
+      },
+      {
+        "score": 11.8818,
+        "hero_id": "viperian"
+      },
+      {
+        "score": 11.205,
+        "hero_id": "lamentis"
+      },
+      {
+        "score": 10.875,
+        "hero_id": "kulu"
+      },
+      {
+        "score": 10.875,
+        "hero_id": "zanie"
+      },
+      {
+        "score": 10.839,
+        "hero_id": "taichi-agumon"
+      },
+      {
+        "score": 10.83,
+        "hero_id": "damian"
+      },
+      {
+        "score": 10.83,
+        "hero_id": "ravion"
+      },
+      {
+        "score": 10.83,
+        "hero_id": "rowan"
+      },
+      {
+        "score": 10.83,
+        "hero_id": "seth"
+      },
+      {
+        "score": 10.72155,
+        "hero_id": "cryonaia"
+      },
+      {
+        "score": 10.704,
+        "hero_id": "arden"
+      },
+      {
+        "score": 10.125,
+        "hero_id": "dunlingr"
+      },
+      {
+        "score": 9.931799999999999,
+        "hero_id": "hewynn"
+      },
+      {
+        "score": 9.931799999999999,
+        "hero_id": "kordan"
+      },
+      {
+        "score": 9.931799999999999,
+        "hero_id": "lorsan"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "aurora"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "frieren"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "hepler"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "peggy"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "sonja"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "sylphira"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "talene"
+      },
+      {
+        "score": 9.6318,
+        "hero_id": "korin"
+      },
+      {
+        "score": 9.6318,
+        "hero_id": "lyca"
+      },
+      {
+        "score": 9.5625,
+        "hero_id": "tasi"
+      },
+      {
+        "score": 8.947799999999999,
+        "hero_id": "cassadee"
+      },
+      {
+        "score": 8.7978,
+        "hero_id": "hammie"
+      },
+      {
+        "score": 8.7978,
+        "hero_id": "kafra"
+      },
+      {
+        "score": 8.53125,
+        "hero_id": "baelran"
+      },
+      {
+        "score": 6.705,
+        "hero_id": "kazim"
+      },
+      {
+        "score": 6.705,
+        "hero_id": "sinbad"
+      },
+      {
+        "score": 6.705,
+        "hero_id": "valka"
+      },
+      {
+        "score": 5.625,
+        "hero_id": "gunnar"
+      },
+      {
+        "score": 5.625,
+        "hero_id": "lucy"
+      },
+      {
+        "score": 5.58,
+        "hero_id": "harak"
+      },
+      {
+        "score": 5.58,
+        "hero_id": "hugin"
+      },
+      {
+        "score": 5.58,
+        "hero_id": "phraesto"
+      },
+      {
+        "score": 5.58,
+        "hero_id": "velara"
+      },
+      {
+        "score": 5.454,
+        "hero_id": "antandra"
+      },
+      {
+        "score": 4.6818,
+        "hero_id": "lucius"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "granny-dahnie"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "pippa"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "shakir"
+      },
+      {
+        "score": 3.5478,
+        "hero_id": "alna"
+      },
+      {
+        "score": 3.5478,
+        "hero_id": "chippy"
+      },
+      {
+        "score": 3.5478,
+        "hero_id": "eironn"
+      },
+      {
+        "score": 3.5478,
+        "hero_id": "ludovic"
+      },
+      {
+        "score": 3.5478,
+        "hero_id": "thador"
+      },
+      {
+        "score": 1.08,
+        "hero_id": "contess"
+      },
+      {
+        "score": 1.08,
+        "hero_id": "pandora"
+      },
+      {
+        "score": 1.08,
+        "hero_id": "thoran"
+      },
+      {
+        "score": 1.08,
+        "hero_id": "ulmus"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight",
+      "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner"
+    ],
+    "replacements": {
+      "buff": [
+        {
+          "score": 0.6339,
+          "matches": [
+            "Haste",
+            "ATK",
+            "Energy"
+          ],
+          "hero_id": "twins"
+        }
+      ],
+      "energy": [],
+      "healing": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "solise"
+        },
+        {
+          "score": 0.7126,
+          "matches": [
+            "Healing over time",
+            "Direct healing",
+            "Healing"
+          ],
+          "hero_id": "hewynn"
+        }
+      ],
+      "similar_skills": [
+        {
+          "score": 1.0,
+          "matches": [
+            "ally-healer",
+            "aoe-healing",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "hewynn"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "ally-healer",
+            "aoe-healing",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "fay"
+        },
+        {
+          "score": 0.8,
+          "matches": [
+            "ally-healer",
+            "aoe-healing"
+          ],
+          "hero_id": "ludovic"
+        }
+      ],
+      "damage": [],
+      "debuff": [],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "frieren"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "gunnar"
+        }
+      ],
+      "overall": [
+        {
+          "score": 0.6635,
+          "matches": [
+            "Healing",
+            "Crowd Control"
+          ],
+          "hero_id": "rolan"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "392776c91d03f97883d1435506c5a2364b139e931aa0e251f954f3bd4301663c",
+    "ai_hash": "ce6ad1a80dd2331ce2a39937dafd1f0a2e2b0fb481ecf8ab447fa3a0cf0fca35",
+    "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
+    "analysis_inputs_hash": "ba06365f304fc2deee85b2609128a6d88cd7d6e40e123682969ee2b3411be905",
+    "stage": "scored"
+  }
+}

@@ -366,31 +366,63 @@ def write_csv(
 
 
 def main() -> None:
-    data = io.load_heroes_data()
-    processed = io.load_processed()
-    synergies = io.load_synergies()
-    config = io.load_config()
+    if (io.DATA / "roster.json").exists():
+        from hero_pipeline.presentation.project import project_roster
+        from hero_pipeline.render.overview import render_overview
+        from hero_pipeline.storage import load_roster_inputs
 
-    content, summary_heroes = build_overview(data, processed, synergies, config)
+        inputs = load_roster_inputs()
+        view = project_roster(
+            inputs,
+            inputs["processed"],
+            inputs["synergies"],
+        )
+        config = io.load_config()
+        content, csv_content = render_overview(view, config)
+        summary_heroes = {}
+    else:
+        data = io.load_heroes_data()
+        processed = io.load_processed()
+        synergies = io.load_synergies()
+        config = io.load_config()
+        content, summary_heroes = build_overview(
+            data,
+            processed,
+            synergies,
+            config,
+        )
     OVERVIEW_MD.write_text(content, encoding="utf-8")
     print(
         f"Wrote {OVERVIEW_MD.relative_to(io.ROOT)} ({len(content.splitlines())} lines)"
     )
 
-    energy_providers = frozenset(
-        short
-        for short, p in processed["heroes"].items()
-        if p.get("is_energy_provider")
-    )
-    n = write_csv(
-        content,
-        energy_providers,
-        analyzed_heroes=summary_heroes_by_short(summary_heroes),
-    )
-    print(
-        f"Wrote {OVERVIEW_CSV.relative_to(io.ROOT)} "
-        f"({n} heroes × {len(csv_mod.COLUMNS)} columns)"
-    )
+    if (io.DATA / "roster.json").exists():
+        OVERVIEW_CSV.write_text(csv_content, encoding="utf-8")
+        csv_mod.LIST_COLUMNS_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        csv_mod.LIST_COLUMNS_OUTPUT.write_text(
+            json.dumps(csv_mod.LIST_COLUMNS, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(
+            f"Wrote {OVERVIEW_CSV.relative_to(io.ROOT)} "
+            f"({len(csv_content.splitlines()) - 1} heroes × "
+            f"{len(csv_mod.COLUMNS)} columns)"
+        )
+    else:
+        energy_providers = frozenset(
+            short
+            for short, p in processed["heroes"].items()
+            if p.get("is_energy_provider")
+        )
+        n = write_csv(
+            content,
+            energy_providers,
+            analyzed_heroes=summary_heroes_by_short(summary_heroes),
+        )
+        print(
+            f"Wrote {OVERVIEW_CSV.relative_to(io.ROOT)} "
+            f"({n} heroes × {len(csv_mod.COLUMNS)} columns)"
+        )
 
 
 if __name__ == "__main__":

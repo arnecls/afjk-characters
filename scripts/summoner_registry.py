@@ -18,6 +18,13 @@ _profiles: dict[str, dict[str, Any]] | None = None
 def load_profiles() -> dict[str, dict[str, Any]]:
     global _profiles
     if _profiles is None:
+        if (ROOT / "data" / "roster.json").exists():
+            from hero_pipeline.storage import load_roster_inputs
+
+            _profiles = load_roster_inputs()["curated"][
+                "hero_summon_profiles"
+            ]
+            return _profiles
         if not PROFILES_PATH.exists():
             _profiles = {}
         else:

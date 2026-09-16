@@ -254,20 +254,35 @@ def qualifies_non_ult_utility(
 
 def main() -> int:
     apply = "--apply" in sys.argv
-    raw = json.loads(io.HEROES_DATA.read_text(encoding="utf-8"))
-    processed = json.loads(io.HEROES_DATA_PROCESSED.read_text(encoding="utf-8"))
-    summaries_by_short = json.loads(
-        (ROOT / "data" / "heroes_data_skill_summary.json").read_text(encoding="utf-8")
-    )
-    current_tags = json.loads(
-        (ROOT / "data" / "hero_behavior_tags.json").read_text(encoding="utf-8")
-    )
+    raw = io.load_heroes_data()
+    processed = io.load_processed()
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
+
+        curated = load_roster_inputs()["curated"]
+        summaries_by_short = curated["skill_summaries"]
+        current_tags = curated["behavior_tags"]
+    else:
+        summaries_by_short = json.loads(
+            (ROOT / "data" / "heroes_data_skill_summary.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        current_tags = json.loads(
+            (ROOT / "data" / "hero_behavior_tags.json").read_text(
+                encoding="utf-8"
+            )
+        )
 
     role_by_title = {
         p["long_name"]: p["role_category"]
         for p in processed["heroes"].values()
     }
-    analysis = ra.get_roster_analysis(raw, role_by_title)
+    analysis = ra.get_roster_analysis(
+        raw,
+        role_by_title,
+        use_cache=False,
+    )
 
     per_skill_speeds = rs.compute_per_skill_speeds(analysis.skills_by_title)
     damage_thresholds = rs.build_section_damage_thresholds(
@@ -299,8 +314,7 @@ def main() -> int:
     print(f"\n{len(proposed)} heroes qualify for {TAG}")
 
     if apply:
-        tags_path = ROOT / "data" / "hero_behavior_tags.json"
-        tag_data = json.loads(tags_path.read_text(encoding="utf-8"))
+        tag_data = {name: list(values) for name, values in current_tags.items()}
         changed = 0
         for short in tag_data:
             has_tag = TAG in tag_data[short]
@@ -312,11 +326,23 @@ def main() -> int:
             elif not should and has_tag:
                 tag_data[short] = [t for t in tag_data[short] if t != TAG]
                 changed += 1
-        tags_path.write_text(
-            json.dumps(tag_data, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        print(f"Applied {TAG} updates to {changed} heroes in hero_behavior_tags.json")
+        if (ROOT / "data" / "roster.json").exists():
+            from hero_pipeline.storage import update_ai_field
+
+            update_ai_field("behavior_tags", tag_data)
+            print(
+                f"Applied {TAG} updates to {changed} heroes in hero-local files"
+            )
+        else:
+            tags_path = ROOT / "data" / "hero_behavior_tags.json"
+            tags_path.write_text(
+                json.dumps(tag_data, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            print(
+                f"Applied {TAG} updates to {changed} heroes "
+                "in hero_behavior_tags.json"
+            )
 
     return 0
 

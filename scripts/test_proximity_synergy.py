@@ -242,14 +242,11 @@ class PositionalTileRegressionTests(unittest.TestCase):
     def test_gunnar_scores_no_synergy_for_moving_perseus(self) -> None:
         gen = _load_gen()
         from test_roster_cache import hero_by_short_name
-        import json
-        from pathlib import Path
+        import heroes_io as io
 
         gunnar = hero_by_short_name("Gunnar")
         perseus = hero_by_short_name("Perseus")
-        proc = json.loads(
-            (Path(__file__).resolve().parent.parent / "data" / "heroes_data_processed.json").read_text()
-        )
+        proc = io.load_processed()
         behavior = _load_rs().HeroBehavior(**proc["heroes"]["Perseus"]["behavior"])
         score, reasons = gen.score_combined_synergy(
             gunnar,

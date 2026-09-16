@@ -13,7 +13,7 @@ This repository collects and analyzes hero skill data for [AFK Journey](https://
 | **[heroes-overview.md](heroes-overview.md)** | Main reference: synergy partners, behavior, and parsed summaries per hero |
 | **[heroes-overview.csv](heroes-overview.csv)** | Same roster data in spreadsheet form (damage, CC, buffs, movement, etc.) |
 | **[Heroes.md](Heroes.md)** | Raw skill descriptions only — no summaries |
-| **[`data/`](data/)** | Canonical JSON (`heroes_data.json`), processed analysis, curated metadata, and schemas — see [data/README.md](data/README.md) |
+| **[`data/`](data/)** | Per-hero source, AI data, generated analysis, and schemas — see [data/README.md](data/README.md) |
 | **[`scripts/`](scripts/)** | Python pipeline: download, analyze, validate, and render views |
 | **[`site/`](site/)** | Static web viewer (GitHub Pages) — hero grid with synergy details |
 | **[`docs/`](docs/)** | Pipeline overview, algorithm write-ups, and validation snapshots — see [docs/README.md](docs/README.md) |
@@ -24,7 +24,7 @@ This repository collects and analyzes hero skill data for [AFK Journey](https://
 Each section in [heroes-overview.md](heroes-overview.md) includes:
 
 - **Behavior** — Prydwen meta tiers, movement pattern, signature skill, behavior tags, placement constraints, damage-type overview
-- **Play overview** — short playstyle blurb (setup, strengths, weaknesses) from `data/hero_play_overviews.json`
+- **Play overview** — short playstyle blurb (setup, strengths, weaknesses) from each hero's `ai.json`
 - **Skill overview** — signature / ultimate / non-ultimate metrics plus per-skill mechanic summaries
 - **Units improving X** — up to five ranked synergy partners (stat buffs, enablers, summon support)
 - **Units benefitting most from X** — reverse index of heroes who synergize with this unit
@@ -59,7 +59,9 @@ just render-site
 
 This refreshes `heroes-overview.md` / `heroes-overview.csv`, copies the CSV into `site/data/`, writes `site/data/heroes.json`, and downloads any missing faction/class icons from Yaphalla into `site/assets/icons/`. Running `just views` also refreshes the site data.
 
-Skill-card chip tags on the character sheet come from the same analysis pass as `heroes_data_processed.json` (`skill_card_tags` per skill). After changing detection logic in `scripts/rewrite-summaries.py`, run `just views` (not `just analyze` alone) so both processed JSON and `site/data/heroes.json` update together.
+Skill-card chip tags on the character sheet come from the same analysis pass as
+each hero's generated analysis (`skill_card_tags` per skill). After changing
+detection logic, run `just views` so generated and site data stay aligned.
 
 Preview locally (required — the site loads data via `fetch`):
 
@@ -73,7 +75,9 @@ Enable GitHub Pages once in the repository settings: source **Deploy from a bran
 
 ### Regenerate the views
 
-The committed JSON in `data/heroes_data.json` is the source of truth. Views are rebuilt from it with [just](https://github.com/casey/just) (or the equivalent Python commands).
+The ordered `data/roster.json` manifest and the three files under each
+`data/heroes/<hero-id>/` directory are the source of truth. Views are rebuilt
+from them with [just](https://github.com/casey/just).
 
 **One-time setup:**
 
@@ -87,7 +91,9 @@ just setup
 just views
 ```
 
-This runs analysis (`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and renders `Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json` + `site/data/heroes-overview.csv`.
+This runs analysis and writes generated analysis/synergy fields inside each
+hero directory, then renders `Heroes.md`, `heroes-overview.md`,
+`heroes-overview.csv`, and the site data.
 
 **Full refresh from live sources (requires network):**
 
@@ -96,6 +102,8 @@ just all
 ```
 
 Downloads merged data from Yaphalla and the Fandom wiki, then runs the full pipeline.
+`just download` alone marks existing generated analysis stale; run `just analyze`
+before rendering.
 
 **Validate processed data against schemas and parity checks:**
 
@@ -114,9 +122,8 @@ PYTHONPATH=scripts .venv/bin/python -m unittest discover -s scripts -p 'test_*.p
 ### Pipeline overview
 
 ```
-download  →  data/heroes_data.json
-analyze   →  data/heroes_data_processed.json  (includes skill_card_tags per skill)
-             data/heroes_data_synergies.json
+download  →  data/heroes/<hero-id>/generated.json (source fields)
+analyze   →  data/heroes/<hero-id>/generated.json (analysis and synergies)
 render    →  Heroes.md
              heroes-overview.md
              heroes-overview.csv
@@ -125,14 +132,16 @@ render    →  Heroes.md
 
 | Step | Script(s) | Role |
 | --- | --- | --- |
-| Download | `scripts/download_heroes.py` | Merge Fandom, Yaphalla, and Prydwen into `heroes_data.json` |
-| Analyze (pass 1) | `scripts/process_heroes.py` | Skill parsing, behavior, magnitudes → `heroes_data_processed.json` |
-| Analyze (pass 2) | `scripts/process_synergies.py` | Synergy and replacement scoring → `heroes_data_synergies.json` |
+| Download | `scripts/download_heroes.py` | Merge Fandom, Yaphalla, and Prydwen into hero-local source files |
+| Analyze | `scripts/hero_pipeline_cli.py` | Analysis, calibration, synergy, and replacement scoring |
 | Render | `scripts/render_heroes.py`, `render_overview.py`, `render_site.py` | Markdown, CSV, and site JSON from committed analysis |
 | Core library | `scripts/rewrite-summaries.py` | Detection, behavior, summaries (used by analyze) |
 | Scoring library | `scripts/generate-heroes-overview.py` | Synergy/replacement matchers (imported by analyze and render) |
 
-Configuration for synergy scoring and display limits lives in `data/heroes_config.json`. Curated metadata — signature skills, behavior tags, skill summaries, play overviews — and manual overrides (placement, movement, melee) are in other files under `data/`; see [data/README.md](data/README.md) and [docs/ai-generated-data.md](docs/ai-generated-data.md).
+Configuration for analysis, synergy scoring, and display limits lives in
+`data/heroes_config.json`. AI-authored data and typed overrides live beside
+each hero; see [data/README.md](data/README.md) and
+[docs/ai-generated-data.md](docs/ai-generated-data.md).
 
 ## Requirements
 

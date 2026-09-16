@@ -29,15 +29,6 @@ def build_processed(data: dict) -> dict:
     rs, gen = analysis_modules()
     hero_records = data["heroes"]
 
-    import sources_web
-
-    try:
-        categories_by_name = sources_web.fetch_prydwen_role_categories()
-        io.apply_prydwen_role_categories(data["heroes"], categories_by_name)
-    except Exception as exc:
-        # Keep existing role_category values when Prydwen is unreachable.
-        print(f"Warning: skipping Prydwen role categories ({exc})", file=sys.stderr)
-
     data_by_title = {record["title"]: record for record in hero_records}
     heroes_stub = [rs.hero_from_record(record) for record in hero_records]
     hero_class_stub = {
@@ -48,7 +39,11 @@ def build_processed(data: dict) -> dict:
         heroes_stub, data_by_title, hero_class_stub
     )
 
-    analysis = get_roster_analysis(data, role_category_by_title)
+    analysis = get_roster_analysis(
+        data,
+        role_category_by_title,
+        use_cache=False,
+    )
     heroes = analysis.heroes
     behavior_by_title = analysis.behavior_by_title
     display_by_title = analysis.display_by_title
@@ -100,9 +95,16 @@ def main() -> None:
     apply_config(config)
     raw = io.load_heroes_data()
     processed = build_processed(raw)
-    io.save_json(io.HEROES_DATA_PROCESSED, processed)
+    if (io.DATA / "roster.json").exists():
+        from hero_pipeline.storage import write_processed_output
+
+        write_processed_output(processed)
+        output = io.DATA / "heroes"
+    else:
+        io.save_json(io.HEROES_DATA_PROCESSED, processed)
+        output = io.HEROES_DATA_PROCESSED
     print(
-        f"Wrote {io.HEROES_DATA_PROCESSED.relative_to(io.ROOT)} "
+        f"Wrote {output.relative_to(io.ROOT)} "
         f"({len(processed['heroes'])} heroes, "
         f"{sum(1 for p in processed['heroes'].values() if p['is_energy_provider'])} energy providers)"
     )

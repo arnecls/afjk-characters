@@ -1,0 +1,663 @@
+{
+  "schema_version": 1,
+  "id": "chippy",
+  "display_name": "Chippy",
+  "source": {
+    "title": "Chippy - Acorn Knight",
+    "name": "Chippy",
+    "tags": "Lightbearer · Tank · Physical",
+    "faction": "Lightbearer",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "An unreliable Hamster Warrior that has a small chance in dealing high damage with normal attacks.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Brothers-in-arms",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
+          "active": [
+            "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage to 320% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage to 340% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage to 350% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage to 360% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Chippy calls in two hamster friends for help."
+      },
+      {
+        "section": "Skill1",
+        "name": "Take This!",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
+          "active": [
+            "Chippy jumps to deal 240% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 250% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 270% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Chippy jumps to deal damage to the enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Eureka!",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "7s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
+          "active": [
+            "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
+            "These attacks cannot deal critical damage and can only be triggered 1 time per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the chance to 3%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the chance to 4%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the chance to 5%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Chippy has a chance to deal high damage with normal attacks."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Chippy - Acorn Knight",
+      "faction": "lightbearer",
+      "class": "tank",
+      "role_category": "tank",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Brothers-in-arms": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
+            "active": [
+              "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage to 320% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage to 340% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage to 350% (ATK-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage to 360% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 360.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 1.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 1,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            }
+          ]
+        },
+        "Take This!": {
+          "category": "skill1",
+          "description": {
+            "raw": "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
+            "active": [
+              "Chippy jumps to deal 240% (ATK-based) damage to the enemy."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases damage to 250% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage to 260% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage to 270% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 270.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 9.0,
+          "initial_cooldown": 2.0,
+          "skill_range": 5,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            }
+          ]
+        },
+        "Eureka!": {
+          "category": "skill2",
+          "description": {
+            "raw": "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
+            "active": [
+              "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
+              "These attacks cannot deal critical damage and can only be triggered 1 time per battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the chance to 3%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the chance to 4%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the chance to 5%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1000.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 7.0,
+          "initial_cooldown": 2.0,
+          "skill_range": 5,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "average",
+        "walk_speed": "normal",
+        "signature_skill_name": "Brothers-in-arms",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "average",
+        "non_ult_speed": "average",
+        "avg_attack_range": 5.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 8.031728571428573,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 6.468814285714286,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 5.9184,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 5.5809,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 4.598871428571428,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 3.5478,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 3.0375,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 2.5353,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.025,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 1.72125,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 1.72125,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 1.0125,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 0.8099999999999999,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 0.8099999999999999,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 5.0,
+        "hero_id": "himmel"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6,
+          "matches": [
+            "self-repositioner"
+          ],
+          "hero_id": "marilee"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "self-repositioner"
+          ],
+          "hero_id": "alsa"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "self-repositioner"
+          ],
+          "hero_id": "kulu"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "alna"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "antandra"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "athalia"
+        }
+      ],
+      "debuff": [],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "b57215bfc6e116ee020f29d43a0a35f4c45e1eff2d54d7c52d8b19ae9778f388",
+    "ai_hash": "1b65468a5a6a419dc264bc67672ac8a69de01ec5a5a6e43a3413718a707b4444",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "ca080194b2428cdbb7e9cf9d62775a8b2c2323c63a5652b10ce8dc19a61a15cd",
+    "stage": "scored"
+  }
+}

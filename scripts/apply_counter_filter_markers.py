@@ -51,6 +51,10 @@ def load_csv() -> dict[str, dict[str, str]]:
 
 
 def load_tags() -> dict[str, list[str]]:
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
+
+        return load_roster_inputs()["curated"]["behavior_tags"]
     return json.loads(TAGS_PATH.read_text(encoding="utf-8"))
 
 
@@ -279,15 +283,24 @@ def transform_text(text: str, tags: dict, rows: dict) -> str:
 def main() -> None:
     tags = load_tags()
     rows = load_csv()
-    data = json.loads(COUNTER_PATH.read_text(encoding="utf-8"))
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs, update_ai_field
+
+        data = load_roster_inputs()["curated"]["counter_overviews"]
+    else:
+        data = json.loads(COUNTER_PATH.read_text(encoding="utf-8"))
     updated = {
         hero: transform_text(text, tags, rows) for hero, text in data.items()
     }
-    COUNTER_PATH.write_text(
-        json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    print(f"Updated {len(updated)} entries in {COUNTER_PATH.name}")
+    if (ROOT / "data" / "roster.json").exists():
+        update_ai_field("counter_overview", updated)
+        print(f"Updated {len(updated)} entries in hero-local files")
+    else:
+        COUNTER_PATH.write_text(
+            json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Updated {len(updated)} entries in {COUNTER_PATH.name}")
 
 
 if __name__ == "__main__":

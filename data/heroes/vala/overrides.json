@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "melee": {
+    "is_dual_range": true
+  }
+}

@@ -1,0 +1,1278 @@
+{
+  "schema_version": 1,
+  "id": "phraesto",
+  "display_name": "Phraesto",
+  "source": {
+    "title": "Phraesto - Misty Scorpion",
+    "name": "Phraesto",
+    "tags": "Hypogean · Tank · Magic",
+    "faction": "Hypogean",
+    "class": "Tank",
+    "damage_type": "Magic",
+    "description": "A cunning Tank who is good at confusing enemies with powerful illusions.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Futile Echo",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage. This Illusion inherits 100% of Phraesto stats and can cast all his skills. When both Phraesto and his Illusion are positioned in the same row, they each receive a 30% damage reduction effect, lasting until one of them is defeated. Active: Phraesto deals 200% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles, recovering himself 160% (ATK-based) + 15% (SP-based) HP for each enemy hit.",
+          "active": [
+            "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage.",
+            "This Illusion inherits 100% of Phraesto stats and can cast all his skills.",
+            "When both Phraesto and his Illusion are positioned in the same row, they each receive a 30% damage reduction effect, lasting until one of them is defeated.",
+            "Active: Phraesto deals 200% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles, recovering himself 160% (ATK-based) + 15% (SP-based) HP for each enemy hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases the damage dealt to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the damage dealt to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases the damage dealt to 320% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the damage dealt to 360% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Phraesto sacrifices max HP to summon an Illusion who can cast all his skills. Active. Phraesto deals damage to enemies nearby and recovers his HP for each enemy hit."
+      },
+      {
+        "section": "Skill1",
+        "name": "Crimson Contract",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "14s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Phraesto and his Illusion each sign a permanent contract with different allied heroes placed 1 tile behind them when a battle starts, reducing the recipient's HP by 6%. Phraesto increases the recipient's Energy Recovery Speed by 14%, while the llusion increases the recipient's DMG Reduction by 14%. The terms of each contract remain undetected by enemies before the battle starts. Active: Phraesto launches 3 strikes against an enemy in front, dealing 100% (ATK-based) + 10% (SP-based) damage with the first 2 hits and 140% (ATK-based) + 20% (SP-based) damage with the 3rd hit.",
+          "active": [
+            "Phraesto and his Illusion each sign a permanent contract with different allied heroes placed 1 tile behind them when a battle starts, reducing the recipient's HP by 6%.",
+            "Phraesto increases the recipient's Energy Recovery Speed by 14%, while the llusion increases the recipient's DMG Reduction by 14%.",
+            "The terms of each contract remain undetected by enemies before the battle starts.",
+            "Active: Phraesto launches 3 strikes against an enemy in front, dealing 100% (ATK-based) + 10% (SP-based) damage with the first 2 hits and 140% (ATK-based) + 20% (SP-based) damage with the 3rd hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Phraesto grants his recipient an extra 80 Energy.",
+                "The Illusion grants the recipient a 180% (ATK-based) shield for 6s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases the damage of the 3rd hit to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the damage of the 3rd hit to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto and his Illusion each sign a permanent contract with different allied heroes positioned behind them at the start of every battle. Active. Deals damage to a frontal enemy 3 times."
+      },
+      {
+        "section": "Skill2",
+        "name": "Vicious Sting",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "11s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Phrases to stings an enemy in front, dealing 50% (ATK-based) damage and inflicting them with Paralyzing Venom for 6s. Enemies afflicted with Paralyzing Venom have their Haste reduced by 30 and Vitality reduced by 45. They also lose 2% + 0.4% (SP-based) of their max HP per second, while restoring 3% of the caster's max HP per second. Enemy HP loss can't exceed 40% of Phraesto ATK per second.",
+          "active": [
+            "Phrases to stings an enemy in front, dealing 50% (ATK-based) damage and inflicting them with Paralyzing Venom for 6s.",
+            "Enemies afflicted with Paralyzing Venom have their Haste reduced by 30 and Vitality reduced by 45.",
+            "They also lose 2% + 0.4% (SP-based) of their max HP per second, while restoring 3% of the caster's max HP per second.",
+            "Enemy HP loss can't exceed 40% of Phraesto ATK per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Increases the enemy's lost HP per second to 2.5% + 0.4% (SP-based) of their max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Increases the max HP ratio restored per second for Paralyzing Venom's caster to 4.5%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Increases the enemy's lost HP per second to 3.3% + 0.4% (SP-based) of their max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto inflicts an enemy with Paralyzing Venom, making them lose HP constantly and reducing their stats."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 30%. Whenever one of them loses 10% of max HP, the other gains 15 Energy.",
+          "active": [
+            "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 30%.",
+            "Whenever one of them loses 10% of max HP, the other gains 15 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 40%.",
+                "Whenever one of them loses 10% of max HP, the other gains 20 Energy."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 50%.",
+                "Whenever one of them loses 10% of max HP, the other gains 25 Energy."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto increases the Phys & Magic DEF of both himself and his Illusion. Whenever one of them loses HP, the other gains Energy."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Foggy Whisper",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Phraesto taunts the enemy who dealt the most damage if his Illusion is defeated before he is, dealing 500% (ATK-based) damage and stunning them for 4.5s.",
+          "active": [
+            "Phraesto taunts the enemy who dealt the most damage if his Illusion is defeated before he is, dealing 500% (ATK-based) damage and stunning them for 4.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Increases the skill damage to 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Increases the skill damage to 700% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Phraesto summons a new Illusion in front of himself if the previous Illusion is defeated before he is.",
+                "The new Illusion inherits on 60% of Phraesto's max HP.",
+                "Triggers once at most per battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto deals damage to an enemy and stuns them if the Illusion is defeated before he is."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s.",
+          "active": [
+            "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s."
+          ]
+        },
+        "description_lite": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield when a battle starts."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-06-06",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Phraesto - Misty Scorpion",
+      "faction": "hypogean",
+      "class": "tank",
+      "role_category": "tank",
+      "is_energy_provider": true,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-06-06",
+      "season": "Song of Strife",
+      "season_number": 1,
+      "skills": {
+        "Futile Echo": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage. This Illusion inherits 100% of Phraesto stats and can cast all his skills. When both Phraesto and his Illusion are positioned in the same row, they each receive a 30% damage reduction effect, lasting until one of them is defeated. Active: Phraesto deals 200% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles, recovering himself 160% (ATK-based) + 15% (SP-based) HP for each enemy hit.",
+            "active": [
+              "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage.",
+              "This Illusion inherits 100% of Phraesto stats and can cast all his skills.",
+              "When both Phraesto and his Illusion are positioned in the same row, they each receive a 30% damage reduction effect, lasting until one of them is defeated.",
+              "Active: Phraesto deals 200% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles, recovering himself 160% (ATK-based) + 15% (SP-based) HP for each enemy hit."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 51: Increases the damage dealt to 240% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 111: Increases the damage dealt to 280% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 171: Increases the damage dealt to 320% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 231: Increases the damage dealt to 360% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 380.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 1.25,
+          "initial_cooldown": 1.25,
+          "skill_range": 2,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Crimson Contract": {
+          "category": "skill1",
+          "description": {
+            "raw": "Phraesto and his Illusion each sign a permanent contract with different allied heroes placed 1 tile behind them when a battle starts, reducing the recipient's HP by 6%. Phraesto increases the recipient's Energy Recovery Speed by 14%, while the llusion increases the recipient's DMG Reduction by 14%. The terms of each contract remain undetected by enemies before the battle starts. Active: Phraesto launches 3 strikes against an enemy in front, dealing 100% (ATK-based) + 10% (SP-based) damage with the first 2 hits and 140% (ATK-based) + 20% (SP-based) damage with the 3rd hit.",
+            "active": [
+              "Phraesto and his Illusion each sign a permanent contract with different allied heroes placed 1 tile behind them when a battle starts, reducing the recipient's HP by 6%.",
+              "Phraesto increases the recipient's Energy Recovery Speed by 14%, while the llusion increases the recipient's DMG Reduction by 14%.",
+              "The terms of each contract remain undetected by enemies before the battle starts.",
+              "Active: Phraesto launches 3 strikes against an enemy in front, dealing 100% (ATK-based) + 10% (SP-based) damage with the first 2 hits and 140% (ATK-based) + 20% (SP-based) damage with the 3rd hit."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 71: Phraesto grants his recipient an extra 80 Energy.",
+                  "The Illusion grants the recipient a 180% (ATK-based) shield for 6s."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 131: Increases the damage of the 3rd hit to 210% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 191: Increases the damage of the 3rd hit to 280% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 14.0,
+          "initial_cooldown": 4.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Damage taken",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Vicious Sting": {
+          "category": "skill2",
+          "description": {
+            "raw": "Phrases to stings an enemy in front, dealing 50% (ATK-based) damage and inflicting them with Paralyzing Venom for 6s. Enemies afflicted with Paralyzing Venom have their Haste reduced by 30 and Vitality reduced by 45. They also lose 2% + 0.4% (SP-based) of their max HP per second, while restoring 3% of the caster's max HP per second. Enemy HP loss can't exceed 40% of Phraesto ATK per second.",
+            "active": [
+              "Phrases to stings an enemy in front, dealing 50% (ATK-based) damage and inflicting them with Paralyzing Venom for 6s.",
+              "Enemies afflicted with Paralyzing Venom have their Haste reduced by 30 and Vitality reduced by 45.",
+              "They also lose 2% + 0.4% (SP-based) of their max HP per second, while restoring 3% of the caster's max HP per second.",
+              "Enemy HP loss can't exceed 40% of Phraesto ATK per second."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 91: Increases the enemy's lost HP per second to 2.5% + 0.4% (SP-based) of their max HP."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 151: Increases the max HP ratio restored per second for Paralyzing Venom's caster to 4.5%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 211: Increases the enemy's lost HP per second to 3.3% + 0.4% (SP-based) of their max HP."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ],
+              "duration": 6.0,
+              "tick": 1.0
+            }
+          ],
+          "cooldown": 11.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "Vitality",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 30%. Whenever one of them loses 10% of max HP, the other gains 15 Energy.",
+            "active": [
+              "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 30%.",
+              "Whenever one of them loses 10% of max HP, the other gains 15 Energy."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 40%.",
+                  "Whenever one of them loses 10% of max HP, the other gains 20 Energy."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 50%.",
+                  "Whenever one of them loses 10% of max HP, the other gains 25 Energy."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "persistence": "unknown"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Magic DEF — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Foggy Whisper": {
+          "category": "skill4",
+          "description": {
+            "raw": "Phraesto taunts the enemy who dealt the most damage if his Illusion is defeated before he is, dealing 500% (ATK-based) damage and stunning them for 4.5s.",
+            "active": [
+              "Phraesto taunts the enemy who dealt the most damage if his Illusion is defeated before he is, dealing 500% (ATK-based) damage and stunning them for 4.5s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 5: Increases the skill damage to 600% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 10: Increases the skill damage to 700% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 15: Phraesto summons a new Illusion in front of himself if the previous Illusion is defeated before he is.",
+                  "The new Illusion inherits on 60% of Phraesto's max HP.",
+                  "Triggers once at most per battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 4.5
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "taunt",
+              "duration": 4.5
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 700.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Stun — Single target"
+            },
+            {
+              "label": "Taunt — Single target"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s.",
+            "active": [
+              "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s."
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "healing",
+        "energy",
+        "magic_def"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 1.8 tiles",
+        "casting_speed": "slow",
+        "walk_speed": "slow",
+        "signature_skill_name": "Crimson Contract",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "average",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 1.8313090418353575,
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place allies 1 tile behind this hero and the Illusion for contract buffs"
+          },
+          {
+            "kind": "self_placement",
+            "text": "keep this hero and Illusion in the same row (damage reduction and battle-start shields)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Healing via Healing over time (multiple targets, average)",
+          "ATK via ATK (all summons, high)",
+          "DEF via DEF (all summons, high)"
+        ],
+        "score": 21.0,
+        "provider_id": "peggy"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (all summons, high)",
+          "Damage dealt via Damage dealt (all summons, average)",
+          "Damage taken via Damage taken (all summons, low)"
+        ],
+        "score": 18.0,
+        "provider_id": "aurora"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (area, low)",
+          "Energy via Energy (area, high) `signature fuel`",
+          "Magic DEF via Magic DEF (single target, high)"
+        ],
+        "score": 9.24,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (all units, high)",
+          "Magic DEF via DEF (single target, low)"
+        ],
+        "score": 6.0,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "Shield via Shield (all summons, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "florabelle"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)",
+          "Magic DEF via Magic DEF (single target, low)"
+        ],
+        "score": 6.0,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (multiple targets, average)",
+          "Magic DEF via DEF (multiple targets, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "Magic DEF via Magic DEF (single target, low)"
+        ],
+        "score": 5.58,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`"
+        ],
+        "score": 5.58,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (area, high)",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 5.58,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (all units, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (arc, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "hepler"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (all units, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (multiple targets, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "ludovic"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "marcille"
+      },
+      {
+        "reasons": [
+          "Magic DEF via DEF (area, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "tilaya"
+      },
+      {
+        "reasons": [
+          "Healing via Healing over time (area, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "yamato-gabumon"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (area, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "gerda"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "lucius"
+      },
+      {
+        "reasons": [
+          "Healing via Lifedrain (area, average, conditional (frequent))"
+        ],
+        "score": 2.55,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (multiple targets, average) `signature fuel`"
+        ],
+        "score": 2.16,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (multiple targets, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "velara"
+      },
+      {
+        "reasons": [
+          "Healing via Lifedrain (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "daimon"
+      },
+      {
+        "reasons": [
+          "Healing via Lifedrain (all units, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "Healing via Lifedrain (area, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "Magic DEF via Magic DEF (area, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "Healing via Direct healing (area, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "nara"
+      },
+      {
+        "reasons": [
+          "Magic DEF via Magic DEF (multiple targets, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "perseus"
+      },
+      {
+        "reasons": [
+          "Magic DEF via Magic DEF (multiple targets, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`"
+        ],
+        "score": 1.08,
+        "provider_id": "lyca"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 3.375,
+        "hero_id": "athalia"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "callan"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "chippy"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "contess"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "igor"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "kruger"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "ludovic"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "nazrik"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "pippa"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "satrana"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "shakir"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "velara"
+      },
+      {
+        "score": 3.375,
+        "hero_id": "walker"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
+    ],
+    "replacements": {
+      "buff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken"
+          ],
+          "hero_id": "hugin"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken"
+          ],
+          "hero_id": "koko"
+        }
+      ],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.54,
+          "matches": [
+            "ally-shielder",
+            "aoe-damage",
+            "heal-inhibitor"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 0.4286,
+          "matches": [
+            "ally-shielder",
+            "aoe-damage",
+            "summoner"
+          ],
+          "hero_id": "galahad"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "ally-buffer",
+            "aoe-damage",
+            "heal-inhibitor"
+          ],
+          "hero_id": "dunlingr"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "frieren"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "silven"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "saida"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Vitality"
+          ],
+          "hero_id": "frieren"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Vitality"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Vitality"
+          ],
+          "hero_id": "gwyneth"
+        }
+      ],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun",
+            "Taunt"
+          ],
+          "hero_id": "hepler"
+        },
+        {
+          "score": 0.9556,
+          "matches": [
+            "Stun",
+            "Taunt"
+          ],
+          "hero_id": "antandra"
+        },
+        {
+          "score": 0.6,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "callan"
+        }
+      ],
+      "overall": [
+        {
+          "score": 0.6418,
+          "matches": [
+            "Crowd Control",
+            "Buffs on allies"
+          ],
+          "hero_id": "antandra"
+        },
+        {
+          "score": 0.5623,
+          "matches": [
+            "Buffs on allies",
+            "Debuffs on enemies",
+            "Damage"
+          ],
+          "hero_id": "satrana"
+        },
+        {
+          "score": 0.512,
+          "matches": [
+            "Damage",
+            "Debuffs on enemies",
+            "Crowd Control"
+          ],
+          "hero_id": "orion"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "2c109d551272e439715a8482802dbd1afdb0a800fc8646fa97b624e71c801226",
+    "ai_hash": "023a0053d6bbc1c33e29620e0208a883c3dcdb0bc53b6662f915e5a8305b4795",
+    "overrides_hash": "e934255b054c62558e4b93bb61b5b8c28c92dc90aef5dfec898380d955082e26",
+    "analysis_inputs_hash": "1a1982970fcfd0bdf0a065826d99952e70f4c7c7b895422e99a0f36114292ac6",
+    "stage": "scored"
+  }
+}

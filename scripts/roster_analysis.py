@@ -74,6 +74,10 @@ def cache_fingerprint(raw: dict[str, Any]) -> str:
         if io.HEROES_CONFIG.exists()
         else ""
     )
+    per_hero_text = "\0".join(
+        f"{path.relative_to(io.DATA)}\0{path.read_text(encoding='utf-8')}"
+        for path in sorted((io.DATA / "heroes").glob("*/*.json"))
+    )
     sidecar_text = "\0".join(
         f"{path.name}\0{path.read_text(encoding='utf-8')}"
         for path in sorted((io.DATA / "skill_effects").glob("*.json"))
@@ -85,6 +89,8 @@ def cache_fingerprint(raw: dict[str, Any]) -> str:
     digest.update(payload.encode())
     digest.update(b"\0")
     digest.update(config_text.encode())
+    digest.update(b"\0")
+    digest.update(per_hero_text.encode())
     digest.update(b"\0")
     digest.update(sidecar_text.encode())
     return digest.hexdigest()

@@ -1,7 +1,7 @@
 ---
 name: update-behavior-tags
 description: >-
-  Audits and updates curated combat-role tags in data/hero_behavior_tags.json
+  Audits and updates curated combat-role tags in each hero's ai.json
   against hero skill data. Use when asked to update, refresh, audit, review, or
   fix behavior tags, hero_behavior_tags.json, similar-skills tags, or when
   following docs/ai-generated-data.md section 2.
@@ -9,7 +9,7 @@ description: >-
 
 # Update behavior tags
 
-Curate `data/hero_behavior_tags.json` so each hero has a small set of tags
+Curate the `behavior_tags` field in `data/heroes/<hero-id>/ai.json` so each hero has a small set of tags
 that describe how they are played in combat. Tags drive **Similar Skills**
 replacement scoring (Jaccard overlap in `scripts/generate-heroes-overview.py`).
 
@@ -17,19 +17,20 @@ replacement scoring (Jaccard overlap in `scripts/generate-heroes-overview.py`).
 
 1. `.cursor/AGENTS.md` — **Behavior tags** section (definitions + 3–5 tag rule)
 2. `data/schema/tags.schema.json` — allowed tag enum (do not invent tags)
-3. `data/hero_behavior_tags.json` — current assignments
-4. `data/heroes_data.json` — `description`, `description_lite`, skill text
-5. `data/heroes_data_skill_summary.json` — mechanic summaries per skill slot
-6. `data/hero_play_overviews.json` — curated playstyle blurbs (good first pass
+3. `data/heroes/<hero-id>/ai.json` — current assignments
+4. `data/heroes/<hero-id>/generated.json` — `description`,
+   `description_lite`, skill text
+5. `data/heroes/<hero-id>/ai.json` — mechanic summaries per skill slot
+6. `data/heroes/<hero-id>/ai.json` — curated playstyle blurbs (good first pass
    for identity; cross-check against skill text before changing tags)
 
 Optional context: `docs/ai-generated-data.md` section 2, `docs/replacement-algorithm.md`.
 
 ## Audit prompt
 
-Compare `data/hero_behavior_tags.json` against skill descriptions in
-`data/heroes_data.json`, using `heroes_data_skill_summary.json` and
-`hero_play_overviews.json` to spot identity mismatches quickly.
+Compare each hero's `behavior_tags` against skill descriptions in its
+`generated.json`, using the summaries and play overview in its `ai.json` to
+spot identity mismatches quickly.
 Are there any characters where the tags do not describe the character's skills
 sufficiently?
 Look for misleading tags, missing tags or tags that are wrongly attributed.
@@ -46,15 +47,15 @@ Task progress:
 - [ ] 1. Load definitions, schema enum, current tags, hero list
 - [ ] 2. Flag coverage gaps (missing heroes, name aliases)
 - [ ] 3. Review heroes (all, or user-named subset)
-- [ ] 4. Apply fixes to hero_behavior_tags.json
+- [ ] 4. Apply fixes to each hero's ai.json
 - [ ] 5. Validate JSON against schema enum
 - [ ] 6. Summarize findings and edits
 ```
 
 ### 1. Load and inventory
 
-- Hero count in `heroes_data.json` must match tag keys (alias: **Twins** in
-  tags = **Elijah & Lailah** in `heroes_data.json`; pipeline uses `Twins`).
+- Hero count in `roster.json` must match tag keys (the manifest ID resolves
+  **Twins** to the downloaded **Elijah & Lailah** record).
 - Note heroes with fewer than 2 or more than 6 tags after edits.
 - Prefer **3–5 tags** per hero; only exceed for genuinely multi-role kits.
 
@@ -116,7 +117,7 @@ PY
 
 ### 3. Apply edits
 
-- Edit only `data/hero_behavior_tags.json`.
+- Edit only the affected hero's `data/heroes/<hero-id>/ai.json`.
 - Keep tag arrays **sorted alphabetically**, **unique**, non-empty.
 - Minimize diff: fix clear issues; do not retag the whole roster without cause.
 - When adding tags, prefer **reusable group tags** already in the enum over

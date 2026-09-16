@@ -1,0 +1,1338 @@
+{
+  "schema_version": 1,
+  "id": "temesia",
+  "display_name": "Temesia",
+  "source": {
+    "title": "Temesia - Lightsavior",
+    "name": "Temesia",
+    "tags": "Lightbearer · Tank · Physical",
+    "faction": "Lightbearer",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A fearless Tank excels at sustainable charging and smashing the enemies' backline.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Knight's Heart",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. Temesia does not perform normal attacks. Instead, she selects the farthest enemy and charges toward them dealing 125% (ATK-based) damage + 10% (SP-based) damage to all enemies in her path. Upon reaching the target, she changes direction and restores 180 Energy. Temesia's attack animation speed is not affected by her ATK SPD or Haste. Each point of ATK SPD or Haste increases her charge damage by 1%. Active. Temesia summons her mount Dawn to leap forward, dealing 300% (ATK-based) damage to adjacent enemies and knocking them down. Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks.",
+          "passive": [
+            "Temesia does not perform normal attacks.",
+            "Instead, she selects the farthest enemy and charges toward them dealing 125% (ATK-based) damage + 10% (SP-based) damage to all enemies in her path.",
+            "Upon reaching the target, she changes direction and restores 180 Energy.",
+            "Temesia's attack animation speed is not affected by her ATK SPD or Haste.",
+            "Each point of ATK SPD or Haste increases her charge damage by 1%."
+          ],
+          "active": [
+            "Temesia summons her mount Dawn to leap forward, dealing 300% (ATK-based) damage to adjacent enemies and knocking them down.",
+            "Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 130% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 140% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 150% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 160% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Tamesia charges on the battlefield, dealing damage to all enemies on her path. Active. Tamesia summons her mount on leap forward, dealing damage and knocking back adjacent enemies down, and increasing her charge speed."
+      },
+      {
+        "section": "Skill1",
+        "name": "Iron Heel",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Temesia commands her mount Down to kick an enemy while changing the charge direction, dealing 150% (ATK-based) + 15% (SP-based) damage and inflicting an interruption effect. Reduces the enemy's damage dealt by 15% (ATK-based) for 5s.",
+          "active": [
+            "Temesia commands her mount Down to kick an enemy while changing the charge direction, dealing 150% (ATK-based) + 15% (SP-based) damage and inflicting an interruption effect.",
+            "Reduces the enemy's damage dealt by 15% (ATK-based) for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Restores 10% (ATK-based) of lost HP when changing the charge direction."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia deals damage and reduces damage dealt by the enemy when charging in the opposite direction"
+      },
+      {
+        "section": "Skill2",
+        "name": "Courage Sword",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Temesia wields her broadsword to attack adjacent enemies four times while charging, dealing damage that is equal to 40% (ATK-based) + 5% (SP-based) of the targets' ATK. Each damage doesn't exceed 70% (ATK-based) + 7% (SP-based) of her ATK.",
+          "active": [
+            "Temesia wields her broadsword to attack adjacent enemies four times while charging, dealing damage that is equal to 40% (ATK-based) + 5% (SP-based) of the targets' ATK.",
+            "Each damage doesn't exceed 70% (ATK-based) + 7% (SP-based) of her ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Each damage is increased to 45% (ATK-based) + 5% (SP-based) of the targets' ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Each damage is increased to 50% (ATK-based) + 5% (SP-based) of the targets' ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Each damage is increased to 60% (ATK-based) + 5% (SP-based) of the targets' ATK.."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia deals damage to the surrounding enemies based on the targets ATK"
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Temesia increases her ATK by 11% (ATK-based) during battle. She also gains an extra 2% ATK the first time she casts Knight's Heart.",
+          "active": [
+            "Temesia increases her ATK by 11% (ATK-based) during battle.",
+            "She also gains an extra 2% ATK the first time she casts Knight's Heart."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Temesia increases her ATK by 14% (ATK-based) during battle.",
+                "She also gains an extra 3% ATK the first time she casts Knight's Heart."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Temesia increases her ATK by 18% (ATK-based) during battle.",
+                "She also gains an extra 4% ATK the first time she casts Knight's Heart."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesisa's ATK increases during battle. She gains extra ATK after the first Knight's cast."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Invincible Fury",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, turning the charge damage into true damage.",
+          "active": [
+            "Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, turning the charge damage into true damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Restores 1% of her max HP per second under this status."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Restores 1.2% of her max HP per second under this status."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Restores 1.4% of her max HP per second under this status."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia gains permanent control immunity and turns the charge damage into true damage after casting Ultimate several times."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.",
+          "active": [
+            "Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia reduces the enemys phys DEF if they are hit by the Knight's Heart."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "B",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Temesia - Lightsavior",
+      "faction": "lightbearer",
+      "class": "tank",
+      "role_category": "specialist",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Knight's Heart": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. Temesia does not perform normal attacks. Instead, she selects the farthest enemy and charges toward them dealing 125% (ATK-based) damage + 10% (SP-based) damage to all enemies in her path. Upon reaching the target, she changes direction and restores 180 Energy. Temesia's attack animation speed is not affected by her ATK SPD or Haste. Each point of ATK SPD or Haste increases her charge damage by 1%. Active. Temesia summons her mount Dawn to leap forward, dealing 300% (ATK-based) damage to adjacent enemies and knocking them down. Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks.",
+            "passive": [
+              "Temesia does not perform normal attacks.",
+              "Instead, she selects the farthest enemy and charges toward them dealing 125% (ATK-based) damage + 10% (SP-based) damage to all enemies in her path.",
+              "Upon reaching the target, she changes direction and restores 180 Energy.",
+              "Temesia's attack animation speed is not affected by her ATK SPD or Haste.",
+              "Each point of ATK SPD or Haste increases her charge damage by 1%."
+            ],
+            "active": [
+              "Temesia summons her mount Dawn to leap forward, dealing 300% (ATK-based) damage to adjacent enemies and knocking them down.",
+              "Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases damage dealt by Temesia's charge to 130% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases damage dealt by Temesia's charge to 140% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases damage dealt by Temesia's charge to 150% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases damage dealt by Temesia's charge to 160% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 180.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "crowd_control",
+              "cc-type": "knock_down"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 6,
+                  "stack_comparison": "up_to"
+                }
+              ],
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_range": 1,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "True damage (Mythic+)"
+            },
+            {
+              "label": "Damage dealt — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF — path (Supreme+)",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Knock down — path"
+            },
+            {
+              "label": "Unaffected — Self (Mythic+)"
+            }
+          ]
+        },
+        "Iron Heel": {
+          "category": "skill1",
+          "description": {
+            "raw": "Temesia commands her mount Down to kick an enemy while changing the charge direction, dealing 150% (ATK-based) + 15% (SP-based) damage and inflicting an interruption effect. Reduces the enemy's damage dealt by 15% (ATK-based) for 5s.",
+            "active": [
+              "Temesia commands her mount Down to kick an enemy while changing the charge direction, dealing 150% (ATK-based) + 15% (SP-based) damage and inflicting an interruption effect.",
+              "Reduces the enemy's damage dealt by 15% (ATK-based) for 5s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Restores 10% (ATK-based) of lost HP when changing the charge direction."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage to 160% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage to 170% (ATK-based) + 15% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "interrupt"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 185.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage dealt",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 2,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Max HP-based damage (Supreme+)"
+            },
+            {
+              "label": "Damage dealt",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Interrupt — Single target"
+            }
+          ]
+        },
+        "Courage Sword": {
+          "category": "skill2",
+          "description": {
+            "raw": "Temesia wields her broadsword to attack adjacent enemies four times while charging, dealing damage that is equal to 40% (ATK-based) + 5% (SP-based) of the targets' ATK. Each damage doesn't exceed 70% (ATK-based) + 7% (SP-based) of her ATK.",
+            "active": [
+              "Temesia wields her broadsword to attack adjacent enemies four times while charging, dealing damage that is equal to 40% (ATK-based) + 5% (SP-based) of the targets' ATK.",
+              "Each damage doesn't exceed 70% (ATK-based) + 7% (SP-based) of her ATK."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Each damage is increased to 45% (ATK-based) + 5% (SP-based) of the targets' ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Each damage is increased to 50% (ATK-based) + 5% (SP-based) of the targets' ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Each damage is increased to 60% (ATK-based) + 5% (SP-based) of the targets' ATK.."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 77.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 15.0,
+          "skill_range": 3,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Temesia increases her ATK by 11% (ATK-based) during battle. She also gains an extra 2% ATK the first time she casts Knight's Heart.",
+            "active": [
+              "Temesia increases her ATK by 11% (ATK-based) during battle.",
+              "She also gains an extra 2% ATK the first time she casts Knight's Heart."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Temesia increases her ATK by 14% (ATK-based) during battle.",
+                  "She also gains an extra 3% ATK the first time she casts Knight's Heart."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Temesia increases her ATK by 18% (ATK-based) during battle.",
+                  "She also gains an extra 4% ATK the first time she casts Knight's Heart."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 18.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Invincible Fury": {
+          "category": "skill4",
+          "description": {
+            "raw": "Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, turning the charge damage into true damage.",
+            "active": [
+              "Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, turning the charge damage into true damage."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Restores 1% of her max HP per second under this status."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Restores 1.2% of her max HP per second under this status."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Restores 1.4% of her max HP per second under this status."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.4
+                }
+              ],
+              "duration": 2,
+              "tick": 1.0
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "permanent",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_range": 3,
+          "skill_card_tags": [
+            {
+              "label": "HoT — Self (EX+15)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.",
+            "active": [
+              "Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 6,
+                  "stack_comparison": "up_to"
+                }
+              ],
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Stacking",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks."
+          },
+          {
+            "label": "Execution scaling",
+            "tier": "mythic+",
+            "targeting": "Self",
+            "description": "Charge damage becomes true damage after casting Knight's Heart 2 times."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area, Single target"
+        ],
+        [
+          "max_hp",
+          "Single target"
+        ],
+        [
+          "true",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {
+        "true": "low"
+      },
+      "benefit_stats": [
+        "atk",
+        "atk_spd",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "fast",
+        "walk_speed": "normal",
+        "signature_skill_name": "Knight's Heart",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "low",
+              "True damage": "low"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 17.208214285714284,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 16.47642857142857,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)",
+          "ATK SPD via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 11.955,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 11.625,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 11.625,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "ATK SPD via Haste (all units, average) `signature fuel`",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 10.08,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 9.375,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 9.0,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 7.6274999999999995,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 7.289999999999999,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 6.375,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 5.8585714285714285,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "shakir"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "perseus"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))",
+          "ATK SPD via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 4.106249999999999,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 3.1875,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 3.1875,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.5,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 9.6,
+        "hero_id": "indris"
+      },
+      {
+        "score": 8.0,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 8.0,
+        "hero_id": "carolina"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.5143,
+          "matches": [
+            "aoe-damage",
+            "mass-cc",
+            "self-repositioner"
+          ],
+          "hero_id": "tasi"
+        },
+        {
+          "score": 0.45,
+          "matches": [
+            "aoe-damage",
+            "backline-inhibit",
+            "enemy-debuffer"
+          ],
+          "hero_id": "bonnie"
+        },
+        {
+          "score": 0.4114,
+          "matches": [
+            "aoe-damage",
+            "enemy-debuffer"
+          ],
+          "hero_id": "cassadee"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical",
+            "True damage"
+          ],
+          "hero_id": "nara"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical",
+            "True damage"
+          ],
+          "hero_id": "korin"
+        },
+        {
+          "score": 0.972,
+          "matches": [
+            "Physical",
+            "True damage"
+          ],
+          "hero_id": "valka"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage dealt"
+          ],
+          "hero_id": "evie"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage dealt"
+          ],
+          "hero_id": "vala"
+        },
+        {
+          "score": 0.6792,
+          "matches": [
+            "Damage dealt"
+          ],
+          "hero_id": "saida"
+        }
+      ],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down",
+            "Interrupt"
+          ],
+          "hero_id": "sylphira"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down"
+          ],
+          "hero_id": "cyran"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down",
+            "Interrupt"
+          ],
+          "hero_id": "lucca"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "cca7c770238bd1ef45b91cbca13ba95843d501aee36e5612da3cffd2c4ea8433",
+    "ai_hash": "dff1bdc0a42f7be8104f4a15d88957756c567dc2c7eb59a23df463ef3da5a433",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "3b797ef8b6db738353067e739c170a106b87fabbad6ad1925309543150e58e62",
+    "stage": "scored"
+  }
+}

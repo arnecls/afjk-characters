@@ -124,7 +124,7 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
         self.assertEqual(before, after)
 
     def test_guiding_light_sentences_and_chunks(self) -> None:
-        data = io.load_json(io.HEROES_DATA)
+        data = io.load_heroes_data()
         aliceth = next(h for h in data["heroes"] if h["name"] == "Aliceth")
         skill = next(s for s in aliceth["skills"] if s.get("name") == "Guiding Light")
         desc = skill["description"]
@@ -141,7 +141,7 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
 
 
     def test_sealed_fate_includes_mark_sentences(self) -> None:
-        data = io.load_json(io.HEROES_DATA)
+        data = io.load_heroes_data()
         aliceth = next(h for h in data["heroes"] if h["name"] == "Aliceth")
         skill = next(s for s in aliceth["skills"] if s.get("name") == "Sealed Fate")
         chunks = rs.skill_chunks_from_skill(skill)
@@ -194,7 +194,7 @@ class SkillChunksTests(unittest.TestCase):
 
 class MigrationParityTests(unittest.TestCase):
     def test_reconstruct_heroes_md_unchanged_after_normalize(self) -> None:
-        data = io.load_json(io.HEROES_DATA)
+        data = io.load_heroes_data()
         before = io.reconstruct_heroes_md(data)
         for hero in data["heroes"]:
             for skill in hero.get("skills", []):

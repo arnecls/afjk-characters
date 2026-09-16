@@ -337,7 +337,7 @@ def parse_behavior(block: str) -> tuple[str, str, str, str]:
 
 
 def _load_heroes_data_by_short_name() -> dict[str, dict]:
-    """Map overview short name -> hero record from heroes_data.json."""
+    """Map overview short name -> hero record from hero-local source."""
     spec = importlib.util.spec_from_file_location(
         "gen_overview", SCRIPTS / "generate-heroes-overview.py"
     )
@@ -346,8 +346,9 @@ def _load_heroes_data_by_short_name() -> dict[str, dict]:
     assert spec.loader is not None
     spec.loader.exec_module(gen)
 
-    data_path = ROOT / "data" / "heroes_data.json"
-    payload = json.loads(data_path.read_text(encoding="utf-8"))
+    import heroes_io as io
+
+    payload = io.load_heroes_data()
     out: dict[str, dict] = {}
     for hero in payload.get("heroes", []):
         title = hero.get("title", "")
@@ -390,10 +391,9 @@ def _load_gen_overview():
 
 def _load_hero_role_categories() -> dict[str, str]:
     """Map overview short name -> Prydwen role label from processed data."""
-    path = ROOT / "data" / "heroes_data_processed.json"
-    if not path.is_file():
-        return {}
-    payload = json.loads(path.read_text(encoding="utf-8"))
+    import heroes_io as io
+
+    payload = io.load_processed()
     out: dict[str, str] = {}
     for short, record in payload.get("heroes", {}).items():
         role = record.get("role_category", "")

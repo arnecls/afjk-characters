@@ -1,0 +1,1097 @@
+{
+  "schema_version": 1,
+  "id": "valka",
+  "display_name": "Valka",
+  "source": {
+    "title": "Valka - Forsaken Blade",
+    "name": "Valka",
+    "tags": "Graveborn · Warrior · Physical",
+    "faction": "Graveborn",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A gentle yet determined Warrior, masterful in the art of the greatsword.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Phantom Slasher",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 Tiles",
+          "Initial Energy": "1000"
+        },
+        "description": {
+          "raw": "Passive. Valka applies a stack of panic to an enemy with her normal attacks, lasting 10s. After 4 stacks, the enemy is struck with a sudden fear of battle, falling into a panic state for 10ss and losing 10 Haste. Valka can only cast Blooming Terror on adjacent enemies who are in a panic state. This skill consumes 100 Energy and removes the enemy's panic status, stunning them while executing two powerful slashes. Each slash deals true damage equal to 6% + 1.5% (SP-based) of the target's max HP and recovers 350% (ATK-based) + 50% (SP-based) of Valka's HP. Afterward, Valka draws her sword to land another slash, dealing true damage equal to 12% + 2% (SP-based) of the target's max HP and knocking them down. Each slash damage is capped at 400% (ATK-based). While casting, Valka is Unaffected and can only use this skill on the enemy once every 6 + 0.4 (SP-based)s.",
+          "passive": [
+            "Valka applies a stack of panic to an enemy with her normal attacks, lasting 10s.",
+            "After 4 stacks, the enemy is struck with a sudden fear of battle, falling into a panic state for 10ss and losing 10 Haste.",
+            "Valka can only cast Blooming Terror on adjacent enemies who are in a panic state.",
+            "This skill consumes 100 Energy and removes the enemy's panic status, stunning them while executing two powerful slashes.",
+            "Each slash deals true damage equal to 6% + 1.5% (SP-based) of the target's max HP and recovers 350% (ATK-based) + 50% (SP-based) of Valka's HP.",
+            "Afterward, Valka draws her sword to land another slash, dealing true damage equal to 12% + 2% (SP-based) of the target's max HP and knocking them down.",
+            "Each slash damage is capped at 400% (ATK-based).",
+            "While casting, Valka is Unaffected and can only use this skill on the enemy once every 6 + 0.4 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When used actively, increases the damage of each of the first two slashes to 7.5% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 13.5% + 2% (SP-based) of their max HP.",
+                "Each slash damage is capped at 500% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When used actively, increases the damage of each of the first two slashes to 9% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 15% + 2% (SP-based) of their max HP.",
+                "Each slash damage is capped at 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "When used actively, increases the damage of each of the first two slashes to 10.5% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 16.5% + 2% (SP-based) of their max HP.",
+                "Each slash damage is capped at 700% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "When used actively, increases the damage of each of the first two slashes to 12% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 18% + 2% (SP-based) of their max HP.",
+                "Each slash damage is capped at 800% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive: Valka's normal attacks apply Panic stacks to her target, striking them with a fear of battle. Active: Valka unleashes powerfull slashes on an enemy in the panic state, dealing damage and healing herself."
+      },
+      {
+        "section": "Skill1",
+        "name": "Deathbloom Scheme",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "5s",
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Valka refines her combat skills and masters new sword techniques as she levels up. Each sword technique is considered a normal attack with its own cooldown. Masters \"Soul Slicer\": When there is more than one adjacent enemy, Valka consumes 300 Energy to deliver 2 slashes, each dealing 140% (ATK-based) + 20% (SP-based) damage.",
+          "active": [
+            "Valka refines her combat skills and masters new sword techniques as she levels up.",
+            "Each sword technique is considered a normal attack with its own cooldown.",
+            "Masters \"Soul Slicer\": When there is more than one adjacent enemy, Valka consumes 300 Energy to deliver 2 slashes, each dealing 140% (ATK-based) + 20% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Masters \"Wrecking Blade\": When there is only one adjacent enemy, Valka consumes 300 Energy to perform a slash, dealing 190% (ATK-based) + 25% (SP-based) damage and knocking the enemy down for 1s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Masters \"Restless Chase\": When there are no adjacent {{Sic|enemy"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valka skillfully utilizes various sword techniques in battle."
+      },
+      {
+        "section": "Skill2",
+        "name": "Spectral Bulwark",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, Valka gains a shield that blocks 24% (HP-based) damage for each ally within 1 tile, up to a maximum of 72% (HP-based). In addition, Valka increases the ATK SPD of these allies by 50 + 5 (SP-based) until the battle ends.",
+          "active": [
+            "When a battle starts, Valka gains a shield that blocks 24% (HP-based) damage for each ally within 1 tile, up to a maximum of 72% (HP-based).",
+            "In addition, Valka increases the ATK SPD of these allies by 50 + 5 (SP-based) until the battle ends."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases shield value to 26% (HP-based) for each ally within range, and the maximum shield value to 78% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases shield value to 28% (HP-based) for each ally within range, and the maximum shield value to 84% (HP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases shield value to 30% (HP-based) for each ally within range, and the maximum shield value to 90% (HP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Valka gains a shield and increases her allies' ATK SPD."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 18 during battle.",
+          "active": [
+            "Increases ATK SPD by 18 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 24 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 30 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Soulshock Riposte",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Upon taking Ultimate skill damage from an enemy within her attack range, Valka instantly blocks the attack and becomes immune to the damage. She then casts Blooming Terror on the attacker without consuming Energy or removing the enemy's panic status. Instead, she recovers 250 Energy. While casting, Valka is Unaffected and can only use this skill on the same enemy once every 10s.",
+          "active": [
+            "Upon taking Ultimate skill damage from an enemy within her attack range, Valka instantly blocks the attack and becomes immune to the damage.",
+            "She then casts Blooming Terror on the attacker without consuming Energy or removing the enemy's panic status.",
+            "Instead, she recovers 250 Energy.",
+            "While casting, Valka is Unaffected and can only use this skill on the same enemy once every 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Energy recovery from Blooming Terror to 300 after blocking."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Within 10s of casting this skill, increases own ATK SPD by 80and Life Drain by 60."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Energy recovery from Blooming Terror to 350 after blocking."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valka blocks the enemy's Ultimate and launches a counterattack."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Energy from launching normal attacks.",
+          "active": [
+            "While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Energy from launching normal attacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "While shield granted by Spectral Bulwark is active, Valka recovers Energy from launching normal attacks."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-01-30",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "B",
+      "dream_realm": "A",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Valka - Forsaken Blade",
+      "faction": "graveborn",
+      "class": "warrior",
+      "role_category": "specialist",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-01-30",
+      "season": "Chains of Eternity",
+      "season_number": 3,
+      "skills": {
+        "Phantom Slasher": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. Valka applies a stack of panic to an enemy with her normal attacks, lasting 10s. After 4 stacks, the enemy is struck with a sudden fear of battle, falling into a panic state for 10ss and losing 10 Haste. Valka can only cast Blooming Terror on adjacent enemies who are in a panic state. This skill consumes 100 Energy and removes the enemy's panic status, stunning them while executing two powerful slashes. Each slash deals true damage equal to 6% + 1.5% (SP-based) of the target's max HP and recovers 350% (ATK-based) + 50% (SP-based) of Valka's HP. Afterward, Valka draws her sword to land another slash, dealing true damage equal to 12% + 2% (SP-based) of the target's max HP and knocking them down. Each slash damage is capped at 400% (ATK-based). While casting, Valka is Unaffected and can only use this skill on the enemy once every 6 + 0.4 (SP-based)s.",
+            "passive": [
+              "Valka applies a stack of panic to an enemy with her normal attacks, lasting 10s.",
+              "After 4 stacks, the enemy is struck with a sudden fear of battle, falling into a panic state for 10ss and losing 10 Haste.",
+              "Valka can only cast Blooming Terror on adjacent enemies who are in a panic state.",
+              "This skill consumes 100 Energy and removes the enemy's panic status, stunning them while executing two powerful slashes.",
+              "Each slash deals true damage equal to 6% + 1.5% (SP-based) of the target's max HP and recovers 350% (ATK-based) + 50% (SP-based) of Valka's HP.",
+              "Afterward, Valka draws her sword to land another slash, dealing true damage equal to 12% + 2% (SP-based) of the target's max HP and knocking them down.",
+              "Each slash damage is capped at 400% (ATK-based).",
+              "While casting, Valka is Unaffected and can only use this skill on the enemy once every 6 + 0.4 (SP-based)s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "When used actively, increases the damage of each of the first two slashes to 7.5% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 13.5% + 2% (SP-based) of their max HP.",
+                  "Each slash damage is capped at 500% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "When used actively, increases the damage of each of the first two slashes to 9% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 15% + 2% (SP-based) of their max HP.",
+                  "Each slash damage is capped at 600% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "When used actively, increases the damage of each of the first two slashes to 10.5% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 16.5% + 2% (SP-based) of their max HP.",
+                  "Each slash damage is capped at 700% (ATK-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "When used actively, increases the damage of each of the first two slashes to 12% + 1.5% (SP-based) of the enemy's max HP, and the damage of the final slash to 18% + 2% (SP-based) of their max HP.",
+                  "Each slash damage is capped at 800% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 10.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_down"
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_range": 1,
+          "initial_energy": 1000.0,
+          "skill_card_tags": [
+            {
+              "label": "Max HP-based damage"
+            },
+            {
+              "label": "Haste",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Knock down — Single target"
+            },
+            {
+              "label": "Stun — Single target"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Deathbloom Scheme": {
+          "category": "skill1",
+          "description": {
+            "raw": "Valka refines her combat skills and masters new sword techniques as she levels up. Each sword technique is considered a normal attack with its own cooldown. Masters \"Soul Slicer\": When there is more than one adjacent enemy, Valka consumes 300 Energy to deliver 2 slashes, each dealing 140% (ATK-based) + 20% (SP-based) damage.",
+            "active": [
+              "Valka refines her combat skills and masters new sword techniques as she levels up.",
+              "Each sword technique is considered a normal attack with its own cooldown.",
+              "Masters \"Soul Slicer\": When there is more than one adjacent enemy, Valka consumes 300 Energy to deliver 2 slashes, each dealing 140% (ATK-based) + 20% (SP-based) damage."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Masters \"Wrecking Blade\": When there is only one adjacent enemy, Valka consumes 300 Energy to perform a slash, dealing 190% (ATK-based) + 25% (SP-based) damage and knocking the enemy down for 1s."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Masters \"Restless Chase\": When there are no adjacent {{Sic|enemy"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 255.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_down",
+              "duration": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 220.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 5.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Knock down — Area"
+            }
+          ]
+        },
+        "Spectral Bulwark": {
+          "category": "skill2",
+          "description": {
+            "raw": "When a battle starts, Valka gains a shield that blocks 24% (HP-based) damage for each ally within 1 tile, up to a maximum of 72% (HP-based). In addition, Valka increases the ATK SPD of these allies by 50 + 5 (SP-based) until the battle ends.",
+            "active": [
+              "When a battle starts, Valka gains a shield that blocks 24% (HP-based) damage for each ally within 1 tile, up to a maximum of 72% (HP-based).",
+              "In addition, Valka increases the ATK SPD of these allies by 50 + 5 (SP-based) until the battle ends."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases shield value to 26% (HP-based) for each ally within range, and the maximum shield value to 78% (HP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases shield value to 28% (HP-based) for each ally within range, and the maximum shield value to 84% (HP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases shield value to 30% (HP-based) for each ally within range, and the maximum shield value to 90% (HP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK SPD — Multiple targets",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases ATK SPD by 18 during battle.",
+            "active": [
+              "Increases ATK SPD by 18 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases ATK SPD by 24 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases ATK SPD by 30 during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "skill_range": 1,
+          "passive_only": true,
+          "skill_card_tags": []
+        },
+        "Soulshock Riposte": {
+          "category": "skill4",
+          "description": {
+            "raw": "Upon taking Ultimate skill damage from an enemy within her attack range, Valka instantly blocks the attack and becomes immune to the damage. She then casts Blooming Terror on the attacker without consuming Energy or removing the enemy's panic status. Instead, she recovers 250 Energy. While casting, Valka is Unaffected and can only use this skill on the same enemy once every 10s.",
+            "active": [
+              "Upon taking Ultimate skill damage from an enemy within her attack range, Valka instantly blocks the attack and becomes immune to the damage.",
+              "She then casts Blooming Terror on the attacker without consuming Energy or removing the enemy's panic status.",
+              "Instead, she recovers 250 Energy.",
+              "While casting, Valka is Unaffected and can only use this skill on the same enemy once every 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases Energy recovery from Blooming Terror to 300 after blocking."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Within 10s of casting this skill, increases own ATK SPD by 80and Life Drain by 60."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases Energy recovery from Blooming Terror to 350 after blocking."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 250.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "persistence": "unknown"
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Lifedrain — Self (EX+10)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Energy from launching normal attacks.",
+            "active": [
+              "While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Energy from launching normal attacks."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "persistence": "unknown"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Haste — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area"
+        ],
+        [
+          "max_hp",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "true": "high"
+      },
+      "benefit_stats": [
+        "atk_spd",
+        "haste",
+        "shield",
+        "energy"
+      ],
+      "scalar_stat_shares": {
+        "atk": 0.5,
+        "max_hp": 0.5
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 1.0 tiles",
+        "casting_speed": "fast",
+        "walk_speed": "fast",
+        "signature_skill_name": "Phantom Slasher",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "True damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "True damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 6.705,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`"
+        ],
+        "score": 5.91,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "shakir"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (all units, average) `signature fuel`",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 4.83,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 3.75,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`"
+        ],
+        "score": 3.2399999999999998,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 3.1875,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 3.1875,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy (all units, low) `signature fuel`"
+        ],
+        "score": 2.58,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 1.875,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.5,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, low) `signature fuel`"
+        ],
+        "score": 1.08,
+        "provider_id": "pandora"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 10.4,
+        "hero_id": "nerion"
+      },
+      {
+        "score": 9.08,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 9.08,
+        "hero_id": "carolina"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
+    ],
+    "replacements": {
+      "buff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "ATK SPD"
+          ],
+          "hero_id": "dunlingr"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "ATK SPD"
+          ],
+          "hero_id": "parisa"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "ATK SPD"
+          ],
+          "hero_id": "lyca"
+        }
+      ],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6,
+          "matches": [
+            "ally-buffer",
+            "ally-shielder",
+            "high-initial-energy"
+          ],
+          "hero_id": "peggy"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "ally-shielder",
+            "high-initial-energy"
+          ],
+          "hero_id": "hepler"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "ally-shielder",
+            "high-initial-energy"
+          ],
+          "hero_id": "lucca"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "True damage",
+            "Physical"
+          ],
+          "hero_id": "nara"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical",
+            "True damage"
+          ],
+          "hero_id": "temesia"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "hodgkin"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Haste"
+          ],
+          "hero_id": "velara"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Haste"
+          ],
+          "hero_id": "alna"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Haste"
+          ],
+          "hero_id": "galahad"
+        }
+      ],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down",
+            "Stun"
+          ],
+          "hero_id": "callan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down",
+            "Stun"
+          ],
+          "hero_id": "zorya"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock down",
+            "Stun"
+          ],
+          "hero_id": "antandra"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "3de5914b751c5df1b2e9bd79e0d5eb7c87fd1f7637ad491d088d014870737d14",
+    "ai_hash": "493a532b18cfbb6f1199eedbaf9cb00ac683d705efc410bcfdba8a96bf2b0e04",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "d0a806d384f4e80a060f978779f4b262d4ea04efa2742343200f9dec262a204e",
+    "stage": "scored"
+  }
+}

@@ -2,21 +2,22 @@
 name: extract-skill-effects
 description: >-
   Extract schema-valid skill effects from hero skill text into
-  data/skill_effects/<short_name>.json. Use when adding a hero, when skill
+  data/heroes/<hero-id>/ai.json. Use when adding a hero, when skill
   text changes, or when fixing wrong/missing buffs, debuffs, CC, damage types,
   healing, shields, energy, immunities, or special provides/requires.
 ---
 
 # Extract skill effects
 
-AI-authored sidecar per hero. Replaces regex detection in
-`scripts/rewrite-summaries.py`. Pipeline reads sidecars via
-`analyze_hero()`; no regex edits for effect fixes.
+AI-authored effect data per hero. Replaces regex detection in
+`scripts/rewrite-summaries.py`. Pipeline reads it from `ai.json` via the
+hero-pipeline storage seam; no regex edits for effect fixes.
 
 ## When to use
 
 - New hero after `just download` (instead of regex gap fixes)
-- Skill text changed in `heroes_data.json` (hash stale in `just validate`)
+- Skill text changed in a hero's `generated.json` (hash stale in
+  `just validate`)
 - Wrong/missing effects in processed JSON or site skill chips
 - User asks to re-extract or fix detection for one hero
 
@@ -24,7 +25,7 @@ AI-authored sidecar per hero. Replaces regex detection in
 
 | Source | Use for |
 |--------|---------|
-| `data/heroes_data.json` | Full skill text, sections, upgrades |
+| `data/heroes/<hero-id>/generated.json` | Full skill text, sections, upgrades |
 | `description_lite` | Cross-check mechanics; preferred for validation |
 | `data/schema/game_properties.schema.json` | CC, damage types, stats, immunities |
 | `data/schema/skills.schema.json` | Effect shape (`$defs/effect`) |
@@ -32,7 +33,7 @@ AI-authored sidecar per hero. Replaces regex detection in
 
 ## Output
 
-`data/skill_effects/<short_name>.json`:
+`data/heroes/<hero-id>/ai.json` (`skill_effects` field):
 
 ```json
 {

@@ -367,6 +367,46 @@ Also see:
 - [skill-effect sidecar](#skill-effect-sidecar)
 - [curated metadata](#curated-metadata)
 
+## roster manifest
+
+Ordered `data/roster.json` identity map for the active hero roster. It owns
+stable lowercase kebab-case hero IDs, display names, source titles, aliases,
+and rendering order. It is global because order and membership are roster
+properties, not hero properties.
+
+## hero bundle
+
+The three files under `data/heroes/<hero-id>/`: `generated.json`, `ai.json`,
+and `overrides.json`. Together they own all data specific to one roster hero.
+Roster-wide rankings remain derived values inside generated files and are
+recomputed from the complete manifest.
+
+## generated hero data
+
+The per-hero `generated.json` file. It contains downloaded source fields,
+external stat facts, deterministic analysis, and ID-based synergy,
+beneficiary, and replacement results. Its provenance hashes identify stale
+analysis after source or curated input changes.
+
+## AI hero data
+
+The per-hero `ai.json` file. It contains skill-effect extraction, behavior
+tags, summon metadata, skill summaries, play overviews, and counter overviews.
+It is source data, not a derived output.
+
+## typed override
+
+A sparse, schema-defined correction in a hero's `overrides.json`. Overrides are
+applied before analysis and are grouped by meaning, such as signature,
+movement, melee/range, and placement. An empty override file is still present
+so every hero bundle has the same interface.
+
+## hero ID
+
+Stable lowercase kebab-case identifier used for hero directories and structured
+cross-hero references. Punctuation is omitted; the downloaded `Elijah & Lailah`
+record uses the `Twins` ID.
+
 ## processed data
 
 Generated analysis output derived from raw hero data and curated inputs. It

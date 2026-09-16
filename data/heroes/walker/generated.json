@@ -1,0 +1,1015 @@
+{
+  "schema_version": 1,
+  "id": "walker",
+  "display_name": "Walker",
+  "source": {
+    "title": "Walker - Wildland Outlaw",
+    "name": "Walker",
+    "tags": "Lightbearer · Rogue · Physical",
+    "faction": "Lightbearer",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A steadfast Rogue who undertakes the bounties of the mightiest enemies and defeats them.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Six-Shot",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast. Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s. Subsequent hits on the same target deal 50% damage.",
+          "active": [
+            "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast.",
+            "Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s.",
+            "Subsequent hits on the same target deal 50% damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: When the enemies in front include a target marked with Bounty Pursuit, the remaining bullets will be directed at the targeted enemy after shooting all others."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 55% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases stun duration to 2 + 0.2 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker fires at enemies in front one by one after loading bullets, dealing damage and stunning them."
+      },
+      {
+        "section": "Skill1",
+        "name": "Shotgun Blast",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area. His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage. Walker's normal attack range cannot be buffed any further.",
+          "active": [
+            "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area.",
+            "His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage.",
+            "Walker's normal attack range cannot be buffed any further."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Walker's normal attacks stun enemies for 0.125s upon dealing critical hits."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases each bullet's damage dealt to 37% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases each bullet's damage dealt to 40% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker's normal attacks are enhanced to cause AoE damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Bounty Pursuit",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts. Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based). Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated.",
+          "active": [
+            "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts.",
+            "Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based).",
+            "Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+                "Each shot deals 50% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based))."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Walker can claim the bounty again after the previous targeted enemy is defeated."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+                "Each shot deals 55% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based))."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker prioritizes attacking the enemy with the highest accumulated damage dealt, during which he gains a buff."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Crit DMG Boost by 30 during battle.",
+          "active": [
+            "Increases Crit DMG Boost by 30 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Crit DMG Boost by 40 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Crit DMG Boost by 50 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Crit DMG Boost during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Aerial Thunder",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade. The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding. The above skill effect only takes effect once when multiple grenades hit the same target.",
+          "active": [
+            "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade.",
+            "The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding.",
+            "The above skill effect only takes effect once when multiple grenades hit the same target."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Reduces the enemies' Crit Resist by 10 in 15s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Increases damage to 150%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Increases damage to 160%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker throws grenades at the beginning of a battle, dealing AoE damage and stunning his enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time. This shield lasts till the target is defeated.",
+          "active": [
+            "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time.",
+            "This shield lasts till the target is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker gains a shield when dealing damage to the bounty target for the first time."
+      }
+    ],
+    "range": 2,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Walker - Wildland Outlaw",
+      "faction": "lightbearer",
+      "class": "rogue",
+      "role_category": "specialist",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 2,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Six-Shot": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast. Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s. Subsequent hits on the same target deal 50% damage.",
+            "active": [
+              "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast.",
+              "Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s.",
+              "Subsequent hits on the same target deal 50% damage."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 51: When the enemies in front include a target marked with Bounty Pursuit, the remaining bullets will be directed at the targeted enemy after shooting all others."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 111: Increases damage to 55% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 171: Increases damage to 60% (ATK-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 231: Increases stun duration to 2 + 0.2 (SP-based)s."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 10,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Max HP-based damage"
+            },
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Stun — Single target"
+            }
+          ]
+        },
+        "Shotgun Blast": {
+          "category": "skill1",
+          "description": {
+            "raw": "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area. His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage. Walker's normal attack range cannot be buffed any further.",
+            "active": [
+              "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area.",
+              "His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage.",
+              "Walker's normal attack range cannot be buffed any further."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 71: Walker's normal attacks stun enemies for 0.125s upon dealing critical hits."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 131: Increases each bullet's damage dealt to 37% (ATK-based) + 6% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 191: Increases each bullet's damage dealt to 40% (ATK-based) + 6% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 0.125
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 46.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 2,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Stun — Single target"
+            }
+          ]
+        },
+        "Bounty Pursuit": {
+          "category": "skill2",
+          "description": {
+            "raw": "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts. Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based). Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated.",
+            "active": [
+              "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts.",
+              "Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based).",
+              "Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 91: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+                  "Each shot deals 50% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based))."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 151: Walker can claim the bounty again after the previous targeted enemy is defeated."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 211: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+                  "Each shot deals 55% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based))."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 24.0
+                }
+              ],
+              "persistence": "unknown"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 55.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Crit — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Crit DMG Boost by 30 during battle.",
+            "active": [
+              "Increases Crit DMG Boost by 30 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Crit DMG Boost by 40 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Crit DMG Boost by 50 during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit DMG Boost",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Crit DMG Boost — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Aerial Thunder": {
+          "category": "skill4",
+          "description": {
+            "raw": "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade. The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding. The above skill effect only takes effect once when multiple grenades hit the same target.",
+            "active": [
+              "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade.",
+              "The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding.",
+              "The above skill effect only takes effect once when multiple grenades hit the same target."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 5: Reduces the enemies' Crit Resist by 10 in 15s."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 10: Increases damage to 150%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at Exclusive Weapon level 15: Increases damage to 160%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_direction": "front",
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_direction": "front",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Crit Resist",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Crit Resist",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Stun — Arc"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time. This shield lasts till the target is defeated.",
+            "active": [
+              "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time.",
+              "This shield lasts till the target is defeated."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "unknown"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 100.0
+                }
+              ],
+              "persistence": "unknown"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Crit — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Lifedrain — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Arc, Single target"
+        ],
+        [
+          "max_hp",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "max_hp",
+        "shield",
+        "crit"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 2.0 tiles",
+        "casting_speed": "fast",
+        "walk_speed": "slow",
+        "signature_skill_name": "Six-Shot",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 2.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "average"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Max HP via Max HP (single target, low)",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 9.021428571428572,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Crit via Crit (single target, average)",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 7.3875,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 4.05,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 3.4232142857142853,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 3.278571428571428,
+        "provider_id": "lyca"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 12.0,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "carolina"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "nerion"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6667,
+          "matches": [
+            "aoe-damage",
+            "battle-start-burst",
+            "mark-target",
+            "mass-cc",
+            "non-ult-utility"
+          ],
+          "hero_id": "kazim"
+        },
+        {
+          "score": 0.5143,
+          "matches": [
+            "aoe-damage",
+            "battle-start-burst",
+            "mass-cc"
+          ],
+          "hero_id": "eironn"
+        },
+        {
+          "score": 0.5143,
+          "matches": [
+            "aoe-damage",
+            "battle-start-burst",
+            "non-ult-utility"
+          ],
+          "hero_id": "bonnie"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "himmel"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gwyneth"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Crit Resist"
+          ],
+          "hero_id": "nazrik"
+        }
+      ],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "phraesto"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "callan"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "043304a8d9af4357268551f733f9bdf9f81d6dfc67cbb60eeeb75364bf70d3ed",
+    "ai_hash": "1d6fa3c363920384dde7fbe1b9553e2c768d1180c82f6aae641838f83118e15c",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "cbdbac3bdf5c320a883a9b6a6fe975b468c0c37c8c40ecc30b76d61a6d5b73d8",
+    "stage": "scored"
+  }
+}

@@ -1,0 +1,984 @@
+{
+  "schema_version": 1,
+  "id": "gerda",
+  "display_name": "Gerda",
+  "source": {
+    "title": "Gerda - Soothing Siren",
+    "name": "Gerda",
+    "tags": "Mauler · Tank · Physical",
+    "faction": "Mauler",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A fearless Tank who excels at disrupting enemy attacks in battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Splashing Fun",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Gerda uses a wooden ladle to splash spring water within a 2-tile radius, healing affected allies for 120% (ATK-based) + 10% (SP-based) HP and dealing 140% (ATK-based) + 15% (SP-based) damage to affected enemies. Enemies affected are put to sleep for 1s and cannot move or act. Each time a target receive healing equal to 10% of their max HP or is healed 3 times by Gerda's hot spring, the sleep extends by 0.5s up to 3s.",
+          "active": [
+            "Gerda uses a wooden ladle to splash spring water within a 2-tile radius, healing affected allies for 120% (ATK-based) + 10% (SP-based) HP and dealing 140% (ATK-based) + 15% (SP-based) damage to affected enemies.",
+            "Enemies affected are put to sleep for 1s and cannot move or act.",
+            "Each time a target receive healing equal to 10% of their max HP or is healed 3 times by Gerda's hot spring, the sleep extends by 0.5s up to 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt to 170% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt to 180% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gerda heals nearby allies and puts enemies to sleep."
+      },
+      {
+        "section": "Skill1",
+        "name": "Spring Therapy",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Gerda leaps forward up to 3 tiles and stomps the ground to unleash a spring, dealing 200% (ATK-based) + 20% (SP-based) damage with an interruption effect to enemies within 1 tile. Then she creates a hot spring within a 2-tile radius. Allies within this area recover 25% (ATK-based) + 2% (SP-based) HP per second, while enemies recover 4% (ATK-based) HP per second (capped at 0.5% of their max HP). Gerda is unaffected while casting this skill.",
+          "active": [
+            "When a battle starts, Gerda leaps forward up to 3 tiles and stomps the ground to unleash a spring, dealing 200% (ATK-based) + 20% (SP-based) damage with an interruption effect to enemies within 1 tile.",
+            "Then she creates a hot spring within a 2-tile radius.",
+            "Allies within this area recover 25% (ATK-based) + 2% (SP-based) HP per second, while enemies recover 4% (ATK-based) HP per second (capped at 0.5% of their max HP).",
+            "Gerda is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gerda leaps forward when a battle starts, interrupting nearby enemies and creating a hot spring."
+      },
+      {
+        "section": "Skill2",
+        "name": "Mighty Smash",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "6s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Gerda smashes an enemy with a wooden ladle, dealing 150% (ATK-based) + 10% (SP-based) damage and stunning them for 1.5s. At the same time, Gerda gains a 340% (ATK-based) + 30% (SP-based) shield for 8s.",
+          "active": [
+            "Gerda smashes an enemy with a wooden ladle, dealing 150% (ATK-based) + 10% (SP-based) damage and stunning them for 1.5s.",
+            "At the same time, Gerda gains a 340% (ATK-based) + 30% (SP-based) shield for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the shield value to 360% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the shield value to 380% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the shield value to 400% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gerda smashes an enemy, stunning them while gaining a shield for herself."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Gerda reduces her damage taken by 12% during battle.",
+          "active": [
+            "Gerda reduces her damage taken by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Gerda reduces her damage taken by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Gerda reduces her damage taken by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gerda reduces her damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Spring of Life",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Gerda increases the healing received from the allied hot spring by 120%. Each time an ally is healed by it, the cooldown of Mighty Smash is reduced by 0.2s.",
+          "active": [
+            "Gerda increases the healing received from the allied hot spring by 120%.",
+            "Each time an ally is healed by it, the cooldown of Mighty Smash is reduced by 0.2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the healing received from the allied hot spring by 150%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When an ally enters an allied hot spring for the first time, they become unaffected for 5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the healing received from the allied hot spring by 180%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gerda increases the healing received from the hot spring and reduces the cooldown of Mighty Smash whenever an ally is healed by the hot spring."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2s instead of interrupting them.",
+          "active": [
+            "When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2s instead of interrupting them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gerda no longer interrupts enemies during Spring Therapy but stuns them instead."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-03-13",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Gerda - Soothing Siren",
+      "faction": "mauler",
+      "class": "tank",
+      "role_category": "tank",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-03-13",
+      "season": "Chains of Eternity",
+      "season_number": 3,
+      "skills": {
+        "Splashing Fun": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Gerda uses a wooden ladle to splash spring water within a 2-tile radius, healing affected allies for 120% (ATK-based) + 10% (SP-based) HP and dealing 140% (ATK-based) + 15% (SP-based) damage to affected enemies. Enemies affected are put to sleep for 1s and cannot move or act. Each time a target receive healing equal to 10% of their max HP or is healed 3 times by Gerda's hot spring, the sleep extends by 0.5s up to 3s.",
+            "active": [
+              "Gerda uses a wooden ladle to splash spring water within a 2-tile radius, healing affected allies for 120% (ATK-based) + 10% (SP-based) HP and dealing 140% (ATK-based) + 15% (SP-based) damage to affected enemies.",
+              "Enemies affected are put to sleep for 1s and cannot move or act.",
+              "Each time a target receive healing equal to 10% of their max HP or is healed 3 times by Gerda's hot spring, the sleep extends by 0.5s up to 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases damage dealt to 150% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases damage dealt to 160% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases damage dealt to 170% (ATK-based) + 15% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases damage dealt to 180% (ATK-based) + 15% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 195.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "sleep",
+              "duration": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 1.0
+            }
+          ],
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Direct healing — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Bind — Single target"
+            },
+            {
+              "label": "Sleep — Single target"
+            }
+          ]
+        },
+        "Spring Therapy": {
+          "category": "skill1",
+          "description": {
+            "raw": "When a battle starts, Gerda leaps forward up to 3 tiles and stomps the ground to unleash a spring, dealing 200% (ATK-based) + 20% (SP-based) damage with an interruption effect to enemies within 1 tile. Then she creates a hot spring within a 2-tile radius. Allies within this area recover 25% (ATK-based) + 2% (SP-based) HP per second, while enemies recover 4% (ATK-based) HP per second (capped at 0.5% of their max HP). Gerda is unaffected while casting this skill.",
+            "active": [
+              "When a battle starts, Gerda leaps forward up to 3 tiles and stomps the ground to unleash a spring, dealing 200% (ATK-based) + 20% (SP-based) damage with an interruption effect to enemies within 1 tile.",
+              "Then she creates a hot spring within a 2-tile radius.",
+              "Allies within this area recover 25% (ATK-based) + 2% (SP-based) HP per second, while enemies recover 4% (ATK-based) HP per second (capped at 0.5% of their max HP).",
+              "Gerda is unaffected while casting this skill."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases damage to 220% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage to 240% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage to 260% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "interrupt"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 280.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "duration": 2.0,
+              "tick": 1.0
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "HoT",
+              "polarity": "buff"
+            },
+            {
+              "label": "Interrupt — Area"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Mighty Smash": {
+          "category": "skill2",
+          "description": {
+            "raw": "Gerda smashes an enemy with a wooden ladle, dealing 150% (ATK-based) + 10% (SP-based) damage and stunning them for 1.5s. At the same time, Gerda gains a 340% (ATK-based) + 30% (SP-based) shield for 8s.",
+            "active": [
+              "Gerda smashes an enemy with a wooden ladle, dealing 150% (ATK-based) + 10% (SP-based) damage and stunning them for 1.5s.",
+              "At the same time, Gerda gains a 340% (ATK-based) + 30% (SP-based) shield for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the shield value to 360% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the shield value to 380% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the shield value to 400% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 1.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 430.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 400.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 12.0,
+          "initial_cooldown": 6.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Stun — Single target"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Gerda reduces her damage taken by 12% during battle.",
+            "active": [
+              "Gerda reduces her damage taken by 12% during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Gerda reduces her damage taken by 16% during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Gerda reduces her damage taken by 20% during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Spring of Life": {
+          "category": "skill4",
+          "description": {
+            "raw": "Gerda increases the healing received from the allied hot spring by 120%. Each time an ally is healed by it, the cooldown of Mighty Smash is reduced by 0.2s.",
+            "active": [
+              "Gerda increases the healing received from the allied hot spring by 120%.",
+              "Each time an ally is healed by it, the cooldown of Mighty Smash is reduced by 0.2s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the healing received from the allied hot spring by 150%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "When an ally enters an allied hot spring for the first time, they become unaffected for 5s."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the healing received from the allied hot spring by 180%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "type": "immunity",
+              "tier": "ex+10",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Unaffected — Self (EX+10)"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2s instead of interrupting them.",
+            "active": [
+              "When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2s instead of interrupting them."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "interrupt"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Interrupt — Single target"
+            },
+            {
+              "label": "Stun — Single target"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area, Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "max_hp",
+        "shield"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "average",
+        "walk_speed": "normal",
+        "signature_skill_name": "Spring Therapy",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "average",
+        "non_ult_speed": "average",
+        "avg_attack_range": 1.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [],
+    "beneficiaries": [
+      {
+        "score": 6.0,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 6.0,
+        "hero_id": "carolina"
+      },
+      {
+        "score": 6.0,
+        "hero_id": "nerion"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "solise"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "ludovic"
+        }
+      ],
+      "similar_skills": [
+        {
+          "score": 0.5,
+          "matches": [
+            "ally-healer",
+            "ally-shielder",
+            "aoe-healing"
+          ],
+          "hero_id": "solise"
+        },
+        {
+          "score": 0.4114,
+          "matches": [
+            "ally-healer",
+            "ally-shielder"
+          ],
+          "hero_id": "hepler"
+        },
+        {
+          "score": 0.375,
+          "matches": [
+            "ally-healer",
+            "ally-shielder",
+            "aoe-healing"
+          ],
+          "hero_id": "velara"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "himmel"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gwyneth"
+        }
+      ],
+      "debuff": [],
+      "cc": [
+        {
+          "score": 0.54,
+          "matches": [
+            "Stun",
+            "Interrupt"
+          ],
+          "hero_id": "lucca"
+        }
+      ],
+      "overall": [
+        {
+          "score": 0.5906,
+          "matches": [
+            "Damage",
+            "Healing"
+          ],
+          "hero_id": "hepler"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "8765bac5e790f00cb42235116d04b9eed0a0bb07cc50c8ef7a33007801b6e222",
+    "ai_hash": "68d9c44e025d265feb113b04487fd9df5cf107a2dfcea38b30d36cabaedeb55c",
+    "overrides_hash": "e934255b054c62558e4b93bb61b5b8c28c92dc90aef5dfec898380d955082e26",
+    "analysis_inputs_hash": "811961b1007c4bcba8948479bb2a6be19778a7092fe66d4fc451d94d0012b769",
+    "stage": "scored"
+  }
+}

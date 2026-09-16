@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/roster.schema.json",
+  "title": "Hero roster manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "heroes"],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "headers": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "heroes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hero" },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "title", "order"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "display_name": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "order": { "type": "integer", "minimum": 0 },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

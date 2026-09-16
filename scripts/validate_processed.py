@@ -34,7 +34,6 @@ import buff_persistence as bp
 import summoner_registry as sr
 
 HEROES_MD = ROOT / "Heroes.md"
-PROCESSED = io.HEROES_DATA_PROCESSED
 SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
 SKILL_SUMMARY_SCHEMA = ROOT / "data" / "schema" / "skill_summary.schema.json"
 PLAY_OVERVIEW = ROOT / "data" / "hero_play_overviews.json"
@@ -320,15 +319,21 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
 def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
     """Validate hero_walk_speeds.json schema and exact roster coverage."""
     errors: list[str] = []
-    if not WALK_SPEEDS.exists():
-        return ["missing hero_walk_speeds.json"]
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
 
-    try:
-        speeds = json.loads(WALK_SPEEDS.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"walk speed JSON parse error: {exc}"]
+        speeds = load_roster_inputs()["curated"]["hero_walk_speeds"]
+        use_legacy_schema = False
+    else:
+        if not WALK_SPEEDS.exists():
+            return ["missing hero_walk_speeds.json"]
+        try:
+            speeds = json.loads(WALK_SPEEDS.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            return [f"walk speed JSON parse error: {exc}"]
+        use_legacy_schema = True
 
-    if jsonschema_available() and WALK_SPEEDS_SCHEMA.is_file():
+    if use_legacy_schema and jsonschema_available() and WALK_SPEEDS_SCHEMA.is_file():
         try:
             schema = json.loads(WALK_SPEEDS_SCHEMA.read_text(encoding="utf-8"))
             import jsonschema
@@ -372,16 +377,22 @@ def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     gen = _load_module("gen_overview", "generate-heroes-overview.py")
 
-    if not SKILL_SUMMARY.exists():
-        errors.append("missing heroes_data_skill_summary.json")
-        return errors
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
 
-    try:
-        summaries = json.loads(SKILL_SUMMARY.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"skill summary JSON parse error: {exc}"]
+        summaries = load_roster_inputs()["curated"]["skill_summaries"]
+        use_legacy_schema = False
+    else:
+        if not SKILL_SUMMARY.exists():
+            errors.append("missing heroes_data_skill_summary.json")
+            return errors
+        try:
+            summaries = json.loads(SKILL_SUMMARY.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            return [f"skill summary JSON parse error: {exc}"]
+        use_legacy_schema = True
 
-    if jsonschema_available():
+    if use_legacy_schema and jsonschema_available():
         try:
             schema = json.loads(SKILL_SUMMARY_SCHEMA.read_text(encoding="utf-8"))
             import jsonschema
@@ -468,16 +479,22 @@ def check_play_overviews(
     errors: list[str] = []
     warnings: list[str] = []
 
-    if not PLAY_OVERVIEW.exists():
-        warnings.append("missing hero_play_overviews.json")
-        return errors, warnings
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
 
-    try:
-        overviews = json.loads(PLAY_OVERVIEW.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"play overview JSON parse error: {exc}"], warnings
+        overviews = load_roster_inputs()["curated"]["play_overviews"]
+        use_legacy_schema = False
+    else:
+        if not PLAY_OVERVIEW.exists():
+            warnings.append("missing hero_play_overviews.json")
+            return errors, warnings
+        try:
+            overviews = json.loads(PLAY_OVERVIEW.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            return [f"play overview JSON parse error: {exc}"], warnings
+        use_legacy_schema = True
 
-    if jsonschema_available():
+    if use_legacy_schema and jsonschema_available():
         try:
             schema = json.loads(PLAY_OVERVIEW_SCHEMA.read_text(encoding="utf-8"))
             import jsonschema
@@ -667,16 +684,22 @@ def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[
     errors.extend(combo_errors)
     warnings.extend(combo_warnings)
 
-    if not COUNTER_OVERVIEW.exists():
-        warnings.append("missing hero_counter_overviews.json")
-        return errors, warnings
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
 
-    try:
-        overviews = json.loads(COUNTER_OVERVIEW.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"counter overview JSON parse error: {exc}"], warnings
+        overviews = load_roster_inputs()["curated"]["counter_overviews"]
+        use_legacy_schema = False
+    else:
+        if not COUNTER_OVERVIEW.exists():
+            warnings.append("missing hero_counter_overviews.json")
+            return errors, warnings
+        try:
+            overviews = json.loads(COUNTER_OVERVIEW.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            return [f"counter overview JSON parse error: {exc}"], warnings
+        use_legacy_schema = True
 
-    if jsonschema_available():
+    if use_legacy_schema and jsonschema_available():
         try:
             schema = json.loads(
                 COUNTER_OVERVIEW_SCHEMA.read_text(encoding="utf-8")
@@ -807,8 +830,13 @@ def check_skill_effects_sidecars(
 def check_summoner_registry(
     raw: dict[str, Any],
 ) -> list[str]:
-    tags_path = ROOT / "data" / "hero_behavior_tags.json"
-    behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
+
+        behavior_tags = load_roster_inputs()["curated"]["behavior_tags"]
+    else:
+        tags_path = ROOT / "data" / "hero_behavior_tags.json"
+        behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
     errors, _warnings = sr.check_summoner_consistency(
         behavior_tags,
         raw["heroes"],
@@ -820,13 +848,36 @@ def check_summoner_registry(
 def check_temporary_stat_buffer_tags(
     raw: dict[str, Any],
 ) -> list[str]:
-    tags_path = ROOT / "data" / "hero_behavior_tags.json"
-    behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import load_roster_inputs
+
+        behavior_tags = load_roster_inputs()["curated"]["behavior_tags"]
+    else:
+        tags_path = ROOT / "data" / "hero_behavior_tags.json"
+        behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
     return bp.check_temporary_stat_buffer_consistency(
         behavior_tags,
         raw["heroes"],
         ses.load_sidecar,
     )
+
+
+def check_per_hero_layout() -> list[str]:
+    """Validate the manifest, three-file bundles, and freshness hashes."""
+    if not (ROOT / "data" / "roster.json").exists():
+        return []
+    from hero_pipeline.storage import (
+        load_bundles,
+        load_manifest,
+        validate_schema_documents,
+    )
+
+    try:
+        manifest = load_manifest()
+        bundles = load_bundles(manifest)
+    except Exception as exc:
+        return [f"per-hero storage could not load: {exc}"]
+    return validate_schema_documents(manifest, bundles)
 
 
 def jsonschema_available() -> bool:
@@ -856,6 +907,7 @@ def main() -> int:
             "semantic",
             "play_overview",
             "counter_overview",
+            "per_hero",
         ],
         help="Check groups that cause a non-zero exit when failing",
     )
@@ -871,19 +923,28 @@ def main() -> int:
     errors: list[str] = []
     warnings: dict[str, list[str]] = {}
 
+    layout_errors = check_per_hero_layout()
+    if "per_hero" in fail_on:
+        if layout_errors:
+            errors.extend(layout_errors)
+        else:
+            print("OK: per-hero manifest and bundles are valid")
+    elif layout_errors:
+        warnings["per_hero"] = layout_errors
+
     if "md_parity" in fail_on:
         md_errors = check_md_parity()
         if md_errors:
             errors.extend(md_errors)
         else:
-            print("OK: Heroes.md matches heroes_data.json")
+            print("OK: Heroes.md matches hero-local generated source")
     else:
         md_errors = check_md_parity()
         if md_errors:
             warnings["md_parity"] = md_errors
 
     raw = io.load_heroes_data()
-    stored = json.loads(PROCESSED.read_text(encoding="utf-8"))
+    stored = io.load_processed()
     fresh = _rebuild_processed()
 
     if "sidecar" in fail_on or "sidecar_lint" in fail_on:

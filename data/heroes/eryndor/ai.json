@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Eryndor - Veiled Viceroy",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "af3b33ce960f57e5d03a4daebe9fa4b51613a4faf297581453f3d12183449359",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "type": "debuff",
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "type": "damage",
+                "name": "Magic",
+                "damage_type": "magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "base",
+                "targeting": "All units",
+                "description": "A different ally applying a stat reduction gives that enemy a permanent Woe stack, up to three."
+              },
+              {
+                "label": "Stat steal",
+                "tier": "base",
+                "targeting": "All units",
+                "description": "An enemy that loses the game surrenders ATK and max HP to Eryndor, up to three times."
+              }
+            ],
+            "special_requires": [
+              {
+                "label": "Debuff on target",
+                "tier": "base",
+                "targeting": "Enemies",
+                "description": "A different ally must inflict a stat reduction on an enemy to add Woe."
+              }
+            ]
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "cbbbfa4d0af535b275059f3012116096d07e4cb14d6eaf98511aa7aa29f12fb1",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ],
+                "type": "damage",
+                "name": "Magic",
+                "damage_type": "magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 85.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "base",
+                "targeting": "All units",
+                "description": "Each Woe stack on a target increases damage from the fan blades."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "f916e51b17319427d299ec10325b350dd9e5623e17a141262b42832178220f2f",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "duration": 8.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 8.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "name": "Magic",
+                "damage_type": "magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "1f625dbae90fb06e74408bcd9ba73feb6617218d68b181737639bccbf1aa38d1",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 18.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "conditional"
+                  }
+                ],
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 8.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "45367224a7b9c1d36706947b551f73a564e6c478d9f1f4953ca5d78dc3abd68f",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "on_ultimate"
+                  }
+                ],
+                "type": "damage",
+                "name": "Magic",
+                "damage_type": "magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "permanent"
+                  }
+                ],
+                "type": "debuff",
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Stat buffs",
+                "label": "debuff_stat"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "afa5ec538bed622b015aa9212f7a0c0309662b89232c60e251f895653c57f04d",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ],
+                "type": "debuff",
+                "name": "Basic stats",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 7.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ],
+                "type": "buff",
+                "name": "Basic stats",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 7.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Stat steal",
+                "tier": "supreme+",
+                "targeting": "All units",
+                "description": "At battle start, Eryndor collects a share of every non-summoned enemy's basic stats."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "enemy-debuffer",
+    "high-damage-ult",
+    "high-initial-energy"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "enemies with stat-reduction stacks lose ATK and max HP, then take magic damage",
+    "skill1": "sequentially strike all non-summoned enemies; stat-reduction stacks amplify damage",
+    "skill2": "gain shields while dealing repeated magic damage in a small enemy area",
+    "skill3": "Passive: gain Haste, with extra Haste after an enemy loses a stat-reduction check",
+    "skill4": "ultimate losses trigger extra magic hits; repeated losses strip enemy stat buffs and ATK",
+    "skill5": "start of battle: steal basic stats from all non-summoned enemies"
+  },
+  "play_overview": "Eryndor turns allied stat reductions into permanent **Woe stacks**, making the outcome of his ultimate increasingly reliable. Pair him with heroes that apply broad, repeatable stat reductions so early setup converts into permanent enemy weakness. His fast ultimate steals enemy ATK and max HP while repeated wins add extra damage. Personal shields and rising Haste help him survive long enough to cycle that payoff. At higher ascension, repeated losses also strip enemy stat buffs and cut their ATK further. Without stat-reduction support, the random outcome makes his damage much less reliable.",
+  "counter_overview": "In PVP, Eryndor's **high-energy ultimate** turns allied stat reductions into Woe stacks, making repeated all-enemy rolls increasingly punishing. Pressure Eryndor and the debuff providers before those stacks make his stat theft reliable; enemy-side stacking is not controlled by changing your own damage type. His lower Magic DEF makes early magic rear pressure effective — [[filter:magic-backline-assassin]] like [[Evie]] or [[Pippa]]. Use [[Lily May]] to cancel Forced Game if her opening interrupt is available, and race the first cast with [[filter:energy-provider]] like [[Thador]] or [[Hugin]]."
+}

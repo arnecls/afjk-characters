@@ -1,0 +1,1261 @@
+{
+  "schema_version": 1,
+  "id": "cryonaia",
+  "display_name": "Cryonaia",
+  "source": {
+    "title": "Cryonaia - Arctic Revenant",
+    "name": "Cryonaia",
+    "tags": "Hypogean · Mage · Magic",
+    "faction": "Hypogean",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "An archmage who looks down on all, wielding the power to freeze everything in her path.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Frostveil Domain",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield. This skill prioritizes enemy heroes who have dealt the most cumulative damage. In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter. When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage. When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated. Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed.",
+          "active": [
+            "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield.",
+            "This skill prioritizes enemy heroes who have dealt the most cumulative damage.",
+            "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter.",
+            "When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage.",
+            "When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated.",
+            "Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the value of Frost Shield to 1800% (ATK-based) + 250% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the value of Frost Shield to 2200% (ATK-based) + 250% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the value of Frost Shield to 2600% (ATK-based) + 250% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the value of Frost Shield to 3000% (ATK-based) + 250% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cryonaia summons the domain of Eternal Winter, trapping several enemies within its bound. While within the domain, Cryonaia gains various boosts."
+      },
+      {
+        "section": "Skill1",
+        "name": "Icicle Tempest",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm. After casting Frostveil Domain, Cryonaia stops using this skill actively. Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield. The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path.",
+          "active": [
+            "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm.",
+            "After casting Frostveil Domain, Cryonaia stops using this skill actively.",
+            "Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield.",
+            "The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Enhances the full-sized ice storm to deal 50% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 25% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                "Also increases the smaller ice storms' damage to 25% (ATK-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Enhances the full-sized ice storm to deal 60% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 30% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                "Also increases the smaller ice storms' damage to 30% (ATK-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Enhances the full-sized ice storm to deal 70% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 35% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                "Also increases the smaller ice storms' damage to 35% (ATK-based) + 3% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cryonaia summons an ice storm that sweeps across the battlefield, dealing damage to enemies within range."
+      },
+      {
+        "section": "Skill2",
+        "name": "Frigid Edge",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit. While her Frost Shield is active, the cooldown of this skill is reduced to 3s.",
+          "active": [
+            "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit.",
+            "While her Frost Shield is active, the cooldown of this skill is reduced to 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cryonaia fires multiple ice shards, dealing damage to the enemy hit."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Cryonaia increases her ATK by 7% during battle. For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times.",
+          "active": [
+            "Cryonaia increases her ATK by 7% during battle.",
+            "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Cryonaia increases her ATK by 10% during battle.",
+                "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.2%, stacking up to 6 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Cryonaia increases her ATK by 12% during battle.",
+                "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.5%, stacking up to 6 times."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cryonaia gains an ATK boost, which increases further the longer the Frost Shield remains active."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Frozen in Time",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter. Only Cryonaia can cast Ultimate while within the domain.",
+          "active": [
+            "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter.",
+            "Only Cryonaia can cast Ultimate while within the domain."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases enemies' damage taken to 130% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases enemies' damage taken to 200% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The biting cold of Eternal Winter freezes time itself.",
+                "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cryonaia deals massive damage to enemies each time they are brought into the domain of Eternal Winter. Only Cryonaia can cast Ultimate while within the domain."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.",
+          "active": [
+            "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cryonaia instantly defeats enemies within the domain of Eternal Winter when their HP falls below a certain percentage."
+      }
+    ],
+    "range": 5,
+    "release_date": "2025-02-19",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "S",
+      "dream_realm": "C",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Cryonaia - Arctic Revenant",
+      "faction": "hypogean",
+      "class": "mage",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2025-02-19",
+      "season": "Chains of Eternity",
+      "season_number": 3,
+      "skills": {
+        "Frostveil Domain": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield. This skill prioritizes enemy heroes who have dealt the most cumulative damage. In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter. When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage. When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated. Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed.",
+            "active": [
+              "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield.",
+              "This skill prioritizes enemy heroes who have dealt the most cumulative damage.",
+              "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter.",
+              "When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage.",
+              "When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated.",
+              "Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the value of Frost Shield to 1800% (ATK-based) + 250% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the value of Frost Shield to 2200% (ATK-based) + 250% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the value of Frost Shield to 2600% (ATK-based) + 250% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the value of Frost Shield to 3000% (ATK-based) + 250% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "immune",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Immune — Self"
+            }
+          ]
+        },
+        "Icicle Tempest": {
+          "category": "skill1",
+          "description": {
+            "raw": "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm. After casting Frostveil Domain, Cryonaia stops using this skill actively. Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield. The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path.",
+            "active": [
+              "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm.",
+              "After casting Frostveil Domain, Cryonaia stops using this skill actively.",
+              "Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield.",
+              "The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Enhances the full-sized ice storm to deal 50% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 25% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                  "Also increases the smaller ice storms' damage to 25% (ATK-based) + 3% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Enhances the full-sized ice storm to deal 60% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 30% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                  "Also increases the smaller ice storms' damage to 30% (ATK-based) + 3% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Enhances the full-sized ice storm to deal 70% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 35% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                  "Also increases the smaller ice storms' damage to 35% (ATK-based) + 3% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 77.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ],
+              "duration": 6.0,
+              "tick": 0.5
+            }
+          ],
+          "cooldown": 12.0,
+          "initial_cooldown": 2.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "DoT"
+            }
+          ]
+        },
+        "Frigid Edge": {
+          "category": "skill2",
+          "description": {
+            "raw": "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit. While her Frost Shield is active, the cooldown of this skill is reduced to 3s.",
+            "active": [
+              "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit.",
+              "While her Frost Shield is active, the cooldown of this skill is reduced to 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the damage dealt to 160% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 220.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 3.0,
+          "skill_range": 5,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Cryonaia increases her ATK by 7% during battle. For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times.",
+            "active": [
+              "Cryonaia increases her ATK by 7% during battle.",
+              "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Cryonaia increases her ATK by 10% during battle.",
+                  "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.2%, stacking up to 6 times."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Cryonaia increases her ATK by 12% during battle.",
+                  "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.5%, stacking up to 6 times."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 12.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Frozen in Time": {
+          "category": "skill4",
+          "description": {
+            "raw": "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter. Only Cryonaia can cast Ultimate while within the domain.",
+            "active": [
+              "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter.",
+              "Only Cryonaia can cast Ultimate while within the domain."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases enemies' damage taken to 130% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Increases enemies' damage taken to 200% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "The biting cold of Eternal Winter freezes time itself.",
+                  "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage taken",
+              "label": "debuff_stat"
+            }
+          ],
+          "skill_range": 3,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Damage taken (EX+5)",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.",
+            "active": [
+              "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Enemy isolation (domain)",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield."
+          },
+          {
+            "label": "Battle time pause",
+            "tier": "ex+15",
+            "targeting": "Self",
+            "description": "The biting cold of Eternal Winter freezes time itself."
+          },
+          {
+            "label": "Battle time pause",
+            "tier": "ex+15",
+            "targeting": "Single target",
+            "description": "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
+          },
+          {
+            "label": "Instant defeat",
+            "tier": "supreme+",
+            "targeting": "Self",
+            "description": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%."
+          }
+        ],
+        "requires": [
+          {
+            "label": "Boss encounter",
+            "tier": "base",
+            "targeting": "Enemies",
+            "description": "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter."
+          }
+        ]
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area, Single target"
+        ],
+        [
+          "dot",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "shield"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "mostly stationary",
+        "movement_note": "avg attack range 5.0 tiles",
+        "casting_speed": "slow",
+        "walk_speed": "normal",
+        "signature_skill_name": "Frostveil Domain",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "slow",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 5.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "high",
+              "DoT": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 27.719764285714287,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Enemy defense via Magic DEF debuff (all units, high)"
+        ],
+        "score": 22.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 21.12033214285714,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`",
+          "Enemy defense via Magic DEF debuff (single target, high)"
+        ],
+        "score": 18.636525000000002,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Enemy defense via DEF Penetration (multiple targets, high)"
+        ],
+        "score": 14.25,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 13.37715,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)",
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Enemy defense via DEF Penetration (all units, low)"
+        ],
+        "score": 12.95,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (area, high)"
+        ],
+        "score": 12.0,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)",
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 10.72155,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 10.575,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 10.575,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 9.878335714285713,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 9.37155,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, low)",
+          "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+        ],
+        "score": 9.091635,
+        "provider_id": "hugin"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 8.955,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "Enemy defense via Damage taken debuff (all units, low)"
+        ],
+        "score": 7.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 7.59375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (multiple targets, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "sinbad"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 5.325,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))",
+          "ATK SPD via Haste (single target, low) `signature fuel`",
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 5.08125,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 4.2,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 4.125,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 4.05,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 4.0,
+        "provider_id": "carolina"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 4.0,
+        "provider_id": "cassadee"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 4.0,
+        "provider_id": "laios"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via ATK SPD (single target, low) `signature fuel`"
+        ],
+        "score": 3.705,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "eironn"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "shadewing"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 3.0,
+        "provider_id": "velara"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 2.7,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.2950000000000004,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 2.2950000000000004,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "himmel"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "kruger"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "nazrik"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "thoran"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "berial"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "cecia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 1.5,
+        "provider_id": "indris"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 14.5,
+        "hero_id": "bonnie"
+      },
+      {
+        "score": 10.0,
+        "hero_id": "shadewing"
+      },
+      {
+        "score": 5.25,
+        "hero_id": "eryndor"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.3,
+          "matches": [
+            "cc-immunity",
+            "high-damage-ult"
+          ],
+          "hero_id": "orion"
+        },
+        {
+          "score": 0.2857,
+          "matches": [
+            "cc-immunity",
+            "invincibility"
+          ],
+          "hero_id": "alna"
+        },
+        {
+          "score": 0.24,
+          "matches": [
+            "high-damage-ult"
+          ],
+          "hero_id": "shemira"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "DoT",
+            "Magic"
+          ],
+          "hero_id": "voracia"
+        },
+        {
+          "score": 0.7242,
+          "matches": [
+            "DoT",
+            "Magic"
+          ],
+          "hero_id": "cyran"
+        },
+        {
+          "score": 0.7074,
+          "matches": [
+            "DoT",
+            "Magic"
+          ],
+          "hero_id": "frieren"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken"
+          ],
+          "hero_id": "himmel"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken"
+          ],
+          "hero_id": "mehira"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Damage taken"
+          ],
+          "hero_id": "kulu"
+        }
+      ],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "644f397471c85a513747f6fab4e3f4a685d9998c123058c0f7e895163e98d467",
+    "ai_hash": "95f710b381fa51fdbd20f02f01c2c35a2855a6c5894b7b262cf82a700ceda5a0",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "44be06fa04579784a7a07c809f3508255af2e8c0c948b45f3863a7ce07ae11e9",
+    "stage": "scored"
+  }
+}

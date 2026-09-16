@@ -1,0 +1,852 @@
+{
+  "schema_version": 1,
+  "id": "igor",
+  "display_name": "Igor",
+  "source": {
+    "title": "Igor - Mad Dagger",
+    "name": "Igor",
+    "tags": "Graveborn · Warrior · Physical",
+    "faction": "Graveborn",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "An agile Warrior who can jump between tombstones to deal AoE damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Funereal Ring",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 Tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Igor summons a tombstone where he stands when a battle starts. Everytime an enemy hero losses 40% of thier HP, Igor summons another tombstone on an empty tile closest to this enemy which will disappear after receiving 3 normal attacks. Igor will always stand on the tombstone and remain steadfast. Igor deals 150% (ATK-based) + 20% (SP-based) damage to all enemies upon casting this skill.",
+          "active": [
+            "Igor summons a tombstone where he stands when a battle starts.",
+            "Everytime an enemy hero losses 40% of thier HP, Igor summons another tombstone on an empty tile closest to this enemy which will disappear after receiving 3 normal attacks.",
+            "Igor will always stand on the tombstone and remain steadfast.",
+            "Igor deals 150% (ATK-based) + 20% (SP-based) damage to all enemies upon casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 270% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Igor deals damage to all enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Ghastly Explosion",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "1s",
+          "Skill Range": "10 Tiles"
+        },
+        "description": {
+          "raw": "Igor activates all tombstones every 8s or whenever he casts Funereal Ring. He jumps onto an activated tombstone, dealing 140% (ATK-based) + 10% (SP-based) damage adjacent enemies and deactivating the tombstone. While casting this skill, Igor gains damage immunity and cannot be targeted. If he jumps onto a tombstone activated by Funereal Ring, he deals an extra 50% damage.",
+          "active": [
+            "Igor activates all tombstones every 8s or whenever he casts Funereal Ring.",
+            "He jumps onto an activated tombstone, dealing 140% (ATK-based) + 10% (SP-based) damage adjacent enemies and deactivating the tombstone.",
+            "While casting this skill, Igor gains damage immunity and cannot be targeted.",
+            "If he jumps onto a tombstone activated by Funereal Ring, he deals an extra 50% damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 150% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 160% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Igor jumps onto an activated tombstone, dealing damage to nearby enemies and then deactivating the tombstone."
+      },
+      {
+        "section": "Skill2",
+        "name": "Specter Guard",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "2 Tiles"
+        },
+        "description": {
+          "raw": "Igor jumps onto anoter tombstone to dodge a fatal blow and gains damage immunity while using this skill. Each time Igor uses Ghastly Explosion or Specter Guard to jump between tombstones, he recovers 3% (HP-based) + 0.8% (SP-based) HP. After casting Specter Guard 6 times, each subsequent cast increases the HP loss ration required to summon a tombstone with Funereal Ring by 12%. herself",
+          "active": [
+            "Igor jumps onto anoter tombstone to dodge a fatal blow and gains damage immunity while using this skill.",
+            "Each time Igor uses Ghastly Explosion or Specter Guard to jump between tombstones, he recovers 3% (HP-based) + 0.8% (SP-based) HP.",
+            "After casting Specter Guard 6 times, each subsequent cast increases the HP loss ration required to summon a tombstone with Funereal Ring by 12%.",
+            "herself"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP recovery to 3.5% (HP-based) + 0.8% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP recovery to 4% (HP-based) + 0.8% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP recovery to 4.5% (HP-based) + 0.8% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Igor jumps onto another tombstone to dodge a fatal blow, recovering HP while moving between tombstones."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Igor increases his Life Drain by 7 during battle. His Life Drain is increased by an extra 6 when triggering Specter Guard for the first time.",
+          "active": [
+            "Igor increases his Life Drain by 7 during battle.",
+            "His Life Drain is increased by an extra 6 when triggering Specter Guard for the first time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Igor increases his Life Drain by 10 during battle.",
+                "His Life Drain is increased by an extra 8 when triggering Specter Guard for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Igor increases his Life Drain by 12 during battle.",
+                "His Life Drain is increased by an extra 10 when triggering Specter Guard for the first time."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Igor increases his Life Drain during battle, with an extra increase when triggering Specter Guard for the first time."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Horror Strike",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 Tiles"
+        },
+        "description": {
+          "raw": "Igor extends the range of Ghastly Explosion by 1 tile and reduces the target's healing received by 50% for 4s when his HP ratio is above 70%.",
+          "active": [
+            "Igor extends the range of Ghastly Explosion by 1 tile and reduces the target's healing received by 50% for 4s when his HP ratio is above 70%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Reduces the target's healing recieved for 5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Enhances Ghastly Explosion once with each cast of Specter Guard, regardless of Igor's HP ratio."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces the target's healing recieved for 6s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Igor extends the range of Ghastly Explosion when his HP ratio is above a certain limit."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Igor summons an extra tombstone with Funereal Ring on the tile with the most surrounding enemies when a battle starts.",
+          "active": [
+            "Igor summons an extra tombstone with Funereal Ring on the tile with the most surrounding enemies when a battle starts."
+          ]
+        },
+        "description_lite": "Igor summons an extra tombstone with Funereal Ring when a battle starts."
+      }
+    ],
+    "range": 10,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Igor - Mad Dagger",
+      "faction": "graveborn",
+      "class": "warrior",
+      "role_category": "specialist",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 10,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Funereal Ring": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Igor summons a tombstone where he stands when a battle starts. Everytime an enemy hero losses 40% of thier HP, Igor summons another tombstone on an empty tile closest to this enemy which will disappear after receiving 3 normal attacks. Igor will always stand on the tombstone and remain steadfast. Igor deals 150% (ATK-based) + 20% (SP-based) damage to all enemies upon casting this skill.",
+            "active": [
+              "Igor summons a tombstone where he stands when a battle starts.",
+              "Everytime an enemy hero losses 40% of thier HP, Igor summons another tombstone on an empty tile closest to this enemy which will disappear after receiving 3 normal attacks.",
+              "Igor will always stand on the tombstone and remain steadfast.",
+              "Igor deals 150% (ATK-based) + 20% (SP-based) damage to all enemies upon casting this skill."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 51: Increases damage to 180% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 111: Increases damage to 210% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 171: Increases damage to 240% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 231: Increases damage to 270% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 290.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "steadfast",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_range": 10,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Steadfast — Self"
+            }
+          ]
+        },
+        "Ghastly Explosion": {
+          "category": "skill1",
+          "description": {
+            "raw": "Igor activates all tombstones every 8s or whenever he casts Funereal Ring. He jumps onto an activated tombstone, dealing 140% (ATK-based) + 10% (SP-based) damage adjacent enemies and deactivating the tombstone. While casting this skill, Igor gains damage immunity and cannot be targeted. If he jumps onto a tombstone activated by Funereal Ring, he deals an extra 50% damage.",
+            "active": [
+              "Igor activates all tombstones every 8s or whenever he casts Funereal Ring.",
+              "He jumps onto an activated tombstone, dealing 140% (ATK-based) + 10% (SP-based) damage adjacent enemies and deactivating the tombstone.",
+              "While casting this skill, Igor gains damage immunity and cannot be targeted.",
+              "If he jumps onto a tombstone activated by Funereal Ring, he deals an extra 50% damage."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases damage to 150% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage to 160% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage to 170% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 180.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "above"
+                }
+              ],
+              "type": "debuff",
+              "name": "Healing",
+              "label": "healing",
+              "duration": 4.0
+            }
+          ],
+          "cooldown": 1.0,
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Direct healing (Mythic+)",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Specter Guard": {
+          "category": "skill2",
+          "description": {
+            "raw": "Igor jumps onto anoter tombstone to dodge a fatal blow and gains damage immunity while using this skill. Each time Igor uses Ghastly Explosion or Specter Guard to jump between tombstones, he recovers 3% (HP-based) + 0.8% (SP-based) HP. After casting Specter Guard 6 times, each subsequent cast increases the HP loss ration required to summon a tombstone with Funereal Ring by 12%. herself",
+            "active": [
+              "Igor jumps onto anoter tombstone to dodge a fatal blow and gains damage immunity while using this skill.",
+              "Each time Igor uses Ghastly Explosion or Specter Guard to jump between tombstones, he recovers 3% (HP-based) + 0.8% (SP-based) HP.",
+              "After casting Specter Guard 6 times, each subsequent cast increases the HP loss ration required to summon a tombstone with Funereal Ring by 12%.",
+              "herself"
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases HP recovery to 3.5% (HP-based) + 0.8% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases HP recovery to 4% (HP-based) + 0.8% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases HP recovery to 4.5% (HP-based) + 0.8% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 3.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 2,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Igor increases his Life Drain by 7 during battle. His Life Drain is increased by an extra 6 when triggering Specter Guard for the first time.",
+            "active": [
+              "Igor increases his Life Drain by 7 during battle.",
+              "His Life Drain is increased by an extra 6 when triggering Specter Guard for the first time."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Igor increases his Life Drain by 10 during battle.",
+                  "His Life Drain is increased by an extra 8 when triggering Specter Guard for the first time."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Igor increases his Life Drain by 12 during battle.",
+                  "His Life Drain is increased by an extra 10 when triggering Specter Guard for the first time."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Lifedrain — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Horror Strike": {
+          "category": "skill4",
+          "description": {
+            "raw": "Igor extends the range of Ghastly Explosion by 1 tile and reduces the target's healing received by 50% for 4s when his HP ratio is above 70%.",
+            "active": [
+              "Igor extends the range of Ghastly Explosion by 1 tile and reduces the target's healing received by 50% for 4s when his HP ratio is above 70%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Reduces the target's healing recieved for 5s."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Enhances Ghastly Explosion once with each cast of Specter Guard, regardless of Igor's HP ratio."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Reduces the target's healing recieved for 6s."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Healing",
+              "label": "healing",
+              "duration": 5.0
+            }
+          ],
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing (EX+5)",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Igor summons an extra tombstone with Funereal Ring on the tile with the most surrounding enemies when a battle starts.",
+            "active": [
+              "Igor summons an extra tombstone with Funereal Ring on the tile with the most surrounding enemies when a battle starts."
+            ]
+          },
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "All units, Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [],
+      "scalar_stat_shares": {
+        "atk": 0.6923076923076923,
+        "max_hp": 0.3076923076923077
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "fast",
+        "walk_speed": "normal",
+        "signature_skill_name": "Funereal Ring",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 10.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "average",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "skill1"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 7.521428571428572,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 4.3875,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 4.05,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 3.4232142857142853,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 3.278571428571428,
+        "provider_id": "lyca"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 7.5,
+        "hero_id": "niru"
+      },
+      {
+        "score": 7.5,
+        "hero_id": "vala"
+      },
+      {
+        "score": 2.25,
+        "hero_id": "eryndor"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.6667,
+          "matches": [
+            "aoe-damage",
+            "heal-inhibitor",
+            "self-repositioner",
+            "untargetable"
+          ],
+          "hero_id": "dionel"
+        },
+        {
+          "score": 0.5143,
+          "matches": [
+            "aoe-damage",
+            "cheat-death",
+            "self-repositioner"
+          ],
+          "hero_id": "tasi"
+        },
+        {
+          "score": 0.4114,
+          "matches": [
+            "cheat-death",
+            "life-drain"
+          ],
+          "hero_id": "zorya"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gwyneth"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "athalia"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "kulu"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing"
+          ],
+          "hero_id": "nazrik"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Healing"
+          ],
+          "hero_id": "niru"
+        }
+      ],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "bc2f0af69de684445b9b8c661cd83309c304a13554dbac91c175cdcf38e03730",
+    "ai_hash": "38cf87a72bfa48be283ee0012d35601f2c2682d608a46bc6032bc1bd3a37b6d6",
+    "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
+    "analysis_inputs_hash": "2678de6716455a9d8cacb2560e7f084737c7e47368dae581841ad328f3da6cc2",
+    "stage": "scored"
+  }
+}

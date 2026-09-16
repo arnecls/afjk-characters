@@ -5,7 +5,7 @@ description: >-
   registration, download from web sources, interactive sentence-by-sentence
   detection-gap resolution for new skill-text flavors, curated AI metadata,
   overrides, and validation. Use when asked to add a new hero, new character,
-  or ingest a newly released unit into heroes_data.json and the pipeline.
+  or ingest a newly released unit into the per-hero data pipeline.
 ---
 
 # Add hero
@@ -22,16 +22,16 @@ pipeline output, use [web-ui](../web-ui/SKILL.md).
 
 | Phase | Goal | Key outputs |
 |-------|------|-------------|
-| **A — Register + download** | Hero name in sources; raw skill text in repo | `data/heroes_data.json` |
-| **B — Detection gaps** | New flavor text parsed into effects | `scripts/rewrite-summaries.py`, tests, `heroes_data_processed.json` |
-| **C — Curated metadata** | Identity skill, tags, walk speed, summaries, play blurb | AI JSON files under `data/` + `hero_walk_speeds.json` |
-| **D — Overrides** | Fix auto-detect edge cases only when wrong | `placement_constraint_overrides.json`, `movement_overrides.json`, `melee_overrides.json` |
+| **A — Register + download** | Hero name in sources; raw skill text in repo | `data/roster.json`, hero `generated.json` |
+| **B — Detection gaps** | New flavor text parsed into effects | hero `ai.json`, tests, generated analysis |
+| **C — Curated metadata** | Identity skill, tags, walk speed, summaries, play blurb | hero `ai.json` |
+| **D — Overrides** | Fix auto-detect edge cases only when wrong | hero `overrides.json` |
 | **E — Validate + verify** | Schema, semantics, character portrait, site | `just validate`, `site/assets/portraits/` |
 
 Commands (agent runs these):
 
 ```bash
-just download    # Phase A — network; refreshes heroes_data.json
+just download    # Phase A — network; refreshes hero-local generated.json
 just views       # Phases B–E after detection changes — analyze + render (no network)
 just validate    # Phase E — schema + semantic checks
 ```
@@ -46,21 +46,21 @@ Task progress:
 - [ ] A1. Confirm hero name, display name, and any alias (Twins ↔ Elijah & Lailah)
 - [ ] A2. Register in scripts/sources_web.py HERO_NAMES if Fandom-listed
 - [ ] A3. Run just download; review warnings for this hero
-- [ ] A4. Read raw skill block in data/heroes_data.json
+- [ ] A4. Read raw skill block in the hero's generated.json
 - [ ] B1. Run scoped analyze_hero debug snippet
 - [ ] B2. Run scoped gap-scan snippet
 - [ ] B3. Walk sentences per skill; ask user on each unresolved gap
 - [ ] B4. Patch rewrite-summaries.py + regression test + CACHE_VERSION bump per fix
 - [ ] B5. Run just views; re-check this hero until gaps closed or user stops
-- [ ] C1. Add signature_skills.json entry
-- [ ] C2. Add hero_behavior_tags.json entry (behavior-tags skill rules)
-- [ ] C3. Add hero_walk_speeds.json entry from afkj-data walking_speed.md
-- [ ] C4. Add heroes_data_skill_summary.json entries per skill category
-- [ ] C5. Add hero_play_overviews.json entry
-- [ ] C6. Add hero_counter_overviews.json entry (counter skill)
+- [ ] C1. Add signature correction to the hero's overrides.json if needed
+- [ ] C2. Add behavior_tags to the hero's ai.json
+- [ ] C3. Add walk speed to the hero's generated.json external facts
+- [ ] C4. Add skill summaries to the hero's ai.json
+- [ ] C5. Add play overview to the hero's ai.json
+- [ ] C6. Add counter overview to the hero's ai.json
 - [ ] D1. Check placement / movement / melee; add overrides only if wrong
 - [ ] E1. Run just validate; fix hero-specific issues
-- [ ] E2. Confirm character portrait and site/data/heroes.json for this hero
+- [ ] E2. Confirm character portrait and generated site data for this hero
 - [ ] E3. Report files touched and open items
 ```
 

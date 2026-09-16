@@ -1,0 +1,1250 @@
+{
+  "schema_version": 1,
+  "id": "rhys",
+  "display_name": "Rhys",
+  "source": {
+    "title": "Rhys - Fiery Cavalier",
+    "name": "Rhys",
+    "tags": "Mauler · Marksman · Physical",
+    "faction": "Mauler",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A fiery-tempered Marksman who can continue moving while attacking.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Flame Barrage",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. Rhys can move while attacking but he is unable to do so for 8s if under control effects. ATK SPD and Haste won't affect his attack animation speed. Every 1 ATK SPD or Haste grants him 2 Crit DMG Boost. Rhys fires at enemies within a arced radius, shooting 6 projectiles across the battlefield, each dealing 280% (ATK-based) + 40% (SP-based) damage to enemies on its path. Rhys then loads his lance with Blast Ammo, allowing his normal attacks to deal 180% (ATK-based) damage to the target and causing 40% (ATK-based) splash damage to enemies in a 1-tile arc behind the target until he is affected by a control effect.",
+          "passive": [
+            "Rhys can move while attacking but he is unable to do so for 8s if under control effects.",
+            "ATK SPD and Haste won't affect his attack animation speed.",
+            "Every 1 ATK SPD or Haste grants him 2 Crit DMG Boost.",
+            "Rhys fires at enemies within a arced radius, shooting 6 projectiles across the battlefield, each dealing 280% (ATK-based) + 40% (SP-based) damage to enemies on its path.",
+            "Rhys then loads his lance with Blast Ammo, allowing his normal attacks to deal 180% (ATK-based) damage to the target and causing 40% (ATK-based) splash damage to enemies in a 1-tile arc behind the target until he is affected by a control effect."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by each projectile against enemies on its path to 290% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by each projectile against enemies on its path to 300% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by each projectile against enemies on its path to 310% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by each projectile against enemies on its path to 320% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Rhys can move while attacking. Active. Rhys shoots at enemies and uses Blast Ammo to enhance follow-up normal attacks."
+      },
+      {
+        "section": "Skill1",
+        "name": "Defensive Stance",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Rhys gains 10 + 2 (SP-based) Crit. Active. Rhys gains control immunity when taking control effects.",
+          "passive": [
+            "Rhys gains 10 + 2 (SP-based) Crit."
+          ],
+          "active": [
+            "Rhys gains control immunity when taking control effects."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Restores 120% (ATK-based) upon casting this skill."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the Passive Crit bonus to 12 + 2 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the Passive Crit bonus to 15 + 2 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rhys increases Crit and gains control immunity when taking control effects."
+      },
+      {
+        "section": "Skill2",
+        "name": "Concussive Strike",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Rhys loads Shock Ammo to shoot enemies within 2-tile, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them back 2-tile. He's unable to cast this skill when loaded with Blast Ammo.",
+          "active": [
+            "Rhys loads Shock Ammo to shoot enemies within 2-tile, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them back 2-tile.",
+            "He's unable to cast this skill when loaded with Blast Ammo."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rhys knocks back nearby enemies and deals damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Rhys increase his Crit DMG Boost by 22 during battle. He gains an extra 8 Crit DMG Boost when his lance is loaded with Blast Ammo.",
+          "active": [
+            "Rhys increase his Crit DMG Boost by 22 during battle.",
+            "He gains an extra 8 Crit DMG Boost when his lance is loaded with Blast Ammo."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Rhys increase his Crit DMG Boost by 30 during battle.",
+                "He gains an extra 10 Crit DMG Boost when his lance is loaded with Blast Ammo."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Rhys increase his Crit DMG Boost by 38 during battle.",
+                "He gains an extra 12 Crit DMG Boost when his lance is loaded with Blast Ammo."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rhys' Crit DMG Boost increases during battle, and it further increases when Blast Ammo is loaded."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Fury Rush",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Rhys gains bonus movement speed when moving on the battlefield. He reaches the max speed 5s into battle and loads Blast Ammo.",
+          "active": [
+            "Rhys gains bonus movement speed when moving on the battlefield.",
+            "He reaches the max speed 5s into battle and loads Blast Ammo."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Blast Ammo damage to 220% (ATK-based) and the splash damage to 50% (ATK-based).",
+                "Increases the splash range to a 2-tile arc behind the target."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases Blast Ammo damage to 230% (ATK-based) and the splash damage to 55% (ATK-based).",
+                "Increases the splash range to a 2-tile arc behind the target."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Blast Ammo damage to 240% (ATK-based) and the splash damage to 60% (ATK-based).",
+                "Increases the splash range to a 2-tile arc behind the target."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rhys loads Blast Ammo to enhance his follow-up normal attacks after moving continuously for a while."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Reduces the cooldown of Defensive Stance to 3s.",
+          "active": [
+            "Reduces the cooldown of Defensive Stance to 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "The cooldown of Defensive Stance is reduced."
+      }
+    ],
+    "range": 6,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Rhys - Fiery Cavalier",
+      "faction": "mauler",
+      "class": "marksman",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Flame Barrage": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. Rhys can move while attacking but he is unable to do so for 8s if under control effects. ATK SPD and Haste won't affect his attack animation speed. Every 1 ATK SPD or Haste grants him 2 Crit DMG Boost. Rhys fires at enemies within a arced radius, shooting 6 projectiles across the battlefield, each dealing 280% (ATK-based) + 40% (SP-based) damage to enemies on its path. Rhys then loads his lance with Blast Ammo, allowing his normal attacks to deal 180% (ATK-based) damage to the target and causing 40% (ATK-based) splash damage to enemies in a 1-tile arc behind the target until he is affected by a control effect.",
+            "passive": [
+              "Rhys can move while attacking but he is unable to do so for 8s if under control effects.",
+              "ATK SPD and Haste won't affect his attack animation speed.",
+              "Every 1 ATK SPD or Haste grants him 2 Crit DMG Boost.",
+              "Rhys fires at enemies within a arced radius, shooting 6 projectiles across the battlefield, each dealing 280% (ATK-based) + 40% (SP-based) damage to enemies on its path.",
+              "Rhys then loads his lance with Blast Ammo, allowing his normal attacks to deal 180% (ATK-based) damage to the target and causing 40% (ATK-based) splash damage to enemies in a 1-tile arc behind the target until he is affected by a control effect."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt by each projectile against enemies on its path to 290% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt by each projectile against enemies on its path to 300% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt by each projectile against enemies on its path to 310% (ATK-based) + 40% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt by each projectile against enemies on its path to 320% (ATK-based) + 40% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_count": -1,
+              "area_direction": "front",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 360.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 10,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            }
+          ]
+        },
+        "Defensive Stance": {
+          "category": "skill1",
+          "description": {
+            "raw": "Passive. Rhys gains 10 + 2 (SP-based) Crit. Active. Rhys gains control immunity when taking control effects.",
+            "passive": [
+              "Rhys gains 10 + 2 (SP-based) Crit."
+            ],
+            "active": [
+              "Rhys gains control immunity when taking control effects."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Restores 120% (ATK-based) upon casting this skill."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the Passive Crit bonus to 12 + 2 (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the Passive Crit bonus to 15 + 2 (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 17.0
+                }
+              ],
+              "persistence": "unknown"
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "immune",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "cooldown": 12.0,
+          "skill_card_tags": [
+            {
+              "label": "Crit — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Immune — Self"
+            }
+          ]
+        },
+        "Concussive Strike": {
+          "category": "skill2",
+          "description": {
+            "raw": "Rhys loads Shock Ammo to shoot enemies within 2-tile, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them back 2-tile. He's unable to cast this skill when loaded with Blast Ammo.",
+            "active": [
+              "Rhys loads Shock Ammo to shoot enemies within 2-tile, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them back 2-tile.",
+              "He's unable to cast this skill when loaded with Blast Ammo."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases damage to 230% (ATK-based) + 25% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases damage to 240% (ATK-based) + 25% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases damage to 250% (ATK-based) + 25% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_back"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 275.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 10.0,
+          "skill_range": 2,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Knock back — Single target"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Rhys increase his Crit DMG Boost by 22 during battle. He gains an extra 8 Crit DMG Boost when his lance is loaded with Blast Ammo.",
+            "active": [
+              "Rhys increase his Crit DMG Boost by 22 during battle.",
+              "He gains an extra 8 Crit DMG Boost when his lance is loaded with Blast Ammo."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Rhys increase his Crit DMG Boost by 30 during battle.",
+                  "He gains an extra 10 Crit DMG Boost when his lance is loaded with Blast Ammo."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Rhys increase his Crit DMG Boost by 38 during battle.",
+                  "He gains an extra 12 Crit DMG Boost when his lance is loaded with Blast Ammo."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "persistence": "permanent"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit DMG boost",
+              "label": "buff_offensive",
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Crit — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Crit DMG boost — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Fury Rush": {
+          "category": "skill4",
+          "description": {
+            "raw": "Rhys gains bonus movement speed when moving on the battlefield. He reaches the max speed 5s into battle and loads Blast Ammo.",
+            "active": [
+              "Rhys gains bonus movement speed when moving on the battlefield.",
+              "He reaches the max speed 5s into battle and loads Blast Ammo."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases Blast Ammo damage to 220% (ATK-based) and the splash damage to 50% (ATK-based).",
+                  "Increases the splash range to a 2-tile arc behind the target."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Increases Blast Ammo damage to 230% (ATK-based) and the splash damage to 55% (ATK-based).",
+                  "Increases the splash range to a 2-tile arc behind the target."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases Blast Ammo damage to 240% (ATK-based) and the splash damage to 60% (ATK-based).",
+                  "Increases the splash range to a 2-tile arc behind the target."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Movement speed",
+              "label": "buff_stat",
+              "persistence": "permanent"
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ]
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Physical (EX+5)"
+            },
+            {
+              "label": "Movement speed — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Reduces the cooldown of Defensive Stance to 3s.",
+            "active": [
+              "Reduces the cooldown of Defensive Stance to 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "persistence": "unknown"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit DMG boost",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "persistence": "unknown"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Crit — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Crit DMG boost — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "All units, Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk_spd",
+        "crit",
+        "crit_dmg_boost"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "moves while attacking",
+        "casting_speed": "slow",
+        "walk_speed": "normal",
+        "signature_skill_name": "Flame Barrage",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "slow",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 10.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (area, high)"
+        ],
+        "score": 24.0,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (area, high)"
+        ],
+        "score": 24.0,
+        "provider_id": "laios"
+      },
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (multiple targets, high)"
+        ],
+        "score": 18.0,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
+          "Enemy defense via Phys DEF debuff (single target, average)"
+        ],
+        "score": 16.686814285714284,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`",
+          "Enemy defense via Phys DEF debuff (all units, low)"
+        ],
+        "score": 16.31037142857143,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (area, average)"
+        ],
+        "score": 16.0,
+        "provider_id": "brutus"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Enemy defense via DEF Penetration (all units, low)"
+        ],
+        "score": 16.0,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Crit via Crit (single target, average)",
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`",
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 12.282900000000001,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 11.153228571428572,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (all units, low)"
+        ],
+        "score": 10.0,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`"
+        ],
+        "score": 9.6318,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 9.0,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 9.0,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, high)"
+        ],
+        "score": 9.0,
+        "provider_id": "atalanta"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, high)"
+        ],
+        "score": 9.0,
+        "provider_id": "kafra"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "kruger"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "temesia"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (all units, average) `signature fuel`",
+          "Energy via Energy (multiple targets, low) `signature fuel`"
+        ],
+        "score": 6.6318,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 6.0,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 6.0,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (single target, low) `signature fuel`",
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 6.0,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 6.0,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 6.0,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (multiple targets, low)"
+        ],
+        "score": 6.0,
+        "provider_id": "sinbad"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "zanie"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 5.945399999999999,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 5.1000000000000005,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 5.1000000000000005,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "berial"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "cecia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "cryonaia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "gwyneth"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "himmel"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "indris"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "nazrik"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "shadewing"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "thoran"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "velara"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "hodgkin"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Phys DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "seth"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 2.4000000000000004,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 2.4000000000000004,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 7.5,
+        "hero_id": "niru"
+      },
+      {
+        "score": 7.5,
+        "hero_id": "vala"
+      },
+      {
+        "score": 3.0,
+        "hero_id": "alsa"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.8,
+          "matches": [
+            "aoe-damage",
+            "self-repositioner"
+          ],
+          "hero_id": "atalanta"
+        },
+        {
+          "score": 0.6,
+          "matches": [
+            "aoe-damage",
+            "self-repositioner"
+          ],
+          "hero_id": "dionel"
+        },
+        {
+          "score": 0.5,
+          "matches": [
+            "aoe-damage",
+            "self-repositioner"
+          ],
+          "hero_id": "tasi"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "himmel"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gwyneth"
+        }
+      ],
+      "debuff": [],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock back"
+          ],
+          "hero_id": "twins"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock back"
+          ],
+          "hero_id": "kulu"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Knock back"
+          ],
+          "hero_id": "aliceth"
+        }
+      ],
+      "overall": [
+        {
+          "score": 0.8308,
+          "matches": [
+            "Damage",
+            "Similar Skills",
+            "Crowd Control"
+          ],
+          "hero_id": "atalanta"
+        },
+        {
+          "score": 0.7385,
+          "matches": [
+            "Damage",
+            "Crowd Control"
+          ],
+          "hero_id": "soren"
+        },
+        {
+          "score": 0.7154,
+          "matches": [
+            "Damage",
+            "Crowd Control"
+          ],
+          "hero_id": "perseus"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "8a9be608d21524709d2ea50281ded09714b2bb4d7a390f29b0980e3aab9c170c",
+    "ai_hash": "2bd0374ee97de0ff2879297b4b86002f9de4a84777380763e519a9b5a661d625",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "4948ad6242f2d2104721349abbbbb7de62652f4e4b6698b33ade275c9fe66a5d",
+    "stage": "scored"
+  }
+}

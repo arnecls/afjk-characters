@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate data/hero_play_overviews.json from Prydwen character reviews."""
+"""Generate per-hero play overviews from Prydwen character reviews."""
 
 from __future__ import annotations
 
@@ -657,11 +657,17 @@ def main() -> None:
     if args.stdout:
         print(json.dumps(overviews, indent=2, ensure_ascii=False))
     elif not args.dry_run:
-        OUTPUT.write_text(
-            json.dumps(overviews, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        print(f"Wrote {len(overviews)} play overviews to {OUTPUT}")
+        if (ROOT / "data" / "roster.json").exists():
+            from hero_pipeline.storage import update_ai_field
+
+            update_ai_field("play_overview", overviews)
+            print(f"Wrote {len(overviews)} play overviews to hero-local files")
+        else:
+            OUTPUT.write_text(
+                json.dumps(overviews, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+            print(f"Wrote {len(overviews)} play overviews to {OUTPUT}")
 
     if missing:
         print(f"Missing review/overview for {len(missing)} hero(es):")

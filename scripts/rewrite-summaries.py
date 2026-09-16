@@ -57,6 +57,20 @@ WALK_SPEED_VALUES = frozenset(
     {"zero", "slow", "normal", "fast", "veryfast"}
 )
 
+_PER_HERO_CURATED_CACHE: dict[str, dict] | None = None
+
+
+def _per_hero_curated(name: str) -> dict | None:
+    """Read curated inputs from hero-local files when they are available."""
+    global _PER_HERO_CURATED_CACHE
+    if not (ROOT / "data" / "roster.json").exists():
+        return None
+    if _PER_HERO_CURATED_CACHE is None:
+        from hero_pipeline.storage import load_roster_inputs
+
+        _PER_HERO_CURATED_CACHE = load_roster_inputs()["curated"]
+    return _PER_HERO_CURATED_CACHE.get(name)
+
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
     "ally_composition": "Ally composition",
@@ -6211,7 +6225,7 @@ def _apply_cassadee_skill_fixes(hero: Hero) -> None:
 
 
 def analyze_hero(hero: Hero) -> None:
-    """Populate hero analysis from data/skill_effects/<short_name>.json."""
+    """Populate hero analysis from the hero's AI effect data."""
     import skill_effects_store as ses
 
     hero.effects.clear()
@@ -7377,6 +7391,9 @@ def compute_is_dual_range(
 
 
 def _load_melee_overrides() -> dict[str, dict[str, bool]]:
+    per_hero = _per_hero_curated("melee_overrides")
+    if per_hero is not None:
+        return per_hero
     if not MELEE_OVERRIDES_FILE.exists():
         return {}
     return json.loads(MELEE_OVERRIDES_FILE.read_text(encoding="utf-8"))
@@ -7440,6 +7457,9 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
 
 
 def _load_movement_overrides() -> dict[str, dict[str, str]]:
+    per_hero = _per_hero_curated("movement_overrides")
+    if per_hero is not None:
+        return per_hero
     if not MOVEMENT_OVERRIDES_FILE.exists():
         return {}
     return json.loads(MOVEMENT_OVERRIDES_FILE.read_text(encoding="utf-8"))
@@ -7447,6 +7467,9 @@ def _load_movement_overrides() -> dict[str, dict[str, str]]:
 
 def _load_walk_speeds() -> dict[str, str]:
     """Load curated base walk-speed tiers keyed by display name."""
+    per_hero = _per_hero_curated("hero_walk_speeds")
+    if per_hero is not None:
+        return per_hero
     if not WALK_SPEEDS_FILE.exists():
         raise FileNotFoundError(
             f"missing walk-speed data: {WALK_SPEEDS_FILE}"
@@ -7484,6 +7507,11 @@ def walk_speed_for_display(display_name: str, speeds: dict[str, str] | None = No
 
 
 def _load_behavior_tags() -> dict[str, frozenset[str]]:
+    per_hero = _per_hero_curated("behavior_tags")
+    if per_hero is not None:
+        return {
+            name: frozenset(values) for name, values in per_hero.items()
+        }
     if not BEHAVIOR_TAGS_FILE.exists():
         return {}
     raw = json.loads(BEHAVIOR_TAGS_FILE.read_text(encoding="utf-8"))
@@ -7789,6 +7817,9 @@ _SKILL_CARD_STAT_KEYS: tuple[str, ...] = tuple(
 
 
 def _load_signature_categories() -> dict[str, dict]:
+    per_hero = _per_hero_curated("signature_skills")
+    if per_hero is not None:
+        return per_hero
     if not SIGNATURE_SKILLS_FILE.exists():
         return {}
     return json.loads(SIGNATURE_SKILLS_FILE.read_text(encoding="utf-8"))
@@ -7818,10 +7849,15 @@ def _skill_names_by_display() -> dict[str, dict[str, str]]:
     global _skill_names_cache
     if _skill_names_cache is not None:
         return _skill_names_cache
-    if not HEROES_DATA_FILE.exists():
+    if not (
+        HEROES_DATA_FILE.exists()
+        or (ROOT / "data" / "roster.json").exists()
+    ):
         _skill_names_cache = {}
         return _skill_names_cache
-    data = json.loads(HEROES_DATA_FILE.read_text(encoding="utf-8"))
+    from heroes_io import load_heroes_data
+
+    data = load_heroes_data()
     result: dict[str, dict[str, str]] = {}
     for hero in data.get("heroes", []):
         display = hero.get("name") or hero.get("title", "").split(" - ", 1)[0]
@@ -7851,24 +7887,42 @@ def _resolved_signature_section(display_name: str) -> str:
 
 
 def _load_skill_summaries() -> dict[str, dict[str, str]]:
+    per_hero = _per_hero_curated("skill_summaries")
+    if per_hero is not None:
+        return per_hero
     if not SKILL_SUMMARY_FILE.exists():
         return {}
     return json.loads(SKILL_SUMMARY_FILE.read_text(encoding="utf-8"))
 
 
 def _load_play_overviews() -> dict[str, str]:
+    per_hero = _per_hero_curated("play_overviews")
+    if per_hero is not None:
+        return per_hero
     if not PLAY_OVERVIEW_FILE.exists():
         return {}
     return json.loads(PLAY_OVERVIEW_FILE.read_text(encoding="utf-8"))
 
 
 def _load_counter_overviews() -> dict[str, str]:
+    per_hero = _per_hero_curated("counter_overviews")
+    if per_hero is not None:
+        return per_hero
     if not COUNTER_OVERVIEW_FILE.exists():
         return {}
     return json.loads(COUNTER_OVERVIEW_FILE.read_text(encoding="utf-8"))
 
 
 def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint]]:
+    per_hero = _per_hero_curated("placement_constraint_overrides")
+    if per_hero is not None:
+        return {
+            name: [
+                PlacementConstraint(kind=e["kind"], text=e["text"])
+                for e in entries
+            ]
+            for name, entries in per_hero.items()
+        }
     if not PLACEMENT_CONSTRAINT_OVERRIDES_FILE.exists():
         return {}
     raw = json.loads(

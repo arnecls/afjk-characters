@@ -1,0 +1,1246 @@
+{
+  "schema_version": 1,
+  "id": "tilaya",
+  "display_name": "Tilaya",
+  "source": {
+    "title": "Tilaya - Wild Blade",
+    "name": "Tilaya",
+    "tags": "Wilder · Warrior · Physical",
+    "faction": "Wilder",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A Warrior with a massive sword who fights by harnessing the power of plants.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Wrath of the Wilds",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Tilaya loses 70% HP and gains Vine Ward, a shield that blocks up to 120% (HP-based) + 12% (SP-based) damage. Vine War automatically recovers 10% (HP-based) + 1% (SP-based) shield value every second and makes Tilaya unaffected while active. When Vine Ward breaks, it enter a 3s cooldown, after which its shield value is restored to 45% (HP-based). Active. Tilaya swings her greatsword 8 times, hitting enemies within a 2-tile arc in front. Each swing deals 60% (ATK-based) damage tiwce. While casting this skill, Tilaya reduces her damage taken 70%; every time she takes 4 hits, she performs an additional swing, up to 12 swings total. If no enemies are within range, Tilaya charges toward the nearest enemy and continues casting this skill. Tilaya's Haste stat does not affect this skill when used actively.",
+          "passive": [
+            "When a battle starts, Tilaya loses 70% HP and gains Vine Ward, a shield that blocks up to 120% (HP-based) + 12% (SP-based) damage.",
+            "Vine War automatically recovers 10% (HP-based) + 1% (SP-based) shield value every second and makes Tilaya unaffected while active.",
+            "When Vine Ward breaks, it enter a 3s cooldown, after which its shield value is restored to 45% (HP-based)."
+          ],
+          "active": [
+            "Tilaya swings her greatsword 8 times, hitting enemies within a 2-tile arc in front.",
+            "Each swing deals 60% (ATK-based) damage tiwce.",
+            "While casting this skill, Tilaya reduces her damage taken 70%; every time she takes 4 hits, she performs an additional swing, up to 12 swings total.",
+            "If no enemies are within range, Tilaya charges toward the nearest enemy and continues casting this skill.",
+            "Tilaya's Haste stat does not affect this skill when used actively."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases each swing hit's damage to 65% (ATK-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases each swing hit's damage to 70% (ATK-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases each swing hit's damage to 75% (ATK-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases each swing hit's damage to 80% (ATK-based) when this skill is used actively."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Tilaya gains Vine Wrd, a shield that gradually recovers its value over time. Active. Tilaya swings her greatsword repeatedly, dealing damage to enemies in front."
+      },
+      {
+        "section": "Skill1",
+        "name": "Mighty Slash",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Tilaya charges briefly and launches a powerful strike on her target, dealing 220% (ATK-based) damage. If Vine Ward is active, she restores its shield value by 160% + 15% (SP-based) of the damage dealt.",
+          "active": [
+            "Tilaya charges briefly and launches a powerful strike on her target, dealing 220% (ATK-based) damage.",
+            "If Vine Ward is active, she restores its shield value by 160% + 15% (SP-based) of the damage dealt."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 230% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 240% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 250% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tilaya launches a powerful strike on her target and restores shield value to Vine Ward."
+      },
+      {
+        "section": "Skill2",
+        "name": "Wildwood Resonance",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage equal to 6% + 1% (SP-based) of her curent shield value for 10s. This extra damage cannot exceed 200% (ATK-based). When Tilaya casts this skill, the duration of the resonance is extended by 3.5s for each ally within 2 tiles.",
+          "active": [
+            "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage equal to 6% + 1% (SP-based) of her curent shield value for 10s.",
+            "This extra damage cannot exceed 200% (ATK-based).",
+            "When Tilaya casts this skill, the duration of the resonance is extended by 3.5s for each ally within 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the extra damage to 7% + 1% (SP-based) of Tilaya's current shield value."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the extra damage to 8% + 1% (SP-based) of Tilaya's current shield value."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the extra damage to 9% + 1% (SP-based) of Tilaya's current shield value."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage based on her current shield value for a certain duration."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increase Vitality by 11 during battle.",
+          "active": [
+            "Increase Vitality by 11 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increase Vitality by 15 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increase Vitality by 19 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increase Vitality during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Verdant Growth",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "The first time Vine Ward breaks, it instantly recover 120% (HP-based) shield value without triggering its cooldown. For subsequent Vine Ward breaks, the shield value recovered after cooldown is increased to 60% (HP-based).",
+          "active": [
+            "The first time Vine Ward breaks, it instantly recover 120% (HP-based) shield value without triggering its cooldown.",
+            "For subsequent Vine Ward breaks, the shield value recovered after cooldown is increased to 60% (HP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield value recovered after Vine Ward's cooldown to 70% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "After Vine Ward remains active for 15s, its bond with nature deepens.",
+                "While active, it increases the max HP by 40% and Phys & Magic DEF by 60% for all allies within 2 tiles.",
+                "The max HP gained from this effect cannot exceed 80% of Tilaya's initial max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield value recovered after Vine Ward's cooldown to 80% (HP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After the first Vine Ward break, the shield value recovered after cooldown increases."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Increases Vine Ward's shield value recover to 15% (HP-based) per second while Tilaya casts her Ultimate.",
+          "active": [
+            "Increases Vine Ward's shield value recover to 15% (HP-based) per second while Tilaya casts her Ultimate."
+          ]
+        },
+        "description_lite": "Increases Vine Ward's shield recovery speed while Tilaya casts her Ultimate."
+      }
+    ],
+    "range": 1,
+    "release_date": "2026-01-08",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Tilaya - Wild Blade",
+      "faction": "wilder",
+      "class": "warrior",
+      "role_category": "tank",
+      "is_energy_provider": false,
+      "is_melee": true,
+      "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-01-08",
+      "season": "Thorns of Devotion",
+      "season_number": 5,
+      "skills": {
+        "Wrath of the Wilds": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. When a battle starts, Tilaya loses 70% HP and gains Vine Ward, a shield that blocks up to 120% (HP-based) + 12% (SP-based) damage. Vine War automatically recovers 10% (HP-based) + 1% (SP-based) shield value every second and makes Tilaya unaffected while active. When Vine Ward breaks, it enter a 3s cooldown, after which its shield value is restored to 45% (HP-based). Active. Tilaya swings her greatsword 8 times, hitting enemies within a 2-tile arc in front. Each swing deals 60% (ATK-based) damage tiwce. While casting this skill, Tilaya reduces her damage taken 70%; every time she takes 4 hits, she performs an additional swing, up to 12 swings total. If no enemies are within range, Tilaya charges toward the nearest enemy and continues casting this skill. Tilaya's Haste stat does not affect this skill when used actively.",
+            "passive": [
+              "When a battle starts, Tilaya loses 70% HP and gains Vine Ward, a shield that blocks up to 120% (HP-based) + 12% (SP-based) damage.",
+              "Vine War automatically recovers 10% (HP-based) + 1% (SP-based) shield value every second and makes Tilaya unaffected while active.",
+              "When Vine Ward breaks, it enter a 3s cooldown, after which its shield value is restored to 45% (HP-based)."
+            ],
+            "active": [
+              "Tilaya swings her greatsword 8 times, hitting enemies within a 2-tile arc in front.",
+              "Each swing deals 60% (ATK-based) damage tiwce.",
+              "While casting this skill, Tilaya reduces her damage taken 70%; every time she takes 4 hits, she performs an additional swing, up to 12 swings total.",
+              "If no enemies are within range, Tilaya charges toward the nearest enemy and continues casting this skill.",
+              "Tilaya's Haste stat does not affect this skill when used actively."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases each swing hit's damage to 65% (ATK-based) when this skill is used actively."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases each swing hit's damage to 70% (ATK-based) when this skill is used actively."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases each swing hit's damage to 75% (ATK-based) when this skill is used actively."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases each swing hit's damage to 80% (ATK-based) when this skill is used actively."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_direction": "front",
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "skill_range": 2,
+          "initial_energy": 0.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "HoT — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Mighty Slash": {
+          "category": "skill1",
+          "description": {
+            "raw": "Tilaya charges briefly and launches a powerful strike on her target, dealing 220% (ATK-based) damage. If Vine Ward is active, she restores its shield value by 160% + 15% (SP-based) of the damage dealt.",
+            "active": [
+              "Tilaya charges briefly and launches a powerful strike on her target, dealing 220% (ATK-based) damage.",
+              "If Vine Ward is active, she restores its shield value by 160% + 15% (SP-based) of the damage dealt."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the damage dealt to 230% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the damage dealt to 240% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the damage dealt to 250% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 6.0,
+          "initial_cooldown": 2.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Wildwood Resonance": {
+          "category": "skill2",
+          "description": {
+            "raw": "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage equal to 6% + 1% (SP-based) of her curent shield value for 10s. This extra damage cannot exceed 200% (ATK-based). When Tilaya casts this skill, the duration of the resonance is extended by 3.5s for each ally within 2 tiles.",
+            "active": [
+              "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage equal to 6% + 1% (SP-based) of her curent shield value for 10s.",
+              "This extra damage cannot exceed 200% (ATK-based).",
+              "When Tilaya casts this skill, the duration of the resonance is extended by 3.5s for each ally within 2 tiles."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the extra damage to 7% + 1% (SP-based) of Tilaya's current shield value."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the extra damage to 8% + 1% (SP-based) of Tilaya's current shield value."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the extra damage to 9% + 1% (SP-based) of Tilaya's current shield value."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 9.0
+                }
+              ],
+              "duration": 10.0,
+              "persistence": "permanent"
+            }
+          ],
+          "cooldown": 15.0,
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Damage dealt — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increase Vitality by 11 during battle.",
+            "active": [
+              "Increase Vitality by 11 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increase Vitality by 15 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increase Vitality by 19 during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Vitality",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 19.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Vitality — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Verdant Growth": {
+          "category": "skill4",
+          "description": {
+            "raw": "The first time Vine Ward breaks, it instantly recover 120% (HP-based) shield value without triggering its cooldown. For subsequent Vine Ward breaks, the shield value recovered after cooldown is increased to 60% (HP-based).",
+            "active": [
+              "The first time Vine Ward breaks, it instantly recover 120% (HP-based) shield value without triggering its cooldown.",
+              "For subsequent Vine Ward breaks, the shield value recovered after cooldown is increased to 60% (HP-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the shield value recovered after Vine Ward's cooldown to 70% (HP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "After Vine Ward remains active for 15s, its bond with nature deepens.",
+                  "While active, it increases the max HP by 40% and Phys & Magic DEF by 60% for all allies within 2 tiles.",
+                  "The max HP gained from this effect cannot exceed 80% of Tilaya's initial max HP."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the shield value recovered after Vine Ward's cooldown to 80% (HP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ],
+              "persistence": "temporary"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "buff",
+              "name": "DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ],
+              "persistence": "temporary"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "DEF — Area (EX+10)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — Area (EX+10)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Increases Vine Ward's shield value recover to 15% (HP-based) per second while Tilaya casts her Ultimate.",
+            "active": [
+              "Increases Vine Ward's shield value recover to 15% (HP-based) per second while Tilaya casts her Ultimate."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "HoT — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Form or stance active",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Vine Ward shields Tilaya at battle start and recovers shield value every second while active."
+          },
+          {
+            "label": "Damage absorption (allies)",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "If Vine Ward is active, Mighty Slash restores shield value equal to 160% of damage dealt."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Arc, Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "max_hp",
+        "shield"
+      ],
+      "scalar_stat_shares": {
+        "atk": 0.5555555555555556,
+        "max_hp": 0.4444444444444444
+      },
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "average",
+        "walk_speed": "normal",
+        "signature_skill_name": "Wrath of the Wilds",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
+        "avg_attack_range": 1.8955223880597014,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "low",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "average"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "skill1"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Max HP via Max HP (single target, low)",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 15.896428571428572,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, average)",
+          "Max HP via Max HP (all units, high)"
+        ],
+        "score": 10.25,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 9.798214285714286,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Max HP via Max HP (multiple targets, average)"
+        ],
+        "score": 8.25,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 6.375,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 4.3875,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 4.25,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)"
+        ],
+        "score": 4.25,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 4.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 4.25,
+        "provider_id": "perseus"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 4.05,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 3.278571428571428,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.125,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))"
+        ],
+        "score": 1.80625,
+        "provider_id": "isabella"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 12.0,
+        "hero_id": "hepler"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "laios"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "voracia"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "granny-dahnie"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "seth"
+      },
+      {
+        "score": 7.982142857142857,
+        "hero_id": "antandra"
+      },
+      {
+        "score": 5.25,
+        "hero_id": "zandrok"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "eironn"
+      },
+      {
+        "score": 4.5,
+        "hero_id": "kruger"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [
+        {
+          "score": 0.8,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "alna"
+        },
+        {
+          "score": 0.6667,
+          "matches": [
+            "Max HP"
+          ],
+          "hero_id": "rolan"
+        }
+      ],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.8,
+          "matches": [
+            "aoe-damage",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "lorsan"
+        },
+        {
+          "score": 0.6667,
+          "matches": [
+            "aoe-damage",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "sonja"
+        },
+        {
+          "score": 0.6667,
+          "matches": [
+            "aoe-damage",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "perseus"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gunnar"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "himmel"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Physical"
+          ],
+          "hero_id": "gwyneth"
+        }
+      ],
+      "debuff": [],
+      "cc": [],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "916a4e5facec8307e0fee83f52d8a353a4603dd75d3523106e7808e83d525d84",
+    "ai_hash": "c81a34e4f3a2c52ca967bbf464f448e83a89ca20d4553eed773c7cbca7b66175",
+    "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
+    "analysis_inputs_hash": "b7f90176f88ca8959ad7134a51be3f6f4b45667bd8d0b9ea6c407931a252459c",
+    "stage": "scored"
+  }
+}

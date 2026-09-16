@@ -1,0 +1,1242 @@
+{
+  "schema_version": 1,
+  "id": "viperian",
+  "display_name": "Viperian",
+  "source": {
+    "title": "Viperian - Shadow Serpent",
+    "name": "Viperian",
+    "tags": "Graveborn · Mage · Magic",
+    "faction": "Graveborn",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A Graveborn Mage who specializes in life rituals and is able to deal a lot of AoE damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Spiritual Viper",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "250"
+        },
+        "description": {
+          "raw": "Passive. Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%. During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed. Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them. Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%. Active. Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies. He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed.",
+          "passive": [
+            "Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%.",
+            "During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed.",
+            "Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them.",
+            "Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%."
+          ],
+          "active": [
+            "Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies.",
+            "He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 290% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 310% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 320% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Viperian burns HP and sends Darkvipers to possess the enemies, dealing massive damage."
+      },
+      {
+        "section": "Skill1",
+        "name": "Soul Ravager",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "5 Tiles"
+        },
+        "description": {
+          "raw": "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt.",
+          "active": [
+            "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Viperian drains HP from the healthiest enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Enchantment Fang",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "10s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies. Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based).",
+          "active": [
+            "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies.",
+            "Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases Common Tearing Bite damage to 75% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases Enhanced Tearing Bite damage to 150% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces the target's Energy by 100 + 15 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Darkvipers launch Tearing Bite periodically to deal damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Crimson Waltz",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "30s",
+          "Initial Cooldown": "10s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
+          "active": [
+            "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
+            "He is Unaffected during the skill casting.",
+            "This skill can be triggered once every 30s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage to 450% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Darkvipers gain 2 enhancements after the skill is cast."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 480% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Burns HP to deal massive damage to all enemies when having a higher HP portion."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
+          "active": [
+            "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Darkvipers return when the possessed enemies are defeated, recovering HP and Energy for Viperian."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "low"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Viperian - Shadow Serpent",
+      "faction": "graveborn",
+      "class": "mage",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
+      "season_number": 0,
+      "skills": {
+        "Spiritual Viper": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%. During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed. Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them. Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%. Active. Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies. He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed.",
+            "passive": [
+              "Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%.",
+              "During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed.",
+              "Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them.",
+              "Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%."
+            ],
+            "active": [
+              "Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies.",
+              "He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 51: Increases damage to 290% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 111: Increases damage to 300% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 171: Increases damage to 310% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": null,
+                "text": [
+                  "Unlocks at level 231: Increases damage to 320% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 340.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 320.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "initial_energy": 250.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Soul Ravager": {
+          "category": "skill1",
+          "description": {
+            "raw": "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt.",
+            "active": [
+              "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases damage to 220% (ATK-based) + 25% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases damage to 230% (ATK-based) + 25% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases damage to 240% (ATK-based) + 25% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 265.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 8.0,
+          "initial_cooldown": 1.0,
+          "skill_range": 5,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Enchantment Fang": {
+          "category": "skill2",
+          "description": {
+            "raw": "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies. Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based).",
+            "active": [
+              "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies.",
+              "Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases Common Tearing Bite damage to 75% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases Enhanced Tearing Bite damage to 150% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Reduces the target's Energy by 100 + 15 (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "cooldown",
+                  "interval": 3.0
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Energy",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 115.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 15.0,
+          "initial_cooldown": 10.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Energy",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Haste by 12 during battle.",
+            "active": [
+              "Increases Haste by 12 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 16 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 20 during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Haste — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Crimson Waltz": {
+          "category": "skill4",
+          "description": {
+            "raw": "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
+            "active": [
+              "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
+              "He is Unaffected during the skill casting.",
+              "This skill can be triggered once every 30s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases damage to 450% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Darkvipers gain 2 enhancements after the skill is cast."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases damage to 480% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.9,
+                  "comparison": "above"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 480.0
+                }
+              ]
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "cooldown": 30.0,
+          "initial_cooldown": 10.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Unaffected — Self"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
+            "active": [
+              "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 14.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "All units, Single target"
+        ],
+        [
+          "dot",
+          "All units"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "haste"
+      ],
+      "scalar_stat_shares": {
+        "atk": 0.8,
+        "max_hp": 0.2
+      },
+      "behavior": {
+        "movement": "mostly stationary",
+        "movement_note": "avg attack range 5.0 tiles",
+        "casting_speed": "slow",
+        "walk_speed": "slow",
+        "signature_skill_name": "Crimson Waltz",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
+        "synergy_signature_is_ult": false,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 5.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "average",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "average"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "skill4"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (all units, high)"
+        ],
+        "score": 30.0,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (area, high)"
+        ],
+        "score": 24.0,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "Enemy defense via DEF Penetration (multiple targets, high)"
+        ],
+        "score": 18.0,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`",
+          "ATK SPD via Haste (single target, average) `signature fuel`",
+          "Enemy defense via DEF Penetration (all units, low)"
+        ],
+        "score": 17.5,
+        "provider_id": "rolan"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, high) `signature fuel`",
+          "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+        ],
+        "score": 12.32406,
+        "provider_id": "hugin"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (multiple targets, average)"
+        ],
+        "score": 12.0,
+        "provider_id": "sinbad"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 11.8818,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, high) `signature fuel`",
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 11.25,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Enemy defense via Magic DEF debuff (single target, high)"
+        ],
+        "score": 10.8954,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 10.5,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (all units, low)"
+        ],
+        "score": 10.0,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 8.7636,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (all units, average) `signature fuel`",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 8.131800000000002,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "carolina"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "cassadee"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (area, low)"
+        ],
+        "score": 8.0,
+        "provider_id": "laios"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 7.500000000000001,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 7.500000000000001,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 7.500000000000001,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 7.500000000000001,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, low) `signature fuel`",
+          "ATK SPD via Haste (single target, low) `signature fuel`",
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 6.75,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 6.375,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (area, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 6.375,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "eironn"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "reinier"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "shadewing"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, average)"
+        ],
+        "score": 6.0,
+        "provider_id": "velara"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.6318,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "berial"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "cecia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "cryonaia"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "himmel"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Magic DEF debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "indris"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "kruger"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "nazrik"
+      },
+      {
+        "reasons": [
+          "Enemy defense via Damage taken debuff (single target, low)"
+        ],
+        "score": 3.0,
+        "provider_id": "thoran"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`"
+        ],
+        "score": 1.8954,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`"
+        ],
+        "score": 1.7118000000000002,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (single target, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 1.0800000000000003,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 12.5,
+        "hero_id": "shadewing"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [],
+      "similar_skills": [
+        {
+          "score": 0.72,
+          "matches": [
+            "aoe-damage",
+            "dot-specialist",
+            "energy-inhibitor"
+          ],
+          "hero_id": "voracia"
+        },
+        {
+          "score": 0.6,
+          "matches": [
+            "aoe-damage",
+            "dot-specialist"
+          ],
+          "hero_id": "arden"
+        },
+        {
+          "score": 0.4,
+          "matches": [
+            "aoe-damage",
+            "energy-inhibitor"
+          ],
+          "hero_id": "hodgkin"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "frieren"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "rolan"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "silven"
+        }
+      ],
+      "debuff": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Energy"
+          ],
+          "hero_id": "saida"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Energy"
+          ],
+          "hero_id": "dunlingr"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Energy"
+          ],
+          "hero_id": "rowan"
+        }
+      ],
+      "cc": [],
+      "overall": [
+        {
+          "score": 0.6857,
+          "matches": [
+            "Damage",
+            "Debuffs on enemies"
+          ],
+          "hero_id": "berial"
+        },
+        {
+          "score": 0.6857,
+          "matches": [
+            "Damage",
+            "Debuffs on enemies"
+          ],
+          "hero_id": "pippa"
+        },
+        {
+          "score": 0.6277,
+          "matches": [
+            "Damage",
+            "Similar Skills"
+          ],
+          "hero_id": "voracia"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "source_hash": "db24a049ed29ec17f8f2c7a4b2059a382c1a5ab37873eea9cd39d5e8a6ff04ce",
+    "ai_hash": "1e290c76949aa663db718527a8215fb25b49fdd9fe2922f387a23cee7c7bba14",
+    "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
+    "analysis_inputs_hash": "ec47af44bbd072cff5785655dde979cc748f28df25cb4c1bff04c532d79e35a7",
+    "stage": "scored"
+  }
+}

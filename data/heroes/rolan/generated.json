@@ -1,0 +1,1659 @@
+{
+  "schema_version": 1,
+  "id": "rolan",
+  "display_name": "Rolan",
+  "source": {
+    "title": "Rolan - First Crown",
+    "name": "Rolan",
+    "tags": "Celestial · Support · Magic",
+    "faction": "Celestial",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "The first king of the Lightbearer Empire, a commanding Support who rallies his allies in battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Oath in the Stone",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage. He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP. The max HP gained from this skill gradually decays over 12s. Casting this skill also grants Rolan's allies 15% Morale.",
+          "active": [
+            "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage.",
+            "He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP.",
+            "The max HP gained from this skill gradually decays over 12s.",
+            "Casting this skill also grants Rolan's allies 15% Morale."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases HP restored to 1050% (ATK-based) + 80% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases HP restored to 1100% (ATK-based) + 80% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases HP restored to 1150% (ATK-based) + 80% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases HP restored to 1200% (ATK-based) + 80% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rolan cleanses dispellable debuffs from allies, redistributes their HP percentage, and grants them a temporary max HP boost that gradually decays."
+      },
+      {
+        "section": "Skill1",
+        "name": "Undying Valor",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale. For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK. The team's Morale is capped at 100%. During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate. Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount. If Rolan is defeated, all Morale is permanently lost. Active. Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK. If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active.",
+          "passive": [
+            "When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale.",
+            "For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK.",
+            "The team's Morale is capped at 100%.",
+            "During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate.",
+            "Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount.",
+            "If Rolan is defeated, all Morale is permanently lost."
+          ],
+          "active": [
+            "Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK.",
+            "If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the ATK bonus from the blessing to 20% + 2% (SP-based) of Rolan's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the ATK bonus from the blessing to 22% + 2% (SP-based) of Rolan's ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the ATK bonus from the blessing to 24% + 2% (SP-based) of Rolan's ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rolan boosts Morale for the allied team, increasing all allies' ATK based on the current Morale. When used actively, this skill further increases allies' ATK and makes them unaffected for a duration."
+      },
+      {
+        "section": "Skill2",
+        "name": "Clemency's Edge",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s. If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s.",
+          "active": [
+            "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s.",
+            "If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the HP restored to 260% (ATK-based) + 30% (SP-based) and the damage dealt to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the HP restored to 280% (ATK-based) + 30% (SP-based) and the damage dealt to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the HP restored to 300% (ATK-based) + 30% (SP-based) and the damage dealt to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rolan heals allies in an area and temporarily reduces their damage taken. At high Morale, he also attacks and stuns enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Healing by 9 and reduces damage taken by 9%. For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%.",
+          "active": [
+            "Increases Healing by 9 and reduces damage taken by 9%.",
+            "For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 12 and reduces damage taken by 12%.",
+                "For every 20% Morale the allied team has, Rolan gains an extra 4 Healing and further reduces his damage taken by 4%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 15 and reduces damage taken by 15%.",
+                "For every 20% Morale the allied team has, Rolan gains an extra 5 Healing and further reduces his damage taken by 5%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Healing and reduces damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Radiant Reign",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward. When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again. While the ward is active, Morale will not decrease unless Rolan is defeated. In non-Boss battles, allies inside the ward are immune to stat reductions.",
+          "active": [
+            "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward.",
+            "When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again.",
+            "While the ward is active, Morale will not decrease unless Rolan is defeated.",
+            "In non-Boss battles, allies inside the ward are immune to stat reductions."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The radiant clone now inherits 90% of the ally's basic stats."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "The radiant clone now inherits 100% of the ally's basic stats."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Allies within the radiant ward recover 80% (ATK-based) HP every second.",
+                "while all enemies within it lose 40% (ATK-based) HP every second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Once the allied team's Morale reaches a certain level, Rolan creates a ward that makes all allies immune to stat reductions. Whenever an ally casts their Ultimate, a radiant clone is summoned to cast their Ultimate again."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes. If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s.",
+          "active": [
+            "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes.",
+            "If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s."
+          ]
+        },
+        "description_lite": "When a battle starts, the allied team gains extra Morale when multiple deployed heroes belong to the same faction."
+      }
+    ],
+    "range": 10,
+    "release_date": "2026-08-06",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "S+",
+      "dream_realm": "S+",
+      "dream_realm_endless": "S+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  },
+  "derived": {
+    "analysis": {
+      "long_name": "Rolan - First Crown",
+      "faction": "celestial",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 10,
+      "release_date": "2026-08-06",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Oath in the Stone": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage. He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP. The max HP gained from this skill gradually decays over 12s. Casting this skill also grants Rolan's allies 15% Morale.",
+            "active": [
+              "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage.",
+              "He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP.",
+              "The max HP gained from this skill gradually decays over 12s.",
+              "Casting this skill also grants Rolan's allies 15% Morale."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases HP restored to 1050% (ATK-based) + 80% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases HP restored to 1100% (ATK-based) + 80% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases HP restored to 1150% (ATK-based) + 80% (SP-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases HP restored to 1200% (ATK-based) + 80% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Cleanse",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200.0
+                }
+              ],
+              "duration": 0.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200.0
+                }
+              ],
+              "duration": 12.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1200.0
+                }
+              ]
+            }
+          ],
+          "initial_energy": 400.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Cleanse — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — All units",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Undying Valor": {
+          "category": "skill1",
+          "description": {
+            "raw": "Passive. When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale. For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK. The team's Morale is capped at 100%. During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate. Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount. If Rolan is defeated, all Morale is permanently lost. Active. Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK. If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active.",
+            "passive": [
+              "When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale.",
+              "For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK.",
+              "The team's Morale is capped at 100%.",
+              "During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate.",
+              "Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount.",
+              "If Rolan is defeated, all Morale is permanently lost."
+            ],
+            "active": [
+              "Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK.",
+              "If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the ATK bonus from the blessing to 20% + 2% (SP-based) of Rolan's ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the ATK bonus from the blessing to 22% + 2% (SP-based) of Rolan's ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the ATK bonus from the blessing to 24% + 2% (SP-based) of Rolan's ATK."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 24.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ],
+              "duration": 10.0,
+              "persistence": "temporary"
+            },
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Single target",
+              "target": "ally",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 4.0,
+          "skill_card_tags": [
+            {
+              "label": "ATK — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Haste",
+              "polarity": "buff"
+            },
+            {
+              "label": "Unaffected"
+            }
+          ]
+        },
+        "Clemency's Edge": {
+          "category": "skill2",
+          "description": {
+            "raw": "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s. If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s.",
+            "active": [
+              "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s.",
+              "If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the HP restored to 260% (ATK-based) + 30% (SP-based) and the damage dealt to 260% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the HP restored to 280% (ATK-based) + 30% (SP-based) and the damage dealt to 280% (ATK-based) + 30% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the HP restored to 300% (ATK-based) + 30% (SP-based) and the damage dealt to 300% (ATK-based) + 30% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 36.0
+                }
+              ],
+              "duration": 10.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 330.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.0
+            }
+          ],
+          "cooldown": 10.0,
+          "initial_cooldown": 1.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Direct healing — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Area",
+              "polarity": "buff"
+            },
+            {
+              "label": "Stun — Area"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Healing by 9 and reduces damage taken by 9%. For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%.",
+            "active": [
+              "Increases Healing by 9 and reduces damage taken by 9%.",
+              "For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Healing by 12 and reduces damage taken by 12%.",
+                  "For every 20% Morale the allied team has, Rolan gains an extra 4 Healing and further reduces his damage taken by 4%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Healing by 15 and reduces damage taken by 15%.",
+                  "For every 20% Morale the allied team has, Rolan gains an extra 5 Healing and further reduces his damage taken by 5%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Radiant Reign": {
+          "category": "skill4",
+          "description": {
+            "raw": "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward. When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again. While the ward is active, Morale will not decrease unless Rolan is defeated. In non-Boss battles, allies inside the ward are immune to stat reductions.",
+            "active": [
+              "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward.",
+              "When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again.",
+              "While the ward is active, Morale will not decrease unless Rolan is defeated.",
+              "In non-Boss battles, allies inside the ward are immune to stat reductions."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "The radiant clone now inherits 90% of the ally's basic stats."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "The radiant clone now inherits 100% of the ally's basic stats."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Allies within the radiant ward recover 80% (ATK-based) HP every second.",
+                  "while all enemies within it lose 40% (ATK-based) HP every second."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": -1.0,
+              "tick": 1.0
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "DoT"
+            },
+            {
+              "label": "HoT — Area",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes. If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s.",
+            "active": [
+              "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes.",
+              "If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "DEF Penetration",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ],
+              "duration": 8.0,
+              "persistence": "temporary"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ],
+              "duration": 8.0,
+              "persistence": "temporary"
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "DEF Penetration — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — All units",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Stacked resource",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Casting the Ultimate grants allied Morale."
+          },
+          {
+            "label": "Ally empower",
+            "tier": "base",
+            "targeting": "Multiple targets",
+            "description": "Rolan blesses the two allies with the highest cumulative damage."
+          },
+          {
+            "label": "Ally Ultimate casts",
+            "tier": "mythic+",
+            "targeting": "Allies",
+            "description": "A radiant clone repeats an ally Ultimate after Morale reaches its cap."
+          },
+          {
+            "label": "Party composition",
+            "tier": "supreme+",
+            "targeting": "Allies",
+            "description": "The strongest deployed faction changes the battle-start Morale and faction bonuses."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "Area"
+        ],
+        [
+          "dot",
+          "Area"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "haste",
+        "max_hp",
+        "def_penetration"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "average",
+        "walk_speed": "slow",
+        "signature_skill_name": "Oath in the Stone",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 10.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Magic": "high"
+            }
+          }
+        }
+      }
+    },
+    "signature_calculated": "ultimate"
+  },
+  "synergies": {
+    "synergies": [
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`",
+          "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+        ],
+        "score": 17.943814285714286,
+        "provider_id": "ravion"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Max HP via Max HP (single target, low)",
+          "Energy via Energy (single target, low) `signature fuel`",
+          "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+        ],
+        "score": 17.406728571428573,
+        "provider_id": "pandora"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "Haste via Haste (all units, average) `signature fuel`",
+          "Max HP via Max HP (multiple targets, average)",
+          "Energy via Energy (multiple targets, low) `signature fuel`",
+          "ATK SPD via Haste (all units, average) `signature fuel`"
+        ],
+        "score": 14.3853,
+        "provider_id": "twins"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, average)",
+          "Haste via Haste (area, high) `signature fuel`",
+          "Energy via Energy (area, low) `signature fuel`",
+          "ATK SPD via Haste (area, high) `signature fuel`"
+        ],
+        "score": 14.197799999999999,
+        "provider_id": "smokey-meerky"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)",
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 13.5,
+        "provider_id": "kazim"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, high)",
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 13.5,
+        "provider_id": "mikola"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, low)",
+          "Haste via Haste (multiple targets, high) `signature fuel`",
+          "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+        ],
+        "score": 11.930009999999998,
+        "provider_id": "hugin"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)",
+          "DEF Penetration via DEF Penetration (multiple targets, high)"
+        ],
+        "score": 9.75,
+        "provider_id": "aliceth"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)",
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 8.685,
+        "provider_id": "parisa"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, high) `signature fuel`",
+          "ATK SPD via Haste (single target, high) `signature fuel`"
+        ],
+        "score": 8.4375,
+        "provider_id": "lorsan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "Haste via Haste (single target, average) `signature fuel`",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 8.25,
+        "provider_id": "dunlingr"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "contess"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "evie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "sonja"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (area, high)"
+        ],
+        "score": 7.875,
+        "provider_id": "taichi-agumon"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (area, average, conditional (frequent)) `signature fuel`",
+          "Max HP via Max HP (multiple targets, low)",
+          "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 6.28125,
+        "provider_id": "zandrok"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (single target, high) `signature fuel`",
+          "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
+        ],
+        "score": 5.9184,
+        "provider_id": "thador"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (single target, average) `signature fuel`",
+          "ATK SPD via Haste (single target, average) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "hewynn"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average) `signature fuel`"
+        ],
+        "score": 5.625,
+        "provider_id": "mehira"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (area, high) `signature fuel`",
+          "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+        ],
+        "score": 5.5809,
+        "provider_id": "rowan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (multiple targets, average)"
+        ],
+        "score": 5.25,
+        "provider_id": "pang"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low, conditional (frequent))",
+          "Haste via Haste (single target, low) `signature fuel`",
+          "ATK SPD via Haste (single target, low) `signature fuel`"
+        ],
+        "score": 5.04375,
+        "provider_id": "isabella"
+      },
+      {
+        "reasons": [
+          "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
+          "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
+        ],
+        "score": 4.78125,
+        "provider_id": "damian"
+      },
+      {
+        "reasons": [
+          "Energy via Energy (all units, low) `signature fuel`",
+          "ATK SPD via ATK SPD (all units, low) `signature fuel`",
+          "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+        ],
+        "score": 4.598871428571428,
+        "provider_id": "lyca"
+      },
+      {
+        "reasons": [
+          "DEF Penetration via DEF Penetration (area, high)"
+        ],
+        "score": 4.5,
+        "provider_id": "kordan"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)",
+          "ATK SPD via ATK SPD (single target, low) `signature fuel`"
+        ],
+        "score": 3.435,
+        "provider_id": "gunnar"
+      },
+      {
+        "reasons": [
+          "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
+        ],
+        "score": 3.375,
+        "provider_id": "phraesto"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (arc, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "fay"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "hammie"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (all units, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "koko"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "kulu"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "lucca"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "marilee"
+      },
+      {
+        "reasons": [
+          "ATK via ATK (single target, low)"
+        ],
+        "score": 2.625,
+        "provider_id": "solise"
+      },
+      {
+        "reasons": [
+          "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
+        ],
+        "score": 0.8099999999999999,
+        "provider_id": "valka"
+      }
+    ],
+    "beneficiaries": [
+      {
+        "score": 43.25,
+        "hero_id": "alsa"
+      },
+      {
+        "score": 34.75,
+        "hero_id": "perseus"
+      },
+      {
+        "score": 28.75,
+        "hero_id": "nerion"
+      },
+      {
+        "score": 28.75,
+        "hero_id": "orion"
+      },
+      {
+        "score": 28.75,
+        "hero_id": "silven"
+      },
+      {
+        "score": 27.25,
+        "hero_id": "lenya"
+      },
+      {
+        "score": 23.275,
+        "hero_id": "voracia"
+      },
+      {
+        "score": 22.75,
+        "hero_id": "eryndor"
+      },
+      {
+        "score": 20.875,
+        "hero_id": "yamato-gabumon"
+      },
+      {
+        "score": 20.25,
+        "hero_id": "dionel"
+      },
+      {
+        "score": 20.25,
+        "hero_id": "lily-may"
+      },
+      {
+        "score": 19.75,
+        "hero_id": "bonnie"
+      },
+      {
+        "score": 19.75,
+        "hero_id": "marilee"
+      },
+      {
+        "score": 19.75,
+        "hero_id": "pang"
+      },
+      {
+        "score": 18.75,
+        "hero_id": "vala"
+      },
+      {
+        "score": 18.7,
+        "hero_id": "carolina"
+      },
+      {
+        "score": 18.25,
+        "hero_id": "florabelle"
+      },
+      {
+        "score": 18.25,
+        "hero_id": "galahad"
+      },
+      {
+        "score": 18.25,
+        "hero_id": "natsu"
+      },
+      {
+        "score": 17.95,
+        "hero_id": "arden"
+      },
+      {
+        "score": 17.95,
+        "hero_id": "valen"
+      },
+      {
+        "score": 17.75,
+        "hero_id": "atalanta"
+      },
+      {
+        "score": 17.75,
+        "hero_id": "himmel"
+      },
+      {
+        "score": 17.5,
+        "hero_id": "bryon"
+      },
+      {
+        "score": 17.5,
+        "hero_id": "viperian"
+      },
+      {
+        "score": 17.25,
+        "hero_id": "faramor"
+      },
+      {
+        "score": 16.25,
+        "hero_id": "gwyneth"
+      },
+      {
+        "score": 16.0,
+        "hero_id": "rhys"
+      },
+      {
+        "score": 15.75,
+        "hero_id": "laios"
+      },
+      {
+        "score": 15.375,
+        "hero_id": "zorya"
+      },
+      {
+        "score": 15.25,
+        "hero_id": "shadewing"
+      },
+      {
+        "score": 14.5,
+        "hero_id": "salazer"
+      },
+      {
+        "score": 14.25,
+        "hero_id": "talene"
+      },
+      {
+        "score": 13.75,
+        "hero_id": "marcille"
+      },
+      {
+        "score": 13.75,
+        "hero_id": "mirael"
+      },
+      {
+        "score": 13.75,
+        "hero_id": "odie"
+      },
+      {
+        "score": 12.95,
+        "hero_id": "cryonaia"
+      },
+      {
+        "score": 12.84375,
+        "hero_id": "tasi"
+      },
+      {
+        "score": 12.75,
+        "hero_id": "dunlingr"
+      },
+      {
+        "score": 12.75,
+        "hero_id": "hepler"
+      },
+      {
+        "score": 12.75,
+        "hero_id": "mikola"
+      },
+      {
+        "score": 12.75,
+        "hero_id": "rowan"
+      },
+      {
+        "score": 12.75,
+        "hero_id": "sonja"
+      },
+      {
+        "score": 12.7,
+        "hero_id": "shemira"
+      },
+      {
+        "score": 12.5,
+        "hero_id": "cecia"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "mehira"
+      },
+      {
+        "score": 12.0,
+        "hero_id": "soren"
+      },
+      {
+        "score": 11.25,
+        "hero_id": "fay"
+      },
+      {
+        "score": 10.5,
+        "hero_id": "korin"
+      },
+      {
+        "score": 10.5,
+        "hero_id": "kulu"
+      },
+      {
+        "score": 10.5,
+        "hero_id": "zanie"
+      },
+      {
+        "score": 10.25,
+        "hero_id": "tilaya"
+      },
+      {
+        "score": 10.0,
+        "hero_id": "silvina"
+      },
+      {
+        "score": 9.75,
+        "hero_id": "cyran"
+      },
+      {
+        "score": 9.45,
+        "hero_id": "kordan"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "isabella"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "parisa"
+      },
+      {
+        "score": 9.0,
+        "hero_id": "temesia"
+      },
+      {
+        "score": 8.775,
+        "hero_id": "taichi-agumon"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "aurora"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "damian"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "frieren"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "lamentis"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "peggy"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "ravion"
+      },
+      {
+        "score": 8.25,
+        "hero_id": "sylphira"
+      },
+      {
+        "score": 7.95,
+        "hero_id": "hewynn"
+      },
+      {
+        "score": 7.95,
+        "hero_id": "lorsan"
+      },
+      {
+        "score": 7.923214285714285,
+        "hero_id": "antandra"
+      },
+      {
+        "score": 7.875,
+        "hero_id": "zandrok"
+      },
+      {
+        "score": 7.7,
+        "hero_id": "berial"
+      },
+      {
+        "score": 7.500000000000001,
+        "hero_id": "twins"
+      },
+      {
+        "score": 7.5,
+        "hero_id": "harak"
+      },
+      {
+        "score": 7.5,
+        "hero_id": "shakir"
+      },
+      {
+        "score": 7.03125,
+        "hero_id": "baelran"
+      },
+      {
+        "score": 6.525,
+        "hero_id": "alna"
+      },
+      {
+        "score": 6.525,
+        "hero_id": "thador"
+      },
+      {
+        "score": 5.625,
+        "hero_id": "cassadee"
+      },
+      {
+        "score": 3.75,
+        "hero_id": "gunnar"
+      },
+      {
+        "score": 3.75,
+        "hero_id": "valka"
+      },
+      {
+        "score": 3.0,
+        "hero_id": "hugin"
+      }
+    ],
+    "beneficiary_overflow_reasons": [
+      "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
+    ],
+    "replacements": {
+      "buff": [],
+      "energy": [],
+      "healing": [
+        {
+          "score": 0.7594,
+          "matches": [
+            "Direct healing",
+            "Healing over time",
+            "Healing"
+          ],
+          "hero_id": "solise"
+        }
+      ],
+      "similar_skills": [
+        {
+          "score": 0.6171,
+          "matches": [
+            "ally-buffer",
+            "ally-healer",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "twins"
+        },
+        {
+          "score": 0.5143,
+          "matches": [
+            "ally-buffer",
+            "cc-immunity",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "alna"
+        },
+        {
+          "score": 0.36,
+          "matches": [
+            "ally-buffer",
+            "non-ult-utility",
+            "temporary-stat-buffer"
+          ],
+          "hero_id": "aliceth"
+        }
+      ],
+      "damage": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "frieren"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "silven"
+        },
+        {
+          "score": 1.0,
+          "matches": [
+            "Magic"
+          ],
+          "hero_id": "saida"
+        }
+      ],
+      "debuff": [],
+      "cc": [
+        {
+          "score": 1.0,
+          "matches": [
+            "Stun"
+          ],
+          "hero_id": "orion"
+        }
+      ],
+      "overall": []
+    }
+  },
+  "provenance": {
+    "source_hash": "0960c488fa8916c649e4e8cfd84ce960f627aad1de68a657ee28e11dbfba9ea1",
+    "ai_hash": "a1551ec344ccd20f7c3eb014dd072749cac6c5dcd529c812263b1cc472a04f81",
+    "overrides_hash": "0b8d333075260502d32a7ea38f6ef22a739849bf2ffb5379be1c9efff0f23ab4",
+    "analysis_inputs_hash": "612bd83a69c5843d760ce0daf6c1a12e35634c672c349d71598c12091e09d66a",
+    "stage": "scored"
+  }
+}

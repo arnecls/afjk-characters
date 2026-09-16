@@ -2620,7 +2620,14 @@ def _load_behavior_tags() -> dict[str, frozenset[str]]:
     global _BEHAVIOR_TAGS
     if _BEHAVIOR_TAGS is None:
         path = ROOT / "data" / "hero_behavior_tags.json"
-        if not path.exists():
+        if (ROOT / "data" / "roster.json").exists():
+            from hero_pipeline.storage import load_roster_inputs
+
+            data = load_roster_inputs()["curated"]["behavior_tags"]
+            _BEHAVIOR_TAGS = {
+                name: frozenset(tags) for name, tags in data.items()
+            }
+        elif not path.exists():
             _BEHAVIOR_TAGS = {}
         else:
             data = json.loads(path.read_text(encoding="utf-8"))
@@ -2634,7 +2641,13 @@ def _load_summon_profiles() -> dict[str, dict[str, bool]]:
     global _SUMMON_PROFILES
     if _SUMMON_PROFILES is None:
         path = ROOT / "data" / "hero_summon_profiles.json"
-        if not path.exists():
+        if (ROOT / "data" / "roster.json").exists():
+            from hero_pipeline.storage import load_roster_inputs
+
+            _SUMMON_PROFILES = load_roster_inputs()["curated"][
+                "hero_summon_profiles"
+            ]
+        elif not path.exists():
             _SUMMON_PROFILES = {}
         else:
             _SUMMON_PROFILES = json.loads(path.read_text(encoding="utf-8"))
@@ -2867,10 +2880,13 @@ def _load_prydwen_tiers_by_title() -> dict[str, dict[str, str]]:
     global _prydwen_tiers_cache
     if _prydwen_tiers_cache is not None:
         return _prydwen_tiers_cache
-    if not HEROES_DATA.exists():
+    import heroes_io as io
+
+    try:
+        data = io.load_heroes_data()
+    except FileNotFoundError:
         _prydwen_tiers_cache = {}
         return _prydwen_tiers_cache
-    data = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
     out: dict[str, dict[str, str]] = {}
     for hero in data.get("heroes", []):
         title = hero.get("title")
@@ -3605,7 +3621,7 @@ def _role_category_by_title(
         )
     except (FileNotFoundError, KeyError):
         pass
-    raw = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
+    raw = io.load_heroes_data()
     records = {h["title"]: h for h in raw.get("heroes", [])}
     class_by_title = {
         h.title: _parse_hero_class(block_by_title[h.title]) for h in heroes
@@ -3672,12 +3688,13 @@ def build_overview() -> str:
     ]
 
     tiers_by_title: dict[str, dict[str, str]] = {}
-    if HEROES_DATA.is_file():
-        payload = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
-        for record in payload.get("heroes", []):
-            tiers = record.get("prydwen_tiers")
-            if tiers and record.get("title"):
-                tiers_by_title[record["title"]] = tiers
+    import heroes_io as io
+
+    payload = io.load_heroes_data()
+    for record in payload.get("heroes", []):
+        tiers = record.get("prydwen_tiers")
+        if tiers and record.get("title"):
+            tiers_by_title[record["title"]] = tiers
 
     behavior_tags_map = _load_behavior_tags()
 
