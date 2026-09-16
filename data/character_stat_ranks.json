@@ -124,7 +124,7 @@
         "basic": "average",
         "offensive": "average",
         "defensive": "average",
-        "other": "high"
+        "other": "average"
       },
       "stats": {
         "HP": "average",
@@ -250,7 +250,7 @@
     "cassadee": {
       "categories": {
         "basic": "average",
-        "offensive": "high",
+        "offensive": "average",
         "defensive": "low",
         "other": "low"
       },
@@ -439,6 +439,22 @@
         "ATK SPD": "average"
       }
     },
+    "eryndor": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    },
     "evie": {
       "categories": {
         "basic": "average",
@@ -511,7 +527,7 @@
         "other": "high"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "high",
         "Phys DEF": "average",
         "Magic DEF": "average",
@@ -523,7 +539,7 @@
       "categories": {
         "basic": "high",
         "offensive": "average",
-        "defensive": "high",
+        "defensive": "average",
         "other": "high"
       },
       "stats": {
@@ -1017,7 +1033,7 @@
     },
     "lucy": {
       "categories": {
-        "basic": "high",
+        "basic": "average",
         "offensive": "high",
         "defensive": "average",
         "other": "average"
@@ -1380,7 +1396,7 @@
         "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "high",
-        "ATK SPD": "high"
+        "ATK SPD": "average"
       }
     },
     "ravion": {
@@ -1762,7 +1778,7 @@
         "HP": "low",
         "ATK": "average",
         "Phys DEF": "average",
-        "Magic DEF": "low",
+        "Magic DEF": "average",
         "Haste": "low",
         "ATK SPD": "average"
       }
@@ -1920,7 +1936,7 @@
       },
       "stats": {
         "HP": "high",
-        "ATK": "high",
+        "ATK": "average",
         "Phys DEF": "low",
         "Magic DEF": "low",
         "Haste": "average",
@@ -1962,7 +1978,7 @@
     "yamato-gabumon": {
       "categories": {
         "basic": "high",
-        "offensive": "average",
+        "offensive": "high",
         "defensive": "high",
         "other": "high"
       },

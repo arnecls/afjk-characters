@@ -110,6 +110,28 @@ class FandomParseTests(unittest.TestCase):
             "2026-05-29",
         )
 
+    def test_non_numeric_cooldown_is_omitted(self) -> None:
+        wikitext = _ALICETH_WIKITEXT.replace(
+            "|energy = 0\n", "|energy = 0\n|cd     = o\n"
+        )
+        hero = sources_web._parse_fandom_hero(wikitext, "Aliceth")
+        self.assertNotIn("Cooldown", hero["skills"][0]["meta"])
+
+    def test_inline_skill_metadata_fields_are_split(self) -> None:
+        wikitext = _ALICETH_WIKITEXT.replace(
+            "|energy = 0\n", "|cd = 6|icd = 0\n|energy = 0\n"
+        )
+        hero = sources_web._parse_fandom_hero(wikitext, "Aliceth")
+        self.assertEqual(hero["skills"][0]["meta"]["Cooldown"], "6s")
+        self.assertNotIn("Initial Cooldown", hero["skills"][0]["meta"])
+
+    def test_malformed_cooldown_continuation_is_truncated(self) -> None:
+        wikitext = _ALICETH_WIKITEXT.replace(
+            "|energy = 0\n", "|cd = 6\nicd = 0\n|energy = 0\n"
+        )
+        hero = sources_web._parse_fandom_hero(wikitext, "Aliceth")
+        self.assertEqual(hero["skills"][0]["meta"]["Cooldown"], "6s")
+
 
 class ProcessWikitextTests(unittest.TestCase):
     def test_color_buzz_highlight_becomes_plain_value(self) -> None:

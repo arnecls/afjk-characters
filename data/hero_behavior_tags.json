@@ -157,6 +157,12 @@
     "enemy-grouping",
     "mass-cc"
   ],
+  "Eryndor": [
+    "aoe-damage",
+    "enemy-debuffer",
+    "high-damage-ult",
+    "high-initial-energy"
+  ],
   "Evie": [
     "ally-healer",
     "backline-assassin",

@@ -204,6 +204,14 @@
     "skill4": "cast ultimate on any tile at battle start",
     "skill5": "extra magic DEF reduction on immobilized targets"
   },
+  "Eryndor": {
+    "ultimate": "enemies with stat-reduction stacks lose ATK and max HP, then take magic damage",
+    "skill1": "sequentially strike all non-summoned enemies; stat-reduction stacks amplify damage",
+    "skill2": "gain shields while dealing repeated magic damage in a small enemy area",
+    "skill3": "Passive: gain Haste, with extra Haste after an enemy loses a stat-reduction check",
+    "skill4": "ultimate losses trigger extra magic hits; repeated losses strip enemy stat buffs and ATK",
+    "skill5": "start of battle: steal basic stats from all non-summoned enemies"
+  },
   "Twins": {
     "ultimate": "linked duo performance inspires allied haste; linked allies become unaffected",
     "skill1": "form line link channeling blessings to recover linked allies' energy and HP",

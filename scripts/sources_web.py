@@ -105,7 +105,7 @@ HERO_NAMES = [
     "Aurora", "Baelran", "Berial", "Bonnie", "Brutus", "Bryon", "Callan",
     "Carolina", "Cassadee", "Cecia", "Chippy", "Contess", "Cryonaia", "Cyran",
     "Daimon", "Damian", "Dionel", "Dunlingr", "Eironn", "Elijah & Lailah",
-    "Evie", "Faramor", "Fay", "Florabelle", "Frieren", "Galahad", "Gerda",
+    "Eryndor", "Evie", "Faramor", "Fay", "Florabelle", "Frieren", "Galahad", "Gerda",
     "Granny Dahnie", "Gunnar", "Gwyneth", "Hammie", "Harak", "Hepler",
     "Hewynn", "Himmel", "Hodgkin", "Hugin", "Igor", "Indris", "Isabella",
     "Kafra", "Kazim", "Koko", "Kordan", "Korin", "Kruger", "Kulu", "Laios",
@@ -319,8 +319,16 @@ def process_wikitext(text: str) -> str:
 def _normalise_cd(cd: str | None) -> str | None:
     if not cd:
         return None
-    s = cd.strip()
+    s = cd.strip().splitlines()[0].strip()
     return f"{s}s" if re.fullmatch(r"\d+(\.\d+)?", s) else s
+
+
+def _is_positive_cd(cd: str | None) -> bool:
+    """Return whether a cooldown field starts with a positive number."""
+    if not cd:
+        return False
+    match = re.match(r"\d+(?:\.\d+)?", cd)
+    return bool(match and float(match.group()) > 0)
 
 
 def _format_range(rng: str | None) -> str | None:
@@ -512,7 +520,7 @@ def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
 
     skills: list[dict] = []
     for inner in _extract_templates(wikitext, "Skill"):
-        fields = _parse_fields(inner)
+        fields = _parse_fields(_normalize_infobox_inner(inner))
         skill_type = (fields.get("type") or "").strip()
         type_info = SKILL_TYPE_MAP.get(skill_type)
         if not type_info:
@@ -521,10 +529,10 @@ def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
 
         meta: dict[str, str] = {}
         cd = _normalise_cd(fields.get("cd"))
-        if cd and float(re.match(r"[\d.]+", cd).group()) > 0:
+        if _is_positive_cd(cd):
             meta["Cooldown"] = cd
         icd = _normalise_cd(fields.get("icd"))
-        if icd and float(re.match(r"[\d.]+", icd).group()) > 0:
+        if _is_positive_cd(icd):
             meta["Initial Cooldown"] = icd
         rng = _format_range(fields.get("range"))
         if rng:

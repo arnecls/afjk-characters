@@ -250,7 +250,7 @@
         "afk_stages": "B",
         "pvp": "S",
         "dream_realm": "B",
-        "dream_realm_endless": "S+"
+        "dream_realm_endless": "A"
       },
       "role_category": "specialist"
     },
@@ -488,7 +488,7 @@
       "range": 1,
       "release_date": "2026-01-08",
       "prydwen_tiers": {
-        "afk_stages": "S+",
+        "afk_stages": "S",
         "pvp": "S+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
@@ -717,6 +717,15 @@
             "raw": "Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects.",
             "active": [
               "Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
             ]
           },
           "description_lite": "Rolling Boulder deals extra damage to enemies recently affected by multiple control effects."
@@ -956,8 +965,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Antandra increases the shield value her guarded ally receives from Shield Formation by 40% of her current HP.",
-                  "While the shield is active, the guarded ally also heals Antandra for 60% of the damage they deal."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -1437,8 +1445,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): While casting Sweet Encounter, makes Atalanta unaffected and increases her Haste by 60.",
-                  "If Sweet Encounter knocks the target enemy into another, reduces both enemies' Phys DEF by 40% for 8s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -1941,7 +1948,7 @@
       "range": 5,
       "release_date": "2026-01-30",
       "prydwen_tiers": {
-        "afk_stages": "A+",
+        "afk_stages": "A",
         "pvp": "B",
         "dream_realm": "A+",
         "dream_realm_endless": "A+"
@@ -2184,7 +2191,7 @@
       "range": 1,
       "release_date": "2025-06-26",
       "prydwen_tiers": {
-        "afk_stages": "S",
+        "afk_stages": "A+",
         "pvp": "A+",
         "dream_realm": "A",
         "dream_realm_endless": "B"
@@ -2417,9 +2424,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s.",
-                  "After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%.",
-                  "Once 3 Silhouettes have been summoned, they no longer lose HP over time."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -3150,8 +3155,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Elona's thunderbolt attacks now jump to 2 enemies within 2 tiles.",
-                  "Each time Elona lands 3 hits with her normal attacks or skills, Bryon's Haste permanently increases by 15, up to a maximum of 120."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -3397,8 +3401,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Callan enhances the shield granted by Restless Guardian at the start of the battle, increasing its value to 600% (HP-based) and raising the percentage of incoming damage it absorbs to 80% for allies within 2 tiles.",
-                  "After the shield expires, he gets back up 50% faster."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -3874,8 +3877,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally.",
-                  "The extra magic damage from the blessing can trigger up to 18 times per second."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -4136,11 +4138,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Cecia gains 500 initial Energy.",
-                  "When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies.",
-                  "The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat.",
-                  "Cecia shares all stolen stats with Mr.",
-                  "Carlyle."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -4552,7 +4550,7 @@
         "afk_stages": "A+",
         "pvp": "S+",
         "dream_realm": "S+",
-        "dream_realm_endless": "S+"
+        "dream_realm_endless": "S"
       },
       "role_category": "support"
     },
@@ -4792,9 +4790,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Within the domain of Eternal Winter, Cryonaia's ice storms move 37.5% faster and deal damage once every 0.25s.",
-                  "While inside the domain, Cryonaia also gains 60% damage reduction, and dealing damage to enemies triggers extra magic damage equal to 4% of the target's current HP.",
-                  "The extra magic damage cannot exceed 40% (ATK-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -5524,8 +5520,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If a toy chariot is present when Damian casts \"Emergency Support!\", its healing effect expands to cover the entire battlefield, and Damian can heal an extra ally.",
-                  "If no toy chariot is present, Damian instead restores 300% (ATK-based) HP to 1 extra weakest ally."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -5769,9 +5764,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When Dionel casts Nectar Feast, he drinks the divine nectar 50% faster.",
-                  "While the divine nectar effect is active, he gains a shield that absorbs 60% (HP-based) damage.",
-                  "When he reaches max Intoxication stacks, his Execution increases by 25 further."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -5807,15 +5800,9 @@
             "Initial Energy": "0"
           },
           "description": {
-            "raw": "Dunlingr designates the Bell of Order as either Spellbind or Curelock before a battle starts, setting the stage for the battle's order. Spellbind: Unable to cast Ultimate. Curelock: Unable to recover HP for others. Active. Dunlingr summons the Bell of Order, declaring an order that all non-boss units on both sides must obey unconditionally for 6 + 0.25 (SP-based)s. Passive Dunlingr summons the Bell of Order when a battle starts and keeps it on the battlefield for 12 + 0.5 (SP-based)s. The Bell of Order deals 200% (ATK-based) + 20% (SP-based) damage to all enemies each time it is summoned. After Dunlingr is defeated, the order's effect duration is reduced to 30% of the remaining time.",
+            "raw": "Dunlingr designates the Bell of Order as either {{Icon",
             "active": [
-              "Dunlingr designates the Bell of Order as either Spellbind or Curelock before a battle starts, setting the stage for the battle's order.",
-              "Spellbind: Unable to cast Ultimate.",
-              "Curelock: Unable to recover HP for others.",
-              "Dunlingr summons the Bell of Order, declaring an order that all non-boss units on both sides must obey unconditionally for 6 + 0.25 (SP-based)s.",
-              "Passive Dunlingr summons the Bell of Order when a battle starts and keeps it on the battlefield for 12 + 0.5 (SP-based)s.",
-              "The Bell of Order deals 200% (ATK-based) + 20% (SP-based) damage to all enemies each time it is summoned.",
-              "After Dunlingr is defeated, the order's effect duration is reduced to 30% of the remaining time."
+              "Dunlingr designates the Bell of Order as either {{Icon"
             ],
             "upgrades": [
               {
@@ -6015,8 +6002,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If Dunlingr is alive, each time the order effect of his Bell ends or its duration is refreshed, an extra effect will be triggered based on the Bell's active order: Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 for 8s.",
-                  "Curelock: Reduces all enemies' HP by 150% (ATK-based) and their Vitality by 50 for 8s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -6523,6 +6509,250 @@
       "role_category": "support"
     },
     {
+      "title": "Eryndor - Veiled Viceroy",
+      "name": "Eryndor",
+      "tags": "Graveborn · Mage · Magic",
+      "faction": "Graveborn",
+      "class": "Mage",
+      "damage_type": "Magic",
+      "description": "A mage who lurks in the shadows, outwitting his opponents through cunning trickery.",
+      "skills": [
+        {
+          "section": "Ultimate",
+          "name": "Forced Game",
+          "unlock": "Unlocks at Level 1",
+          "meta": {
+            "Skill Range": "8 tiles",
+            "Initial Energy": "550"
+          },
+          "description": {
+            "raw": "Eryndor invites all non-summoned enemies to play his game. Each enemy independently rolls a die to determine their outcome. Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times. Each stack of Woe reduces the enemy's roll by 1. If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times. Ervndor can claim stats from each enemy up to 3 times. The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats.",
+            "active": [
+              "Eryndor invites all non-summoned enemies to play his game.",
+              "Each enemy independently rolls a die to determine their outcome.",
+              "Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times.",
+              "Each stack of Woe reduces the enemy's roll by 1.",
+              "If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times.",
+              "Ervndor can claim stats from each enemy up to 3 times.",
+              "The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 170% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 180% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 190% (ATK-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 200% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Eryndor invites all enemy heroes to play his game. Enemies who lose the game surrender stats to Eryndor and take damage."
+        },
+        {
+          "section": "Skill1",
+          "name": "Unfurling Blades",
+          "unlock": "Unlocks at Level 11",
+          "meta": {
+            "Cooldown": "6s",
+            "Skill Range": "8 tiles"
+          },
+          "description": {
+            "raw": "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade. Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based).",
+            "active": [
+              "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade.",
+              "Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the damage of each hit to 75% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the damage of each hit to 80% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the damage of each hit to 85% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Eryndor strikes all non-summoned enemies with his fan blades, dealing more damage for each stack of Woe on the target."
+        },
+        {
+          "section": "Skill2",
+          "name": "Veiled Return",
+          "unlock": "Unlocks at Level 31",
+          "meta": {
+            "Cooldown": "15s",
+            "Initial Cooldown": "3s",
+            "Skill Range": "8 tiles"
+          },
+          "description": {
+            "raw": "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage. The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile. Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill. Shields granted by this skill last for 8s.",
+            "active": [
+              "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage.",
+              "The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile.",
+              "Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill.",
+              "Shields granted by this skill last for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases damage to 180% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases damage to 190% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases damage to 200% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Eryndor throws his fan into the area with the most enemies, dealing continuous damage and gaining shields."
+        },
+        {
+          "section": "Unlocks at Legendary+",
+          "name": "Hero Focus",
+          "unlock": "Unlocks at Legendary+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "Eryndor gains 10 Haste during battle. When an enemy loses his game, he gains an extra 6 Haste.",
+            "active": [
+              "Eryndor gains 10 Haste during battle.",
+              "When an enemy loses his game, he gains an extra 6 Haste."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Eryndor gains 14 Haste during battle.",
+                  "When an enemy loses his game, he gains an extra 7 Haste."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Eryndor gains 18 Haste during battle.",
+                  "When an enemy loses his game, he gains an extra 8 Haste."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Eryndor increases his Haste, with an additional increase when an enemy loses his game."
+        },
+        {
+          "section": "Ex. Skill",
+          "name": "All is Lost",
+          "unlock": "Unlocks at Mythic+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy. Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits.",
+            "active": [
+              "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy.",
+              "Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage dealt by extra hits to 225% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Once a non-boss enemy has lost Eryndor's game 2 times, they are permanently stripped of all stat buffs for the rest of the battle, and their ATK is further reduced by 15% of Eryndor's ATK, down to a minimum of 20% of the target's initial ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage dealt by extra hits to 250% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Enemies who lose Eryndor's game take extra damage multiple times."
+        },
+        {
+          "section": "Unlocks at Supreme+",
+          "name": "Enhance Force",
+          "unlock": "Unlocks at Supreme+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee. The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat.",
+            "active": [
+              "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee.",
+              "The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat."
+            ]
+          },
+          "description_lite": "Eryndor collects a portion of enemy heroes' basic stats as an entry fee when a battle starts."
+        }
+      ],
+      "range": 8,
+      "release_date": "2026-09-03",
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      },
+      "role_category": "damage_dealer"
+    },
+    {
       "title": "Evie - Royal Envoy",
       "name": "Evie",
       "tags": "Lightbearer · Support · Magic",
@@ -6765,10 +6995,10 @@
       "range": 20,
       "release_date": "2026-05-07",
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A+",
         "pvp": "S",
         "dream_realm": "A+",
-        "dream_realm_endless": "B"
+        "dream_realm_endless": "A+"
       },
       "role_category": "support"
     },
@@ -7474,8 +7704,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Overgrowth has its cooldown reduced to 5s and can simultaneously affect Smashy, Swifty and Spiny.",
-                  "Meanwhile, allied summons in their giant form gain extra ATK equal to 40% (ATK-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -7726,7 +7955,7 @@
         "dream_realm": "S+",
         "dream_realm_endless": "S+"
       },
-      "role_category": "damage_dealer"
+      "role_category": "specialist"
     },
     {
       "title": "Galahad - Daughter of Dawn",
@@ -7970,10 +8199,10 @@
       "range": 10,
       "release_date": "2025-12-18",
       "prydwen_tiers": {
-        "afk_stages": "S",
+        "afk_stages": "A+",
         "pvp": "B",
         "dream_realm": "A+",
-        "dream_realm_endless": "S"
+        "dream_realm_endless": "S+"
       },
       "role_category": "damage_dealer"
     },
@@ -8201,9 +8430,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When an ally enters Gerda's hot spring area for the first time, they gain a shield that can absorb 300% (ATK-based) damage.",
-                  "For every 3 instances of healing the ally receives from the hot spring, they gain an extra shield that absorbs 150% (ATK-based) damage.",
-                  "The total shield value from this skill cannot exceed 450% (ATK-based) per ally at once."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -8447,8 +8674,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Shooting a Parasitic Seed instantly restores Granny Dahnie's Energy by 100.",
-                  "While shooting the Parasitic Seed, Granny Dahnie's Haste increased by 150, and the ATK reduction the seed inflicts on enemies is further increased by 70%.."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -8699,10 +8925,10 @@
       "range": 20,
       "release_date": "2026-03-05",
       "prydwen_tiers": {
-        "afk_stages": "S+",
+        "afk_stages": "S",
         "pvp": "S+",
         "dream_realm": "S+",
-        "dream_realm_endless": "S+"
+        "dream_realm_endless": "S"
       },
       "role_category": "tank"
     },
@@ -8945,8 +9171,8 @@
       "prydwen_tiers": {
         "afk_stages": "A",
         "pvp": "S+",
-        "dream_realm": "S+",
-        "dream_realm_endless": "S+"
+        "dream_realm": "S",
+        "dream_realm_endless": "S"
       },
       "role_category": "damage_dealer"
     },
@@ -10277,8 +10503,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Hodgkin gains 400 initial Energy.",
-                  "During Cannon Fire, for each enemy hit by the cannon at least 2 times, he recovers 150 Energy and reduces that enemy's Vitality by 80 for 10s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -10997,8 +11222,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Within 4s after Indris breaks an enemy's weakness, each of his normal attack arrow that hits the affected enemy deals extra physical damage equal to 5% of the enemy's max HP.",
-                  "The damage cannot exceed 150% of Indris' ATK."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -12791,14 +13015,11 @@
             "Skill Range": "Global"
           },
           "description": {
-            "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 rearmost|align=right enemy on the enemy side of the battlefield and release all devoured enemies upon impact. Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s. Devoured enemies cannot act or act and will only take damage from Boomboom. If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges.",
+            "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 {{e|rearmost",
             "active": [
               "Kulu summons Boomboom, which bounces 3 times between enemies.",
               "The first 2 bounces will target the 2 frontmost enemies, devouring them.",
-              "For the final bounce, Boomboom will target 1 rearmost|align=right enemy on the enemy side of the battlefield and release all devoured enemies upon impact.",
-              "Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s.",
-              "Devoured enemies cannot act or act and will only take damage from Boomboom.",
-              "If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges."
+              "For the final bounce, Boomboom will target 1 {{e|rearmost"
             ],
             "upgrades": [
               {
@@ -13273,7 +13494,7 @@
           "name": "Astral Fission",
           "unlock": "Unlocks at Level 31",
           "meta": {
-            "Cooldown": "10\nicd     = 1",
+            "Cooldown": "10s",
             "Skill Range": "Global"
           },
           "description": {
@@ -13408,7 +13629,7 @@
         "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "A+",
-        "dream_realm_endless": "A"
+        "dream_realm_endless": "A+"
       },
       "role_category": "specialist"
     },
@@ -13640,10 +13861,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When a battle starts, Lenya gains a shield that absorbs 800% (ATK-based) damage.",
-                  "While the shield is active, she gains 25 Crit and 40 Crit DMG Boost.",
-                  "The shield value increases by 800% (ATK-based) whenever Lenya cast her Ultimate.",
-                  "Additionally, each time Lenya wins a duel, she recovers 300 Energy."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -14135,10 +14353,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Lorsan can cast Stormbound Chain 5 times.",
-                  "Each time Stormbound Chain transfers damage, it also inflicts max HP reduction equal to 20% of the transferred damage.",
-                  "Whenever Stormbound Chain breaks, the ally dealing the most damage gains Zephyr's Embrace for 4.5s.",
-                  "If the ally already has this effect, its duration will be extended by 4.5s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -14382,9 +14597,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Lucca increases the Phys & Magic DEF of adjacent allies placed behind him during Battle Preparation by 30%.",
-                  "During battle, whenever these allies take melee damage, Lucca immediately casts his Ultimate on eligible attackers without consuming Energy.",
-                  "This effect can trigger only once per battle."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -15342,7 +15555,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -15584,8 +15797,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Lyca gains 300 extra Initial Energy.",
-                  "She extends the duration of Nebula Reflection from her Comet Archery by 7s and makes each meteor summoned by allied attacks deal extra damage equal to 40% of her ATK."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -16773,8 +16985,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Increases Bone Sear's cooldown by 12 and the number of enemies it burns by 3.",
-                  "Bone Sear also increases Mirael's ATK SPD by 300 for 18s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -16859,11 +17070,11 @@
             "Skill Range": "Global"
           },
           "description": {
-            "raw": "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range. The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK. This skill won't defeat the enemy and prioritizes attacking the closest enemy in a symmetrical|align=right position.",
+            "raw": "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range. The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK. This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical",
             "active": [
               "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range.",
               "The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK.",
-              "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a symmetrical|align=right position."
+              "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical"
             ],
             "upgrades": [
               {
@@ -17020,9 +17231,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When casting Phantom Chains, becomes Unaffected for 3s and permanently reduces the target's Vitality by 30.",
-                  "Also inflicts max HP reduction equal to 20% of the target's max HP.",
-                  "The max HP reduction cannot exceed 250% of the Nara's ATK and lasts until the end of battle."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -17988,8 +18197,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Replaces normal attacks with Spirit Devour, which deals only 75% of the skill's original damage.",
-                  "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -18000,7 +18208,7 @@
       "range": 1,
       "release_date": "2024-03-27",
       "prydwen_tiers": {
-        "afk_stages": "A+",
+        "afk_stages": "A",
         "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
@@ -19196,8 +19404,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Floral Inspiration no longer has an initial cooldown.",
-                  "After this skill is cast for the first time, Floral Inspiration targets 1 extra allies, prioritizing those who have dealt the most normal attack damage."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -19694,7 +19901,7 @@
       "range": 6,
       "release_date": "2026-07-02",
       "prydwen_tiers": {
-        "afk_stages": "A+",
+        "afk_stages": "S",
         "pvp": "B",
         "dream_realm": "A+",
         "dream_realm_endless": "A+"
@@ -19941,7 +20148,7 @@
         "afk_stages": "A+",
         "pvp": "A",
         "dream_realm": "A",
-        "dream_realm_endless": "A"
+        "dream_realm_endless": "A+"
       },
       "role_category": "tank"
     },
@@ -20903,8 +21110,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Rhys' Ultimate now stops time until he finishes firing all bullets.",
-                  "If cast while Blast Ammo is loaded, he increases his Crit DMG Boost by 120 and movement speed by 60%, lasting until he's affected by a control effect.."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -21149,9 +21355,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Rowan upgrades his Energy potion into a super Energy potion.",
-                  "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
-                  "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -21162,7 +21366,7 @@
       "range": 3,
       "release_date": "2024-03-27",
       "prydwen_tiers": {
-        "afk_stages": "A",
+        "afk_stages": "A+",
         "pvp": "A",
         "dream_realm": "B",
         "dream_realm_endless": "B"
@@ -21176,7 +21380,7 @@
       "faction": "Celestial",
       "class": "Support",
       "damage_type": "Magic",
-      "description": "",
+      "description": "The first king of the Lightbearer Empire, a commanding Support who rallies his allies in battle.",
       "skills": [
         {
           "section": "Ultimate",
@@ -21897,9 +22101,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Salazer increases the damage of Spirit Shackles by 60%.",
-                  "Each time an enemy that he has previously imprisoned is defeated, grants him a shield equal to 100% of that enemy's max HP.",
-                  "The shield lasts for 15s, and its value cannot exceed 1500% of Salazer's ATK."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -22141,8 +22343,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Increases ignite damage by 100%.",
-                  "The effects that previously required igniting 5 heroes now trigger after igniting 4 heroes."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -22387,9 +22588,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If an ally's shield ratio drops below 20% while Scarlita is still in the air during Sanctified Verdict, she instantly grants them a shield that blocks 120% (HP-based) damage for 10s.",
-                  "This effect can trigger once per battle.",
-                  "If the shield is not activated by the time Scarlita descends from midair, Sanctified Verdict's ground smash will affect the entire battlefield and deals 75% more damage."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -23589,7 +23788,7 @@
       "range": 7,
       "release_date": "2026-02-13",
       "prydwen_tiers": {
-        "afk_stages": "S",
+        "afk_stages": "S+",
         "pvp": "A+",
         "dream_realm": "S",
         "dream_realm_endless": "A+"
@@ -24060,7 +24259,7 @@
         "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "B",
-        "dream_realm_endless": "C"
+        "dream_realm_endless": "A"
       },
       "role_category": "specialist"
     },
@@ -24536,10 +24735,10 @@
       "range": 6,
       "release_date": "2026-01-30",
       "prydwen_tiers": {
-        "afk_stages": "S",
+        "afk_stages": "A+",
         "pvp": "S",
         "dream_realm": "S",
-        "dream_realm_endless": "S"
+        "dream_realm_endless": "A+"
       },
       "role_category": "support"
     },
@@ -25006,9 +25205,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If an enemy hit by Whirlwind Swing or Repel Sweep collides with an any unit, terrain, or battlefield boundaries while being knocked back, restores 80 Energy to Soren.",
-                  "This also grants Soren a shield equal to 100% (ATK-based) for the rest of the battle and refreshes the cooldown of Deflecting Swing.",
-                  "This effect can be triggered once per skill cast."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -25284,7 +25481,7 @@
       "faction": "Dimensional",
       "class": "Warrior",
       "damage_type": "Physical",
-      "description": "",
+      "description": "Taichi is a fifth grader with strong leadership and the drive to take action, and he holds the Crest of Courage. His partner is Agumon, an energetic Digimon.",
       "skills": [
         {
           "section": "Ultimate",
@@ -25756,7 +25953,7 @@
         "afk_stages": "A",
         "pvp": "B",
         "dream_realm": "C",
-        "dream_realm_endless": "A+"
+        "dream_realm_endless": "A"
       },
       "role_category": "specialist"
     },
@@ -26226,9 +26423,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Temesia takes 30% less damage while charging.",
-                  "Her Iron Heel skill also deals extra damage equal to 30% of the target's max HP while granting her a 300% (ATK-based) shield.",
-                  "The extra damage cannot exceed 600% (ATK-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -27438,9 +27633,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Unlock : Enemies marked by Notice Beforehand deal 20% less damage.",
-                  "While in Skyblaster mode, Vala gains 100 more Energy every time she attacks the marked enemy.",
-                  "In Sword mode, she instead gains an extra 30 Execution."
+                  "Unlock {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -27684,8 +27877,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Valen gains 500 initial Energy.",
-                  "Whenever his lightning deals damage to an enemy, he gains 60 extra Energy and reduces that enemy's Haste by 20 and movement speed by 30 for 2s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -27796,17 +27988,7 @@
                 "level": "3",
                 "unlock": "Unlocks at Level 131",
                 "text": [
-                  "Masters \"Restless Chase\": When there are no adjacent , Valka consumes 150 Energy to roll toward the nearest enemy within 3 tiles, dodging high-arcing projectiles from normal attacks and gaining a shield that blocks 220% (ATK-based) damage.",
-                  "She then executes a powerful slash, dealing 150% (ATK-based) + 15% (SP-based) damage."
-                ]
-              },
-              {
-                "level": "4",
-                "unlock": "Unlocks at Level 191",
-                "text": [
-                  "Increases the damage of each Soul Slicer slash to 180% (ATK-based) + 15% (SP-based) damage.",
-                  "Increases the damage of the first Wrecking Blade slash to 170% (ATK-based) + 20% (SP-based) damage and the second slash to 230% (ATK-based) + 25% (SP-based).",
-                  "Increases the damage of each Restless Chase to 180% (ATK-based) + 15% (SP-based) damage."
+                  "Masters \"Restless Chase\": When there are no adjacent {{Sic|enemy"
                 ]
               }
             ]
@@ -27939,8 +28121,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Valka's Ultimate damage increases by 0.6% with each point of her ATK SPD and Haste.",
-                  "Whenever she casts her Ultimate, she also gains a shield as if Spectral Bulwark had triggered, with a shield value of 30% (HP-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -28200,7 +28381,7 @@
         "afk_stages": "S+",
         "pvp": "B",
         "dream_realm": "S",
-        "dream_realm_endless": "A"
+        "dream_realm_endless": "A+"
       },
       "role_category": "support"
     },
@@ -28429,6 +28610,15 @@
             "raw": "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
             "active": [
               "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
             ]
           },
           "description_lite": "Darkvipers return when the possessed enemies are defeated, recovering HP and Energy for Viperian."
@@ -28451,7 +28641,7 @@
       "faction": "Mauler",
       "class": "Mage",
       "damage_type": "Magic",
-      "description": "",
+      "description": "An elegant gourmet and deadly Mage who effortlessly slices through enemies in battle.",
       "skills": [
         {
           "section": "Ultimate",
@@ -28914,8 +29104,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Walker increases his Crit by 20.",
-                  "When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -28940,7 +29129,7 @@
       "faction": "Dimensional",
       "class": "Mage",
       "damage_type": "Magic",
-      "description": "",
+      "description": "Yamato is a level-headed, responsible fifth grader who holds the Crest of Friendship. His partner is Gabumon, a Digimon who cares deeply about his friends.",
       "skills": [
         {
           "section": "Ultimate",

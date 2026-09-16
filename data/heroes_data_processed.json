@@ -1776,6 +1776,15 @@
             "raw": "Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects.",
             "active": [
               "Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
             ]
           },
           "effects": [
@@ -2321,8 +2330,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Antandra increases the shield value her guarded ally receives from Shield Formation by 40% of her current HP.",
-                  "While the shield is active, the guarded ally also heals Antandra for 60% of the damage they deal."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -2397,11 +2405,11 @@
         "walk_speed": "fast",
         "signature_skill_name": "Shield Assault",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [
@@ -2412,7 +2420,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -2423,7 +2431,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -3410,8 +3418,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): While casting Sweet Encounter, makes Atalanta unaffected and increases her Haste by 60.",
-                  "If Sweet Encounter knocks the target enemy into another, reduces both enemies' Phys DEF by 40% for 8s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -3494,17 +3501,17 @@
         "walk_speed": "fast",
         "signature_skill_name": "Wild Sniper",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "slow",
         "avg_attack_range": 3.094339622641509,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -3515,7 +3522,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -5695,9 +5702,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s.",
-                  "After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%.",
-                  "Once 3 Silhouettes have been summoned, they no longer lose HP over time."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -6826,7 +6831,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -7240,8 +7245,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Elona's thunderbolt attacks now jump to 2 enemies within 2 tiles.",
-                  "Each time Elona lands 3 hits with her normal attacks or skills, Bryon's Haste permanently increases by 15, up to a maximum of 120."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -7699,8 +7703,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Callan enhances the shield granted by Restless Guardian at the start of the battle, increasing its value to 600% (HP-based) and raising the percentage of incoming damage it absorbs to 80% for allies within 2 tiles.",
-                  "After the shield expires, he gets back up 50% faster."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -7784,8 +7787,8 @@
         "shield"
       ],
       "scalar_stat_shares": {
-        "atk": 0.5882352941176471,
-        "max_hp": 0.4117647058823529
+        "atk": 0.625,
+        "max_hp": 0.375
       },
       "behavior": {
         "movement": "moving",
@@ -8719,8 +8722,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally.",
-                  "The extra magic damage from the blessing can trigger up to 18 times per second."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -9418,11 +9420,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Cecia gains 500 initial Energy.",
-                  "When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies.",
-                  "The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat.",
-                  "Cecia shares all stolen stats with Mr.",
-                  "Carlyle."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -9477,17 +9475,17 @@
         "walk_speed": "normal",
         "signature_skill_name": "Queen's Summons",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "slow",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -9499,7 +9497,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -10891,9 +10889,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Within the domain of Eternal Winter, Cryonaia's ice storms move 37.5% faster and deal damage once every 0.25s.",
-                  "While inside the domain, Cryonaia also gains 60% damage reduction, and dealing damage to enemies triggers extra magic damage equal to 4% of the target's current HP.",
-                  "The extra magic damage cannot exceed 40% (ATK-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -12515,8 +12511,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If a toy chariot is present when Damian casts \"Emergency Support!\", its healing effect expands to cover the entire battlefield, and Damian can heal an extra ally.",
-                  "If no toy chariot is present, Damian instead restores 300% (ATK-based) HP to 1 extra weakest ally."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -12618,7 +12613,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "low"
             }
           }
         }
@@ -13041,9 +13036,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When Dionel casts Nectar Feast, he drinks the divine nectar 50% faster.",
-                  "While the divine nectar effect is active, he gains a shield that absorbs 60% (HP-based) damage.",
-                  "When he reaches max Intoxication stacks, his Execution increases by 25 further."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -13093,12 +13086,10 @@
       "benefit_stats": [
         "atk",
         "atk_spd",
-        "shield",
         "execution"
       ],
       "scalar_stat_shares": {
-        "atk": 0.9,
-        "max_hp": 0.1
+        "atk": 1.0
       },
       "behavior": {
         "movement": "moving",
@@ -13169,15 +13160,9 @@
         "Echo of Silence": {
           "category": "ultimate",
           "description": {
-            "raw": "Dunlingr designates the Bell of Order as either Spellbind or Curelock before a battle starts, setting the stage for the battle's order. Spellbind: Unable to cast Ultimate. Curelock: Unable to recover HP for others. Active. Dunlingr summons the Bell of Order, declaring an order that all non-boss units on both sides must obey unconditionally for 6 + 0.25 (SP-based)s. Passive Dunlingr summons the Bell of Order when a battle starts and keeps it on the battlefield for 12 + 0.5 (SP-based)s. The Bell of Order deals 200% (ATK-based) + 20% (SP-based) damage to all enemies each time it is summoned. After Dunlingr is defeated, the order's effect duration is reduced to 30% of the remaining time.",
+            "raw": "Dunlingr designates the Bell of Order as either {{Icon",
             "active": [
-              "Dunlingr designates the Bell of Order as either Spellbind or Curelock before a battle starts, setting the stage for the battle's order.",
-              "Spellbind: Unable to cast Ultimate.",
-              "Curelock: Unable to recover HP for others.",
-              "Dunlingr summons the Bell of Order, declaring an order that all non-boss units on both sides must obey unconditionally for 6 + 0.25 (SP-based)s.",
-              "Passive Dunlingr summons the Bell of Order when a battle starts and keeps it on the battlefield for 12 + 0.5 (SP-based)s.",
-              "The Bell of Order deals 200% (ATK-based) + 20% (SP-based) damage to all enemies each time it is summoned.",
-              "After Dunlingr is defeated, the order's effect duration is reduced to 30% of the remaining time."
+              "Dunlingr designates the Bell of Order as either {{Icon"
             ],
             "upgrades": [
               {
@@ -13548,8 +13533,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If Dunlingr is alive, each time the order effect of his Bell ends or its duration is refreshed, an extra effect will be triggered based on the Bell's active order: Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 for 8s.",
-                  "Curelock: Reduces all enemies' HP by 150% (ATK-based) and their Vitality by 50 for 8s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -13702,7 +13686,7 @@
       },
       "behavior": {
         "movement": "moving",
-        "movement_note": "melee class",
+        "movement_note": "avg attack range 2.9 tiles",
         "casting_speed": "average",
         "walk_speed": "normal",
         "signature_skill_name": "Echo of Silence",
@@ -13713,30 +13697,28 @@
         "signature_first_cast_needs_energy": true,
         "ult_speed": "fast",
         "non_ult_speed": "average",
-        "avg_attack_range": 6.365853658536587,
+        "avg_attack_range": 2.9047619047619047,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "average",
               "Magic": "average"
             }
           },
           "ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "average",
               "Magic": "average"
             }
           },
@@ -14879,6 +14861,666 @@
             "debuffs": "none",
             "damage_types": {
               "Magic": "low"
+            }
+          }
+        }
+      }
+    },
+    "Eryndor": {
+      "long_name": "Eryndor - Veiled Viceroy",
+      "faction": "graveborn",
+      "class": "mage",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 8,
+      "release_date": "2026-09-03",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Forced Game": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Eryndor invites all non-summoned enemies to play his game. Each enemy independently rolls a die to determine their outcome. Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times. Each stack of Woe reduces the enemy's roll by 1. If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times. Ervndor can claim stats from each enemy up to 3 times. The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats.",
+            "active": [
+              "Eryndor invites all non-summoned enemies to play his game.",
+              "Each enemy independently rolls a die to determine their outcome.",
+              "Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times.",
+              "Each stack of Woe reduces the enemy's roll by 1.",
+              "If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times.",
+              "Ervndor can claim stats from each enemy up to 3 times.",
+              "The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 170% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 180% (ATK-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 190% (ATK-based)."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt to an enemy who loses Eryndor's game to 200% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "debuff",
+              "name": "ATK",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ],
+              "persistence": "permanent"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 8,
+          "initial_energy": 550.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK — All units",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Max HP — All units",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Unfurling Blades": {
+          "category": "skill1",
+          "description": {
+            "raw": "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade. Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based).",
+            "active": [
+              "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade.",
+              "Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based)."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the damage of each hit to 75% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the damage of each hit to 80% (ATK-based) + 10% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the damage of each hit to 85% (ATK-based) + 10% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 95.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 6.0,
+          "skill_range": 8,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            }
+          ]
+        },
+        "Veiled Return": {
+          "category": "skill2",
+          "description": {
+            "raw": "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage. The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile. Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill. Shields granted by this skill last for 8s.",
+            "active": [
+              "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage.",
+              "The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile.",
+              "Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill.",
+              "Shields granted by this skill last for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases damage to 180% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases damage to 190% (ATK-based) + 20% (SP-based)."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases damage to 200% (ATK-based) + 20% (SP-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ],
+              "duration": 8.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 15.0,
+          "initial_cooldown": 3.0,
+          "skill_range": 8,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Shield — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Eryndor gains 10 Haste during battle. When an enemy loses his game, he gains an extra 6 Haste.",
+            "active": [
+              "Eryndor gains 10 Haste during battle.",
+              "When an enemy loses his game, he gains an extra 6 Haste."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Eryndor gains 14 Haste during battle.",
+                  "When an enemy loses his game, he gains an extra 7 Haste."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Eryndor gains 18 Haste during battle.",
+                  "When an enemy loses his game, he gains an extra 8 Haste."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 18.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Haste — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "All is Lost": {
+          "category": "skill4",
+          "description": {
+            "raw": "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy. Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits.",
+            "active": [
+              "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy.",
+              "Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage dealt by extra hits to 225% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Once a non-boss enemy has lost Eryndor's game 2 times, they are permanently stripped of all stat buffs for the rest of the battle, and their ATK is further reduced by 15% of Eryndor's ATK, down to a minimum of 20% of the target's initial ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage dealt by extra hits to 250% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "on_ultimate"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "permanent"
+                }
+              ],
+              "type": "debuff",
+              "name": "ATK",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Stat buffs",
+              "label": "debuff_stat"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "ATK (EX+10)",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Stat buffs (EX+10)",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee. The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat.",
+            "active": [
+              "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee.",
+              "The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "type": "debuff",
+              "name": "Basic stats",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 7.0
+                }
+              ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 7.0
+                }
+              ],
+              "persistence": "permanent"
+            }
+          ],
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Basic stats — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Basic stats — All units",
+              "polarity": "debuff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Stacking",
+            "tier": "base",
+            "targeting": "All units",
+            "description": "A different ally applying a stat reduction gives that enemy a permanent Woe stack, up to three."
+          },
+          {
+            "label": "Stat steal",
+            "tier": "base",
+            "targeting": "All units",
+            "description": "An enemy that loses the game surrenders ATK and max HP to Eryndor, up to three times."
+          }
+        ],
+        "requires": [
+          {
+            "label": "Debuff on target",
+            "tier": "base",
+            "targeting": "Enemies",
+            "description": "A different ally must inflict a stat reduction on an enemy to add Woe."
+          }
+        ]
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "All units, Area, Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "haste",
+        "max_hp",
+        "shield",
+        "physical_def",
+        "magic_def"
+      ],
+      "scalar_stat_shares": {
+        "atk": 1.0
+      },
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "avg attack range 8.0 tiles",
+        "casting_speed": "fast",
+        "walk_speed": "normal",
+        "signature_skill_name": "Forced Game",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "signature_first_cast_needs_energy": false,
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
+        "avg_attack_range": 8.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "average"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "average"
             }
           }
         }
@@ -16360,7 +17002,7 @@
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 5.000000000000001,
         "placement_constraints": [],
         "skill_overview": {
@@ -16809,8 +17451,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Overgrowth has its cooldown reduced to 5s and can simultaneously affect Smashy, Swifty and Spiny.",
-                  "Meanwhile, allied summons in their giant form gain extra ATK equal to 40% (ATK-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -16915,7 +17556,7 @@
       "long_name": "Frieren - The Legendary Mage",
       "faction": "dimensional",
       "class": "mage",
-      "role_category": "damage_dealer",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
@@ -18455,9 +19096,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When an ally enters Gerda's hot spring area for the first time, they gain a shield that can absorb 300% (ATK-based) damage.",
-                  "For every 3 instances of healing the ally receives from the hot spring, they gain an extra shield that absorbs 150% (ATK-based) damage.",
-                  "The total shield value from this skill cannot exceed 450% (ATK-based) per ally at once."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -18567,7 +19206,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "average"
             }
           },
           "ultimate": {
@@ -18589,7 +19228,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "average"
             }
           }
         }
@@ -19093,8 +19732,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Shooting a Parasitic Seed instantly restores Granny Dahnie's Energy by 100.",
-                  "While shooting the Parasitic Seed, Granny Dahnie's Haste increased by 150, and the ATK reduction the seed inflicts on enemies is further increased by 70%.."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -19138,7 +19776,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
-        "energy",
         "physical_def",
         "magic_def"
       ],
@@ -19819,7 +20456,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
@@ -20323,17 +20960,17 @@
         "walk_speed": "normal",
         "signature_skill_name": "Hailing Arrows",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "fast",
         "avg_attack_range": 8.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -20344,7 +20981,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -23098,8 +23735,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Hodgkin gains 400 initial Energy.",
-                  "During Cannon Fire, for each enemy hit by the cannon at least 2 times, he recovers 150 Energy and reduces that enemy's Vitality by 80 for 10s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -24593,8 +25229,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Within 4s after Indris breaks an enemy's weakness, each of his normal attack arrow that hits the affected enemy deals extra physical damage equal to 5% of the enemy's max HP.",
-                  "The damage cannot exceed 150% of Indris' ATK."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -24649,7 +25284,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "average",
+        "casting_speed": "slow",
         "walk_speed": "fast",
         "signature_skill_name": "Spellbane Shot",
         "signature_skill_is_ult": true,
@@ -27508,7 +28143,7 @@
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": false,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -27929,17 +28564,17 @@
         "walk_speed": "normal",
         "signature_skill_name": "Demonseal Spear",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "average",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -27950,7 +28585,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -28714,14 +29349,11 @@
         "Boomboom Bash!": {
           "category": "skill2",
           "description": {
-            "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 rearmost|align=right enemy on the enemy side of the battlefield and release all devoured enemies upon impact. Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s. Devoured enemies cannot act or act and will only take damage from Boomboom. If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges.",
+            "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 {{e|rearmost",
             "active": [
               "Kulu summons Boomboom, which bounces 3 times between enemies.",
               "The first 2 bounces will target the 2 frontmost enemies, devouring them.",
-              "For the final bounce, Boomboom will target 1 rearmost|align=right enemy on the enemy side of the battlefield and release all devoured enemies upon impact.",
-              "Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s.",
-              "Devoured enemies cannot act or act and will only take damage from Boomboom.",
-              "If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges."
+              "For the final bounce, Boomboom will target 1 {{e|rearmost"
             ],
             "upgrades": [
               {
@@ -30771,10 +31403,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When a battle starts, Lenya gains a shield that absorbs 800% (ATK-based) damage.",
-                  "While the shield is active, she gains 25 Crit and 40 Crit DMG Boost.",
-                  "The shield value increases by 800% (ATK-based) whenever Lenya cast her Ultimate.",
-                  "Additionally, each time Lenya wins a duel, she recovers 300 Energy."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -31844,10 +32473,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Lorsan can cast Stormbound Chain 5 times.",
-                  "Each time Stormbound Chain transfers damage, it also inflicts max HP reduction equal to 20% of the transferred damage.",
-                  "Whenever Stormbound Chain breaks, the ally dealing the most damage gains Zephyr's Embrace for 4.5s.",
-                  "If the ally already has this effect, its duration will be extended by 4.5s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -32442,9 +33068,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Lucca increases the Phys & Magic DEF of adjacent allies placed behind him during Battle Preparation by 30%.",
-                  "During battle, whenever these allies take melee damage, Lucca immediately casts his Ultimate on eligible attackers without consuming Energy.",
-                  "This effect can trigger only once per battle."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -32506,10 +33130,6 @@
         "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [
-          {
-            "kind": "ally_placement",
-            "text": "place adjacent allies behind at battle prep (DEF buff)"
-          },
           {
             "kind": "ally_placement",
             "text": "place allies on adjacent tiles behind at battle start (shields and ATK boost)"
@@ -34573,7 +35193,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -34623,8 +35243,8 @@
         "shield"
       ],
       "scalar_stat_shares": {
-        "atk": 0.9230769230769231,
-        "max_hp": 0.07692307692307693
+        "atk": 0.9166666666666666,
+        "max_hp": 0.08333333333333333
       },
       "behavior": {
         "movement": "high movement",
@@ -35072,8 +35692,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Lyca gains 300 extra Initial Energy.",
-                  "She extends the duration of Nebula Reflection from her Comet Archery by 7s and makes each meteor summoned by allied attacks deal extra damage equal to 40% of her ATK."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -37478,8 +38097,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Increases Bone Sear's cooldown by 12 and the number of enemies it burns by 3.",
-                  "Bone Sear also increases Mirael's ATK SPD by 300 for 18s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -37691,11 +38309,11 @@
         "Phantom Chains": {
           "category": "skill1",
           "description": {
-            "raw": "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range. The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK. This skill won't defeat the enemy and prioritizes attacking the closest enemy in a symmetrical|align=right position.",
+            "raw": "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range. The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK. This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical",
             "active": [
               "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range.",
               "The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK.",
-              "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a symmetrical|align=right position."
+              "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical"
             ],
             "upgrades": [
               {
@@ -38026,9 +38644,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): When casting Phantom Chains, becomes Unaffected for 3s and permanently reduces the target's Vitality by 30.",
-                  "Also inflicts max HP reduction equal to 20% of the target's max HP.",
-                  "The max HP reduction cannot exceed 250% of the Nara's ATK and lasts until the end of battle."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -38084,7 +38700,7 @@
       ],
       "damage_magnitudes": {
         "true": "high",
-        "max_hp": "average"
+        "max_hp": "high"
       },
       "benefit_stats": [
         "atk",
@@ -39376,7 +39992,7 @@
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
         "ult_speed": "fast",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -40264,8 +40880,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Replaces normal attacks with Spirit Devour, which deals only 75% of the skill's original damage.",
-                  "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -40354,7 +40969,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "average",
+        "casting_speed": "slow",
         "walk_speed": "slow",
         "signature_skill_name": "Soul Shepherd",
         "signature_skill_is_ult": true,
@@ -40399,7 +41014,7 @@
             "debuffs": "none",
             "damage_types": {
               "HP loss": "low",
-              "Magic": "average"
+              "Magic": "high"
             }
           }
         }
@@ -43036,8 +43651,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Floral Inspiration no longer has an initial cooldown.",
-                  "After this skill is cast for the first time, Floral Inspiration targets 1 extra allies, prioritizing those who have dealt the most normal attack damage."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -43130,7 +43744,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           }
         }
@@ -43634,17 +44248,17 @@
         "walk_speed": "fast",
         "signature_skill_name": "Divine Rend",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "signature_first_cast_needs_energy": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "fast",
         "avg_attack_range": 2.8823529411764706,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -43655,7 +44269,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -46954,8 +47568,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Rhys' Ultimate now stops time until he finishes firing all bullets.",
-                  "If cast while Blast Ammo is loaded, he increases his Crit DMG Boost by 120 and movement speed by 60%, lasting until he's affected by a control effect.."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -47042,7 +47655,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -47053,7 +47666,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -47494,9 +48107,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Rowan upgrades his Energy potion into a super Energy potion.",
-                  "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
-                  "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -48900,7 +49511,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "high",
-              "DoT": "low"
+              "DoT": "average"
             }
           }
         }
@@ -49286,9 +49897,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Salazer increases the damage of Spirit Shackles by 60%.",
-                  "Each time an enemy that he has previously imprisoned is defeated, grants him a shield equal to 100% of that enemy's max HP.",
-                  "The shield lasts for 15s, and its value cannot exceed 1500% of Salazer's ATK."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -49332,8 +49941,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "max_hp",
-        "shield"
+        "max_hp"
       ],
       "scalar_stat_shares": {
         "atk": 1.0
@@ -49800,8 +50408,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Increases ignite damage by 100%.",
-                  "The effects that previously required igniting 5 heroes now trigger after igniting 4 heroes."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -50358,9 +50965,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If an ally's shield ratio drops below 20% while Scarlita is still in the air during Sanctified Verdict, she instantly grants them a shield that blocks 120% (HP-based) damage for 10s.",
-                  "This effect can trigger once per battle.",
-                  "If the shield is not activated by the time Scarlita descends from midair, Sanctified Verdict's ground smash will affect the entire battlefield and deals 75% more damage."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -50396,8 +51001,8 @@
         "energy"
       ],
       "scalar_stat_shares": {
-        "atk": 0.6666666666666666,
-        "max_hp": 0.3333333333333333
+        "atk": 0.7272727272727273,
+        "max_hp": 0.2727272727272727
       },
       "behavior": {
         "movement": "moving",
@@ -50995,7 +51600,7 @@
             "debuffs": "average",
             "damage_types": {
               "HP loss": "high",
-              "Physical": "average"
+              "Physical": "low"
             }
           }
         }
@@ -55770,9 +56375,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): If an enemy hit by Whirlwind Swing or Repel Sweep collides with an any unit, terrain, or battlefield boundaries while being knocked back, restores 80 Energy to Soren.",
-                  "This also grants Soren a shield equal to 100% (ATK-based) for the rest of the battle and refreshes the cooldown of Deflecting Swing.",
-                  "This effect can be triggered once per skill cast."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -58598,9 +59201,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Temesia takes 30% less damage while charging.",
-                  "Her Iron Heel skill also deals extra damage equal to 30% of the target's max HP while granting her a 300% (ATK-based) shield.",
-                  "The extra damage cannot exceed 600% (ATK-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -58671,8 +59272,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "low",
-        "max_hp": "high"
+        "true": "low"
       },
       "benefit_stats": [
         "atk",
@@ -61022,7 +61622,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "average"
             }
           },
           "non_ultimate": {
@@ -61510,9 +62110,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Unlock : Enemies marked by Notice Beforehand deal 20% less damage.",
-                  "While in Skyblaster mode, Vala gains 100 more Energy every time she attacks the marked enemy.",
-                  "In Sword mode, she instead gains an extra 30 Execution."
+                  "Unlock {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -61590,8 +62188,7 @@
       },
       "benefit_stats": [
         "atk",
-        "haste",
-        "energy"
+        "haste"
       ],
       "scalar_stat_shares": {
         "atk": 1.0
@@ -62047,8 +62644,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Valen gains 500 initial Energy.",
-                  "Whenever his lightning deals damage to an enemy, he gains 60 extra Energy and reduces that enemy's Haste by 20 and movement speed by 30 for 2s."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -62348,17 +62944,7 @@
                 "level": "3",
                 "unlock": "Unlocks at Level 131",
                 "text": [
-                  "Masters \"Restless Chase\": When there are no adjacent , Valka consumes 150 Energy to roll toward the nearest enemy within 3 tiles, dodging high-arcing projectiles from normal attacks and gaining a shield that blocks 220% (ATK-based) damage.",
-                  "She then executes a powerful slash, dealing 150% (ATK-based) + 15% (SP-based) damage."
-                ]
-              },
-              {
-                "level": "4",
-                "unlock": "Unlocks at Level 191",
-                "text": [
-                  "Increases the damage of each Soul Slicer slash to 180% (ATK-based) + 15% (SP-based) damage.",
-                  "Increases the damage of the first Wrecking Blade slash to 170% (ATK-based) + 20% (SP-based) damage and the second slash to 230% (ATK-based) + 25% (SP-based).",
-                  "Increases the damage of each Restless Chase to 180% (ATK-based) + 15% (SP-based) damage."
+                  "Masters \"Restless Chase\": When there are no adjacent {{Sic|enemy"
                 ]
               }
             ]
@@ -62613,8 +63199,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Valka's Ultimate damage increases by 0.6% with each point of her ATK SPD and Haste.",
-                  "Whenever she casts her Ultimate, she also gains a shield as if Spectral Bulwark had triggered, with a shield value of 30% (HP-based)."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -62665,8 +63250,8 @@
         "energy"
       ],
       "scalar_stat_shares": {
-        "atk": 0.6086956521739131,
-        "max_hp": 0.391304347826087
+        "atk": 0.5,
+        "max_hp": 0.5
       },
       "behavior": {
         "movement": "moving",
@@ -63670,6 +64255,15 @@
             "raw": "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
             "active": [
               "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
+                ]
+              }
             ]
           },
           "effects": [
@@ -64777,8 +65371,7 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Level 2 (Unlocks with ): Walker increases his Crit by 20.",
-                  "When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain."
+                  "Level 2 (Unlocks with {{Item|Shadow Essence"
                 ]
               }
             ]
@@ -67147,17 +67740,17 @@
         "walk_speed": "slow",
         "signature_skill_name": "Guardian's Ring",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
+        "signature_skill_speed": "slow",
         "synergy_signature_speed": "average",
         "synergy_signature_is_ult": false,
         "signature_first_cast_needs_energy": false,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "average",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -67168,7 +67761,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -67181,7 +67774,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
