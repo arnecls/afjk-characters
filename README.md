@@ -106,10 +106,16 @@ Downloads merged data from Yaphalla and the Fandom wiki, then runs the full pipe
 `just download` alone marks existing generated analysis stale; run `just analyze`
 before rendering.
 
-**Validate processed data against schemas and parity checks:**
+**Validate processed data against schemas and cache freshness:**
 
 ```bash
 just validate
+```
+
+Broader content and detection checks:
+
+```bash
+just validate-semantics
 ```
 
 Run `just` (or `just --list`) to see all available recipes.

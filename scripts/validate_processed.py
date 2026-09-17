@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Validate heroes_data_processed.json against Heroes.md skill text.
+"""Validate per-hero bundles against Heroes.md and local analysis caches.
 
 Assumes a fully ascended roster: numeric checks compare processed values to
 the strongest parseable number across all skill levels and ascension tiers,
 not base unlock values.
 
 Checks:
-- Heroes.md matches reconstruct_heroes_md(heroes_data.json)
-- Re-analysis output matches committed processed JSON
+- Heroes.md matches reconstructed source from hero bundles
+- Committed analysis.json local caches match fresh analyze_local output
 - JSON Schema validation
 - Semantic issues: passive_only misuse, wiki markup, (scaled) gaps, CC gaps
 """
@@ -183,13 +183,19 @@ def check_md_parity() -> list[str]:
     return errors
 
 
-def check_reanalysis_parity(stored: dict[str, Any], fresh: dict[str, Any]) -> list[str]:
-    if stored == fresh:
-        return []
-    errors = []
-    for title in sorted(set(stored["heroes"]) | set(fresh["heroes"])):
-        if stored["heroes"].get(title) != fresh["heroes"].get(title):
-            errors.append(f"processed drift: {title}")
+def check_local_analysis_parity() -> list[str]:
+    """Compare committed local caches with a fresh analyze_local pass."""
+    from hero_pipeline.analysis.local import analyze_local
+    from hero_pipeline.storage import load_roster_inputs
+
+    snapshot = load_roster_inputs()
+    errors: list[str] = []
+    for entry in snapshot["manifest"]["heroes"]:
+        bundle = snapshot["bundles"][entry["id"]]
+        stored = (bundle.get("analysis") or {}).get("local")
+        fresh = analyze_local(entry, bundle)
+        if stored != fresh:
+            errors.append(f"local analysis drift: {entry['id']}")
     return errors[:20]
 
 
@@ -764,7 +770,7 @@ def check_temporary_stat_buffer_tags(
 
 
 def check_per_hero_layout() -> list[str]:
-    """Validate the manifest, three-file bundles, and freshness hashes."""
+    """Validate the manifest, four-file bundles, and freshness hashes."""
     from hero_pipeline.storage import (
         load_bundles,
         load_manifest,
@@ -894,13 +900,13 @@ def main() -> int:
             warnings["temporary_stat_buffer"] = tsb_errors
 
     if "reanalysis" in fail_on:
-        drift = check_reanalysis_parity(stored, fresh)
+        drift = check_local_analysis_parity()
         if drift:
             errors.extend(drift)
         else:
-            print("OK: processed JSON matches re-analysis output")
+            print("OK: local analysis caches match fresh local analysis")
     else:
-        drift = check_reanalysis_parity(stored, fresh)
+        drift = check_local_analysis_parity()
         if drift:
             warnings["reanalysis"] = drift
 

@@ -31,6 +31,10 @@ download:
 validate: ensure-venv
     .venv/bin/python scripts/hero_pipeline_cli.py validate
 
+# Content and semantic checks against local caches and AI sidecars.
+validate-semantics: ensure-venv
+    .venv/bin/python scripts/validate_processed.py
+
 # Strict types for the schema-first pipeline package only.
 typecheck: ensure-venv
     .venv/bin/python -m mypy --config-file mypy.ini scripts/hero_pipeline

@@ -129,8 +129,8 @@ def render_views(
         )
 
 
-def views(*, hero_id: str | None = None) -> tuple[int, int]:
-    """Refresh caches, score in memory, and publish views."""
+def views() -> tuple[int, int]:
+    """Refresh caches, score in memory, and publish full-roster views."""
     snapshot = _snapshot()
     processed, relationships, snapshot = score(snapshot=snapshot)
     require_fresh_local_analyses(snapshot)

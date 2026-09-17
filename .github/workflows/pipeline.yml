@@ -1,0 +1,39 @@
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - hero-split
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate schemas and cache freshness
+        run: python3 scripts/hero_pipeline_cli.py validate
+
+      - name: Validate semantics
+        run: python3 scripts/validate_processed.py
+
+      - name: Typecheck
+        run: python3 -m mypy --config-file mypy.ini scripts/hero_pipeline
+
+      - name: Test
+        run: python3 -m pytest scripts/ -n auto
+
+      - name: Render views
+        run: python3 scripts/hero_pipeline_cli.py views

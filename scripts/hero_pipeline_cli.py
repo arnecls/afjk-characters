@@ -28,8 +28,10 @@ def main() -> None:
     analyze_p = sub.add_parser("analyze", help="refresh stale local caches")
     analyze_p.add_argument("--hero")
 
-    views_p = sub.add_parser("views", help="calibrate, score, and render")
-    views_p.add_argument("--hero")
+    views_p = sub.add_parser(
+        "views",
+        help="calibrate, score, and render the full roster",
+    )
 
     validate_p = sub.add_parser("validate", help="validate bundles and caches")
     validate_p.add_argument("--hero")
@@ -54,7 +56,7 @@ def main() -> None:
         print(f"Refreshed {count} local analysis caches")
         return
     if args.command == "views":
-        heroes, scored = views(hero_id=args.hero)
+        heroes, scored = views()
         print(f"Rendered views for {heroes} heroes ({scored} scored)")
         return
     if args.command == "validate":

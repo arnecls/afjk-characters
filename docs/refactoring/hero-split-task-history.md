@@ -2,7 +2,7 @@
 
 Status: active  
 Branch: `hero-split`  
-Current commit: `9e49a4f` (`Split hero-local detectors into real seams`)  
+Current commit: `e13266b` (`Align Hero Split docs and tests`)  
 Baseline: `main` at `69940ed`  
 Last reviewed: 2026-09-17
 
@@ -431,6 +431,8 @@ The major branch milestones are:
 - `546f4ef` — split analysis responsibilities and update scoring facts
 - `4edb2f7` — calibrate from ID-keyed local analysis; own all relationship scoring
 - `9e49a4f` — split hero-local detectors; typed Cassadee corrections; no hidden analyze I/O
+- `e13266b` — align docs, tests, complexity, and benchmark evidence
+- this commit — views are full-roster; validate-semantics and pipeline CI
 
 ## 7. Current todo list
 
@@ -469,44 +471,15 @@ Fresh-cache `just analyze` three-run median 0.476s (0.463–0.484), peak RSS
 
 ### Priority 4 — repository integration debt
 
-- [ ] **Repair the Pages workflow entry points.**
+- [x] **Resolve the misleading `views --hero` option.**
+- [x] **Decide whether broader semantic validation belongs in `just validate`.**
 
-  `.github/workflows/deploy-pages.yml` still calls the deleted
-  `scripts/render_overview.py` and `scripts/render_site.py` instead of the
-  current CLI/`just` workflow. This is separate from the local architecture
-  contract but will fail when that workflow runs.
+`just validate` stays schema/freshness. `just validate-semantics` runs
+`scripts/validate_processed.py`, including persisted local-cache versus fresh
+`analyze_local` comparison. Non-deployment CI is
+`.github/workflows/pipeline.yml`.
 
-  Definition of done:
-
-  - CI uses supported commands;
-  - CI runs validation, type checking, tests, and the intended render step;
-  - no deleted entry point is referenced.
-
-- [ ] **Resolve the misleading `views --hero` option.**
-
-  The CLI accepts `--hero`, but `pipeline.views()` currently performs the
-  full roster publication and does not use the argument to scope rendering.
-  Either implement a clearly documented scoped behavior or remove the option.
-
-  Definition of done:
-
-  - the command's scope is explicit and tested;
-  - a one-hero operation cannot imply that roster-wide calibration is
-    hero-local;
-  - normal full-roster view output remains unchanged.
-
-- [ ] **Decide whether broader semantic validation belongs in `just validate`.**
-
-  The current command validates schemas and cache freshness. Broader
-  detection/content checks still exist in separate validation code and tests.
-  Decide whether to integrate them or document the split explicitly.
-
-  Definition of done:
-
-  - the operator-facing validation command has an unambiguous scope;
-  - required semantic checks run in CI or are explicitly required as a
-    separate gate;
-  - validation does not reintroduce legacy production loaders.
+Pages deploy remains unchanged and is deferred below.
 
 ## 8. Accepted or deferred issues
 
@@ -524,6 +497,10 @@ These are known but not part of the current closure sequence.
 - **Download may fetch the complete web roster even for a scoped hero update.**
   The write can remain scoped while network optimization is treated
   separately.
+- **GitHub Pages workflow still names deleted render scripts.**
+  `.github/workflows/deploy-pages.yml` calls `scripts/render_overview.py`
+  and `scripts/render_site.py`. Deployment is outside this rewrite. Local
+  architecture CI is `.github/workflows/pipeline.yml`.
 - **The public site payload shape is intentionally unchanged.** An internal
   schema redesign must not be used as a reason to redesign the browser data
   unless it produces a concrete architectural deletion and passes a rendered
@@ -547,7 +524,7 @@ The Hero Split rewrite is complete when all of the following are true:
 - relationship outputs satisfy deterministic ID/reference invariants;
 - single-hero initialization and authored changes are local to the manifest
   and hero bundle;
-- `just validate`, `just typecheck`, `just test`, and supported CI entry
-  points pass;
+- `just validate`, `just validate-semantics`, `just typecheck`, `just test`,
+  and the non-deployment pipeline CI pass;
 - complexity and performance measurements show fewer migration conversions and
   duplicate implementations, rather than only renamed or relocated code.
