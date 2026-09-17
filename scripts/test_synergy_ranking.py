@@ -151,7 +151,7 @@ class SynergyTierRankingTests(unittest.TestCase):
         ranked.sort(
             key=lambda x: (
                 -gen._prydwen_tier_preference(
-                    tiers.get(receiver["title"], {}),
+                    tiers.get(getattr(receiver, "title"), {}),
                     tiers.get(x[2], {}),
                 ),
                 -x[0],

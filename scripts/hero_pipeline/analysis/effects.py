@@ -3369,9 +3369,9 @@ def _merge_effect_records(into: Effect, src: Effect) -> None:
         into["duration"] = src["duration"]
     if src["tick"] is not None:
         into["tick"] = src["tick"]
-    src_persistence = getattr(src, "persistence", None)
+    src_persistence = src.get("persistence")
     if src_persistence and (
-        not getattr(into, "persistence", None)
+        not into.get("persistence")
         or src_persistence != "unknown"
     ):
         into["persistence"] = src_persistence
@@ -6775,16 +6775,14 @@ def strip_summaries_from_heroes_md(text: str) -> str:
 # Hero behavior (movement & casting speed) — sourced from heroes2.md
 # ---------------------------------------------------------------------------
 
-BEHAVIOR_NAME_ALIASES: dict[str, str] = {
-    "Twins": "Elijah & Lailah",
-}
-
-_CURATED_DISPLAY_ALIASES = {v: k for k, v in BEHAVIOR_NAME_ALIASES.items()}
-
-
 def curated_display_name(display: str) -> str:
     """Map wiki display name to curated JSON keys (signature skills, etc.)."""
-    return _CURATED_DISPLAY_ALIASES.get(display, display)
+    from hero_pipeline.storage import display_names_by_id, resolve_hero_id
+
+    try:
+        return display_names_by_id()[resolve_hero_id(display)]
+    except KeyError:
+        return display
 
 BEHAVIOR_ATTACK_SECTIONS = frozenset(
     {"Ultimate", "Skill1", "Skill2", "Ex. Skill"}

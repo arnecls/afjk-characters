@@ -712,7 +712,7 @@ def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
 
 def receiver_primary_damage_kind(receiver: _rs.Hero) -> str:
     """Return ``physical`` or ``magic`` from the hero's primary damage type."""
-    raw = (getattr(receiver, "damage_type", None) or "Physical").strip().lower()
+    raw = str(receiver.get("damage_type") or "Physical").strip().lower()
     if raw.startswith("magic"):
         return "magic"
     return "physical"
@@ -730,7 +730,7 @@ def receiver_wants_enemy_defense_reduction(
     """True when a damage dealer lacks meaningful true-family damage."""
     if role_category != DAMAGE_DEALER_ROLE:
         return False
-    mags = getattr(receiver, "damage_magnitudes", None) or {}
+    mags = receiver.get("damage_magnitudes") or {}
     for key in _TRUE_FAMILY_DAMAGE_KEYS:
         if mags.get(key) in ("average", "high"):
             return False
@@ -1105,6 +1105,49 @@ def _stat_synergy_reasons(reasons: list[str]) -> list[str]:
     return [r for r in reasons if " via " in r and (not r.startswith("Enables "))]
 
 
+def synergy_pick_has_enabler_reason(pick: dict) -> bool:
+    return any(r.startswith("Enables ") for r in pick.get("reasons", ()))
+
+
+def synergy_pick_has_stat_buff_reason(pick: dict) -> bool:
+    return bool(_stat_synergy_reasons(pick.get("reasons", ())))
+
+
+def synergy_pick_has_early_battle_energy_reason(pick: dict) -> bool:
+    """True when a pick's value is battle-start Energy for one receiver."""
+    for reason in pick.get("reasons", ()):
+        if not reason.startswith("Energy via "):
+            continue
+        detail = reason.removeprefix("Energy via ").split("`", 1)[0]
+        lowered = detail.lower()
+        if (
+            "at battle start" in lowered
+            or "start of battle" in lowered
+            or "lieutenant" in lowered
+            or "energy potion" in lowered
+            or "early objective" in lowered
+            or "contract ally, start of battle" in lowered
+        ):
+            return True
+    return False
+
+
+def should_filter_obvious_stat_buffer_pick(
+    pick: dict,
+    provider_beneficiary_count: dict[str, int],
+    threshold: int,
+) -> bool:
+    """Hide roster-wide stat buffers from top picks; keep enabler matches."""
+    provider = pick.get("provider", "")
+    if provider_beneficiary_count.get(provider, 0) <= threshold:
+        return False
+    if synergy_pick_has_enabler_reason(pick):
+        return False
+    if synergy_pick_has_early_battle_energy_reason(pick):
+        return False
+    return synergy_pick_has_stat_buff_reason(pick)
+
+
 def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
     """True when a receiver explicitly benefits from external shield uptime."""
     return receiver_benefits_from_external_shields(receiver)
@@ -1115,7 +1158,7 @@ def receiver_benefits_from_external_shields(receiver: _rs.Hero) -> bool:
 
 
 def _receiver_scalar_share(receiver: _rs.Hero, stat: str) -> float:
-    shares = getattr(receiver, "scalar_stat_shares", None) or {}
+    shares = receiver.get("scalar_stat_shares") or {}
     return float(shares.get(stat, 0.0))
 
 
@@ -2271,49 +2314,8 @@ def build_beneficiaries_index(
 
 
 def configure(policy: Mapping[str, Any]) -> None:
-    """Apply one immutable policy to this scorer module."""
-    global TARGETING_WEIGHT, MAG_WEIGHT, SUMMON_TARGETING_WEIGHT
-    global HASTE_FOR_ATK_SPD_SCORE_MULT, SIGNATURE_FUEL_SPEED_MULT
-    global SIGNATURE_FUEL_ENERGY_MULT, ENERGY_SYNERGY_SCORE_MULT
-    global HIGH_DAMAGE_ULT_ENERGY_PREF_MULT, IMPLICIT_FUEL_BASE
-    global EARLY_BATTLE_ENERGY_ULT_MULT, DEFINING_TIER_SCORE_MULT
-    global PROXIMITY_MELEE_MAX_RANGE, PROXIMITY_DEFAULT_AURA_RADIUS
-    global PROXIMITY_RANGE_SLACK, PROXIMITY_RECEIVER_WHITELIST
-    global PROXIMITY_PROVIDER_BLACKLIST, SCALAR_SHARE_BOOST
-    global SCALAR_BOUND_THRESHOLD, REPLACEMENT_MIN_SCORE
-    global REPLACEMENT_MAX, REPLACEMENT_SAME_FACTION_MULT
-    global REPLACEMENT_SAME_ROLE_CATEGORY_MULT
-    global REPLACEMENT_SAME_MELEE_MULT
-    global REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE
-    synergy = policy["synergy"]
-    replacement = policy["replacement"]
-    TARGETING_WEIGHT = dict(synergy["targeting_weight"])
-    MAG_WEIGHT = dict(synergy["mag_weight"])
-    SUMMON_TARGETING_WEIGHT = synergy["summon_targeting_weight"]
-    HASTE_FOR_ATK_SPD_SCORE_MULT = synergy["haste_for_atk_spd_score_mult"]
-    SIGNATURE_FUEL_SPEED_MULT = dict(synergy["signature_fuel_speed_mult"])
-    SIGNATURE_FUEL_ENERGY_MULT = dict(synergy["signature_fuel_energy_mult"])
-    ENERGY_SYNERGY_SCORE_MULT = synergy["energy_synergy_score_mult"]
-    HIGH_DAMAGE_ULT_ENERGY_PREF_MULT = synergy["high_damage_ult_energy_pref_mult"]
-    IMPLICIT_FUEL_BASE = synergy["implicit_fuel_base"]
-    EARLY_BATTLE_ENERGY_ULT_MULT = dict(synergy["early_battle_energy_ult_mult"])
-    DEFINING_TIER_SCORE_MULT = dict(synergy["defining_tier_score_mult"])
-    PROXIMITY_MELEE_MAX_RANGE = synergy["proximity_melee_max_range"]
-    PROXIMITY_DEFAULT_AURA_RADIUS = synergy["proximity_default_aura_radius"]
-    PROXIMITY_RANGE_SLACK = synergy["proximity_range_slack"]
-    PROXIMITY_RECEIVER_WHITELIST = frozenset(synergy["proximity_receiver_whitelist"])
-    PROXIMITY_PROVIDER_BLACKLIST = frozenset(synergy["proximity_provider_blacklist"])
-    SCALAR_SHARE_BOOST = synergy["scalar_share_boost"]
-    SCALAR_BOUND_THRESHOLD = synergy["scalar_bound_threshold"]
-    REPLACEMENT_MIN_SCORE = replacement["min_score"]
-    REPLACEMENT_MAX = replacement["max_replacements"]
-    REPLACEMENT_SAME_FACTION_MULT = replacement["same_faction_mult"]
-    REPLACEMENT_SAME_ROLE_CATEGORY_MULT = replacement["same_role_category_mult"]
-    REPLACEMENT_SAME_MELEE_MULT = replacement["same_melee_mult"]
-    REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE = {
-        key: dict(value)
-        for key, value in replacement["category_weights_by_role"].items()
-    }
+    """Scoring uses module defaults; config overlays are not activated."""
+    del policy
 
 
 def _score_all(

@@ -135,6 +135,15 @@ _SECTION_TO_CATEGORY = {
     "Ex. Skill": "skill4",
     "Unlocks at Supreme+": "skill5",
 }
+_CATEGORY_TO_SECTION = {
+    category: section for section, category in _SECTION_TO_CATEGORY.items()
+}
+
+
+def _stamp_source_section(converted: Any, section: str | None) -> Any:
+    if section and isinstance(converted, dict) and "category" in converted:
+        converted["source_section"] = section
+    return converted
 
 _META_RE = re.compile(r"^([\d.]+)")
 
@@ -564,7 +573,11 @@ def _numeric_from_value(value: Any) -> float | None:
     return None
 
 
-def _merge_effects(effects: list[Any]) -> list[Any]:
+def _merge_effects(
+    effects: list[Any],
+    *,
+    keep_section_in_key: bool = True,
+) -> list[Any]:
     """Merge effects by (category, label), keeping strongest numeric per tier.
 
     Keeps the strongest numeric per label for fully-ascended synergy comparison.
@@ -573,15 +586,18 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
 
     merged: list[Any] = []
     for eff in effects:
+        section = eff.get("source_section") if keep_section_in_key else None
         key = rs._effect_dedupe_key(
-            eff["category"], eff["label"], eff.get("source_section"),
+            eff["category"], eff["label"], section,
             targeting=eff["targeting"],
         )
         existing = [
             e
             for e in merged
             if rs._effect_dedupe_key(
-                e["category"], e["label"], getattr(e, "source_section", None),
+                e["category"],
+                e["label"],
+                e.get("source_section") if keep_section_in_key else None,
                 targeting=e["targeting"],
             )
             == key
@@ -614,7 +630,7 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
             cur["tier"] = eff["tier"]
         cur["conditional"] = rs._merge_conditional(cur["conditional"], eff["conditional"])
         cur["conditions"] = rs._merge_conditions_lists(
-            getattr(cur, "conditions", None),
+            cur.get("conditions"),
             eff.get("conditions"),
         )
         if eff["category"] == "buff":
@@ -638,7 +654,7 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
             cur["tick"] = eff_tick
         eff_persistence = eff.get("persistence")
         if eff_persistence and (
-            not getattr(cur, "persistence", None)
+            not cur.get("persistence")
             or eff_persistence != "unknown"
         ):
             cur["persistence"] = eff_persistence
@@ -648,6 +664,14 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
         eff_area_dir = eff.get("area_direction")
         if eff_area_dir is not None:
             cur["area_direction"] = eff_area_dir
+        if eff.get("source_section") and (
+            not cur.get("source_section")
+            or (
+                eff["numeric"] is not None
+                and (cur["numeric"] is None or eff["numeric"] > cur["numeric"])
+            )
+        ):
+            cur["source_section"] = eff["source_section"]
         if eff["numeric"] is not None and (
             cur["numeric"] is None or eff["numeric"] > cur["numeric"]
         ):
@@ -701,6 +725,8 @@ def _merge_special_effects(items: list[Any]) -> list[Any]:
                     tier=se["tier"],
                     targeting=se["targeting"],
                     qualitative=se["qualitative"],
+                    grants=list(se.get("grants") or []),
+                    named_ids=tuple(se.get("named_ids") or ()),
                 )
             )
             continue
@@ -709,6 +735,10 @@ def _merge_special_effects(items: list[Any]) -> list[Any]:
             cur["tier"] = se["tier"]
         if se["qualitative"] and not cur["qualitative"]:
             cur["qualitative"] = se["qualitative"]
+        if se.get("grants") and not cur.get("grants"):
+            cur["grants"] = list(se["grants"])
+        if se.get("named_ids") and not cur.get("named_ids"):
+            cur["named_ids"] = tuple(se["named_ids"])
     return merged
 
 
@@ -1391,8 +1421,8 @@ def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) ->
     for se in profile.get("requires", []):
         special_effects.append(synergy_mechanic_to_special(se, "requires"))
 
-    hero["effects"] = _merge_effects(raw_effects)
-    hero["summon_effects"] = _merge_effects(raw_summon)
+    hero["effects"] = _merge_effects(raw_effects, keep_section_in_key=False)
+    hero["summon_effects"] = _merge_effects(raw_summon, keep_section_in_key=False)
     hero["cc_immunities"] = _merge_immunities(raw_immunities)
     hero["special_effects"] = _merge_special_effects(special_effects)
     hero["damage_entries"] = [

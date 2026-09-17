@@ -2073,6 +2073,75 @@ class ConditionParsingTests(unittest.TestCase):
         types = {c.get("type") for c in schema.get("conditions") or []}
         self.assertIn("unit_type", types)
 
+    def test_merge_effects_unions_conditions_and_same_section_numeric(self):
+        left = rs.Effect(
+            category="damage",
+            label="Magic",
+            tier="base",
+            targeting="Single target",
+            numeric=100,
+            source_section="Skill1",
+            persistence="unknown",
+            conditions=[{"type": "status", "status": "controlled"}],
+        )
+        right = rs.Effect(
+            category="damage",
+            label="Magic",
+            tier="Mythic+",
+            targeting="Single target",
+            numeric=200,
+            source_section="Skill1",
+            persistence="refresh",
+            conditions=[{"type": "mode", "mode": "lightning"}],
+        )
+        merged = hs._merge_effects([left, right])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["numeric"], 200)
+        self.assertEqual(merged[0]["tier"], "base")
+        self.assertEqual(merged[0]["persistence"], "refresh")
+        types = {c.get("type") for c in merged[0]["conditions"]}
+        self.assertEqual(types, {"status", "mode"})
+
+    def test_thoran_soul_pact_merges_to_strongest_heal(self):
+        import skill_effects_store as ses
+
+        record = next(
+            r
+            for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Thoran"
+        )
+        hero = rs.hero_from_record(record)
+        sidecar = ses.load_sidecar(hero["title"])
+        self.assertIsNotNone(sidecar)
+        ses.apply_sidecar_to_hero(hero, sidecar)
+        merged = hs._merge_effects(hero["skill_slices"]["Ex. Skill"]["effects"])
+        heals = [
+            effect
+            for effect in merged
+            if effect["category"] == "buff"
+            and effect["label"] == "Direct healing"
+            and effect.get("numeric") in {25, 30, 35}
+        ]
+        self.assertEqual(len(heals), 1, heals)
+        self.assertEqual(heals[0]["numeric"], 35)
+        self.assertEqual(heals[0]["tier"], "EX+5")
+        self.assertEqual(heals[0]["source_section"], "Ex. Skill")
+
+    def test_merge_special_effects_keeps_named_ally_grants(self):
+        named = rs.SpecialEffect(
+            kind="provides",
+            label="Named ally on team",
+            tier="Supreme+",
+            targeting="Allies",
+            qualitative="buffs Daimon",
+            grants=[("Phys DEF", "high"), ("Magic DEF", "high")],
+        )
+        merged = hs._merge_special_effects([named])
+        self.assertEqual(
+            merged[0]["grants"],
+            [("Phys DEF", "high"), ("Magic DEF", "high")],
+        )
+
 
 class SeasonMappingTests(unittest.TestCase):
     @classmethod

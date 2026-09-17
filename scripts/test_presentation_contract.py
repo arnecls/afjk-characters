@@ -84,3 +84,65 @@ class PresentationContractTests(unittest.TestCase):
     def test_relationship_invariants(self) -> None:
         errors = relationship_invariant_errors(self.view)
         self.assertEqual(errors, [])
+
+    def test_condition_and_soul_pact_contract_clusters(self) -> None:
+        by_id = {hero["id"]: hero for hero in self.current["heroes"]}
+        arden = by_id["arden"]
+        storm = arden["analysis"]["skills"]["Spring Thunderstorm"]["effects"][0]
+        self.assertEqual(
+            {c.get("type") for c in storm["conditions"]},
+            {"status_condition"},
+        )
+        natsu = by_id["natsu"]
+        roar = natsu["analysis"]["skills"][
+            "Lightning Fire Dragon's Roar/Fire Dragon King's Roar"
+        ]["effects"][1]
+        self.assertEqual(
+            [c.get("mode") for c in roar["conditions"]],
+            ["lightning_fire_dragon", "fire_dragon_king"],
+        )
+        vala = by_id["vala"]
+        checkmate = vala["analysis"]["skills"]["Checkmate"]["effects"][1]
+        self.assertEqual(
+            [c.get("mode") for c in checkmate["conditions"]],
+            ["skyblaster", "sword"],
+        )
+        viperian = by_id["viperian"]
+        fang = viperian["analysis"]["skills"]["Enchantment Fang"]["effects"][0]
+        self.assertEqual(fang["conditions"][0]["type"], "duration_gate")
+        self.assertEqual(fang["conditions"][0]["interval"], 3.0)
+        thoran = by_id["thoran"]
+        heals = [
+            effect
+            for effect in thoran["analysis"]["skills"]["Soul Pact"]["effects"]
+            if effect.get("type") == "heal"
+        ]
+        self.assertEqual(len(heals), 1, heals)
+        self.assertEqual(heals[0]["value"][0]["value"], 35)
+        self.assertEqual(heals[0]["tier"], "ex+5")
+        energy_idx = [
+            index
+            for index, effect in enumerate(thoran["display"]["effects"])
+            if effect.get("label") == "Energy"
+        ]
+        self.assertEqual(energy_idx, [5])
+        self.assertEqual(
+            thoran["analysis"]["summary_effect_magnitudes"]["effects"][5],
+            "low",
+        )
+        self.assertEqual(thoran["display"]["effects"][5]["magnitude"], "low")
+
+    def test_sinbad_debuff_replacements_keep_cassadee(self) -> None:
+        sinbad = next(
+            hero
+            for hero in self.current_artifacts["site_heroes"]["heroes"]
+            if hero["slug"] == "sinbad"
+        )
+        debuffs = next(
+            row
+            for row in sinbad["sections"]["replacements"]
+            if row["category"] == "Debuffs on enemies"
+        )
+        slugs = [entry["slug"] for entry in debuffs["entries"]]
+        self.assertEqual(slugs, ["cassadee", "shadewing", "evie"])
+        self.assertEqual(debuffs["entries"][0]["score"], 0.5486)

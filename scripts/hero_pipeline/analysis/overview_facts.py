@@ -7,6 +7,7 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
+from typing import Any, Mapping
 
 from healing_types import (
     DIRECT_HEALING_LABEL,
@@ -327,13 +328,39 @@ def short_name(title: str) -> str:
         return title.split(" - ", 1)[0].strip()
 
 
+def _ns_to_mapping(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return value
+    if hasattr(value, "__dict__") and not isinstance(value, type):
+        converted: dict[str, Any] = {}
+        for key, item in vars(value).items():
+            if isinstance(item, list):
+                converted[key] = [_ns_to_mapping(entry) for entry in item]
+            else:
+                converted[key] = _ns_to_mapping(item)
+        return converted
+    return value
+
+
+def _get(row: Any, key: str, default: Any = None) -> Any:
+    if isinstance(row, Mapping):
+        return row.get(key, default)
+    return getattr(row, key, default)
+
+
 def _is_same_hero(provider: _rs.Hero, receiver: _rs.Hero) -> bool:
     """True when provider and receiver are the same roster hero."""
-    return short_name(provider["title"]) == short_name(receiver["title"])
+    return short_name(_get(provider, "title")) == short_name(
+        _get(receiver, "title")
+    )
 
 
 def receiver_stats(hero: _rs.Hero) -> list[str]:
-    return [s for s in hero["benefit_stats"] if s != "Primary damage type (unit)"]
+    return [
+        s
+        for s in (_get(hero, "benefit_stats") or [])
+        if s != "Primary damage type (unit)"
+    ]
 
 
 def stat_buff_targeting_weight(
@@ -420,10 +447,12 @@ def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
 
 
 def provider_skill_text(hero: _rs.Hero) -> str:
+    hero = _ns_to_mapping(hero)
     return " ".join(t for _, t, _ in hero["skill_chunks"]).lower()
 
 
 def provider_damage_types(hero: _rs.Hero) -> set[str]:
+    hero = _ns_to_mapping(hero)
     types: set[str] = set()
     if hero["damage_type"]:
         types.add(hero["damage_type"])
@@ -475,6 +504,7 @@ def provider_early_battle_ally_energy(
     provider: _rs.Hero,
 ) -> tuple[float, str] | None:
     """Score ally-facing energy granted at or immediately after battle start."""
+    provider = _ns_to_mapping(provider)
     best: tuple[float, str] | None = None
     tw = EARLY_BATTLE_ENERGY_REACH_WEIGHT
 
@@ -599,6 +629,7 @@ def is_healing_provider(provider: _rs.Hero) -> bool:
 
 def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
     """Early Energy helps when the curated signature Ultimate is slow."""
+    behavior = _ns_to_mapping(behavior)
     if (
         behavior["signature_skill_is_ult"]
         and behavior["synergy_signature_is_ult"]
@@ -610,6 +641,7 @@ def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
 
 def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
     """True when a high-damage ultimate carry still needs ally Energy to cast."""
+    receiver = _ns_to_mapping(receiver)
     curated = _rs.curated_display_name(short_name(receiver["title"]))
     tags = _load_behavior_tags().get(curated, frozenset())
     if HIGH_DAMAGE_ULT_TAG not in tags:
@@ -649,6 +681,9 @@ def score_early_battle_energy_synergy(
     receiver: _rs.Hero,
     receiver_behavior: _rs.HeroBehavior,
 ) -> tuple[float, list[str]]:
+    provider = _ns_to_mapping(provider)
+    receiver = _ns_to_mapping(receiver)
+    receiver_behavior = _ns_to_mapping(receiver_behavior)
     if _is_same_hero(provider, receiver):
         return 0.0, []
     if not receiver_wants_early_battle_energy(receiver_behavior):
@@ -691,6 +726,7 @@ def provider_buffs_at_battle_start(provider: _rs.Hero) -> bool:
 
 
 def provider_has_special(hero: _rs.Hero, label: str) -> bool:
+    hero = _ns_to_mapping(hero)
     return any(
         se["kind"] == "provides" and se["label"] == label for se in hero["special_effects"]
     )
@@ -743,6 +779,7 @@ def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
 
 
 def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
+    provider = _ns_to_mapping(provider)
     for se in provider["special_effects"]:
         if se["kind"] == "provides" and se["label"].startswith("Ally grant ("):
             return se["label"]
@@ -910,6 +947,7 @@ def _effect_is_enemy_persistent_damage(effect: _rs.Effect) -> bool:
 def _provider_structured_persistent_damage(
     provider: _rs.Hero,
 ) -> list[_rs.Effect]:
+    provider = _ns_to_mapping(provider)
     return [
         effect
         for effect in provider["effects"]
@@ -963,6 +1001,7 @@ def match_ally_debuff_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None
 
 
 def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
+    provider = _ns_to_mapping(provider)
     ally_dot = match_ally_dot_on_enemies(provider)
     effects = _provider_structured_persistent_damage(provider)
     if not effects and not ally_dot:
@@ -1074,7 +1113,7 @@ def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
 
 def receiver_primary_damage_kind(receiver: _rs.Hero) -> str:
     """Return ``physical`` or ``magic`` from the hero's primary damage type."""
-    raw = (getattr(receiver, "damage_type", None) or "Physical").strip().lower()
+    raw = str(_get(receiver, "damage_type") or "Physical").strip().lower()
     if raw.startswith("magic"):
         return "magic"
     return "physical"
@@ -1092,7 +1131,7 @@ def receiver_wants_enemy_defense_reduction(
     """True when a damage dealer lacks meaningful true-family damage."""
     if role_category != DAMAGE_DEALER_ROLE:
         return False
-    mags = getattr(receiver, "damage_magnitudes", None) or {}
+    mags = receiver.get("damage_magnitudes") or {}
     for key in _TRUE_FAMILY_DAMAGE_KEYS:
         if mags.get(key) in ("average", "high"):
             return False
@@ -1116,6 +1155,8 @@ def match_enemy_defense_reduction(
     provider: _rs.Hero, receiver: _rs.Hero
 ) -> tuple[float, str] | None:
     """Score type-matched DEF shred / Damage taken / ally DEF Penetration."""
+    provider = _ns_to_mapping(provider)
+    receiver = _ns_to_mapping(receiver)
     kind = receiver_primary_damage_kind(receiver)
     allowed_debuffs = _matching_enemy_def_debuff_labels(kind)
     candidates: list[tuple[float, str]] = []
@@ -1158,6 +1199,8 @@ def score_enemy_defense_synergy(
     role_category: str | None,
 ) -> tuple[float, list[str]]:
     """Automatic DEF-shred synergy for qualifying damage dealers."""
+    provider = _ns_to_mapping(provider)
+    receiver = _ns_to_mapping(receiver)
     if _is_same_hero(provider, receiver):
         return 0.0, []
     if not receiver_wants_enemy_defense_reduction(receiver, role_category):
@@ -1304,6 +1347,8 @@ def score_named_ally_provides(
     receiver: _rs.Hero,
 ) -> tuple[float, list[str]]:
     """Score provider special_provides that buff a named receiver."""
+    provider = _ns_to_mapping(provider)
+    receiver = _ns_to_mapping(receiver)
     receiver_name = short_name(receiver["title"])
     total = 0.0
     reasons: list[str] = []
@@ -1585,6 +1630,7 @@ def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
 
 def receiver_benefits_from_external_shields(receiver: _rs.Hero) -> bool:
     """Detect shield payoff wording that can plausibly use ally shields."""
+    receiver = _ns_to_mapping(receiver)
     for _tier, text, _section in receiver.get("skill_chunks") or ():
         t = text.lower()
         if re.search(r"\bwhen gaining a shield\b", t):
@@ -1601,7 +1647,7 @@ def receiver_benefits_from_external_shields(receiver: _rs.Hero) -> bool:
 
 
 def _receiver_scalar_share(receiver: _rs.Hero, stat: str) -> float:
-    shares = getattr(receiver, "scalar_stat_shares", None) or {}
+    shares = _get(receiver, "scalar_stat_shares") or {}
     return float(shares.get(stat, 0.0))
 
 
@@ -1805,6 +1851,10 @@ def score_synergy(
     signature_speed: str = "average",
     receiver_behavior: _rs.HeroBehavior | None = None,
 ) -> tuple[float, list[str]]:
+    provider = _ns_to_mapping(provider)
+    receiver = _ns_to_mapping(receiver)
+    if receiver_behavior is not None:
+        receiver_behavior = _ns_to_mapping(receiver_behavior)
     if _is_same_hero(provider, receiver):
         return 0.0, []
 

@@ -466,7 +466,13 @@
           "label": "Named ally on team",
           "tier": "supreme+",
           "targeting": "Allies",
-          "description": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
+          "description": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
+          "grants": [
+            {
+              "label": "Healing",
+              "magnitude": "average"
+            }
+          ]
         }
       ],
       "requires": [
@@ -654,6 +660,6 @@
   },
   "provenance": {
     "inputs_hash": "508650f455e3cf566e851e49de0f8974bd067bc6fe647ed9d203c0e9386ed831",
-    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
+    "algorithm_hash": "c8057af69bb2c987397603f52bba7387583778b559ad118b382f8259a4e67791"
   }
 }

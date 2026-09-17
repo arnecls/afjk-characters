@@ -53,6 +53,13 @@ A second `just views` regeneration left generated analysis, Markdown, and CSV
 byte-identical. `site/data/heroes.json` only changes `meta.generated`. Do not
 add a replacement cache from this migration.
 
+## Mapping-native analysis
+
+- Local analysis and calibration use mapping record factories, not dataclasses.
+- Twins and other display aliases resolve through the roster manifest.
+- Relationship scoring keeps module defaults; `configure()` does not assign
+  globals. Config-file overlays remain a later approved change.
+
 ## Phase 8 compatibility boundary
 
 - Normal pipeline commands now require the manifest and hero bundles. Runtime

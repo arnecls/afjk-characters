@@ -172,69 +172,23 @@ Completion criterion: production analyze and render paths do not call
 `load_raw_roster()`, `_curated_maps()`, `load_processed()`, or
 `legacy_synergies()`.
 
-### F3 — Analysis still uses the legacy object graph
+### F3 — Analysis uses mapping records
 
-Severity: medium-high architectural debt
+Severity: resolved for production analysis
 
-`hero_pipeline.analysis.local.analyze_local()` delegates to
-`process_heroes.build_processed()`. That function builds legacy hero objects,
-loads `rewrite-summaries.py`, runs `roster_analysis`, and serializes the result
-back to schema-shaped mappings through `hero_schema`.
+Local analysis and calibration operate on plain mapping records produced by
+`analysis/records.py`. Display names such as Twins resolve through the roster
+manifest aliases. Relationship scoring reads calibrated mappings and does not
+mutate module-level policy globals.
 
-`rewrite-summaries.py` remains approximately 9,700 lines and contains the
-highest-complexity functions in the scripts directory. The migration adds a
-clean service name around it but does not isolate hero-local analysis from
-roster-wide calibration.
+### F4 — Policy overlays stay inactive
 
-Why the compatibility layer is currently required:
+Severity: documented
 
-- targeting, magnitude, behavior, and effect rules operate on `Hero`,
-  `Effect`, `SkillSlice`, and `HeroBehavior` objects;
-- `hero_schema` performs schema-to-object and object-to-schema conversions;
-- existing tests assert behavior through those objects; and
-- several calculations still expect full-roster legacy state.
-
-Suggested improvement:
-
-1. Define the generated analysis schema as the domain contract, not merely a
-   serialization format.
-2. Port one cohesive slice at a time, starting with effect conversion and
-   hero-local derived fields.
-3. Make local analysis accept one bundle and return one generated-analysis
-   mapping.
-4. Move roster-relative magnitude and speed bands into a separate calibration
-   pass over those mappings.
-5. Preserve parity with golden-output tests before deleting each corresponding
-   legacy object conversion.
-
-Completion criterion: `hero_pipeline.analysis` no longer imports
-`process_heroes`, `roster_analysis`, or legacy object constructors.
-
-### F4 — The immutable policy layer is only cosmetic
-
-Severity: medium
-
-`analysis.policy.make_policy()` freezes configuration, but both analysis and
-synergy immediately thaw it and call `process_config.apply_config()`.
-`apply_config()` mutates globals in dynamically loaded analysis modules.
-
-Impact:
-
-- run behavior depends on process-global state;
-- test order and repeated in-process runs can influence results;
-- concurrent analyses with different policies are unsafe; and
-- the public policy contract does not reflect how configuration is consumed.
-
-Suggested improvement:
-
-1. Group analysis and scoring settings into typed immutable policy sections.
-2. Pass the relevant policy section into calculations explicitly.
-3. Convert module constants to defaults used when constructing a policy.
-4. Remove `apply_config()`, `thaw_policy()`, and dynamic global assignment after
-   all consumers accept policy arguments.
-
-Completion criterion: two analyses with different policies can execute in the
-same process without shared-state mutation.
+`make_policy()` still freezes defaults. Scoring `configure()` is a no-op because
+`heroes_config.json` values never reached the analysis modules. Ambient
+`bound_policy` remains for local/calibration cycle math until those call sites
+take an explicit policy argument.
 
 ### F5 — Synergy scoring reparses the roster and converts IDs back to names
 

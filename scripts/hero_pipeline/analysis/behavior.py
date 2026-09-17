@@ -129,9 +129,16 @@ def resolve_behavior_block(
             candidates.append(name)
 
     add(display_name)
-    if display_name in BEHAVIOR_NAME_ALIASES:
-        add(BEHAVIOR_NAME_ALIASES[display_name])
     add(full_title.split(" - ", 1)[0].strip())
+    try:
+        from hero_pipeline.storage import manifest_index, resolve_hero_id
+
+        entry = manifest_index()["by_id"][resolve_hero_id(display_name)]
+        add(entry["display_name"])
+        for alias in entry.get("aliases") or []:
+            add(alias)
+    except KeyError:
+        pass
 
     for name in candidates:
         if name in heroes2_index:
@@ -2191,8 +2198,6 @@ def _skill_overview_metrics(
     key: str,
 ) -> SkillOverviewMetrics:
     raw = overview.get(key, {})
-    if isinstance(raw, SkillOverviewMetrics):
-        return raw
     if isinstance(raw, dict) and raw:
         return _normalize_skill_overview_metrics(
             SkillOverviewMetrics(
@@ -2226,9 +2231,9 @@ def _behavior_bullet(label: str, body: str) -> str:
 
 def _format_skill_overview_line(label: str, metrics: SkillOverviewMetrics) -> str:
     parts = [
-        f"{name} `{getattr(metrics, attr)}`"
+        f"{name} `{metrics[attr]}`"
         for attr, name in _SKILL_OVERVIEW_FIELD_ORDER
-        if getattr(metrics, attr) != "none"
+        if metrics[attr] != "none"
     ]
     if not parts:
         return _behavior_bullet(label, "—")
@@ -2828,12 +2833,8 @@ def format_behavior_section(
     if tag_line := _format_behavior_tags_line(behavior_tags):
         lines.append(tag_line)
     for constraint in behavior["placement_constraints"]:
-        if isinstance(constraint, PlacementConstraint):
-            kind = constraint["kind"]
-            text = constraint["text"]
-        else:
-            kind = constraint["kind"]
-            text = constraint["text"]
+        kind = constraint["kind"]
+        text = constraint["text"]
         if kind in ("ally_placement", "ally_composition"):
             lines.append(_behavior_bullet("Ally composition", text))
         elif kind == "self_placement":

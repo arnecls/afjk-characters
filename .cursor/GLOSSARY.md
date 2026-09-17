@@ -426,6 +426,7 @@ uses `load_roster_snapshot()`, which rejects missing or stale v2 caches.
 
 Hero-only derived facts computed from one bundle: effects, benefit stats,
 movement, placement, and other values that do not need the rest of the roster.
+The working representation is a mapping record, not a dataclass.
 
 ## roster calibration
 
@@ -440,7 +441,8 @@ calibrated analyses. They are not stored in `analysis.json`.
 ## policy
 
 Immutable tunables for one pipeline run, split into local, calibration,
-synergy, replacement, and presentation sections.
+synergy, replacement, and presentation sections. Scoring uses the module
+defaults; config-file overlays are not applied.
 
 ## presentation model
 

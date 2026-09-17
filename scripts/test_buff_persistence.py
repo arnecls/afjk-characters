@@ -78,7 +78,7 @@ class BuffPersistenceTests(unittest.TestCase):
         schema = hs.effect_to_schema(effect)
         self.assertEqual(schema.get("persistence"), "temporary")
         restored = hs.schema_effect_to_effect(schema)
-        self.assertEqual(getattr(restored, "persistence", None), "temporary")
+        self.assertEqual(restored.get("persistence"), "temporary")
 
     def test_perseus_requires_temporary_buff_label(self):
         doc = ses.load_sidecar("Perseus - Fertile Guardian")

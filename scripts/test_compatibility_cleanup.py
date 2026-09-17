@@ -64,6 +64,26 @@ class CompatibilityCleanupTests(unittest.TestCase):
                 str(path.relative_to(SCRIPTS)),
             )
 
+    def test_scoring_does_not_mutate_module_globals(self) -> None:
+        scoring = (
+            SCRIPTS / "hero_pipeline" / "relationships" / "scoring.py"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("global MAG_WEIGHT", scoring)
+        self.assertNotIn("global TARGETING_WEIGHT", scoring)
+
+    def test_twins_aliases_come_from_the_manifest(self) -> None:
+        effects = (
+            SCRIPTS / "hero_pipeline" / "analysis" / "effects.py"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn('"Twins": "Elijah & Lailah"', effects)
+        self.assertNotIn("BEHAVIOR_NAME_ALIASES", effects)
+
+    def test_display_name_ai_joins_stay_out_of_production_scoring(self) -> None:
+        scoring = (
+            SCRIPTS / "hero_pipeline" / "relationships" / "scoring.py"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("load_ai_by_id", scoring)
+
 
 if __name__ == "__main__":
     unittest.main()

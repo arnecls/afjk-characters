@@ -13,7 +13,7 @@ from . import serialize as hs
 from . import effects as rs
 from .policy import LocalPolicy, bound_policy, make_policy, thaw_policy
 
-ALGORITHM_VERSION = "local-analysis-v6"
+ALGORITHM_VERSION = "local-analysis-v9"
 
 
 def algorithm_hash() -> str:

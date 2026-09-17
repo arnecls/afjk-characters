@@ -133,7 +133,10 @@ def hero_from_local(analysis: Mapping[str, Any]) -> Any:
         converted_summon = []
         converted_immunities = []
         for row in skill.get("effects") or []:
-            converted = hs.schema_effect_to_effect(row)
+            converted = hs._stamp_source_section(
+                hs.schema_effect_to_effect(row),
+                section,
+            )
             if rs.is_cc_immunity(converted):
                 converted_immunities.append(converted)
             elif row.get("target") in {"own_summons", "all_summons"}:
@@ -148,6 +151,20 @@ def hero_from_local(analysis: Mapping[str, Any]) -> Any:
             cc_immunities=converted_immunities,
         )
     hero["skill_slices"] = slices
+    hero["effects"] = hs._merge_effects(
+        [
+            effect
+            for slice_ in slices.values()
+            for effect in slice_["effects"]
+        ]
+    )
+    hero["summon_effects"] = hs._merge_effects(
+        [
+            effect
+            for slice_ in slices.values()
+            for effect in slice_["summon_effects"]
+        ]
+    )
     return hero
 
 
@@ -405,10 +422,10 @@ def _extra_analysis_fields(
                 )
             )
             skill_effect_magnitudes[key] = effect["magnitude"]
-    all_effects = list(hero["effects"]) + list(hero["summon_effects"])
+    merged_effects = list(hero["effects"]) + list(hero["summon_effects"])
     signature_section = behavior["signature_skill_section"]
     signature_name = behavior["signature_skill_name"]
-    for effect in all_effects:
+    for effect in merged_effects:
         raw = rs._effect_throughput_score(effect, hero, skills)
         effect_facts = {
             "magnitude": effect["magnitude"],
@@ -428,6 +445,38 @@ def _extra_analysis_fields(
         ):
             effect_facts["battle_start_energy"] = True
         effects[effect_key(effect)] = effect_facts
+    merged_numeric = {
+        effect_key(effect): effect.get("numeric")
+        for effect in merged_effects
+    }
+    ultimate_keys = {
+        effect_key(effect)
+        for effect in merged_effects
+        if effect.get("source_section") == "Ultimate"
+    }
+    for skill_slice in hero["skill_slices"].values():
+        section = skill_slice.get("section") or ""
+        if section != "Unlocks at Supreme+":
+            continue
+        for effect in (
+            list(skill_slice["effects"]) + list(skill_slice["summon_effects"])
+        ):
+            key = effect_key(effect)
+            if key not in ultimate_keys:
+                continue
+            current = effects.get(key)
+            if current is None:
+                continue
+            if effect["category"] != "debuff":
+                continue
+            if (
+                effect.get("numeric") is None
+                or effect.get("numeric") != merged_numeric.get(key)
+            ):
+                continue
+            raw = rs._effect_throughput_score(effect, hero, skills)
+            if float(raw or 0) > float(current.get("weight") or 0):
+                current["weight"] = raw
 
     named: dict[str, dict[str, Any]] = {}
     for special in hero["special_effects"]:

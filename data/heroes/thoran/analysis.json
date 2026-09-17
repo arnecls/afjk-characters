@@ -417,40 +417,6 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 25.0
-              }
-            ]
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "heal",
-            "healing_type": "direct",
-            "name": "Direct healing",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 30.0
-              }
-            ]
-          },
-          {
-            "tier": "ex+15",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "heal",
-            "healing_type": "direct",
-            "name": "Direct healing",
-            "value": [
-              {
-                "type": "percentage",
                 "value": 35.0
               }
             ]
@@ -709,6 +675,6 @@
   },
   "provenance": {
     "inputs_hash": "6354f0a9c3124ccb881ac1a70b72e135595b91876f2d86e9843f65459f6fccff",
-    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
+    "algorithm_hash": "c8057af69bb2c987397603f52bba7387583778b559ad118b382f8259a4e67791"
   }
 }

@@ -90,6 +90,20 @@ def contract_hero(hero: Mapping[str, Any]) -> dict[str, Any]:
     """Return one hero's view-facing facts without internal scoring facts."""
     analysis = dict(hero.get("analysis") or {})
     analysis.pop("scoring", None)
+    profile = dict(analysis.get("synergy_profile") or {})
+    if profile:
+        analysis["synergy_profile"] = {
+            kind: [
+                {
+                    key: value
+                    for key, value in dict(item).items()
+                    if key != "grants"
+                }
+                for item in (profile.get(kind) or [])
+            ]
+            for kind in ("provides", "requires")
+            if kind in profile
+        }
     return {
         "id": hero["id"],
         "display_name": hero["display_name"],
@@ -143,6 +157,15 @@ def _is_number(value: Any) -> bool:
     return isinstance(value, (int, float)) and not isinstance(value, bool)
 
 
+def _list_key(item: Any, index: int) -> str:
+    if isinstance(item, Mapping):
+        for key in ("slug", "id", "provider_id", "hero_id", "category"):
+            value = item.get(key)
+            if value not in (None, ""):
+                return f"[{key}={value}]"
+    return f"[{index}]"
+
+
 def _walk_numbers(value: Any, prefix: str = "") -> dict[str, float]:
     if _is_number(value):
         number = float(value)
@@ -158,7 +181,7 @@ def _walk_numbers(value: Any, prefix: str = "") -> dict[str, float]:
     if isinstance(value, list):
         items = {}
         for index, item in enumerate(value):
-            items.update(_walk_numbers(item, f"{prefix}[{index}]"))
+            items.update(_walk_numbers(item, f"{prefix}{_list_key(item, index)}"))
         return items
     return {}
 
@@ -175,9 +198,38 @@ def _walk_strings(value: Any, prefix: str = "") -> dict[str, str]:
     if isinstance(value, list):
         items = {}
         for index, item in enumerate(value):
-            items.update(_walk_strings(item, f"{prefix}[{index}]"))
+            items.update(_walk_strings(item, f"{prefix}{_list_key(item, index)}"))
         return items
     return {}
+
+
+def _list_identity(item: Any) -> Any:
+    if isinstance(item, Mapping):
+        for key in ("slug", "id", "provider_id", "hero_id"):
+            value = item.get(key)
+            if value not in (None, ""):
+                return value
+    return None
+
+
+def compare_list_order(baseline: Any, current: Any, *, prefix: str = "") -> list[str]:
+    errors: list[str] = []
+    if isinstance(baseline, Mapping) and isinstance(current, Mapping):
+        for key in sorted(set(baseline) & set(current)):
+            path = f"{prefix}.{key}" if prefix else str(key)
+            errors.extend(compare_list_order(baseline[key], current[key], prefix=path))
+        return errors
+    if isinstance(baseline, list) and isinstance(current, list):
+        before = [_list_identity(item) for item in baseline]
+        after = [_list_identity(item) for item in current]
+        if before and after and all(value is not None for value in before + after):
+            if before != after:
+                errors.append(f"changed order {prefix}: {before} -> {after}")
+        for item_before, item_after in zip(baseline, current):
+            errors.extend(
+                compare_list_order(item_before, item_after, prefix=prefix)
+            )
+    return errors
 
 
 def compare_numbers(baseline: Any, current: Any, *, prefix: str = "") -> list[str]:
@@ -317,6 +369,13 @@ def compare_view_artifacts(
     )
     errors.extend(
         compare_strings(
+            baseline["site_heroes"],
+            current["site_heroes"],
+            prefix="site",
+        )
+    )
+    errors.extend(
+        compare_list_order(
             baseline["site_heroes"],
             current["site_heroes"],
             prefix="site",
