@@ -24,9 +24,13 @@ import skill_effects_store as ses
 
 def _load_tags() -> dict[str, list[str]]:
     if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_ai_field
+        from hero_pipeline.storage import display_names_by_id, load_ai_by_id
 
-        return load_ai_field("behavior_tags")
+        names = display_names_by_id()
+        return {
+            names[hero_id]: tags
+            for hero_id, tags in load_ai_by_id("behavior_tags").items()
+        }
     return json.loads(
         (ROOT / "data" / "hero_behavior_tags.json").read_text()
     )
@@ -268,7 +272,7 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
 
     def _hero(self, prefix: str):
         for hero in self.heroes:
-            if prefix.lower() in hero.title.lower():
+            if prefix.lower() in hero["title"].lower():
                 return hero
         raise AssertionError(f"hero not found: {prefix}")
 

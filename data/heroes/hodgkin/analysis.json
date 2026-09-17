@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "hodgkin",
   "display_name": "Hodgkin",
   "local": {
@@ -502,7 +502,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "energy"
@@ -510,713 +509,188 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "hodgkin",
     "display_name": "Hodgkin",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Hodgkin - Reviled Captain",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Hodgkin fires a cannon at each enemy hero in sequence, dealing 320% (ATK-based) + 30% (SP-based) damage to hit enemy and their adjacent enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Allies adjacent to the hit enemy will also take 100% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If any unit is hit by the cannon more than twice, the damage from subsequent hits is reduced to 20%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Hodgkin can fire at least 5 cannons with this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases cannon damage to 330% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases cannon damage to 340% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases cannon damage to 350% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases cannon damage to 360% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Hodgkin casts Cannon Fire, he immediately enters the ethereal state for 4s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Hodgkin enters an ethereal state for 8 + 0.5 (SP-based)s, during which he is immune to physical damage and recovers 70% (ATK-based) + 10% (SP-based) HP per second.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Recovers 80% (ATK-based) + 10% (SP-based) HP per second during ethereal state.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Recovers 90% (ATK-based) + 10% (SP-based) HP per second during ethereal state.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Recovers 100% (ATK-based) + 10% (SP-based) HP per second during ethereal state.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Hodgkin deals 240% (ATK-based) + 30% (SP-based) damage to enemies within a 2-tile arc and steals 70 + 5 (SP-based) Energy from them.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 260% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 280% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 300% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Hodgkin increases his ATK by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His ATK increases by an extra 6% during his ethereal state.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Hodgkin increases his ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His ATK increases by an extra 8% during his ethereal state.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Hodgkin increases his ATK by 15% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His ATK increases by an extra 10% during his ethereal state.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When a unit affected by unvoidbound magic is defeated, they trigger an explosion that deals damage equal to 120% (ATK-based) plus an extra 10% of the defeated unit's max HP to the adjacent enemies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This extra damage cannot exceed 200% (ATK-based) of Hodgkin's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The targeted enemies also lose 200 Energy.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases explosion damage to 140% (ATK-based)",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Applies voidbound magic to any unit hit by Cannon Fire that does not already have it.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The energy loss from this kind of explosion is reduced to 70%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The skill also applies voidbound magic to Breakable Walls within range.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases explosion damage to 160% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Hodgkin fires a cannon at each enemy hero in sequence, dealing 320% (ATK-based) + 30% (SP-based) damage to hit enemy and their adjacent enemies.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Cannon Fire": "Ultimate",
-        "Phantom Respite": "Skill1",
-        "Rending Cleave": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Ardent Believers": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 390.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "qualitative": "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 75.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 160.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 2,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 390.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 75.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 2,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 150.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Allies adjacent to the hit enemy will also take 100% (ATK-based).",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "qualitative": "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins.",
-          "grants": []
-        }
+      [
+        "base",
+        "If any unit is hit by the cannon more than twice, the damage from subsequent hits is reduced to 20%.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Arc, Area"
-        ],
-        [
-          "Max HP-based damage",
-          "Area"
-        ]
+      [
+        "base",
+        "Hodgkin can fire at least 5 cannons with this skill.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "Max HP-based damage": 40.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Energy"
+      [
+        "base",
+        "Increases cannon damage to 330% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases cannon damage to 340% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases cannon damage to 350% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases cannon damage to 360% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Hodgkin casts Cannon Fire, he immediately enters the ethereal state for 4s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Hodgkin enters an ethereal state for 8 + 0.5 (SP-based)s, during which he is immune to physical damage and recovers 70% (ATK-based) + 10% (SP-based) HP per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Recovers 80% (ATK-based) + 10% (SP-based) HP per second during ethereal state.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Recovers 90% (ATK-based) + 10% (SP-based) HP per second during ethereal state.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Recovers 100% (ATK-based) + 10% (SP-based) HP per second during ethereal state.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Hodgkin deals 240% (ATK-based) + 30% (SP-based) damage to enemies within a 2-tile arc and steals 70 + 5 (SP-based) Energy from them.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 260% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 280% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 300% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Hodgkin increases his ATK by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His ATK increases by an extra 6% during his ethereal state.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Hodgkin increases his ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His ATK increases by an extra 8% during his ethereal state.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Hodgkin increases his ATK by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His ATK increases by an extra 10% during his ethereal state.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When a unit affected by unvoidbound magic is defeated, they trigger an explosion that deals damage equal to 120% (ATK-based) plus an extra 10% of the defeated unit's max HP to the adjacent enemies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This extra damage cannot exceed 200% (ATK-based) of Hodgkin's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The targeted enemies also lose 200 Energy.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases explosion damage to 140% (ATK-based)",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Applies voidbound magic to any unit hit by Cannon Fire that does not already have it.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The energy loss from this kind of explosion is reduced to 70%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The skill also applies voidbound magic to Breakable Walls within range.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases explosion damage to 160% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "e4dd6aa7f0ddffa8b69e931399843a602f77002b97227159ce6e8e046fb99265",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

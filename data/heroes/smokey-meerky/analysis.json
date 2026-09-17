@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "smokey-meerky",
   "display_name": "Smokey & Meerky",
   "local": {
@@ -468,7 +468,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "energy"
@@ -476,654 +475,163 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "smokey-meerky",
     "display_name": "Smokey & Meerky",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Smokey & Meerky - Wasteland Apothecary",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "- Improved Aroma II: Grants 30 haste to all allies within the aroma.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "HP recovery increases to 24% (ATK-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "HP recovery increases to 27% (ATK-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "HP recovery increases to 29% (ATK-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "HP recovery increases to 31% (ATK-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "ATK buff increases to 18% + 1% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Energy recovery increases to 8 per second.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "ATK buff increases to 20% + 1% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Healing increases to 100% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Healing increases to 110% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Healing increases to 120% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Smokey & Meerky passively increase their ATK by 6%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Special Aroma": "Ultimate",
-        "Energizing Formula": "Skill1",
-        "Quick Recovery": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Withering Potion": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 170.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 170.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 8.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_summoned"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 6.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 14.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": 10.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 0.1,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": 0.1,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 170.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 170.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 8.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_summoned"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 120.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 6.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 14.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": 10.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 0.1,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": 0.1,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "DoT",
-          "Area"
-        ]
+      [
+        "base",
+        "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Energy"
+      [
+        "base",
+        "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 8,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "- Improved Aroma II: Grants 30 haste to all allies within the aroma.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 24% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 27% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 29% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 31% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "ATK buff increases to 18% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Energy recovery increases to 8 per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "ATK buff increases to 20% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Healing increases to 100% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Healing increases to 110% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Healing increases to 120% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Smokey & Meerky passively increase their ATK by 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "97938e4826d5380854bc4d84dd26bd9e6a4e17bb33d8cd5c97af889d04946dd8",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

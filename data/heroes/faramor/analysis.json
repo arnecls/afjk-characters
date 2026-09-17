@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "faramor",
   "display_name": "Faramor",
   "local": {
@@ -470,7 +470,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -479,679 +478,178 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "faramor",
     "display_name": "Faramor",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Faramor - Silverfang Mantle",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Faramor consumes 250 - 10 (SP-based) Energy to summon a 1-tile magic circle, centered on his current target, dealing 210% (ATK-based) + 20% (SP-based) true damage to enemies caught inside.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While the circle is active, he consumes 120 Energy per second to maintain it.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Enemies within the circle cannot heal; every 0.5s, they take 35% (ATK-based) true damage, plus extra true damage equal to 20% of their lost HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The extra true damage cannot exceed 240% of Faramor's ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If no enemies remain in the circle for 1s, the skill ends immediately.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when summoning the magic circle to 220% (ATK-based) + 20% (SP-based) and the subsequent damage to 40% (ATK-based) per hit.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when summoning the magic circle to 230% (ATK-based) + 20% (SP-based) and the subsequent damage to 45% (ATK-based) per hit.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when summoning the magic circle to 240% (ATK-based) + 20% (SP-based) and the subsequent damage to 50% (ATK-based) per hit.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when summoning the magic circle to 250% (ATK-based) + 20% (SP-based) and the subsequent damage to 55% (ATK-based) per hit.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Faramor prays to imbue his weapon with sacred power, gaining a shield that can absorb 200% (ATK-based) + 20% (SP-based) damage while dealing 250% (ATK-based) + 25% (SP-based) damage to his current target.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The shield lasts for 6s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to the target to 260% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to the target to 270% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to the target to 280% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "During battle preparation, Faramor can bless an adjacent allied hero, prioritizing those placed behind him.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Faramor increases ATK by 12% + 1.5% (SP-based) for 10s for both himself and the hero he blesses, automatically reapplying the buff when it expires.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Every 3s while the buff is active, Faramor also deals 100% (ATK-based) damage to enemies within 1 tile of both himself and the blessed hero, stunning the affected enemies for 0.5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Faramor increases the ATK of himself and the blessed allied hero by 13% + 1.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Faramor increases the ATK of himself and the blessed allied hero by 14% + 1.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Faramor increases the ATK of himself and the blessed allied hero by 15% + 1.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Faramor replaces his normal attacks with Glory's Embrace while his magic circle is active, but the shield value he gains from Glory's Embrace is capped at 600% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The magic circle also weakens the enemies within it, allowing allies to deal extra true damage equal to 75% of their ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each ally can only trigger the true damage once every 1s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the extra true damage dealt by allies to 80% of their ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "When an enemy is defeated within the magic circle, grants Faramor 10% ATK and expands the circle's radius to 2 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "This effect can only trigger once per battle.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the extra true damage dealt by allies to 85% of their ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "If an enemy revives within Faramor's magic circle after their HP drops to 0, Faramor will reduce their Vitality by 50.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Faramor consumes 250 - 10 (SP-based) Energy to summon a 1-tile magic circle, centered on his current target, dealing 210% (ATK-based) + 20% (SP-based) true damage to enemies caught inside.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Sanctified Circle": "Ultimate",
-        "Glory's Embrace": "Skill1",
-        "Sacred Pledge": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Bitter Requiem": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": 0.5,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Enemy grouping",
-              "tier": "base",
-              "targeting": "—",
-              "qualitative": "Enemies must enter and stay inside Faramor's magic circle for his sustained area true damage and anti-heal to pay off.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 600.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Temporary ally stat buffs",
-              "tier": "base",
-              "targeting": "—",
-              "qualitative": "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 0.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 0.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Once per battle",
-              "tier": "Mythic+",
-              "targeting": "—",
-              "qualitative": "This effect can only trigger once per battle.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": 0.5,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 600.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 0.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 0.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "While the circle is active, he consumes 120 Energy per second to maintain it.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Enemy grouping",
-          "tier": "base",
-          "targeting": "—",
-          "qualitative": "Enemies must enter and stay inside Faramor's magic circle for his sustained area true damage and anti-heal to pay off.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Temporary ally stat buffs",
-          "tier": "base",
-          "targeting": "—",
-          "qualitative": "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Once per battle",
-          "tier": "Mythic+",
-          "targeting": "—",
-          "qualitative": "This effect can only trigger once per battle.",
-          "grants": []
-        }
+      [
+        "base",
+        "Enemies within the circle cannot heal; every 0.5s, they take 35% (ATK-based) true damage, plus extra true damage equal to 20% of their lost HP.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ],
-        [
-          "DoT",
-          "Area"
-        ],
-        [
-          "HP loss",
-          "Area"
-        ],
-        [
-          "True damage",
-          "Area"
-        ]
+      [
+        "base",
+        "The extra true damage cannot exceed 240% of Faramor's ATK.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "True damage": 2240.0,
-        "HP loss": 1280.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Shield"
+      [
+        "base",
+        "If no enemies remain in the circle for 1s, the skill ends immediately.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage dealt when summoning the magic circle to 220% (ATK-based) + 20% (SP-based) and the subsequent damage to 40% (ATK-based) per hit.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when summoning the magic circle to 230% (ATK-based) + 20% (SP-based) and the subsequent damage to 45% (ATK-based) per hit.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when summoning the magic circle to 240% (ATK-based) + 20% (SP-based) and the subsequent damage to 50% (ATK-based) per hit.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when summoning the magic circle to 250% (ATK-based) + 20% (SP-based) and the subsequent damage to 55% (ATK-based) per hit.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Faramor prays to imbue his weapon with sacred power, gaining a shield that can absorb 200% (ATK-based) + 20% (SP-based) damage while dealing 250% (ATK-based) + 25% (SP-based) damage to his current target.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The shield lasts for 6s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to the target to 260% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to the target to 270% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to the target to 280% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "During battle preparation, Faramor can bless an adjacent allied hero, prioritizing those placed behind him.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Faramor increases ATK by 12% + 1.5% (SP-based) for 10s for both himself and the hero he blesses, automatically reapplying the buff when it expires.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Every 3s while the buff is active, Faramor also deals 100% (ATK-based) damage to enemies within 1 tile of both himself and the blessed hero, stunning the affected enemies for 0.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Faramor increases the ATK of himself and the blessed allied hero by 13% + 1.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Faramor increases the ATK of himself and the blessed allied hero by 14% + 1.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Faramor increases the ATK of himself and the blessed allied hero by 15% + 1.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Faramor replaces his normal attacks with Glory's Embrace while his magic circle is active, but the shield value he gains from Glory's Embrace is capped at 600% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The magic circle also weakens the enemies within it, allowing allies to deal extra true damage equal to 75% of their ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each ally can only trigger the true damage once every 1s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the extra true damage dealt by allies to 80% of their ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "When an enemy is defeated within the magic circle, grants Faramor 10% ATK and expands the circle's radius to 2 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "This effect can only trigger once per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the extra true damage dealt by allies to 85% of their ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "If an enemy revives within Faramor's magic circle after their HP drops to 0, Faramor will reduce their Vitality by 50.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "257b2d6b878cd7448a05dabcd3d60bd6e085c47c63c9064a71688e96d398a282",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

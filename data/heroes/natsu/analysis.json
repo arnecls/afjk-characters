@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "natsu",
   "display_name": "Natsu",
   "local": {
@@ -90,10 +90,6 @@
             "area_direction": "front",
             "area_count": 3,
             "conditions": [
-              {
-                "type": "skill_mode",
-                "mode": "lightning_fire_dragon"
-              },
               {
                 "type": "skill_mode",
                 "mode": "fire_dragon_king"
@@ -705,7 +701,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -717,1099 +712,218 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "natsu",
     "display_name": "Natsu",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Natsu - Fire Dragon Slayer Mage",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "During battle preparation, choose between Lightning Fire Dragon mode and Fire Dragon King Mode for Natsu.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lightning Fire Dragon King Mode focuses on debuffing enemies, while Fire Dragon King Mode delivers higher damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Lighting Fire Dragon Mode, Natsu deals 1400% (ATK-based) + 160% (SP-based) damage to all enemies within a 3-tile frontal arc and stuns them for 3s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, Natsu deals 2400% (ATK-based) + 280% (SP-based) damage to all enemies within a 3-tile frontal arc.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 1450% (ATK-based) + 160% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 1500% (ATK-based) + 160% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 1550% (ATK-based) + 160% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, Natsu deals 2700% (ATK-based) + 280% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 1600% (ATK-based) + 160% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, Natsu deals 2800% (ATK-based) + 280% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, deals 500% (ATK-based) + 56% (SP-based) damage to the enemy who has deal the most cumulative damage, while reducing their Haste by 80.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The Haste reduction effect diminishes over 5s until it expires.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, Natsu strikes an adjacent enemy, dealing damage equal to 44% + 5% (SP-based) of the target's max HP and knocking them down for 0.5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This damage cannot exceed 1000% (ATK-based) + 100% (SP-based) of Natsu's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 520% (ATK-based) + 56% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 46% + 5% (SP-based) of the target's max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 540% (ATK-based) + 56% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 48% + 5% (SP-based) of the target's max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Lightning Fire Dragon Mode, Natsu deals 560% (ATK-based) + 56% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 50% + 5% (SP-based) of the target's max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This skill triggers only once per battle after the first defeat of an ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Fueled by rage, Natsu increases his ATK and DEF by 27% + 3% (SP-based) of the defeated ally's corresponding stats.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Additionally, if the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Natsu's ATK, Phys DEF, and Magic DEF increase by 28% + 3% (SP-based) of the defeated ally's corresponding stats.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Natsu's ATK, Phys DEF, and Magic DEF increase by 29% + 3% (SP-based) of the defeated ally's corresponding stats.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Natsu's ATK, Phys DEF, and Magic DEF increase by 30% + 3% (SP-based) of the defeated ally's corresponding stats.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "In Lightning Fire Dragon Mode, Natsu increases his Haste by 9.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "In Fire Dragon King Mode, he increases his ATK by 12%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "In Lightning Fire Dragon Mode, Natsu increases his Haste by 12.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "In Fire Dragon King Mode, he increases his ATK by 16%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "In Lightning Fire Dragon Mode, Natsu increases his Haste by 15.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "In Fire Dragon King Mode, he increases his ATK by 20%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When Natsu deals damage, he reduces the target's max HP by 40% of the actual damage dealt.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This effect does not apply to bosses and the max HP reduction per enemy cannot exceed 800% of Natsu's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Natsu reduces the target's max HP by 45% of the actual damage dealt.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "While enemies are under any debuff inflicted by Natsu, their max HP drops by 20% of Natsu's ATK every 0.5s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Natsu reduces the target's max HP by 50% of the actual damage dealt.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he burns the enemy for 5s, dealing 80% (ATK-based) damage every 0.5s.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "During battle preparation, choose between Lightning Fire Dragon mode and Fire Dragon King Mode for Natsu.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Lightning Fire Dragon's Roar/Fire Dragon King's Roar": "Ultimate",
-        "Lightning Fire Dragon's Iron Fist/Fire Dragon King's Iron Fist": "Skill1",
-        "Fiery Ties": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "\"Salamander\" Natsu": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "lightning_fire_dragon"
-                }
-              ],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 3080.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "lightning_fire_dragon"
-                }
-              ],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 3080.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "fire_dragon_king"
-                }
-              ],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Form or stance active",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "During battle preparation, choose Lightning Fire Dragon mode or Fire Dragon King mode.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "lightning_fire_dragon"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 616.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "lightning_fire_dragon"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 0.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 0.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "fire_dragon_king"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "fire_dragon_king"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "defeat",
-                  "ally": true
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "DEF",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "defeat",
-                  "ally": true
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "defeat",
-                  "ally": true
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Crit DMG boost",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "defeat",
-                  "ally": true
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Named ally on team",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "If the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "lightning_fire_dragon"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "skill_mode",
-                  "mode": "fire_dragon_king"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Max HP",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "damage"
-                },
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_boss"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 0.5,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "debuffed"
-                },
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_boss"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": 0.5,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "damage",
-                  "self": true
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "skill_mode",
-              "mode": "lightning_fire_dragon"
-            }
-          ],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 3080.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "skill_mode",
-              "mode": "lightning_fire_dragon"
-            },
-            {
-              "type": "skill_mode",
-              "mode": "fire_dragon_king"
-            }
-          ],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "skill_mode",
-              "mode": "lightning_fire_dragon"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 0.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 0.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "skill_mode",
-              "mode": "fire_dragon_king"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "skill_mode",
-              "mode": "fire_dragon_king"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "defeat",
-              "ally": true
-            },
-            {
-              "type": "duration_gate",
-              "gate": "once_per_battle"
-            },
-            {
-              "type": "skill_mode",
-              "mode": "fire_dragon_king"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "DEF",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "defeat",
-              "ally": true
-            },
-            {
-              "type": "duration_gate",
-              "gate": "once_per_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "defeat",
-              "ally": true
-            },
-            {
-              "type": "duration_gate",
-              "gate": "once_per_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit DMG boost",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "defeat",
-              "ally": true
-            },
-            {
-              "type": "duration_gate",
-              "gate": "once_per_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "skill_mode",
-              "mode": "lightning_fire_dragon"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "Max HP",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "damage"
-            },
-            {
-              "type": "unit_type",
-              "unit_type": "non_boss"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": 0.5,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "debuffed"
-            },
-            {
-              "type": "unit_type",
-              "unit_type": "non_boss"
-            },
-            {
-              "type": "trigger_condition",
-              "trigger": "damage",
-              "self": true
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Lightning Fire Dragon King Mode focuses on debuffing enemies, while Fire Dragon King Mode delivers higher damage.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Form or stance active",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "During battle preparation, choose Lightning Fire Dragon mode or Fire Dragon King mode.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Named ally on team",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "If the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5.",
-          "grants": []
-        }
+      [
+        "base",
+        "In Lighting Fire Dragon Mode, Natsu deals 1400% (ATK-based) + 160% (SP-based) damage to all enemies within a 3-tile frontal arc and stuns them for 3s.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Arc, Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2400% (ATK-based) + 280% (SP-based) damage to all enemies within a 3-tile frontal arc.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Crit",
-        "Crit DMG Boost",
-        "Physical DEF",
-        "Magic DEF"
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1450% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1500% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1550% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2700% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1600% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2800% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, deals 500% (ATK-based) + 56% (SP-based) damage to the enemy who has deal the most cumulative damage, while reducing their Haste by 80.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The Haste reduction effect diminishes over 5s until it expires.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu strikes an adjacent enemy, dealing damage equal to 44% + 5% (SP-based) of the target's max HP and knocking them down for 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 1000% (ATK-based) + 100% (SP-based) of Natsu's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 520% (ATK-based) + 56% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 46% + 5% (SP-based) of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 540% (ATK-based) + 56% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 48% + 5% (SP-based) of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 560% (ATK-based) + 56% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 50% + 5% (SP-based) of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This skill triggers only once per battle after the first defeat of an ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Fueled by rage, Natsu increases his ATK and DEF by 27% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Additionally, if the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Natsu's ATK, Phys DEF, and Magic DEF increase by 28% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Natsu's ATK, Phys DEF, and Magic DEF increase by 29% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Natsu's ATK, Phys DEF, and Magic DEF increase by 30% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "In Lightning Fire Dragon Mode, Natsu increases his Haste by 9.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Fire Dragon King Mode, he increases his ATK by 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Lightning Fire Dragon Mode, Natsu increases his Haste by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Fire Dragon King Mode, he increases his ATK by 16%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Lightning Fire Dragon Mode, Natsu increases his Haste by 15.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Fire Dragon King Mode, he increases his ATK by 20%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When Natsu deals damage, he reduces the target's max HP by 40% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This effect does not apply to bosses and the max HP reduction per enemy cannot exceed 800% of Natsu's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Natsu reduces the target's max HP by 45% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "While enemies are under any debuff inflicted by Natsu, their max HP drops by 20% of Natsu's ATK every 0.5s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Natsu reduces the target's max HP by 50% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he burns the enemy for 5s, dealing 80% (ATK-based) damage every 0.5s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "720ac66e9cb045a077369388b0494b625a45d47390f596976211792153ec5593",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

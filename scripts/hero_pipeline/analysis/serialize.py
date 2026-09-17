@@ -35,11 +35,15 @@ _RS = None
 def _rs():
     global _RS
     if _RS is None:
-        from . import text as mod
-        import sys
+        from . import behavior, effects
 
-        sys.modules.setdefault("rewrite_summaries", mod)
-        _RS = mod
+        class _Modules:
+            def __getattr__(self, name: str) -> Any:
+                if hasattr(behavior, name):
+                    return getattr(behavior, name)
+                return getattr(effects, name)
+
+        _RS = _Modules()
     return _RS
 
 # ---------------------------------------------------------------------------
@@ -462,10 +466,10 @@ def _value_from_numeric(numeric: float | None, label: str = "") -> Any:
 
 def _resolve_effect_numeric(effect: Any, label: str) -> float | None:
     """Numeric magnitude with qualitative-text fallback."""
-    n = effect.numeric
+    n = effect["numeric"]
     if n is not None:
         return n
-    text = effect.qualitative or ""
+    text = effect["qualitative"] or ""
     if not text:
         return None
     rs = _rs()
@@ -473,7 +477,7 @@ def _resolve_effect_numeric(effect: Any, label: str) -> float | None:
         amounts = rs._healing_amounts(text)
         if amounts:
             return max(amounts)
-    return rs.extract_number(text, label, category=effect.category)
+    return rs.extract_number(text, label, category=effect["category"])
 
 
 def _apply_schema_value(
@@ -485,17 +489,17 @@ def _apply_schema_value(
 
 
 def _effect_duration(effect: Any, label: str) -> float | None:
-    dur = getattr(effect, "duration", None)
+    dur = effect.get("duration")
     if dur is not None:
         return dur
-    text = effect.qualitative or ""
+    text = effect["qualitative"] or ""
     if not text:
         return None
     return _rs().extract_timed_duration(text, label)
 
 
 def _apply_effect_persistence(out: dict[str, Any], effect: Any) -> None:
-    persistence = getattr(effect, "persistence", None)
+    persistence = effect.get("persistence")
     if persistence:
         out["persistence"] = persistence
 
@@ -570,86 +574,86 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
     merged: list[Any] = []
     for eff in effects:
         key = rs._effect_dedupe_key(
-            eff.category, eff.label, getattr(eff, "source_section", None),
-            targeting=eff.targeting,
+            eff["category"], eff["label"], eff.get("source_section"),
+            targeting=eff["targeting"],
         )
         existing = [
             e
             for e in merged
             if rs._effect_dedupe_key(
-                e.category, e.label, getattr(e, "source_section", None),
-                targeting=e.targeting,
+                e["category"], e["label"], getattr(e, "source_section", None),
+                targeting=e["targeting"],
             )
             == key
         ]
         if not existing:
             merged.append(
                 type(eff)(
-                    category=eff.category,
-                    label=eff.label,
-                    tier=eff.tier,
-                    targeting=eff.targeting,
-                    numeric=eff.numeric,
-                    qualitative=eff.qualitative,
-                    magnitude=eff.magnitude,
-                    area_count=getattr(eff, "area_count", None),
-                    target_count=getattr(eff, "target_count", None),
-                    duration=getattr(eff, "duration", None),
-                    tick=getattr(eff, "tick", None),
-                    persistence=getattr(eff, "persistence", None),
-                    conditional=eff.conditional,
-                    conditions=list(getattr(eff, "conditions", None) or []),
-                    area=getattr(eff, "area", None),
-                    area_direction=getattr(eff, "area_direction", None),
-                    source_section=getattr(eff, "source_section", None),
+                    category=eff["category"],
+                    label=eff["label"],
+                    tier=eff["tier"],
+                    targeting=eff["targeting"],
+                    numeric=eff["numeric"],
+                    qualitative=eff["qualitative"],
+                    magnitude=eff["magnitude"],
+                    area_count=eff.get("area_count"),
+                    target_count=eff.get("target_count"),
+                    duration=eff.get("duration"),
+                    tick=eff.get("tick"),
+                    persistence=eff.get("persistence"),
+                    conditional=eff["conditional"],
+                    conditions=list(eff.get("conditions") or []),
+                    area=eff.get("area"),
+                    area_direction=eff.get("area_direction"),
+                    source_section=eff.get("source_section"),
                 )
             )
             continue
         cur = existing[0]
-        if rs.TIER_ORDER.get(eff.tier, 99) < rs.TIER_ORDER.get(cur.tier, 99):
-            cur.tier = eff.tier
-        cur.conditional = rs._merge_conditional(cur.conditional, eff.conditional)
-        cur.conditions = rs._merge_conditions_lists(
+        if rs.TIER_ORDER.get(eff["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
+            cur["tier"] = eff["tier"]
+        cur["conditional"] = rs._merge_conditional(cur["conditional"], eff["conditional"])
+        cur["conditions"] = rs._merge_conditions_lists(
             getattr(cur, "conditions", None),
-            getattr(eff, "conditions", None),
+            eff.get("conditions"),
         )
-        if eff.category == "buff":
-            cur.targeting = rs._prefer_buff_targeting(eff.targeting, cur.targeting)
+        if eff["category"] == "buff":
+            cur["targeting"] = rs._prefer_buff_targeting(eff["targeting"], cur["targeting"])
         else:
-            cur.targeting = rs._prefer_wider_targeting(eff.targeting, cur.targeting)
-        eff_count = getattr(eff, "area_count", None)
+            cur["targeting"] = rs._prefer_wider_targeting(eff["targeting"], cur["targeting"])
+        eff_count = eff.get("area_count")
         if eff_count is not None:
-            if cur.area_count is None or eff_count != 2:
-                cur.area_count = eff_count
-        eff_target_count = getattr(eff, "target_count", None)
+            if cur["area_count"] is None or eff_count != 2:
+                cur["area_count"] = eff_count
+        eff_target_count = eff.get("target_count")
         if eff_target_count is not None:
-            cur.target_count = eff_target_count
-        eff_duration = getattr(eff, "duration", None)
+            cur["target_count"] = eff_target_count
+        eff_duration = eff.get("duration")
         if eff_duration is not None and (
-            cur.duration is None or eff_duration > cur.duration
+            cur["duration"] is None or eff_duration > cur["duration"]
         ):
-            cur.duration = eff_duration
-        eff_tick = getattr(eff, "tick", None)
+            cur["duration"] = eff_duration
+        eff_tick = eff.get("tick")
         if eff_tick is not None:
-            cur.tick = eff_tick
-        eff_persistence = getattr(eff, "persistence", None)
+            cur["tick"] = eff_tick
+        eff_persistence = eff.get("persistence")
         if eff_persistence and (
             not getattr(cur, "persistence", None)
             or eff_persistence != "unknown"
         ):
-            cur.persistence = eff_persistence
-        eff_area = getattr(eff, "area", None)
+            cur["persistence"] = eff_persistence
+        eff_area = eff.get("area")
         if eff_area is not None:
-            cur.area = eff_area
-        eff_area_dir = getattr(eff, "area_direction", None)
+            cur["area"] = eff_area
+        eff_area_dir = eff.get("area_direction")
         if eff_area_dir is not None:
-            cur.area_direction = eff_area_dir
-        if eff.numeric is not None and (
-            cur.numeric is None or eff.numeric > cur.numeric
+            cur["area_direction"] = eff_area_dir
+        if eff["numeric"] is not None and (
+            cur["numeric"] is None or eff["numeric"] > cur["numeric"]
         ):
-            cur.numeric = eff.numeric
-            if eff.qualitative:
-                cur.qualitative = eff.qualitative
+            cur["numeric"] = eff["numeric"]
+            if eff["qualitative"]:
+                cur["qualitative"] = eff["qualitative"]
     return merged
 
 
@@ -662,23 +666,23 @@ def _merge_immunities(items: list[Any]) -> list[Any]:
         existing = [
             c
             for c in merged
-            if c.immunity_type == imm.immunity_type
-            and c.targeting == imm.targeting
+            if c["immunity_type"] == imm["immunity_type"]
+            and c["targeting"] == imm["targeting"]
         ]
         if not existing:
             merged.append(
                 type(imm)(
-                    immunity_type=imm.immunity_type,
-                    tier=imm.tier,
-                    targeting=imm.targeting,
-                    timing=imm.timing,
+                    immunity_type=imm["immunity_type"],
+                    tier=imm["tier"],
+                    targeting=imm["targeting"],
+                    timing=imm["timing"],
                 )
             )
             continue
         cur = existing[0]
-        if rs.TIER_ORDER.get(imm.tier, 99) < rs.TIER_ORDER.get(cur.tier, 99):
-            cur.tier = imm.tier
-        cur.timing = rs._prefer_timing(imm.timing, cur.timing)
+        if rs.TIER_ORDER.get(imm["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
+            cur["tier"] = imm["tier"]
+        cur["timing"] = rs._prefer_timing(imm["timing"], cur["timing"])
     return merged
 
 
@@ -687,24 +691,24 @@ def _merge_special_effects(items: list[Any]) -> list[Any]:
 
     merged: list[Any] = []
     for se in items:
-        key = (se.kind, se.label, se.targeting)
-        existing = [s for s in merged if (s.kind, s.label, s.targeting) == key]
+        key = (se["kind"], se["label"], se["targeting"])
+        existing = [s for s in merged if (s["kind"], s["label"], s["targeting"]) == key]
         if not existing:
             merged.append(
                 type(se)(
-                    kind=se.kind,
-                    label=se.label,
-                    tier=se.tier,
-                    targeting=se.targeting,
-                    qualitative=se.qualitative,
+                    kind=se["kind"],
+                    label=se["label"],
+                    tier=se["tier"],
+                    targeting=se["targeting"],
+                    qualitative=se["qualitative"],
                 )
             )
             continue
         cur = existing[0]
-        if rs.TIER_ORDER.get(se.tier, 99) < rs.TIER_ORDER.get(cur.tier, 99):
-            cur.tier = se.tier
-        if se.qualitative and not cur.qualitative:
-            cur.qualitative = se.qualitative
+        if rs.TIER_ORDER.get(se["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
+            cur["tier"] = se["tier"]
+        if se["qualitative"] and not cur["qualitative"]:
+            cur["qualitative"] = se["qualitative"]
     return merged
 
 
@@ -744,21 +748,21 @@ def _spatial_from_effect(
 ) -> dict[str, Any]:
     """Map legacy targeting plus optional area overrides to schema spatial fields."""
     spatial = _targeting_to_schema(
-        effect.targeting,
+        effect["targeting"],
         category,
         summon=summon,
-        area_count=getattr(effect, "area_count", None),
-        target_count=getattr(effect, "target_count", None),
-        area=getattr(effect, "area", None),
-        area_direction=getattr(effect, "area_direction", None),
+        area_count=effect.get("area_count"),
+        target_count=effect.get("target_count"),
+        area=effect.get("area"),
+        area_direction=effect.get("area_direction"),
     )
-    effect_area = getattr(effect, "area", None)
-    effect_area_dir = getattr(effect, "area_direction", None)
+    effect_area = effect.get("area")
+    effect_area_dir = effect.get("area_direction")
     if effect_area:
         spatial["area"] = effect_area
     if effect_area_dir:
         spatial["area_direction"] = effect_area_dir
-    area_count = getattr(effect, "area_count", None)
+    area_count = effect.get("area_count")
     if area_count is not None and spatial.get("area") in (
         "radius",
         "path",
@@ -792,12 +796,12 @@ def effect_to_schema(
     is_max_known: bool = True,
 ) -> dict[str, Any]:
     """Convert legacy Effect to skills.schema.json effect."""
-    category = effect.category
-    summon_scope = _schema_target_from_buff_targeting(effect.targeting)
+    category = effect["category"]
+    summon_scope = _schema_target_from_buff_targeting(effect["targeting"])
     is_summon_buff = summon or summon_scope is not None
     out: dict[str, Any] = {
-        "tier": to_schema_tier(effect.tier),
-        "targeting_label": effect.targeting,
+        "tier": to_schema_tier(effect["tier"]),
+        "targeting_label": effect["targeting"],
         "is_max_known": is_max_known,
     }
     out.update(
@@ -807,8 +811,8 @@ def effect_to_schema(
             summon=is_summon_buff,
         )
     )
-    conditions = list(getattr(effect, "conditions", None) or [])
-    legacy = _conditional_to_conditions(effect.conditional)
+    conditions = list(effect.get("conditions") or [])
+    legacy = _conditional_to_conditions(effect["conditional"])
     if legacy:
         seen = {tuple(sorted(c.items())) for c in conditions}
         for cond in legacy:
@@ -821,136 +825,136 @@ def effect_to_schema(
 
     if category == "cc":
         out["type"] = "crowd_control"
-        out["cc-type"] = to_schema_cc(effect.label)
-        if effect.numeric is not None:
-            out["duration"] = effect.numeric
+        out["cc-type"] = to_schema_cc(effect["label"])
+        if effect["numeric"] is not None:
+            out["duration"] = effect["numeric"]
         return out
 
     if category == "buff":
-        stat = _stat_from_label(effect.label)
+        stat = _stat_from_label(effect["label"])
         if (
             stat
-            and "buff" in effect.label.lower()
-            and effect.numeric is not None
+            and "buff" in effect["label"].lower()
+            and effect["numeric"] is not None
             and not is_summon_buff
         ):
             out["type"] = "stat_mod"
             out["stat"] = stat
-            out["name"] = _rs().canonical_effect_name(effect.label, "buff")
+            out["name"] = _rs().canonical_effect_name(effect["label"], "buff")
             _apply_schema_value(
-                out, _resolve_effect_numeric(effect, effect.label), effect.label
+                out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
             )
-            _apply_effect_duration(out, effect, effect.label)
+            _apply_effect_duration(out, effect, effect["label"])
             _apply_effect_persistence(out, effect)
             out["label"] = _label_to_effect_label(
-                category, effect.label, summon=is_summon_buff
+                category, effect["label"], summon=is_summon_buff
             )
             return out
-        if "shield" in effect.label.lower():
+        if "shield" in effect["label"].lower():
             out["type"] = "shield"
-            out["name"] = effect.label
+            out["name"] = effect["label"]
             _apply_schema_value(
-                out, _resolve_effect_numeric(effect, effect.label), effect.label
+                out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
             )
-            _apply_effect_duration(out, effect, effect.label)
+            _apply_effect_duration(out, effect, effect["label"])
             return out
-        if is_hp_recovery_label(effect.label):
-            ht = healing_type_from_label(effect.label)
+        if is_hp_recovery_label(effect["label"]):
+            ht = healing_type_from_label(effect["label"])
             assert ht is not None
             out["type"] = "heal" if ht == HEALING_TYPE_DIRECT else "dot"
             out["healing_type"] = ht
-            out["name"] = normalize_healing_label(effect.label)
+            out["name"] = normalize_healing_label(effect["label"])
             _apply_schema_value(
-                out, _resolve_effect_numeric(effect, effect.label), effect.label
+                out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
             )
             if out["type"] == "dot":
-                explicit_duration = getattr(effect, "duration", None)
+                explicit_duration = effect.get("duration")
                 if explicit_duration is not None:
                     out["duration"] = explicit_duration
                 else:
-                    dur = _effect_duration(effect, effect.label)
+                    dur = _effect_duration(effect, effect["label"])
                     if dur is not None:
                         out["duration"] = max(1, int(float(dur)))
                     else:
                         out["duration"] = _dot_duration_from_text(
-                            effect.qualitative
+                            effect["qualitative"]
                         )
-                tick = getattr(effect, "tick", None)
+                tick = effect.get("tick")
                 out["tick"] = (
                     tick
                     if tick is not None
-                    else _dot_tick_from_text(effect.qualitative)
+                    else _dot_tick_from_text(effect["qualitative"])
                 )
                 if "value" not in out:
                     out["type"] = "heal"
                     out.pop("tick", None)
             else:
-                _apply_effect_duration(out, effect, effect.label)
+                _apply_effect_duration(out, effect, effect["label"])
             return out
         out["type"] = "buff"
-        out["name"] = _rs().canonical_effect_name(effect.label, "buff")
+        out["name"] = _rs().canonical_effect_name(effect["label"], "buff")
         out["label"] = _label_to_effect_label(
-            category, effect.label, summon=is_summon_buff
+            category, effect["label"], summon=is_summon_buff
         )
         _apply_schema_value(
-            out, _resolve_effect_numeric(effect, effect.label), effect.label
+            out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
         )
-        _apply_effect_duration(out, effect, effect.label)
+        _apply_effect_duration(out, effect, effect["label"])
         _apply_effect_persistence(out, effect)
         return out
 
     if category == "debuff":
         out["type"] = "debuff"
-        out["name"] = _rs().canonical_effect_name(effect.label, "debuff")
-        out["label"] = _label_to_effect_label(category, effect.label)
+        out["name"] = _rs().canonical_effect_name(effect["label"], "debuff")
+        out["label"] = _label_to_effect_label(category, effect["label"])
         _apply_schema_value(
-            out, _resolve_effect_numeric(effect, effect.label), effect.label
+            out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
         )
-        _apply_effect_duration(out, effect, effect.label)
+        _apply_effect_duration(out, effect, effect["label"])
         return out
 
     if category == "damage":
-        if effect.label == "DoT":
+        if effect["label"] == "DoT":
             out["type"] = "dot"
         else:
             out["type"] = "damage"
-        out["damage_type"] = to_schema_damage_type(effect.label)
-        out["name"] = effect.label
-        out["label"] = _label_to_effect_label(category, effect.label)
-        amount = effect.numeric
+        out["damage_type"] = to_schema_damage_type(effect["label"])
+        out["name"] = effect["label"]
+        out["label"] = _label_to_effect_label(category, effect["label"])
+        amount = effect["numeric"]
         if amount is None:
             amount = _rs()._extract_damage_amount(
-                effect.qualitative, effect.label
+                effect["qualitative"], effect["label"]
             )
-        _apply_schema_value(out, amount, effect.label)
+        _apply_schema_value(out, amount, effect["label"])
         if out["type"] == "dot":
-            dur = getattr(effect, "duration", None)
+            dur = effect.get("duration")
             if dur is not None:
                 out["duration"] = dur
             else:
-                out["duration"] = _dot_duration_from_text(effect.qualitative)
-            tick = getattr(effect, "tick", None)
+                out["duration"] = _dot_duration_from_text(effect["qualitative"])
+            tick = effect.get("tick")
             out["tick"] = (
                 tick
                 if tick is not None
-                else _dot_tick_from_text(effect.qualitative)
+                else _dot_tick_from_text(effect["qualitative"])
             )
         return out
 
     out["type"] = "buff"
-    out["name"] = effect.label
+    out["name"] = effect["label"]
     return out
 
 
 def cc_immunity_to_schema(imm: Any) -> dict[str, Any]:
     out: dict[str, Any] = {
         "type": "immunity",
-        "tier": to_schema_tier(imm.tier),
-        "immunity_type": to_schema_immunity(imm.immunity_type),
-        "timing": to_schema_timing(imm.timing),
-        "targeting_label": imm.targeting,
+        "tier": to_schema_tier(imm["tier"]),
+        "immunity_type": to_schema_immunity(imm["immunity_type"]),
+        "timing": to_schema_timing(imm["timing"]),
+        "targeting_label": imm["targeting"],
     }
-    out.update(_targeting_to_schema(imm.targeting, "buff"))
+    out.update(_targeting_to_schema(imm["targeting"], "buff"))
     return out
 
 
@@ -1089,17 +1093,17 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
 
 def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:
     out: dict[str, Any] = {
-        "label": se.label,
-        "tier": to_schema_tier(se.tier),
+        "label": se["label"],
+        "tier": to_schema_tier(se["tier"]),
     }
-    if se.targeting and se.targeting != "—":
-        out["targeting"] = se.targeting
-    if se.qualitative:
-        out["description"] = se.qualitative.strip()
-    if se.grants:
+    if se.get("targeting") and se.get("targeting") != "—":
+        out["targeting"] = se["targeting"]
+    if se.get("qualitative"):
+        out["description"] = se["qualitative"].strip()
+    if se.get("grants"):
         out["grants"] = [
             {"label": label, "magnitude": magnitude}
-            for label, magnitude in se.grants
+            for label, magnitude in se["grants"]
         ]
     return out
 
@@ -1170,7 +1174,7 @@ def _build_skill_record(
         "description": _skill_description_structured(skill),
         "effects": [],
     }
-    tier = slice_.tier if slice_ else "base"
+    tier = slice_["tier"] if slice_ else "base"
     schema_tier = to_schema_tier(tier)
     if schema_tier != "base":
         record["tier"] = schema_tier
@@ -1199,17 +1203,17 @@ def _build_skill_record(
 
     effects: list[dict[str, Any]] = []
     if slice_:
-        for eff in _merge_effects(slice_.effects):
+        for eff in _merge_effects(slice_["effects"]):
             schema_eff = effect_to_schema(eff, is_max_known=not has_scaled)
             if _schema_effect_is_complete(schema_eff):
                 effects.append(schema_eff)
-        for eff in _merge_effects(slice_.summon_effects):
+        for eff in _merge_effects(slice_["summon_effects"]):
             schema_eff = effect_to_schema(
                 eff, is_max_known=not has_scaled
             )
             if _schema_effect_is_complete(schema_eff):
                 effects.append(schema_eff)
-        for imm in _merge_immunities(slice_.cc_immunities):
+        for imm in _merge_immunities(slice_["cc_immunities"]):
             effects.append(cc_immunity_to_schema(imm))
 
     if not effects:
@@ -1237,7 +1241,7 @@ def build_role_category_by_title(
     classes = class_by_title or {}
     out: dict[str, str] = {}
     for hero in heroes:
-        title = hero.title
+        title = hero["title"]
         record = dict(records.get(title, {}))
         if "class" not in record and title in classes:
             record["class"] = classes[title]
@@ -1254,10 +1258,10 @@ def role_category_by_title_from_processed(
     by_short = processed.get("heroes", {})
     out: dict[str, str] = {}
     for hero in heroes:
-        short = short_name_fn(hero.title)
+        short = short_name_fn(hero["title"])
         record = by_short.get(short, {})
-        long_name = record.get("long_name", hero.title)
-        out[hero.title] = record.get("role_category") or resolve_role_category(
+        long_name = record.get("long_name", hero["title"])
+        out[hero["title"]] = record.get("role_category") or resolve_role_category(
             {"long_name": long_name, "class": record.get("class")}
         )
     return out
@@ -1295,21 +1299,21 @@ def serialize_processed_hero(
 ) -> dict[str, Any]:
     provides = [
         special_to_synergy_mechanic(se)
-        for se in _merge_special_effects(hero.special_effects)
-        if se.kind == "provides"
+        for se in _merge_special_effects(hero["special_effects"])
+        if se["kind"] == "provides"
     ]
     requires = [
         special_to_synergy_mechanic(se)
-        for se in _merge_special_effects(hero.special_effects)
-        if se.kind == "requires"
+        for se in _merge_special_effects(hero["special_effects"])
+        if se["kind"] == "requires"
     ]
 
     skills: dict[str, Any] = {}
-    primary = hero.damage_type or hero_record.get("damage_type") or "Physical"
+    primary = hero["damage_type"] or hero_record.get("damage_type") or "Physical"
     rs = _rs()
     for skill in hero_record.get("skills", []):
         section = skill["section"]
-        slice_ = hero.skill_slices.get(section)
+        slice_ = hero["skill_slices"].get(section)
         skill_name, skill_rec = _build_skill_record(skill, slice_, primary)
         category = _SECTION_TO_CATEGORY.get(section)
         if category:
@@ -1320,22 +1324,22 @@ def serialize_processed_hero(
 
     damage_entries = [
         [to_schema_damage_type(dt), reach]
-        for dt, reach in hero.damage_entries
+        for dt, reach in hero["damage_entries"]
     ]
     damage_magnitudes = {
         to_schema_damage_type(dt): mag
-        for dt, mag in hero.damage_magnitudes.items()
+        for dt, mag in hero["damage_magnitudes"].items()
     }
-    benefit_stats = [to_schema_stat(s) for s in hero.benefit_stats]
+    benefit_stats = [to_schema_stat(s) for s in hero["benefit_stats"]]
     scalar_stat_shares = {
         to_schema_stat(stat): share
-        for stat, share in getattr(hero, "scalar_stat_shares", {}).items()
+        for stat, share in (hero.get("scalar_stat_shares") or {}).items()
     }
     raw_range = hero_record.get("range")
     default_range = int(raw_range) if raw_range is not None else None
 
     return {
-        "long_name": hero_record.get("title") or hero.title,
+        "long_name": hero_record.get("title") or hero["title"],
         "faction": to_schema_faction(hero_record.get("faction")),
         "class": to_schema_class(hero_record.get("class")),
         "role_category": resolve_role_category(hero_record),
@@ -1373,7 +1377,7 @@ def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) ->
             if _is_placeholder_schema_effect(effect):
                 continue
             converted = schema_effect_to_effect(effect)
-            if isinstance(converted, rs.CcImmunity):
+            if rs.is_cc_immunity(converted):
                 raw_immunities.append(converted)
             elif effect.get("target") in ("summon", "own_summons", "all_summons"):
                 raw_summon.append(converted)
@@ -1387,22 +1391,22 @@ def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) ->
     for se in profile.get("requires", []):
         special_effects.append(synergy_mechanic_to_special(se, "requires"))
 
-    hero.effects = _merge_effects(raw_effects)
-    hero.summon_effects = _merge_effects(raw_summon)
-    hero.cc_immunities = _merge_immunities(raw_immunities)
-    hero.special_effects = _merge_special_effects(special_effects)
-    hero.damage_entries = [
+    hero["effects"] = _merge_effects(raw_effects)
+    hero["summon_effects"] = _merge_effects(raw_summon)
+    hero["cc_immunities"] = _merge_immunities(raw_immunities)
+    hero["special_effects"] = _merge_special_effects(special_effects)
+    hero["damage_entries"] = [
         (to_display_damage_type(row[0]), row[1])
         for row in processed.get("damage_entries", [])
     ]
-    hero.damage_magnitudes = {
+    hero["damage_magnitudes"] = {
         to_display_damage_type(dt): mag
         for dt, mag in processed.get("damage_magnitudes", {}).items()
     }
-    hero.benefit_stats = [
+    hero["benefit_stats"] = [
         to_display_stat(s) for s in processed.get("benefit_stats", [])
     ]
-    hero.scalar_stat_shares = {
+    hero["scalar_stat_shares"] = {
         to_display_stat(stat): float(share)
         for stat, share in processed.get("scalar_stat_shares", {}).items()
     }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lumont",
   "display_name": "Lumont",
   "local": {
@@ -549,7 +549,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "shield"
@@ -558,801 +557,173 @@
       "atk": 0.9166666666666666,
       "max_hp": 0.08333333333333333
     },
-    "behavior": {},
     "id": "lumont",
     "display_name": "Lumont",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Lumont - Benign Horn",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Lumont selects a tile in range and charges at it, knocking enemies in his path back toward the selected tile.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Lumont reaches the selected tile, he deals 240% (ATK-based) + 30% (SP-based) damage to all adjacent enemies and taunts them for 3s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lumont is unaffected while casting this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 260% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Taunts enemies for 4s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 280% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 300% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lumont gains a shield from Totem ward that blocks 450% (ATK-based) + 40% (SP-based) damage for 12s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "For every adjacent enemy, the shield value is increased by 30%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He also increases Phys DEF of 2 closest allies by 30% for 7s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value by 35% for every adjacent enemy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value by 40% for every adjacent enemy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value by 45% for every adjacent enemy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Lumont stomps the ground dealing 240% (ATK-based) damage to adjacent enemies and stunning them for 1 + 0.25 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases dmaage to 260% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Reduces this skill's cooldown by 1s for every enemy hit.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases dmaage to 280% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Lumont increases his Haste by 9 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His Haste is increased by an extra 6 when there are at least 2 enemies nearby.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Lumont increases his Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His Haste is increased by an extra 8 when there are at least 2 enemies nearby.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Lumont increases his Haste by 15 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His Haste is increased by an extra 10 when there are at least 2 enemies nearby.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Lumont slams the ground with totem 3 times after receiving damage equal to 40% of his max HP, dealing 150% (ATK-based) damage to enemies within 1, 2, and 3 tiles in order and reducing their ATK by 25% for 6s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "His 3rd slam also knocks the enemies hit into the air.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Lumont is unaffected while casting this skill.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Gains an extra skill attempt when a battle starts or an ally is defeated for the first time.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases damage to 180% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases damage to 210% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Lumont selects a tile in range and charges at it, knocking enemies in his path back toward the selected tile.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Lumont's Charge": "Ultimate",
-        "Totem Ward": "Skill1",
-        "War Stomp": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Totem Slam": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "path",
-              "area_direction": "selected_target",
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Taunt",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "path",
-              "area_direction": "selected_target",
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "path",
-              "area_direction": "selected_target",
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 1.25,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 1.25,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 280.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "Supreme+",
-              "targeting": "Area",
-              "numeric": 2.25,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 2.25,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 7.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "path",
-          "area_direction": "selected_target",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Taunt",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "path",
-          "area_direction": "selected_target",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 500.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "selected_target",
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 500.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.25,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 2.25,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 1.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 7.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "When Lumont reaches the selected tile, he deals 240% (ATK-based) + 30% (SP-based) damage to all adjacent enemies and taunts them for 3s.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Lumont is unaffected while casting this skill.",
+        "Ultimate"
       ],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "Increases damage to 260% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Shield"
+      [
+        "base",
+        "Taunts enemies for 4s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.9166666666666666,
-        "Max HP": 0.08333333333333333
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage to 280% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 300% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lumont gains a shield from Totem ward that blocks 450% (ATK-based) + 40% (SP-based) damage for 12s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "For every adjacent enemy, the shield value is increased by 30%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He also increases Phys DEF of 2 closest allies by 30% for 7s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value by 35% for every adjacent enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value by 40% for every adjacent enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value by 45% for every adjacent enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Lumont stomps the ground dealing 240% (ATK-based) damage to adjacent enemies and stunning them for 1 + 0.25 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases dmaage to 260% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces this skill's cooldown by 1s for every enemy hit.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases dmaage to 280% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Lumont increases his Haste by 9 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Haste is increased by an extra 6 when there are at least 2 enemies nearby.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Lumont increases his Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Haste is increased by an extra 8 when there are at least 2 enemies nearby.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Lumont increases his Haste by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Haste is increased by an extra 10 when there are at least 2 enemies nearby.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lumont slams the ground with totem 3 times after receiving damage equal to 40% of his max HP, dealing 150% (ATK-based) damage to enemies within 1, 2, and 3 tiles in order and reducing their ATK by 25% for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "His 3rd slam also knocks the enemies hit into the air.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Lumont is unaffected while casting this skill.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains an extra skill attempt when a battle starts or an ally is defeated for the first time.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases damage to 180% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases damage to 210% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "9422f7eb88ee1ed808f0ba0041596cd34ac1aab05f4327970284f7f4dfa5b3b1",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

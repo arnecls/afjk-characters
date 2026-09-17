@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "pang",
   "display_name": "Pang",
   "local": {
@@ -515,7 +515,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -526,741 +525,228 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "pang",
     "display_name": "Pang",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Pang - Bamboo Guardian",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Pang enters a meditative state, focusing his chi before unleashing a powerful burst at the end of the meditation.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The burst deals 350% (ATK-based) + 50% (SP-based) damage to enemies within 2 tiles.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He then enters the Unyielding Force stance, which drains 150 Energy per second while active.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Pang remains unaffected while casting this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Unyielding Force stance, Pang increases his Haste by 60 and ATK by 17%, and unlocks Skybreach Strikes.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Skybreach Strikes: Pang charges his strength, strikes an enemy 7 times with alternating palm attacks.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each strike deals 70% (ATK-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The final strike deals 150% (ATK-based) damage and stuns the enemy for 1.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When hitting a non-boss enemy, the final strike also prevent Energy recovery for 5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the chi burst damage to 380% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 19%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the chi burst damage to 410% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 21%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the chi burst damage to 440% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 23%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the chi burst damage to 470% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 25%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Pang strikes an enemy on the head, dealing 300% (ATK-based) + 40% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If he is in Unyielding Force stance, this strike deals an extra 12% of the enemy's current HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 240% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increase the damage dealt to 320% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 13% of the enemy's current HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 260% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increase the damage dealt to 340% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 14% of the enemy's current HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 280% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increase the damage dealt to 360% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 15% of the enemy's current HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 300% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Pang channels his chi, gaining a 340% (ATK-based) + 40% (SP-based) Chi Barrier for 9s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "While the barrier is active, Pang remains unaffected.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% (SP-based) damage to Pang's current target.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Pang is also unaffected while channeling his chi.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the Chi Barrier's shield value to 380% (ATK-based) + 40% (SP-based) and the razor leaves damage to 230% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the Chi Barrier's shield value to 420% (ATK-based) + 40% (SP-based) and the razor leaves damage to 250% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the Chi Barrier's shield value to 460% (ATK-based) + 40% (SP-based) and the razor leaves damage to 270% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Pang increases his ATK by 9% during the battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He further increases his ATK by an extra 6% while in Unyielding Force stance.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Pang increases his ATK by 12% during the battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He further increases his ATK by an extra 8% while in Unyielding Force stance.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Pang increases his ATK by 15% during the battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He further increases his ATK by an extra 10% while in Unyielding Force stance.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Pang increases the ATK of any unit shielded by his Chi Barrier by 15%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Pang increases the ATK of any unit shielded by his Chi Barrier by 17%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "When an allied hero (other than Pang) reaches 850 Energy or higher, Pang grants them a Chi Barrier.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "He can only shield the same ally once every 15s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Pang increases the ATK of any unit shielded by his Chi Barrier by 19%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "While in this stance, he gains 30 DEF Penetration.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Pang enters a meditative state, focusing his chi before unleashing a powerful burst at the end of the meditation.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Sky Splitter": "Ultimate",
-        "Radiant Fist": "Skill1",
-        "Zen Ward": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Spirit Sync": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 520.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 1.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_boss"
-                },
-                {
-                  "type": "unit_type",
-                  "unit_type": "boss"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Transformation",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% damage to Pang's current target.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 400.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 460.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": 19.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "DEF Penetration",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 520.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 1.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_boss"
-            },
-            {
-              "type": "unit_type",
-              "unit_type": "boss"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 460.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": 19.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "DEF Penetration",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "The burst deals 350% (ATK-based) + 50% (SP-based) damage to enemies within 2 tiles.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "He then enters the Unyielding Force stance, which drains 150 Energy per second while active.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Transformation",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% damage to Pang's current target.",
-          "grants": []
-        }
+      [
+        "base",
+        "Pang remains unaffected while casting this skill.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "In Unyielding Force stance, Pang increases his Haste by 60 and ATK by 17%, and unlocks Skybreach Strikes.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Shield",
-        "Energy",
-        "DEF Penetration"
+      [
+        "base",
+        "Skybreach Strikes: Pang charges his strength, strikes an enemy 7 times with alternating palm attacks.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Each strike deals 70% (ATK-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The final strike deals 150% (ATK-based) damage and stuns the enemy for 1.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When hitting a non-boss enemy, the final strike also prevent Energy recovery for 5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the chi burst damage to 380% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 19%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the chi burst damage to 410% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 21%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the chi burst damage to 440% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 23%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the chi burst damage to 470% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 25%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Pang strikes an enemy on the head, dealing 300% (ATK-based) + 40% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If he is in Unyielding Force stance, this strike deals an extra 12% of the enemy's current HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 240% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increase the damage dealt to 320% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 13% of the enemy's current HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 260% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increase the damage dealt to 340% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 14% of the enemy's current HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 280% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increase the damage dealt to 360% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 15% of the enemy's current HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 300% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Pang channels his chi, gaining a 340% (ATK-based) + 40% (SP-based) Chi Barrier for 9s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "While the barrier is active, Pang remains unaffected.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% (SP-based) damage to Pang's current target.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Pang is also unaffected while channeling his chi.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the Chi Barrier's shield value to 380% (ATK-based) + 40% (SP-based) and the razor leaves damage to 230% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the Chi Barrier's shield value to 420% (ATK-based) + 40% (SP-based) and the razor leaves damage to 250% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the Chi Barrier's shield value to 460% (ATK-based) + 40% (SP-based) and the razor leaves damage to 270% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Pang increases his ATK by 9% during the battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He further increases his ATK by an extra 6% while in Unyielding Force stance.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Pang increases his ATK by 12% during the battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He further increases his ATK by an extra 8% while in Unyielding Force stance.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Pang increases his ATK by 15% during the battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He further increases his ATK by an extra 10% while in Unyielding Force stance.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Pang increases the ATK of any unit shielded by his Chi Barrier by 15%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Pang increases the ATK of any unit shielded by his Chi Barrier by 17%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "When an allied hero (other than Pang) reaches 850 Energy or higher, Pang grants them a Chi Barrier.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "He can only shield the same ally once every 15s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Pang increases the ATK of any unit shielded by his Chi Barrier by 19%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "While in this stance, he gains 30 DEF Penetration.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "3547930b0f3cb56b6acce97cd53e37cac0dd16104b6f843c22610903a6cb9b73",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

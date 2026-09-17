@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "brutus",
   "display_name": "Brutus",
   "local": {
@@ -450,575 +450,177 @@
         "Arc"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "brutus",
     "display_name": "Brutus",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Brutus - Blood Claw",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Brutus spins Mountain's Roar at high speed and deals 110% (ATK-based) + 15% (SP-based) damage every second to adjacent enemies within 1 tile for 4s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He is unaffected while spinning.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases damage to 120% (ATK-based) + 15% (SP-based)",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Brutus is immune to control effects while spinning.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This skill's duration stacks with the duration of his other damage immunities.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 130% (ATK-based) + 15% (SP-based)",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases damage to 140% (ATK-based) + 15% (SP-based)",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Brutus roars with rage, taunting surrounding enemies within 2 tiles for 1.5 + 0.5 (SP-based)s and reducing their Phys DEF by 15% for 9s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Reduces surrounding enemies' Phys DEF by 20%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Reduces surrounding enemies' Phys DEF by 25%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Reduces surrounding enemies' Phys DEF by 30%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Brutus is immune to the first fatal blow he receives.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "He is then immune to all damage and becomes unaffected for 5 + 1 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Immunity grants 25 Life Drain and 25% ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: Immunity grants 35 Life Drain and 30% ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Immunity grants 35 Life Drain and 35% ATK.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Brutus increases his Life Drain by 10 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 5 Life Drain during his Ultimate.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Brutus increases his Life Drain by 13 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 7 Life Drain during his Ultimate.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Brutus increases his Life Drain by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 8 Life Drain during his Ultimate.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Brutus cleaves with all his might to enemies within 1-tile arc in front after receiving physical damage 10 times from adjacent enemies, dealing 200% (ATK-based) damage plus 12% of the target's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The total damage cannot exceed 750% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Brutus also gains 30% Life Drain.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This skill can be triggered once every 5s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Brutus deals 230% (ATK-based) damage plus 12% of the target's max HP with this skill (the total damage cannot exceed 780% of his ATK).",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Removes the cooldown limit for this skill.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Brutus can cast this skill for every 10 physical damage attacks he takes from adjacent enemies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Brutus deals 260% (ATK-based) damage plus 12% of the target's max HP with this skill (the total damage cannot exceed 780% of his ATK).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "The duration of damage immunity and unaffected status from Indomitable is increased by 1s.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Brutus spins Mountain's Roar at high speed and deals 110% (ATK-based) + 15% (SP-based) damage every second to adjacent enemies within 1 tile for 4s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Whirlwind Wrath": "Ultimate",
-        "Ferocious Roar": "Skill1",
-        "Indomitable": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Cleaving Strike": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 140.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 4.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            },
-            {
-              "immunity_type": "Immune",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Taunt",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 35.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 8.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "Mythic+",
-              "targeting": "Arc",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": "front",
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Arc",
-              "numeric": 260.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": "front",
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 140.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 4.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Taunt",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 35.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "Mythic+",
-          "targeting": "Arc",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "Mythic+",
-          "targeting": "Arc",
-          "numeric": 260.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "He is unaffected while spinning.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        },
-        {
-          "immunity_type": "Immune",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Unlocks at level 51: Increases damage to 120% (ATK-based) + 15% (SP-based)",
+        "Ultimate"
       ],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Arc"
-        ],
-        [
-          "DoT",
-          "Area"
-        ],
-        [
-          "Max HP-based damage",
-          "Arc"
-        ]
+      [
+        "base",
+        "Unlocks at level 111: Brutus is immune to control effects while spinning.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "Max HP-based damage": 36.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "This skill's duration stacks with the duration of his other damage immunities.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 130% (ATK-based) + 15% (SP-based)",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases damage to 140% (ATK-based) + 15% (SP-based)",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Brutus roars with rage, taunting surrounding enemies within 2 tiles for 1.5 + 0.5 (SP-based)s and reducing their Phys DEF by 15% for 9s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Reduces surrounding enemies' Phys DEF by 20%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Reduces surrounding enemies' Phys DEF by 25%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Reduces surrounding enemies' Phys DEF by 30%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Brutus is immune to the first fatal blow he receives.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He is then immune to all damage and becomes unaffected for 5 + 1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Immunity grants 25 Life Drain and 25% ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Immunity grants 35 Life Drain and 30% ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Immunity grants 35 Life Drain and 35% ATK.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Brutus increases his Life Drain by 10 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 5 Life Drain during his Ultimate.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Brutus increases his Life Drain by 13 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 7 Life Drain during his Ultimate.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Brutus increases his Life Drain by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 8 Life Drain during his Ultimate.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Brutus cleaves with all his might to enemies within 1-tile arc in front after receiving physical damage 10 times from adjacent enemies, dealing 200% (ATK-based) damage plus 12% of the target's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The total damage cannot exceed 750% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Brutus also gains 30% Life Drain.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This skill can be triggered once every 5s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Brutus deals 230% (ATK-based) damage plus 12% of the target's max HP with this skill (the total damage cannot exceed 780% of his ATK).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Removes the cooldown limit for this skill.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Brutus can cast this skill for every 10 physical damage attacks he takes from adjacent enemies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Brutus deals 260% (ATK-based) damage plus 12% of the target's max HP with this skill (the total damage cannot exceed 780% of his ATK).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "The duration of damage immunity and unaffected status from Indomitable is increased by 1s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "f10b4e740e27be7b8ef7f7e0bc0064e247132d6e4fdafb6c19dcc881770ac22b",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

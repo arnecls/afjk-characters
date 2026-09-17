@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "hewynn",
   "display_name": "Hewynn",
   "local": {
@@ -352,467 +352,159 @@
       ]
     },
     "damage_entries": [],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "hewynn",
     "display_name": "Hewynn",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Hewynn - Tender Leaf",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Healing amount per second is increased to 100% (ATK-based) + 5% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Healing amount per second is increased to 105% (ATK-based) + 5% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Healing amount per second is increased to 110% (ATK-based) + 5% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Healing amount per second is increased to 115% (ATK-based) + 5% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases HP recovery to 290% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases HP recovery to 300% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Hewynn's skill grants this effect once every 3s to 1 weakest ally while casting her Ultimate.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect can trigger once every 8 - 1 (SP-based)s per ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Heals an ally and removes all their dispellable debuffs, triggering once every 6 - 1 (SP-based)s per ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Heals once every 6 - 1 (SP-based)s per ally, and removes dispellable debuffs once every 4 - 1 (SP-based)s per ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra healing amount to 130% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Hewynn increases her ATK by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 6% ATK after casting Rain Prayer for the first time.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Hewynn increases her ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 8% ATK after casting Rain Prayer for the first time.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Hewynn increases her ATK by 14% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 10% ATK after casting Rain Prayer for the first time.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Hewynn is unaffected for 6s while casting Rain Prayer.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "During this time, all allies take 30% less damage.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Hewynn has 300 Initial Energy.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "While Rain Prayer is effective, all allies take 32% less damage.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "While Rain Prayer is effective, all allies take 34% less damage and receive buffs from Revitalize.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "While Rain Prayer is effective, all allies take 36% less damage.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Rain Prayer": "Ultimate",
-        "Healing Wave": "Skill1",
-        "Revitalize": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Tranquility": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 115.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 9.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Passive with internal cooldown",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "This effect can trigger once every 8 - 1s per ally.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 280.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 14.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 6.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 115.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 9.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 280.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 14.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 6.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Healing amount per second is increased to 100% (ATK-based) + 5% (SP-based) HP.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Healing amount per second is increased to 105% (ATK-based) + 5% (SP-based) HP.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Passive with internal cooldown",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "This effect can trigger once every 8 - 1s per ally.",
-          "grants": []
-        }
+      [
+        "base",
+        "Healing amount per second is increased to 110% (ATK-based) + 5% (SP-based) HP.",
+        "Ultimate"
       ],
-      "damage_entries": [],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK"
+      [
+        "base",
+        "Healing amount per second is increased to 115% (ATK-based) + 5% (SP-based) HP.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 4,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases HP recovery to 290% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases HP recovery to 300% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Hewynn's skill grants this effect once every 3s to 1 weakest ally while casting her Ultimate.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can trigger once every 8 - 1 (SP-based)s per ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Heals an ally and removes all their dispellable debuffs, triggering once every 6 - 1 (SP-based)s per ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Heals once every 6 - 1 (SP-based)s per ally, and removes dispellable debuffs once every 4 - 1 (SP-based)s per ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra healing amount to 130% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Hewynn increases her ATK by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 6% ATK after casting Rain Prayer for the first time.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Hewynn increases her ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 8% ATK after casting Rain Prayer for the first time.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Hewynn increases her ATK by 14% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 10% ATK after casting Rain Prayer for the first time.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Hewynn is unaffected for 6s while casting Rain Prayer.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "During this time, all allies take 30% less damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Hewynn has 300 Initial Energy.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "While Rain Prayer is effective, all allies take 32% less damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "While Rain Prayer is effective, all allies take 34% less damage and receive buffs from Revitalize.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "While Rain Prayer is effective, all allies take 36% less damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "889940e3b6e44b9af84d020588b8a5ffd28d3626bee97680e4ec9f8b777fc896",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

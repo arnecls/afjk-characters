@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "walker",
   "display_name": "Walker",
   "local": {
@@ -521,7 +521,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "max_hp",
       "shield",
@@ -530,717 +529,183 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "walker",
     "display_name": "Walker",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Walker - Wildland Outlaw",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Subsequent hits on the same target deal 50% damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: When the enemies in front include a target marked with Bounty Pursuit, the remaining bullets will be directed at the targeted enemy after shooting all others.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases damage to 55% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 60% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases stun duration to 2 + 0.2 (SP-based)s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Walker's normal attack range cannot be buffed any further.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Walker's normal attacks stun enemies for 0.125s upon dealing critical hits.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Increases each bullet's damage dealt to 37% (ATK-based) + 6% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Increases each bullet's damage dealt to 40% (ATK-based) + 6% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each shot deals 50% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based)).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: Walker can claim the bounty again after the previous targeted enemy is defeated.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each shot deals 55% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based)).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Crit DMG Boost by 30 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Crit DMG Boost by 40 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Crit DMG Boost by 50 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The above skill effect only takes effect once when multiple grenades hit the same target.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Reduces the enemies' Crit Resist by 10 in 15s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Increases damage to 150%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Increases damage to 160%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "This shield lasts till the target is defeated.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Six-Shot": "Ultimate",
-        "Shotgun Blast": "Skill1",
-        "Bounty Pursuit": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Aerial Thunder": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 6.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 0.125,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 0.125,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 46.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 24.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 55.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Crit DMG Boost",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "Mythic+",
-              "targeting": "Arc",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Arc",
-              "numeric": 160.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Crit Resist",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 6.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 160.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 24.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit DMG Boost",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "Mythic+",
-          "targeting": "Arc",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Crit Resist",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Arc, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "Subsequent hits on the same target deal 50% damage.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Max HP",
-        "Shield",
-        "Crit"
+      [
+        "base",
+        "Unlocks at level 51: When the enemies in front include a target marked with Bounty Pursuit, the remaining bullets will be directed at the targeted enemy after shooting all others.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 2,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 111: Increases damage to 55% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 60% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases stun duration to 2 + 0.2 (SP-based)s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Walker's normal attack range cannot be buffed any further.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Walker's normal attacks stun enemies for 0.125s upon dealing critical hits.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Increases each bullet's damage dealt to 37% (ATK-based) + 6% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increases each bullet's damage dealt to 40% (ATK-based) + 6% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each shot deals 50% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based)).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Walker can claim the bounty again after the previous targeted enemy is defeated.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each shot deals 55% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based)).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Crit DMG Boost by 30 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Crit DMG Boost by 40 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Crit DMG Boost by 50 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The above skill effect only takes effect once when multiple grenades hit the same target.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Reduces the enemies' Crit Resist by 10 in 15s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Increases damage to 150%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Increases damage to 160%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This shield lasts till the target is defeated.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "9d390e81550560e4ab170b54b3c7179e9fcc98508df9e907188dca0c06222e55",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

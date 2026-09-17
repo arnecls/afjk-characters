@@ -14,9 +14,13 @@ _profiles: dict[str, dict[str, Any]] | None = None
 def load_profiles() -> dict[str, dict[str, Any]]:
     global _profiles
     if _profiles is None:
-        from hero_pipeline.storage import load_ai_field
+        from hero_pipeline.storage import load_ai_by_id, display_names_by_id
 
-        _profiles = load_ai_field("summon_profile")
+        profiles = load_ai_by_id("summon_profile")
+        names = display_names_by_id()
+        _profiles = {
+            names[hero_id]: value for hero_id, value in profiles.items()
+        }
     return _profiles
 
 

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "yamato-gabumon",
   "display_name": "Yamato & Gabumon",
   "local": {
@@ -437,7 +437,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -446,623 +445,203 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "yamato-gabumon",
     "display_name": "Yamato & Gabumon",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Yamato & Gabumon - Cool Duo",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Yamato does not directly join the battle, remaining invincible on the sidelines.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts and whenever Gabumon casts his Ultimate, Yamato cheers for Gabumon, increasing Gabumon's ATK bv 15% for 5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While this effect is active, Gabumon recovers an extra 150 Energy every second if he has not yet Digivolved into Metalgarurumon.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Gabumon uses Petit Fire as his normal attack, dealing 100% (ATK-based) damage to an enemy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The first time Gabumon casts his Ultimate, he Digivolves into Metalgarurumon, permanently increasing his ATK by 40% and Haste by 25, and unlocking new skills.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When casting Ultimate as Metalgarurumon, he jumps to a target tile and unleashes Cocytus Breath in an area (4-tile long, 3-tile wide).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This causes enemies within the area to lose 28% (ATK-based) + 2% (SP-based) HP every 0.5s and freezes them for 3s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Enemies affected by Cocytus Breath lose 30% (ATK-based) + 2% (SP-based) HP every 0.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Enemies affected by Cocytus Breath lose 32% (ATK-based) + 2% (SP-based) HP every 0.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Enemies affected by Cocytus Breath lose 34% (ATK-based) + 2% (SP-based) HP every 0.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Enemies affected by Cocytus Breath lose 36% (ATK-based) + 2% (SP-based) HP every 0.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Metalgarurumon fires a massive Freeze Bomber.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Upon hitting the main target, it deals 360% (ATK-based) + 48% (SP-based) damage to them and 180% (ATK-based) + 24% (SP-based) damage to other enemies within 1 tile.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to the main target to 400% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 200% (ATK-based) + 24% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to the main target to 440% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 220% (ATK-based) + 24% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to the main target to 480% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 240% (ATK-based) + 24% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Metalgarurumon howls, increasing his ATK by 19% + 2.5% (SP-based) and Haste by 40 for 16s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases bonus ATK to 21% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases bonus ATK to 23% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases bonus ATK to 25% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Energy recovery from attacks by 18% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After Digivolving, increases Energy recovery from attacks by an extra 12%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Energy recovery from attacks by 24% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After Digivolving, increases Energy recovery from attacks by an extra 16%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Energy recovery from attacks by 30% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After Digivolving, increases Energy recovery from attacks by an extra 20%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Metalgarurumon fires 10 small missiles, distributed evenly among all enemies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When a missile hits, it deals 60% (ATK-based) damage to all enemies within 1 tile of the target.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "During a single cast, if the same enemy has taken 4 hits from this skill, all subsequent hits on that enemy deal 50% less damage.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "During battle preparation, for each ally deployed within 1 tile of Gabumon, this skill permanently fires 2 more missiles, up to 6 extra missiles.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "When a missile hits, it deals 70% (ATK-based) damage to all enemies within 1 tile of the target.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "During a single cast, if an enemy has taken 4 hits from this skill, that enemy is immediately frozen for 2s and takes 360% (ATK-based) extra damage.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "When a missile hits, it deals 80% (ATK-based) damage to all enemies within 1 tile of the target.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When Gabumon Digivolves, his Bond of Friendship activates.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Gabumon and allies who were initially deployed within 1 tiles of him recover 150% (ATK-based) HP per second for 8s.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "If Agumon receives this effect, the duration is extended to 12s.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "For each ally affected, Gabumon permanently increases his ATK by 5%, up to 15%.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Yamato does not directly join the battle, remaining invincible on the sidelines.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Cocytus Breath": "Ultimate",
-        "Garuru Tomahawk": "Skill1",
-        "Garuru Howling": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Grace Cross Freezer": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 4,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": 0.5,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "rectangle",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 4,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "rectangle",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 528.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 528.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 16.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy Regen on Hit",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 360.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "Supreme+",
-              "targeting": "Area",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 4,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": 0.5,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "rectangle",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 4,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 528.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 16.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Energy Regen on Hit",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "Supreme+",
-          "targeting": "Area",
-          "numeric": 150.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "When a battle starts and whenever Gabumon casts his Ultimate, Yamato cheers for Gabumon, increasing Gabumon's ATK bv 15% for 5s.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ],
-        [
-          "DoT",
-          "Area"
-        ]
+      [
+        "base",
+        "While this effect is active, Gabumon recovers an extra 150 Energy every second if he has not yet Digivolved into Metalgarurumon.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Energy"
+      [
+        "base",
+        "Gabumon uses Petit Fire as his normal attack, dealing 100% (ATK-based) damage to an enemy.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 4,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "The first time Gabumon casts his Ultimate, he Digivolves into Metalgarurumon, permanently increasing his ATK by 40% and Haste by 25, and unlocking new skills.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When casting Ultimate as Metalgarurumon, he jumps to a target tile and unleashes Cocytus Breath in an area (4-tile long, 3-tile wide).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This causes enemies within the area to lose 28% (ATK-based) + 2% (SP-based) HP every 0.5s and freezes them for 3s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Enemies affected by Cocytus Breath lose 30% (ATK-based) + 2% (SP-based) HP every 0.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Enemies affected by Cocytus Breath lose 32% (ATK-based) + 2% (SP-based) HP every 0.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Enemies affected by Cocytus Breath lose 34% (ATK-based) + 2% (SP-based) HP every 0.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Enemies affected by Cocytus Breath lose 36% (ATK-based) + 2% (SP-based) HP every 0.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Metalgarurumon fires a massive Freeze Bomber.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Upon hitting the main target, it deals 360% (ATK-based) + 48% (SP-based) damage to them and 180% (ATK-based) + 24% (SP-based) damage to other enemies within 1 tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to the main target to 400% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 200% (ATK-based) + 24% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to the main target to 440% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 220% (ATK-based) + 24% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to the main target to 480% (ATK-based) + 48% (SP-based); increases damage to other enemies within 1 tile to 240% (ATK-based) + 24% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Metalgarurumon howls, increasing his ATK by 19% + 2.5% (SP-based) and Haste by 40 for 16s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases bonus ATK to 21% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases bonus ATK to 23% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases bonus ATK to 25% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Energy recovery from attacks by 18% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After Digivolving, increases Energy recovery from attacks by an extra 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Energy recovery from attacks by 24% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After Digivolving, increases Energy recovery from attacks by an extra 16%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Energy recovery from attacks by 30% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After Digivolving, increases Energy recovery from attacks by an extra 20%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Metalgarurumon fires 10 small missiles, distributed evenly among all enemies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When a missile hits, it deals 60% (ATK-based) damage to all enemies within 1 tile of the target.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "During a single cast, if the same enemy has taken 4 hits from this skill, all subsequent hits on that enemy deal 50% less damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "During battle preparation, for each ally deployed within 1 tile of Gabumon, this skill permanently fires 2 more missiles, up to 6 extra missiles.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "When a missile hits, it deals 70% (ATK-based) damage to all enemies within 1 tile of the target.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "During a single cast, if an enemy has taken 4 hits from this skill, that enemy is immediately frozen for 2s and takes 360% (ATK-based) extra damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "When a missile hits, it deals 80% (ATK-based) damage to all enemies within 1 tile of the target.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When Gabumon Digivolves, his Bond of Friendship activates.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Gabumon and allies who were initially deployed within 1 tiles of him recover 150% (ATK-based) HP per second for 8s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "If Agumon receives this effect, the duration is extended to 12s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "For each ally affected, Gabumon permanently increases his ATK by 5%, up to 15%.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "ceaecfeadb4a955798c9f37e4c688344f77d86f558cfc0df343636f4114a63ab",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -146,9 +146,9 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
         rs.analyze_hero(hero)
         section = skill["section"]
         labels = [
-            e.label
-            for e in hero.skill_slices[section].effects
-            if e.category == "debuff"
+            e["label"]
+            for e in hero["skill_slices"][section]["effects"]
+            if e["category"] == "debuff"
         ]
         self.assertIn("Marked target (focus fire)", labels)
 

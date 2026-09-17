@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "rolan",
   "display_name": "Rolan",
   "local": {
@@ -626,7 +626,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -636,958 +635,218 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "rolan",
     "display_name": "Rolan",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Rolan - First Crown",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The max HP gained from this skill gradually decays over 12s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Casting this skill also grants Rolan's allies 15% Morale.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases HP restored to 1050% (ATK-based) + 80% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases HP restored to 1100% (ATK-based) + 80% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases HP restored to 1150% (ATK-based) + 80% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases HP restored to 1200% (ATK-based) + 80% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The team's Morale is capped at 100%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If Rolan is defeated, all Morale is permanently lost.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the ATK bonus from the blessing to 20% + 2% (SP-based) of Rolan's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the ATK bonus from the blessing to 22% + 2% (SP-based) of Rolan's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the ATK bonus from the blessing to 24% + 2% (SP-based) of Rolan's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the HP restored to 260% (ATK-based) + 30% (SP-based) and the damage dealt to 260% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the HP restored to 280% (ATK-based) + 30% (SP-based) and the damage dealt to 280% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the HP restored to 300% (ATK-based) + 30% (SP-based) and the damage dealt to 300% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 9 and reduces damage taken by 9%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 12 and reduces damage taken by 12%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "For every 20% Morale the allied team has, Rolan gains an extra 4 Healing and further reduces his damage taken by 4%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 15 and reduces damage taken by 15%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "For every 20% Morale the allied team has, Rolan gains an extra 5 Healing and further reduces his damage taken by 5%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "While the ward is active, Morale will not decrease unless Rolan is defeated.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "In non-Boss battles, allies inside the ward are immune to stat reductions.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "The radiant clone now inherits 90% of the ally's basic stats.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The radiant clone now inherits 100% of the ally's basic stats.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Allies within the radiant ward recover 80% (ATK-based) HP every second.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "while all enemies within it lose 40% (ATK-based) HP every second.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Rolan draws Excalibur, cleansing the dispellable debuffs from his allies and redistributing the HP of all non-summoned allies so they are at the same percentage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Oath in the Stone": "Ultimate",
-        "Undying Valor": "Skill1",
-        "Clemency's Edge": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Radiant Reign": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Cleanse",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 1200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 0.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 1200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 12.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 1200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacked resource",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Casting the Ultimate grants allied Morale.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 24.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 10.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Single target",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Ally empower",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "qualitative": "Rolan blesses the two allies with the highest cumulative damage.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Stacked resource",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Morale increases at battle start, after allied Ultimate casts, and after enemy defeats.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 36.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 10.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Ally Ultimate casts",
-              "tier": "Mythic+",
-              "targeting": "Allies",
-              "qualitative": "A radiant clone repeats an ally Ultimate after Morale reaches its cap.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "DEF Penetration",
-              "tier": "Supreme+",
-              "targeting": "All units",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Supreme+",
-              "targeting": "All units",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Party composition",
-              "tier": "Supreme+",
-              "targeting": "Allies",
-              "qualitative": "The strongest deployed faction changes the battle-start Morale and faction bonuses.",
-              "grants": []
-            }
-          ]
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Cleanse",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 1200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 0.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 1200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 12.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 1200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 24.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 10.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 10.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 330.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "DEF Penetration",
-          "tier": "Supreme+",
-          "targeting": "All units",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "He then increases all allies' max HP by 150% and restores 1000% (ATK-based) + 80% (SP-based) HP.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Single target",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "The max HP gained from this skill gradually decays over 12s.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Stacked resource",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "Casting the Ultimate grants allied Morale.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally empower",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "qualitative": "Rolan blesses the two allies with the highest cumulative damage.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally Ultimate casts",
-          "tier": "Mythic+",
-          "targeting": "Allies",
-          "qualitative": "A radiant clone repeats an ally Ultimate after Morale reaches its cap.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Party composition",
-          "tier": "Supreme+",
-          "targeting": "Allies",
-          "qualitative": "The strongest deployed faction changes the battle-start Morale and faction bonuses.",
-          "grants": []
-        }
+      [
+        "base",
+        "Casting this skill also grants Rolan's allies 15% Morale.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ],
-        [
-          "DoT",
-          "Area"
-        ]
+      [
+        "base",
+        "Increases HP restored to 1050% (ATK-based) + 80% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP",
-        "DEF Penetration"
+      [
+        "base",
+        "Increases HP restored to 1100% (ATK-based) + 80% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 10,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases HP restored to 1150% (ATK-based) + 80% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases HP restored to 1200% (ATK-based) + 80% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Rolan inspires his allies, granting the allied team 20% Morale.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "For every 20% Morale the team has, all allies gain ATK equal to 10% + 1% of Rolan's initial ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The team's Morale is capped at 100%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "During combat, the allied team gains 10% Morale whenever an ally casts an Ultimate.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Defeating a non-summoned enemy grants 10% Morale, while losing a non-summoned ally deducts the same amount.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If Rolan is defeated, all Morale is permanently lost.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Rolan blesses the 2 allies with the highest cumulative damage dealt, making them unaffected for 10s and increasing their ATK by 18% + 2% (SP-based) of Rolan's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If the allied team has at least 60% Morale, the blessed allies also gain 50 Haste while the blessing is active.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the ATK bonus from the blessing to 20% + 2% (SP-based) of Rolan's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the ATK bonus from the blessing to 22% + 2% (SP-based) of Rolan's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the ATK bonus from the blessing to 24% + 2% (SP-based) of Rolan's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Rolan targets the area with the most allies, restoring 240% (ATK-based) + 30% (SP-based) HP to allies within 1 tile and reducing their damage taken by 36% + 3% (SP-based) for 10s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If the allied team has at least 60% Morale, Rolan also targets the area with the most enemies, dealing 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stunning them for 3s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP restored to 260% (ATK-based) + 30% (SP-based) and the damage dealt to 260% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP restored to 280% (ATK-based) + 30% (SP-based) and the damage dealt to 280% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP restored to 300% (ATK-based) + 30% (SP-based) and the damage dealt to 300% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 9 and reduces damage taken by 9%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "For every 20% Morale the allied team has, Rolan gains an extra 3 Healing and further reduces his damage taken by 3%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 12 and reduces damage taken by 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "For every 20% Morale the allied team has, Rolan gains an extra 4 Healing and further reduces his damage taken by 4%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 15 and reduces damage taken by 15%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "For every 20% Morale the allied team has, Rolan gains an extra 5 Healing and further reduces his damage taken by 5%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Once the allied team's Morale reaches 100%, Rolan creates a radiant ward.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When an ally casts their Ultimate, a radiant clone appears, inheriting 80% of that ally's basic stats and casting their Ultimate again.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "While the ward is active, Morale will not decrease unless Rolan is defeated.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "In non-Boss battles, allies inside the ward are immune to stat reductions.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "The radiant clone now inherits 90% of the ally's basic stats.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The radiant clone now inherits 100% of the ally's basic stats.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Allies within the radiant ward recover 80% (ATK-based) HP every second.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "while all enemies within it lose 40% (ATK-based) HP every second.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When a battle starts, the allied team gains an extra 6% Morale for each hero from the faction with the most deployed heroes.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "If that faction is the Lightbearer Empire or the Celestials, the Morale bonus increases by 4% per hero, and Rolan and heroes from that faction also gain 20 Penetration and take 50% less damage for 8s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "2acd98542f5966a9d8ed11c6fac14cb0d359123a921d9467c47065752f3cf1a4",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

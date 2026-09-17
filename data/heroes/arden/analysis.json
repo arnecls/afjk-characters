@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "arden",
   "display_name": "Arden",
   "local": {
@@ -366,12 +366,6 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 2,
-            "conditions": [
-              {
-                "type": "status_condition",
-                "status": "controlled"
-              }
-            ],
             "type": "crowd_control",
             "cc-type": "bind",
             "duration": 3.5
@@ -416,7 +410,6 @@
         "Multiple targets, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "energy"
@@ -424,596 +417,148 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "arden",
     "display_name": "Arden",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Arden - Oak Sage",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Arden selects a tile and casts lightning strikes on all surrounding enemies within 2 tiles, dealing 160% (ATK-based) + 20% (SP-based) damage and creating dark cloud that cover the area for 7s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The dark cloud will repeatedly strike controlled enemies below with lightning, dealing 80% (ATK-based) + 10% (SP-based) damage each time.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "An enemy can only be struck once every 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Arden prioritizes selecting the tile with the most surrounding enemies when casting the lightning strikes.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Deals 180% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 90% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Deals 190% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 95% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Deals 200% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 100% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Deals 210% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 110% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Arden summons vines to entangle 2 closest enemies for 2 + 0.25 (SP-based)s, making them unable to move or act while dealing 50% (ATK-based) damage every 1s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Arden prioritizes enemies under the dark cloud.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 55% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 60% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 65% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Arden recovers 12 + 3 (SP-based) Energy whenever a non-summoned enemy is controlled.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect can trigger once per enemy every 2s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Triggers once per enemy every 1.5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Triggers once per enemy every 1s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Arden recovers 15 + 3 (SP-based) Energy.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 16% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 20% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Arden casts Entangling Vines on all enemies under the dark cloud once after casting Force of Nature.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the range of Force of Nature to 3 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases the duration of Entangling Vines to 3s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the duration of Entangling Vines to 3.5s.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Arden reduces the lightning strike interval of Force of Nature for the same enemy by 1s.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Arden selects a tile and casts lightning strikes on all surrounding enemies within 2 tiles, dealing 160% (ATK-based) + 20% (SP-based) damage and creating dark cloud that cover the area for 7s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Force of Nature": "Ultimate",
-        "Entangling Vines": "Skill1",
-        "Nature's Resilience": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Spring Thunderstorm": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 230.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 210.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 7.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "controlled"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 2.25,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.25,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 65.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "EX+10",
-              "targeting": "Area",
-              "numeric": 3.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 3.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_summoned"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "controlled"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "EX+10",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "EX+15",
-              "targeting": "Area",
-              "numeric": 3.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 3.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 230.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 210.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 7.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "controlled"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 2.25,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.25,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 3.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 3.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "controlled"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_summoned"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        }
+      [
+        "base",
+        "The dark cloud will repeatedly strike controlled enemies below with lightning, dealing 80% (ATK-based) + 10% (SP-based) damage each time.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ],
-        [
-          "DoT",
-          "Multiple targets, Single target"
-        ]
+      [
+        "base",
+        "An enemy can only be struck once every 2s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Energy"
+      [
+        "base",
+        "Arden prioritizes selecting the tile with the most surrounding enemies when casting the lightning strikes.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Deals 180% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 90% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Deals 190% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 95% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Deals 200% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 100% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Deals 210% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 110% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Arden summons vines to entangle 2 closest enemies for 2 + 0.25 (SP-based)s, making them unable to move or act while dealing 50% (ATK-based) damage every 1s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Arden prioritizes enemies under the dark cloud.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 55% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 60% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 65% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Arden recovers 12 + 3 (SP-based) Energy whenever a non-summoned enemy is controlled.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can trigger once per enemy every 2s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Triggers once per enemy every 1.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Triggers once per enemy every 1s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Arden recovers 15 + 3 (SP-based) Energy.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Arden casts Entangling Vines on all enemies under the dark cloud once after casting Force of Nature.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the range of Force of Nature to 3 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the duration of Entangling Vines to 3s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the duration of Entangling Vines to 3.5s.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Arden reduces the lightning strike interval of Force of Nature for the same enemy by 1s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "a9a3c43375893125885704211eb4b2d7888fec1d021c1e5e8a8cc400b75551f0",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

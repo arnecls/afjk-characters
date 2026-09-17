@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import copy
 import re
-from dataclasses import asdict
 from typing import Any, Mapping, cast
 
 import heroes_io as io
@@ -17,11 +16,13 @@ from ..contracts import (
     RosterSnapshot,
 )
 from ..storage import _manifest_entries
+from healing_types import is_hp_recovery_label
+
 from . import overview_facts as gen
+from . import behavior as bh
 from . import serialize as hs
-from . import text as rs
-from .local import _apply_local_policy
-from .policy import CalibrationPolicy, LocalPolicy, apply_local_policy
+from . import effects as rs
+from .policy import CalibrationPolicy, LocalPolicy, bound_policy, make_policy, thaw_policy
 
 
 def _effect_from_mapping(raw: Mapping[str, Any]) -> Any:
@@ -63,44 +64,91 @@ def _slice_from_mapping(raw: Mapping[str, Any]) -> Any:
 
 def hero_from_local(analysis: Mapping[str, Any]) -> Any:
     raw = analysis.get("hero")
-    if not isinstance(raw, Mapping):
-        raise ValueError(
-            f"local analysis {analysis.get('id')!r} has no hero record"
+    if isinstance(raw, Mapping):
+        values = copy.deepcopy(dict(raw))
+        values["skill_chunks"] = [
+            tuple(chunk) for chunk in values.get("skill_chunks") or []
+        ]
+        values["skill_slices"] = {
+            section: _slice_from_mapping(slice_)
+            for section, slice_ in (values.get("skill_slices") or {}).items()
+        }
+        values["effects"] = [
+            _effect_from_mapping(effect)
+            for effect in values.get("effects") or []
+        ]
+        values["summon_effects"] = [
+            _effect_from_mapping(effect)
+            for effect in values.get("summon_effects") or []
+        ]
+        values["cc_immunities"] = [
+            _immunity_from_mapping(immunity)
+            for immunity in values.get("cc_immunities") or []
+        ]
+        values["special_effects"] = [
+            _special_from_mapping(special)
+            for special in values.get("special_effects") or []
+        ]
+        values["damage_entries"] = [
+            tuple(entry) for entry in values.get("damage_entries") or []
+        ]
+        values["positional_tile_buff_labels"] = frozenset(
+            values.get("positional_tile_buff_labels") or []
         )
-    values = copy.deepcopy(dict(raw))
-    values["skill_chunks"] = [
-        tuple(chunk) for chunk in values.get("skill_chunks") or []
+        values["proximity_aura_buff_labels"] = frozenset(
+            values.get("proximity_aura_buff_labels") or []
+        )
+        return rs.Hero(**values)
+    title = str(analysis.get("long_name") or analysis.get("display_name") or "")
+    damage_type = str(
+        analysis.get("damage_type")
+        or analysis.get("primary_damage_type")
+        or "Physical"
+    )
+    hero = hs.deserialize_hero(title, dict(analysis), damage_type)
+    hero["skill_chunks"] = [
+        tuple(chunk) for chunk in analysis.get("skill_chunks") or []
     ]
-    values["skill_slices"] = {
-        section: _slice_from_mapping(slice_)
-        for section, slice_ in (values.get("skill_slices") or {}).items()
+    hero["positional_tile_buff_labels"] = frozenset(
+        analysis.get("positional_tile_buff_labels") or []
+    )
+    hero["proximity_aura_buff_labels"] = frozenset(
+        analysis.get("proximity_aura_buff_labels") or []
+    )
+    hero["proximity_aura_radius"] = analysis.get("proximity_aura_radius")
+    raw_range = analysis.get("default_range")
+    if isinstance(raw_range, (int, float)):
+        hero["default_range"] = int(raw_range)
+    hero["id"] = analysis.get("id")
+    hero["display_name"] = analysis.get("display_name")
+    slices: dict[str, Any] = {}
+    category_to_section = {
+        category: section
+        for section, category in hs._SECTION_TO_CATEGORY.items()
     }
-    values["effects"] = [
-        _effect_from_mapping(effect)
-        for effect in values.get("effects") or []
-    ]
-    values["summon_effects"] = [
-        _effect_from_mapping(effect)
-        for effect in values.get("summon_effects") or []
-    ]
-    values["cc_immunities"] = [
-        _immunity_from_mapping(immunity)
-        for immunity in values.get("cc_immunities") or []
-    ]
-    values["special_effects"] = [
-        _special_from_mapping(special)
-        for special in values.get("special_effects") or []
-    ]
-    values["damage_entries"] = [
-        tuple(entry) for entry in values.get("damage_entries") or []
-    ]
-    values["positional_tile_buff_labels"] = frozenset(
-        values.get("positional_tile_buff_labels") or []
-    )
-    values["proximity_aura_buff_labels"] = frozenset(
-        values.get("proximity_aura_buff_labels") or []
-    )
-    return rs.Hero(**values)
+    for skill in (analysis.get("skills") or {}).values():
+        category = str(skill.get("category") or "")
+        section = category_to_section.get(category, category)
+        converted_effects = []
+        converted_summon = []
+        converted_immunities = []
+        for row in skill.get("effects") or []:
+            converted = hs.schema_effect_to_effect(row)
+            if rs.is_cc_immunity(converted):
+                converted_immunities.append(converted)
+            elif row.get("target") in {"own_summons", "all_summons"}:
+                converted_summon.append(converted)
+            else:
+                converted_effects.append(converted)
+        slices[section] = rs.SkillSlice(
+            section=section,
+            tier=str(skill.get("tier") or "base"),
+            effects=converted_effects,
+            summon_effects=converted_summon,
+            cc_immunities=converted_immunities,
+        )
+    hero["skill_slices"] = slices
+    return hero
 
 
 def calibrate_roster(
@@ -110,13 +158,24 @@ def calibrate_roster(
     snapshot: RosterSnapshot,
 ) -> tuple[ProcessedRoster, list[AnalyzedHero], AnalysisContext]:
     """Apply roster-wide calibration to ID-keyed local mappings."""
-    _apply_local_policy(local_policy)
-    rs.CASTING_SPEED_FAST_THRESHOLD = calibration_policy[
-        "casting_speed_fast_threshold"
-    ]
-    rs.CASTING_SPEED_SLOW_THRESHOLD = calibration_policy[
-        "casting_speed_slow_threshold"
-    ]
+    policy = thaw_policy(make_policy())
+    policy["local"] = dict(local_policy)
+    policy["calibration"] = dict(calibration_policy)
+    with bound_policy(policy):
+        return _calibrate_roster(
+            analyses_by_id,
+            local_policy,
+            calibration_policy,
+            snapshot,
+        )
+
+
+def _calibrate_roster(
+    analyses_by_id: Mapping[str, LocalAnalysis],
+    local_policy: LocalPolicy,
+    calibration_policy: CalibrationPolicy,
+    snapshot: RosterSnapshot,
+) -> tuple[ProcessedRoster, list[AnalyzedHero], AnalysisContext]:
     unknown = sorted(set(analyses_by_id) - set(snapshot["bundles"]))
     if unknown:
         raise ValueError(
@@ -148,6 +207,7 @@ def calibrate_roster(
         snapshot,
         behavior_by_title,
         context,
+        analyses_by_id,
     )
     return (
         cast(ProcessedRoster, processed),
@@ -229,7 +289,7 @@ def _behavior_inputs(
         )
         names: dict[str, str] = {}
         for skill in (source_doc.get("source") or {}).get("skills") or []:
-            category = rs.SECTION_TO_SKILL_CATEGORY.get(
+            category = bh.SECTION_TO_SKILL_CATEGORY.get(
                 skill.get("section", "")
             )
             if category and skill.get("name"):
@@ -244,7 +304,6 @@ def analyze_bundles(
 ) -> list[Any]:
     """Run hero-local analysis for every bundle."""
     heroes = []
-    apply_local_policy(policy)
     for record in _source_records(snapshot):
         hero = rs.hero_from_record(copy.deepcopy(record))
         rs.analyze_hero(hero)
@@ -258,7 +317,6 @@ def calibrate_heroes(
     policy: Mapping[str, Any],
 ) -> tuple[list[Any], dict[str, Any], dict[str, Any]]:
     """Apply roster-wide magnitude and behavior calibration."""
-    apply_local_policy(policy)
     records = _source_records(snapshot)
     data_by_title = {record["title"]: record for record in records}
     block_by_title = {
@@ -273,7 +331,7 @@ def calibrate_heroes(
         for record in records
     }
     display_by_title = _display_by_title(snapshot)
-    behavior_by_title = rs.build_behavior_for_heroes(
+    behavior_by_title = bh.build_behavior_for_heroes(
         heroes,
         display_by_title,
         hero_class_by_title=hero_class_by_title,
@@ -316,47 +374,47 @@ def _extra_analysis_fields(
         }.get(section or "", "passive")
 
     def effect_key(effect: Any) -> str:
-        section = section_token(effect.source_section)
+        section = section_token(effect["source_section"])
         parts: tuple[Any, ...]
         if (
-            effect.category == "buff"
-            and gen.is_hp_recovery_label(effect.label)
+            effect["category"] == "buff"
+            and is_hp_recovery_label(effect["label"])
         ):
-            parts = (effect.category, effect.label, section)
-        elif effect.category == "buff":
-            bucket = "self" if effect.targeting == "Self" else "ally"
-            parts = (effect.category, effect.label, bucket)
-        elif effect.category in {"cc", "debuff"}:
-            parts = (effect.category, effect.label, effect.targeting)
+            parts = (effect["category"], effect["label"], section)
+        elif effect["category"] == "buff":
+            bucket = "self" if effect["targeting"] == "Self" else "ally"
+            parts = (effect["category"], effect["label"], bucket)
+        elif effect["category"] in {"cc", "debuff"}:
+            parts = (effect["category"], effect["label"], effect["targeting"])
         else:
-            parts = (effect.category, effect.label)
+            parts = (effect["category"], effect["label"])
         return "|".join(parts)
 
     effects: dict[str, dict[str, Any]] = {}
     skill_effect_magnitudes: dict[str, str] = {}
-    for skill_slice in hero.skill_slices.values():
+    for skill_slice in hero["skill_slices"].values():
         for effect in (
-            list(skill_slice.effects) + list(skill_slice.summon_effects)
+            list(skill_slice["effects"]) + list(skill_slice["summon_effects"])
         ):
             key = "|".join(
                 (
-                    section_token(effect.source_section),
-                    effect.category,
-                    effect.label,
-                    effect.targeting,
+                    section_token(effect["source_section"]),
+                    effect["category"],
+                    effect["label"],
+                    effect["targeting"],
                 )
             )
-            skill_effect_magnitudes[key] = effect.magnitude
-    all_effects = list(hero.effects) + list(hero.summon_effects)
-    signature_section = behavior.signature_skill_section
-    signature_name = behavior.signature_skill_name
+            skill_effect_magnitudes[key] = effect["magnitude"]
+    all_effects = list(hero["effects"]) + list(hero["summon_effects"])
+    signature_section = behavior["signature_skill_section"]
+    signature_name = behavior["signature_skill_name"]
     for effect in all_effects:
         raw = rs._effect_throughput_score(effect, hero, skills)
         effect_facts = {
-            "magnitude": effect.magnitude,
+            "magnitude": effect["magnitude"],
             "weight": raw,
         }
-        if effect.category == "cc" and gen._cc_effect_in_signature(
+        if effect["category"] == "cc" and gen._cc_effect_in_signature(
                 effect,
                 hero,
                 signature_section,
@@ -364,40 +422,40 @@ def _extra_analysis_fields(
         ):
             effect_facts["signature_cc"] = True
         if (
-            effect.category == "buff"
-            and effect.label == "Energy"
+            effect["category"] == "buff"
+            and effect["label"] == "Energy"
             and gen._effect_is_battle_start_ally_energy(effect)
         ):
             effect_facts["battle_start_energy"] = True
         effects[effect_key(effect)] = effect_facts
 
     named: dict[str, dict[str, Any]] = {}
-    for special in hero.special_effects:
-        if special.label != "Named ally on team":
+    for special in hero["special_effects"]:
+        if special["label"] != "Named ally on team":
             continue
         ids = [
             hero_id
             for name, hero_id in id_by_display.items()
             if gen._named_ally_text_mentions_hero(
-                special.qualitative,
+                special["qualitative"],
                 name,
             )
         ]
         key = "|".join(
             (
-                special.kind,
-                special.label,
-                hs.to_schema_tier(special.tier),
+                special["kind"],
+                special["label"],
+                hs.to_schema_tier(special["tier"]),
             )
         )
         named[key] = {
             "ids": ids,
-            "grants": [list(item) for item in special.grants],
+            "grants": [list(item) for item in special.get("grants") or []],
         }
 
     skill_text = gen.provider_skill_text(hero)
     scoring = {
-        "primary_damage_type": hero.damage_type,
+        "primary_damage_type": hero["damage_type"],
         "behavior_tags": list(
             bundle["ai"].get("behavior_tags") or []
         ),
@@ -442,22 +500,22 @@ def _extra_analysis_fields(
         "ally_grant_detail": gen._ally_grant_detail(hero, "") or None,
         "replacement_damage": gen._hero_damage_profile(
             hero,
-            {hero.title: skills},
+            {hero["title"]: skills},
         ),
         "signature_section": signature_section,
     }
     return _json_value({
         "positional_tile_buff_labels": sorted(
-            hero.positional_tile_buff_labels
+            hero["positional_tile_buff_labels"]
         ),
-        "proximity_aura_buff_labels": sorted(hero.proximity_aura_buff_labels),
-        "proximity_aura_radius": hero.proximity_aura_radius,
+        "proximity_aura_buff_labels": sorted(hero["proximity_aura_buff_labels"]),
+        "proximity_aura_radius": hero["proximity_aura_radius"],
         "summary_effect_magnitudes": {
             "effects": [
-                effect.magnitude for effect in summary_hero.effects
+                effect["magnitude"] for effect in summary_hero["effects"]
             ],
             "summon_effects": [
-                effect.magnitude for effect in summary_hero.summon_effects
+                effect["magnitude"] for effect in summary_hero["summon_effects"]
             ],
         },
         "scoring": scoring,
@@ -469,11 +527,14 @@ def serialize_processed(
     snapshot: Mapping[str, Any],
     behavior_by_title: Mapping[str, Any],
     context: Mapping[str, Any],
+    analyses_by_id: Mapping[str, LocalAnalysis],
 ) -> dict[str, Any]:
-    """Serialize calibrated heroes to ID-keyed analysis mappings."""
+    """Calibrate ID-keyed local mappings in memory."""
+    from . import overview_facts as facts
+
     seasons = io.load_seasons()
     energy_provider_titles = {
-        hero.title for hero in heroes if gen.is_energy_provider(hero)
+        hero["title"] for hero in heroes if facts.is_energy_provider(hero)
     }
     processed_heroes: dict[str, dict[str, Any]] = {}
     data_by_title = context["data_by_title"]
@@ -482,47 +543,78 @@ def serialize_processed(
     display_by_title = context["display_by_title"]
     id_by_display = _id_by_display(snapshot)
     for hero in heroes:
-        behavior = behavior_by_title[hero.title]
+        behavior = behavior_by_title[hero["title"]]
         bundle = snapshot["bundles"][id_by_display[
-            display_by_title[hero.title]
+            display_by_title[hero["title"]]
         ]]
-        hero_record = data_by_title[hero.title]
-        behavior_dict = asdict(behavior)
+        hero_record = data_by_title[hero["title"]]
+        behavior_dict = dict(behavior)
         behavior_dict.pop("signature_skill_section", None)
-        short = display_by_title[hero.title]
-        hero_class = hero_class_by_title[hero.title]
-        skills = skills_by_title[hero.title]
+        short = display_by_title[hero["title"]]
+        hero_id = id_by_display[short]
+        hero_class = hero_class_by_title[hero["title"]]
+        skills = skills_by_title[hero["title"]]
         default_range = hero_record.get("range")
         if default_range is not None:
             default_range = int(default_range)
         season, season_number = hs.map_date_to_season(
             hero_record.get("release_date"), seasons
         )
-        serialized = hs.serialize_processed_hero(
-            hero,
-            hero_record,
-            is_energy_provider=hero.title in energy_provider_titles,
-            is_melee=rs.compute_is_melee(
-                skills,
-                hero_class=hero_class,
-                display_name=short,
-                default_range=default_range,
-            ),
-            is_dual_range=rs.compute_is_dual_range(
-                skills, display_name=short
-            ),
-            behavior=behavior_dict,
-            season=season,
-            season_number=season_number,
+        serialized = copy.deepcopy(dict(analyses_by_id[hero_id]))
+        for key in (
+            "id",
+            "display_name",
+            "signature_calculated",
+            "skill_chunks",
+            "primary_damage_type",
+        ):
+            serialized.pop(key, None)
+        serialized.update(
+            {
+                "is_energy_provider": hero["title"] in energy_provider_titles,
+                "is_melee": bh.compute_is_melee(
+                    skills,
+                    hero_class=hero_class,
+                    display_name=short,
+                    default_range=default_range,
+                ),
+                "is_dual_range": bh.compute_is_dual_range(
+                    skills, display_name=short
+                ),
+                "behavior": behavior_dict,
+                "season": season,
+                "season_number": season_number,
+                "damage_magnitudes": {
+                    hs.to_schema_damage_type(dt): mag
+                    for dt, mag in (
+                        hero.get("damage_magnitudes") or {}
+                    ).items()
+                },
+            }
         )
-        processed_heroes[id_by_display[short]] = serialized
+        processed_heroes[hero_id] = serialized
     result = {"heroes": processed_heroes}
-    hs.validate_processed(result)
+    schema_heroes = {}
+    local_only = {
+        "id",
+        "display_name",
+        "signature_calculated",
+        "skill_chunks",
+        "primary_damage_type",
+        "positional_tile_buff_labels",
+        "proximity_aura_buff_labels",
+        "proximity_aura_radius",
+    }
+    for hero_id, row in processed_heroes.items():
+        schema_heroes[hero_id] = {
+            key: value for key, value in row.items() if key not in local_only
+        }
+    hs.validate_processed({"heroes": schema_heroes})
     summary_by_title = {
-        hero.title: hs.deserialize_hero(
-            hero.title,
-            processed_heroes[id_by_display[display_by_title[hero.title]]],
-            data_by_title[hero.title].get("damage_type") or "Physical",
+        hero["title"]: hs.deserialize_hero(
+            hero["title"],
+            processed_heroes[id_by_display[display_by_title[hero["title"]]]],
+            data_by_title[hero["title"]].get("damage_type") or "Physical",
         )
         for hero in heroes
     }
@@ -531,15 +623,15 @@ def serialize_processed(
         skills_by_title,
     )
     for hero in heroes:
-        short = display_by_title[hero.title]
-        behavior = behavior_by_title[hero.title]
+        short = display_by_title[hero["title"]]
+        behavior = behavior_by_title[hero["title"]]
         bundle = snapshot["bundles"][id_by_display[short]]
         processed_heroes[id_by_display[short]].update(
             _extra_analysis_fields(
                 hero,
-                summary_by_title[hero.title],
-                skills=skills_by_title[hero.title],
-                hero_class=hero_class_by_title[hero.title],
+                summary_by_title[hero["title"]],
+                skills=skills_by_title[hero["title"]],
+                hero_class=hero_class_by_title[hero["title"]],
                 behavior=behavior,
                 bundle=bundle,
                 id_by_display=id_by_display,

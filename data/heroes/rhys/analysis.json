@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "rhys",
   "display_name": "Rhys",
   "local": {
@@ -449,7 +449,6 @@
         "All units, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk_spd",
       "crit",
@@ -458,585 +457,193 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "rhys",
     "display_name": "Rhys",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Rhys - Fiery Cavalier",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Rhys can move while attacking but he is unable to do so for 8s if under control effects.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "ATK SPD and Haste won't affect his attack animation speed.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Every 1 ATK SPD or Haste grants him 2 Crit DMG Boost.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Rhys fires at enemies within a arced radius, shooting 6 projectiles across the battlefield, each dealing 280% (ATK-based) + 40% (SP-based) damage to enemies on its path.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Rhys then loads his lance with Blast Ammo, allowing his normal attacks to deal 180% (ATK-based) damage to the target and causing 40% (ATK-based) splash damage to enemies in a 1-tile arc behind the target until he is affected by a control effect.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by each projectile against enemies on its path to 290% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by each projectile against enemies on its path to 300% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by each projectile against enemies on its path to 310% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by each projectile against enemies on its path to 320% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Rhys gains 10 + 2 (SP-based) Crit.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Rhys gains control immunity when taking control effects.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Restores 120% (ATK-based) upon casting this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Passive Crit bonus to 12 + 2 (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Passive Crit bonus to 15 + 2 (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Rhys loads Shock Ammo to shoot enemies within 2-tile, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them back 2-tile.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "He's unable to cast this skill when loaded with Blast Ammo.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 230% (ATK-based) + 25% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 240% (ATK-based) + 25% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 250% (ATK-based) + 25% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Rhys increase his Crit DMG Boost by 22 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 8 Crit DMG Boost when his lance is loaded with Blast Ammo.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Rhys increase his Crit DMG Boost by 30 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 10 Crit DMG Boost when his lance is loaded with Blast Ammo.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Rhys increase his Crit DMG Boost by 38 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 12 Crit DMG Boost when his lance is loaded with Blast Ammo.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Rhys gains bonus movement speed when moving on the battlefield.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "He reaches the max speed 5s into battle and loads Blast Ammo.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases Blast Ammo damage to 220% (ATK-based) and the splash damage to 50% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the splash range to a 2-tile arc behind the target.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases Blast Ammo damage to 230% (ATK-based) and the splash damage to 55% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases the splash range to a 2-tile arc behind the target.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases Blast Ammo damage to 240% (ATK-based) and the splash damage to 60% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the splash range to a 2-tile arc behind the target.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Reduces the cooldown of Defensive Stance to 3s.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Rhys can move while attacking but he is unable to do so for 8s if under control effects.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Flame Barrage": "Ultimate",
-        "Defensive Stance": "Skill1",
-        "Concussive Strike": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Fury Rush": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 360.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 17.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Immune",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 275.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "Crit DMG boost",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Movement speed",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "EX+5",
-              "targeting": "Single target",
-              "numeric": 240.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "Crit DMG boost",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 360.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 17.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit DMG boost",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "buff",
-          "label": "Movement speed",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "ATK SPD and Haste won't affect his attack animation speed.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Immune",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "Every 1 ATK SPD or Haste grants him 2 Crit DMG Boost.",
+        "Ultimate"
       ],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "All units, Single target"
-        ]
+      [
+        "base",
+        "Rhys fires at enemies within a arced radius, shooting 6 projectiles across the battlefield, each dealing 280% (ATK-based) + 40% (SP-based) damage to enemies on its path.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK SPD",
-        "Crit",
-        "Crit DMG Boost"
+      [
+        "base",
+        "Rhys then loads his lance with Blast Ammo, allowing his normal attacks to deal 180% (ATK-based) damage to the target and causing 40% (ATK-based) splash damage to enemies in a 1-tile arc behind the target until he is affected by a control effect.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 6,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage dealt by each projectile against enemies on its path to 290% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by each projectile against enemies on its path to 300% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by each projectile against enemies on its path to 310% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by each projectile against enemies on its path to 320% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Rhys gains 10 + 2 (SP-based) Crit.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Rhys gains control immunity when taking control effects.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Restores 120% (ATK-based) upon casting this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Passive Crit bonus to 12 + 2 (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Passive Crit bonus to 15 + 2 (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Rhys loads Shock Ammo to shoot enemies within 2-tile, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them back 2-tile.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He's unable to cast this skill when loaded with Blast Ammo.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 230% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 240% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 250% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Rhys increase his Crit DMG Boost by 22 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 8 Crit DMG Boost when his lance is loaded with Blast Ammo.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Rhys increase his Crit DMG Boost by 30 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 10 Crit DMG Boost when his lance is loaded with Blast Ammo.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Rhys increase his Crit DMG Boost by 38 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 12 Crit DMG Boost when his lance is loaded with Blast Ammo.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Rhys gains bonus movement speed when moving on the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "He reaches the max speed 5s into battle and loads Blast Ammo.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases Blast Ammo damage to 220% (ATK-based) and the splash damage to 50% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the splash range to a 2-tile arc behind the target.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases Blast Ammo damage to 230% (ATK-based) and the splash damage to 55% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the splash range to a 2-tile arc behind the target.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases Blast Ammo damage to 240% (ATK-based) and the splash damage to 60% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the splash range to a 2-tile arc behind the target.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Reduces the cooldown of Defensive Stance to 3s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "cb3d838874b7e77ce73018c563d8eb43d343725e7d8304153dbc3fbd2274400a",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

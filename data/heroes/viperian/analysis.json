@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "viperian",
   "display_name": "Viperian",
   "local": {
@@ -225,13 +225,6 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "cooldown",
-                "interval": 3.0
-              }
-            ],
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -465,7 +458,6 @@
         "All units"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste"
     ],
@@ -473,574 +465,168 @@
       "atk": 0.8,
       "max_hp": 0.2
     },
-    "behavior": {},
     "id": "viperian",
     "display_name": "Viperian",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill4",
-    "hero": {
-      "title": "Viperian - Shadow Serpent",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases damage to 290% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases damage to 300% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 310% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases damage to 320% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 220% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 230% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 240% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Common Tearing Bite damage to 75% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Enhanced Tearing Bite damage to 150% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Reduces the target's Energy by 100 + 15 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "He is Unaffected during the skill casting.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This skill can be triggered once every 30s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases damage to 450% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Darkvipers gain 2 enhancements after the skill is cast.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases damage to 480% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Spiritual Viper": "Ultimate",
-        "Soul Ravager": "Skill1",
-        "Enchantment Fang": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Crimson Waltz": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 340.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 320.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 265.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "cooldown",
-                  "interval": 3.0
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 115.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": 480.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.9,
-                  "comparison": "above"
-                }
-              ],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 14.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 480.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "cooldown",
-              "interval": 3.0
-            },
-            {
-              "type": "hp_threshold",
-              "hp_ratio": 0.9,
-              "comparison": "above"
-            }
-          ],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 320.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 115.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 14.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them.",
+        "Ultimate"
       ],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Magic",
-          "All units, Single target"
-        ],
-        [
-          "DoT",
-          "All units"
-        ]
+      [
+        "base",
+        "Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste"
+      [
+        "base",
+        "Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.8,
-        "Max HP": 0.2
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 51: Increases damage to 290% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 111: Increases damage to 300% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 310% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases damage to 320% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 220% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 230% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 240% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Common Tearing Bite damage to 75% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Enhanced Tearing Bite damage to 150% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces the target's Energy by 100 + 15 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "He is Unaffected during the skill casting.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This skill can be triggered once every 30s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases damage to 450% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Darkvipers gain 2 enhancements after the skill is cast.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases damage to 480% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "81e4a0467bc8689a2cbc7b1f75722b592bd5c15679b3c57d6abc7003b76d2f2b",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

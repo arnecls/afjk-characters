@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "himmel",
   "display_name": "Himmel",
   "local": {
@@ -474,7 +474,6 @@
         "All units"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -483,697 +482,178 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "himmel",
     "display_name": "Himmel",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Himmel - The Legendary Hero",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Himmel delivers 9 consecutive slashes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 60% (ATK-based) + 6% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He then follows up with a massive sweep that deals 220% (ATK-based) + 30% (SP-based) damage to all enemies in front of him, plus extra true damage equal to 15% + 2% (SP-based) of the target's max HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The extra true damage cannot exceed 300% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the final sweep damage to 240% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the final sweep damage to 260% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the final sweep damage to 280% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the final sweep damage to 300% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He then returns to his original position.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Himmel remains while casting this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 360% (ATK-based) + 40% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 380% (ATK-based) + 40% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 400% (ATK-based) + 40% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Himmel inspires all party members, increasing their basic stats by 12% (ATK-based) + 1% (SP-based) and granting them a shared permanent shield equal to 1500% + 100% (SP-based) of Himmel's initial ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Himmel strikes the target 4 times, each dealing 120% (ATK-based) + 20% (SP-based) damage, then converts 30% + 2% (SP-based) of the damage dealt into healing for all party members.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage per strike to 140% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage per strike to 160% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage per strike to 180% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When a battle starts, blue-moon weed petals sweep across the battlefield, bestowing blessings on Himmel and his party members: Tank & Support: Increases their max HP by 150% (ATK-based) of Himmel's initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Mage & Himmel: Increases their ATK by 8% of Himmel's initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "The Tank and Support members increase their max HP by 200% (ATK-based) of Himmel's initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "while the Mage member and Himmel increase their ATK by 10% of Himmel's initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "10s into a battle, the Blue-Moon Blessings sweep across the battlefield again, healing all party members for 40% of their max HP and removing all their debuffs.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "For each surviving party member, increases Himmel's ATK by 12%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "The Tank and Support members increase their max HP by 250% of Himmel's initial ATK, while the Mage member and Himmel increase their ATK by 12% of Himmel's initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Himmel has the same fighting spirit that once drove him to challenge the Demon King.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Himmel delivers 9 consecutive slashes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 60% (ATK-based) + 6% (SP-based) damage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Heroic Slash": "Ultimate",
-        "Heroic Dash": "Skill1",
-        "Hero Party": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Blue-Moon Blessings": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 17.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Party composition",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Boss encounter",
-              "tier": "Supreme+",
-              "targeting": "—",
-              "qualitative": "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 440.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Basic stats",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 13.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Named ally on team",
-              "tier": "Mythic+",
-              "targeting": "Allies",
-              "qualitative": "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
-              "grants": [
-                [
-                  "Penetration",
-                  "average"
-                ]
-              ]
-            },
-            {
-              "kind": "requires",
-              "label": "Named ally on team",
-              "tier": "Mythic+",
-              "targeting": "Allies",
-              "qualitative": "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 440.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 17.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Basic stats",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 13.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage taken",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "He then follows up with a massive sweep that deals 220% (ATK-based) + 30% (SP-based) damage to all enemies in front of him, plus extra true damage equal to 15% + 2% (SP-based) of the target's max HP.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Party composition",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Boss encounter",
-          "tier": "Supreme+",
-          "targeting": "—",
-          "qualitative": "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Named ally on team",
-          "tier": "Mythic+",
-          "targeting": "Allies",
-          "qualitative": "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
-          "grants": [
-            [
-              "Penetration",
-              "average"
-            ]
-          ]
-        },
-        {
-          "kind": "requires",
-          "label": "Named ally on team",
-          "tier": "Mythic+",
-          "targeting": "Allies",
-          "qualitative": "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
-          "grants": []
-        }
+      [
+        "base",
+        "The extra true damage cannot exceed 300% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "All units, Multiple targets, Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "All units"
-        ]
+      [
+        "base",
+        "Increases the final sweep damage to 240% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP"
+      [
+        "base",
+        "Increases the final sweep damage to 260% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the final sweep damage to 280% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the final sweep damage to 300% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He then returns to his original position.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Himmel remains while casting this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 360% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 380% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 400% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Himmel inspires all party members, increasing their basic stats by 12% (ATK-based) + 1% (SP-based) and granting them a shared permanent shield equal to 1500% + 100% (SP-based) of Himmel's initial ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Himmel strikes the target 4 times, each dealing 120% (ATK-based) + 20% (SP-based) damage, then converts 30% + 2% (SP-based) of the damage dealt into healing for all party members.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage per strike to 140% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage per strike to 160% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage per strike to 180% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, blue-moon weed petals sweep across the battlefield, bestowing blessings on Himmel and his party members: Tank & Support: Increases their max HP by 150% (ATK-based) of Himmel's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Mage & Himmel: Increases their ATK by 8% of Himmel's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "The Tank and Support members increase their max HP by 200% (ATK-based) of Himmel's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "while the Mage member and Himmel increase their ATK by 10% of Himmel's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "10s into a battle, the Blue-Moon Blessings sweep across the battlefield again, healing all party members for 40% of their max HP and removing all their debuffs.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "For each surviving party member, increases Himmel's ATK by 12%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "The Tank and Support members increase their max HP by 250% of Himmel's initial ATK, while the Mage member and Himmel increase their ATK by 12% of Himmel's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Himmel has the same fighting spirit that once drove him to challenge the Demon King.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "bcb7ec49c88ea118ff19544f3004cd61308288338c35e4988f3f60fefb4aa70b",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

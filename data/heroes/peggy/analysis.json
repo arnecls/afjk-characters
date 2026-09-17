@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "peggy",
   "display_name": "Peggy",
   "local": {
@@ -533,7 +533,6 @@
         "Area, Multiple targets"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -542,809 +541,203 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "peggy",
     "display_name": "Peggy",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": 2.0,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Peggy - Empire's Jewel",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Peggy summons 2 royal guards to join the fray.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The royal guards inherit 120% + 16% (SP-based) of Peggy's HP and 50% + 7% (SP-based) of her ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If Peggy is defeated, all royal guards immediately leave the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Peggy then orders these royal guards to protect all allies for 12s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The roval quards inherit 130% + 16% (SP-based) of Peggy's HP and 55% + 7% (SP-based) of her ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The roval quards inherit 140% + 16% (SP-based) of Peggy's HP and 60% + 7% (SP-based) of her ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The roval quards inherit 150% + 16% (SP-based) of Peggy's HP and 65% + 7% (SP-based) of her ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The roval quards inherit 160% + 16% (SP-based) of Peggy's HP and 70% + 7% (SP-based) of her ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% (SP-based) HP per second for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the HP restored per second to 160% (ATK-based) + 18% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the HP restored per second to 170% (ATK-based) + 18% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the HP restored per second to 180% (ATK-based) + 18% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Peggy summons a royal marksman in the backline to assist in battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% (SP-based) damage to 2 frontmost enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Enemies hit by the armor-piercing arrows take 22% + 3% (SP-based) more ranged damage for the next 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "For allied summons, their additional ranged damage against these enemies is increased to 16% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "For allied summons, their additional ranged damage against these enemies is increased to 18% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "For allied summons, their additional ranged damage against these enemies is increased to 20% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 10.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If 2 royal guards are on the battlefield, further increases Haste by 5.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 12.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If 2 royal guards are on the battlefield, further increases Haste by 8.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 15.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If 2 royal guards are on the battlefield, further increases Haste by 10.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the damage dealt by royal sword moves to 240% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The royal guards gain a 1-tile glory aura.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the damage dealt by royal sword moves to 280% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Peggy summons 2 royal guards to join the fray.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Princess Rally": "Ultimate",
-        "Royal Scroll": "Skill1",
-        "Royal Barrage": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Royal Protection": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 75.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "When a battle starts, Peggy summons 2 royal guards to join the fray.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Damage absorption (allies)",
-              "tier": "base",
-              "targeting": "All units",
-              "qualitative": "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 220.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Ranged damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 22.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Ranged damage",
-              "tier": "base",
-              "targeting": "All summons",
-              "numeric": 16.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 280.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "EX+10",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "Mythic+",
-              "targeting": "Owned summons",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Supreme+",
-              "targeting": "All summons",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "DEF",
-              "tier": "Supreme+",
-              "targeting": "All summons",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 180.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 280.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Ranged damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 22.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage dealt",
-          "tier": "EX+10",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "The royal guards inherit 120% + 16% (SP-based) of Peggy's HP and 50% + 7% (SP-based) of her ATK.",
+        "Ultimate"
       ],
-      "summon_effects": [
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 75.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 180.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Ranged damage",
-          "tier": "base",
-          "targeting": "All summons",
-          "numeric": 16.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "Mythic+",
-          "targeting": "Owned summons",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Supreme+",
-          "targeting": "All summons",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "buff",
-          "label": "DEF",
-          "tier": "Supreme+",
-          "targeting": "All summons",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "If Peggy is defeated, all royal guards immediately leave the battlefield.",
+        "Ultimate"
       ],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "When a battle starts, Peggy summons 2 royal guards to join the fray.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Damage absorption (allies)",
-          "tier": "base",
-          "targeting": "All units",
-          "qualitative": "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
-          "grants": []
-        }
+      [
+        "base",
+        "Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Multiple targets"
-        ]
+      [
+        "base",
+        "If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Shield"
+      [
+        "base",
+        "Peggy then orders these royal guards to protect all allies for 12s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 6,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": 2.0
-    }
+      [
+        "base",
+        "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 130% + 16% (SP-based) of Peggy's HP and 55% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 140% + 16% (SP-based) of Peggy's HP and 60% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 150% + 16% (SP-based) of Peggy's HP and 65% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 160% + 16% (SP-based) of Peggy's HP and 70% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% (SP-based) HP per second for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP restored per second to 160% (ATK-based) + 18% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP restored per second to 170% (ATK-based) + 18% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP restored per second to 180% (ATK-based) + 18% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Peggy summons a royal marksman in the backline to assist in battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% (SP-based) damage to 2 frontmost enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Enemies hit by the armor-piercing arrows take 22% + 3% (SP-based) more ranged damage for the next 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For allied summons, their additional ranged damage against these enemies is increased to 16% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For allied summons, their additional ranged damage against these enemies is increased to 18% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For allied summons, their additional ranged damage against these enemies is increased to 20% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 10.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 2 royal guards are on the battlefield, further increases Haste by 5.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 2 royal guards are on the battlefield, further increases Haste by 8.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 15.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 2 royal guards are on the battlefield, further increases Haste by 10.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt by royal sword moves to 240% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The royal guards gain a 1-tile glory aura.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt by royal sword moves to 280% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "4681446f98525f20bd46f9794426e5c9adc0cec6e59ceccdd059f01003e5536e",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

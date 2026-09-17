@@ -30,8 +30,10 @@ AI_NAME = "ai.json"
 OVERRIDES_NAME = "overrides.json"
 ANALYSIS_NAME = "analysis.json"
 
-_TWINS_TITLE = "Elijah & Lailah - Celestial Twins"
+ANALYSIS_SCHEMA_VERSION = 2
 ANALYSIS_FIELDS = ("skill_effects", "behavior_tags", "summon_profile")
+
+_MANIFEST_INDEX: dict[str, Any] | None = None
 
 
 def _repo():
@@ -90,10 +92,81 @@ def canonical_hash(value: Any) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
-def display_name_for_title(title: str) -> str:
-    if title == _TWINS_TITLE:
-        return "Twins"
-    return title.split(" - ", 1)[0].strip()
+def _normalize_alias(value: str) -> str:
+    return " ".join(value.split()).casefold()
+
+
+def build_manifest_index(manifest: Mapping[str, Any]) -> dict[str, Any]:
+    """Resolve IDs, titles, display names, and aliases to a stable hero ID."""
+    by_id: dict[str, dict[str, Any]] = {}
+    by_alias: dict[str, str] = {}
+    for entry in _manifest_entries(dict(manifest)):
+        hero_id = entry["id"]
+        by_id[hero_id] = entry
+        names = [
+            hero_id,
+            entry["display_name"],
+            entry["title"],
+            *(entry.get("aliases") or []),
+        ]
+        for name in names:
+            if not isinstance(name, str) or not name.strip():
+                continue
+            key = _normalize_alias(name)
+            existing = by_alias.get(key)
+            if existing is not None and existing != hero_id:
+                raise ValueError(
+                    f"duplicate roster alias {name!r} for {existing} and {hero_id}"
+                )
+            by_alias[key] = hero_id
+    return {"by_id": by_id, "by_alias": by_alias}
+
+
+def manifest_index(manifest: Mapping[str, Any] | None = None) -> dict[str, Any]:
+    global _MANIFEST_INDEX
+    if manifest is not None:
+        return build_manifest_index(manifest)
+    if _MANIFEST_INDEX is None:
+        _MANIFEST_INDEX = build_manifest_index(load_manifest())
+    return _MANIFEST_INDEX
+
+
+def resolve_hero_id(
+    token: str,
+    manifest: Mapping[str, Any] | None = None,
+) -> str:
+    index = manifest_index(manifest)
+    hero_id = index["by_alias"].get(_normalize_alias(token))
+    if hero_id is None:
+        raise KeyError(f"unknown hero identity: {token!r}")
+    return hero_id
+
+
+def display_names_by_id(manifest: Mapping[str, Any] | None = None) -> dict[str, str]:
+    index = manifest_index(manifest)
+    return {
+        hero_id: entry["display_name"]
+        for hero_id, entry in index["by_id"].items()
+    }
+
+
+def ids_by_display_name(manifest: Mapping[str, Any] | None = None) -> dict[str, str]:
+    index = manifest_index(manifest)
+    return {
+        entry["display_name"]: hero_id
+        for hero_id, entry in index["by_id"].items()
+    }
+
+
+def display_name_for_title(
+    title: str,
+    manifest: Mapping[str, Any] | None = None,
+) -> str:
+    try:
+        hero_id = resolve_hero_id(title, manifest)
+        return manifest_index(manifest)["by_id"][hero_id]["display_name"]
+    except KeyError:
+        return title.split(" - ", 1)[0].strip()
 
 
 def hero_id_for_display(display_name: str) -> str:
@@ -141,9 +214,11 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
         orders.add(entry["order"])
         names.add(entry["display_name"])
         titles.add(entry["title"])
+    build_manifest_index({"heroes": entries, "schema_version": 1})
 
 
 def load_manifest(path: Path | None = None) -> dict[str, Any]:
+    global _MANIFEST_INDEX
     manifest_path = path or _repo().manifest_path
     if not manifest_path.is_file():
         raise FileNotFoundError(
@@ -153,6 +228,7 @@ def load_manifest(path: Path | None = None) -> dict[str, Any]:
     if not isinstance(manifest, dict):
         raise ValueError(f"{manifest_path} must contain an object")
     validate_manifest(manifest)
+    _MANIFEST_INDEX = build_manifest_index(manifest)
     return manifest
 
 
@@ -198,7 +274,7 @@ def empty_overrides_document() -> dict[str, Any]:
 
 def empty_analysis_document(entry: Mapping[str, Any]) -> dict[str, Any]:
     return {
-        "schema_version": 1,
+        "schema_version": ANALYSIS_SCHEMA_VERSION,
         "id": entry["id"],
         "display_name": entry["display_name"],
         "local": None,
@@ -250,7 +326,8 @@ def load_bundles(
     }
 
 
-def load_roster_snapshot() -> RosterSnapshot:
+def load_roster_inputs() -> RosterSnapshot:
+    """Load bundles without requiring a fresh local analysis cache."""
     manifest = load_manifest()
     return cast(RosterSnapshot, {
         "manifest": manifest,
@@ -258,18 +335,24 @@ def load_roster_snapshot() -> RosterSnapshot:
     })
 
 
-def load_ai_field(field: str) -> dict[str, Any]:
-    snapshot = load_roster_snapshot()
+def load_roster_snapshot() -> RosterSnapshot:
+    snapshot = load_roster_inputs()
+    require_fresh_local_analyses(snapshot)
+    return snapshot
+
+
+def load_ai_by_id(field: str) -> dict[str, Any]:
+    snapshot = load_roster_inputs()
     result: dict[str, Any] = {}
     for entry in snapshot["manifest"]["heroes"]:
         value = snapshot["bundles"][entry["id"]]["ai"].get(field)
         if value is not None:
-            result[entry["display_name"]] = copy.deepcopy(value)
+            result[entry["id"]] = copy.deepcopy(value)
     return result
 
 
 def load_walk_speeds() -> dict[str, str]:
-    snapshot = load_roster_snapshot()
+    snapshot = load_roster_inputs()
     result: dict[str, str] = {}
     for entry in snapshot["manifest"]["heroes"]:
         external = snapshot["bundles"][entry["id"]]["source"].get(
@@ -286,11 +369,16 @@ def require_fresh_local_analyses(
 ) -> dict[str, LocalAnalysis]:
     from .analysis.local import algorithm_hash
 
-    snapshot = snapshot or load_roster_snapshot()
+    snapshot = snapshot or load_roster_inputs()
     algo = algorithm_hash()
     stale: list[str] = []
     for entry in snapshot["manifest"]["heroes"]:
-        if not analysis_is_fresh(snapshot["bundles"][entry["id"]], algo):
+        bundle = snapshot["bundles"][entry["id"]]
+        document = bundle["analysis"]
+        if document.get("schema_version") != ANALYSIS_SCHEMA_VERSION:
+            stale.append(entry["id"])
+            continue
+        if not analysis_is_fresh(bundle, algo):
             stale.append(entry["id"])
     if stale:
         raise ValueError(
@@ -302,7 +390,7 @@ def require_fresh_local_analyses(
 def load_local_analyses(
     snapshot: RosterSnapshot | None = None,
 ) -> dict[str, LocalAnalysis]:
-    snapshot = snapshot or load_roster_snapshot()
+    snapshot = snapshot or load_roster_inputs()
     result: dict[str, LocalAnalysis] = {}
     for entry in snapshot["manifest"]["heroes"]:
         document = snapshot["bundles"][entry["id"]]["analysis"]
@@ -314,7 +402,7 @@ def load_local_analyses(
 
 
 def load_raw_roster() -> dict[str, Any]:
-    snapshot = load_roster_snapshot()
+    snapshot = load_roster_inputs()
     return {
         **(snapshot["manifest"].get("headers") or {}),
         "heroes": [
@@ -328,7 +416,7 @@ def load_processed() -> ProcessedRoster:
     from .analysis.service import analyze_roster
 
     processed, _heroes, _context, _policy = analyze_roster(
-        load_roster_snapshot(),
+        load_roster_inputs(),
         load_config(),
     )
     return processed
@@ -338,7 +426,7 @@ def load_synergies() -> GeneratedSynergyRoster:
     from .analysis.policy import make_policy
     from .relationships.service import score_roster
 
-    snapshot = load_roster_snapshot()
+    snapshot = load_roster_inputs()
     processed = load_processed()
     return score_roster(processed, snapshot, make_policy(load_config()))
 
@@ -362,6 +450,11 @@ def analysis_is_fresh(
     local = document.get("local")
     provenance = document.get("provenance") or {}
     if not isinstance(local, dict):
+        return False
+    if document.get("schema_version") != ANALYSIS_SCHEMA_VERSION:
+        return False
+    hero_id = (bundle.get("manifest") or {}).get("id") or bundle["source"].get("id")
+    if local.get("id") != hero_id:
         return False
     expected = analysis_inputs_hash(
         bundle["source"],
@@ -428,7 +521,7 @@ def write_local_analyses(
             continue
         bundle = snapshot["bundles"][hero_id]
         document = {
-            "schema_version": 1,
+            "schema_version": ANALYSIS_SCHEMA_VERSION,
             "id": hero_id,
             "display_name": entry["display_name"],
             "local": copy.deepcopy(analyses[hero_id]),
@@ -444,9 +537,9 @@ def write_local_analyses(
         documents.append((_path_for(entry, ANALYSIS_NAME), document))
         bundle["analysis"] = cast(HeroAnalysisDocument, document)
     if documents:
-        from .analysis import text as analysis_text
+        from .analysis.effects import _PER_HERO_CURATED_CACHE
 
-        analysis_text._PER_HERO_CURATED_CACHE.clear()
+        _PER_HERO_CURATED_CACHE.clear()
         publish_documents(documents)
 
 
@@ -584,20 +677,25 @@ def init_hero(
         raise
 
 
-def update_ai_field(field: str, values: dict[str, Any]) -> None:
+def update_ai_by_id(field: str, values: dict[str, Any]) -> None:
     manifest = load_manifest()
     bundles = load_bundles(manifest)
+    known = {entry["id"] for entry in _manifest_entries(manifest)}
+    unknown = sorted(set(values) - known)
+    if unknown:
+        raise KeyError("unknown hero ids: " + ", ".join(unknown))
     documents: list[tuple[Path, Any]] = []
     for entry in _manifest_entries(manifest):
-        name = entry["display_name"]
-        if name not in values:
+        hero_id = entry["id"]
+        if hero_id not in values:
             continue
-        ai = copy.deepcopy(bundles[entry["id"]]["ai"])
-        ai[field] = copy.deepcopy(values[name])
+        ai = copy.deepcopy(bundles[hero_id]["ai"])
+        ai[field] = copy.deepcopy(values[hero_id])
         documents.append((_path_for(entry, AI_NAME), ai))
         if field in ANALYSIS_FIELDS:
-            analysis = copy.deepcopy(bundles[entry["id"]]["analysis"])
+            analysis = copy.deepcopy(bundles[hero_id]["analysis"])
             analysis["local"] = None
+            analysis["schema_version"] = ANALYSIS_SCHEMA_VERSION
             analysis["provenance"] = {
                 "inputs_hash": None,
                 "algorithm_hash": None,
@@ -610,20 +708,25 @@ def update_ai_field(field: str, values: dict[str, Any]) -> None:
 def update_override_section(section: str, values: dict[str, Any]) -> None:
     manifest = load_manifest()
     bundles = load_bundles(manifest)
+    known = {entry["id"] for entry in _manifest_entries(manifest)}
+    unknown = sorted(set(values) - known)
+    if unknown:
+        raise KeyError("unknown hero ids: " + ", ".join(unknown))
     documents: list[tuple[Path, Any]] = []
     for entry in _manifest_entries(manifest):
-        name = entry["display_name"]
-        if name not in values:
+        hero_id = entry["id"]
+        if hero_id not in values:
             continue
-        overrides = copy.deepcopy(bundles[entry["id"]]["overrides"])
-        value = values[name]
+        overrides = copy.deepcopy(bundles[hero_id]["overrides"])
+        value = values[hero_id]
         if value:
             overrides[section] = copy.deepcopy(value)
         else:
             overrides.pop(section, None)
         documents.append((_path_for(entry, OVERRIDES_NAME), overrides))
-        analysis = copy.deepcopy(bundles[entry["id"]]["analysis"])
+        analysis = copy.deepcopy(bundles[hero_id]["analysis"])
         analysis["local"] = None
+        analysis["schema_version"] = ANALYSIS_SCHEMA_VERSION
         analysis["provenance"] = {
             "inputs_hash": None,
             "algorithm_hash": None,
@@ -659,18 +762,18 @@ def validate_bundle_documents(
         source = source_doc.get("source") or {}
         if source.get("title") != entry["title"]:
             errors.append(f"title mismatch: {hero_id}")
-        if source.get("name") != entry["display_name"] and not (
-            entry["display_name"] == "Twins"
-            and source.get("name") == "Elijah & Lailah"
-        ):
-            errors.append(f"display-name mismatch: {hero_id}")
+        try:
+            if resolve_hero_id(str(source.get("name") or ""), manifest) != hero_id:
+                errors.append(f"source name does not resolve to {hero_id}")
+        except KeyError:
+            errors.append(f"unknown source name for {hero_id}")
         if bundle["ai"].get("schema_version") != 1:
             errors.append(f"unsupported ai schema: {hero_id}")
         if bundle["overrides"].get("schema_version") != 1:
             errors.append(f"unsupported override schema: {hero_id}")
         if source_doc.get("schema_version") != 1:
             errors.append(f"unsupported source schema: {hero_id}")
-        if bundle["analysis"].get("schema_version") != 1:
+        if bundle["analysis"].get("schema_version") != ANALYSIS_SCHEMA_VERSION:
             errors.append(f"unsupported analysis schema: {hero_id}")
         if source_doc.get("id") != hero_id:
             errors.append(f"source id mismatch: {hero_id}")
@@ -680,6 +783,8 @@ def validate_bundle_documents(
             errors.append(f"analysis id mismatch: {hero_id}")
         provenance = bundle["analysis"].get("provenance") or {}
         local = bundle["analysis"].get("local")
+        if isinstance(local, dict) and local.get("id") != hero_id:
+            errors.append(f"local analysis id mismatch: {hero_id}")
         if local is not None:
             expected = analysis_inputs_hash(
                 source_doc, bundle["ai"], bundle["overrides"]
@@ -710,6 +815,20 @@ def validate_schema_documents(
         "analysis": _schema_dir() / "hero_analysis.schema.json",
     }
     schemas = {key: load_json(path) for key, path in schema_paths.items()}
+    registry = None
+    try:
+        from referencing import Registry, Resource
+
+        registry = Registry()
+        for path in _schema_dir().glob("*.json"):
+            schema = load_json(path)
+            schema_id = schema.get("$id") or path.name
+            registry = registry.with_resource(
+                schema_id,
+                Resource.from_contents(schema),
+            )
+    except ImportError:
+        registry = None
     errors: list[str] = []
     documents: list[tuple[str, Any, str]] = [("roster", manifest, "roster")]
     for entry in _manifest_entries(manifest):
@@ -723,7 +842,13 @@ def validate_schema_documents(
             for name in ("source", "ai", "overrides", "analysis")
         )
     for label, document, schema_key in documents:
-        validator = jsonschema.Draft202012Validator(schemas[schema_key])
+        if registry is None:
+            validator = jsonschema.Draft202012Validator(schemas[schema_key])
+        else:
+            validator = jsonschema.Draft202012Validator(
+                schemas[schema_key],
+                registry=registry,
+            )
         for error in validator.iter_errors(document):
             location = ".".join(str(part) for part in error.absolute_path)
             suffix = f" at {location}" if location else ""

@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 from character_stat_ranks import hero_slug
-from hero_pipeline.analysis.policy import apply_local_policy, make_policy, thaw_policy
+from hero_pipeline.analysis.policy import bound_policy, make_policy, thaw_policy
 from hero_pipeline.repository import Repository, repository_scope
 from hero_pipeline.storage import (
     load_bundles,
@@ -115,7 +115,7 @@ class CombinedPublicationTests(unittest.TestCase):
             reloaded = load_bundles(load_manifest())["aliceth"]["analysis"]
             self.assertEqual(reloaded["local"]["id"], "aliceth")
             self.assertEqual(reloaded["provenance"]["algorithm_hash"], "a" * 64)
-            self.assertEqual(reloaded["schema_version"], 1)
+            self.assertEqual(reloaded["schema_version"], 2)
 
     def test_failed_score_leaves_files_unchanged(self) -> None:
         self.repo = _mini_repo(["aliceth"])
@@ -194,16 +194,23 @@ class CombinedPublicationTests(unittest.TestCase):
 
 
 class PolicyIsolationTests(unittest.TestCase):
-    def test_apply_local_policy_sets_and_can_restore_constants(self) -> None:
-        from hero_pipeline.analysis import text as rs
+    def test_bound_policy_does_not_mutate_module_constants(self) -> None:
+        from hero_pipeline.analysis import behavior as bh
+        from hero_pipeline.analysis.policy import active_calibration, bound_policy
 
-        original = rs.CASTING_SPEED_FAST_THRESHOLD
+        original = bh.CASTING_SPEED_FAST_THRESHOLD
         mutated = thaw_policy(make_policy())
         mutated["calibration"]["casting_speed_fast_threshold"] = original + 3
-        apply_local_policy(mutated)
-        self.assertEqual(rs.CASTING_SPEED_FAST_THRESHOLD, original + 3)
-        apply_local_policy(make_policy())
-        self.assertEqual(rs.CASTING_SPEED_FAST_THRESHOLD, original)
+        with bound_policy(mutated):
+            self.assertEqual(
+                active_calibration()["casting_speed_fast_threshold"],
+                original + 3,
+            )
+            self.assertEqual(bh.CASTING_SPEED_FAST_THRESHOLD, original)
+        self.assertEqual(
+            active_calibration()["casting_speed_fast_threshold"],
+            original,
+        )
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ def _hero() -> rs.Hero:
 class RoleProminenceTests(unittest.TestCase):
     def test_damage_dealer_prefers_wider_higher_damage(self) -> None:
         hero = _hero()
-        hero.effects = [
+        hero["effects"] = [
             rs.Effect(
                 category="damage",
                 label="Physical",
@@ -49,7 +49,7 @@ class RoleProminenceTests(unittest.TestCase):
             rs.Hero(
                 title="Weak",
                 damage_type="Physical",
-                effects=[hero.effects[0]],
+                effects=[hero["effects"][0]],
             ),
             None,
         )
@@ -57,7 +57,7 @@ class RoleProminenceTests(unittest.TestCase):
 
     def test_tank_counts_shield_not_enemy_debuff(self) -> None:
         hero = _hero()
-        hero.effects = [
+        hero["effects"] = [
             rs.Effect(
                 category="buff",
                 label="Shield",
@@ -80,7 +80,7 @@ class RoleProminenceTests(unittest.TestCase):
 
     def test_support_counts_ally_healing_and_buffs(self) -> None:
         hero = _hero()
-        hero.effects = [
+        hero["effects"] = [
             rs.Effect(
                 category="buff",
                 label="Direct healing",
@@ -101,7 +101,7 @@ class RoleProminenceTests(unittest.TestCase):
 
     def test_duplicate_labels_use_max_not_sum(self) -> None:
         hero = _hero()
-        hero.effects = [
+        hero["effects"] = [
             rs.Effect(
                 category="damage",
                 label="Physical",
@@ -122,7 +122,7 @@ class RoleProminenceTests(unittest.TestCase):
             rs.Hero(
                 title="Once",
                 damage_type="Physical",
-                effects=[hero.effects[1]],
+                effects=[hero["effects"][1]],
             ),
             None,
         )
@@ -130,7 +130,7 @@ class RoleProminenceTests(unittest.TestCase):
 
     def test_build_index_keys_match_role_categories(self) -> None:
         hero = _hero()
-        hero.effects = [
+        hero["effects"] = [
             rs.Effect(
                 category="damage",
                 label="Physical",
@@ -139,7 +139,7 @@ class RoleProminenceTests(unittest.TestCase):
                 numeric=80.0,
             )
         ]
-        summary = {hero.title: hero}
+        summary = {hero["title"]: hero}
         index = gen.build_mix_role_prominence_index(
             summary,
             None,

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "zanie",
   "display_name": "Zanie",
   "local": {
@@ -574,7 +574,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -583,903 +582,218 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "zanie",
     "display_name": "Zanie",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Zanie - Timeless Tinkerer",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Zanie has her max HP reduced by 15%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "These turrets are immobile and unaffected.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each turret fires lasers at random enemies within 5 tiles, dealing damage equal to 100% of the laser turret's ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If the 2 turrets start the battle within 2 tiles of each other, they become linked, combining their energy to fire at the nearest enemy, dealing damage equal to 55% of the laser turrets' total ATK every 0.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This combined attack also reduces the target's shield value by up to 30% of the laser turrets' total ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Zanie increases ATK SPD by 15 + 4 (SP-based) and ATK by 20% + 2% (SP-based) for herself and her laser turrets for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "During this time, laser turret attacks deal extra damage equal to 3% of the target's current HP, up to 60% of the laser turret's ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, increases ATK SPD by 20 + 4 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, increases ATK SPD by 25 + 4 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, increases ATK SPD by 30 + 4 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, increases ATK SPD by 35 + 4 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Zanie builds a gun turret in front of her.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The turret inherits 70% of her max HP and ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Its normal attack has a range of 3 tiles and deals damage equal to 100% + 10% (SP-based) of the gun turret's ATK, prioritizing the enemy closest to any laser turret.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "After 2 normal attacks, the gun turret charges up its next attack into a devastating heavy barrage that fires 6 consecutive rounds at the enemy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Each round deals damage equal to 50% of the gun turret's ATK, stuns the enemy for 0.5s, and knocks them back.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The gun turret now inherits 75% of Zanie's max HP and ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The gun turret now inherits 80% of Zanie's max HP and ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The gun turret now inherits 85% of Zanie's max HP and ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When her gun turret is destroyed, Zanie moves to its remains to fully repair it and grant it a shield that can block 500% (ATK-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "She then returns to her original position.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect can only be triggered once per battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Zaniemoves to the weakest|weakest laser turret to repair it, restoring 300% (ATK-based) + 45% (SP-based) HP and granting it a shield that blocks 500% (ATK-based) + 50% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Zanie then returns to her original position.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When actively used, increases HP restored to a turret to 350% (ATK-based) + 45% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When actively used, increases HP restored to a turret to 400% (ATK-based) + 45% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When actively used, increases HP restored to a turret to 450% (ATK-based) + 45% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Penetration by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Penetration by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Penetration by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Every 22s, Zanie upgrades one of her turrets, increasing its max HP and ATK by 40% and expanding its range by 1 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "She will prioritize upgrading the frontmost laser turret.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each turret can only be upgraded once per battle.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Max HP and ATK boosts for upgraded turrets are increased to 50%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Reduces this skill's cooldown to 15s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Max HP and ATK boosts for upgraded turrets are increased to 60%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and dealing damage equal to 100% of the turret's ATK per second for 5s.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "The burn effect cannot stack.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "If the turret is linked to the other laser turret, the burn effect also reduces the enemy's Phys DEF by 30%.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Zanie has her max HP reduced by 15%.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Vein Pulse": "Ultimate",
-        "Iron Defense": "Skill1",
-        "Field Repairs": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Precision Overload": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 35.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 35.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "When a battle starts, she deploys 2 laser turrets that inherit HP and ATK.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 110.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 0.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 0.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "When a battle starts, Zanie builds a gun turret in front of her.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 450.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "DEF Penetration",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Owned summons",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "Mythic+",
-              "targeting": "Owned summons",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 35.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 110.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 0.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 0.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "DEF Penetration",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK.",
+        "Ultimate"
       ],
-      "summon_effects": [
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 35.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 500.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 450.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "Mythic+",
-          "targeting": "Owned summons",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "These turrets are immobile and unaffected.",
+        "Ultimate"
       ],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "When a battle starts, she deploys 2 laser turrets that inherit HP and ATK.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "When a battle starts, Zanie builds a gun turret in front of her.",
-          "grants": []
-        }
+      [
+        "base",
+        "Each turret fires lasers at random enemies within 5 tiles, dealing damage equal to 100% of the laser turret's ATK.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ]
+      [
+        "base",
+        "If the 2 turrets start the battle within 2 tiles of each other, they become linked, combining their energy to fire at the nearest enemy, dealing damage equal to 55% of the laser turrets' total ATK every 0.5s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "DEF Penetration"
+      [
+        "base",
+        "This combined attack also reduces the target's shield value by up to 30% of the laser turrets' total ATK.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 20,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Zanie increases ATK SPD by 15 + 4 (SP-based) and ATK by 20% + 2% (SP-based) for herself and her laser turrets for 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During this time, laser turret attacks deal extra damage equal to 3% of the target's current HP, up to 60% of the laser turret's ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 20 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 25 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 30 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 35 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Zanie builds a gun turret in front of her.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The turret inherits 70% of her max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Its normal attack has a range of 3 tiles and deals damage equal to 100% + 10% (SP-based) of the gun turret's ATK, prioritizing the enemy closest to any laser turret.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After 2 normal attacks, the gun turret charges up its next attack into a devastating heavy barrage that fires 6 consecutive rounds at the enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each round deals damage equal to 50% of the gun turret's ATK, stuns the enemy for 0.5s, and knocks them back.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The gun turret now inherits 75% of Zanie's max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The gun turret now inherits 80% of Zanie's max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The gun turret now inherits 85% of Zanie's max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When her gun turret is destroyed, Zanie moves to its remains to fully repair it and grant it a shield that can block 500% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "She then returns to her original position.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can only be triggered once per battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Zaniemoves to the weakest|weakest laser turret to repair it, restoring 300% (ATK-based) + 45% (SP-based) HP and granting it a shield that blocks 500% (ATK-based) + 50% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Zanie then returns to her original position.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When actively used, increases HP restored to a turret to 350% (ATK-based) + 45% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When actively used, increases HP restored to a turret to 400% (ATK-based) + 45% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When actively used, increases HP restored to a turret to 450% (ATK-based) + 45% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Penetration by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Penetration by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Penetration by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Every 22s, Zanie upgrades one of her turrets, increasing its max HP and ATK by 40% and expanding its range by 1 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "She will prioritize upgrading the frontmost laser turret.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each turret can only be upgraded once per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Max HP and ATK boosts for upgraded turrets are increased to 50%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Reduces this skill's cooldown to 15s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Max HP and ATK boosts for upgraded turrets are increased to 60%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and dealing damage equal to 100% of the turret's ATK per second for 5s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The burn effect cannot stack.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "If the turret is linked to the other laser turret, the burn effect also reduces the enemy's Phys DEF by 30%.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "9f2f1b4b13bb4e5d84b337c0a5aab597c7947dae3a9dae1c6a404979ca6a7047",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

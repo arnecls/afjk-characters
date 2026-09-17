@@ -31,6 +31,7 @@ import heroes_io as io
 import skill_effects_store as ses
 import buff_persistence as bp
 import summoner_registry as sr
+from hero_pipeline.storage import display_names_by_id, load_ai_by_id
 
 HEROES_MD = ROOT / "Heroes.md"
 SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
@@ -371,12 +372,11 @@ def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
 def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     """Validate heroes_data_skill_summary.json coverage and basic lint."""
     processed = _processed_by_display(processed)
-    from hero_pipeline.storage import load_ai_field
-
+    summaries = load_ai_by_id("skill_summaries")
+    names = display_names_by_id()
+    summaries = {names[hero_id]: value for hero_id, value in summaries.items()}
     errors: list[str] = []
     from hero_pipeline.analysis import overview_facts as gen
-
-    summaries = load_ai_field("skill_summaries")
 
     expected: dict[str, set[str]] = {}
     skill_names: dict[str, dict[str, str]] = {}
@@ -442,12 +442,12 @@ def check_play_overviews(
     strict: bool = False,
 ) -> tuple[list[str], list[str]]:
     """Validate hero_play_overviews.json coverage and basic lint."""
-    from hero_pipeline.storage import load_ai_field
-
     errors: list[str] = []
     warnings: list[str] = []
     processed = _processed_by_display(processed)
-    overviews = load_ai_field("play_overview")
+    overviews = load_ai_by_id("play_overview")
+    names = display_names_by_id()
+    overviews = {names[hero_id]: value for hero_id, value in overviews.items()}
 
     expected = set(processed["heroes"])
     for short in sorted(expected):
@@ -615,8 +615,6 @@ def check_counter_filter_combos() -> tuple[list[str], list[str]]:
 
 def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str]]:
     """Validate hero_counter_overviews.json schema and hero markers."""
-    from hero_pipeline.storage import load_ai_field
-
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -625,7 +623,9 @@ def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[
     warnings.extend(combo_warnings)
 
     processed = _processed_by_display(processed)
-    overviews = load_ai_field("counter_overview")
+    overviews = load_ai_by_id("counter_overview")
+    names = display_names_by_id()
+    overviews = {names[hero_id]: value for hero_id, value in overviews.items()}
 
     expected = set(processed["heroes"])
     for short, text in overviews.items():
@@ -739,9 +739,9 @@ def check_skill_effects_sidecars(
 def check_summoner_registry(
     raw: dict[str, Any],
 ) -> list[str]:
-    from hero_pipeline.storage import load_ai_field
-
-    behavior_tags = load_ai_field("behavior_tags")
+    tags = load_ai_by_id("behavior_tags")
+    names = display_names_by_id()
+    behavior_tags = {names[hero_id]: value for hero_id, value in tags.items()}
     errors, _warnings = sr.check_summoner_consistency(
         behavior_tags,
         raw["heroes"],
@@ -753,9 +753,9 @@ def check_summoner_registry(
 def check_temporary_stat_buffer_tags(
     raw: dict[str, Any],
 ) -> list[str]:
-    from hero_pipeline.storage import load_ai_field
-
-    behavior_tags = load_ai_field("behavior_tags")
+    tags = load_ai_by_id("behavior_tags")
+    names = display_names_by_id()
+    behavior_tags = {names[hero_id]: value for hero_id, value in tags.items()}
     return bp.check_temporary_stat_buffer_consistency(
         behavior_tags,
         raw["heroes"],

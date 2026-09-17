@@ -95,6 +95,7 @@ class LocalAnalysis(TypedDict, total=False):
     synergy_profile: dict[str, Any]
     damage_entries: list[Any]
     benefit_stats: list[str]
+    primary_damage_type: str
     positional_tile_buff_labels: list[str]
     proximity_aura_buff_labels: list[str]
     proximity_aura_radius: float | None

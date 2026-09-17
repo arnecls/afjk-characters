@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "antandra",
   "display_name": "Antandra",
   "local": {
@@ -490,7 +490,6 @@
         "Arc, Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "max_hp",
       "energy",
@@ -500,733 +499,153 @@
       "atk": 0.7857142857142857,
       "max_hp": 0.21428571428571427
     },
-    "behavior": {},
     "id": "antandra",
     "display_name": "Antandra",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Antandra - Desert Fury",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Antandra sets her shield up and taunts enemies within 2 tiles for 1s, reducing her damage taken by 60%and becoming Unaffected for 5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Afterward, she raises the shield to stun adjacent enemies for 2s and swings the spear, dealing 400% (ATK-based) damage to adjacent enemies and knocking them down, recovering 20% (HP-based) HР + 5% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each enemy hit recovers her an extra 8% (HP-based) + 2% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases damage to 420% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases damage to 440% (ATK-based)",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 450% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases damage to 460% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Antandra selects the frontmost ally (except herself) as the guarded ally when a battle starts.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Antandra grants herself and the guarded ally shields that block damage equal to 15% + 5% (SP-based) of the ally's max HP for 5s, and the shield value is up to 500% (ATK-based) of her ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Antandra reselects another front-most all (except herself) as the guarded ally if the previous one is defeated.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Reduces the skill cooldown by 3s whenever the guarded ally loses 10% (HP-based) max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Increases the shield value to 20% + 5% (SP-based) of the guarded ally's max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Increases the shield value to 25% + 5% (SP-based) of the guarded ally's max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Antandra attacks the frontal area within 1-tile arc 3 times and reduces the targets' ATK by 20% for 6s + 1 (SP-based)s, with the first 2 hits dealing 100% (ATK-based) damage and the third hit dealing 120% (ATK-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Increases the damage of 3rd attack to 140% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: Increases the damage of 3rd attack to 160% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Increases the damage of 3rd attack to 180% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Antandra increases her Max HP by 17% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Antandra increases her Max HP by 23% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Antandra increases her Max HP by 29% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Antandra rushes next to the guarded ally when their HP ratio drops below 50% for the first time, reducing their damage taken by 40% for 10s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This skill can only be used once for each guarded ally per battle.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Rushes next to the guarded ally, recovering their Energy by 100 per second for 4s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Rushes next to the guarded ally, reducing their damage taken by 50%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Rushes next to the guarded ally, reducing their damage taken by 60%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Antandra sets her shield up and taunts enemies within 2 tiles for 1s, reducing her damage taken by 60%and becoming Unaffected for 5s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Shield Assault": "Ultimate",
-        "Shield Formation": "Skill1",
-        "Spear Barrage": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Gale Barrier": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Taunt",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 460.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "qualitative": "Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Once per battle",
-              "tier": "Mythic+",
-              "targeting": "Allies",
-              "qualitative": "This skill can only be used once for each guarded ally per battle.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 29.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.5,
-                  "comparison": "below"
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Phys DEF",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 6,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Taunt",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 1.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 460.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 29.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "hp_threshold",
-              "hp_ratio": 0.5,
-              "comparison": "below"
-            },
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Phys DEF",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 6,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Afterward, she raises the shield to stun adjacent enemies for 2s and swings the spear, dealing 400% (ATK-based) damage to adjacent enemies and knocking them down, recovering 20% (HP-based) HР + 5% (SP-based) HP.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Each enemy hit recovers her an extra 8% (HP-based) + 2% (SP-based).",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "qualitative": "Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Once per battle",
-          "tier": "Mythic+",
-          "targeting": "Allies",
-          "qualitative": "This skill can only be used once for each guarded ally per battle.",
-          "grants": []
-        }
+      [
+        "base",
+        "Unlocks at level 51: Increases damage to 420% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Arc, Area"
-        ]
+      [
+        "base",
+        "Unlocks at level 111: Increases damage to 440% (ATK-based)",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Max HP",
-        "Energy",
-        "Physical DEF"
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 450% (ATK-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.7857142857142857,
-        "Max HP": 0.21428571428571427
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 231: Increases damage to 460% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Antandra selects the frontmost ally (except herself) as the guarded ally when a battle starts.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Antandra grants herself and the guarded ally shields that block damage equal to 15% + 5% (SP-based) of the ally's max HP for 5s, and the shield value is up to 500% (ATK-based) of her ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Antandra reselects another front-most all (except herself) as the guarded ally if the previous one is defeated.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Reduces the skill cooldown by 3s whenever the guarded ally loses 10% (HP-based) max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Increases the shield value to 20% + 5% (SP-based) of the guarded ally's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increases the shield value to 25% + 5% (SP-based) of the guarded ally's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Antandra attacks the frontal area within 1-tile arc 3 times and reduces the targets' ATK by 20% for 6s + 1 (SP-based)s, with the first 2 hits dealing 100% (ATK-based) damage and the third hit dealing 120% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Increases the damage of 3rd attack to 140% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Increases the damage of 3rd attack to 160% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Increases the damage of 3rd attack to 180% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Antandra increases her Max HP by 17% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Antandra increases her Max HP by 23% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Antandra increases her Max HP by 29% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Antandra rushes next to the guarded ally when their HP ratio drops below 50% for the first time, reducing their damage taken by 40% for 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This skill can only be used once for each guarded ally per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Rushes next to the guarded ally, recovering their Energy by 100 per second for 4s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Rushes next to the guarded ally, reducing their damage taken by 50%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Rushes next to the guarded ally, reducing their damage taken by 60%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "253f2171692e8681891c36d058347a83c66e5c16192001886bebf8aa5f1e8a57",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

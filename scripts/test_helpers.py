@@ -2,24 +2,32 @@
 
 from __future__ import annotations
 
+import types
 import sys
 
 
 def load_rewrite_summaries():
-    """Return the local-analysis text module used by tests."""
-    from hero_pipeline.analysis import text
+    """Return the combined effect/behavior analysis namespace used by tests."""
+    from hero_pipeline.analysis import behavior, effects
 
-    sys.modules["rewrite_summaries"] = text
-    return text
+    namespace = types.SimpleNamespace()
+    namespace.__dict__.update(
+        {key: value for key, value in effects.__dict__.items() if key != "__builtins__"}
+    )
+    namespace.__dict__.update(
+        {
+            key: value
+            for key, value in behavior.__dict__.items()
+            if key != "__builtins__"
+        }
+    )
+    return namespace
 
 
 def load_overview_facts(name: str = "gen_overview"):
     """Return the scoring-facts module used by tests."""
     from hero_pipeline.analysis import overview_facts
 
-    sys.modules[name] = overview_facts
-    sys.modules["gen_overview"] = overview_facts
-    sys.modules["generate_heroes_overview"] = overview_facts
     return overview_facts
 
 

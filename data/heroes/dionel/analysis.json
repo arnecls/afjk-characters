@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "dionel",
   "display_name": "Dionel",
   "local": {
@@ -463,7 +463,6 @@
         "All units"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -472,648 +471,158 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "dionel",
     "display_name": "Dionel",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Dionel - Venus of Dawn",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% (SP-based) damage to all adjacent enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Gains a Nectar Feast buff within the effect duration.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Using this skill won't shorten its duration until the skill ends if Dionel has already been buffed.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases the damage of to 180% (ATK-based) + 15% (SP-based) and the damage of its last hit to 260% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: The skill duration is extended by 2s if Dionel achieves an Assist or Defeat on an enemy hero, triggered only once per casting.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases the damage of to 190% (ATK-based) + 15% (SP-based) and the damage of its last hit to 270% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% (SP-based) damage to all enemies along the way.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Increases the Penetration attack damage to 150% + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Flashes to a better attacking position if not in a good spot, triggered once every 6s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Increases the Penetration attack damage to 155% + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Dionel drinks the divine nectar to increase 20% + 2% (SP-based) ATK and 20 + 3 (SP-based) ATK SPD for 12s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: For each Intoxication stack, the ATK bonus is increased to 16%, and the ATK SPD bonus is increased to 16.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: For each Intoxication stack, the ATK bonus is increased to 18%, and the ATK SPD bonus is increased to 18.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: The bonuses from active casting are increased to 25% + 2% (SP-based) ATK and 25 + 3 (SP-based) ATK SPD.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Dionel's normal attack permanently increases his ATK SPD by 3 during battle, for a maximum ATK SPD bonus of 30.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Dionel's normal attack permanently increases his ATK SPD by 4 during battle, for a maximum ATK SPD bonus of 40.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Dionel's normal attack permanently increases his ATK SPD by 5 during battle, for a maximum ATK SPD bonus of 50.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Dionel summons a light spear after a short delay, dealing 200% (ATK-based) true damage to all enemies, up to 3 casting per battle.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The skill is only available when the owned Intoxication is fully stacked.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Increases the skill damage dealt to 210% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Deals extra true damage equal to 20% of the target's current HP when first casting the skill in a battle.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Reduces target's Vitality by 60 in the next 8s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The extra damage is no more than 1000% of ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Increases the skill damage dealt to 220% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Dionel increases Execution by 20 within the duration of Nectar Feast if it's been activated.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% (SP-based) damage to all adjacent enemies.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Dawn Light": "Ultimate",
-        "Starry Void": "Skill1",
-        "Nectar Feast": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Celestial Spear": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Untargetable",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Execution scaling",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "qualitative": "When he reaches max Intoxication stacks, his Execution increases by 25 further.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Temporary ally stat buffs",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 170.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "path",
-              "area_direction": "selected_target",
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 3,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 23.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 3,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Execution",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": 220.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "path",
-          "area_direction": "selected_target",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 3,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 23.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 3,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Execution",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "Mythic+",
-          "targeting": "All units",
-          "numeric": 220.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based).",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Untargetable",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Unlocks at level 51: Gains a Nectar Feast buff within the effect duration.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Execution scaling",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "qualitative": "When he reaches max Intoxication stacks, his Execution increases by 25 further.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Temporary ally stat buffs",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally.",
-          "grants": []
-        }
+      [
+        "base",
+        "Using this skill won't shorten its duration until the skill ends if Dionel has already been buffed.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ],
-        [
-          "True damage",
-          "All units"
-        ]
+      [
+        "base",
+        "Unlocks at level 111: Increases the damage of to 180% (ATK-based) + 15% (SP-based) and the damage of its last hit to 260% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "True damage": 1049.9999999999998
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "Execution"
+      [
+        "base",
+        "Unlocks at level 171: The skill duration is extended by 2s if Dionel achieves an Assist or Defeat on an enemy hero, triggered only once per casting.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 231: Increases the damage of to 190% (ATK-based) + 15% (SP-based) and the damage of its last hit to 270% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% (SP-based) damage to all enemies along the way.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Increases the Penetration attack damage to 150% + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Flashes to a better attacking position if not in a good spot, triggered once every 6s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increases the Penetration attack damage to 155% + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Dionel drinks the divine nectar to increase 20% + 2% (SP-based) ATK and 20 + 3 (SP-based) ATK SPD for 12s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: For each Intoxication stack, the ATK bonus is increased to 16%, and the ATK SPD bonus is increased to 16.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: For each Intoxication stack, the ATK bonus is increased to 18%, and the ATK SPD bonus is increased to 18.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: The bonuses from active casting are increased to 25% + 2% (SP-based) ATK and 25 + 3 (SP-based) ATK SPD.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Dionel's normal attack permanently increases his ATK SPD by 3 during battle, for a maximum ATK SPD bonus of 30.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Dionel's normal attack permanently increases his ATK SPD by 4 during battle, for a maximum ATK SPD bonus of 40.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Dionel's normal attack permanently increases his ATK SPD by 5 during battle, for a maximum ATK SPD bonus of 50.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Dionel summons a light spear after a short delay, dealing 200% (ATK-based) true damage to all enemies, up to 3 casting per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The skill is only available when the owned Intoxication is fully stacked.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Increases the skill damage dealt to 210% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Deals extra true damage equal to 20% of the target's current HP when first casting the skill in a battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Reduces target's Vitality by 60 in the next 8s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The extra damage is no more than 1000% of ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Increases the skill damage dealt to 220% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Dionel increases Execution by 20 within the duration of Nectar Feast if it's been activated.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "37dbc43e0243a1cffce10d38d69214d5f09dcc3c5156656070701c9f03eb8f3f",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

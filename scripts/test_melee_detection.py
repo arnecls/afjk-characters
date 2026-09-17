@@ -26,8 +26,8 @@ class MeleeDetectionTests(unittest.TestCase):
                 snapshot["bundles"][entry["id"]]["source"]["source"]
             )
             hero = rs.hero_from_record(source)
-            skills = rs.load_skills_by_title_from_records([source])[hero.title]
-            cls.heroes[hero.title] = (hero, skills, source, entry["display_name"])
+            skills = rs.load_skills_by_title_from_records([source])[hero["title"]]
+            cls.heroes[hero["title"]] = (hero, skills, source, entry["display_name"])
 
     def _match(self, title_prefix: str) -> tuple[object, list, dict, str]:
         return next(

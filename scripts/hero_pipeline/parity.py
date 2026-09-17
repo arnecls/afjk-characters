@@ -1,7 +1,7 @@
 """Independent presentation-contract comparison for the pipeline rewrite.
 
-Fixtures are frozen from hero-split ``b7d7ed2``. Relationship sections may
-differ; numeric leaves and structurally compared text must match.
+Fixtures are frozen from hero-split ``b7d7ed2``. Compare displayed
+semantics, including relationship membership, scores, and reasons.
 """
 
 from __future__ import annotations
@@ -17,21 +17,7 @@ from .repository import Repository, current_repository
 
 FIXTURE_DIR = Path(__file__).resolve().parent.parent / "fixtures" / "hero_split_b7d7ed2"
 CONTRACT_NAME = "presentation-contract.json"
-
-RELATIONSHIP_MARKDOWN_HEADINGS = (
-    "Units improving",
-    "Units benefitting most from",
-    "Best overall replacement",
-    "Buffs on allies",
-    "Energy provider",
-    "Healing",
-    "Similar Skills",
-    "Damage",
-    "Debuffs on enemies",
-    "Crowd Control",
-)
-
-SITE_RELATIONSHIP_KEYS = frozenset({"benefits_from", "replacements"})
+SITE_FIXTURE_DIR = FIXTURE_DIR / "site" / "data"
 
 
 def _plain(value: Any) -> Any:
@@ -51,44 +37,57 @@ def normalize_text(value: str) -> str:
     return "\n".join(lines) + ("\n" if value.endswith("\n") else "")
 
 
-def _drop_relationship_markdown(markdown: str) -> str:
-    lines = markdown.split("\n")
-    kept: list[str] = []
-    skipping = False
-    for line in lines:
-        if line.startswith("### ") or line.startswith("#### "):
-            title = line.lstrip("#").strip()
-            skipping = any(
-                title.startswith(prefix)
-                for prefix in RELATIONSHIP_MARKDOWN_HEADINGS
-            )
-        if skipping:
-            continue
-        kept.append(line)
-    return normalize_text("\n".join(kept))
-
-
-def _drop_site_relationships(payload: Any) -> Any:
+def site_without_timestamp(payload: Mapping[str, Any] | Any) -> Any:
+    """Drop only dynamic generation metadata from a site heroes document."""
     if not isinstance(payload, dict):
         return payload
     result = dict(payload)
     meta = dict(result.get("meta") or {})
     meta.pop("generated", None)
     result["meta"] = meta
-    heroes = []
-    for hero in result.get("heroes") or []:
-        item = dict(hero)
-        sections = dict(item.get("sections") or {})
-        for key in SITE_RELATIONSHIP_KEYS:
-            sections.pop(key, None)
-        item["sections"] = sections
-        heroes.append(item)
-    result["heroes"] = heroes
     return result
 
 
+def list_column_semantics(columns: Any) -> list[dict[str, Any]]:
+    rows = columns if isinstance(columns, list) else []
+    return [
+        {
+            "label": row.get("label"),
+            "polarity": row.get("polarity"),
+            "group": row.get("group"),
+        }
+        for row in rows
+        if isinstance(row, Mapping)
+    ]
+
+
+def load_fixture_artifacts() -> dict[str, Any]:
+    """Load the expanded b7d7ed2 public-view artifacts."""
+    def read_text(name: str) -> str:
+        return (FIXTURE_DIR / name).read_text(encoding="utf-8")
+
+    def read_site(name: str) -> Any:
+        path = SITE_FIXTURE_DIR / name
+        if name.endswith(".json"):
+            return json.loads(path.read_text(encoding="utf-8"))
+        return path.read_text(encoding="utf-8")
+
+    return {
+        "heroes_md": normalize_text(read_text("Heroes.md")),
+        "overview_md": normalize_text(read_text("heroes-overview.md")),
+        "overview_csv": normalize_text(read_text("heroes-overview.csv")),
+        "site_heroes": site_without_timestamp(read_site("heroes.json")),
+        "site_csv": normalize_text(read_site("heroes-overview.csv")),
+        "mix_synergy_index": read_site("mix-synergy-index.json"),
+        "mix_config": read_site("mix-config.json"),
+        "mix_role_prominence": read_site("mix-role-prominence.json"),
+        "list_columns": list_column_semantics(read_site("list-columns.json")),
+        "counter_filter_combos": read_site("counter_filter_combos.json"),
+    }
+
+
 def contract_hero(hero: Mapping[str, Any]) -> dict[str, Any]:
-    """Return one hero's view-facing facts without relationship lists."""
+    """Return one hero's view-facing facts without internal scoring facts."""
     analysis = dict(hero.get("analysis") or {})
     analysis.pop("scoring", None)
     return {
@@ -99,6 +98,7 @@ def contract_hero(hero: Mapping[str, Any]) -> dict[str, Any]:
         "display": _plain(hero.get("display") or {}),
         "curated": _plain(hero.get("curated") or {}),
         "analysis": _plain(analysis),
+        "references": _plain(hero.get("references") or {}),
     }
 
 
@@ -118,9 +118,9 @@ def contract_from_view(
             for hero in sorted(view["heroes"], key=lambda item: item["id"])
         ],
         "heroes_md": normalize_text(heroes_md),
-        "overview_md": _drop_relationship_markdown(overview_md),
+        "overview_md": normalize_text(overview_md),
         "overview_csv": normalize_text(overview_csv),
-        "site_heroes": _drop_site_relationships(site_heroes),
+        "site_heroes": site_without_timestamp(site_heroes),
     }
 
 
@@ -239,8 +239,8 @@ def markdown_structure(text: str) -> list[str]:
 
 
 def compare_markdown(baseline: str, current: str, *, label: str) -> list[str]:
-    before = markdown_structure(_drop_relationship_markdown(baseline))
-    after = markdown_structure(_drop_relationship_markdown(current))
+    before = markdown_structure(baseline)
+    after = markdown_structure(current)
     if before == after:
         return []
     errors = [f"{label} structure differs"]
@@ -259,7 +259,7 @@ def compare_contracts(
     baseline: Mapping[str, Any],
     current: Mapping[str, Any],
 ) -> list[str]:
-    """Return errors when the presentation contract regresses."""
+    """Return errors when hero-level presentation facts regress."""
     errors: list[str] = []
     before_ids = [hero["id"] for hero in baseline["heroes"]]
     after_ids = [hero["id"] for hero in current["heroes"]]
@@ -269,11 +269,23 @@ def compare_contracts(
         )
         return errors
     after_by_id = {hero["id"]: hero for hero in current["heroes"]}
+    skip_keys = {"references"}
     for hero in baseline["heroes"]:
         other = after_by_id[hero["id"]]
         prefix = hero["id"]
-        errors.extend(compare_numbers(hero, other, prefix=prefix))
-        errors.extend(compare_strings(hero, other, prefix=prefix))
+        left = {key: value for key, value in hero.items() if key not in skip_keys}
+        right = {key: value for key, value in other.items() if key not in skip_keys}
+        errors.extend(compare_numbers(left, right, prefix=prefix))
+        errors.extend(compare_strings(left, right, prefix=prefix))
+    return errors
+
+
+def compare_view_artifacts(
+    baseline: Mapping[str, Any],
+    current: Mapping[str, Any],
+) -> list[str]:
+    """Compare every browser-visible generated artifact."""
+    errors: list[str] = []
     errors.extend(
         compare_markdown(
             baseline["heroes_md"],
@@ -292,6 +304,10 @@ def compare_contracts(
         current["overview_csv"]
     ):
         errors.append("heroes-overview.csv differs")
+    if normalize_text(str(baseline.get("site_csv", ""))) != normalize_text(
+        str(current.get("site_csv", ""))
+    ):
+        errors.append("site/data/heroes-overview.csv differs")
     errors.extend(
         compare_numbers(
             baseline["site_heroes"],
@@ -306,11 +322,27 @@ def compare_contracts(
             prefix="site",
         )
     )
+    for name in ("mix_synergy_index", "mix_config", "mix_role_prominence"):
+        errors.extend(
+            compare_numbers(baseline[name], current[name], prefix=name)
+        )
+        errors.extend(
+            compare_strings(baseline[name], current[name], prefix=name)
+        )
+    if baseline["list_columns"] != current["list_columns"]:
+        errors.append("list-columns display semantics differ")
+    errors.extend(
+        compare_strings(
+            baseline["counter_filter_combos"],
+            current["counter_filter_combos"],
+            prefix="counter_filter",
+        )
+    )
     return errors
 
 
 def relationship_invariant_errors(view: Mapping[str, Any]) -> list[str]:
-    """Validate relationship lists without constraining membership."""
+    """Validate relationship lists and referential integrity."""
     known = {hero["id"] for hero in view["heroes"]}
     errors: list[str] = []
     for hero in view["heroes"]:
@@ -353,6 +385,12 @@ def snapshot_views(repository: Repository | None = None) -> dict[str, str]:
         "heroes-overview.md",
         "heroes-overview.csv",
         "site/data/heroes.json",
+        "site/data/heroes-overview.csv",
+        "site/data/mix-synergy-index.json",
+        "site/data/mix-config.json",
+        "site/data/mix-role-prominence.json",
+        "site/data/list-columns.json",
+        "site/data/counter_filter_combos.json",
     ):
         path = repo.root / relpath
         if path.is_file():

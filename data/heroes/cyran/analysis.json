@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "cyran",
   "display_name": "Cyran",
   "local": {
@@ -572,7 +572,6 @@
         "All units"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -582,887 +581,168 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "cyran",
     "display_name": "Cyran",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Cyran - Umbral Weaver",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Cyran selects a tile and summons a black hole that lasts for 5s, with its center covering a 1-tile radius.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Every 0.25s, enemies within the center take 16% (ATK-based) + 2% (SP-based) damage, and those outside the center but within 4 tiles take 6% (ATK-based) + 1% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "All enemies on the battlefield are pulled toward the center, with the gravitational force increasing as they get closer.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Non-Boss enemies within the center are immediately defeated if their current HP is below Cyran's 600% (ATK-based) + 20% (SP-based) and their HP ratio is below 15% + 1% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the black hole's damage to enemies within the center to 17% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 7% (ATK-based) + 1% (SP-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the black hole's damage to enemies within the center to 18% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 8% (ATK-based) + 1% (SP-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the black hole's damage to enemies within the center to 19% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 9% (ATK-based) + 1% (SP-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the black hole's damage to enemies within the center to 20% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 10% (ATK-based) + 1% (SP-based) per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Cyran casts 3 magic orbs towards the area with the most enemies, dealing 65% (ATK-based) + 7% (SP-based) damage to adjacent enemies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 70% (ATK-based) + 7% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 75% (ATK-based) + 7% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 80% (ATK-based) + 7% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Cyran uses magic to lift the nearest enemy into the air, imprisoning them for 1s before hurling them into the area with the most enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This knocks the target down for 0.5s and deals 150% (ATK-based) + 10% (SP-based) damage to enemies within 1 tile of the target.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When casting this skill, Cyran prioritizes targeting an enemy who is neither unaffected nor steadfast.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 160% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 170% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 180% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "When in battle, Cyran increases his Crit by 18, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 12.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When in battle, Cyran increases his Crit by 24, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 16.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When in battle, Cyran increases his Crit by 30, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 20.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Confining Spell: Deals 25% (ATK-based) damage to the rearmost enemy, imprisoning them for 1.5s and preventing from moving or acting.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Starshard Spell: Conjures a dark flame across the battlefield, dealing 40% (ATK-based) true damage to all enemies and reducing their ATK SPD by 20 for 5s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases dark flame damage to 45% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "If Merlin is present on the enemy side, Merlin is silenced for 8s when a battle starts, preventing Merlin from casting any skills.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Any skills Merlin would've cast when a battle starts are triggered after silence ends, at which point Cyran loses 5% of his current HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "If Merlin is absent on the enemy side, Cyran permanently increases his ATK by 10%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases dark flame damage to 50% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Gains extra 200 initial Energy.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Cyran selects a tile and summons a black hole that lasts for 5s, with its center covering a 1-tile radius.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Gravitic Requiem": "Ultimate",
-        "Arcane Barrage": "Skill1",
-        "Cursed Grasp": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Mystic Recollection": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 620.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 4,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 600.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 4,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": 0.25,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Displace",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Execution",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_boss"
-                },
-                {
-                  "type": "unit_type",
-                  "unit_type": "boss"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Artifact mimic",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "qualitative": "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Artifact block",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "qualitative": "If Merlin is present on the enemy side, Merlin is silenced for 8s when a battle starts, preventing Merlin from casting any skills.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 87.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Displace",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 190.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 1.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "ATK SPD",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "timing": "Start of battle"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 620.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 4,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 600.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 4,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": 0.25,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Displace",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Execution",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_boss"
-            },
-            {
-              "type": "unit_type",
-              "unit_type": "boss"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 1.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Displace",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 1.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK SPD",
-          "tier": "Mythic+",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "Mythic+",
-          "targeting": "All units",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Every 0.25s, enemies within the center take 16% (ATK-based) + 2% (SP-based) damage, and those outside the center but within 4 tiles take 6% (ATK-based) + 1% (SP-based) damage.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "timing": "Start of battle"
-        }
+      [
+        "base",
+        "All enemies on the battlefield are pulled toward the center, with the gravitational force increasing as they get closer.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Artifact mimic",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "qualitative": "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Artifact block",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "qualitative": "If Merlin is present on the enemy side, Merlin is silenced for 8s when a battle starts, preventing Merlin from casting any skills.",
-          "grants": []
-        }
+      [
+        "base",
+        "Non-Boss enemies within the center are immediately defeated if their current HP is below Cyran's 600% (ATK-based) + 20% (SP-based) and their HP ratio is below 15% + 1% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area, Single target"
-        ],
-        [
-          "DoT",
-          "Area"
-        ],
-        [
-          "True damage",
-          "All units"
-        ]
+      [
+        "base",
+        "Increases the black hole's damage to enemies within the center to 17% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 7% (ATK-based) + 1% (SP-based) per second.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "True damage": 200.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "Haste",
-        "Crit"
+      [
+        "base",
+        "Increases the black hole's damage to enemies within the center to 18% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 8% (ATK-based) + 1% (SP-based) per second.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 6,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the black hole's damage to enemies within the center to 19% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 9% (ATK-based) + 1% (SP-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the black hole's damage to enemies within the center to 20% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 10% (ATK-based) + 1% (SP-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Cyran casts 3 magic orbs towards the area with the most enemies, dealing 65% (ATK-based) + 7% (SP-based) damage to adjacent enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 70% (ATK-based) + 7% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 75% (ATK-based) + 7% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 80% (ATK-based) + 7% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Cyran uses magic to lift the nearest enemy into the air, imprisoning them for 1s before hurling them into the area with the most enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This knocks the target down for 0.5s and deals 150% (ATK-based) + 10% (SP-based) damage to enemies within 1 tile of the target.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When casting this skill, Cyran prioritizes targeting an enemy who is neither unaffected nor steadfast.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 160% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 170% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 180% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "When in battle, Cyran increases his Crit by 18, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When in battle, Cyran increases his Crit by 24, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 16.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When in battle, Cyran increases his Crit by 30, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 20.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Confining Spell: Deals 25% (ATK-based) damage to the rearmost enemy, imprisoning them for 1.5s and preventing from moving or acting.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Starshard Spell: Conjures a dark flame across the battlefield, dealing 40% (ATK-based) true damage to all enemies and reducing their ATK SPD by 20 for 5s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases dark flame damage to 45% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If Merlin is present on the enemy side, Merlin is silenced for 8s when a battle starts, preventing Merlin from casting any skills.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Any skills Merlin would've cast when a battle starts are triggered after silence ends, at which point Cyran loses 5% of his current HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If Merlin is absent on the enemy side, Cyran permanently increases his ATK by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases dark flame damage to 50% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Gains extra 200 initial Energy.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "94f9fd4e88e935c52e1274ae02d3541a8871377e86e3189249e1ad16ffd43aaf",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

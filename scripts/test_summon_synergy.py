@@ -41,10 +41,10 @@ def _summon_effect(label: str, magnitude: str = "low") -> rs.Effect:
 class SummonSynergyTests(unittest.TestCase):
     def test_peggy_lamentis_credits_def_without_receiver_benefit_stat(self):
         heroes, matchers, behavior = _full_roster()
-        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
-        lamentis = next(h for h in heroes if h.title.startswith("Lamentis"))
-        self.assertNotIn("Physical DEF", lamentis.benefit_stats)
-        self.assertNotIn("Magic DEF", lamentis.benefit_stats)
+        peggy = next(h for h in heroes if h["title"].startswith("Peggy"))
+        lamentis = next(h for h in heroes if h["title"].startswith("Lamentis"))
+        self.assertNotIn("Physical DEF", lamentis["benefit_stats"])
+        self.assertNotIn("Magic DEF", lamentis["benefit_stats"])
 
         score, reasons = gen.score_summon_synergy(peggy, lamentis)
         self.assertGreater(score, 0.0)
@@ -54,8 +54,8 @@ class SummonSynergyTests(unittest.TestCase):
 
     def test_peggy_florabelle_not_excluded_for_atk_only_summon_match(self):
         heroes, _, _ = _full_roster()
-        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
-        florabelle = next(h for h in heroes if h.title.startswith("Florabelle"))
+        peggy = next(h for h in heroes if h["title"].startswith("Peggy"))
+        florabelle = next(h for h in heroes if h["title"].startswith("Florabelle"))
 
         score, reasons = gen.score_summon_synergy(peggy, florabelle)
         self.assertGreater(score, 0.0)
@@ -64,9 +64,9 @@ class SummonSynergyTests(unittest.TestCase):
 
     def test_ranged_damage_gated_by_summon_profile(self):
         heroes, _, _ = _full_roster()
-        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
-        florabelle = next(h for h in heroes if h.title.startswith("Florabelle"))
-        cecia = next(h for h in heroes if h.title.startswith("Cecia"))
+        peggy = next(h for h in heroes if h["title"].startswith("Peggy"))
+        florabelle = next(h for h in heroes if h["title"].startswith("Florabelle"))
+        cecia = next(h for h in heroes if h["title"].startswith("Cecia"))
 
         flor_score, flor_reasons = gen.score_summon_synergy(peggy, florabelle)
         cecia_score, cecia_reasons = gen.score_summon_synergy(peggy, cecia)
@@ -79,7 +79,7 @@ class SummonSynergyTests(unittest.TestCase):
 
         provider = rs.Hero("PeggyLike - Test", "Physical")
         receiver = rs.Hero("Incidental - Test", "Physical")
-        provider.summon_effects = [_summon_effect("ATK", "low")]
+        provider["summon_effects"] = [_summon_effect("ATK", "low")]
 
         original_profiles = sr._profiles
         sr._profiles = {
@@ -99,7 +99,7 @@ class SummonSynergyTests(unittest.TestCase):
 
         provider = rs.Hero("Buffer - Test", "Physical")
         receiver = rs.Hero("Summoner - Test", "Physical")
-        provider.summon_effects = [
+        provider["summon_effects"] = [
             _summon_effect("ATK", "low"),
             _summon_effect("DEF", "average"),
             _summon_effect("Haste", "high"),
@@ -127,8 +127,8 @@ class SummonSynergyTests(unittest.TestCase):
 
     def test_marcille_no_longer_receives_summon_buffs(self):
         heroes, _, _ = _full_roster()
-        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
-        marcille = next(h for h in heroes if h.title.startswith("Marcille"))
+        peggy = next(h for h in heroes if h["title"].startswith("Peggy"))
+        marcille = next(h for h in heroes if h["title"].startswith("Marcille"))
 
         score, reasons = gen.score_summon_synergy(peggy, marcille)
         self.assertEqual(score, 0.0)
@@ -136,8 +136,8 @@ class SummonSynergyTests(unittest.TestCase):
 
     def test_lucy_receives_summon_buffs(self):
         heroes, _, _ = _full_roster()
-        peggy = next(h for h in heroes if h.title.startswith("Peggy"))
-        lucy = next(h for h in heroes if h.title.startswith("Lucy"))
+        peggy = next(h for h in heroes if h["title"].startswith("Peggy"))
+        lucy = next(h for h in heroes if h["title"].startswith("Lucy"))
 
         score, reasons = gen.score_summon_synergy(peggy, lucy)
         self.assertGreater(score, 0.0)

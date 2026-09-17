@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "mikola",
   "display_name": "Mikola",
   "local": {
@@ -423,7 +423,6 @@
       "requires": []
     },
     "damage_entries": [],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste"
@@ -431,585 +430,163 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "mikola",
     "display_name": "Mikola",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Mikola - Warbeat Compere",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Mikola generates a 2-tile Courage Sphere that follows her around, increasing Haste by 40 and Ranged DEF by 10 for all allies within range, while increasing her own Haste by 30 and Ranged DEF by 10.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Mikola deals total damage equal to 300% of her initial ATK while Courage Sphere is around, a Healing Wave will emerge, restoring 80% (ATK-based) + 10% (SP-based) HP to all allies within range.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Courage Sphere lasts for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the healing amount of Healing Wave to 90% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the duration of Courage Sphere to 12s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the healing amount of Healing Wave to 100% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the healing amount of Healing Wave to 110% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Mikola generates an Honor Arena spanning the battlefield when a battle starts, lasting until the battle ends.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The side with more units within the arena will gain control of it after maintaining the advantage for 3s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Mikola restores all allies' HP by 12% (ATK-based) + 2% (SP-based) per second and increases their ATK by 14% + 1% (SP-based) when her side gains control of the Honor Arena.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases all allies' ATK by 16% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases all allies' ATK by 18% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases all allies' ATK by 20% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Mikola rings her bell, restoring 130% (ATK-based) + 20% (SP-based) HP and increasing Phys and Magic DEF by 40% for herself and the 2 weakest allies for 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases HP recovery amount to 150% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases HP recovery amount to 170% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases HP recovery amount to 190% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Mikola increases her ATK by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 6% ATK when her side gains control of the Honor Arena.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Mikola increases her ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 8% ATK when her side gains control of the Honor Arena.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Mikola increases her ATK by 15% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 10% ATK when her side gains control of the Honor Arena.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Mikola enhances her Courage Sphere after it has been active for 6s, granting Combat Fury to all allied heroes (except herself) within range, and dealing damage equal to 50% of her ATK per second to enemies adjacent to these allies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The enhancements reset when the Courage Sphere disappears.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 60% of her ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases 30 Vitality for allies carrying Combat Fury.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 70% of her ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Mikola generates a 2-tile Courage Sphere that follows her around, increasing Haste by 40 and Ranged DEF by 10 for all allies within range, while increasing her own Haste by 30 and Ranged DEF by 10.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Dauntless Hymn": "Ultimate",
-        "Heroic Duel": "Skill1",
-        "Vigorous Call": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Passionate Opening": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 110.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 14.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "DEF",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Vitality",
-              "tier": "EX+10",
-              "targeting": "Multiple targets",
-              "numeric": 70.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Ally DoT on enemies",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "qualitative": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 110.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 14.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "DEF",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 130.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Vitality",
-          "tier": "EX+10",
-          "targeting": "Multiple targets",
-          "numeric": 70.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "When Mikola deals total damage equal to 300% of her initial ATK while Courage Sphere is around, a Healing Wave will emerge, restoring 80% (ATK-based) + 10% (SP-based) HP to all allies within range.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "Courage Sphere lasts for 10s.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Ally DoT on enemies",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "qualitative": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury.",
-          "grants": []
-        }
+      [
+        "base",
+        "Increases the healing amount of Healing Wave to 90% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste"
+      [
+        "base",
+        "Increases the duration of Courage Sphere to 12s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the healing amount of Healing Wave to 100% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the healing amount of Healing Wave to 110% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Mikola generates an Honor Arena spanning the battlefield when a battle starts, lasting until the battle ends.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The side with more units within the arena will gain control of it after maintaining the advantage for 3s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Mikola restores all allies' HP by 12% (ATK-based) + 2% (SP-based) per second and increases their ATK by 14% + 1% (SP-based) when her side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases all allies' ATK by 16% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases all allies' ATK by 18% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases all allies' ATK by 20% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Mikola rings her bell, restoring 130% (ATK-based) + 20% (SP-based) HP and increasing Phys and Magic DEF by 40% for herself and the 2 weakest allies for 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP recovery amount to 150% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP recovery amount to 170% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP recovery amount to 190% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Mikola increases her ATK by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 6% ATK when her side gains control of the Honor Arena.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Mikola increases her ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 8% ATK when her side gains control of the Honor Arena.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Mikola increases her ATK by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 10% ATK when her side gains control of the Honor Arena.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Mikola enhances her Courage Sphere after it has been active for 6s, granting Combat Fury to all allied heroes (except herself) within range, and dealing damage equal to 50% of her ATK per second to enemies adjacent to these allies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The enhancements reset when the Courage Sphere disappears.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 60% of her ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases 30 Vitality for allies carrying Combat Fury.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 70% of her ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "bdd7a31828f8bfdec5fffab1980ad3bbca4b7671fe0e81d3d05ed46d6127659f",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "velara",
   "display_name": "Velara",
   "local": {
@@ -484,7 +484,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "shield",
@@ -493,744 +492,203 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "velara",
     "display_name": "Velara",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Velara - Pale Votary",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Velara summons 4 dormant magic circles on the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each circle awakens after accumulating 1000 Energy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a circle awakens, it affects all units within 2 tiles, restoring 40% (ATK-based) + 8% (SP-based) HP to allies and reducing enemies' Haste by 30 + 5 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Velara channels her Energy into one of her dormant circles until it awakens.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If all circles are already awakened, she instead expands their area of effect to cover the entire battlefield and transfers 30% + 3% (SP-based) of basic stats from all enemies, then evenly distributing them among all allied units, lasting for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The transferred stats that each ally receives cannot exceed 45% of Velara's starting stats.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In boss fights, allies will always receive the maximum amount of transferred stats.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Awakened magic circle restores 50% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 35 + 5 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Awakened magic circle restores 60% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 40 + 5 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Awakened magic circle restores 70% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 45 + 5 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Awakened magic circle restores 80% (ATK-based) + 80% (SP-based)|ult",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Velara immobilizes the enemy with the highest cumulative damage dealt, reducing their Haste by 50 + 10 (SP-based) and their Phys & Magic DEF by 45% + 6% (SP-based) for 5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Each awakened magic circle extends this duration by 0.5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Haste reduction to 55 + 10 (SP-based), and Phys & Magic DEF reduction to 50% + 6% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Haste reduction to 60 + 10 (SP-based), and Phys & Magic DEF reduction to 55% + 6% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Haste reduction to 70 + 10 (SP-based), and Phys & Magic DEF reduction to 60% + 6% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Every 3s, each magic circle gains Energy based on the stat reduction debuffs on enemies within 2 tiles.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "For each unique ally who inflicted any of those debuffs, the circle gains 24 + 4 (SP-based) Energy.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "If Velara is placed within a magic circle when a battle starts, that circle is immediately awakened.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Otherwise, the circle farthest from her position is awakened instead.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the Energy gained from each debuff to 26 + 4 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the Energy gained from each debuff to 28 + 4 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the Energy gained from each debuff to 32 + 4 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Velara increases her Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When all her magic circles are awakened, her Haste is increased by an extra 3.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Velara increases her Haste by 15 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When all her magic circles are awakened, her Haste is increased by an extra 4.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Velara increases her Haste by 18 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When all her magic circles are awakened, her Haste is increased by an extra 5.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When a magic circle awakens, it fires a mystic bolt to the weakest unit within 2 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "If the unit is an ally, they gain a 500% (ATK-based) shield for 8s; if it's an enemy, they take 300% (ATK-based) damage.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each awakened magic circle increases value applied or damage dealt by this skill by 10%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the shield value granted by Graceful Edict to 550% (ATK-based) and the damage it deals to 350%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Every 10s in battle, each awakened magic circle fires a mystic bolt at the weakest unit on the battlefield.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the shield value granted by Graceful Edict to 600% (ATK-based) and the damage it deals to 400%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "After all magic circles are awakened, casting Ruthless Rite expands their area of effect to cover the entire battlefield until the battle ends.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Each subsequent cast makes allied units unaffected and increases their damage dealt by 5% for 5s.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Velara summons 4 dormant magic circles on the battlefield.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Ruthless Rite": "Ultimate",
-        "Sinbound Shackles": "Skill1",
-        "Merciful Harvest": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Graceful Edict": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Basic stats",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 33.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Basic stats",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 33.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 70.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 45.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Boss encounter",
-              "tier": "base",
-              "targeting": "—",
-              "qualitative": "In boss fights, allies will always receive the maximum amount of transferred stats.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 45.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 400.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Supreme+",
-              "targeting": "Multiple targets",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Basic stats",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 33.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Basic stats",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 33.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 70.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 45.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 45.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 400.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Each circle awakens after accumulating 1000 Energy.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "Supreme+",
-          "targeting": "Multiple targets",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "When a circle awakens, it affects all units within 2 tiles, restoring 40% (ATK-based) + 8% (SP-based) HP to allies and reducing enemies' Haste by 30 + 5 (SP-based).",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Boss encounter",
-          "tier": "base",
-          "targeting": "—",
-          "qualitative": "In boss fights, allies will always receive the maximum amount of transferred stats.",
-          "grants": []
-        }
+      [
+        "base",
+        "Velara channels her Energy into one of her dormant circles until it awakens.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Single target"
-        ]
+      [
+        "base",
+        "If all circles are already awakened, she instead expands their area of effect to cover the entire battlefield and transfers 30% + 3% (SP-based) of basic stats from all enemies, then evenly distributing them among all allied units, lasting for 10s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Shield",
-        "Energy"
+      [
+        "base",
+        "The transferred stats that each ally receives cannot exceed 45% of Velara's starting stats.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "In boss fights, allies will always receive the maximum amount of transferred stats.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Awakened magic circle restores 50% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 35 + 5 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Awakened magic circle restores 60% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 40 + 5 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Awakened magic circle restores 70% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 45 + 5 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Awakened magic circle restores 80% (ATK-based) + 80% (SP-based)|ult",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Velara immobilizes the enemy with the highest cumulative damage dealt, reducing their Haste by 50 + 10 (SP-based) and their Phys & Magic DEF by 45% + 6% (SP-based) for 5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each awakened magic circle extends this duration by 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Haste reduction to 55 + 10 (SP-based), and Phys & Magic DEF reduction to 50% + 6% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Haste reduction to 60 + 10 (SP-based), and Phys & Magic DEF reduction to 55% + 6% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Haste reduction to 70 + 10 (SP-based), and Phys & Magic DEF reduction to 60% + 6% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Every 3s, each magic circle gains Energy based on the stat reduction debuffs on enemies within 2 tiles.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For each unique ally who inflicted any of those debuffs, the circle gains 24 + 4 (SP-based) Energy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If Velara is placed within a magic circle when a battle starts, that circle is immediately awakened.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Otherwise, the circle farthest from her position is awakened instead.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the Energy gained from each debuff to 26 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the Energy gained from each debuff to 28 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the Energy gained from each debuff to 32 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Velara increases her Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When all her magic circles are awakened, her Haste is increased by an extra 3.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Velara increases her Haste by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When all her magic circles are awakened, her Haste is increased by an extra 4.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Velara increases her Haste by 18 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When all her magic circles are awakened, her Haste is increased by an extra 5.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a magic circle awakens, it fires a mystic bolt to the weakest unit within 2 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "If the unit is an ally, they gain a 500% (ATK-based) shield for 8s; if it's an enemy, they take 300% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each awakened magic circle increases value applied or damage dealt by this skill by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the shield value granted by Graceful Edict to 550% (ATK-based) and the damage it deals to 350%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Every 10s in battle, each awakened magic circle fires a mystic bolt at the weakest unit on the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the shield value granted by Graceful Edict to 600% (ATK-based) and the damage it deals to 400%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After all magic circles are awakened, casting Ruthless Rite expands their area of effect to cover the entire battlefield until the battle ends.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Each subsequent cast makes allied units unaffected and increases their damage dealt by 5% for 5s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "6f55a324e097841c2bf6ec2005bd8011104dba561e8d9aed63e86d499ab97500",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

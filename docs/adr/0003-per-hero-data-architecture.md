@@ -36,10 +36,12 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
 3. `overrides.json` is always present, including when empty. Its schema names
    override sections instead of accepting arbitrary patches.
 4. Analysis, synergy, and presentation modules exchange schema-shaped
-   mappings. JSON adapters validate at storage seams; renderers do not
-   re-detect effects or infer polarity.
+   mappings (`schema_version` 2 on `analysis.json`). JSON adapters validate
+   at storage seams with a Draft 2020-12 registry; renderers do not
+   re-detect effects or infer polarity. AI read/write is ID-keyed.
 5. Download-only changes mark local analysis stale. Roster calibration and
    relationships are recomputed in memory when views are published.
+   `load_roster_snapshot()` is the strict fresh-cache interface.
 6. Aggregate hero JSON and roster-keyed AI files are not canonical inputs.
    Public Markdown, CSV, and site data remain generated projections.
 7. Existing `just` recipe names remain stable.

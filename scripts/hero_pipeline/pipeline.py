@@ -16,7 +16,6 @@ from .repository import current_repository
 from .storage import (
     init_hero,
     load_config,
-    load_roster_snapshot,
     require_fresh_local_analyses,
     validate_schema_documents,
     write_source_roster,
@@ -25,7 +24,9 @@ from .relationships.service import score_roster
 
 
 def _snapshot():
-    return load_roster_snapshot()
+    from .storage import load_roster_inputs
+
+    return load_roster_inputs()
 
 
 def init(
@@ -135,8 +136,7 @@ def views(*, hero_id: str | None = None) -> tuple[int, int]:
     """Refresh caches, score in memory, and publish views."""
     snapshot = _snapshot()
     processed, relationships, snapshot = score(snapshot=snapshot)
-    if hero_id:
-        require_fresh_local_analyses(snapshot)
+    require_fresh_local_analyses(snapshot)
     render_views(processed, relationships, snapshot)
     return len(processed["heroes"]), len(relationships["heroes"])
 

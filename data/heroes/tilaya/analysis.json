@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "tilaya",
   "display_name": "Tilaya",
   "local": {
@@ -585,7 +585,6 @@
         "Arc, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "max_hp",
@@ -595,836 +594,188 @@
       "atk": 0.5555555555555556,
       "max_hp": 0.4444444444444444
     },
-    "behavior": {},
     "id": "tilaya",
     "display_name": "Tilaya",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Tilaya - Wild Blade",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Tilaya loses 70% HP and gains Vine Ward, a shield that blocks up to 120% (HP-based) + 12% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Vine War automatically recovers 10% (HP-based) + 1% (SP-based) shield value every second and makes Tilaya unaffected while active.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Vine Ward breaks, it enter a 3s cooldown, after which its shield value is restored to 45% (HP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Tilaya swings her greatsword 8 times, hitting enemies within a 2-tile arc in front.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each swing deals 60% (ATK-based) damage tiwce.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While casting this skill, Tilaya reduces her damage taken 70%; every time she takes 4 hits, she performs an additional swing, up to 12 swings total.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If no enemies are within range, Tilaya charges toward the nearest enemy and continues casting this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Tilaya's Haste stat does not affect this skill when used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases each swing hit's damage to 65% (ATK-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases each swing hit's damage to 70% (ATK-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases each swing hit's damage to 75% (ATK-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases each swing hit's damage to 80% (ATK-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Tilaya charges briefly and launches a powerful strike on her target, dealing 220% (ATK-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If Vine Ward is active, she restores its shield value by 160% + 15% (SP-based) of the damage dealt.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 230% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 240% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 250% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage equal to 6% + 1% (SP-based) of her curent shield value for 10s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This extra damage cannot exceed 200% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When Tilaya casts this skill, the duration of the resonance is extended by 3.5s for each ally within 2 tiles.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra damage to 7% + 1% (SP-based) of Tilaya's current shield value.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra damage to 8% + 1% (SP-based) of Tilaya's current shield value.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra damage to 9% + 1% (SP-based) of Tilaya's current shield value.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increase Vitality by 11 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increase Vitality by 15 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increase Vitality by 19 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "The first time Vine Ward breaks, it instantly recover 120% (HP-based) shield value without triggering its cooldown.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "For subsequent Vine Ward breaks, the shield value recovered after cooldown is increased to 60% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the shield value recovered after Vine Ward's cooldown to 70% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "After Vine Ward remains active for 15s, its bond with nature deepens.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "While active, it increases the max HP by 40% and Phys & Magic DEF by 60% for all allies within 2 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The max HP gained from this effect cannot exceed 80% of Tilaya's initial max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the shield value recovered after Vine Ward's cooldown to 80% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Increases Vine Ward's shield value recover to 15% (HP-based) per second while Tilaya casts her Ultimate.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Tilaya loses 70% HP and gains Vine Ward, a shield that blocks up to 120% (HP-based) + 12% (SP-based) damage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Wrath of the Wilds": "Ultimate",
-        "Mighty Slash": "Skill1",
-        "Wildwood Resonance": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Verdant Growth": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_shield"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 70.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Form or stance active",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "Vine Ward shields Tilaya at battle start and recovers shield value every second while active.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 160.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_shield"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Damage absorption (allies)",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "If Vine Ward is active, Mighty Slash restores shield value equal to 160% of damage dealt.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 9.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 10.0,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Vitality",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 19.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "status_condition",
-                  "status": "active_shield"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "EX+10",
-              "targeting": "Area",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_shield"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "DEF",
-              "tier": "EX+10",
-              "targeting": "Area",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_shield"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 160.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "start_of_battle"
-            },
-            {
-              "type": "status_condition",
-              "status": "active_shield"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_shield"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 70.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Damage dealt",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 9.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 10.0,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Vitality",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 19.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 120.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "status_condition",
-              "status": "active_shield"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "EX+10",
-          "targeting": "Area",
-          "numeric": 120.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_shield"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "DEF",
-          "tier": "EX+10",
-          "targeting": "Area",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_shield"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Vine War automatically recovers 10% (HP-based) + 1% (SP-based) shield value every second and makes Tilaya unaffected while active.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "When Vine Ward breaks, it enter a 3s cooldown, after which its shield value is restored to 45% (HP-based).",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Form or stance active",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "Vine Ward shields Tilaya at battle start and recovers shield value every second while active.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Damage absorption (allies)",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "If Vine Ward is active, Mighty Slash restores shield value equal to 160% of damage dealt.",
-          "grants": []
-        }
+      [
+        "base",
+        "Tilaya swings her greatsword 8 times, hitting enemies within a 2-tile arc in front.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Arc, Single target"
-        ]
+      [
+        "base",
+        "Each swing deals 60% (ATK-based) damage tiwce.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Max HP",
-        "Shield"
+      [
+        "base",
+        "While casting this skill, Tilaya reduces her damage taken 70%; every time she takes 4 hits, she performs an additional swing, up to 12 swings total.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.5555555555555556,
-        "Max HP": 0.4444444444444444
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "If no enemies are within range, Tilaya charges toward the nearest enemy and continues casting this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Tilaya's Haste stat does not affect this skill when used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases each swing hit's damage to 65% (ATK-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases each swing hit's damage to 70% (ATK-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases each swing hit's damage to 75% (ATK-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases each swing hit's damage to 80% (ATK-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Tilaya charges briefly and launches a powerful strike on her target, dealing 220% (ATK-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If Vine Ward is active, she restores its shield value by 160% + 15% (SP-based) of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 250% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Tilaya's greatsword resonates with nearby plants, causing her attacks to deal extra damage equal to 6% + 1% (SP-based) of her curent shield value for 10s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This extra damage cannot exceed 200% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When Tilaya casts this skill, the duration of the resonance is extended by 3.5s for each ally within 2 tiles.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra damage to 7% + 1% (SP-based) of Tilaya's current shield value.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra damage to 8% + 1% (SP-based) of Tilaya's current shield value.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra damage to 9% + 1% (SP-based) of Tilaya's current shield value.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increase Vitality by 11 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increase Vitality by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increase Vitality by 19 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "The first time Vine Ward breaks, it instantly recover 120% (HP-based) shield value without triggering its cooldown.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "For subsequent Vine Ward breaks, the shield value recovered after cooldown is increased to 60% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the shield value recovered after Vine Ward's cooldown to 70% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "After Vine Ward remains active for 15s, its bond with nature deepens.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "While active, it increases the max HP by 40% and Phys & Magic DEF by 60% for all allies within 2 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The max HP gained from this effect cannot exceed 80% of Tilaya's initial max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the shield value recovered after Vine Ward's cooldown to 80% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Increases Vine Ward's shield value recover to 15% (HP-based) per second while Tilaya casts her Ultimate.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "6dd3d504ddaba447dbffd7c0abd3ef89eac456976d80878658798963831d2945",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

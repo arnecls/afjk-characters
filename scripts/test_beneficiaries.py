@@ -32,8 +32,8 @@ class BeneficiaryFallbackTests(unittest.TestCase):
     def test_zandrok_gets_primary_beneficiaries(self):
         heroes, matchers, behavior = _full_roster()
         index = gen.build_beneficiaries_index(heroes, matchers, behavior)
-        zandrok = next(h for h in heroes if h.title.startswith("Zandrok"))
-        benefited = index[zandrok.title]
+        zandrok = next(h for h in heroes if h["title"].startswith("Zandrok"))
+        benefited = index[zandrok["title"]]
         self.assertGreaterEqual(len(benefited), gen.FALLBACK_BENEFICIARIES_DISPLAY)
         names = {name for _score, name in benefited}
         self.assertTrue(names)
@@ -41,8 +41,8 @@ class BeneficiaryFallbackTests(unittest.TestCase):
     def test_primary_beneficiaries_unchanged_for_top_buffer(self):
         heroes, matchers, behavior = _full_roster()
         index = gen.build_beneficiaries_index(heroes, matchers, behavior)
-        lyca = next(h for h in heroes if h.title.startswith("Lyca"))
-        benefited = index[lyca.title]
+        lyca = next(h for h in heroes if h["title"].startswith("Lyca"))
+        benefited = index[lyca["title"]]
         self.assertGreater(len(benefited), gen.FALLBACK_BENEFICIARIES_DISPLAY)
         top_scores = sorted((s for s, _n in benefited), reverse=True)
         self.assertGreater(top_scores[0], top_scores[-1])
@@ -53,14 +53,14 @@ class BeneficiaryFallbackTests(unittest.TestCase):
         buffer_b = rs.Hero("BufferB - Test", "Magic")
         weak = rs.Hero("WeakBuff - Test", "Physical")
         receiver = rs.Hero("Receiver - Test", "Physical")
-        receiver.benefit_stats = ["Haste"]
+        receiver["benefit_stats"] = ["Haste"]
 
         for hero, label, numeric, targeting in (
             (buffer_a, "Haste", 50.0, "All units"),
             (buffer_b, "ATK", 50.0, "All units"),
             (weak, "Haste", 10.0, "Area"),
         ):
-            hero.effects = [
+            hero["effects"] = [
                 rs.Effect(
                     "buff",
                     label,
@@ -73,7 +73,7 @@ class BeneficiaryFallbackTests(unittest.TestCase):
 
         heroes = [buffer_a, buffer_b, weak, receiver]
         behavior = {
-            h.title: rs.HeroBehavior(
+            h["title"]: rs.HeroBehavior(
                 movement="moving",
                 movement_note="",
                 casting_speed="average",
@@ -90,9 +90,9 @@ class BeneficiaryFallbackTests(unittest.TestCase):
             )
             for h in heroes
         }
-        matchers = gen._make_enabler_matchers({h.title: "warrior" for h in heroes})
+        matchers = gen._make_enabler_matchers({h["title"]: "warrior" for h in heroes})
         index = gen.build_beneficiaries_index(heroes, matchers, behavior)
-        benefited = index[weak.title]
+        benefited = index[weak["title"]]
         self.assertGreater(len(benefited), 0)
         self.assertLessEqual(len(benefited), gen.FALLBACK_BENEFICIARIES_DISPLAY)
         names = [name for _score, name in benefited]

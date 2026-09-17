@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "florabelle",
   "display_name": "Florabelle",
   "local": {
@@ -456,7 +456,6 @@
         "Area, Multiple targets"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste"
@@ -464,621 +463,203 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "florabelle",
     "display_name": "Florabelle",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Florabelle - Blooming Maiden",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Florabelle summons Spiny when a battle starts.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Spiny inherits 80% + 15% (SP-based) of Florabelle's Max HP, dealing 60% (ATK-based) damage with normal attacks.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Spiny retreats to the pod when defeated, then rejoins the battle after 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Smashy inherits 220% of Florabelle's Max HP, dealing 120% (ATK-based) damage with normal attacks.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Smashy takes 100% extra damage when under control effects.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Florabelle casts the skill to remove all debuffs on Smashy and restore its HP to full, commanding Smashy to smash the target area ground again.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Spiny's normal attack damage to 70% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When all three Bulbsprites are on the battlefield, summoning Smashy will instead trigger a coordinated attack from all Bulbsprites, dealing 400% (ATK-based) damage to all enemies within 3 tiles and knocking them into the air.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Spiny's normal attack damage to 80% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Smashy's normal attack damage to 220% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Florabelle feeds a Bulbsprite with petalplum to transform them into a giant for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Giant Bulbsprites will gain an extra 60 + 6 (SP-based) Haste and 60 Life Drain.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When multiple Bulbsprites are on the field, this skill targets them in the order of Smashy, Swifty, and Spiny.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases Life Drain in giant form to 80.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases Life Drain in giant form to 100.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the duration of the giant form to 10s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Florabelle summons Swifty in the back.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Swifty has a 6-tile attack range, inherits 45% of Florabelle's Max HP, and deals 80% (ATK-based) + 10% (SP-based) damage with normal attacks.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Casting this skill while Swifty is already on the battlefield initiates Swifty's Rapid Fire, unleashing 8 arrows at random targets, each dealing 70% (ATK-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Swifty cannot be summoned again for the next 8s after being defeated.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Swifty's normal attack damage to 95% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of each arrow to 88% (ATK-based) when Swifty casts Rapid Fire.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Swifty's normal attack damage to 110% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Florabelle increases her ATK by 10% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 4% ATK when at least 2 of her summons are on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Florabelle increases her ATK by 14% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 6% ATK when at least 2 of her summons are on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Florabelle increases her ATK by 18% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 8% ATK when at least 2 of her summons are on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Grants a Natural Blessing to allied summons upon their entrance to the battlefield, providing them with a permanent shield capable of absorbing damage equal to 280% of Florabelle's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Boosts the shield granted by this skill to 330% of Florabelle's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Feeds the allied summon with the highest ATK with an unripe petalplum when Florabelle casts Overgrowth.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "This transforms the summon into a giant, increasing their Haste by 27 and Life Drain by 32.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Boosts the shield granted by this skill to 350% of Florabelle's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Allied Bulbsprites in their giant form are immune to control effects.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Florabelle summons Spiny when a battle starts.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Pounding Blow": "Ultimate",
-        "Overgrowth": "Skill1",
-        "Tiny Sharpshooter": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Protective Blessing": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 400.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Florabelle summons Spiny when a battle starts.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 66.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Owned summons",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Florabelle summons Swifty in the back with a 6-tile attack range and normal attacks.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "Mythic+",
-              "targeting": "All summons",
-              "numeric": 350.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "EX+10",
-              "targeting": "Owned summons",
-              "numeric": 27.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "EX+10",
-              "targeting": "Owned summons",
-              "numeric": 32.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Immune",
-              "tier": "Supreme+",
-              "targeting": "Owned summons",
-              "timing": "Form"
-            }
-          ],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 400.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        }
+      [
+        "base",
+        "Spiny inherits 80% + 15% (SP-based) of Florabelle's Max HP, dealing 60% (ATK-based) damage with normal attacks.",
+        "Ultimate"
       ],
-      "summon_effects": [
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 66.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Owned summons",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "Mythic+",
-          "targeting": "All summons",
-          "numeric": 350.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Spiny retreats to the pod when defeated, then rejoins the battle after 10s.",
+        "Ultimate"
       ],
-      "cc_immunities": [
-        {
-          "immunity_type": "Immune",
-          "tier": "Supreme+",
-          "targeting": "Owned summons",
-          "timing": "Form"
-        }
+      [
+        "base",
+        "Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Florabelle summons Spiny when a battle starts.",
-          "grants": []
-        }
+      [
+        "base",
+        "Smashy inherits 220% of Florabelle's Max HP, dealing 120% (ATK-based) damage with normal attacks.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Multiple targets"
-        ]
+      [
+        "base",
+        "Smashy takes 100% extra damage when under control effects.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste"
+      [
+        "base",
+        "Florabelle casts the skill to remove all debuffs on Smashy and restore its HP to full, commanding Smashy to smash the target area ground again.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases Spiny's normal attack damage to 70% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When all three Bulbsprites are on the battlefield, summoning Smashy will instead trigger a coordinated attack from all Bulbsprites, dealing 400% (ATK-based) damage to all enemies within 3 tiles and knocking them into the air.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Spiny's normal attack damage to 80% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Smashy's normal attack damage to 220% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Florabelle feeds a Bulbsprite with petalplum to transform them into a giant for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Giant Bulbsprites will gain an extra 60 + 6 (SP-based) Haste and 60 Life Drain.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When multiple Bulbsprites are on the field, this skill targets them in the order of Smashy, Swifty, and Spiny.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases Life Drain in giant form to 80.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases Life Drain in giant form to 100.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the duration of the giant form to 10s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Florabelle summons Swifty in the back.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Swifty has a 6-tile attack range, inherits 45% of Florabelle's Max HP, and deals 80% (ATK-based) + 10% (SP-based) damage with normal attacks.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Casting this skill while Swifty is already on the battlefield initiates Swifty's Rapid Fire, unleashing 8 arrows at random targets, each dealing 70% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Swifty cannot be summoned again for the next 8s after being defeated.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Swifty's normal attack damage to 95% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow to 88% (ATK-based) when Swifty casts Rapid Fire.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Swifty's normal attack damage to 110% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Florabelle increases her ATK by 10% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 4% ATK when at least 2 of her summons are on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Florabelle increases her ATK by 14% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 6% ATK when at least 2 of her summons are on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Florabelle increases her ATK by 18% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 8% ATK when at least 2 of her summons are on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Grants a Natural Blessing to allied summons upon their entrance to the battlefield, providing them with a permanent shield capable of absorbing damage equal to 280% of Florabelle's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Boosts the shield granted by this skill to 330% of Florabelle's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Feeds the allied summon with the highest ATK with an unripe petalplum when Florabelle casts Overgrowth.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "This transforms the summon into a giant, increasing their Haste by 27 and Life Drain by 32.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Boosts the shield granted by this skill to 350% of Florabelle's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Allied Bulbsprites in their giant form are immune to control effects.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "f0232e0bb5aa6063c10f98a3995cc3a1dae1e76d4fc4c87f28af664ea2db64aa",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "harak",
   "display_name": "Harak",
   "local": {
@@ -509,7 +509,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "max_hp",
@@ -519,777 +518,178 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "harak",
     "display_name": "Harak",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Harak - Deepsea Ravager",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Harak launches a vicious assault, striking an enemy 10 times, each dealing 60% (ATK-based) + 10% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each strike also deals extra damage equal to 6% of the enemy's lost HP, up to 120% of Harak's own ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The final strike deals 200% (ATK-based) + 20% (SP-based) damage and knocks the enemy down.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While casting this skill, Harak remains Unaffected and prevents the enemy from recovering HP for 6s, causing them to lose 40% (ATK-based) HP per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive strike to 70% (ATK-based) + 10% (SP-based), And the damage of the final strike to 210% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive strike to 80% (ATK-based) + 10% (SP-based), And the damage of the final strike to 220% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive strike to 90% (ATK-based) + 10% (SP-based), And the damage of the final strike to 230% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive strike to 100% (ATK-based) + 10% (SP-based), And the damage of the final strike to 240% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 230% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 240% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 250% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Harak enters feast mode when a battle starts, increasing Crit by 35 + 6 (SP-based) and Haste by 50 for 12s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Assissting and defeating a unit resets the duration of feast mode.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "During this time, he is Unaffected.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Harak cannot devour an enemy whose HP exceeds 200% (ATK-based) of his own ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Crit granted by feast mode to 40 + 6 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Crit granted by feast mode to 45 + 6 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Crit granted by feast mode to 50 + 6 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Harak increases Life Drain by 8 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Each time he assists or defeats an enemy, he gains an extra 1 Life Drain, up to a maximum of 4.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Harak increases Life Drain by 10 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Each time he assists or defeats an enemy, he gains an extra 2 Life Drain, up to a maximum of 8.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Harak increases Life Drain by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Each time he assists or defeats an enemy, he gains an extra 3 Life Drain, up to a maximum of 12.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Upon assisting or defeating a unit, Harak gains 60% of their ATK and 60% of their max HP, up to 220% of his base ATK and 220% of his max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Gains up to 240% of his base ATK and 240% of his max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Gains up to 260% of his base ATK and 260% of his max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Recovers HP when assisting or defeating a unit, with the recovery amount equal to 50% of the defeated unit's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Harak launches a vicious assault, striking an enemy 10 times, each dealing 60% (ATK-based) + 10% (SP-based) damage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Vicious Bite": "Ultimate",
-        "Tidal Assault": "Skill1",
-        "Flesh Feast": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Ravenous Digestion": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 260.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 6.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 6.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Instant defeat",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Boss encounter",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Execution",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 700.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 260.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 6.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 6.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Execution",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "EX+15",
-          "targeting": "Self",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 700.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Each strike also deals extra damage equal to 6% of the enemy's lost HP, up to 120% of Harak's own ATK.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "The final strike deals 200% (ATK-based) + 20% (SP-based) damage and knocks the enemy down.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Instant defeat",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Boss encounter",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle.",
-          "grants": []
-        }
+      [
+        "base",
+        "While casting this skill, Harak remains Unaffected and prevents the enemy from recovering HP for 6s, causing them to lose 40% (ATK-based) HP per second.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases the damage of each successive strike to 70% (ATK-based) + 10% (SP-based), And the damage of the final strike to 210% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "HP loss": 9.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Max HP",
-        "Crit",
-        "Energy"
+      [
+        "base",
+        "Increases the damage of each successive strike to 80% (ATK-based) + 10% (SP-based), And the damage of the final strike to 220% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage of each successive strike to 90% (ATK-based) + 10% (SP-based), And the damage of the final strike to 230% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each successive strike to 100% (ATK-based) + 10% (SP-based), And the damage of the final strike to 240% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 250% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Harak enters feast mode when a battle starts, increasing Crit by 35 + 6 (SP-based) and Haste by 50 for 12s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Assissting and defeating a unit resets the duration of feast mode.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "During this time, he is Unaffected.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Harak cannot devour an enemy whose HP exceeds 200% (ATK-based) of his own ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Crit granted by feast mode to 40 + 6 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Crit granted by feast mode to 45 + 6 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Crit granted by feast mode to 50 + 6 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Harak increases Life Drain by 8 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time he assists or defeats an enemy, he gains an extra 1 Life Drain, up to a maximum of 4.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Harak increases Life Drain by 10 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time he assists or defeats an enemy, he gains an extra 2 Life Drain, up to a maximum of 8.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Harak increases Life Drain by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time he assists or defeats an enemy, he gains an extra 3 Life Drain, up to a maximum of 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Upon assisting or defeating a unit, Harak gains 60% of their ATK and 60% of their max HP, up to 220% of his base ATK and 220% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains up to 240% of his base ATK and 240% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Gains up to 260% of his base ATK and 260% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Recovers HP when assisting or defeating a unit, with the recovery amount equal to 50% of the defeated unit's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "31760791655f9b59ce8887717e71e348605903a4ef21bf7abcf77848c554cd06",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

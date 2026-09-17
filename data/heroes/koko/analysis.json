@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "koko",
   "display_name": "Koko",
   "local": {
@@ -516,7 +516,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "shield",
@@ -526,750 +525,153 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "koko",
     "display_name": "Koko",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Koko - Wild Child",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Koko inspires herself and all allies, granting them a 45% DMG Reduction for 12s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After the duration of Full Energy ends, the recorded damage will be dealt as true damage to all allies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When the skill takes effect, allies gain 30 + 3 (SP-based) Life Drain and 10% ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While active, the effect cannot be dispelled and prevents Koko from recasting the skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases the DMG Reduction effect to 50%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases the DMG Reduction effect to 55%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases gained Life Drain to 35 + 3 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases gained Life Drain to 40 + 3 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Koko feeds the weakest ally, healing them by 230% (ATK-based) + 20% (SP-based) HP and granting them 10% ATK for 5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Koko also feeds Patto to recover 350% (ATK-based) HP every 15s, increasing 20 Energy on Hit for 7s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Recovers 240% (ATK-based) + 20% (SP-based) HP for all allies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Recovers 250% (ATK-based) + 20% (SP-based) HP for all allies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Recovers 260% (ATK-based) + 20% (SP-based) HP for all allies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Koko throws a mighty spear at the target, dealing 210% (ATK-based) + 15% (SP-based) damage and increasing their damage taken by 10% in the next 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "If there's an enemy within her adjacent tiles, Patto will smash the ground, dealing 210% (ATK-based) + 15% (SP-based) damage to adjacent enemies and stunning them for 3s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effects can only be triggered once every 8s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Increases damage to 220% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: Increases damage to 230% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Increases damage to 240% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increase Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increase Haste by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increase Haste by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "After the damage recorded in Full Energy has been settled, all allies gain a shield for 7s that can absorb damage equal to 15% of the total damage dealt by allies affected by Full Energy when it's active.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Increases the shield value to 20%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Removes all allied heroes' control effects when casting Full Energy, gaining 20 Resilience when the skill takes effect.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Gains 30 Resilience when the skill takes effect.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Increases the target's Vitality by 25 for 6s after Koko feeds them using Fulfilling Feast.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Koko inspires herself and all allies, granting them a 45% DMG Reduction for 12s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Full Energy": "Ultimate",
-        "Fulfilling Feast": "Skill1",
-        "Patto, smash!": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Fluffy Shield": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 12.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 350.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Vitality",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 350.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 255.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Resilience",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Resilience",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Dispel debuffs",
-              "tier": "EX+10",
-              "targeting": "All units",
-              "qualitative": "Removes all allied heroes' control effects when casting Full Energy.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Vitality",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "skill_cast"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 12.0,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 350.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Vitality",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 350.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "skill_cast"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 255.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "Mythic+",
-          "targeting": "All units",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Resilience",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "After the duration of Full Energy ends, the recorded damage will be dealt as true damage to all allies.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Dispel debuffs",
-          "tier": "EX+10",
-          "targeting": "All units",
-          "qualitative": "Removes all allied heroes' control effects when casting Full Energy.",
-          "grants": []
-        }
+      [
+        "base",
+        "When the skill takes effect, allies gain 30 + 3 (SP-based) Life Drain and 10% ATK.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ]
+      [
+        "base",
+        "While active, the effect cannot be dispelled and prevents Koko from recasting the skill.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Shield",
-        "Resilience",
-        "Energy"
+      [
+        "base",
+        "Unlocks at level 51: Increases the DMG Reduction effect to 50%.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 4,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 111: Increases the DMG Reduction effect to 55%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases gained Life Drain to 35 + 3 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases gained Life Drain to 40 + 3 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Koko feeds the weakest ally, healing them by 230% (ATK-based) + 20% (SP-based) HP and granting them 10% ATK for 5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Koko also feeds Patto to recover 350% (ATK-based) HP every 15s, increasing 20 Energy on Hit for 7s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Recovers 240% (ATK-based) + 20% (SP-based) HP for all allies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Recovers 250% (ATK-based) + 20% (SP-based) HP for all allies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Recovers 260% (ATK-based) + 20% (SP-based) HP for all allies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Koko throws a mighty spear at the target, dealing 210% (ATK-based) + 15% (SP-based) damage and increasing their damage taken by 10% in the next 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If there's an enemy within her adjacent tiles, Patto will smash the ground, dealing 210% (ATK-based) + 15% (SP-based) damage to adjacent enemies and stunning them for 3s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effects can only be triggered once every 8s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Increases damage to 220% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Increases damage to 230% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Increases damage to 240% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increase Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increase Haste by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increase Haste by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "After the damage recorded in Full Energy has been settled, all allies gain a shield for 7s that can absorb damage equal to 15% of the total damage dealt by allies affected by Full Energy when it's active.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Increases the shield value to 20%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Removes all allied heroes' control effects when casting Full Energy, gaining 20 Resilience when the skill takes effect.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Gains 30 Resilience when the skill takes effect.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Increases the target's Vitality by 25 for 6s after Koko feeds them using Fulfilling Feast.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "ec878f4d7d9ec19a138ab6f28724cab6eae0fe64441543cb69cb022d5d8561cc",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

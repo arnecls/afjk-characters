@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "thoran",
   "display_name": "Thoran",
   "local": {
@@ -417,6 +417,40 @@
             "value": [
               {
                 "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
                 "value": 35.0
               }
             ]
@@ -505,7 +539,6 @@
         "Multiple targets, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "max_hp",
       "energy"
@@ -514,755 +547,168 @@
       "atk": 0.6666666666666666,
       "max_hp": 0.3333333333333333
     },
-    "behavior": {},
     "id": "thoran",
     "display_name": "Thoran",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Thoran - Fallen King",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Thoran charges up for a moment to slash at enemies within range, dealing 200% (ATK-based) + 20% (SP-based) damage plus 180% (ATK-based) of the damage received during the charge.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He also gains 20% Life Drain.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Thoran is Unaffected while casting this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases additional damage to 200% (ATK-based) of the damage received during the charge.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Thoran's soul will complete the slash if this skill is interrupted.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases additional damage to 220% (ATK-based) of the damage received during the charge.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases additional damage to 240% (ATK-based) of the damage received during the charge.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Thoran targets the non-soul-plundered enemy with the highest HP and drains 18% + 1.5% (SP-based) of the target's current HP to increase his max HP by the same amount.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He also causes this target to receive 13% more damage for the rest of the battle.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Drained HP limit: 600% (ATK-based) of Thoran's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Increases drained HP to 20% + 1.5% (SP-based) of the enemy's current HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Increases the enemy's received damage to 16% for the rest of the battle.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Increases the enemy's received damage to 17% for the rest of the battle.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Enhancement: Thoran's Ultimate drains an additional 20% of the current HP from all enemies affected by Soul Plunder to increase his max HP by the same amount.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Thoran will resurrect with 40% (HP-based) + 4% (SP-based) HP restored after a short time when defeated.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect can be triggered once per battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Thoran can revive himself with 50% (HP-based) + 4% (SP-based) HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: Thoran can revive himself with 60% (HP-based) + 4% (SP-based) HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Gains 500 Energy when the skill is triggered.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Thoran's normal attacks and skills increase his Energy Recovery by 24%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "His Energy Recovery is increased by an extra 6% when Resurrection is not triggered.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Energy Recovery to 32%; additional increase when Resurrection is not triggered to 8%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Energy Recovery to 40%; additional increase when Resurrection is not triggered to 10%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "After that, Thoran no longer takes damage for this ally.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "25% of the damage dealt by this ally heals Thoran when the pact exists.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases the healing amount that Thoran receives from the ally's damage dealt to 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the healing amount that Thoran receives from the ally's damage dealt to 35%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Thoran drains another 20% of the current HP from all enemies affected by Soul Plunder when casting Soul Retaliation, increasing his max HP by the same amount.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Thoran charges up for a moment to slash at enemies within range, dealing 200% (ATK-based) + 20% (SP-based) damage plus 180% (ATK-based) of the damage received during the charge.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Soul Retaliation": "Ultimate",
-        "Soul Plunder": "Skill1",
-        "Resurrection": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Soul Pact": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 240.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 240.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 17.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "on_defeat"
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "on_defeat"
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Cheat death",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "Thoran will resurrect with 60% (HP-based) + 4% HP restored after a short time when defeated.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "skill_cast"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "EX+5",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 35.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Ally positioning link",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Cheat death",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "Supreme+",
-              "targeting": "Multiple targets",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 240.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 17.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "on_defeat"
-            },
-            {
-              "type": "duration_gate",
-              "gate": "once_per_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 500.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "on_defeat"
-            },
-            {
-              "type": "duration_gate",
-              "gate": "once_per_battle"
-            },
-            {
-              "type": "trigger_condition",
-              "trigger": "skill_cast"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "EX+5",
-          "targeting": "Self",
-          "numeric": 35.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "He also gains 20% Life Drain.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Thoran is Unaffected while casting this skill.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Cheat death",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "Thoran will resurrect with 60% (HP-based) + 4% HP restored after a short time when defeated.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally positioning link",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Cheat death",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
-          "grants": []
-        }
+      [
+        "base",
+        "Unlocks at level 51: Increases additional damage to 200% (ATK-based) of the damage received during the charge.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ],
-        [
-          "HP loss",
-          "Multiple targets, Single target"
-        ]
+      [
+        "base",
+        "Unlocks at level 111: Thoran's soul will complete the slash if this skill is interrupted.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Max HP",
-        "Energy"
+      [
+        "base",
+        "Unlocks at level 171: Increases additional damage to 220% (ATK-based) of the damage received during the charge.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.6666666666666666,
-        "Max HP": 0.3333333333333333
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 231: Increases additional damage to 240% (ATK-based) of the damage received during the charge.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Thoran targets the non-soul-plundered enemy with the highest HP and drains 18% + 1.5% (SP-based) of the target's current HP to increase his max HP by the same amount.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He also causes this target to receive 13% more damage for the rest of the battle.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Drained HP limit: 600% (ATK-based) of Thoran's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Increases drained HP to 20% + 1.5% (SP-based) of the enemy's current HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Increases the enemy's received damage to 16% for the rest of the battle.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increases the enemy's received damage to 17% for the rest of the battle.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Enhancement: Thoran's Ultimate drains an additional 20% of the current HP from all enemies affected by Soul Plunder to increase his max HP by the same amount.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Thoran will resurrect with 40% (HP-based) + 4% (SP-based) HP restored after a short time when defeated.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can be triggered once per battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Thoran can revive himself with 50% (HP-based) + 4% (SP-based) HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Thoran can revive himself with 60% (HP-based) + 4% (SP-based) HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Gains 500 Energy when the skill is triggered.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Thoran's normal attacks and skills increase his Energy Recovery by 24%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Energy Recovery is increased by an extra 6% when Resurrection is not triggered.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Energy Recovery to 32%; additional increase when Resurrection is not triggered to 8%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Energy Recovery to 40%; additional increase when Resurrection is not triggered to 10%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "After that, Thoran no longer takes damage for this ally.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "25% of the damage dealt by this ally heals Thoran when the pact exists.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the healing amount that Thoran receives from the ally's damage dealt to 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the healing amount that Thoran receives from the ally's damage dealt to 35%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Thoran drains another 20% of the current HP from all enemies affected by Soul Plunder when casting Soul Retaliation, increasing his max HP by the same amount.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "6354f0a9c3124ccb881ac1a70b72e135595b91876f2d86e9843f65459f6fccff",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "carolina",
   "display_name": "Carolina",
   "local": {
@@ -420,586 +420,164 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "crit"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "carolina",
     "display_name": "Carolina",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Carolina - Candlelight Specter",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Carolina selects an enemy after charging up briefly, dealing 240% (ATK-based) + 20% (SP-based) damage to the target and freezing them for 6s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Then, she creates an arctic field that inflicts Frostbite on the targed and enemies within 2 tiles every 2s, Carolina prioritizes selecting the target with the most enemies in their surrounding 2 tiles, and each stack of Frostbite reduces the target's Haste by 15 for 6s, up to 3 stacks.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases damage to 260% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases frozen duration to 8s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 270% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases damage to 280% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Carolina deals 155% (ATK-based) + 15% (SP-based) damage to a target and adjacent enemies and inflicts a Frostbite stack.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Increases damage to 165% (ATK-based) + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Increases damage to 175% (ATK-based) + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Increases damage to 185% (ATK-based) + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Carolina surrounds herself with 4 snowballs and automatically shoots a snowball to attack enemies every 3s, dealing 130% (ATK-based) + 10% (SP-based) damage to the targets under control effects.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each enemy can be attacked by a snowball every 2.5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Carolina creates more snowballs when they are all used up.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Increases damage to 140% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: Increases damage to 150% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Reduces each snowball attack on each enemy to 1.5s.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Carolina increases her Crit by 14 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 18 Crit after casting Snowball Witchery 5 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Carolina increases her Crit by 19 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 24 Crit after casting Snowball Witchery 5 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Carolina increases her Crit by 24 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 30 Crit after casting Snowball Witchery 5 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Carolina permanently increases the snowballs' damage by 10% with each cast of Snowball Witchery, up to 7 times.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Starting from the third cast, Carolina deals AoE damage to adjacent tiles with newly produced snowballs and reduces enemies' Magic DEF by 15% for 6s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Uses a snowball to attack the same controlled enemy hit by Carolina's normal attacks.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Increases the Magic DEF reduction to 25%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Increases the Magic DEF reduction to 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Carolina inflicts Frostbite when dealing damage with Snowball Witchery.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Carolina selects an enemy after charging up briefly, dealing 240% (ATK-based) + 20% (SP-based) damage to the target and freezing them for 6s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Frozen Grave": "Ultimate",
-        "Freezing Nova": "Skill1",
-        "Snowball Witchery": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Ice Vortex": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 8.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 3,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "base",
-              "targeting": "Area",
-              "qualitative": "Then, she creates an arctic field that inflicts Frostbite on the targed and enemies within 2 tiles every 2s, Carolina prioritizes selecting the target with the most enemies in their surrounding 2 tiles, and each stack of Frostbite reduces the target's Haste by 15 for 6s, up to 3 stacks.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "CC on enemies",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Carolina surrounds herself with 4 snowballs and automatically shoots a snowball to attack enemies every 3s, dealing 130% (ATK-based) + 10% damage to the targets under control effects.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 160.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 8.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 3,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Then, she creates an arctic field that inflicts Frostbite on the targed and enemies within 2 tiles every 2s, Carolina prioritizes selecting the target with the most enemies in their surrounding 2 tiles, and each stack of Frostbite reduces the target's Haste by 15 for 6s, up to 3 stacks.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "base",
-          "targeting": "Area",
-          "qualitative": "Then, she creates an arctic field that inflicts Frostbite on the targed and enemies within 2 tiles every 2s, Carolina prioritizes selecting the target with the most enemies in their surrounding 2 tiles, and each stack of Frostbite reduces the target's Haste by 15 for 6s, up to 3 stacks.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "CC on enemies",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "Carolina surrounds herself with 4 snowballs and automatically shoots a snowball to attack enemies every 3s, dealing 130% (ATK-based) + 10% damage to the targets under control effects.",
-          "grants": []
-        }
+      [
+        "base",
+        "Unlocks at level 51: Increases damage to 260% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "Unlocks at level 111: Increases frozen duration to 8s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Crit"
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 270% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 4,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 231: Increases damage to 280% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Carolina deals 155% (ATK-based) + 15% (SP-based) damage to a target and adjacent enemies and inflicts a Frostbite stack.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Increases damage to 165% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Increases damage to 175% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increases damage to 185% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Carolina surrounds herself with 4 snowballs and automatically shoots a snowball to attack enemies every 3s, dealing 130% (ATK-based) + 10% (SP-based) damage to the targets under control effects.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each enemy can be attacked by a snowball every 2.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Carolina creates more snowballs when they are all used up.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Increases damage to 140% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Increases damage to 150% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Reduces each snowball attack on each enemy to 1.5s.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Carolina increases her Crit by 14 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 18 Crit after casting Snowball Witchery 5 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Carolina increases her Crit by 19 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 24 Crit after casting Snowball Witchery 5 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Carolina increases her Crit by 24 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 30 Crit after casting Snowball Witchery 5 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Carolina permanently increases the snowballs' damage by 10% with each cast of Snowball Witchery, up to 7 times.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Starting from the third cast, Carolina deals AoE damage to adjacent tiles with newly produced snowballs and reduces enemies' Magic DEF by 15% for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Uses a snowball to attack the same controlled enemy hit by Carolina's normal attacks.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Increases the Magic DEF reduction to 25%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Increases the Magic DEF reduction to 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Carolina inflicts Frostbite when dealing damage with Snowball Witchery.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "5b19b882653cacee55c20dad0645bd3b6e9095aab495c45871f31bc7529b4974",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -86,7 +86,7 @@ class RoundTripTests(unittest.TestCase):
 
     def _round_trip(self, prefix: str):
         hero, data = self._hero_by_title_prefix(prefix)
-        record = next(h for h in data["heroes"] if h["title"] == hero.title)
+        record = next(h for h in data["heroes"] if h["title"] == hero["title"])
         serialized = hs.serialize_processed_hero(
             hero,
             record,
@@ -107,21 +107,21 @@ class RoundTripTests(unittest.TestCase):
             },
         )
         restored = hs.deserialize_hero(
-            hero.title, serialized, hero.damage_type or "Physical"
+            hero["title"], serialized, hero["damage_type"] or "Physical"
         )
         rs.assign_magnitudes([restored])
         return hero, restored
 
     def test_aliceth_effect_labels_preserved(self):
         before, after = self._round_trip("Aliceth")
-        before_keys = {(e.category, e.label) for e in before.effects}
-        after_keys = {(e.category, e.label) for e in after.effects}
+        before_keys = {(e["category"], e["label"]) for e in before["effects"]}
+        after_keys = {(e["category"], e["label"]) for e in after["effects"]}
         self.assertEqual(before_keys, after_keys)
 
     def test_round_trip_summary_parity(self):
         for prefix in ("Aliceth",):
             before, after = self._round_trip(prefix)
-            short = gen.short_name(before.title)
+            short = gen.short_name(before["title"])
             self.assertEqual(
                 rs.format_summary(before, short).strip(),
                 rs.format_summary(after, short).strip(),
@@ -153,22 +153,22 @@ class RoundTripTests(unittest.TestCase):
     def test_targeting_label_round_trip(self):
         for prefix in ("Alna", "Athalia", "Carolina", "Gerda", "Gunnar"):
             hero, _data = self._hero_by_title_prefix(prefix)
-            for _section, slice_ in hero.skill_slices.items():
-                for eff in slice_.effects:
+            for _section, slice_ in hero["skill_slices"].items():
+                for eff in slice_["effects"]:
                     schema_eff = hs.effect_to_schema(eff)
                     restored = hs.schema_effect_to_effect(schema_eff)
                     self.assertEqual(
-                        restored.targeting,
-                        eff.targeting,
-                        f"{prefix} / {_section} / {eff.label}",
+                        restored["targeting"],
+                        eff["targeting"],
+                        f"{prefix} / {_section} / {eff["label"]}",
                     )
 
     def test_dionel_untargetable_immunity(self):
         hero, _data = self._hero_by_title_prefix("Dionel")
         section = rs.CATEGORY_TO_SECTION["ultimate"]
         imms = [
-            (i.immunity_type, i.targeting)
-            for i in hero.skill_slices[section].cc_immunities
+            (i["immunity_type"], i["targeting"])
+            for i in hero["skill_slices"][section]["cc_immunities"]
         ]
         self.assertIn(("Untargetable", "Self"), imms)
 
@@ -179,15 +179,15 @@ class RoundTripTests(unittest.TestCase):
             rs.CcImmunity("Steadfast", "Mythic+", "Self", "Permanent"),
         ]
         merged = rs._merge_cc_immunity_records(records)
-        by_tgt = {(i.immunity_type, i.targeting): i for i in merged}
+        by_tgt = {(i["immunity_type"], i["targeting"]): i for i in merged}
         self.assertEqual(len(merged), 2)
         self.assertIn(("Steadfast", "Self"), by_tgt)
         self.assertIn(("Steadfast", "Single target"), by_tgt)
         # Earliest unlock tier wins; stronger timing preferred.
-        self.assertEqual(by_tgt[("Steadfast", "Self")].tier, "base")
-        self.assertEqual(by_tgt[("Steadfast", "Self")].timing, "Permanent")
+        self.assertEqual(by_tgt[("Steadfast", "Self")]["tier"], "base")
+        self.assertEqual(by_tgt[("Steadfast", "Self")]["timing"], "Permanent")
         self.assertEqual(
-            by_tgt[("Steadfast", "Single target")].timing, "Conditional"
+            by_tgt[("Steadfast", "Single target")]["timing"], "Conditional"
         )
 
     def test_merge_immunities_schema_keeps_distinct_targeting(self):
@@ -197,15 +197,15 @@ class RoundTripTests(unittest.TestCase):
             rs.CcImmunity("Unaffected", "base", "Self", "On ultimate"),
         ]
         merged = hs._merge_immunities(records)
-        pairs = {(i.immunity_type, i.targeting) for i in merged}
+        pairs = {(i["immunity_type"], i["targeting"]) for i in merged}
         self.assertEqual(pairs, {("Unaffected", "Self"), ("Unaffected", "Single target")})
 
     def test_antandra_shield_assault_unaffected_self(self):
         hero, _data = self._hero_by_title_prefix("Antandra")
         section = rs.CATEGORY_TO_SECTION["ultimate"]
         imms = [
-            (i.immunity_type, i.targeting)
-            for i in hero.skill_slices[section].cc_immunities
+            (i["immunity_type"], i["targeting"])
+            for i in hero["skill_slices"][section]["cc_immunities"]
         ]
         self.assertIn(("Unaffected", "Self"), imms)
 
@@ -214,11 +214,11 @@ class RoundTripTests(unittest.TestCase):
         ult = rs.CATEGORY_TO_SECTION["ultimate"]
         bond = rs.CATEGORY_TO_SECTION["skill1"]
         ult_imms = [
-            (i.immunity_type, i.targeting)
-            for i in hero.skill_slices[ult].cc_immunities
+            (i["immunity_type"], i["targeting"])
+            for i in hero["skill_slices"][ult]["cc_immunities"]
         ]
         bond_imms = [
-            i.immunity_type for i in hero.skill_slices[bond].cc_immunities
+            i["immunity_type"] for i in hero["skill_slices"][bond]["cc_immunities"]
         ]
         self.assertIn(("Unaffected", "Multiple targets"), ult_imms)
         self.assertNotIn("Unaffected", bond_imms)
@@ -227,9 +227,9 @@ class RoundTripTests(unittest.TestCase):
         hero, _data = self._hero_by_title_prefix("Nerion")
         section = rs.CATEGORY_TO_SECTION["skill1"]
         ccs = {
-            (e.label, e.targeting)
-            for e in hero.skill_slices[section].effects
-            if e.category == "cc"
+            (e["label"], e["targeting"])
+            for e in hero["skill_slices"][section]["effects"]
+            if e["category"] == "cc"
         }
         self.assertIn(("Knock back", "Single target"), ccs)
         self.assertIn(("Stun", "Single target"), ccs)
@@ -237,12 +237,12 @@ class RoundTripTests(unittest.TestCase):
     def test_alna_shared_resolve_ally_buffs_no_spurious_max_hp_debuff(self):
         hero, _data = self._hero_by_title_prefix("Alna")
         section = rs.CATEGORY_TO_SECTION["skill1"]
-        sl = hero.skill_slices[section]
-        labels = {(e.category, e.label, e.targeting) for e in sl.effects}
+        sl = hero["skill_slices"][section]
+        labels = {(e["category"], e["label"], e["targeting"]) for e in sl["effects"]}
         empower = [
             se
-            for se in sl.special_effects
-            if se.kind == "provides" and se.label == "Ally empower"
+            for se in sl["special_effects"]
+            if se["kind"] == "provides" and se["label"] == "Ally empower"
         ]
         self.assertTrue(empower)
         self.assertIn(("buff", "Max HP", "Single target"), labels)
@@ -252,76 +252,76 @@ class RoundTripTests(unittest.TestCase):
         hero, _data = self._hero_by_title_prefix("Antandra")
         section = rs.CATEGORY_TO_SECTION["skill4"]
         dmg_taken = [
-            e for e in hero.skill_slices[section].effects
-            if e.label == "Damage taken"
+            e for e in hero["skill_slices"][section]["effects"]
+            if e["label"] == "Damage taken"
         ]
         self.assertTrue(dmg_taken)
-        self.assertEqual(dmg_taken[0].targeting, "Single target")
+        self.assertEqual(dmg_taken[0]["targeting"], "Single target")
 
     def test_antandra_enhance_force_phys_def_self(self):
         hero, _data = self._hero_by_title_prefix("Antandra")
         section = rs.CATEGORY_TO_SECTION["skill5"]
         phys_def = [
-            e for e in hero.skill_slices[section].effects
-            if e.label == "Phys DEF"
+            e for e in hero["skill_slices"][section]["effects"]
+            if e["label"] == "Phys DEF"
         ]
         self.assertTrue(phys_def)
-        self.assertEqual(phys_def[0].targeting, "Self")
+        self.assertEqual(phys_def[0]["targeting"], "Self")
 
     def test_rhys_defensive_stance_self_buffs(self):
         hero, _data = self._hero_by_title_prefix("Rhys")
         section = rs.CATEGORY_TO_SECTION["skill1"]
-        sl = hero.skill_slices[section]
-        crit = [e for e in sl.effects if e.label == "Crit"]
+        sl = hero["skill_slices"][section]
+        crit = [e for e in sl["effects"] if e["label"] == "Crit"]
         self.assertTrue(crit)
-        self.assertEqual(crit[0].targeting, "Self")
-        imms = [(i.immunity_type, i.targeting) for i in sl.cc_immunities]
+        self.assertEqual(crit[0]["targeting"], "Self")
+        imms = [(i["immunity_type"], i["targeting"]) for i in sl["cc_immunities"]]
         self.assertIn(("Immune", "Self"), imms)
 
     def test_eironn_tempest_guard_dodge_self(self):
         hero, _data = self._hero_by_title_prefix("Eironn")
         section = rs.CATEGORY_TO_SECTION["skill2"]
         dodge = [
-            e for e in hero.skill_slices[section].effects
-            if e.label == "Dodge chance"
+            e for e in hero["skill_slices"][section]["effects"]
+            if e["label"] == "Dodge chance"
         ]
         self.assertTrue(dodge)
-        self.assertEqual(dodge[0].targeting, "Self")
+        self.assertEqual(dodge[0]["targeting"], "Self")
 
     def test_marcille_hero_focus_chant_haste_self(self):
         hero, _data = self._hero_by_title_prefix("Marcille")
         section = rs.CATEGORY_TO_SECTION["ultimate"]
         haste = [
             e
-            for e in hero.skill_slices[section].effects
-            if e.label == "Haste"
+            for e in hero["skill_slices"][section]["effects"]
+            if e["label"] == "Haste"
         ]
         self.assertTrue(haste)
-        self.assertEqual(haste[0].targeting, "Self")
+        self.assertEqual(haste[0]["targeting"], "Self")
 
     def test_cassadee_hero_focus_no_spurious_tidal_strength(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
         section = rs.CATEGORY_TO_SECTION["skill3"]
-        labels = {e.label for e in hero.skill_slices[section].effects}
+        labels = {e["label"] for e in hero["skill_slices"][section]["effects"]}
         self.assertNotIn("Tidal Strength", labels)
-        haste = [e for e in hero.skill_slices[section].effects if e.label == "Haste"]
+        haste = [e for e in hero["skill_slices"][section]["effects"] if e["label"] == "Haste"]
         self.assertTrue(haste)
-        self.assertTrue(all(e.targeting == "Self" for e in haste))
+        self.assertTrue(all(e["targeting"] == "Self" for e in haste))
 
     def test_cassadee_running_tide_path_knockback_and_supreme_magic_def(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
-        ult = hero.skill_slices["Ultimate"]
-        supreme = hero.skill_slices["Unlocks at Supreme+"]
-        knockback = [e for e in ult.effects if e.category == "cc"]
+        ult = hero["skill_slices"]["Ultimate"]
+        supreme = hero["skill_slices"]["Unlocks at Supreme+"]
+        knockback = [e for e in ult["effects"] if e["category"] == "cc"]
         self.assertTrue(knockback)
-        self.assertEqual(knockback[0].targeting, "Area")
-        self.assertEqual(knockback[0].area, "path")
-        self.assertEqual(knockback[0].area_direction, "selected_target")
+        self.assertEqual(knockback[0]["targeting"], "Area")
+        self.assertEqual(knockback[0]["area"], "path")
+        self.assertEqual(knockback[0]["area_direction"], "selected_target")
         magic_def = [
-            e for e in supreme.effects if e.category == "debuff" and e.label == "Magic DEF"
+            e for e in supreme["effects"] if e["category"] == "debuff" and e["label"] == "Magic DEF"
         ]
         self.assertTrue(magic_def)
-        self.assertEqual(magic_def[0].tier, "Supreme+")
+        self.assertEqual(magic_def[0]["tier"], "Supreme+")
         tags = rs.format_skill_card_tags(hero, "ultimate")
         labels = tag_labels(tags)
         self.assertIn("Magic DEF — path (Supreme+)", labels)
@@ -329,33 +329,33 @@ class RoundTripTests(unittest.TestCase):
 
     def test_cassadee_tidal_strength_magic_damage_blessed_ally(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
-        skill2 = hero.skill_slices["Skill2"]
+        skill2 = hero["skill_slices"]["Skill2"]
         damage = [
             e
-            for e in skill2.effects
-            if e.category == "damage" and e.label == "Magic"
+            for e in skill2["effects"]
+            if e["category"] == "damage" and e["label"] == "Magic"
         ]
         self.assertTrue(damage)
         self.assertNotIn(
             "Tidal Strength",
-            {e.label for e in skill2.effects},
+            {e["label"] for e in skill2["effects"]},
         )
-        base = [e for e in damage if e.tier == "base"]
+        base = [e for e in damage if e["tier"] == "base"]
         self.assertTrue(base)
-        self.assertEqual(base[0].targeting, "Single target")
+        self.assertEqual(base[0]["targeting"], "Single target")
         triggers = [
             c
-            for c in base[0].conditions
+            for c in base[0]["conditions"]
             if c.get("type") == "trigger_condition"
             and c.get("trigger") == "normal_attack"
         ]
         self.assertTrue(triggers)
         bless = [
             se
-            for se in hero.skill_slices["Ex. Skill"].special_effects
-            if se.kind == "provides"
-            and se.label == "Ally blessing"
-            and se.targeting == "All units"
+            for se in hero["skill_slices"]["Ex. Skill"]["special_effects"]
+            if se["kind"] == "provides"
+            and se["label"] == "Ally blessing"
+            and se["targeting"] == "All units"
         ]
         self.assertTrue(bless)
         skill2_tags = rs.format_skill_card_tags(hero, "skill2")
@@ -391,40 +391,40 @@ class RoundTripTests(unittest.TestCase):
 
     def test_cassadee_processed_skill1_effects_preserve_targeting_variants(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
-        skill1 = hero.skill_slices["Skill1"]
-        effects = hs._merge_effects(skill1.effects)
+        skill1 = hero["skill_slices"]["Skill1"]
+        effects = hs._merge_effects(skill1["effects"])
 
         base_stun = [
             e
             for e in effects
-            if e.category == "cc" and e.label == "Stun" and e.tier == "base"
+            if e["category"] == "cc" and e["label"] == "Stun" and e["tier"] == "base"
         ]
         self.assertTrue(base_stun)
-        self.assertEqual(base_stun[0].targeting, "Single target")
+        self.assertEqual(base_stun[0]["targeting"], "Single target")
 
         base_knockup = [
             e
             for e in effects
-            if e.category == "cc" and e.label == "Knock up" and e.tier == "base"
+            if e["category"] == "cc" and e["label"] == "Knock up" and e["tier"] == "base"
         ]
         self.assertTrue(base_knockup)
-        self.assertEqual(base_knockup[0].targeting, "Single target")
+        self.assertEqual(base_knockup[0]["targeting"], "Single target")
 
         ex10_stun = [
             e
             for e in effects
-            if e.category == "cc" and e.label == "Stun" and e.tier == "EX+10"
+            if e["category"] == "cc" and e["label"] == "Stun" and e["tier"] == "EX+10"
         ]
         self.assertTrue(ex10_stun)
-        self.assertEqual(ex10_stun[0].targeting, "Multiple targets")
+        self.assertEqual(ex10_stun[0]["targeting"], "Multiple targets")
 
         ex10_knockup = [
             e
             for e in effects
-            if e.category == "cc" and e.label == "Knock up" and e.tier == "EX+10"
+            if e["category"] == "cc" and e["label"] == "Knock up" and e["tier"] == "EX+10"
         ]
         self.assertTrue(ex10_knockup)
-        self.assertEqual(ex10_knockup[0].targeting, "Multiple targets")
+        self.assertEqual(ex10_knockup[0]["targeting"], "Multiple targets")
 
     def test_cross_skill_enhancement_tags_include_ascension_tier(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
@@ -438,25 +438,25 @@ class RoundTripTests(unittest.TestCase):
 
     def test_zandrok_rallying_roar_wedge_path_damage(self):
         hero, _data = self._hero_by_title_prefix("Zandrok")
-        skill1 = hero.skill_slices["Skill1"]
+        skill1 = hero["skill_slices"]["Skill1"]
         path_damage = [
             e
-            for e in skill1.effects
-            if e.category == "damage" and e.area == "path"
+            for e in skill1["effects"]
+            if e["category"] == "damage" and e["area"] == "path"
         ]
         self.assertEqual(len(path_damage), 1)
-        self.assertEqual(path_damage[0].label, "Physical")
-        self.assertEqual(path_damage[0].area_count, 5)
-        self.assertEqual(path_damage[0].area_direction, "front")
+        self.assertEqual(path_damage[0]["label"], "Physical")
+        self.assertEqual(path_damage[0]["area_count"], 5)
+        self.assertEqual(path_damage[0]["area_direction"], "front")
         active_area = [
             e
-            for e in skill1.effects
-            if e.category == "buff"
-            and e.label in ("Haste", "Lifedrain")
-            and e.targeting == "Area"
+            for e in skill1["effects"]
+            if e["category"] == "buff"
+            and e["label"] in ("Haste", "Lifedrain")
+            and e["targeting"] == "Area"
         ]
         self.assertTrue(active_area)
-        self.assertTrue(all(e.area_count == 2 for e in active_area))
+        self.assertTrue(all(e["area_count"] == 2 for e in active_area))
 
     def test_zandrok_skill5_no_native_supreme_suffix(self):
         hero, _data = self._hero_by_title_prefix("Zandrok")
@@ -464,8 +464,8 @@ class RoundTripTests(unittest.TestCase):
         labels = tag_labels(tags)
         stacking = [
             se
-            for se in hero.skill_slices["Unlocks at Supreme+"].special_effects
-            if se.kind == "provides" and se.label == "Stacking"
+            for se in hero["skill_slices"]["Unlocks at Supreme+"]["special_effects"]
+            if se["kind"] == "provides" and se["label"] == "Stacking"
         ]
         self.assertTrue(stacking)
         self.assertFalse(any("(Supreme+)" in label for label in labels))
@@ -498,27 +498,27 @@ class RoundTripTests(unittest.TestCase):
         self.assertIn("Taunt — Area", labels)
         phys = next(
             e
-            for e in hero.skill_slices["Skill1"].effects
-            if e.category == "debuff" and e.label == "Phys DEF"
+            for e in hero["skill_slices"]["Skill1"]["effects"]
+            if e["category"] == "debuff" and e["label"] == "Phys DEF"
         )
-        self.assertEqual(phys.targeting, "Area")
-        self.assertEqual(phys.area_count, 2)
+        self.assertEqual(phys["targeting"], "Area")
+        self.assertEqual(phys["area_count"], 2)
 
     def test_lucca_skill1_disarm_and_shield(self):
         hero, _data = self._hero_by_title_prefix("Lucca")
-        skill1 = hero.skill_slices["Skill1"]
+        skill1 = hero["skill_slices"]["Skill1"]
         disarm = [
             e
-            for e in skill1.effects
-            if e.category == "cc" and e.label == "Disarm"
+            for e in skill1["effects"]
+            if e["category"] == "cc" and e["label"] == "Disarm"
         ]
         self.assertEqual(len(disarm), 1)
-        self.assertEqual(disarm[0].numeric, 4.0)
-        self.assertEqual(disarm[0].targeting, "Single target")
-        shields = [e for e in skill1.effects if e.label == "Shield"]
+        self.assertEqual(disarm[0]["numeric"], 4.0)
+        self.assertEqual(disarm[0]["targeting"], "Single target")
+        shields = [e for e in skill1["effects"] if e["label"] == "Shield"]
         self.assertEqual(len(shields), 1)
-        self.assertEqual(shields[0].numeric, 340.0)
-        self.assertEqual(shields[0].targeting, "Self")
+        self.assertEqual(shields[0]["numeric"], 340.0)
+        self.assertEqual(shields[0]["targeting"], "Self")
         tags = rs.format_skill_card_tags(hero, "skill1")
         labels = tag_labels(tags)
         self.assertIn("Disarm — Single target", labels)
@@ -583,23 +583,23 @@ class RoundTripTests(unittest.TestCase):
         labels = tag_labels(tags)
         self.assertIn("Bind — Area", labels)
         self.assertNotIn("Bind — Single target", labels)
-        ult = hero.skill_slices["Ultimate"]
+        ult = hero["skill_slices"]["Ultimate"]
         rain_damage = [
             e
-            for e in ult.effects
-            if e.category == "damage"
-            and e.label == "Physical"
-            and e.targeting == "Area"
+            for e in ult["effects"]
+            if e["category"] == "damage"
+            and e["label"] == "Physical"
+            and e["targeting"] == "Area"
         ]
         passive_damage = [
             e
-            for e in ult.effects
-            if e.category == "damage"
-            and e.label == "Physical"
-            and e.targeting == "Single target"
+            for e in ult["effects"]
+            if e["category"] == "damage"
+            and e["label"] == "Physical"
+            and e["targeting"] == "Single target"
         ]
         self.assertEqual(len(rain_damage), 1)
-        self.assertEqual(rain_damage[0].area_count, 2)
+        self.assertEqual(rain_damage[0]["area_count"], 2)
         self.assertEqual(len(passive_damage), 1)
 
     def test_lamentis_ultimate_apostle_cc_is_multiple_targets(self):
@@ -612,20 +612,20 @@ class RoundTripTests(unittest.TestCase):
         self.assertIn("Stun — Multiple targets", labels)
         self.assertIn("Max HP — Multiple targets", labels)
         self.assertNotIn("Stun — All units", labels)
-        ult = hero.skill_slices["Ultimate"]
+        ult = hero["skill_slices"]["Ultimate"]
         magic = [
             e
-            for e in ult.effects
-            if e.category == "damage" and e.label == "Magic"
+            for e in ult["effects"]
+            if e["category"] == "damage" and e["label"] == "Magic"
         ]
         self.assertEqual(len(magic), 1)
-        self.assertEqual(magic[0].targeting, "All units")
+        self.assertEqual(magic[0]["targeting"], "All units")
         apostle_stun = [
             e
-            for e in ult.effects
-            if e.category == "cc" and e.label == "Stun"
+            for e in ult["effects"]
+            if e["category"] == "cc" and e["label"] == "Stun"
         ]
-        self.assertEqual(apostle_stun[0].targeting, "Multiple targets")
+        self.assertEqual(apostle_stun[0]["targeting"], "Multiple targets")
 
     def test_daimon_skill1_shield_is_self_not_single_target(self):
         data = io.load_heroes_data()
@@ -710,48 +710,48 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Arden")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        skill1 = hero.skill_slices["Skill1"]
+        skill1 = hero["skill_slices"]["Skill1"]
         binds = [
             e
-            for e in skill1.effects
-            if e.category == "cc"
-            and e.label == "Bind"
-            and e.tier in ("Mythic+", "EX+10")
+            for e in skill1["effects"]
+            if e["category"] == "cc"
+            and e["label"] == "Bind"
+            and e["tier"] in ("Mythic+", "EX+10")
         ]
-        self.assertEqual({e.tier for e in binds}, {"Mythic+", "EX+10"})
-        self.assertTrue(all(e.targeting == "Area" for e in binds), binds)
-        self.assertTrue(all(e.area_count == 2 for e in binds), binds)
+        self.assertEqual({e["tier"] for e in binds}, {"Mythic+", "EX+10"})
+        self.assertTrue(all(e["targeting"] == "Area" for e in binds), binds)
+        self.assertTrue(all(e["area_count"] == 2 for e in binds), binds)
 
     def test_aliceth_aegis_wings_invincible_targets_ally(self):
         data = io.load_heroes_data()
         record = next(r for r in data["heroes"] if r.get("name") == "Aliceth")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        aegis = hero.skill_slices["Ex. Skill"]
+        aegis = hero["skill_slices"]["Ex. Skill"]
         invincible = next(
             se
-            for se in aegis.special_effects
-            if se.kind == "provides"
-            and se.label == "Invincibility"
-            and se.tier == "Mythic+"
+            for se in aegis["special_effects"]
+            if se["kind"] == "provides"
+            and se["label"] == "Invincibility"
+            and se["tier"] == "Mythic+"
         )
-        self.assertEqual(invincible.targeting, "Single target")
+        self.assertEqual(invincible["targeting"], "Single target")
 
     def test_contess_hp_loss_vulnerability_is_debuff(self):
         data = io.load_heroes_data()
         record = next(r for r in data["heroes"] if r.get("name") == "Contess")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        expulsion = hero.skill_slices["Ex. Skill"]
+        expulsion = hero["skill_slices"]["Ex. Skill"]
         hp_loss = next(
             e
-            for e in expulsion.effects
-            if e.category == "debuff" and e.label == "HP loss"
+            for e in expulsion["effects"]
+            if e["category"] == "debuff" and e["label"] == "HP loss"
         )
-        self.assertEqual(hp_loss.targeting, "Single target")
+        self.assertEqual(hp_loss["targeting"], "Single target")
         self.assertTrue(
-            any(c.get("type") == "count" for c in hp_loss.conditions),
-            hp_loss.conditions,
+            any(c.get("type") == "count" for c in hp_loss["conditions"]),
+            hp_loss["conditions"],
         )
         tags = rs.format_skill_card_tags(hero, "skill4")
         self.assertIn(
@@ -764,11 +764,11 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Contess")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        quiet = hero.skill_slices["Skill2"]
+        quiet = hero["skill_slices"]["Skill2"]
         energy = next(
             e
-            for e in quiet.effects
-            if e.category == "debuff" and e.label == "Energy"
+            for e in quiet["effects"]
+            if e["category"] == "debuff" and e["label"] == "Energy"
         )
         self.assertIn(
             {
@@ -776,7 +776,7 @@ class RoundTripTests(unittest.TestCase):
                 "trigger": "cast",
                 "skill_type": "ultimate",
             },
-            energy.conditions,
+            energy["conditions"],
         )
 
     def test_thoran_cheat_death_on_skill2_not_ultimate(self):
@@ -784,22 +784,22 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Thoran")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        ult = hero.skill_slices["Ultimate"]
-        res = hero.skill_slices["Skill2"]
+        ult = hero["skill_slices"]["Ultimate"]
+        res = hero["skill_slices"]["Skill2"]
         ult_cheat = [
-            se.label
-            for se in ult.special_effects
-            if se.kind == "provides" and se.label == "Cheat death"
+            se["label"]
+            for se in ult["special_effects"]
+            if se["kind"] == "provides" and se["label"] == "Cheat death"
         ]
         res_cheat = [
-            se.label
-            for se in res.special_effects
-            if se.kind == "provides" and se.label == "Cheat death"
+            se["label"]
+            for se in res["special_effects"]
+            if se["kind"] == "provides" and se["label"] == "Cheat death"
         ]
         self.assertEqual(ult_cheat, [])
         self.assertEqual(len(res_cheat), 1)
         ult_interrupt = [
-            e for e in ult.effects if e.category == "cc" and e.label == "Interrupt"
+            e for e in ult["effects"] if e["category"] == "cc" and e["label"] == "Interrupt"
         ]
         self.assertEqual(ult_interrupt, [])
 
@@ -808,17 +808,17 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Zorya")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        ult = hero.skill_slices["Ultimate"]
-        ex = hero.skill_slices["Ex. Skill"]
+        ult = hero["skill_slices"]["Ultimate"]
+        ex = hero["skill_slices"]["Ex. Skill"]
         ult_req = [
-            se.label
-            for se in ult.special_effects
-            if se.kind == "requires" and "Ultimate" in se.label
+            se["label"]
+            for se in ult["special_effects"]
+            if se["kind"] == "requires" and "Ultimate" in se["label"]
         ]
         ex_req = [
-            se.label
-            for se in ex.special_effects
-            if se.kind == "requires" and "Ultimate" in se.label
+            se["label"]
+            for se in ex["special_effects"]
+            if se["kind"] == "requires" and "Ultimate" in se["label"]
         ]
         self.assertEqual(ult_req, [])
         self.assertTrue(ex_req)
@@ -855,16 +855,16 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Contess")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        supreme = hero.skill_slices["Unlocks at Supreme+"]
+        supreme = hero["skill_slices"]["Unlocks at Supreme+"]
         stun = next(
             e
-            for e in supreme.effects
-            if e.category == "cc" and e.label.lower() == "stun"
+            for e in supreme["effects"]
+            if e["category"] == "cc" and e["label"].lower() == "stun"
         )
         silence = next(
             e
-            for e in supreme.effects
-            if e.category == "cc" and e.label.lower() == "silence"
+            for e in supreme["effects"]
+            if e["category"] == "cc" and e["label"].lower() == "silence"
         )
         self.assertIn(
             {
@@ -872,7 +872,7 @@ class RoundTripTests(unittest.TestCase):
                 "trigger": "rule_violation",
                 "rule": "be_civil",
             },
-            stun.conditions,
+            stun["conditions"],
         )
         self.assertIn(
             {
@@ -880,7 +880,7 @@ class RoundTripTests(unittest.TestCase):
                 "trigger": "rule_violation",
                 "rule": "be_quiet",
             },
-            silence.conditions,
+            silence["conditions"],
         )
 
     def test_natsu_ultimate_mode_branches(self):
@@ -888,15 +888,15 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Natsu")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        ult = hero.skill_slices["Ultimate"]
+        ult = hero["skill_slices"]["Ultimate"]
         modes = {
             tuple(
                 c["mode"]
-                for c in e.conditions
+                for c in e["conditions"]
                 if c.get("type") == "skill_mode"
             )
-            for e in ult.effects
-            if e.conditions
+            for e in ult["effects"]
+            if e["conditions"]
         }
         self.assertIn(("lightning_fire_dragon",), modes)
         self.assertIn(("fire_dragon_king",), modes)
@@ -906,15 +906,15 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Vala")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        skill = hero.skill_slices["Skill2"]
+        skill = hero["skill_slices"]["Skill2"]
         modes = {
             tuple(
                 c["mode"]
-                for c in e.conditions
+                for c in e["conditions"]
                 if c.get("type") == "skill_mode"
             )
-            for e in skill.effects
-            if e.conditions
+            for e in skill["effects"]
+            if e["conditions"]
         }
         self.assertIn(("skyblaster",), modes)
         self.assertIn(("sword",), modes)
@@ -924,9 +924,9 @@ class RoundTripTests(unittest.TestCase):
         record = next(r for r in data["heroes"] if r.get("name") == "Marilee")
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        ex = hero.skill_slices["Ex. Skill"]
+        ex = hero["skill_slices"]["Ex. Skill"]
         true_hit = next(
-            e for e in ex.effects if e.category == "damage" and e.label == "True damage"
+            e for e in ex["effects"] if e["category"] == "damage" and e["label"] == "True damage"
         )
         self.assertIn(
             {
@@ -934,17 +934,17 @@ class RoundTripTests(unittest.TestCase):
                 "stacks": 6,
                 "stack_comparison": "at_max",
             },
-            true_hit.conditions,
+            true_hit["conditions"],
         )
         self.assertIn(
             {"type": "trigger_condition", "trigger": "normal_attack"},
-            true_hit.conditions,
+            true_hit["conditions"],
         )
         provides = [
-            se for se in ex.special_effects if se.kind == "provides"
+            se for se in ex["special_effects"] if se["kind"] == "provides"
         ]
         self.assertTrue(
-            any(se.label == "DoT conversion" for se in provides),
+            any(se["label"] == "DoT conversion" for se in provides),
             provides,
         )
 
@@ -1007,7 +1007,7 @@ class SkillOverviewTests(unittest.TestCase):
         if cls._behavior_cache is None:
             heroes, _blocks, role_category_by_title = cls._all_heroes_analyzed()
             display_by_title = {
-                h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+                h["title"]: h["title"].split(" - ", 1)[0].strip() for h in heroes
             }
             cls._behavior_cache = rs.build_behavior_for_heroes(
                 heroes, display_by_title
@@ -1030,19 +1030,19 @@ class SkillOverviewTests(unittest.TestCase):
         heroes, _blocks, _role = self._all_heroes_analyzed()
         behavior_by_title = self._behavior_by_title()
         display_by_title = {
-            h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+            h["title"]: h["title"].split(" - ", 1)[0].strip() for h in heroes
         }
         for hero in heroes:
-            if display_by_title[hero.title] == display_name:
-                return hero, behavior_by_title[hero.title]
+            if display_by_title[hero["title"]] == display_name:
+                return hero, behavior_by_title[hero["title"]]
         self.fail(f"hero not found: {display_name}")
 
     def test_hugin_skill_overview_speeds(self):
         _, behavior = self._hero_by_display("Hugin")
-        overview = behavior.skill_overview
-        self.assertEqual(overview["signature"].speed, "fast")
-        self.assertEqual(overview["ultimate"].speed, "slow")
-        self.assertEqual(overview["non_ultimate"].speed, "fast")
+        overview = behavior["skill_overview"]
+        self.assertEqual(overview["signature"]["speed"], "fast")
+        self.assertEqual(overview["ultimate"]["speed"], "slow")
+        self.assertEqual(overview["non_ultimate"]["speed"], "fast")
 
     def test_format_behavior_includes_prydwen_tiers_line(self):
         _, behavior = self._hero_by_display("Aliceth")
@@ -1095,7 +1095,7 @@ class SkillOverviewTests(unittest.TestCase):
         overview_idx = text.index("#### Skill overview")
         damage_idx = text.index("- **Damage types**:")
         self.assertLess(damage_idx, overview_idx)
-        self.assertTrue(behavior.skill_overview["signature"].damage_types)
+        self.assertTrue(behavior["skill_overview"]["signature"]["damage_types"])
 
     def test_play_overview_before_skill_overview(self):
         hero, behavior = self._hero_by_display("Aliceth")
@@ -1316,8 +1316,8 @@ class SkillOverviewTests(unittest.TestCase):
         section = rs.CATEGORY_TO_SECTION["skill3"]
         tags = rs.format_skill_card_tags(hero, "skill3")
         assert_tag_in(self, "ATK — Self", tags, polarity="buff")
-        for effect in hero.skill_slices[section].effects:
-            if effect.label == "ATK" and effect.targeting == "Self":
+        for effect in hero["skill_slices"][section]["effects"]:
+            if effect["label"] == "ATK" and effect["targeting"] == "Self":
                 schema = hs.effect_to_schema(effect)
                 self.assertEqual(schema.get("target"), "self")
                 break
@@ -1438,7 +1438,7 @@ class SkillOverviewTests(unittest.TestCase):
             hero = self._hero_analyzed(display)
             for category in rs.SKILL_CATEGORY_ORDER:
                 section = rs.CATEGORY_TO_SECTION.get(category)
-                if not section or section not in hero.skill_slices:
+                if not section or section not in hero["skill_slices"]:
                     continue
                 tags = rs.format_skill_card_tags(hero, category)
                 labels = tag_labels(tags)
@@ -1448,7 +1448,7 @@ class SkillOverviewTests(unittest.TestCase):
                     if label.split(" (")[0] in rs._SKILL_CARD_DAMAGE_KEYS
                 ]
                 expected = rs._skill_card_damage_labels(
-                    hero, hero.skill_slices[section], category
+                    hero, hero["skill_slices"][section], category
                 )
                 self.assertEqual(
                     damage_in_tags,
@@ -1493,55 +1493,55 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(sig["Aliceth"]["signature_calculated"], "ultimate")
 
         _, alna = self._hero_by_display("Alna")
-        self.assertEqual(alna.signature_skill_name, "Shared Resolve")
-        self.assertFalse(alna.signature_skill_is_ult)
-        self.assertEqual(alna.signature_skill_speed, "average")
+        self.assertEqual(alna["signature_skill_name"], "Shared Resolve")
+        self.assertFalse(alna["signature_skill_is_ult"])
+        self.assertEqual(alna["signature_skill_speed"], "average")
         self.assertEqual(sig["Alna"]["signature_override"], "skill1")
         self.assertEqual(sig["Alna"]["signature_calculated"], "skill2")
 
         _, aurora = self._hero_by_display("Aurora")
-        self.assertEqual(aurora.signature_skill_name, "Starlit Slumber")
-        self.assertTrue(aurora.signature_skill_is_ult)
-        self.assertTrue(aurora.synergy_signature_is_ult)
+        self.assertEqual(aurora["signature_skill_name"], "Starlit Slumber")
+        self.assertTrue(aurora["signature_skill_is_ult"])
+        self.assertTrue(aurora["synergy_signature_is_ult"])
         self.assertEqual(sig["Aurora"]["signature_calculated"], "skill1")
 
     def test_cassadee_signature_first_cast_speed(self):
         _, behavior = self._hero_by_display("Cassadee")
-        sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "average")
-        self.assertEqual(sig_metrics.first_cast_speed, "fast")
+        sig_metrics = behavior["skill_overview"]["signature"]
+        self.assertEqual(sig_metrics["speed"], "average")
+        self.assertEqual(sig_metrics["first_cast_speed"], "fast")
         text = "\n".join(rs.format_behavior_section("Cassadee", behavior))
         self.assertIn("first cast speed `fast`", text)
         self.assertIn("speed `average`", text)
 
     def test_bryon_signature_skill(self):
         _, behavior = self._hero_by_display("Bryon")
-        self.assertEqual(behavior.signature_skill_name, "Shadow Flash")
-        self.assertFalse(behavior.signature_skill_is_ult)
-        sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "slow")
+        self.assertEqual(behavior["signature_skill_name"], "Shadow Flash")
+        self.assertFalse(behavior["signature_skill_is_ult"])
+        sig_metrics = behavior["skill_overview"]["signature"]
+        self.assertEqual(sig_metrics["speed"], "slow")
         text = "\n".join(rs.format_behavior_section("Bryon", behavior))
         self.assertIn("- **Ultimate**:", text)
 
     def test_niru_signature_first_cast_speed(self):
         _, behavior = self._hero_by_display("Niru")
-        sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "fast")
-        self.assertEqual(sig_metrics.first_cast_speed, "none")
+        sig_metrics = behavior["skill_overview"]["signature"]
+        self.assertEqual(sig_metrics["speed"], "fast")
+        self.assertEqual(sig_metrics["first_cast_speed"], "none")
         text = "\n".join(rs.format_behavior_section("Niru", behavior))
         self.assertNotIn("first cast speed", text)
 
     def test_high_initial_energy_ultimate_first_cast_speed(self):
         for display in ("Kordan", "Cyran"):
             _, behavior = self._hero_by_display(display)
-            overview = behavior.skill_overview
+            overview = behavior["skill_overview"]
             row = (
                 overview["signature"]
-                if behavior.signature_skill_is_ult
+                if behavior["signature_skill_is_ult"]
                 else overview["ultimate"]
             )
             self.assertEqual(
-                row.first_cast_speed,
+                row["first_cast_speed"],
                 "fast",
                 msg=display,
             )
@@ -1549,22 +1549,22 @@ class SkillOverviewTests(unittest.TestCase):
     def test_pang_high_ie_ult_speed_fast_hides_first_cast_line(self):
         """Roster-wide fast ult speed collapses redundant first-cast label."""
         _, behavior = self._hero_by_display("Pang")
-        self.assertTrue(behavior.signature_skill_is_ult)
-        sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "fast")
-        self.assertEqual(sig_metrics.first_cast_speed, "none")
+        self.assertTrue(behavior["signature_skill_is_ult"])
+        sig_metrics = behavior["skill_overview"]["signature"]
+        self.assertEqual(sig_metrics["speed"], "fast")
+        self.assertEqual(sig_metrics["first_cast_speed"], "none")
 
     def test_aurora_ultimate_first_cast_not_fast_from_passive_setup(self):
         _, behavior = self._hero_by_display("Aurora")
-        self.assertTrue(behavior.signature_skill_is_ult)
-        sig_metrics = behavior.skill_overview["signature"]
-        self.assertNotEqual(sig_metrics.first_cast_speed, "fast")
+        self.assertTrue(behavior["signature_skill_is_ult"])
+        sig_metrics = behavior["skill_overview"]["signature"]
+        self.assertNotEqual(sig_metrics["first_cast_speed"], "fast")
 
     def test_velara_ultimate_first_cast_not_fast_without_high_ie(self):
         _, behavior = self._hero_by_display("Velara")
-        self.assertTrue(behavior.signature_skill_is_ult)
-        sig_metrics = behavior.skill_overview["signature"]
-        self.assertNotEqual(sig_metrics.first_cast_speed, "fast")
+        self.assertTrue(behavior["signature_skill_is_ult"])
+        sig_metrics = behavior["skill_overview"]["signature"]
+        self.assertNotEqual(sig_metrics["first_cast_speed"], "fast")
 
     def test_include_skill_summaries_false_omits_subsections(self):
         _, behavior = self._hero_by_display("Aliceth")
@@ -1602,7 +1602,7 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Hugin"), "Hugin"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
         self.assertIn("self_placement", kinds)
 
@@ -1610,7 +1610,7 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Phraesto"), "Phraesto"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
         self.assertIn("self_placement", kinds)
 
@@ -1619,8 +1619,8 @@ class PlacementConstraintTests(unittest.TestCase):
             self._hero_skills("Ravion"), "Ravion"
         )
         self.assertTrue(constraints)
-        self.assertTrue(all(c.kind == "ally_composition" for c in constraints))
-        self.assertNotIn("ally_placement", {c.kind for c in constraints})
+        self.assertTrue(all(c["kind"] == "ally_composition" for c in constraints))
+        self.assertNotIn("ally_placement", {c["kind"] for c in constraints})
 
     def test_bonnie_has_no_placement_constraints(self):
         constraints = rs.detect_placement_constraints(
@@ -1632,9 +1632,9 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Galahad"), "Galahad"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_composition", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_composition"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_composition"]
         self.assertTrue(any("prioritizes ally behind" in t for t in texts), texts)
 
     def test_galahad_heroes2_typo_still_detected(self):
@@ -1653,16 +1653,16 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Niru"), "Niru"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_composition", kinds)
 
     def test_thoran_ally_placement(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Thoran"), "Thoran"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(any("Soul Pact" in t for t in texts), texts)
 
     def test_thoran_heroes2_on_tile_behind(self):
@@ -1681,27 +1681,27 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Sonja"), "Sonja"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(any("left and right" in t for t in texts), texts)
 
     def test_gunnar_ally_placement(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Gunnar"), "Gunnar"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(any("Doomfield" in t for t in texts), texts)
 
     def test_aliceth_brightfeather_ally_composition(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Aliceth"), "Aliceth"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_composition", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_composition"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_composition"]
         self.assertTrue(
             any("Brightfeather" in t and "row" in t for t in texts),
             texts,
@@ -1709,31 +1709,31 @@ class PlacementConstraintTests(unittest.TestCase):
 
     def test_aliceth_hero_focus_not_debuff_require(self):
         hero, _data = self._hero_by_title_prefix("Aliceth")
-        requires = [e for e in hero.special_effects if e.kind == "requires"]
+        requires = [e for e in hero["special_effects"] if e["kind"] == "requires"]
         debuff_requires = [
             e
             for e in requires
-            if e.label in ("Debuff on target", "Debuff on target (Aging)")
+            if e["label"] in ("Debuff on target", "Debuff on target (Aging)")
         ]
-        self.assertEqual([e.label for e in debuff_requires], [], debuff_requires)
+        self.assertEqual([e["label"] for e in debuff_requires], [], debuff_requires)
 
     def test_zandrok_no_temporary_ally_buff_require(self):
         hero, _data = self._hero_by_title_prefix("Zandrok")
-        requires = [e for e in hero.special_effects if e.kind == "requires"]
-        labels = [e.label for e in requires]
+        requires = [e for e in hero["special_effects"] if e["kind"] == "requires"]
+        labels = [e["label"] for e in requires]
         self.assertNotIn("Temporary ally stat buffs", labels)
 
     def test_shadewing_no_debuff_partner_require(self):
         hero, _data = self._hero_by_title_prefix("Shadewing")
-        requires = [e for e in hero.special_effects if e.kind == "requires"]
+        requires = [e for e in hero["special_effects"] if e["kind"] == "requires"]
         debuff_requires = [
             e
             for e in requires
-            if e.label in ("Debuff on target", "Debuff on target (Aging)")
+            if e["label"] in ("Debuff on target", "Debuff on target (Aging)")
         ]
         self.assertEqual([], debuff_requires)
         dot_requires = [
-            e for e in requires if e.label == "Continuous damage on enemies"
+            e for e in requires if e["label"] == "Continuous damage on enemies"
         ]
         self.assertTrue(dot_requires)
 
@@ -1741,18 +1741,18 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Elijah & Lailah"), "Twins"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(any("Stellar Bond" in t for t in texts), texts)
 
     def test_reinier_symmetrical_placement(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Reinier"), "Reinier"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(any("symmetrical" in t for t in texts), texts)
 
     def _hero_by_short_name(self, display_name: str):
@@ -1766,9 +1766,9 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Satrana"), "Satrana"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(
             any("within 2 tiles" in t and "Sparks" in t for t in texts),
             texts,
@@ -1794,9 +1794,9 @@ class PlacementConstraintTests(unittest.TestCase):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Himmel"), "Himmel"
         )
-        kinds = {c.kind for c in constraints}
+        kinds = {c["kind"] for c in constraints}
         self.assertIn("ally_placement", kinds)
-        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        texts = [c["text"] for c in constraints if c["kind"] == "ally_placement"]
         self.assertTrue(any("Hero Party" in t for t in texts), texts)
 
 
@@ -1809,10 +1809,10 @@ class MovementDetectionTests(unittest.TestCase):
             hero_blocks()
         )
         display_by_title = {
-            h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+            h["title"]: h["title"].split(" - ", 1)[0].strip() for h in heroes
         }
         hero_class_by_title = {
-            h.title: gen._parse_hero_class(block_by_title[h.title]).lower()
+            h["title"]: gen._parse_hero_class(block_by_title[h["title"]]).lower()
             for h in heroes
         }
         behavior_by_title = rs.build_behavior_for_heroes(
@@ -1821,37 +1821,37 @@ class MovementDetectionTests(unittest.TestCase):
             hero_class_by_title=hero_class_by_title,
         )
         for hero in heroes:
-            if display_by_title[hero.title] == display_name:
-                return behavior_by_title[hero.title]
+            if display_by_title[hero["title"]] == display_name:
+                return behavior_by_title[hero["title"]]
         self.fail(f"hero not found: {display_name}")
 
     def test_natsu_is_moving(self):
         behavior = self._behavior("Natsu")
-        self.assertEqual(behavior.movement, "moving")
+        self.assertEqual(behavior["movement"], "moving")
 
     def test_nara_is_mostly_stationary(self):
         behavior = self._behavior("Nara")
-        self.assertEqual(behavior.movement, "mostly stationary")
+        self.assertEqual(behavior["movement"], "mostly stationary")
 
     def test_gunnar_stays_stationary(self):
         behavior = self._behavior("Gunnar")
-        self.assertEqual(behavior.movement, "stationary")
+        self.assertEqual(behavior["movement"], "stationary")
 
     def test_daimon_stays_stationary(self):
         behavior = self._behavior("Daimon")
-        self.assertEqual(behavior.movement, "stationary")
+        self.assertEqual(behavior["movement"], "stationary")
 
     def test_florabelle_stays_stationary(self):
         behavior = self._behavior("Florabelle")
-        self.assertEqual(behavior.movement, "stationary")
+        self.assertEqual(behavior["movement"], "stationary")
 
     def test_callan_inactive_while_ultimate(self):
         behavior = self._behavior("Callan")
-        self.assertIn("inactive while ultimate is running", behavior.movement_note)
+        self.assertIn("inactive while ultimate is running", behavior["movement_note"])
 
     def test_zorya_inactive_while_dormant(self):
         behavior = self._behavior("Zorya")
-        self.assertIn("inactive while dormant", behavior.movement_note)
+        self.assertIn("inactive while dormant", behavior["movement_note"])
 
 
 class WalkSpeedTests(unittest.TestCase):
@@ -1880,13 +1880,13 @@ class WalkSpeedTests(unittest.TestCase):
 
         heroes, block_by_title, _ = analyze_heroes_from_blocks(hero_blocks())
         display_by_title = {
-            h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+            h["title"]: h["title"].split(" - ", 1)[0].strip() for h in heroes
         }
         # Map Elijah & Lailah display to Twins curated key via short_name path
         for title, display in list(display_by_title.items()):
             display_by_title[title] = rs.curated_display_name(display)
         hero_class_by_title = {
-            h.title: gen._parse_hero_class(block_by_title[h.title]).lower()
+            h["title"]: gen._parse_hero_class(block_by_title[h["title"]]).lower()
             for h in heroes
         }
         behavior_by_title = rs.build_behavior_for_heroes(
@@ -1896,9 +1896,9 @@ class WalkSpeedTests(unittest.TestCase):
         )
         speeds = rs._load_walk_speeds()
         for hero in heroes:
-            curated = display_by_title[hero.title]
-            behavior = behavior_by_title[hero.title]
-            self.assertEqual(behavior.walk_speed, speeds[curated])
+            curated = display_by_title[hero["title"]]
+            behavior = behavior_by_title[hero["title"]]
+            self.assertEqual(behavior["walk_speed"], speeds[curated])
 
     def test_format_behavior_includes_walk_speed(self):
         behavior = rs.HeroBehavior(
@@ -2067,8 +2067,8 @@ class ConditionParsingTests(unittest.TestCase):
         )
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        sl = hero.skill_slices["Skill2"]
-        merged = hs._merge_effects(sl.effects)
+        sl = hero["skill_slices"]["Skill2"]
+        merged = hs._merge_effects(sl["effects"])
         schema = hs.effect_to_schema(merged[0])
         types = {c.get("type") for c in schema.get("conditions") or []}
         self.assertIn("unit_type", types)

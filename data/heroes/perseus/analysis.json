@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "perseus",
   "display_name": "Perseus",
   "local": {
@@ -481,7 +481,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -491,7 +490,6 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "perseus",
     "display_name": "Perseus",
     "positional_tile_buff_labels": [],
@@ -501,738 +499,198 @@
       "Phys DEF"
     ],
     "proximity_aura_radius": 1.0,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Perseus - Chosen Champion",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Perseus chooses a direction and marches 3 tiles forward with dazzling spearwork.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Along the way, he deals 85% (ATK-based) + 10% (SP-based) damage to adjacent enemies 11 times and continuously knocks them back in the direction of his march.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "At the end of the march, Perseus performs a mighty shield bash, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies within 1 tiles and stunning them for 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Perseus stays unaffected while casting this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Perseus' damage during his march to 90% (ATK-based) + 10% (SP-based) and his shield bash damage to 290% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Perseus' damage during his march to 95% (ATK-based) + 10% (SP-based) and his shield bash damage to 300% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Perseus' damage during his march to 100% (ATK-based) + 10% (SP-based) and his shield bash damage to 310% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Perseus' damage during his march to 105% (ATK-based) + 10% (SP-based) and his shield bash damage to 320% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Perseus swings both his spear and shield in a circle to strike nearby enemies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "With his spear, he deals 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "With his shield, he deals 140% (ATK-based) + 10% (SP-based) damage to adjacent enemies while gaining a shield value equal to 360% (ATK-based) of his ATK plus 80% of the damage dealt for 6s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While the shield lasts, his ATK SPD increases by 35.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield swing damage to 150% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield swing damage to 160% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield swing damage to 170% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Before Perseus takes heavy damage, the ground within 1 tile around him turns fertile.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Allies standing on this fertile ground have their ATK increased by 14.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 19% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When Perseus' HP drops below 40% of his initial HP for the first time, he draws power from the fertile ground, increasing his max HP permanently by 60% + 6% (SP-based) and healing for the same amount.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Once this power is drawn the fertile ground withers away permanently.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Allies standing on the fertile ground now have their ATK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Allies standing on the fertile ground now have their ATK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Allies standing on the fertile ground now have their ATK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases his ATK by 9% in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Further increases his ATK by 6% when he has temporary stat buffs from allies.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases his ATK by 12% in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Further increases his ATK by 8% when he has temporary stat buffs from allies.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases his ATK by 15% in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Further increases his ATK by 10% when he has temporary stat buffs from allies.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Perseus is blessed by Bountiful Grace.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When he gains a temporary stat buffs, its effect is increased by 20%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This effect stacks up 4 times.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "When Perseus gains a temporary stat buff, its effect is increased by 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "When Perseus has 2 temporary stat buffs from different allies, the damage he deals is converted to true damage, and he comes unaffected.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "This effect lasts at least 6s each time it's triggered.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "When Perseus gains a temporary stat buff, its effect is increased by 40%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Expands the range of fertile ground by 1 tiles.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Perseus chooses a direction and marches 3 tiles forward with dazzling spearwork.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Divine Rend": "Ultimate",
-        "Spear-Shield Combo": "Skill1",
-        "Fertile Ground": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Divine Grace": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 350.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Temporary ally stat buffs",
-              "tier": "Legendary+",
-              "targeting": "—",
-              "qualitative": "Further increases his ATK by 6% when he has temporary stat buffs from allies.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Temporary ally stat buffs",
-              "tier": "Mythic+",
-              "targeting": "Allies",
-              "qualitative": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 17.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.4,
-                  "comparison": "below"
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 350.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 17.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "hp_threshold",
-              "hp_ratio": 0.4,
-              "comparison": "below"
-            },
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Along the way, he deals 85% (ATK-based) + 10% (SP-based) damage to adjacent enemies 11 times and continuously knocks them back in the direction of his march.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "At the end of the march, Perseus performs a mighty shield bash, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies within 1 tiles and stunning them for 2s.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Temporary ally stat buffs",
-          "tier": "Legendary+",
-          "targeting": "—",
-          "qualitative": "Further increases his ATK by 6% when he has temporary stat buffs from allies.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Temporary ally stat buffs",
-          "tier": "Mythic+",
-          "targeting": "Allies",
-          "qualitative": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%.",
-          "grants": []
-        }
+      [
+        "base",
+        "Perseus stays unaffected while casting this skill.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ]
+      [
+        "base",
+        "Increases Perseus' damage during his march to 90% (ATK-based) + 10% (SP-based) and his shield bash damage to 290% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "Max HP",
-        "Shield"
+      [
+        "base",
+        "Increases Perseus' damage during his march to 95% (ATK-based) + 10% (SP-based) and his shield bash damage to 300% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [
-        "Magic DEF",
-        "ATK",
-        "Phys DEF"
+      [
+        "base",
+        "Increases Perseus' damage during his march to 100% (ATK-based) + 10% (SP-based) and his shield bash damage to 310% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
       ],
-      "proximity_aura_radius": 1.0
-    }
+      [
+        "base",
+        "Increases Perseus' damage during his march to 105% (ATK-based) + 10% (SP-based) and his shield bash damage to 320% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Perseus swings both his spear and shield in a circle to strike nearby enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "With his spear, he deals 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "With his shield, he deals 140% (ATK-based) + 10% (SP-based) damage to adjacent enemies while gaining a shield value equal to 360% (ATK-based) of his ATK plus 80% of the damage dealt for 6s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While the shield lasts, his ATK SPD increases by 35.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield swing damage to 150% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield swing damage to 160% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield swing damage to 170% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Before Perseus takes heavy damage, the ground within 1 tile around him turns fertile.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Allies standing on this fertile ground have their ATK increased by 14.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 19% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When Perseus' HP drops below 40% of his initial HP for the first time, he draws power from the fertile ground, increasing his max HP permanently by 60% + 6% (SP-based) and healing for the same amount.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Once this power is drawn the fertile ground withers away permanently.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Allies standing on the fertile ground now have their ATK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Allies standing on the fertile ground now have their ATK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Allies standing on the fertile ground now have their ATK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases his ATK by 9% in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Further increases his ATK by 6% when he has temporary stat buffs from allies.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases his ATK by 12% in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Further increases his ATK by 8% when he has temporary stat buffs from allies.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases his ATK by 15% in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Further increases his ATK by 10% when he has temporary stat buffs from allies.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Perseus is blessed by Bountiful Grace.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When he gains a temporary stat buffs, its effect is increased by 20%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This effect stacks up 4 times.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "When Perseus gains a temporary stat buff, its effect is increased by 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "When Perseus has 2 temporary stat buffs from different allies, the damage he deals is converted to true damage, and he comes unaffected.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "This effect lasts at least 6s each time it's triggered.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "When Perseus gains a temporary stat buff, its effect is increased by 40%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Expands the range of fertile ground by 1 tiles.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "97c63e6a95f62179b2b5e426c6c8fd675988d57a750e906d6c17209e47763013",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "parisa",
   "display_name": "Parisa",
   "local": {
@@ -383,7 +383,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -392,478 +391,143 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "parisa",
     "display_name": "Parisa",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Parisa - Ode to Flowers",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Parisa marks a non-marked enemy with a flower until the battle ends, dealing 480% (ATK-based) damage to all floral-marked targets and other enemies within 1 tiles of them.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If the skill hits the targets multiple times within 2s, the subsequent damage dealt by targets is reduced by 20%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 490% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each defeated enemy who carries Floral Mark grants Parisa 60 + 20 (SP-based) Energy recovery per second in 5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 510% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 520% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Parisa increases ATK SPD by 22 + 3 (SP-based) and normal attack damage by 22% for 10s for herself and 1 nearest ally.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases ATK SPD by 25 + 3 (SP-based), and the normal attack damage by 25%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases ATK SPD by 28 + 3 (SP-based), and the normal attack damage by 28%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases ATK SPD by 30 + 3 (SP-based), and the normal attack damage by 30%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "After every 3 normal attacks, Parisa launches a bouquet of flowers that gradually expands towards her target, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies along the path.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each enemy hit by flowers restores herself an extra 70 Energy.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Every bouquet of flowers can recover her Energy up to 3 times.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The flowers deal 205% (ATK-based) + 20% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The flowers deal 210% (ATK-based) + 20% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The flowers deal 215% (ATK-based) + 20% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 16% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 20% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Parisa marks the nearest enemy in a symmetrical position with a flower when a battle starts.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Normal attacks hit 1 more target after inflicting 4 marks.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Normal attacks hit 1 more target after inflicting 3 marks.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Normal attacks hit 1 more target after inflicting 2 marks.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Reduces the required normal attacks to trigger Flower Power by 1.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Parisa marks a non-marked enemy with a flower until the battle ends, dealing 480% (ATK-based) damage to all floral-marked targets and other enemies within 1 tiles of them.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Floral Splendor": "Ultimate",
-        "Floral Inspiration": "Skill1",
-        "Flower Power": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Falling Blossom": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 520.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "base",
-              "targeting": "Area",
-              "qualitative": "Parisa marks a non-marked enemy with a flower until the battle ends, dealing 480% (ATK-based) damage to all floral-marked targets and other enemies within 1 tiles of them.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 235.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "path",
-              "area_direction": "selected_target",
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 70.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "Parisa marks the nearest enemy in a symmetrical position with a flower when a battle starts.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 520.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "path",
-          "area_direction": "selected_target",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 70.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        }
+      [
+        "base",
+        "If the skill hits the targets multiple times within 2s, the subsequent damage dealt by targets is reduced by 20%.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Area",
-          "qualitative": "Parisa marks a non-marked enemy with a flower until the battle ends, dealing 480% (ATK-based) damage to all floral-marked targets and other enemies within 1 tiles of them.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "Parisa marks the nearest enemy in a symmetrical position with a flower when a battle starts.",
-          "grants": []
-        }
+      [
+        "base",
+        "Increases damage to 490% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ]
+      [
+        "base",
+        "Each defeated enemy who carries Floral Mark grants Parisa 60 + 20 (SP-based) Energy recovery per second in 5s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "Energy"
+      [
+        "base",
+        "Increases damage to 510% (ATK-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage to 520% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Parisa increases ATK SPD by 22 + 3 (SP-based) and normal attack damage by 22% for 10s for herself and 1 nearest ally.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases ATK SPD by 25 + 3 (SP-based), and the normal attack damage by 25%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases ATK SPD by 28 + 3 (SP-based), and the normal attack damage by 28%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases ATK SPD by 30 + 3 (SP-based), and the normal attack damage by 30%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After every 3 normal attacks, Parisa launches a bouquet of flowers that gradually expands towards her target, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies along the path.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each enemy hit by flowers restores herself an extra 70 Energy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Every bouquet of flowers can recover her Energy up to 3 times.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The flowers deal 205% (ATK-based) + 20% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The flowers deal 210% (ATK-based) + 20% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The flowers deal 215% (ATK-based) + 20% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Parisa marks the nearest enemy in a symmetrical position with a flower when a battle starts.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Normal attacks hit 1 more target after inflicting 4 marks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Normal attacks hit 1 more target after inflicting 3 marks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Normal attacks hit 1 more target after inflicting 2 marks.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Reduces the required normal attacks to trigger Flower Power by 1.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "f06d17762ac553374d92a66faf1c6e64bba68ef2d8d20b2ecef60fa274e0c63c",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

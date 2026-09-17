@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lucca",
   "display_name": "Lucca",
   "local": {
@@ -534,7 +534,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "max_hp",
       "shield"
@@ -543,835 +542,163 @@
       "atk": 0.8571428571428571,
       "max_hp": 0.14285714285714285
     },
-    "behavior": {},
     "id": "lucca",
     "display_name": "Lucca",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Lucca - Stalwart Fighter",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 210% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 220% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 230% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 240% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 360% + 3% (SP-based) Phys DEF plus 360% + 3% (SP-based) Magic DEF.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 380% + 3% (SP-based) Phys DEF plus 380% + 3% (SP-based) Magic DEF.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 400% + 3% (SP-based) Phys DEF plus 400% + 3% (SP-based) Magic DEF.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This skill can be cast while Lucca is under dispellable control effects.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Reduces damage taken by 28% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Reduces damage taken by 31% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Reduces damage taken by 35% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases max HP by 17% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases max HP by 23% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases max HP by 29% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Lucca maintains a solid fighting stance, remaining Steadfast during battle.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Allies supporting Lucca also receive a 5% boost to their ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the shield value to 240% of the ally's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "If at least 2 allies are placed to support Lucca, expands Ruthless Ram's area of effect to a 1-tile arc.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the shield value to 260% of the ally's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Lucca recovers 15% (HP-based) HP when casting Courageous Call.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Quake Slam": "Ultimate",
-        "Ruthless Ram": "Skill1",
-        "Courageous Call": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Unshakeable Ties": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 260.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Immune",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 340.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Interrupt",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Disarm",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 4.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 4.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 165.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 29.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 220.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "EX+5",
-              "targeting": "Self",
-              "numeric": 240.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 260.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Steadfast",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "timing": "Permanent"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Magic DEF",
-              "tier": "Supreme+",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 260.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 340.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "start_of_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Interrupt",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Disarm",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 4.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 4.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 29.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Magic DEF",
-          "tier": "Supreme+",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Immune",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        },
-        {
-          "immunity_type": "Steadfast",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "timing": "Permanent"
-        }
+      [
+        "base",
+        "The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s.",
+        "Ultimate"
       ],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Max HP",
-        "Shield"
+      [
+        "base",
+        "Increases the damage dealt to 210% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.8571428571428571,
-        "Max HP": 0.14285714285714285
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage dealt to 220% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 360% + 3% (SP-based) Phys DEF plus 360% + 3% (SP-based) Magic DEF.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 380% + 3% (SP-based) Phys DEF plus 380% + 3% (SP-based) Magic DEF.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 400% + 3% (SP-based) Phys DEF plus 400% + 3% (SP-based) Magic DEF.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This skill can be cast while Lucca is under dispellable control effects.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces damage taken by 28% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces damage taken by 31% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces damage taken by 35% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 17% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 23% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 29% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lucca maintains a solid fighting stance, remaining Steadfast during battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Allies supporting Lucca also receive a 5% boost to their ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the shield value to 240% of the ally's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If at least 2 allies are placed to support Lucca, expands Ruthless Ram's area of effect to a 1-tile arc.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the shield value to 260% of the ally's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lucca recovers 15% (HP-based) HP when casting Courageous Call.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "0de0d86b5b54cd555e4f164a058c0bf8c45e58cb69614282a7cb5b2be9d382f7",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

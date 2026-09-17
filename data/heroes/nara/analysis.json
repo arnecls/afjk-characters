@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "nara",
   "display_name": "Nara",
   "local": {
@@ -519,7 +519,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "energy"
@@ -527,779 +526,183 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "nara",
     "display_name": "Nara",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Nara - Wrathful Wraith",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Nara gains 750 Energy when a battle starts.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After charging up briefly, she deals 320% (ATK-based) + 35% (SP-based) damage to the target.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If she target's HP ratio is lover than 40%, Nara deals 560% (ATK-based) + 60% (SP-based) true damage instead.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Auto Battle, this skill won't be used against non-boss enemy heroes whose HP ratio is above 40%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases damage to 330% (ATK-based) + 35% (SP-based), and increases true damage to 570% (ATK-based) + 60% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases damage to 340% (ATK-based) + 35% (SP-based), and increases true damage to 580% (ATK-based) + 60% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 350% (ATK-based) + 35% (SP-based), and increases true damage to 590% (ATK-based) + 60% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases damage to 360% (ATK-based) + 35% (SP-based), and increases true damage to 600% (ATK-based) + 60% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the HP lost per tile pulled to 4% + 0.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the HP lost per tile pulled to 4,5% + 0.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the HP lost per tile pulled to 5% + 0.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Nara kicks a nearby enemy, dealing 130% (ATK-based) + 15% (SP-based) damage, knocking them into the air and down for 2s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "She then follows up with 3 rapid hits, each dealing 80% (ATK-based) + 8% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases kicking damage to 140% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases kicking damage to 150% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases kicking damage to 160% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Nara increases her ATK by 10% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After an Assist or Defeat, her ATK increases by an extra 15%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Nara increases her ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After an Assist or Defeat, her ATK increases by an extra 17%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Nara increases her ATK by 14% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After an Assist or Defeat, her ATK increases by an extra 20%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "After defeating an enemy hero with Crimson Vengeance, Nara releases a 2-tile shockwave, dealing damage equal to 8% of the defeated target's max HP to all enemies within the area.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This shockwave also heals all allies within the area by 8% of the defeated target's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The damage dealth and healing from this skill cannot exceed 600% of Nara's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases damage to 10% of the defeated target's max HP, and healing to 10% of the defeated target's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "When Nara's Energy is full, she casts Phantom Chains on an enemy outside of her normal attack range with an HP ratio below 40%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases damage to 15% of the defeated target's max HP, and healing to 15% of the defeated target's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "After defating an enemy with Crimson Vengeance, Nara instantly recovers 250 Energy.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Nara gains 750 Energy when a battle starts.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Crimson Vengeance": "Ultimate",
-        "Phantom Chains": "Skill1",
-        "Killer Kick": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Eerie Execution": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 660.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 620.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Displace",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 4.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "timing": "Permanent"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 175.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 14.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Max HP",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 660.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 620.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Displace",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 4.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 14.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Max HP",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "After charging up briefly, she deals 320% (ATK-based) + 35% (SP-based) damage to the target.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "timing": "Permanent"
-        }
+      [
+        "base",
+        "If she target's HP ratio is lover than 40%, Nara deals 560% (ATK-based) + 60% (SP-based) true damage instead.",
+        "Ultimate"
       ],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Area"
-        ],
-        [
-          "True damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "In Auto Battle, this skill won't be used against non-boss enemy heroes whose HP ratio is above 40%.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "True damage": 840.0,
-        "Max HP-based damage": 32.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Energy"
+      [
+        "base",
+        "Unlocks at level 51: Increases damage to 330% (ATK-based) + 35% (SP-based), and increases true damage to 570% (ATK-based) + 60% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Unlocks at level 111: Increases damage to 340% (ATK-based) + 35% (SP-based), and increases true damage to 580% (ATK-based) + 60% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 350% (ATK-based) + 35% (SP-based), and increases true damage to 590% (ATK-based) + 60% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases damage to 360% (ATK-based) + 35% (SP-based), and increases true damage to 600% (ATK-based) + 60% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP lost per tile pulled to 4% + 0.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP lost per tile pulled to 4,5% + 0.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP lost per tile pulled to 5% + 0.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Nara kicks a nearby enemy, dealing 130% (ATK-based) + 15% (SP-based) damage, knocking them into the air and down for 2s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "She then follows up with 3 rapid hits, each dealing 80% (ATK-based) + 8% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases kicking damage to 140% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases kicking damage to 150% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases kicking damage to 160% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Nara increases her ATK by 10% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After an Assist or Defeat, her ATK increases by an extra 15%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Nara increases her ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After an Assist or Defeat, her ATK increases by an extra 17%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Nara increases her ATK by 14% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After an Assist or Defeat, her ATK increases by an extra 20%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "After defeating an enemy hero with Crimson Vengeance, Nara releases a 2-tile shockwave, dealing damage equal to 8% of the defeated target's max HP to all enemies within the area.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This shockwave also heals all allies within the area by 8% of the defeated target's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The damage dealth and healing from this skill cannot exceed 600% of Nara's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases damage to 10% of the defeated target's max HP, and healing to 10% of the defeated target's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "When Nara's Energy is full, she casts Phantom Chains on an enemy outside of her normal attack range with an HP ratio below 40%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases damage to 15% of the defeated target's max HP, and healing to 15% of the defeated target's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After defating an enemy with Crimson Vengeance, Nara instantly recovers 250 Energy.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "73801d28f7f2a73e908c1aa0df84736e4def5f68320abbd4b3be2451b1ecf627",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

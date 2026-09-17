@@ -243,20 +243,20 @@ def export_sidecar_from_hero(
     }
 
     for section, skill in skills_by_section.items():
-        sl = hero.skill_slices.get(section)
+        sl = hero["skill_slices"].get(section)
         tiers: dict[str, dict[str, Any]] = {}
         has_scaled = skill_has_scaled_placeholder(skill)
 
         if sl:
-            for eff in sl.effects:
-                tier_key = hs.to_schema_tier(eff.tier)
+            for eff in sl["effects"]:
+                tier_key = hs.to_schema_tier(eff["tier"])
                 bucket = _tier_bucket(tiers, tier_key)
                 schema_eff = hs.effect_to_schema(eff, is_max_known=not has_scaled)
                 if hs._schema_effect_is_complete(schema_eff):
                     bucket["effects"].append(schema_eff)
 
-            for eff in sl.summon_effects:
-                tier_key = hs.to_schema_tier(eff.tier)
+            for eff in sl["summon_effects"]:
+                tier_key = hs.to_schema_tier(eff["tier"])
                 bucket = _tier_bucket(tiers, tier_key)
                 schema_eff = hs.effect_to_schema(
                     eff, summon=True, is_max_known=not has_scaled
@@ -264,16 +264,16 @@ def export_sidecar_from_hero(
                 if hs._schema_effect_is_complete(schema_eff):
                     bucket["summon_effects"].append(schema_eff)
 
-            for imm in sl.cc_immunities:
-                tier_key = hs.to_schema_tier(imm.tier)
+            for imm in sl["cc_immunities"]:
+                tier_key = hs.to_schema_tier(imm["tier"])
                 bucket = _tier_bucket(tiers, tier_key)
                 bucket["immunities"].append(hs.cc_immunity_to_schema(imm))
 
-            for se in sl.special_effects:
-                tier_key = hs.to_schema_tier(se.tier)
+            for se in sl["special_effects"]:
+                tier_key = hs.to_schema_tier(se["tier"])
                 bucket = _tier_bucket(tiers, tier_key)
                 mech = hs.special_to_synergy_mechanic(se)
-                if se.kind == "provides":
+                if se["kind"] == "provides":
                     bucket["special_provides"].append(mech)
                 else:
                     bucket["special_requires"].append(mech)
@@ -293,7 +293,7 @@ def export_sidecar_from_hero(
 def _convert_schema_effect(effect: dict[str, Any]) -> tuple[str, Any]:
     converted = hs.schema_effect_to_effect(effect)
     rs = hs._rs()
-    if isinstance(converted, rs.CcImmunity):
+    if converted.get("immunity_type") and "category" not in converted:
         return ("immunity", converted)
     if effect.get("type") == "immunity":
         return ("immunity", converted)
@@ -319,41 +319,41 @@ def apply_sidecar_to_hero(hero: Any, doc: dict[str, Any]) -> None:
             for eff_schema in tier_data.get("effects", []):
                 kind, obj = _convert_schema_effect(eff_schema)
                 if kind == "immunity":
-                    obj.tier = tier
-                    sl.cc_immunities.append(obj)
+                    obj["tier"] = tier
+                    sl["cc_immunities"].append(obj)
                 elif kind == "summon":
-                    obj.tier = tier
-                    sl.summon_effects.append(obj)
+                    obj["tier"] = tier
+                    sl["summon_effects"].append(obj)
                 else:
-                    obj.tier = tier
-                    obj.source_section = section
-                    sl.effects.append(obj)
+                    obj["tier"] = tier
+                    obj["source_section"] = section
+                    sl["effects"].append(obj)
 
             for eff_schema in tier_data.get("summon_effects", []):
                 obj = hs.schema_effect_to_effect(eff_schema, summon=True)
-                obj.tier = tier
-                obj.source_section = section
-                sl.summon_effects.append(obj)
+                obj["tier"] = tier
+                obj["source_section"] = section
+                sl["summon_effects"].append(obj)
 
             for imm_schema in tier_data.get("immunities", []):
                 imm = hs.schema_effect_to_effect(imm_schema)
-                if isinstance(imm, rs.CcImmunity):
-                    imm.tier = tier
-                    sl.cc_immunities.append(imm)
+                if imm.get("immunity_type") and "category" not in imm:
+                    imm["tier"] = tier
+                    sl["cc_immunities"].append(imm)
 
             for mech in tier_data.get("special_provides", []):
-                sl.special_effects.append(
+                sl["special_effects"].append(
                     hs.synergy_mechanic_to_special(mech, "provides")
                 )
             for mech in tier_data.get("special_requires", []):
-                sl.special_effects.append(
+                sl["special_effects"].append(
                     hs.synergy_mechanic_to_special(mech, "requires")
                 )
 
-        sl.tier = earliest_tier
+        sl["tier"] = earliest_tier
         slices[section] = sl
 
-    hero.skill_slices = slices
+    hero["skill_slices"] = slices
 
 
 def lint_sidecar_skill_text(

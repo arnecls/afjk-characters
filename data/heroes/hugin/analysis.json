@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "hugin",
   "display_name": "Hugin",
   "local": {
@@ -370,7 +370,6 @@
       "requires": []
     },
     "damage_entries": [],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "energy"
@@ -378,482 +377,148 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "hugin",
     "display_name": "Hugin",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Hugin - Maverick Smith",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Hugin sets his anvil on the tile where he is placed during battle preparation.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 7% + 1% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 8% + 1% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 9% + 1% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 10% + 1% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 620% (ATK-based) + 60% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 640% (ATK-based) + 60% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 660% (ATK-based) + 60% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This buff disappears when the ally leaves the sigil.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 16% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 18% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the ATK boost to 20% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 16 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the shield value to 850%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Grants control immunity to allies protected by an enhanced cogshield while it's active.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the shield value to 900%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Hugin sets his anvil on the tile where he is placed during battle preparation.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Unstoppable!": "Ultimate",
-        "Titan's Aegis": "Skill1",
-        "Mechanized Bond": "Skill2",
-        "Hero Focus Hugin": "Unlocks at Legendary+",
-        "Steelbound Kinship": "Ex. Skill",
-        "Enhance Force Hugin": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 660.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 75.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": 800.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_shield"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 800.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 75.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_shield"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Energy"
+      [
+        "base",
+        "Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 20,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 7% + 1% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 8% + 1% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 9% + 1% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 10% + 1% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 620% (ATK-based) + 60% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 640% (ATK-based) + 60% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 660% (ATK-based) + 60% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This buff disappears when the ally leaves the sigil.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 16% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 18% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the ATK boost to 20% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the shield value to 850%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Grants control immunity to allies protected by an enhanced cogshield while it's active.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the shield value to 900%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "a4e17968e68c68320da0039f56aa53410ab4e50b34d2ae7baa879c7bc60dd72c",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -31,6 +31,7 @@ class CompatibilityCleanupTests(unittest.TestCase):
             "render_site.py",
             "hero_pipeline/engine.py",
             "hero_pipeline/semantic.py",
+            "hero_pipeline/relationships/runtime.py",
             "hero_pipeline/analysis/temporary_legacy_adapter.py",
             "hero_pipeline/synergy/facts.py",
         ):
@@ -53,6 +54,14 @@ class CompatibilityCleanupTests(unittest.TestCase):
             self.assertFalse(
                 "roster.json" in text and ".exists()" in text,
                 filename,
+            )
+
+    def test_runtime_hero_dataclasses_are_gone(self) -> None:
+        for path in (SCRIPTS / "hero_pipeline").rglob("*.py"):
+            text = path.read_text(encoding="utf-8")
+            self.assertFalse(
+                "@dataclass" in text and "class Hero" in text,
+                str(path.relative_to(SCRIPTS)),
             )
 
 

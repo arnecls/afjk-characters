@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "indris",
   "display_name": "Indris",
   "local": {
@@ -510,7 +510,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd"
@@ -518,752 +517,188 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "indris",
     "display_name": "Indris",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Indris - Chain Breaker",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) + 20% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The shot disables the enemy's stat buffs for 8s and reduces their Phys & Magic DEF by 20% for the rest of the battle.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unstackable.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The buff-disabling effect doesn't work on Bosses.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Indris fires a silencing arrow at a target with exposed weakness, he deals extra true damage equal to 20% of the exposed target's max HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The true damage cannot exceed 500% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of the silencing arrow to 260% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of the silencing arrow to 280% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of the silencing arrow to 300% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Indris' normal attacks deal 60% (ATK-based) + 6% (SP-based) extra true damage to enemies with exposed weakness.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This effect can trigger once every 4s per enemy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In addition, Indris' normal attack fires 3 arrows, each dealing 165% (ATK-based) + 20% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The arrows prioritize different enemies with exposed weaknesses.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If all 3 arrows hit the same target, the second and third arrows deal 25% less damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of each arrow triggered by True Sight to 170% (ATK-based) + 20% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of each arrow triggered by True Sight to 175% (ATK-based) + 20% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of each arrow triggered by True Sight to 180% (ATK-based) + 20% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Indris knocks back all enemies within 2 tiles, pushing them out of the 2-tile area surrounding him.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "He then casts a binding spell on the nearest enemy, dealing 170% (ATK-based) + 20% (SP-based) damage and immobilizing them for 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 190% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Indris increases his ATK by 6% during battle, plus an extra 9% if an enemy has exposed weakness.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Indris increases his ATK by 8% during battle, plus an extra 12% if an enemy has exposed weakness.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Indris increases his ATK by 10% during battle, plus an extra 15% if an enemy has exposed weakness.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Each time Indris triggers the exposed weakness damage bonus, he increases his ATK SPD by 40 for 6s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unstackable.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 50.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Indris' normal attacks reduce the target's Phys DEF by 20% for 6s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Unstackable.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 60.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "After hitting an enemy with Arcane Binding, Indris's normal attacks can trigger the exposed weakness damage bonus without cooldown for 5s.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) + 20% (SP-based) damage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Spellbane Shot": "Ultimate",
-        "True Sight": "Skill1",
-        "Arcane Binding": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Windpiercer": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 320.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Multiple debuffs on target",
-              "tier": "base",
-              "targeting": "Enemies",
-              "qualitative": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Passive with internal cooldown",
-              "tier": "base",
-              "targeting": "Enemies",
-              "qualitative": "This effect can trigger once every 4s per enemy.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 220.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "debuffed"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 320.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 180.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "debuffed"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "The shot disables the enemy's stat buffs for 8s and reduces their Phys & Magic DEF by 20% for the rest of the battle.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Multiple debuffs on target",
-          "tier": "base",
-          "targeting": "Enemies",
-          "qualitative": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Passive with internal cooldown",
-          "tier": "base",
-          "targeting": "Enemies",
-          "qualitative": "This effect can trigger once every 4s per enemy.",
-          "grants": []
-        }
+      [
+        "base",
+        "Unstackable.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
-        ],
-        [
-          "True damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "The buff-disabling effect doesn't work on Bosses.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "Max HP-based damage": 30.0,
-        "True damage": 90.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD"
+      [
+        "base",
+        "When Indris fires a silencing arrow at a target with exposed weakness, he deals extra true damage equal to 20% of the exposed target's max HP.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 15,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "The true damage cannot exceed 500% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of the silencing arrow to 260% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of the silencing arrow to 280% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of the silencing arrow to 300% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Indris' normal attacks deal 60% (ATK-based) + 6% (SP-based) extra true damage to enemies with exposed weakness.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This effect can trigger once every 4s per enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In addition, Indris' normal attack fires 3 arrows, each dealing 165% (ATK-based) + 20% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The arrows prioritize different enemies with exposed weaknesses.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If all 3 arrows hit the same target, the second and third arrows deal 25% less damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow triggered by True Sight to 170% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow triggered by True Sight to 175% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow triggered by True Sight to 180% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Indris knocks back all enemies within 2 tiles, pushing them out of the 2-tile area surrounding him.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He then casts a binding spell on the nearest enemy, dealing 170% (ATK-based) + 20% (SP-based) damage and immobilizing them for 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 190% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Indris increases his ATK by 6% during battle, plus an extra 9% if an enemy has exposed weakness.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Indris increases his ATK by 8% during battle, plus an extra 12% if an enemy has exposed weakness.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Indris increases his ATK by 10% during battle, plus an extra 15% if an enemy has exposed weakness.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Each time Indris triggers the exposed weakness damage bonus, he increases his ATK SPD by 40 for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unstackable.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 50.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Indris' normal attacks reduce the target's Phys DEF by 20% for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Unstackable.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 60.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After hitting an enemy with Arcane Binding, Indris's normal attacks can trigger the exposed weakness damage bonus without cooldown for 5s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "d42c2d3480a4655e68765b0390c4511161777715dc893a50a30cfbb3ee326a1b",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

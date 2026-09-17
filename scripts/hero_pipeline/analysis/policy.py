@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+from contextlib import contextmanager
+from contextvars import ContextVar
 from types import MappingProxyType
-from typing import Any, Mapping, cast, TypedDict
+from typing import Any, Iterator, Mapping, cast, TypedDict
 
 
 class LocalPolicy(TypedDict, total=False):
@@ -259,19 +261,37 @@ def thaw_policy(policy: Mapping[str, Any]) -> dict[str, Any]:
     return thaw(policy)
 
 
-def apply_local_policy(policy: Mapping[str, Any]) -> None:
-    """Copy local and calibration tunables onto the analysis text module."""
-    from . import text as rs
-    from .local import _apply_local_policy
+_ACTIVE_POLICY: ContextVar[PipelinePolicy | None] = ContextVar(
+    "hero_pipeline_policy",
+    default=None,
+)
 
-    _apply_local_policy(policy["local"])
-    calibration = policy["calibration"]
-    rs.CASTING_SPEED_FAST_THRESHOLD = calibration[
-        "casting_speed_fast_threshold"
-    ]
-    rs.CASTING_SPEED_SLOW_THRESHOLD = calibration[
-        "casting_speed_slow_threshold"
-    ]
+
+@contextmanager
+def bound_policy(policy: Mapping[str, Any]) -> Iterator[None]:
+    """Bind immutable policy for the current analysis/scoring call."""
+    token = _ACTIVE_POLICY.set(cast(PipelinePolicy, policy))
+    try:
+        yield
+    finally:
+        _ACTIVE_POLICY.reset(token)
+
+
+def active_policy() -> PipelinePolicy:
+    return _ACTIVE_POLICY.get() or make_policy()
+
+
+def active_local() -> LocalPolicy:
+    return active_policy()["local"]
+
+
+def active_calibration() -> CalibrationPolicy:
+    return active_policy()["calibration"]
+
+
+def apply_local_policy(policy: Mapping[str, Any]) -> None:
+    """Bind policy for the current task without mutating module constants."""
+    _ACTIVE_POLICY.set(cast(PipelinePolicy, policy))
 
 
 def config_override_diff(config: Mapping[str, Any]) -> dict[str, Any]:

@@ -8,7 +8,7 @@ from hero_pipeline.storage import (
     DATA,
     load_bundles,
     load_manifest,
-    load_roster_snapshot,
+    load_roster_inputs,
     validate_schema_documents,
 )
 
@@ -50,10 +50,10 @@ class PerHeroStorageTests(unittest.TestCase):
             )
             self.assertEqual(bundle["ai"]["schema_version"], 1)
             self.assertEqual(bundle["overrides"]["schema_version"], 1)
-            self.assertEqual(bundle["analysis"]["schema_version"], 1)
+            self.assertEqual(bundle["analysis"]["schema_version"], 2)
 
     def test_snapshot_source_titles_match_manifest(self) -> None:
-        snapshot = load_roster_snapshot()
+        snapshot = load_roster_inputs()
         self.assertEqual(len(snapshot["manifest"]["heroes"]), 125)
         for entry in snapshot["manifest"]["heroes"]:
             source = snapshot["bundles"][entry["id"]]["source"]["source"]

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "isabella",
   "display_name": "Isabella",
   "local": {
@@ -537,7 +537,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -547,916 +546,183 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "isabella",
     "display_name": "Isabella",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Isabella - The Taken Soul",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Isabella selects the frontmost allied hero as her companion.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If the companion is defeated Isabella will select a new one.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Whenever the companion receives a stat boosts to ATK, ATK SPD, Haste, Phys DEF, Magic DEF, or Vitality, Isabella gains a permanent stack of spell note corresponding to that stat.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each type of spell note can stack up to 3 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Note that stat boosts granted by Isabella's spell notes themselves do not trigger additional stacks of spell notes.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Isabella casts her Ultimate, she increases her companion's ATK by 15% + 1.5% (SP-based) for 6s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Additionally, each spell note stack Isabella carries will increase the companion's corresponding stat: ATK, Phys DEF and Magic DEF: +15% per stack.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "ATK SPD, Haste and Vitality: +15 per stack.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Isabella uses her Ultimate, the buff she grants to her companion lasts 6.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Isabella uses her Ultimate, the buff she grants to her companion lasts 7s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Isabella uses her Ultimate, the buff she grants to her companion lasts 7.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Isabella uses her Ultimate, the buff she grants to her companion lasts 8s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Isabella targets only her companion with this skill, healing them for 340% (ATK-based) + 40% (SP-based) HP and then dealing 150% (ATK-based) damage to enemies adjacent to her companion.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "100% of the damage dealt is also converted into extra healing for her companion.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the amount of direct healing to 360% (ATK-based) + 40% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the amount of direct healing to 380% (ATK-based) + 40% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the amount of direct healing to 400% (ATK-based) + 40% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "After her companion is affected by control effects for 5s, Isabella can make them unaffected for 2.5 + 0.25 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect can only trigger once every 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Additionally, when an enemy hero deals 350% (ATK-based) damage to her companion, Isabella reduces that enemy's ATK by 60% (ATK-based) + 7% (SP-based) for 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the ATK reduction inflicted by Isabella to 65% (ATK-based) + 7% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the ATK reduction inflicted by Isabella to 70% (ATK-based) + 7% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the ATK reduction inflicted by Isabella to 75% (ATK-based) + 7% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Assistance by 30 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Assistance by 40 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Assistance by 50 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When Isabella casts her Ultimate, she also debuffs the enemy hero who has dealt the most damage to her companion, temporarily reducing the stats linked to active spell note stacks from Isabella's Ultimate.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The debuffs last 8s and are 80% effective as the corresponding buffs from spell note stacks.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases debuff effectiveness to 90% of the original buff value.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "When a buff from Isabella's Ultimate expires, she recovers 180 Energy for every spell note type at maximum stacks.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Each time Isabella casts her Ultimate, she can recover up to 540 Energy this way.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases debuff effectiveness to 100% of the original buff value.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Isabella selects the frontmost allied hero as her companion.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Grimoire Pact": "Ultimate",
-        "Lingering Grace": "Skill1",
-        "Hexward": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Retributive Echo": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Vitality",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Once per battle",
-              "tier": "base",
-              "targeting": "—",
-              "qualitative": "This effect can only trigger once every 5s.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 400.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Single target",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "ATK SPD",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Vitality",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 400.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 150.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK SPD",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "numeric": 180.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "If the companion is defeated Isabella will select a new one.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Single target",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "Whenever the companion receives a stat boosts to ATK, ATK SPD, Haste, Phys DEF, Magic DEF, or Vitality, Isabella gains a permanent stack of spell note corresponding to that stat.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "requires",
-          "label": "Once per battle",
-          "tier": "base",
-          "targeting": "—",
-          "qualitative": "This effect can only trigger once every 5s.",
-          "grants": []
-        }
+      [
+        "base",
+        "Each type of spell note can stack up to 3 times.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ]
+      [
+        "base",
+        "Note that stat boosts granted by Isabella's spell notes themselves do not trigger additional stacks of spell notes.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "Haste",
-        "Energy"
+      [
+        "base",
+        "When Isabella casts her Ultimate, she increases her companion's ATK by 15% + 1.5% (SP-based) for 6s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Additionally, each spell note stack Isabella carries will increase the companion's corresponding stat: ATK, Phys DEF and Magic DEF: +15% per stack.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "ATK SPD, Haste and Vitality: +15 per stack.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Isabella uses her Ultimate, the buff she grants to her companion lasts 6.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Isabella uses her Ultimate, the buff she grants to her companion lasts 7s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Isabella uses her Ultimate, the buff she grants to her companion lasts 7.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Isabella uses her Ultimate, the buff she grants to her companion lasts 8s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Isabella targets only her companion with this skill, healing them for 340% (ATK-based) + 40% (SP-based) HP and then dealing 150% (ATK-based) damage to enemies adjacent to her companion.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "100% of the damage dealt is also converted into extra healing for her companion.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the amount of direct healing to 360% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the amount of direct healing to 380% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the amount of direct healing to 400% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After her companion is affected by control effects for 5s, Isabella can make them unaffected for 2.5 + 0.25 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can only trigger once every 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Additionally, when an enemy hero deals 350% (ATK-based) damage to her companion, Isabella reduces that enemy's ATK by 60% (ATK-based) + 7% (SP-based) for 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the ATK reduction inflicted by Isabella to 65% (ATK-based) + 7% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the ATK reduction inflicted by Isabella to 70% (ATK-based) + 7% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the ATK reduction inflicted by Isabella to 75% (ATK-based) + 7% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Assistance by 30 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Assistance by 40 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Assistance by 50 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When Isabella casts her Ultimate, she also debuffs the enemy hero who has dealt the most damage to her companion, temporarily reducing the stats linked to active spell note stacks from Isabella's Ultimate.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The debuffs last 8s and are 80% effective as the corresponding buffs from spell note stacks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases debuff effectiveness to 90% of the original buff value.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "When a buff from Isabella's Ultimate expires, she recovers 180 Energy for every spell note type at maximum stacks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Each time Isabella casts her Ultimate, she can recover up to 540 Energy this way.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases debuff effectiveness to 100% of the original buff value.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "09fffa80a3e53ebfac9113ee56ac99790bccae2745d9817bd0865d4876957d2f",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

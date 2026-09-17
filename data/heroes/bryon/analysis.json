@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "bryon",
   "display_name": "Bryon",
   "local": {
@@ -452,7 +452,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "energy"
@@ -460,644 +459,213 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "bryon",
     "display_name": "Bryon",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Bryon - Evergreen Sentinel",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Bryon consumes 300 - 80 (SP-based) Energy, calling Elona to deal 320% (ATK-based) damage to his current target.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona remains on the battlefield, consuming increasing amounts of Energy over time.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When she runs out of Energy or Bryon is defeated, Elona leaves the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona cannot be attacked and will ignore the terrain and prioritizes Bryon's target.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona's normal attack deals 90% (ATK-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona gains enhanced effects after 8s into a battle.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Normal attack damage is increased by 20%, and Haste is increased by 40.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The enhancements are reset when Elona leaves the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona gains enhanced thunderbolt effects after 18s into a battle, reducing Haste of adjacent enemies by 30 and dealing 40% (ATK-based) damage per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The enhancements are reset when Elona leaves the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona's normal attack damage is increased to 100% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elona's normal attack damage is increased to 110% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Bryon summons 4 magic leaves to attack the target.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Each leaf deals 90% (ATK-based) + 10% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The damage dealt by each leaf is increased to 93% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The damage dealt by each leaf is increased to 96% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The damage dealt by each leaf is increased to 100% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Bryon's normal attacks and skills deal damage 2 times, absorbing targets' 50 Energy.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Bryon deals 190% (ATK-based) damage 2 times.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Bryon's normal attacks and skills deal damage 2 times, granting Elona's next normal attack with thunderbolts, dealing additional damage equal to 4% + 0,5% (SP-based) of enemy's current HP, along with a skill interruption effect.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 240% + 15% (SP-based) of Bryon's ATK, up to 3 stacks.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each damage dealt is increased to 195% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each damage dealt is increased to 200% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Bryon increases his Haste by 10 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 3 Haste when Elona is on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Bryon increases his Haste by 13 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 4 Haste when Elona is on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Bryon increases his Haste by 17 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He gains an extra 5 Haste when Elona is on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Elona deals 350% (ATK-based) damage to the enemy and stuns them for 3s when Bryon is being controlled or receives damage exceeding 15% of his max HP from a single hit.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This skill takes effect once every 20s and can only be triggered when Elona is on the field.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "When Bryon takes a fatal blow for the first time, Elona consumes all the Energy to block the fatal damage and restores 200% (ATK-based) HP for Bryon.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "For the next 5s, Bryon cannot be targeted and recovers 40% (ATK-based) HP per second.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Then Elona departs from the battlefield and cannot be summoned for 10s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Elona's counterattack damage is increased to 400% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Elona's counterattack damage is increased to 450% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Bryon generates two leaves beside Elona if the falcon is on the battlefield when Leafblade Gale is cast.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Falcon Raid": "Ultimate",
-        "Leafblade Gale": "Skill1",
-        "Shadow Flash": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Tacit Strike": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 320.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 320.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Cheat death",
-              "tier": "EX+5",
-              "targeting": "Self",
-              "qualitative": "When Bryon takes a fatal blow for the first time, Elona consumes all the Energy to block the fatal damage and restores 200% (ATK-based) HP for Bryon.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Counterattack",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "qualitative": "Elona's counterattack damage is increased to 400% (ATK-based).",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 110.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 17.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 450.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 450.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 320.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 17.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Bryon consumes 300 - 80 (SP-based) Energy, calling Elona to deal 320% (ATK-based) damage to his current target.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Cheat death",
-          "tier": "EX+5",
-          "targeting": "Self",
-          "qualitative": "When Bryon takes a fatal blow for the first time, Elona consumes all the Energy to block the fatal damage and restores 200% (ATK-based) HP for Bryon.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Counterattack",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "qualitative": "Elona's counterattack damage is increased to 400% (ATK-based).",
-          "grants": []
-        }
+      [
+        "base",
+        "Elona remains on the battlefield, consuming increasing amounts of Energy over time.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Single target"
-        ],
-        [
-          "DoT",
-          "Area"
-        ]
+      [
+        "base",
+        "When she runs out of Energy or Bryon is defeated, Elona leaves the battlefield.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Energy"
+      [
+        "base",
+        "Elona cannot be attacked and will ignore the terrain and prioritizes Bryon's target.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Elona's normal attack deals 90% (ATK-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Elona gains enhanced effects after 8s into a battle.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Normal attack damage is increased by 20%, and Haste is increased by 40.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The enhancements are reset when Elona leaves the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Elona gains enhanced thunderbolt effects after 18s into a battle, reducing Haste of adjacent enemies by 30 and dealing 40% (ATK-based) damage per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The enhancements are reset when Elona leaves the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Elona's normal attack damage is increased to 100% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Elona's normal attack damage is increased to 110% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Bryon summons 4 magic leaves to attack the target.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each leaf deals 90% (ATK-based) + 10% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The damage dealt by each leaf is increased to 93% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The damage dealt by each leaf is increased to 96% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The damage dealt by each leaf is increased to 100% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Bryon's normal attacks and skills deal damage 2 times, absorbing targets' 50 Energy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Bryon deals 190% (ATK-based) damage 2 times.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Bryon's normal attacks and skills deal damage 2 times, granting Elona's next normal attack with thunderbolts, dealing additional damage equal to 4% + 0,5% (SP-based) of enemy's current HP, along with a skill interruption effect.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 240% + 15% (SP-based) of Bryon's ATK, up to 3 stacks.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each damage dealt is increased to 195% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each damage dealt is increased to 200% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Bryon increases his Haste by 10 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 3 Haste when Elona is on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Bryon increases his Haste by 13 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 4 Haste when Elona is on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Bryon increases his Haste by 17 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He gains an extra 5 Haste when Elona is on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Elona deals 350% (ATK-based) damage to the enemy and stuns them for 3s when Bryon is being controlled or receives damage exceeding 15% of his max HP from a single hit.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This skill takes effect once every 20s and can only be triggered when Elona is on the field.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "When Bryon takes a fatal blow for the first time, Elona consumes all the Energy to block the fatal damage and restores 200% (ATK-based) HP for Bryon.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "For the next 5s, Bryon cannot be targeted and recovers 40% (ATK-based) HP per second.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Then Elona departs from the battlefield and cannot be summoned for 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Elona's counterattack damage is increased to 400% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Elona's counterattack damage is increased to 450% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Bryon generates two leaves beside Elona if the falcon is on the battlefield when Leafblade Gale is cast.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "813188513ffdcf16e74d81ee60f3fc6ca8d105e0180706be00aef179386c8032",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

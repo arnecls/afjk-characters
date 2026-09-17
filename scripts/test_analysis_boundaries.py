@@ -10,13 +10,13 @@ from hero_pipeline.analysis.calibrate import calibrate_roster
 from hero_pipeline.analysis.local import analyze_local
 from hero_pipeline.analysis.policy import make_policy
 from hero_pipeline.analysis.service import analyze_roster
-from hero_pipeline.storage import load_roster_snapshot
+from hero_pipeline.storage import load_roster_inputs
 
 
 class AnalysisBoundaryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.snapshot = load_roster_snapshot()
+        cls.snapshot = load_roster_inputs()
         cls.policy = make_policy()
 
     def test_local_analysis_is_one_bundle_to_one_mapping(self) -> None:

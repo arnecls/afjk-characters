@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "hammie",
   "display_name": "Hammie",
   "local": {
@@ -222,277 +222,89 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "hammie",
     "display_name": "Hammie",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Hammie - Acorn Mage",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Hammie charges up to shoot a fireball, dealing 260% (ATK-based) damage to the enemy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 280% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 300% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 320% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 340% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Hammie heals the weakest ally for 160% (ATK-based) HP and increases their ATK by 10% for 5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the healing amount to 170% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the healing amount to 180% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the healing amount to 190% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The healing amount is increased to 230% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The healing amount is increased to 240% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The healing amount is increased to 250% (ATK-based).",
-          "Skill2"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Hammie charges up to shoot a fireball, dealing 260% (ATK-based) damage to the enemy.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Pretty Fireball": "Ultimate",
-        "You'll Be Fine": "Skill1",
-        "I'm Hungry": "Skill2"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 340.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 220.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.7,
-                  "comparison": "below"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 340.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 220.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "hp_threshold",
-              "hp_ratio": 0.7,
-              "comparison": "below"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        }
+      [
+        "base",
+        "Increases the damage to 280% (ATK-based).",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Magic",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases the damage to 300% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK"
+      [
+        "base",
+        "Increases the damage to 320% (ATK-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage to 340% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Hammie heals the weakest ally for 160% (ATK-based) HP and increases their ATK by 10% for 5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 170% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 180% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 190% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The healing amount is increased to 230% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The healing amount is increased to 240% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The healing amount is increased to 250% (ATK-based).",
+        "Skill2"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "1de022056c19c44a61c0e7838b60f13208070ec71e20e67584d25cbac3067b0b",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

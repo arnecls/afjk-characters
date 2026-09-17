@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "seth",
   "display_name": "Seth",
   "local": {
@@ -487,7 +487,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -499,728 +498,148 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "seth",
     "display_name": "Seth",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Seth - Swift Shadow",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Seth prioritizes selecting the weakest enemy as the target.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage while jumping to 160% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases HP recovery from each Bloodlust stack to 15% of the total damage dealt.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage while jumping to 170% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage while jumping to 180% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The additional damage cannot exceed 400% of his ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 160% (ATK-based) + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 170% (ATK-based) + 15% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 180% (ATK-based) + 15% (SP-based)..",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Gains a stack of Bloodlust when the HP of a non-summoned enemy first falls below 50%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Haste by 12 + 1.5 (SP-based) and Life Drain by 10 + 1 (SP-based) permanently with each stack of Bloodlust.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Gains 25 Crit when he first triggers Bloodlust.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 16% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 20% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases Energy recovery to 240.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases Energy recovery to 260.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Shadow Strike": "Ultimate",
-        "Predator's Lunge": "Skill1",
-        "Hunter Instinct": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Hunting Spree": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 0.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 0.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 195.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_summoned"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "DEF",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Crit",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 0.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 0.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 180.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_summoned"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "DEF",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Crit",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        }
+      [
+        "base",
+        "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks.",
-          "grants": []
-        }
+      [
+        "base",
+        "Seth prioritizes selecting the weakest enemy as the target.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases damage while jumping to 160% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "HP loss": 37.5
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Crit",
-        "Energy",
-        "Physical DEF",
-        "Magic DEF"
+      [
+        "base",
+        "Increases HP recovery from each Bloodlust stack to 15% of the total damage dealt.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage while jumping to 170% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage while jumping to 180% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The additional damage cannot exceed 400% of his ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 160% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 170% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 180% (ATK-based) + 15% (SP-based)..",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Gains a stack of Bloodlust when the HP of a non-summoned enemy first falls below 50%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Haste by 12 + 1.5 (SP-based) and Life Drain by 10 + 1 (SP-based) permanently with each stack of Bloodlust.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Gains 25 Crit when he first triggers Bloodlust.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases Energy recovery to 240.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases Energy recovery to 260.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "0a10615dc9faa7ba6bdcb725a3435ea3e9f1c8bdcf23194e9b12644afb888882",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

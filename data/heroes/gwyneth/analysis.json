@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "gwyneth",
   "display_name": "Gwyneth",
   "local": {
@@ -478,7 +478,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd"
@@ -486,760 +485,203 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "gwyneth",
     "display_name": "Gwyneth",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Gwyneth - Dragonslayer Knight",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "For each wave of arrows, subsequent hits on the same target deal 80% less damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This skill prioritizes the area with the most enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 290% (ATK-based) + 35% (SP-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 310% (ATK-based) + 35% (SP-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 330% (ATK-based) + 35% (SP-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 350% (ATK-based) + 35% (SP-based) when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Gwyneth's normal attacks follow a 3-attack cycle.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the lightning splash damage dealt to 240% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the lightning splash damage dealt to 260% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the lightning splash damage dealt to 280% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "While burned, the target has their Vitality reduced by 40.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect cannot stack.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 510% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 530% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 550% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 15 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 20 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 12.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 25 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 15.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Gwyneth's normal attack damage is increased by 20%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Equipment Level 5: Increases Gwyneth's normal attack damage by 25%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Equipment Level 10: When an arrow is imbued with the power of both lightning and fire, it also deals extra damage to the main target equal to 10% of their max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This extra damage cannot exceed 360% of Gwyneth's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "All damage dealt by this arrow also ignores 60% of enemies' Phys DEF damage reduction, and 4% of all other damage taken reduction effects.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "In non-boss battles, this second value is increased to 12%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Equipment Level 15: Increases Gwyneth's normal attack damage by 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Hailing Arrows": "Ultimate",
-        "Fulgur Arrow": "Skill1",
-        "Flare Arrow": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Fulgur Flare": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 385.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 385.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 0.1,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 0.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 0.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Silence",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 310.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 550.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 4.0,
-              "tick": 0.25,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 385.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 0.1,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 0.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 0.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Silence",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 1.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 550.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 4.0,
-          "tick": 0.25,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage dealt",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "Max HP-based damage": 15.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD"
+      [
+        "base",
+        "Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 8,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "For each wave of arrows, subsequent hits on the same target deal 80% less damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This skill prioritizes the area with the most enemies.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 290% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 310% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 330% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 350% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Gwyneth's normal attacks follow a 3-attack cycle.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the lightning splash damage dealt to 240% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the lightning splash damage dealt to 260% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the lightning splash damage dealt to 280% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "While burned, the target has their Vitality reduced by 40.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect cannot stack.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 510% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 530% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 550% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 25 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 15.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Gwyneth's normal attack damage is increased by 20%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Equipment Level 5: Increases Gwyneth's normal attack damage by 25%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Equipment Level 10: When an arrow is imbued with the power of both lightning and fire, it also deals extra damage to the main target equal to 10% of their max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This extra damage cannot exceed 360% of Gwyneth's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "All damage dealt by this arrow also ignores 60% of enemies' Phys DEF damage reduction, and 4% of all other damage taken reduction effects.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "In non-boss battles, this second value is increased to 12%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Equipment Level 15: Increases Gwyneth's normal attack damage by 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "84ddd12f46ba8c4370dc00563ae7f0b10bc3e700074388cc579bc2233248e453",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

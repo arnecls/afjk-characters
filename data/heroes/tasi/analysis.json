@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "tasi",
   "display_name": "Tasi",
   "local": {
@@ -452,7 +452,6 @@
         "All units, Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -462,669 +461,178 @@
       "atk": 0.9166666666666666,
       "max_hp": 0.08333333333333333
     },
-    "behavior": {},
     "id": "tasi",
     "display_name": "Tasi",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Tasi - Fairy of Dreams",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Tasi summons a dream that lasts for 3.5 + 0.5 (SP-based)s, hypnotizing all enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Hypnotized enemies cannot move or act and take 70% (ATK-based) + 12% (SP-based) damage per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage per second to 80% (ATK-based) + 12% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage per second to 90% (ATK-based) + 12% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage per second to 100% (ATK-based) + 12% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage per second to 110% (ATK-based) + 12% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Tasi consumes 10% of her current HP to deal damage equal to 110% + 10% (SP-based) of her consumed HP to adjacent enemies, stunning them for 0.5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The damage dealt will be no less than 60% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "She then flies to the farthest enemy and applies the same effect to adjacent enemies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "However, the second hit on the same enemy will deal only 50% of the original damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 120% + 10% (SP-based) of her consumed HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 130% + 10% (SP-based) of her consumed HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 140% + 10% (SP-based) of her consumed HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Tasi enters her dream realm and transforms into a butterfly upon losing 50% (HP-based) HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "In this form, she becomes invincible, recovering 120% (ATK-based) + 10% (SP-based) HP per second while dealing 45% (ATK-based) + 5% (SP-based) damage to adjacent enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This effect lasts for 3s, and Tasi can cast this skill up to 2 times in one battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage per second to 50% (ATK-based) + 5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage per second to 55% (ATK-based) + 5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage per second to 60% (ATK-based) + 5% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Tasi increases her ATK by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After casting Eternal Dreamscape, she gains an extra 6% ATK while the dream lasts.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Tasi increases her ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After casting Eternal Dreamscape, she gains an extra 8% ATK while the dream lasts.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Tasi increases her ATK by 15% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After casting Eternal Dreamscape, she gains an extra 10% ATK while the dream lasts.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Tasi gains 70 Haste and reduces damage taken by 90% for 5s after casting Eternal Dreamscape.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "During this time, Dream Dance no longer costs Tasi's HP to cast and has no cooldown.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Its damage counts as if Tasi had consumed 10% of her current HP, and she will prioritize targeting the farthest hypnotized enemy.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Gains 100 Haste after casting Eternal Dreamscape.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Adds 40 extra Penetration when dealing damage to hypnotized enemies with Dream Dance.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Gains 130 Haste after casting Eternal Dreamscape.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Tasi gains an extra attempt to cast Fluttering Dream each time she assists or kills a non-summoned enemy.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Tasi summons a dream that lasts for 3.5 + 0.5 (SP-based)s, hypnotizing all enemies.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Eternal Dreamscape": "Ultimate",
-        "Dream Dance": "Skill1",
-        "Fluttering Dream": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Shimmering Dust": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Sleep",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 4.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 4.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 110.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Sleep (area)",
-              "tier": "base",
-              "targeting": "All units",
-              "qualitative": "Tasi summons a dream that lasts for 3.5 + 0.5s, hypnotizing all enemies. Hypnotized enemies cannot move or act and take 70% (ATK-based) + 12% damage per second.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 0.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 0.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 140.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Transformation",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "Tasi enters her dream realm and transforms into a butterfly upon losing 50% (HP-based) HP.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "In this form, she becomes invincible, recovering 120% (ATK-based) + 10% HP per second while dealing 45% (ATK-based) + 5% damage to adjacent enemies.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Sleep",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 4.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 4.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 130.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 0.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 0.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 140.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 120.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 130.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Hypnotized enemies cannot move or act and take 70% (ATK-based) + 12% (SP-based) damage per second.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Sleep (area)",
-          "tier": "base",
-          "targeting": "All units",
-          "qualitative": "Tasi summons a dream that lasts for 3.5 + 0.5s, hypnotizing all enemies. Hypnotized enemies cannot move or act and take 70% (ATK-based) + 12% damage per second.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Transformation",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "Tasi enters her dream realm and transforms into a butterfly upon losing 50% (HP-based) HP.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "In this form, she becomes invincible, recovering 120% (ATK-based) + 10% HP per second while dealing 45% (ATK-based) + 5% damage to adjacent enemies.",
-          "grants": []
-        }
+      [
+        "base",
+        "Increases damage per second to 80% (ATK-based) + 12% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ],
-        [
-          "DoT",
-          "All units, Area"
-        ]
+      [
+        "base",
+        "Increases damage per second to 90% (ATK-based) + 12% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP"
+      [
+        "base",
+        "Increases damage per second to 100% (ATK-based) + 12% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.9166666666666666,
-        "Max HP": 0.08333333333333333
-      },
-      "default_range": 4,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage per second to 110% (ATK-based) + 12% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Tasi consumes 10% of her current HP to deal damage equal to 110% + 10% (SP-based) of her consumed HP to adjacent enemies, stunning them for 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The damage dealt will be no less than 60% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "She then flies to the farthest enemy and applies the same effect to adjacent enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "However, the second hit on the same enemy will deal only 50% of the original damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 120% + 10% (SP-based) of her consumed HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 130% + 10% (SP-based) of her consumed HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 140% + 10% (SP-based) of her consumed HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Tasi enters her dream realm and transforms into a butterfly upon losing 50% (HP-based) HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "In this form, she becomes invincible, recovering 120% (ATK-based) + 10% (SP-based) HP per second while dealing 45% (ATK-based) + 5% (SP-based) damage to adjacent enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect lasts for 3s, and Tasi can cast this skill up to 2 times in one battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage per second to 50% (ATK-based) + 5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage per second to 55% (ATK-based) + 5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage per second to 60% (ATK-based) + 5% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Tasi increases her ATK by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After casting Eternal Dreamscape, she gains an extra 6% ATK while the dream lasts.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Tasi increases her ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After casting Eternal Dreamscape, she gains an extra 8% ATK while the dream lasts.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Tasi increases her ATK by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After casting Eternal Dreamscape, she gains an extra 10% ATK while the dream lasts.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Tasi gains 70 Haste and reduces damage taken by 90% for 5s after casting Eternal Dreamscape.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "During this time, Dream Dance no longer costs Tasi's HP to cast and has no cooldown.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Its damage counts as if Tasi had consumed 10% of her current HP, and she will prioritize targeting the farthest hypnotized enemy.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains 100 Haste after casting Eternal Dreamscape.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Adds 40 extra Penetration when dealing damage to hypnotized enemies with Dream Dance.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Gains 130 Haste after casting Eternal Dreamscape.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Tasi gains an extra attempt to cast Fluttering Dream each time she assists or kills a non-summoned enemy.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "40054930d915e156a9dbdcdb2fc16496574b1b76afbd0c2bcf6cab2cb17850b8",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

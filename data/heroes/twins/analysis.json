@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "twins",
   "display_name": "Twins",
   "local": {
@@ -561,7 +561,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "haste",
       "energy"
@@ -569,933 +568,233 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "twins",
     "display_name": "Twins",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Elijah & Lailah - Celestial Twins",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Elijah and Lailah fight separately in battle but share the same HP and Energy pool.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Their max HP is increased by 50%.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elijah and Lailah perform an inspiring duo dance, increasing all allies' Haste by 60 + 4 (SP-based) for 7s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "During the dance, allies linked through Stellar Bond become unaffected.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The skill can be cast as long as Elijah is able to use Ultimate.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, extends the duration of the Haste bonus to 7.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, extends the duration of the Haste bonus to 8s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, extends the duration of the Haste bonus to 8.5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When actively used, extends the duration of the Haste bonus to 9s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Elijah forms a Stellar Bond with Lailah when they align on the battlefield.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Allied heroes placed in a straight path between the twins are also linked by Stellar Bond.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Stellar Bond grants a permanent ATK bonus to all linked allies, including Elijah and Lailah.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If no other allies are linked, Elijah and Lailah gain an ATK increase of 25%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "However, for each additional ally linked, this ATK bonus is reduced by 5% for everyone linked by the bond.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Elijah channels a golden glow through the Stellar Bond link to Lailah, restoring 30 + 4 (SP-based) Energy for each ally along its path.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Simultaneously, Lailah sends a green glow through the Stellar Bond link to Elijah, healing each ally along the path for an HP amount equal to 100% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Energy recovered by Elijah's golden glow to 35 + 4 (SP-based), and the HP recovered through Lailah's green glow to 110% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Energy recovered by Elijah's golden glow to 40 + 4 (SP-based), and the HP recovered through Lailah's green glow to 120% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the Energy recovered by Elijah's golden glow to 45 + 4 (SP-based), and the HP recovered through Lailah's green glow to 130% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Elijah grants Lailah and 1 weakest ally a 150% (ATK-based) + 15% (SP-based) shield that lasts for 4 + 0.4s (SP-based) and makes Lailah unaffected while the shield is active.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Lailah casts Stellar Pulse on the tiles occupied by Elijah and 1 ally adjacent to enemies, dealing 110% (ATK-based) + 10% (SP-based) damage and inflicting blind for 4 + 0.4s (SP-based) on enemies within 1 tile of the target tiles.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Stellar Pulse also knocks back enemies surrounding Lailah by 1 tile.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the shield value granted by Elijah to 160% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Lailah's Stellar Pulse damage to 120% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the shield value granted by Elijah to 170% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Lailah's Stellar Pulse damage to 130% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the shield value granted by Elijah to 180% (ATK-based) + 15% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Lailah's Stellar Pulse damage to 140% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Elijah and Lailah increase their Haste by 9 in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Elijah and Lailah increase their Haste by 12 in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 4, stacking up to 3 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Elijah and Lailah increase their Haste by 15 in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 5, stacking up to 3 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When a battle starts, if the allies (excluding Elijah and Lailah) linked through Stellar Bond all belong to the same faction, a special resonance effect is triggered.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The resonance increases linked allies' Vitality by an extra 10 and their Energy gained by 10%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "After all linked allies have cast their Ultimates while resonance is active, the bond unleashes a permanent energy burst, inspiring all allies and returning them 10% of their Energy cost each time they cast their Ultimate.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the Vitality bonus to 25 and the Energy gain bonus to 12% while the Stellar Bond resonance is active.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases the Vitality bonus to 40 and the Energy gain bonus to 14% while the Stellar Bond resonance is active.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "After Stellar Bond unleashes an energy burst, increases the Energy returned to allies from each Ultimate cast to 15% of their Energy used.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "The increases for each linked ally are equal to 15% of the highest corresponding stats among other linked allies, but cannot exceed 30% of the original corresponding stats of Elijah and Lailah.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "These stat boosts are not included when calculating increases from this skill.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Elijah and Lailah fight separately in battle but share the same HP and Energy pool.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Starlight Waltz": "Ultimate",
-        "Stellar Bond": "Skill1",
-        "Cosmic Protection": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Starbound Harmony": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 3,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "timing": "On ultimate"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Shared HP and Energy",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Elijah and Lailah fight separately in battle but share the same HP and Energy pool.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Ally positioning link",
-              "tier": "Legendary+",
-              "targeting": "All units",
-              "qualitative": "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Ally positioning link",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "qualitative": "During the dance, allies linked through Stellar Bond become unaffected.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Ally positioning link",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Elijah forms a Stellar Bond with Lailah when they align on the battlefield.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Ally positioning link",
-              "tier": "base",
-              "targeting": "Area",
-              "qualitative": "Simultaneously, Lailah sends a green glow through the Stellar Bond link to Elijah, healing each ally along the path for an HP amount equal to 100% (ATK-based) + 10%.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Ally on positioning link",
-              "tier": "base",
-              "targeting": "—",
-              "qualitative": "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Ally on positioning link",
-              "tier": "Supreme+",
-              "targeting": "Allies",
-              "qualitative": "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 49.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Phys DEF",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Magic DEF",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Blind",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 4.4,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 4.4,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 195.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On skill"
-            }
-          ],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Vitality",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 3,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 49.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 130.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Phys DEF",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Magic DEF",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Blind",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 4.4,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 4.4,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 195.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Vitality",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Their max HP is increased by 50%.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "timing": "On ultimate"
-        },
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On skill"
-        }
+      [
+        "base",
+        "Elijah and Lailah perform an inspiring duo dance, increasing all allies' Haste by 60 + 4 (SP-based) for 7s.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Shared HP and Energy",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Elijah and Lailah fight separately in battle but share the same HP and Energy pool.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally positioning link",
-          "tier": "Legendary+",
-          "targeting": "All units",
-          "qualitative": "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally positioning link",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "qualitative": "During the dance, allies linked through Stellar Bond become unaffected.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally positioning link",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Elijah forms a Stellar Bond with Lailah when they align on the battlefield.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally positioning link",
-          "tier": "base",
-          "targeting": "Area",
-          "qualitative": "Simultaneously, Lailah sends a green glow through the Stellar Bond link to Elijah, healing each ally along the path for an HP amount equal to 100% (ATK-based) + 10%.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Ally on positioning link",
-          "tier": "base",
-          "targeting": "—",
-          "qualitative": "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Ally on positioning link",
-          "tier": "Supreme+",
-          "targeting": "Allies",
-          "qualitative": "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond.",
-          "grants": []
-        }
+      [
+        "base",
+        "During the dance, allies linked through Stellar Bond become unaffected.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area"
-        ]
+      [
+        "base",
+        "The skill can be cast as long as Elijah is able to use Ultimate.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Haste",
-        "Energy"
+      [
+        "base",
+        "When actively used, extends the duration of the Haste bonus to 7.5s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 6,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "When actively used, extends the duration of the Haste bonus to 8s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, extends the duration of the Haste bonus to 8.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, extends the duration of the Haste bonus to 9s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Elijah forms a Stellar Bond with Lailah when they align on the battlefield.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Allied heroes placed in a straight path between the twins are also linked by Stellar Bond.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Stellar Bond grants a permanent ATK bonus to all linked allies, including Elijah and Lailah.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If no other allies are linked, Elijah and Lailah gain an ATK increase of 25%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "However, for each additional ally linked, this ATK bonus is reduced by 5% for everyone linked by the bond.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Elijah channels a golden glow through the Stellar Bond link to Lailah, restoring 30 + 4 (SP-based) Energy for each ally along its path.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Simultaneously, Lailah sends a green glow through the Stellar Bond link to Elijah, healing each ally along the path for an HP amount equal to 100% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Energy recovered by Elijah's golden glow to 35 + 4 (SP-based), and the HP recovered through Lailah's green glow to 110% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Energy recovered by Elijah's golden glow to 40 + 4 (SP-based), and the HP recovered through Lailah's green glow to 120% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the Energy recovered by Elijah's golden glow to 45 + 4 (SP-based), and the HP recovered through Lailah's green glow to 130% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Elijah grants Lailah and 1 weakest ally a 150% (ATK-based) + 15% (SP-based) shield that lasts for 4 + 0.4s (SP-based) and makes Lailah unaffected while the shield is active.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Lailah casts Stellar Pulse on the tiles occupied by Elijah and 1 ally adjacent to enemies, dealing 110% (ATK-based) + 10% (SP-based) damage and inflicting blind for 4 + 0.4s (SP-based) on enemies within 1 tile of the target tiles.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Stellar Pulse also knocks back enemies surrounding Lailah by 1 tile.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the shield value granted by Elijah to 160% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Lailah's Stellar Pulse damage to 120% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the shield value granted by Elijah to 170% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Lailah's Stellar Pulse damage to 130% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the shield value granted by Elijah to 180% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Lailah's Stellar Pulse damage to 140% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Elijah and Lailah increase their Haste by 9 in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Elijah and Lailah increase their Haste by 12 in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 4, stacking up to 3 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Elijah and Lailah increase their Haste by 15 in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 5, stacking up to 3 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, if the allies (excluding Elijah and Lailah) linked through Stellar Bond all belong to the same faction, a special resonance effect is triggered.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The resonance increases linked allies' Vitality by an extra 10 and their Energy gained by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "After all linked allies have cast their Ultimates while resonance is active, the bond unleashes a permanent energy burst, inspiring all allies and returning them 10% of their Energy cost each time they cast their Ultimate.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the Vitality bonus to 25 and the Energy gain bonus to 12% while the Stellar Bond resonance is active.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the Vitality bonus to 40 and the Energy gain bonus to 14% while the Stellar Bond resonance is active.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "After Stellar Bond unleashes an energy burst, increases the Energy returned to allies from each Ultimate cast to 15% of their Energy used.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The increases for each linked ally are equal to 15% of the highest corresponding stats among other linked allies, but cannot exceed 30% of the original corresponding stats of Elijah and Lailah.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "These stat boosts are not included when calculating increases from this skill.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "384588f7a59f41667e00789fd9744daa2dece6d9ab60f5e422278b3e07cd5f50",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

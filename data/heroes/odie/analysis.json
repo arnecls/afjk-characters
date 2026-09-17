@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "odie",
   "display_name": "Odie",
   "local": {
@@ -392,538 +392,154 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk_spd"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "odie",
     "display_name": "Odie",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill4",
-    "hero": {
-      "title": "Odie - Desert Defender",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Odie fires a Corrosive Dart, dealing 150% (ATK-based) + 20% (SP-based) damage and Dart Poison to an enemy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The poisoned target will receive 30% (ATK-based) damage every second until defeated.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Dart Poison cannot be dispelled.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Gains 600 Energy when a poisoned enemy is defeated, but only 200 Energy if the enemy is a summoned unit.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 200% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 225% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 250% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Odie deals 60% (ATK-based) + 5% (SP-based) damage to an enemy 3 times.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The attacks from this skill are considered normal attacks.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 62% (ATK-based) + 5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 65% (ATK-based) + 5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 70% (ATK-based) + 5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Odie prioritizes launching normal attacks at the nearest poisoned target.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When the normal attacks hit a poisoned target, the base damage of the target's Dart Poison is permanently increased by 25% (ATK-based), up to 20 + 2 (SP-based) stacks.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the range of normal attacks and Ultimate to 7 tiles.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Dart Poison's base damage to 27%",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases Dart Poison's base damage to 29%",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 21 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 27 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 33 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Odie immediately defeats poisoned enemies when their HP drops below a threshold equal to 5.2 times the base damage dealt by Dart Poison per second.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each time a poisoned enemy is defeated, the threshold is increased by 0.5 times the base damage dealt by Dart Poison per second, up to 2 times.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the threshold to 5.7 times the base damage dealt by Dart Poison per second.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Gains 600 Initial Energy.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the threshold to 6.2 times the base damage dealt by Dart Poison per second.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart Poison damage per second.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Odie fires a Corrosive Dart, dealing 150% (ATK-based) + 20% (SP-based) damage and Dart Poison to an enemy.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Corrosive Dart": "Ultimate",
-        "Triple Tap": "Skill1",
-        "Venom Surge": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Heart Crusher": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 270.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": -1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Debuff application",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Dart Poison deals damage every second until the target is defeated and cannot be dispelled.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 75.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 29.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "debuffed"
-                },
-                {
-                  "type": "trigger_condition",
-                  "trigger": "normal_attack"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 33.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Execution",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "debuffed"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Instant defeat",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "Odie immediately defeats poisoned enemies when their HP drops below a scaling Dart Poison threshold.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Execution scaling",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "qualitative": "Triple Tap deals 1.5 times Dart Poison damage per second against poisoned targets.",
-              "grants": []
-            }
-          ]
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 270.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 250.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": -1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 29.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "debuffed"
-            },
-            {
-              "type": "trigger_condition",
-              "trigger": "normal_attack"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 33.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "Execution",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "debuffed"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "The poisoned target will receive 30% (ATK-based) damage every second until defeated.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Debuff application",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Dart Poison deals damage every second until the target is defeated and cannot be dispelled.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Instant defeat",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "Odie immediately defeats poisoned enemies when their HP drops below a scaling Dart Poison threshold.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Execution scaling",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "qualitative": "Triple Tap deals 1.5 times Dart Poison damage per second against poisoned targets.",
-          "grants": []
-        }
+      [
+        "base",
+        "Dart Poison cannot be dispelled.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ]
+      [
+        "base",
+        "Gains 600 Energy when a poisoned enemy is defeated, but only 200 Energy if the enemy is a summoned unit.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK SPD"
+      [
+        "base",
+        "Increases damage to 200% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage to 225% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 250% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Odie deals 60% (ATK-based) + 5% (SP-based) damage to an enemy 3 times.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The attacks from this skill are considered normal attacks.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 62% (ATK-based) + 5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 65% (ATK-based) + 5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 70% (ATK-based) + 5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Odie prioritizes launching normal attacks at the nearest poisoned target.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When the normal attacks hit a poisoned target, the base damage of the target's Dart Poison is permanently increased by 25% (ATK-based), up to 20 + 2 (SP-based) stacks.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the range of normal attacks and Ultimate to 7 tiles.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Dart Poison's base damage to 27%",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Dart Poison's base damage to 29%",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 21 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 27 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 33 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Odie immediately defeats poisoned enemies when their HP drops below a threshold equal to 5.2 times the base damage dealt by Dart Poison per second.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each time a poisoned enemy is defeated, the threshold is increased by 0.5 times the base damage dealt by Dart Poison per second, up to 2 times.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the threshold to 5.7 times the base damage dealt by Dart Poison per second.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Gains 600 Initial Energy.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the threshold to 6.2 times the base damage dealt by Dart Poison per second.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart Poison damage per second.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "67a21992e37c1245628c32dea943516cfa2e8d4acedd7a7458a732291848d9de",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

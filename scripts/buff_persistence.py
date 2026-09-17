@@ -650,9 +650,9 @@ def validate_effect_persistence(
 
 def is_runtime_positive_stat_buff(effect: Any) -> bool:
     """True for analyzed Effect objects that are roster stat buffs."""
-    if getattr(effect, "category", None) != "buff":
+    if effect.get("category") != "buff":
         return False
-    label = (getattr(effect, "label", None) or "").strip()
+    label = (effect.get("label") or "").strip()
     if label in NON_STAT_BUFF_NAMES:
         return False
     return hs._stat_from_label(label) is not None or label in (
@@ -664,7 +664,7 @@ def is_runtime_positive_stat_buff(effect: Any) -> bool:
 def is_runtime_temporary_stat_buff(effect: Any) -> bool:
     return (
         is_runtime_positive_stat_buff(effect)
-        and getattr(effect, "persistence", None) == "temporary"
+        and effect.get("persistence") == "temporary"
     )
 
 

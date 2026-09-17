@@ -316,23 +316,24 @@ ENABLER_REQUIRE_HANDLERS = (
 PARTY_COMPOSITION_CLASSES = frozenset({"Mage", "Tank", "Support"})
 
 
-_TWINS_FULL_TITLE = "Elijah & Lailah - Celestial Twins"
-
-
 def short_name(title: str) -> str:
     """Display name for heroes in heroes-overview.md."""
-    if title == _TWINS_FULL_TITLE:
-        return "Twins"
-    return title.split(" - ", 1)[0].strip()
+    from hero_pipeline.storage import resolve_hero_id, manifest_index
+
+    try:
+        hero_id = resolve_hero_id(title)
+        return manifest_index()["by_id"][hero_id]["display_name"]
+    except KeyError:
+        return title.split(" - ", 1)[0].strip()
 
 
 def _is_same_hero(provider: _rs.Hero, receiver: _rs.Hero) -> bool:
     """True when provider and receiver are the same roster hero."""
-    return short_name(provider.title) == short_name(receiver.title)
+    return short_name(provider["title"]) == short_name(receiver["title"])
 
 
 def receiver_stats(hero: _rs.Hero) -> list[str]:
-    return [s for s in hero.benefit_stats if s != "Primary damage type (unit)"]
+    return [s for s in hero["benefit_stats"] if s != "Primary damage type (unit)"]
 
 
 def stat_buff_targeting_weight(
@@ -347,7 +348,7 @@ MOVING_RECEIVER_MOVEMENTS = frozenset({"moving", "high movement"})
 
 
 def _provider_has_static_tile_buffer_tag(provider: _rs.Hero) -> bool:
-    tags = _load_behavior_tags().get(short_name(provider.title), frozenset())
+    tags = _load_behavior_tags().get(short_name(provider["title"]), frozenset())
     return _rs.STATIC_TILE_BUFFER_TAG in tags
 
 
@@ -357,13 +358,13 @@ def ally_buff_applies_to_receiver(
     receiver_movement: str,
 ) -> bool:
     """Whether an ally buff can help this receiver in synergy scoring."""
-    if effect.category != "buff" or effect.targeting not in ALLY_TARGETINGS:
+    if effect["category"] != "buff" or effect["targeting"] not in ALLY_TARGETINGS:
         return False
     if receiver_movement not in MOVING_RECEIVER_MOVEMENTS:
         return True
     if _provider_has_static_tile_buffer_tag(provider):
         return False
-    if effect.label in provider.positional_tile_buff_labels:
+    if effect["label"] in provider["positional_tile_buff_labels"]:
         return False
     return True
 
@@ -388,13 +389,13 @@ SUMMON_TARGETING_WEIGHT = 3.0
 def receiver_has_summoner_tag(hero: _rs.Hero) -> bool:
     from summoner_registry import summoner_heroes
 
-    return short_name(hero.title) in summoner_heroes()
+    return short_name(hero["title"]) in summoner_heroes()
 
 
 def receiver_has_ranged_summons(hero: _rs.Hero) -> bool:
     from summoner_registry import has_ranged_summons
 
-    return has_ranged_summons(short_name(hero.title))
+    return has_ranged_summons(short_name(hero["title"]))
 
 
 def format_reason_for_display(reason: str) -> str:
@@ -419,14 +420,14 @@ def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
 
 
 def provider_skill_text(hero: _rs.Hero) -> str:
-    return " ".join(t for _, t, _ in hero.skill_chunks).lower()
+    return " ".join(t for _, t, _ in hero["skill_chunks"]).lower()
 
 
 def provider_damage_types(hero: _rs.Hero) -> set[str]:
     types: set[str] = set()
-    if hero.damage_type:
-        types.add(hero.damage_type)
-    for dt, _ in hero.damage_entries:
+    if hero["damage_type"]:
+        types.add(hero["damage_type"])
+    for dt, _ in hero["damage_entries"]:
         types.add(dt)
     return types
 
@@ -434,7 +435,7 @@ def provider_damage_types(hero: _rs.Hero) -> set[str]:
 def provider_best_enemy_targeting(hero: _rs.Hero, damage_type: str) -> str:
     best = "Single target"
     best_w = 0.0
-    for dt, tgt in hero.damage_entries:
+    for dt, tgt in hero["damage_entries"]:
         if dt != damage_type:
             continue
         if tgt == "Self":
@@ -448,10 +449,10 @@ def provider_best_enemy_targeting(hero: _rs.Hero, damage_type: str) -> str:
 
 
 def provider_has_start_of_battle_output(hero: _rs.Hero) -> bool:
-    for se in hero.special_effects:
-        if se.kind == "provides" and se.label == "Start-of-battle cast":
+    for se in hero["special_effects"]:
+        if se["kind"] == "provides" and se["label"] == "Start-of-battle cast":
             return True
-    for tier, text, section in hero.skill_chunks:
+    for tier, text, section in hero["skill_chunks"]:
         if _rs.text_has_start_of_battle_ultimate(text, section):
             return True
     return False
@@ -479,7 +480,7 @@ def provider_early_battle_ally_energy(
 
     from heroes_io import joined_skill_chunks
 
-    for _tier, text, _section in joined_skill_chunks(provider.skill_chunks):
+    for _tier, text, _section in joined_skill_chunks(provider["skill_chunks"]):
         t = text.lower()
         if not _BATTLE_START_RE.search(t):
             continue
@@ -569,22 +570,22 @@ def is_energy_provider(provider: _rs.Hero) -> bool:
     if provider_early_battle_ally_energy(provider):
         return True
     return any(
-        e.category == "buff"
-        and e.label == "Energy"
-        and e.targeting in ALLY_TARGETINGS
+        e["category"] == "buff"
+        and e["label"] == "Energy"
+        and e["targeting"] in ALLY_TARGETINGS
         and not _rs.effect_synergy_excluded(e)
-        and not _rs._energy_recovery_targets_self(e.qualitative)
-        for e in provider.effects
+        and not _rs._energy_recovery_targets_self(e["qualitative"])
+        for e in provider["effects"]
     )
 
 
 def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
     """True when a parsed effect restores ally HP (not Healing stat buffs)."""
-    if effect.category != "buff":
+    if effect["category"] != "buff":
         return False
-    if not is_hp_recovery_label(effect.label):
+    if not is_hp_recovery_label(effect["label"]):
         return False
-    if effect.targeting not in ALLY_TARGETINGS:
+    if effect["targeting"] not in ALLY_TARGETINGS:
         return False
     if _rs.effect_synergy_excluded(effect):
         return False
@@ -593,23 +594,23 @@ def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
 
 def is_healing_provider(provider: _rs.Hero) -> bool:
     """True when the hero restores ally HP (instant or over time)."""
-    return any(_healing_effect_is_ally_provider(e) for e in provider.effects)
+    return any(_healing_effect_is_ally_provider(e) for e in provider["effects"])
 
 
 def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
     """Early Energy helps when the curated signature Ultimate is slow."""
     if (
-        behavior.signature_skill_is_ult
-        and behavior.synergy_signature_is_ult
-        and behavior.synergy_signature_speed == "slow"
+        behavior["signature_skill_is_ult"]
+        and behavior["synergy_signature_is_ult"]
+        and behavior["synergy_signature_speed"] == "slow"
     ):
         return True
-    return behavior.signature_first_cast_needs_energy
+    return behavior["signature_first_cast_needs_energy"]
 
 
 def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
     """True when a high-damage ultimate carry still needs ally Energy to cast."""
-    curated = _rs.curated_display_name(short_name(receiver.title))
+    curated = _rs.curated_display_name(short_name(receiver["title"]))
     tags = _load_behavior_tags().get(curated, frozenset())
     if HIGH_DAMAGE_ULT_TAG not in tags:
         return False
@@ -622,9 +623,9 @@ def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
 
 def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
     """True when Energy recovery is already scored via early-battle path."""
-    if effect.label != "Energy":
+    if effect["label"] != "Energy":
         return False
-    text = effect.qualitative
+    text = effect["qualitative"]
     t = text.lower()
     if not _BATTLE_START_RE.search(t):
         return False
@@ -658,18 +659,18 @@ def score_early_battle_energy_synergy(
         return 0.0, []
 
     pts, detail = match
-    if receiver_behavior.signature_first_cast_needs_energy:
+    if receiver_behavior["signature_first_cast_needs_energy"]:
         pts *= EARLY_BATTLE_ENERGY_ULT_MULT["slow"]
     else:
         pts *= EARLY_BATTLE_ENERGY_ULT_MULT.get(
-            receiver_behavior.ult_speed, 1.0
+            receiver_behavior["ult_speed"], 1.0
         )
     pts *= ENERGY_SYNERGY_SCORE_MULT
     if receiver_prefers_ultimate_energy(receiver):
         pts *= HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
     fuel_tag = (
         SIGNATURE_FUEL_MARKER
-        if receiver_behavior.synergy_signature_is_ult
+        if receiver_behavior["synergy_signature_is_ult"]
         else ""
     )
     return pts, [f"Energy via {detail}{fuel_tag}"]
@@ -677,10 +678,10 @@ def score_early_battle_energy_synergy(
 
 def provider_buffs_at_battle_start(provider: _rs.Hero) -> bool:
     """True when the provider applies ally buffs at battle start."""
-    for effect in provider.effects:
-        if effect.category != "buff" or effect.targeting not in ALLY_TARGETINGS:
+    for effect in provider["effects"]:
+        if effect["category"] != "buff" or effect["targeting"] not in ALLY_TARGETINGS:
             continue
-        t = effect.qualitative.lower()
+        t = effect["qualitative"].lower()
         if re.search(
             r"when a battle starts|start of (?:a )?battle|battle preparation",
             t,
@@ -691,35 +692,35 @@ def provider_buffs_at_battle_start(provider: _rs.Hero) -> bool:
 
 def provider_has_special(hero: _rs.Hero, label: str) -> bool:
     return any(
-        se.kind == "provides" and se.label == label for se in hero.special_effects
+        se["kind"] == "provides" and se["label"] == label for se in hero["special_effects"]
     )
 
 
 def provider_enemy_debuffs(hero: _rs.Hero) -> list[_rs.Effect]:
     return [
         e
-        for e in hero.effects
-        if e.category == "debuff" and e.targeting in ALLY_TARGETINGS
+        for e in hero["effects"]
+        if e["category"] == "debuff" and e["targeting"] in ALLY_TARGETINGS
     ]
 
 
 def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     knock_up = [
         e
-        for e in provider.effects
-        if e.category == "cc"
-        and e.label == "Knock up"
-        and e.targeting in ALLY_TARGETINGS
+        for e in provider["effects"]
+        if e["category"] == "cc"
+        and e["label"] == "Knock up"
+        and e["targeting"] in ALLY_TARGETINGS
     ]
     if not knock_up:
         return None
     best = max(
         knock_up,
-        key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1.0)
-        * MAG_WEIGHT.get(e.magnitude, 1.0),
+        key=lambda e: TARGETING_WEIGHT.get(e["targeting"], 1.0)
+        * MAG_WEIGHT.get(e["magnitude"], 1.0),
     )
-    tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
-    mw = MAG_WEIGHT.get(best.magnitude, 1.0)
+    tw = TARGETING_WEIGHT.get(best["targeting"], 1.0)
+    mw = MAG_WEIGHT.get(best["magnitude"], 1.0)
     pts = tw * mw * 2.5
     text = provider_skill_text(provider)
     tags = ["Knock up"]
@@ -734,7 +735,7 @@ def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     ):
         pts *= 1.45
         tags.append("wide area")
-    tgt = best.targeting
+    tgt = best["targeting"]
     if tgt == "All units":
         pts *= 1.2
         tags.append("all enemies")
@@ -742,9 +743,9 @@ def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
 
 
 def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
-    for se in provider.special_effects:
-        if se.kind == "provides" and se.label.startswith("Ally grant ("):
-            return se.label
+    for se in provider["special_effects"]:
+        if se["kind"] == "provides" and se["label"].startswith("Ally grant ("):
+            return se["label"]
     if provider_has_special(provider, "Ally blessing"):
         return "Ally blessing"
     text = provider_skill_text(provider)
@@ -778,12 +779,12 @@ _BURN_OR_MAGIC_ENEMY_EFFECT_RE = re.compile(
 
 def _provider_grants_ally_combat_effect(provider: _rs.Hero, text: str) -> bool:
     if any(
-        se.kind == "provides"
+        se["kind"] == "provides"
         and (
-            se.label.startswith("Ally grant (")
-            or se.label in ("Ally combat grant", "Ally blessing")
+            se["label"].startswith("Ally grant (")
+            or se["label"] in ("Ally combat grant", "Ally blessing")
         )
-        for se in provider.special_effects
+        for se in provider["special_effects"]
     ):
         return True
     if _ALLY_HIT_MAGIC_DAMAGE_RE.search(text):
@@ -889,18 +890,18 @@ _PERSISTENT_DAMAGE_DEBUFF_LABELS = frozenset({"Burn debuff", "DoT"})
 
 def _effect_is_enemy_persistent_damage(effect: _rs.Effect) -> bool:
     """Structured enemy DoT, recurring HP loss, or burn-style debuffs."""
-    if effect.targeting == "Self" or effect.targeting not in ALLY_TARGETINGS:
+    if effect["targeting"] == "Self" or effect["targeting"] not in ALLY_TARGETINGS:
         return False
-    if effect.category == "damage":
-        if effect.label == "DoT":
+    if effect["category"] == "damage":
+        if effect["label"] == "DoT":
             return True
-        if effect.label in ("HP loss", "Max HP-based damage"):
-            return effect.tick is not None or (
-                effect.duration is not None and effect.duration > 0
+        if effect["label"] in ("HP loss", "Max HP-based damage"):
+            return effect["tick"] is not None or (
+                effect["duration"] is not None and effect["duration"] > 0
             )
     if (
-        effect.category == "debuff"
-        and effect.label in _PERSISTENT_DAMAGE_DEBUFF_LABELS
+        effect["category"] == "debuff"
+        and effect["label"] in _PERSISTENT_DAMAGE_DEBUFF_LABELS
     ):
         return True
     return False
@@ -911,7 +912,7 @@ def _provider_structured_persistent_damage(
 ) -> list[_rs.Effect]:
     return [
         effect
-        for effect in provider.effects
+        for effect in provider["effects"]
         if _effect_is_enemy_persistent_damage(effect)
     ]
 
@@ -919,28 +920,28 @@ def _provider_structured_persistent_damage(
 def _format_persistent_damage_detail(effects: list[_rs.Effect]) -> str:
     parts: list[str] = []
     if any(
-        effect.category == "damage"
-        and effect.label == "DoT"
-        and getattr(effect, "area", None) == "zone"
+        effect["category"] == "damage"
+        and effect["label"] == "DoT"
+        and effect.get("area") == "zone"
         for effect in effects
     ):
         parts.append("persistent zone")
-    if any(effect.category == "damage" and effect.label == "DoT" for effect in effects):
+    if any(effect["category"] == "damage" and effect["label"] == "DoT" for effect in effects):
         if "persistent zone" not in parts:
             parts.append("DoT")
     if any(
-        effect.category == "damage" and effect.label == "HP loss"
+        effect["category"] == "damage" and effect["label"] == "HP loss"
         for effect in effects
     ):
         parts.append("recurring HP loss")
     if any(
-        effect.category == "damage" and effect.label == "Max HP-based damage"
+        effect["category"] == "damage" and effect["label"] == "Max HP-based damage"
         for effect in effects
     ):
         parts.append("recurring max-HP damage")
     if any(
-        effect.category == "debuff"
-        and effect.label in _PERSISTENT_DAMAGE_DEBUFF_LABELS
+        effect["category"] == "debuff"
+        and effect["label"] in _PERSISTENT_DAMAGE_DEBUFF_LABELS
         for effect in effects
     ):
         parts.append("Burn")
@@ -972,10 +973,10 @@ def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
     if effects:
         best = max(
             effects,
-            key=lambda effect: TARGETING_WEIGHT.get(effect.targeting, 1.0)
-            * MAG_WEIGHT.get(effect.magnitude or "average", 1.0),
+            key=lambda effect: TARGETING_WEIGHT.get(effect["targeting"], 1.0)
+            * MAG_WEIGHT.get(effect["magnitude"] or "average", 1.0),
         )
-        tw = TARGETING_WEIGHT.get(best.targeting, 3.0)
+        tw = TARGETING_WEIGHT.get(best["targeting"], 3.0)
         structured_score = tw * 2.5
         structured_detail = _format_persistent_damage_detail(effects)
 
@@ -1010,16 +1011,16 @@ _GROUPING_CC_LABELS = frozenset(
 
 def match_enemy_grouping(provider: _rs.Hero) -> tuple[float, str] | None:
     """Score curated enemy-grouping providers for zone/AoE receivers."""
-    tags = _load_behavior_tags().get(short_name(provider.title), frozenset())
+    tags = _load_behavior_tags().get(short_name(provider["title"]), frozenset())
     if "enemy-grouping" not in tags:
         return None
 
     grouping_cc = [
         e
-        for e in provider.effects
-        if e.category == "cc"
-        and e.label in _GROUPING_CC_LABELS
-        and e.targeting in ALLY_TARGETINGS
+        for e in provider["effects"]
+        if e["category"] == "cc"
+        and e["label"] in _GROUPING_CC_LABELS
+        and e["targeting"] in ALLY_TARGETINGS
     ]
 
     pts = 7.0
@@ -1029,18 +1030,18 @@ def match_enemy_grouping(provider: _rs.Hero) -> tuple[float, str] | None:
         best = max(
             grouping_cc,
             key=lambda e: (
-                2 if e.label == "Displace" else 1,
-                TARGETING_WEIGHT.get(e.targeting, 1.0),
-                MAG_WEIGHT.get(e.magnitude or "average", 1.0),
+                2 if e["label"] == "Displace" else 1,
+                TARGETING_WEIGHT.get(e["targeting"], 1.0),
+                MAG_WEIGHT.get(e["magnitude"] or "average", 1.0),
             ),
         )
-        tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
+        tw = TARGETING_WEIGHT.get(best["targeting"], 1.0)
         pts += tw * 0.75
-        mag = best.magnitude or "average"
-        detail_parts[0] = f"{best.label} ({best.targeting.lower()}, {mag})"
-        if any(e.label == "Displace" for e in grouping_cc):
+        mag = best["magnitude"] or "average"
+        detail_parts[0] = f"{best["label"]} ({best["targeting"].lower()}, {mag})"
+        if any(e["label"] == "Displace" for e in grouping_cc):
             pts += 1.0
-        if any(e.label in {"Bind", "Stun", "Sleep"} for e in grouping_cc):
+        if any(e["label"] in {"Bind", "Stun", "Sleep"} for e in grouping_cc):
             pts += 1.0
 
     if "battle-start-burst" in tags or "battle-start-ult" in tags:
@@ -1053,21 +1054,21 @@ def match_enemy_grouping(provider: _rs.Hero) -> tuple[float, str] | None:
 def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
     cc_effects = [
         e
-        for e in provider.effects
-        if e.category == "cc"
-        and e.targeting in ALLY_TARGETINGS
-        and e.label in _CC_SUSTAINED_LABELS
+        for e in provider["effects"]
+        if e["category"] == "cc"
+        and e["targeting"] in ALLY_TARGETINGS
+        and e["label"] in _CC_SUSTAINED_LABELS
     ]
     if not cc_effects:
         return None
     best = max(
         cc_effects,
-        key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1.0)
-        * MAG_WEIGHT.get(e.magnitude, 1.0),
+        key=lambda e: TARGETING_WEIGHT.get(e["targeting"], 1.0)
+        * MAG_WEIGHT.get(e["magnitude"], 1.0),
     )
-    tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
-    mw = MAG_WEIGHT.get(best.magnitude, 1.0)
-    detail = f"{best.label} ({best.targeting.lower()}, {best.magnitude})"
+    tw = TARGETING_WEIGHT.get(best["targeting"], 1.0)
+    mw = MAG_WEIGHT.get(best["magnitude"], 1.0)
+    detail = f"{best["label"]} ({best["targeting"].lower()}, {best["magnitude"]})"
     return tw * mw * 2.0, detail
 
 
@@ -1104,10 +1105,10 @@ def receiver_self_shreds_defense(receiver: _rs.Hero) -> bool:
         receiver_primary_damage_kind(receiver)
     )
     return any(
-        e.category == "debuff"
-        and e.targeting in ALLY_TARGETINGS
-        and e.label in labels
-        for e in receiver.effects
+        e["category"] == "debuff"
+        and e["targeting"] in ALLY_TARGETINGS
+        and e["label"] in labels
+        for e in receiver["effects"]
     )
 
 
@@ -1118,29 +1119,29 @@ def match_enemy_defense_reduction(
     kind = receiver_primary_damage_kind(receiver)
     allowed_debuffs = _matching_enemy_def_debuff_labels(kind)
     candidates: list[tuple[float, str]] = []
-    for effect in provider.effects:
-        if effect.targeting not in ALLY_TARGETINGS:
+    for effect in provider["effects"]:
+        if effect["targeting"] not in ALLY_TARGETINGS:
             continue
-        if effect.category == "debuff" and effect.label in allowed_debuffs:
-            tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
-            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+        if effect["category"] == "debuff" and effect["label"] in allowed_debuffs:
+            tw = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
+            mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
             pts = tw * mw * ENEMY_DEFENSE_BASE_MULT
             detail = (
-                f"{effect.label} debuff ({effect.targeting.lower()}, "
-                f"{effect.magnitude})"
+                f"{effect["label"]} debuff ({effect["targeting"].lower()}, "
+                f"{effect["magnitude"]})"
             )
             candidates.append((pts, detail))
         elif (
-            effect.category == "buff"
-            and effect.label == _DEF_PENETRATION_BUFF
+            effect["category"] == "buff"
+            and effect["label"] == _DEF_PENETRATION_BUFF
             and not _rs.effect_synergy_excluded(effect)
         ):
-            tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
-            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+            tw = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
+            mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
             pts = tw * mw * ENEMY_DEFENSE_BASE_MULT
             detail = (
-                f"DEF Penetration ({effect.targeting.lower()}, "
-                f"{effect.magnitude})"
+                f"DEF Penetration ({effect["targeting"].lower()}, "
+                f"{effect["magnitude"]})"
             )
             candidates.append((pts, detail))
     if not candidates:
@@ -1192,13 +1193,13 @@ def match_debuff_on_target(provider: _rs.Hero) -> tuple[float, str] | None:
     if debuffs:
         best = max(
             debuffs,
-            key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1)
-            * MAG_WEIGHT.get(e.magnitude, 1),
+            key=lambda e: TARGETING_WEIGHT.get(e["targeting"], 1)
+            * MAG_WEIGHT.get(e["magnitude"], 1),
         )
-        tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
-        mw = MAG_WEIGHT.get(best.magnitude, 1.0)
+        tw = TARGETING_WEIGHT.get(best["targeting"], 1.0)
+        mw = MAG_WEIGHT.get(best["magnitude"], 1.0)
         candidates.append(
-            (tw * mw * 1.5, f"{best.label} ({best.targeting.lower()})")
+            (tw * mw * 1.5, f"{best["label"]} ({best["targeting"].lower()})")
         )
     if not candidates:
         return None
@@ -1214,21 +1215,21 @@ def match_stellar_bond(provider: _rs.Hero) -> tuple[float, str] | None:
 def match_multiple_debuffs(provider: _rs.Hero) -> tuple[float, str] | None:
     ally_debuff = match_ally_debuff_on_enemies(provider)
     debuffs = provider_enemy_debuffs(provider)
-    labels = {e.label for e in debuffs}
+    labels = {e["label"] for e in debuffs}
     if provider_has_special(provider, "Ally Vitality debuff on enemies"):
         labels.add("Ally Vitality debuff on enemies")
     if len(labels) >= 2:
         best = max(
             debuffs,
-            key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1)
-            * MAG_WEIGHT.get(e.magnitude, 1),
+            key=lambda e: TARGETING_WEIGHT.get(e["targeting"], 1)
+            * MAG_WEIGHT.get(e["magnitude"], 1),
         )
-        tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
+        tw = TARGETING_WEIGHT.get(best["targeting"], 1.0)
         return tw * len(labels) * 1.2, f"{len(labels)} debuff types"
     if provider_has_special(provider, "Debuff application"):
         return 3.5, "Debuff application"
     if debuffs:
-        return 2.0, debuffs[0].label
+        return 2.0, debuffs[0]["label"]
     return None
 
 
@@ -1237,19 +1238,19 @@ def match_ally_ultimate_casts(provider: _rs.Hero) -> tuple[float, str] | None:
         return 4.5, "Start-of-battle Ultimate"
     energy_buffs = [
         e
-        for e in provider.effects
-        if e.category == "buff"
-        and e.label == "Energy"
-        and e.targeting in ALLY_TARGETINGS
+        for e in provider["effects"]
+        if e["category"] == "buff"
+        and e["label"] == "Energy"
+        and e["targeting"] in ALLY_TARGETINGS
     ]
     if energy_buffs:
         best = max(
             energy_buffs,
-            key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1)
-            * MAG_WEIGHT.get(e.magnitude, 1),
+            key=lambda e: TARGETING_WEIGHT.get(e["targeting"], 1)
+            * MAG_WEIGHT.get(e["magnitude"], 1),
         )
         return (
-            TARGETING_WEIGHT.get(best.targeting, 2.0) * 2.0,
+            TARGETING_WEIGHT.get(best["targeting"], 2.0) * 2.0,
             "Energy recovery (Ultimate pace)",
         )
     return None
@@ -1283,8 +1284,8 @@ def match_named_ally_on_team(
     provider: _rs.Hero,
     req: _rs.SpecialEffect,
 ) -> tuple[float, str] | None:
-    provider_name = short_name(provider.title)
-    if not _named_ally_text_mentions_hero(req.qualitative, provider_name):
+    provider_name = short_name(provider["title"])
+    if not _named_ally_text_mentions_hero(req["qualitative"], provider_name):
         return None
     return 7.0, f"{provider_name} named in skill text"
 
@@ -1303,15 +1304,15 @@ def score_named_ally_provides(
     receiver: _rs.Hero,
 ) -> tuple[float, list[str]]:
     """Score provider special_provides that buff a named receiver."""
-    receiver_name = short_name(receiver.title)
+    receiver_name = short_name(receiver["title"])
     total = 0.0
     reasons: list[str] = []
-    for se in provider.special_effects:
-        if se.kind != "provides" or se.label != "Named ally on team":
+    for se in provider["special_effects"]:
+        if se["kind"] != "provides" or se["label"] != "Named ally on team":
             continue
-        if not _named_ally_text_mentions_hero(se.qualitative, receiver_name):
+        if not _named_ally_text_mentions_hero(se["qualitative"], receiver_name):
             continue
-        grants = getattr(se, "grants", None) or []
+        grants = se.get("grants") or []
         if grants:
             for label, magnitude in grants:
                 pts = TARGETING_WEIGHT["Single target"] * MAG_WEIGHT.get(
@@ -1322,7 +1323,7 @@ def score_named_ally_provides(
         else:
             total += 7.0
             reasons.append(
-                f"Named ally grant via {short_name(provider.title)}"
+                f"Named ally grant via {short_name(provider["title"])}"
             )
     return total, reasons
 
@@ -1347,10 +1348,10 @@ def _ally_stat_buff_synergy(
     import buff_persistence as bp
 
     ally_buffs: list[_rs.Effect] = []
-    for sl in provider.skill_slices.values():
-        for effect in sl.effects:
+    for sl in provider["skill_slices"].values():
+        for effect in sl["effects"]:
             if (
-                effect.targeting in ALLY_TARGETINGS
+                effect["targeting"] in ALLY_TARGETINGS
                 and bp.is_runtime_temporary_stat_buff(effect)
                 and not _rs.effect_synergy_excluded(effect)
             ):
@@ -1362,13 +1363,13 @@ def _ally_stat_buff_synergy(
         if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
             continue
         score = SYNERGY_STAT_BUFF_REACH_WEIGHT * MAG_WEIGHT.get(
-            effect.magnitude, 1.0
+            effect["magnitude"], 1.0
         )
         score *= _rs.effect_synergy_multiplier(effect)
         if score <= 0:
             continue
-        if effect.label not in best_by_label or score > best_by_label[effect.label]:
-            best_by_label[effect.label] = score
+        if effect["label"] not in best_by_label or score > best_by_label[effect["label"]]:
+            best_by_label[effect["label"]] = score
     if not best_by_label:
         return None
     pts = sum(best_by_label.values())
@@ -1392,21 +1393,21 @@ def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
 def match_adjacent_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     ally_buffs = [
         e
-        for e in provider.effects
-        if e.category == "buff" and e.targeting in ALLY_TARGETINGS
+        for e in provider["effects"]
+        if e["category"] == "buff" and e["targeting"] in ALLY_TARGETINGS
     ]
     if not ally_buffs:
         return None
     best = max(
         ally_buffs,
-        key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1)
-        * MAG_WEIGHT.get(e.magnitude, 1),
+        key=lambda e: TARGETING_WEIGHT.get(e["targeting"], 1)
+        * MAG_WEIGHT.get(e["magnitude"], 1),
     )
-    tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
-    mw = MAG_WEIGHT.get(best.magnitude, 1.0)
+    tw = TARGETING_WEIGHT.get(best["targeting"], 1.0)
+    mw = MAG_WEIGHT.get(best["magnitude"], 1.0)
     if len(ally_buffs) >= 2:
         return tw * mw * 1.5, "Multiple ally buffs"
-    return tw * mw, f"{best.label} ({best.targeting.lower()})"
+    return tw * mw, f"{best["label"]} ({best["targeting"].lower()})"
 
 
 def _parse_hero_class(block: str) -> str:
@@ -1421,11 +1422,11 @@ def _make_enabler_matchers(
     hero_class_by_title: dict[str, str],
 ) -> dict[str, callable]:
     def ranged(p: _rs.Hero) -> tuple[float, str] | None:
-        return match_ranged_damage_allies(p, hero_class_by_title.get(p.title, ""))
+        return match_ranged_damage_allies(p, hero_class_by_title.get(p["title"], ""))
 
     def party(p: _rs.Hero) -> tuple[float, str] | None:
         return match_party_composition(
-            p, hero_class_by_title.get(p.title, "")
+            p, hero_class_by_title.get(p["title"], "")
         )
 
     return {
@@ -1448,7 +1449,7 @@ def _make_enabler_matchers(
 
 
 def receiver_requires(hero: _rs.Hero) -> list[_rs.SpecialEffect]:
-    return [se for se in hero.special_effects if se.kind == "requires"]
+    return [se for se in hero["special_effects"] if se["kind"] == "requires"]
 
 
 REQUIRE_SYNERGY_FRAGMENTS: dict[str, str] = {
@@ -1483,11 +1484,11 @@ def _join_require_fragments(fragments: list[str]) -> str:
 
 def partner_synergy_require_fragments(hero: _rs.Hero) -> list[str]:
     labels_present = {
-        req.label
+        req["label"]
         for req in receiver_requires(hero)
-        if req.label not in SKIP_ENABLER_REQUIRES
-        and req.label not in PLACEMENT_ENABLER_REQUIRES
-        and req.label in ENABLER_REQUIRE_HANDLERS
+        if req["label"] not in SKIP_ENABLER_REQUIRES
+        and req["label"] not in PLACEMENT_ENABLER_REQUIRES
+        and req["label"] in ENABLER_REQUIRE_HANDLERS
     }
     fragments: list[str] = []
     for label in ENABLER_REQUIRE_HANDLERS:
@@ -1534,41 +1535,41 @@ def score_enabler_synergy(
     seen: set[str] = set()
 
     for req in receiver_requires(receiver):
-        if req.label in SKIP_ENABLER_REQUIRES:
+        if req["label"] in SKIP_ENABLER_REQUIRES:
             continue
-        if req.label in seen:
+        if req["label"] in seen:
             continue
-        if req.label == "Named ally on team":
+        if req["label"] == "Named ally on team":
             result = match_named_ally_on_team(provider, req)
             if not result:
                 continue
             pts, detail = result
-        elif req.label == "Temporary ally stat buffs":
+        elif req["label"] == "Temporary ally stat buffs":
             result = _ally_stat_buff_synergy(provider, receiver_movement)
             if not result:
                 continue
             pts, buff_count, start_of_battle = result
         else:
-            matcher = enabler_matchers.get(req.label)
+            matcher = enabler_matchers.get(req["label"])
             if not matcher:
                 continue
             result = matcher(provider)
             if not result:
                 continue
             pts, detail = result
-        pts *= DEFINING_TIER_SCORE_MULT.get(req.tier, 1.0)
-        seen.add(req.label)
+        pts *= DEFINING_TIER_SCORE_MULT.get(req["tier"], 1.0)
+        seen.add(req["label"])
         total += pts
-        if req.label == "Temporary ally stat buffs":
+        if req["label"] == "Temporary ally stat buffs":
             reasons.append(
                 _format_ally_stat_buff_grant(
                     buff_count,
-                    short_name(receiver.title),
+                    short_name(receiver["title"]),
                     start_of_battle=start_of_battle,
                 )
             )
         else:
-            reasons.append(f"Enables {req.label} via {detail}")
+            reasons.append(f"Enables {req["label"]} via {detail}")
 
     return total, reasons
 
@@ -1584,7 +1585,7 @@ def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
 
 def receiver_benefits_from_external_shields(receiver: _rs.Hero) -> bool:
     """Detect shield payoff wording that can plausibly use ally shields."""
-    for _tier, text, _section in getattr(receiver, "skill_chunks", ()):
+    for _tier, text, _section in receiver.get("skill_chunks") or ():
         t = text.lower()
         if re.search(r"\bwhen gaining a shield\b", t):
             return True
@@ -1823,10 +1824,10 @@ def score_synergy(
         mult_by_label = dict(label_prefs)
         best_for_stat: tuple[float, str, str] | None = None
 
-        for effect in provider.effects:
-            if effect.category != "buff" or effect.label not in allowed:
+        for effect in provider["effects"]:
+            if effect["category"] != "buff" or effect["label"] not in allowed:
                 continue
-            if effect.targeting not in ALLY_TARGETINGS:
+            if effect["targeting"] not in ALLY_TARGETINGS:
                 continue
             if _rs.effect_synergy_excluded(effect):
                 continue
@@ -1835,26 +1836,26 @@ def score_synergy(
             ):
                 continue
             if (
-                effect.label in provider.proximity_aura_buff_labels
-                and short_name(provider.title) not in PROXIMITY_PROVIDER_BLACKLIST
-                and short_name(receiver.title) not in PROXIMITY_RECEIVER_WHITELIST
+                effect["label"] in provider["proximity_aura_buff_labels"]
+                and short_name(provider["title"]) not in PROXIMITY_PROVIDER_BLACKLIST
+                and short_name(receiver["title"]) not in PROXIMITY_RECEIVER_WHITELIST
                 and not receiver_can_reach_proximity_aura(
-                    receiver_behavior.avg_attack_range
+                    receiver_behavior["avg_attack_range"]
                     if receiver_behavior
                     else None,
-                    provider.proximity_aura_radius
+                    provider["proximity_aura_radius"]
                     or PROXIMITY_DEFAULT_AURA_RADIUS,
                 )
             ):
                 continue
-            tw = stat_buff_targeting_weight(receiver, stat, effect.targeting)
-            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
-            pts = tw * mw * mult_by_label[effect.label]
+            tw = stat_buff_targeting_weight(receiver, stat, effect["targeting"])
+            mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
+            pts = tw * mw * mult_by_label[effect["label"]]
             pts *= _rs.effect_synergy_multiplier(effect)
             pts *= scalar_stat_score_mult(receiver, stat)
             if pts <= 0:
                 continue
-            if effect.label == "Energy":
+            if effect["label"] == "Energy":
                 if (
                     receiver_behavior
                     and receiver_wants_early_battle_energy(receiver_behavior)
@@ -1867,26 +1868,26 @@ def score_synergy(
                     pts *= HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
                 if is_implicit:
                     pts *= IMPLICIT_FUEL_BASE
-            elif effect.label in SIGNATURE_FUEL_LABELS:
+            elif effect["label"] in SIGNATURE_FUEL_LABELS:
                 pts *= fuel_mult
                 if is_implicit:
                     pts *= IMPLICIT_FUEL_BASE
             cond = (
-                f", conditional ({effect.conditional})"
-                if effect.conditional
+                f", conditional ({effect["conditional"]})"
+                if effect["conditional"]
                 else ""
             )
             fuel_tag = (
                 SIGNATURE_FUEL_MARKER
-                if effect.label in SIGNATURE_FUEL_LABELS
+                if effect["label"] in SIGNATURE_FUEL_LABELS
                 else ""
             )
             detail = (
-                f"{effect.label} ({effect.targeting.lower()}, "
-                f"{effect.magnitude}{cond}){fuel_tag}"
+                f"{effect["label"]} ({effect["targeting"].lower()}, "
+                f"{effect["magnitude"]}{cond}){fuel_tag}"
             )
             if best_for_stat is None or pts > best_for_stat[0]:
-                best_for_stat = (pts, detail, effect.label)
+                best_for_stat = (pts, detail, effect["label"])
 
         if best_for_stat:
             total += best_for_stat[0]
@@ -1906,38 +1907,38 @@ def score_summon_synergy(
     if _is_same_hero(provider, receiver) or not receiver_has_summoner_tag(receiver):
         return 0.0, []
 
-    if not provider.summon_effects:
+    if not provider["summon_effects"]:
         return 0.0, []
 
     best_by_label: dict[str, tuple[float, str]] = {}
 
-    for effect in provider.summon_effects:
-        if effect.category != "buff":
+    for effect in provider["summon_effects"]:
+        if effect["category"] != "buff":
             continue
-        if _rs.is_own_summon_buff_targeting(effect.targeting):
+        if _rs.is_own_summon_buff_targeting(effect["targeting"]):
             continue
-        if not _rs.is_all_summon_buff_targeting(effect.targeting):
+        if not _rs.is_all_summon_buff_targeting(effect["targeting"]):
             continue
         if _rs.effect_synergy_excluded(effect):
             continue
         if (
-            effect.label == RANGED_DAMAGE_SUMMON_LABEL
+            effect["label"] == RANGED_DAMAGE_SUMMON_LABEL
             and not receiver_has_ranged_summons(receiver)
         ):
             continue
-        mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+        mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
         pts = SUMMON_TARGETING_WEIGHT * mw * _rs.effect_synergy_multiplier(effect)
         if pts <= 0:
             continue
         cond = (
-            f", conditional ({effect.conditional})"
-            if effect.conditional
+            f", conditional ({effect["conditional"]})"
+            if effect["conditional"]
             else ""
         )
-        detail = f"{effect.label} (all summons, {effect.magnitude}{cond})"
-        prev = best_by_label.get(effect.label)
+        detail = f"{effect["label"]} (all summons, {effect["magnitude"]}{cond})"
+        prev = best_by_label.get(effect["label"])
         if prev is None or pts > prev[0]:
-            best_by_label[effect.label] = (pts, detail)
+            best_by_label[effect["label"]] = (pts, detail)
 
     reasons: list[str] = []
     total = 0.0
@@ -2003,13 +2004,13 @@ def rank_synergy_entries(
     tiers_by_title: dict[str, dict[str, str]] | None = None,
     role_category_by_title: dict[str, str] | None = None,
 ) -> list[tuple[float, list[str], str]]:
-    receiver_behavior = behavior_by_title[receiver.title]
-    receiver_movement = receiver_behavior.movement
-    signature_speed = receiver_behavior.synergy_signature_speed or "average"
+    receiver_behavior = behavior_by_title[receiver["title"]]
+    receiver_movement = receiver_behavior["movement"]
+    signature_speed = receiver_behavior["synergy_signature_speed"] or "average"
     tiers = tiers_by_title if tiers_by_title is not None else _load_prydwen_tiers_by_title()
-    receiver_tiers = tiers.get(receiver.title, {})
+    receiver_tiers = tiers.get(receiver["title"], {})
     role_map = role_category_by_title or {}
-    receiver_role = role_map.get(receiver.title)
+    receiver_role = role_map.get(receiver["title"])
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
         if _is_same_hero(provider, receiver):
@@ -2025,7 +2026,7 @@ def rank_synergy_entries(
         )
         if score <= 0 or not reasons:
             continue
-        ranked.append((score, reasons, provider.title))
+        ranked.append((score, reasons, provider["title"]))
 
     ranked.sort(
         key=lambda x: (
@@ -2104,13 +2105,13 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
     reasons: list[str] = []
     ally_buffs = [
         e
-        for e in provider.effects
-        if e.category == "buff"
-        and e.targeting in ALLY_TARGETINGS
+        for e in provider["effects"]
+        if e["category"] == "buff"
+        and e["targeting"] in ALLY_TARGETINGS
         and not _rs.effect_synergy_excluded(e)
     ]
-    labels = {e.label for e in ally_buffs}
-    targetings = {e.targeting for e in ally_buffs}
+    labels = {e["label"] for e in ally_buffs}
+    targetings = {e["targeting"] for e in ally_buffs}
 
     if "Haste" in labels or "ATK SPD" in labels:
         scope = (
@@ -2143,15 +2144,15 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
 def _hero_support_score(hero: _rs.Hero) -> float:
     """Weighted ally + summon buff output (non-rare)."""
     total = 0.0
-    for effect in list(hero.effects) + list(hero.summon_effects):
-        if effect.category != "buff":
+    for effect in list(hero["effects"]) + list(hero["summon_effects"]):
+        if effect["category"] != "buff":
             continue
-        if effect.targeting not in ALLY_TARGETINGS:
+        if effect["targeting"] not in ALLY_TARGETINGS:
             continue
         if _rs.effect_synergy_excluded(effect):
             continue
-        total += TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
-            effect.magnitude, 1.0
+        total += TARGETING_WEIGHT.get(effect["targeting"], 1.0) * MAG_WEIGHT.get(
+            effect["magnitude"], 1.0
         )
     return total
 
@@ -2159,8 +2160,8 @@ def _hero_support_score(hero: _rs.Hero) -> float:
 def _hero_attack_score(hero: _rs.Hero) -> float:
     """Weighted outgoing damage + half-weight enemy debuff/CC."""
     total = 0.0
-    mags = hero.damage_magnitudes or {}
-    for dt, tgt in hero.damage_entries:
+    mags = hero["damage_magnitudes"] or {}
+    for dt, tgt in hero["damage_entries"]:
         if tgt == "Self":
             continue
         tw = max(
@@ -2168,15 +2169,15 @@ def _hero_attack_score(hero: _rs.Hero) -> float:
             default=1.0,
         )
         total += tw * MAG_WEIGHT.get(mags.get(dt, "average"), 1.0)
-    for effect in hero.effects:
-        if effect.category not in ("debuff", "cc"):
+    for effect in hero["effects"]:
+        if effect["category"] not in ("debuff", "cc"):
             continue
-        if effect.targeting == "Self":
+        if effect["targeting"] == "Self":
             continue
         total += (
             0.5
-            * TARGETING_WEIGHT.get(effect.targeting, 1.0)
-            * MAG_WEIGHT.get(effect.magnitude, 1.0)
+            * TARGETING_WEIGHT.get(effect["targeting"], 1.0)
+            * MAG_WEIGHT.get(effect["magnitude"], 1.0)
         )
     return total
 
@@ -2198,24 +2199,24 @@ def _replacement_effect_weight(
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
 ) -> float:
     """Global raw strength for replacement profiles (ignores per-role magnitude)."""
-    targeting = TARGETING_WEIGHT.get(effect.targeting, 1.0)
-    skills = (skills_by_title or {}).get(hero.title, [])
-    if skills and _rs._effect_uses_throughput(effect.category, effect.label):
+    targeting = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
+    skills = (skills_by_title or {}).get(hero["title"], [])
+    if skills and _rs._effect_uses_throughput(effect["category"], effect["label"]):
         raw = _rs._effect_throughput_score(effect, hero, skills)
         if raw and raw > 0:
             return targeting * raw
-    if effect.category == "cc":
-        duration = effect.numeric
+    if effect["category"] == "cc":
+        duration = effect["numeric"]
         if duration is None or duration <= 0:
             duration = _rs.extract_cc_duration(
-                effect.qualitative.lower(), effect.label
+                effect["qualitative"].lower(), effect["label"]
             )
         if duration and duration > 0:
             return targeting * duration
         return targeting * 1.0
     gate_mult = _rs.effect_throughput_gate_multiplier(effect)
-    if effect.numeric is not None and effect.numeric > 0:
-        return targeting * effect.numeric * gate_mult
+    if effect["numeric"] is not None and effect["numeric"] > 0:
+        return targeting * effect["numeric"] * gate_mult
     return targeting * 1.0
 
 
@@ -2225,17 +2226,17 @@ def _hero_provider_profile(
 ) -> dict[str, float]:
     """Weighted ally-buff profile for what a hero provides to allies."""
     profile: dict[str, float] = {}
-    for effect in hero.effects:
-        if effect.category != "buff":
+    for effect in hero["effects"]:
+        if effect["category"] != "buff":
             continue
-        if is_hp_recovery_label(effect.label):
+        if is_hp_recovery_label(effect["label"]):
             continue
-        if effect.targeting not in ALLY_TARGETINGS:
+        if effect["targeting"] not in ALLY_TARGETINGS:
             continue
         if _rs.effect_synergy_excluded(effect):
             continue
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
-        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+        profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
     return profile
 
 
@@ -2295,14 +2296,14 @@ def _healing_effect_weight(
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
 ) -> float:
     """Throughput-based ally-healing weight for replacement scoring."""
-    targeting = TARGETING_WEIGHT.get(effect.targeting, 1.0)
-    skills = (skills_by_title or {}).get(hero.title, [])
+    targeting = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
+    skills = (skills_by_title or {}).get(hero["title"], [])
     if skills:
         throughput = _rs._effect_throughput_score(effect, hero, skills)
         if throughput > 0:
             return throughput * targeting
-    if effect.numeric is not None and effect.numeric > 0:
-        return targeting * effect.numeric
+    if effect["numeric"] is not None and effect["numeric"] > 0:
+        return targeting * effect["numeric"]
     return targeting * 1.0
 
 
@@ -2338,7 +2339,7 @@ def _prominence_sum(weights: dict[str, float]) -> float:
 
 
 def _hero_all_prominence_effects(hero: _rs.Hero) -> list[_rs.Effect]:
-    return list(hero.effects) + list(hero.summon_effects)
+    return list(hero["effects"]) + list(hero["summon_effects"])
 
 
 def hero_damage_dealer_prominence(
@@ -2348,12 +2349,12 @@ def hero_damage_dealer_prominence(
     """Outgoing damage weighted by throughput and targeting reach."""
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if effect.category != "damage":
+        if effect["category"] != "damage":
             continue
-        if effect.targeting == "Self":
+        if effect["targeting"] == "Self":
             continue
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
-        _prominence_max_label(weights, effect.label, weight)
+        _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
 
 
@@ -2366,16 +2367,16 @@ def hero_tank_prominence(
     for effect in _hero_all_prominence_effects(hero):
         if _rs.effect_synergy_excluded(effect):
             continue
-        if effect.targeting not in SELF_OR_ALLY_TARGETINGS:
+        if effect["targeting"] not in SELF_OR_ALLY_TARGETINGS:
             continue
-        if effect.category == "buff" and effect.label in TANK_SUSTAIN_BUFF_LABELS:
+        if effect["category"] == "buff" and effect["label"] in TANK_SUSTAIN_BUFF_LABELS:
             weight = _replacement_effect_weight(effect, hero, skills_by_title)
-            _prominence_max_label(weights, effect.label, weight)
-        elif is_hp_recovery_label(effect.label):
-            if effect.category != "buff":
+            _prominence_max_label(weights, effect["label"], weight)
+        elif is_hp_recovery_label(effect["label"]):
+            if effect["category"] != "buff":
                 continue
             weight = _healing_effect_weight(effect, hero, skills_by_title)
-            _prominence_max_label(weights, effect.label, weight)
+            _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
 
 
@@ -2390,10 +2391,10 @@ def hero_support_prominence(
             continue
         if _healing_effect_is_ally_provider(effect):
             weight = _healing_effect_weight(effect, hero, skills_by_title)
-            _prominence_max_label(weights, f"heal:{effect.label}", weight)
-        elif effect.category == "buff" and effect.targeting in ALLY_TARGETINGS:
+            _prominence_max_label(weights, f"heal:{effect["label"]}", weight)
+        elif effect["category"] == "buff" and effect["targeting"] in ALLY_TARGETINGS:
             weight = _replacement_effect_weight(effect, hero, skills_by_title)
-            _prominence_max_label(weights, effect.label, weight)
+            _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
 
 
@@ -2406,15 +2407,15 @@ def hero_specialist_prominence(
     for effect in _hero_all_prominence_effects(hero):
         if _rs.effect_synergy_excluded(effect):
             continue
-        if effect.category in ("debuff", "cc"):
-            if effect.targeting == "Self":
+        if effect["category"] in ("debuff", "cc"):
+            if effect["targeting"] == "Self":
                 continue
             weight = _replacement_effect_weight(effect, hero, skills_by_title)
-            key = f"{effect.category}:{effect.label}"
+            key = f"{effect["category"]}:{effect["label"]}"
             _prominence_max_label(weights, key, weight)
-        elif effect.category == "buff" and effect.targeting in ALLY_TARGETINGS:
+        elif effect["category"] == "buff" and effect["targeting"] in ALLY_TARGETINGS:
             weight = _replacement_effect_weight(effect, hero, skills_by_title)
-            _prominence_max_label(weights, effect.label, weight)
+            _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
 
 
@@ -2454,11 +2455,11 @@ def _hero_healing_profile(
 ) -> dict[str, float]:
     """Weighted ally-healing profile for replacement scoring (raw throughput)."""
     profile: dict[str, float] = {}
-    for effect in hero.effects:
+    for effect in hero["effects"]:
         if not _healing_effect_is_ally_provider(effect):
             continue
         key = healing_profile_key(
-            normalize_healing_label(effect.label), effect.source_section
+            normalize_healing_label(effect["label"]), effect["source_section"]
         )
         weight = _healing_effect_weight(effect, hero, skills_by_title)
         profile[key] = max(profile.get(key, 0.0), weight)
@@ -2523,7 +2524,7 @@ def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
         weight = TARGETING_WEIGHT.get(targeting, 1.0)
         best = max(best, amount * weight)
 
-    for _tier, text, _section in hero.skill_chunks:
+    for _tier, text, _section in hero["skill_chunks"]:
         lowered = text.lower()
         if _rs._energy_recovery_targets_self(text):
             continue
@@ -2558,21 +2559,21 @@ def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
                 "Single target",
             )
 
-    for effect in hero.effects:
-        if effect.category != "buff" or effect.label != "Energy":
+    for effect in hero["effects"]:
+        if effect["category"] != "buff" or effect["label"] != "Energy":
             continue
-        if effect.targeting not in ALLY_TARGETINGS:
+        if effect["targeting"] not in ALLY_TARGETINGS:
             continue
         if _rs.effect_synergy_excluded(effect):
             continue
-        if _rs._energy_recovery_targets_self(effect.qualitative):
+        if _rs._energy_recovery_targets_self(effect["qualitative"]):
             continue
-        energy = _flat_ally_energy_from_text(effect.qualitative)
-        if energy is None and effect.numeric is not None:
-            if "energy" in effect.qualitative.lower():
-                energy = effect.numeric
+        energy = _flat_ally_energy_from_text(effect["qualitative"])
+        if energy is None and effect["numeric"] is not None:
+            if "energy" in effect["qualitative"].lower():
+                energy = effect["numeric"]
         if energy is not None:
-            consider(energy, effect.targeting)
+            consider(energy, effect["targeting"])
 
     return best
 
@@ -2608,11 +2609,13 @@ def _energy_replacement_coverage(source: float, candidate: float) -> float:
 def _load_behavior_tags() -> dict[str, frozenset[str]]:
     global _BEHAVIOR_TAGS
     if _BEHAVIOR_TAGS is None:
-        from hero_pipeline.storage import load_ai_field
+        from hero_pipeline.storage import load_ai_by_id, display_names_by_id
 
-        data = load_ai_field("behavior_tags")
+        data = load_ai_by_id("behavior_tags")
+        names = display_names_by_id()
         _BEHAVIOR_TAGS = {
-            name: frozenset(tags) for name, tags in data.items()
+            names[hero_id]: frozenset(tags)
+            for hero_id, tags in data.items()
         }
     return _BEHAVIOR_TAGS
 
@@ -2620,9 +2623,13 @@ def _load_behavior_tags() -> dict[str, frozenset[str]]:
 def _load_summon_profiles() -> dict[str, dict[str, bool]]:
     global _SUMMON_PROFILES
     if _SUMMON_PROFILES is None:
-        from hero_pipeline.storage import load_ai_field
+        from hero_pipeline.storage import load_ai_by_id, display_names_by_id
 
-        _SUMMON_PROFILES = load_ai_field("summon_profile")
+        profiles = load_ai_by_id("summon_profile")
+        names = display_names_by_id()
+        _SUMMON_PROFILES = {
+            names[hero_id]: value for hero_id, value in profiles.items()
+        }
     return _SUMMON_PROFILES
 
 
@@ -2640,7 +2647,7 @@ def _hero_damage_profile(
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
 ) -> dict[str, float]:
     """Weighted outgoing-damage profile per damage type (global throughput)."""
-    skills = (skills_by_title or {}).get(hero.title, [])
+    skills = (skills_by_title or {}).get(hero["title"], [])
     raw = _rs.hero_replacement_damage_profile(hero, skills if skills else None)
     profile: dict[str, float] = {}
     if skills:
@@ -2650,7 +2657,7 @@ def _hero_damage_profile(
                 weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
             profile[dt] = weight
         return profile
-    for dt, tgt in hero.damage_entries:
+    for dt, tgt in hero["damage_entries"]:
         if tgt == "Self":
             continue
         tw = 0.0
@@ -2661,8 +2668,8 @@ def _hero_damage_profile(
         if dt in _rs.TRUE_DAMAGE_TYPES:
             weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
         profile[dt] = max(profile.get(dt, 0.0), weight)
-    if hero.damage_type and hero.damage_type not in profile:
-        profile[hero.damage_type] = 1.0
+    if hero["damage_type"] and hero["damage_type"] not in profile:
+        profile[hero["damage_type"]] = 1.0
     return profile
 
 
@@ -2687,9 +2694,9 @@ def _cc_effect_in_signature(
 ) -> bool:
     if not sig_section and not sig_name:
         return False
-    snippet = effect.qualitative.lower()[:80]
-    label = effect.label.lower()
-    for _tier, text, section in hero.skill_chunks:
+    snippet = effect["qualitative"].lower()[:80]
+    label = effect["label"].lower()
+    for _tier, text, section in hero["skill_chunks"]:
         if sig_section and section != sig_section:
             continue
         tl = text.lower()
@@ -2708,13 +2715,13 @@ def _hero_debuff_profile(
 ) -> dict[str, float]:
     """Weighted enemy debuff profile."""
     profile: dict[str, float] = {}
-    for effect in hero.effects:
-        if effect.category != "debuff":
+    for effect in hero["effects"]:
+        if effect["category"] != "debuff":
             continue
-        if effect.targeting == "Self":
+        if effect["targeting"] == "Self":
             continue
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
-        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+        profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
     return profile
 
 
@@ -2727,16 +2734,16 @@ def _hero_cc_profile(
     """Weighted enemy CC profile; signature-skill CC is boosted."""
     profile: dict[str, float] = {}
     has_signature_cc = False
-    for effect in hero.effects:
-        if effect.category != "cc":
+    for effect in hero["effects"]:
+        if effect["category"] != "cc":
             continue
-        if effect.targeting == "Self":
+        if effect["targeting"] == "Self":
             continue
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
         if _cc_effect_in_signature(effect, hero, sig_section, sig_name):
             weight *= REPLACEMENT_SIGNATURE_CC_BOOST
             has_signature_cc = True
-        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+        profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
     return profile, has_signature_cc
 
 
@@ -3185,31 +3192,31 @@ def compute_replacement_scores(
     sig_sections = _signature_sections()
 
     for hero in heroes:
-        profiles[hero.title] = _hero_provider_profile(hero, skills_by_title)
-        healing_profiles[hero.title] = _hero_healing_profile(hero, skills_by_title)
-        energy_provided[hero.title] = _hero_effective_ally_energy_provided(hero)
-        behavior = behavior_by_title.get(hero.title)
-        sig_name = behavior.signature_skill_name if behavior else ""
-        display = short_name(hero.title)
+        profiles[hero["title"]] = _hero_provider_profile(hero, skills_by_title)
+        healing_profiles[hero["title"]] = _hero_healing_profile(hero, skills_by_title)
+        energy_provided[hero["title"]] = _hero_effective_ally_energy_provided(hero)
+        behavior = behavior_by_title.get(hero["title"])
+        sig_name = behavior["signature_skill_name"] if behavior else ""
+        display = short_name(hero["title"])
         curated = _rs.curated_display_name(display)
         sig_section = sig_sections.get(curated, "")
-        damage_profiles[hero.title] = _hero_damage_profile(hero, skills_by_title)
-        damage_types[hero.title] = provider_damage_types(hero)
-        debuff_profiles[hero.title] = _hero_debuff_profile(hero, skills_by_title)
-        cc_profiles[hero.title], _ = _hero_cc_profile(
+        damage_profiles[hero["title"]] = _hero_damage_profile(hero, skills_by_title)
+        damage_types[hero["title"]] = provider_damage_types(hero)
+        debuff_profiles[hero["title"]] = _hero_debuff_profile(hero, skills_by_title)
+        cc_profiles[hero["title"]], _ = _hero_cc_profile(
             hero, sig_section, sig_name, skills_by_title
         )
 
     result: dict[str, dict[str, list[dict]]] = {}
     for hero_x in heroes:
-        px = profiles[hero_x.title]
-        ex = energy_provided[hero_x.title]
-        dpx = damage_profiles[hero_x.title]
-        dtx = damage_types[hero_x.title]
-        dbpx = debuff_profiles[hero_x.title]
-        cpx = cc_profiles[hero_x.title]
-        hpx = healing_profiles[hero_x.title]
-        display_x = short_name(hero_x.title)
+        px = profiles[hero_x["title"]]
+        ex = energy_provided[hero_x["title"]]
+        dpx = damage_profiles[hero_x["title"]]
+        dtx = damage_types[hero_x["title"]]
+        dbpx = debuff_profiles[hero_x["title"]]
+        cpx = cc_profiles[hero_x["title"]]
+        hpx = healing_profiles[hero_x["title"]]
+        display_x = short_name(hero_x["title"])
         curated_x = _rs.curated_display_name(display_x)
         tags_x = behavior_tags_map.get(curated_x, frozenset())
         energy_eligible = is_energy_provider(hero_x)
@@ -3218,43 +3225,43 @@ def compute_replacement_scores(
             key: [] for key in REPLACEMENT_CATEGORIES
         }
         for hero_y in heroes:
-            if hero_y.title == hero_x.title:
+            if hero_y["title"] == hero_x["title"]:
                 continue
-            py = profiles[hero_y.title]
-            dpy = damage_profiles[hero_y.title]
-            dbpy = debuff_profiles[hero_y.title]
-            cpy = cc_profiles[hero_y.title]
-            display_y = short_name(hero_y.title)
+            py = profiles[hero_y["title"]]
+            dpy = damage_profiles[hero_y["title"]]
+            dbpy = debuff_profiles[hero_y["title"]]
+            cpy = cc_profiles[hero_y["title"]]
+            display_y = short_name(hero_y["title"])
             curated_y = _rs.curated_display_name(display_y)
             tags_y = behavior_tags_map.get(curated_y, frozenset())
-            ey = energy_provided[hero_y.title]
+            ey = energy_provided[hero_y["title"]]
 
             category_scores["buff"].append(
                 (
                     _replacement_coverage(px, py),
-                    hero_y.title,
+                    hero_y["title"],
                     _buff_overlap_tags(px, py),
                 )
             )
             if energy_eligible and is_energy_provider(hero_y):
                 category_scores["energy"].append(
-                    (_energy_replacement_coverage(ex, ey), hero_y.title, [])
+                    (_energy_replacement_coverage(ex, ey), hero_y["title"], [])
                 )
             category_scores["healing"].append(
                 (
                     _healing_replacement_coverage(
-                        hpx, healing_profiles[hero_y.title]
+                        hpx, healing_profiles[hero_y["title"]]
                     ),
-                    hero_y.title,
+                    hero_y["title"],
                     _healing_overlap_tags(
-                        hpx, healing_profiles[hero_y.title]
+                        hpx, healing_profiles[hero_y["title"]]
                     ),
                 )
             )
             category_scores["similar_skills"].append(
                 (
                     _set_jaccard(tags_x, tags_y),
-                    hero_y.title,
+                    hero_y["title"],
                     _similar_skills_overlap_tags(tags_x, tags_y),
                 )
             )
@@ -3262,38 +3269,38 @@ def compute_replacement_scores(
                 (
                     _damage_replacement_coverage(
                         dtx,
-                        damage_types[hero_y.title],
+                        damage_types[hero_y["title"]],
                         dpx,
                         dpy,
                     ),
-                    hero_y.title,
+                    hero_y["title"],
                     _damage_overlap_tags(dpx, dpy),
                 )
             )
             category_scores["debuff"].append(
                 (
                     _replacement_coverage(dbpx, dbpy),
-                    hero_y.title,
+                    hero_y["title"],
                     _debuff_overlap_tags(dbpx, dbpy),
                 )
             )
             category_scores["cc"].append(
                 (
                     _replacement_coverage(cpx, cpy),
-                    hero_y.title,
+                    hero_y["title"],
                     _cc_overlap_tags(cpx, cpy),
                 )
             )
 
-        source_faction = factions.get(hero_x.title)
-        source_role_category = role_categories.get(hero_x.title)
-        source_is_melee = bool((is_melee_by_title or {}).get(hero_x.title))
-        result[hero_x.title] = {}
+        source_faction = factions.get(hero_x["title"])
+        source_role_category = role_categories.get(hero_x["title"])
+        source_is_melee = bool((is_melee_by_title or {}).get(hero_x["title"]))
+        result[hero_x["title"]] = {}
         for key in REPLACEMENT_CATEGORIES:
             rank_kwargs = {
                 "source_faction": source_faction,
                 "faction_by_title": factions,
-                "source_title": hero_x.title,
+                "source_title": hero_x["title"],
                 "tiers_by_title": tiers_by_title,
                 "source_role_category": source_role_category,
                 "role_category_by_title": role_categories,
@@ -3303,17 +3310,17 @@ def compute_replacement_scores(
             }
             if key == "similar_skills":
                 rank_kwargs["min_tag_overlap"] = SIMILAR_SKILLS_MIN_TAG_OVERLAP
-            result[hero_x.title][key] = _rank_replacement_category(
+            result[hero_x["title"]][key] = _rank_replacement_category(
                 category_scores[key],
                 **rank_kwargs,
             )
-        result[hero_x.title]["overall"] = _rank_overall_replacements(
+        result[hero_x["title"]]["overall"] = _rank_overall_replacements(
             category_scores,
             energy_eligible=energy_eligible,
             source_role_category=source_role_category,
             source_faction=source_faction,
             faction_by_title=factions,
-            source_title=hero_x.title,
+            source_title=hero_x["title"],
             tiers_by_title=tiers_by_title,
             role_category_by_title=role_categories,
             source_is_melee=source_is_melee,
@@ -3331,7 +3338,7 @@ def build_synergy_entries_by_receiver(
     """Full synergy ranking per receiver (no top-N cap)."""
     tiers_by_title = _load_prydwen_tiers_by_title()
     return {
-        receiver.title: rank_synergy_entries(
+        receiver["title"]: rank_synergy_entries(
             receiver,
             heroes,
             enabler_matchers,
@@ -3376,8 +3383,8 @@ def build_beneficiaries_index(
     primary: dict[str, list[tuple[float, str]]] = defaultdict(list)
     full: dict[str, list[tuple[float, str]]] = defaultdict(list)
     for receiver in heroes:
-        entries = synergy_entries_by_receiver[receiver.title]
-        receiver_name = short_name(receiver.title)
+        entries = synergy_entries_by_receiver[receiver["title"]]
+        receiver_name = short_name(receiver["title"])
         for score, _reasons, provider_title in entries[:MAX_SYNERGIES]:
             primary[provider_title].append((score, receiver_name))
         for score, _reasons, provider_title in entries:
@@ -3385,7 +3392,7 @@ def build_beneficiaries_index(
 
     result: dict[str, list[tuple[float, str]]] = {}
     for hero in heroes:
-        title = hero.title
+        title = hero["title"]
         if primary[title]:
             result[title] = sorted(
                 primary[title], key=lambda x: (-x[0], x[1])
@@ -3406,7 +3413,7 @@ def format_synergies(
     role_category_by_title: dict[str, str] | None = None,
 ) -> list[str]:
     lines: list[str] = []
-    receiver_name = short_name(receiver.title)
+    receiver_name = short_name(receiver["title"])
     requires_lines = format_synergy_requires_markdown(receiver, receiver_name)
     if requires_lines:
         lines.extend(requires_lines)
@@ -3425,7 +3432,7 @@ def format_synergies(
     else:
         lines.append("_No synergy partners matched stat buffs or enablers._")
 
-    benefited = beneficiaries_index.get(receiver.title, [])
+    benefited = beneficiaries_index.get(receiver["title"], [])
     if benefited:
         lines.append("")
         lines.append(f"### Units benefitting most from {receiver_name}")
@@ -3448,7 +3455,7 @@ def format_synergies(
             display = benefited[:MAX_BENEFICIARIES_DISPLAY]
         else:
             display = benefited
-        receiver_by_short = {short_name(h.title): h for h in heroes}
+        receiver_by_short = {short_name(h["title"]): h for h in heroes}
 
         def _beneficiary_sort_key(item: tuple[float, str]) -> tuple[float, str]:
             score, name = item
@@ -3570,12 +3577,12 @@ def scan_enabler_patterns_in_heroes(heroes: list[_rs.Hero]) -> dict[str, list[st
         ),
     )
     for hero in heroes:
-        for _tier, text, _section in hero.skill_chunks:
+        for _tier, text, _section in hero["skill_chunks"]:
             tl = text.lower()
             for pat, tag in patterns:
-                if re.search(pat, tl) and hero.title not in candidates[tag]:
+                if re.search(pat, tl) and hero["title"] not in candidates[tag]:
                     snip = text[:100].replace("\n", " ")
-                    candidates[tag].append(f"{short_name(hero.title)}: …{snip}…")
+                    candidates[tag].append(f"{short_name(hero["title"])}: …{snip}…")
     return dict(candidates)
 
 
@@ -3596,7 +3603,7 @@ def _role_category_by_title(
     raw = io.load_heroes_data()
     records = {h["title"]: h for h in raw.get("heroes", [])}
     class_by_title = {
-        h.title: _parse_hero_class(block_by_title[h.title]) for h in heroes
+        h["title"]: _parse_hero_class(block_by_title[h["title"]]) for h in heroes
     }
     return hs.build_role_category_by_title(heroes, records, class_by_title)
 
@@ -3612,12 +3619,12 @@ def build_overview() -> str:
             continue
         hero = _rs.parse_hero_block(block)
         heroes.append(hero)
-        block_by_title[hero.title] = block
+        block_by_title[hero["title"]] = block
 
     hero_class_by_title: dict[str, str] = {}
     for hero in heroes:
-        hero_class_by_title[hero.title] = _parse_hero_class(
-            block_by_title[hero.title]
+        hero_class_by_title[hero["title"]] = _parse_hero_class(
+            block_by_title[hero["title"]]
         )
         _rs.analyze_hero(hero)
 
@@ -3628,7 +3635,7 @@ def build_overview() -> str:
     _rs.assign_magnitudes(heroes, skills_by_title)
     enabler_matchers = _make_enabler_matchers(hero_class_by_title)
 
-    display_by_title = {h.title: short_name(h.title) for h in heroes}
+    display_by_title = {h["title"]: short_name(h["title"]) for h in heroes}
     behavior_by_title = _rs.build_behavior_for_heroes(
         heroes, display_by_title,
         hero_class_by_title=hero_class_by_title,
@@ -3640,7 +3647,7 @@ def build_overview() -> str:
         role_category_by_title=role_category_by_title,
     )
 
-    roster_slugs = {hero_slug(short_name(h.title)) for h in heroes}
+    roster_slugs = {hero_slug(short_name(h["title"])) for h in heroes}
     slug_ranks = build_slug_ranks_map(load_character_stat_ranks(), roster_slugs)
 
     parts = [
@@ -3679,17 +3686,17 @@ def build_overview() -> str:
             behavior_by_title,
             role_category_by_title=role_category_by_title,
         )
-        summary = _rs.format_summary(hero, short_name(hero.title)).rstrip()
+        summary = _rs.format_summary(hero, short_name(hero["title"])).rstrip()
 
-        parts.append(f"## {short_name(hero.title)}")
+        parts.append(f"## {short_name(hero["title"])}")
         parts.append("")
-        hero_name = short_name(hero.title)
-        behavior = behavior_by_title[hero.title]
+        hero_name = short_name(hero["title"])
+        behavior = behavior_by_title[hero["title"]]
         parts.extend(
             _rs.format_behavior_section(
                 hero_name,
                 behavior,
-                prydwen_tiers=tiers_by_title.get(hero.title),
+                prydwen_tiers=tiers_by_title.get(hero["title"]),
                 hero=hero,
                 behavior_tags=sorted(behavior_tags_map.get(hero_name, ())),
                 stats_overview=stats_overview_for_short(hero_name, slug_ranks),

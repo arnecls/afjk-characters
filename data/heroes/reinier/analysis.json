@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "reinier",
   "display_name": "Reinier",
   "local": {
@@ -446,671 +446,182 @@
         "Multiple targets, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "reinier",
     "display_name": "Reinier",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Reinier - Symmetric Sin",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "If non-summoned allies outnumber non-summoned enemies, Reinier selects an enemy, dealing 230% (ATK-based) + 20 (SP-based), and teleporting to another dimension with the target for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Otherwise, only the target will be teleported to another dimension while Reinier remains on the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If the target is under Steadfast or Unaffected, or if the target is the only non-summoned enemy alive, Reinier will deal 450% (ATK-based) damage instead of entering another dimension.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This skill prioritizes the healthiest non-summoned enemy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Mutual Reflection works on an extra enemy if non-summoned enemies outnumber non-summoned allies by at least 2.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Reduces the duration of transferring this enemy to another dimension to 7s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases the damage to 250% (ATK-based) + 20 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The damage is increased to 460% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases the damage to 260% (ATK-based) + 20 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The damage is increased to 480% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases the damage to 270% (ATK-based) + 20 (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The damage is increased to 500% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Reinier switches an adjacent ally's position with an enemy if they're in symmetrical positions.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Whenever the enemy takes damage, the ally restores HP equal to 45% of the enemy's taken damage till a battle ends.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The total HP recovery amount by this means is no more than 1000% (ATK-based) + 100% (SP-based) in a consecutive 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 71: Restores allied hero's HP equal to 46% of the damage dealt.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 131: Restores allied hero's HP equal to 48% of the damage dealt.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unlocks at level 191: Restores allied hero's HP equal to 50% of the damage dealt.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Reinier launches a mighty strike against the healthiest enemy through the portal, interrupting them and dealing 45% (ATK-based) + 3% (SP-based) damage 8 times.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Afterward, Reineir punches and knocks them into the air, dealing 120% (ATK-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "If the enemy's HP ratio is above 61.8%, then each hit attaches extra damage equal to 1% of their current HP, up to 20% ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 91: Reinier senses satisfaction when enemy's HP ratio drops below 61.8% for the first time, recovering 200% (ATK-based) HP and 80 Energy.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 151: The damage of each strike is increased to 1.2% of the enemy's current HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Unlocks at level 211: Reinier shares satisfaction with allies when each enemy's HP ratio drops below 61.8% for the first time, granting all allies 120% (ATK-based) HP and 50 Energy.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Reinier's Dynamic Balance increases the target's ATK by 7% when cast on an ally or reduces the target ATK by 7% when cast on an enemy.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Reinier's Dynamic Balance increases the target's ATK by 10% when cast on an ally or reduces the target ATK by 10% when cast on an enemy.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Reinier's Dynamic Balance increases the target's ATK by 12% when cast on an ally or reduces the target ATK by 12% when cast on an enemy.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Reinier deals 200% (ATK-based) damage to the enemy and knocks them down when casting Dynamic Balance, increasing their damage taken by 25% till the battle ends.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 5: Increases the damage dealt to the enemy to 250% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 10: Reduces the position-switched ally's damage taken by 25% till the battle ends.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Reinier increases the allied herp's ATK by 4% till the battle ends if they're in a symmetrical position with an enemy hero.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "If non-summoned allies outnumber non-summoned enemies, Reinier selects an enemy, dealing 230% (ATK-based) + 20 (SP-based), and teleporting to another dimension with the target for 10s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Mutual Reflection": "Ultimate",
-        "Dynamic Balance": "Skill1",
-        "Golden Ratio": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Tuned Art": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Displace",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_summoned"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_summoned"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Interrupt",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Single target",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Displace",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_summoned"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 500.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_summoned"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Interrupt",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Single target",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Otherwise, only the target will be teleported to another dimension while Reinier remains on the battlefield.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Magic",
-          "Multiple targets, Single target"
-        ]
+      [
+        "base",
+        "If the target is under Steadfast or Unaffected, or if the target is the only non-summoned enemy alive, Reinier will deal 450% (ATK-based) damage instead of entering another dimension.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "This skill prioritizes the healthiest non-summoned enemy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 51: Mutual Reflection works on an extra enemy if non-summoned enemies outnumber non-summoned allies by at least 2.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Reduces the duration of transferring this enemy to another dimension to 7s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 111: Increases the damage to 250% (ATK-based) + 20 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The damage is increased to 460% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases the damage to 260% (ATK-based) + 20 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The damage is increased to 480% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases the damage to 270% (ATK-based) + 20 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The damage is increased to 500% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Reinier switches an adjacent ally's position with an enemy if they're in symmetrical positions.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Whenever the enemy takes damage, the ally restores HP equal to 45% of the enemy's taken damage till a battle ends.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The total HP recovery amount by this means is no more than 1000% (ATK-based) + 100% (SP-based) in a consecutive 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Restores allied hero's HP equal to 46% of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Restores allied hero's HP equal to 48% of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Restores allied hero's HP equal to 50% of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Reinier launches a mighty strike against the healthiest enemy through the portal, interrupting them and dealing 45% (ATK-based) + 3% (SP-based) damage 8 times.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Afterward, Reineir punches and knocks them into the air, dealing 120% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If the enemy's HP ratio is above 61.8%, then each hit attaches extra damage equal to 1% of their current HP, up to 20% ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Reinier senses satisfaction when enemy's HP ratio drops below 61.8% for the first time, recovering 200% (ATK-based) HP and 80 Energy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: The damage of each strike is increased to 1.2% of the enemy's current HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Reinier shares satisfaction with allies when each enemy's HP ratio drops below 61.8% for the first time, granting all allies 120% (ATK-based) HP and 50 Energy.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Reinier's Dynamic Balance increases the target's ATK by 7% when cast on an ally or reduces the target ATK by 7% when cast on an enemy.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reinier's Dynamic Balance increases the target's ATK by 10% when cast on an ally or reduces the target ATK by 10% when cast on an enemy.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reinier's Dynamic Balance increases the target's ATK by 12% when cast on an ally or reduces the target ATK by 12% when cast on an enemy.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Reinier deals 200% (ATK-based) damage to the enemy and knocks them down when casting Dynamic Balance, increasing their damage taken by 25% till the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Increases the damage dealt to the enemy to 250% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Reduces the position-switched ally's damage taken by 25% till the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Reinier increases the allied herp's ATK by 4% till the battle ends if they're in a symmetrical position with an enemy hero.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "925460be2b538f440b65931e4879b420b6bf56130843248ca1240cdbe002cacd",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

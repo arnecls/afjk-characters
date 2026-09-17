@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "silvina",
   "display_name": "Silvina",
   "local": {
@@ -346,7 +346,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "shield",
       "crit"
@@ -354,466 +353,133 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "silvina",
     "display_name": "Silvina",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Silvina - The Taken Breath",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Silvina deals 300% (ATK-based) + 50% (SP-based) damage to an enemy and reduces their Energy by 200.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 51: Increases damage to 320% (ATK-based) + 50% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 111: Increases damage to 340% (ATK-based) + 50% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 171: Increases damage to 360% (ATK-based) + 50% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Unlocks at level 231: Increases the Energy reduction to 300.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Silvina marks the closest enemy in a symmetrical position, flashes next to them, and launches an attack when a battle starts, dealing 300% (ATK-based) + 25% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 320% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 340% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This attack stuns the enemy for 5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Silvina's normal attack becomes Whirl Assault for the first 12s of battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each Whirl Assault deals 140% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each Whirl Assault deals 150% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each Whirl Assault deals 160% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each Whirl Assault deals 170% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Crit by 24 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Crit by 32 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Crit by 40 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Silvina gains a shield that can block up to 450% (ATK-based) damage after casting First Strike.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases shield value to 500% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "When a marked enemy is defeated, Silvina frightens enemies within 2 tiles of the defeated enemy for 4s while Blade Vortex is in effect.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases shield value to 600% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Silvina deals 300% (ATK-based) + 50% (SP-based) damage to an enemy and reduces their Energy by 200.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Shadow Slayer": "Ultimate",
-        "First Strike": "Skill1",
-        "Blade Vortex": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Shield of Light": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 410.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2s.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "EX+10",
-              "targeting": "Area",
-              "qualitative": "When a marked enemy is defeated, Silvina frightens enemies within 2 tiles of the defeated enemy for 4s while Blade Vortex is in effect.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 450.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Frighten",
-              "tier": "EX+10",
-              "targeting": "Area",
-              "numeric": 4.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 4.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 450.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Frighten",
-          "tier": "EX+10",
-          "targeting": "Area",
-          "numeric": 4.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 4.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Unlocks at level 51: Increases damage to 320% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2s.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "EX+10",
-          "targeting": "Area",
-          "qualitative": "When a marked enemy is defeated, Silvina frightens enemies within 2 tiles of the defeated enemy for 4s while Blade Vortex is in effect.",
-          "grants": []
-        }
+      [
+        "base",
+        "Unlocks at level 111: Increases damage to 340% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ]
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 360% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Shield",
-        "Crit"
+      [
+        "base",
+        "Unlocks at level 231: Increases the Energy reduction to 300.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Silvina marks the closest enemy in a symmetrical position, flashes next to them, and launches an attack when a battle starts, dealing 300% (ATK-based) + 25% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 320% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 340% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This attack stuns the enemy for 5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Silvina's normal attack becomes Whirl Assault for the first 12s of battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each Whirl Assault deals 140% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each Whirl Assault deals 150% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each Whirl Assault deals 160% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each Whirl Assault deals 170% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Crit by 24 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Crit by 32 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Crit by 40 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Silvina gains a shield that can block up to 450% (ATK-based) damage after casting First Strike.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases shield value to 500% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "When a marked enemy is defeated, Silvina frightens enemies within 2 tiles of the defeated enemy for 4s while Blade Vortex is in effect.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases shield value to 600% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "246b8f4b8f0ad004f3bc157a153ee09830347c4aa52e26c005b2b75942707ce9",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "ulmus",
   "display_name": "Ulmus",
   "local": {
@@ -469,7 +469,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "shield",
       "energy"
@@ -478,677 +477,168 @@
       "atk": 0.5384615384615384,
       "max_hp": 0.46153846153846156
     },
-    "behavior": {},
     "id": "ulmus",
     "display_name": "Ulmus",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "skill2",
-    "hero": {
-      "title": "Ulmus - Grove Keeper",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% (SP-based) HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When rooted, Ulmus is Unaffected and unable to move.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "His normal attacks become ranged and deal an additional 50% damage to enemies surrounding the primary target.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Ulmus attacks an enemy, knocking the target and adjacent enemies into the air, dealing 200% (ATK-based) + 20% (SP-based) damage plus an extra 4% (HP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This skill prioritizes the area with the most enemies within his attack range.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 210%|ult (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 220%|ult (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 230%|ult (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 240%|ult (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Ulmus gains a 25% (HP-based) + 3% (SP-based) shield that lasts 10s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When the shield breaks, it deals 160% (ATK-based) + 15% (SP-based) damage to surrounding enemies.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If Ulmus is rooted, he will grant the shield to the frontmost ally instead.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 28% (HP-based) + 3% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 32% (HP-based) + 3% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the shield value to 35% (HP-based) + 3% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Ulmus recovers 3.5% + 0.5% (SP-based) of his lost HP per second.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When rooted, he will instead recover 30 + 4 (SP-based) Energy per second.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the HP recovery per second to 4% + 0.5% (SP-based), or the Energy recovery to 32 + 4 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the HP recovery per second to 4.5% + 0.5% (SP-based), or the Energy recovery to 34 + 4 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the HP recovery per second to 5% + 0.5% (SP-based), or the Energy recovery to 36 + 4 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases max HP by 17% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases max HP by 23% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases max HP by 29% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Ulmus extends his roots to trap vulnerable enemies on the battlefield.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Whenever an enemy target is knocked down, knocked into the air or affected by other displacement effects, Ulmus binds the target to the ground, increasing the knockdown duration by 2 and dealing 80% (ATK-based) damage.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This effect can only affect the same enemy once every 10s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the damage dealt to 100%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Gains 60 Life Drain when dealing damage with this skill.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the damage dealt to 120%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant Barrier breaks or vanishes.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% (SP-based) HP.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Ancient Tenacity": "Ultimate",
-        "Verdant Barrier": "Skill1",
-        "Way of the Forest": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Prowling Roots": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.3,
-                  "comparison": "below"
-                },
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 220.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Cheat death",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% HP.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Vulnerable enemy",
-              "tier": "Mythic+",
-              "targeting": "Enemies",
-              "qualitative": "Ulmus extends his roots to trap vulnerable enemies on the battlefield.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 175.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "Supreme+",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 3.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "hp_threshold",
-              "hp_ratio": 0.3,
-              "comparison": "below"
-            },
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 220.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "Supreme+",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 3.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "When rooted, Ulmus is Unaffected and unable to move.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "His normal attacks become ranged and deal an additional 50% damage to enemies surrounding the primary target.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Cheat death",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% HP.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Vulnerable enemy",
-          "tier": "Mythic+",
-          "targeting": "Enemies",
-          "qualitative": "Ulmus extends his roots to trap vulnerable enemies on the battlefield.",
-          "grants": []
-        }
+      [
+        "base",
+        "Ulmus attacks an enemy, knocking the target and adjacent enemies into the air, dealing 200% (ATK-based) + 20% (SP-based) damage plus an extra 4% (HP-based) damage.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "This skill prioritizes the area with the most enemies within his attack range.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Shield",
-        "Energy"
+      [
+        "base",
+        "Increases the damage dealt to 210%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.5384615384615384,
-        "Max HP": 0.46153846153846156
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage dealt to 220%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Ulmus gains a 25% (HP-based) + 3% (SP-based) shield that lasts 10s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When the shield breaks, it deals 160% (ATK-based) + 15% (SP-based) damage to surrounding enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If Ulmus is rooted, he will grant the shield to the frontmost ally instead.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 28% (HP-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 32% (HP-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 35% (HP-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Ulmus recovers 3.5% + 0.5% (SP-based) of his lost HP per second.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When rooted, he will instead recover 30 + 4 (SP-based) Energy per second.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP recovery per second to 4% + 0.5% (SP-based), or the Energy recovery to 32 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP recovery per second to 4.5% + 0.5% (SP-based), or the Energy recovery to 34 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP recovery per second to 5% + 0.5% (SP-based), or the Energy recovery to 36 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 17% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 23% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 29% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Ulmus extends his roots to trap vulnerable enemies on the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Whenever an enemy target is knocked down, knocked into the air or affected by other displacement effects, Ulmus binds the target to the ground, increasing the knockdown duration by 2 and dealing 80% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This effect can only affect the same enemy once every 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt to 100%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Gains 60 Life Drain when dealing damage with this skill.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt to 120%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant Barrier breaks or vanishes.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "7add15c77c1babedfb05eeaf1dafdda6ef5e6bbae3c7ab2e758e4e0ad02fd0b7",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

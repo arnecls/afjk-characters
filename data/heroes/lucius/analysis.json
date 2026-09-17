@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lucius",
   "display_name": "Lucius",
   "local": {
@@ -452,7 +452,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "shield"
     ],
@@ -460,629 +459,128 @@
       "atk": 0.9166666666666666,
       "max_hp": 0.08333333333333333
     },
-    "behavior": {},
     "id": "lucius",
     "display_name": "Lucius",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Lucius - The Lightbringer",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases shield value to 490% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases shield value to 500% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases shield value to 510% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases shield value to 520% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Stuns the enemy for 1s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases shield value to 310% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases shield value to 320% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases shield effect gained by 8%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases shield effect gained by 14%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases shield effect gained by 20%.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 11 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 15 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 19 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Gains a 3% (HP-based) shield for 4s per every enemy hit.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Reduces enemies' ATK by 10%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Reduces enemies' ATK by 12%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Lucius heals 1 more ally with Divine Light Blessing.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Divine Light Aegis": "Ultimate",
-        "Divine Bash": "Skill1",
-        "Divine Light Blessing": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Sacred Beam": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 470.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 350.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 19.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 8.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 90.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Supreme+",
-              "targeting": "Multiple targets",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "trigger_condition",
-                  "trigger": "buff"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 470.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 350.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 1.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 19.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 8.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Supreme+",
-          "targeting": "Multiple targets",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "trigger_condition",
-              "trigger": "buff"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Increases shield value to 490% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "Increases shield value to 500% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Shield"
+      [
+        "base",
+        "Increases shield value to 510% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.9166666666666666,
-        "Max HP": 0.08333333333333333
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases shield value to 520% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Stuns the enemy for 1s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases shield value to 310% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases shield value to 320% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases shield effect gained by 8%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases shield effect gained by 14%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases shield effect gained by 20%.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 11 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 19 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains a 3% (HP-based) shield for 4s per every enemy hit.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Reduces enemies' ATK by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Reduces enemies' ATK by 12%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lucius heals 1 more ally with Divine Light Blessing.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "cb38144333ae0b672fa9e1ee6100153d30e5bbb27b5464b3f218f3d483611fba",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -567,7 +567,7 @@ class DisplacementReplacementTests(unittest.TestCase):
         eironn = _hero_by_short_name("Eironn")
         cyran = _hero_by_short_name("Cyran")
         displace = [
-            e for e in cyran.effects if e.category == "cc" and e.label == "Displace"
+            e for e in cyran["effects"] if e["category"] == "cc" and e["label"] == "Displace"
         ]
         self.assertGreater(len(displace), 0)
         from test_roster_cache import full_roster, skills_by_title
@@ -576,7 +576,7 @@ class DisplacementReplacementTests(unittest.TestCase):
         replacements = gen.compute_replacement_scores(
             heroes, behavior, {}, skills_by_title=skills_by_title()
         )
-        cc = replacements[eironn.title]["cc"]
+        cc = replacements[eironn["title"]]["cc"]
         cc_names = [entry["name"] for entry in cc]
         self.assertIn("Evie", cc_names)
         self.assertTrue(any("Displace" in entry.get("matches", []) for entry in cc))
@@ -626,10 +626,10 @@ class HealingReplacementTests(unittest.TestCase):
 
         heroes, _, behavior = full_roster()
         replacements = gen.compute_replacement_scores(heroes, behavior, {})
-        hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
-        aliceth = next(h for h in heroes if h.title.startswith("Aliceth"))
-        hewynn_healing = replacements[hewynn.title]["healing"]
-        aliceth_healing = replacements[aliceth.title]["healing"]
+        hewynn = next(h for h in heroes if h["title"].startswith("Hewynn"))
+        aliceth = next(h for h in heroes if h["title"].startswith("Aliceth"))
+        hewynn_healing = replacements[hewynn["title"]]["healing"]
+        aliceth_healing = replacements[aliceth["title"]]["healing"]
         self.assertGreater(len(hewynn_healing), 0)
         self.assertEqual(aliceth_healing, [])
 
@@ -639,18 +639,18 @@ class HealingEffectSeparationTests(unittest.TestCase):
         hewynn = _hero_by_short_name("Hewynn")
         healing = [
             e
-            for e in hewynn.effects
+            for e in hewynn["effects"]
             if gen._healing_effect_is_ally_provider(e)
-            or is_hp_recovery_label(e.label)
+            or is_hp_recovery_label(e["label"])
         ]
-        labels_sections = {(e.label, e.source_section) for e in healing}
+        labels_sections = {(e["label"], e["source_section"]) for e in healing}
         self.assertIn((HEALING_OVER_TIME_LABEL, "Ultimate"), labels_sections)
 
     def test_healing_profile_uses_throughput_weights(self) -> None:
         from test_roster_cache import full_roster, skills_by_title
 
         heroes, _, _behavior = full_roster()
-        hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
+        hewynn = next(h for h in heroes if h["title"].startswith("Hewynn"))
         profile = gen._hero_healing_profile(hewynn, skills_by_title())
         self.assertGreater(next(iter(profile.values())), 0.0)
 
@@ -699,20 +699,20 @@ class HealingEffectSeparationTests(unittest.TestCase):
             blocks
         )
         skills = skills_by_title()
-        display = {h.title: gen.short_name(h.title) for h in heroes}
+        display = {h["title"]: gen.short_name(h["title"]) for h in heroes}
         behavior = rs.build_behavior_for_heroes(
             heroes, display
         )
         replacements = gen.compute_replacement_scores(
             heroes, behavior, {}, role_category_by_title, skills
         )
-        hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
+        hewynn = next(h for h in heroes if h["title"].startswith("Hewynn"))
         healing = {
             entry["name"]: entry["score"]
-            for entry in replacements[hewynn.title]["healing"]
+            for entry in replacements[hewynn["title"]]["healing"]
         }
         healing_order = [
-            entry["name"] for entry in replacements[hewynn.title]["healing"]
+            entry["name"] for entry in replacements[hewynn["title"]]["healing"]
         ]
         self.assertGreaterEqual(healing.get("Solise", 0.0), healing.get("Lorsan", 0.0))
         if "Solise" in healing_order and "Lorsan" in healing_order:
@@ -796,7 +796,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
     def test_inflated_per_role_label_does_not_inflate_coverage(self) -> None:
         """Higher raw numeric beats per-role 'high' when profiles use global weights."""
         hero_support = self._make_hero("Support Hero")
-        hero_support.effects = [
+        hero_support["effects"] = [
             rs.Effect(
                 category="buff",
                 label="ATK",
@@ -807,7 +807,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
             )
         ]
         hero_dps = self._make_hero("Damage Hero")
-        hero_dps.effects = [
+        hero_dps["effects"] = [
             rs.Effect(
                 category="buff",
                 label="ATK",

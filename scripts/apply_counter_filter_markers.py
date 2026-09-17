@@ -48,9 +48,11 @@ def load_csv() -> dict[str, dict[str, str]]:
 
 
 def load_tags() -> dict[str, list[str]]:
-    from hero_pipeline.storage import load_ai_field
+    from hero_pipeline.storage import load_ai_by_id, display_names_by_id
 
-    return load_ai_field("behavior_tags")
+    data = load_ai_by_id("behavior_tags")
+    names = display_names_by_id()
+    return {names[hero_id]: tags for hero_id, tags in data.items()}
 
 
 def combo_for_hero(hero: str, tags: dict[str, list[str]], rows: dict) -> str | None:
@@ -276,15 +278,24 @@ def transform_text(text: str, tags: dict, rows: dict) -> str:
 
 
 def main() -> None:
-    from hero_pipeline.storage import load_ai_field, update_ai_field
+    from hero_pipeline.storage import (
+        load_ai_by_id,
+        display_names_by_id,
+        ids_by_display_name,
+        update_ai_by_id,
+    )
 
     tags = load_tags()
     rows = load_csv()
-    data = load_ai_field("counter_overview")
-    updated = {
-        hero: transform_text(text, tags, rows) for hero, text in data.items()
+    data = load_ai_by_id("counter_overview")
+    names = display_names_by_id()
+    updated_display = {
+        names[hero_id]: transform_text(text, tags, rows)
+        for hero_id, text in data.items()
     }
-    update_ai_field("counter_overview", updated)
+    by_id = ids_by_display_name()
+    updated = {by_id[name]: text for name, text in updated_display.items()}
+    update_ai_by_id("counter_overview", updated)
     print(f"Updated {len(updated)} entries in hero-local files")
 
 

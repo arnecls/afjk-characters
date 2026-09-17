@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "zandrok",
   "display_name": "Zandrok",
   "local": {
@@ -453,656 +453,184 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "max_hp"
     ],
     "scalar_stat_shares": {
       "max_hp": 1.0
     },
-    "behavior": {},
     "id": "zandrok",
     "display_name": "Zandrok",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Zandrok - Watchful Edge",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Zandrok raises his axe and slams down on the enemy, destroying all obstacles within 2 tiles of their position.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The impact deals 12% (HP-based) + 2% (SP-based) damage to enemies in the area nd knocks them in the air for 1s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 14% (HP-based) + 2% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 16% (HP-based) + 2% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 18% (HP-based) + 2% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 20% (HP-based) + 2% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Zadrok summons illusions of himself that charge forward in a 5-tile-wide wedge formation toward the enemy side, dealing 10% (HP-based) damage and destroying all obstacles in their path.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Any allies they pass through, including Zandrok, become inspired.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Inspired Zandrok and allies gain 50% + 5% (SP-based) and 20% + 2% (SP-based) extra max HP respectively until the battle ends, with their current HP remaining unchanged.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "They also increase their Life Drain by 40 + 4 (SP-based), Haste by 20, and movement speed by 100% for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Zandrok inspires his allies within 2 tiles, increasing their Life Drain by 25 + 4 (SP-based) and Haste by 14 for 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Unstackable.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases his allies' Life Drain by 30 + 4 (SP-based) and their Haste by 16 when Zandrok casts this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases his allies' Life Drain by 35 + 4 (SP-based) and their Haste by 18 when Zandrok casts this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases his allies' Life Drain by 40 + 4 (SP-based) and their Haste by 20 when Zandrok casts this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Zandrok stomps the ground, dealing damag eequal to 12% + 1.5% (SP-based) of his max HP to enemies within 1 tile and stunning them for 1.5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 13% + 1.5% (SP-based) of Zandrok's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 14% + 1.5% (SP-based) of Zandrok's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to 15% + 1.5% (SP-based) of Zandrok's max HP.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Zandrok increases his max HP by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He further increases his max HP by an extra 6% while the temporary buffs granted by Rallying Roar are active.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Zandrok increases his max HP by 18% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He further increases his max HP by an extra 9% while the temporary buffs granted by Rallying Roar are active.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Zandrok increases his max HP by 24% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "He further increases his max HP by an extra 12% while the temporary buffs granted by Rallying Roar are active.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "While Zandrok's HP is higher than 50% of his initial max HP, his normal attacks deal extra damage equal to 4% of his max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the extra damage to 5% of Zandrok's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Enhances the next nromal attack of allies inspired by Rallying Roar, making it deal extra damage equal to 15% of their own max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "This extra damage cannot exceed 100% of Zandrok's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the extra damage to 6% of Zandrok's max HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Any excess healing Zandrok receives is converted into max HP.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "The total max HP gained from this effect cannot exceed 50% of his initial max HP.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Zandrok raises his axe and slams down on the enemy, destroying all obstacles within 2 tiles of their position.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Savage Slash": "Ultimate",
-        "Rallying Roar": "Skill1",
-        "Shock Stomp": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Hunter's Fury": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 1.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 5,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "path",
-              "area_direction": "front",
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 44.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Start-of-battle cast",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "At battle start, illusion charges inspire allies they pass through with extra max HP, Life Drain, Haste, and movement speed.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 1.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 1.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 24.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "qualitative": "Any excess healing Zandrok receives is converted into max HP, up to 50% of his initial max HP.",
-              "grants": []
-            }
-          ]
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 1.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 5,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "path",
-          "area_direction": "front",
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 44.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 1.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 1.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 24.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        }
+      [
+        "base",
+        "The impact deals 12% (HP-based) + 2% (SP-based) damage to enemies in the area nd knocks them in the air for 1s.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Start-of-battle cast",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "At battle start, illusion charges inspire allies they pass through with extra max HP, Life Drain, Haste, and movement speed.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "qualitative": "Any excess healing Zandrok receives is converted into max HP, up to 50% of his initial max HP.",
-          "grants": []
-        }
+      [
+        "base",
+        "Increases the damage to 14% (HP-based) + 2% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ],
-        [
-          "Max HP-based damage",
-          "Area"
-        ]
+      [
+        "base",
+        "Increases the damage to 16% (HP-based) + 2% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Max HP"
+      [
+        "base",
+        "Increases the damage to 18% (HP-based) + 2% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "Max HP": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage to 20% (HP-based) + 2% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Zadrok summons illusions of himself that charge forward in a 5-tile-wide wedge formation toward the enemy side, dealing 10% (HP-based) damage and destroying all obstacles in their path.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Any allies they pass through, including Zandrok, become inspired.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Inspired Zandrok and allies gain 50% + 5% (SP-based) and 20% + 2% (SP-based) extra max HP respectively until the battle ends, with their current HP remaining unchanged.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "They also increase their Life Drain by 40 + 4 (SP-based), Haste by 20, and movement speed by 100% for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Zandrok inspires his allies within 2 tiles, increasing their Life Drain by 25 + 4 (SP-based) and Haste by 14 for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unstackable.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases his allies' Life Drain by 30 + 4 (SP-based) and their Haste by 16 when Zandrok casts this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases his allies' Life Drain by 35 + 4 (SP-based) and their Haste by 18 when Zandrok casts this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases his allies' Life Drain by 40 + 4 (SP-based) and their Haste by 20 when Zandrok casts this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Zandrok stomps the ground, dealing damag eequal to 12% + 1.5% (SP-based) of his max HP to enemies within 1 tile and stunning them for 1.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 13% + 1.5% (SP-based) of Zandrok's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 14% + 1.5% (SP-based) of Zandrok's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 15% + 1.5% (SP-based) of Zandrok's max HP.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Zandrok increases his max HP by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He further increases his max HP by an extra 6% while the temporary buffs granted by Rallying Roar are active.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Zandrok increases his max HP by 18% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He further increases his max HP by an extra 9% while the temporary buffs granted by Rallying Roar are active.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Zandrok increases his max HP by 24% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "He further increases his max HP by an extra 12% while the temporary buffs granted by Rallying Roar are active.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "While Zandrok's HP is higher than 50% of his initial max HP, his normal attacks deal extra damage equal to 4% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the extra damage to 5% of Zandrok's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Enhances the next nromal attack of allies inspired by Rallying Roar, making it deal extra damage equal to 15% of their own max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "This extra damage cannot exceed 100% of Zandrok's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the extra damage to 6% of Zandrok's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Any excess healing Zandrok receives is converted into max HP.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The total max HP gained from this effect cannot exceed 50% of his initial max HP.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "e1dc2963630014fe8ae1a609d02609eac2dec1fd2d5e78cbb8e5cc1615a63f0b",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

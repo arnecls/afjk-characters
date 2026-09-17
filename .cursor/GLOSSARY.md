@@ -389,9 +389,12 @@ analysis cache.
 
 ## local analysis cache
 
-The per-hero `analysis.json` file. It stores rebuildable hero-local analysis
-keyed by hashes of source, analysis-relevant AI fields, overrides, and the
-analysis algorithm. Presentation-only AI fields do not invalidate this cache.
+The per-hero `analysis.json` file (`schema_version` 2). It stores rebuildable
+ID-keyed hero-local mappings: skills, synergy facts, compact scoring inputs,
+and `skill_chunks`. It does not store a runtime `hero` object, calibrated
+behavior, or roster-relative damage magnitudes. Freshness hashes source,
+analysis-relevant AI fields, overrides, schema identity, and the effective
+local policy. Presentation-only AI fields do not invalidate this cache.
 
 ## AI hero data
 
@@ -410,13 +413,14 @@ so every hero bundle has the same interface.
 
 Stable lowercase kebab-case identifier used for hero directories and structured
 cross-hero references. Punctuation is omitted; the downloaded `Elijah & Lailah`
-record uses the `Twins` ID.
+record uses the `twins` ID. Manifest `aliases` (display name, title, and
+source names such as `Elijah & Lailah`) resolve uniquely to that ID.
 
 ## roster snapshot
 
-In-memory ID-keyed view of the manifest plus every hero bundle. Analysis,
-scoring, and presentation load this snapshot instead of rebuilding
-roster-keyed aggregate files.
+In-memory ID-keyed view of the manifest plus every hero bundle. Inspecting
+inputs and refreshing caches uses a stale-permitting load. Publishing views
+uses `load_roster_snapshot()`, which rejects missing or stale v2 caches.
 
 ## local analysis
 

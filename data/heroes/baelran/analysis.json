@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "baelran",
   "display_name": "Baelran",
   "local": {
@@ -529,7 +529,6 @@
         "Arc, Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -539,774 +538,193 @@
       "atk": 0.4583333333333333,
       "max_hp": 0.5416666666666666
     },
-    "behavior": {},
     "id": "baelran",
     "display_name": "Baelran",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Baelran - Dawnblade",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Baelran gains a shield equal to 80% + 5% (SP-based) of his initial HP and receives 300% (HP-based) bonus max HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This bonus max HP does not raise Baelran's current HP and decreases by 2% every second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Baelran is restored to his max HP, he spreads his wings, deals 10% (HP-based) damage to enemies within 2 tiles, and enters Celestial Form.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While in Celestial Form, the bonus max HP no longer decreases, and his normal attacks all strike enemies within a 1-tile arc in front of him.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Baelran is unaffected while receiving bonus max HP and while transitioning into Celestial Form.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Baelran channels divine power into his blade, dealing 280% (ATK-based) + 40% (SP-based) true damage to all enemies within a 3-tile arc in front of him.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He then restores HP equal to 40% of the damage dealt by the active strike.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by the active strike to 300% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by the active strike to 320% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by the active strike to 340% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt by the active strike to 360% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Baelran restores 2% (HP-based) HP every second.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in Celestial Form, his blade is permanently imbued with Divine Light, dealing an extra 1.5% (HP-based) + 0.3% (SP-based) true damage with each hit.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the extra damage grated by Divine Light to 1.8% (HP-based) + 0.3% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the extra damage grated by Divine Light to 2.1% (HP-based) + 0.3% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the extra damage grated by Divine Light to 2.5% (HP-based) + 0.3% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Baelran knocks his target into the air with an upward slash, dealing 180% (ATK-based) + 20% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "He then slams his sword down, dealing 300% (ATK-based) + 40% (SP-based) damage to enemies within a 3-tile rectangular area in front of him, knocking them down for 2s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increase the slam damage to 320% (ATK-based) + 40% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increase the slam damage to 340% (ATK-based) + 40% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increase the slam damage to 360% (ATK-based) + 40% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Baelran increases his Haste by 9 during battle, and further increases it by 3 when he enters Celestial Form or enhanced Celestial Form.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Baelran increases his Haste by 12 during battle, and further increases it by 4 when he enters Celestial Form or enhanced Celestial Form.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Baelran increases his Haste by 15 during battle, and further increases it by 5 when he enters Celestial Form or enhanced Celestial Form.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When Baelran enters Celestial Form, he fully regains the bonus max HP granted by Celestial Rise.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "If he is restored to max HP again, he enters an enhanced Celestial Form, dealing 10% (HP-based) true damage to enemies within 2 tiles and becoming unaffected permanently.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When casting Celestial Rise, Baelran calls down Divine Light strikes on every tile within the affected area, dealing 6% (HP-based) true damage per strike.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "If an enemy is hit multiple times, the damage they take from each successive strike is reduced by 10%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the damage dealt by each Divine Light strike to 8% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases the damage dealt by each Divine Light strike to 10% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "When Baelran enters Celestial Form, he dispels all debuffs on himself an permanently increases his ATK by 10%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Upon entering enhanced Celestial Form, Baelran calls down Divine Light strikes on every tile within 2 tiles of him, dealing 10% (HP-based) true damage per strike to enemies hit.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "The extra damage from Baelran's Sanctified Surge can also reduce the max HP of non-boss enemies by 70% of the damage dealt.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "This max HP reduction cannot exceed 40% of the target's max HP or 800% (ATK-based) of Baelran's ATK, whichever is lower.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "When fighting against boss enemies, this skill does not reduce max HP; instead, it causes them to lose 0.7% (HP-based) HP.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Baelran gains a shield equal to 80% + 5% (SP-based) of his initial HP and receives 300% (HP-based) bonus max HP.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Celestial Rise": "Ultimate",
-        "Sanctified Surge": "Skill1",
-        "Wrath Cleave": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Divine Dominance": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 400.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 360.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Form"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Enhanced form",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "qualitative": "If he is restored to max HP again, he enters an enhanced Celestial Form, dealing 10% (HP-based) true damage to enemies within 2 tiles and becoming unaffected permanently.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Dispel debuffs",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "qualitative": "When Baelran enters Celestial Form, he dispels all debuffs on himself an permanently increases his ATK by 10%.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Boss encounter",
-              "tier": "Supreme+",
-              "targeting": "Enemies",
-              "qualitative": "When fighting against boss enemies, this skill does not reduce max HP; instead, it causes them to lose 0.7% (HP-based) HP.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 1.8,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 400.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Max HP",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_boss"
-                },
-                {
-                  "type": "unit_type",
-                  "unit_type": "boss"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 400.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 360.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "EX+15",
-          "targeting": "Self",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Max HP",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_boss"
-            },
-            {
-              "type": "unit_type",
-              "unit_type": "boss"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "This bonus max HP does not raise Baelran's current HP and decreases by 2% every second.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Form"
-        }
+      [
+        "base",
+        "When Baelran is restored to his max HP, he spreads his wings, deals 10% (HP-based) damage to enemies within 2 tiles, and enters Celestial Form.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Enhanced form",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "qualitative": "If he is restored to max HP again, he enters an enhanced Celestial Form, dealing 10% (HP-based) true damage to enemies within 2 tiles and becoming unaffected permanently.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Dispel debuffs",
-          "tier": "EX+15",
-          "targeting": "Self",
-          "qualitative": "When Baelran enters Celestial Form, he dispels all debuffs on himself an permanently increases his ATK by 10%.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Boss encounter",
-          "tier": "Supreme+",
-          "targeting": "Enemies",
-          "qualitative": "When fighting against boss enemies, this skill does not reduce max HP; instead, it causes them to lose 0.7% (HP-based) HP.",
-          "grants": []
-        }
+      [
+        "base",
+        "While in Celestial Form, the bonus max HP no longer decreases, and his normal attacks all strike enemies within a 1-tile arc in front of him.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ],
-        [
-          "True damage",
-          "Arc, Area, Single target"
-        ]
+      [
+        "base",
+        "Baelran is unaffected while receiving bonus max HP and while transitioning into Celestial Form.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "True damage": 840.0
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Shield"
+      [
+        "base",
+        "Baelran channels divine power into his blade, dealing 280% (ATK-based) + 40% (SP-based) true damage to all enemies within a 3-tile arc in front of him.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.4583333333333333,
-        "Max HP": 0.5416666666666666
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "He then restores HP equal to 40% of the damage dealt by the active strike.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 300% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 320% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 340% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 360% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Baelran restores 2% (HP-based) HP every second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in Celestial Form, his blade is permanently imbued with Divine Light, dealing an extra 1.5% (HP-based) + 0.3% (SP-based) true damage with each hit.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the extra damage grated by Divine Light to 1.8% (HP-based) + 0.3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the extra damage grated by Divine Light to 2.1% (HP-based) + 0.3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the extra damage grated by Divine Light to 2.5% (HP-based) + 0.3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Baelran knocks his target into the air with an upward slash, dealing 180% (ATK-based) + 20% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He then slams his sword down, dealing 300% (ATK-based) + 40% (SP-based) damage to enemies within a 3-tile rectangular area in front of him, knocking them down for 2s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increase the slam damage to 320% (ATK-based) + 40% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increase the slam damage to 340% (ATK-based) + 40% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increase the slam damage to 360% (ATK-based) + 40% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Baelran increases his Haste by 9 during battle, and further increases it by 3 when he enters Celestial Form or enhanced Celestial Form.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Baelran increases his Haste by 12 during battle, and further increases it by 4 when he enters Celestial Form or enhanced Celestial Form.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Baelran increases his Haste by 15 during battle, and further increases it by 5 when he enters Celestial Form or enhanced Celestial Form.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When Baelran enters Celestial Form, he fully regains the bonus max HP granted by Celestial Rise.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "If he is restored to max HP again, he enters an enhanced Celestial Form, dealing 10% (HP-based) true damage to enemies within 2 tiles and becoming unaffected permanently.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When casting Celestial Rise, Baelran calls down Divine Light strikes on every tile within the affected area, dealing 6% (HP-based) true damage per strike.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "If an enemy is hit multiple times, the damage they take from each successive strike is reduced by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt by each Divine Light strike to 8% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the damage dealt by each Divine Light strike to 10% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "When Baelran enters Celestial Form, he dispels all debuffs on himself an permanently increases his ATK by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Upon entering enhanced Celestial Form, Baelran calls down Divine Light strikes on every tile within 2 tiles of him, dealing 10% (HP-based) true damage per strike to enemies hit.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "The extra damage from Baelran's Sanctified Surge can also reduce the max HP of non-boss enemies by 70% of the damage dealt.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This max HP reduction cannot exceed 40% of the target's max HP or 800% (ATK-based) of Baelran's ATK, whichever is lower.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "When fighting against boss enemies, this skill does not reduce max HP; instead, it causes them to lose 0.7% (HP-based) HP.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "a634a5e187b4e47d6595d65c8e2f8ec7d22f746d6dbd010bbd09c9abb2e3deb8",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

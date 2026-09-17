@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "aliceth",
   "display_name": "Aliceth",
   "local": {
@@ -651,7 +651,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk"
     ],
@@ -659,1076 +658,228 @@
       "atk": 0.8235294117647058,
       "max_hp": 0.17647058823529413
     },
-    "behavior": {},
     "id": "aliceth",
     "display_name": "Aliceth",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Aliceth - Radiant Wings",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Aliceth flies into the air and fires 6 volleys of 3 arrows in rapid succession at an enemy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each arrow deals 100% (ATK-based) + 10% (SP-based) damage, plus extra damage equal to 5% of the enemy's lost HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 50% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Aliceth remains invincible while airborne.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the base damage of each arrow to 105% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the base damage of each arrow to 110% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the base damage of each arrow to 115% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the base damage of each arrow to 120% (ATK-based) + 10% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Aliceth grants an ally Brightfeather, prioritizing the nearest ally in her row.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "After that, ally deals ranged damage 3 times, they unleash a feather for an additional strike, dealing 120% (ATK-based) + 20% (SP-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This strike can occur once every 0.5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If the ally granted Brightfeather is a ranged unit, their normal attack range is increased by 5 tiles.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The ally loses Brightfeather if they are defeated.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Aliceth shoots a charged arrow at enemy, dealing 380% (ATK-based) + 50% (SP-based) damage, knocking them back 6 tiles, and stunning them for 2.5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of the charged arrow to 420% (ATK-based) + 50% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of the charged arrow to 460% (ATK-based) + 50% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of the charged arrow to 500% (ATK-based) + 50% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The enchanted mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "If the marked enemy is defeated or becomes untargetable, Aliceth shifts the mark to a new enemy, resetting the mark's duration counter.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When a battle starts, Aliceth places her Mark of Judgement on the farthest enemy.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 (SP-based) Penetration.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 40 + 5 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 45 + 5 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 50 + 5 (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Aliceth increases her ATK by 9% in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After the first enemy affected by her Mark of Judgement is defeated, Aliceth and allies with Brightfeather gain an extra 6% ATK.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Aliceth increases her ATK by 13% in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 8% ATK.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Aliceth increases her ATK by 16% in battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 10% ATK.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Afterward, Aliceth or the ally is moved to a safe spot within 4 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "But allies who are unaffected or steadfast will not be moved.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "This skill can trigger once per hero.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "The affected hero recovers 35% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The affected hero recovers 40% (HP-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "For every 4 feather unleashed by an ally with Brightfeather, a burst of light erupts, dealing 330% (ATK-based) damage to adjacent enemies and blinding them for 3s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Blinded enemies lose 40% (ATK-based) HP per second.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant Rain is enhanced to fire 1 extra arrow volley for the rest of the battle.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Through this, she can fire up to 6 extra arrow volleys in total.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Aliceth flies into the air and fires 6 volleys of 3 arrows in rapid succession at an enemy.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Radiant Rain": "Ultimate",
-        "Guiding Light": "Skill1",
-        "Sealed Fate": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Aegis Wings": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On ultimate"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "Aliceth remains invincible while airborne.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Attack range",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 500.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "ranged"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 550.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Ally grant (Brightfeather)",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Aliceth grants an ally Brightfeather, prioritizing the nearest ally in her row.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Execution",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "DEF Penetration",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 55.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Marked target (focus fire)",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "qualitative": "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 Penetration.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Instant defeat",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "The enchanted mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30%.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 16.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Multiple targets",
-              "numeric": 16.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Fatal blow immunity",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "rare",
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "once_per_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Blind",
-              "tier": "EX+15",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "EX+15",
-              "targeting": "Area",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "EX+15",
-              "targeting": "Single target",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.5,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": "on blind",
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "blinded"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "on_blind"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Fatal blow save",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based).",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 550.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Attack range",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 500.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "ranged"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 2.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Execution",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "DEF Penetration",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 55.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 16.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Multiple targets",
-          "numeric": 16.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Fatal blow immunity",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 330.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "rare",
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "once_per_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Blind",
-          "tier": "EX+15",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "EX+15",
-          "targeting": "Single target",
-          "numeric": 330.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.5,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": "on blind",
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "blinded"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "on_blind"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Each arrow deals 100% (ATK-based) + 10% (SP-based) damage, plus extra damage equal to 5% of the enemy's lost HP.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On ultimate"
-        }
+      [
+        "base",
+        "The extra damage cannot exceed 50% (ATK-based).",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "Aliceth remains invincible while airborne.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally grant (Brightfeather)",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Aliceth grants an ally Brightfeather, prioritizing the nearest ally in her row.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "qualitative": "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 Penetration.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Instant defeat",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "The enchanted mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30%.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Fatal blow save",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based).",
-          "grants": []
-        }
+      [
+        "base",
+        "Aliceth remains invincible while airborne.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases the base damage of each arrow to 105% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "HP loss": 7.5
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK"
+      [
+        "base",
+        "Increases the base damage of each arrow to 110% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 0.8235294117647058,
-        "Max HP": 0.17647058823529413
-      },
-      "default_range": 8,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the base damage of each arrow to 115% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the base damage of each arrow to 120% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Aliceth grants an ally Brightfeather, prioritizing the nearest ally in her row.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After that, ally deals ranged damage 3 times, they unleash a feather for an additional strike, dealing 120% (ATK-based) + 20% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This strike can occur once every 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If the ally granted Brightfeather is a ranged unit, their normal attack range is increased by 5 tiles.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The ally loses Brightfeather if they are defeated.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Aliceth shoots a charged arrow at enemy, dealing 380% (ATK-based) + 50% (SP-based) damage, knocking them back 6 tiles, and stunning them for 2.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of the charged arrow to 420% (ATK-based) + 50% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of the charged arrow to 460% (ATK-based) + 50% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of the charged arrow to 500% (ATK-based) + 50% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The enchanted mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If the marked enemy is defeated or becomes untargetable, Aliceth shifts the mark to a new enemy, resetting the mark's duration counter.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When a battle starts, Aliceth places her Mark of Judgement on the farthest enemy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 (SP-based) Penetration.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 40 + 5 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 45 + 5 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 50 + 5 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Aliceth increases her ATK by 9% in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After the first enemy affected by her Mark of Judgement is defeated, Aliceth and allies with Brightfeather gain an extra 6% ATK.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Aliceth increases her ATK by 13% in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 8% ATK.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Aliceth increases her ATK by 16% in battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 10% ATK.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Afterward, Aliceth or the ally is moved to a safe spot within 4 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "But allies who are unaffected or steadfast will not be moved.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This skill can trigger once per hero.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "The affected hero recovers 35% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The affected hero recovers 40% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "For every 4 feather unleashed by an ally with Brightfeather, a burst of light erupts, dealing 330% (ATK-based) damage to adjacent enemies and blinding them for 3s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Blinded enemies lose 40% (ATK-based) HP per second.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant Rain is enhanced to fire 1 extra arrow volley for the rest of the battle.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Through this, she can fire up to 6 extra arrow volleys in total.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "0eef52ba4b0d2c8560e955287bf98da0c863ca6bcc5e8d1b3ae383d2e46ef179",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

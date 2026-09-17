@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "eryndor",
   "display_name": "Eryndor",
   "local": {
@@ -598,7 +598,6 @@
         "All units, Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -610,934 +609,198 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "eryndor",
     "display_name": "Eryndor",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Eryndor - Veiled Viceroy",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Eryndor invites all non-summoned enemies to play his game.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each enemy independently rolls a die to determine their outcome.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each stack of Woe reduces the enemy's roll by 1.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Ervndor can claim stats from each enemy up to 3 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to an enemy who loses Eryndor's game to 170% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to an enemy who loses Eryndor's game to 180% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to an enemy who loses Eryndor's game to 190% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt to an enemy who loses Eryndor's game to 200% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of each hit to 75% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of each hit to 80% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of each hit to 85% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Shields granted by this skill last for 8s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 180% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 190% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 200% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Eryndor gains 10 Haste during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When an enemy loses his game, he gains an extra 6 Haste.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Eryndor gains 14 Haste during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When an enemy loses his game, he gains an extra 7 Haste.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Eryndor gains 18 Haste during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "When an enemy loses his game, he gains an extra 8 Haste.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the damage dealt by extra hits to 225% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Once a non-boss enemy has lost Eryndor's game 2 times, they are permanently stripped of all stat buffs for the rest of the battle, and their ATK is further reduced by 15% of Eryndor's ATK, down to a minimum of 20% of the target's initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the damage dealt by extra hits to 250% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Eryndor invites all non-summoned enemies to play his game.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Forced Game": "Ultimate",
-        "Unfurling Blades": "Skill1",
-        "Veiled Return": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "All is Lost": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Max HP",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "base",
-              "targeting": "All units",
-              "qualitative": "A different ally applying a stat reduction gives that enemy a permanent Woe stack, up to three.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Stat steal",
-              "tier": "base",
-              "targeting": "All units",
-              "qualitative": "An enemy that loses the game surrenders ATK and max HP to Eryndor, up to three times.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Debuff on target",
-              "tier": "base",
-              "targeting": "Enemies",
-              "qualitative": "A different ally must inflict a stat reduction on an enemy to add Woe.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 95.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "unit_type",
-                  "unit_type": "non_summoned"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "base",
-              "targeting": "All units",
-              "qualitative": "Each Woe stack on a target increases damage from the fan blades.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 250.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "on_ultimate"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "permanent"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Stat buffs",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Basic stats",
-              "tier": "Supreme+",
-              "targeting": "All units",
-              "numeric": 7.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "Basic stats",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 7.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stat steal",
-              "tier": "Supreme+",
-              "targeting": "All units",
-              "qualitative": "At battle start, Eryndor collects a share of every non-summoned enemy's basic stats.",
-              "grants": []
-            }
-          ]
-        }
-      },
-      "effects": [
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Max HP",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "unit_type",
-              "unit_type": "non_summoned"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "on_ultimate"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "permanent"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Stat buffs",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Basic stats",
-          "tier": "Supreme+",
-          "targeting": "All units",
-          "numeric": 7.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "start_of_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        },
-        {
-          "category": "buff",
-          "label": "Basic stats",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 7.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "start_of_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "Each enemy independently rolls a die to determine their outcome.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "base",
-          "targeting": "All units",
-          "qualitative": "A different ally applying a stat reduction gives that enemy a permanent Woe stack, up to three.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Stat steal",
-          "tier": "base",
-          "targeting": "All units",
-          "qualitative": "An enemy that loses the game surrenders ATK and max HP to Eryndor, up to three times.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Debuff on target",
-          "tier": "base",
-          "targeting": "Enemies",
-          "qualitative": "A different ally must inflict a stat reduction on an enemy to add Woe.",
-          "grants": []
-        }
+      [
+        "base",
+        "Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "All units, Area, Single target"
-        ]
+      [
+        "base",
+        "Each stack of Woe reduces the enemy's roll by 1.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP",
-        "Shield",
-        "Physical DEF",
-        "Magic DEF"
+      [
+        "base",
+        "If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 8,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Ervndor can claim stats from each enemy up to 3 times.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to an enemy who loses Eryndor's game to 170% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to an enemy who loses Eryndor's game to 180% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to an enemy who loses Eryndor's game to 190% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to an enemy who loses Eryndor's game to 200% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each hit to 75% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each hit to 80% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each hit to 85% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Shields granted by this skill last for 8s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 180% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 190% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 200% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Eryndor gains 10 Haste during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When an enemy loses his game, he gains an extra 6 Haste.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Eryndor gains 14 Haste during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When an enemy loses his game, he gains an extra 7 Haste.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Eryndor gains 18 Haste during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "When an enemy loses his game, he gains an extra 8 Haste.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt by extra hits to 225% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Once a non-boss enemy has lost Eryndor's game 2 times, they are permanently stripped of all stat buffs for the rest of the battle, and their ATK is further reduced by 15% of Eryndor's ATK, down to a minimum of 20% of the target's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt by extra hits to 250% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "66f8c024e1aa19163e99ca1d417bc0c037893783dcc007e72c29f4e53a12c512",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

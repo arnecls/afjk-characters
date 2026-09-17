@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "kulu",
   "display_name": "Kulu",
   "local": {
@@ -507,7 +507,6 @@
         "All units, Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -516,784 +515,253 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "kulu",
     "display_name": "Kulu",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Kulu - Blast Master",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Kulu's normal attacks trigger an explosion that deals 80% (ATK-based) damage to the target and all adjacent units.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "All of Kulu's skills deal damage to both enemies and allies, but allies take 70% reduced damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Kulu unleashes her fury, bombarding the enemy side of the battlefield 14 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each strike hits a random tile, dealing 90% (ATK-based) + 10% (SP-based) damage to all units on the target tile and its surrounding area within 1 tile.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "At least 10 strikes will hit areas with 1 or more enemies within, and at least 6 of those will target the area with the most enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After the bombardment, Kulu summons a gigantified Boomboom to deal 250% (ATK-based) + 25% (SP-based) damage to all units on the enemy ide of the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Kulu only casts her Ultimate if there are enemies present on their side of the battlefield.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "She becomes unaffected while casting her Ultimate.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each bombardment deals 100% (ATK-based) + 10% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each bombardment deals 110% (ATK-based) + 10% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each bombardment deals 120% (ATK-based) + 10% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each bombardment deals 130% (ATK-based) + 10% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Kulu bombs the enemy's border tiles closest to your side, creating debris that restricts movement and knocks back units on the affect tiles towards their own side of the battlefield.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Debris blocking the center tile can be destroyed in 6 + 1 (ATK-based) hits, but debris on the other tiles are indestructible.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Whenever the center debris is destroyed, Kulu marks the tile for an explosion that detonates after 8s, covering it with debris once again.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Kulu teleports to the nearest enemy, dealing 150% (ATK-based) + 20% (SP-based) damage to that enemy and knocking them into the air.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "She then returns to her original tile.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If the target is on the allied side of the battlefield, Kulu knocks the enemy back toward their side by up to 3 tiles instead of knocking them into the air.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Kulu is invincible while casting this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Damage is increased to 170% (ATK-based) + 20% (SP-based) when the skill is used actively.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Damage is increased to 190% (ATK-based) + 20% (SP-based) when the skill is used actively.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Damage is increased to 210% (ATK-based) + 20% (SP-based) when the skill is used actively.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Kulu summons Boomboom, which bounces 3 times between enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The first 2 bounces will target the 2 frontmost enemies, devouring them.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "For the final bounce, Boomboom will target 1 {{e|rearmost",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each bounce deals 120% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each bounce deals 130% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each bounce deals 140% (ATK-based) + 10% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 6% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Dealing damage to enemies will increase ATK by an extra 0.6%, stacking up to 50 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 8% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Dealing damage to enemies will increase ATK by an extra 0.8%, stacking up to 50 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 10% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Dealing damage to enemies will increase ATK by an extra 1%, stacking up to 50 times.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When a battle starts, Kulu applies an explosive debuff to all enemies, increasing their damage taken by 10%, which lasts until the end of the battle.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When an enemy with the explosive debuff is defeated, Kulu turns them into a doom bomb that detonates after 2s.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The explosion deals 210% (ATK-based) damage to all enemy units within 2 tiles, plus extra damage equal to 15% of the defeated enemy's initial HP.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The extra damage cannot exceed 300% (ATK-based) of Kulu's ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "The doom bomb explosion deals 240% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The doom bomb explosion deals 270% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Each time a doom bomb detonates, Kulu enters Blast Mania for 10s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "While in Blast Mania, she gains 35 Penetration and the explosion radius of her normal attacks, Blast Mayhem, and Boomboom Bash skills expand to 2 tiles.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Subsequent detonations will extend the duration of Blast Mania, but the effects will not stack.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Kulu gains extra ATK SPD and Ranged DEF during battle.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "If there are no enemies on Kulu's half of the battlefield, her ATK SPD increases by 40 and her Ranged DEF increases by 40.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "For each enemy present on Kulu's half of the battlefield, the buff values decrease by 10, down to 20.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Other allies on Kulu's half of the battlefield receive a portion of these buffs, benefiting by 50% of their values.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Kulu's normal attacks trigger an explosion that deals 80% (ATK-based) damage to the target and all adjacent units.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Blast Mayhem": "Ultimate",
-        "Demolition Zone": "Skill1",
-        "Boomboom Bash!": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Bombs Away!": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 275.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "On ultimate"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "Kulu is invincible while casting this skill.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Enhanced form",
-              "tier": "EX+15",
-              "targeting": "Single target",
-              "qualitative": "Each time a doom bomb detonates, Kulu enters Blast Mania for 10s.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 230.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 210.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Movement speed",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Single target",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 50,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 270.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "DEF Penetration",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 35.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 275.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 210.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Movement speed",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Single target",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 50,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "DEF Penetration",
-          "tier": "EX+15",
-          "targeting": "Self",
-          "numeric": 35.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "All of Kulu's skills deal damage to both enemies and allies, but allies take 70% reduced damage.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "On ultimate"
-        }
+      [
+        "base",
+        "Kulu unleashes her fury, bombarding the enemy side of the battlefield 14 times.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "Kulu is invincible while casting this skill.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Enhanced form",
-          "tier": "EX+15",
-          "targeting": "Single target",
-          "qualitative": "Each time a doom bomb detonates, Kulu enters Blast Mania for 10s.",
-          "grants": []
-        }
+      [
+        "base",
+        "Each strike hits a random tile, dealing 90% (ATK-based) + 10% (SP-based) damage to all units on the target tile and its surrounding area within 1 tile.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "All units, Area, Single target"
-        ]
+      [
+        "base",
+        "At least 10 strikes will hit areas with 1 or more enemies within, and at least 6 of those will target the area with the most enemies.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "DEF Penetration"
+      [
+        "base",
+        "After the bombardment, Kulu summons a gigantified Boomboom to deal 250% (ATK-based) + 25% (SP-based) damage to all units on the enemy ide of the battlefield.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 6,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Kulu only casts her Ultimate if there are enemies present on their side of the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "She becomes unaffected while casting her Ultimate.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each bombardment deals 100% (ATK-based) + 10% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each bombardment deals 110% (ATK-based) + 10% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each bombardment deals 120% (ATK-based) + 10% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each bombardment deals 130% (ATK-based) + 10% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Kulu bombs the enemy's border tiles closest to your side, creating debris that restricts movement and knocks back units on the affect tiles towards their own side of the battlefield.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Debris blocking the center tile can be destroyed in 6 + 1 (ATK-based) hits, but debris on the other tiles are indestructible.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Whenever the center debris is destroyed, Kulu marks the tile for an explosion that detonates after 8s, covering it with debris once again.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Kulu teleports to the nearest enemy, dealing 150% (ATK-based) + 20% (SP-based) damage to that enemy and knocking them into the air.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "She then returns to her original tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If the target is on the allied side of the battlefield, Kulu knocks the enemy back toward their side by up to 3 tiles instead of knocking them into the air.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Kulu is invincible while casting this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Damage is increased to 170% (ATK-based) + 20% (SP-based) when the skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Damage is increased to 190% (ATK-based) + 20% (SP-based) when the skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Damage is increased to 210% (ATK-based) + 20% (SP-based) when the skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Kulu summons Boomboom, which bounces 3 times between enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The first 2 bounces will target the 2 frontmost enemies, devouring them.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For the final bounce, Boomboom will target 1 {{e|rearmost",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each bounce deals 120% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each bounce deals 130% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each bounce deals 140% (ATK-based) + 10% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 6% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Dealing damage to enemies will increase ATK by an extra 0.6%, stacking up to 50 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 8% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Dealing damage to enemies will increase ATK by an extra 0.8%, stacking up to 50 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 10% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Dealing damage to enemies will increase ATK by an extra 1%, stacking up to 50 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, Kulu applies an explosive debuff to all enemies, increasing their damage taken by 10%, which lasts until the end of the battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When an enemy with the explosive debuff is defeated, Kulu turns them into a doom bomb that detonates after 2s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The explosion deals 210% (ATK-based) damage to all enemy units within 2 tiles, plus extra damage equal to 15% of the defeated enemy's initial HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The extra damage cannot exceed 300% (ATK-based) of Kulu's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "The doom bomb explosion deals 240% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The doom bomb explosion deals 270% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Each time a doom bomb detonates, Kulu enters Blast Mania for 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "While in Blast Mania, she gains 35 Penetration and the explosion radius of her normal attacks, Blast Mayhem, and Boomboom Bash skills expand to 2 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Subsequent detonations will extend the duration of Blast Mania, but the effects will not stack.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Kulu gains extra ATK SPD and Ranged DEF during battle.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "If there are no enemies on Kulu's half of the battlefield, her ATK SPD increases by 40 and her Ranged DEF increases by 40.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "For each enemy present on Kulu's half of the battlefield, the buff values decrease by 10, down to 20.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Other allies on Kulu's half of the battlefield receive a portion of these buffs, benefiting by 50% of their values.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "b6f65e1d05db7df956cc5959d692f7f56a216e0e6faf3bc8ff636b42233e5141",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

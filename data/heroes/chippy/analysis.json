@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "chippy",
   "display_name": "Chippy",
   "local": {
@@ -215,228 +215,92 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "chippy",
     "display_name": "Chippy",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Chippy - Acorn Knight",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 320% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 340% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 350% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage to 360% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 250% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 260% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 270% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the chance to 3%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the chance to 4%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the chance to 5%.",
-          "Skill2"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Brothers-in-arms": "Ultimate",
-        "Take This!": "Skill1",
-        "Eureka!": "Skill2"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 360.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 270.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 1000.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 1000.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        }
+      [
+        "base",
+        "Increases the damage to 320% (ATK-based).",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases the damage to 340% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage to 350% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage to 360% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 250% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 260% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 270% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the chance to 3%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the chance to 4%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the chance to 5%.",
+        "Skill2"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "89cd599e9e71803e9c5df4d445dcde1a8af7a90925f6f7be5494e7aa9c978736",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

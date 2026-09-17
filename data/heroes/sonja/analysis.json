@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "sonja",
   "display_name": "Sonja",
   "local": {
@@ -410,7 +410,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -419,569 +418,193 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "sonja",
     "display_name": "Sonja",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Sonja - Crimson Queenpin",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Sonja delivers 8 Piercing Strikes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 35% (ATK-based) + 4% (SP-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each strike also deals extra damage equal to 4% of the enemy's current HP, up to 160% of Sonja's own ATK.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "She then charges to the far end of the struck area, dealing 180% (ATK-based) + 20% (SP-based) damage to enemies within it.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While casting this skill, Sonja is immune to all control effects.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each Piercing Strike to 40% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each Piercing Strike to 45% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each Piercing Strike to 50% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of Sonja's charge to 220% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Sonja forms Crimson Covenant with two allies placed to her left and right (prioritizing those in the front over those in the back), increasing their ATK by 10% + 1% (SP-based) and their Phys & Magic DEF by 15% + 1.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While Crimson Covenant is active, the two allies gain an extra 3% + 0.3% (SP-based) ATK and 4% + 0.4% (SP-based) Phys & Magic DEF every 6s, stacking up to 6 times.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Sonja is immune to all control effects while casting this skill.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Crimson Covenant is terminated if either of the buffed allies is defeated.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "In this case, Sonja absorbs the accumulated stat bonuses from both allies, gaining them for herself until the battle ends.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases Crimson Covenant's initial ATK bonus to 13% + 1% (SP-based), and its initial Phys & Magic DEF bonus to 18% + 1.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Grants allies with Crimson Covenant an extra 4% + 0.3% (SP-based) ATK and 5% + 0.4% (SP-based) Phys & Magic DEF every 6s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases Crimson Covenant's initial ATK bonus to 16% + 1% (SP-based), and its initial Phys & Magic DEF bonus to 21% + 1.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Sonja spins, slashing enemies within 1 tile twice with her cloak.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Each slash deals 120% (ATK-based) + 10% (SP-based) damage and stuns the enemies hit for 1 + 0.1 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increase the damage of each slash to 130% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increase the damage of each slash to 140% (ATK-based) + 10% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Extends the stun duration to 1.5 + 0.1 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Sonja increases her Haste by 7.2 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 7.2 Haste after casting Tempest Thrusts for the first time.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Sonja increases her Haste by 9.6 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 9.6 Haste after casting Tempest Thrusts for the first time.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Sonja increases her Haste by 12 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "She gains an extra 12 Haste after casting Tempest Thrusts for the first time.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Sonja gains 100 extra Initial Energy.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "She permanently enhances Crimson Covenant after casting her first Tempest Thrusts.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Instead of only gaining stat bonuses when a buffed ally is defeated, she continuously benefits from the accumulated stat bonuses while the buffed allies are alive.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases Sonja's Initial Energy to 200.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Enhancing the Crimson Covenant also reduces the damage taken by 40% for a covenant member if any other member is alive.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "50% of the reduced damage is shared by other members, but this will not cause them to be defeated.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Enhancing the Crimson Covenant also reduces damage shared by other members to 40% of the total amount reduced.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Sonja delivers 8 Piercing Strikes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 35% (ATK-based) + 4% (SP-based) damage.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Tempest Thrusts": "Ultimate",
-        "Crimson Covenant": "Skill1",
-        "Stunning Reception": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Unbreakable Bond": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 240.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 3,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 16.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 21.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 1.5,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.5,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 12.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 240.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 3,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 12.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 16.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 21.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 1.5,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.5,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Each strike also deals extra damage equal to 4% of the enemy's current HP, up to 160% of Sonja's own ATK.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "She then charges to the far end of the struck area, dealing 180% (ATK-based) + 20% (SP-based) damage to enemies within it.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP"
+      [
+        "base",
+        "While casting this skill, Sonja is immune to all control effects.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage of each Piercing Strike to 40% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each Piercing Strike to 45% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each Piercing Strike to 50% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of Sonja's charge to 220% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Sonja forms Crimson Covenant with two allies placed to her left and right (prioritizing those in the front over those in the back), increasing their ATK by 10% + 1% (SP-based) and their Phys & Magic DEF by 15% + 1.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While Crimson Covenant is active, the two allies gain an extra 3% + 0.3% (SP-based) ATK and 4% + 0.4% (SP-based) Phys & Magic DEF every 6s, stacking up to 6 times.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Sonja is immune to all control effects while casting this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Crimson Covenant is terminated if either of the buffed allies is defeated.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In this case, Sonja absorbs the accumulated stat bonuses from both allies, gaining them for herself until the battle ends.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases Crimson Covenant's initial ATK bonus to 13% + 1% (SP-based), and its initial Phys & Magic DEF bonus to 18% + 1.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Grants allies with Crimson Covenant an extra 4% + 0.3% (SP-based) ATK and 5% + 0.4% (SP-based) Phys & Magic DEF every 6s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases Crimson Covenant's initial ATK bonus to 16% + 1% (SP-based), and its initial Phys & Magic DEF bonus to 21% + 1.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Sonja spins, slashing enemies within 1 tile twice with her cloak.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each slash deals 120% (ATK-based) + 10% (SP-based) damage and stuns the enemies hit for 1 + 0.1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increase the damage of each slash to 130% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increase the damage of each slash to 140% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Extends the stun duration to 1.5 + 0.1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Sonja increases her Haste by 7.2 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 7.2 Haste after casting Tempest Thrusts for the first time.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Sonja increases her Haste by 9.6 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 9.6 Haste after casting Tempest Thrusts for the first time.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Sonja increases her Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 12 Haste after casting Tempest Thrusts for the first time.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Sonja gains 100 extra Initial Energy.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "She permanently enhances Crimson Covenant after casting her first Tempest Thrusts.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Instead of only gaining stat bonuses when a buffed ally is defeated, she continuously benefits from the accumulated stat bonuses while the buffed allies are alive.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases Sonja's Initial Energy to 200.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Enhancing the Crimson Covenant also reduces the damage taken by 40% for a covenant member if any other member is alive.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "50% of the reduced damage is shared by other members, but this will not cause them to be defeated.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Enhancing the Crimson Covenant also reduces damage shared by other members to 40% of the total amount reduced.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "ad8989a2114759e5a5742bae7ebf5b0a8d0372e472de32917c4b840d7cee712e",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

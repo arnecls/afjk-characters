@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "orion",
   "display_name": "Orion",
   "local": {
@@ -611,7 +611,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "max_hp",
@@ -621,972 +620,188 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "orion",
     "display_name": "Orion",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Orion - Golden Prince",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Orion summons a magical rapier at a designated location.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases rapier slash damage to 70% (ATK-based) + 10% (SP-based), and the final magic burst damage to 460% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases rapier slash damage to 80% (ATK-based) + 10% (SP-based), and the final magic burst damage to 500% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases rapier slash damage to 90% (ATK-based) + 10% (SP-based), and the final magic burst damage to 540% (ATK-based) + 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases rapier slash damage to 100% (ATK-based) + 10% (SP-based), and the final magic burst damage to 600% (ATK-based)+ 40% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases thrust damage to 100% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases thrust damage to 110% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases thrust damage to 120% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "All his Supporters gain 60% of the shield Orion gains.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases magical slash damage to 360% (ATK-based) + 40% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases magical slash damage to 380% (ATK-based) + 40% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases magical slash damage to 400% (ATK-based) + 40% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Orion increases his ATK by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If he has Supporters on the battlefield, his ATK increases by an extra 6%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Orion increases his ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If he has Supporters on the battlefield, his ATK increases by an extra 8%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Orion increases his ATK by 15% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If he has Supporters on the battlefield.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "his ATK increases by an extra 10%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the damage dealt bonus Orion gains from each Authority stack to 16%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "At 3 Authority stacks, Orion unleashes his full power, permanently activating his rapier enchantment.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "In addition, his Sear effect is upgraded for the rest of the battle: enemies afflicted for 3s are silenced and have their Vitality reduced by 60 until Sear expires.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the damage dealt bonus Orion gains from each Authority stack to 18%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Orion summons a magical rapier at a designated location.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Fatal Waltz": "Ultimate",
-        "Fervent Flurry": "Skill1",
-        "Velvet Glove": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Royal Prerogative": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 640.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 640.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "start_of_battle"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 120.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Continuous damage on enemies",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Enhanced form",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 440.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 6.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 6.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Named ally on team",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Whenever an ally grants Orion a temporary stat buff, that ally becomes his Supporter.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Temporary ally stat buffs",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Whenever Orion receives a temporary stat buff from an ally, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 3,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 3,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Silence",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Stacking",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "qualitative": "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Enhanced form",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "qualitative": "At 3 Authority stacks, Orion unleashes his full power, permanently activating his rapier enchantment.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "True damage",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 640.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "battle_phase",
-              "phase": "start_of_battle"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 120.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 6.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 6.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage dealt",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 3,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 3,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Silence",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "True damage",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "For the next 1.5s, it rapidly slashes all enemies within 1 tile, dealing 60% (ATK-based) + 10% (SP-based) damage 8 times.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "After that, the rapier erupts in a burst of magic, dealing 420% (ATK-based) + 40% (SP-based) damage once more and stunning enemies within range for 3 + 0.3 (SP-based)s.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Continuous damage on enemies",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Enhanced form",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Named ally on team",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "Whenever an ally grants Orion a temporary stat buff, that ally becomes his Supporter.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Temporary ally stat buffs",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "Whenever Orion receives a temporary stat buff from an ally, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Stacking",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "qualitative": "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks.",
-          "grants": []
-        }
+      [
+        "base",
+        "Increases rapier slash damage to 70% (ATK-based) + 10% (SP-based), and the final magic burst damage to 460% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Arc, Area, Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ],
-        [
-          "True damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases rapier slash damage to 80% (ATK-based) + 10% (SP-based), and the final magic burst damage to 500% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Max HP",
-        "Shield",
-        "Energy"
+      [
+        "base",
+        "Increases rapier slash damage to 90% (ATK-based) + 10% (SP-based), and the final magic burst damage to 540% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases rapier slash damage to 100% (ATK-based) + 10% (SP-based), and the final magic burst damage to 600% (ATK-based)+ 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Orion enchants his rapier for 15 + 2 (SP-based)s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While the enchantment is active, he gains Energy 25% faster, and each instance of damage from his skills or normal attacks applies a stacking Sear effect to enemies for 3s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each stack of Sear deals damage every second equal to 20% + 2% (SP-based) of the base damage from the instance that applied it.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Orion thrusts at the target 4 times in quick succession, dealing 90% (ATK-based) + 10% (SP-based) damage with each thrust.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases thrust damage to 100% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases thrust damage to 110% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases thrust damage to 120% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Whenever an ally grants Orion a temporary stat buff, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Orion unleashes a magical slash in a 1-tile frontal arc, dealing 340% (ATK-based) + 40% (SP-based) damage and gaining a shield equal to 200% of the damage dealt for 6s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "All his Supporters gain 60% of the shield Orion gains.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases magical slash damage to 360% (ATK-based) + 40% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases magical slash damage to 380% (ATK-based) + 40% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases magical slash damage to 400% (ATK-based) + 40% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Orion increases his ATK by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If he has Supporters on the battlefield, his ATK increases by an extra 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Orion increases his ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If he has Supporters on the battlefield, his ATK increases by an extra 8%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Orion increases his ATK by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If he has Supporters on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "his ATK increases by an extra 10%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Every time Orion gains a Supporter, he receives 1 stack of Authority, up to 3 stacks.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each stack of Authority increases Orion's damage dealt by 14%, reduces his damage taken by 18%, and extends the duration of Sear effects he inflicts by 1s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt bonus Orion gains from each Authority stack to 16%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "At 3 Authority stacks, Orion unleashes his full power, permanently activating his rapier enchantment.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "In addition, his Sear effect is upgraded for the rest of the battle: enemies afflicted for 3s are silenced and have their Vitality reduced by 60 until Sear expires.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt bonus Orion gains from each Authority stack to 18%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After gaining a total of 3 Authority stacks, Orion becomes unaffected for the rest of the battle, and the Sear effect he inflicts deals extra true damage equal to 50% of the damage dealt.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "cbb0dceeeb407cfa0856d473469bd334bce32bc4d3d9a58b849ce7db9660d20d",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

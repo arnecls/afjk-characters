@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "nerion",
   "display_name": "Nerion",
   "local": {
@@ -506,7 +506,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "atk_spd",
@@ -517,751 +516,183 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "nerion",
     "display_name": "Nerion",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Nerion - Bereaved Tide",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "When an enemy has been under control effects for 6s, they take 350% (ATK-based) + 35% (SP-based) damage and are afflicted with drowning.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Nerion deals 30% (ATK-based) more damage to drowning enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "And both effects last until the end of the battle.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This passive effect takes only 4s to trigger on enemies that deal magic damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Nerion empowers himself with the force of the tide for 12s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While this effect lasts, his ATK and ATK SPD are increased by 22% and 60+ 8 (SP-based) respectively, and his normal attacks gain the Deluge effect: when a normal attack hits, it bounces between drowning enemies, dealing 220% (ATK-based) + 30% (SP-based) extra damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each unit can be hit by the bounce up to 1 time.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While empowered by the force of the tide, Nerion's ATK increases to 24%, and the extra damage dealt by Deluge increases to 240% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While empowered by the force of the tide, Nerion's ATK increases to 26%, and the extra damage dealt by Deluge increases to 260% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While empowered by the force of the tide, Nerion's ATK increases to 28%, and the extra damage dealt by Deluge increases to 280% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While empowered by the force of the tide, Nerion's ATK increases to 30%, and the extra damage dealt by Deluge increases to 300% (ATK-based) + 30% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After every 3 normal attacks, Nerion's next normal attack becomes enhanced.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Upon hitting a target, the enhanced normal attack knocks the target back 1 tile, deals 270% (ATK-based) + 30% (SP-based) damage, and stuns them for 2s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 300% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 330% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 360% (ATK-based) + 30% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Nerion throws his spear at the area with the most enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Upon hitting the target tile, the spear deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within 1 tile.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "2s later, a raging current erupts, knocking all enemies within the same area into the air and dealing 210% (ATK-based) + 30% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the spear's damage dealt upon hitting the target tile to 160% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 240% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the spear's damage dealt upon hitting the target tile to 180% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 270% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the spear's damage dealt upon hitting the target tile to 200% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 300% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 21 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 27 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 33 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When a battle starts, Nerion applies the drowning effect to the rearmost enemy.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Drowning enemies have their ATK and Haste reduced by 20% and 40 respectively, and take 50% (ATK-based) damage every time they have been under control effects for 0.5s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Drowning enemies take 60% (ATK-based) damage every 0.5s while they are under control effects.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Whenever Nerion applies the drowning effect, he immediately gains a permanent Tidal Shield equal to 600% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The shield takes 60% less damage from magic attacks.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Drowning enemies take 70% (ATK-based) damage every 0.5s while they are under control effects.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "While permanently empowered, Nerion gains 30 extra Penetration if he has more than 800 Energy.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When an enemy has been under control effects for 6s, they take 350% (ATK-based) + 35% (SP-based) damage and are afflicted with drowning.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Drowning Doom": "Ultimate",
-        "Tidal Rebuke": "Skill1",
-        "Riptide Wrath": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Abyssal Embrace": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 385.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 22.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 68.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Enhanced form",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "qualitative": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "CC on enemies",
-              "tier": "base",
-              "targeting": "Enemies",
-              "qualitative": "When an enemy has been under control effects for 6s, they take 350% (ATK-based) + 35% damage and are afflicted with drowning.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 390.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "cc",
-              "label": "Knock up",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 600.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 600.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 1.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Shield",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "numeric": 600.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 600.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 22.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 68.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock up",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 600.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 1.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Shield",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "numeric": 600.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Nerion deals 30% (ATK-based) more damage to drowning enemies.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Enhanced form",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "qualitative": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "CC on enemies",
-          "tier": "base",
-          "targeting": "Enemies",
-          "qualitative": "When an enemy has been under control effects for 6s, they take 350% (ATK-based) + 35% damage and are afflicted with drowning.",
-          "grants": []
-        }
+      [
+        "base",
+        "And both effects last until the end of the battle.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area, Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ]
+      [
+        "base",
+        "This passive effect takes only 4s to trigger on enemies that deal magic damage.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "ATK SPD",
-        "Shield",
-        "Energy",
-        "DEF Penetration"
+      [
+        "base",
+        "Nerion empowers himself with the force of the tide for 12s.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 7,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "While this effect lasts, his ATK and ATK SPD are increased by 22% and 60+ 8 (SP-based) respectively, and his normal attacks gain the Deluge effect: when a normal attack hits, it bounces between drowning enemies, dealing 220% (ATK-based) + 30% (SP-based) extra damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each unit can be hit by the bounce up to 1 time.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While empowered by the force of the tide, Nerion's ATK increases to 24%, and the extra damage dealt by Deluge increases to 240% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While empowered by the force of the tide, Nerion's ATK increases to 26%, and the extra damage dealt by Deluge increases to 260% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While empowered by the force of the tide, Nerion's ATK increases to 28%, and the extra damage dealt by Deluge increases to 280% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While empowered by the force of the tide, Nerion's ATK increases to 30%, and the extra damage dealt by Deluge increases to 300% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After every 3 normal attacks, Nerion's next normal attack becomes enhanced.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Upon hitting a target, the enhanced normal attack knocks the target back 1 tile, deals 270% (ATK-based) + 30% (SP-based) damage, and stuns them for 2s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 300% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 330% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 360% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Nerion throws his spear at the area with the most enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Upon hitting the target tile, the spear deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within 1 tile.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "2s later, a raging current erupts, knocking all enemies within the same area into the air and dealing 210% (ATK-based) + 30% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the spear's damage dealt upon hitting the target tile to 160% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 240% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the spear's damage dealt upon hitting the target tile to 180% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 270% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the spear's damage dealt upon hitting the target tile to 200% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 300% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 21 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 27 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 33 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, Nerion applies the drowning effect to the rearmost enemy.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Drowning enemies have their ATK and Haste reduced by 20% and 40 respectively, and take 50% (ATK-based) damage every time they have been under control effects for 0.5s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Drowning enemies take 60% (ATK-based) damage every 0.5s while they are under control effects.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Whenever Nerion applies the drowning effect, he immediately gains a permanent Tidal Shield equal to 600% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The shield takes 60% less damage from magic attacks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Drowning enemies take 70% (ATK-based) damage every 0.5s while they are under control effects.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "While permanently empowered, Nerion gains 30 extra Penetration if he has more than 800 Energy.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "6cc2293608136509555f8702366d85b1e4c057ec480ac1476fd5ec6615988c33",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

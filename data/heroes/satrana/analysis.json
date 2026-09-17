@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "satrana",
   "display_name": "Satrana",
   "local": {
@@ -455,681 +455,174 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "max_hp"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "satrana",
     "display_name": "Satrana",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Satrana - Ember Enchantress",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Satrana does the fiery dance, dealing 240% (ATK-based) damage to surrounding enemies within 2 tiles.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "She is invincible during the effect.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The last strike of this skill charms enemies for 2 + 0.25 (SP-based)s, making them only use normal attacks while charmed.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 260% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 280% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 300% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Satrana scratches enemies in a 1-tile arc twice.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Each strike deals 110% (ATK-based) damage plus 2.5% + 0.5% (SP-based) target's max HP.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The additional damage cannot exceed 75% + 10% (SP-based) of Satrana's ATK.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The damage dealt by this skill grants Satrana 100 Life Drain.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 115% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 120% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 130% (ATK-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Satrana grants Sparks to allies within 2 tiles when a battle starts.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s and reducing their Vitality by 20.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The skill damage cannot exceed 45% + 5% (SP-based) of Satrana's ATK.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The effect lasts until the battle ends.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When all enemies or a total of 5 enemies have been ignited, the Vitality reduction is increased to 60.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 1% + 0.2% (SP-based) of the target's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When all enemy heroes or 5 enemy heroes have been ignited, the damage is increased to 2% of max HP.",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Reduces damage taken by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Reduces damage taken by 16% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Reduces damage taken by 20% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When an enemy hero is ignited, the magic damage taken by Satrana is reduced by 16% until the battle ends.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Satrana grants this effect to a nearby ally when one more enemy hero is ignited.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Each ignited enemy hero grants Satrana 200 Energy.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Increases Satrana's magic DMG Reduction to 20%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases Satrana's magic DMG Reduction to 22%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a total of 5 enemy heroes have been ignited.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Satrana does the fiery dance, dealing 240% (ATK-based) damage to surrounding enemies within 2 tiles.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Fiery Dance": "Ultimate",
-        "Vixen Rush": "Skill1",
-        "Ignite Passions": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Radiant Vigor": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Charm",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.25,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.25,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "She is invincible during the effect.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Ally grant (Sparks)",
-              "tier": "base",
-              "targeting": "Area",
-              "qualitative": "Satrana grants Sparks to allies within 2 tiles when a battle starts.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Max HP-based damage",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "base",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Ally DoT on enemies",
-              "tier": "base",
-              "targeting": "Area",
-              "qualitative": "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s until the battle ends.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Magic damage",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 22.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Charm",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 2.25,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.25,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Max HP-based damage",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "base",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Magic damage",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 22.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "She is invincible during the effect.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "She is invincible during the effect.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally grant (Sparks)",
-          "tier": "base",
-          "targeting": "Area",
-          "qualitative": "Satrana grants Sparks to allies within 2 tiles when a battle starts.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Ally DoT on enemies",
-          "tier": "base",
-          "targeting": "Area",
-          "qualitative": "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s until the battle ends.",
-          "grants": []
-        }
+      [
+        "base",
+        "The last strike of this skill charms enemies for 2 + 0.25 (SP-based)s, making them only use normal attacks while charmed.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases damage to 260% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "Max HP"
+      [
+        "base",
+        "Increases damage to 280% (ATK-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage to 300% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Satrana scratches enemies in a 1-tile arc twice.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each strike deals 110% (ATK-based) damage plus 2.5% + 0.5% (SP-based) target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The additional damage cannot exceed 75% + 10% (SP-based) of Satrana's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The damage dealt by this skill grants Satrana 100 Life Drain.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 115% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 120% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 130% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Satrana grants Sparks to allies within 2 tiles when a battle starts.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s and reducing their Vitality by 20.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The skill damage cannot exceed 45% + 5% (SP-based) of Satrana's ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The effect lasts until the battle ends.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When all enemies or a total of 5 enemies have been ignited, the Vitality reduction is increased to 60.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 1% + 0.2% (SP-based) of the target's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When all enemy heroes or 5 enemy heroes have been ignited, the damage is increased to 2% of max HP.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Reduces damage taken by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reduces damage taken by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reduces damage taken by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When an enemy hero is ignited, the magic damage taken by Satrana is reduced by 16% until the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Satrana grants this effect to a nearby ally when one more enemy hero is ignited.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Each ignited enemy hero grants Satrana 200 Energy.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases Satrana's magic DMG Reduction to 20%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases Satrana's magic DMG Reduction to 22%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a total of 5 enemy heroes have been ignited.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "e78503a86a523f0fd16b34af01079eed264abfc787a81949f39baf7ccd682f1c",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

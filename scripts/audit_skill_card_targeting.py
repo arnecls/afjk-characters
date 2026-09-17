@@ -50,31 +50,31 @@ def audit_live_tags(rs_mod) -> list[str]:
         record = snapshot["bundles"][entry["id"]]["source"]["source"]
         hero = rs_mod.hero_from_record(record)
         rs_mod.analyze_hero(hero)
-        title = hero.title.split(" - ")[0]
+        title = hero["title"].split(" - ")[0]
         for category in ("ultimate", "skill1", "skill2", "skill3", "skill4", "skill5"):
             section = rs_mod.CATEGORY_TO_SECTION.get(category)
-            sl = hero.skill_slices.get(section)
+            sl = hero["skill_slices"].get(section)
             if not sl:
                 continue
             disambiguate_groups, disambiguate_labels = rs_mod._skill_card_disambiguate_keys(
                 sl
             )
             live = tag_labels(rs_mod.format_skill_card_tags(hero, category))
-            for effect in sl.effects:
-                if effect.category not in ("buff", "debuff", "cc"):
+            for effect in sl["effects"]:
+                if effect["category"] not in ("buff", "debuff", "cc"):
                     continue
                 targeting = rs_mod._skill_card_targeting_label(effect)
                 if targeting in ("Single target", ""):
                     continue
                 expected = rs_mod._skill_card_tag_with_tier(
-                    effect.label,
+                    effect["label"],
                     targeting,
-                    effect.tier,
+                    effect["tier"],
                     category,
-                    is_cc=effect.category == "cc",
+                    is_cc=effect["category"] == "cc",
                     explicit_targeting=rs_mod._skill_card_use_explicit_targeting(
                         effect,
-                        category=effect.category,
+                        category=effect["category"],
                         group_keys=disambiguate_groups,
                         label_keys=disambiguate_labels,
                     ),
@@ -84,7 +84,7 @@ def audit_live_tags(rs_mod) -> list[str]:
                 related = [
                     tag
                     for tag in live
-                    if rs_mod._skill_card_tag_label(effect.label) in tag
+                    if rs_mod._skill_card_tag_label(effect["label"]) in tag
                 ]
                 if related and any(
                     targeting.lower() in tag.lower()
@@ -93,7 +93,7 @@ def audit_live_tags(rs_mod) -> list[str]:
                 ):
                     continue
                 issues.append(
-                    f"{title}/{category}: {effect.label} wants {targeting}, "
+                    f"{title}/{category}: {effect["label"]} wants {targeting}, "
                     f"have {related}"
                 )
     return issues

@@ -72,14 +72,14 @@ class HeroUtility:
 
 def _skill_section_text(skills: list, section: str) -> str:
     for skill in skills:
-        if skill.section == section:
-            return skill.text or ""
+        if skill["section"] == section:
+            return skill["text"] or ""
     return ""
 
 
 def _ultimate_skill(skills: list):
     for skill in skills:
-        if skill.section == "Ultimate":
+        if skill["section"] == "Ultimate":
             return skill
     return None
 
@@ -104,13 +104,13 @@ def high_field_count(metrics: rs.SkillOverviewMetrics) -> int:
 
 def peak_damage_effect_mag(hero, section: str) -> str:
     """Highest damage-effect magnitude in a section's skill slice."""
-    sl = hero.skill_slices.get(section)
+    sl = hero["skill_slices"].get(section)
     if not sl:
         return "none"
     mags = [
-        e.magnitude
-        for e in sl.effects + sl.summon_effects
-        if e.category == "damage"
+        e["magnitude"]
+        for e in sl["effects"] + sl["summon_effects"]
+        if e["category"] == "damage"
     ]
     if not mags:
         return "none"
@@ -145,7 +145,7 @@ def compute_hero_utility(
         )
         heal, buffs, debuffs = rs._section_effect_metrics(hero, section)
         peak_dmg = peak_damage_effect_mag(hero, section)
-        dmg_pts = max(MAG_PTS[metrics.damage], MAG_PTS[peak_dmg])
+        dmg_pts = max(MAG_PTS[metrics["damage"]], MAG_PTS[peak_dmg])
         buff_pts = MAG_PTS[buffs]
         utility_pts = (
             dmg_pts
@@ -179,7 +179,7 @@ def compute_hero_utility(
         if highs or utility_pts >= 2:
             notes.append(
                 f"{section}: {highs} high, {utility_pts} util "
-                f"(dmg={metrics.damage}/{peak_dmg})"
+                f"(dmg={metrics["damage"]}/{peak_dmg})"
             )
 
     return totals, notes
@@ -228,7 +228,7 @@ def qualifies_non_ult_utility(
         return False, "", ["blocked by ult-reliant tag"]
 
     ult = _ultimate_skill(skills)
-    if ult and rs.text_has_start_of_battle_ultimate(ult.text, "Ultimate"):
+    if ult and rs.text_has_start_of_battle_ultimate(ult["text"], "Ultimate"):
         return False, "", ["blocked by start-of-battle ultimate"]
 
     totals, notes = compute_hero_utility(
@@ -255,12 +255,13 @@ def qualifies_non_ult_utility(
 def main() -> int:
     from hero_pipeline.storage import (
         load_analyses,
-        load_roster_snapshot,
-        update_ai_field,
+        load_roster_inputs,
+        ids_by_display_name,
+        update_ai_by_id,
     )
 
     apply = "--apply" in sys.argv
-    snapshot = load_roster_snapshot()
+    snapshot = load_roster_inputs()
     entries = sorted(
         snapshot["manifest"]["heroes"],
         key=lambda entry: entry["order"],
@@ -310,9 +311,9 @@ def main() -> int:
 
     proposed: dict[str, list[str]] = {}
     for hero in heroes:
-        short = gen.short_name(hero.title)
-        skills = skills_by_title[hero.title]
-        speeds = per_skill_speeds.get(hero.title, {})
+        short = gen.short_name(hero["title"])
+        skills = skills_by_title[hero["title"]]
+        speeds = per_skill_speeds.get(hero["title"], {})
         tags = frozenset(current_tags.get(short, []))
         ok, path, notes = qualifies_non_ult_utility(
             hero,
@@ -342,7 +343,11 @@ def main() -> int:
             elif not should and has_tag:
                 tag_data[short] = [t for t in tag_data[short] if t != TAG]
                 changed += 1
-        update_ai_field("behavior_tags", tag_data)
+        by_id = ids_by_display_name()
+        update_ai_by_id(
+            "behavior_tags",
+            {by_id[name]: tags for name, tags in tag_data.items()},
+        )
         print(
             f"Applied {TAG} updates to {changed} heroes in hero-local files"
         )

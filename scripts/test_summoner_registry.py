@@ -21,16 +21,25 @@ ROOT = SCRIPTS.parent
 
 
 def _load_roster_inputs() -> tuple[dict, dict[str, list[str]]]:
-    from hero_pipeline.storage import load_ai_field, load_roster_snapshot
+    from hero_pipeline.storage import (
+        display_names_by_id,
+        load_ai_by_id,
+        load_roster_inputs,
+    )
 
-    snapshot = load_roster_snapshot()
+    snapshot = load_roster_inputs()
     raw = {
         "heroes": [
             snapshot["bundles"][entry["id"]]["source"]["source"]
             for entry in snapshot["manifest"]["heroes"]
         ]
     }
-    return raw, load_ai_field("behavior_tags")
+    names = display_names_by_id()
+    tags = {
+        names[hero_id]: value
+        for hero_id, value in load_ai_by_id("behavior_tags").items()
+    }
+    return raw, tags
 
 
 def _load_rs():

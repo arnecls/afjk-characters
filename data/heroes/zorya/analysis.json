@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "zorya",
   "display_name": "Zorya",
   "local": {
@@ -593,7 +593,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -603,928 +602,218 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "zorya",
     "display_name": "Zorya",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Zorya - Watcher in Stone",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Zorya's skill are powerful and have short cooldowns, but she can only use them while awake.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When a battle starts, Zorya enter a dormant state.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While dormant, she remains invincible and recovers 85 Energy and 7% max HP per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Once her Energy is full, Zorya awakens and join the fight.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Every time Zorya awakens, she jumps to the area with the most enemies, dealing 300% (ATK-based) + 4% (SP-based) damage to enemies within 2 tiles and stunning them for 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While awake, she is steadfast and consumes 70 Energy per second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When her Energy is fully depleted, she returns to her dormant state.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Zorya's Energy cannot be modified by sources other than this skill.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Instead, for every 10 Energy she would have gained, her ATK permanently increases by 1%, stacking up to 100 times.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Zorya's landing damage to 320% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Zorya's landing damage to 340% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Zorya's landing damage to 360% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Zorya's landing damage to 380% (ATK-based) + 4% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Zorya awakens, her skin hardens like stone, reducing her damage taken by 70%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This effect gradually fades over 10s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Zorya summons arcane wings that sweep forward in a 2-tile arc, dealing 270% (ATK-based) + 30% (SP-based) damage to enemies hit and knocking them down for 2s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases this skill's damage to 280% (ATK-based) + 30% (SP-based) when actively used.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases this skill's damage to 290% (ATK-based) + 30% (SP-based) when actively used.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases this skill's damage to 300% (ATK-based) + 30% (SP-based) when actively used.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While awake, Zorya gains bloodlust, increasing her Life Drain by 20.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Whenever an enemy hero is defeated within 2 tiles, she immediately heals herself for 30% of her max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Zorya deals 85% (ATK-based) + 10% (SP-based) damage to all enemies within 2 tiles twice.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Then, she launches an intimidating strike on the targets within range, dealing 250% (ATK-based) + 30% (SP-based) damage, plus extra damage equal to 15% of their lost HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 150% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of the two active strikes to 90% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 260% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of the two active strikes to 95% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 270% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of the two active strikes to 100% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 280% (ATK-based) + 30% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases damage dealt by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 3%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases damage dealt by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 4%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases damage dealt by 15% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 5%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "While Zorya is awake, she creates a 2-tile forcefield around herself, causing all enemies within it to lose 80% movement speed and 60 Haste, while increasing her own Haste by 20.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Whenever an allied hero casts their Ultimate, the Haste bonus from the forcefield permanently increases by 15, stacking up to 4 times.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the Haste granted by the forcefield to 30.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "As long as Zorya's HP ratio remains above 50%, she stays unaffected.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the Haste granted by the forcefield to 40.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "This effect can trigger once per battle.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Zorya's skill are powerful and have short cooldowns, but she can only use them while awake.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Guardian's Ring": "Ultimate",
-        "Gargoyle Rampart": "Skill1",
-        "Devouring Strike": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Intimidating Field": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 85.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 7.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 384.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Steadfast",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Form"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "While dormant, she remains invincible and recovers 85 Energy and 7% max HP per second.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 70.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock down",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Arc",
-              "numeric": 330.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "arc",
-              "area_direction": "front",
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 310.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 310.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 310.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 15.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Movement speed",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Area",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "EX+10",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "Ally Ultimate casts",
-              "tier": "Mythic+",
-              "targeting": "Allies",
-              "qualitative": "Whenever an allied hero casts their Ultimate, the Haste bonus from the forcefield permanently increases by 15, stacking up to 4 times.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Cheat death",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state.",
-              "grants": []
-            }
-          ]
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 85.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 7.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 384.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": "front",
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 70.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Knock down",
-          "tier": "base",
-          "targeting": "Arc",
-          "numeric": 2.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "arc",
-          "area_direction": "front",
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Damage dealt",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 15.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Movement speed",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Area",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "When a battle starts, Zorya enter a dormant state.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Steadfast",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Form"
-        },
-        {
-          "immunity_type": "Unaffected",
-          "tier": "EX+10",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "While dormant, she remains invincible and recovers 85 Energy and 7% max HP per second.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "While dormant, she remains invincible and recovers 85 Energy and 7% max HP per second.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Ally Ultimate casts",
-          "tier": "Mythic+",
-          "targeting": "Allies",
-          "qualitative": "Whenever an allied hero casts their Ultimate, the Haste bonus from the forcefield permanently increases by 15, stacking up to 4 times.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Cheat death",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state.",
-          "grants": []
-        }
+      [
+        "base",
+        "Once her Energy is full, Zorya awakens and join the fight.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Arc, Area, Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ]
+      [
+        "base",
+        "Every time Zorya awakens, she jumps to the area with the most enemies, dealing 300% (ATK-based) + 4% (SP-based) damage to enemies within 2 tiles and stunning them for 2s.",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "HP loss": 22.5
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP",
-        "Energy"
+      [
+        "base",
+        "While awake, she is steadfast and consumes 70 Energy per second.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 2,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "When her Energy is fully depleted, she returns to her dormant state.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Zorya's Energy cannot be modified by sources other than this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Instead, for every 10 Energy she would have gained, her ATK permanently increases by 1%, stacking up to 100 times.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Zorya's landing damage to 320% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Zorya's landing damage to 340% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Zorya's landing damage to 360% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Zorya's landing damage to 380% (ATK-based) + 4% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Zorya awakens, her skin hardens like stone, reducing her damage taken by 70%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This effect gradually fades over 10s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Zorya summons arcane wings that sweep forward in a 2-tile arc, dealing 270% (ATK-based) + 30% (SP-based) damage to enemies hit and knocking them down for 2s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases this skill's damage to 280% (ATK-based) + 30% (SP-based) when actively used.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases this skill's damage to 290% (ATK-based) + 30% (SP-based) when actively used.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases this skill's damage to 300% (ATK-based) + 30% (SP-based) when actively used.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While awake, Zorya gains bloodlust, increasing her Life Drain by 20.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Whenever an enemy hero is defeated within 2 tiles, she immediately heals herself for 30% of her max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Zorya deals 85% (ATK-based) + 10% (SP-based) damage to all enemies within 2 tiles twice.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Then, she launches an intimidating strike on the targets within range, dealing 250% (ATK-based) + 30% (SP-based) damage, plus extra damage equal to 15% of their lost HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 150% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of the two active strikes to 90% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 260% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of the two active strikes to 95% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 270% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of the two active strikes to 100% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 280% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases damage dealt by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 3%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases damage dealt by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 4%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases damage dealt by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 5%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "While Zorya is awake, she creates a 2-tile forcefield around herself, causing all enemies within it to lose 80% movement speed and 60 Haste, while increasing her own Haste by 20.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Whenever an allied hero casts their Ultimate, the Haste bonus from the forcefield permanently increases by 15, stacking up to 4 times.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the Haste granted by the forcefield to 30.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "As long as Zorya's HP ratio remains above 50%, she stays unaffected.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the Haste granted by the forcefield to 40.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This effect can trigger once per battle.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "245dfa860a897cc422d0b9a5e3e92c2d1f617bf1b42df88e5ae8efec7cd2f486",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

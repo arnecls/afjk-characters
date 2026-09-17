@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "hepler",
   "display_name": "Hepler",
   "local": {
@@ -471,7 +471,6 @@
         "Area"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -482,715 +481,198 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "hepler",
     "display_name": "Hepler",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Hepler - Master of Forms",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Hepler enters Altered Form, dealing 230% (ATK-based) + 35% (SP-based) damage to all enemies within 2 tiles and taunting them for 5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He also gains 4 Spark stacks.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While Hepler in Altered Form, Remedial Class and Extra Credit are enhanced and have shorter cooldowns, but each costs 1 Spark stack to cast.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Hepler runs out of Spark stacks, he reverts to his True Form, dealing 230% (ATK-based) + 35% (SP-based) damage to enemies within 2 tiles and blinding them for 5s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when entering Altered Form to 260% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 230% (ATK-based) + 35% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when entering Altered Form to 290% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 290% (ATK-based) + 35% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when entering Altered Form to 320% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 320% (ATK-based) + 35% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when entering Altered Form to 350% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 350% (ATK-based) + 35% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While in True Form, Hepler unleashes destructive magic at an enemy, dealing 300% (ATK-based) + 30% (SP-based) damage and reducing the target's Haste by 60 for 3 + 0.3 (SP-based)s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in Altered Form, Hepler strikes the target with powerful blows, dealing 360% (ATK-based) + 45% (SP-based) damage to the target and enemies within 1 tile around them, and stunning them for 3 + 0.3 (SP-based)s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in True Form, increase the Haste reduction from Hepler's magic attack to 70.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in Altered Form, increases the damage of Hepler's powerful blow to 390% (ATK-based) + 45% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in True Form, increase the Haste reduction from Hepler's magic attack to 80.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in Altered Form, increases the damage of Hepler's powerful blow to 420% (ATK-based) + 45% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in True Form, increase the Haste reduction from Hepler's magic attack to 90.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in Altered Form, increases the damage of Hepler's powerful blow to 450% (ATK-based) + 45% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "While in True Form, Hepler casts a healing spell on the weakest ally, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "While in Altered Form, Hepler casts a healing spell on the 3 weakest allies and grant them toughened skin, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s and granting them a 400% (ATK-based) + 64% (SP-based) shield for 15s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases HP restored by the healing spell to 140% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 480% (ATK-based) + 64% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases HP restored by the healing spell to 150% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 560% (ATK-based) + 64% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases HP restored by the healing spell to 160% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 640% (ATK-based) + 64% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Reduces damage taken by 9% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "While in Altered Form, further reduces damage taken by 6%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Reduces damage taken by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "While in Altered Form, further reduces damage taken by 8%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Reduces damage taken by 15% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "While in Altered Form, further reduces damage taken by 10%.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "When a battle starts, Hepler protects the frontmost adjacent allied hero.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "The first time that ally would take a fatal blow, they instead ignore the damage.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "At the same time, Hepler heals the ally and grants them toughened skin for 5s, and transforms them into a small animal that runs toward the back of the battlefield.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "While in animal form, the ally becomes invincible for 3s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the duration of healing and toughened skin granted by this skill to 7s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Hepler gains ATK equal to 30% of the protected ally's initial ATK, while that ally gains max HP equal to 40% of Hepler's initial HP.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "The ATK Hepler gains from this skill cannot exceed 80% of his own initial ATK.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the duration of healing and toughened skin granted by this skill to 9s.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Whenever Hepler spends Spark stacks, he and the protected ally permanently increase their Phys & Magic DEF by 6% and reduce their damage taken by 3%, stacking up to 10 times.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Hepler enters Altered Form, dealing 230% (ATK-based) + 35% (SP-based) damage to all enemies within 2 tiles and taunting them for 5s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Form Shift": "Ultimate",
-        "Remedial Class": "Skill1",
-        "Extra Credit": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Fur-ious Rescue": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Taunt",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 385.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Blind",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 2,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "qualitative": "While in animal form, the ally becomes invincible for 3s.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Haste",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 495.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.3,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.3,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Healing over time",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 160.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 6.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "DEF",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 6.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 10,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            },
-            {
-              "category": "buff",
-              "label": "Damage taken",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 10,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Taunt",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 495.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Blind",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 2,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Haste",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.3,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.3,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Healing over time",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 160.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 6.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Damage taken",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 10,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 80.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "DEF",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 6.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 10,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "He also gains 4 Spark stacks.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "qualitative": "While in animal form, the ally becomes invincible for 3s.",
-          "grants": []
-        }
+      [
+        "base",
+        "While Hepler in Altered Form, Remedial Class and Extra Credit are enhanced and have shorter cooldowns, but each costs 1 Spark stack to cast.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Area"
-        ]
+      [
+        "base",
+        "When Hepler runs out of Spark stacks, he reverts to his True Form, dealing 230% (ATK-based) + 35% (SP-based) damage to enemies within 2 tiles and blinding them for 5s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP",
-        "Physical DEF",
-        "Magic DEF"
+      [
+        "base",
+        "Increases the damage dealt when entering Altered Form to 260% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 230% (ATK-based) + 35% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage dealt when entering Altered Form to 290% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 290% (ATK-based) + 35% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when entering Altered Form to 320% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 320% (ATK-based) + 35% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when entering Altered Form to 350% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 350% (ATK-based) + 35% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While in True Form, Hepler unleashes destructive magic at an enemy, dealing 300% (ATK-based) + 30% (SP-based) damage and reducing the target's Haste by 60 for 3 + 0.3 (SP-based)s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in Altered Form, Hepler strikes the target with powerful blows, dealing 360% (ATK-based) + 45% (SP-based) damage to the target and enemies within 1 tile around them, and stunning them for 3 + 0.3 (SP-based)s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in True Form, increase the Haste reduction from Hepler's magic attack to 70.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in Altered Form, increases the damage of Hepler's powerful blow to 390% (ATK-based) + 45% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in True Form, increase the Haste reduction from Hepler's magic attack to 80.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in Altered Form, increases the damage of Hepler's powerful blow to 420% (ATK-based) + 45% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in True Form, increase the Haste reduction from Hepler's magic attack to 90.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in Altered Form, increases the damage of Hepler's powerful blow to 450% (ATK-based) + 45% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While in True Form, Hepler casts a healing spell on the weakest ally, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "While in Altered Form, Hepler casts a healing spell on the 3 weakest allies and grant them toughened skin, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s and granting them a 400% (ATK-based) + 64% (SP-based) shield for 15s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP restored by the healing spell to 140% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 480% (ATK-based) + 64% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP restored by the healing spell to 150% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 560% (ATK-based) + 64% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP restored by the healing spell to 160% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 640% (ATK-based) + 64% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Reduces damage taken by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "While in Altered Form, further reduces damage taken by 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reduces damage taken by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "While in Altered Form, further reduces damage taken by 8%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reduces damage taken by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "While in Altered Form, further reduces damage taken by 10%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, Hepler protects the frontmost adjacent allied hero.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The first time that ally would take a fatal blow, they instead ignore the damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "At the same time, Hepler heals the ally and grants them toughened skin for 5s, and transforms them into a small animal that runs toward the back of the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "While in animal form, the ally becomes invincible for 3s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the duration of healing and toughened skin granted by this skill to 7s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Hepler gains ATK equal to 30% of the protected ally's initial ATK, while that ally gains max HP equal to 40% of Hepler's initial HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The ATK Hepler gains from this skill cannot exceed 80% of his own initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the duration of healing and toughened skin granted by this skill to 9s.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Whenever Hepler spends Spark stacks, he and the protected ally permanently increase their Phys & Magic DEF by 6% and reduce their damage taken by 3%, stacking up to 10 times.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "5fe8322d7f307e4c12ca4002828623aca960f23a3f886457d13d2477521afab0",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

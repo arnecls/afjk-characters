@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "damian",
   "display_name": "Damian",
   "local": {
@@ -439,7 +439,6 @@
         "Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -448,612 +447,168 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "damian",
     "display_name": "Damian",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Damian - Woody Wonder",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Damian cannot be attacked during the battle.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He builds a toy chariot that inherits 85% + 10% (SP-based) of his HP and 100% of his other stats to take his place when a battle starts.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "He then stays out of the battlefield and will run away after all allies are defeated.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If a toy chariot is present on the battlefield, Damian sends it charging at the target, causing it to explode and deal 320% (ATK-based) damage while blinding enemies within 1 tile for 3s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When the toy chariot explodes, Damian recovers 80 Energy for every 10% of its HP ratio.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If there is no toy chariot, he builds a new one and moves it to the target location.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 330% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 340% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 350% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 360% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If a toy chariot is present on the battlefield, Damian controls it to play music for the weakest ally within 3 tiles, recovering 120% (ATK-based) + 10% (SP-based) HP to this ally 4 times.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If there is no toy chariot, Damian restores himself 300 Energy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the healing amount to 130% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the healing amount to 140% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the healing amount to 150% (ATK-based) + 10% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Damian controls a toy plane to fly towards the farthest enemy and throw fireworks at them, dealing 250% (ATK-based) + 20% (SP-based) damage and stunning the target for 3s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases stun duration to 5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 275% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 300% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 16% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 20% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Damian's toy chariot activates a music halo when it responds to Emergency Support!",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "for the first time, inspiring non-summoned allies within 2 tiles and increasing their Haste by 40 for 10s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Heals allies within 2 tiles for 80% (ATK-based) HP per second.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Inspires non-summoned allies and grants them 50 Haste.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Inspires non-summoned allies and grants them 55 Haste.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When casting Explode, my chariot!",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "the blind duration is increased to 7s when the toy chariot's HP ratio is above 50%.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Damian cannot be attacked during the battle.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Explode, my chariot!": "Ultimate",
-        "Emergency Support!": "Skill1",
-        "It's a Plane!": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Inventor's Will": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Blind",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 3.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": 3.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 360.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Summoning",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "He builds a toy chariot that inherits 85% + 10% of his HP and 100% of his other stats to take his place when a battle starts.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 150.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 300.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 5.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 320.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": 40.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": "frequent",
-              "conditions": [
-                {
-                  "type": "duration_gate",
-                  "gate": "first_time"
-                },
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Blind",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 7.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 7.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "hp_threshold",
-                  "hp_ratio": 0.5,
-                  "comparison": "above"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "cc",
-          "label": "Blind",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 3.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": 3.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": 360.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 300.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 150.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 5.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": 40.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": "frequent",
-          "conditions": [
-            {
-              "type": "duration_gate",
-              "gate": "first_time"
-            },
-            {
-              "type": "battle_phase",
-              "phase": "conditional"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "cc",
-          "label": "Blind",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 7.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 7.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "hp_threshold",
-              "hp_ratio": 0.5,
-              "comparison": "above"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "He builds a toy chariot that inherits 85% + 10% (SP-based) of his HP and 100% of his other stats to take his place when a battle starts.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Summoning",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "He builds a toy chariot that inherits 85% + 10% of his HP and 100% of his other stats to take his place when a battle starts.",
-          "grants": []
-        }
+      [
+        "base",
+        "He then stays out of the battlefield and will run away after all allies are defeated.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Area, Single target"
-        ]
+      [
+        "base",
+        "If a toy chariot is present on the battlefield, Damian sends it charging at the target, causing it to explode and deal 320% (ATK-based) damage while blinding enemies within 1 tile for 3s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Energy"
+      [
+        "base",
+        "When the toy chariot explodes, Damian recovers 80 Energy for every 10% of its HP ratio.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 20,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "If there is no toy chariot, he builds a new one and moves it to the target location.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 330% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 340% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 350% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 360% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If a toy chariot is present on the battlefield, Damian controls it to play music for the weakest ally within 3 tiles, recovering 120% (ATK-based) + 10% (SP-based) HP to this ally 4 times.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If there is no toy chariot, Damian restores himself 300 Energy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 130% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 140% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 150% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Damian controls a toy plane to fly towards the farthest enemy and throw fireworks at them, dealing 250% (ATK-based) + 20% (SP-based) damage and stunning the target for 3s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases stun duration to 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 275% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 300% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Damian's toy chariot activates a music halo when it responds to Emergency Support!",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "for the first time, inspiring non-summoned allies within 2 tiles and increasing their Haste by 40 for 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Heals allies within 2 tiles for 80% (ATK-based) HP per second.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Inspires non-summoned allies and grants them 50 Haste.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Inspires non-summoned allies and grants them 55 Haste.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When casting Explode, my chariot!",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "the blind duration is increased to 7s when the toy chariot's HP ratio is above 50%.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "168118c2d2a0d1c9461b0b3b889182dca905fcbe467c852ae5b3f68a2b044642",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

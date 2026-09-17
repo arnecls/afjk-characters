@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lyca",
   "display_name": "Lyca",
   "local": {
@@ -416,548 +416,154 @@
         "All units, Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk_spd"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "lyca",
     "display_name": "Lyca",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Lyca - Keeper of Glades",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Lyca fires a comet-like arrow in a chosen direction, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within 5 tiles along its path and leaving Nebula Reflection for 7s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The allies under Nebula Reflection summon meteors to deal extra damage equal to 50% of their ATK to the target while using normal attacks.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 220% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 240% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 260% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases damage to 270% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Lyca bestows blessings of the stars, increasing all allies' ATK SPD by 25 + 5 (SP-based) for 6s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "This effect is triggered immediately when a battle starts and grants all allies 120 Energy.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases ATK SPD to 30 + 5 (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases effect duration to 8s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases ATK SPD to 40 + 5 (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Lyca summons meteors to attack all enemies, dealing 100% (ATK-based) damage and reducing their Phys DEF by 10% for 5s + 1.5 (SP-based)s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 120% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Reduces their Phys DEF by 12%.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 130% (ATK-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 21 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 27 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 33 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Lyca summons meteors when a battle starts, directing them to attack targets with her normal attacks, dealing 40% (ATK-based) physical damage.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases damage to 50% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Shoots an aerolite at a shielded enemy, dealing 350% (ATK-based) damage.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "If the shield breaks, the target is stunned for 4s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Only 1 aerolite can be shot every 10s.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases aerolite damage to 450% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Lyca reduces the target's Phys DEF by 25% for 6s if they are hit by Comet Archery.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Lyca fires a comet-like arrow in a chosen direction, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within 5 tiles along its path and leaving Nebula Reflection for 7s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Comet Archery": "Ultimate",
-        "Empyrean Blessing": "Skill1",
-        "Nova Fall": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Meteor Catastrophe": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 290.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 5,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK SPD",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 10.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 450.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": 4.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 4.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 450.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 5,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "buff",
-          "label": "ATK SPD",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 10.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": 4.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 4.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "The allies under Nebula Reflection summon meteors to deal extra damage equal to 50% of their ATK to the target while using normal attacks.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [],
-      "damage_entries": [
-        [
-          "Physical",
-          "All units, Area, Single target"
-        ]
+      [
+        "base",
+        "Increases damage to 220% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK SPD"
+      [
+        "base",
+        "Increases damage to 240% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 5,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases damage to 260% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 270% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lyca bestows blessings of the stars, increasing all allies' ATK SPD by 25 + 5 (SP-based) for 6s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This effect is triggered immediately when a battle starts and grants all allies 120 Energy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases ATK SPD to 30 + 5 (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases effect duration to 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases ATK SPD to 40 + 5 (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Lyca summons meteors to attack all enemies, dealing 100% (ATK-based) damage and reducing their Phys DEF by 10% for 5s + 1.5 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 120% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces their Phys DEF by 12%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 130% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 21 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 27 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 33 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lyca summons meteors when a battle starts, directing them to attack targets with her normal attacks, dealing 40% (ATK-based) physical damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases damage to 50% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Shoots an aerolite at a shielded enemy, dealing 350% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If the shield breaks, the target is stunned for 4s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Only 1 aerolite can be shot every 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases aerolite damage to 450% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lyca reduces the target's Phys DEF by 25% for 6s if they are hit by Comet Archery.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "0d85c424b942b98d206839e25f037e4a1068c50fa8f58c629e784a9cbae078ff",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

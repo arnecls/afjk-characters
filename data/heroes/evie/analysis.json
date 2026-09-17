@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "evie",
   "display_name": "Evie",
   "local": {
@@ -497,7 +497,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "energy"
@@ -505,824 +504,228 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "evie",
     "display_name": "Evie",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "skill1",
-    "hero": {
-      "title": "Evie - Royal Envoy",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "When a battle starts, Evie teleports to the symmetrical tile on the enemy side and enters concealment.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While concealed, Evie is invincible and accumulates 120 Detection points every second.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "She loses 500 Detection points each time an ally casts their Ultimate.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "As soon as Evie enters concealment.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "she starts gathering intel on all non-summoned enemies within 1 tile.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Once complete, she continues investigating the remaining non-summoned enemies one at a time, prioritizing from nearest to farthest based on their starting positions relative to her.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Each investigation takes 4.5s, and when it is completed, Evie gains 150 Energy.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After gathering intel on all those enemies, Evie teleports back to her original tile and loses her invincibility.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Evie interrogates the enemy with the highest cumulative damage dealt for 6s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "During the interrogation, she deals 180% (ATK-based) + 18% (SP-based) damage to the enemy every second and immobilizes them.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "If she has already gathered intel on the target, the skill also silences them during the interrogation.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases interrogation duration to 6.5s when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases interrogation duration to 7s when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases interrogation duration to 7.5s when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases interrogation duration to 8s when this skill is used actively.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "When Evie finishes gathering intel on an enemy hero, that enemy hero's Magic DEF is permanently reduced by 20% + 2% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "If she manages to gather intel on all surviving enemy heroes while concealed, the Magic DEF of all enemies is reduced by an extra 25% + 2.5% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Evie dashes to the nearest enemy and strikes them twice with her dagger.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "dealing 220% (ATK-based)damage with each hit.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 230% (ATK-based) when this skill is used actively.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 240% (ATK-based) when this skill is used actively.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage dealt to 250% (ATK-based) when this skill is used actively.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When a battle starts, Evie summons a quill to follow the rearmost ally.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Afterward, every 3s, the quill switches to the ally with the highest cumulative damage dealt, restoring 120% (ATK-based) HP to them every second and increasing their ATK by 20% + 2% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When the ally with the quill has dealt damage equal to 250% of their initial ATK, the quill shoots 1 healing orb at each of the 2 weakest allies other than the ally the quill is following.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "restoring 45% (ATK-based) + 6% (SP-based) HP to them.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The effect can trigger once every 0.5s.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the orb's healing amount to 50% (ATK-based) + 6% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the orb's healing amount to 55% (ATK-based) + 6% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the orb's healing amount to 60% (ATK-based) + 6% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 11 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 15 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Healing by 19 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "If Evie gathers intel on every surviving enemy hero without being revealed, she shares her findings with her allies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "With their weaknesses exposed, these enemies deal 25% less damage for the rest of the battle.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "In non-boss battles, the duration of dispellable debuffs inflicted on allies by these enemies is also reduced by 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the reduction to enemy damage dealt to 30% and the reduction to their debuff durations to 40%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Enemies also take 25% more magic damage after Evie shares her findings with allies.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the reduction to enemy damage dealt to 35% and the reduction to their debuff durations to 50%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "After gathering intel on all surviving enemy heroes while concealed, Evie summons an extra quill to follow the ally with the second-highest cumulative damage dealt.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Each ally can only be followed by one quill.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Evie teleports to the symmetrical tile on the enemy side and enters concealment.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Intel Chase": "Ultimate",
-        "Pointed Proof": "Skill1",
-        "Foretold Favor": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Tactical Briefing": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Displace",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Bind",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 8.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 198.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Silence",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 8.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 8.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "While concealed, Evie is invincible and accumulates 120 Detection points every second.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "All units",
-              "qualitative": "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Passive with internal cooldown",
-              "tier": "base",
-              "targeting": "—",
-              "qualitative": "The effect can trigger once every 0.5s.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 25.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "ATK",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "buff",
-              "label": "Direct healing",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 60.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "Damage dealt",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": 35.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Debuff duration",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Debuff duration",
-              "tier": "EX+5",
-              "targeting": "Single target",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 180.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Displace",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Bind",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 8.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 198.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Silence",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 8.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 8.0,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 25.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": -1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "zone",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "ATK",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Direct healing",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 60.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage dealt",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": 35.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Debuff duration",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Debuff duration",
-          "tier": "EX+5",
-          "targeting": "Single target",
-          "numeric": 50.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "While concealed, Evie is invincible and accumulates 120 Detection points every second.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "While concealed, Evie is invincible and accumulates 120 Detection points every second.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "All units",
-          "qualitative": "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Passive with internal cooldown",
-          "tier": "base",
-          "targeting": "—",
-          "qualitative": "The effect can trigger once every 0.5s.",
-          "grants": []
-        }
+      [
+        "base",
+        "She loses 500 Detection points each time an ally casts their Ultimate.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Single target"
-        ]
+      [
+        "base",
+        "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Energy"
+      [
+        "base",
+        "As soon as Evie enters concealment.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 20,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "she starts gathering intel on all non-summoned enemies within 1 tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Once complete, she continues investigating the remaining non-summoned enemies one at a time, prioritizing from nearest to farthest based on their starting positions relative to her.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each investigation takes 4.5s, and when it is completed, Evie gains 150 Energy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After gathering intel on all those enemies, Evie teleports back to her original tile and loses her invincibility.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Evie interrogates the enemy with the highest cumulative damage dealt for 6s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During the interrogation, she deals 180% (ATK-based) + 18% (SP-based) damage to the enemy every second and immobilizes them.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If she has already gathered intel on the target, the skill also silences them during the interrogation.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 6.5s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 7s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 7.5s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 8s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Evie finishes gathering intel on an enemy hero, that enemy hero's Magic DEF is permanently reduced by 20% + 2% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If she manages to gather intel on all surviving enemy heroes while concealed, the Magic DEF of all enemies is reduced by an extra 25% + 2.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Evie dashes to the nearest enemy and strikes them twice with her dagger.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "dealing 220% (ATK-based)damage with each hit.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 230% (ATK-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 240% (ATK-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 250% (ATK-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When a battle starts, Evie summons a quill to follow the rearmost ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Afterward, every 3s, the quill switches to the ally with the highest cumulative damage dealt, restoring 120% (ATK-based) HP to them every second and increasing their ATK by 20% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When the ally with the quill has dealt damage equal to 250% of their initial ATK, the quill shoots 1 healing orb at each of the 2 weakest allies other than the ally the quill is following.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "restoring 45% (ATK-based) + 6% (SP-based) HP to them.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The effect can trigger once every 0.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the orb's healing amount to 50% (ATK-based) + 6% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the orb's healing amount to 55% (ATK-based) + 6% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the orb's healing amount to 60% (ATK-based) + 6% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 11 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 19 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "If Evie gathers intel on every surviving enemy hero without being revealed, she shares her findings with her allies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "With their weaknesses exposed, these enemies deal 25% less damage for the rest of the battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "In non-boss battles, the duration of dispellable debuffs inflicted on allies by these enemies is also reduced by 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the reduction to enemy damage dealt to 30% and the reduction to their debuff durations to 40%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Enemies also take 25% more magic damage after Evie shares her findings with allies.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the reduction to enemy damage dealt to 35% and the reduction to their debuff durations to 50%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After gathering intel on all surviving enemy heroes while concealed, Evie summons an extra quill to follow the ally with the second-highest cumulative damage dealt.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Each ally can only be followed by one quill.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "d8327bd2d8ae1cf1f63767a3c0376fa23119a70acdb156e0b729cbf301725461",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -70,7 +70,7 @@ class ConditionScoringTests(unittest.TestCase):
             conditions=[{"type": "duration_gate", "gate": "once_per_battle"}],
         )
         rs.apply_conditional_magnitude(effect)
-        self.assertEqual(effect.magnitude, "low")
+        self.assertEqual(effect["magnitude"], "low")
 
     def test_score_synergy_skips_structured_once_per_battle(self) -> None:
         provider = rs.Hero(

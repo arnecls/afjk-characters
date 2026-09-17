@@ -660,9 +660,13 @@ def main() -> None:
     if args.stdout:
         print(json.dumps(overviews, indent=2, ensure_ascii=False))
     elif not args.dry_run:
-        from hero_pipeline.storage import update_ai_field
+        from hero_pipeline.storage import ids_by_display_name, update_ai_by_id
 
-        update_ai_field("play_overview", overviews)
+        by_id = ids_by_display_name()
+        update_ai_by_id(
+            "play_overview",
+            {by_id[name]: text for name, text in overviews.items()},
+        )
         print(f"Wrote {len(overviews)} play overviews to hero-local files")
 
     if missing:

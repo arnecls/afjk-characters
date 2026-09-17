@@ -20,8 +20,10 @@ and public views.
 1. Compute local analysis fully before any `analysis.json` file is replaced.
 2. Stage the complete snapshot under `tmp/`, validate it, then replace each
    destination file. On ordinary exceptions, restore the previous bytes.
-3. Key each local cache with `inputs_hash` and `algorithm_hash`. Readers
-   reject stale caches before roster calibration.
+3. Key each local cache with `schema_version` 2, `inputs_hash`, and
+   `algorithm_hash` (detector version, schema identity, and effective local
+   policy). `load_roster_snapshot()` rejects missing or stale v2 caches.
+   Refresh uses a stale-permitting input load.
 4. Do not introduce a database or generation-directory layout. Crash-atomic
    publication remains out of scope.
 5. Public Markdown, CSV, and browser-visible files are written after

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "shadewing",
   "display_name": "Shadewing",
   "local": {
@@ -514,7 +514,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "shield",
@@ -523,743 +522,198 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "shadewing",
     "display_name": "Shadewing",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Shadewing - Undying Vow",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Shadewing inflicts Crimson Venom on an enemy for 10s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "The extra damage cannot exceed 100% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Crimson Venom's base damage per second to 65% (ATK-based) + 8% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Crimson Venom's base damage per second to 70% (ATK-based) + 8% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Crimson Venom's base damage per second to 75% (ATK-based) + 8% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Crimson Venom's base damage per second to 80% (ATK-based) + 8% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of the two claw strikes to 75% (ATK-based) and the damage dealt per second from the resulting wound to 140% (ATK-based) + 20% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of the two claw strikes to 80% (ATK-based) and the damage dealt per second from the resulting wound to 160% (ATK-based) + 20% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases the damage of the two claw strikes to 85% (ATK-based) and the damage dealt per second from the resulting wound to 180% (ATK-based) + 20% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "During the flight, Shadewing is invincible.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This damage cannot exceed 600% (ATK-based) + 90% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "The curse lashes out at most once every 3s per enemy.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when the curse lashes out to 30% + 4% (SP-based) of the enemy's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This damage cannot exceed 700% (ATK-based) + 90% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when the curse lashes out to 35% + 4% (SP-based) of the enemy's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This damage cannot exceed 800% (ATK-based) + 90% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage dealt when the curse lashes out to 40% + 4% (SP-based) of the enemy's max HP.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "This damage cannot exceed 900% (ATK-based) + 90% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 12% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 16% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK by 20% during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+5",
-          "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 42%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Converts 85% of the damage dealt by Withering Curse's lash into true damage.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 48%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "The effects last until the end of the battle.",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Shadewing inflicts Crimson Venom on an enemy for 10s.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Crimson Venom": "Ultimate",
-        "Razor Talons": "Skill1",
-        "Withering Curse": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Curse Feast": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "HP loss",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 5.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 88.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 80.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 10.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Debuff application",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Shadewing inflicts Crimson Venom on an enemy for 10s.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Invincibility",
-              "tier": "base",
-              "targeting": "Self",
-              "qualitative": "During the flight, Shadewing is invincible.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "DoT conversion",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
-              "grants": []
-            },
-            {
-              "kind": "provides",
-              "label": "Damage leech from allies",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "qualitative": "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
-              "grants": []
-            },
-            {
-              "kind": "requires",
-              "label": "Continuous damage on enemies",
-              "tier": "base",
-              "targeting": "Enemies",
-              "qualitative": "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 200.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "DoT",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 140.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": 1.0,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Invincible",
-              "tier": "base",
-              "targeting": "Self",
-              "numeric": 900.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            },
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 20.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Energy",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 100.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Lifedrain",
-              "tier": "Supreme+",
-              "targeting": "Self",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "HP loss",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 5.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 200.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "damage",
-          "label": "DoT",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 140.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 10.0,
-          "tick": 1.0,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Energy",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 100.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Invincible",
-          "tier": "base",
-          "targeting": "Self",
-          "numeric": 900.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 20.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "buff",
-          "label": "Lifedrain",
-          "tier": "Supreme+",
-          "targeting": "Self",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Supreme+"
-        }
+      [
+        "base",
+        "While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Debuff application",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Shadewing inflicts Crimson Venom on an enemy for 10s.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "qualitative": "During the flight, Shadewing is invincible.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "DoT conversion",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
-          "grants": []
-        },
-        {
-          "kind": "provides",
-          "label": "Damage leech from allies",
-          "tier": "Supreme+",
-          "targeting": "Single target",
-          "qualitative": "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "Continuous damage on enemies",
-          "tier": "base",
-          "targeting": "Enemies",
-          "qualitative": "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
-          "grants": []
-        }
+      [
+        "base",
+        "The extra damage cannot exceed 100% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "Single target"
-        ],
-        [
-          "DoT",
-          "Single target"
-        ],
-        [
-          "HP loss",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases Crimson Venom's base damage per second to 65% (ATK-based) + 8% (SP-based).",
+        "Ultimate"
       ],
-      "damage_scores": {
-        "HP loss": 7.5
-      },
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Shield",
-        "Energy"
+      [
+        "base",
+        "Increases Crimson Venom's base damage per second to 70% (ATK-based) + 8% (SP-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases Crimson Venom's base damage per second to 75% (ATK-based) + 8% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Crimson Venom's base damage per second to 80% (ATK-based) + 8% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of the two claw strikes to 75% (ATK-based) and the damage dealt per second from the resulting wound to 140% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of the two claw strikes to 80% (ATK-based) and the damage dealt per second from the resulting wound to 160% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of the two claw strikes to 85% (ATK-based) and the damage dealt per second from the resulting wound to 180% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "During the flight, Shadewing is invincible.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 600% (ATK-based) + 90% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The curse lashes out at most once every 3s per enemy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when the curse lashes out to 30% + 4% (SP-based) of the enemy's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 700% (ATK-based) + 90% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when the curse lashes out to 35% + 4% (SP-based) of the enemy's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 800% (ATK-based) + 90% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when the curse lashes out to 40% + 4% (SP-based) of the enemy's max HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 900% (ATK-based) + 90% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 42%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Converts 85% of the damage dealt by Withering Curse's lash into true damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 48%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The effects last until the end of the battle.",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "d666b2176c7ed56b076dae9dadc32c29539062e4ab99bd06c532fd1d47bbff0d",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

@@ -78,7 +78,7 @@ class SchemaSerializationTests(unittest.TestCase):
         }
         legacy = hs.schema_effect_to_effect(sidecar_effect)
         processed = hs.effect_to_schema(hs._merge_effects([legacy])[0])
-        self.assertEqual(legacy.tick, 0.25)
+        self.assertEqual(legacy["tick"], 0.25)
         self.assertEqual(processed["tick"], 0.25)
         self.assertEqual(processed["duration"], 4)
 
@@ -98,8 +98,8 @@ class SchemaSerializationTests(unittest.TestCase):
         }
         legacy = hs.schema_effect_to_effect(sidecar_effect)
         processed = hs.effect_to_schema(hs._merge_effects([legacy])[0])
-        self.assertEqual(legacy.tick, 0.5)
-        self.assertEqual(legacy.duration, -1.0)
+        self.assertEqual(legacy["tick"], 0.5)
+        self.assertEqual(legacy["duration"], -1.0)
         self.assertEqual(processed["tick"], 0.5)
         self.assertEqual(processed["duration"], -1.0)
 

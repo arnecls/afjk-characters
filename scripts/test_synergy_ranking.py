@@ -151,7 +151,7 @@ class SynergyTierRankingTests(unittest.TestCase):
         ranked.sort(
             key=lambda x: (
                 -gen._prydwen_tier_preference(
-                    tiers.get(receiver.title, {}),
+                    tiers.get(receiver["title"], {}),
                     tiers.get(x[2], {}),
                 ),
                 -x[0],
@@ -336,12 +336,12 @@ class SynergySelfFilterTests(unittest.TestCase):
         from test_roster_cache import full_roster
 
         heroes, matchers, behavior = full_roster()
-        lyca = next(h for h in heroes if gen.short_name(h.title) == "Lyca")
+        lyca = next(h for h in heroes if gen.short_name(h["title"]) == "Lyca")
         entries = gen.rank_synergy_entries(lyca, heroes, matchers, behavior)
         providers = {gen.short_name(title) for _score, _reasons, title in entries}
         self.assertNotIn("Lyca", providers)
         score, reasons = gen.score_combined_synergy(
-            lyca, lyca, matchers, behavior[lyca.title]
+            lyca, lyca, matchers, behavior[lyca["title"]]
         )
         self.assertEqual(score, 0.0)
         self.assertEqual(reasons, [])
@@ -604,12 +604,12 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
                 break
         hero = rs.parse_hero_block(blocks["Tasi"])
         rs.analyze_hero(hero)
-        display = {hero.title: "Tasi"}
+        display = {hero["title"]: "Tasi"}
         behavior = rs.build_behavior_for_heroes(
             [hero], display, heroes_text=text
-        )[hero.title]
-        self.assertTrue(behavior.signature_first_cast_needs_energy)
-        self.assertTrue(behavior.signature_skill_is_ult)
+        )[hero["title"]]
+        self.assertTrue(behavior["signature_first_cast_needs_energy"])
+        self.assertTrue(behavior["signature_skill_is_ult"])
 
 
 class ThadorEarlyEnergyTests(unittest.TestCase):
@@ -727,13 +727,13 @@ class FaramorEnemyGroupingTests(unittest.TestCase):
         heroes = [self._analyzed(name) for name in ("Eironn", "Isabella")]
         matchers = gen._make_enabler_matchers({})
         behavior = self.rs.build_behavior_for_heroes(
-            [faramor], {faramor.title: "Faramor"}, heroes_text=""
-        )[faramor.title]
+            [faramor], {faramor["title"]: "Faramor"}, heroes_text=""
+        )[faramor["title"]]
         ranked = gen.rank_synergy_entries(
             faramor,
             heroes,
             matchers,
-            {faramor.title: behavior},
+            {faramor["title"]: behavior},
         )
         providers = {title for _score, _reasons, title in ranked}
         self.assertIn("Eironn - Stormsword", providers)

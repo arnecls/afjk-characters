@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "alsa",
   "display_name": "Alsa",
   "local": {
@@ -519,7 +519,6 @@
         "All units, Area, Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk",
       "haste",
@@ -529,761 +528,178 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "alsa",
     "display_name": "Alsa",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Alsa - Desert Flare",
-      "damage_type": "Magic",
-      "skill_chunks": [
-        [
-          "base",
-          "Alsa curls into a ball and moves to the target tile, dealing 300% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Afterward, she enters Combat Stance until the battle ends.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "In Combat Stance, she consumes 500 Energy to cast Vigorous Slam, hitting the targets and dealing 260% (ATK-based) + 20% (SP-based) damage, stunning them for 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Alsa prioritizes Swift Evasion to deal 150% (ATK-based) + 5% (SP-based) damage to adjacent enemies when attacked, reducing their movement speed by 60% for 2s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Alsa rolls away from attackers afterward, gaining a shield equal to 25% of max HP for 7s.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "This effect occurs once every 7s at most.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Alsa becomes immune to control effects when curling into a ball.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Vigorous Slam damage to 270% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Vigorous Slam damage to 280% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Vigorous Slam damage to 290% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases Vigorous Slam damage to 300% (ATK-based) + 20% (SP-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Alsa channels the power of Earth Force to blast the nearest enemy target, dealing 270% (ATK-based) + 25% (SP-based) damage and stunning them for 2 + 0.25 (SP-based)s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The blast creates earth pillars 3 tiles behind this target and knocks back enemies on those tiles by 1 tile.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "A maximum of 6 pillars can be present on the field.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 280% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 290% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Increases damage to 300% (ATK-based) + 25% (SP-based).",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Alsa senses the vibrations of leylines to locate all enemies recently affected by control effects, then drops boulders on them, dealing 250% (ATK-based) + 25% (SP-based) damage.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 260% (ATK-based) + 25% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 270% (ATK-based) + 25% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases damage to 280% (ATK-based) + 25% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 10 during battles, gaining an extra 6 Haste after entering the Combat Stance status.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 14 during battles, gaining an extra 7 Haste after entering the Combat Stance status.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases Haste by 18 during battles, gaining an extra 8 Haste after entering the Combat Stance status.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Alsa increases the damage of Vigorous Slam by 50% (ATK-based) after dealing damage with the skill, stacking up to 2 times.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "She also increases the shield value of Swift Evasion by 5% of her max HP after casting it, stacking up to 2 times.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "Unlocks at Exclusive Weapon Level 5: Reduces the Energy cost to 400 when the Vigorous Slam buff is stacked to its maximum.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "Reduces the cooldown to 6s when the Swift Evasion buff is stacked to its maximum.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the damage dealt by the next Vigorous Slam by 55% (ATK-based).",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "This effect can stack up to 2 times.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects.",
-          "Unlocks at Supreme+"
-        ],
-        [
-          "Supreme+",
-          "Level 2 (Unlocks with {{Item|Shadow Essence",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Alsa curls into a ball and moves to the target tile, dealing 300% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Twirling Rocks": "Ultimate",
-        "Stone Barrier": "Skill1",
-        "Rolling Boulder": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Don of Terra": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": 320.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.0,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            },
-            {
-              "category": "debuff",
-              "label": "Movement speed",
-              "tier": "base",
-              "targeting": "Area",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": 1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "radius",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Immune",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Enhanced form",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "Afterward, she enters Combat Stance until the battle ends.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "cc",
-              "label": "Stun",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 2.25,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": 2.25,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 325.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "cc",
-              "label": "Knock back",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "base",
-              "targeting": "All units",
-              "numeric": 305.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": -1,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "zone",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "requires",
-              "label": "CC on enemies",
-              "tier": "base",
-              "targeting": "Allies",
-              "qualitative": "Alsa senses the vibrations of leylines to locate all enemies recently affected by control effects, then drops boulders on them, dealing 250% (ATK-based) + 25% (SP-based) damage.",
-              "grants": []
-            }
-          ]
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            },
-            {
-              "category": "buff",
-              "label": "Haste",
-              "tier": "Legendary+",
-              "targeting": "Self",
-              "numeric": 18.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "temporary",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "status_condition",
-                  "status": "active_state"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Legendary+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 50.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 2,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Max HP",
-              "tier": "Mythic+",
-              "targeting": "Self",
-              "numeric": 55.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "unknown",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 2,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "buff",
-              "label": "Damage dealt",
-              "tier": "EX+15",
-              "targeting": "Self",
-              "numeric": 55.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": "permanent",
-              "conditional": null,
-              "conditions": [
-                {
-                  "type": "stack_count",
-                  "stacks": 2,
-                  "stack_comparison": "up_to"
-                }
-              ],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Magic",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 180.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Magic",
-          "tier": "base",
-          "targeting": "All units",
-          "numeric": 325.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "cc",
-          "label": "Stun",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 2.25,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": 2.25,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "Movement speed",
-          "tier": "base",
-          "targeting": "Area",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": 1,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "radius",
-          "area_direction": null,
-          "source_section": "Ultimate"
-        },
-        {
-          "category": "cc",
-          "label": "Knock back",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "buff",
-          "label": "Haste",
-          "tier": "Legendary+",
-          "targeting": "Self",
-          "numeric": 18.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "temporary",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "status_condition",
-              "status": "active_state"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Unlocks at Legendary+"
-        },
-        {
-          "category": "buff",
-          "label": "Damage dealt",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 55.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "permanent",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 2,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "buff",
-          "label": "Max HP",
-          "tier": "Mythic+",
-          "targeting": "Self",
-          "numeric": 55.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": "unknown",
-          "conditional": null,
-          "conditions": [
-            {
-              "type": "stack_count",
-              "stacks": 2,
-              "stack_comparison": "up_to"
-            }
-          ],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Afterward, she enters Combat Stance until the battle ends.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Immune",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "In Combat Stance, she consumes 500 Energy to cast Vigorous Slam, hitting the targets and dealing 260% (ATK-based) + 20% (SP-based) damage, stunning them for 2s.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Enhanced form",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "Afterward, she enters Combat Stance until the battle ends.",
-          "grants": []
-        },
-        {
-          "kind": "requires",
-          "label": "CC on enemies",
-          "tier": "base",
-          "targeting": "Allies",
-          "qualitative": "Alsa senses the vibrations of leylines to locate all enemies recently affected by control effects, then drops boulders on them, dealing 250% (ATK-based) + 25% (SP-based) damage.",
-          "grants": []
-        }
+      [
+        "base",
+        "Alsa prioritizes Swift Evasion to deal 150% (ATK-based) + 5% (SP-based) damage to adjacent enemies when attacked, reducing their movement speed by 60% for 2s.",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Magic",
-          "All units, Area, Single target"
-        ]
+      [
+        "base",
+        "Alsa rolls away from attackers afterward, gaining a shield equal to 25% of max HP for 7s.",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK",
-        "Haste",
-        "Max HP",
-        "Shield"
+      [
+        "base",
+        "This effect occurs once every 7s at most.",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 6,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Alsa becomes immune to control effects when curling into a ball.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Vigorous Slam damage to 270% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Vigorous Slam damage to 280% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Vigorous Slam damage to 290% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases Vigorous Slam damage to 300% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Alsa channels the power of Earth Force to blast the nearest enemy target, dealing 270% (ATK-based) + 25% (SP-based) damage and stunning them for 2 + 0.25 (SP-based)s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The blast creates earth pillars 3 tiles behind this target and knocks back enemies on those tiles by 1 tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "A maximum of 6 pillars can be present on the field.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 280% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 290% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 300% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Alsa senses the vibrations of leylines to locate all enemies recently affected by control effects, then drops boulders on them, dealing 250% (ATK-based) + 25% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 260% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 270% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage to 280% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 10 during battles, gaining an extra 6 Haste after entering the Combat Stance status.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 14 during battles, gaining an extra 7 Haste after entering the Combat Stance status.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 18 during battles, gaining an extra 8 Haste after entering the Combat Stance status.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Alsa increases the damage of Vigorous Slam by 50% (ATK-based) after dealing damage with the skill, stacking up to 2 times.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "She also increases the shield value of Swift Evasion by 5% of her max HP after casting it, stacking up to 2 times.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon Level 5: Reduces the Energy cost to 400 when the Vigorous Slam buff is stacked to its maximum.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Reduces the cooldown to 6s when the Swift Evasion buff is stacked to its maximum.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt by the next Vigorous Slam by 55% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "This effect can stack up to 2 times.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "be17ee65a0357d9241587b1f3e3afd453ce6da10e36f65f3a498819f9304de0f",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }

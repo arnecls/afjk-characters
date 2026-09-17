@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "sinbad",
   "display_name": "Sinbad",
   "local": {
@@ -469,7 +469,6 @@
         "Single target"
       ]
     ],
-    "damage_magnitudes": {},
     "benefit_stats": [
       "atk_spd",
       "energy"
@@ -477,681 +476,178 @@
     "scalar_stat_shares": {
       "atk": 1.0
     },
-    "behavior": {},
     "id": "sinbad",
     "display_name": "Sinbad",
     "positional_tile_buff_labels": [],
     "proximity_aura_buff_labels": [],
     "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
     "signature_calculated": "ultimate",
-    "hero": {
-      "title": "Sinbad - Seaside Savant",
-      "damage_type": "Physical",
-      "skill_chunks": [
-        [
-          "base",
-          "Sinbad's skills also deal normal attack damage and his casting speed is affected by both his ATK SPD and Haste.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Sinbad lands as many hits as possible on the enemy over the next 3s, dealing 100% (ATK-based) + 15% (SP-based) damage per hit.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "After these successive attacks, he delivers one final strike that deals 240% (ATK-based) damage.",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive hit to 105% (ATK-based) + 15% (SP-based), and the final strike to 250% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive hit to 110% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive hit to 115% (ATK-based) + 15% (SP-based), and the final strike to 270% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "Increases the damage of each successive hit to 120% (ATK-based) + 15% (SP-based), and the final strike to 280% (ATK-based).",
-          "Ultimate"
-        ],
-        [
-          "base",
-          "6s into a battle, Sinbad vaults behind his allies and starts assessing his enemies' strengths.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "He marks the enemy dealing the most damage as the \"hitter\" and the one taking the most damage as the \"guard.\" These marks last for 30s.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Sinbad then charges at the \"hitter\" and then the \"guard\", dealing 120% (ATK-based) + 10% (SP-based) damage to each target 4 times.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The attack also reduces the \"hitter's\" ATK by 45% and increases the \"guard's\" damage taken by 25%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Both debuffs expire when their respective marks expire.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "The debuffs are reduces to 20% of the original effect when used against Bosses.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Reduce the \"hitter's\" ATK by 50% and increases the \"guard's\" damage taken by 30%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Reduce the \"hitter's\" ATK by 55% and increases the \"guard's\" damage taken by 35%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Reduce the \"hitter's\" ATK by 60% and increases the \"guard's\" damage taken by 40%.",
-          "Skill1"
-        ],
-        [
-          "base",
-          "Sinbad swings his double-headed blade twice, dealing 210% (ATK-based) + 20% (SP-based) damage per hit to his target.",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of each hit to 220% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of each hit to 230% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "base",
-          "Increases the damage of each hit to 240% (ATK-based) + 20% (SP-based).",
-          "Skill2"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 21 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 27 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Legendary+",
-          "Increases ATK SPD by 33 during battle.",
-          "Unlocks at Legendary+"
-        ],
-        [
-          "Mythic+",
-          "Sinbad studies the fighting styles of the \"hitter\" and the \"guard\" to strengthen the debuffs he applies.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "If the \"hitter\" deals more normal attack damage, Sinbad's debuff will reduce their ATK SPD by 60; if they deal more skill damage, the debuff will reduce their Energy Recovery efficiency by 60%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "For the \"guard\", if they depend more on healing from allies or themselves, Sinbad's debuff will reduce their Vitality by 60; if they rely more on damage mitigations, the debuff will reduce their Phys DEF and Magic DEF by 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "Mythic+",
-          "<!--",
-          "Ex. Skill"
-        ],
-        [
-          "EX+10",
-          "If an enemy is marked as \"hitter\" or \"guard\" in two consecutive assessments, their ATK is further reduced by 20% if marked as \"hitter\", and they take 10% more damage if marked as \"guard\".",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Reduces the \"hitter's\" ATK by an extra 30%.",
-          "Ex. Skill"
-        ],
-        [
-          "EX+15",
-          "Increases the \"guard's\" damage taken by an extra 15%.",
-          "Ex. Skill"
-        ],
-        [
-          "Supreme+",
-          "Duo Cut deals 140% (ATK-based) more damage to enemies marked as \"hitter\" or \"guard.\"",
-          "Unlocks at Supreme+"
-        ]
+    "skill_chunks": [
+      [
+        "base",
+        "Sinbad's skills also deal normal attack damage and his casting speed is affected by both his ATK SPD and Haste.",
+        "Ultimate"
       ],
-      "skill_name_to_section": {
-        "Whizzing Edge": "Ultimate",
-        "Tracker's Instincts": "Skill1",
-        "Duo Cut": "Skill2",
-        "Hero Focus": "Unlocks at Legendary+",
-        "Adaptive Prowess": "Ex. Skill",
-        "Enhance Force": "Unlocks at Supreme+"
-      },
-      "skill_slices": {
-        "Ultimate": {
-          "section": "Ultimate",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 240.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ultimate"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": [
-            {
-              "kind": "provides",
-              "label": "Marked target (focus fire)",
-              "tier": "base",
-              "targeting": "Single target",
-              "qualitative": "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time.",
-              "grants": []
-            }
-          ]
-        },
-        "Skill1": {
-          "section": "Skill1",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 130.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            },
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill1"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [
-            {
-              "immunity_type": "Unaffected",
-              "tier": "base",
-              "targeting": "Self",
-              "timing": "Conditional"
-            }
-          ],
-          "special_effects": []
-        },
-        "Skill2": {
-          "section": "Skill2",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "base",
-              "targeting": "Single target",
-              "numeric": 260.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Skill2"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Legendary+": {
-          "section": "Unlocks at Legendary+",
-          "tier": "base",
-          "effects": [],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Ex. Skill": {
-          "section": "Ex. Skill",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "debuff",
-              "label": "ATK SPD",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Energy",
-              "tier": "Mythic+",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Magic DEF",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": 30.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Phys DEF",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Vitality",
-              "tier": "Mythic+",
-              "targeting": "Multiple targets",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "ATK",
-              "tier": "EX+10",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            },
-            {
-              "category": "debuff",
-              "label": "Damage taken",
-              "tier": "EX+15",
-              "targeting": "Single target",
-              "numeric": null,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Ex. Skill"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        },
-        "Unlocks at Supreme+": {
-          "section": "Unlocks at Supreme+",
-          "tier": "base",
-          "effects": [
-            {
-              "category": "damage",
-              "label": "Physical",
-              "tier": "Supreme+",
-              "targeting": "Single target",
-              "numeric": 140.0,
-              "qualitative": "",
-              "magnitude": "average",
-              "area_count": null,
-              "target_count": null,
-              "duration": null,
-              "tick": null,
-              "persistence": null,
-              "conditional": null,
-              "conditions": [],
-              "area": "single",
-              "area_direction": null,
-              "source_section": "Unlocks at Supreme+"
-            }
-          ],
-          "summon_effects": [],
-          "cc_immunities": [],
-          "special_effects": []
-        }
-      },
-      "effects": [
-        {
-          "category": "damage",
-          "label": "Physical",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": 260.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill2"
-        },
-        {
-          "category": "debuff",
-          "label": "Damage taken",
-          "tier": "base",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Skill1"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK SPD",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Energy",
-          "tier": "Mythic+",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Magic DEF",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": 30.0,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Phys DEF",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "Vitality",
-          "tier": "Mythic+",
-          "targeting": "Multiple targets",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        },
-        {
-          "category": "debuff",
-          "label": "ATK",
-          "tier": "EX+10",
-          "targeting": "Single target",
-          "numeric": null,
-          "qualitative": "",
-          "magnitude": "average",
-          "area_count": null,
-          "target_count": null,
-          "duration": null,
-          "tick": null,
-          "persistence": null,
-          "conditional": null,
-          "conditions": [],
-          "area": "single",
-          "area_direction": null,
-          "source_section": "Ex. Skill"
-        }
+      [
+        "base",
+        "Sinbad lands as many hits as possible on the enemy over the next 3s, dealing 100% (ATK-based) + 15% (SP-based) damage per hit.",
+        "Ultimate"
       ],
-      "summon_effects": [],
-      "cc_immunities": [
-        {
-          "immunity_type": "Unaffected",
-          "tier": "base",
-          "targeting": "Self",
-          "timing": "Conditional"
-        }
+      [
+        "base",
+        "After these successive attacks, he delivers one final strike that deals 240% (ATK-based) damage.",
+        "Ultimate"
       ],
-      "special_effects": [
-        {
-          "kind": "provides",
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Single target",
-          "qualitative": "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time.",
-          "grants": []
-        }
+      [
+        "base",
+        "Increases the damage of each successive hit to 105% (ATK-based) + 15% (SP-based), and the final strike to 250% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_entries": [
-        [
-          "Physical",
-          "Single target"
-        ]
+      [
+        "base",
+        "Increases the damage of each successive hit to 110% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based).",
+        "Ultimate"
       ],
-      "damage_scores": {},
-      "damage_magnitudes": {},
-      "benefit_stats": [
-        "ATK SPD",
-        "Energy"
+      [
+        "base",
+        "Increases the damage of each successive hit to 115% (ATK-based) + 15% (SP-based), and the final strike to 270% (ATK-based).",
+        "Ultimate"
       ],
-      "scalar_stat_shares": {
-        "ATK": 1.0
-      },
-      "default_range": 1,
-      "positional_tile_buff_labels": [],
-      "proximity_aura_buff_labels": [],
-      "proximity_aura_radius": null
-    }
+      [
+        "base",
+        "Increases the damage of each successive hit to 120% (ATK-based) + 15% (SP-based), and the final strike to 280% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "6s into a battle, Sinbad vaults behind his allies and starts assessing his enemies' strengths.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He marks the enemy dealing the most damage as the \"hitter\" and the one taking the most damage as the \"guard.\" These marks last for 30s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Sinbad then charges at the \"hitter\" and then the \"guard\", dealing 120% (ATK-based) + 10% (SP-based) damage to each target 4 times.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The attack also reduces the \"hitter's\" ATK by 45% and increases the \"guard's\" damage taken by 25%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Both debuffs expire when their respective marks expire.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The debuffs are reduces to 20% of the original effect when used against Bosses.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Reduce the \"hitter's\" ATK by 50% and increases the \"guard's\" damage taken by 30%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Reduce the \"hitter's\" ATK by 55% and increases the \"guard's\" damage taken by 35%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Reduce the \"hitter's\" ATK by 60% and increases the \"guard's\" damage taken by 40%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Sinbad swings his double-headed blade twice, dealing 210% (ATK-based) + 20% (SP-based) damage per hit to his target.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each hit to 220% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each hit to 230% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each hit to 240% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 21 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 27 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 33 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Sinbad studies the fighting styles of the \"hitter\" and the \"guard\" to strengthen the debuffs he applies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "If the \"hitter\" deals more normal attack damage, Sinbad's debuff will reduce their ATK SPD by 60; if they deal more skill damage, the debuff will reduce their Energy Recovery efficiency by 60%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "For the \"guard\", if they depend more on healing from allies or themselves, Sinbad's debuff will reduce their Vitality by 60; if they rely more on damage mitigations, the debuff will reduce their Phys DEF and Magic DEF by 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "<!--",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If an enemy is marked as \"hitter\" or \"guard\" in two consecutive assessments, their ATK is further reduced by 20% if marked as \"hitter\", and they take 10% more damage if marked as \"guard\".",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Reduces the \"hitter's\" ATK by an extra 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the \"guard's\" damage taken by an extra 15%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Duo Cut deals 140% (ATK-based) more damage to enemies marked as \"hitter\" or \"guard.\"",
+        "Unlocks at Supreme+"
+      ]
+    ]
   },
   "provenance": {
     "inputs_hash": "6ecca6adff7f5c15f667377c05a234ff95e139af2d23afa4cd32268d9da37ca9",
-    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+    "algorithm_hash": "7ec691a794f40a6218873314d2b4af69905f425b2246d79421228151abdfbfcb"
   }
 }
