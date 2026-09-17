@@ -54,9 +54,11 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
   source data and targeted corrections have different ownership and lifecycle.
 - Persist roster-wide relationships per hero: rejected because those values
   always require the complete roster and duplicate scoring implementations.
-- Use immutable dataclasses between modules: rejected for this migration because
-  conversions recreated the round-trip seam that currently loses analysis
-  detail. Schema-shaped mappings preserve parity with persisted contracts.
+- Use immutable dataclasses between modules: rejected for this migration
+  because conversions recreated the round-trip seam. Later work removed the
+  remaining `_runtime_hero_from_local` reconstruction helper; calibration now
+  consumes ID-keyed `LocalAnalysis` mappings and one schema-native merge
+  owner. Schema-shaped mappings remain the inter-module contract.
 
 ## Consequences
 

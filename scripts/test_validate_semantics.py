@@ -12,7 +12,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries
+from test_helpers import load_working_analysis
 from hero_pipeline.relationships import scoring as gen
 
 import heroes_io as io  # noqa: E402
@@ -28,7 +28,7 @@ def _load_module(name: str, filename: str):
     return sys.modules[spec.name]
 
 
-rs = load_rewrite_summaries()
+rs = load_working_analysis()
 vp = _load_module("validate_processed", "validate_processed.py")
 
 

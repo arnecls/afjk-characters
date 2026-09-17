@@ -12,7 +12,7 @@ from types import SimpleNamespace
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries
+from test_helpers import load_working_analysis
 from hero_pipeline.relationships import scoring as gen
 
 
@@ -56,7 +56,7 @@ def _shield_provider() -> SimpleNamespace:
 
 class ShieldMaxHpSynergyTests(unittest.TestCase):
     def test_shield_does_not_score_for_max_hp_only_receiver(self) -> None:
-        rs = load_rewrite_summaries()
+        rs = load_working_analysis()
 
         receiver = SimpleNamespace(
             title="Scaler - Hero",
@@ -585,7 +585,7 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
     def test_tasi_behavior_flags_slow_first_cast(self) -> None:
         import importlib.util
 
-        rs = load_rewrite_summaries()
+        rs = load_working_analysis()
         text = (Path(__file__).resolve().parent.parent / "Heroes.md").read_text(
             encoding="utf-8"
         )
@@ -696,7 +696,7 @@ class FaramorEnemyGroupingTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         # Earlier tests may stub the cache; force a fresh load from disk.
         gen._BEHAVIOR_TAGS = None
-        cls.rs = load_rewrite_summaries()
+        cls.rs = load_working_analysis()
 
         import heroes_io as io
 
@@ -838,7 +838,7 @@ class DisplaySynergyFallbackTests(unittest.TestCase):
 class ContinuousDamageMatcherTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.rs = load_rewrite_summaries()
+        cls.rs = load_working_analysis()
 
         import heroes_io as io
 

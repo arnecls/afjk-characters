@@ -45,7 +45,7 @@ Task progress (single hero):
 - [ ] 2. Read skill text — hero `source.json` description (active + max-tier upgrades)
 - [ ] 3. Read detected output — effects[], skill_card_tags, benefit_stats (if relevant)
 - [ ] 4. Cross-check display — site/data/heroes.json skillCards; chip polarity in site/js/app.js if tags look right in JSON but wrong on site
-- [ ] 5. Reproduce — hero_from_record + analyze_hero (see debug snippet below)
+- [ ] 5. Reproduce — `analyze_local` on the hero bundle (see debug snippet below)
 - [ ] 6. Classify — missing label / spurious label / wrong label / wrong target / wrong magnitude / display-only
 - [ ] 7. Fix — update the hero's `ai.json` via
   [extract-skill-effects](../extract-skill-effects/SKILL.md); hero_schema.py,
@@ -58,30 +58,21 @@ Task progress (single hero):
 
 ```bash
 python3 - <<'PY'
-import importlib.util, sys
+import sys
 from pathlib import Path
-SCRIPTS = Path("scripts")
-sys.path.insert(0, str(SCRIPTS))
-spec = importlib.util.spec_from_file_location(
-    "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-)
-rs = importlib.util.module_from_spec(spec)
-sys.modules["rewrite_summaries"] = spec.loader.load_module()
-spec.loader.exec_module(rs)
-import heroes_io as io
+sys.path.insert(0, str(Path("scripts")))
+from hero_pipeline.analysis.local import analyze_local
+from hero_pipeline.storage import load_roster_inputs
 
-NAME = "Seth"  # change
-record = next(r for r in io.load_heroes_data()["heroes"] if r.get("name") == NAME)
-hero = rs.hero_from_record(record)
-rs.analyze_hero(hero)
-for sec, sl in sorted(hero.skill_slices.items()):
-    if not sl.effects and not sl.cc_immunities:
-        continue
-    print("===", sec)
-    for e in sl.effects:
-        print(" ", e.category, e.label, e.targeting, e.tier, getattr(e, "numeric", None))
-    for imm in sl.cc_immunities:
-        print(" ", "immunity", imm.immunity_type, imm.targeting)
+HERO_ID = "seth"
+snapshot = load_roster_inputs()
+entry = next(row for row in snapshot["manifest"]["heroes"] if row["id"] == HERO_ID)
+analysis = analyze_local(entry, snapshot["bundles"][HERO_ID])
+for name, skill in analysis["skills"].items():
+    print("===", name)
+    for effect in skill.get("effects") or []:
+        print(" ", effect.get("type"), effect.get("name") or effect.get("label"),
+              effect.get("targeting"))
 PY
 ```
 

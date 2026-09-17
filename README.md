@@ -75,8 +75,9 @@ Enable GitHub Pages once in the repository settings: source **Deploy from a bran
 
 ### Regenerate the views
 
-The ordered `data/roster.json` manifest and the three files under each
-`data/heroes/<hero-id>/` directory are the source of truth. Views are rebuilt
+The ordered `data/roster.json` manifest and the four files under each
+`data/heroes/<hero-id>/` directory (`source.json`, `ai.json`,
+`overrides.json`, `analysis.json`) are the source of truth. Views are rebuilt
 from them with [just](https://github.com/casey/just).
 
 **One-time setup:**

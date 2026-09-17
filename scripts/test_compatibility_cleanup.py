@@ -133,6 +133,12 @@ class CompatibilityCleanupTests(unittest.TestCase):
         self.assertIn("def analyze_working", texts["hero_pipeline/analysis/postprocess.py"])
         helpers = (SCRIPTS / "test_helpers.py").read_text(encoding="utf-8")
         self.assertNotIn("def load_overview_facts", helpers)
+        self.assertNotIn("def load_rewrite_summaries", helpers)
+        self.assertNotIn("def gen_overview", helpers)
+        self.assertIn("def load_working_analysis", helpers)
+        joined_helpers_and_pipeline = joined + "\n" + helpers
+        self.assertNotIn("from hero_pipeline.analysis.overview_facts", joined_helpers_and_pipeline)
+        self.assertNotIn("def _runtime_hero_from_local", joined)
         storage = texts["hero_pipeline/storage.py"]
         self.assertIn('result[entry["id"]] = value', storage)
         self.assertNotIn("display_name", storage.split("def load_walk_speeds", 1)[1][:500])

@@ -12,7 +12,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries
+from test_helpers import load_working_analysis
 from hero_pipeline.relationships import scoring as gen
 
 import json
@@ -37,8 +37,8 @@ def _load_tags() -> dict[str, list[str]]:
     )
 
 
-def _load_rewrite_summaries():
-    return load_rewrite_summaries()
+def _load_working_analysis():
+    return load_working_analysis()
 
 
 def _load_generate_overview():
@@ -68,7 +68,7 @@ class BuffPersistenceTests(unittest.TestCase):
         self.assertEqual(bp.classify_persistence(effect, text), "permanent")
 
     def test_round_trip_persistence_on_effect(self):
-        rs = _load_rewrite_summaries()
+        rs = _load_working_analysis()
         effect = rs.Effect(
             category="buff",
             label="ATK",
@@ -263,7 +263,7 @@ class SidecarTargetingTests(unittest.TestCase):
 class TemporaryBuffSynergyTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        rs = _load_rewrite_summaries()
+        rs = _load_working_analysis()
         go = _load_generate_overview()
         cls.rs = rs
         cls.go = go

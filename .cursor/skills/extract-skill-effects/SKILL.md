@@ -80,27 +80,18 @@ Task progress:
 
 ```bash
 python3 - <<'PY'
-import importlib.util, json, sys
+import sys
 from pathlib import Path
-SCRIPTS = Path("scripts")
-sys.path.insert(0, str(SCRIPTS))
-import heroes_io as io, skill_effects_store as ses
-from hero_pipeline.analysis import serialize as hs
-from hero_pipeline.analysis import behavior as rs
+sys.path.insert(0, str(Path("scripts")))
+from hero_pipeline.analysis.local import analyze_local
+from hero_pipeline.storage import load_roster_inputs
 
-NAME = "Aliceth"  # short or title substring
-raw = io.load_heroes_data()
-record = next(r for r in raw["heroes"] if NAME.lower() in r["title"].lower())
-
-old = rs.hero_from_record(record)
-rs.analyze_hero(old)
-new_doc = ses.export_sidecar_from_hero(old, record)  # replace with your draft
-# Or: build draft manually, then compare processed output:
-new_hero = rs.hero_from_record(record)
-ses.apply_sidecar_to_hero(new_hero, new_doc)
-rs.assign_magnitudes([new_hero], {})
-print("OLD effects:", len(old.effects), "NEW slice effects:",
-      sum(len(s.effects) for s in new_hero.skill_slices.values()))
+HERO_ID = "aliceth"
+snapshot = load_roster_inputs()
+entry = next(row for row in snapshot["manifest"]["heroes"] if row["id"] == HERO_ID)
+analysis = analyze_local(entry, snapshot["bundles"][HERO_ID])
+print("skills", len(analysis["skills"]))
+print("effects", sum(len(skill.get("effects") or []) for skill in analysis["skills"].values()))
 PY
 ```
 

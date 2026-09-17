@@ -29,9 +29,9 @@ def load_rs():
     global _rs
     if _rs is not None:
         return _rs
-    from test_helpers import load_rewrite_summaries
+    from test_helpers import load_working_analysis
 
-    _rs = load_rewrite_summaries()
+    _rs = load_working_analysis()
     sys.modules["rewrite_summaries"] = _rs
     return _rs
 

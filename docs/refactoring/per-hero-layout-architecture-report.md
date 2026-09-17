@@ -34,6 +34,42 @@ analysis uses frozen policy defaults with no discarded policy arguments.
 Walk speed is joined by hero ID. See [ADR 0004](adr/0004-staged-publication.md)
 and [migration deltas](per-hero-layout-migration-deltas.md).
 
+The original review found that the end-to-end pipeline was not schema-first yet.
+
+## Update 2026-09-17 (Hero Split closure)
+
+The four-file bundle is now the only runtime layout:
+
+`source.json`, `ai.json`, `overrides.json`, `analysis.json`.
+
+The mapping flow is:
+
+`bundle -> LocalAnalysis -> CalibratedAnalysis -> relationships -> presentation`.
+
+Calibration no longer reconstructs a `Hero`/`Effect`/`SkillSlice` graph through
+`_runtime_hero_from_local`. Effect conversion/merge has one owner in
+`analysis/schema_effects.py`. Relationship scoring has one owner in
+`relationships/scoring.py`. Tests import that scorer or `load_working_analysis()`
+for detector/behavior helpers; `load_overview_facts` is gone.
+
+Hero-local detection lives in sibling modules under `analysis/` (targeting,
+numeric extraction, conditions, damage, crowd control, merge, chunks,
+post-process). `effects.py` wires those modules. Cassadee path-ultimate
+corrections are typed `overrides.json` data.
+
+Directional complexity of non-test Python under `scripts/` at commit
+`9e49a4f` plus this documentation pass:
+
+- 63 files, 29,118 lines, 1,146 functions, 22 functions over 100 lines,
+  5,720 branch nodes
+- largest production module: `relationships/scoring.py` (3,319 lines)
+- next: `analysis/behavior.py` (2,914), `analysis/scoring_facts.py` (1,870),
+  `analysis/targeting.py` (1,548)
+
+Total line count is still above `main` (23,528). The win is ownership: no
+duplicate `score_synergy`, no reconstruction helper, and no 6,690-line
+`effects.py`. Frozen public-output parity remains the acceptance gate.
+
 The original review found that the end-to-end pipeline was not schema-first yet. The new `hero_pipeline`
 package currently adapts the per-hero layout into the aggregate dictionaries,
 display-name keys, mutable module configuration, and legacy `Hero`/`Effect`

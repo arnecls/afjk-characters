@@ -43,15 +43,20 @@ beneficiaries, and replacements remain exact.
 Record `just analyze` and render wall time plus peak RSS in `tmp/` when a
 phase lands. Do not add a cache unless those numbers show a need.
 
-Measured on 2026-09-17 after the compact schema-native scorer (125 heroes,
-macOS `/usr/bin/time -l`):
+Measured on 2026-09-17 after detector seams (125 heroes, three-run
+median/range, `resource.ru_maxrss` on macOS; `just analyze` with fresh
+caches):
 
-- `just analyze`: 14.71s real, 14.13s user, peak RSS 92.5 MiB
-- `just render`: 1.13s real, 0.86s user, peak RSS 64.1 MiB
+- `just analyze`: median 0.476s wall (range 0.463–0.484s), median peak RSS
+  45.0 MiB (range 44.7–45.0)
+- `just render-heroes` (`views`): median 10.209s wall (range 9.864–10.531s),
+  median peak RSS 84.1 MiB (range 83.1–84.1)
 
-A second `just views` regeneration left generated analysis, Markdown, and CSV
-byte-identical. `site/data/heroes.json` only changes `meta.generated`. Do not
-add a replacement cache from this migration.
+Earlier the same day, a full stale-cache analyze (compact schema-native
+scorer) was 14.71s real, peak RSS 92.5 MiB. A second `just views`
+regeneration left Markdown and CSV byte-identical. `site/data/heroes.json`
+only changes `meta.generated`. That timestamp was restored after the
+benchmarks.
 
 ## Mapping-native analysis
 
@@ -61,9 +66,17 @@ add a replacement cache from this migration.
 - Cycle math reads frozen policy defaults. Ambient `bound_policy` is gone.
 - Twins and other display aliases resolve through the roster manifest.
 - Walk speed is keyed by hero ID in storage, calibration, and behavior.
-- Production synergy scoring lives in `relationships/scoring.py`.
-  `analysis/overview_facts.py` is removed. Relationship scoring keeps module
-  defaults. Config-file overlays remain a later approved change.
+- Production synergy, ranking, beneficiary, replacement, and role-prominence
+  scoring live in `relationships/scoring.py`. Analysis fact extraction lives
+  in `analysis/scoring_facts.py` and does not define `score_synergy`.
+  `analysis/overview_facts.py` is removed. Config-file overlays remain a
+  later approved change.
+- Calibration consumes ID-keyed `LocalAnalysis` mappings. There is no
+  `_runtime_hero_from_local` reconstruction helper.
+- Hero-local detection is split across `analysis/targeting.py`,
+  `numeric.py`, `conditions.py`, `damage.py`, `crowd_control.py`,
+  `effect_merge.py`, `skill_chunks.py`, and `postprocess.py`.
+  `analysis/effects.py` only wires those modules.
 
 ## Phase 8 compatibility boundary
 

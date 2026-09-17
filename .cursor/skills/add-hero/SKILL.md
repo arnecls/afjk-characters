@@ -47,7 +47,7 @@ Task progress:
 - [ ] A2. Register in scripts/sources_web.py HERO_NAMES if Fandom-listed
 - [ ] A3. Run just download; review warnings for this hero
 - [ ] A4. Read raw skill block in the hero's source.json
-- [ ] B1. Run scoped analyze_hero debug snippet
+- [ ] B1. Run scoped `analyze_local` debug snippet
 - [ ] B2. Run scoped gap-scan snippet
 - [ ] B3. Walk sentences per skill; ask user on each unresolved gap
 - [ ] B4. Patch local analysis + regression test; bump ALGORITHM_VERSION if detection changed
@@ -366,30 +366,25 @@ Summarize:
 
 Set `NAME` to the hero's **data name** from `source.json`.
 
-### Scoped analyze_hero
+### Local analysis cache
 
 ```bash
 python3 - <<'PY'
 import sys
 from pathlib import Path
-SCRIPTS = Path("scripts")
-sys.path.insert(0, str(SCRIPTS))
-from hero_pipeline.analysis import behavior as rs
-import heroes_io as io
+sys.path.insert(0, str(Path("scripts")))
+from hero_pipeline.analysis.local import analyze_local
+from hero_pipeline.storage import load_roster_inputs
 
-NAME = "Kazim"  # change to data name
-record = next(r for r in io.load_heroes_data()["heroes"] if r.get("name") == NAME)
-hero = rs.hero_from_record(record)
-rs.analyze_hero(hero)
-for sec, sl in sorted(hero.skill_slices.items()):
-    if not sl.effects and not sl.cc_immunities:
-        continue
-    print("===", sec)
-    for e in sl.effects:
-        print(" ", e.category, e.label, e.targeting, e.tier,
-              getattr(e, "numeric", None))
-    for imm in sl.cc_immunities:
-        print(" ", "immunity", imm.immunity_type, imm.targeting)
+HERO_ID = "kazim"  # change to roster id
+snapshot = load_roster_inputs()
+entry = next(row for row in snapshot["manifest"]["heroes"] if row["id"] == HERO_ID)
+analysis = analyze_local(entry, snapshot["bundles"][HERO_ID])
+for name, skill in analysis["skills"].items():
+    print("===", name)
+    for effect in skill.get("effects") or []:
+        print(" ", effect.get("type"), effect.get("name") or effect.get("label"),
+              effect.get("targeting"), effect.get("value"))
 PY
 ```
 

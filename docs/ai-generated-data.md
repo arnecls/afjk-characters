@@ -33,7 +33,7 @@ staleness checks.
 
 **Source of truth** for effect detection (buffs, debuffs, CC, damage, healing,
 shields, energy, immunities, special provides/requires). The pipeline loads
-these files in `analyze_hero()` instead of regex parsing.
+these files in `analyze_local()` instead of regex parsing.
 
 ### Prompt to Update
 

@@ -5,8 +5,8 @@ from __future__ import annotations
 import types
 
 
-def load_rewrite_summaries():
-    """Return the combined effect/behavior analysis namespace used by tests."""
+def load_working_analysis():
+    """Return detector and behavior helpers for working-analysis tests."""
     import json
     from pathlib import Path
 

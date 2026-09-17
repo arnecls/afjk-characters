@@ -11,12 +11,12 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries
+from test_helpers import load_working_analysis
 from hero_pipeline.relationships import scoring as gen
 
 import heroes_io as io
 
-_rs = load_rewrite_summaries()
+_rs = load_working_analysis()
 
 
 class MergeSourcesTests(unittest.TestCase):

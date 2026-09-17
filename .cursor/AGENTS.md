@@ -275,24 +275,25 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 
 **Skill cards** (site character sheet) — chip tags under each skill summary
 in `site/data/heroes.json` → `sections.skillCards`. Tags are computed during
-`just analyze` from the same `analyze_hero()` pass as processed JSON:
+`just analyze` from `analyze_local()` and stored on the hero-local cache:
 
 - **Damage chips** — labels from `skill_slices[section].effects` (category
   `damage`), not a second pass over raw skill text.
 - **Buff / debuff / CC / immunity chips** — same `skill_slices` effects.
 
 Stored on each skill as `skill_card_tags` in the hero's generated analysis.
-`render_site.py` reads those tags (does not re-derive). After changing
-effects in `data/heroes/<hero-id>/ai.json`, run `just views`
-(analyze + render) so processed JSON and the site stay aligned.
+`scripts/hero_pipeline_cli.py views` reads those tags (does not re-derive).
+After changing effects in `data/heroes/<hero-id>/ai.json`, run `just views`
+so processed JSON and the site stay aligned.
 
 **Skill effect extraction** (AI-authored sidecar, not regex):
 
 - Source of truth: `data/heroes/<hero-id>/ai.json` per hero.
-- `analyze_hero()` loads sidecar via `scripts/skill_effects_store.py`.
+- `analyze_local()` applies `ai.json.skill_effects` through
+  `scripts/skill_effects_store.py`.
 - Each skill entry stores `source_hash`; stale hash fails `just validate`.
 - To fix detection: re-extract with the extract-skill-effects skill — do not
-  edit regex rule tables (removed from `rewrite-summaries.py`).
+  edit regex rule tables.
 
 **Skill summary authoring** (AI-generated, not scripted):
 

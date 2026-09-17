@@ -16,12 +16,12 @@ sys.path.insert(0, str(SCRIPTS))
 
 from hero_pipeline.analysis import serialize as hs
 import heroes_io as io
-from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels, load_rewrite_summaries
+from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels, load_working_analysis
 from hero_pipeline.relationships import scoring as gen
 
 
 def _load_rs():
-    return load_rewrite_summaries()
+    return load_working_analysis()
 
 
 rs = _load_rs()
@@ -1440,6 +1440,10 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("aerial area arrow rain", text)
 
     def test_signature_categories_override_and_calculated(self):
+        from hero_pipeline.analysis.detector_common import prime_curated_cache
+        from hero_pipeline.storage import load_roster_inputs
+
+        prime_curated_cache(load_roster_inputs())
         sig = rs._load_signature_categories()
         self.assertNotIn("signature_override", sig["Aliceth"])
         self.assertEqual(sig["Aliceth"]["signature_calculated"], "ultimate")
