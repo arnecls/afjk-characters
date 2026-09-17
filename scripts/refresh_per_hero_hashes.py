@@ -5,8 +5,8 @@ from __future__ import annotations
 
 import copy
 
-import heroes_io as io
 import skill_effects_store as sidecars
+from hero_pipeline.repository import current_repository
 from hero_pipeline.storage import (
     canonical_hash,
     load_bundles,
@@ -16,15 +16,14 @@ from hero_pipeline.storage import (
 
 
 def main() -> None:
+    repository = current_repository()
     manifest = load_manifest()
     bundles = load_bundles(manifest)
-    raw = io.load_heroes_data()
-    by_title = {hero["title"]: hero for hero in raw["heroes"]}
     changed = 0
     for entry in manifest["heroes"]:
         hero_id = entry["id"]
         bundle = bundles[hero_id]
-        source = by_title[entry["title"]]
+        source = bundle["generated"]["source"]
         ai = copy.deepcopy(bundle["ai"])
         doc = ai.get("skill_effects")
         if doc:
@@ -39,12 +38,7 @@ def main() -> None:
                     skill_doc["source_hash"] = expected
                     changed += 1
             write_json_atomic(
-                (
-                    sidecars.DATA
-                    / "heroes"
-                    / hero_id
-                    / "ai.json"
-                ),
+                repository.heroes_dir / hero_id / "ai.json",
                 ai,
             )
         generated = copy.deepcopy(bundle["generated"])
@@ -64,7 +58,7 @@ def main() -> None:
             }
         )
         write_json_atomic(
-            sidecars.DATA / "heroes" / hero_id / "generated.json",
+            repository.heroes_dir / hero_id / "generated.json",
             generated,
         )
     print(f"Refreshed {changed} skill source hashes")

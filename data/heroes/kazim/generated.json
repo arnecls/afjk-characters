@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "kazim",
   "display_name": "Kazim",
   "source": {
@@ -891,6 +891,129 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "low",
+          "high",
+          "average",
+          "average",
+          "average",
+          "high",
+          "low",
+          "average",
+          "low",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-buffer",
+          "aoe-damage",
+          "battle-start-burst",
+          "high-initial-energy",
+          "invincibility",
+          "mark-target",
+          "mass-cc",
+          "non-ult-utility",
+          "temporary-stat-buffer"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "B",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|Physical": {
+            "magnitude": "high",
+            "weight": 55.0
+          },
+          "cc|Knock up|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Invincible|self": {
+            "magnitude": "high",
+            "weight": 50.0
+          },
+          "debuff|Marked target (focus fire)|Single target": {
+            "magnitude": "average",
+            "weight": 0.0
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.3,
+            "signature_cc": true
+          },
+          "buff|Haste|ally": {
+            "magnitude": "average",
+            "weight": 3.0
+          },
+          "buff|ATK|ally": {
+            "magnitude": "high",
+            "weight": 3.5
+          },
+          "cc|Knock up|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "average",
+            "weight": 2.0
+          },
+          "buff|ATK SPD|self": {
+            "magnitude": "low",
+            "weight": 2.0
+          },
+          "buff|Energy|self": {
+            "magnitude": "average",
+            "weight": 20.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Physical|Area": "average",
+          "ultimate|cc|Knock up|Area": "average",
+          "skill1|buff|Invincible|Self": "average",
+          "skill1|debuff|Marked target (focus fire)|Single target": "average",
+          "skill1|damage|Physical|Single target": "average",
+          "skill1|cc|Stun|Single target": "average",
+          "skill2|buff|Haste|Multiple targets": "average",
+          "skill2|cc|Knock up|Area": "average",
+          "skill2|damage|Physical|Area": "average",
+          "skill4|buff|ATK|Single target": "average",
+          "skill4|cc|Knock up|Single target": "average",
+          "skill4|damage|Max HP-based damage|Single target": "average",
+          "skill5|cc|Knock up|Single target": "average",
+          "skill5|buff|ATK SPD|Self": "average",
+          "skill5|buff|Energy|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": true,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 262.85714285714283,
+          "Max HP-based damage": 4.5
+        },
+        "signature_section": "Skill1"
       }
     },
     "signature_calculated": "skill1"
@@ -898,247 +1021,247 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
           "Enables Knock up from allies via Knock up + early battle (area)"
         ],
-        "score": 16.6875,
-        "provider_id": "zandrok"
+        "score": 16.6875
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (area)"
         ],
-        "score": 14.5,
-        "provider_id": "florabelle"
+        "score": 14.5
       },
       {
+        "provider_id": "nerion",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (area)"
         ],
-        "score": 14.5,
-        "provider_id": "nerion"
+        "score": 14.5
       },
       {
+        "provider_id": "ulmus",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (area)"
         ],
-        "score": 14.5,
-        "provider_id": "ulmus"
+        "score": 14.5
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "Enables Knock up from allies via Knock up (area)"
         ],
-        "score": 10.0,
-        "provider_id": "lucca"
+        "score": 10.0
       },
       {
+        "provider_id": "scarlita",
         "reasons": [
           "Enables Knock up from allies via Knock up (area)"
         ],
-        "score": 10.0,
-        "provider_id": "scarlita"
+        "score": 10.0
       },
       {
+        "provider_id": "cassadee",
         "reasons": [
           "Enables Knock up from allies via Knock up (multiple targets)"
         ],
-        "score": 7.5,
-        "provider_id": "cassadee"
+        "score": 7.5
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 6.705,
-        "provider_id": "smokey-meerky"
+        "score": 6.705
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 5.91,
-        "provider_id": "ravion"
+        "score": 5.91
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`"
         ],
-        "score": 5.625,
-        "provider_id": "lorsan"
+        "score": 5.625
       },
       {
+        "provider_id": "baelran",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "baelran"
+        "score": 5.4375
       },
       {
+        "provider_id": "dionel",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "dionel"
+        "score": 5.4375
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "kordan"
+        "score": 5.4375
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "kulu"
+        "score": 5.4375
       },
       {
+        "provider_id": "lucy",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "lucy"
+        "score": 5.4375
       },
       {
+        "provider_id": "nara",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "nara"
+        "score": 5.4375
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "Enables Knock up from allies via Knock up + wide area (single target)"
         ],
-        "score": 5.4375,
-        "provider_id": "shakir"
+        "score": 5.4375
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK SPD via Haste (all units, average) `signature fuel`",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 4.83,
-        "provider_id": "twins"
+        "score": 4.83
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "dunlingr"
+        "score": 3.75
       },
       {
+        "provider_id": "frieren",
         "reasons": [
           "Enables Knock up from allies via Knock up (single target)"
         ],
-        "score": 3.75,
-        "provider_id": "frieren"
+        "score": 3.75
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "hewynn"
+        "score": 3.75
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "mehira"
+        "score": 3.75
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "mikola"
+        "score": 3.75
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enables Knock up from allies via Knock up (single target)"
         ],
-        "score": 3.75,
-        "provider_id": "reinier"
+        "score": 3.75
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "rolan"
+        "score": 3.75
       },
       {
+        "provider_id": "lumont",
         "reasons": [
           "Enables Knock up from allies via Knock up (single target)"
         ],
-        "score": 3.75,
-        "provider_id": "lumont"
+        "score": 3.75
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "rowan"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 3.1875,
-        "provider_id": "damian"
+        "score": 3.1875
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "ATK SPD via ATK SPD (all units, low) `signature fuel`",
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 2.58,
-        "provider_id": "lyca"
+        "score": 2.58
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`"
         ],
-        "score": 1.875,
-        "provider_id": "isabella"
+        "score": 1.875
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "parisa"
+        "score": 1.5
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "valka"
+        "score": 1.5
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "pandora"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -1357,34 +1480,35 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "twins",
           "score": 1.0,
           "matches": [
             "Haste",
             "ATK"
-          ],
-          "hero_id": "twins"
+          ]
         },
         {
+          "hero_id": "ravion",
           "score": 1.0,
           "matches": [
             "Haste",
             "ATK"
-          ],
-          "hero_id": "ravion"
+          ]
         },
         {
+          "hero_id": "smokey-meerky",
           "score": 1.0,
           "matches": [
             "Haste",
             "ATK"
-          ],
-          "hero_id": "smokey-meerky"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "walker",
           "score": 0.6667,
           "matches": [
             "aoe-damage",
@@ -1392,113 +1516,112 @@
             "mark-target",
             "mass-cc",
             "non-ult-utility"
-          ],
-          "hero_id": "walker"
+          ]
         },
         {
+          "hero_id": "parisa",
           "score": 0.5333,
           "matches": [
             "ally-buffer",
             "aoe-damage",
             "mark-target",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "parisa"
+          ]
         },
         {
+          "hero_id": "alna",
           "score": 0.4,
           "matches": [
             "ally-buffer",
             "aoe-damage",
             "invincibility",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "alna"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "valka",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "valka"
+          ]
         },
         {
+          "hero_id": "nara",
           "score": 1.0,
           "matches": [
             "Physical",
             "Max HP-based damage"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "hodgkin",
           "score": 1.0,
           "matches": [
             "Physical",
             "Max HP-based damage"
-          ],
-          "hero_id": "hodgkin"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "aliceth",
           "score": 1.0,
           "matches": [
             "Marked target (focus fire)"
-          ],
-          "hero_id": "aliceth"
+          ]
         },
         {
+          "hero_id": "vala",
           "score": 1.0,
           "matches": [
             "Marked target (focus fire)"
-          ],
-          "hero_id": "vala"
+          ]
         },
         {
+          "hero_id": "kafra",
           "score": 1.0,
           "matches": [
             "Marked target (focus fire)"
-          ],
-          "hero_id": "kafra"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "zandrok",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock up"
-          ],
-          "hero_id": "zandrok"
+          ]
         },
         {
+          "hero_id": "scarlita",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock up"
-          ],
-          "hero_id": "scarlita"
+          ]
         },
         {
+          "hero_id": "lucca",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock up"
-          ],
-          "hero_id": "lucca"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "zandrok",
           "score": 0.5297,
           "matches": [
             "Crowd Control",
             "Damage",
             "Buffs on allies"
-          ],
-          "hero_id": "zandrok"
+          ]
         }
       ]
     }
@@ -1508,6 +1631,7 @@
     "ai_hash": "4b283c8077dc51233783ccc9b46d1cb318aba750ca2eb04bfa19220928da69e3",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "c1caccda3f75601b5e0e1aa3dc2fa0f344ee1f82e33a1fa4f7728a85972e04d1",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

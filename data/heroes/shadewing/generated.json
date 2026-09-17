@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "shadewing",
   "display_name": "Shadewing",
   "source": {
@@ -838,6 +838,101 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "average",
+          "average",
+          "high",
+          "low",
+          "low",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "dot-specialist",
+          "enemy-debuffer"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A+",
+          "pvp": "A",
+          "dream_realm": "A",
+          "dream_realm_endless": "A"
+        },
+        "effects": {
+          "damage|HP loss": {
+            "magnitude": "low",
+            "weight": 0.25
+          },
+          "damage|Magic": {
+            "magnitude": "low",
+            "weight": 17.391304347826086
+          },
+          "damage|DoT": {
+            "magnitude": "average",
+            "weight": 12.173913043478262
+          },
+          "buff|Energy|self": {
+            "magnitude": "average",
+            "weight": 10.0
+          },
+          "buff|Invincible|self": {
+            "magnitude": "high",
+            "weight": 240.0
+          },
+          "debuff|Phys DEF|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Magic DEF|Single target": {
+            "magnitude": "average",
+            "weight": 5.333333333333333
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "average",
+            "weight": 3.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|HP loss|Single target": "average",
+          "ultimate|damage|Magic|Single target": "average",
+          "ultimate|damage|DoT|Single target": "average",
+          "ultimate|buff|Energy|Self": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill1|damage|DoT|Single target": "average",
+          "skill2|buff|Invincible|Self": "average",
+          "skill2|debuff|Phys DEF|Single target": "average",
+          "skill2|debuff|Magic DEF|Single target": "average",
+          "skill4|buff|Energy|Self": "average",
+          "skill5|buff|Lifedrain|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "HP loss": 0.5625,
+          "Magic": 26.08695652173913,
+          "DoT": 18.26086956521739
+        },
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "ultimate"
@@ -845,435 +940,435 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Energy via Energy (single target, low) `signature fuel`",
           "Enables Continuous damage on enemies via persistent zone"
         ],
-        "score": 21.455,
-        "provider_id": "pandora"
+        "score": 21.455
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK via ATK (area, average)",
           "Energy via Energy (area, low) `signature fuel`",
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 16.33,
-        "provider_id": "smokey-meerky"
+        "score": 16.33
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK via ATK (all units, average)",
           "Enables Continuous damage on enemies via persistent zone"
         ],
-        "score": 15.25,
-        "provider_id": "rolan"
+        "score": 15.25
       },
       {
+        "provider_id": "alna",
         "reasons": [
           "Enables Continuous damage on enemies via persistent zone"
         ],
-        "score": 12.5,
-        "provider_id": "alna"
+        "score": 12.5
       },
       {
+        "provider_id": "frieren",
         "reasons": [
           "Enables Continuous damage on enemies via DoT + Burn"
         ],
-        "score": 12.5,
-        "provider_id": "frieren"
+        "score": 12.5
       },
       {
+        "provider_id": "tasi",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 12.5,
-        "provider_id": "tasi"
+        "score": 12.5
       },
       {
+        "provider_id": "viperian",
         "reasons": [
           "Enables Continuous damage on enemies via persistent zone"
         ],
-        "score": 12.5,
-        "provider_id": "viperian"
+        "score": 12.5
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK via ATK (all units, high)",
           "Enables Continuous damage on enemies via Ally-granted DoT"
         ],
-        "score": 11.875,
-        "provider_id": "mikola"
+        "score": 11.875
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 11.625,
-        "provider_id": "contess"
+        "score": 11.625
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK via ATK (multiple targets, high)",
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 10.035,
-        "provider_id": "ravion"
+        "score": 10.035
       },
       {
+        "provider_id": "faramor",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "faramor"
+        "score": 10.0
       },
       {
+        "provider_id": "brutus",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "brutus"
+        "score": 10.0
       },
       {
+        "provider_id": "bryon",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "bryon"
+        "score": 10.0
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "cecia"
+        "score": 10.0
       },
       {
+        "provider_id": "cryonaia",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "cryonaia"
+        "score": 10.0
       },
       {
+        "provider_id": "cyran",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "cyran"
+        "score": 10.0
       },
       {
+        "provider_id": "daimon",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "daimon"
+        "score": 10.0
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "lorsan"
+        "score": 10.0
       },
       {
+        "provider_id": "pippa",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "pippa"
+        "score": 10.0
       },
       {
+        "provider_id": "voracia",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "voracia"
+        "score": 10.0
       },
       {
+        "provider_id": "yamato-gabumon",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 10.0,
-        "provider_id": "yamato-gabumon"
+        "score": 10.0
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 9.0,
-        "provider_id": "aliceth"
+        "score": 9.0
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "evie"
+        "score": 7.875
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "kazim"
+        "score": 7.875
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "parisa"
+        "score": 7.875
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "sonja"
+        "score": 7.875
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "ATK via ATK (area, high)"
         ],
-        "score": 7.875,
-        "provider_id": "taichi-agumon"
+        "score": 7.875
       },
       {
+        "provider_id": "arden",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 7.5,
-        "provider_id": "arden"
+        "score": 7.5
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`",
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 6.99,
-        "provider_id": "thador"
+        "score": 6.99
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 6.33,
-        "provider_id": "twins"
+        "score": 6.33
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "pang"
+        "score": 5.25
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "perseus"
+        "score": 5.25
       },
       {
+        "provider_id": "satrana",
         "reasons": [
           "Enables Continuous damage on enemies via Ally grant (Sparks)"
         ],
-        "score": 4.0,
-        "provider_id": "satrana"
+        "score": 4.0
       },
       {
+        "provider_id": "talene",
         "reasons": [
           "Enables Continuous damage on enemies via Ally-granted DoT"
         ],
-        "score": 4.0,
-        "provider_id": "talene"
+        "score": 4.0
       },
       {
+        "provider_id": "gunnar",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "gunnar"
+        "score": 3.75
       },
       {
+        "provider_id": "gwyneth",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "gwyneth"
+        "score": 3.75
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "phraesto"
+        "score": 3.75
       },
       {
+        "provider_id": "saida",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "saida"
+        "score": 3.75
       },
       {
+        "provider_id": "zanie",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "zanie"
+        "score": 3.75
       },
       {
+        "provider_id": "berial",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "berial"
+        "score": 3.75
       },
       {
+        "provider_id": "bonnie",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "bonnie"
+        "score": 3.75
       },
       {
+        "provider_id": "granny-dahnie",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "granny-dahnie"
+        "score": 3.75
       },
       {
+        "provider_id": "ludovic",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "ludovic"
+        "score": 3.75
       },
       {
+        "provider_id": "mirael",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "mirael"
+        "score": 3.75
       },
       {
+        "provider_id": "natsu",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "natsu"
+        "score": 3.75
       },
       {
+        "provider_id": "nerion",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "nerion"
+        "score": 3.75
       },
       {
+        "provider_id": "odie",
         "reasons": [
           "Enables Continuous damage on enemies via DoT + Burn"
         ],
-        "score": 3.75,
-        "provider_id": "odie"
+        "score": 3.75
       },
       {
+        "provider_id": "orion",
         "reasons": [
           "Enables Continuous damage on enemies via DoT"
         ],
-        "score": 3.75,
-        "provider_id": "orion"
+        "score": 3.75
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "rowan"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "solise"
+        "score": 2.625
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "dunlingr"
+        "score": 2.625
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "ATK via ATK (arc, low)"
         ],
-        "score": 2.625,
-        "provider_id": "fay"
+        "score": 2.625
       },
       {
+        "provider_id": "hammie",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "hammie"
+        "score": 2.625
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "ATK via ATK (all units, low)"
         ],
-        "score": 2.625,
-        "provider_id": "koko"
+        "score": 2.625
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "ATK via ATK (area, low)"
         ],
-        "score": 2.625,
-        "provider_id": "kordan"
+        "score": 2.625
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "kulu"
+        "score": 2.625
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "lucca"
+        "score": 2.625
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "marilee"
+        "score": 2.625
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK via ATK (single target, low, conditional (frequent))"
         ],
-        "score": 2.2312499999999997,
-        "provider_id": "isabella"
+        "score": 2.2312499999999997
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "lyca"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -1299,78 +1394,78 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "cecia",
           "score": 0.6,
           "matches": [
             "dot-specialist",
             "enemy-debuffer"
-          ],
-          "hero_id": "cecia"
+          ]
         },
         {
+          "hero_id": "nerion",
           "score": 0.576,
           "matches": [
             "dot-specialist",
             "enemy-debuffer"
-          ],
-          "hero_id": "nerion"
+          ]
         },
         {
+          "hero_id": "kruger",
           "score": 0.4,
           "matches": [
             "enemy-debuffer"
-          ],
-          "hero_id": "kruger"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "mehira",
           "score": 1.0,
           "matches": [
             "Magic",
             "DoT"
-          ],
-          "hero_id": "mehira"
+          ]
         },
         {
+          "hero_id": "dunlingr",
           "score": 1.0,
           "matches": [
             "Magic",
             "HP loss"
-          ],
-          "hero_id": "dunlingr"
+          ]
         },
         {
+          "hero_id": "niru",
           "score": 1.0,
           "matches": [
             "Magic",
             "HP loss"
-          ],
-          "hero_id": "niru"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "thador",
           "score": 1.0,
           "matches": [
             "Magic DEF",
             "Phys DEF"
-          ],
-          "hero_id": "thador"
+          ]
         },
         {
+          "hero_id": "eironn",
           "score": 1.0,
           "matches": [
             "Magic DEF"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "sinbad",
           "score": 1.0,
           "matches": [
             "Magic DEF",
             "Phys DEF"
-          ],
-          "hero_id": "sinbad"
+          ]
         }
       ],
       "cc": [],
@@ -1382,6 +1477,7 @@
     "ai_hash": "1272c64a2eb304021961135ab1b2235fa451dc1fac1020dc1863fc564d043f5a",
     "overrides_hash": "12b7bf5945cc37e13a3adb6b3e2bfc82094037f68f971d10144829d2d9fa0dfb",
     "analysis_inputs_hash": "7643f8a9ff6d63fc98c7f40535edee402f2cbdd799f6d67d2a23f5cb99a9160d",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

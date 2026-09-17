@@ -13,10 +13,8 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import heroes_io as io
 import sources_web as sw
 
-OUTPUT = ROOT / "data" / "hero_play_overviews.json"
 REVIEWS_CACHE = ROOT / "data" / "prydwen_reviews_cache.json"
 
 MAX_CHARS = 900
@@ -592,8 +590,13 @@ def summarize_prydwen_review(review: str, hero_name: str = "") -> str:
 
 
 def hero_names_from_processed() -> list[str]:
-    processed = io.load_processed()
-    return sorted(processed["heroes"])
+    from hero_pipeline.storage import load_roster_snapshot
+
+    snapshot = load_roster_snapshot()
+    return sorted(
+        entry["display_name"]
+        for entry in snapshot["manifest"]["heroes"]
+    )
 
 
 def build_play_overviews(
@@ -657,17 +660,10 @@ def main() -> None:
     if args.stdout:
         print(json.dumps(overviews, indent=2, ensure_ascii=False))
     elif not args.dry_run:
-        if (ROOT / "data" / "roster.json").exists():
-            from hero_pipeline.storage import update_ai_field
+        from hero_pipeline.storage import update_ai_field
 
-            update_ai_field("play_overview", overviews)
-            print(f"Wrote {len(overviews)} play overviews to hero-local files")
-        else:
-            OUTPUT.write_text(
-                json.dumps(overviews, indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-            )
-            print(f"Wrote {len(overviews)} play overviews to {OUTPUT}")
+        update_ai_field("play_overview", overviews)
+        print(f"Wrote {len(overviews)} play overviews to hero-local files")
 
     if missing:
         print(f"Missing review/overview for {len(missing)} hero(es):")

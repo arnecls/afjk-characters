@@ -147,6 +147,23 @@
         },
         "behavior": {
           "$ref": "#/$defs/behavior"
+        },
+        "positional_tile_buff_labels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "proximity_aura_buff_labels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "proximity_aura_radius": {
+          "type": ["number", "null"]
+        },
+        "summary_effect_magnitudes": {
+          "$ref": "hero-generated.schema.json#/$defs/effectMagnitudes"
+        },
+        "scoring": {
+          "$ref": "hero-generated.schema.json#/$defs/scoring"
         }
       }
     },

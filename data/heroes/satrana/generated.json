@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "satrana",
   "display_name": "Satrana",
   "source": {
@@ -779,6 +779,110 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "high",
+          "average",
+          "low",
+          "high",
+          "low",
+          "low",
+          "average",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "dot-specialist",
+          "heal-inhibitor",
+          "hp-scaling",
+          "invincibility",
+          "life-drain"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "A",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|Magic": {
+            "magnitude": "average",
+            "weight": 30.0
+          },
+          "buff|Invincible|self": {
+            "magnitude": "high",
+            "weight": 30.0
+          },
+          "cc|Charm|Single target": {
+            "magnitude": "average",
+            "weight": 0.225,
+            "signature_cc": true
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "low",
+            "weight": 0.5
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "high",
+            "weight": 16.666666666666668
+          },
+          "debuff|Vitality|Multiple targets": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Magic damage|ally": {
+            "magnitude": "average",
+            "weight": 2.2
+          },
+          "buff|Damage taken|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Magic|Area": "average",
+          "ultimate|buff|Invincible|Self": "average",
+          "ultimate|cc|Charm|Single target": "average",
+          "skill1|damage|Max HP-based damage|Single target": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill1|buff|Lifedrain|Self": "average",
+          "skill2|debuff|Vitality|Multiple targets": "average",
+          "skill3|buff|Damage taken|Self": "average",
+          "skill4|buff|Magic damage|Single target": "average",
+          "skill4|buff|Damage taken|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": [
+          24.15,
+          "Ally grant (Sparks); allies within 2 tiles deal magic damage via hits + battle start + wide area"
+        ],
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": "Ally grant (Sparks)",
+        "replacement_damage": {
+          "Magic": 96.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -786,47 +890,47 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Max HP via Max HP (single target, low)",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 9.021428571428572,
-        "provider_id": "pandora"
+        "score": 9.021428571428572
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 4.3875,
-        "provider_id": "thador"
+        "score": 4.3875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       }
     ],
     "beneficiaries": [
@@ -844,83 +948,83 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "shakir",
           "score": 0.48,
           "matches": [
             "heal-inhibitor",
             "life-drain"
-          ],
-          "hero_id": "shakir"
+          ]
         },
         {
+          "hero_id": "nazrik",
           "score": 0.4,
           "matches": [
             "heal-inhibitor",
             "hp-scaling"
-          ],
-          "hero_id": "nazrik"
+          ]
         },
         {
+          "hero_id": "zorya",
           "score": 0.4,
           "matches": [
             "hp-scaling",
             "life-drain"
-          ],
-          "hero_id": "zorya"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         },
         {
+          "hero_id": "sylphira",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "sylphira"
+          ]
         },
         {
+          "hero_id": "shemira",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "shemira"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "alna",
           "score": 1.0,
           "matches": [
             "Vitality"
-          ],
-          "hero_id": "alna"
+          ]
         },
         {
+          "hero_id": "dunlingr",
           "score": 1.0,
           "matches": [
             "Vitality"
-          ],
-          "hero_id": "dunlingr"
+          ]
         },
         {
+          "hero_id": "pandora",
           "score": 1.0,
           "matches": [
             "Vitality"
-          ],
-          "hero_id": "pandora"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "mehira",
           "score": 1.0,
           "matches": [
             "Charm"
-          ],
-          "hero_id": "mehira"
+          ]
         }
       ],
       "overall": []
@@ -931,6 +1035,7 @@
     "ai_hash": "fc06ed2948c88466cedb2b3fe468d2455e5e7e7386086ff86769ab0cbd234c6c",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "2170fae33bc23cc4dd292ea969289c8154aec593f1d23b80602f48e213b71785",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

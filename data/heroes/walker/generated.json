@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "walker",
   "display_name": "Walker",
   "source": {
@@ -844,6 +844,112 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "low",
+          "low",
+          "low",
+          "average",
+          "high",
+          "average",
+          "low",
+          "high"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "aoe-damage",
+          "battle-start-burst",
+          "mark-target",
+          "mass-cc",
+          "non-ult-utility"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "C",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.2,
+            "signature_cc": true
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "low",
+            "weight": 0.6
+          },
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 16.0
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Crit|self": {
+            "magnitude": "average",
+            "weight": 2.4
+          },
+          "buff|Crit DMG Boost|self": {
+            "magnitude": "high",
+            "weight": 5.0
+          },
+          "cc|Stun|Arc": {
+            "magnitude": "average",
+            "weight": 0.2,
+            "signature_cc": true
+          },
+          "debuff|Crit Resist|Single target": {
+            "magnitude": "low",
+            "weight": 1.0
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "high",
+            "weight": 10.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Stun|Single target": "average",
+          "ultimate|damage|Max HP-based damage|Single target": "average",
+          "ultimate|damage|Physical|Single target": "average",
+          "skill1|cc|Stun|Single target": "average",
+          "skill1|damage|Physical|Single target": "average",
+          "skill2|buff|Damage taken|Self": "average",
+          "skill2|buff|Crit|Self": "average",
+          "skill2|damage|Physical|Single target": "average",
+          "skill3|buff|Crit DMG Boost|Self": "average",
+          "skill4|cc|Stun|Arc": "average",
+          "skill4|damage|Physical|Arc": "average",
+          "skill4|debuff|Crit Resist|Single target": "average",
+          "skill5|buff|Crit|Self": "average",
+          "skill5|buff|Lifedrain|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 42.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -851,48 +957,48 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Max HP via Max HP (single target, low)",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 9.021428571428572,
-        "provider_id": "pandora"
+        "score": 9.021428571428572
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Crit via Crit (single target, average)",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 7.3875,
-        "provider_id": "thador"
+        "score": 7.3875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       }
     ],
     "beneficiaries": [
@@ -918,6 +1024,7 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "kazim",
           "score": 0.6667,
           "matches": [
             "aoe-damage",
@@ -925,81 +1032,80 @@
             "mark-target",
             "mass-cc",
             "non-ult-utility"
-          ],
-          "hero_id": "kazim"
+          ]
         },
         {
+          "hero_id": "eironn",
           "score": 0.5143,
           "matches": [
             "aoe-damage",
             "battle-start-burst",
             "mass-cc"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "bonnie",
           "score": 0.5143,
           "matches": [
             "aoe-damage",
             "battle-start-burst",
             "non-ult-utility"
-          ],
-          "hero_id": "bonnie"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "nazrik",
           "score": 1.0,
           "matches": [
             "Crit Resist"
-          ],
-          "hero_id": "nazrik"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "phraesto",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "phraesto"
+          ]
         },
         {
+          "hero_id": "callan",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "callan"
+          ]
         }
       ],
       "overall": []
@@ -1010,6 +1116,7 @@
     "ai_hash": "1d6fa3c363920384dde7fbe1b9553e2c768d1180c82f6aae641838f83118e15c",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "cbdbac3bdf5c320a883a9b6a6fe975b468c0c37c8c40ecc30b76d61a6d5b73d8",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

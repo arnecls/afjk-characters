@@ -7,8 +7,15 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from typing import Any
+from typing import Any, Mapping, cast
 
+from .contracts import (
+    GeneratedSynergyRoster,
+    HeroBundle,
+    ProcessedRoster,
+    RosterManifest,
+    RosterSnapshot,
+)
 from .repository import DEFAULT_REPOSITORY, current_repository
 
 ROOT = DEFAULT_REPOSITORY.root
@@ -34,6 +41,27 @@ def _schema_dir() -> Path:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_config() -> dict[str, Any]:
+    """Load pipeline configuration from the active repository."""
+    value = load_json(_repo().config_path)
+    if not isinstance(value, dict):
+        raise ValueError(f"{_repo().config_path} must contain an object")
+    return value
+
+
+def load_seasons() -> list[dict[str, Any]]:
+    """Load season records from the active repository."""
+    value = load_json(_repo().seasons_path)
+    if not isinstance(value, dict):
+        raise ValueError(f"{_repo().seasons_path} must contain an object")
+    seasons = value.get("seasons")
+    if not isinstance(seasons, list):
+        raise ValueError(
+            f"{_repo().seasons_path} must contain a seasons array"
+        )
+    return cast(list[dict[str, Any]], seasons)
 
 
 def save_json(path: Path, value: Any) -> None:
@@ -162,6 +190,40 @@ def load_bundles(
     }
 
 
+def load_roster_snapshot() -> RosterSnapshot:
+    """Load only the canonical manifest and ID-keyed hero bundles."""
+    manifest = load_manifest()
+    return cast(RosterSnapshot, {
+        "manifest": manifest,
+        "bundles": load_bundles(manifest),
+    })
+
+
+def load_ai_field(field: str) -> dict[str, Any]:
+    """Project one AI field by display name for legacy audit utilities."""
+    snapshot = load_roster_snapshot()
+    result: dict[str, Any] = {}
+    for entry in snapshot["manifest"]["heroes"]:
+        value = snapshot["bundles"][entry["id"]]["ai"].get(field)
+        if value is not None:
+            result[entry["display_name"]] = copy.deepcopy(value)
+    return result
+
+
+def load_walk_speeds() -> dict[str, str]:
+    """Return non-null generated walk speeds by display name."""
+    snapshot = load_roster_snapshot()
+    result: dict[str, str] = {}
+    for entry in snapshot["manifest"]["heroes"]:
+        external = snapshot["bundles"][entry["id"]]["generated"].get(
+            "external"
+        ) or {}
+        value = external.get("walk_speed")
+        if value is not None:
+            result[entry["display_name"]] = value
+    return result
+
+
 def _source_records(
     manifest: dict[str, Any],
     bundles: dict[str, dict[str, Any]],
@@ -251,17 +313,48 @@ def load_processed(
     manifest: dict[str, Any] | None = None,
     bundles: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
+    """Return the temporary display-name-keyed compatibility projection."""
     manifest = manifest or load_manifest()
-    bundles = bundles or load_bundles(manifest)
-    heroes = {}
-    for entry in _manifest_entries(manifest):
+    analyses = load_analyses(
+        cast(RosterManifest, manifest),
+        (
+            cast(dict[str, HeroBundle], bundles)
+            if bundles is not None
+            else None
+        ),
+    )
+    return {
+        "heroes": {
+            entry["display_name"]: analyses["heroes"][entry["id"]]
+            for entry in _manifest_entries(manifest)
+        }
+    }
+
+
+def load_analyses(
+    manifest: RosterManifest | None = None,
+    bundles: dict[str, HeroBundle] | None = None,
+) -> ProcessedRoster:
+    """Return persisted generated analyses keyed by immutable hero ID."""
+    legacy_manifest = (
+        cast(dict[str, Any], manifest)
+        if manifest is not None
+        else load_manifest()
+    )
+    legacy_bundles = (
+        cast(dict[str, dict[str, Any]], bundles)
+        if bundles is not None
+        else load_bundles(legacy_manifest)
+    )
+    heroes: dict[str, Any] = {}
+    for entry in _manifest_entries(legacy_manifest):
         analysis = (
-            bundles[entry["id"]]["generated"].get("derived") or {}
+            legacy_bundles[entry["id"]]["generated"].get("derived") or {}
         ).get("analysis")
         if analysis is None:
             raise ValueError(f"missing analysis for {entry['display_name']}")
-        heroes[entry["display_name"]] = copy.deepcopy(analysis)
-    return {"heroes": heroes}
+        heroes[entry["id"]] = copy.deepcopy(analysis)
+    return cast(ProcessedRoster, {"heroes": heroes})
 
 
 def load_synergies(
@@ -334,16 +427,19 @@ def _curated_maps(
 
 
 def load_roster_inputs() -> dict[str, Any]:
-    """Load all hero-local inputs and compatibility projections."""
-    manifest = load_manifest()
-    bundles = load_bundles(manifest)
+    """Load canonical inputs plus projections for legacy callers."""
+    snapshot = load_roster_snapshot()
+    manifest = snapshot["manifest"]
+    bundles = snapshot["bundles"]
+    legacy_manifest = cast(dict[str, Any], manifest)
+    legacy_bundles = cast(dict[str, dict[str, Any]], bundles)
     return {
         "manifest": manifest,
         "bundles": bundles,
-        "raw": load_raw_roster(manifest, bundles),
-        "curated": _curated_maps(manifest, bundles),
-        "processed": load_processed(manifest, bundles),
-        "synergies": load_synergies(manifest, bundles),
+        "raw": load_raw_roster(legacy_manifest, legacy_bundles),
+        "curated": _curated_maps(legacy_manifest, legacy_bundles),
+        "processed": load_processed(legacy_manifest, legacy_bundles),
+        "synergies": load_synergies(legacy_manifest, legacy_bundles),
     }
 
 
@@ -385,13 +481,16 @@ def to_generated_synergies(
 
 
 def roster_generation_hash(
-    processed: dict[str, Any],
-    synergies: dict[str, Any],
-    manifest: dict[str, Any],
+    processed: Mapping[str, Any],
+    synergies: Mapping[str, Any],
+    manifest: Mapping[str, Any],
 ) -> str:
     """Return one hash covering every hero's published derived output."""
     payload = {
-        "ids": [entry["id"] for entry in _manifest_entries(manifest)],
+        "ids": [
+            entry["id"]
+            for entry in _manifest_entries(cast(dict[str, Any], manifest))
+        ],
         "processed": processed,
         "synergies": synergies,
     }
@@ -446,8 +545,8 @@ def publish_documents(documents: list[tuple[Path, Any]]) -> None:
 def _prepared_generated(
     generated: dict[str, Any],
     *,
-    analysis: dict[str, Any] | None,
-    synergies: dict[str, Any] | None,
+    analysis: Mapping[str, Any] | None,
+    synergies: Mapping[str, Any] | None,
     ai: dict[str, Any],
     overrides: dict[str, Any],
     stage: str,
@@ -478,30 +577,38 @@ def _prepared_generated(
 
 
 def write_analysis_outputs(
-    processed: dict[str, Any],
-    synergies: dict[str, Any],
+    processed: ProcessedRoster,
+    synergies: GeneratedSynergyRoster,
     *,
-    manifest: dict[str, Any] | None = None,
-    bundles: dict[str, dict[str, Any]] | None = None,
+    manifest: RosterManifest | None = None,
+    bundles: dict[str, HeroBundle] | None = None,
 ) -> None:
     """Persist analysis and synergy results inside each generated file."""
-    manifest = manifest or load_manifest()
-    bundles = bundles or load_bundles(manifest)
-    generation = roster_generation_hash(processed, synergies, manifest)
+    legacy_manifest = (
+        cast(dict[str, Any], manifest)
+        if manifest is not None
+        else load_manifest()
+    )
+    legacy_bundles = (
+        cast(dict[str, dict[str, Any]], bundles)
+        if bundles is not None
+        else load_bundles(legacy_manifest)
+    )
+    generation = roster_generation_hash(
+        processed,
+        synergies,
+        legacy_manifest,
+    )
     documents: list[tuple[Path, Any]] = []
     prepared: dict[str, dict[str, Any]] = {}
-    for entry in _manifest_entries(manifest):
+    for entry in _manifest_entries(legacy_manifest):
         hero_id = entry["id"]
-        name = entry["display_name"]
         generated = _prepared_generated(
-            bundles[hero_id]["generated"],
-            analysis=processed["heroes"][name],
-            synergies=to_generated_synergies(
-                synergies["heroes"][name],
-                manifest,
-            ),
-            ai=bundles[hero_id]["ai"],
-            overrides=bundles[hero_id]["overrides"],
+            legacy_bundles[hero_id]["generated"],
+            analysis=processed["heroes"][hero_id],
+            synergies=synergies["heroes"][hero_id],
+            ai=legacy_bundles[hero_id]["ai"],
+            overrides=legacy_bundles[hero_id]["overrides"],
             stage="scored",
             generation_hash=generation,
         )
@@ -511,7 +618,7 @@ def write_analysis_outputs(
         documents.append((_path_for(entry, GENERATED_NAME), generated))
     publish_documents(documents)
     for hero_id, generated in prepared.items():
-        bundles[hero_id]["generated"] = generated
+        legacy_bundles[hero_id]["generated"] = generated
 
 
 def write_processed_output(
@@ -525,10 +632,9 @@ def write_processed_output(
     bundles = bundles or load_bundles(manifest)
     for entry in _manifest_entries(manifest):
         hero_id = entry["id"]
-        name = entry["display_name"]
         generated = copy.deepcopy(bundles[hero_id]["generated"])
         generated.setdefault("derived", {})["analysis"] = copy.deepcopy(
-            processed["heroes"][name]
+            processed["heroes"][hero_id]
         )
         generated.setdefault("provenance", {})["analysis_inputs_hash"] = (
             canonical_hash(
@@ -544,21 +650,27 @@ def write_processed_output(
 
 
 def write_synergies_output(
-    synergies: dict[str, Any],
+    synergies: GeneratedSynergyRoster,
     *,
-    manifest: dict[str, Any] | None = None,
-    bundles: dict[str, dict[str, Any]] | None = None,
+    manifest: RosterManifest | None = None,
+    bundles: dict[str, HeroBundle] | None = None,
 ) -> None:
     """Persist only the roster synergy portion of generated data."""
-    manifest = manifest or load_manifest()
-    bundles = bundles or load_bundles(manifest)
-    for entry in _manifest_entries(manifest):
+    legacy_manifest = (
+        cast(dict[str, Any], manifest)
+        if manifest is not None
+        else load_manifest()
+    )
+    legacy_bundles = (
+        cast(dict[str, dict[str, Any]], bundles)
+        if bundles is not None
+        else load_bundles(legacy_manifest)
+    )
+    for entry in _manifest_entries(legacy_manifest):
         hero_id = entry["id"]
-        name = entry["display_name"]
-        generated = copy.deepcopy(bundles[hero_id]["generated"])
-        generated["synergies"] = to_generated_synergies(
-            synergies["heroes"][name],
-            manifest,
+        generated = copy.deepcopy(legacy_bundles[hero_id]["generated"])
+        generated["synergies"] = copy.deepcopy(
+            synergies["heroes"][hero_id]
         )
         generated.setdefault("provenance", {})["stage"] = "scored"
         write_json_atomic(_path_for(entry, GENERATED_NAME), generated)
@@ -740,6 +852,13 @@ def validate_bundle_documents(
                 errors.append(
                     f"unknown beneficiary hero_id {other} on {hero_id}"
                 )
+        for rows in (stored_synergies.get("replacements") or {}).values():
+            for row in rows:
+                other = row.get("hero_id")
+                if other and other not in known_ids:
+                    errors.append(
+                        f"unknown replacement hero_id {other} on {hero_id}"
+                    )
     hashes = {
         (bundles[entry["id"]]["generated"].get("provenance") or {}).get(
             "generation_hash"

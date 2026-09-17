@@ -8,7 +8,7 @@ from hero_pipeline.storage import (
     DATA,
     load_bundles,
     load_manifest,
-    load_roster_inputs,
+    load_roster_snapshot,
     validate_schema_documents,
 )
 
@@ -48,17 +48,19 @@ class PerHeroStorageTests(unittest.TestCase):
             self.assertEqual(bundle["ai"]["schema_version"], 1)
             self.assertEqual(bundle["overrides"]["schema_version"], 1)
 
-    def test_id_based_synergies_round_trip_to_legacy_shape(self) -> None:
-        inputs = load_roster_inputs()
-        self.assertEqual(len(inputs["raw"]["heroes"]), 125)
-        for entry in inputs["manifest"]["heroes"]:
-            stored = inputs["bundles"][entry["id"]]["generated"]["synergies"]
+    def test_snapshot_relationships_remain_id_based(self) -> None:
+        snapshot = load_roster_snapshot()
+        self.assertEqual(len(snapshot["manifest"]["heroes"]), 125)
+        for entry in snapshot["manifest"]["heroes"]:
+            stored = snapshot["bundles"][entry["id"]]["generated"][
+                "synergies"
+            ]
             for row in stored["synergies"]:
                 self.assertIn("provider_id", row)
                 self.assertNotIn("provider", row)
-            legacy = inputs["synergies"]["heroes"][entry["display_name"]]
-            for row in legacy["synergies"]:
-                self.assertIn("provider", row)
+            for row in stored["beneficiaries"]:
+                self.assertIn("hero_id", row)
+                self.assertNotIn("name", row)
 
     def test_schema_and_freshness_validation(self) -> None:
         manifest = load_manifest()

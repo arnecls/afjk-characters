@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "saida",
   "display_name": "Saida",
   "source": {
@@ -880,6 +880,128 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "low",
+          "low",
+          "high",
+          "average",
+          "low",
+          "low",
+          "low",
+          "low",
+          "high",
+          "high"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-shielder",
+          "cheat-death",
+          "energy-inhibitor",
+          "high-initial-energy"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "S+",
+          "pvp": "S",
+          "dream_realm": "A",
+          "dream_realm_endless": "A"
+        },
+        "effects": {
+          "debuff|Energy|Single target": {
+            "magnitude": "high",
+            "weight": 192.0
+          },
+          "cc|Bind|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "cc|Displace|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|Magic": {
+            "magnitude": "high",
+            "weight": 120.0
+          },
+          "buff|Direct healing|skill1": {
+            "magnitude": "high",
+            "weight": 16.666666666666668
+          },
+          "cc|Interrupt|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "low",
+            "weight": 0.4
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Damage dealt|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "cc|Bind|All units": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|DoT": {
+            "magnitude": "high",
+            "weight": 120.0
+          },
+          "buff|Shield|ally": {
+            "magnitude": "high",
+            "weight": 80.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|debuff|Energy|Single target": "average",
+          "ultimate|cc|Bind|Single target": "average",
+          "ultimate|cc|Displace|Single target": "average",
+          "ultimate|damage|Magic|Single target": "average",
+          "skill1|buff|Direct healing|Self": "average",
+          "skill1|cc|Interrupt|Single target": "average",
+          "skill1|damage|Magic|Area": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill3|buff|Damage taken|Self": "average",
+          "skill4|debuff|Damage dealt|Single target": "average",
+          "skill4|cc|Bind|All units": "average",
+          "skill4|damage|Magic|All units": "average",
+          "skill4|damage|DoT|Single target": "average",
+          "skill5|buff|Shield|Multiple targets": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 600.0,
+          "DoT": 24.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -906,105 +1028,105 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "hugin",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "hugin"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 0.5588,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "thador"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "hepler",
           "score": 0.4,
           "matches": [
             "ally-shielder",
             "high-initial-energy"
-          ],
-          "hero_id": "hepler"
+          ]
         },
         {
+          "hero_id": "valka",
           "score": 0.4,
           "matches": [
             "ally-shielder",
             "high-initial-energy"
-          ],
-          "hero_id": "valka"
+          ]
         },
         {
+          "hero_id": "peggy",
           "score": 0.3429,
           "matches": [
             "ally-shielder",
             "high-initial-energy"
-          ],
-          "hero_id": "peggy"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "marcille",
           "score": 0.7345,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "marcille"
+          ]
         },
         {
+          "hero_id": "sylphira",
           "score": 0.6769,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "sylphira"
+          ]
         },
         {
+          "hero_id": "cryonaia",
           "score": 0.6024,
           "matches": [
             "Magic",
             "DoT"
-          ],
-          "hero_id": "cryonaia"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "lily-may",
           "score": 0.6218,
           "matches": [
             "Energy"
-          ],
-          "hero_id": "lily-may"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "eironn",
           "score": 0.975,
           "matches": [
             "Bind",
             "Displace"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "cyran",
           "score": 0.825,
           "matches": [
             "Bind",
             "Displace"
-          ],
-          "hero_id": "cyran"
+          ]
         },
         {
+          "hero_id": "evie",
           "score": 0.8125,
           "matches": [
             "Bind",
             "Displace"
-          ],
-          "hero_id": "evie"
+          ]
         }
       ],
       "overall": []
@@ -1015,6 +1137,7 @@
     "ai_hash": "1ccdc07c122de37f6a95f4a1d5b959ffc764076a28f7ce0a1830da4feeed7e3a",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "50631b712bd490287afd00790f2343924a063ffd347466aa1cb1a71df52d5ae9",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

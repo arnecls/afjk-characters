@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "salazer",
   "display_name": "Salazer",
   "source": {
@@ -746,6 +746,82 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "high",
+          "high",
+          "low",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "execute",
+          "interrupt"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "C",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|Physical": {
+            "magnitude": "average",
+            "weight": 30.0
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "high",
+            "weight": 5.2
+          },
+          "cc|Bind|Single target": {
+            "magnitude": "high",
+            "weight": 0.65,
+            "signature_cc": true
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Direct healing|skill5": {
+            "magnitude": "average",
+            "weight": 15.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Physical|Single target": "average",
+          "ultimate|buff|Lifedrain|Self": "average",
+          "skill1|damage|Physical|Arc": "average",
+          "skill2|cc|Bind|Single target": "average",
+          "skill2|damage|Physical|Single target": "average",
+          "skill3|buff|Damage taken|Self": "average",
+          "skill4|buff|Lifedrain|Self": "average",
+          "skill5|buff|Direct healing|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 95.625
+        },
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "ultimate"
@@ -753,230 +829,230 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "kordan",
         "reasons": [
           "Enemy defense via DEF Penetration (area, high)"
         ],
-        "score": 24.0,
-        "provider_id": "kordan"
+        "score": 24.0
       },
       {
+        "provider_id": "laios",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, high)"
         ],
-        "score": 24.0,
-        "provider_id": "laios"
+        "score": 24.0
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "Enemy defense via DEF Penetration (multiple targets, high)"
         ],
-        "score": 18.0,
-        "provider_id": "aliceth"
+        "score": 18.0
       },
       {
+        "provider_id": "brutus",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "brutus"
+        "score": 16.0
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "Max HP via Max HP (all units, high)",
           "Enemy defense via DEF Penetration (all units, low)"
         ],
-        "score": 14.5,
-        "provider_id": "rolan"
+        "score": 14.5
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "Enemy defense via Damage taken debuff (all units, low)"
         ],
-        "score": 10.0,
-        "provider_id": "kulu"
+        "score": 10.0
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Enemy defense via Phys DEF debuff (all units, low)"
         ],
-        "score": 10.0,
-        "provider_id": "lyca"
+        "score": 10.0
       },
       {
+        "provider_id": "atalanta",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "atalanta"
+        "score": 9.0
       },
       {
+        "provider_id": "kafra",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "kafra"
+        "score": 9.0
       },
       {
+        "provider_id": "kruger",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "kruger"
+        "score": 8.0
       },
       {
+        "provider_id": "temesia",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "temesia"
+        "score": 8.0
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "ravion"
+        "score": 6.0
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "reinier"
+        "score": 6.0
       },
       {
+        "provider_id": "sinbad",
         "reasons": [
           "Enemy defense via Phys DEF debuff (multiple targets, low)"
         ],
-        "score": 6.0,
-        "provider_id": "sinbad"
+        "score": 6.0
       },
       {
+        "provider_id": "zanie",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "zanie"
+        "score": 6.0
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Max HP via Max HP (single target, low)",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 4.5,
-        "provider_id": "pandora"
+        "score": 4.5
       },
       {
+        "provider_id": "berial",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "berial"
+        "score": 3.0
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "cecia"
+        "score": 3.0
       },
       {
+        "provider_id": "cryonaia",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "cryonaia"
+        "score": 3.0
       },
       {
+        "provider_id": "gwyneth",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "gwyneth"
+        "score": 3.0
       },
       {
+        "provider_id": "himmel",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "himmel"
+        "score": 3.0
       },
       {
+        "provider_id": "hodgkin",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "hodgkin"
+        "score": 3.0
       },
       {
+        "provider_id": "indris",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "indris"
+        "score": 3.0
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "isabella"
+        "score": 3.0
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "koko"
+        "score": 3.0
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "mehira"
+        "score": 3.0
       },
       {
+        "provider_id": "nazrik",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "nazrik"
+        "score": 3.0
       },
       {
+        "provider_id": "seth",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "seth"
+        "score": 3.0
       },
       {
+        "provider_id": "shadewing",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "shadewing"
+        "score": 3.0
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "thador"
+        "score": 3.0
       },
       {
+        "provider_id": "thoran",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "thoran"
+        "score": 3.0
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "velara"
+        "score": 3.0
       }
     ],
     "beneficiaries": [
@@ -1002,98 +1078,98 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "odie",
           "score": 0.4,
           "matches": [
             "execute"
-          ],
-          "hero_id": "odie"
+          ]
         },
         {
+          "hero_id": "indris",
           "score": 0.4,
           "matches": [
             "interrupt"
-          ],
-          "hero_id": "indris"
+          ]
         },
         {
+          "hero_id": "reinier",
           "score": 0.25,
           "matches": [
             "interrupt"
-          ],
-          "hero_id": "reinier"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "thador"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "evie",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "evie"
+          ]
         },
         {
+          "hero_id": "eironn",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "arden",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "arden"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "cecia",
           "score": 0.7356,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "cecia"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 0.613,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "alna",
           "score": 0.613,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "alna"
+          ]
         }
       ]
     }
@@ -1103,6 +1179,7 @@
     "ai_hash": "9066b79f1127c21cac1ab10a9888e6349a8cec062df10bcfe5c1d3585909acb1",
     "overrides_hash": "82fbbd30a8454b9d09c10d2a2a797f97e63559db8301a7c5c5142e5fbc90886c",
     "analysis_inputs_hash": "5a9b2897edd84fea60b6a2e4b19ceaabba7cd8040b0dff623ac15f7c999e4869",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

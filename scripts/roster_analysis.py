@@ -1,17 +1,8 @@
 #!/usr/bin/env python3
-"""Shared hero roster analysis with optional disk cache.
-
-Caches the expensive per-hero parse (``analyze_hero``) and behavior build so
-``process_synergies.py`` can reuse work from ``process_heroes.py`` when both
-run in sequence. Cache is keyed on ``heroes_data.json`` and ``heroes_config.json``.
-"""
+"""Shared in-memory hero roster analysis for compatibility callers."""
 
 from __future__ import annotations
 
-import hashlib
-import importlib.util
-import json
-import pickle
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -21,22 +12,6 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
-
-CACHE_PATH = io.DATA / ".roster_analysis_cache.pkl"
-CACHE_VERSION = 71
-
-_rs: Any = None
-_gen: Any = None
-
-
-def _load_module(name: str, filename: str) -> Any:
-    spec = importlib.util.spec_from_file_location(name, SCRIPTS / filename)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
-
 
 def analysis_modules() -> tuple[Any, Any]:
     """Return shared rewrite-summaries and overview modules (single load)."""
@@ -61,56 +36,6 @@ class RosterAnalysis:
     def enabler_matchers(self) -> dict[str, Any]:
         _, gen = analysis_modules()
         return gen._make_enabler_matchers(self.hero_class_by_title)
-
-
-def cache_fingerprint(raw: dict[str, Any]) -> str:
-    """Hash inputs that invalidate roster analysis."""
-    config_text = (
-        io.HEROES_CONFIG.read_text(encoding="utf-8")
-        if io.HEROES_CONFIG.exists()
-        else ""
-    )
-    per_hero_text = "\0".join(
-        f"{path.relative_to(io.DATA)}\0{path.read_text(encoding='utf-8')}"
-        for path in sorted((io.DATA / "heroes").glob("*/*.json"))
-    )
-    sidecar_text = "\0".join(
-        f"{path.name}\0{path.read_text(encoding='utf-8')}"
-        for path in sorted((io.DATA / "skill_effects").glob("*.json"))
-    )
-    payload = json.dumps(raw, sort_keys=True, ensure_ascii=False)
-    digest = hashlib.sha256()
-    digest.update(str(CACHE_VERSION).encode())
-    digest.update(b"\0")
-    digest.update(payload.encode())
-    digest.update(b"\0")
-    digest.update(config_text.encode())
-    digest.update(b"\0")
-    digest.update(per_hero_text.encode())
-    digest.update(b"\0")
-    digest.update(sidecar_text.encode())
-    return digest.hexdigest()
-
-
-def _load_cache(fingerprint: str) -> RosterAnalysis | None:
-    if not CACHE_PATH.exists():
-        return None
-    try:
-        cached_fp, analysis = pickle.loads(CACHE_PATH.read_bytes())
-    except Exception:
-        return None
-    if cached_fp != fingerprint:
-        return None
-    return analysis
-
-
-def _save_cache(fingerprint: str, analysis: RosterAnalysis) -> None:
-    sys.modules["rewrite_summaries"] = analysis_modules()[0]
-    try:
-        payload = pickle.dumps((fingerprint, analysis))
-    except pickle.PicklingError:
-        return
-    CACHE_PATH.write_bytes(payload)
 
 
 def _build_roster_analysis(
@@ -162,29 +87,12 @@ def _build_roster_analysis(
     )
 
 
-def _finalize_cached(
-    cached: RosterAnalysis,
-    role_category_by_title: dict[str, str],
-) -> RosterAnalysis:
-    """Return cached analysis (quality indicators are roster-wide)."""
-    del role_category_by_title
-    return cached
-
-
 def get_roster_analysis(
     raw: dict[str, Any],
     role_category_by_title: dict[str, str],
     *,
     use_cache: bool = True,
 ) -> RosterAnalysis:
-    """Return analyzed roster, loading from disk cache when possible."""
-    fingerprint = cache_fingerprint(raw)
-    if use_cache:
-        cached = _load_cache(fingerprint)
-        if cached is not None:
-            return _finalize_cached(cached, role_category_by_title)
-
-    analysis = _build_roster_analysis(raw, role_category_by_title)
-    if use_cache:
-        _save_cache(fingerprint, analysis)
-    return analysis
+    """Return analyzed roster; ``use_cache`` is retained for API parity."""
+    del use_cache
+    return _build_roster_analysis(raw, role_category_by_title)

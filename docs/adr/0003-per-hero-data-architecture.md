@@ -66,5 +66,6 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
 - Generated documents may use schema version 2 for additive scoring facts and
   a roster generation hash. Hero IDs are immutable and are not recomputed from
   display names.
-- The old analysis and synergy implementations need staged migration before
-  their compatibility adapters can be removed.
+- Scoring and presentation now consume ID-keyed generated analysis. Local
+  analysis still uses a named temporary adapter over the previous object
+  engine until that last internal graph is retired.

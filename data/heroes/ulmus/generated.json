@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "ulmus",
   "display_name": "Ulmus",
   "source": {
@@ -788,6 +788,102 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "low",
+          "low",
+          "low",
+          "low",
+          "low",
+          "high"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-shielder",
+          "aoe-damage",
+          "cheat-death"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "A",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "buff|Direct healing|ultimate": {
+            "magnitude": "low",
+            "weight": 3.0
+          },
+          "cc|Knock up|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 22.0
+          },
+          "cc|Knock back|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Healing over time|skill2": {
+            "magnitude": "low",
+            "weight": 0.35
+          },
+          "buff|Energy|self": {
+            "magnitude": "low",
+            "weight": 4.0
+          },
+          "cc|Bind|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "high",
+            "weight": 4.8
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|buff|Direct healing|Self": "average",
+          "ultimate|cc|Knock up|Area": "average",
+          "ultimate|damage|Physical|Area": "average",
+          "skill1|damage|Physical|Area": "average",
+          "skill1|cc|Knock back|Area": "average",
+          "skill2|buff|Healing over time|Self": "average",
+          "skill2|buff|Energy|Self": "average",
+          "skill4|cc|Bind|Single target": "average",
+          "skill4|damage|Physical|Single target": "average",
+          "skill4|buff|Lifedrain|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 88.0
+        },
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "skill2"
@@ -795,53 +891,53 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "rowan"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.16,
-        "provider_id": "ravion"
+        "score": 2.16
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "twins"
+        "score": 1.08
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "lyca"
+        "score": 1.08
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "pandora"
+        "score": 1.08
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "smokey-meerky"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -859,89 +955,89 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "talene",
           "score": 0.6,
           "matches": [
             "aoe-damage",
             "cheat-death"
-          ],
-          "hero_id": "talene"
+          ]
         },
         {
+          "hero_id": "tasi",
           "score": 0.576,
           "matches": [
             "aoe-damage",
             "cheat-death"
-          ],
-          "hero_id": "tasi"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 0.48,
           "matches": [
             "ally-shielder",
             "cheat-death"
-          ],
-          "hero_id": "saida"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "scarlita",
           "score": 1.0,
           "matches": [
             "Knock back",
             "Knock up"
-          ],
-          "hero_id": "scarlita"
+          ]
         },
         {
+          "hero_id": "kordan",
           "score": 0.8842,
           "matches": [
             "Knock back",
             "Bind",
             "Knock up"
-          ],
-          "hero_id": "kordan"
+          ]
         },
         {
+          "hero_id": "cassadee",
           "score": 0.8842,
           "matches": [
             "Knock back",
             "Knock up"
-          ],
-          "hero_id": "cassadee"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "scarlita",
           "score": 0.5161,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "scarlita"
+          ]
         }
       ]
     }
@@ -951,6 +1047,7 @@
     "ai_hash": "52e3a7c4c8b07edfcf7ae7ac49ec604791a87f73bc8fadad543af04f0bc56a0d",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "266acc1ce029cfb62bb85138fcb11929dce9c02a6f2144c48a5667da20365cd4",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

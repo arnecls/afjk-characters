@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "reinier",
   "display_name": "Reinier",
   "source": {
@@ -762,6 +762,109 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "high",
+          "low",
+          "low",
+          "low",
+          "low",
+          "average",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "backline-assassin",
+          "enemy-grouping",
+          "interrupt"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "B",
+          "dream_realm": "S",
+          "dream_realm_endless": "S"
+        },
+        "effects": {
+          "cc|Displace|Multiple targets": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|Magic": {
+            "magnitude": "high",
+            "weight": 23.529411764705884
+          },
+          "buff|Direct healing|skill1": {
+            "magnitude": "low",
+            "weight": 5.0
+          },
+          "cc|Interrupt|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "cc|Knock up|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "debuff|ATK|Single target": {
+            "magnitude": "average",
+            "weight": 1.2
+          },
+          "debuff|Damage taken|Single target": {
+            "magnitude": "average",
+            "weight": 2.5
+          },
+          "cc|Knock down|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Damage taken|ally": {
+            "magnitude": "low",
+            "weight": 2.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Displace|Multiple targets": "average",
+          "ultimate|damage|Magic|Multiple targets": "average",
+          "skill1|buff|Direct healing|Single target": "average",
+          "skill2|cc|Interrupt|Single target": "average",
+          "skill2|damage|Magic|Single target": "average",
+          "skill2|cc|Knock up|Single target": "average",
+          "skill3|debuff|ATK|Single target": "average",
+          "skill4|debuff|Damage taken|Single target": "average",
+          "skill4|cc|Knock down|Single target": "average",
+          "skill4|damage|Magic|Single target": "average",
+          "skill4|buff|Damage taken|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 37.5
+        },
+        "signature_section": "Skill1"
       }
     },
     "signature_calculated": "ultimate"
@@ -788,177 +891,177 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "koko",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "koko"
+          ]
         },
         {
+          "hero_id": "shakir",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "shakir"
+          ]
         }
       ],
       "energy": [],
       "healing": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "contess",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "contess"
+          ]
         },
         {
+          "hero_id": "twins",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "twins"
+          ]
         }
       ],
       "similar_skills": [
         {
+          "hero_id": "pippa",
           "score": 0.3333,
           "matches": [
             "backline-assassin",
             "enemy-grouping"
-          ],
-          "hero_id": "pippa"
+          ]
         },
         {
+          "hero_id": "indris",
           "score": 0.25,
           "matches": [
             "interrupt"
-          ],
-          "hero_id": "indris"
+          ]
         },
         {
+          "hero_id": "salazer",
           "score": 0.25,
           "matches": [
             "interrupt"
-          ],
-          "hero_id": "salazer"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "kulu",
           "score": 0.8108,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "kulu"
+          ]
         },
         {
+          "hero_id": "pandora",
           "score": 0.6486,
           "matches": [
             "ATK",
             "Damage taken"
-          ],
-          "hero_id": "pandora"
+          ]
         },
         {
+          "hero_id": "sinbad",
           "score": 0.5405,
           "matches": [
             "ATK",
             "Damage taken"
-          ],
-          "hero_id": "sinbad"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "ravion",
           "score": 0.6,
           "matches": [
             "Displace",
             "Knock down"
-          ],
-          "hero_id": "ravion"
+          ]
         },
         {
+          "hero_id": "cyran",
           "score": 0.6,
           "matches": [
             "Displace",
             "Knock down"
-          ],
-          "hero_id": "cyran"
+          ]
         },
         {
+          "hero_id": "lucca",
           "score": 0.6,
           "matches": [
             "Interrupt",
             "Knock down",
             "Knock up"
-          ],
-          "hero_id": "lucca"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "koko",
           "score": 0.7634,
           "matches": [
             "Buffs on allies",
             "Healing"
-          ],
-          "hero_id": "koko"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 0.7385,
           "matches": [
             "Buffs on allies",
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "hewynn",
           "score": 0.7385,
           "matches": [
             "Buffs on allies",
             "Healing"
-          ],
-          "hero_id": "hewynn"
+          ]
         }
       ]
     }
@@ -968,6 +1071,7 @@
     "ai_hash": "aa735837ddfc0df195617201beda9ab4fc00336670870f8b4b96b6967d242e6e",
     "overrides_hash": "e934255b054c62558e4b93bb61b5b8c28c92dc90aef5dfec898380d955082e26",
     "analysis_inputs_hash": "3641e8bcf4af034d9c93eecbfd9825069f8d8a1c111a2964541597d76f0e775b",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

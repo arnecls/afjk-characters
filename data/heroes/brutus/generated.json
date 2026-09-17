@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "brutus",
   "display_name": "Brutus",
   "source": {
@@ -766,6 +766,92 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "average",
+          "average",
+          "average",
+          "average",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "aoe-damage",
+          "cheat-death",
+          "invincibility",
+          "life-drain",
+          "taunt"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "B",
+          "dream_realm": "B",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|DoT": {
+            "magnitude": "average",
+            "weight": 10.0
+          },
+          "debuff|Phys DEF|Area": {
+            "magnitude": "average",
+            "weight": 1.92
+          },
+          "cc|Taunt|Area": {
+            "magnitude": "average",
+            "weight": 0.128,
+            "signature_cc": true
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "average",
+            "weight": 3.5
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "average",
+            "weight": 4.266666666666667
+          },
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 92.44444444444444
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|DoT|Area": "average",
+          "skill1|debuff|Phys DEF|Area": "average",
+          "skill1|cc|Taunt|Area": "average",
+          "skill2|buff|Lifedrain|Self": "average",
+          "skill3|buff|Lifedrain|Self": "average",
+          "skill4|damage|Max HP-based damage|Arc": "average",
+          "skill4|damage|Physical|Arc": "average",
+          "skill4|buff|Lifedrain|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "DoT": 35.714285714285715,
+          "Physical": 106.66666666666667,
+          "Max HP-based damage": 9.600000000000001
+        },
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "ultimate"
@@ -815,115 +901,115 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "antandra",
           "score": 0.4114,
           "matches": [
             "aoe-damage",
             "taunt"
-          ],
-          "hero_id": "antandra"
+          ]
         },
         {
+          "hero_id": "thoran",
           "score": 0.4,
           "matches": [
             "cheat-death",
             "life-drain"
-          ],
-          "hero_id": "thoran"
+          ]
         },
         {
+          "hero_id": "igor",
           "score": 0.375,
           "matches": [
             "aoe-damage",
             "cheat-death",
             "life-drain"
-          ],
-          "hero_id": "igor"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Physical",
             "DoT"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "valka",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "valka"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "laios",
           "score": 1.0,
           "matches": [
             "Phys DEF"
-          ],
-          "hero_id": "laios"
+          ]
         },
         {
+          "hero_id": "kafra",
           "score": 0.8789,
           "matches": [
             "Phys DEF"
-          ],
-          "hero_id": "kafra"
+          ]
         },
         {
+          "hero_id": "atalanta",
           "score": 0.651,
           "matches": [
             "Phys DEF"
-          ],
-          "hero_id": "atalanta"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "phraesto",
           "score": 1.0,
           "matches": [
             "Taunt"
-          ],
-          "hero_id": "phraesto"
+          ]
         },
         {
+          "hero_id": "hepler",
           "score": 1.0,
           "matches": [
             "Taunt"
-          ],
-          "hero_id": "hepler"
+          ]
         },
         {
+          "hero_id": "lumont",
           "score": 1.0,
           "matches": [
             "Taunt"
-          ],
-          "hero_id": "lumont"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "lumont",
           "score": 0.5462,
           "matches": [
             "Crowd Control"
-          ],
-          "hero_id": "lumont"
+          ]
         },
         {
+          "hero_id": "hepler",
           "score": 0.5174,
           "matches": [
             "Crowd Control"
-          ],
-          "hero_id": "hepler"
+          ]
         }
       ]
     }
@@ -933,6 +1019,7 @@
     "ai_hash": "1ada969037f05eac4fb4d219c201ac6a99bd2edc22a043652339f11c87556ca0",
     "overrides_hash": "82fbbd30a8454b9d09c10d2a2a797f97e63559db8301a7c5c5142e5fbc90886c",
     "analysis_inputs_hash": "d8430d7bcc430a54055d9c5940cb33ecd6bd1bc1636d19281ba3a07939149b6f",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

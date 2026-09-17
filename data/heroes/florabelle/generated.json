@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "florabelle",
   "display_name": "Florabelle",
   "source": {
@@ -785,6 +785,89 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "average",
+          "average"
+        ],
+        "summon_effects": [
+          "high",
+          "high",
+          "average"
+        ]
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "aoe-damage",
+          "summoner"
+        ],
+        "summon_profile": {
+          "is_summoner": true,
+          "has_ranged_summons": true
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "C",
+          "dream_realm": "A+",
+          "dream_realm_endless": "A"
+        },
+        "effects": {
+          "cc|Knock up|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "average",
+            "weight": 40.0
+          },
+          "buff|ATK|self": {
+            "magnitude": "average",
+            "weight": 1.8
+          },
+          "buff|Haste|ally": {
+            "magnitude": "high",
+            "weight": 5.5
+          },
+          "buff|Lifedrain|ally": {
+            "magnitude": "high",
+            "weight": 8.333333333333334
+          },
+          "buff|Shield|ally": {
+            "magnitude": "average",
+            "weight": 35.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Knock up|Area": "average",
+          "ultimate|damage|Physical|Area": "average",
+          "skill1|buff|Haste|Owned summons": "average",
+          "skill1|buff|Lifedrain|Owned summons": "average",
+          "skill2|damage|Physical|Multiple targets": "average",
+          "skill3|buff|ATK|Self": "average",
+          "skill4|buff|Shield|All summons": "average",
+          "skill4|buff|Haste|Owned summons": "average",
+          "skill4|buff|Lifedrain|Owned summons": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 160.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "skill1"
@@ -792,435 +875,435 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "kordan",
         "reasons": [
           "Enemy defense via DEF Penetration (area, high)"
         ],
-        "score": 24.0,
-        "provider_id": "kordan"
+        "score": 24.0
       },
       {
+        "provider_id": "laios",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, high)"
         ],
-        "score": 24.0,
-        "provider_id": "laios"
+        "score": 24.0
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "Enemy defense via DEF Penetration (multiple targets, high)"
         ],
-        "score": 23.25,
-        "provider_id": "aliceth"
+        "score": 23.25
       },
       {
+        "provider_id": "peggy",
         "reasons": [
           "ATK via ATK (all summons, high)",
           "DEF via DEF (all summons, high)",
           "Ranged damage via Ranged damage (all summons, low)"
         ],
-        "score": 21.0,
-        "provider_id": "peggy"
+        "score": 21.0
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK via ATK (multiple targets, high)",
           "Haste via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
           "Enemy defense via Phys DEF debuff (single target, average)"
         ],
-        "score": 20.298214285714288,
-        "provider_id": "ravion"
+        "score": 20.298214285714288
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 18.396428571428572,
-        "provider_id": "pandora"
+        "score": 18.396428571428572
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK via ATK (all units, average)",
           "Haste via Haste (single target, average) `signature fuel`",
           "Enemy defense via DEF Penetration (all units, low)"
         ],
-        "score": 18.25,
-        "provider_id": "rolan"
+        "score": 18.25
       },
       {
+        "provider_id": "aurora",
         "reasons": [
           "Haste via Haste (all summons, high)",
           "Damage dealt via Damage dealt (all summons, average)",
           "Damage taken via Damage taken (all summons, low)"
         ],
-        "score": 18.0,
-        "provider_id": "aurora"
+        "score": 18.0
       },
       {
+        "provider_id": "brutus",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "brutus"
+        "score": 16.0
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`",
           "Enemy defense via Phys DEF debuff (all units, low)"
         ],
-        "score": 13.278571428571428,
-        "provider_id": "lyca"
+        "score": 13.278571428571428
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "ATK via ATK (single target, low)",
           "Enemy defense via Damage taken debuff (all units, low)"
         ],
-        "score": 12.625,
-        "provider_id": "kulu"
+        "score": 12.625
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 10.875,
-        "provider_id": "kazim"
+        "score": 10.875
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK via ATK (all units, high)",
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 10.875,
-        "provider_id": "mikola"
+        "score": 10.875
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK via ATK (area, average)",
           "Haste via Haste (area, high) `signature fuel`"
         ],
-        "score": 9.75,
-        "provider_id": "smokey-meerky"
+        "score": 9.75
       },
       {
+        "provider_id": "atalanta",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "atalanta"
+        "score": 9.0
       },
       {
+        "provider_id": "kafra",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "kafra"
+        "score": 9.0
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "Haste via Haste (all units, average) `signature fuel`"
         ],
-        "score": 8.25,
-        "provider_id": "twins"
+        "score": 8.25
       },
       {
+        "provider_id": "kruger",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "kruger"
+        "score": 8.0
       },
       {
+        "provider_id": "temesia",
         "reasons": [
           "Enemy defense via Phys DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "temesia"
+        "score": 8.0
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "contess"
+        "score": 7.875
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "evie"
+        "score": 7.875
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "parisa"
+        "score": 7.875
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "sonja"
+        "score": 7.875
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "ATK via ATK (area, high)"
         ],
-        "score": 7.875,
-        "provider_id": "taichi-agumon"
+        "score": 7.875
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`",
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 7.3875,
-        "provider_id": "thador"
+        "score": 7.3875
       },
       {
+        "provider_id": "hugin",
         "reasons": [
           "ATK via ATK (multiple targets, low)",
           "Haste via Haste (multiple targets, high) `signature fuel`"
         ],
-        "score": 7.125,
-        "provider_id": "hugin"
+        "score": 7.125
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK via ATK (single target, low, conditional (frequent))",
           "Haste via Haste (single target, low) `signature fuel`",
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 6.731249999999999,
-        "provider_id": "isabella"
+        "score": 6.731249999999999
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 6.0,
-        "provider_id": "mehira"
+        "score": 6.0
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "reinier"
+        "score": 6.0
       },
       {
+        "provider_id": "zanie",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "zanie"
+        "score": 6.0
       },
       {
+        "provider_id": "sinbad",
         "reasons": [
           "Enemy defense via Phys DEF debuff (multiple targets, low)"
         ],
-        "score": 6.0,
-        "provider_id": "sinbad"
+        "score": 6.0
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK via ATK (single target, low)",
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 5.625,
-        "provider_id": "dunlingr"
+        "score": 5.625
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "ATK via ATK (all units, low)",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 5.625,
-        "provider_id": "koko"
+        "score": 5.625
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "pang"
+        "score": 5.25
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "Haste via Haste (single target, high) `signature fuel`"
         ],
-        "score": 4.5,
-        "provider_id": "lorsan"
+        "score": 4.5
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "gwyneth",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "gwyneth"
+        "score": 3.0
       },
       {
+        "provider_id": "himmel",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "himmel"
+        "score": 3.0
       },
       {
+        "provider_id": "nazrik",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "nazrik"
+        "score": 3.0
       },
       {
+        "provider_id": "shadewing",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "shadewing"
+        "score": 3.0
       },
       {
+        "provider_id": "thoran",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "thoran"
+        "score": 3.0
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "velara"
+        "score": 3.0
       },
       {
+        "provider_id": "berial",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "berial"
+        "score": 3.0
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "cecia"
+        "score": 3.0
       },
       {
+        "provider_id": "cryonaia",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "cryonaia"
+        "score": 3.0
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "hewynn"
+        "score": 3.0
       },
       {
+        "provider_id": "hodgkin",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "hodgkin"
+        "score": 3.0
       },
       {
+        "provider_id": "indris",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "indris"
+        "score": 3.0
       },
       {
+        "provider_id": "seth",
         "reasons": [
           "Enemy defense via Phys DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "seth"
+        "score": 3.0
       },
       {
+        "provider_id": "gunnar",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "gunnar"
+        "score": 2.625
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "solise"
+        "score": 2.625
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "ATK via ATK (arc, low)"
         ],
-        "score": 2.625,
-        "provider_id": "fay"
+        "score": 2.625
       },
       {
+        "provider_id": "hammie",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "hammie"
+        "score": 2.625
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "lucca"
+        "score": 2.625
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "marilee"
+        "score": 2.625
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.55,
-        "provider_id": "damian"
+        "score": 2.55
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "Haste via Haste (area, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.55,
-        "provider_id": "zandrok"
+        "score": 2.55
       }
     ],
     "beneficiaries": [
@@ -1258,98 +1341,98 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "galahad",
           "score": 0.6,
           "matches": [
             "aoe-damage",
             "summoner"
-          ],
-          "hero_id": "galahad"
+          ]
         },
         {
+          "hero_id": "zanie",
           "score": 0.5,
           "matches": [
             "summoner"
-          ],
-          "hero_id": "zanie"
+          ]
         },
         {
+          "hero_id": "lamentis",
           "score": 0.4,
           "matches": [
             "aoe-damage",
             "summoner"
-          ],
-          "hero_id": "lamentis"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "athalia",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "athalia"
+          ]
         },
         {
+          "hero_id": "kulu",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "kulu"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "zandrok",
           "score": 1.0,
           "matches": [
             "Knock up"
-          ],
-          "hero_id": "zandrok"
+          ]
         },
         {
+          "hero_id": "nerion",
           "score": 1.0,
           "matches": [
             "Knock up"
-          ],
-          "hero_id": "nerion"
+          ]
         },
         {
+          "hero_id": "scarlita",
           "score": 1.0,
           "matches": [
             "Knock up"
-          ],
-          "hero_id": "scarlita"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "kazim",
           "score": 0.5615,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "kazim"
+          ]
         },
         {
+          "hero_id": "pang",
           "score": 0.5538,
           "matches": [
             "Damage"
-          ],
-          "hero_id": "pang"
+          ]
         },
         {
+          "hero_id": "perseus",
           "score": 0.5308,
           "matches": [
             "Damage"
-          ],
-          "hero_id": "perseus"
+          ]
         }
       ]
     }
@@ -1359,6 +1442,7 @@
     "ai_hash": "4c5d8a7e0c4454a54c9faf4543a704982e62f3b19df1e7d0e2ca1fb0bf39da48",
     "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
     "analysis_inputs_hash": "1049edae944064401779d3ac96bcb7ef4bcfff69b2a9e1b3b7795d9202ab5939",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

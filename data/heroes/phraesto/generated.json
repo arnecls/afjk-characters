@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "phraesto",
   "display_name": "Phraesto",
   "source": {
@@ -769,6 +769,102 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "low",
+          "low",
+          "low",
+          "low",
+          "average",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-buffer",
+          "ally-shielder",
+          "aoe-damage",
+          "energy-provider",
+          "heal-inhibitor",
+          "summoner"
+        ],
+        "summon_profile": {
+          "is_summoner": true,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A+",
+          "pvp": "A",
+          "dream_realm": "A",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "damage|Magic": {
+            "magnitude": "high",
+            "weight": 70.0
+          },
+          "buff|Damage taken|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Vitality|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "damage|DoT": {
+            "magnitude": "low",
+            "weight": 27.272727272727273
+          },
+          "buff|Magic DEF|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.45,
+            "signature_cc": true
+          },
+          "cc|Taunt|Single target": {
+            "magnitude": "average",
+            "weight": 0.45,
+            "signature_cc": true
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Magic|Area": "average",
+          "skill1|buff|Damage taken|Single target": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill2|damage|Magic|Single target": "average",
+          "skill2|debuff|Vitality|Single target": "average",
+          "skill2|damage|DoT|Single target": "average",
+          "skill3|buff|Magic DEF|Self": "average",
+          "skill4|cc|Stun|Single target": "average",
+          "skill4|cc|Taunt|Single target": "average",
+          "skill4|damage|Magic|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": [
+          3.75,
+          "Energy recovery speed (contract ally, start of battle)"
+        ],
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 105.0
+        },
+        "signature_section": "Skill1"
       }
     },
     "signature_calculated": "ultimate"
@@ -776,283 +872,283 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "peggy",
         "reasons": [
           "Healing via Healing over time (multiple targets, average)",
           "ATK via ATK (all summons, high)",
           "DEF via DEF (all summons, high)"
         ],
-        "score": 21.0,
-        "provider_id": "peggy"
+        "score": 21.0
       },
       {
+        "provider_id": "aurora",
         "reasons": [
           "Haste via Haste (all summons, high)",
           "Damage dealt via Damage dealt (all summons, average)",
           "Damage taken via Damage taken (all summons, low)"
         ],
-        "score": 18.0,
-        "provider_id": "aurora"
+        "score": 18.0
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Healing via Direct healing (area, low)",
           "Energy via Energy (area, high) `signature fuel`",
           "Magic DEF via Magic DEF (single target, high)"
         ],
-        "score": 9.24,
-        "provider_id": "rowan"
+        "score": 9.24
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "Healing via Direct healing (all units, high)",
           "Magic DEF via DEF (single target, low)"
         ],
-        "score": 6.0,
-        "provider_id": "solise"
+        "score": 6.0
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Shield via Shield (all summons, average)"
         ],
-        "score": 6.0,
-        "provider_id": "florabelle"
+        "score": 6.0
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "Healing via Direct healing (single target, high)",
           "Magic DEF via Magic DEF (single target, low)"
         ],
-        "score": 6.0,
-        "provider_id": "isabella"
+        "score": 6.0
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "Healing via Direct healing (multiple targets, average)",
           "Magic DEF via DEF (multiple targets, average)"
         ],
-        "score": 6.0,
-        "provider_id": "mikola"
+        "score": 6.0
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Healing via Direct healing (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`",
           "Magic DEF via Magic DEF (single target, low)"
         ],
-        "score": 5.58,
-        "provider_id": "twins"
+        "score": 5.58
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Healing via Direct healing (single target, high)",
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 5.58,
-        "provider_id": "pandora"
+        "score": 5.58
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Healing via Healing over time (area, high)",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 5.58,
-        "provider_id": "smokey-meerky"
+        "score": 5.58
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "contess"
+        "score": 4.5
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "evie"
+        "score": 4.5
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "Healing via Direct healing (all units, high)"
         ],
-        "score": 4.5,
-        "provider_id": "rolan"
+        "score": 4.5
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "damian"
+        "score": 4.5
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "Healing via Direct healing (arc, high)"
         ],
-        "score": 4.5,
-        "provider_id": "fay"
+        "score": 4.5
       },
       {
+        "provider_id": "hepler",
         "reasons": [
           "Healing via Healing over time (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "hepler"
+        "score": 4.5
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "Healing via Healing over time (all units, high)"
         ],
-        "score": 4.5,
-        "provider_id": "hewynn"
+        "score": 4.5
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "Healing via Healing over time (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "lorsan"
+        "score": 4.5
       },
       {
+        "provider_id": "ludovic",
         "reasons": [
           "Healing via Direct healing (multiple targets, high)"
         ],
-        "score": 4.5,
-        "provider_id": "ludovic"
+        "score": 4.5
       },
       {
+        "provider_id": "marcille",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "marcille"
+        "score": 4.5
       },
       {
+        "provider_id": "tilaya",
         "reasons": [
           "Magic DEF via DEF (area, high)"
         ],
-        "score": 4.5,
-        "provider_id": "tilaya"
+        "score": 4.5
       },
       {
+        "provider_id": "yamato-gabumon",
         "reasons": [
           "Healing via Healing over time (area, high)"
         ],
-        "score": 4.5,
-        "provider_id": "yamato-gabumon"
+        "score": 4.5
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "gerda",
         "reasons": [
           "Healing via Direct healing (area, average)"
         ],
-        "score": 3.0,
-        "provider_id": "gerda"
+        "score": 3.0
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Healing via Direct healing (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "koko"
+        "score": 3.0
       },
       {
+        "provider_id": "lucius",
         "reasons": [
           "Healing via Direct healing (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "lucius"
+        "score": 3.0
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "Healing via Lifedrain (area, average, conditional (frequent))"
         ],
-        "score": 2.55,
-        "provider_id": "zandrok"
+        "score": 2.55
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.16,
-        "provider_id": "ravion"
+        "score": 2.16
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Healing via Direct healing (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "reinier"
+        "score": 1.5
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Healing via Direct healing (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "velara"
+        "score": 1.5
       },
       {
+        "provider_id": "daimon",
         "reasons": [
           "Healing via Lifedrain (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "daimon"
+        "score": 1.5
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "Healing via Lifedrain (all units, low)"
         ],
-        "score": 1.5,
-        "provider_id": "dunlingr"
+        "score": 1.5
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "Healing via Lifedrain (area, low)"
         ],
-        "score": 1.5,
-        "provider_id": "kordan"
+        "score": 1.5
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "Magic DEF via Magic DEF (area, low)"
         ],
-        "score": 1.5,
-        "provider_id": "lucca"
+        "score": 1.5
       },
       {
+        "provider_id": "nara",
         "reasons": [
           "Healing via Direct healing (area, low)"
         ],
-        "score": 1.5,
-        "provider_id": "nara"
+        "score": 1.5
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "Magic DEF via Magic DEF (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "perseus"
+        "score": 1.5
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "Magic DEF via Magic DEF (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "sonja"
+        "score": 1.5
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "lyca"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -1115,155 +1211,155 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "hugin",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "hugin"
+          ]
         },
         {
+          "hero_id": "koko",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "koko"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "gunnar",
           "score": 0.54,
           "matches": [
             "ally-shielder",
             "aoe-damage",
             "heal-inhibitor"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "galahad",
           "score": 0.4286,
           "matches": [
             "ally-shielder",
             "aoe-damage",
             "summoner"
-          ],
-          "hero_id": "galahad"
+          ]
         },
         {
+          "hero_id": "dunlingr",
           "score": 0.4,
           "matches": [
             "ally-buffer",
             "aoe-damage",
             "heal-inhibitor"
-          ],
-          "hero_id": "dunlingr"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "saida"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Vitality"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Vitality"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Vitality"
-          ],
-          "hero_id": "gwyneth"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "hepler",
           "score": 1.0,
           "matches": [
             "Stun",
             "Taunt"
-          ],
-          "hero_id": "hepler"
+          ]
         },
         {
+          "hero_id": "antandra",
           "score": 0.9556,
           "matches": [
             "Stun",
             "Taunt"
-          ],
-          "hero_id": "antandra"
+          ]
         },
         {
+          "hero_id": "callan",
           "score": 0.6,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "callan"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "antandra",
           "score": 0.6418,
           "matches": [
             "Crowd Control",
             "Buffs on allies"
-          ],
-          "hero_id": "antandra"
+          ]
         },
         {
+          "hero_id": "satrana",
           "score": 0.5623,
           "matches": [
             "Buffs on allies",
             "Debuffs on enemies",
             "Damage"
-          ],
-          "hero_id": "satrana"
+          ]
         },
         {
+          "hero_id": "orion",
           "score": 0.512,
           "matches": [
             "Damage",
             "Debuffs on enemies",
             "Crowd Control"
-          ],
-          "hero_id": "orion"
+          ]
         }
       ]
     }
@@ -1273,6 +1369,7 @@
     "ai_hash": "023a0053d6bbc1c33e29620e0208a883c3dcdb0bc53b6662f915e5a8305b4795",
     "overrides_hash": "e934255b054c62558e4b93bb61b5b8c28c92dc90aef5dfec898380d955082e26",
     "analysis_inputs_hash": "1a1982970fcfd0bdf0a065826d99952e70f4c7c7b895422e99a0f36114292ac6",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

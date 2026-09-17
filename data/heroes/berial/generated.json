@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "berial",
   "display_name": "Berial",
   "source": {
@@ -816,6 +816,102 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "high",
+          "average",
+          "average",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "assassin",
+          "cheat-death",
+          "energy-inhibitor",
+          "stealth",
+          "summoner"
+        ],
+        "summon_profile": {
+          "is_summoner": true,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "B",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "debuff|Energy|Single target": {
+            "magnitude": "average",
+            "weight": 18.0
+          },
+          "damage|DoT": {
+            "magnitude": "high",
+            "weight": 682.6666666666666
+          },
+          "cc|Frighten|Area": {
+            "magnitude": "average",
+            "weight": 8.533333333333333,
+            "signature_cc": true
+          },
+          "damage|Magic": {
+            "magnitude": "average",
+            "weight": 19.0
+          },
+          "buff|Direct healing|skill1": {
+            "magnitude": "average",
+            "weight": 15.0
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "low",
+            "weight": 6.0
+          },
+          "debuff|Damage dealt|Single target": {
+            "magnitude": "low",
+            "weight": 1.0
+          },
+          "debuff|Damage taken|Single target": {
+            "magnitude": "low",
+            "weight": 0.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|debuff|Energy|Single target": "average",
+          "ultimate|damage|DoT|Single target": "average",
+          "ultimate|cc|Frighten|Area": "average",
+          "ultimate|damage|Magic|Area": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill1|buff|Direct healing|Self": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill3|debuff|Damage dealt|Single target": "average",
+          "skill3|debuff|Damage taken|Single target": "average",
+          "skill4|debuff|Energy|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "DoT": 144.0,
+          "Magic": 93.33333333333333
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -823,322 +919,322 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "aurora",
         "reasons": [
           "Haste via Haste (all summons, high)",
           "Damage dealt via Damage dealt (all summons, average)",
           "Damage taken via Damage taken (all summons, low)"
         ],
-        "score": 18.0,
-        "provider_id": "aurora"
+        "score": 18.0
       },
       {
+        "provider_id": "peggy",
         "reasons": [
           "ATK via ATK (all summons, high)",
           "DEF via DEF (all summons, high)"
         ],
-        "score": 18.0,
-        "provider_id": "peggy"
+        "score": 18.0
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "Enemy defense via Magic DEF debuff (all units, high)"
         ],
-        "score": 15.0,
-        "provider_id": "evie"
+        "score": 15.0
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "Enemy defense via DEF Penetration (area, high)"
         ],
-        "score": 12.0,
-        "provider_id": "kordan"
+        "score": 12.0
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`",
           "Enemy defense via Magic DEF debuff (single target, high)"
         ],
-        "score": 10.7829,
-        "provider_id": "thador"
+        "score": 10.7829
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 9.653228571428572,
-        "provider_id": "pandora"
+        "score": 9.653228571428572
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "Enemy defense via DEF Penetration (multiple targets, high)"
         ],
-        "score": 9.0,
-        "provider_id": "aliceth"
+        "score": 9.0
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Enemy defense via DEF Penetration (all units, low)"
         ],
-        "score": 7.7,
-        "provider_id": "rolan"
+        "score": 7.7
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 7.386814285714285,
-        "provider_id": "ravion"
+        "score": 7.386814285714285
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Shield via Shield (all summons, average)"
         ],
-        "score": 6.0,
-        "provider_id": "florabelle"
+        "score": 6.0
       },
       {
+        "provider_id": "sinbad",
         "reasons": [
           "Enemy defense via Magic DEF debuff (multiple targets, average)"
         ],
-        "score": 6.0,
-        "provider_id": "sinbad"
+        "score": 6.0
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`",
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 5.945399999999999,
-        "provider_id": "rowan"
+        "score": 5.945399999999999
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "Enemy defense via Damage taken debuff (all units, low)"
         ],
-        "score": 5.0,
-        "provider_id": "kulu"
+        "score": 5.0
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`",
           "ATK SPD via ATK SPD (all units, low) `signature fuel`",
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 4.990371428571429,
-        "provider_id": "lyca"
+        "score": 4.990371428571429
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Energy via Energy (area, low) `signature fuel`",
           "ATK SPD via Haste (area, high) `signature fuel`"
         ],
-        "score": 4.6818,
-        "provider_id": "smokey-meerky"
+        "score": 4.6818
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 4.2,
-        "provider_id": "mehira"
+        "score": 4.2
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "lorsan"
+        "score": 4.05
       },
       {
+        "provider_id": "carolina",
         "reasons": [
           "Enemy defense via Magic DEF debuff (area, low)"
         ],
-        "score": 4.0,
-        "provider_id": "carolina"
+        "score": 4.0
       },
       {
+        "provider_id": "cassadee",
         "reasons": [
           "Enemy defense via Magic DEF debuff (area, low)"
         ],
-        "score": 4.0,
-        "provider_id": "cassadee"
+        "score": 4.0
       },
       {
+        "provider_id": "laios",
         "reasons": [
           "Enemy defense via Magic DEF debuff (area, low)"
         ],
-        "score": 4.0,
-        "provider_id": "laios"
+        "score": 4.0
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Energy via Energy (multiple targets, low) `signature fuel`",
           "ATK SPD via Haste (all units, average) `signature fuel`"
         ],
-        "score": 3.3318000000000003,
-        "provider_id": "twins"
+        "score": 3.3318000000000003
       },
       {
+        "provider_id": "eironn",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "eironn"
+        "score": 3.0
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "reinier"
+        "score": 3.0
       },
       {
+        "provider_id": "shadewing",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "shadewing"
+        "score": 3.0
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "velara"
+        "score": 3.0
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`",
           "Enemy defense via Magic DEF debuff (single target, low)"
         ],
-        "score": 2.85,
-        "provider_id": "isabella"
+        "score": 2.85
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 2.7,
-        "provider_id": "dunlingr"
+        "score": 2.7
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 2.7,
-        "provider_id": "hewynn"
+        "score": 2.7
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.7,
-        "provider_id": "kazim"
+        "score": 2.7
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.7,
-        "provider_id": "mikola"
+        "score": 2.7
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.2950000000000004,
-        "provider_id": "damian"
+        "score": 2.2950000000000004
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.2950000000000004,
-        "provider_id": "zandrok"
+        "score": 2.2950000000000004
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "cecia"
+        "score": 1.5
       },
       {
+        "provider_id": "cryonaia",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "cryonaia"
+        "score": 1.5
       },
       {
+        "provider_id": "himmel",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "himmel"
+        "score": 1.5
       },
       {
+        "provider_id": "indris",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "indris"
+        "score": 1.5
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "koko"
+        "score": 1.5
       },
       {
+        "provider_id": "kruger",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "kruger"
+        "score": 1.5
       },
       {
+        "provider_id": "nazrik",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "nazrik"
+        "score": 1.5
       },
       {
+        "provider_id": "thoran",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "thoran"
+        "score": 1.5
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.0800000000000003,
-        "provider_id": "parisa"
+        "score": 1.0800000000000003
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.0800000000000003,
-        "provider_id": "valka"
+        "score": 1.0800000000000003
       }
     ],
     "beneficiaries": [
@@ -1164,105 +1260,105 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "bryon",
           "score": 0.5143,
           "matches": [
             "cheat-death",
             "energy-inhibitor",
             "summoner"
-          ],
-          "hero_id": "bryon"
+          ]
         },
         {
+          "hero_id": "vala",
           "score": 0.4,
           "matches": [
             "assassin",
             "energy-inhibitor",
             "stealth"
-          ],
-          "hero_id": "vala"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 0.3429,
           "matches": [
             "cheat-death",
             "energy-inhibitor"
-          ],
-          "hero_id": "saida"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "DoT",
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "cyran",
           "score": 1.0,
           "matches": [
             "DoT",
             "Magic"
-          ],
-          "hero_id": "cyran"
+          ]
         },
         {
+          "hero_id": "cryonaia",
           "score": 1.0,
           "matches": [
             "DoT",
             "Magic"
-          ],
-          "hero_id": "cryonaia"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Energy",
             "Damage dealt"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "pippa",
           "score": 1.0,
           "matches": [
             "Energy"
-          ],
-          "hero_id": "pippa"
+          ]
         },
         {
+          "hero_id": "silvina",
           "score": 1.0,
           "matches": [
             "Energy"
-          ],
-          "hero_id": "silvina"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "silvina",
           "score": 1.0,
           "matches": [
             "Frighten"
-          ],
-          "hero_id": "silvina"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "saida",
           "score": 0.5846,
           "matches": [
             "Debuffs on enemies"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "cryonaia",
           "score": 0.5595,
           "matches": [
             "Damage"
-          ],
-          "hero_id": "cryonaia"
+          ]
         }
       ]
     }
@@ -1272,6 +1368,7 @@
     "ai_hash": "bacdccdfbe1a1bfa116ddd4bb8b844c7b612aecba2eaf6890295c4734d0c0a03",
     "overrides_hash": "3c12c4c81bd13f3402b7b065261e3dfc548b0ddb885a43313aa35f73ad82d98f",
     "analysis_inputs_hash": "dc0cd5301669020ed60675addb72e8fe0b1e846014317f1d91e411fdb6ea0dd6",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

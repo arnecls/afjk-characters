@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "athalia",
   "display_name": "Athalia",
   "source": {
@@ -849,6 +849,97 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "high",
+          "low",
+          "high",
+          "low",
+          "high",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "backline-assassin",
+          "hp-scaling",
+          "non-ult-utility",
+          "self-repositioner"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A+",
+          "pvp": "S",
+          "dream_realm": "B",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|True damage": {
+            "magnitude": "average",
+            "weight": 39.6
+          },
+          "damage|HP loss": {
+            "magnitude": "high",
+            "weight": 4.4
+          },
+          "cc|Knock down|Single target": {
+            "magnitude": "low",
+            "weight": 0.06666666666666667,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "high",
+            "weight": 80.0
+          },
+          "buff|Execution|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "high",
+            "weight": 79.2
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|True damage|Single target": "average",
+          "ultimate|damage|HP loss|Single target": "average",
+          "ultimate|cc|Knock down|Single target": "average",
+          "skill1|damage|Physical|Area": "average",
+          "skill1|buff|Execution|Self": "average",
+          "skill2|damage|Physical|Area": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill2|buff|Damage taken|Self": "average",
+          "skill4|damage|Physical|Area": "average",
+          "skill5|damage|Physical|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "True damage": 150.0,
+          "Physical": 200.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -856,48 +947,48 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Max HP via Max HP (single target, low)",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 9.021428571428572,
-        "provider_id": "pandora"
+        "score": 9.021428571428572
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Crit via Crit (single target, average)",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 7.3875,
-        "provider_id": "thador"
+        "score": 7.3875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       }
     ],
     "beneficiaries": [
@@ -923,104 +1014,104 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "marilee",
           "score": 0.6,
           "matches": [
             "hp-scaling",
             "self-repositioner"
-          ],
-          "hero_id": "marilee"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 0.4,
           "matches": [
             "hp-scaling",
             "non-ult-utility"
-          ],
-          "hero_id": "silven"
+          ]
         },
         {
+          "hero_id": "aliceth",
           "score": 0.4,
           "matches": [
             "backline-assassin",
             "hp-scaling",
             "non-ult-utility"
-          ],
-          "hero_id": "aliceth"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "faramor",
           "score": 1.0,
           "matches": [
             "True damage",
             "Physical"
-          ],
-          "hero_id": "faramor"
+          ]
         },
         {
+          "hero_id": "nara",
           "score": 1.0,
           "matches": [
             "Physical",
             "True damage"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "baelran",
           "score": 0.8126,
           "matches": [
             "True damage",
             "Physical"
-          ],
-          "hero_id": "baelran"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "nara",
           "score": 0.6358,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "baelran",
           "score": 0.6172,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "baelran"
+          ]
         },
         {
+          "hero_id": "faramor",
           "score": 0.5391,
           "matches": [
             "Damage"
-          ],
-          "hero_id": "faramor"
+          ]
         }
       ]
     }
@@ -1030,6 +1121,7 @@
     "ai_hash": "cddf6d1913f0ffe8187b9176bbb042b202ce241c056c4af6482281a6816b5c86",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "f78bf53bab0053dc667e50385e838c5c39702ddf0f3e0738a42f111ccf25a8b7",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

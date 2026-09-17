@@ -2,19 +2,42 @@
 
 from __future__ import annotations
 
-from typing import Any, Mapping
+from typing import Mapping
 
+from ..contracts import (
+    AnalysisContext,
+    AnalyzedHero,
+    LocalAnalysis,
+    ProcessedRoster,
+    RosterSnapshot,
+)
 from .calibrate import calibrate_roster
 from .local import analyze_local
-from .policy import make_policy
+from .policy import make_policy, PipelinePolicy
 
 
 def analyze_roster(
-    snapshot: Mapping[str, Any],
-    config: Mapping[str, Any] | None = None,
-) -> tuple[dict[str, Any], list[Any], dict[str, Any], Mapping[str, Any]]:
+    snapshot: RosterSnapshot,
+    config: Mapping[str, object] | None = None,
+) -> tuple[
+    ProcessedRoster,
+    list[AnalyzedHero],
+    AnalysisContext,
+    PipelinePolicy,
+]:
     """Analyze and calibrate a roster snapshot."""
     policy = make_policy(config)
-    heroes = analyze_local(snapshot, policy)
-    processed, heroes, context = calibrate_roster(heroes, snapshot, policy)
+    local_by_id: dict[str, LocalAnalysis] = {}
+    for entry in snapshot["manifest"]["heroes"]:
+        hero_id = entry["id"]
+        local_by_id[hero_id] = analyze_local(
+            entry,
+            snapshot["bundles"][hero_id],
+            policy["local"],
+        )
+    processed, heroes, context = calibrate_roster(
+        local_by_id,
+        policy["local"],
+        policy["calibration"],
+    )
     return processed, heroes, context, policy

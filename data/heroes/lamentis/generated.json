@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lamentis",
   "display_name": "Lamentis",
   "source": {
@@ -868,6 +868,122 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "average",
+          "high",
+          "average",
+          "high",
+          "average",
+          "average",
+          "low"
+        ],
+        "summon_effects": [
+          "average",
+          "low"
+        ]
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "aoe-damage",
+          "high-initial-energy",
+          "hp-scaling",
+          "mass-cc",
+          "summoner"
+        ],
+        "summon_profile": {
+          "is_summoner": true,
+          "has_ranged_summons": true
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "C",
+          "dream_realm": "A+",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "debuff|Max HP|Multiple targets": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "cc|Stun|Multiple targets": {
+            "magnitude": "average",
+            "weight": 0.25,
+            "signature_cc": true
+          },
+          "damage|Magic": {
+            "magnitude": "high",
+            "weight": 58.57142857142857
+          },
+          "buff|ATK SPD|self": {
+            "magnitude": "average",
+            "weight": 4.285714285714286
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "high",
+            "weight": 2.2
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "average",
+            "weight": 8.0
+          },
+          "damage|True damage": {
+            "magnitude": "average",
+            "weight": 24.0
+          },
+          "buff|Direct healing|skill4": {
+            "magnitude": "average",
+            "weight": 8.0
+          },
+          "buff|Energy|self": {
+            "magnitude": "low",
+            "weight": 2.0
+          },
+          "buff|ATK SPD|ally": {
+            "magnitude": "average",
+            "weight": 4.285714285714286
+          },
+          "buff|Basic stats|ally": {
+            "magnitude": "low",
+            "weight": 0.6
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|debuff|Max HP|Multiple targets": "average",
+          "ultimate|cc|Stun|Multiple targets": "average",
+          "ultimate|damage|Magic|All units": "average",
+          "ultimate|buff|ATK SPD|Self": "average",
+          "ultimate|buff|ATK SPD|Owned summons": "average",
+          "skill1|damage|Max HP-based damage|Single target": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill3|buff|ATK SPD|Self": "average",
+          "skill3|buff|ATK SPD|Owned summons": "average",
+          "skill4|damage|True damage|Single target": "average",
+          "skill4|buff|Direct healing|Self": "average",
+          "skill4|buff|Energy|Self": "average",
+          "skill4|buff|Basic stats|Owned summons": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": true,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 235.71428571428572,
+          "True damage": 54.0
+        },
+        "signature_section": "Ex. Skill"
       }
     },
     "signature_calculated": "ultimate"
@@ -875,298 +991,298 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "peggy",
         "reasons": [
           "Healing via Healing over time (multiple targets, average)",
           "ATK via ATK (all summons, high)",
           "DEF via DEF (all summons, high)",
           "Ranged damage via Ranged damage (all summons, low)"
         ],
-        "score": 24.0,
-        "provider_id": "peggy"
+        "score": 24.0
       },
       {
+        "provider_id": "aurora",
         "reasons": [
           "Haste via Haste (all summons, high)",
           "Damage dealt via Damage dealt (all summons, average)",
           "Damage taken via Damage taken (all summons, low)"
         ],
-        "score": 18.0,
-        "provider_id": "aurora"
+        "score": 18.0
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`",
           "Healing via Healing over time (area, high)",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 11.205,
-        "provider_id": "smokey-meerky"
+        "score": 11.205
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`",
           "Healing via Healing over time (single target, high)"
         ],
-        "score": 10.125,
-        "provider_id": "lorsan"
+        "score": 10.125
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Healing via Direct healing (all units, high)"
         ],
-        "score": 8.25,
-        "provider_id": "rolan"
+        "score": 8.25
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Healing via Healing over time (all units, high)"
         ],
-        "score": 8.25,
-        "provider_id": "hewynn"
+        "score": 8.25
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK SPD via Haste (all units, average) `signature fuel`",
           "Healing via Direct healing (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 7.83,
-        "provider_id": "twins"
+        "score": 7.83
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 7.6875,
-        "provider_id": "damian"
+        "score": 7.6875
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Healing via Direct healing (multiple targets, average)"
         ],
-        "score": 6.75,
-        "provider_id": "mikola"
+        "score": 6.75
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`",
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 6.375,
-        "provider_id": "isabella"
+        "score": 6.375
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Shield via Shield (all summons, average)"
         ],
-        "score": 6.0,
-        "provider_id": "florabelle"
+        "score": 6.0
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 5.91,
-        "provider_id": "ravion"
+        "score": 5.91
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
           "Healing via Lifedrain (area, average, conditional (frequent))"
         ],
-        "score": 5.7375,
-        "provider_id": "zandrok"
+        "score": 5.7375
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`"
         ],
-        "score": 5.625,
-        "provider_id": "shakir"
+        "score": 5.625
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Healing via Direct healing (single target, high)",
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 5.58,
-        "provider_id": "pandora"
+        "score": 5.58
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Healing via Lifedrain (all units, low)"
         ],
-        "score": 5.25,
-        "provider_id": "dunlingr"
+        "score": 5.25
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Healing via Direct healing (area, low)",
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 4.74,
-        "provider_id": "rowan"
+        "score": 4.74
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "contess"
+        "score": 4.5
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "evie"
+        "score": 4.5
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "Healing via Direct healing (all units, high)"
         ],
-        "score": 4.5,
-        "provider_id": "solise"
+        "score": 4.5
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "Healing via Direct healing (arc, high)"
         ],
-        "score": 4.5,
-        "provider_id": "fay"
+        "score": 4.5
       },
       {
+        "provider_id": "hepler",
         "reasons": [
           "Healing via Healing over time (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "hepler"
+        "score": 4.5
       },
       {
+        "provider_id": "ludovic",
         "reasons": [
           "Healing via Direct healing (multiple targets, high)"
         ],
-        "score": 4.5,
-        "provider_id": "ludovic"
+        "score": 4.5
       },
       {
+        "provider_id": "marcille",
         "reasons": [
           "Healing via Direct healing (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "marcille"
+        "score": 4.5
       },
       {
+        "provider_id": "yamato-gabumon",
         "reasons": [
           "Healing via Healing over time (area, high)"
         ],
-        "score": 4.5,
-        "provider_id": "yamato-gabumon"
+        "score": 4.5
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "mehira"
+        "score": 3.75
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "kazim"
+        "score": 3.75
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Healing via Direct healing (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "koko"
+        "score": 3.0
       },
       {
+        "provider_id": "gerda",
         "reasons": [
           "Healing via Direct healing (area, average)"
         ],
-        "score": 3.0,
-        "provider_id": "gerda"
+        "score": 3.0
       },
       {
+        "provider_id": "lucius",
         "reasons": [
           "Healing via Direct healing (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "lucius"
+        "score": 3.0
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "ATK SPD via ATK SPD (all units, low) `signature fuel`",
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 2.58,
-        "provider_id": "lyca"
+        "score": 2.58
       },
       {
+        "provider_id": "daimon",
         "reasons": [
           "Healing via Lifedrain (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "daimon"
+        "score": 1.5
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "Healing via Lifedrain (area, low)"
         ],
-        "score": 1.5,
-        "provider_id": "kordan"
+        "score": 1.5
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Healing via Direct healing (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "reinier"
+        "score": 1.5
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Healing via Direct healing (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "velara"
+        "score": 1.5
       },
       {
+        "provider_id": "nara",
         "reasons": [
           "Healing via Direct healing (area, low)"
         ],
-        "score": 1.5,
-        "provider_id": "nara"
+        "score": 1.5
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "parisa"
+        "score": 1.5
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "valka"
+        "score": 1.5
       }
     ],
     "beneficiaries": [
@@ -1188,100 +1304,100 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "natsu",
           "score": 0.5,
           "matches": [
             "aoe-damage",
             "high-initial-energy",
             "mass-cc"
-          ],
-          "hero_id": "natsu"
+          ]
         },
         {
+          "hero_id": "lucy",
           "score": 0.45,
           "matches": [
             "high-initial-energy",
             "mass-cc",
             "summoner"
-          ],
-          "hero_id": "lucy"
+          ]
         },
         {
+          "hero_id": "florabelle",
           "score": 0.4,
           "matches": [
             "aoe-damage",
             "summoner"
-          ],
-          "hero_id": "florabelle"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "sylphira",
           "score": 0.9493,
           "matches": [
             "Magic",
             "True damage"
-          ],
-          "hero_id": "sylphira"
+          ]
         },
         {
+          "hero_id": "nara",
           "score": 0.8583,
           "matches": [
             "True damage"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "korin",
           "score": 0.8387,
           "matches": [
             "True damage"
-          ],
-          "hero_id": "korin"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "eryndor",
           "score": 1.0,
           "matches": [
             "Max HP"
-          ],
-          "hero_id": "eryndor"
+          ]
         },
         {
+          "hero_id": "nara",
           "score": 1.0,
           "matches": [
             "Max HP"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "natsu",
           "score": 1.0,
           "matches": [
             "Max HP"
-          ],
-          "hero_id": "natsu"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "koko",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "koko"
+          ]
         },
         {
+          "hero_id": "orion",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "orion"
+          ]
         }
       ],
       "overall": []
@@ -1292,6 +1408,7 @@
     "ai_hash": "0a0792a6faea56ae51ac5b881e57b5d8dec9564e789bd804a4a0cd9eeeee4119",
     "overrides_hash": "9b0af27010ddf64ec02cb643fe9389531748a5bb2c807086217eeb81e6acc44e",
     "analysis_inputs_hash": "db13ad9ba5783b16dc5f8b8354939916a1b2ab62e62f2ebcb5664fb91be6a306",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

@@ -373,13 +373,16 @@ def load_synergies() -> dict:
 
 
 def load_config() -> dict:
-    return load_json(HEROES_CONFIG)
+    from hero_pipeline.storage import load_config as load_pipeline_config
+
+    return load_pipeline_config()
 
 
 def load_seasons() -> list[dict]:
     """Return season name/start_date records from data/seasons.json."""
-    payload = load_json(SEASONS_JSON)
-    return list(payload.get("seasons", []))
+    from hero_pipeline.storage import load_seasons as load_pipeline_seasons
+
+    return load_pipeline_seasons()
 
 
 # ---------------------------------------------------------------------------

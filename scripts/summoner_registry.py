@@ -3,12 +3,8 @@
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parent.parent
-PROFILES_PATH = ROOT / "data" / "hero_summon_profiles.json"
 SUMMONER_BEHAVIOR_TAG = "summoner"
 SUMMONING_LABEL = "Summoning"
 
@@ -18,17 +14,9 @@ _profiles: dict[str, dict[str, Any]] | None = None
 def load_profiles() -> dict[str, dict[str, Any]]:
     global _profiles
     if _profiles is None:
-        if (ROOT / "data" / "roster.json").exists():
-            from hero_pipeline.storage import load_roster_inputs
+        from hero_pipeline.storage import load_ai_field
 
-            _profiles = load_roster_inputs()["curated"][
-                "hero_summon_profiles"
-            ]
-            return _profiles
-        if not PROFILES_PATH.exists():
-            _profiles = {}
-        else:
-            _profiles = json.loads(PROFILES_PATH.read_text(encoding="utf-8"))
+        _profiles = load_ai_field("summon_profile")
     return _profiles
 
 

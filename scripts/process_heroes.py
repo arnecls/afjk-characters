@@ -21,7 +21,6 @@ sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
 import hero_schema as hs
-from process_config import apply_config
 from roster_analysis import analysis_modules, get_roster_analysis
 
 
@@ -93,7 +92,7 @@ def build_processed(data: dict) -> dict:
 def main() -> None:
     from hero_pipeline.pipeline import analyze
 
-    processed, synergies = analyze()
+    processed, _synergies = analyze()
     print(
         f"Wrote analysis for {len(processed['heroes'])} heroes "
         f"({sum(1 for p in processed['heroes'].values() if p['is_energy_provider'])} energy providers)"

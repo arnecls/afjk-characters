@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "niru",
   "display_name": "Niru",
   "source": {
@@ -680,6 +680,88 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "high",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-healer",
+          "assassin",
+          "battle-start-ult",
+          "heal-inhibitor",
+          "hp-scaling"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "A",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|HP loss": {
+            "magnitude": "low",
+            "weight": 0.030000000000000002
+          },
+          "damage|Magic": {
+            "magnitude": "high",
+            "weight": 40.0
+          },
+          "debuff|Healing|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "skill1|damage|HP loss|Single target": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill2|damage|Magic|All units": "average",
+          "skill5|debuff|Healing|Single target": "average"
+        },
+        "named_allies": {
+          "provides|Named ally on team|supreme+": {
+            "ids": [
+              "daimon",
+              "shemira"
+            ],
+            "grants": [
+              [
+                "Phys DEF",
+                "high"
+              ],
+              [
+                "Magic DEF",
+                "high"
+              ]
+            ]
+          }
+        },
+        "start_of_battle_output": true,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "HP loss": 0.04499999999999999,
+          "Magic": 86.84210526315789
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -687,704 +769,704 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "callan",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "callan"
+        "score": 7.5
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "dunlingr"
+        "score": 7.5
       },
       {
+        "provider_id": "eryndor",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "eryndor"
+        "score": 7.5
       },
       {
+        "provider_id": "galahad",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "galahad"
+        "score": 7.5
       },
       {
+        "provider_id": "gunnar",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "gunnar"
+        "score": 7.5
       },
       {
+        "provider_id": "himmel",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "himmel"
+        "score": 7.5
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "kulu"
+        "score": 7.5
       },
       {
+        "provider_id": "lamentis",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "lamentis"
+        "score": 7.5
       },
       {
+        "provider_id": "ludovic",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "ludovic"
+        "score": 7.5
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "lyca"
+        "score": 7.5
       },
       {
+        "provider_id": "marcille",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "marcille"
+        "score": 7.5
       },
       {
+        "provider_id": "saida",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "saida"
+        "score": 7.5
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "solise"
+        "score": 7.5
       },
       {
+        "provider_id": "alsa",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "alsa"
+        "score": 7.5
       },
       {
+        "provider_id": "igor",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "igor"
+        "score": 7.5
       },
       {
+        "provider_id": "lucy",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "lucy"
+        "score": 7.5
       },
       {
+        "provider_id": "rhys",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "rhys"
+        "score": 7.5
       },
       {
+        "provider_id": "scarlita",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "scarlita"
+        "score": 7.5
       },
       {
+        "provider_id": "viperian",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 7.5,
-        "provider_id": "viperian"
+        "score": 7.5
       },
       {
+        "provider_id": "alna",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "alna"
+        "score": 6.0
       },
       {
+        "provider_id": "athalia",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "athalia"
+        "score": 6.0
       },
       {
+        "provider_id": "aurora",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "aurora"
+        "score": 6.0
       },
       {
+        "provider_id": "baelran",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "baelran"
+        "score": 6.0
       },
       {
+        "provider_id": "bonnie",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "bonnie"
+        "score": 6.0
       },
       {
+        "provider_id": "cassadee",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "cassadee"
+        "score": 6.0
       },
       {
+        "provider_id": "cyran",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "cyran"
+        "score": 6.0
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "damian"
+        "score": 6.0
       },
       {
+        "provider_id": "eironn",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "eironn"
+        "score": 6.0
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "twins"
+        "score": 6.0
       },
       {
+        "provider_id": "faramor",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "faramor"
+        "score": 6.0
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "fay"
+        "score": 6.0
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "florabelle"
+        "score": 6.0
       },
       {
+        "provider_id": "frieren",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "frieren"
+        "score": 6.0
       },
       {
+        "provider_id": "gwyneth",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "gwyneth"
+        "score": 6.0
       },
       {
+        "provider_id": "hepler",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "hepler"
+        "score": 6.0
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "koko"
+        "score": 6.0
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "kordan"
+        "score": 6.0
       },
       {
+        "provider_id": "kruger",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "kruger"
+        "score": 6.0
       },
       {
+        "provider_id": "nerion",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "nerion"
+        "score": 6.0
       },
       {
+        "provider_id": "orion",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "orion"
+        "score": 6.0
       },
       {
+        "provider_id": "peggy",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "peggy"
+        "score": 6.0
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "phraesto"
+        "score": 6.0
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "ravion"
+        "score": 6.0
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "rolan"
+        "score": 6.0
       },
       {
+        "provider_id": "satrana",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "satrana"
+        "score": 6.0
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "shakir"
+        "score": 6.0
       },
       {
+        "provider_id": "shemira",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "shemira"
+        "score": 6.0
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "sonja"
+        "score": 6.0
       },
       {
+        "provider_id": "sylphira",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "sylphira"
+        "score": 6.0
       },
       {
+        "provider_id": "talene",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "talene"
+        "score": 6.0
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "thador"
+        "score": 6.0
       },
       {
+        "provider_id": "thoran",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "thoran"
+        "score": 6.0
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "valka"
+        "score": 6.0
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "zandrok"
+        "score": 6.0
       },
       {
+        "provider_id": "antandra",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "antandra"
+        "score": 6.0
       },
       {
+        "provider_id": "arden",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "arden"
+        "score": 6.0
       },
       {
+        "provider_id": "atalanta",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "atalanta"
+        "score": 6.0
       },
       {
+        "provider_id": "berial",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "berial"
+        "score": 6.0
       },
       {
+        "provider_id": "carolina",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "carolina"
+        "score": 6.0
       },
       {
+        "provider_id": "dionel",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "dionel"
+        "score": 6.0
       },
       {
+        "provider_id": "gerda",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "gerda"
+        "score": 6.0
       },
       {
+        "provider_id": "hodgkin",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "hodgkin"
+        "score": 6.0
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "isabella"
+        "score": 6.0
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "kazim"
+        "score": 6.0
       },
       {
+        "provider_id": "korin",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "korin"
+        "score": 6.0
       },
       {
+        "provider_id": "lenya",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "lenya"
+        "score": 6.0
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "lucca"
+        "score": 6.0
       },
       {
+        "provider_id": "lucius",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "lucius"
+        "score": 6.0
       },
       {
+        "provider_id": "lumont",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "lumont"
+        "score": 6.0
       },
       {
+        "provider_id": "mirael",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "mirael"
+        "score": 6.0
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "pang"
+        "score": 6.0
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "perseus"
+        "score": 6.0
       },
       {
+        "provider_id": "pippa",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "pippa"
+        "score": 6.0
       },
       {
+        "provider_id": "soren",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "soren"
+        "score": 6.0
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "taichi-agumon"
+        "score": 6.0
       },
       {
+        "provider_id": "tasi",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "tasi"
+        "score": 6.0
       },
       {
+        "provider_id": "temesia",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "temesia"
+        "score": 6.0
       },
       {
+        "provider_id": "ulmus",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "ulmus"
+        "score": 6.0
       },
       {
+        "provider_id": "valen",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "valen"
+        "score": 6.0
       },
       {
+        "provider_id": "voracia",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "voracia"
+        "score": 6.0
       },
       {
+        "provider_id": "yamato-gabumon",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "yamato-gabumon"
+        "score": 6.0
       },
       {
+        "provider_id": "zorya",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 6.0,
-        "provider_id": "zorya"
+        "score": 6.0
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "Enables Enemy defeat via Instant defeat"
         ],
-        "score": 5.0,
-        "provider_id": "aliceth"
+        "score": 5.0
       },
       {
+        "provider_id": "cryonaia",
         "reasons": [
           "Enables Enemy defeat via Instant defeat"
         ],
-        "score": 5.0,
-        "provider_id": "cryonaia"
+        "score": 5.0
       },
       {
+        "provider_id": "odie",
         "reasons": [
           "Enables Enemy defeat via Instant defeat"
         ],
-        "score": 5.0,
-        "provider_id": "odie"
+        "score": 5.0
       },
       {
+        "provider_id": "harak",
         "reasons": [
           "Enables Enemy defeat via Instant defeat"
         ],
-        "score": 5.0,
-        "provider_id": "harak"
+        "score": 5.0
       },
       {
+        "provider_id": "brutus",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "brutus"
+        "score": 4.5
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "reinier"
+        "score": 4.5
       },
       {
+        "provider_id": "tilaya",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "tilaya"
+        "score": 4.5
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "cecia"
+        "score": 4.5
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "marilee"
+        "score": 4.5
       },
       {
+        "provider_id": "natsu",
         "reasons": [
           "Enables Enemy defeat via AoE magic (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "natsu"
+        "score": 4.5
       },
       {
+        "provider_id": "salazer",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "salazer"
+        "score": 4.5
       },
       {
+        "provider_id": "walker",
         "reasons": [
           "Enables Enemy defeat via AoE physical (kills)"
         ],
-        "score": 4.5,
-        "provider_id": "walker"
+        "score": 4.5
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "Enables Enemy defeat via HP threshold strike"
         ],
-        "score": 4.0,
-        "provider_id": "mehira"
+        "score": 4.0
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "Enables Enemy defeat via Marked target (focus fire)"
         ],
-        "score": 3.5,
-        "provider_id": "parisa"
+        "score": 3.5
       },
       {
+        "provider_id": "sinbad",
         "reasons": [
           "Enables Enemy defeat via Marked target (focus fire)"
         ],
-        "score": 3.5,
-        "provider_id": "sinbad"
+        "score": 3.5
       },
       {
+        "provider_id": "kafra",
         "reasons": [
           "Enables Enemy defeat via Marked target (focus fire)"
         ],
-        "score": 3.5,
-        "provider_id": "kafra"
+        "score": 3.5
       },
       {
+        "provider_id": "silvina",
         "reasons": [
           "Enables Enemy defeat via Marked target (focus fire)"
         ],
-        "score": 3.5,
-        "provider_id": "silvina"
+        "score": 3.5
       },
       {
+        "provider_id": "vala",
         "reasons": [
           "Enables Enemy defeat via Marked target (focus fire)"
         ],
-        "score": 3.5,
-        "provider_id": "vala"
+        "score": 3.5
       }
     ],
     "beneficiaries": [
@@ -1406,78 +1488,78 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "nara",
           "score": 0.5143,
           "matches": [
             "ally-healer",
             "assassin",
             "heal-inhibitor"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "isabella",
           "score": 0.4114,
           "matches": [
             "ally-healer",
             "heal-inhibitor"
-          ],
-          "hero_id": "isabella"
+          ]
         },
         {
+          "hero_id": "nazrik",
           "score": 0.3333,
           "matches": [
             "heal-inhibitor",
             "hp-scaling"
-          ],
-          "hero_id": "nazrik"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "dunlingr",
           "score": 1.0,
           "matches": [
             "Magic",
             "HP loss"
-          ],
-          "hero_id": "dunlingr"
+          ]
         },
         {
+          "hero_id": "shadewing",
           "score": 1.0,
           "matches": [
             "Magic",
             "HP loss"
-          ],
-          "hero_id": "shadewing"
+          ]
         },
         {
+          "hero_id": "zorya",
           "score": 1.0,
           "matches": [
             "Magic",
             "HP loss"
-          ],
-          "hero_id": "zorya"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "nazrik",
           "score": 1.0,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "nazrik"
+          ]
         },
         {
+          "hero_id": "igor",
           "score": 1.0,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "igor"
+          ]
         }
       ],
       "cc": [],
@@ -1489,6 +1571,7 @@
     "ai_hash": "bd14f2fe7d600f65a8148dabd231b2968cb66b5d9d5b413d48374cbc7b1f28a7",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "4b2fb17371c915e0e1fdada6f7fe5d037b2fec253d3a8e034f9e12e9c0405e39",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

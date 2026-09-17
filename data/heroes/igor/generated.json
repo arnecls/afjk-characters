@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "igor",
   "display_name": "Igor",
   "source": {
@@ -693,6 +693,78 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "aoe-damage",
+          "cheat-death",
+          "heal-inhibitor",
+          "life-drain",
+          "self-repositioner",
+          "untargetable"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "A",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|Physical": {
+            "magnitude": "average",
+            "weight": 29.0
+          },
+          "debuff|Healing|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "low",
+            "weight": 0.3
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Physical|All units": "average",
+          "skill1|damage|Physical|Area": "average",
+          "skill1|debuff|Healing|Single target": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill3|buff|Lifedrain|Self": "average",
+          "skill4|debuff|Healing|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 200.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "skill1"
@@ -700,46 +772,46 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 7.521428571428572,
-        "provider_id": "pandora"
+        "score": 7.521428571428572
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 4.3875,
-        "provider_id": "thador"
+        "score": 4.3875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       }
     ],
     "beneficiaries": [
@@ -765,77 +837,77 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "dionel",
           "score": 0.6667,
           "matches": [
             "aoe-damage",
             "heal-inhibitor",
             "self-repositioner",
             "untargetable"
-          ],
-          "hero_id": "dionel"
+          ]
         },
         {
+          "hero_id": "tasi",
           "score": 0.5143,
           "matches": [
             "aoe-damage",
             "cheat-death",
             "self-repositioner"
-          ],
-          "hero_id": "tasi"
+          ]
         },
         {
+          "hero_id": "zorya",
           "score": 0.4114,
           "matches": [
             "cheat-death",
             "life-drain"
-          ],
-          "hero_id": "zorya"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "athalia",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "athalia"
+          ]
         },
         {
+          "hero_id": "kulu",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "kulu"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "nazrik",
           "score": 1.0,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "nazrik"
+          ]
         },
         {
+          "hero_id": "niru",
           "score": 1.0,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "niru"
+          ]
         }
       ],
       "cc": [],
@@ -847,6 +919,7 @@
     "ai_hash": "38cf87a72bfa48be283ee0012d35601f2c2682d608a46bc6032bc1bd3a37b6d6",
     "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
     "analysis_inputs_hash": "2678de6716455a9d8cacb2560e7f084737c7e47368dae581841ad328f3da6cc2",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

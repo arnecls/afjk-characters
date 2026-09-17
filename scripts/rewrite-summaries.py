@@ -57,17 +57,54 @@ WALK_SPEED_VALUES = frozenset(
     {"zero", "slow", "normal", "fast", "veryfast"}
 )
 
-_PER_HERO_CURATED_CACHE: dict[str, dict] | None = None
+_PER_HERO_CURATED_CACHE: dict[str, dict] = {}
 
 
 def _per_hero_curated(name: str) -> dict | None:
-    """Read curated inputs from hero-local files when they are available."""
-    global _PER_HERO_CURATED_CACHE
-    if _PER_HERO_CURATED_CACHE is None:
-        from hero_pipeline.storage import load_roster_inputs
+    """Project one legacy analysis input from canonical hero bundles."""
+    if name in _PER_HERO_CURATED_CACHE:
+        return _PER_HERO_CURATED_CACHE[name]
+    from hero_pipeline.storage import load_roster_snapshot
 
-        _PER_HERO_CURATED_CACHE = load_roster_inputs()["curated"]
-    return _PER_HERO_CURATED_CACHE.get(name)
+    snapshot = load_roster_snapshot()
+    result: dict = {}
+    for entry in snapshot["manifest"]["heroes"]:
+        bundle = snapshot["bundles"][entry["id"]]
+        generated = bundle["generated"]
+        ai = bundle["ai"]
+        overrides = bundle["overrides"]
+        display = entry["display_name"]
+        value = None
+        if name == "signature_skills":
+            value = {}
+            calculated = (generated.get("derived") or {}).get(
+                "signature_calculated"
+            )
+            if calculated:
+                value["signature_calculated"] = calculated
+            value.update(overrides.get("signature") or {})
+        elif name == "hero_walk_speeds":
+            value = (generated.get("external") or {}).get("walk_speed")
+        elif name == "behavior_tags":
+            value = list(ai.get("behavior_tags") or [])
+        elif name == "skill_summaries":
+            value = dict(ai.get("skill_summaries") or {})
+        elif name == "play_overviews":
+            value = ai.get("play_overview")
+        elif name == "counter_overviews":
+            value = ai.get("counter_overview")
+        else:
+            override_key = {
+                "melee_overrides": "melee",
+                "movement_overrides": "movement",
+                "placement_constraint_overrides": "placement_constraints",
+            }.get(name)
+            if override_key is not None:
+                value = overrides.get(override_key)
+        if value or name in {"behavior_tags", "skill_summaries"}:
+            result[display] = value
+    _PER_HERO_CURATED_CACHE[name] = result
+    return result
 
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
@@ -3920,14 +3957,13 @@ def text_has_summon_unit(t: str) -> bool:
 
 
 def hero_fields_summon_units(hero: Hero) -> bool:
+    from summoner_registry import profile_for
+
     short = hero.title.split(" - ", 1)[0].strip()
     if short == "Elijah & Lailah":
         short = "Twins"
-    profiles_path = ROOT / "data" / "hero_summon_profiles.json"
-    if profiles_path.exists():
-        profiles = json.loads(profiles_path.read_text(encoding="utf-8"))
-        if short in profiles:
-            return True
+    if profile_for(short) is not None:
+        return True
     text = " ".join(chunk for _, chunk, _ in hero.skill_chunks)
     return text_has_summon_unit(text)
 
@@ -7847,18 +7883,13 @@ def _skill_names_by_display() -> dict[str, dict[str, str]]:
     global _skill_names_cache
     if _skill_names_cache is not None:
         return _skill_names_cache
-    if not (
-        HEROES_DATA_FILE.exists()
-        or (ROOT / "data" / "roster.json").exists()
-    ):
-        _skill_names_cache = {}
-        return _skill_names_cache
-    from heroes_io import load_heroes_data
+    from hero_pipeline.storage import load_roster_snapshot
 
-    data = load_heroes_data()
+    snapshot = load_roster_snapshot()
     result: dict[str, dict[str, str]] = {}
-    for hero in data.get("heroes", []):
-        display = hero.get("name") or hero.get("title", "").split(" - ", 1)[0]
+    for entry in snapshot["manifest"]["heroes"]:
+        hero = snapshot["bundles"][entry["id"]]["generated"]["source"]
+        display = entry["display_name"]
         by_category: dict[str, str] = {}
         for skill in hero.get("skills", []):
             section = skill.get("section", "")
@@ -8890,35 +8921,69 @@ def build_behavior_for_heroes(
     heroes2_text: str | None = None,
     heroes_text: str | None = None,
     hero_class_by_title: dict[str, str] | None = None,
+    *,
+    skills_by_title_input: dict[str, list[SkillMeta]] | None = None,
+    block_by_title_input: dict[str, str] | None = None,
+    signature_by_display_input: dict[str, dict] | None = None,
+    placement_overrides_input: dict[str, list[dict]] | None = None,
+    movement_overrides_input: dict[str, dict] | None = None,
+    walk_speeds_input: dict[str, str] | None = None,
+    behavior_tags_input: dict[str, list[str]] | None = None,
+    skill_names_by_display_input: dict[str, dict[str, str]] | None = None,
 ) -> dict[str, HeroBehavior]:
     """Compute movement and casting speed for each hero title."""
-    h2_text = heroes2_text if heroes2_text is not None else (
-        HEROES2_MD.read_text(encoding="utf-8") if HEROES2_MD.exists() else ""
-    )
-    h1_text = heroes_text if heroes_text is not None else HEROES_MD.read_text(
-        encoding="utf-8"
-    )
-    heroes2_index = index_hero_blocks(h2_text)
-    heroes_index = index_hero_blocks(h1_text)
-
-    skills_by_title: dict[str, list[SkillMeta]] = {}
-    block_by_title: dict[str, str] = {}
-    for hero in heroes:
-        display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
-        block = resolve_behavior_block(
-            display, hero.title, heroes2_index, heroes_index
+    if skills_by_title_input is not None and block_by_title_input is not None:
+        skills_by_title = skills_by_title_input
+        block_by_title = block_by_title_input
+    else:
+        h2_text = heroes2_text if heroes2_text is not None else (
+            HEROES2_MD.read_text(encoding="utf-8") if HEROES2_MD.exists() else ""
         )
-        block_by_title[hero.title] = block
-        skills_by_title[hero.title] = load_skill_meta(block)
+        h1_text = heroes_text if heroes_text is not None else HEROES_MD.read_text(
+            encoding="utf-8"
+        )
+        heroes2_index = index_hero_blocks(h2_text)
+        heroes_index = index_hero_blocks(h1_text)
+        skills_by_title = {}
+        block_by_title = {}
+        for hero in heroes:
+            display = display_names.get(
+                hero.title, hero.title.split(" - ", 1)[0]
+            )
+            block = resolve_behavior_block(
+                display, hero.title, heroes2_index, heroes_index
+            )
+            block_by_title[hero.title] = block
+            skills_by_title[hero.title] = load_skill_meta(block)
 
     casting_scores = compute_casting_scores(skills_by_title)
     casting_labels = casting_speed_labels(casting_scores)
     per_skill_speeds = compute_per_skill_speeds(skills_by_title)
-    signature_by_display = _load_signature_categories()
-    placement_overrides = _load_placement_constraint_overrides()
-    movement_overrides = _load_movement_overrides()
-    walk_speeds = _load_walk_speeds()
-    behavior_tags = _load_behavior_tags()
+    signature_by_display = (
+        signature_by_display_input
+        if signature_by_display_input is not None
+        else _load_signature_categories()
+    )
+    placement_overrides = (
+        placement_overrides_input
+        if placement_overrides_input is not None
+        else _load_placement_constraint_overrides()
+    )
+    movement_overrides = (
+        movement_overrides_input
+        if movement_overrides_input is not None
+        else _load_movement_overrides()
+    )
+    walk_speeds = (
+        walk_speeds_input
+        if walk_speeds_input is not None
+        else _load_walk_speeds()
+    )
+    behavior_tags = (
+        behavior_tags_input
+        if behavior_tags_input is not None
+        else _load_behavior_tags()
+    )
     class_by_title = hero_class_by_title or {}
     damage_thresholds = build_section_damage_thresholds(
         heroes, skills_by_title
@@ -8986,8 +9051,16 @@ def build_behavior_for_heroes(
                 movement_note=note,
                 casting_speed=casting_labels.get(hero.title, "average"),
                 walk_speed=walk_speed,
-                signature_skill_name=_skill_name_for_category(
-                    curated, _effective_signature_category(raw_sig)
+                signature_skill_name=(
+                    skill_names_by_display_input.get(curated, {}).get(
+                        _effective_signature_category(raw_sig),
+                        "",
+                    )
+                    if skill_names_by_display_input is not None
+                    else _skill_name_for_category(
+                        curated,
+                        _effective_signature_category(raw_sig),
+                    )
                 ),
                 signature_skill_is_ult=bool(defining.get("is_ultimate")),
                 signature_skill_section=defining.get("section", ""),

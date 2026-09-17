@@ -1459,6 +1459,7 @@ def _validate_with_schema(data: dict[str, Any], schema: dict[str, Any]) -> None:
         "skills.schema.json",
         "game_properties.schema.json",
         "hero_walk_speeds.schema.json",
+        "hero_generated.schema.json",
     ):
         doc = json.loads((SCHEMA_DIR / name).read_text(encoding="utf-8"))
         store[doc["$id"]] = doc

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "taichi-agumon",
   "display_name": "Taichi & Agumon",
   "source": {
@@ -843,6 +843,99 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "high",
+          "high",
+          "average",
+          "high",
+          "average",
+          "high",
+          "high"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "execute",
+          "high-damage-ult",
+          "invincibility",
+          "non-ult-utility",
+          "temporary-stat-buffer"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {},
+        "effects": {
+          "buff|Energy|self": {
+            "magnitude": "high",
+            "weight": 80.0
+          },
+          "damage|Physical": {
+            "magnitude": "high",
+            "weight": 54.166666666666664
+          },
+          "buff|ATK|self": {
+            "magnitude": "high",
+            "weight": 10.0
+          },
+          "cc|Stun|Area": {
+            "magnitude": "average",
+            "weight": 0.17391304347826086,
+            "signature_cc": true
+          },
+          "buff|Shield|self": {
+            "magnitude": "high",
+            "weight": 54.054054054054056
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "average",
+            "weight": 8.108108108108109
+          },
+          "damage|HP loss": {
+            "magnitude": "high",
+            "weight": 15.0
+          },
+          "buff|ATK|ally": {
+            "magnitude": "high",
+            "weight": 2.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|buff|Energy|Self": "average",
+          "ultimate|damage|Physical|Area": "average",
+          "ultimate|buff|ATK|Self": "average",
+          "skill1|damage|Physical|Area": "average",
+          "skill1|cc|Stun|Area": "average",
+          "skill2|buff|Shield|Self": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill3|buff|ATK|Self": "average",
+          "skill4|damage|HP loss|Area": "average",
+          "skill4|damage|Physical|Single target": "average",
+          "skill5|buff|ATK|Area": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 144.0,
+          "HP loss": 2.8125
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -850,244 +943,244 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK via ATK (multiple targets, high)",
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 15.003000000000002,
-        "provider_id": "ravion"
+        "score": 15.003000000000002
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK via ATK (area, average)",
           "Energy via Energy (area, low) `signature fuel`",
           "ATK SPD via Haste (area, high) `signature fuel`"
         ],
-        "score": 10.839,
-        "provider_id": "smokey-meerky"
+        "score": 10.839
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 10.4265,
-        "provider_id": "pandora"
+        "score": 10.4265
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK via ATK (single target, high)",
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 9.9,
-        "provider_id": "kazim"
+        "score": 9.9
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK via ATK (all units, high)",
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 9.9,
-        "provider_id": "mikola"
+        "score": 9.9
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`",
           "ATK SPD via Haste (all units, average) `signature fuel`"
         ],
-        "score": 9.826500000000001,
-        "provider_id": "twins"
+        "score": 9.826500000000001
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "DEF Penetration via DEF Penetration (multiple targets, high)"
         ],
-        "score": 9.75,
-        "provider_id": "aliceth"
+        "score": 9.75
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK via ATK (all units, average)",
           "DEF Penetration via DEF Penetration (all units, low)",
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 8.775,
-        "provider_id": "rolan"
+        "score": 8.775
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK via ATK (multiple targets, high)",
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 8.685,
-        "provider_id": "parisa"
+        "score": 8.685
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "contess"
+        "score": 7.875
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "evie"
+        "score": 7.875
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "sonja"
+        "score": 7.875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 7.6545,
-        "provider_id": "rowan"
+        "score": 7.6545
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 7.6545,
-        "provider_id": "thador"
+        "score": 7.6545
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "pang"
+        "score": 5.25
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK via ATK (single target, low)",
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 4.65,
-        "provider_id": "dunlingr"
+        "score": 4.65
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "DEF Penetration via DEF Penetration (area, high)"
         ],
-        "score": 4.5,
-        "provider_id": "kordan"
+        "score": 4.5
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`",
           "ATK SPD via ATK SPD (all units, low) `signature fuel`"
         ],
-        "score": 3.3615000000000004,
-        "provider_id": "lyca"
+        "score": 3.3615000000000004
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK via ATK (single target, low, conditional (frequent))",
           "ATK SPD via Haste (single target, low) `signature fuel`"
         ],
-        "score": 3.2437499999999995,
-        "provider_id": "isabella"
+        "score": 3.2437499999999995
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`"
         ],
-        "score": 3.0375,
-        "provider_id": "lorsan"
+        "score": 3.0375
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "ATK via ATK (arc, low)"
         ],
-        "score": 2.625,
-        "provider_id": "fay"
+        "score": 2.625
       },
       {
+        "provider_id": "hammie",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "hammie"
+        "score": 2.625
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "ATK via ATK (all units, low)"
         ],
-        "score": 2.625,
-        "provider_id": "koko"
+        "score": 2.625
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "kulu"
+        "score": 2.625
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "lucca"
+        "score": 2.625
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "marilee"
+        "score": 2.625
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "solise"
+        "score": 2.625
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 2.025,
-        "provider_id": "hewynn"
+        "score": 2.025
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.025,
-        "provider_id": "mehira"
+        "score": 2.025
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 1.72125,
-        "provider_id": "damian"
+        "score": 1.72125
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 1.72125,
-        "provider_id": "zandrok"
+        "score": 1.72125
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 0.8099999999999999,
-        "provider_id": "valka"
+        "score": 0.8099999999999999
       }
     ],
     "beneficiaries": [
@@ -1138,112 +1231,112 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "evie",
           "score": 1.0,
           "matches": [
             "ATK"
-          ],
-          "hero_id": "evie"
+          ]
         },
         {
+          "hero_id": "mikola",
           "score": 1.0,
           "matches": [
             "ATK"
-          ],
-          "hero_id": "mikola"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "ATK"
-          ],
-          "hero_id": "rolan"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "cryonaia",
           "score": 0.6,
           "matches": [
             "execute",
             "high-damage-ult",
             "invincibility"
-          ],
-          "hero_id": "cryonaia"
+          ]
         },
         {
+          "hero_id": "aliceth",
           "score": 0.3,
           "matches": [
             "execute",
             "non-ult-utility",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "aliceth"
+          ]
         },
         {
+          "hero_id": "lumont",
           "score": 0.2857,
           "matches": [
             "non-ult-utility",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "lumont"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "athalia",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "athalia"
+          ]
         },
         {
+          "hero_id": "faramor",
           "score": 1.0,
           "matches": [
             "Physical",
             "HP loss"
-          ],
-          "hero_id": "faramor"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "antandra",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "antandra"
+          ]
         },
         {
+          "hero_id": "atalanta",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "atalanta"
+          ]
         },
         {
+          "hero_id": "callan",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "callan"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "aliceth",
           "score": 0.5503,
           "matches": [
             "Damage"
-          ],
-          "hero_id": "aliceth"
+          ]
         }
       ]
     }
@@ -1253,6 +1346,7 @@
     "ai_hash": "2ff374aa7263ed0d3a928aff795107af5d89ae570ea565dd341485c4c6e6e873",
     "overrides_hash": "0b8d333075260502d32a7ea38f6ef22a739849bf2ffb5379be1c9efff0f23ab4",
     "analysis_inputs_hash": "8573cbf197d9d16b2db6dcb291f15cb16212773e4c841003b6fe279675d1ef59",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

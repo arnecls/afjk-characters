@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-import json
+import copy
 import re
 import sys
 from dataclasses import dataclass
@@ -13,7 +13,6 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import heroes_io as io
 import roster_analysis as ra
 
 rs, gen = ra.analysis_modules()
@@ -253,26 +252,49 @@ def qualifies_non_ult_utility(
 
 
 def main() -> int:
-    apply = "--apply" in sys.argv
-    raw = io.load_heroes_data()
-    processed = io.load_processed()
-    if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_roster_inputs
+    from hero_pipeline.storage import (
+        load_analyses,
+        load_roster_snapshot,
+        update_ai_field,
+    )
 
-        curated = load_roster_inputs()["curated"]
-        summaries_by_short = curated["skill_summaries"]
-        current_tags = curated["behavior_tags"]
-    else:
-        summaries_by_short = json.loads(
-            (ROOT / "data" / "heroes_data_skill_summary.json").read_text(
-                encoding="utf-8"
+    apply = "--apply" in sys.argv
+    snapshot = load_roster_snapshot()
+    entries = sorted(
+        snapshot["manifest"]["heroes"],
+        key=lambda entry: entry["order"],
+    )
+    raw = {
+        **(snapshot["manifest"].get("headers") or {}),
+        "heroes": [
+            copy.deepcopy(
+                snapshot["bundles"][entry["id"]]["generated"]["source"]
             )
-        )
-        current_tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text(
-                encoding="utf-8"
+            for entry in entries
+        ],
+    }
+    processed = load_analyses(
+        snapshot["manifest"],
+        snapshot["bundles"],
+    )
+    summaries_by_short = {
+        entry["display_name"]: copy.deepcopy(
+            snapshot["bundles"][entry["id"]]["ai"].get(
+                "skill_summaries"
             )
+            or {}
         )
+        for entry in entries
+    }
+    current_tags = {
+        entry["display_name"]: list(
+            snapshot["bundles"][entry["id"]]["ai"].get(
+                "behavior_tags"
+            )
+            or []
+        )
+        for entry in entries
+    }
 
     role_by_title = {
         p["long_name"]: p["role_category"]
@@ -326,23 +348,10 @@ def main() -> int:
             elif not should and has_tag:
                 tag_data[short] = [t for t in tag_data[short] if t != TAG]
                 changed += 1
-        if (ROOT / "data" / "roster.json").exists():
-            from hero_pipeline.storage import update_ai_field
-
-            update_ai_field("behavior_tags", tag_data)
-            print(
-                f"Applied {TAG} updates to {changed} heroes in hero-local files"
-            )
-        else:
-            tags_path = ROOT / "data" / "hero_behavior_tags.json"
-            tags_path.write_text(
-                json.dumps(tag_data, indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-            )
-            print(
-                f"Applied {TAG} updates to {changed} heroes "
-                "in hero_behavior_tags.json"
-            )
+        update_ai_field("behavior_tags", tag_data)
+        print(
+            f"Applied {TAG} updates to {changed} heroes in hero-local files"
+        )
 
     return 0
 

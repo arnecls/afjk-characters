@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "thoran",
   "display_name": "Thoran",
   "source": {
@@ -828,6 +828,92 @@
             "damage_types": {}
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "average",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "cheat-death",
+          "counterattack",
+          "life-drain"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "B",
+          "dream_realm": "A+",
+          "dream_realm_endless": "A"
+        },
+        "effects": {
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 26.666666666666668
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "low",
+            "weight": 2.2222222222222223
+          },
+          "damage|HP loss": {
+            "magnitude": "average",
+            "weight": 1.2121212121212122
+          },
+          "debuff|Damage taken|Single target": {
+            "magnitude": "low",
+            "weight": 1.0303030303030303
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "low",
+            "weight": 6.0
+          },
+          "buff|Energy|self": {
+            "magnitude": "low",
+            "weight": 50.0
+          },
+          "buff|Direct healing|skill4": {
+            "magnitude": "low",
+            "weight": 3.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Physical|Area": "average",
+          "ultimate|buff|Lifedrain|Self": "average",
+          "skill1|damage|HP loss|Single target": "average",
+          "skill1|debuff|Damage taken|Single target": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill2|buff|Energy|Self": "average",
+          "skill3|buff|Energy|Self": "average",
+          "skill4|buff|Direct healing|Self": "average",
+          "skill5|damage|HP loss|Multiple targets": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 40.0
+        },
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "ultimate"
@@ -835,55 +921,55 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "twins",
         "reasons": [
           "Max HP via Max HP (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 4.83,
-        "provider_id": "twins"
+        "score": 4.83
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "rowan"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Max HP via Max HP (single target, low)",
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 2.955,
-        "provider_id": "pandora"
+        "score": 2.955
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.16,
-        "provider_id": "ravion"
+        "score": 2.16
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "lyca"
+        "score": 1.08
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "smokey-meerky"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -909,74 +995,74 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "zorya",
           "score": 0.6,
           "matches": [
             "cheat-death",
             "life-drain"
-          ],
-          "hero_id": "zorya"
+          ]
         },
         {
+          "hero_id": "brutus",
           "score": 0.4,
           "matches": [
             "cheat-death",
             "life-drain"
-          ],
-          "hero_id": "brutus"
+          ]
         },
         {
+          "hero_id": "igor",
           "score": 0.3429,
           "matches": [
             "cheat-death",
             "life-drain"
-          ],
-          "hero_id": "igor"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "faramor",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "faramor"
+          ]
         },
         {
+          "hero_id": "athalia",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "athalia"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "kulu",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "kulu"
+          ]
         },
         {
+          "hero_id": "reinier",
           "score": 1.0,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "reinier"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 0.9706,
           "matches": [
             "Damage taken"
-          ],
-          "hero_id": "himmel"
+          ]
         }
       ],
       "cc": [],
@@ -988,6 +1074,7 @@
     "ai_hash": "601478e9304556cc0832d6c196a147f7c75383014527c845775ca6c7df843f96",
     "overrides_hash": "82fbbd30a8454b9d09c10d2a2a797f97e63559db8301a7c5c5142e5fbc90886c",
     "analysis_inputs_hash": "001b662d104da337951d7bb7f4f73fc7b78b1a51804dea8489f2176fbfc280a3",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

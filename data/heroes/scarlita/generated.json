@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "scarlita",
   "display_name": "Scarlita",
   "source": {
@@ -804,6 +804,118 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "average",
+          "high",
+          "average",
+          "average",
+          "low",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-shielder",
+          "aoe-damage",
+          "execute",
+          "hp-scaling",
+          "non-ult-utility"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "B",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "cc|Knock back|All units": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 21.818181818181817
+          },
+          "cc|Stun|Arc": {
+            "magnitude": "average",
+            "weight": 0.18181818181818182,
+            "signature_cc": true
+          },
+          "buff|Invincible|self": {
+            "magnitude": "high",
+            "weight": 88.0
+          },
+          "buff|Energy|self": {
+            "magnitude": "high",
+            "weight": 60.0
+          },
+          "cc|Stun|Area": {
+            "magnitude": "average",
+            "weight": 1.6,
+            "signature_cc": true
+          },
+          "cc|Knock up|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "cc|Knock down|Arc": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Shield|ally": {
+            "magnitude": "low",
+            "weight": 4.444444444444445
+          },
+          "buff|Execution|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Knock back|All units": "average",
+          "ultimate|damage|Physical|All units": "average",
+          "ultimate|cc|Stun|Arc": "average",
+          "skill1|buff|Invincible|Self": "average",
+          "skill1|buff|Energy|Self": "average",
+          "skill1|cc|Stun|Area": "average",
+          "skill1|cc|Knock up|Area": "average",
+          "skill1|damage|Physical|Area": "average",
+          "skill2|cc|Knock down|Arc": "average",
+          "skill2|damage|Physical|Arc": "average",
+          "skill2|buff|Shield|Single target": "average",
+          "skill3|buff|Execution|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 100.0
+        },
+        "signature_section": "Ex. Skill"
       }
     },
     "signature_calculated": "skill4"
@@ -811,204 +923,204 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK via ATK (multiple targets, high)",
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 9.114545454545453,
-        "provider_id": "ravion"
+        "score": 9.114545454545453
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 8.034545454545455,
-        "provider_id": "pandora"
+        "score": 8.034545454545455
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "contess"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "evie"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK via ATK (all units, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "mikola"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "parisa"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "sonja"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "kazim"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "ATK via ATK (area, high)"
         ],
-        "score": 6.954545454545454,
-        "provider_id": "taichi-agumon"
+        "score": 6.954545454545454
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK via ATK (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 5.716363636363637,
-        "provider_id": "twins"
+        "score": 5.716363636363637
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK via ATK (area, average)",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 5.716363636363637,
-        "provider_id": "smokey-meerky"
+        "score": 5.716363636363637
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 4.636363636363637,
-        "provider_id": "aliceth"
+        "score": 4.636363636363637
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 4.636363636363637,
-        "provider_id": "perseus"
+        "score": 4.636363636363637
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK via ATK (all units, average)"
         ],
-        "score": 4.636363636363637,
-        "provider_id": "rolan"
+        "score": 4.636363636363637
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 4.636363636363637,
-        "provider_id": "pang"
+        "score": 4.636363636363637
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "rowan"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "dunlingr"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "ATK via ATK (arc, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "fay"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "ATK via ATK (all units, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "koko"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "ATK via ATK (area, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "kordan"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "kulu"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "solise"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "hammie",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "hammie"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "lucca"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.3181818181818183,
-        "provider_id": "marilee"
+        "score": 2.3181818181818183
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK via ATK (single target, low, conditional (frequent))"
         ],
-        "score": 1.9704545454545452,
-        "provider_id": "isabella"
+        "score": 1.9704545454545452
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "lyca"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -1023,106 +1135,106 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "contess",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "contess"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "hugin",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "hugin"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "korin",
           "score": 0.48,
           "matches": [
             "ally-shielder",
             "hp-scaling"
-          ],
-          "hero_id": "korin"
+          ]
         },
         {
+          "hero_id": "aliceth",
           "score": 0.432,
           "matches": [
             "execute",
             "hp-scaling",
             "non-ult-utility"
-          ],
-          "hero_id": "aliceth"
+          ]
         },
         {
+          "hero_id": "daimon",
           "score": 0.4286,
           "matches": [
             "ally-shielder",
             "hp-scaling",
             "non-ult-utility"
-          ],
-          "hero_id": "daimon"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "thador"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "lorsan",
           "score": 0.6429,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "lorsan"
+          ]
         },
         {
+          "hero_id": "lucca",
           "score": 0.5357,
           "matches": [
             "Stun",
             "Knock up",
             "Knock down"
-          ],
-          "hero_id": "lucca"
+          ]
         },
         {
+          "hero_id": "lumont",
           "score": 0.5179,
           "matches": [
             "Stun",
             "Knock back",
             "Knock up"
-          ],
-          "hero_id": "lumont"
+          ]
         }
       ],
       "overall": []
@@ -1133,6 +1245,7 @@
     "ai_hash": "6ba2c4505bb35945f8e2ca02b6c59d2609bfd40d1e378e93aa37a0b7b9e987c0",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "86d826a3848325e2f7cac423163c49907a7335a55d33cb6b3b34f42a9b97b286",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

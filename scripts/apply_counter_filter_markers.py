@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Apply [[filter:id]] like [[Hero]] markers to hero_counter_overviews.json."""
+"""Apply counter filter markers to hero-local AI documents."""
 
 from __future__ import annotations
 
 import csv
-import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-COUNTER_PATH = ROOT / "data" / "hero_counter_overviews.json"
 CSV_PATH = ROOT / "heroes-overview.csv"
-TAGS_PATH = ROOT / "data" / "hero_behavior_tags.json"
 
 HERO_RE = re.compile(r"\[\[([^\]]+)\]\]")
 FILTER_RE = re.compile(r"\[\[filter:([a-z0-9-]+)\]\]")
@@ -51,11 +48,9 @@ def load_csv() -> dict[str, dict[str, str]]:
 
 
 def load_tags() -> dict[str, list[str]]:
-    if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_roster_inputs
+    from hero_pipeline.storage import load_ai_field
 
-        return load_roster_inputs()["curated"]["behavior_tags"]
-    return json.loads(TAGS_PATH.read_text(encoding="utf-8"))
+    return load_ai_field("behavior_tags")
 
 
 def combo_for_hero(hero: str, tags: dict[str, list[str]], rows: dict) -> str | None:
@@ -281,26 +276,16 @@ def transform_text(text: str, tags: dict, rows: dict) -> str:
 
 
 def main() -> None:
+    from hero_pipeline.storage import load_ai_field, update_ai_field
+
     tags = load_tags()
     rows = load_csv()
-    if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_roster_inputs, update_ai_field
-
-        data = load_roster_inputs()["curated"]["counter_overviews"]
-    else:
-        data = json.loads(COUNTER_PATH.read_text(encoding="utf-8"))
+    data = load_ai_field("counter_overview")
     updated = {
         hero: transform_text(text, tags, rows) for hero, text in data.items()
     }
-    if (ROOT / "data" / "roster.json").exists():
-        update_ai_field("counter_overview", updated)
-        print(f"Updated {len(updated)} entries in hero-local files")
-    else:
-        COUNTER_PATH.write_text(
-            json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        print(f"Updated {len(updated)} entries in {COUNTER_PATH.name}")
+    update_ai_field("counter_overview", updated)
+    print(f"Updated {len(updated)} entries in hero-local files")
 
 
 if __name__ == "__main__":

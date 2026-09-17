@@ -14,6 +14,7 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 import render_site
+from hero_pipeline.presentation.site_payload import build_mix_config
 
 HEROES_JSON = ROOT / "site" / "data" / "heroes.json"
 SITE_CSV = ROOT / "site" / "data" / "heroes-overview.csv"
@@ -214,7 +215,7 @@ class RenderSiteTests(unittest.TestCase):
     def test_build_mix_config_exposes_composition_scoring(self) -> None:
         config_path = ROOT / "data" / "heroes_config.json"
         config = json.loads(config_path.read_text(encoding="utf-8"))
-        mix_cfg = render_site.build_mix_config(config)
+        mix_cfg = build_mix_config({"config": config})
         comp = mix_cfg["compositionScoring"]
         self.assertEqual(comp["baseBonus"], 10.0)
         self.assertEqual(comp["urgencyPerFilledSlot"], 0.25)

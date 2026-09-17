@@ -45,6 +45,27 @@ def sidecar_path(title: str) -> Path:
     return SKILL_EFFECTS_DIR / f"{short_name(title)}.json"
 
 
+def _manifest_entry_for_title(
+    manifest: dict[str, Any],
+    title: str,
+) -> dict[str, Any] | None:
+    display_name = short_name(title)
+    return next(
+        (
+            item
+            for item in manifest["heroes"]
+            if title in {
+                item["id"],
+                item["title"],
+                item["display_name"],
+                *(item.get("aliases") or []),
+            }
+            or item["display_name"] == display_name
+        ),
+        None,
+    )
+
+
 def _load_schema() -> dict[str, Any]:
     global _SCHEMA
     if _SCHEMA is None:
@@ -125,46 +146,33 @@ def skill_has_scaled_placeholder(skill: dict[str, Any]) -> bool:
 
 def load_sidecar(title: str) -> dict[str, Any] | None:
     from hero_pipeline.repository import current_repository
-    from hero_pipeline.storage import (
-        display_name_for_title,
-        hero_id_for_display,
-    )
+    from hero_pipeline.storage import load_json, load_manifest
 
-    display_name = display_name_for_title(title)
-    path = current_repository().heroes_dir / hero_id_for_display(
-        display_name
-    ) / "ai.json"
-    if path.exists():
-        document = json.loads(path.read_text(encoding="utf-8"))
-        return document.get("skill_effects")
-    path = sidecar_path(title)
-    if not path.exists():
+    manifest = load_manifest()
+    entry = _manifest_entry_for_title(manifest, title)
+    if entry is None:
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    path = current_repository().heroes_dir / entry["id"] / "ai.json"
+    return load_json(path).get("skill_effects")
 
 
 def save_sidecar(title: str, doc: dict[str, Any]) -> Path:
     from hero_pipeline.repository import current_repository
     from hero_pipeline.storage import (
-        display_name_for_title,
-        hero_id_for_display,
+        load_manifest,
         load_json,
         write_json_atomic,
     )
 
     validate_sidecar_doc(doc)
-    display_name = display_name_for_title(title)
-    path = current_repository().heroes_dir / hero_id_for_display(
-        display_name
-    ) / "ai.json"
-    if path.exists():
-        ai = load_json(path)
-        ai["skill_effects"] = doc
-        write_json_atomic(path, ai)
-        return path
-    SKILL_EFFECTS_DIR.mkdir(parents=True, exist_ok=True)
-    path = sidecar_path(title)
-    path.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+    manifest = load_manifest()
+    entry = _manifest_entry_for_title(manifest, title)
+    if entry is None:
+        raise KeyError(f"unknown roster hero: {title}")
+    path = current_repository().heroes_dir / entry["id"] / "ai.json"
+    ai = load_json(path)
+    ai["skill_effects"] = doc
+    write_json_atomic(path, ai)
     return path
 
 

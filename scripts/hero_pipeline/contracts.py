@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Mapping, NotRequired, TypedDict
+from typing import Any, Mapping, NotRequired, Protocol, TypedDict
 
 
 class HeroManifestEntry(TypedDict):
@@ -92,6 +92,34 @@ class LocalAnalysis(TypedDict, total=False):
     positional_tile_buff_labels: list[str]
     proximity_aura_buff_labels: list[str]
     proximity_aura_radius: float | None
+    summary_effect_magnitudes: dict[str, list[str]]
+
+
+class EffectScoringFacts(TypedDict):
+    magnitude: str
+    weight: float
+    signature_cc: NotRequired[bool]
+    battle_start_energy: NotRequired[bool]
+
+
+class ScoringFacts(TypedDict, total=False):
+    primary_damage_type: str
+    behavior_tags: list[str]
+    summon_profile: dict[str, bool]
+    prydwen_tiers: dict[str, str]
+    effects: dict[str, EffectScoringFacts]
+    skill_effect_magnitudes: dict[str, str]
+    named_allies: dict[str, dict[str, Any]]
+    start_of_battle_output: bool
+    early_battle_energy: list[Any] | None
+    effective_ally_energy: float
+    shield_payoff: bool
+    ally_magic: list[Any] | None
+    ranged_damage: bool
+    wide_area: bool
+    ally_grant_detail: str | None
+    replacement_damage: dict[str, float]
+    signature_section: str
 
 
 class CalibratedAnalysis(LocalAnalysis, total=False):
@@ -100,6 +128,7 @@ class CalibratedAnalysis(LocalAnalysis, total=False):
     is_energy_provider: bool
     is_melee: bool
     is_dual_range: bool
+    scoring: ScoringFacts
 
 
 class GeneratedSynergies(TypedDict, total=False):
@@ -107,6 +136,26 @@ class GeneratedSynergies(TypedDict, total=False):
     beneficiaries: list[dict[str, Any]]
     beneficiary_overflow_reasons: list[str]
     replacements: dict[str, list[dict[str, Any]]]
+
+
+class ProcessedRoster(TypedDict):
+    heroes: dict[str, CalibratedAnalysis]
+
+
+class GeneratedSynergyRoster(TypedDict):
+    heroes: dict[str, GeneratedSynergies]
+
+
+class AnalysisContext(TypedDict, total=False):
+    data_by_title: dict[str, HeroSource]
+    skills_by_title: dict[str, list[object]]
+    hero_class_by_title: dict[str, str]
+    role_category_by_title: dict[str, str]
+    behavior_by_title: dict[str, object]
+
+
+class AnalyzedHero(Protocol):
+    title: str
 
 
 class PresentationHero(TypedDict, total=False):
@@ -117,11 +166,14 @@ class PresentationHero(TypedDict, total=False):
     analysis: CalibratedAnalysis
     synergies: GeneratedSynergies
     curated: dict[str, Any]
-    formatted: dict[str, Any]
+    display: dict[str, Any]
+    references: dict[str, Any]
 
 
 class PresentationRoster(TypedDict):
     schema_version: int
     manifest: RosterManifest
     policy: Mapping[str, Any]
+    config: dict[str, Any]
+    identity: dict[str, dict[str, str]]
     heroes: list[PresentationHero]

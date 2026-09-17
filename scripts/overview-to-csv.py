@@ -632,7 +632,7 @@ def convert(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Convert heroes-overview.md into a wide CSV summary table."
+        description="Render the wide CSV summary table from hero bundles."
     )
     parser.add_argument(
         "-i",
@@ -650,18 +650,17 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    text = args.input.read_text(encoding="utf-8")
-    energy_providers = _load_energy_provider_names()
-    hero_meta = _load_hero_faction_class()
-    hero_tiers = _load_hero_prydwen_tiers()
-    hero_roles = _load_hero_role_categories()
-    data = convert(text, energy_providers, hero_meta, hero_tiers, hero_roles)
+    from hero_pipeline.presentation.project import project_roster
+    from hero_pipeline.render.overview import render_overview
+    from hero_pipeline.storage import load_config, load_roster_snapshot
 
+    view = project_roster(
+        load_roster_snapshot(),
+        config=load_config(),
+    )
+    _markdown, csv_content = render_overview(view)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    with args.output.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.writer(fh)
-        writer.writerow(COLUMNS)
-        writer.writerows(data)
+    args.output.write_text(csv_content, encoding="utf-8")
 
     LIST_COLUMNS_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     LIST_COLUMNS_OUTPUT.write_text(
@@ -669,7 +668,10 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    print(f"Wrote {len(data)} heroes × {len(COLUMNS)} columns to {args.output}")
+    print(
+        f"Wrote {len(view['heroes'])} heroes × "
+        f"{len(COLUMNS)} columns to {args.output}"
+    )
     print(f"Wrote list column registry to {LIST_COLUMNS_OUTPUT}")
 
 

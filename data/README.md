@@ -55,10 +55,9 @@ The manifest ID, not a display name, identifies a hero bundle. For example,
 
 Edit these when tuning scoring, fixing edge cases, or extending validation:
 
-- **`heroes_config.json`** — synergy/display/behavior/replacement parameters
-  loaded by `process_config.py`. The `proximity_synergy` block sets
-  `melee_max_range`, default aura radius, range slack, and optional
-  receiver/provider overrides for local aura buff matching.
+- **`heroes_config.json`** — display parameters consumed by the immutable
+  pipeline policy. Analysis and scoring retain their historically effective
+  defaults; inactive tuning keys are documented migration compatibility data.
 - **`heroes/<hero-id>/overrides.json`** — typed signature, placement, movement,
   and melee/range corrections.
 - **`heroes/<hero-id>/generated.json`** — external walk-speed and stat-rank

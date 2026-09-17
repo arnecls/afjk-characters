@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "velara",
   "display_name": "Velara",
   "source": {
@@ -805,6 +805,118 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "high",
+          "average",
+          "average",
+          "average",
+          "low",
+          "high",
+          "average",
+          "high",
+          "low",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-healer",
+          "ally-shielder",
+          "aoe-healing",
+          "backline-inhibit",
+          "temporary-stat-buffer"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "S+",
+          "pvp": "B",
+          "dream_realm": "S",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "debuff|Haste|Area": {
+            "magnitude": "low",
+            "weight": 1.875
+          },
+          "buff|Basic stats|ally": {
+            "magnitude": "high",
+            "weight": 2.0625
+          },
+          "debuff|Basic stats|All units": {
+            "magnitude": "average",
+            "weight": 2.0625
+          },
+          "buff|Direct healing|ultimate": {
+            "magnitude": "low",
+            "weight": 4.375
+          },
+          "debuff|Haste|Multiple targets": {
+            "magnitude": "low",
+            "weight": 2.8125
+          },
+          "debuff|Phys DEF|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Magic DEF|Single target": {
+            "magnitude": "average",
+            "weight": 3.103448275862069
+          },
+          "debuff|Haste|Single target": {
+            "magnitude": "low",
+            "weight": 3.4482758620689653
+          },
+          "cc|Bind|Single target": {
+            "magnitude": "high",
+            "weight": 0.3448275862068966,
+            "signature_cc": true
+          },
+          "buff|Haste|self": {
+            "magnitude": "low",
+            "weight": 1.8
+          },
+          "damage|Magic": {
+            "magnitude": "average",
+            "weight": 40.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|debuff|Haste|Area": "average",
+          "ultimate|buff|Basic stats|All units": "average",
+          "ultimate|debuff|Basic stats|All units": "average",
+          "ultimate|buff|Direct healing|Multiple targets": "average",
+          "ultimate|debuff|Haste|Multiple targets": "average",
+          "skill1|debuff|Phys DEF|Single target": "average",
+          "skill1|debuff|Magic DEF|Single target": "average",
+          "skill1|debuff|Haste|Single target": "average",
+          "skill1|cc|Bind|Single target": "average",
+          "skill3|buff|Haste|Self": "average",
+          "skill4|damage|Magic|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 45.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "skill1"
@@ -812,146 +924,146 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 8.601428571428572,
-        "provider_id": "pandora"
+        "score": 8.601428571428572
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 8.583214285714286,
-        "provider_id": "ravion"
+        "score": 8.583214285714286
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 7.6274999999999995,
-        "provider_id": "thador"
+        "score": 7.6274999999999995
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`",
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 7.289999999999999,
-        "provider_id": "rowan"
+        "score": 7.289999999999999
       },
       {
+        "provider_id": "hugin",
         "reasons": [
           "Haste via Haste (multiple targets, high) `signature fuel`",
           "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 6.336,
-        "provider_id": "hugin"
+        "score": 6.336
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Haste via Haste (area, high) `signature fuel`",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 5.58,
-        "provider_id": "smokey-meerky"
+        "score": 5.58
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "Haste via Haste (single target, high) `signature fuel`"
         ],
-        "score": 4.5,
-        "provider_id": "lorsan"
+        "score": 4.5
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`",
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 4.3585714285714285,
-        "provider_id": "lyca"
+        "score": 4.3585714285714285
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Haste via Haste (all units, average) `signature fuel`",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 4.08,
-        "provider_id": "twins"
+        "score": 4.08
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "rolan"
+        "score": 3.0
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "dunlingr"
+        "score": 3.0
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "hewynn"
+        "score": 3.0
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "kazim"
+        "score": 3.0
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "mehira"
+        "score": 3.0
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "mikola"
+        "score": 3.0
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.55,
-        "provider_id": "damian"
+        "score": 2.55
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "Haste via Haste (area, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.55,
-        "provider_id": "zandrok"
+        "score": 2.55
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "Haste via Haste (single target, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "isabella"
+        "score": 1.5
       }
     ],
     "beneficiaries": [
@@ -972,147 +1084,147 @@
       "energy": [],
       "healing": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "contess",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "contess"
+          ]
         },
         {
+          "hero_id": "twins",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "twins"
+          ]
         }
       ],
       "similar_skills": [
         {
+          "hero_id": "solise",
           "score": 0.864,
           "matches": [
             "ally-healer",
             "ally-shielder",
             "aoe-healing"
-          ],
-          "hero_id": "solise"
+          ]
         },
         {
+          "hero_id": "hewynn",
           "score": 0.864,
           "matches": [
             "ally-healer",
             "aoe-healing",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "hewynn"
+          ]
         },
         {
+          "hero_id": "smokey-meerky",
           "score": 0.72,
           "matches": [
             "ally-healer",
             "aoe-healing",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "smokey-meerky"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "eironn",
           "score": 0.6308,
           "matches": [
             "Haste",
             "Magic DEF"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "carolina",
           "score": 0.5257,
           "matches": [
             "Haste",
             "Magic DEF"
-          ],
-          "hero_id": "carolina"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "evie",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "evie"
+          ]
         },
         {
+          "hero_id": "alna",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "alna"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "evie",
           "score": 0.6403,
           "matches": [
             "Healing",
             "Crowd Control"
-          ],
-          "hero_id": "evie"
+          ]
         },
         {
+          "hero_id": "solise",
           "score": 0.576,
           "matches": [
             "Healing",
             "Similar Skills"
-          ],
-          "hero_id": "solise"
+          ]
         },
         {
+          "hero_id": "hewynn",
           "score": 0.576,
           "matches": [
             "Healing",
             "Similar Skills"
-          ],
-          "hero_id": "hewynn"
+          ]
         }
       ]
     }
@@ -1122,6 +1234,7 @@
     "ai_hash": "f8530fa8e2fb780c08b685d8b2300cca776632a9313883dbba008251b3ccc0a0",
     "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
     "analysis_inputs_hash": "253ca913e68e0257bbbe068df3c0bf8325b856a681b456e64cb13cb389838df7",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

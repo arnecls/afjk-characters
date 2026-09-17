@@ -72,12 +72,17 @@ This processed data is saved in each hero's `generated.json`. Curated inputs
 and typed corrections are read from that hero's `ai.json` and `overrides.json`.
 
 ### Stage 3: Synergy & Replacement Scoring (Analyze — pass 2)
-[`scripts/process_synergies.py`](../scripts/process_synergies.py) evaluates every possible pair of heroes using matchers from [`scripts/generate-heroes-overview.py`](../scripts/generate-heroes-overview.py) (shared scoring library, not a separate render step).
+[`scripts/process_synergies.py`](../scripts/process_synergies.py) is a thin
+entry point for `just analyze-synergies`. Production scoring lives in
+[`scripts/hero_pipeline/synergy/scoring.py`](../scripts/hero_pipeline/synergy/scoring.py)
+and reads compact facts from generated analysis. It does not reparse skill
+prose or reconstruct aggregate roster files.
 
 It looks at what a hero **provides** (e.g., Haste buffs, Magic damage) and
 matches it against what another hero **requires** (e.g., a slow Ultimate that
 needs Haste, or a passive that triggers on allied Magic damage). The results
-are saved in each hero's `generated.json` using stable IDs.
+are saved in each hero's `generated.json` using stable IDs. Display limits
+are applied later in presentation.
 
 ### Stage 4: Rendering (Views)
 [`scripts/render_overview.py`](../scripts/render_overview.py) and

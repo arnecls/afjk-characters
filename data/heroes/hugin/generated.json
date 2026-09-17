@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "hugin",
   "display_name": "Hugin",
   "source": {
@@ -686,6 +686,81 @@
             "damage_types": {}
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "high",
+          "high",
+          "average",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-shielder",
+          "energy-provider",
+          "high-initial-energy",
+          "static-tile-buffer",
+          "temporary-stat-buffer"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "S+",
+          "pvp": "A",
+          "dream_realm": "A+",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "buff|ATK|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Haste|ally": {
+            "magnitude": "high",
+            "weight": 5.333333333333333
+          },
+          "buff|Shield|ally": {
+            "magnitude": "high",
+            "weight": 80.0
+          },
+          "buff|Energy|ally": {
+            "magnitude": "average",
+            "weight": 10.714285714285714
+          },
+          "buff|Damage taken|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|buff|ATK|Multiple targets": "average",
+          "ultimate|buff|Haste|Multiple targets": "average",
+          "skill1|buff|Shield|Single target": "average",
+          "skill1|buff|Energy|Single target": "average",
+          "skill2|buff|ATK|Single target": "average",
+          "skill4|buff|Shield|Multiple targets": "average",
+          "skill5|buff|Damage taken|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {},
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "skill1"
@@ -693,126 +768,126 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Haste via Haste (area, high) `signature fuel`",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 5.58,
-        "provider_id": "smokey-meerky"
+        "score": 5.58
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy (multiple targets, average) `signature fuel`"
         ],
-        "score": 5.16,
-        "provider_id": "ravion"
+        "score": 5.16
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "Haste via Haste (single target, high) `signature fuel`"
         ],
-        "score": 4.5,
-        "provider_id": "lorsan"
+        "score": 4.5
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Haste via Haste (all units, average) `signature fuel`",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 4.08,
-        "provider_id": "twins"
+        "score": 4.08
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "rowan"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`"
         ],
-        "score": 3.2399999999999998,
-        "provider_id": "thador"
+        "score": 3.2399999999999998
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "rolan"
+        "score": 3.0
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "dunlingr"
+        "score": 3.0
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "Haste via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "hewynn"
+        "score": 3.0
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "kazim"
+        "score": 3.0
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "mehira"
+        "score": 3.0
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "Haste via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "mikola"
+        "score": 3.0
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.55,
-        "provider_id": "damian"
+        "score": 2.55
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "Haste via Haste (area, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 2.55,
-        "provider_id": "zandrok"
+        "score": 2.55
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "Haste via Haste (single target, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "isabella"
+        "score": 1.5
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "lyca"
+        "score": 1.08
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "pandora"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -904,50 +979,50 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "saida",
           "score": 0.8678,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 0.543,
           "matches": [
             "Shield",
             "Energy"
-          ],
-          "hero_id": "thador"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "twins",
           "score": 0.5143,
           "matches": [
             "ally-shielder",
             "energy-provider",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "twins"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 0.5,
           "matches": [
             "ally-shielder",
             "energy-provider",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "thador"
+          ]
         },
         {
+          "hero_id": "pang",
           "score": 0.5,
           "matches": [
             "ally-shielder",
             "high-initial-energy",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "pang"
+          ]
         }
       ],
       "damage": [],
@@ -961,6 +1036,7 @@
     "ai_hash": "02a5948f0625bd4a64ad5e437bd3ef996f91d92c2924a02eb5a01c74ab6e780c",
     "overrides_hash": "82fbbd30a8454b9d09c10d2a2a797f97e63559db8301a7c5c5142e5fbc90886c",
     "analysis_inputs_hash": "6658614462fa3e4ca1bb70ebae3eae5ea762d5e0bab07a2e3565bcfb8bb197cd",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

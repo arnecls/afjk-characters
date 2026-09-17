@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "korin",
   "display_name": "Korin",
   "source": {
@@ -676,6 +676,94 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "low",
+          "low",
+          "average",
+          "average",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-shielder",
+          "hp-scaling"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "C",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "cc|Bind|Area": {
+            "magnitude": "average",
+            "weight": 0.16666666666666666,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 7.916666666666667
+          },
+          "cc|Knock back|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Shield|ally": {
+            "magnitude": "average",
+            "weight": 32.0
+          },
+          "damage|True damage": {
+            "magnitude": "average",
+            "weight": 32.0
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "low",
+            "weight": 0.2
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Bind|Area": "average",
+          "ultimate|damage|Physical|Area": "average",
+          "ultimate|cc|Knock back|Area": "average",
+          "skill1|buff|Shield|Single target": "average",
+          "skill1|damage|True damage|Single target": "average",
+          "skill4|damage|Max HP-based damage|Area": "average",
+          "skill5|buff|Damage taken|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 35.25,
+          "True damage": 40.5,
+          "Max HP-based damage": 1.2000000000000002
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -683,164 +771,164 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 10.686814285714286,
-        "provider_id": "ravion"
+        "score": 10.686814285714286
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Max HP via Max HP (all units, high)"
         ],
-        "score": 10.5,
-        "provider_id": "rolan"
+        "score": 10.5
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Max HP via Max HP (single target, low)",
           "Energy via Energy (single target, low) `signature fuel`",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 9.653228571428572,
-        "provider_id": "pandora"
+        "score": 9.653228571428572
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK SPD via Haste (all units, average) `signature fuel`",
           "Max HP via Max HP (multiple targets, average)",
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 9.6318,
-        "provider_id": "twins"
+        "score": 9.6318
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`",
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 9.6318,
-        "provider_id": "smokey-meerky"
+        "score": 9.6318
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`"
         ],
-        "score": 9.0,
-        "provider_id": "lorsan"
+        "score": 9.0
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`"
         ],
-        "score": 9.0,
-        "provider_id": "shakir"
+        "score": 9.0
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
           "Max HP via Max HP (multiple targets, low)"
         ],
-        "score": 6.6000000000000005,
-        "provider_id": "zandrok"
+        "score": 6.6000000000000005
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "ATK SPD via ATK SPD (all units, low) `signature fuel`",
           "Energy via Energy (all units, low) `signature fuel`",
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 6.310371428571429,
-        "provider_id": "lyca"
+        "score": 6.310371428571429
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 6.2829,
-        "provider_id": "thador"
+        "score": 6.2829
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 6.0,
-        "provider_id": "dunlingr"
+        "score": 6.0
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 6.0,
-        "provider_id": "hewynn"
+        "score": 6.0
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 6.0,
-        "provider_id": "kazim"
+        "score": 6.0
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 6.0,
-        "provider_id": "mehira"
+        "score": 6.0
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 6.0,
-        "provider_id": "mikola"
+        "score": 6.0
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`",
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 5.945399999999999,
-        "provider_id": "rowan"
+        "score": 5.945399999999999
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 5.1000000000000005,
-        "provider_id": "damian"
+        "score": 5.1000000000000005
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`"
         ],
-        "score": 3.0,
-        "provider_id": "isabella"
+        "score": 3.0
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 2.4000000000000004,
-        "provider_id": "parisa"
+        "score": 2.4000000000000004
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 2.4000000000000004,
-        "provider_id": "valka"
+        "score": 2.4000000000000004
       }
     ],
     "beneficiaries": [
@@ -859,104 +947,104 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "contess",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "contess"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "hugin",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "hugin"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "baelran",
           "score": 0.6,
           "matches": [
             "hp-scaling"
-          ],
-          "hero_id": "baelran"
+          ]
         },
         {
+          "hero_id": "scarlita",
           "score": 0.48,
           "matches": [
             "ally-shielder",
             "hp-scaling"
-          ],
-          "hero_id": "scarlita"
+          ]
         },
         {
+          "hero_id": "daimon",
           "score": 0.4,
           "matches": [
             "ally-shielder",
             "hp-scaling"
-          ],
-          "hero_id": "daimon"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "lamentis",
           "score": 1.0,
           "matches": [
             "True damage"
-          ],
-          "hero_id": "lamentis"
+          ]
         },
         {
+          "hero_id": "nara",
           "score": 1.0,
           "matches": [
             "True damage",
             "Physical",
             "Max HP-based damage"
-          ],
-          "hero_id": "nara"
+          ]
         },
         {
+          "hero_id": "temesia",
           "score": 1.0,
           "matches": [
             "Physical",
             "True damage"
-          ],
-          "hero_id": "temesia"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "kordan",
           "score": 1.0,
           "matches": [
             "Bind",
             "Knock back"
-          ],
-          "hero_id": "kordan"
+          ]
         },
         {
+          "hero_id": "indris",
           "score": 0.9583,
           "matches": [
             "Bind",
             "Knock back"
-          ],
-          "hero_id": "indris"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 0.8,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "gwyneth"
+          ]
         }
       ],
       "overall": []
@@ -967,6 +1055,7 @@
     "ai_hash": "fde34d862e8946ebe2efd5a2502dd16a05489160947de8ee68f493cc8af5f94c",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "9fcc19a2dab7399303432f229e64f512aa1f8cb384044b5335effe73097f9642",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "contess",
   "display_name": "Contess",
   "source": {
@@ -1001,6 +1001,140 @@
             "damage_types": {}
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "high",
+          "average",
+          "high",
+          "low",
+          "high",
+          "low",
+          "low",
+          "low",
+          "high",
+          "average",
+          "low",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-healer",
+          "ally-shielder",
+          "enemy-debuffer",
+          "energy-inhibitor",
+          "interrupt",
+          "stealth",
+          "temporary-stat-buffer",
+          "untargetable"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A+",
+          "pvp": "S+",
+          "dream_realm": "S+",
+          "dream_realm_endless": "S"
+        },
+        "effects": {
+          "buff|Energy|self": {
+            "magnitude": "low",
+            "weight": 9.428571428571429
+          },
+          "buff|Direct healing|ultimate": {
+            "magnitude": "high",
+            "weight": 95.14285714285714
+          },
+          "buff|Shield|ally": {
+            "magnitude": "high",
+            "weight": 42.857142857142854
+          },
+          "buff|ATK|ally": {
+            "magnitude": "high",
+            "weight": 4.285714285714286
+          },
+          "debuff|Max HP|Single target": {
+            "magnitude": "low",
+            "weight": 0.37714285714285717
+          },
+          "buff|Direct healing|skill1": {
+            "magnitude": "average",
+            "weight": 13.714285714285714
+          },
+          "debuff|ATK|Multiple targets": {
+            "magnitude": "average",
+            "weight": 1.4285714285714286
+          },
+          "debuff|Energy|Multiple targets": {
+            "magnitude": "low",
+            "weight": 1.568627450980392
+          },
+          "debuff|ATK|Single target": {
+            "magnitude": "low",
+            "weight": 0.4
+          },
+          "debuff|Energy|Single target": {
+            "magnitude": "low",
+            "weight": 0.3
+          },
+          "cc|Silence|Single target": {
+            "magnitude": "high",
+            "weight": 0.6,
+            "signature_cc": true
+          },
+          "debuff|HP loss|Single target": {
+            "magnitude": "average",
+            "weight": 2.2
+          },
+          "damage|DoT": {
+            "magnitude": "low",
+            "weight": 3.0
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.2,
+            "signature_cc": true
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|buff|Energy|Self": "average",
+          "ultimate|buff|Direct healing|Single target": "average",
+          "ultimate|buff|Shield|Single target": "average",
+          "ultimate|buff|ATK|Single target": "average",
+          "skill1|debuff|Max HP|Single target": "average",
+          "skill1|buff|Direct healing|Multiple targets": "average",
+          "skill1|debuff|ATK|Multiple targets": "average",
+          "skill2|debuff|Energy|Multiple targets": "average",
+          "skill3|debuff|ATK|Single target": "average",
+          "skill3|debuff|Energy|Single target": "average",
+          "skill4|cc|Silence|Single target": "average",
+          "skill4|debuff|HP loss|Single target": "average",
+          "skill4|damage|DoT|Single target": "average",
+          "skill5|cc|Stun|Single target": "average",
+          "skill5|cc|Silence|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "HP loss": 0.8035714285714286
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "skill1"
@@ -1008,72 +1142,72 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 8.601428571428572,
-        "provider_id": "pandora"
+        "score": 8.601428571428572
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 7.6274999999999995,
-        "provider_id": "thador"
+        "score": 7.6274999999999995
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`",
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 7.289999999999999,
-        "provider_id": "rowan"
+        "score": 7.289999999999999
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 5.583214285714286,
-        "provider_id": "ravion"
+        "score": 5.583214285714286
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`",
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 4.3585714285714285,
-        "provider_id": "lyca"
+        "score": 4.3585714285714285
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "hugin",
         "reasons": [
           "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 1.8359999999999999,
-        "provider_id": "hugin"
+        "score": 1.8359999999999999
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Energy via Energy (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "twins"
+        "score": 1.08
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Energy via Energy (area, low) `signature fuel`"
         ],
-        "score": 1.08,
-        "provider_id": "smokey-meerky"
+        "score": 1.08
       }
     ],
     "beneficiaries": [
@@ -1212,133 +1346,133 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "hugin",
           "score": 1.0,
           "matches": [
             "Shield",
             "ATK"
-          ],
-          "hero_id": "hugin"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 0.9091,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "thador"
+          ]
         }
       ],
       "energy": [],
       "healing": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "solise",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "solise"
+          ]
         },
         {
+          "hero_id": "evie",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing"
-          ],
-          "hero_id": "evie"
+          ]
         }
       ],
       "similar_skills": [
         {
+          "hero_id": "twins",
           "score": 0.36,
           "matches": [
             "ally-healer",
             "ally-shielder",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "twins"
+          ]
         },
         {
+          "hero_id": "velara",
           "score": 0.36,
           "matches": [
             "ally-healer",
             "ally-shielder",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "velara"
+          ]
         },
         {
+          "hero_id": "thador",
           "score": 0.3333,
           "matches": [
             "ally-shielder",
             "enemy-debuffer",
             "temporary-stat-buffer"
-          ],
-          "hero_id": "thador"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "faramor",
           "score": 1.0,
           "matches": [
             "HP loss"
-          ],
-          "hero_id": "faramor"
+          ]
         },
         {
+          "hero_id": "ravion",
           "score": 1.0,
           "matches": [
             "HP loss"
-          ],
-          "hero_id": "ravion"
+          ]
         },
         {
+          "hero_id": "aliceth",
           "score": 1.0,
           "matches": [
             "HP loss"
-          ],
-          "hero_id": "aliceth"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "evie",
           "score": 0.9,
           "matches": [
             "Silence"
-          ],
-          "hero_id": "evie"
+          ]
         },
         {
+          "hero_id": "orion",
           "score": 0.625,
           "matches": [
             "Silence",
             "Stun"
-          ],
-          "hero_id": "orion"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "evie",
           "score": 0.5839,
           "matches": [
             "Healing",
             "Crowd Control"
-          ],
-          "hero_id": "evie"
+          ]
         }
       ]
     }
@@ -1348,6 +1482,7 @@
     "ai_hash": "1bb4b241df2d7b7a2bd0e5c097ee4d43fd00a7da0a0a6fd0affedb3f66115638",
     "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
     "analysis_inputs_hash": "13f5f9f3a9cac59e8484e1a4acdd5f2d35e5a5fbc37dbfdb3beeb57c914fd650",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

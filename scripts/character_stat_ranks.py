@@ -41,7 +41,7 @@ def stats_overview_for_short(short: str, slug_ranks: dict[str, dict]) -> dict | 
 
 def load_character_stat_ranks(path: Path | None = None) -> dict:
     """Load raw character stat ranks JSON."""
-    if path is None and (STAT_RANKS_PATH.parent / "roster.json").exists():
+    if path is None:
         from hero_pipeline.storage import load_manifest, load_bundles
 
         manifest = load_manifest()

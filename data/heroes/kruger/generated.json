@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "kruger",
   "display_name": "Kruger",
   "source": {
@@ -760,6 +760,100 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "high",
+          "low",
+          "low",
+          "low",
+          "low",
+          "average"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "enemy-debuffer",
+          "life-drain"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "C",
+          "dream_realm": "A+",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "debuff|Phys DEF|Single target": {
+            "magnitude": "average",
+            "weight": 1.3333333333333333
+          },
+          "cc|Knock down|Single target": {
+            "magnitude": "low",
+            "weight": 0.2,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "high",
+            "weight": 190.0
+          },
+          "debuff|Phys DEF|Area": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Vulnerable|Area": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Damage taken|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Ranged DEF|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Lifedrain|self": {
+            "magnitude": "average",
+            "weight": 3.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|debuff|Phys DEF|Single target": "average",
+          "ultimate|cc|Knock down|Single target": "average",
+          "ultimate|damage|Physical|Single target": "average",
+          "skill1|debuff|Phys DEF|Single target": "average",
+          "skill1|damage|Physical|Single target": "average",
+          "skill2|debuff|Phys DEF|Area": "average",
+          "skill2|debuff|Vulnerable|Area": "average",
+          "skill2|damage|Physical|Area": "average",
+          "skill2|debuff|Damage taken|Single target": "average",
+          "skill3|buff|Ranged DEF|Self": "average",
+          "skill4|buff|Lifedrain|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 600.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -767,96 +861,96 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 7.521428571428572,
-        "provider_id": "pandora"
+        "score": 7.521428571428572
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Physical DEF via Phys DEF (single target, average)",
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 7.05,
-        "provider_id": "rowan"
+        "score": 7.05
       },
       {
+        "provider_id": "tilaya",
         "reasons": [
           "Physical DEF via DEF (area, high)"
         ],
-        "score": 4.5,
-        "provider_id": "tilaya"
+        "score": 4.5
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 4.3875,
-        "provider_id": "thador"
+        "score": 4.3875
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "Physical DEF via DEF (multiple targets, average)"
         ],
-        "score": 3.0,
-        "provider_id": "mikola"
+        "score": 3.0
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Physical DEF via Phys DEF (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "twins"
+        "score": 1.5
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "Physical DEF via DEF (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "solise"
+        "score": 1.5
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "Physical DEF via Phys DEF (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "isabella"
+        "score": 1.5
       },
       {
+        "provider_id": "lumont",
         "reasons": [
           "Physical DEF via Phys DEF (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "lumont"
+        "score": 1.5
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "Physical DEF via Phys DEF (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "perseus"
+        "score": 1.5
       }
     ],
     "beneficiaries": [
@@ -878,88 +972,88 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "carolina",
           "score": 0.6,
           "matches": [
             "enemy-debuffer"
-          ],
-          "hero_id": "carolina"
+          ]
         },
         {
+          "hero_id": "shadewing",
           "score": 0.4,
           "matches": [
             "enemy-debuffer"
-          ],
-          "hero_id": "shadewing"
+          ]
         },
         {
+          "hero_id": "seth",
           "score": 0.4,
           "matches": [
             "life-drain"
-          ],
-          "hero_id": "seth"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "kazim",
           "score": 0.6309,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "kazim"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "sinbad",
           "score": 0.5684,
           "matches": [
             "Phys DEF",
             "Damage taken"
-          ],
-          "hero_id": "sinbad"
+          ]
         },
         {
+          "hero_id": "ravion",
           "score": 0.5053,
           "matches": [
             "Phys DEF"
-          ],
-          "hero_id": "ravion"
+          ]
         },
         {
+          "hero_id": "zanie",
           "score": 0.5053,
           "matches": [
             "Phys DEF"
-          ],
-          "hero_id": "zanie"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "overall": []
@@ -970,6 +1064,7 @@
     "ai_hash": "380f2ad6b1b632de66c74a14f8b961cc41186363c2a767da361c8b64ec8f5f87",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "4ea5f1ebbd5ef065a7d52c5ecdf6492572828586ceb1286fb8086dd1e27559f1",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

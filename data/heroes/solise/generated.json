@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "solise",
   "display_name": "Solise",
   "source": {
@@ -731,6 +731,90 @@
             "damage_types": {}
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "low",
+          "average",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-healer",
+          "ally-shielder",
+          "aoe-healing"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A+",
+          "pvp": "S",
+          "dream_realm": "S",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "buff|Direct healing|ultimate": {
+            "magnitude": "high",
+            "weight": 120.0
+          },
+          "damage|Magic": {
+            "magnitude": "low",
+            "weight": 132.0
+          },
+          "buff|Healing over time|skill1": {
+            "magnitude": "high",
+            "weight": 26.666666666666664
+          },
+          "buff|ATK|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "high",
+            "weight": 29.41176470588235
+          },
+          "buff|DEF|ally": {
+            "magnitude": "low",
+            "weight": 0.8
+          },
+          "buff|Magic DEF|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|buff|Direct healing|All units": "average",
+          "ultimate|damage|Magic|All units": "average",
+          "skill1|buff|Healing over time|Single target": "average",
+          "skill1|buff|ATK|Single target": "average",
+          "skill2|buff|Direct healing|Multiple targets": "average",
+          "skill4|buff|DEF|Single target": "average",
+          "skill4|buff|Magic DEF|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": "Ally blessing",
+        "replacement_damage": {
+          "Magic": 30.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -738,202 +822,202 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "ATK via ATK (single target, high)",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 15.396428571428572,
-        "provider_id": "pandora"
+        "score": 15.396428571428572
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK via ATK (multiple targets, high)",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 11.298214285714286,
-        "provider_id": "ravion"
+        "score": 11.298214285714286
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "contess"
+        "score": 7.875
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "evie"
+        "score": 7.875
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK via ATK (single target, high)"
         ],
-        "score": 7.875,
-        "provider_id": "kazim"
+        "score": 7.875
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK via ATK (all units, high)"
         ],
-        "score": 7.875,
-        "provider_id": "mikola"
+        "score": 7.875
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "parisa"
+        "score": 7.875
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "ATK via ATK (multiple targets, high)"
         ],
-        "score": 7.875,
-        "provider_id": "sonja"
+        "score": 7.875
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "ATK via ATK (area, high)"
         ],
-        "score": 7.875,
-        "provider_id": "taichi-agumon"
+        "score": 7.875
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "twins"
+        "score": 5.25
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK via ATK (all units, average)"
         ],
-        "score": 5.25,
-        "provider_id": "rolan"
+        "score": 5.25
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "aliceth"
+        "score": 5.25
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "ATK via ATK (multiple targets, average)"
         ],
-        "score": 5.25,
-        "provider_id": "pang"
+        "score": 5.25
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK via ATK (area, average)"
         ],
-        "score": 5.25,
-        "provider_id": "smokey-meerky"
+        "score": 5.25
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 4.3875,
-        "provider_id": "thador"
+        "score": 4.3875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       },
       {
+        "provider_id": "gunnar",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "gunnar"
+        "score": 2.625
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "dunlingr"
+        "score": 2.625
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "ATK via ATK (arc, low)"
         ],
-        "score": 2.625,
-        "provider_id": "fay"
+        "score": 2.625
       },
       {
+        "provider_id": "hammie",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "hammie"
+        "score": 2.625
       },
       {
+        "provider_id": "hugin",
         "reasons": [
           "ATK via ATK (multiple targets, low)"
         ],
-        "score": 2.625,
-        "provider_id": "hugin"
+        "score": 2.625
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "ATK via ATK (all units, low)"
         ],
-        "score": 2.625,
-        "provider_id": "koko"
+        "score": 2.625
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "kulu"
+        "score": 2.625
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "lucca"
+        "score": 2.625
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "ATK via ATK (single target, low)"
         ],
-        "score": 2.625,
-        "provider_id": "marilee"
+        "score": 2.625
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK via ATK (single target, low, conditional (frequent))"
         ],
-        "score": 2.2312499999999997,
-        "provider_id": "isabella"
+        "score": 2.2312499999999997
       }
     ],
     "beneficiaries": [
@@ -956,102 +1040,102 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "twins",
           "score": 0.8571,
           "matches": [
             "ATK",
             "Magic DEF"
-          ],
-          "hero_id": "twins"
+          ]
         },
         {
+          "hero_id": "perseus",
           "score": 0.7143,
           "matches": [
             "ATK",
             "Magic DEF"
-          ],
-          "hero_id": "perseus"
+          ]
         }
       ],
       "energy": [],
       "healing": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing over time",
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "smokey-meerky",
           "score": 0.8392,
           "matches": [
             "Direct healing",
             "Healing over time",
             "Healing"
-          ],
-          "hero_id": "smokey-meerky"
+          ]
         }
       ],
       "similar_skills": [
         {
+          "hero_id": "velara",
           "score": 0.864,
           "matches": [
             "ally-healer",
             "ally-shielder",
             "aoe-healing"
-          ],
-          "hero_id": "velara"
+          ]
         },
         {
+          "hero_id": "ludovic",
           "score": 0.8,
           "matches": [
             "ally-healer",
             "aoe-healing"
-          ],
-          "hero_id": "ludovic"
+          ]
         },
         {
+          "hero_id": "smokey-meerky",
           "score": 0.6,
           "matches": [
             "ally-healer",
             "aoe-healing"
-          ],
-          "hero_id": "smokey-meerky"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "debuff": [],
       "cc": [],
       "overall": [
         {
+          "hero_id": "rolan",
           "score": 0.5261,
           "matches": [
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         }
       ]
     }
@@ -1061,6 +1145,7 @@
     "ai_hash": "d28248494d8ff9c7e157fd54ba4e909101be8da51aa78ca1be827bc4010cdfa3",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "10d2f853395941ef6dc1c5eb1c0978d49a4840fca6289ff389066e73dd104458",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

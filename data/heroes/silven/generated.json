@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "silven",
   "display_name": "Silven",
   "source": {
@@ -720,6 +720,94 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "average",
+          "low",
+          "low",
+          "low",
+          "high",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "high-initial-energy",
+          "hp-scaling",
+          "mark-target",
+          "non-ult-utility"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "S+",
+          "pvp": "A+",
+          "dream_realm": "S",
+          "dream_realm_endless": "A+"
+        },
+        "effects": {
+          "damage|Magic": {
+            "magnitude": "low",
+            "weight": 83.33333333333333
+          },
+          "cc|Knock down|Single target": {
+            "magnitude": "average",
+            "weight": 0.6666666666666666,
+            "signature_cc": true
+          },
+          "buff|Ranged DEF|self": {
+            "magnitude": "low",
+            "weight": 0.3
+          },
+          "damage|Max HP-based damage": {
+            "magnitude": "low",
+            "weight": 0.15999999999999998
+          },
+          "buff|DEF Penetration|self": {
+            "magnitude": "low",
+            "weight": 0.4
+          },
+          "buff|Energy|self": {
+            "magnitude": "high",
+            "weight": 30.0
+          },
+          "buff|ATK SPD|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Magic|Single target": "average",
+          "skill1|cc|Knock down|Single target": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill2|buff|Ranged DEF|Self": "average",
+          "skill2|damage|Max HP-based damage|Single target": "average",
+          "skill4|buff|DEF Penetration|Self": "average",
+          "skill4|buff|Energy|Self": "average",
+          "skill4|buff|ATK SPD|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": true,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 125.0
+        },
+        "signature_section": "Skill1"
       }
     },
     "signature_calculated": "skill1"
@@ -727,425 +815,425 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "kordan",
         "reasons": [
           "DEF Penetration via DEF Penetration (area, high)",
           "Grants 2 distinct temporary stat buffs to Silven",
           "Enemy defense via DEF Penetration (area, high)"
         ],
-        "score": 37.5,
-        "provider_id": "kordan"
+        "score": 37.5
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven",
           "Enemy defense via Magic DEF debuff (all units, high)"
         ],
-        "score": 34.5,
-        "provider_id": "evie"
+        "score": 34.5
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`",
           "Physical DEF via Phys DEF (single target, low)",
           "Grants 6 distinct temporary stat buffs to Silven",
           "Enemy defense via Magic DEF debuff (single target, low)"
         ],
-        "score": 32.7,
-        "provider_id": "isabella"
+        "score": 32.7
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "DEF Penetration via DEF Penetration (all units, low)",
           "Grants 3 distinct temporary stat buffs to Silven",
           "Enemy defense via DEF Penetration (all units, low)"
         ],
-        "score": 28.75,
-        "provider_id": "rolan"
+        "score": 28.75
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "DEF Penetration via DEF Penetration (multiple targets, high)",
           "Grants 1 distinct temporary stat buff to Silven",
           "Enemy defense via DEF Penetration (multiple targets, high)"
         ],
-        "score": 27.0,
-        "provider_id": "aliceth"
+        "score": 27.0
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Physical DEF via DEF (multiple targets, average)",
           "Grants 4 distinct temporary stat buffs to Silven"
         ],
-        "score": 24.75,
-        "provider_id": "mikola"
+        "score": 24.75
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Grants 3 distinct temporary stat buffs to Silven"
         ],
-        "score": 17.25,
-        "provider_id": "dunlingr"
+        "score": 17.25
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Energy via Energy (single target, high) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven",
           "Enemy defense via Magic DEF debuff (single target, high)"
         ],
-        "score": 16.740000000000002,
-        "provider_id": "thador"
+        "score": 16.740000000000002
       },
       {
+        "provider_id": "hugin",
         "reasons": [
           "ATK SPD via Haste (multiple targets, high) `signature fuel`",
           "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
           "Grants 2 distinct temporary stat buffs to Silven"
         ],
-        "score": 16.461,
-        "provider_id": "hugin"
+        "score": 16.461
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`",
           "Energy via Energy (area, low) `signature fuel`",
           "Grants 2 distinct temporary stat buffs to Silven"
         ],
-        "score": 15.705,
-        "provider_id": "smokey-meerky"
+        "score": 15.705
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "Grants 3 distinct temporary stat buffs to Silven"
         ],
-        "score": 13.5,
-        "provider_id": "perseus"
+        "score": 13.5
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Grants 2 distinct temporary stat buffs to Silven",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 12.0,
-        "provider_id": "koko"
+        "score": 12.0
       },
       {
+        "provider_id": "sinbad",
         "reasons": [
           "Enemy defense via Magic DEF debuff (multiple targets, average)"
         ],
-        "score": 12.0,
-        "provider_id": "sinbad"
+        "score": 12.0
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 11.25,
-        "provider_id": "mehira"
+        "score": 11.25
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK SPD via Haste (all units, average) `signature fuel`",
           "Energy via Energy (multiple targets, low) `signature fuel`",
           "Physical DEF via Phys DEF (single target, low)",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 10.83,
-        "provider_id": "twins"
+        "score": 10.83
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`",
           "Grants 2 distinct temporary stat buffs to Silven"
         ],
-        "score": 10.5,
-        "provider_id": "parisa"
+        "score": 10.5
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven",
           "Enemy defense via Magic DEF debuff (single target, average)"
         ],
-        "score": 10.5,
-        "provider_id": "velara"
+        "score": 10.5
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 10.41,
-        "provider_id": "ravion"
+        "score": 10.41
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 10.125,
-        "provider_id": "lorsan"
+        "score": 10.125
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "Enemy defense via Damage taken debuff (all units, low)"
         ],
-        "score": 10.0,
-        "provider_id": "kulu"
+        "score": 10.0
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "Grants 2 distinct temporary stat buffs to Silven"
         ],
-        "score": 9.0,
-        "provider_id": "sonja"
+        "score": 9.0
       },
       {
+        "provider_id": "tilaya",
         "reasons": [
           "Physical DEF via DEF (area, high)",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 9.0,
-        "provider_id": "tilaya"
+        "score": 9.0
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven",
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 8.58,
-        "provider_id": "pandora"
+        "score": 8.58
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven (start of battle)"
         ],
-        "score": 8.542499999999999,
-        "provider_id": "zandrok"
+        "score": 8.542499999999999
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 8.25,
-        "provider_id": "hewynn"
+        "score": 8.25
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 8.25,
-        "provider_id": "kazim"
+        "score": 8.25
       },
       {
+        "provider_id": "carolina",
         "reasons": [
           "Enemy defense via Magic DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "carolina"
+        "score": 8.0
       },
       {
+        "provider_id": "cassadee",
         "reasons": [
           "Enemy defense via Magic DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "cassadee"
+        "score": 8.0
       },
       {
+        "provider_id": "laios",
         "reasons": [
           "Enemy defense via Magic DEF debuff (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "laios"
+        "score": 8.0
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "ATK SPD via ATK SPD (all units, low) `signature fuel`",
           "Energy via Energy (all units, low) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 7.08,
-        "provider_id": "lyca"
+        "score": 7.08
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 7.012499999999999,
-        "provider_id": "damian"
+        "score": 7.012499999999999
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`",
           "Physical DEF via Phys DEF (single target, average)"
         ],
-        "score": 6.24,
-        "provider_id": "rowan"
+        "score": 6.24
       },
       {
+        "provider_id": "gunnar",
         "reasons": [
           "ATK SPD via ATK SPD (single target, low) `signature fuel`",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 6.0,
-        "provider_id": "gunnar"
+        "score": 6.0
       },
       {
+        "provider_id": "eironn",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "eironn"
+        "score": 6.0
       },
       {
+        "provider_id": "lumont",
         "reasons": [
           "Physical DEF via Phys DEF (multiple targets, low)",
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 6.0,
-        "provider_id": "lumont"
+        "score": 6.0
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "reinier"
+        "score": 6.0
       },
       {
+        "provider_id": "shadewing",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "shadewing"
+        "score": 6.0
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "contess"
+        "score": 4.5
       },
       {
+        "provider_id": "alna",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "alna"
+        "score": 4.5
       },
       {
+        "provider_id": "fay",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "fay"
+        "score": 4.5
       },
       {
+        "provider_id": "hammie",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "hammie"
+        "score": 4.5
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "pang"
+        "score": 4.5
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "shakir"
+        "score": 4.5
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "Grants 1 distinct temporary stat buff to Silven"
         ],
-        "score": 4.5,
-        "provider_id": "taichi-agumon"
+        "score": 4.5
       },
       {
+        "provider_id": "himmel",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "himmel"
+        "score": 3.0
       },
       {
+        "provider_id": "berial",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "berial"
+        "score": 3.0
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "cecia"
+        "score": 3.0
       },
       {
+        "provider_id": "cryonaia",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "cryonaia"
+        "score": 3.0
       },
       {
+        "provider_id": "indris",
         "reasons": [
           "Enemy defense via Magic DEF debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "indris"
+        "score": 3.0
       },
       {
+        "provider_id": "kruger",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "kruger"
+        "score": 3.0
       },
       {
+        "provider_id": "nazrik",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "nazrik"
+        "score": 3.0
       },
       {
+        "provider_id": "thoran",
         "reasons": [
           "Enemy defense via Damage taken debuff (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "thoran"
+        "score": 3.0
       },
       {
+        "provider_id": "solise",
         "reasons": [
           "Physical DEF via DEF (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "solise"
+        "score": 1.5
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "valka"
+        "score": 1.5
       }
     ],
     "beneficiaries": [
@@ -1171,86 +1259,86 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "athalia",
           "score": 0.4,
           "matches": [
             "hp-scaling",
             "non-ult-utility"
-          ],
-          "hero_id": "athalia"
+          ]
         },
         {
+          "hero_id": "aliceth",
           "score": 0.3333,
           "matches": [
             "hp-scaling",
             "mark-target",
             "non-ult-utility"
-          ],
-          "hero_id": "aliceth"
+          ]
         },
         {
+          "hero_id": "daimon",
           "score": 0.2857,
           "matches": [
             "hp-scaling",
             "non-ult-utility"
-          ],
-          "hero_id": "daimon"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "sylphira",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "sylphira"
+          ]
         },
         {
+          "hero_id": "shemira",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "shemira"
+          ]
         },
         {
+          "hero_id": "ludovic",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "ludovic"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "sylphira",
           "score": 1.0,
           "matches": [
             "Knock down"
-          ],
-          "hero_id": "sylphira"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "sylphira",
           "score": 0.6808,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "sylphira"
+          ]
         }
       ]
     }
@@ -1260,6 +1348,7 @@
     "ai_hash": "ac10239f6898ff3685af7f53ee09894877ebd10de8833dcf5ee3987e9b351f0d",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "252a6db16dc7fca09c9d8f05daa596832ee95449c363a7c77b06e676e31ae578",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

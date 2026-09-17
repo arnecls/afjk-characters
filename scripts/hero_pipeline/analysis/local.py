@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 
-from typing import Any, Mapping
-
-from ..semantic import analyze_bundles
+from ..contracts import HeroBundle, HeroManifestEntry, LocalAnalysis
+from .policy import LocalPolicy
+from .temporary_legacy_adapter import analyze_bundle
 
 
 def analyze_local(
-    snapshot: Mapping[str, Any],
-    policy: Mapping[str, Any] | None = None,
-) -> list[Any]:
-    """Analyze each hero bundle without roster-wide calibration."""
-    if policy is None:
-        from .policy import make_policy
-
-        policy = make_policy()
-    return analyze_bundles(snapshot, policy)
+    entry: HeroManifestEntry,
+    bundle: HeroBundle,
+    local_policy: LocalPolicy,
+) -> LocalAnalysis:
+    """Analyze one bundle and return a schema-shaped mapping."""
+    return analyze_bundle(entry, bundle, local_policy)

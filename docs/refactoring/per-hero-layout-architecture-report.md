@@ -27,7 +27,13 @@ The branch establishes a better canonical storage architecture:
 - schemas and provenance hashes protect storage boundaries; and
 - generated files are written atomically.
 
-The end-to-end pipeline is not schema-first yet. The new `hero_pipeline`
+As of 2026-09-17, the deepening migration has landed on this branch. Storage,
+scoring, and presentation are ID-keyed and schema-shaped. Local analysis and
+roster calibration still use a named temporary adapter over
+`rewrite-summaries.py`. See [ADR 0004](adr/0004-staged-publication.md) and
+[migration deltas](per-hero-layout-migration-deltas.md).
+
+The original review found that the end-to-end pipeline was not schema-first yet. The new `hero_pipeline`
 package currently adapts the per-hero layout into the aggregate dictionaries,
 display-name keys, mutable module configuration, and legacy `Hero`/`Effect`
 objects expected by the existing implementation. Render adapters then
@@ -562,7 +568,40 @@ treated as a request for a broad rewrite:
 6. Re-run complexity measurement after each phase, but prioritize boundary
    simplification and deleted conversions over raw line-count targets.
 
-The migration is complete when IDs and schema-shaped records flow from storage
-through analysis, scoring, and presentation. See
-[ADR 0004](adr/0004-staged-publication.md) and
-[migration deltas](per-hero-layout-migration-deltas.md).
+### Finding resolution (2026-09-17)
+
+- F1: Combined publication is the production `analyze` path. Scoring failure
+  before publication leaves files unchanged.
+- F2: Production analyze/render/validate use the roster snapshot. Aggregate
+  projections remain quarantined in `storage`/`heroes_io` for tests.
+- F3: Local analysis returns schema mappings. The named
+  `temporary_legacy_adapter` still rehydrates legacy objects internally.
+- F4: Policy defaults are explicit and frozen. Remaining engine-constant
+  mutation is serialized and restored.
+- F5: Production scoring reads generated v2 analysis facts and writes
+  ID-keyed relationships. Source skill prose is not reparsed at score time.
+- F6: Markdown, CSV, and site serializers consume one presentation model.
+  Display names and slugs are resolved there.
+- F7: Normal pipeline commands require the per-hero layout. Dual-layout
+  detection remains only in offline migration scripts.
+- F8: TypedDict contracts and mypy now cover `scripts/hero_pipeline`.
+- F9: Publication, analysis-boundary, render, and compatibility tests cover
+  the new seams. Historical object-engine tests still exercise the adapter.
+
+The remaining honest gap is F3's internal object graph, not the production
+storage or render contracts.
+
+Leftover files that are still required as oracles or test adapters, not as
+production pipeline steps:
+
+- `scripts/rewrite-summaries.py` and `scripts/hero_schema.py` behind
+  `analysis/temporary_legacy_adapter.py`;
+- `scripts/generate-heroes-overview.py` as a CLI alias plus historical
+  scoring helpers used by tests;
+- `scripts/heroes_io.py` display-name loaders for tests and migration
+  scripts, backed by `storage.load_raw_roster` / `load_processed` /
+  `load_synergies`.
+
+Removed rather than retained: `process_config.py`,
+`hero_pipeline.legacy_adapters`, and unused synergy scaffolding
+(`capabilities.py`, `indexes.py`, `ranking.py`, `replacements.py`).

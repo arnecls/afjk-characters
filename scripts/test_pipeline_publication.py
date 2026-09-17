@@ -7,6 +7,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from threading import Event, Thread
 
 from character_stat_ranks import hero_slug
 from hero_pipeline.analysis.policy import make_policy, policy_scope
@@ -20,9 +21,12 @@ from hero_pipeline.storage import (
     load_bundles,
     load_json,
     load_manifest,
+    validate_bundle_documents,
     validate_manifest,
+    validate_schema_documents,
     write_analysis_outputs,
 )
+from hero_pipeline.synergy.service import score_roster
 
 
 def _mini_repo(src_ids: list[str]) -> Repository:
@@ -112,17 +116,17 @@ class CombinedPublicationTests(unittest.TestCase):
             new_analysis["faction"] = old.get("faction")
             processed = {
                 "heroes": {
-                    "Aliceth": {**old, "role_category": "support"}
+                    "aliceth": {**old, "role_category": "support"}
                 }
             }
             synergies = {
                 "heroes": {
-                    "Aliceth": {
+                    "aliceth": {
                         "synergies": [
                             {
                                 "score": 1.0,
                                 "reasons": ["test"],
-                                "provider": "Aliceth",
+                                "provider_id": "aliceth",
                             }
                         ],
                         "beneficiaries": [],
@@ -164,6 +168,68 @@ class CombinedPublicationTests(unittest.TestCase):
                     self.repo.heroes_dir / "aliceth" / "generated.json"
                 ).read_bytes()
             self.assertEqual(before, after)
+
+    def test_nested_synergy_shape_is_rejected(self) -> None:
+        self.repo = _mini_repo(["aliceth"])
+        with repository_scope(self.repo):
+            manifest = load_manifest()
+            bundles = load_bundles(manifest)
+            bundles["aliceth"]["generated"]["synergies"]["synergies"] = [
+                {"provider_id": "aliceth"}
+            ]
+            errors = validate_schema_documents(manifest, bundles)
+            self.assertTrue(
+                any("aliceth/generated" in error for error in errors)
+            )
+
+    def test_unknown_replacement_id_is_rejected(self) -> None:
+        self.repo = _mini_repo(["aliceth"])
+        with repository_scope(self.repo):
+            manifest = load_manifest()
+            bundles = load_bundles(manifest)
+            bundles["aliceth"]["generated"]["synergies"][
+                "replacements"
+            ] = {
+                "overall": [
+                    {
+                        "hero_id": "missing",
+                        "score": 1.0,
+                        "matches": ["test"],
+                    }
+                ]
+            }
+            errors = validate_bundle_documents(manifest, bundles)
+            self.assertTrue(
+                any("unknown replacement hero_id" in error for error in errors)
+            )
+
+    def test_scoring_reads_generated_analysis_not_source(self) -> None:
+        self.repo = _mini_repo(["aliceth"])
+        with repository_scope(self.repo):
+            snapshot = {
+                "manifest": load_manifest(),
+                "bundles": load_bundles(),
+            }
+            generated = snapshot["bundles"]["aliceth"]["generated"]
+
+            class ForbiddenSource(dict):
+                def get(self, *_args, **_kwargs):
+                    raise AssertionError("scorer read generated.source")
+
+                def __getitem__(self, _key):
+                    raise AssertionError("scorer read generated.source")
+
+            generated["source"] = ForbiddenSource()
+            analysis = generated["derived"]["analysis"]
+            result = score_roster(
+                {"heroes": {"aliceth": analysis}},
+                snapshot,
+                make_policy(),
+            )
+            self.assertEqual(set(result["heroes"]), {"aliceth"})
+            for row in result["heroes"]["aliceth"]["synergies"]:
+                self.assertIn("provider_id", row)
+                self.assertNotIn("provider", row)
 
 
 class ParityHarnessTests(unittest.TestCase):
@@ -216,6 +282,48 @@ class PolicyIsolationTests(unittest.TestCase):
             self.assertEqual(
                 rs.CASTING_SPEED_FAST_THRESHOLD, original + 3
             )
+        self.assertEqual(rs.CASTING_SPEED_FAST_THRESHOLD, original)
+
+    def test_concurrent_policy_scopes_do_not_overlap(self) -> None:
+        from hero_pipeline.analysis.policy import thaw_policy
+        from hero_pipeline.engine import rewrite_summaries
+
+        rs = rewrite_summaries()
+        original = rs.CASTING_SPEED_FAST_THRESHOLD
+        first = thaw_policy(make_policy())
+        second = thaw_policy(make_policy())
+        first["calibration"]["casting_speed_fast_threshold"] = original + 1
+        second["calibration"]["casting_speed_fast_threshold"] = original + 2
+        first_entered = Event()
+        release_first = Event()
+        observations: list[float] = []
+
+        def run_first() -> None:
+            with policy_scope(first):
+                observations.append(rs.CASTING_SPEED_FAST_THRESHOLD)
+                first_entered.set()
+                self.assertTrue(release_first.wait(timeout=5))
+                observations.append(rs.CASTING_SPEED_FAST_THRESHOLD)
+
+        def run_second() -> None:
+            self.assertTrue(first_entered.wait(timeout=5))
+            with policy_scope(second):
+                observations.append(rs.CASTING_SPEED_FAST_THRESHOLD)
+
+        first_thread = Thread(target=run_first)
+        second_thread = Thread(target=run_second)
+        first_thread.start()
+        second_thread.start()
+        self.assertTrue(first_entered.wait(timeout=5))
+        release_first.set()
+        first_thread.join(timeout=5)
+        second_thread.join(timeout=5)
+        self.assertFalse(first_thread.is_alive())
+        self.assertFalse(second_thread.is_alive())
+        self.assertEqual(
+            observations,
+            [original + 1, original + 1, original + 2],
+        )
         self.assertEqual(rs.CASTING_SPEED_FAST_THRESHOLD, original)
 
 

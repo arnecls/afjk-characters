@@ -2,17 +2,31 @@
 
 from __future__ import annotations
 
-from typing import Any, Mapping
+from typing import cast
 
-from ..semantic import score_heroes
+from ..analysis.policy import PipelinePolicy
+from ..contracts import (
+    GeneratedSynergyRoster,
+    ProcessedRoster,
+    RosterSnapshot,
+)
+from .facts import load_scoring_inputs
+from .scoring import score_all
 
 
 def score_roster(
-    heroes: list[Any],
-    processed: Mapping[str, Any],
-    snapshot: Mapping[str, Any],
-    context: Mapping[str, Any],
-    policy: Mapping[str, Any],
-) -> dict[str, Any]:
-    """Score provider-to-receiver relationships for a complete roster."""
-    return score_heroes(heroes, processed, snapshot, context, policy)
+    processed: ProcessedRoster,
+    snapshot: RosterSnapshot,
+    policy: PipelinePolicy,
+) -> GeneratedSynergyRoster:
+    """Score ID-keyed generated analysis without source reparsing."""
+    heroes, behaviors = load_scoring_inputs(
+        snapshot,
+        processed["heroes"],
+    )
+    result = score_all(
+        heroes,
+        behaviors,
+        policy,
+    )
+    return cast(GeneratedSynergyRoster, result)

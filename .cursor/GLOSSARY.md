@@ -135,7 +135,7 @@ Used in:
 
 - [Behavior rules](.cursor/AGENTS.md)
 - [Detail view rendering](site/js/src/views-detail.js)
-- [Processed hero data](data/heroes_data_processed.json)
+- [Generated analysis](data/heroes)
 
 Also see:
 
@@ -333,7 +333,7 @@ Also see:
 ## three data tiers
 
 The project separates raw source data, processed analysis data, and browser data:
-`data/heroes_data.json`, `data/heroes_data_processed.json`, and
+`data/heroes/<id>/generated.json` source, `generated.json` derived analysis, and
 `site/data/heroes.json`. Many bugs are classified by which tier first contains
 the wrong value.
 
@@ -358,7 +358,7 @@ version control so analysis can be regenerated consistently.
 Used in:
 
 - [AI-generated data docs](docs/ai-generated-data.md)
-- [Raw hero data](data/heroes_data.json)
+- [Per-hero generated source](data/heroes)
 - [Skill-effect sidecars](data/skill_effects)
 
 Also see:
@@ -441,7 +441,7 @@ synergy scoring and site rendering.
 
 Used in:
 
-- [Processed hero data](data/heroes_data_processed.json)
+- [Generated analysis](data/heroes)
 - [Skill analysis pipeline](docs/skill-analysis-pipeline.md)
 - [Site renderer](scripts/render_site.py)
 
@@ -472,7 +472,7 @@ Also see:
 ## source hash
 
 Hash stored on each sidecar skill entry to prove the extracted effects still
-match the current `heroes_data.json` description. A stale hash means the skill
+match the current generated skill description. A stale hash means the skill
 text changed and the sidecar must be refreshed.
 
 Used in:
@@ -1153,7 +1153,7 @@ skill summaries.
 Used in:
 
 - [Behavior rules](.cursor/AGENTS.md)
-- [Raw hero data](data/heroes_data.json)
+- [Per-hero generated source](data/heroes)
 - [Replacement algorithm](docs/replacement-algorithm.md)
 
 Also see:

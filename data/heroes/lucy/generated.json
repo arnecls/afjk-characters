@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lucy",
   "display_name": "Lucy",
   "source": {
@@ -723,6 +723,83 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "average",
+          "low",
+          "high"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-shielder",
+          "backline-assassin",
+          "backline-inhibit",
+          "high-initial-energy",
+          "mass-cc",
+          "summoner"
+        ],
+        "summon_profile": {
+          "is_summoner": true,
+          "has_ranged_summons": true
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "C",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|Magic": {
+            "magnitude": "average",
+            "weight": 68.8
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.1724137931034483,
+            "signature_cc": true
+          },
+          "cc|Knock up|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Shield|ally": {
+            "magnitude": "average",
+            "weight": 37.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|Magic|All units": "average",
+          "ultimate|cc|Stun|Single target": "average",
+          "ultimate|cc|Knock up|Single target": "average",
+          "skill1|cc|Stun|Single target": "average",
+          "skill1|damage|Magic|Single target": "average",
+          "skill2|damage|Magic|All units": "average",
+          "skill2|cc|Stun|Single target": "average",
+          "skill2|cc|Knock up|Single target": "average",
+          "skill4|buff|Shield|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 330.0
+        },
+        "signature_section": "Skill2"
       }
     },
     "signature_calculated": "skill2"
@@ -730,148 +807,148 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "peggy",
         "reasons": [
           "ATK via ATK (all summons, high)",
           "DEF via DEF (all summons, high)",
           "Ranged damage via Ranged damage (all summons, low)"
         ],
-        "score": 21.0,
-        "provider_id": "peggy"
+        "score": 21.0
       },
       {
+        "provider_id": "aurora",
         "reasons": [
           "Haste via Haste (all summons, high)",
           "Damage dealt via Damage dealt (all summons, average)",
           "Damage taken via Damage taken (all summons, low)"
         ],
-        "score": 18.0,
-        "provider_id": "aurora"
+        "score": 18.0
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Shield via Shield (all summons, average)"
         ],
-        "score": 6.0,
-        "provider_id": "florabelle"
+        "score": 6.0
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`"
         ],
-        "score": 5.625,
-        "provider_id": "shakir"
+        "score": 5.625
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "ATK SPD via Haste (area, high) `signature fuel`"
         ],
-        "score": 5.625,
-        "provider_id": "smokey-meerky"
+        "score": 5.625
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`"
         ],
-        "score": 5.625,
-        "provider_id": "lorsan"
+        "score": 5.625
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "dunlingr"
+        "score": 3.75
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "ATK SPD via Haste (all units, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "twins"
+        "score": 3.75
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "hewynn"
+        "score": 3.75
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "kazim"
+        "score": 3.75
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "mehira"
+        "score": 3.75
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "mikola"
+        "score": 3.75
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "ravion"
+        "score": 3.75
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 3.75,
-        "provider_id": "rolan"
+        "score": 3.75
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 3.1875,
-        "provider_id": "damian"
+        "score": 3.1875
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`"
         ],
-        "score": 3.1875,
-        "provider_id": "zandrok"
+        "score": 3.1875
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`"
         ],
-        "score": 1.875,
-        "provider_id": "isabella"
+        "score": 1.875
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "ATK SPD via ATK SPD (all units, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "lyca"
+        "score": 1.5
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "parisa"
+        "score": 1.5
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.5,
-        "provider_id": "valka"
+        "score": 1.5
       }
     ],
     "beneficiaries": [
@@ -886,106 +963,106 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "contess",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "contess"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "hugin",
           "score": 1.0,
           "matches": [
             "Shield"
-          ],
-          "hero_id": "hugin"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "peggy",
           "score": 0.45,
           "matches": [
             "ally-shielder",
             "high-initial-energy",
             "summoner"
-          ],
-          "hero_id": "peggy"
+          ]
         },
         {
+          "hero_id": "lamentis",
           "score": 0.45,
           "matches": [
             "high-initial-energy",
             "mass-cc",
             "summoner"
-          ],
-          "hero_id": "lamentis"
+          ]
         },
         {
+          "hero_id": "galahad",
           "score": 0.4286,
           "matches": [
             "ally-shielder",
             "backline-inhibit",
             "summoner"
-          ],
-          "hero_id": "galahad"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "saida",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "sylphira",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "sylphira"
+          ]
         },
         {
+          "hero_id": "marcille",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "marcille"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "zandrok",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock up"
-          ],
-          "hero_id": "zandrok"
+          ]
         },
         {
+          "hero_id": "nerion",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock up"
-          ],
-          "hero_id": "nerion"
+          ]
         },
         {
+          "hero_id": "scarlita",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock up"
-          ],
-          "hero_id": "scarlita"
+          ]
         }
       ],
       "overall": []
@@ -996,6 +1073,7 @@
     "ai_hash": "185eef0e1315792c5c50963c2cd9249859fbe22a3c20e5fba7e8297cb225c9e2",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "add9508991295b4d7ca558652cde3e03f0b8a8aa2968a3c4452e98c4527c3910",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

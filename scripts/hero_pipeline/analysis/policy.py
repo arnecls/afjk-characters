@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 from types import MappingProxyType
+from threading import RLock
 from typing import Any, Mapping, cast, TypedDict
 
 from ..engine import overview, rewrite_summaries
+
+_POLICY_LOCK = RLock()
 
 
 class LocalPolicy(TypedDict, total=False):
@@ -93,93 +96,117 @@ def effective_defaults() -> PipelinePolicy:
     analysis therefore keeps these defaults until a later approved
     overlay.
     """
-    rs = rewrite_summaries()
-    gen = overview()
     return {
         "local": {
-            "energy_fill_rate": float(rs.ENERGY_FILL_RATE),
-            "ult_energy_capacity": float(rs.ULT_ENERGY_CAPACITY),
-            "initial_cd_skill_weight": float(rs.INITIAL_CD_SKILL_WEIGHT),
-            "initial_cd_cap": float(rs.INITIAL_CD_CAP),
-            "min_cycle_seconds": float(rs.MIN_CYCLE_SECONDS),
-            "passive_reference_cycle_seconds": float(
-                rs.PASSIVE_REFERENCE_CYCLE_SECONDS
-            ),
-            "condition_frequent_score": float(rs.CONDITION_FREQUENT_SCORE),
-            "condition_cooldown_reference_seconds": float(
-                rs.CONDITION_COOLDOWN_REFERENCE_SECONDS
-            ),
-            "condition_cooldown_floor_mult": float(
-                rs.CONDITION_COOLDOWN_FLOOR_MULT
-            ),
-            "condition_rare_downgrade_steps": int(
-                rs.CONDITION_RARE_DOWNGRADE_STEPS
-            ),
-            "melee_max_range": float(rs.MELEE_MAX_RANGE),
-            "non_melee_melee_max_range": float(rs.NON_MELEE_MELEE_MAX_RANGE),
+            "energy_fill_rate": 100.0,
+            "ult_energy_capacity": 1000.0,
+            "initial_cd_skill_weight": 0.5,
+            "initial_cd_cap": 60.0,
+            "min_cycle_seconds": 3.0,
+            "passive_reference_cycle_seconds": 10.0,
+            "condition_frequent_score": 0.85,
+            "condition_cooldown_reference_seconds": 10.0,
+            "condition_cooldown_floor_mult": 0.2,
+            "condition_rare_downgrade_steps": 2,
+            "melee_max_range": 3.5,
+            "non_melee_melee_max_range": 2.5,
         },
         "calibration": {
-            "casting_speed_fast_threshold": float(
-                rs.CASTING_SPEED_FAST_THRESHOLD
-            ),
-            "casting_speed_slow_threshold": float(
-                rs.CASTING_SPEED_SLOW_THRESHOLD
-            ),
+            "casting_speed_fast_threshold": 5.0,
+            "casting_speed_slow_threshold": 8.5,
         },
         "synergy": {
-            "targeting_weight": dict(gen.TARGETING_WEIGHT),
-            "mag_weight": dict(gen.MAG_WEIGHT),
-            "summon_targeting_weight": float(gen.SUMMON_TARGETING_WEIGHT),
-            "haste_for_atk_spd_score_mult": float(
-                gen.HASTE_FOR_ATK_SPD_SCORE_MULT
-            ),
-            "frequent_conditional_score": float(
-                gen.FREQUENT_CONDITIONAL_SCORE
-            ),
-            "signature_fuel_speed_mult": dict(gen.SIGNATURE_FUEL_SPEED_MULT),
-            "signature_fuel_energy_mult": dict(
-                gen.SIGNATURE_FUEL_ENERGY_MULT
-            ),
-            "energy_synergy_score_mult": float(
-                gen.ENERGY_SYNERGY_SCORE_MULT
-            ),
-            "high_damage_ult_energy_pref_mult": float(
-                gen.HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
-            ),
-            "implicit_fuel_base": float(gen.IMPLICIT_FUEL_BASE),
-            "early_battle_energy_ult_mult": dict(
-                gen.EARLY_BATTLE_ENERGY_ULT_MULT
-            ),
-            "defining_tier_score_mult": dict(gen.DEFINING_TIER_SCORE_MULT),
-            "proximity_melee_max_range": float(
-                gen.PROXIMITY_MELEE_MAX_RANGE
-            ),
-            "proximity_default_aura_radius": float(
-                gen.PROXIMITY_DEFAULT_AURA_RADIUS
-            ),
-            "proximity_range_slack": float(gen.PROXIMITY_RANGE_SLACK),
-            "proximity_receiver_whitelist": sorted(
-                gen.PROXIMITY_RECEIVER_WHITELIST
-            ),
-            "proximity_provider_blacklist": sorted(
-                gen.PROXIMITY_PROVIDER_BLACKLIST
-            ),
-            "scalar_share_boost": float(gen.SCALAR_SHARE_BOOST),
-            "scalar_bound_threshold": float(gen.SCALAR_BOUND_THRESHOLD),
+            "targeting_weight": {
+                "All units": 5.0,
+                "Area": 4.0,
+                "Arc": 3.0,
+                "Multiple targets": 3.0,
+                "Single target": 1.5,
+            },
+            "mag_weight": {
+                "high": 3.0,
+                "average": 2.0,
+                "low": 1.0,
+            },
+            "summon_targeting_weight": 3.0,
+            "haste_for_atk_spd_score_mult": 1.25,
+            "frequent_conditional_score": 0.85,
+            "signature_fuel_speed_mult": {
+                "slow": 1.6,
+                "average": 1.2,
+                "fast": 1.0,
+            },
+            "signature_fuel_energy_mult": {
+                "slow": 1.3,
+                "average": 1.05,
+                "fast": 1.0,
+            },
+            "energy_synergy_score_mult": 0.72,
+            "high_damage_ult_energy_pref_mult": 2.25,
+            "implicit_fuel_base": 0.45,
+            "early_battle_energy_ult_mult": {
+                "slow": 1.25,
+                "average": 1.0,
+                "fast": 0.85,
+            },
+            "defining_tier_score_mult": {
+                "Mythic+": 1.5,
+                "EX+5": 1.5,
+                "EX+10": 1.6,
+                "EX+15": 1.8,
+                "Supreme+": 1.7,
+            },
+            "proximity_melee_max_range": 3.5,
+            "proximity_default_aura_radius": 2.0,
+            "proximity_range_slack": 0.5,
+            "proximity_receiver_whitelist": [],
+            "proximity_provider_blacklist": [],
+            "scalar_share_boost": 0.75,
+            "scalar_bound_threshold": 0.5,
         },
         "replacement": {
-            "min_score": float(gen.REPLACEMENT_MIN_SCORE),
-            "max_replacements": int(gen.REPLACEMENT_MAX),
-            "same_faction_mult": float(gen.REPLACEMENT_SAME_FACTION_MULT),
-            "same_role_category_mult": float(
-                gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT
-            ),
-            "same_melee_mult": float(gen.REPLACEMENT_SAME_MELEE_MULT),
+            "min_score": 0.5,
+            "max_replacements": 3,
+            "same_faction_mult": 1.2,
+            "same_role_category_mult": 1.2,
+            "same_melee_mult": 1.2,
             "category_weights_by_role": {
-                role: dict(weights)
-                for role, weights in (
-                    gen.REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE.items()
-                )
+                "damage_dealer": {
+                    "similar_skills": 3,
+                    "damage": 5,
+                    "debuff": 2,
+                    "cc": 2,
+                    "buff": 1,
+                    "healing": 0,
+                    "energy": 1,
+                },
+                "tank": {
+                    "cc": 4,
+                    "buff": 3,
+                    "damage": 2,
+                    "debuff": 2,
+                    "similar_skills": 2,
+                    "healing": 2,
+                    "energy": 0,
+                },
+                "support": {
+                    "buff": 4,
+                    "healing": 4,
+                    "energy": 3,
+                    "similar_skills": 2,
+                    "cc": 2,
+                    "debuff": 1,
+                    "damage": 0,
+                },
+                "specialist": {
+                    "similar_skills": 4,
+                    "damage": 2,
+                    "debuff": 2,
+                    "cc": 2,
+                    "buff": 2,
+                    "healing": 2,
+                    "energy": 1,
+                },
             },
         },
         "presentation": {
@@ -192,7 +219,9 @@ def effective_defaults() -> PipelinePolicy:
     }
 
 
-def make_policy(config: Mapping[str, Any] | None = None) -> Any:
+def make_policy(
+    config: Mapping[str, Any] | None = None,
+) -> PipelinePolicy:
     """Return a frozen policy.
 
     Analysis and scoring keep effective module defaults. Presentation
@@ -219,7 +248,7 @@ def make_policy(config: Mapping[str, Any] | None = None) -> Any:
                 "max_replacements"
             ]
             policy["replacement"] = cast(ReplacementPolicy, presentation_rep)
-    return _freeze(policy)
+    return cast(PipelinePolicy, _freeze(policy))
 
 
 def thaw_policy(policy: Mapping[str, Any]) -> dict[str, Any]:
@@ -338,12 +367,20 @@ class policy_scope:
         self._previous: dict[str, Any] | None = None
 
     def __enter__(self) -> Mapping[str, Any]:
-        self._previous = apply_policy(self.policy)
-        return self.policy
+        _POLICY_LOCK.acquire()
+        try:
+            self._previous = apply_policy(self.policy)
+            return self.policy
+        except BaseException:
+            _POLICY_LOCK.release()
+            raise
 
     def __exit__(self, *_exc: object) -> None:
-        if self._previous is not None:
-            restore_engine_state(self._previous)
+        try:
+            if self._previous is not None:
+                restore_engine_state(self._previous)
+        finally:
+            _POLICY_LOCK.release()
 
 
 def config_override_diff(config: Mapping[str, Any]) -> dict[str, Any]:

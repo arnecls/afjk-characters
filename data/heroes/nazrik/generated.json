@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "nazrik",
   "display_name": "Nazrik",
   "source": {
@@ -765,6 +765,107 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "high",
+          "low",
+          "average",
+          "average",
+          "low",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "heal-inhibitor",
+          "hp-scaling",
+          "mark-target"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A",
+          "pvp": "B",
+          "dream_realm": "A",
+          "dream_realm_endless": "A"
+        },
+        "effects": {
+          "damage|True damage": {
+            "magnitude": "high",
+            "weight": 90.0
+          },
+          "damage|Physical": {
+            "magnitude": "high",
+            "weight": 98.75
+          },
+          "debuff|Max HP|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Healing|Single target": {
+            "magnitude": "average",
+            "weight": 21.428571428571427
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.21428571428571427,
+            "signature_cc": true
+          },
+          "buff|Crit|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Crit Resist|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Vitality|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Damage taken|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|damage|True damage|Single target": "average",
+          "ultimate|damage|Physical|Single target": "average",
+          "skill1|damage|Physical|Single target": "average",
+          "skill1|debuff|Max HP|Single target": "average",
+          "skill2|debuff|Healing|Single target": "average",
+          "skill2|cc|Stun|Single target": "average",
+          "skill2|damage|Physical|Single target": "average",
+          "skill3|buff|Crit|Self": "average",
+          "skill4|debuff|Crit Resist|Single target": "average",
+          "skill4|debuff|Vitality|Single target": "average",
+          "skill4|debuff|Damage taken|Single target": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": true,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "True damage": 168.75,
+          "Physical": 148.125
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -772,47 +873,47 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 7.521428571428572,
-        "provider_id": "pandora"
+        "score": 7.521428571428572
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Crit via Crit (single target, average)",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 7.3875,
-        "provider_id": "thador"
+        "score": 7.3875
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       }
     ],
     "beneficiaries": [
@@ -838,103 +939,103 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "silven",
           "score": 0.48,
           "matches": [
             "hp-scaling",
             "mark-target"
-          ],
-          "hero_id": "silven"
+          ]
         },
         {
+          "hero_id": "satrana",
           "score": 0.4,
           "matches": [
             "heal-inhibitor",
             "hp-scaling"
-          ],
-          "hero_id": "satrana"
+          ]
         },
         {
+          "hero_id": "faramor",
           "score": 0.3429,
           "matches": [
             "heal-inhibitor",
             "hp-scaling"
-          ],
-          "hero_id": "faramor"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "faramor",
           "score": 1.0,
           "matches": [
             "True damage",
             "Physical"
-          ],
-          "hero_id": "faramor"
+          ]
         },
         {
+          "hero_id": "athalia",
           "score": 1.0,
           "matches": [
             "True damage",
             "Physical"
-          ],
-          "hero_id": "athalia"
+          ]
         },
         {
+          "hero_id": "nara",
           "score": 1.0,
           "matches": [
             "True damage",
             "Physical"
-          ],
-          "hero_id": "nara"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "phraesto",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "phraesto"
+          ]
         },
         {
+          "hero_id": "bonnie",
           "score": 1.0,
           "matches": [
             "Stun"
-          ],
-          "hero_id": "bonnie"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "vala",
           "score": 0.615,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "vala"
+          ]
         },
         {
+          "hero_id": "faramor",
           "score": 0.6088,
           "matches": [
             "Damage"
-          ],
-          "hero_id": "faramor"
+          ]
         },
         {
+          "hero_id": "orion",
           "score": 0.5265,
           "matches": [
             "Damage",
             "Crowd Control"
-          ],
-          "hero_id": "orion"
+          ]
         }
       ]
     }
@@ -944,6 +1045,7 @@
     "ai_hash": "fdf4f6362f6ac985ab60177c43ddd854b9cf115518296ddc50d9864503f38bae",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "a67551db1a936f71231bd1d35dc40dae02855b87b6dc1ea907335acd6c4f58e1",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

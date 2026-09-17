@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "callan",
   "display_name": "Callan",
   "source": {
@@ -740,6 +740,87 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "low",
+          "average",
+          "average",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "ally-shielder",
+          "cc-immunity"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "A+",
+          "pvp": "A+",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "damage|Magic": {
+            "magnitude": "low",
+            "weight": 19.2
+          },
+          "cc|Knock down|All units": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Vitality|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "cc|Stun|All units": {
+            "magnitude": "average",
+            "weight": 0.2,
+            "signature_cc": true
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.2,
+            "signature_cc": true
+          },
+          "buff|Direct healing|skill5": {
+            "magnitude": "low",
+            "weight": 1.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "skill1|damage|Magic|All units": "average",
+          "skill1|cc|Knock down|All units": "average",
+          "skill3|buff|Vitality|Self": "average",
+          "skill4|cc|Stun|All units": "average",
+          "skill4|cc|Stun|Single target": "average",
+          "skill5|buff|Direct healing|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": true,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 68.0
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "skill1"
@@ -747,110 +828,110 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "thador",
         "reasons": [
           "Shield via Shield (multiple targets, high)",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`"
         ],
-        "score": 8.8875,
-        "provider_id": "thador"
+        "score": 8.8875
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
         ],
-        "score": 7.521428571428572,
-        "provider_id": "pandora"
+        "score": 7.521428571428572
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "Shield via Shield (single target, high)"
         ],
-        "score": 4.5,
-        "provider_id": "contess"
+        "score": 4.5
       },
       {
+        "provider_id": "saida",
         "reasons": [
           "Shield via Shield (multiple targets, high)"
         ],
-        "score": 4.5,
-        "provider_id": "saida"
+        "score": 4.5
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 4.05,
-        "provider_id": "rowan"
+        "score": 4.05
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
         ],
-        "score": 3.4232142857142853,
-        "provider_id": "ravion"
+        "score": 3.4232142857142853
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
         ],
-        "score": 3.375,
-        "provider_id": "phraesto"
+        "score": 3.375
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
         ],
-        "score": 3.278571428571428,
-        "provider_id": "lyca"
+        "score": 3.278571428571428
       },
       {
+        "provider_id": "korin",
         "reasons": [
           "Shield via Shield (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "korin"
+        "score": 3.0
       },
       {
+        "provider_id": "lucius",
         "reasons": [
           "Shield via Shield (area, average)"
         ],
-        "score": 3.0,
-        "provider_id": "lucius"
+        "score": 3.0
       },
       {
+        "provider_id": "lucy",
         "reasons": [
           "Shield via Shield (single target, average)"
         ],
-        "score": 3.0,
-        "provider_id": "lucy"
+        "score": 3.0
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Shield via Shield (all units, low)"
         ],
-        "score": 1.5,
-        "provider_id": "koko"
+        "score": 1.5
       },
       {
+        "provider_id": "orion",
         "reasons": [
           "Shield via Shield (multiple targets, low)"
         ],
-        "score": 1.5,
-        "provider_id": "orion"
+        "score": 1.5
       },
       {
+        "provider_id": "scarlita",
         "reasons": [
           "Shield via Shield (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "scarlita"
+        "score": 1.5
       },
       {
+        "provider_id": "soren",
         "reasons": [
           "Shield via Shield (single target, low)"
         ],
-        "score": 1.5,
-        "provider_id": "soren"
+        "score": 1.5
       }
     ],
     "beneficiaries": [
@@ -872,85 +953,85 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "korin",
           "score": 0.3333,
           "matches": [
             "ally-shielder"
-          ],
-          "hero_id": "korin"
+          ]
         },
         {
+          "hero_id": "hepler",
           "score": 0.3,
           "matches": [
             "ally-shielder"
-          ],
-          "hero_id": "hepler"
+          ]
         },
         {
+          "hero_id": "lucca",
           "score": 0.3,
           "matches": [
             "ally-shielder"
-          ],
-          "hero_id": "lucca"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "zorya",
           "score": 1.0,
           "matches": [
             "Stun",
             "Knock down"
-          ],
-          "hero_id": "zorya"
+          ]
         },
         {
+          "hero_id": "antandra",
           "score": 0.96,
           "matches": [
             "Stun",
             "Knock down"
-          ],
-          "hero_id": "antandra"
+          ]
         },
         {
+          "hero_id": "lucca",
           "score": 0.96,
           "matches": [
             "Stun",
             "Knock down"
-          ],
-          "hero_id": "lucca"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "zorya",
           "score": 0.5248,
           "matches": [
             "Crowd Control",
             "Damage"
-          ],
-          "hero_id": "zorya"
+          ]
         }
       ]
     }
@@ -960,6 +1041,7 @@
     "ai_hash": "67e2181ca03f5474a25e10551deeb108670c7446a3aac857dff55196eb7227b9",
     "overrides_hash": "b7c3b9889b7633533c62c350a63d303e6c0b2708c123da6a9107e48a17ef5065",
     "analysis_inputs_hash": "7fb09eb57c0be0edac81227ac6a0b268300bd19618df7d9b835c5b804b66e9dd",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

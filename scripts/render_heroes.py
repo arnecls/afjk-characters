@@ -8,28 +8,27 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import heroes_io as io
-from hero_pipeline.analysis.policy import make_policy
 from hero_pipeline.presentation.project import project_roster
+from hero_pipeline.repository import DEFAULT_REPOSITORY, current_repository
 from hero_pipeline.render.markdown import render_heroes
-from hero_pipeline.storage import load_roster_inputs
+from hero_pipeline.storage import load_config, load_roster_snapshot
 
-HEROES_OUT = io.HEROES_MD
+HEROES_OUT = DEFAULT_REPOSITORY.heroes_md
 
 
 def main() -> None:
-    inputs = load_roster_inputs()
+    repository = current_repository()
+    config = load_config()
+    inputs = load_roster_snapshot()
     view = project_roster(
         inputs,
-        inputs["processed"],
-        inputs["synergies"],
-        make_policy(io.load_config()),
+        config=config,
     )
     content = render_heroes(view)
     hero_count = len(inputs["manifest"]["heroes"])
-    HEROES_OUT.write_text(content, encoding="utf-8")
+    repository.heroes_md.write_text(content, encoding="utf-8")
     print(
-        f"Wrote {HEROES_OUT.relative_to(io.ROOT)} "
+        f"Wrote {repository.heroes_md.relative_to(repository.root)} "
         f"({len(content.splitlines())} lines, {hero_count} heroes)"
     )
 

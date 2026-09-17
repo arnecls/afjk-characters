@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import importlib.util
 import json
 import re
 import sys
@@ -36,13 +35,9 @@ HEROES_MD = ROOT / "Heroes.md"
 OVERVIEW_MD = ROOT / "heroes-overview.md"
 HEROES_DATA = ROOT / "data" / "heroes_data.json"
 
-_SPEC = importlib.util.spec_from_file_location(
-    "rewrite_summaries", ROOT / "scripts" / "rewrite-summaries.py"
-)
-_rs = importlib.util.module_from_spec(_SPEC)
-sys.modules["rewrite_summaries"] = _rs
-assert _SPEC.loader is not None
-_SPEC.loader.exec_module(_rs)
+from hero_pipeline.engine import rewrite_summaries
+
+_rs = rewrite_summaries()
 
 STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "ATK": ["ATK"],
@@ -2619,38 +2614,21 @@ def _energy_replacement_coverage(source: float, candidate: float) -> float:
 def _load_behavior_tags() -> dict[str, frozenset[str]]:
     global _BEHAVIOR_TAGS
     if _BEHAVIOR_TAGS is None:
-        path = ROOT / "data" / "hero_behavior_tags.json"
-        if (ROOT / "data" / "roster.json").exists():
-            from hero_pipeline.storage import load_roster_inputs
+        from hero_pipeline.storage import load_ai_field
 
-            data = load_roster_inputs()["curated"]["behavior_tags"]
-            _BEHAVIOR_TAGS = {
-                name: frozenset(tags) for name, tags in data.items()
-            }
-        elif not path.exists():
-            _BEHAVIOR_TAGS = {}
-        else:
-            data = json.loads(path.read_text(encoding="utf-8"))
-            _BEHAVIOR_TAGS = {
-                name: frozenset(tags) for name, tags in data.items()
-            }
+        data = load_ai_field("behavior_tags")
+        _BEHAVIOR_TAGS = {
+            name: frozenset(tags) for name, tags in data.items()
+        }
     return _BEHAVIOR_TAGS
 
 
 def _load_summon_profiles() -> dict[str, dict[str, bool]]:
     global _SUMMON_PROFILES
     if _SUMMON_PROFILES is None:
-        path = ROOT / "data" / "hero_summon_profiles.json"
-        if (ROOT / "data" / "roster.json").exists():
-            from hero_pipeline.storage import load_roster_inputs
+        from hero_pipeline.storage import load_ai_field
 
-            _SUMMON_PROFILES = load_roster_inputs()["curated"][
-                "hero_summon_profiles"
-            ]
-        elif not path.exists():
-            _SUMMON_PROFILES = {}
-        else:
-            _SUMMON_PROFILES = json.loads(path.read_text(encoding="utf-8"))
+        _SUMMON_PROFILES = load_ai_field("summon_profile")
     return _SUMMON_PROFILES
 
 
@@ -3734,29 +3712,10 @@ def build_overview() -> str:
 
 
 def main() -> None:
-    text = HEROES_MD.read_text(encoding="utf-8")
-    stripped = _rs.strip_summaries_from_heroes_md(text)
-    if stripped != text:
-        HEROES_MD.write_text(stripped, encoding="utf-8")
-        print(f"Stripped summaries from {HEROES_MD.relative_to(ROOT)}")
+    """Retain the historical command while using the schema-native renderer."""
+    from render_overview import main as render
 
-    content = build_overview()
-    OVERVIEW_MD.write_text(content, encoding="utf-8")
-    print(f"Wrote {OVERVIEW_MD.relative_to(ROOT)} ({len(content.splitlines())} lines)")
-
-    text = HEROES_MD.read_text(encoding="utf-8")
-    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-    heroes = [_rs.parse_hero_block(b) for b in blocks]
-    for h in heroes:
-        _rs.analyze_hero(h)
-    candidates = scan_enabler_patterns_in_heroes(heroes)
-    print("\n--- Enabler pattern scan (skill text) ---")
-    for tag, examples in sorted(candidates.items()):
-        print(f"\n{tag} ({len(examples)} heroes):")
-        for ex in examples[:5]:
-            print(f"  - {ex}")
-        if len(examples) > 5:
-            print(f"  … and {len(examples) - 5} more")
+    render()
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "gerda",
   "display_name": "Gerda",
   "source": {
@@ -845,6 +845,121 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "average",
+          "average",
+          "low",
+          "low",
+          "low",
+          "average",
+          "average",
+          "average",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-healer",
+          "ally-shielder",
+          "aoe-healing",
+          "battle-start-burst",
+          "mass-cc",
+          "self-repositioner"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "C",
+          "pvp": "A",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "buff|Direct healing|ultimate": {
+            "magnitude": "average",
+            "weight": 10.909090909090908
+          },
+          "damage|Physical": {
+            "magnitude": "average",
+            "weight": 28.666666666666668
+          },
+          "cc|Sleep|Single target": {
+            "magnitude": "low",
+            "weight": 0.09090909090909091,
+            "signature_cc": true
+          },
+          "cc|Bind|Single target": {
+            "magnitude": "low",
+            "weight": 0.09090909090909091,
+            "signature_cc": true
+          },
+          "cc|Interrupt|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "buff|Healing over time|skill1": {
+            "magnitude": "average",
+            "weight": 2.5
+          },
+          "cc|Stun|Single target": {
+            "magnitude": "average",
+            "weight": 0.2,
+            "signature_cc": true
+          },
+          "buff|Shield|self": {
+            "magnitude": "average",
+            "weight": 26.666666666666668
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "cc|Interrupt|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|buff|Direct healing|Area": "average",
+          "ultimate|damage|Physical|Area": "average",
+          "ultimate|cc|Sleep|Single target": "average",
+          "ultimate|cc|Bind|Single target": "average",
+          "skill1|cc|Interrupt|Area": "average",
+          "skill1|damage|Physical|Area": "average",
+          "skill1|buff|Healing over time|Single target": "average",
+          "skill2|cc|Stun|Single target": "average",
+          "skill2|damage|Physical|Single target": "average",
+          "skill2|buff|Shield|Self": "average",
+          "skill3|buff|Damage taken|Self": "average",
+          "skill5|cc|Stun|Single target": "average",
+          "skill5|cc|Interrupt|Single target": "average",
+          "skill5|buff|Shield|Self": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 88.0
+        },
+        "signature_section": "Skill1"
       }
     },
     "signature_calculated": "ultimate"
@@ -873,103 +988,103 @@
       "energy": [],
       "healing": [
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing over time",
             "Healing"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "solise",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing over time",
             "Healing"
-          ],
-          "hero_id": "solise"
+          ]
         },
         {
+          "hero_id": "ludovic",
           "score": 1.0,
           "matches": [
             "Direct healing",
             "Healing over time",
             "Healing"
-          ],
-          "hero_id": "ludovic"
+          ]
         }
       ],
       "similar_skills": [
         {
+          "hero_id": "solise",
           "score": 0.5,
           "matches": [
             "ally-healer",
             "ally-shielder",
             "aoe-healing"
-          ],
-          "hero_id": "solise"
+          ]
         },
         {
+          "hero_id": "hepler",
           "score": 0.4114,
           "matches": [
             "ally-healer",
             "ally-shielder"
-          ],
-          "hero_id": "hepler"
+          ]
         },
         {
+          "hero_id": "velara",
           "score": 0.375,
           "matches": [
             "ally-healer",
             "ally-shielder",
             "aoe-healing"
-          ],
-          "hero_id": "velara"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gunnar",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gunnar"
+          ]
         },
         {
+          "hero_id": "himmel",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "himmel"
+          ]
         },
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "lucca",
           "score": 0.54,
           "matches": [
             "Stun",
             "Interrupt"
-          ],
-          "hero_id": "lucca"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "hepler",
           "score": 0.5906,
           "matches": [
             "Damage",
             "Healing"
-          ],
-          "hero_id": "hepler"
+          ]
         }
       ]
     }
@@ -979,6 +1094,7 @@
     "ai_hash": "68d9c44e025d265feb113b04487fd9df5cf107a2dfcea38b30d36cabaedeb55c",
     "overrides_hash": "e934255b054c62558e4b93bb61b5b8c28c92dc90aef5dfec898380d955082e26",
     "analysis_inputs_hash": "811961b1007c4bcba8948479bb2a6be19778a7092fe66d4fc451d94d0012b769",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

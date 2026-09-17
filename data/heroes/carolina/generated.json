@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "carolina",
   "display_name": "Carolina",
   "source": {
@@ -729,6 +729,87 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "high",
+          "average",
+          "low",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Magic",
+        "behavior_tags": [
+          "enemy-debuffer"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "C",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "cc|Bind|Single target": {
+            "magnitude": "high",
+            "weight": 2.0,
+            "signature_cc": true
+          },
+          "damage|Magic": {
+            "magnitude": "average",
+            "weight": 75.0
+          },
+          "debuff|Haste|Area": {
+            "magnitude": "low",
+            "weight": 3.75
+          },
+          "debuff|Haste|Single target": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Crit|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "debuff|Magic DEF|Area": {
+            "magnitude": "low",
+            "weight": 1.5
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Bind|Single target": "average",
+          "ultimate|damage|Magic|Single target": "average",
+          "ultimate|debuff|Haste|Area": "average",
+          "skill1|debuff|Haste|Area": "average",
+          "skill1|damage|Magic|Area": "average",
+          "skill2|damage|Magic|Single target": "average",
+          "skill2|debuff|Haste|Single target": "average",
+          "skill3|buff|Crit|Self": "average",
+          "skill4|debuff|Magic DEF|Area": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": true,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Magic": 64.76190476190476
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -736,759 +817,759 @@
   "synergies": {
     "synergies": [
       {
+        "provider_id": "hepler",
         "reasons": [
           "Enables CC on enemies via Blind (area, high)"
         ],
-        "score": 24.0,
-        "provider_id": "hepler"
+        "score": 24.0
       },
       {
+        "provider_id": "lorsan",
         "reasons": [
           "ATK SPD via Haste (single target, high) `signature fuel`",
           "Enables CC on enemies via Stun (multiple targets, high)"
         ],
-        "score": 22.05,
-        "provider_id": "lorsan"
+        "score": 22.05
       },
       {
+        "provider_id": "callan",
         "reasons": [
           "Enables CC on enemies via Stun (all units, average)"
         ],
-        "score": 20.0,
-        "provider_id": "callan"
+        "score": 20.0
       },
       {
+        "provider_id": "tasi",
         "reasons": [
           "Enables CC on enemies via Sleep (all units, average)"
         ],
-        "score": 20.0,
-        "provider_id": "tasi"
+        "score": 20.0
       },
       {
+        "provider_id": "twins",
         "reasons": [
           "Energy via Energy (multiple targets, low) `signature fuel`",
           "ATK SPD via Haste (all units, average) `signature fuel`",
           "Enables CC on enemies via Blind (area, average)"
         ],
-        "score": 19.3318,
-        "provider_id": "twins"
+        "score": 19.3318
       },
       {
+        "provider_id": "rolan",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 18.7,
-        "provider_id": "rolan"
+        "score": 18.7
       },
       {
+        "provider_id": "damian",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
           "Enables CC on enemies via Blind (area, average)"
         ],
-        "score": 18.295,
-        "provider_id": "damian"
+        "score": 18.295
       },
       {
+        "provider_id": "pandora",
         "reasons": [
           "Energy via Energy (single target, low) `signature fuel`",
           "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
           "Enables CC on enemies via Frighten (all units, low)"
         ],
-        "score": 18.15322857142857,
-        "provider_id": "pandora"
+        "score": 18.15322857142857
       },
       {
+        "provider_id": "aliceth",
         "reasons": [
           "Enables CC on enemies via Blind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "aliceth"
+        "score": 16.0
       },
       {
+        "provider_id": "alna",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "alna"
+        "score": 16.0
       },
       {
+        "provider_id": "antandra",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "antandra"
+        "score": 16.0
       },
       {
+        "provider_id": "arden",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "arden"
+        "score": 16.0
       },
       {
+        "provider_id": "baelran",
         "reasons": [
           "Enables CC on enemies via Knock down (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "baelran"
+        "score": 16.0
       },
       {
+        "provider_id": "berial",
         "reasons": [
           "Enables CC on enemies via Frighten (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "berial"
+        "score": 16.0
       },
       {
+        "provider_id": "cassadee",
         "reasons": [
           "Enables CC on enemies via Knock back (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "cassadee"
+        "score": 16.0
       },
       {
+        "provider_id": "cecia",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "cecia"
+        "score": 16.0
       },
       {
+        "provider_id": "eironn",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "eironn"
+        "score": 16.0
       },
       {
+        "provider_id": "gwyneth",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "gwyneth"
+        "score": 16.0
       },
       {
+        "provider_id": "koko",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "koko"
+        "score": 16.0
       },
       {
+        "provider_id": "laios",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "laios"
+        "score": 16.0
       },
       {
+        "provider_id": "lucca",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "lucca"
+        "score": 16.0
       },
       {
+        "provider_id": "orion",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "orion"
+        "score": 16.0
       },
       {
+        "provider_id": "perseus",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "perseus"
+        "score": 16.0
       },
       {
+        "provider_id": "pippa",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "pippa"
+        "score": 16.0
       },
       {
+        "provider_id": "scarlita",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "scarlita"
+        "score": 16.0
       },
       {
+        "provider_id": "silvina",
         "reasons": [
           "Enables CC on enemies via Frighten (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "silvina"
+        "score": 16.0
       },
       {
+        "provider_id": "sylphira",
         "reasons": [
           "Enables CC on enemies via Knock down (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "sylphira"
+        "score": 16.0
       },
       {
+        "provider_id": "voracia",
         "reasons": [
           "Enables CC on enemies via Knock down (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "voracia"
+        "score": 16.0
       },
       {
+        "provider_id": "zorya",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "zorya"
+        "score": 16.0
       },
       {
+        "provider_id": "atalanta",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "atalanta"
+        "score": 16.0
       },
       {
+        "provider_id": "korin",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "korin"
+        "score": 16.0
       },
       {
+        "provider_id": "lumont",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "lumont"
+        "score": 16.0
       },
       {
+        "provider_id": "taichi-agumon",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "taichi-agumon"
+        "score": 16.0
       },
       {
+        "provider_id": "valen",
         "reasons": [
           "Enables CC on enemies via Stun (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "valen"
+        "score": 16.0
       },
       {
+        "provider_id": "yamato-gabumon",
         "reasons": [
           "Enables CC on enemies via Bind (area, average)"
         ],
-        "score": 16.0,
-        "provider_id": "yamato-gabumon"
+        "score": 16.0
       },
       {
+        "provider_id": "mehira",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Enables CC on enemies via Charm (all units, low)"
         ],
-        "score": 12.7,
-        "provider_id": "mehira"
+        "score": 12.7
       },
       {
+        "provider_id": "smokey-meerky",
         "reasons": [
           "Energy via Energy (area, low) `signature fuel`",
           "ATK SPD via Haste (area, high) `signature fuel`",
           "Enables CC on enemies via Stun (area, low)"
         ],
-        "score": 12.681799999999999,
-        "provider_id": "smokey-meerky"
+        "score": 12.681799999999999
       },
       {
+        "provider_id": "thador",
         "reasons": [
           "Crit via Crit (single target, average)",
           "Energy via Energy (single target, high) `signature fuel`",
           "Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`",
           "Enables CC on enemies via Knock down (single target, low)"
         ],
-        "score": 12.282900000000001,
-        "provider_id": "thador"
+        "score": 12.282900000000001
       },
       {
+        "provider_id": "lamentis",
         "reasons": [
           "Enables CC on enemies via Stun (multiple targets, average)"
         ],
-        "score": 12.0,
-        "provider_id": "lamentis"
+        "score": 12.0
       },
       {
+        "provider_id": "natsu",
         "reasons": [
           "Enables CC on enemies via Stun (arc, average)"
         ],
-        "score": 12.0,
-        "provider_id": "natsu"
+        "score": 12.0
       },
       {
+        "provider_id": "soren",
         "reasons": [
           "Enables CC on enemies via Stun (multiple targets, average)"
         ],
-        "score": 12.0,
-        "provider_id": "soren"
+        "score": 12.0
       },
       {
+        "provider_id": "walker",
         "reasons": [
           "Enables CC on enemies via Stun (arc, average)"
         ],
-        "score": 12.0,
-        "provider_id": "walker"
+        "score": 12.0
       },
       {
+        "provider_id": "lyca",
         "reasons": [
           "Energy via Energy (all units, low) `signature fuel`",
           "ATK SPD via ATK SPD (all units, low) `signature fuel`",
           "Energy via Energy recovery (120 at battle start, all units) `signature fuel`",
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 10.990371428571429,
-        "provider_id": "lyca"
+        "score": 10.990371428571429
       },
       {
+        "provider_id": "kazim",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Enables CC on enemies via Knock up (area, low)"
         ],
-        "score": 10.7,
-        "provider_id": "kazim"
+        "score": 10.7
       },
       {
+        "provider_id": "ravion",
         "reasons": [
           "Energy via Energy (multiple targets, average) `signature fuel`",
           "ATK SPD via Haste (multiple targets, average) `signature fuel`",
           "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
           "Enables CC on enemies via Knock down (single target, low)"
         ],
-        "score": 10.386814285714285,
-        "provider_id": "ravion"
+        "score": 10.386814285714285
       },
       {
+        "provider_id": "zandrok",
         "reasons": [
           "ATK SPD via Haste (area, average, conditional (frequent)) `signature fuel`",
           "Enables CC on enemies via Knock up (area, low)"
         ],
-        "score": 10.295,
-        "provider_id": "zandrok"
+        "score": 10.295
       },
       {
+        "provider_id": "saida",
         "reasons": [
           "Enables CC on enemies via Bind (all units, low)"
         ],
-        "score": 10.0,
-        "provider_id": "saida"
+        "score": 10.0
       },
       {
+        "provider_id": "phraesto",
         "reasons": [
           "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`",
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 9.375,
-        "provider_id": "phraesto"
+        "score": 9.375
       },
       {
+        "provider_id": "valka",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`",
           "Enables CC on enemies via Knock down (area, low)"
         ],
-        "score": 9.08,
-        "provider_id": "valka"
+        "score": 9.08
       },
       {
+        "provider_id": "contess",
         "reasons": [
           "Enables CC on enemies via Silence (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "contess"
+        "score": 9.0
       },
       {
+        "provider_id": "evie",
         "reasons": [
           "Enables CC on enemies via Bind (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "evie"
+        "score": 9.0
       },
       {
+        "provider_id": "indris",
         "reasons": [
           "Enables CC on enemies via Bind (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "indris"
+        "score": 9.0
       },
       {
+        "provider_id": "kordan",
         "reasons": [
           "Enables CC on enemies via Bind (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "kordan"
+        "score": 9.0
       },
       {
+        "provider_id": "velara",
         "reasons": [
           "Enables CC on enemies via Bind (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "velara"
+        "score": 9.0
       },
       {
+        "provider_id": "salazer",
         "reasons": [
           "Enables CC on enemies via Bind (single target, high)"
         ],
-        "score": 9.0,
-        "provider_id": "salazer"
+        "score": 9.0
       },
       {
+        "provider_id": "aurora",
         "reasons": [
           "Enables CC on enemies via Bind (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "aurora"
+        "score": 8.0
       },
       {
+        "provider_id": "cyran",
         "reasons": [
           "Enables CC on enemies via Bind (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "cyran"
+        "score": 8.0
       },
       {
+        "provider_id": "daimon",
         "reasons": [
           "Enables CC on enemies via Frighten (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "daimon"
+        "score": 8.0
       },
       {
+        "provider_id": "faramor",
         "reasons": [
           "Enables CC on enemies via Stun (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "faramor"
+        "score": 8.0
       },
       {
+        "provider_id": "florabelle",
         "reasons": [
           "Enables CC on enemies via Knock up (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "florabelle"
+        "score": 8.0
       },
       {
+        "provider_id": "lenya",
         "reasons": [
           "Enables CC on enemies via Knock back (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "lenya"
+        "score": 8.0
       },
       {
+        "provider_id": "nerion",
         "reasons": [
           "Enables CC on enemies via Knock up (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "nerion"
+        "score": 8.0
       },
       {
+        "provider_id": "talene",
         "reasons": [
           "Enables CC on enemies via Knock back (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "talene"
+        "score": 8.0
       },
       {
+        "provider_id": "temesia",
         "reasons": [
           "Enables CC on enemies via Knock down (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "temesia"
+        "score": 8.0
       },
       {
+        "provider_id": "ulmus",
         "reasons": [
           "Enables CC on enemies via Knock up (area, low)"
         ],
-        "score": 8.0,
-        "provider_id": "ulmus"
+        "score": 8.0
       },
       {
+        "provider_id": "alsa",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "alsa"
+        "score": 6.0
       },
       {
+        "provider_id": "bonnie",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "bonnie"
+        "score": 6.0
       },
       {
+        "provider_id": "frieren",
         "reasons": [
           "Enables CC on enemies via Knock down (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "frieren"
+        "score": 6.0
       },
       {
+        "provider_id": "galahad",
         "reasons": [
           "Enables CC on enemies via Bind (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "galahad"
+        "score": 6.0
       },
       {
+        "provider_id": "gerda",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "gerda"
+        "score": 6.0
       },
       {
+        "provider_id": "himmel",
         "reasons": [
           "Enables CC on enemies via Knock down (multiple targets, low)"
         ],
-        "score": 6.0,
-        "provider_id": "himmel"
+        "score": 6.0
       },
       {
+        "provider_id": "lucy",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "lucy"
+        "score": 6.0
       },
       {
+        "provider_id": "ludovic",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "ludovic"
+        "score": 6.0
       },
       {
+        "provider_id": "marcille",
         "reasons": [
           "Enables CC on enemies via Blind (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "marcille"
+        "score": 6.0
       },
       {
+        "provider_id": "nara",
         "reasons": [
           "Enables CC on enemies via Knock down (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "nara"
+        "score": 6.0
       },
       {
+        "provider_id": "nazrik",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "nazrik"
+        "score": 6.0
       },
       {
+        "provider_id": "satrana",
         "reasons": [
           "Enables CC on enemies via Charm (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "satrana"
+        "score": 6.0
       },
       {
+        "provider_id": "silven",
         "reasons": [
           "Enables CC on enemies via Knock down (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "silven"
+        "score": 6.0
       },
       {
+        "provider_id": "vala",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "vala"
+        "score": 6.0
       },
       {
+        "provider_id": "kafra",
         "reasons": [
           "Enables CC on enemies via Stun (single target, average)"
         ],
-        "score": 6.0,
-        "provider_id": "kafra"
+        "score": 6.0
       },
       {
+        "provider_id": "rowan",
         "reasons": [
           "Energy via Energy (area, high) `signature fuel`",
           "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
         ],
-        "score": 5.945399999999999,
-        "provider_id": "rowan"
+        "score": 5.945399999999999
       },
       {
+        "provider_id": "dunlingr",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`",
           "Enables CC on enemies via Silence (single target, low)"
         ],
-        "score": 5.7,
-        "provider_id": "dunlingr"
+        "score": 5.7
       },
       {
+        "provider_id": "hugin",
         "reasons": [
           "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
           "ATK SPD via Haste (multiple targets, high) `signature fuel`"
         ],
-        "score": 5.12406,
-        "provider_id": "hugin"
+        "score": 5.12406
       },
       {
+        "provider_id": "gunnar",
         "reasons": [
           "ATK SPD via ATK SPD (single target, low) `signature fuel`",
           "Enables CC on enemies via Stun (single target, low)"
         ],
-        "score": 4.08,
-        "provider_id": "gunnar"
+        "score": 4.08
       },
       {
+        "provider_id": "athalia",
         "reasons": [
           "Enables CC on enemies via Knock down (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "athalia"
+        "score": 3.0
       },
       {
+        "provider_id": "bryon",
         "reasons": [
           "Enables CC on enemies via Stun (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "bryon"
+        "score": 3.0
       },
       {
+        "provider_id": "dionel",
         "reasons": [
           "Enables CC on enemies via Knock up (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "dionel"
+        "score": 3.0
       },
       {
+        "provider_id": "granny-dahnie",
         "reasons": [
           "Enables CC on enemies via Bind (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "granny-dahnie"
+        "score": 3.0
       },
       {
+        "provider_id": "harak",
         "reasons": [
           "Enables CC on enemies via Knock down (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "harak"
+        "score": 3.0
       },
       {
+        "provider_id": "kruger",
         "reasons": [
           "Enables CC on enemies via Knock down (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "kruger"
+        "score": 3.0
       },
       {
+        "provider_id": "kulu",
         "reasons": [
           "Enables CC on enemies via Knock back (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "kulu"
+        "score": 3.0
       },
       {
+        "provider_id": "lucius",
         "reasons": [
           "Enables CC on enemies via Knock back (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "lucius"
+        "score": 3.0
       },
       {
+        "provider_id": "marilee",
         "reasons": [
           "Enables CC on enemies via Stun (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "marilee"
+        "score": 3.0
       },
       {
+        "provider_id": "pang",
         "reasons": [
           "Enables CC on enemies via Stun (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "pang"
+        "score": 3.0
       },
       {
+        "provider_id": "reinier",
         "reasons": [
           "Enables CC on enemies via Knock up (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "reinier"
+        "score": 3.0
       },
       {
+        "provider_id": "rhys",
         "reasons": [
           "Enables CC on enemies via Knock back (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "rhys"
+        "score": 3.0
       },
       {
+        "provider_id": "shakir",
         "reasons": [
           "Enables CC on enemies via Knock up (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "shakir"
+        "score": 3.0
       },
       {
+        "provider_id": "sonja",
         "reasons": [
           "Enables CC on enemies via Stun (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "sonja"
+        "score": 3.0
       },
       {
+        "provider_id": "zanie",
         "reasons": [
           "Enables CC on enemies via Stun (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "zanie"
+        "score": 3.0
       },
       {
+        "provider_id": "seth",
         "reasons": [
           "Enables CC on enemies via Bind (single target, low)"
         ],
-        "score": 3.0,
-        "provider_id": "seth"
+        "score": 3.0
       },
       {
+        "provider_id": "hewynn",
         "reasons": [
           "ATK SPD via Haste (single target, average) `signature fuel`"
         ],
-        "score": 2.7,
-        "provider_id": "hewynn"
+        "score": 2.7
       },
       {
+        "provider_id": "mikola",
         "reasons": [
           "ATK SPD via Haste (multiple targets, average) `signature fuel`"
         ],
-        "score": 2.7,
-        "provider_id": "mikola"
+        "score": 2.7
       },
       {
+        "provider_id": "isabella",
         "reasons": [
           "ATK SPD via Haste (single target, low) `signature fuel`"
         ],
-        "score": 1.35,
-        "provider_id": "isabella"
+        "score": 1.35
       },
       {
+        "provider_id": "parisa",
         "reasons": [
           "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
         ],
-        "score": 1.0800000000000003,
-        "provider_id": "parisa"
+        "score": 1.0800000000000003
       }
     ],
     "beneficiaries": [
@@ -1510,106 +1591,106 @@
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "shadewing",
           "score": 0.72,
           "matches": [
             "enemy-debuffer"
-          ],
-          "hero_id": "shadewing"
+          ]
         },
         {
+          "hero_id": "kruger",
           "score": 0.6,
           "matches": [
             "enemy-debuffer"
-          ],
-          "hero_id": "kruger"
+          ]
         },
         {
+          "hero_id": "indris",
           "score": 0.5,
           "matches": [
             "enemy-debuffer"
-          ],
-          "hero_id": "indris"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "frieren",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "frieren"
+          ]
         },
         {
+          "hero_id": "rolan",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "rolan"
+          ]
         },
         {
+          "hero_id": "silven",
           "score": 1.0,
           "matches": [
             "Magic"
-          ],
-          "hero_id": "silven"
+          ]
         }
       ],
       "debuff": [
         {
+          "hero_id": "eironn",
           "score": 1.0,
           "matches": [
             "Haste",
             "Magic DEF"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "bonnie",
           "score": 1.0,
           "matches": [
             "Haste"
-          ],
-          "hero_id": "bonnie"
+          ]
         },
         {
+          "hero_id": "zorya",
           "score": 1.0,
           "matches": [
             "Haste"
-          ],
-          "hero_id": "zorya"
+          ]
         }
       ],
       "cc": [
         {
+          "hero_id": "evie",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "evie"
+          ]
         },
         {
+          "hero_id": "eironn",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "eironn"
+          ]
         },
         {
+          "hero_id": "arden",
           "score": 1.0,
           "matches": [
             "Bind"
-          ],
-          "hero_id": "arden"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "eironn",
           "score": 0.5143,
           "matches": [
             "Damage",
             "Debuffs on enemies",
             "Crowd Control"
-          ],
-          "hero_id": "eironn"
+          ]
         }
       ]
     }
@@ -1619,6 +1700,7 @@
     "ai_hash": "4300dedc01de5c7ce69efcd2fc6bfded95541c2cae4e91323e5bfc781197c741",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "bef94439bedb5cec5fcb51ee88baf329d8e566569031fdfb09beb0d5652fcfd4",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

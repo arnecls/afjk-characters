@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Build heroes_data_synergies.json from heroes_data_processed.json.
-
-Pass 2 of the analysis pipeline. Re-parses skill text from ``heroes_data.json``
-so synergy scoring uses full analysis fidelity (the processed JSON round-trip
-drops some targeting detail). Computes roster-wide synergy rankings, the
-beneficiary index, and replacement scores.
-
-Requires pass 1 (``process_heroes.py``) to have run first so processed hero
-titles can be validated.
-"""
+"""Compatibility entry point for combined analysis and synergy publication."""
 
 from __future__ import annotations
 
@@ -17,12 +8,6 @@ from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
-
-import heroes_io as io
-import hero_schema as hs
-from process_config import apply_config
-from roster_analysis import analysis_modules, get_roster_analysis
-
 
 def _assert_short_name_sets_match(
     processed: dict, analyzed_short_names: set[str]
@@ -69,6 +54,9 @@ def _sanitize_replacements(replacements: dict) -> dict:
 
 
 def build_synergies(raw: dict, processed: dict) -> dict:
+    import hero_schema as hs
+    from roster_analysis import analysis_modules, get_roster_analysis
+
     rs, gen = analysis_modules()
     hero_records = raw["heroes"]
     heroes_stub = [rs.hero_from_record(record) for record in hero_records]
@@ -141,12 +129,10 @@ def build_synergies(raw: dict, processed: dict) -> dict:
 
 
 def main() -> None:
-    from hero_pipeline.pipeline import analyze
+    from hero_pipeline.pipeline import rescore
 
-    processed, synergies = analyze()
-    print(
-        f"Wrote {len(synergies['heroes'])} scored heroes"
-    )
+    synergies = rescore()
+    print(f"Wrote {len(synergies['heroes'])} scored heroes")
 
 
 if __name__ == "__main__":

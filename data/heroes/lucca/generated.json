@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "lucca",
   "display_name": "Lucca",
   "source": {
@@ -862,6 +862,128 @@
             }
           }
         }
+      },
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null,
+      "summary_effect_magnitudes": {
+        "effects": [
+          "low",
+          "low",
+          "average",
+          "low",
+          "average",
+          "low",
+          "average",
+          "low",
+          "low",
+          "low",
+          "low",
+          "low"
+        ],
+        "summon_effects": []
+      },
+      "scoring": {
+        "primary_damage_type": "Physical",
+        "behavior_tags": [
+          "ally-shielder",
+          "high-initial-energy",
+          "interrupt"
+        ],
+        "summon_profile": {
+          "is_summoner": false,
+          "has_ranged_summons": false
+        },
+        "prydwen_tiers": {
+          "afk_stages": "B",
+          "pvp": "B",
+          "dream_realm": "C",
+          "dream_realm_endless": "C"
+        },
+        "effects": {
+          "cc|Knock up|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "cc|Knock down|Area": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "cc|Stun|Area": {
+            "magnitude": "average",
+            "weight": 0.3333333333333333,
+            "signature_cc": true
+          },
+          "damage|Physical": {
+            "magnitude": "low",
+            "weight": 43.333333333333336
+          },
+          "buff|Shield|self": {
+            "magnitude": "average",
+            "weight": 35.78947368421053
+          },
+          "cc|Interrupt|Single target": {
+            "magnitude": "low",
+            "weight": 0.0,
+            "signature_cc": true
+          },
+          "cc|Disarm|Single target": {
+            "magnitude": "average",
+            "weight": 0.42105263157894735,
+            "signature_cc": true
+          },
+          "buff|Damage taken|self": {
+            "magnitude": "low",
+            "weight": 0.0
+          },
+          "buff|Direct healing|skill2": {
+            "magnitude": "low",
+            "weight": 1.0
+          },
+          "buff|Max HP|self": {
+            "magnitude": "low",
+            "weight": 2.9
+          },
+          "buff|ATK|ally": {
+            "magnitude": "low",
+            "weight": 0.5
+          },
+          "buff|Magic DEF|ally": {
+            "magnitude": "low",
+            "weight": 0.0
+          }
+        },
+        "skill_effect_magnitudes": {
+          "ultimate|cc|Knock up|Area": "average",
+          "ultimate|cc|Knock down|Area": "average",
+          "ultimate|cc|Stun|Area": "average",
+          "ultimate|damage|Physical|Area": "average",
+          "skill1|buff|Shield|Self": "average",
+          "skill1|cc|Interrupt|Single target": "average",
+          "skill1|cc|Disarm|Single target": "average",
+          "skill1|damage|Physical|Single target": "average",
+          "skill2|buff|Damage taken|Self": "average",
+          "skill2|buff|Direct healing|Self": "average",
+          "skill3|buff|Max HP|Self": "average",
+          "skill4|buff|ATK|Single target": "average",
+          "skill4|buff|Shield|Self": "average",
+          "skill5|buff|Magic DEF|Area": "average"
+        },
+        "named_allies": {},
+        "start_of_battle_output": false,
+        "early_battle_energy": null,
+        "effective_ally_energy": 0.0,
+        "shield_payoff": false,
+        "ally_magic": null,
+        "ranged_damage": false,
+        "wide_area": false,
+        "ally_grant_detail": null,
+        "replacement_damage": {
+          "Physical": 146.66666666666666
+        },
+        "signature_section": "Ultimate"
       }
     },
     "signature_calculated": "ultimate"
@@ -880,116 +1002,116 @@
     "replacements": {
       "buff": [
         {
+          "hero_id": "rowan",
           "score": 1.0,
           "matches": [
             "Magic DEF"
-          ],
-          "hero_id": "rowan"
+          ]
         },
         {
+          "hero_id": "mikola",
           "score": 1.0,
           "matches": [
             "Magic DEF",
             "ATK"
-          ],
-          "hero_id": "mikola"
+          ]
         },
         {
+          "hero_id": "sonja",
           "score": 1.0,
           "matches": [
             "Magic DEF",
             "ATK"
-          ],
-          "hero_id": "sonja"
+          ]
         }
       ],
       "energy": [],
       "healing": [],
       "similar_skills": [
         {
+          "hero_id": "hepler",
           "score": 0.6,
           "matches": [
             "ally-shielder",
             "high-initial-energy"
-          ],
-          "hero_id": "hepler"
+          ]
         },
         {
+          "hero_id": "saida",
           "score": 0.4,
           "matches": [
             "ally-shielder",
             "high-initial-energy"
-          ],
-          "hero_id": "saida"
+          ]
         },
         {
+          "hero_id": "valka",
           "score": 0.4,
           "matches": [
             "ally-shielder",
             "high-initial-energy"
-          ],
-          "hero_id": "valka"
+          ]
         }
       ],
       "damage": [
         {
+          "hero_id": "gwyneth",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "gwyneth"
+          ]
         },
         {
+          "hero_id": "alna",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "alna"
+          ]
         },
         {
+          "hero_id": "athalia",
           "score": 1.0,
           "matches": [
             "Physical"
-          ],
-          "hero_id": "athalia"
+          ]
         }
       ],
       "debuff": [],
       "cc": [
         {
+          "hero_id": "scarlita",
           "score": 0.6383,
           "matches": [
             "Stun",
             "Knock up",
             "Knock down"
-          ],
-          "hero_id": "scarlita"
+          ]
         },
         {
+          "hero_id": "callan",
           "score": 0.6128,
           "matches": [
             "Stun",
             "Knock down"
-          ],
-          "hero_id": "callan"
+          ]
         },
         {
+          "hero_id": "antandra",
           "score": 0.6128,
           "matches": [
             "Stun",
             "Knock down"
-          ],
-          "hero_id": "antandra"
+          ]
         }
       ],
       "overall": [
         {
+          "hero_id": "perseus",
           "score": 0.5501,
           "matches": [
             "Buffs on allies",
             "Damage"
-          ],
-          "hero_id": "perseus"
+          ]
         }
       ]
     }
@@ -999,6 +1121,7 @@
     "ai_hash": "21c7a9607a663bce14f09b956c6458ac742b9ea062b040bf684302cbae9caf27",
     "overrides_hash": "a9d5f6d002d956b8af5787a05e0ca000d45c03977ffa54ee8fbed719fed5fd23",
     "analysis_inputs_hash": "9b4e3df2b31d65f5c6d5e20c9fe1fb6f8329b788d4ee3ad233b05ab9b5141eaa",
-    "stage": "scored"
+    "stage": "scored",
+    "generation_hash": "b6b0faa80bb81699f646c5fb8be0402dbe3f60d3a53777bc9a2171069b6ac5b0"
   }
 }

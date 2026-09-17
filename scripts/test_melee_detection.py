@@ -12,14 +12,12 @@ sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
 import hero_schema as hs
-from process_config import apply_config
 from roster_analysis import analysis_modules, get_roster_analysis
 
 
 class MeleeDetectionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        apply_config(io.load_config())
         cls.rs, cls.gen = analysis_modules()
         raw = io.load_heroes_data()
         hero_records = raw["heroes"]

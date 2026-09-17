@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tests for render_overview.py hero loading and summary consistency."""
+"""Tests for presentation projection and overview serialization."""
 
 from __future__ import annotations
 
@@ -7,66 +7,67 @@ import sys
 import time
 import unittest
 from pathlib import Path
+from typing import Any
 
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
-import render_overview as rov
+from hero_pipeline.analysis.policy import make_policy
+from hero_pipeline.contracts import PresentationRoster, RosterSnapshot
+from hero_pipeline.presentation.format import _join_names, format_summary
+from hero_pipeline.presentation.project import project_roster
+from hero_pipeline.storage import load_roster_snapshot
 
 
-class LoadSummaryHeroesTests(unittest.TestCase):
+class PresentationProjectionTests(unittest.TestCase):
+    config: dict[str, Any]
+    snapshot: RosterSnapshot
+    view: PresentationRoster
+
     @classmethod
     def setUpClass(cls) -> None:
-        cls.data = io.load_heroes_data()
-        cls.processed = io.load_processed()
+        cls.config = io.load_config()
+        cls.snapshot = load_roster_snapshot()
+        cls.view = project_roster(
+            cls.snapshot,
+            policy=make_policy(cls.config),
+            config=cls.config,
+        )
 
-    def test_load_summary_heroes_roster_size(self) -> None:
-        heroes, _skills = rov.load_summary_heroes(self.data, self.processed)
-        self.assertEqual(len(heroes), len(self.processed["heroes"]))
+    def test_project_roster_size(self) -> None:
+        self.assertEqual(
+            len(self.view["heroes"]),
+            len(self.snapshot["manifest"]["heroes"]),
+        )
 
-    def test_load_summary_heroes_fast(self) -> None:
+    def test_project_roster_fast(self) -> None:
         t0 = time.perf_counter()
-        rov.load_summary_heroes(self.data, self.processed)
+        project_roster(
+            self.snapshot,
+            policy=make_policy(self.config),
+            config=self.config,
+        )
         elapsed = time.perf_counter() - t0
         self.assertLess(elapsed, 2.0)
 
     def test_format_summary_self_consistent(self) -> None:
-        heroes, _skills = rov.load_summary_heroes(self.data, self.processed)
-        for short, record in self.processed["heroes"].items():
-            long_name = record["long_name"]
-            hero = heroes[long_name]
-            summary = rov.rs.format_summary(hero, short).strip()
-            again = rov.rs.format_summary(hero, short).strip()
-            self.assertEqual(summary, again, short)
-
-
-class SummaryParityTests(unittest.TestCase):
-    """Processed JSON rehydration matches serialize round-trip summaries."""
-
-    def test_round_trip_summary_matches_processed(self) -> None:
-        processed = io.load_processed()
-        data = io.load_heroes_data()
-        heroes, _skills = rov.load_summary_heroes(data, processed)
-        for prefix in ("Aliceth", "Lorsan", "Contess"):
-            record = processed["heroes"][prefix]
-            long_name = record["long_name"]
-            hero = heroes[long_name]
-            from_render = rov.rs.format_summary(hero, prefix).strip()
-            again = rov.rs.format_summary(hero, prefix).strip()
-            self.assertEqual(from_render, again, prefix)
+        for hero in self.view["heroes"]:
+            summary = format_summary(hero).strip()
+            again = format_summary(hero).strip()
+            self.assertEqual(summary, again, hero["display_name"])
 
 
 class JoinNamesTests(unittest.TestCase):
     def test_four_name_oxford_comma(self) -> None:
-        joined = rov._join_names(["Rowan", "Lyca", "Ravion", "Thador"])
+        joined = _join_names(["Rowan", "Lyca", "Ravion", "Thador"])
         self.assertEqual(
             joined,
             "**Rowan**, **Lyca**, **Ravion**, or **Thador**",
         )
 
     def test_three_name_oxford_comma(self) -> None:
-        joined = rov._join_names(["Rowan", "Lyca", "Ravion"])
+        joined = _join_names(["Rowan", "Lyca", "Ravion"])
         self.assertEqual(joined, "**Rowan**, **Lyca**, or **Ravion**")
 
 

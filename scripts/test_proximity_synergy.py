@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import importlib.util
-import json
 import re
 import sys
 import unittest
@@ -81,13 +80,8 @@ class ProximityDetectionTests(unittest.TestCase):
 class ProximityReachGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        from process_config import apply_config
-
         cls.rs = _load_rs()
         cls.gen = _load_gen()
-        apply_config(
-            json.loads((ROOT / "data/heroes_config.json").read_text())
-        )
         blocks = _hero_blocks()
         keys = [
             "Shakir",

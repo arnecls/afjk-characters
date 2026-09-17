@@ -1,143 +1,282 @@
-"""Site JSON payload built from the presentation model."""
+"""Build all static-site records from the resolved presentation model."""
 
 from __future__ import annotations
 
+import re
 from datetime import datetime, timezone
 from typing import Any, Mapping
 
-from character_stat_ranks import hero_slug
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+)
 
-from ..engine import rewrite_summaries
-from ..render.overview import _name_synergies, _summary_heroes
+from .format import (
+    ALLY_TARGETINGS,
+    _signature_category,
+    build_synergy_section,
+    damage_types,
+    format_behavior,
+    format_replacements,
+    format_summary,
+    skill_cards,
+)
+
+TARGETING_WEIGHT = {
+    "All units": 5.0,
+    "Area": 4.0,
+    "Arc": 3.0,
+    "Multiple targets": 3.0,
+    "Single target": 1.5,
+}
+TANK_SUSTAIN_LABELS = {
+    "Shield",
+    "Max HP",
+    "DEF",
+    "Phys DEF",
+    "Magic DEF",
+    "Ranged DEF",
+}
+ALWAYS_HIGH_BUFFS = {"Invincible", "Fatal blow immunity", "DMG+CC immunity"}
+ALWAYS_MEDIUM_DEBUFFS = {"Marked target (focus fire)"}
+EXCLUDED_GATES = {
+    "once_per_battle",
+    "once_per_hero",
+    "once_per_enemy",
+    "once_per_target",
+    "once_per_ally",
+    "once_per_skill",
+}
+
+
+def _normalized_tiers(source: Mapping[str, Any]) -> dict[str, str]:
+    tiers = source.get("prydwen_tiers") or {}
+    return {
+        key: str(tiers.get(key) or "?").strip() or "?"
+        for key in (
+            "afk_stages",
+            "dream_realm",
+            "dream_realm_endless",
+            "pvp",
+        )
+    }
+
+
+def _effect_excluded(effect: Mapping[str, Any]) -> bool:
+    for condition in effect.get("conditions") or []:
+        if (
+            condition.get("type") == "battle_phase"
+            and condition.get("phase") == "once_per_battle"
+        ):
+            return True
+        if (
+            condition.get("type") == "duration_gate"
+            and condition.get("gate") in EXCLUDED_GATES
+        ):
+            return True
+    return False
+
+
+def _gate_multiplier(effect: Mapping[str, Any]) -> float:
+    for condition in effect.get("conditions") or []:
+        if condition.get("type") != "duration_gate":
+            continue
+        interval = condition.get("interval")
+        if isinstance(interval, (int, float)) and interval > 0:
+            return max(0.2, 10.0 / float(interval))
+    return 1.0
+
+
+def _effect_weight(effect: Mapping[str, Any], *, healing: bool = False) -> float:
+    targeting = TARGETING_WEIGHT.get(str(effect.get("targeting")), 1.0)
+    numeric = effect.get("numeric")
+    if healing and isinstance(numeric, (int, float)) and numeric > 0:
+        return targeting * float(numeric) / 10.0
+    category = effect.get("category")
+    label = effect.get("label")
+    uses_throughput = (
+        category in ("buff", "debuff")
+        and not (category == "buff" and label in ALWAYS_HIGH_BUFFS)
+        and not (category == "debuff" and label in ALWAYS_MEDIUM_DEBUFFS)
+    )
+    if uses_throughput and isinstance(numeric, (int, float)) and numeric > 0:
+        return targeting * float(numeric) * _gate_multiplier(effect) / 10.0
+    if category == "cc":
+        duration = numeric or effect.get("duration")
+        if isinstance(duration, (int, float)) and duration > 0:
+            return targeting * float(duration)
+        return targeting
+    if isinstance(numeric, (int, float)) and numeric > 0:
+        return targeting * float(numeric) * _gate_multiplier(effect)
+    return targeting
+
+
+def _role_prominence(hero: Mapping[str, Any]) -> dict[str, float]:
+    effects = list(hero["display"]["effects"]) + list(
+        hero["display"]["summon_effects"]
+    )
+
+    def maximum(
+        predicate: Any,
+        *,
+        prefix: str = "",
+        healing: bool = False,
+    ) -> float:
+        values: dict[str, float] = {}
+        for effect in effects:
+            if not predicate(effect):
+                continue
+            key = f"{prefix}{effect['label']}"
+            values[key] = max(
+                values.get(key, 0.0),
+                _effect_weight(effect, healing=healing),
+            )
+        return sum(values.values())
+
+    damage = maximum(
+        lambda effect: effect["category"] == "damage"
+        and effect["targeting"] != "Self"
+    )
+    tank = maximum(
+        lambda effect: not _effect_excluded(effect)
+        and effect["targeting"] in ALLY_TARGETINGS | {"Self"}
+        and effect["category"] == "buff"
+        and effect["label"] in TANK_SUSTAIN_LABELS
+    )
+    tank += maximum(
+        lambda effect: not _effect_excluded(effect)
+        and effect["targeting"] in ALLY_TARGETINGS | {"Self"}
+        and effect["category"] == "buff"
+        and effect["label"]
+        in (DIRECT_HEALING_LABEL, HEALING_OVER_TIME_LABEL),
+        prefix="heal:",
+        healing=True,
+    )
+    support = maximum(
+        lambda effect: not _effect_excluded(effect)
+        and effect["category"] == "buff"
+        and effect["targeting"] in ALLY_TARGETINGS
+        and effect["label"]
+        in (DIRECT_HEALING_LABEL, HEALING_OVER_TIME_LABEL),
+        prefix="heal:",
+        healing=True,
+    )
+    support += maximum(
+        lambda effect: not _effect_excluded(effect)
+        and effect["category"] == "buff"
+        and effect["targeting"] in ALLY_TARGETINGS
+        and effect["label"]
+        not in (DIRECT_HEALING_LABEL, HEALING_OVER_TIME_LABEL)
+    )
+    specialist = maximum(
+        lambda effect: not _effect_excluded(effect)
+        and effect["category"] in ("debuff", "cc")
+        and effect["targeting"] != "Self",
+        prefix="enemy:",
+    )
+    specialist += maximum(
+        lambda effect: not _effect_excluded(effect)
+        and effect["category"] == "buff"
+        and effect["targeting"] in ALLY_TARGETINGS
+    )
+    return {
+        "damage_dealer": round(damage, 4),
+        "tank": round(tank, 4),
+        "support": round(support, 4),
+        "specialist": round(specialist, 4),
+    }
 
 
 def build_site_payload(
     view: Mapping[str, Any],
-    config: Mapping[str, Any],
     *,
     generated_at: str | None = None,
 ) -> dict[str, Any]:
-    """Return site hero documents without reading data files."""
-    import render_site as legacy
-
-    rs = rewrite_summaries()
-    limits = (view.get("policy") or {}).get("presentation") or {}
-    if not limits:
-        limits = config.get("display_limits") or {}
-    max_syn = int(limits.get("max_synergies", 6))
-    max_ben = int(limits.get("max_beneficiaries_display", 4))
-    obvious = int(limits.get("obvious_provider_threshold", 20))
-    max_rep = int(
-        (config.get("replacement_scoring") or {}).get("max_replacements", 3)
+    """Return site hero documents without reading files or rebuilding effects."""
+    policy = view.get("policy") or {}
+    config = view.get("config") or {}
+    limits = policy.get("presentation") or config.get("display_limits") or {}
+    max_synergies = int(limits.get("max_synergies", 6))
+    max_beneficiaries = int(
+        limits.get("max_beneficiaries_display", 4)
     )
-    name_synergies = _name_synergies(view)
-    summary_heroes = _summary_heroes(view)
-    provider_beneficiary_count = {
-        short: len(payload.get("beneficiaries") or [])
-        for short, payload in name_synergies["heroes"].items()
+    obvious_threshold = int(
+        limits.get("obvious_provider_threshold", 20)
+    )
+    max_replacements = int(
+        (policy.get("replacement") or {}).get(
+            "max_replacements",
+            (config.get("replacement_scoring") or {}).get(
+                "max_replacements", 3
+            ),
+        )
+    )
+    heroes_by_name = {
+        hero["display_name"]: hero for hero in view["heroes"]
     }
-    slug_by_name = {
-        hero["display_name"]: hero.get("slug") or hero_slug(hero["display_name"])
+    provider_counts = {
+        hero["display_name"]: len(hero["references"]["beneficiaries"])
         for hero in view["heroes"]
     }
-    heroes_out: list[dict[str, Any]] = []
-    for hero in sorted(view["heroes"], key=lambda item: item["display_name"]):
-        short = hero["display_name"]
-        p = {
-            **hero["analysis"],
-            **name_synergies["heroes"][short],
-        }
-        long_name = p["long_name"]
-        analyzed = summary_heroes[long_name]
-        behavior = rs.HeroBehavior(**p["behavior"])
-        meta = hero["source"]
-        skill_summaries = hero["curated"].get("skill_summaries") or {}
-        hero_categories = {s["category"] for s in p["skills"].values()}
-        prydwen_tiers = legacy._normalize_prydwen_tiers(
-            meta.get("prydwen_tiers")
+    output: list[dict[str, Any]] = []
+    for hero in sorted(
+        view["heroes"], key=lambda item: item["display_name"]
+    ):
+        _markdown, synergy = build_synergy_section(
+            hero,
+            heroes_by_name,
+            provider_counts,
+            max_synergies=max_synergies,
+            max_beneficiaries=max_beneficiaries,
+            obvious_threshold=obvious_threshold,
         )
-        behavior_md = "\n".join(
-            rs.format_behavior_section(
-                short,
-                behavior,
-                skill_summaries=skill_summaries,
-                hero_categories=hero_categories,
+        _replacement_markdown, replacements = format_replacements(
+            hero, max_replacements
+        )
+        behavior = hero["analysis"].get("behavior") or {}
+        signature_category = _signature_category(hero)
+        signature_skill = None
+        if behavior.get("signature_skill_name") and signature_category:
+            signature_skill = {
+                "name": behavior["signature_skill_name"],
+                "category": signature_category,
+            }
+        sections: dict[str, Any] = {
+            "behavior": format_behavior(
+                hero,
                 include_skill_summaries=False,
                 include_stats_overview=False,
-                prydwen_tiers=prydwen_tiers,
-                hero=analyzed,
-                behavior_tags=sorted(
-                    hero["curated"].get("behavior_tags") or []
-                ),
-                play_overview=hero["curated"].get("play_overview"),
-                counter_overview=hero["curated"].get("counter_overview"),
-            )
-        ).strip()
-        damage_types = rs._hero_skill_overview_damage_types(behavior, analyzed)
-        skill_card_tags_by_category: dict[str, list[str]] = {}
-        for skill_data in p.get("skills", {}).values():
-            category = skill_data.get("category")
-            tags = skill_data.get("skill_card_tags")
-            if category and tags is not None:
-                skill_card_tags_by_category[category] = tags
-        skill_cards = rs.format_skill_cards(
-            analyzed,
-            skill_summaries,
-            hero_categories,
-            [],
-            source_skills=meta.get("skills", []),
-            skill_card_tags_by_category=skill_card_tags_by_category or None,
-        )
-        summary_md = rs.format_summary(analyzed, short).strip()
-        synergy = legacy._build_synergy_sections(
-            short,
-            p,
-            analyzed,
-            max_syn,
-            max_ben,
-            provider_beneficiary_count,
-            obvious,
-            slug_by_name,
-            name_synergies,
-        )
-        replacements = legacy._build_replacements(
-            short, p.get("replacements", {}), max_rep, slug_by_name
-        )
-        sig_category = rs.signature_skill_category(short, behavior)
-        signature_skill = None
-        if behavior.signature_skill_name and sig_category:
-            signature_skill = {
-                "name": behavior.signature_skill_name,
-                "category": sig_category,
-            }
-        stats_overview = hero["curated"].get("stat_ranks")
-        sections: dict[str, Any] = {
-            "behavior": behavior_md,
-            "damageTypes": damage_types,
-            "skillCards": skill_cards,
+                normalized_tiers=True,
+            ).strip(),
+            "damageTypes": damage_types(hero),
+            "skillCards": skill_cards(hero),
             "benefits_from": synergy,
             "replacements": replacements,
-            "summary": summary_md,
+            "summary": format_summary(hero).strip(),
         }
-        if stats_overview:
-            sections["statsOverview"] = stats_overview
-        heroes_out.append(
+        if hero["curated"].get("stat_ranks"):
+            sections["statsOverview"] = hero["curated"]["stat_ranks"]
+        source = hero["source"]
+        analysis = hero["analysis"]
+        output.append(
             {
-                "name": short,
-                "slug": slug_by_name[short],
-                "title": meta.get("title", long_name),
-                "faction": meta.get("faction"),
-                "class": meta.get("class"),
-                "roleCategory": p.get("role_category"),
-                "damage_type": meta.get("damage_type"),
-                "defaultRange": p.get("default_range"),
-                "releaseDate": p.get("release_date"),
-                "season": p.get("season"),
-                "seasonNumber": p.get("season_number"),
-                "description": meta.get("description", ""),
-                "portrait": f"assets/portraits/{short}.png",
+                "name": hero["display_name"],
+                "slug": hero["slug"],
+                "title": source.get("title", analysis["long_name"]),
+                "faction": source.get("faction"),
+                "class": source.get("class"),
+                "roleCategory": analysis.get("role_category"),
+                "damage_type": source.get("damage_type"),
+                "defaultRange": analysis.get("default_range"),
+                "releaseDate": analysis.get("release_date"),
+                "season": analysis.get("season"),
+                "seasonNumber": analysis.get("season_number"),
+                "description": source.get("description", ""),
+                "portrait": (
+                    f"assets/portraits/{hero['display_name']}.png"
+                ),
                 "signatureSkill": signature_skill,
-                "prydwenTiers": prydwen_tiers,
+                "prydwenTiers": _normalized_tiers(source),
                 "sections": sections,
             }
         )
@@ -145,9 +284,60 @@ def build_site_payload(
         "%Y-%m-%dT%H:%M:%SZ"
     )
     return {
-        "meta": {
-            "generated": timestamp,
-            "hero_count": len(heroes_out),
+        "meta": {"generated": timestamp, "hero_count": len(output)},
+        "heroes": output,
+    }
+
+
+def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
+    """Return provider scores keyed by resolved receiver/provider slugs."""
+    by_receiver: dict[str, dict[str, float]] = {}
+    for hero in view["heroes"]:
+        providers = {
+            pick["slug"]: round(float(pick["score"]), 4)
+            for pick in hero["references"]["synergies"]
+        }
+        if providers:
+            by_receiver[hero["slug"]] = providers
+    return {"byReceiver": by_receiver}
+
+
+def build_mix_config(view: Mapping[str, Any]) -> dict[str, Any]:
+    """Return the browser's copied mix-policy subset."""
+    config = view.get("config") or {}
+    mix = config.get("mix_mode") or {}
+    synergy = config.get("synergy_weights") or {}
+    composition = mix.get("composition_scoring") or {}
+    return {
+        "factionBonus": mix.get("faction_bonus", 3.0),
+        "focusTags": mix.get("focus_tags", {}),
+        "ccTargetingWeight": mix.get(
+            "cc_targeting_weight", synergy.get("targeting_weight", {})
+        ),
+        "roleProminenceTierWeight": mix.get(
+            "role_prominence_tier_weight", 7
+        ),
+        "markSynergyMultiplier": mix.get("mark_synergy_multiplier", 2.0),
+        "compositionScoring": {
+            "baseBonus": composition.get("base_bonus", 10.0),
+            "urgencyPerFilledSlot": composition.get(
+                "urgency_per_filled_slot", 0.25
+            ),
+            "maxHyperCarryPremium": composition.get(
+                "max_hyper_carry_premium", 0.5
+            ),
         },
-        "heroes": heroes_out,
+    }
+
+
+def build_mix_role_prominence(view: Mapping[str, Any]) -> dict[str, Any]:
+    """Return slug-keyed role prominence from structured display effects."""
+    return {
+        "bySlug": {
+            hero["slug"]: _role_prominence(hero)
+            for hero in sorted(
+                view["heroes"],
+                key=lambda item: item["display_name"],
+            )
+        }
     }

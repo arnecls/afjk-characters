@@ -184,9 +184,12 @@ def compare_views(
     for relpath in sorted(set(baseline) & set(current)):
         before = baseline[relpath]
         after = current[relpath]
-        if relpath.endswith("heroes.json"):
-            before_obj = _drop_site_timestamp(_load_json_text(before))
-            after_obj = _drop_site_timestamp(_load_json_text(after))
+        if relpath.endswith(".json"):
+            before_obj = _load_json_text(before)
+            after_obj = _load_json_text(after)
+            if relpath.endswith("heroes.json"):
+                before_obj = _drop_site_timestamp(before_obj)
+                after_obj = _drop_site_timestamp(after_obj)
             if canonicalize(before_obj) != canonicalize(after_obj):
                 changed[relpath] = "json"
         elif before != after:
