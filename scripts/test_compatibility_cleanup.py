@@ -129,6 +129,8 @@ class CompatibilityCleanupTests(unittest.TestCase):
         self.assertNotIn("def score_synergy", texts["hero_pipeline/analysis/scoring_facts.py"])
         self.assertNotIn("def _runtime_hero_from_local", texts["hero_pipeline/analysis/calibrate.py"])
         self.assertIn("def score_synergy", texts["hero_pipeline/relationships/scoring.py"])
+        self.assertNotIn("def analyze_hero", texts["hero_pipeline/analysis/postprocess.py"])
+        self.assertIn("def analyze_working", texts["hero_pipeline/analysis/postprocess.py"])
         helpers = (SCRIPTS / "test_helpers.py").read_text(encoding="utf-8")
         self.assertNotIn("def load_overview_facts", helpers)
         storage = texts["hero_pipeline/storage.py"]

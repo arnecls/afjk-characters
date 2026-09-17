@@ -536,7 +536,7 @@ def write_local_analyses(
         documents.append((_path_for(entry, ANALYSIS_NAME), document))
         bundle["analysis"] = cast(HeroAnalysisDocument, document)
     if documents:
-        from .analysis.effects import _PER_HERO_CURATED_CACHE
+        from .analysis.detector_common import _PER_HERO_CURATED_CACHE
 
         _PER_HERO_CURATED_CACHE.clear()
         publish_documents(documents)

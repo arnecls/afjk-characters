@@ -4,11 +4,19 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
+from .conditions import _merge_conditional, _merge_conditions_lists
+from .detector_common import TIER_ORDER
+from .effect_merge import _effect_dedupe_key
 from .records import (
     CcImmunity,
     Effect,
     SpecialEffect,
     is_cc_immunity,
+)
+from .targeting import (
+    _prefer_buff_targeting,
+    _prefer_timing,
+    _prefer_wider_targeting,
 )
 
 SECTION_TO_CATEGORY = {
@@ -78,12 +86,10 @@ def merge_effects(
     keep_section_in_key: bool = True,
 ) -> list[Any]:
     """Merge working effects by label, keeping the strongest numeric."""
-    from . import effects as rs
-
     merged: list[Any] = []
     for eff in effects:
         section = eff.get("source_section") if keep_section_in_key else None
-        key = rs._effect_dedupe_key(
+        key = _effect_dedupe_key(
             eff["category"],
             eff["label"],
             section,
@@ -92,7 +98,7 @@ def merge_effects(
         existing = [
             row
             for row in merged
-            if rs._effect_dedupe_key(
+            if _effect_dedupe_key(
                 row["category"],
                 row["label"],
                 row.get("source_section") if keep_section_in_key else None,
@@ -104,21 +110,21 @@ def merge_effects(
             merged.append(_copy_effect(eff))
             continue
         cur = existing[0]
-        if rs.TIER_ORDER.get(eff["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
+        if TIER_ORDER.get(eff["tier"], 99) < TIER_ORDER.get(cur["tier"], 99):
             cur["tier"] = eff["tier"]
-        cur["conditional"] = rs._merge_conditional(
+        cur["conditional"] = _merge_conditional(
             cur["conditional"], eff["conditional"]
         )
-        cur["conditions"] = rs._merge_conditions_lists(
+        cur["conditions"] = _merge_conditions_lists(
             cur.get("conditions"),
             eff.get("conditions"),
         )
         if eff["category"] == "buff":
-            cur["targeting"] = rs._prefer_buff_targeting(
+            cur["targeting"] = _prefer_buff_targeting(
                 eff["targeting"], cur["targeting"]
             )
         else:
-            cur["targeting"] = rs._prefer_wider_targeting(
+            cur["targeting"] = _prefer_wider_targeting(
                 eff["targeting"], cur["targeting"]
             )
         eff_count = eff.get("area_count")
@@ -165,8 +171,6 @@ def merge_effects(
 
 
 def merge_immunities(items: list[Any]) -> list[Any]:
-    from . import effects as rs
-
     merged: list[Any] = []
     for imm in items:
         existing = [
@@ -186,15 +190,13 @@ def merge_immunities(items: list[Any]) -> list[Any]:
             )
             continue
         cur = existing[0]
-        if rs.TIER_ORDER.get(imm["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
+        if TIER_ORDER.get(imm["tier"], 99) < TIER_ORDER.get(cur["tier"], 99):
             cur["tier"] = imm["tier"]
-        cur["timing"] = rs._prefer_timing(imm["timing"], cur["timing"])
+        cur["timing"] = _prefer_timing(imm["timing"], cur["timing"])
     return merged
 
 
 def merge_special_effects(items: list[Any]) -> list[Any]:
-    from . import effects as rs
-
     merged: list[Any] = []
     for se in items:
         key = (se["kind"], se["label"], se["targeting"])
@@ -217,7 +219,7 @@ def merge_special_effects(items: list[Any]) -> list[Any]:
             )
             continue
         cur = existing[0]
-        if rs.TIER_ORDER.get(se["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
+        if TIER_ORDER.get(se["tier"], 99) < TIER_ORDER.get(cur["tier"], 99):
             cur["tier"] = se["tier"]
         if se["qualitative"] and not cur["qualitative"]:
             cur["qualitative"] = se["qualitative"]

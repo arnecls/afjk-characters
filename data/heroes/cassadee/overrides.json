@@ -2,5 +2,30 @@
   "schema_version": 1,
   "signature": {
     "signature_override": "skill2"
+  },
+  "corrections": {
+    "skill_postprocess": {
+      "relabel": [
+        { "from": "Tidal Strength", "to": "Magic damage" }
+      ],
+      "force_section_path": {
+        "section": "Ultimate",
+        "categories": ["cc", "damage"],
+        "targeting": "Area",
+        "area": "path",
+        "area_direction": "selected_target",
+        "area_count": 3
+      },
+      "copy_unique_effects": {
+        "from_section": "Unlocks at Supreme+",
+        "to_section": "Ultimate",
+        "categories": ["debuff"]
+      },
+      "drop_effects": {
+        "category": "buff",
+        "label": "Magic damage",
+        "sections": ["Skill1", "Ex. Skill", "Unlocks at Supreme+"]
+      }
+    }
   }
 }

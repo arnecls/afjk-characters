@@ -26,7 +26,7 @@ def _parse_meta_number(value: str) -> float | None:
 
 def load_skill_meta(block: str) -> list[SkillMeta]:
     """Parse per-skill range, cooldown, energy, and description text."""
-    from .effects import SECTION_TIERS
+    from .detector_common import SECTION_TIERS
 
     skills: list[SkillMeta] = []
     if not block:

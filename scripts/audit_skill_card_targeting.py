@@ -13,7 +13,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import tag_labels
+from test_helpers import load_rewrite_summaries, tag_labels
 
 TIER_SUFFIX_RE = re.compile(
     r"\s*\((Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)\s*$",
@@ -116,9 +116,7 @@ def audit_stored_tags_with_suffix() -> list[str]:
 
 
 def main() -> int:
-    from hero_pipeline.analysis import behavior as rewrite_summaries
-
-    rs_mod = rewrite_summaries
+    rs_mod = load_rewrite_summaries()
     live_issues = audit_live_tags(rs_mod)
     stored_issues = audit_stored_tags_with_suffix()
     chip_proc = subprocess.run(

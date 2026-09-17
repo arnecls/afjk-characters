@@ -7,7 +7,12 @@ import types
 
 def load_rewrite_summaries():
     """Return the combined effect/behavior analysis namespace used by tests."""
+    import json
+    from pathlib import Path
+
+    import skill_effects_store as ses
     from hero_pipeline.analysis import behavior, effects
+    from hero_pipeline.analysis.skill_corrections import spec_from_overrides
 
     namespace = types.SimpleNamespace()
     namespace.__dict__.update(
@@ -20,6 +25,28 @@ def load_rewrite_summaries():
             if key != "__builtins__"
         }
     )
+
+    def analyze_hero(hero, sidecar=None):
+        if sidecar is None:
+            sidecar = ses.load_sidecar(hero["title"])
+        if not hero.get("skill_corrections"):
+            short = (
+                hero["title"].split(" - ", 1)[0].strip().lower().replace(" ", "-")
+            )
+            override_path = (
+                Path(__file__).resolve().parents[1]
+                / "data"
+                / "heroes"
+                / short
+                / "overrides.json"
+            )
+            if override_path.is_file():
+                hero["skill_corrections"] = spec_from_overrides(
+                    json.loads(override_path.read_text(encoding="utf-8"))
+                )
+        effects.analyze_working(hero, sidecar)
+
+    namespace.analyze_hero = analyze_hero
     return namespace
 
 

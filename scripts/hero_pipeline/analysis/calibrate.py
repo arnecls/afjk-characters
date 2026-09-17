@@ -24,6 +24,7 @@ from . import serialize as hs
 from . import magnitudes as mag
 from .records import SkillMeta
 from .skill_meta import from_schema_skill
+from .damage import _effect_throughput_score
 
 
 def calibrate_roster(
@@ -301,10 +302,9 @@ def _extra_analysis_fields(
     merged_effects = list(working["effects"]) + list(working["summon_effects"])
     signature_section = behavior["signature_skill_section"]
     signature_name = behavior["signature_skill_name"]
-    from . import effects as rs
 
     for effect in merged_effects:
-        raw = rs._effect_throughput_score(effect, working, skills)
+        raw = _effect_throughput_score(effect, working, skills)
         effect_facts = {
             "magnitude": effect["magnitude"],
             "weight": raw,
@@ -345,7 +345,7 @@ def _extra_analysis_fields(
             or effect.get("numeric") != merged_numeric.get(key)
         ):
             continue
-        raw = rs._effect_throughput_score(effect, working, skills)
+        raw = _effect_throughput_score(effect, working, skills)
         if float(raw or 0) > float(current.get("weight") or 0):
             current["weight"] = raw
 

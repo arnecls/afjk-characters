@@ -10,9 +10,10 @@ import skill_effects_store as skill_effects
 from ..contracts import HeroBundle, HeroManifestEntry, LocalAnalysis
 from . import behavior as bh
 from . import serialize as hs
-from . import effects as rs
+from .postprocess import _postprocess_analyzed_hero
+from .skill_chunks import hero_from_record, load_skills_by_title_from_records
 
-ALGORITHM_VERSION = "local-analysis-v9"
+ALGORITHM_VERSION = "local-analysis-v10"
 
 
 def algorithm_hash() -> str:
@@ -57,13 +58,16 @@ def _analyze_local_bundle(
         raise FileNotFoundError(
             f"missing skill effects for hero {entry['id']!r}"
         )
-    hero: dict[str, Any] = rs.hero_from_record(copy.deepcopy(source))
+    hero: dict[str, Any] = hero_from_record(copy.deepcopy(source))
     skill_effects.apply_sidecar_to_hero(hero, copy.deepcopy(sidecar))
-    rs._postprocess_analyzed_hero(hero, hero["damage_type"] or "Physical")
+    from .skill_corrections import spec_from_overrides
+
+    hero["skill_corrections"] = spec_from_overrides(bundle.get("overrides"))
+    _postprocess_analyzed_hero(hero, hero["damage_type"] or "Physical")
     from . import scoring_facts as gen
     import heroes_io as io
 
-    skills = rs.load_skills_by_title_from_records([source])[hero["title"]]
+    skills = load_skills_by_title_from_records([source])[hero["title"]]
     raw_range = source.get("range")
     default_range = (
         int(raw_range) if isinstance(raw_range, (int, float)) else None

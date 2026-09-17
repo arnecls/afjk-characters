@@ -17,7 +17,7 @@ from ..storage import (
     write_local_analyses,
 )
 from .calibrate import calibrate_roster
-from .effects import prime_curated_cache
+from .detector_common import prime_curated_cache
 from .local import algorithm_hash, analyze_local
 from .policy import make_policy, PipelinePolicy
 
