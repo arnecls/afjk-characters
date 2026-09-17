@@ -23,13 +23,6 @@ def load_rewrite_summaries():
     return namespace
 
 
-def load_overview_facts(name: str = "gen_overview"):
-    """Return analysis-fact helpers used by focused scoring tests."""
-    from hero_pipeline.analysis import scoring_facts
-
-    return scoring_facts
-
-
 def tag_labels(tags: list) -> list[str]:
     """Display labels from skill_card_tags (strings or {label, polarity?})."""
     out: list[str] = []

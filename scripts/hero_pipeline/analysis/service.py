@@ -6,7 +6,7 @@ from typing import Mapping
 
 from ..contracts import (
     AnalysisContext,
-    AnalyzedHero,
+    CalibratedAnalysis,
     LocalAnalysis,
     ProcessedRoster,
     RosterSnapshot,
@@ -55,7 +55,7 @@ def analyze_roster(
     config: Mapping[str, object] | None = None,
 ) -> tuple[
     ProcessedRoster,
-    list[AnalyzedHero],
+    list[CalibratedAnalysis],
     AnalysisContext,
     PipelinePolicy,
 ]:

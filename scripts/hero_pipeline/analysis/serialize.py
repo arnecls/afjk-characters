@@ -140,10 +140,15 @@ _CATEGORY_TO_SECTION = {
 }
 
 
-def _stamp_source_section(converted: Any, section: str | None) -> Any:
-    if section and isinstance(converted, dict) and "category" in converted:
-        converted["source_section"] = section
-    return converted
+from .schema_effects import (
+    is_placeholder_schema_effect as _is_placeholder_schema_effect,
+    merge_effects as _merge_effects,
+    merge_immunities as _merge_immunities,
+    merge_special_effects as _merge_special_effects,
+    schema_effect_to_effect,
+    stamp_source_section as _stamp_source_section,
+    synergy_mechanic_to_special,
+)
 
 _META_RE = re.compile(r"^([\d.]+)")
 
@@ -573,189 +578,6 @@ def _numeric_from_value(value: Any) -> float | None:
     return None
 
 
-def _merge_effects(
-    effects: list[Any],
-    *,
-    keep_section_in_key: bool = True,
-) -> list[Any]:
-    """Merge effects by (category, label), keeping strongest numeric per tier.
-
-    Keeps the strongest numeric per label for fully-ascended synergy comparison.
-    """
-    rs = _rs()
-
-    merged: list[Any] = []
-    for eff in effects:
-        section = eff.get("source_section") if keep_section_in_key else None
-        key = rs._effect_dedupe_key(
-            eff["category"], eff["label"], section,
-            targeting=eff["targeting"],
-        )
-        existing = [
-            e
-            for e in merged
-            if rs._effect_dedupe_key(
-                e["category"],
-                e["label"],
-                e.get("source_section") if keep_section_in_key else None,
-                targeting=e["targeting"],
-            )
-            == key
-        ]
-        if not existing:
-            merged.append(
-                type(eff)(
-                    category=eff["category"],
-                    label=eff["label"],
-                    tier=eff["tier"],
-                    targeting=eff["targeting"],
-                    numeric=eff["numeric"],
-                    qualitative=eff["qualitative"],
-                    magnitude=eff["magnitude"],
-                    area_count=eff.get("area_count"),
-                    target_count=eff.get("target_count"),
-                    duration=eff.get("duration"),
-                    tick=eff.get("tick"),
-                    persistence=eff.get("persistence"),
-                    conditional=eff["conditional"],
-                    conditions=list(eff.get("conditions") or []),
-                    area=eff.get("area"),
-                    area_direction=eff.get("area_direction"),
-                    source_section=eff.get("source_section"),
-                )
-            )
-            continue
-        cur = existing[0]
-        if rs.TIER_ORDER.get(eff["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
-            cur["tier"] = eff["tier"]
-        cur["conditional"] = rs._merge_conditional(cur["conditional"], eff["conditional"])
-        cur["conditions"] = rs._merge_conditions_lists(
-            cur.get("conditions"),
-            eff.get("conditions"),
-        )
-        if eff["category"] == "buff":
-            cur["targeting"] = rs._prefer_buff_targeting(eff["targeting"], cur["targeting"])
-        else:
-            cur["targeting"] = rs._prefer_wider_targeting(eff["targeting"], cur["targeting"])
-        eff_count = eff.get("area_count")
-        if eff_count is not None:
-            if cur["area_count"] is None or eff_count != 2:
-                cur["area_count"] = eff_count
-        eff_target_count = eff.get("target_count")
-        if eff_target_count is not None:
-            cur["target_count"] = eff_target_count
-        eff_duration = eff.get("duration")
-        if eff_duration is not None and (
-            cur["duration"] is None or eff_duration > cur["duration"]
-        ):
-            cur["duration"] = eff_duration
-        eff_tick = eff.get("tick")
-        if eff_tick is not None:
-            cur["tick"] = eff_tick
-        eff_persistence = eff.get("persistence")
-        if eff_persistence and (
-            not cur.get("persistence")
-            or eff_persistence != "unknown"
-        ):
-            cur["persistence"] = eff_persistence
-        eff_area = eff.get("area")
-        if eff_area is not None:
-            cur["area"] = eff_area
-        eff_area_dir = eff.get("area_direction")
-        if eff_area_dir is not None:
-            cur["area_direction"] = eff_area_dir
-        if eff.get("source_section") and (
-            not cur.get("source_section")
-            or (
-                eff["numeric"] is not None
-                and (cur["numeric"] is None or eff["numeric"] > cur["numeric"])
-            )
-        ):
-            cur["source_section"] = eff["source_section"]
-        if eff["numeric"] is not None and (
-            cur["numeric"] is None or eff["numeric"] > cur["numeric"]
-        ):
-            cur["numeric"] = eff["numeric"]
-            if eff["qualitative"]:
-                cur["qualitative"] = eff["qualitative"]
-    return merged
-
-
-def _merge_immunities(items: list[Any]) -> list[Any]:
-    rs = _rs()
-
-    # Keep distinct targeting as separate rows (Self vs Single target).
-    merged: list[Any] = []
-    for imm in items:
-        existing = [
-            c
-            for c in merged
-            if c["immunity_type"] == imm["immunity_type"]
-            and c["targeting"] == imm["targeting"]
-        ]
-        if not existing:
-            merged.append(
-                type(imm)(
-                    immunity_type=imm["immunity_type"],
-                    tier=imm["tier"],
-                    targeting=imm["targeting"],
-                    timing=imm["timing"],
-                )
-            )
-            continue
-        cur = existing[0]
-        if rs.TIER_ORDER.get(imm["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
-            cur["tier"] = imm["tier"]
-        cur["timing"] = rs._prefer_timing(imm["timing"], cur["timing"])
-    return merged
-
-
-def _merge_special_effects(items: list[Any]) -> list[Any]:
-    rs = _rs()
-
-    merged: list[Any] = []
-    for se in items:
-        key = (se["kind"], se["label"], se["targeting"])
-        existing = [s for s in merged if (s["kind"], s["label"], s["targeting"]) == key]
-        if not existing:
-            merged.append(
-                type(se)(
-                    kind=se["kind"],
-                    label=se["label"],
-                    tier=se["tier"],
-                    targeting=se["targeting"],
-                    qualitative=se["qualitative"],
-                    grants=list(se.get("grants") or []),
-                    named_ids=tuple(se.get("named_ids") or ()),
-                )
-            )
-            continue
-        cur = existing[0]
-        if rs.TIER_ORDER.get(se["tier"], 99) < rs.TIER_ORDER.get(cur["tier"], 99):
-            cur["tier"] = se["tier"]
-        if se["qualitative"] and not cur["qualitative"]:
-            cur["qualitative"] = se["qualitative"]
-        if se.get("grants") and not cur.get("grants"):
-            cur["grants"] = list(se["grants"])
-        if se.get("named_ids") and not cur.get("named_ids"):
-            cur["named_ids"] = tuple(se["named_ids"])
-    return merged
-
-
-def _is_placeholder_schema_effect(effect: dict[str, Any]) -> bool:
-    if effect.get("type") != "damage":
-        return False
-    value = effect.get("value")
-    if isinstance(value, list) and len(value) == 1:
-        comp = value[0]
-        return (
-            isinstance(comp, dict)
-            and comp.get("type") == "percentage"
-            and comp.get("value") == 100
-        )
-    return False
-
-
 def _schema_effect_is_complete(effect: dict[str, Any]) -> bool:
     """Drop effects that omit schema-required magnitudes (no value: 0 placeholders)."""
     etype = effect.get("type")
@@ -988,8 +810,8 @@ def cc_immunity_to_schema(imm: Any) -> dict[str, Any]:
     return out
 
 
-def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> Any:
-    """Convert schema effect to legacy Effect."""
+def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> Any:
+    """Convert schema effect to a working effect mapping."""
     rs = _rs()
 
     etype = effect["type"]
@@ -1136,23 +958,6 @@ def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:
             for label, magnitude in se["grants"]
         ]
     return out
-
-
-def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
-    rs = _rs()
-
-    grants = [
-        (grant["label"], grant["magnitude"])
-        for grant in se.get("grants", [])
-    ]
-    return rs.SpecialEffect(
-        kind=kind,
-        label=se["label"],
-        tier=to_display_tier(se.get("tier", "base")),
-        targeting=se.get("targeting", "—"),
-        qualitative=se.get("description", ""),
-        grants=grants,
-    )
 
 
 def _skill_description_structured(skill: dict[str, Any]) -> dict[str, Any]:

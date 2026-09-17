@@ -13,15 +13,12 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries, load_overview_facts
+from test_helpers import load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 
 def _load_rs():
     return load_rewrite_summaries()
-
-
-def _load_gen():
-    return load_overview_facts()
 
 
 def _hero_blocks() -> dict[str, str]:
@@ -69,7 +66,7 @@ class ProximityReachGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.rs = _load_rs()
-        cls.gen = _load_gen()
+        cls.gen = gen
         blocks = _hero_blocks()
         keys = [
             "Shakir",
@@ -193,7 +190,6 @@ class ProximityReachGateTests(unittest.TestCase):
 
 class PositionalTileRegressionTests(unittest.TestCase):
     def test_moving_receiver_skips_positional_tile_buff(self) -> None:
-        gen = _load_gen()
         rs = _load_rs()
         provider = rs.Hero(title="Prov - Test", damage_type="Physical")
         provider["effects"] = [
@@ -222,7 +218,6 @@ class PositionalTileRegressionTests(unittest.TestCase):
         self.assertEqual(score, 0.0)
 
     def test_gunnar_scores_no_synergy_for_moving_perseus(self) -> None:
-        gen = _load_gen()
         from test_roster_cache import hero_by_short_name
         import heroes_io as io
 

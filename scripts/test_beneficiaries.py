@@ -3,7 +3,8 @@
 
 from __future__ import annotations
 
-from test_helpers import load_rewrite_summaries, load_overview_facts
+from test_helpers import load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 import importlib.util
 import re
@@ -15,11 +16,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 
 
-def _load_modules():
-    return load_rewrite_summaries(), load_overview_facts()
-
-
-rs, gen = _load_modules()
+rs = load_rewrite_summaries()
 
 
 def _full_roster():

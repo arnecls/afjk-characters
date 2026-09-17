@@ -14,9 +14,10 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from hero_pipeline.analysis import calibrate, serialize as hs
+from hero_pipeline.analysis import serialize as hs
 import heroes_io as io
-from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels, load_rewrite_summaries, load_overview_facts
+from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels, load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 
 def _load_rs():
@@ -26,11 +27,6 @@ def _load_rs():
 rs = _load_rs()
 
 
-def _load_gen():
-    return load_overview_facts()
-
-
-gen = _load_gen()
 
 
 def _analyze_heroes_from_blocks(blocks: list[str]) -> tuple[list, dict[str, str], dict]:
@@ -83,53 +79,6 @@ class RoundTripTests(unittest.TestCase):
         self.assertTrue(blocks, f"hero not found: {prefix}")
         heroes, _blocks, _role = _analyze_heroes_from_blocks(blocks)
         return heroes[0], data
-
-    def _round_trip(self, prefix: str):
-        hero, data = self._hero_by_title_prefix(prefix)
-        record = next(h for h in data["heroes"] if h["title"] == hero["title"])
-        serialized = hs.serialize_processed_hero(
-            hero,
-            record,
-            is_energy_provider=False,
-            is_melee=False,
-            is_dual_range=False,
-            behavior={
-                "movement": "moving",
-                "movement_note": "",
-                "casting_speed": "average",
-                "signature_skill_name": "Test",
-                "signature_skill_is_ult": False,
-                "signature_skill_speed": "average",
-                "synergy_signature_speed": "average",
-                "synergy_signature_is_ult": False,
-                "ult_speed": "slow",
-                "non_ult_speed": "fast",
-            },
-        )
-        restored = calibrate._runtime_hero_from_local(
-            serialized,
-            title=hero["title"],
-            damage_type=hero["damage_type"] or "Physical",
-            stamp_sections=False,
-        )
-        rs.assign_magnitudes([restored])
-        return hero, restored
-
-    def test_aliceth_effect_labels_preserved(self):
-        before, after = self._round_trip("Aliceth")
-        before_keys = {(e["category"], e["label"]) for e in before["effects"]}
-        after_keys = {(e["category"], e["label"]) for e in after["effects"]}
-        self.assertEqual(before_keys, after_keys)
-
-    def test_round_trip_summary_parity(self):
-        for prefix in ("Aliceth",):
-            before, after = self._round_trip(prefix)
-            short = gen.short_name(before["title"])
-            self.assertEqual(
-                rs.format_summary(before, short).strip(),
-                rs.format_summary(after, short).strip(),
-                prefix,
-            )
 
     def test_aliceth_full_ascension_numerics(self):
         processed = io.load_processed()

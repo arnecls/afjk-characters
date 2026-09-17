@@ -2092,7 +2092,11 @@ def build_behavior_for_heroes(
         skills = skills_by_title[hero["title"]]
         movement, note = compute_movement(skills)
         avg_range = _weighted_attack_range(skills, default_range=hero["default_range"])
-        display = display_names.get(hero["title"], hero["title"].split(" - ", 1)[0])
+        display = display_names.get(
+            hero.get("id") or hero["title"],
+            hero.get("display_name")
+            or str(hero.get("title") or "").split(" - ", 1)[0],
+        )
         curated = curated_display_name(display)
         hero_id = hero.get("id")
         if not hero_id:
@@ -2100,8 +2104,10 @@ def build_behavior_for_heroes(
 
             hero_id = resolve_hero_id(display)
         walk_speed = walk_speed_for_id(hero_id, walk_speeds)
-        hero_class = class_by_title.get(hero["title"], "").lower()
-        tags = behavior_tags.get(curated, frozenset())
+        hero_class = class_by_title.get(
+            hero.get("id") or hero["title"], ""
+        ).lower()
+        tags = behavior_tags.get(hero_id) or behavior_tags.get(curated, frozenset())
         movement, note = _apply_melee_movement_floor(
             movement,
             note,
@@ -2110,10 +2116,15 @@ def build_behavior_for_heroes(
             skills=skills,
         )
         movement, note = _apply_movement_override(
-            movement, note, curated, movement_overrides
+            movement,
+            note,
+            hero_id if hero_id in movement_overrides else curated,
+            movement_overrides,
         )
         speeds = per_skill_speeds.get(hero["title"], {})
-        raw_sig = signature_by_display.get(curated)
+        raw_sig = signature_by_display.get(hero_id) or signature_by_display.get(
+            curated
+        )
         defining = None
         alternative = None
         if raw_sig:
@@ -2128,7 +2139,7 @@ def build_behavior_for_heroes(
                 )
         placement_constraints = detect_placement_constraints(
             skills,
-            curated,
+            hero_id if hero_id in placement_overrides else curated,
             placement_overrides,
             block_text=block_by_title[hero["title"]],
         )
@@ -2154,7 +2165,10 @@ def build_behavior_for_heroes(
                 casting_speed=casting_labels.get(hero["title"], "average"),
                 walk_speed=walk_speed,
                 signature_skill_name=(
-                    skill_names_by_display_input.get(curated, {}).get(
+                    (
+                        skill_names_by_display_input.get(hero_id)
+                        or skill_names_by_display_input.get(curated, {})
+                    ).get(
                         _effective_signature_category(raw_sig),
                         "",
                     )

@@ -73,7 +73,7 @@ class AnalysisBoundaryTests(unittest.TestCase):
             entry["id"] for entry in self.snapshot["manifest"]["heroes"]
         })
         self.assertTrue(heroes)
-        self.assertIn("skills_by_title", context)
+        self.assertIn("skills_by_id", context)
         self.assertEqual(policy["local"]["energy_fill_rate"], 100.0)
 
 

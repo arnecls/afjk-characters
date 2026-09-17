@@ -12,14 +12,10 @@ from types import SimpleNamespace
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries, load_overview_facts
+from test_helpers import load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 
-def _load_gen():
-    return load_overview_facts()
-
-
-gen = _load_gen()
 
 
 def _hero(title: str) -> SimpleNamespace:

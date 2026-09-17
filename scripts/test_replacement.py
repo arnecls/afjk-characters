@@ -12,7 +12,8 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries, load_overview_facts
+from test_helpers import load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 from healing_types import (
     DIRECT_HEALING_LABEL,
@@ -21,11 +22,7 @@ from healing_types import (
 )
 
 
-def _load_modules():
-    return load_rewrite_summaries(), load_overview_facts()
-
-
-rs, gen = _load_modules()
+rs = load_rewrite_summaries()
 
 
 def _default_prydwen_tiers(tier: str = "A") -> dict[str, str]:
@@ -49,13 +46,30 @@ def _baseline_tiers_for_scores(
     return {t: dict(block) for t in titles}
 
 
+_REPLACEMENT_CONSTANTS = (
+    "REPLACEMENT_MIN_SCORE",
+    "REPLACEMENT_MAX",
+    "REPLACEMENT_SAME_FACTION_MULT",
+    "REPLACEMENT_SAME_ROLE_CATEGORY_MULT",
+)
+_ORIG_REPLACEMENT_CONSTANTS = {
+    name: getattr(gen, name) for name in _REPLACEMENT_CONSTANTS
+}
+
+
+class _RestoreReplacementConstants(unittest.TestCase):
+    def tearDown(self) -> None:
+        for name, value in _ORIG_REPLACEMENT_CONSTANTS.items():
+            setattr(gen, name, value)
+
+
 def _hero_by_short_name(name: str):
     from test_roster_cache import hero_by_short_name
 
     return hero_by_short_name(name)
 
 
-class ReplacementFactionRankingTests(unittest.TestCase):
+class ReplacementFactionRankingTests(_RestoreReplacementConstants):
     def setUp(self) -> None:
         gen.REPLACEMENT_MIN_SCORE = 0.5
         gen.REPLACEMENT_MAX = 3
@@ -140,7 +154,7 @@ class ReplacementFactionRankingTests(unittest.TestCase):
         self.assertAlmostEqual(not_boosted, raw)
 
 
-class ReplacementRoleCategoryRankingTests(unittest.TestCase):
+class ReplacementRoleCategoryRankingTests(_RestoreReplacementConstants):
     def setUp(self) -> None:
         gen.REPLACEMENT_MIN_SCORE = 0.5
         gen.REPLACEMENT_MAX = 3
@@ -236,7 +250,7 @@ class ReplacementRoleCategoryRankingTests(unittest.TestCase):
         self.assertAlmostEqual(not_boosted, raw)
 
 
-class ReplacementTierRankingTests(unittest.TestCase):
+class ReplacementTierRankingTests(_RestoreReplacementConstants):
     def setUp(self) -> None:
         gen.REPLACEMENT_MIN_SCORE = 0.5
         gen.REPLACEMENT_MAX = 3
@@ -485,7 +499,7 @@ class ReplacementTierRankingTests(unittest.TestCase):
         )
 
 
-class SimilarSkillsReplacementTests(unittest.TestCase):
+class SimilarSkillsReplacementTests(_RestoreReplacementConstants):
     def setUp(self) -> None:
         gen.REPLACEMENT_MIN_SCORE = 0.5
         gen.REPLACEMENT_MAX = 3
@@ -825,7 +839,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         self.assertLess(cov_reverse, cov_forward)
 
 
-class OverallReplacementTests(unittest.TestCase):
+class OverallReplacementTests(_RestoreReplacementConstants):
     def setUp(self) -> None:
         gen.REPLACEMENT_MIN_SCORE = 0.5
         gen.REPLACEMENT_MAX = 3

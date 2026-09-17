@@ -11,10 +11,10 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries, load_overview_facts
+from test_helpers import load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 rs = load_rewrite_summaries()
-gen = load_overview_facts()
 
 
 def _buff(**kwargs) -> rs.Effect:

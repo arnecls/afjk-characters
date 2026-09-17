@@ -12,7 +12,8 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from test_helpers import load_rewrite_summaries, load_overview_facts
+from test_helpers import load_rewrite_summaries
+from hero_pipeline.relationships import scoring as gen
 
 import json
 
@@ -41,7 +42,8 @@ def _load_rewrite_summaries():
 
 
 def _load_generate_overview():
-    return load_overview_facts("generate_heroes_overview")
+    from hero_pipeline.relationships import scoring as module
+    return module
 
 
 class BuffPersistenceTests(unittest.TestCase):

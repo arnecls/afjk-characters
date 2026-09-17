@@ -15,7 +15,7 @@ def recompute_damage_scores(
     skills_by_title: dict[str, list[SkillMeta]],
 ) -> None:
     for hero in heroes:
-        skills = skills_by_title.get(hero["title"], [])
+        skills = skills_by_title.get(hero.get("id") or hero["title"], [])
         if not skills:
             continue
         primary = hero["damage_type"] or "Physical"
@@ -97,7 +97,7 @@ def assign_magnitudes(
         scored: list[tuple[Any, Hero, Effect]] = []
         for hero, effect in group:
             if use_throughput:
-                skills = skills_map.get(hero["title"], [])
+                skills = skills_map.get(hero.get("id") or hero["title"], [])
                 val = (
                     rs._effect_throughput_score(effect, hero, skills)
                     if skills

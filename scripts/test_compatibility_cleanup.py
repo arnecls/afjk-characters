@@ -126,6 +126,11 @@ class CompatibilityCleanupTests(unittest.TestCase):
         self.assertNotIn("del policy", joined)
         self.assertNotIn("def score_synergy", texts["hero_pipeline/analysis/local.py"])
         self.assertNotIn("def score_synergy", texts["hero_pipeline/analysis/calibrate.py"])
+        self.assertNotIn("def score_synergy", texts["hero_pipeline/analysis/scoring_facts.py"])
+        self.assertNotIn("def _runtime_hero_from_local", texts["hero_pipeline/analysis/calibrate.py"])
+        self.assertIn("def score_synergy", texts["hero_pipeline/relationships/scoring.py"])
+        helpers = (SCRIPTS / "test_helpers.py").read_text(encoding="utf-8")
+        self.assertNotIn("def load_overview_facts", helpers)
         storage = texts["hero_pipeline/storage.py"]
         self.assertIn('result[entry["id"]] = value', storage)
         self.assertNotIn("display_name", storage.split("def load_walk_speeds", 1)[1][:500])

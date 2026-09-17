@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any
+from typing import Any, Mapping
 
 from .policy import frozen_defaults
 from .records import SkillMeta
@@ -102,6 +102,47 @@ def load_skill_meta(block: str) -> list[SkillMeta]:
             )
         )
     return skills
+
+
+def from_schema_skill(
+    skill: Mapping[str, Any],
+    *,
+    source_skill: Mapping[str, Any] | None = None,
+) -> SkillMeta:
+    """Build casting metadata from schema skill fields and source meta."""
+    from .schema_effects import CATEGORY_TO_SECTION
+
+    category = str(skill.get("category") or "")
+    section = CATEGORY_TO_SECTION.get(category, category)
+    description = skill.get("description") or {}
+    if isinstance(description, dict):
+        text = str(description.get("raw") or "")
+    else:
+        text = str(description)
+    range_tiles = skill.get("skill_range")
+    range_global = bool(skill.get("range_global"))
+    meta = (source_skill or {}).get("meta") or {}
+    range_raw = str(meta.get("Skill Range") or "")
+    if "global" in range_raw.lower():
+        range_global = True
+    channel_duration = None
+    if section == "Ultimate" and text:
+        durations = [
+            float(match.group(1))
+            for match in _CHANNEL_DURATION_RE.finditer(text)
+        ]
+        if durations:
+            channel_duration = min(max(durations), _CHANNEL_DURATION_CAP)
+    return SkillMeta(
+        section=section,
+        range_tiles=float(range_tiles) if range_tiles is not None else None,
+        range_global=range_global,
+        cooldown=skill.get("cooldown"),
+        initial_cd=skill.get("initial_cooldown"),
+        initial_energy=skill.get("initial_energy"),
+        channel_duration=channel_duration,
+        text=text,
+    )
 
 
 def skill_by_section(

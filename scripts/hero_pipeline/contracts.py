@@ -154,6 +154,9 @@ class GeneratedSynergyRoster(TypedDict):
 
 
 class AnalysisContext(TypedDict, total=False):
+    skills_by_id: dict[str, list[object]]
+    hero_class_by_id: dict[str, str]
+    behavior_by_id: dict[str, object]
     data_by_title: dict[str, HeroSource]
     skills_by_title: dict[str, list[object]]
     hero_class_by_title: dict[str, str]
