@@ -14,7 +14,7 @@ ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
 from hero_pipeline.analysis import overview_facts as gen
-from hero_pipeline.analysis import text as rs
+from hero_pipeline.analysis import behavior as rs
 from hero_pipeline.analysis.policy import make_policy
 from hero_pipeline.analysis.calibrate import analyze_bundles
 

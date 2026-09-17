@@ -22,90 +22,102 @@ from . import overview_facts as gen
 from . import behavior as bh
 from . import serialize as hs
 from . import effects as rs
-from .policy import CalibrationPolicy, LocalPolicy, bound_policy, make_policy, thaw_policy
+from .policy import CalibrationPolicy, LocalPolicy
 
 
-def _effect_from_mapping(raw: Mapping[str, Any]) -> Any:
-    return rs.Effect(**copy.deepcopy(dict(raw)))
-
-
-def _immunity_from_mapping(raw: Mapping[str, Any]) -> Any:
-    return rs.CcImmunity(**copy.deepcopy(dict(raw)))
-
-
-def _special_from_mapping(raw: Mapping[str, Any]) -> Any:
-    values = copy.deepcopy(dict(raw))
-    values["grants"] = [
-        tuple(grant) for grant in values.get("grants") or []
-    ]
-    return rs.SpecialEffect(**values)
-
-
-def _slice_from_mapping(raw: Mapping[str, Any]) -> Any:
-    values = copy.deepcopy(dict(raw))
-    values["effects"] = [
-        _effect_from_mapping(effect)
-        for effect in values.get("effects") or []
-    ]
-    values["summon_effects"] = [
-        _effect_from_mapping(effect)
-        for effect in values.get("summon_effects") or []
-    ]
-    values["cc_immunities"] = [
-        _immunity_from_mapping(immunity)
-        for immunity in values.get("cc_immunities") or []
-    ]
-    values["special_effects"] = [
-        _special_from_mapping(special)
-        for special in values.get("special_effects") or []
-    ]
-    return rs.SkillSlice(**values)
-
-
-def hero_from_local(analysis: Mapping[str, Any]) -> Any:
-    raw = analysis.get("hero")
-    if isinstance(raw, Mapping):
-        values = copy.deepcopy(dict(raw))
-        values["skill_chunks"] = [
-            tuple(chunk) for chunk in values.get("skill_chunks") or []
-        ]
-        values["skill_slices"] = {
-            section: _slice_from_mapping(slice_)
-            for section, slice_ in (values.get("skill_slices") or {}).items()
-        }
-        values["effects"] = [
-            _effect_from_mapping(effect)
-            for effect in values.get("effects") or []
-        ]
-        values["summon_effects"] = [
-            _effect_from_mapping(effect)
-            for effect in values.get("summon_effects") or []
-        ]
-        values["cc_immunities"] = [
-            _immunity_from_mapping(immunity)
-            for immunity in values.get("cc_immunities") or []
-        ]
-        values["special_effects"] = [
-            _special_from_mapping(special)
-            for special in values.get("special_effects") or []
-        ]
-        values["damage_entries"] = [
-            tuple(entry) for entry in values.get("damage_entries") or []
-        ]
-        values["positional_tile_buff_labels"] = frozenset(
-            values.get("positional_tile_buff_labels") or []
-        )
-        values["proximity_aura_buff_labels"] = frozenset(
-            values.get("proximity_aura_buff_labels") or []
-        )
-        return rs.Hero(**values)
-    title = str(analysis.get("long_name") or analysis.get("display_name") or "")
-    damage_type = str(
-        analysis.get("damage_type")
+def hero_from_local(
+    analysis: Mapping[str, Any],
+    *,
+    title: str | None = None,
+    damage_type: str | None = None,
+    stamp_sections: bool = True,
+) -> dict[str, Any]:
+    """Build a scoring mapping from schema-shaped local analysis."""
+    resolved_title = str(
+        title
+        or analysis.get("long_name")
+        or analysis.get("display_name")
+        or ""
+    )
+    resolved_damage = str(
+        damage_type
+        or analysis.get("damage_type")
         or analysis.get("primary_damage_type")
         or "Physical"
     )
-    hero = hs.deserialize_hero(title, dict(analysis), damage_type)
+    hero = rs.Hero(title=resolved_title, damage_type=resolved_damage)
+    raw_effects: list[Any] = []
+    raw_summon: list[Any] = []
+    raw_immunities: list[Any] = []
+    slices: dict[str, Any] = {}
+    category_to_section = {
+        category: section
+        for section, category in hs._SECTION_TO_CATEGORY.items()
+    }
+    for skill in (analysis.get("skills") or {}).values():
+        category = str(skill.get("category") or "")
+        section = category_to_section.get(category, category)
+        converted_effects = []
+        converted_summon = []
+        converted_immunities = []
+        for row in skill.get("effects") or []:
+            if hs._is_placeholder_schema_effect(row):
+                continue
+            converted = hs.schema_effect_to_effect(row)
+            if stamp_sections:
+                converted = hs._stamp_source_section(converted, section)
+            if rs.is_cc_immunity(converted):
+                converted_immunities.append(converted)
+                raw_immunities.append(converted)
+            elif row.get("target") in {
+                "summon",
+                "own_summons",
+                "all_summons",
+            }:
+                converted_summon.append(converted)
+                raw_summon.append(converted)
+            else:
+                converted_effects.append(converted)
+                raw_effects.append(converted)
+        slices[section] = rs.SkillSlice(
+            section=section,
+            tier=str(skill.get("tier") or "base"),
+            effects=converted_effects,
+            summon_effects=converted_summon,
+            cc_immunities=converted_immunities,
+        )
+    profile = analysis.get("synergy_profile") or {}
+    special_effects = [
+        hs.synergy_mechanic_to_special(item, "provides")
+        for item in profile.get("provides") or []
+    ]
+    special_effects.extend(
+        hs.synergy_mechanic_to_special(item, "requires")
+        for item in profile.get("requires") or []
+    )
+    hero["effects"] = hs._merge_effects(
+        raw_effects, keep_section_in_key=stamp_sections
+    )
+    hero["summon_effects"] = hs._merge_effects(
+        raw_summon, keep_section_in_key=stamp_sections
+    )
+    hero["cc_immunities"] = hs._merge_immunities(raw_immunities)
+    hero["special_effects"] = hs._merge_special_effects(special_effects)
+    hero["damage_entries"] = [
+        (hs.to_display_damage_type(row[0]), row[1])
+        for row in analysis.get("damage_entries") or []
+    ]
+    hero["damage_magnitudes"] = {
+        hs.to_display_damage_type(dt): mag
+        for dt, mag in (analysis.get("damage_magnitudes") or {}).items()
+    }
+    hero["benefit_stats"] = [
+        hs.to_display_stat(stat) for stat in analysis.get("benefit_stats") or []
+    ]
+    hero["scalar_stat_shares"] = {
+        hs.to_display_stat(stat): float(share)
+        for stat, share in (analysis.get("scalar_stat_shares") or {}).items()
+    }
     hero["skill_chunks"] = [
         tuple(chunk) for chunk in analysis.get("skill_chunks") or []
     ]
@@ -121,50 +133,7 @@ def hero_from_local(analysis: Mapping[str, Any]) -> Any:
         hero["default_range"] = int(raw_range)
     hero["id"] = analysis.get("id")
     hero["display_name"] = analysis.get("display_name")
-    slices: dict[str, Any] = {}
-    category_to_section = {
-        category: section
-        for section, category in hs._SECTION_TO_CATEGORY.items()
-    }
-    for skill in (analysis.get("skills") or {}).values():
-        category = str(skill.get("category") or "")
-        section = category_to_section.get(category, category)
-        converted_effects = []
-        converted_summon = []
-        converted_immunities = []
-        for row in skill.get("effects") or []:
-            converted = hs._stamp_source_section(
-                hs.schema_effect_to_effect(row),
-                section,
-            )
-            if rs.is_cc_immunity(converted):
-                converted_immunities.append(converted)
-            elif row.get("target") in {"own_summons", "all_summons"}:
-                converted_summon.append(converted)
-            else:
-                converted_effects.append(converted)
-        slices[section] = rs.SkillSlice(
-            section=section,
-            tier=str(skill.get("tier") or "base"),
-            effects=converted_effects,
-            summon_effects=converted_summon,
-            cc_immunities=converted_immunities,
-        )
     hero["skill_slices"] = slices
-    hero["effects"] = hs._merge_effects(
-        [
-            effect
-            for slice_ in slices.values()
-            for effect in slice_["effects"]
-        ]
-    )
-    hero["summon_effects"] = hs._merge_effects(
-        [
-            effect
-            for slice_ in slices.values()
-            for effect in slice_["summon_effects"]
-        ]
-    )
     return hero
 
 
@@ -175,16 +144,12 @@ def calibrate_roster(
     snapshot: RosterSnapshot,
 ) -> tuple[ProcessedRoster, list[AnalyzedHero], AnalysisContext]:
     """Apply roster-wide calibration to ID-keyed local mappings."""
-    policy = thaw_policy(make_policy())
-    policy["local"] = dict(local_policy)
-    policy["calibration"] = dict(calibration_policy)
-    with bound_policy(policy):
-        return _calibrate_roster(
-            analyses_by_id,
-            local_policy,
-            calibration_policy,
-            snapshot,
-        )
+    return _calibrate_roster(
+        analyses_by_id,
+        local_policy,
+        calibration_policy,
+        snapshot,
+    )
 
 
 def _calibrate_roster(
@@ -660,10 +625,13 @@ def serialize_processed(
         }
     hs.validate_processed({"heroes": schema_heroes})
     summary_by_title = {
-        hero["title"]: hs.deserialize_hero(
-            hero["title"],
+        hero["title"]: hero_from_local(
             processed_heroes[id_by_display[display_by_title[hero["title"]]]],
-            data_by_title[hero["title"]].get("damage_type") or "Physical",
+            title=hero["title"],
+            damage_type=(
+                data_by_title[hero["title"]].get("damage_type") or "Physical"
+            ),
+            stamp_sections=False,
         )
         for hero in heroes
     }

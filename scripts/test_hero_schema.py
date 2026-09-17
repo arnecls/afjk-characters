@@ -14,7 +14,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-from hero_pipeline.analysis import serialize as hs
+from hero_pipeline.analysis import calibrate, serialize as hs
 import heroes_io as io
 from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels, load_rewrite_summaries, load_overview_facts
 
@@ -106,8 +106,11 @@ class RoundTripTests(unittest.TestCase):
                 "non_ult_speed": "fast",
             },
         )
-        restored = hs.deserialize_hero(
-            hero["title"], serialized, hero["damage_type"] or "Physical"
+        restored = calibrate.hero_from_local(
+            serialized,
+            title=hero["title"],
+            damage_type=hero["damage_type"] or "Physical",
+            stamp_sections=False,
         )
         rs.assign_magnitudes([restored])
         return hero, restored

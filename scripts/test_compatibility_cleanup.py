@@ -77,12 +77,38 @@ class CompatibilityCleanupTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertNotIn('"Twins": "Elijah & Lailah"', effects)
         self.assertNotIn("BEHAVIOR_NAME_ALIASES", effects)
+        self.assertNotIn('short = "Twins"', effects)
 
     def test_display_name_ai_joins_stay_out_of_production_scoring(self) -> None:
         scoring = (
             SCRIPTS / "hero_pipeline" / "relationships" / "scoring.py"
         ).read_text(encoding="utf-8")
         self.assertNotIn("load_ai_by_id", scoring)
+
+    def test_reconstruction_and_ambient_policy_are_gone(self) -> None:
+        serialize = (
+            SCRIPTS / "hero_pipeline" / "analysis" / "serialize.py"
+        ).read_text(encoding="utf-8")
+        local = (
+            SCRIPTS / "hero_pipeline" / "analysis" / "local.py"
+        ).read_text(encoding="utf-8")
+        calibrate = (
+            SCRIPTS / "hero_pipeline" / "analysis" / "calibrate.py"
+        ).read_text(encoding="utf-8")
+        policy_text = (
+            SCRIPTS / "hero_pipeline" / "analysis" / "policy.py"
+        ).read_text(encoding="utf-8")
+        scoring = (
+            SCRIPTS / "hero_pipeline" / "relationships" / "scoring.py"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("def deserialize_hero", serialize)
+        self.assertNotIn("bound_policy", local)
+        self.assertNotIn("bound_policy", calibrate)
+        self.assertNotIn("def bound_policy", policy_text)
+        self.assertNotIn("def configure", scoring)
+        self.assertFalse(
+            (SCRIPTS / "hero_pipeline" / "analysis" / "text.py").exists()
+        )
 
 
 if __name__ == "__main__":

@@ -25,15 +25,15 @@ from .records import (
 
 
 def _policy_local(name: str, default: Any) -> Any:
-    from .policy import active_local
+    from .policy import frozen_defaults
 
-    return active_local().get(name, default)
+    return frozen_defaults()["local"].get(name, default)
 
 
 def _policy_calibration(name: str, default: Any) -> Any:
-    from .policy import active_calibration
+    from .policy import frozen_defaults
 
-    return active_calibration().get(name, default)
+    return frozen_defaults()["calibration"].get(name, default)
 
 from healing_types import (
     DIRECT_HEALING_LABEL,
@@ -3905,9 +3905,9 @@ def text_has_summon_unit(t: str) -> bool:
 def hero_fields_summon_units(hero: Hero) -> bool:
     from summoner_registry import profile_for
 
-    short = hero["title"].split(" - ", 1)[0].strip()
-    if short == "Elijah & Lailah":
-        short = "Twins"
+    short = curated_display_name(
+        hero["title"].split(" - ", 1)[0].strip()
+    )
     if profile_for(short) is not None:
         return True
     text = " ".join(chunk for _, chunk, _ in hero["skill_chunks"])

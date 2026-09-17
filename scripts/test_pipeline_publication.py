@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 from character_stat_ranks import hero_slug
-from hero_pipeline.analysis.policy import bound_policy, make_policy, thaw_policy
+from hero_pipeline.analysis.policy import make_policy, thaw_policy
 from hero_pipeline.repository import Repository, repository_scope
 from hero_pipeline.storage import (
     load_bundles,
@@ -194,23 +194,24 @@ class CombinedPublicationTests(unittest.TestCase):
 
 
 class PolicyIsolationTests(unittest.TestCase):
-    def test_bound_policy_does_not_mutate_module_constants(self) -> None:
+    def test_policy_defaults_do_not_mutate_module_constants(self) -> None:
         from hero_pipeline.analysis import behavior as bh
-        from hero_pipeline.analysis.policy import active_calibration, bound_policy
+        from hero_pipeline.analysis.policy import frozen_defaults
 
         original = bh.CASTING_SPEED_FAST_THRESHOLD
         mutated = thaw_policy(make_policy())
         mutated["calibration"]["casting_speed_fast_threshold"] = original + 3
-        with bound_policy(mutated):
-            self.assertEqual(
-                active_calibration()["casting_speed_fast_threshold"],
-                original + 3,
-            )
-            self.assertEqual(bh.CASTING_SPEED_FAST_THRESHOLD, original)
         self.assertEqual(
-            active_calibration()["casting_speed_fast_threshold"],
+            frozen_defaults()["calibration"]["casting_speed_fast_threshold"],
             original,
         )
+        self.assertEqual(bh.CASTING_SPEED_FAST_THRESHOLD, original)
+        frozen_defaults()["calibration"]["casting_speed_fast_threshold"]
+        self.assertEqual(
+            frozen_defaults()["calibration"]["casting_speed_fast_threshold"],
+            original,
+        )
+        self.assertEqual(bh.CASTING_SPEED_FAST_THRESHOLD, original)
 
 
 if __name__ == "__main__":

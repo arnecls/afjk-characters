@@ -235,7 +235,7 @@ def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
 
 
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
-    from hero_pipeline.analysis import text as rs
+    from hero_pipeline.analysis import behavior as rs
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
 

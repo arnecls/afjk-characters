@@ -2313,19 +2313,14 @@ def build_beneficiaries_index(
     return result
 
 
-def configure(policy: Mapping[str, Any]) -> None:
-    """Scoring uses module defaults; config overlays are not activated."""
-    del policy
-
-
 def _score_all(
     heroes_by_id: dict[str, _rs.Hero],
     behavior_by_id: dict[str, _rs.HeroBehavior],
     policy: Mapping[str, Any],
 ) -> dict[str, Any]:
     """Return complete ID-keyed synergy data."""
+    del policy
     global _DISPLAY_BY_ID, _SORT_BY_ID
-    configure(policy)
     heroes = list(heroes_by_id.values())
     _DISPLAY_BY_ID = {hero["id"]: hero["display_name"] for hero in heroes}
     _SORT_BY_ID = {hero["id"]: hero["sort_name"] for hero in heroes}

@@ -11,7 +11,7 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from hero_pipeline.analysis import text as rs
+from hero_pipeline.analysis import behavior as rs
 from hero_pipeline.storage import load_roster_snapshot
 
 

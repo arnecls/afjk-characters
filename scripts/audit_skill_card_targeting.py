@@ -116,9 +116,9 @@ def audit_stored_tags_with_suffix() -> list[str]:
 
 
 def main() -> int:
-    from hero_pipeline.analysis import text as rewrite_summaries
+    from hero_pipeline.analysis import behavior as rewrite_summaries
 
-    rs_mod = rewrite_summaries()
+    rs_mod = rewrite_summaries
     live_issues = audit_live_tags(rs_mod)
     stored_issues = audit_stored_tags_with_suffix()
     chip_proc = subprocess.run(

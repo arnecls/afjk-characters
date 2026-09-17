@@ -11,7 +11,7 @@ from ..contracts import HeroBundle, HeroManifestEntry, LocalAnalysis
 from . import behavior as bh
 from . import serialize as hs
 from . import effects as rs
-from .policy import LocalPolicy, bound_policy, make_policy, thaw_policy
+from .policy import LocalPolicy
 
 ALGORITHM_VERSION = "local-analysis-v9"
 
@@ -43,10 +43,8 @@ def analyze_local(
     local_policy: LocalPolicy,
 ) -> LocalAnalysis:
     """Analyze one bundle and return a schema-shaped mapping."""
-    policy = thaw_policy(make_policy())
-    policy["local"] = dict(local_policy)
-    with bound_policy(policy):
-        return _analyze_local_bundle(entry, bundle)
+    del local_policy
+    return _analyze_local_bundle(entry, bundle)
 
 
 def _analyze_local_bundle(

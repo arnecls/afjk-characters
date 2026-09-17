@@ -55,10 +55,13 @@ add a replacement cache from this migration.
 
 ## Mapping-native analysis
 
-- Local analysis and calibration use mapping record factories, not dataclasses.
+- Local analysis and calibration use mapping records, not dataclasses.
+- Schema-shaped analysis is the calibration input; scoring mappings are built
+  from those fields without a reverse `deserialize_hero` path.
+- Cycle math reads frozen policy defaults. Ambient `bound_policy` is gone.
 - Twins and other display aliases resolve through the roster manifest.
-- Relationship scoring keeps module defaults; `configure()` does not assign
-  globals. Config-file overlays remain a later approved change.
+- Relationship scoring keeps module defaults. Config-file overlays remain a
+  later approved change.
 
 ## Phase 8 compatibility boundary
 
@@ -71,11 +74,6 @@ add a replacement cache from this migration.
 - `hero_pipeline.legacy_adapters` and `process_config.py` are gone. The pickle
   roster cache and mutable `apply_config()` path are no longer used. Analysis
   policy defaults are explicit and immutable.
-- `rewrite-summaries.py`, `hero_schema.py`, and the dynamic loader remain
-  behind `analysis/temporary_legacy_adapter.py` until local analysis and
-  roster calibration no longer require the legacy object graph.
-- `generate-heroes-overview.py` remains as a CLI alias and as a test oracle
-  for historical scoring helpers. Its `main()` only calls `render_overview`.
 - Unused compact-scorer scaffolding (`synergy/capabilities.py`,
   `indexes.py`, `ranking.py`, `replacements.py`) was removed after the
   schema-native scorer landed in `synergy/scoring.py`.

@@ -2,10 +2,8 @@
 
 from __future__ import annotations
 
-from contextlib import contextmanager
-from contextvars import ContextVar
 from types import MappingProxyType
-from typing import Any, Iterator, Mapping, cast, TypedDict
+from typing import Any, Mapping, cast, TypedDict
 
 
 class LocalPolicy(TypedDict, total=False):
@@ -248,6 +246,17 @@ def make_policy(
     return cast(PipelinePolicy, _freeze(policy))
 
 
+_FROZEN_DEFAULTS: PipelinePolicy | None = None
+
+
+def frozen_defaults() -> PipelinePolicy:
+    """Cached immutable analysis defaults used by cycle math."""
+    global _FROZEN_DEFAULTS
+    if _FROZEN_DEFAULTS is None:
+        _FROZEN_DEFAULTS = make_policy()
+    return _FROZEN_DEFAULTS
+
+
 def thaw_policy(policy: Mapping[str, Any]) -> dict[str, Any]:
     """Return a mutable copy of a frozen policy."""
 
@@ -259,39 +268,6 @@ def thaw_policy(policy: Mapping[str, Any]) -> dict[str, Any]:
         return value
 
     return thaw(policy)
-
-
-_ACTIVE_POLICY: ContextVar[PipelinePolicy | None] = ContextVar(
-    "hero_pipeline_policy",
-    default=None,
-)
-
-
-@contextmanager
-def bound_policy(policy: Mapping[str, Any]) -> Iterator[None]:
-    """Bind immutable policy for the current analysis/scoring call."""
-    token = _ACTIVE_POLICY.set(cast(PipelinePolicy, policy))
-    try:
-        yield
-    finally:
-        _ACTIVE_POLICY.reset(token)
-
-
-def active_policy() -> PipelinePolicy:
-    return _ACTIVE_POLICY.get() or make_policy()
-
-
-def active_local() -> LocalPolicy:
-    return active_policy()["local"]
-
-
-def active_calibration() -> CalibrationPolicy:
-    return active_policy()["calibration"]
-
-
-def apply_local_policy(policy: Mapping[str, Any]) -> None:
-    """Bind policy for the current task without mutating module constants."""
-    _ACTIVE_POLICY.set(cast(PipelinePolicy, policy))
 
 
 def config_override_diff(config: Mapping[str, Any]) -> dict[str, Any]:

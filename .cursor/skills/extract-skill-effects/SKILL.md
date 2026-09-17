@@ -86,7 +86,7 @@ SCRIPTS = Path("scripts")
 sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io, skill_effects_store as ses
 from hero_pipeline.analysis import serialize as hs
-from hero_pipeline.analysis import text as rs
+from hero_pipeline.analysis import behavior as rs
 
 NAME = "Aliceth"  # short or title substring
 raw = io.load_heroes_data()

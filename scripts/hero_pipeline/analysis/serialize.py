@@ -1390,59 +1390,6 @@ def serialize_processed_hero(
     }
 
 
-def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) -> Any:
-    """Rebuild legacy Hero from schema-compliant processed record."""
-    rs = _rs()
-
-    hero = rs.Hero(title=title, damage_type=damage_type or "")
-    effects: list[rs.Effect] = []
-    summon_effects: list[rs.Effect] = []
-    cc_immunities: list[rs.CcImmunity] = []
-
-    raw_effects: list[Any] = []
-    raw_summon: list[Any] = []
-    raw_immunities: list[Any] = []
-    for skill in processed.get("skills", {}).values():
-        for effect in skill.get("effects", []):
-            if _is_placeholder_schema_effect(effect):
-                continue
-            converted = schema_effect_to_effect(effect)
-            if rs.is_cc_immunity(converted):
-                raw_immunities.append(converted)
-            elif effect.get("target") in ("summon", "own_summons", "all_summons"):
-                raw_summon.append(converted)
-            else:
-                raw_effects.append(converted)
-
-    profile = processed.get("synergy_profile", {})
-    special_effects: list[rs.SpecialEffect] = []
-    for se in profile.get("provides", []):
-        special_effects.append(synergy_mechanic_to_special(se, "provides"))
-    for se in profile.get("requires", []):
-        special_effects.append(synergy_mechanic_to_special(se, "requires"))
-
-    hero["effects"] = _merge_effects(raw_effects, keep_section_in_key=False)
-    hero["summon_effects"] = _merge_effects(raw_summon, keep_section_in_key=False)
-    hero["cc_immunities"] = _merge_immunities(raw_immunities)
-    hero["special_effects"] = _merge_special_effects(special_effects)
-    hero["damage_entries"] = [
-        (to_display_damage_type(row[0]), row[1])
-        for row in processed.get("damage_entries", [])
-    ]
-    hero["damage_magnitudes"] = {
-        to_display_damage_type(dt): mag
-        for dt, mag in processed.get("damage_magnitudes", {}).items()
-    }
-    hero["benefit_stats"] = [
-        to_display_stat(s) for s in processed.get("benefit_stats", [])
-    ]
-    hero["scalar_stat_shares"] = {
-        to_display_stat(stat): float(share)
-        for stat, share in processed.get("scalar_stat_shares", {}).items()
-    }
-    return hero
-
-
 _SCHEMA: dict[str, Any] | None = None
 _SYNERGIES_SCHEMA: dict[str, Any] | None = None
 

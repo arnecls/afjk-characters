@@ -174,21 +174,20 @@ Completion criterion: production analyze and render paths do not call
 
 ### F3 — Analysis uses mapping records
 
-Severity: resolved for production analysis
+Severity: resolved
 
-Local analysis and calibration operate on plain mapping records produced by
-`analysis/records.py`. Display names such as Twins resolve through the roster
-manifest aliases. Relationship scoring reads calibrated mappings and does not
-mutate module-level policy globals.
+Local analysis and calibration operate on plain mapping records. Cycle math
+reads frozen `make_policy()` defaults. Display names such as Twins resolve
+through the roster manifest aliases. Relationship scoring reads calibrated
+mappings and does not mutate module-level policy globals.
 
 ### F4 — Policy overlays stay inactive
 
 Severity: documented
 
-`make_policy()` still freezes defaults. Scoring `configure()` is a no-op because
-`heroes_config.json` values never reached the analysis modules. Ambient
-`bound_policy` remains for local/calibration cycle math until those call sites
-take an explicit policy argument.
+`make_policy()` still freezes defaults. Values in `heroes_config.json` that
+never reached the analysis modules stay inactive. Overlays remain a later
+approved change.
 
 ### F5 — Synergy scoring reparses the roster and converts IDs back to names
 
@@ -528,10 +527,11 @@ treated as a request for a broad rewrite:
   before publication leaves files unchanged.
 - F2: Production analyze/render/validate use the roster snapshot. Aggregate
   projections remain quarantined in `storage`/`heroes_io` for tests.
-- F3: Local analysis returns schema mappings. The named
-  `temporary_legacy_adapter` still rehydrates legacy objects internally.
-- F4: Policy defaults are explicit and frozen. Remaining engine-constant
-  mutation is serialized and restored.
+- F3: Local analysis returns schema mappings. Calibration rebuilds scoring
+  mappings from those schema fields; there is no `deserialize_hero` reverse
+  object graph.
+- F4: Policy defaults are explicit, frozen, and read directly. Ambient
+  `bound_policy` is gone.
 - F5: Production scoring reads generated v2 analysis facts and writes
   ID-keyed relationships. Source skill prose is not reparsed at score time.
 - F6: Markdown, CSV, and site serializers consume one presentation model.
@@ -540,22 +540,19 @@ treated as a request for a broad rewrite:
   detection remains only in offline migration scripts.
 - F8: TypedDict contracts and mypy now cover `scripts/hero_pipeline`.
 - F9: Publication, analysis-boundary, render, and compatibility tests cover
-  the new seams. Historical object-engine tests still exercise the adapter.
+  the mapping-native seams.
 
-The remaining honest gap is F3's internal object graph, not the production
-storage or render contracts.
+The remaining honest gap is leftover aggregate loaders used by tests, not the
+production analyze, score, or render contracts.
 
-Leftover files that are still required as oracles or test adapters, not as
-production pipeline steps:
+Leftover files that are still required as test adapters, not as production
+pipeline steps:
 
-- `scripts/rewrite-summaries.py` and `scripts/hero_schema.py` behind
-  `analysis/temporary_legacy_adapter.py`;
-- `scripts/generate-heroes-overview.py` as a CLI alias plus historical
-  scoring helpers used by tests;
 - `scripts/heroes_io.py` display-name loaders for tests and migration
   scripts, backed by `storage.load_raw_roster` / `load_processed` /
   `load_synergies`.
 
 Removed rather than retained: `process_config.py`,
-`hero_pipeline.legacy_adapters`, and unused synergy scaffolding
+`hero_pipeline.legacy_adapters`, `analysis/text.py`, `deserialize_hero`,
+ambient `bound_policy`, scoring `configure()`, and unused synergy scaffolding
 (`capabilities.py`, `indexes.py`, `ranking.py`, `replacements.py`).

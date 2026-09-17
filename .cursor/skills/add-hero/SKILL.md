@@ -136,7 +136,7 @@ This phase walks each sentence against detected output and **stops to ask the
 user** when a mechanic is visible in text but missing from `effects`.
 
 Reference: `.cursor/AGENTS.md` (damage types, CC, buffs, targeting,
-immunities). Detection engine: `scripts/hero_pipeline/analysis/text.py`.
+immunities). Detection engine: `scripts/hero_pipeline/analysis/effects.py`.
 
 ### B1. Print current detection
 
@@ -197,7 +197,7 @@ ask — do not guess silently.
 
 Per confirmed gap:
 
-1. Patch `scripts/hero_pipeline/analysis/text.py` (primary) or
+1. Patch `scripts/hero_pipeline/analysis/effects.py` (primary) or
    `scripts/heroes_io.py` (sentence splitting) or
    `scripts/hero_pipeline/analysis/serialize.py` (schema mapping).
 2. Add a regression test in the matching `scripts/test_*.py` using the
@@ -374,7 +374,7 @@ import sys
 from pathlib import Path
 SCRIPTS = Path("scripts")
 sys.path.insert(0, str(SCRIPTS))
-from hero_pipeline.analysis import text as rs
+from hero_pipeline.analysis import behavior as rs
 import heroes_io as io
 
 NAME = "Kazim"  # change to data name

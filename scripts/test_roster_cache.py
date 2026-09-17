@@ -29,7 +29,7 @@ def load_rs():
     global _rs
     if _rs is not None:
         return _rs
-    from hero_pipeline.analysis import text as module
+    from hero_pipeline.analysis import behavior as module
     sys.modules["rewrite_summaries"] = module
     _rs = module
     return module
