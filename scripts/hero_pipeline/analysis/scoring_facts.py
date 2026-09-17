@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Hero-local scoring facts derived from analyzed skill text."""
+"""Hero-local scoring facts derived from analyzed skill mappings."""
 
 from __future__ import annotations
 
@@ -19,7 +19,9 @@ from healing_types import (
     normalize_healing_label,
 )
 
-from . import behavior as _rs
+from . import effects as _rs
+from . import behavior as _bh
+from .behavior import STATIC_TILE_BUFFER_TAG
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -259,6 +261,7 @@ _DEFAULT_ENERGY_POTION = 200.0
 _ENERGY_RECOVERY_SPEED_FACTOR = 10.0
 
 _SIGNATURE_SECTIONS: dict[str, str] | None = None
+_prydwen_tiers_cache: dict[str, dict[str, str]] | None = None
 _BEHAVIOR_TAGS: dict[str, frozenset[str]] | None = None
 _SUMMON_PROFILES: dict[str, dict[str, bool]] | None = None
 SUMMONER_BEHAVIOR_TAG = "summoner"
@@ -376,7 +379,7 @@ MOVING_RECEIVER_MOVEMENTS = frozenset({"moving", "high movement"})
 
 def _provider_has_static_tile_buffer_tag(provider: _rs.Hero) -> bool:
     tags = _load_behavior_tags().get(short_name(provider["title"]), frozenset())
-    return _rs.STATIC_TILE_BUFFER_TAG in tags
+    return STATIC_TILE_BUFFER_TAG in tags
 
 
 def ally_buff_applies_to_receiver(
@@ -1844,6 +1847,194 @@ def receiver_can_reach_proximity_aura(
     return receiver_range <= effective_max
 
 
+
+def _flat_ally_energy_from_text(text: str) -> float | None:
+    """Parse a flat ally energy grant from skill or effect text."""
+    patterns = (
+        r"grants? all allies (\d+) energy",
+        r"(?:the )?ally gains? (\d+) energy",
+        r"grants? (?:his |her )?(?:recipient|lieutenant).{0,40}(\d+) energy",
+        r"ally recovers? (\d+) energy",
+        r"recover(?:s|ing) (\d+)(?:\s*\+\s*\d+)? energy",
+        r"restores? .{0,40}(\d+)(?:\s*\+\s*\d+)? energy",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, text, re.I)
+        if match:
+            return float(match.group(1))
+    return None
+
+
+def _targeting_for_ally_energy_text(
+    text: str,
+    default: str = "Single target",
+) -> str:
+    lowered = text.lower()
+    if "all allies" in lowered or "all units" in lowered:
+        return "All units"
+    if "surrounding allies" in lowered or "within 2 tiles" in lowered:
+        return "Area"
+    if "multiple" in lowered:
+        return "Multiple targets"
+    return default
+
+
+def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
+    """Weighted ally energy provision; higher means more energy to allies."""
+    if not is_energy_provider(hero):
+        return 0.0
+
+    best = 0.0
+
+    def consider(amount: float, targeting: str) -> None:
+        nonlocal best
+        if amount <= 0:
+            return
+        weight = TARGETING_WEIGHT.get(targeting, 1.0)
+        best = max(best, amount * weight)
+
+    for _tier, text, _section in hero["skill_chunks"]:
+        lowered = text.lower()
+        if _rs._energy_recovery_targets_self(text):
+            continue
+        if _is_self_battle_start_energy(text):
+            if not re.search(
+                r"\b(?:ally|allies|all allied|surrounding allies)\b", lowered
+            ):
+                continue
+
+        energy = _flat_ally_energy_from_text(text)
+        if energy is not None and re.search(
+            r"\b(?:ally|allies|all allied|surrounding allies)\b", lowered
+        ):
+            consider(energy, _targeting_for_ally_energy_text(text))
+
+        if re.search(
+            r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
+            lowered,
+        ):
+            consider(_DEFAULT_LIEUTENANT_ENERGY, "Single target")
+
+        if re.search(r"energy potion when a battle starts", lowered):
+            consider(_DEFAULT_ENERGY_POTION, "Area")
+
+        speed_match = re.search(
+            r"increases? the recipient'?s? energy recovery speed by (\d+)",
+            lowered,
+        )
+        if speed_match and _BATTLE_START_RE.search(lowered):
+            consider(
+                float(speed_match.group(1)) * _ENERGY_RECOVERY_SPEED_FACTOR,
+                "Single target",
+            )
+
+    for effect in hero["effects"]:
+        if effect["category"] != "buff" or effect["label"] != "Energy":
+            continue
+        if effect["targeting"] not in ALLY_TARGETINGS:
+            continue
+        if _rs.effect_synergy_excluded(effect):
+            continue
+        if _rs._energy_recovery_targets_self(effect["qualitative"]):
+            continue
+        energy = _flat_ally_energy_from_text(effect["qualitative"])
+        if energy is None and effect["numeric"] is not None:
+            if "energy" in effect["qualitative"].lower():
+                energy = effect["numeric"]
+        if energy is not None:
+            consider(energy, effect["targeting"])
+
+    return best
+
+
+def _hero_damage_profile(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> dict[str, float]:
+    """Weighted outgoing-damage profile per damage type (global throughput)."""
+    skills = (skills_by_title or {}).get(hero["title"], [])
+    raw = _bh.hero_replacement_damage_profile(hero, skills if skills else None)
+    profile: dict[str, float] = {}
+    if skills:
+        for dt, score in raw.items():
+            weight = score
+            if dt in _rs.TRUE_DAMAGE_TYPES:
+                weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
+            profile[dt] = weight
+        return profile
+    for dt, tgt in hero["damage_entries"]:
+        if tgt == "Self":
+            continue
+        tw = 0.0
+        for part in tgt.split(", "):
+            tw = max(tw, TARGETING_WEIGHT.get(part, 1.0))
+        score = raw.get(dt, 0.0) or 1.0
+        weight = tw * score
+        if dt in _rs.TRUE_DAMAGE_TYPES:
+            weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
+        profile[dt] = max(profile.get(dt, 0.0), weight)
+    if hero["damage_type"] and hero["damage_type"] not in profile:
+        profile[hero["damage_type"]] = 1.0
+    return profile
+
+
+def _signature_sections() -> dict[str, str]:
+    global _SIGNATURE_SECTIONS
+    if _SIGNATURE_SECTIONS is None:
+        data = _bh._load_signature_categories()
+        _SIGNATURE_SECTIONS = {
+            display: _rs.CATEGORY_TO_SECTION[
+                _bh._effective_signature_category(entry)
+            ]
+            for display, entry in data.items()
+        }
+    return _SIGNATURE_SECTIONS
+
+
+def _cc_effect_in_signature(
+    effect: _rs.Effect,
+    hero: _rs.Hero,
+    sig_section: str,
+    sig_name: str,
+) -> bool:
+    if not sig_section and not sig_name:
+        return False
+    snippet = effect["qualitative"].lower()[:80]
+    label = effect["label"].lower()
+    for _tier, text, section in hero["skill_chunks"]:
+        if sig_section and section != sig_section:
+            continue
+        tl = text.lower()
+        if sig_name and sig_name.lower() not in tl:
+            if snippet not in tl and label not in tl:
+                continue
+        elif snippet not in tl and label not in tl:
+            continue
+        return True
+    return False
+
+
+def _role_category_by_title(
+    heroes: list[_rs.Hero],
+    block_by_title: dict[str, str],
+) -> dict[str, str]:
+    from hero_pipeline.analysis import serialize as hs
+    import heroes_io as io
+
+    try:
+        processed = io.load_processed()
+        return hs.role_category_by_title_from_processed(
+            heroes, processed, short_name
+        )
+    except (FileNotFoundError, KeyError, ValueError):
+        pass
+    raw = io.load_heroes_data()
+    records = {h["title"]: h for h in raw.get("heroes", [])}
+    class_by_title = {
+        h["title"]: _parse_hero_class(block_by_title[h["title"]]) for h in heroes
+    }
+    return hs.build_role_category_by_title(heroes, records, class_by_title)
+
 def score_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
@@ -1949,7 +2140,6 @@ def score_synergy(
 
     return total, reasons
 
-
 def score_summon_synergy(
     provider: _rs.Hero, receiver: _rs.Hero
 ) -> tuple[float, list[str]]:
@@ -2000,7 +2190,6 @@ def score_summon_synergy(
 
     return total, reasons
 
-
 def score_combined_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
@@ -2044,7 +2233,6 @@ def score_combined_synergy(
         + def_reasons
         + named_reasons,
     )
-
 
 def rank_synergy_entries(
     receiver: _rs.Hero,
@@ -2091,7 +2279,6 @@ def rank_synergy_entries(
         if not should_exclude_synergy(entry[1], receiver)
     ]
 
-
 def rank_synergies(
     receiver: _rs.Hero,
     heroes: list[_rs.Hero],
@@ -2110,7 +2297,6 @@ def rank_synergies(
         )[:MAX_SYNERGIES]
     ]
 
-
 def beneficiary_rating_out_of_five(
     raw_score: float,
     receiver_synergies: list[dict],
@@ -2127,7 +2313,6 @@ def beneficiary_rating_out_of_five(
     )
     return min(float(BENEFIT_MAX_STARS), max(float(BENEFIT_MIN_STARS), scaled))
 
-
 def format_beneficiary_rating_display(
     raw_score: float,
     receiver_synergies: list[dict],
@@ -2140,7 +2325,6 @@ def format_beneficiary_rating_display(
     )
     return f"{BENEFIT_STAR * full_stars} ({rating:.1f})"
 
-
 def format_beneficiary_rating_markdown(
     raw_score: float,
     receiver_synergies: list[dict],
@@ -2148,7 +2332,6 @@ def format_beneficiary_rating_markdown(
     """Numeric rating for markdown, e.g. ``3.4 / 5``."""
     rating = beneficiary_rating_out_of_five(raw_score, receiver_synergies)
     return f"{rating:.1f} / {BENEFIT_MAX_STARS}"
-
 
 def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
     """Why a provider lands on many receivers' top-five synergy lists."""
@@ -2190,7 +2373,6 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
         )
     return reasons
 
-
 def _hero_support_score(hero: _rs.Hero) -> float:
     """Weighted ally + summon buff output (non-rare)."""
     total = 0.0
@@ -2205,7 +2387,6 @@ def _hero_support_score(hero: _rs.Hero) -> float:
             effect["magnitude"], 1.0
         )
     return total
-
 
 def _hero_attack_score(hero: _rs.Hero) -> float:
     """Weighted outgoing damage + half-weight enemy debuff/CC."""
@@ -2231,7 +2412,6 @@ def _hero_attack_score(hero: _rs.Hero) -> float:
         )
     return total
 
-
 def is_supporting_unit(
     hero: _rs.Hero,
     hero_class: str,
@@ -2241,7 +2421,6 @@ def is_supporting_unit(
         return True
     support = _hero_support_score(hero)
     return support > _hero_attack_score(hero) and support >= min_support_score
-
 
 def _replacement_effect_weight(
     effect: _rs.Effect,
@@ -2269,7 +2448,6 @@ def _replacement_effect_weight(
         return targeting * effect["numeric"] * gate_mult
     return targeting * 1.0
 
-
 def _hero_provider_profile(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
@@ -2289,7 +2467,6 @@ def _hero_provider_profile(
         profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
     return profile
 
-
 def _healing_candidate_by_label(profile: dict[str, float]) -> dict[str, float]:
     """Per heal-type weight summed across all sections."""
     by_label: dict[str, float] = {}
@@ -2298,10 +2475,8 @@ def _healing_candidate_by_label(profile: dict[str, float]) -> dict[str, float]:
         by_label[label] = by_label.get(label, 0.0) + weight
     return by_label
 
-
 def _healing_profile_total(profile: dict[str, float]) -> float:
     return sum(weight for weight in profile.values() if weight > 0)
-
 
 def _healing_throughput_coverage(
     source: dict[str, float],
@@ -2314,7 +2489,6 @@ def _healing_throughput_coverage(
         return 0.0
     return min(cand_total / src_total, 1.0)
 
-
 def _healing_type_coverage(
     source: dict[str, float],
     candidate: dict[str, float],
@@ -2325,10 +2499,7 @@ def _healing_type_coverage(
         _healing_candidate_by_label(candidate),
     )
 
-
-# Back-compat for tests and callers that used private helpers.
 _healing_profile_label = healing_profile_label
-
 
 def _normalize_healing_profile(profile: dict[str, float]) -> dict[str, float]:
     """Scale to each hero's strongest heal mode (display / shape helpers)."""
@@ -2338,7 +2509,6 @@ def _normalize_healing_profile(profile: dict[str, float]) -> dict[str, float]:
     if peak <= 0:
         return profile
     return {key: weight / peak for key, weight in profile.items()}
-
 
 def _healing_effect_weight(
     effect: _rs.Effect,
@@ -2355,7 +2525,6 @@ def _healing_effect_weight(
     if effect["numeric"] is not None and effect["numeric"] > 0:
         return targeting * effect["numeric"]
     return targeting * 1.0
-
 
 TANK_SUSTAIN_BUFF_LABELS = frozenset(
     {
@@ -2377,20 +2546,16 @@ ROLE_PROMINENCE_KEYS = (
     "specialist",
 )
 
-
 def _prominence_max_label(
     weights: dict[str, float], label: str, weight: float
 ) -> None:
     weights[label] = max(weights.get(label, 0.0), weight)
 
-
 def _prominence_sum(weights: dict[str, float]) -> float:
     return sum(weights.values())
 
-
 def _hero_all_prominence_effects(hero: _rs.Hero) -> list[_rs.Effect]:
     return list(hero["effects"]) + list(hero["summon_effects"])
-
 
 def hero_damage_dealer_prominence(
     hero: _rs.Hero,
@@ -2406,7 +2571,6 @@ def hero_damage_dealer_prominence(
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
         _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
-
 
 def hero_tank_prominence(
     hero: _rs.Hero,
@@ -2429,7 +2593,6 @@ def hero_tank_prominence(
             _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
 
-
 def hero_support_prominence(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
@@ -2446,7 +2609,6 @@ def hero_support_prominence(
             weight = _replacement_effect_weight(effect, hero, skills_by_title)
             _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
-
 
 def hero_specialist_prominence(
     hero: _rs.Hero,
@@ -2468,7 +2630,6 @@ def hero_specialist_prominence(
             _prominence_max_label(weights, effect["label"], weight)
     return _prominence_sum(weights)
 
-
 def hero_role_prominence_scores(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
@@ -2480,7 +2641,6 @@ def hero_role_prominence_scores(
         "support": hero_support_prominence(hero, skills_by_title),
         "specialist": hero_specialist_prominence(hero, skills_by_title),
     }
-
 
 def build_mix_role_prominence_index(
     summary_heroes: dict[str, _rs.Hero],
@@ -2498,7 +2658,6 @@ def build_mix_role_prominence_index(
         by_slug[slug] = {key: round(raw[key], 4) for key in ROLE_PROMINENCE_KEYS}
     return {"bySlug": by_slug}
 
-
 def _hero_healing_profile(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
@@ -2515,7 +2674,6 @@ def _hero_healing_profile(
         profile[key] = max(profile.get(key, 0.0), weight)
     return profile
 
-
 def _healing_replacement_coverage(
     source: dict[str, float],
     candidate: dict[str, float],
@@ -2527,7 +2685,6 @@ def _healing_replacement_coverage(
     type_cov = _healing_type_coverage(source, candidate)
     blend = REPLACEMENT_HEALING_THROUGHPUT_BLEND
     return blend * throughput + (1.0 - blend) * type_cov
-
 
 def _flat_ally_energy_from_text(text: str) -> float | None:
     """Parse a flat ally energy grant from skill or effect text."""
@@ -2545,7 +2702,6 @@ def _flat_ally_energy_from_text(text: str) -> float | None:
             return float(match.group(1))
     return None
 
-
 def _targeting_for_ally_energy_text(
     text: str,
     default: str = "Single target",
@@ -2558,7 +2714,6 @@ def _targeting_for_ally_energy_text(
     if "multiple" in lowered:
         return "Multiple targets"
     return default
-
 
 def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
     """Weighted ally energy provision; higher means more energy to allies."""
@@ -2627,7 +2782,6 @@ def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
 
     return best
 
-
 def _replacement_coverage(
     source: dict[str, float],
     candidate: dict[str, float],
@@ -2649,12 +2803,10 @@ def _replacement_coverage(
         covered += min(cand / src, 1.0) * src
     return covered / total if total > 0 else 0.0
 
-
 def _energy_replacement_coverage(source: float, candidate: float) -> float:
     if source <= 0 or candidate <= 0:
         return 0.0
     return min(candidate / source, 1.0)
-
 
 def _load_behavior_tags() -> dict[str, frozenset[str]]:
     global _BEHAVIOR_TAGS
@@ -2669,7 +2821,6 @@ def _load_behavior_tags() -> dict[str, frozenset[str]]:
         }
     return _BEHAVIOR_TAGS
 
-
 def _load_summon_profiles() -> dict[str, dict[str, bool]]:
     global _SUMMON_PROFILES
     if _SUMMON_PROFILES is None:
@@ -2682,7 +2833,6 @@ def _load_summon_profiles() -> dict[str, dict[str, bool]]:
         }
     return _SUMMON_PROFILES
 
-
 def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
     if not a and not b:
         return 0.0
@@ -2691,14 +2841,13 @@ def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
         return 0.0
     return len(a & b) / len(union)
 
-
 def _hero_damage_profile(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
 ) -> dict[str, float]:
     """Weighted outgoing-damage profile per damage type (global throughput)."""
     skills = (skills_by_title or {}).get(hero["title"], [])
-    raw = _rs.hero_replacement_damage_profile(hero, skills if skills else None)
+    raw = _bh.hero_replacement_damage_profile(hero, skills if skills else None)
     profile: dict[str, float] = {}
     if skills:
         for dt, score in raw.items():
@@ -2722,19 +2871,17 @@ def _hero_damage_profile(
         profile[hero["damage_type"]] = 1.0
     return profile
 
-
 def _signature_sections() -> dict[str, str]:
     global _SIGNATURE_SECTIONS
     if _SIGNATURE_SECTIONS is None:
-        data = _rs._load_signature_categories()
+        data = _bh._load_signature_categories()
         _SIGNATURE_SECTIONS = {
             display: _rs.CATEGORY_TO_SECTION[
-                _rs._effective_signature_category(entry)
+                _bh._effective_signature_category(entry)
             ]
             for display, entry in data.items()
         }
     return _SIGNATURE_SECTIONS
-
 
 def _cc_effect_in_signature(
     effect: _rs.Effect,
@@ -2758,7 +2905,6 @@ def _cc_effect_in_signature(
         return True
     return False
 
-
 def _hero_debuff_profile(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
@@ -2773,7 +2919,6 @@ def _hero_debuff_profile(
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
         profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
     return profile
-
 
 def _hero_cc_profile(
     hero: _rs.Hero,
@@ -2796,7 +2941,6 @@ def _hero_cc_profile(
         profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
     return profile, has_signature_cc
 
-
 def _damage_replacement_coverage(
     types_source: set[str],
     types_candidate: set[str],
@@ -2810,7 +2954,6 @@ def _damage_replacement_coverage(
     type_cov = len(true_source & types_candidate) / len(true_source)
     blend = REPLACEMENT_TRUE_DAMAGE_BLEND
     return blend * type_cov + (1.0 - blend) * general
-
 
 def _dedupe_ranked_tags(
     ranked: list[tuple[float, str]], limit: int = 5
@@ -2826,7 +2969,6 @@ def _dedupe_ranked_tags(
         if len(matches) >= limit:
             break
     return matches
-
 
 def _profile_overlap_tags(
     source: dict[str, float],
@@ -2846,7 +2988,6 @@ def _profile_overlap_tags(
             ranked.append((weight, name))
     return _dedupe_ranked_tags(ranked, limit)
 
-
 def _buff_overlap_tags(
     buff_a: dict[str, float], buff_b: dict[str, float], limit: int = 5
 ) -> list[str]:
@@ -2857,30 +2998,25 @@ def _buff_overlap_tags(
         expand_label=lambda label: _BUFF_LABEL_TO_STATS.get(label, [label]),
     )
 
-
 def _similar_skills_overlap_tags(
     tags_a: frozenset[str], tags_b: frozenset[str], limit: int = 5
 ) -> list[str]:
     return sorted(tags_a & tags_b)[:limit]
-
 
 def _damage_overlap_tags(
     damage_a: dict[str, float], damage_b: dict[str, float], limit: int = 5
 ) -> list[str]:
     return _profile_overlap_tags(damage_a, damage_b, limit)
 
-
 def _debuff_overlap_tags(
     debuff_a: dict[str, float], debuff_b: dict[str, float], limit: int = 5
 ) -> list[str]:
     return _profile_overlap_tags(debuff_a, debuff_b, limit)
 
-
 def _cc_overlap_tags(
     cc_a: dict[str, float], cc_b: dict[str, float], limit: int = 5
 ) -> list[str]:
     return _profile_overlap_tags(cc_a, cc_b, limit)
-
 
 def _healing_overlap_tags(
     healing_a: dict[str, float], healing_b: dict[str, float], limit: int = 5
@@ -2900,10 +3036,6 @@ def _healing_overlap_tags(
         weight = min(cand / src, 1.0) * src
         ranked.append((weight, label))
     return _dedupe_ranked_tags(ranked, limit)
-
-
-_prydwen_tiers_cache: dict[str, dict[str, str]] | None = None
-
 
 def _load_prydwen_tiers_by_title() -> dict[str, dict[str, str]]:
     global _prydwen_tiers_cache
@@ -2925,7 +3057,6 @@ def _load_prydwen_tiers_by_title() -> dict[str, dict[str, str]]:
     _prydwen_tiers_cache = out
     return out
 
-
 def _prydwen_tier_rank(tier: str | None) -> int | None:
     if not tier or tier == "?":
         return None
@@ -2933,7 +3064,6 @@ def _prydwen_tier_rank(tier: str | None) -> int | None:
         return TIER_RANK_ORDER.index(tier)
     except ValueError:
         return None
-
 
 def _normalize_replacement_prydwen_tiers(
     tiers: dict[str, str] | None,
@@ -2947,7 +3077,6 @@ def _normalize_replacement_prydwen_tiers(
         raw["dream_realm"] = TIER_RANK_ORDER[max(ranks)]
     raw.pop("dream_realm_endless", None)
     return raw
-
 
 def _prydwen_tier_avg_delta(
     source_tiers: dict[str, str] | None,
@@ -2968,7 +3097,6 @@ def _prydwen_tier_avg_delta(
         return None
     return sum(deltas) / len(deltas)
 
-
 def _prydwen_tier_preference(
     source_tiers: dict[str, str] | None,
     candidate_tiers: dict[str, str] | None,
@@ -2979,7 +3107,6 @@ def _prydwen_tier_preference(
         return 0
     return 1 if delta >= 0 else 0
 
-
 def _replacement_prydwen_tiers_present(tiers: dict[str, str] | None) -> bool:
     """True when hero has at least one Prydwen tier in replacement modes."""
     normalized = _normalize_replacement_prydwen_tiers(tiers)
@@ -2987,7 +3114,6 @@ def _replacement_prydwen_tiers_present(tiers: dict[str, str] | None) -> bool:
         _prydwen_tier_rank(normalized.get(mode)) is not None
         for mode in REPLACEMENT_TIER_MODES
     )
-
 
 def _replacement_candidate_meets_tier_floor(
     source_tiers: dict[str, str] | None,
@@ -3010,7 +3136,6 @@ def _replacement_candidate_meets_tier_floor(
         return True
     return not all(d <= -max_deficit for d in deltas)
 
-
 def _replacement_tier_rank_key(
     source_tiers: dict[str, str] | None,
     candidate_tiers: dict[str, str] | None,
@@ -3022,7 +3147,6 @@ def _replacement_tier_rank_key(
     if delta is None:
         return (0, float("-inf"))
     return (1 if delta >= 0 else 0, delta)
-
 
 def _replacement_rank_score(
     raw: float,
@@ -3053,7 +3177,6 @@ def _replacement_rank_score(
             score = min(score * REPLACEMENT_SAME_MELEE_MULT, 1.0)
     return score
 
-
 def _replacement_category_weights(role: str | None) -> dict[str, float]:
     """Normalized per-category weights for overall replacement scoring."""
     role_key = role or _rs.DEFAULT_ROLE_CATEGORY
@@ -3067,7 +3190,6 @@ def _replacement_category_weights(role: str | None) -> dict[str, float]:
         even = 1.0 / len(REPLACEMENT_CATEGORIES)
         return dict.fromkeys(REPLACEMENT_CATEGORIES, even)
     return {key: weight / total for key, weight in weights.items()}
-
 
 def _overall_replacement_match_labels(
     active: dict[str, float],
@@ -3094,7 +3216,6 @@ def _overall_replacement_match_labels(
         if label not in labels:
             labels.append(label)
     return labels or ["Overall"]
-
 
 def _rank_overall_replacements(
     category_scores: dict[str, list[tuple[float, str, list[str]]]],
@@ -3147,7 +3268,6 @@ def _rank_overall_replacements(
         source_is_melee=source_is_melee,
         is_melee_by_title=is_melee_by_title,
     )
-
 
 def _rank_replacement_category(
     scores: list[tuple[float, str, list[str]]],
@@ -3216,7 +3336,6 @@ def _rank_replacement_category(
         if len(ranked) >= REPLACEMENT_MAX:
             break
     return ranked
-
 
 def compute_replacement_scores(
     heroes: list[_rs.Hero],
@@ -3378,7 +3497,6 @@ def compute_replacement_scores(
         )
     return result
 
-
 def build_synergy_entries_by_receiver(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
@@ -3399,7 +3517,6 @@ def build_synergy_entries_by_receiver(
         for receiver in heroes
     }
 
-
 def format_synergy_entries(
     entries: list[tuple[float, list[str], str]],
 ) -> list[dict]:
@@ -3411,7 +3528,6 @@ def format_synergy_entries(
         }
         for score, reasons, title in entries
     ]
-
 
 def build_beneficiaries_index(
     heroes: list[_rs.Hero],
@@ -3452,7 +3568,6 @@ def build_beneficiaries_index(
                 full[title], key=lambda x: (-x[0], x[1])
             )[:FALLBACK_BENEFICIARIES_DISPLAY]
     return result
-
 
 def format_synergies(
     receiver: _rs.Hero,
@@ -3548,7 +3663,6 @@ def format_synergies(
 
     return lines
 
-
 def scan_enabler_patterns_in_heroes(heroes: list[_rs.Hero]) -> dict[str, list[str]]:
     """Find skill-text phrases that look like ally/enemy requirements."""
     candidates: dict[str, list[str]] = defaultdict(list)
@@ -3635,7 +3749,6 @@ def scan_enabler_patterns_in_heroes(heroes: list[_rs.Hero]) -> dict[str, list[st
                     candidates[tag].append(f"{short_name(hero["title"])}: …{snip}…")
     return dict(candidates)
 
-
 def _role_category_by_title(
     heroes: list[_rs.Hero],
     block_by_title: dict[str, str],
@@ -3656,109 +3769,4 @@ def _role_category_by_title(
         h["title"]: _parse_hero_class(block_by_title[h["title"]]) for h in heroes
     }
     return hs.build_role_category_by_title(heroes, records, class_by_title)
-
-
-def build_overview() -> str:
-    text = HEROES_MD.read_text(encoding="utf-8")
-    blocks = re.split(r"\n(?=## )", text)
-    heroes: list[_rs.Hero] = []
-    block_by_title: dict[str, str] = {}
-
-    for block in blocks:
-        if not block.startswith("## "):
-            continue
-        hero = _rs.parse_hero_block(block)
-        heroes.append(hero)
-        block_by_title[hero["title"]] = block
-
-    hero_class_by_title: dict[str, str] = {}
-    for hero in heroes:
-        hero_class_by_title[hero["title"]] = _parse_hero_class(
-            block_by_title[hero["title"]]
-        )
-        _rs.analyze_hero(hero)
-
-    skills_by_title = _rs.load_skills_by_title_from_blocks(
-        list(block_by_title.values())
-    )
-    role_category_by_title = _role_category_by_title(heroes, block_by_title)
-    _rs.assign_magnitudes(heroes, skills_by_title)
-    enabler_matchers = _make_enabler_matchers(hero_class_by_title)
-
-    display_by_title = {h["title"]: short_name(h["title"]) for h in heroes}
-    behavior_by_title = _rs.build_behavior_for_heroes(
-        heroes, display_by_title,
-        hero_class_by_title=hero_class_by_title,
-    )
-    beneficiaries_index = build_beneficiaries_index(
-        heroes,
-        enabler_matchers,
-        behavior_by_title,
-        role_category_by_title=role_category_by_title,
-    )
-
-    roster_slugs = {hero_slug(short_name(h["title"])) for h in heroes}
-    slug_ranks = build_slug_ranks_map(load_character_stat_ranks(), roster_slugs)
-
-    parts = [
-        "# Heroes Overview",
-        "",
-        "Per-hero synergy picks and summaries derived from skill text in",
-        "[Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.",
-        "Synergy: stat buff tags under **Units improving X**, and",
-        "enabler partners matching **Requires** special effects.",
-        "Up to five partners by combined score. Omitted: ATK-only, Max HP",
-        "buff-only, and Shield-only (unless the hero benefits from shields).",
-        "Rare conditional buffs score lower.",
-        "Meta tiers from "
-        "[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).",
-        "Regenerate: `python3 scripts/generate-heroes-overview.py`.",
-        "",
-    ]
-
-    tiers_by_title: dict[str, dict[str, str]] = {}
-    import heroes_io as io
-
-    payload = io.load_heroes_data()
-    for record in payload.get("heroes", []):
-        tiers = record.get("prydwen_tiers")
-        if tiers and record.get("title"):
-            tiers_by_title[record["title"]] = tiers
-
-    behavior_tags_map = _load_behavior_tags()
-
-    for hero in heroes:
-        syn_lines = format_synergies(
-            hero,
-            heroes,
-            enabler_matchers,
-            beneficiaries_index,
-            behavior_by_title,
-            role_category_by_title=role_category_by_title,
-        )
-        summary = _rs.format_summary(hero, short_name(hero["title"])).rstrip()
-
-        parts.append(f"## {short_name(hero["title"])}")
-        parts.append("")
-        hero_name = short_name(hero["title"])
-        behavior = behavior_by_title[hero["title"]]
-        parts.extend(
-            _rs.format_behavior_section(
-                hero_name,
-                behavior,
-                prydwen_tiers=tiers_by_title.get(hero["title"]),
-                hero=hero,
-                behavior_tags=sorted(behavior_tags_map.get(hero_name, ())),
-                stats_overview=stats_overview_for_short(hero_name, slug_ranks),
-            )
-        )
-        parts.append(f"### Units improving {hero_name}")
-        parts.append("")
-        parts.extend(syn_lines)
-        parts.append("")
-        parts.append(summary)
-        parts.append("")
-
-    return "\n".join(parts).rstrip() + "\n"
-
 

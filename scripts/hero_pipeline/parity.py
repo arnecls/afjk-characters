@@ -6,6 +6,8 @@ semantics, including relationship membership, scores, and reasons.
 
 from __future__ import annotations
 
+import csv
+import io
 import json
 import math
 import re
@@ -51,37 +53,38 @@ def site_without_timestamp(payload: Mapping[str, Any] | Any) -> Any:
 def list_column_semantics(columns: Any) -> list[dict[str, Any]]:
     rows = columns if isinstance(columns, list) else []
     return [
-        {
-            "label": row.get("label"),
-            "polarity": row.get("polarity"),
-            "group": row.get("group"),
-        }
+        dict(row)
         for row in rows
         if isinstance(row, Mapping)
     ]
 
 
+def csv_rows(value: str) -> list[list[str]]:
+    return list(csv.reader(io.StringIO(value)))
+
+
 def load_fixture_artifacts() -> dict[str, Any]:
     """Load the expanded b7d7ed2 public-view artifacts."""
     def read_text(name: str) -> str:
-        return (FIXTURE_DIR / name).read_text(encoding="utf-8")
+        return (FIXTURE_DIR / name).read_bytes().decode("utf-8")
 
     def read_site(name: str) -> Any:
         path = SITE_FIXTURE_DIR / name
+        raw = path.read_bytes().decode("utf-8")
         if name.endswith(".json"):
-            return json.loads(path.read_text(encoding="utf-8"))
-        return path.read_text(encoding="utf-8")
+            return json.loads(raw)
+        return raw
 
     return {
-        "heroes_md": normalize_text(read_text("Heroes.md")),
-        "overview_md": normalize_text(read_text("heroes-overview.md")),
-        "overview_csv": normalize_text(read_text("heroes-overview.csv")),
+        "heroes_md": read_text("Heroes.md"),
+        "overview_md": read_text("heroes-overview.md"),
+        "overview_csv": read_text("heroes-overview.csv"),
         "site_heroes": site_without_timestamp(read_site("heroes.json")),
-        "site_csv": normalize_text(read_site("heroes-overview.csv")),
+        "site_csv": read_site("heroes-overview.csv"),
         "mix_synergy_index": read_site("mix-synergy-index.json"),
         "mix_config": read_site("mix-config.json"),
         "mix_role_prominence": read_site("mix-role-prominence.json"),
-        "list_columns": list_column_semantics(read_site("list-columns.json")),
+        "list_columns": read_site("list-columns.json"),
         "counter_filter_combos": read_site("counter_filter_combos.json"),
     }
 
@@ -332,50 +335,91 @@ def compare_contracts(
     return errors
 
 
+def compare_values(
+    baseline: Any,
+    current: Any,
+    *,
+    prefix: str = "",
+) -> list[str]:
+    """Recursively compare JSON-compatible values, including key order."""
+    if isinstance(baseline, dict) and isinstance(current, dict):
+        errors: list[str] = []
+        before_keys = list(baseline)
+        after_keys = list(current)
+        if before_keys != after_keys:
+            missing = [key for key in before_keys if key not in current]
+            added = [key for key in after_keys if key not in baseline]
+            if missing:
+                errors.append(f"missing keys {prefix}: {missing}")
+            if added:
+                errors.append(f"added keys {prefix}: {added}")
+            if not missing and not added and before_keys != after_keys:
+                errors.append(
+                    f"changed key order {prefix}: {before_keys} -> {after_keys}"
+                )
+        for key in before_keys:
+            if key in current:
+                path = f"{prefix}.{key}" if prefix else str(key)
+                errors.extend(
+                    compare_values(baseline[key], current[key], prefix=path)
+                )
+        return errors
+    if isinstance(baseline, list) and isinstance(current, list):
+        if len(baseline) != len(current):
+            return [
+                f"{prefix} length {len(baseline)} -> {len(current)}"
+            ]
+        errors = []
+        for index, (left, right) in enumerate(zip(baseline, current)):
+            errors.extend(
+                compare_values(left, right, prefix=f"{prefix}[{index}]")
+            )
+        return errors
+    if baseline != current or type(baseline) is not type(current):
+        if (
+            isinstance(baseline, (int, float))
+            and isinstance(current, (int, float))
+            and not isinstance(baseline, bool)
+            and not isinstance(current, bool)
+            and baseline == current
+        ):
+            return []
+        return [f"changed {prefix}: {baseline!r} -> {current!r}"]
+    return []
+
+
 def compare_view_artifacts(
     baseline: Mapping[str, Any],
     current: Mapping[str, Any],
 ) -> list[str]:
     """Compare every browser-visible generated artifact."""
     errors: list[str] = []
-    errors.extend(
-        compare_markdown(
-            baseline["heroes_md"],
-            current["heroes_md"],
-            label="Heroes.md",
+    if baseline["heroes_md"] != current["heroes_md"]:
+        errors.append("Heroes.md bytes differ")
+        errors.extend(
+            compare_markdown(
+                baseline["heroes_md"],
+                current["heroes_md"],
+                label="Heroes.md",
+            )
         )
-    )
-    errors.extend(
-        compare_markdown(
-            baseline["overview_md"],
-            current["overview_md"],
-            label="heroes-overview.md",
+    if baseline["overview_md"] != current["overview_md"]:
+        errors.append("heroes-overview.md bytes differ")
+        errors.extend(
+            compare_markdown(
+                baseline["overview_md"],
+                current["overview_md"],
+                label="heroes-overview.md",
+            )
         )
-    )
-    if normalize_text(baseline["overview_csv"]) != normalize_text(
-        current["overview_csv"]
-    ):
-        errors.append("heroes-overview.csv differs")
-    if normalize_text(str(baseline.get("site_csv", ""))) != normalize_text(
+    if baseline["overview_csv"] != current["overview_csv"]:
+        errors.append("heroes-overview.csv bytes differ")
+    if csv_rows(str(baseline.get("site_csv", ""))) != csv_rows(
         str(current.get("site_csv", ""))
     ):
-        errors.append("site/data/heroes-overview.csv differs")
+        errors.append("site/data/heroes-overview.csv rows differ")
     errors.extend(
-        compare_numbers(
-            baseline["site_heroes"],
-            current["site_heroes"],
-            prefix="site",
-        )
-    )
-    errors.extend(
-        compare_strings(
-            baseline["site_heroes"],
-            current["site_heroes"],
-            prefix="site",
-        )
-    )
-    errors.extend(
-        compare_list_order(
+        compare_values(
             baseline["site_heroes"],
             current["site_heroes"],
             prefix="site",
@@ -383,15 +427,17 @@ def compare_view_artifacts(
     )
     for name in ("mix_synergy_index", "mix_config", "mix_role_prominence"):
         errors.extend(
-            compare_numbers(baseline[name], current[name], prefix=name)
+            compare_values(baseline[name], current[name], prefix=name)
         )
-        errors.extend(
-            compare_strings(baseline[name], current[name], prefix=name)
-        )
-    if baseline["list_columns"] != current["list_columns"]:
-        errors.append("list-columns display semantics differ")
     errors.extend(
-        compare_strings(
+        compare_values(
+            baseline["list_columns"],
+            current["list_columns"],
+            prefix="list_columns",
+        )
+    )
+    errors.extend(
+        compare_values(
             baseline["counter_filter_combos"],
             current["counter_filter_combos"],
             prefix="counter_filter",

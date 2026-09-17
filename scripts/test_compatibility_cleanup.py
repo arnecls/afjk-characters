@@ -34,6 +34,7 @@ class CompatibilityCleanupTests(unittest.TestCase):
             "hero_pipeline/relationships/runtime.py",
             "hero_pipeline/analysis/temporary_legacy_adapter.py",
             "hero_pipeline/synergy/facts.py",
+            "hero_pipeline/analysis/overview_facts.py",
         ):
             self.assertFalse((SCRIPTS / filename).exists(), filename)
         self.assertFalse(
@@ -109,6 +110,25 @@ class CompatibilityCleanupTests(unittest.TestCase):
         self.assertFalse(
             (SCRIPTS / "hero_pipeline" / "analysis" / "text.py").exists()
         )
+
+    def test_retired_hero_split_risks_cannot_return(self) -> None:
+        pipeline = SCRIPTS / "hero_pipeline"
+        texts = {
+            str(path.relative_to(SCRIPTS)): path.read_text(encoding="utf-8")
+            for path in pipeline.rglob("*.py")
+        }
+        joined = "\n".join(texts.values())
+        self.assertNotIn("def hero_from_local", joined)
+        self.assertNotIn("def hero_from_analysis", joined)
+        self.assertNotIn("from .effects import *", joined)
+        self.assertNotIn("def walk_speed_for_display", joined)
+        self.assertNotIn("del local_policy", joined)
+        self.assertNotIn("del policy", joined)
+        self.assertNotIn("def score_synergy", texts["hero_pipeline/analysis/local.py"])
+        self.assertNotIn("def score_synergy", texts["hero_pipeline/analysis/calibrate.py"])
+        storage = texts["hero_pipeline/storage.py"]
+        self.assertIn('result[entry["id"]] = value', storage)
+        self.assertNotIn("display_name", storage.split("def load_walk_speeds", 1)[1][:500])
 
 
 if __name__ == "__main__":

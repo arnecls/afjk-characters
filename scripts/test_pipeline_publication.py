@@ -185,7 +185,6 @@ class CombinedPublicationTests(unittest.TestCase):
             result = score_roster(
                 {"heroes": {"aliceth": analysis}},
                 snapshot,
-                make_policy(),
             )
             self.assertEqual(set(result["heroes"]), {"aliceth"})
             for row in result["heroes"]["aliceth"]["synergies"]:

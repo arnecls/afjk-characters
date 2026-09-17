@@ -360,7 +360,7 @@ def load_walk_speeds() -> dict[str, str]:
         ) or {}
         value = external.get("walk_speed")
         if value is not None:
-            result[entry["display_name"]] = value
+            result[entry["id"]] = value
     return result
 
 
@@ -423,12 +423,11 @@ def load_processed() -> ProcessedRoster:
 
 
 def load_synergies() -> GeneratedSynergyRoster:
-    from .analysis.policy import make_policy
     from .relationships.service import score_roster
 
     snapshot = load_roster_inputs()
     processed = load_processed()
-    return score_roster(processed, snapshot, make_policy(load_config()))
+    return score_roster(processed, snapshot)
 
 
 def load_analyses(

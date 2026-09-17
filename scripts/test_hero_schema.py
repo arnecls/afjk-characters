@@ -106,7 +106,7 @@ class RoundTripTests(unittest.TestCase):
                 "non_ult_speed": "fast",
             },
         )
-        restored = calibrate.hero_from_local(
+        restored = calibrate._runtime_hero_from_local(
             serialized,
             title=hero["title"],
             damage_type=hero["damage_type"] or "Physical",
@@ -1860,23 +1860,19 @@ class MovementDetectionTests(unittest.TestCase):
 class WalkSpeedTests(unittest.TestCase):
     def test_load_walk_speeds_covers_roster(self):
         speeds = rs._load_walk_speeds()
-        self.assertEqual(speeds["Arden"], "slow")
-        self.assertEqual(speeds["Aliceth"], "normal")
-        self.assertEqual(speeds["Alna"], "fast")
-        self.assertEqual(speeds["Twins"], "normal")
-        self.assertIn(speeds["Zorya"], rs.WALK_SPEED_VALUES)
+        self.assertEqual(speeds["arden"], "slow")
+        self.assertEqual(speeds["aliceth"], "normal")
+        self.assertEqual(speeds["alna"], "fast")
+        self.assertEqual(speeds["twins"], "normal")
+        self.assertIn(speeds["zorya"], rs.WALK_SPEED_VALUES)
 
-    def test_twins_alias_resolves_walk_speed(self):
+    def test_twins_id_resolves_walk_speed(self):
         speeds = rs._load_walk_speeds()
-        self.assertEqual(
-            rs.walk_speed_for_display("Elijah & Lailah", speeds),
-            "normal",
-        )
-        self.assertEqual(rs.walk_speed_for_display("Twins", speeds), "normal")
+        self.assertEqual(rs.walk_speed_for_id("twins", speeds), "normal")
 
     def test_missing_walk_speed_raises(self):
         with self.assertRaises(KeyError):
-            rs.walk_speed_for_display("NotAHero", {})
+            rs.walk_speed_for_id("not-a-hero", {})
 
     def test_behavior_includes_walk_speed(self):
         from test_roster_cache import analyze_heroes_from_blocks, hero_blocks
@@ -1885,7 +1881,6 @@ class WalkSpeedTests(unittest.TestCase):
         display_by_title = {
             h["title"]: h["title"].split(" - ", 1)[0].strip() for h in heroes
         }
-        # Map Elijah & Lailah display to Twins curated key via short_name path
         for title, display in list(display_by_title.items()):
             display_by_title[title] = rs.curated_display_name(display)
         hero_class_by_title = {
@@ -1898,10 +1893,15 @@ class WalkSpeedTests(unittest.TestCase):
             hero_class_by_title=hero_class_by_title,
         )
         speeds = rs._load_walk_speeds()
+        from hero_pipeline.storage import resolve_hero_id
+
         for hero in heroes:
             curated = display_by_title[hero["title"]]
             behavior = behavior_by_title[hero["title"]]
-            self.assertEqual(behavior["walk_speed"], speeds[curated])
+            self.assertEqual(
+                behavior["walk_speed"],
+                speeds[resolve_hero_id(curated)],
+            )
 
     def test_format_behavior_includes_walk_speed(self):
         behavior = rs.HeroBehavior(

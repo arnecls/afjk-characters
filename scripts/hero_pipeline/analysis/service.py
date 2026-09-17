@@ -17,16 +17,17 @@ from ..storage import (
     write_local_analyses,
 )
 from .calibrate import calibrate_roster
+from .effects import prime_curated_cache
 from .local import algorithm_hash, analyze_local
 from .policy import make_policy, PipelinePolicy
 
 
 def refresh_local_caches(
     snapshot: RosterSnapshot,
-    policy: PipelinePolicy,
     hero_ids: set[str] | None = None,
 ) -> dict[str, LocalAnalysis]:
     """Recompute stale local analysis caches and persist them."""
+    prime_curated_cache(snapshot)
     algo = algorithm_hash()
     selected = hero_ids or {
         entry["id"] for entry in snapshot["manifest"]["heroes"]
@@ -39,7 +40,6 @@ def refresh_local_caches(
         stale[hero_id] = analyze_local(
             bundle["manifest"],
             bundle,
-            policy["local"],
         )
     if stale:
         write_local_analyses(
@@ -61,12 +61,10 @@ def analyze_roster(
 ]:
     """Refresh stale local caches, then calibrate the full roster."""
     policy = make_policy(config)
-    refresh_local_caches(snapshot, policy)
+    refresh_local_caches(snapshot)
     local_by_id = load_local_analyses(snapshot)
     processed, heroes, context = calibrate_roster(
         local_by_id,
-        policy["local"],
-        policy["calibration"],
         snapshot,
     )
     return processed, heroes, context, policy

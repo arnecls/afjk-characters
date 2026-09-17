@@ -11,14 +11,15 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-from hero_pipeline.analysis import behavior as rs
+from hero_pipeline.analysis import behavior as bh
+from hero_pipeline.analysis import effects as rs
 from hero_pipeline.storage import load_roster_snapshot
 
 
 class MeleeDetectionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.rs = rs
+        cls.rs = bh
         snapshot = load_roster_snapshot()
         cls.heroes: dict[str, tuple[object, list, dict]] = {}
         for entry in snapshot["manifest"]["heroes"]:

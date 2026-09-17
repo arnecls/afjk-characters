@@ -18,21 +18,20 @@ from ..contracts import (
 from ..storage import _manifest_entries
 from healing_types import is_hp_recovery_label
 
-from . import overview_facts as gen
+from . import scoring_facts as gen
 from . import behavior as bh
 from . import serialize as hs
 from . import effects as rs
-from .policy import CalibrationPolicy, LocalPolicy
 
 
-def hero_from_local(
+def _runtime_hero_from_local(
     analysis: Mapping[str, Any],
     *,
     title: str | None = None,
     damage_type: str | None = None,
     stamp_sections: bool = True,
 ) -> dict[str, Any]:
-    """Build a scoring mapping from schema-shaped local analysis."""
+    """Convert schema-shaped local skills into one runtime scoring mapping."""
     resolved_title = str(
         title
         or analysis.get("long_name")
@@ -139,23 +138,17 @@ def hero_from_local(
 
 def calibrate_roster(
     analyses_by_id: Mapping[str, LocalAnalysis],
-    local_policy: LocalPolicy,
-    calibration_policy: CalibrationPolicy,
     snapshot: RosterSnapshot,
 ) -> tuple[ProcessedRoster, list[AnalyzedHero], AnalysisContext]:
     """Apply roster-wide calibration to ID-keyed local mappings."""
     return _calibrate_roster(
         analyses_by_id,
-        local_policy,
-        calibration_policy,
         snapshot,
     )
 
 
 def _calibrate_roster(
     analyses_by_id: Mapping[str, LocalAnalysis],
-    local_policy: LocalPolicy,
-    calibration_policy: CalibrationPolicy,
     snapshot: RosterSnapshot,
 ) -> tuple[ProcessedRoster, list[AnalyzedHero], AnalysisContext]:
     unknown = sorted(set(analyses_by_id) - set(snapshot["bundles"]))
@@ -174,15 +167,10 @@ def _calibrate_roster(
         analyses_by_id.items(),
         key=lambda item: snapshot["bundles"][item[0]]["manifest"]["order"],
     )
-    heroes = [hero_from_local(analysis) for _, analysis in ordered]
-    policy = {
-        "local": dict(local_policy),
-        "calibration": dict(calibration_policy),
-    }
+    heroes = [_runtime_hero_from_local(analysis) for _, analysis in ordered]
     heroes, behavior_by_title, context = calibrate_heroes(
         heroes,
         snapshot,
-        policy,
     )
     processed = serialize_processed(
         heroes,
@@ -265,7 +253,7 @@ def _behavior_inputs(
             )
         walk_speed = (source_doc.get("external") or {}).get("walk_speed")
         if walk_speed is not None:
-            result["walk_speeds"][curated] = walk_speed
+            result["walk_speeds"][entry["id"]] = walk_speed
         result["behavior_tags"][curated] = list(
             ai.get("behavior_tags") or []
         )
@@ -282,7 +270,6 @@ def _behavior_inputs(
 
 def analyze_bundles(
     snapshot: Mapping[str, Any],
-    policy: Mapping[str, Any],
 ) -> list[Any]:
     """Run hero-local analysis for every bundle."""
     heroes = []
@@ -296,9 +283,11 @@ def analyze_bundles(
 def calibrate_heroes(
     heroes: list[Any],
     snapshot: Mapping[str, Any],
-    policy: Mapping[str, Any],
 ) -> tuple[list[Any], dict[str, Any], dict[str, Any]]:
     """Apply roster-wide magnitude and behavior calibration."""
+    from .effects import prime_curated_cache
+
+    prime_curated_cache(snapshot)
     records = _source_records(snapshot)
     data_by_title = {record["title"]: record for record in records}
     block_by_title = {
@@ -544,7 +533,7 @@ def serialize_processed(
     analyses_by_id: Mapping[str, LocalAnalysis],
 ) -> dict[str, Any]:
     """Calibrate ID-keyed local mappings in memory."""
-    from . import overview_facts as facts
+    from . import scoring_facts as facts
 
     seasons = io.load_seasons()
     energy_provider_titles = {
@@ -625,7 +614,7 @@ def serialize_processed(
         }
     hs.validate_processed({"heroes": schema_heroes})
     summary_by_title = {
-        hero["title"]: hero_from_local(
+        hero["title"]: _runtime_hero_from_local(
             processed_heroes[id_by_display[display_by_title[hero["title"]]]],
             title=hero["title"],
             damage_type=(

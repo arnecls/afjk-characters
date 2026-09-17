@@ -140,7 +140,7 @@ Synergy ranking and roster-wide magnitude bands assume every hero is **fully
 ascended**: all skill slots unlock (Ultimate through Supreme+ / EX tiers), and
 numeric comparison uses the **strongest parseable value** per effect label
 across skill level lines — not the base unlock value. This is implemented in
-`_merge_effects_from_list()` in `rewrite-summaries.py` (max numeric wins).
+`_merge_effects_from_list()` in `analysis/serialize.py` (max numeric wins).
 Processed JSON may set `is_max_known: false` when higher tiers still
 use `(scaled)` placeholders in source text.
 
@@ -152,7 +152,7 @@ roster** (same effect label), not same-role peers only.
 
 - **Buffs / debuffs** — parsed % compared within the same label across
   all heroes (quantiles when enough data); debuffs also reward
-  `all enemies` reach. `assign_magnitudes()` in `rewrite-summaries.py`.
+  `all enemies` reach. `assign_magnitudes()` in `analysis/magnitudes.py`.
 - **Crowd control** — duration-based (≥5s → high, ≥2s → average).
 - **HP loss / max-HP / true damage** — composite score from %, targeting, and
   frequency; roster-wide quantiles in `assign_damage_magnitudes()`.
@@ -185,7 +185,7 @@ Regenerate overview (and strip stray summaries from Heroes.md if present):
 
 `python3 scripts/generate-heroes-overview.py`
 
-Summary/synergy rules live in `scripts/rewrite-summaries.py` (library).
+Summary/synergy rules live in `scripts/hero_pipeline/relationships/scoring.py`.
 
 ## Behavior (movement & casting speed)
 
@@ -195,7 +195,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   `high movement`, or `moving / stationary` (dual units). Derived from
   per-skill `Skill Range`, cooldown-weighted attack ranges, and
   repositioning phrases in skill text. Special cases in
-  `compute_movement()` in `rewrite-summaries.py`: off-battlefield heroes
+  `compute_movement()` in `analysis/behavior.py`: off-battlefield heroes
   (Damian), summon controllers (Bryon), dual units (Twins), constant
   movers (Rhys), dormant/rooted cycles (Zorya, Ulmus), explicit hero
   repositioning (Rowan), brief aerial reposition (Scarlita), pull-to-self
@@ -259,7 +259,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   damage**, a final `- **True damage**: {type} \`{mag}\`, …` line lists types
   (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
-  `rewrite-summaries.py`; stored in `behavior.skill_overview`. Speed uses
+  `analysis/behavior.py`; stored in `behavior.skill_overview`. Speed uses
   `compute_per_skill_speeds()` roster-wide quantiles. Damage scores per skill
   section from chunk text (roster-wide quantiles). Heal/buffs/debuffs peak
   magnitudes from `skill_slices` effects. Non-ultimate row aggregates

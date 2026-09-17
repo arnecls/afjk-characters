@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from .analysis.policy import make_policy
 from .analysis.service import analyze_roster, refresh_local_caches
 from .contracts import GeneratedSynergyRoster, ProcessedRoster
 from .presentation.project import project_roster
@@ -59,10 +58,8 @@ def download(*, hero_id: str | None = None) -> int:
 def analyze(*, hero_id: str | None = None) -> int:
     """Refresh stale local analysis caches."""
     snapshot = _snapshot()
-    policy = make_policy(load_config())
     stale = refresh_local_caches(
         snapshot,
-        policy,
         {hero_id} if hero_id else None,
     )
     return len(stale)
@@ -76,7 +73,7 @@ def score(
     snapshot = snapshot or _snapshot()
     config = load_config()
     processed, _heroes, _context, policy = analyze_roster(snapshot, config)
-    relationships = score_roster(processed, snapshot, policy)
+    relationships = score_roster(processed, snapshot)
     return processed, relationships, snapshot
 
 

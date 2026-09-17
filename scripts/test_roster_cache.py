@@ -29,10 +29,11 @@ def load_rs():
     global _rs
     if _rs is not None:
         return _rs
-    from hero_pipeline.analysis import behavior as module
-    sys.modules["rewrite_summaries"] = module
-    _rs = module
-    return module
+    from test_helpers import load_rewrite_summaries
+
+    _rs = load_rewrite_summaries()
+    sys.modules["rewrite_summaries"] = _rs
+    return _rs
 
 
 def load_gen():
@@ -41,7 +42,8 @@ def load_gen():
     if _gen is not None:
         return _gen
     load_rs()
-    from hero_pipeline.analysis import overview_facts as module
+    from hero_pipeline.analysis import scoring_facts as module
+
     sys.modules["gen_overview"] = module
     _gen = module
     return module

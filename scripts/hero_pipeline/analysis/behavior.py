@@ -9,19 +9,67 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from healing_types import HP_RECOVERY_LABELS, LEGACY_DIRECT_HEALING_LABEL
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    HP_RECOVERY_LABELS,
+    LEGACY_DIRECT_HEALING_LABEL,
+    normalize_healing_label,
+)
 
-from .effects import *  # noqa: F403
+from .records import (
+    Hero,
+    HeroBehavior,
+    PlacementConstraint,
+    SkillMeta,
+    SkillOverviewMetrics,
+    SkillSlice,
+)
 from .effects import (
     CATEGORY_TO_SECTION,
+    DAMAGE_TYPE_SORT_KEY,
+    HEROES2_MD,
+    HEROES_MD,
+    MELEE_OVERRIDES_FILE,
+    MOVEMENT_OVERRIDES_FILE,
+    PLACEMENT_CONSTRAINT_OVERRIDES_FILE,
+    PLAY_OVERVIEW_FILE,
+    COUNTER_OVERVIEW_FILE,
+    SIGNATURE_SKILLS_FILE,
+    SKILL_SUMMARY_FILE,
+    WALK_SPEED_VALUES,
+    WALK_SPEEDS_FILE,
+    BEHAVIOR_TAGS_FILE,
+    TRUE_DAMAGE_TYPES,
+    TIER_ORDER,
+    _SUMMARY_SECTION_RE,
+    _all_amounts,
+    _chunk_deals_enemy_damage,
+    _chunk_is_companion_focused,
+    _chunk_targets_enemies,
+    _chunk_throughput_score,
+    _damage_frequency_multiplier,
+    _per_hero_curated,
     _policy_calibration,
     _policy_local,
+    _quantile_thresholds,
+    _score_true_damage_chunk,
+    _skill_card_tier_suffix,
+    curated_display_name,
+    detect_damage_targeting,
+    detect_damage_types,
+    is_all_summon_buff_targeting,
+    is_own_summon_buff_targeting,
+    strip_summaries_from_heroes_md,
+    text_has_start_of_battle_ultimate,
+    DAMAGE_TARGETING_WEIGHT,
 )
-from . import effects as _effects
-
-for _name, _value in _effects.__dict__.items():
-    if _name.startswith("_") and _name not in globals():
-        globals()[_name] = _value
+from .skill_meta import (
+    load_skill_meta,
+    skill_by_section as _skill_by_section,
+    skill_casting_time as _skill_casting_time,
+    ult_casting_time as _ult_casting_time,
+)
 
 MELEE_HERO_CLASSES = frozenset({"warrior", "rogue", "tank"})
 MELEE_MAX_RANGE: float = 3.5
@@ -67,7 +115,93 @@ _NO_CD_FREQUENCY_WEIGHT = 2.0
 MIN_CYCLE_SECONDS: float = 3.0
 PASSIVE_REFERENCE_CYCLE_SECONDS: float = 10.0
 
-
+BEHAVIOR_ATTACK_SECTIONS = frozenset(
+    {"Ultimate", "Skill1", "Skill2", "Ex. Skill"}
+)
+BEHAVIOR_RANGE_SECTIONS = frozenset(
+    {"Ultimate", "Skill1", "Skill2"}
+)
+HIGH_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bjump(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bleap(?:s|ped|ping)?\b", re.I),
+    re.compile(r"\bdash(?:es|ed|ing)?\b", re.I),
+    re.compile(r"\bdives?\b", re.I),
+    re.compile(r"\blunge(?:s|d)?\b", re.I),
+    re.compile(r"\bpounce(?:s|d)?\b", re.I),
+    re.compile(r"\bblink(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bteleport(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bswoop(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bcharg(?:e|es|ed|ing)\s+(?:at|to|toward|into)\b", re.I),
+    re.compile(r"\brush(?:es|ed|ing)?\s+(?:to|toward|next to)\b", re.I),
+    re.compile(r"\bmoving to a safe spot\b", re.I),
+    re.compile(r"\bmoves? to a\b", re.I),
+)
+OFF_BATTLEFIELD_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"cannot be attacked during the battle", re.I),
+    re.compile(r"stays out of (?:the )?battlefield", re.I),
+)
+DUAL_UNIT_RE = re.compile(r"\bfight separately in battle\b", re.I)
+CONSTANT_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bcan move while attacking\b", re.I),
+    re.compile(r"\bbonus movement speed when moving\b", re.I),
+    re.compile(r"\bincreases? .{0,30}movement speed\b", re.I),
+)
+ROOTED_STATIONARY_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\btakes root\b", re.I),
+    re.compile(r"\bwhen rooted\b", re.I),
+    re.compile(r"\bwhile rooted\b", re.I),
+)
+DORMANT_INACTIVE_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bwhile dormant\b", re.I),
+    re.compile(r"\benter a dormant state\b", re.I),
+    re.compile(r"\breturns? to (?:her |his |their )?dormant state\b", re.I),
+)
+INACTIVE_WHILE_ULTIMATE_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(
+        r"while the shield is active.{0,80}cannot move or act",
+        re.I,
+    ),
+    re.compile(
+        r"maintains the shield for up to \d+",
+        re.I,
+    ),
+)
+EXPLICIT_HERO_MOVE_RE = re.compile(
+    r"\b(?:moves?|walks?|steps?) up to \d+ tile", re.I
+)
+SUMMON_MOVEMENT_SENTENCE_RE = re.compile(
+    r"(?:toy (?:chariot|plane)|chariot|elona|bradduck|falcon|companion|"
+    r"summon(?:ed|s)?|plane).{0,50}"
+    r"(?:charg|jump|leap|dash|fly|mov|swoop|rush)",
+    re.I,
+)
+SUMMON_CONTROLLER_RE = re.compile(
+    r"\belona\b.+\b(?:remains on the battlefield|cannot be attacked)\b",
+    re.I,
+)
+PULL_ENEMY_RE = re.compile(
+    r"\bpull(?:s|ed|ing)? (?:a |an |the )?.{0,40}(?:enemy|target).{0,25}toward",
+    re.I,
+)
+BRIEF_REPOSITION_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bblink(?:s|ed|ing)? to the backline\b", re.I),
+    re.compile(r"\bascends? to the sky\b", re.I),
+    re.compile(r"\bhovers? over the battlefield\b", re.I),
+    re.compile(r"\bdescends? near\b", re.I),
+    re.compile(r"\bwhile in the air\b", re.I),
+)
+NORMAL_ATTACK_RE = re.compile(r"\bnormal attack", re.I)
+DUAL_RANGE_RE = re.compile(
+    r"switch(?:es|ed|ing)?\s+between\s+(?:ranged|melee)|"
+    r"(?:ranged|melee)\s+(?:attack|mode).{0,60}(?:melee|ranged)\s+"
+    r"(?:attack|mode)|"
+    r"Skyblaster\s+Mode|Sword\s+Mode",
+    re.I,
+)
+FRONTAL_ARC_RANGE_RE = re.compile(
+    r"within (?:a )?(\d+(?:\.\d+)?)-tile frontal arc",
+    re.I,
+)
 
 
 SKILL_OVERVIEW_KEYS = ("signature", "ultimate", "non_ultimate")
@@ -147,84 +281,6 @@ def resolve_behavior_block(
         if name in heroes_index:
             return heroes_index[name]
     return ""
-
-
-def load_skill_meta(block: str) -> list[SkillMeta]:
-    """Parse per-skill range, cooldown, energy, and description text."""
-    skills: list[SkillMeta] = []
-    if not block:
-        return skills
-
-    for part in re.split(r"(?=^### )", block, flags=re.MULTILINE):
-        sec_m = re.match(r"### (.+)", part)
-        if not sec_m:
-            continue
-        section = sec_m.group(1).strip()
-        if section not in SECTION_TIERS:
-            continue
-
-        cooldown = initial_cd = initial_energy = None
-        range_tiles: float | None = None
-        range_global = False
-
-        cd_m = re.search(r"^- Cooldown: (.+)$", part, re.MULTILINE)
-        if cd_m:
-            cooldown = _parse_meta_number(cd_m.group(1))
-        icd_m = re.search(r"^- Initial Cooldown: (.+)$", part, re.MULTILINE)
-        if icd_m:
-            initial_cd = _parse_meta_number(icd_m.group(1))
-        en_m = re.search(r"^- Initial Energy: (.+)$", part, re.MULTILINE)
-        if en_m:
-            initial_energy = _parse_meta_number(en_m.group(1))
-        rng_m = re.search(r"^- Skill Range: (.+)$", part, re.MULTILINE)
-        if rng_m:
-            rng = rng_m.group(1).strip()
-            if "global" in rng.lower():
-                range_global = True
-            else:
-                range_tiles = _parse_meta_number(rng)
-
-        text_lines: list[str] = []
-        channel_duration: float | None = None
-        for ln in part.splitlines():
-            if ln.startswith("### "):
-                continue
-            if ln.startswith("**") or ln.startswith("*Unlocks"):
-                continue
-            if re.match(
-                r"^- (?:Cooldown|Initial Cooldown|Skill Range|Initial Energy):",
-                ln,
-            ):
-                continue
-            if ln.startswith("- Level"):
-                break
-            if ln.strip():
-                text_lines.append(ln.strip())
-        text = " ".join(text_lines)
-
-        if section == "Ultimate" and text:
-            durations = [
-                float(m.group(1))
-                for m in _CHANNEL_DURATION_RE.finditer(text)
-            ]
-            if durations:
-                channel_duration = min(
-                    max(durations), _CHANNEL_DURATION_CAP
-                )
-
-        skills.append(
-            SkillMeta(
-                section=section,
-                range_tiles=range_tiles,
-                range_global=range_global,
-                cooldown=cooldown,
-                initial_cd=initial_cd,
-                initial_energy=initial_energy,
-                channel_duration=channel_duration,
-                text=text,
-            )
-        )
-    return skills
 
 
 def _split_sentences(text: str) -> list[str]:
@@ -558,43 +614,18 @@ def _load_movement_overrides() -> dict[str, dict[str, str]]:
 
 
 def _load_walk_speeds() -> dict[str, str]:
-    """Load curated base walk-speed tiers keyed by display name."""
-    per_hero = _per_hero_curated("hero_walk_speeds")
-    if per_hero is not None:
-        return per_hero
-    if not WALK_SPEEDS_FILE.exists():
-        raise FileNotFoundError(
-            f"missing walk-speed data: {WALK_SPEEDS_FILE}"
-        )
-    raw = json.loads(WALK_SPEEDS_FILE.read_text(encoding="utf-8"))
-    if not isinstance(raw, dict):
-        raise ValueError(f"{WALK_SPEEDS_FILE.name} must be an object")
-    result: dict[str, str] = {}
-    for key, value in raw.items():
-        if not isinstance(key, str) or not isinstance(value, str):
-            raise ValueError(
-                f"invalid walk-speed entry {key!r}: {value!r}"
-            )
-        if value not in WALK_SPEED_VALUES:
-            raise ValueError(
-                f"unknown walk speed for {key}: {value!r}"
-            )
-        result[key] = value
-    return result
+    """Load curated base walk-speed tiers keyed by hero ID."""
+    from hero_pipeline.storage import load_walk_speeds
+
+    return load_walk_speeds()
 
 
-def walk_speed_for_display(display_name: str, speeds: dict[str, str] | None = None) -> str:
-    """Resolve walk speed for a curated or wiki display name."""
+def walk_speed_for_id(hero_id: str, speeds: dict[str, str] | None = None) -> str:
+    """Resolve walk speed for a stable roster ID."""
     table = speeds if speeds is not None else _load_walk_speeds()
-    curated = curated_display_name(display_name)
-    if curated in table:
-        return table[curated]
-    if display_name in table:
-        return table[display_name]
-    raise KeyError(
-        f"missing walk speed for {display_name!r} "
-        f"(curated key {curated!r})"
-    )
+    if hero_id in table:
+        return table[hero_id]
+    raise KeyError(f"missing walk speed for {hero_id!r}")
 
 
 
@@ -654,29 +685,6 @@ def _apply_movement_override(
     if not entry:
         return label, note
     return entry.get("movement", label), entry.get("note", note)
-
-
-def _skill_by_section(
-    skills: list[SkillMeta], section: str
-) -> SkillMeta | None:
-    for skill in skills:
-        if skill["section"] == section:
-            return skill
-    return None
-
-
-def _skill_casting_time(skill: SkillMeta | None) -> float:
-    """Cooldown plus weighted initial delay for a non-ult skill."""
-    if skill is None:
-        return 0.0
-    cd = skill["cooldown"] or 0.0
-    icd = min(
-        skill["initial_cd"] or 0.0,
-        _policy_local("initial_cd_cap", INITIAL_CD_CAP),
-    )
-    return cd + icd * _policy_local(
-        "initial_cd_skill_weight", INITIAL_CD_SKILL_WEIGHT
-    )
 
 
 def compute_casting_scores(
@@ -776,18 +784,6 @@ SIGNATURE_SKILL_SECTION_KEYS: dict[str, str] = {
     "Skill2": "skill2",
     "Ex. Skill": "ex",
 }
-
-
-def _ult_casting_time(skills: list[SkillMeta]) -> float:
-    ult = _skill_by_section(skills, "Ultimate")
-    if ult is None:
-        return 0.0
-    ie = ult["initial_energy"] if ult["initial_energy"] is not None else 0.0
-    icd_ult = ult["initial_cd"] or 0.0
-    ch = ult["channel_duration"] or 0.0
-    return icd_ult + (
-        _policy_local("ult_energy_capacity", ULT_ENERGY_CAPACITY) - ie
-    ) / _policy_local("energy_fill_rate", ENERGY_FILL_RATE) + ch
 
 
 def compute_per_skill_speeds(
@@ -2098,7 +2094,12 @@ def build_behavior_for_heroes(
         avg_range = _weighted_attack_range(skills, default_range=hero["default_range"])
         display = display_names.get(hero["title"], hero["title"].split(" - ", 1)[0])
         curated = curated_display_name(display)
-        walk_speed = walk_speed_for_display(curated, walk_speeds)
+        hero_id = hero.get("id")
+        if not hero_id:
+            from hero_pipeline.storage import resolve_hero_id
+
+            hero_id = resolve_hero_id(display)
+        walk_speed = walk_speed_for_id(hero_id, walk_speeds)
         hero_class = class_by_title.get(hero["title"], "").lower()
         tags = behavior_tags.get(curated, frozenset())
         movement, note = _apply_melee_movement_floor(

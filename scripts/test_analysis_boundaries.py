@@ -24,7 +24,6 @@ class AnalysisBoundaryTests(unittest.TestCase):
         local = analyze_local(
             entry,
             self.snapshot["bundles"][entry["id"]],
-            self.policy["local"],
         )
 
         self.assertEqual(local["id"], entry["id"])
@@ -41,14 +40,12 @@ class AnalysisBoundaryTests(unittest.TestCase):
 
         self.assertEqual(
             local_parameters,
-            ["entry", "bundle", "local_policy"],
+            ["entry", "bundle"],
         )
         self.assertEqual(
             calibration_parameters,
             [
                 "analyses_by_id",
-                "local_policy",
-                "calibration_policy",
                 "snapshot",
             ],
         )
@@ -60,14 +57,11 @@ class AnalysisBoundaryTests(unittest.TestCase):
         local = analyze_local(
             entry,
             self.snapshot["bundles"][entry["id"]],
-            self.policy["local"],
         )
 
         with self.assertRaisesRegex(ValueError, "does not match"):
             calibrate_roster(
                 {"wrong-id": local},
-                self.policy["local"],
-                self.policy["calibration"],
                 self.snapshot,
             )
 

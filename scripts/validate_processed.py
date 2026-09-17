@@ -235,7 +235,7 @@ def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
 
 
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
-    from hero_pipeline.analysis import behavior as rs
+    from hero_pipeline.analysis import effects as rs
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
 
@@ -340,30 +340,30 @@ def _processed_by_display(processed: dict[str, Any]) -> dict[str, Any]:
 
 
 def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
-    """Validate hero_walk_speeds.json schema and exact roster coverage."""
-    processed = _processed_by_display(processed)
+    """Validate walk-speed coverage by stable hero ID."""
     from hero_pipeline.storage import load_walk_speeds
 
     errors: list[str] = []
     speeds = load_walk_speeds()
+    heroes = processed["heroes"]
 
-    expected = set(processed["heroes"])
+    expected = set(heroes)
     found = set(speeds) if isinstance(speeds, dict) else set()
-    for short in sorted(expected - found):
-        errors.append(f"walk speed missing for {short}")
-    for short in sorted(found - expected):
-        errors.append(f"walk speed unknown hero {short}")
+    for hero_id in sorted(expected - found):
+        errors.append(f"walk speed missing for {hero_id}")
+    for hero_id in sorted(found - expected):
+        errors.append(f"walk speed unknown hero {hero_id}")
 
-    for short, hero in processed["heroes"].items():
+    for hero_id, hero in heroes.items():
         behavior = hero.get("behavior") or {}
         walk = behavior.get("walk_speed")
         if not walk:
-            errors.append(f"processed walk_speed missing for {short}")
+            errors.append(f"processed walk_speed missing for {hero_id}")
             continue
-        expected_walk = speeds.get(short) if isinstance(speeds, dict) else None
+        expected_walk = speeds.get(hero_id) if isinstance(speeds, dict) else None
         if expected_walk and walk != expected_walk:
             errors.append(
-                f"processed walk_speed mismatch for {short}: "
+                f"processed walk_speed mismatch for {hero_id}: "
                 f"{walk!r} != {expected_walk!r}"
             )
     return errors
@@ -376,7 +376,7 @@ def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     names = display_names_by_id()
     summaries = {names[hero_id]: value for hero_id, value in summaries.items()}
     errors: list[str] = []
-    from hero_pipeline.analysis import overview_facts as gen
+    from hero_pipeline.analysis import scoring_facts as gen
 
     expected: dict[str, set[str]] = {}
     skill_names: dict[str, dict[str, str]] = {}

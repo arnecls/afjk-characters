@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import types
-import sys
 
 
 def load_rewrite_summaries():
@@ -25,10 +24,10 @@ def load_rewrite_summaries():
 
 
 def load_overview_facts(name: str = "gen_overview"):
-    """Return the scoring-facts module used by tests."""
-    from hero_pipeline.analysis import overview_facts
+    """Return analysis-fact helpers used by focused scoring tests."""
+    from hero_pipeline.analysis import scoring_facts
 
-    return overview_facts
+    return scoring_facts
 
 
 def tag_labels(tags: list) -> list[str]:

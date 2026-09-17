@@ -28,10 +28,11 @@ The branch establishes a better canonical storage architecture:
 - generated files are written atomically.
 
 As of 2026-09-17, the deepening migration has landed on this branch. Storage,
-scoring, and presentation are ID-keyed and schema-shaped. Local analysis and
-roster calibration still use a named temporary adapter over
-`rewrite-summaries.py`. See [ADR 0004](adr/0004-staged-publication.md) and
-[migration deltas](per-hero-layout-migration-deltas.md).
+scoring, and presentation are ID-keyed and schema-shaped. Production views
+score through `relationships/scoring.py`. `overview_facts.py` is gone. Local
+analysis uses frozen policy defaults with no discarded policy arguments.
+Walk speed is joined by hero ID. See [ADR 0004](adr/0004-staged-publication.md)
+and [migration deltas](per-hero-layout-migration-deltas.md).
 
 The original review found that the end-to-end pipeline was not schema-first yet. The new `hero_pipeline`
 package currently adapts the per-hero layout into the aggregate dictionaries,
@@ -49,8 +50,7 @@ AST-based comparison found:
 
 These figures are directional rather than a substitute for a dedicated
 complexity tool. They do show that the small new entry point did not simplify
-the legacy algorithms. `rewrite-summaries.py` and
-`generate-heroes-overview.py` remain the dominant implementation.
+the detector. `effects.py` remains the largest production module.
 
 The highest-priority defect is in `hero_pipeline.pipeline.analyze()`: its two
 writers receive the same pre-analysis bundle snapshot. The synergy write can

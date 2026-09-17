@@ -11,7 +11,6 @@ from ..contracts import HeroBundle, HeroManifestEntry, LocalAnalysis
 from . import behavior as bh
 from . import serialize as hs
 from . import effects as rs
-from .policy import LocalPolicy
 
 ALGORITHM_VERSION = "local-analysis-v9"
 
@@ -40,10 +39,8 @@ def _json_mapping(value: Any) -> Any:
 def analyze_local(
     entry: HeroManifestEntry,
     bundle: HeroBundle,
-    local_policy: LocalPolicy,
 ) -> LocalAnalysis:
     """Analyze one bundle and return a schema-shaped mapping."""
-    del local_policy
     return _analyze_local_bundle(entry, bundle)
 
 
@@ -63,7 +60,7 @@ def _analyze_local_bundle(
     hero: dict[str, Any] = rs.hero_from_record(copy.deepcopy(source))
     skill_effects.apply_sidecar_to_hero(hero, copy.deepcopy(sidecar))
     rs._postprocess_analyzed_hero(hero, hero["damage_type"] or "Physical")
-    from . import overview_facts as gen
+    from . import scoring_facts as gen
     import heroes_io as io
 
     skills = rs.load_skills_by_title_from_records([source])[hero["title"]]

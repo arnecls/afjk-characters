@@ -11,10 +11,8 @@ from hero_pipeline.parity import (
     compare_contracts,
     compare_view_artifacts,
     contract_from_view,
-    list_column_semantics,
     load_contract,
     load_fixture_artifacts,
-    normalize_text,
     relationship_invariant_errors,
     site_without_timestamp,
 )
@@ -54,15 +52,15 @@ class PresentationContractTests(unittest.TestCase):
         )
         counter_path = current_repository().data / "counter_filter_combos.json"
         cls.current_artifacts = {
-            "heroes_md": normalize_text(heroes_md),
-            "overview_md": normalize_text(overview_md),
-            "overview_csv": normalize_text(overview_csv),
+            "heroes_md": heroes_md,
+            "overview_md": overview_md,
+            "overview_csv": overview_csv,
             "site_heroes": site_without_timestamp(site_outputs["heroes"]),
-            "site_csv": normalize_text(overview_csv),
+            "site_csv": overview_csv.replace("\r\n", "\n"),
             "mix_synergy_index": site_outputs["mix_synergy_index"],
             "mix_config": site_outputs["mix_config"],
             "mix_role_prominence": site_outputs["mix_role_prominence"],
-            "list_columns": list_column_semantics(build_list_columns()),
+            "list_columns": build_list_columns(),
             "counter_filter_combos": (
                 json.loads(counter_path.read_text(encoding="utf-8"))
                 if counter_path.is_file()

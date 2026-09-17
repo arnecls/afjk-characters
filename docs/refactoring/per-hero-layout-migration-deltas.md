@@ -60,8 +60,10 @@ add a replacement cache from this migration.
   from those fields without a reverse `deserialize_hero` path.
 - Cycle math reads frozen policy defaults. Ambient `bound_policy` is gone.
 - Twins and other display aliases resolve through the roster manifest.
-- Relationship scoring keeps module defaults. Config-file overlays remain a
-  later approved change.
+- Walk speed is keyed by hero ID in storage, calibration, and behavior.
+- Production synergy scoring lives in `relationships/scoring.py`.
+  `analysis/overview_facts.py` is removed. Relationship scoring keeps module
+  defaults. Config-file overlays remain a later approved change.
 
 ## Phase 8 compatibility boundary
 

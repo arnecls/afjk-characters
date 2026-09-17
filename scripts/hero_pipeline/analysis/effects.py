@@ -8,7 +8,7 @@ import re
 import statistics
 from collections import defaultdict
 from pathlib import Path
-from typing import Any
+from typing import Any, Mapping
 
 from .records import (
     CcImmunity,
@@ -79,50 +79,50 @@ WALK_SPEED_VALUES = frozenset(
 _PER_HERO_CURATED_CACHE: dict[str, dict] = {}
 
 
-def _per_hero_curated(name: str) -> dict | None:
-    """Project one legacy analysis input from canonical hero bundles."""
-    if name in _PER_HERO_CURATED_CACHE:
-        return _PER_HERO_CURATED_CACHE[name]
-    from hero_pipeline.storage import load_roster_inputs
-
-    snapshot = load_roster_inputs()
-    result: dict = {}
+def prime_curated_cache(snapshot: Mapping[str, Any]) -> None:
+    """Fill curated fallbacks from a roster snapshot without hidden loads."""
+    tables: dict[str, dict] = {
+        "signature_skills": {},
+        "behavior_tags": {},
+        "skill_summaries": {},
+        "play_overviews": {},
+        "counter_overviews": {},
+        "melee_overrides": {},
+        "movement_overrides": {},
+        "placement_constraint_overrides": {},
+    }
     for entry in snapshot["manifest"]["heroes"]:
         bundle = snapshot["bundles"][entry["id"]]
-        source_doc = bundle["source"]
         local = (bundle.get("analysis") or {}).get("local") or {}
         ai = bundle["ai"]
         overrides = bundle["overrides"]
         display = entry["display_name"]
-        value = None
-        if name == "signature_skills":
-            value = {}
-            calculated = local.get("signature_calculated")
-            if calculated:
-                value["signature_calculated"] = calculated
-            value.update(overrides.get("signature") or {})
-        elif name == "hero_walk_speeds":
-            value = (source_doc.get("external") or {}).get("walk_speed")
-        elif name == "behavior_tags":
-            value = list(ai.get("behavior_tags") or [])
-        elif name == "skill_summaries":
-            value = dict(ai.get("skill_summaries") or {})
-        elif name == "play_overviews":
-            value = ai.get("play_overview")
-        elif name == "counter_overviews":
-            value = ai.get("counter_overview")
-        else:
-            override_key = {
-                "melee_overrides": "melee",
-                "movement_overrides": "movement",
-                "placement_constraint_overrides": "placement_constraints",
-            }.get(name)
-            if override_key is not None:
-                value = overrides.get(override_key)
-        if value or name in {"behavior_tags", "skill_summaries"}:
-            result[display] = value
-    _PER_HERO_CURATED_CACHE[name] = result
-    return result
+        signature: dict[str, Any] = {}
+        if local.get("signature_calculated"):
+            signature["signature_calculated"] = local["signature_calculated"]
+        signature.update(overrides.get("signature") or {})
+        if signature:
+            tables["signature_skills"][display] = signature
+        tables["behavior_tags"][display] = list(ai.get("behavior_tags") or [])
+        tables["skill_summaries"][display] = dict(ai.get("skill_summaries") or {})
+        if ai.get("play_overview"):
+            tables["play_overviews"][display] = ai.get("play_overview")
+        if ai.get("counter_overview"):
+            tables["counter_overviews"][display] = ai.get("counter_overview")
+        if overrides.get("melee"):
+            tables["melee_overrides"][display] = overrides["melee"]
+        if overrides.get("movement"):
+            tables["movement_overrides"][display] = overrides["movement"]
+        if overrides.get("placement_constraints"):
+            tables["placement_constraint_overrides"][display] = overrides[
+                "placement_constraints"
+            ]
+    _PER_HERO_CURATED_CACHE.update(tables)
+
+
+def _per_hero_curated(name: str) -> dict | None:
+    """Return primed curated input, or None so callers can use file fallbacks."""
+    return _PER_HERO_CURATED_CACHE.get(name)
 
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
@@ -1420,7 +1420,7 @@ def load_skills_by_title_from_records(
     heroes: list[dict],
 ) -> dict[str, list[SkillMeta]]:
     from heroes_io import render_hero_block
-    from .behavior import load_skill_meta
+    from .skill_meta import load_skill_meta
 
     skills_by_title: dict[str, list[SkillMeta]] = {}
     for hero in heroes:
@@ -4530,19 +4530,19 @@ def _effect_cycle_time(
     skills: list[SkillMeta],
 ) -> float:
     """Seconds between repeated casts of the effect's source skill."""
-    from .behavior import _skill_casting_time, _ult_casting_time
+    from .skill_meta import skill_casting_time, ult_casting_time
 
     if section == "Ultimate":
         return max(
             _policy_local("min_cycle_seconds", MIN_CYCLE_SECONDS),
-            _ult_casting_time(skills),
+            ult_casting_time(skills),
         )
     if skill is not None and (
         (skill["cooldown"] or 0) > 0 or (skill["initial_cd"] or 0) > 0
     ):
         return max(
             _policy_local("min_cycle_seconds", MIN_CYCLE_SECONDS),
-            _skill_casting_time(skill),
+            skill_casting_time(skill),
         )
     return _policy_local(
         "passive_reference_cycle_seconds", PASSIVE_REFERENCE_CYCLE_SECONDS
@@ -4552,9 +4552,9 @@ def _effect_cycle_time(
 def _section_skill_text(
     hero: Hero, skills: list[SkillMeta], section: str
 ) -> str:
-    from .behavior import _skill_by_section
+    from .skill_meta import skill_by_section
 
-    skill = _skill_by_section(skills, section)
+    skill = skill_by_section(skills, section)
     if skill and skill["text"]:
         return skill["text"]
     parts = [text for _tier, text, sec in hero["skill_chunks"] if sec == section]
@@ -4569,10 +4569,10 @@ def _effect_throughput_score(
     base = effect["numeric"]
     if base is None or base <= 0:
         return 0.0
-    from .behavior import _skill_by_section
+    from .skill_meta import skill_by_section
 
     section = effect["source_section"] or ""
-    skill = _skill_by_section(skills, section) if section else None
+    skill = skill_by_section(skills, section) if section else None
     text = _section_skill_text(hero, skills, section)
     if effect_has_structured_cooldown(effect):
         burst = base * effect_throughput_gate_multiplier(effect)
@@ -4589,10 +4589,10 @@ def _chunk_throughput_score(
 ) -> float:
     if burst <= 0 or not skills:
         return burst
-    from .behavior import _skill_by_section
+    from .skill_meta import skill_by_section
 
     cycle = _effect_cycle_time(
-        section, _skill_by_section(skills, section), skills
+        section, skill_by_section(skills, section), skills
     )
     return burst / cycle
 
@@ -4601,7 +4601,7 @@ def load_skills_by_title_from_blocks(
     blocks: list[str],
 ) -> dict[str, list[SkillMeta]]:
     skills_by_title: dict[str, list[SkillMeta]] = {}
-    from .behavior import load_skill_meta
+    from .skill_meta import load_skill_meta
 
     for block in blocks:
         title = block.splitlines()[0].replace("## ", "").strip()
@@ -6550,124 +6550,20 @@ def format_buffs_provided_intro(hero: Hero, display_name: str) -> str | None:
     return f"{display_name} provides {_join_intro_fragments(fragments)}."
 
 
-def _recompute_damage_scores(
-    heroes: list[Hero],
-    skills_by_title: dict[str, list[SkillMeta]],
-) -> None:
-    for hero in heroes:
-        skills = skills_by_title.get(hero["title"], [])
-        if not skills:
-            continue
-        primary = hero["damage_type"] or "Physical"
-        hero["damage_scores"].clear()
-        for _tier, text, section in hero["skill_chunks"]:
-            if _chunk_is_companion_focused(text):
-                continue
-            if _skill_chunk_has_ally_only_damage(text):
-                continue
-            tgt = detect_targeting(text)
-            for d in detect_damage_types(text, primary):
-                if d not in TRUE_DAMAGE_TYPES:
-                    continue
-                score = _score_true_damage_chunk(
-                    text, d, tgt, section=section, skills=skills
-                )
-                if score > 0:
-                    hero["damage_scores"][d] = max(
-                        hero["damage_scores"].get(d, 0.0), score
-                    )
+def _recompute_damage_scores(*args, **kwargs):
+    from .magnitudes import recompute_damage_scores
+    return recompute_damage_scores(*args, **kwargs)
 
 
-def assign_damage_magnitudes(heroes: list[Hero]) -> None:
-    by_type: dict[str, list[float]] = defaultdict(list)
-    for hero in heroes:
-        for dt, score in hero["damage_scores"].items():
-            if dt in TRUE_DAMAGE_TYPES:
-                by_type[dt].append(score)
-
-    thresholds: dict[str, tuple[float, float]] = {}
-    for dmg_type, scores in by_type.items():
-        thresholds[dmg_type] = _quantile_thresholds(scores)
-
-    for hero in heroes:
-        for dt in hero["damage_scores"]:
-            if dt not in TRUE_DAMAGE_TYPES:
-                continue
-            score = hero["damage_scores"][dt]
-            t1, t2 = thresholds.get(dt, _FALLBACK_DAMAGE_THRESHOLDS)
-            hero["damage_magnitudes"][dt] = (
-                "low" if score <= t1 else "average" if score <= t2 else "high"
-            )
+def assign_damage_magnitudes(heroes):
+    from .magnitudes import assign_damage_magnitudes as _assign
+    return _assign(heroes)
 
 
-def assign_magnitudes(
-    heroes: list[Hero],
-    skills_by_title: dict[str, list[SkillMeta]] | None = None,
-):
-    skills_map = skills_by_title or {}
-    if skills_map:
-        _recompute_damage_scores(heroes, skills_map)
-    by_key: dict[str, list[tuple[Hero, Effect]]] = defaultdict(list)
-    for hero in heroes:
-        for eff in hero["effects"] + hero["summon_effects"]:
-            by_key[f"{eff["category"]}:{eff["label"]}"].append((hero, eff))
-    for group in by_key.values():
-        category = group[0][1]["category"]
-        label = group[0][1]["label"]
-        # CC magnitudes are duration-based, not damage-% quantiles.
-        if category == "cc":
-            for _hero, e in group:
-                e["magnitude"] = qualitative_magnitude(e)
-            continue
-        # For always-high labels, skip quantile – just apply the heuristic.
-        if label in _ALWAYS_HIGH_BUFFS:
-            for _hero, e in group:
-                e["magnitude"] = qualitative_magnitude(e)
-            continue
-        if category == "debuff" and label in _ALWAYS_MEDIUM_DEBUFFS:
-            for _hero, e in group:
-                e["magnitude"] = qualitative_magnitude(e)
-            continue
-        use_throughput = _effect_uses_throughput(category, label) and bool(
-            skills_map
-        )
-        scored: list[tuple[float | None, Hero, Effect]] = []
-        for hero, e in group:
-            if use_throughput:
-                skills = skills_map.get(hero["title"], [])
-                val = (
-                    _effect_throughput_score(e, hero, skills)
-                    if skills
-                    else e["numeric"]
-                )
-                scored.append((val if val and val > 0 else e["numeric"], hero, e))
-            else:
-                scored.append((e["numeric"], hero, e))
-        nums = sorted(v for v, _h, _e in scored if v is not None)
-        if len(nums) >= 6:
-            t1, t2 = statistics.quantiles(nums, n=3)
-            for val, _hero, e in scored:
-                if val is None:
-                    e["magnitude"] = qualitative_magnitude(e)
-                else:
-                    e["magnitude"] = (
-                        qualitative_magnitude(e)
-                        if use_throughput and val <= 0
-                        else (
-                            "low"
-                            if val <= t1
-                            else "average"
-                            if val <= t2
-                            else "high"
-                        )
-                    )
-        else:
-            for _val, _hero, e in scored:
-                e["magnitude"] = qualitative_magnitude(e)
-    for hero in heroes:
-        for eff in hero["effects"] + hero["summon_effects"]:
-            apply_conditional_magnitude(eff)
-    assign_damage_magnitudes(heroes)
+def assign_magnitudes(heroes, skills_by_title=None):
+    from .magnitudes import assign_magnitudes as _assign
+    return _assign(heroes, skills_by_title)
+
 
 
 def format_summary(hero: Hero, display_name: str | None = None) -> str:
@@ -6771,10 +6667,6 @@ def strip_summaries_from_heroes_md(text: str) -> str:
     return stripped.rstrip() + "\n"
 
 
-# ---------------------------------------------------------------------------
-# Hero behavior (movement & casting speed) — sourced from heroes2.md
-# ---------------------------------------------------------------------------
-
 def curated_display_name(display: str) -> str:
     """Map wiki display name to curated JSON keys (signature skills, etc.)."""
     from hero_pipeline.storage import display_names_by_id, resolve_hero_id
@@ -6783,113 +6675,6 @@ def curated_display_name(display: str) -> str:
         return display_names_by_id()[resolve_hero_id(display)]
     except KeyError:
         return display
-
-BEHAVIOR_ATTACK_SECTIONS = frozenset(
-    {"Ultimate", "Skill1", "Skill2", "Ex. Skill"}
-)
-
-# Ex. Skill range is situational; Skill1/2/Ult reflect positioning.
-BEHAVIOR_RANGE_SECTIONS = frozenset(
-    {"Ultimate", "Skill1", "Skill2"}
-)
-
-# Repositioning phrases -> high movement (avoid "charged arrow", etc.).
-HIGH_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\bjump(?:s|ed|ing)?\b", re.I),
-    re.compile(r"\bleap(?:s|ped|ping)?\b", re.I),
-    re.compile(r"\bdash(?:es|ed|ing)?\b", re.I),
-    re.compile(r"\bdives?\b", re.I),
-    re.compile(r"\blunge(?:s|d)?\b", re.I),
-    re.compile(r"\bpounce(?:s|d)?\b", re.I),
-    re.compile(r"\bblink(?:s|ed|ing)?\b", re.I),
-    re.compile(r"\bteleport(?:s|ed|ing)?\b", re.I),
-    re.compile(r"\bswoop(?:s|ed|ing)?\b", re.I),
-    re.compile(r"\bcharg(?:e|es|ed|ing)\s+(?:at|to|toward|into)\b", re.I),
-    re.compile(r"\brush(?:es|ed|ing)?\s+(?:to|toward|next to)\b", re.I),
-    re.compile(r"\bmoving to a safe spot\b", re.I),
-    re.compile(r"\bmoves? to a\b", re.I),
-)
-
-OFF_BATTLEFIELD_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(r"cannot be attacked during the battle", re.I),
-    re.compile(r"stays out of (?:the )?battlefield", re.I),
-)
-
-DUAL_UNIT_RE = re.compile(r"\bfight separately in battle\b", re.I)
-
-CONSTANT_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\bcan move while attacking\b", re.I),
-    re.compile(r"\bbonus movement speed when moving\b", re.I),
-    re.compile(r"\bincreases? .{0,30}movement speed\b", re.I),
-)
-
-ROOTED_STATIONARY_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\btakes root\b", re.I),
-    re.compile(r"\bwhen rooted\b", re.I),
-    re.compile(r"\bwhile rooted\b", re.I),
-)
-
-DORMANT_INACTIVE_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\bwhile dormant\b", re.I),
-    re.compile(r"\benter a dormant state\b", re.I),
-    re.compile(r"\breturns? to (?:her |his |their )?dormant state\b", re.I),
-)
-
-INACTIVE_WHILE_ULTIMATE_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(
-        r"while the shield is active.{0,80}cannot move or act",
-        re.I,
-    ),
-    re.compile(
-        r"maintains the shield for up to \d+",
-        re.I,
-    ),
-)
-
-EXPLICIT_HERO_MOVE_RE = re.compile(
-    r"\b(?:moves?|walks?|steps?) up to \d+ tile", re.I
-)
-
-# Summon/companion is the agent of movement, not the hero.
-SUMMON_MOVEMENT_SENTENCE_RE = re.compile(
-    r"(?:toy (?:chariot|plane)|chariot|elona|bradduck|falcon|companion|"
-    r"summon(?:ed|s)?|plane).{0,50}"
-    r"(?:charg|jump|leap|dash|fly|mov|swoop|rush)",
-    re.I,
-)
-
-SUMMON_CONTROLLER_RE = re.compile(
-    r"\belona\b.+\b(?:remains on the battlefield|cannot be attacked)\b",
-    re.I,
-)
-
-PULL_ENEMY_RE = re.compile(
-    r"\bpull(?:s|ed|ing)? (?:a |an |the )?.{0,40}(?:enemy|target).{0,25}toward",
-    re.I,
-)
-
-BRIEF_REPOSITION_RES: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\bblink(?:s|ed|ing)? to the backline\b", re.I),
-    re.compile(r"\bascends? to the sky\b", re.I),
-    re.compile(r"\bhovers? over the battlefield\b", re.I),
-    re.compile(r"\bdescends? near\b", re.I),
-    re.compile(r"\bwhile in the air\b", re.I),
-)
-
-NORMAL_ATTACK_RE = re.compile(r"\bnormal attack", re.I)
-
-DUAL_RANGE_RE = re.compile(
-    r"switch(?:es|ed|ing)?\s+between\s+(?:ranged|melee)|"
-    r"(?:ranged|melee)\s+(?:attack|mode).{0,60}(?:melee|ranged)\s+"
-    r"(?:attack|mode)|"
-    r"Skyblaster\s+Mode|Sword\s+Mode",
-    re.I,
-)
-
-FRONTAL_ARC_RANGE_RE = re.compile(
-    r"within (?:a )?(\d+(?:\.\d+)?)-tile frontal arc",
-    re.I,
-)
 
 MIN_CYCLE_SECONDS: float = 3.0
 PASSIVE_REFERENCE_CYCLE_SECONDS: float = 10.0
