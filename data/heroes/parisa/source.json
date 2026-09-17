@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "parisa",
+  "display_name": "Parisa",
+  "source": {
+    "title": "Parisa - Ode to Flowers",
+    "name": "Parisa",
+    "tags": "Wilder · Mage · Magic",
+    "faction": "Wilder",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "An elegant mage who enhances her own ATK SPD and that of her allies, she's especially powerful at taking down grouped enemies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Floral Splendor",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Parisa marks a non-marked enemy with a flower until the battle ends, dealing 480% (ATK-based) damage to all floral-marked targets and other enemies within 1 tiles of them. If the skill hits the targets multiple times within 2s, the subsequent damage dealt by targets is reduced by 20%.",
+          "active": [
+            "Parisa marks a non-marked enemy with a flower until the battle ends, dealing 480% (ATK-based) damage to all floral-marked targets and other enemies within 1 tiles of them.",
+            "If the skill hits the targets multiple times within 2s, the subsequent damage dealt by targets is reduced by 20%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 490% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Each defeated enemy who carries Floral Mark grants Parisa 60 + 20 (SP-based) Energy recovery per second in 5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 510% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 520% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Parisa marks a target with a flower and deals AoE damage to them."
+      },
+      {
+        "section": "Skill1",
+        "name": "Floral Inspiration",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Parisa increases ATK SPD by 22 + 3 (SP-based) and normal attack damage by 22% for 10s for herself and 1 nearest ally.",
+          "active": [
+            "Parisa increases ATK SPD by 22 + 3 (SP-based) and normal attack damage by 22% for 10s for herself and 1 nearest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases ATK SPD by 25 + 3 (SP-based), and the normal attack damage by 25%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases ATK SPD by 28 + 3 (SP-based), and the normal attack damage by 28%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases ATK SPD by 30 + 3 (SP-based), and the normal attack damage by 30%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Parisa increases ATK SPD and normal attack damage for herself an an ally."
+      },
+      {
+        "section": "Skill2",
+        "name": "Flower Power",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "After every 3 normal attacks, Parisa launches a bouquet of flowers that gradually expands towards her target, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies along the path. Each enemy hit by flowers restores herself an extra 70 Energy. Every bouquet of flowers can recover her Energy up to 3 times.",
+          "active": [
+            "After every 3 normal attacks, Parisa launches a bouquet of flowers that gradually expands towards her target, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies along the path.",
+            "Each enemy hit by flowers restores herself an extra 70 Energy.",
+            "Every bouquet of flowers can recover her Energy up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "The flowers deal 205% (ATK-based) + 20% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The flowers deal 210% (ATK-based) + 20% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The flowers deal 215% (ATK-based) + 20% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Parisa shoots flowers to attack enemies along the path after a number of normal attacks."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Falling Blossom",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Parisa marks the nearest enemy in a symmetrical position with a flower when a battle starts.",
+          "active": [
+            "Parisa marks the nearest enemy in a symmetrical position with a flower when a battle starts."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Normal attacks hit 1 more target after inflicting 4 marks."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Normal attacks hit 1 more target after inflicting 3 marks."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Normal attacks hit 1 more target after inflicting 2 marks."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Reduces the required normal attacks to trigger Flower Power by 1.",
+          "active": [
+            "Reduces the required normal attacks to trigger Flower Power by 1."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Parisa triggers Flower Power with fewer normal attacks."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

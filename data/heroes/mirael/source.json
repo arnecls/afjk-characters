@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "mirael",
+  "display_name": "Mirael",
+  "source": {
+    "title": "Mirael - Scarlet Sorceress",
+    "name": "Mirael",
+    "tags": "Lightbearer · Mage · Magic",
+    "faction": "Lightbearer",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A destructive Mage who is feeble but skilled at dealing high damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Winged Flame",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Skill Range": "11 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Mirael selects a direction and summons a 3-tile wide wall of flame, dealing 600% (ATK-based) + 60% (SP-based) damage to burned enemies.",
+          "active": [
+            "Mirael selects a direction and summons a 3-tile wide wall of flame, dealing 600% (ATK-based) + 60% (SP-based) damage to burned enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 610% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 620% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 630% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Mirael summons a wall of flame that deals damage to burned enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Bone Sear",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Mirael burns and deals 35% (ATK-based) + 4% (SP-based) damage every second to 1 enemy for 10s. This skill prioritizes the unburned enemies.",
+          "active": [
+            "Mirael burns and deals 35% (ATK-based) + 4% (SP-based) damage every second to 1 enemy for 10s.",
+            "This skill prioritizes the unburned enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage per second to 37% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage per second to 40% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage per second to 45% (ATK-based) + 4% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Mirael burns an enemy and deals continuous damage to them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Fireball Singe",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Mirael shoots a fireball, dealing 250% (ATK-based) + 20% (SP-based) damage to a target and 160% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "active": [
+            "Mirael shoots a fireball, dealing 250% (ATK-based) + 20% (SP-based) damage to a target and 160% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Mirael shoots a fireball, dealing 260% (ATK-based) + 20% (SP-based) damage to a target and 180% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Mirael shoots a fireball, dealing 270% (ATK-based) + 20% (SP-based) damage to a target and 190% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Mirael shoots a fireball, dealing 280% (ATK-based) + 20% (SP-based) damage to a target and 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Mirael shoots a fireball at the target, causing damage in a small area."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 21 during battle.",
+          "active": [
+            "Increases ATK SPD by 21 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 27 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 33 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Dance of Flames",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Mirael uses Fireball Singe as her normal attack for the rest of the battle after casting Winged Flame for the first time. Fireball Singe shoots 2 fireballs each time, each dealing 150% (ATK-based) + 15% (SP-based) damage to the target and 100% (ATK-based) + 15% (SP-based) damage to the adjacent enemies.",
+          "active": [
+            "Mirael uses Fireball Singe as her normal attack for the rest of the battle after casting Winged Flame for the first time.",
+            "Fireball Singe shoots 2 fireballs each time, each dealing 150% (ATK-based) + 15% (SP-based) damage to the target and 100% (ATK-based) + 15% (SP-based) damage to the adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Burns 2 enemies with Bone Sear for the rest of the battle after casting Winged Fame for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases each fireball damage to 160% (ATK-based) + 15% (SP-based) on the target and 110% (ATK-based) + 15% (SP-based) on adjacent enemies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases each fireball damage to 170% (ATK-based) + 15% (SP-based) on the target and 120% (ATK-based) + 15% (SP-based) on adjacent enemies."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Mirael uses Fireball Singe as her normal attacks after casting Winged Flame for the first time."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Mirael increases the burning duration of Bone Sear by 4s.",
+          "active": [
+            "Mirael increases the burning duration of Bone Sear by 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Mirael increases the burning duration of Bone Sear."
+      }
+    ],
+    "range": 3,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

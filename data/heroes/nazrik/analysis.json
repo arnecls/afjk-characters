@@ -1,0 +1,1133 @@
+{
+  "schema_version": 1,
+  "id": "nazrik",
+  "display_name": "Nazrik",
+  "local": {
+    "long_name": "Nazrik - Soulstalker",
+    "faction": "mauler",
+    "class": "marksman",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 7,
+    "release_date": "2025-10-30",
+    "season": "Thorns of Devotion",
+    "season_number": 5,
+    "skills": {
+      "Rend Rupture": {
+        "category": "ultimate",
+        "description": {
+          "raw": "4s into battle, Nazrik marks the enemy who has taken the most damage as his Prey and prioritizes them as the target for all his skills. When casting this skill, Nazrik silently prays before hurling a spear with a guaranteed critical hit, dealing 600% (ATK-based) + 70% (SP-based) true damage to an enemy. After a short delay, he triggers all Rend stacks on that enemy, dealing 35% (ATK-based) + 3.5% (SP-based) extra damage per stack.",
+          "active": [
+            "4s into battle, Nazrik marks the enemy who has taken the most damage as his Prey and prioritizes them as the target for all his skills.",
+            "When casting this skill, Nazrik silently prays before hurling a spear with a guaranteed critical hit, dealing 600% (ATK-based) + 70% (SP-based) true damage to an enemy.",
+            "After a short delay, he triggers all Rend stacks on that enemy, dealing 35% (ATK-based) + 3.5% (SP-based) extra damage per stack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage of this skill's spear hurl to 630% (ATK-based) + 70% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of this skill's spear hurl to 660% (ATK-based) + 70% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of this skill's spear hurl to 690% (ATK-based) + 70% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of this skill's spear hurl to 720% (ATK-based) + 70% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 720.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 790.0
+              }
+            ]
+          }
+        ],
+        "initial_energy": 200.0,
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Savage Wound": {
+        "category": "skill1",
+        "description": {
+          "raw": "Whenever Nazrik lands a critical hit on an enemy with a spear throw from his normal attacks or skills, he deals extra damage equal to 6.5% + 0.8% (SP-based) of the enemy's initial max HP. The extra damage cannot exceed 180% (ATK-based) + 20% (SP-based). Each hit also reduces the enemy's max HP by the same amount, up to 40%. Against bosses, the max HP reduction does not apply; instead, the extra damage is converted into true damage. Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks. This effect cannot be dispelled. When an enemy affected by Rend casts their Ultimate, they take 35% (ATK-based) + 3.5% (SP-based) damage for each Rend stack they currently have.",
+          "active": [
+            "Whenever Nazrik lands a critical hit on an enemy with a spear throw from his normal attacks or skills, he deals extra damage equal to 6.5% + 0.8% (SP-based) of the enemy's initial max HP.",
+            "The extra damage cannot exceed 180% (ATK-based) + 20% (SP-based).",
+            "Each hit also reduces the enemy's max HP by the same amount, up to 40%.",
+            "Against bosses, the max HP reduction does not apply; instead, the extra damage is converted into true damage.",
+            "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks.",
+            "This effect cannot be dispelled.",
+            "When an enemy affected by Rend casts their Ultimate, they take 35% (ATK-based) + 3.5% (SP-based) damage for each Rend stack they currently have."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the extra damage dealt to 7% + 0.8% (SP-based) of the enemy's max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the extra damage dealt to 7.5% + 0.8% (SP-based) of the enemy's max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the extra damage dealt to 8% + 0.8% (SP-based) of the enemy's max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 38.5
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat"
+          }
+        ],
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Max HP",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Staggering Strike": {
+        "category": "skill2",
+        "description": {
+          "raw": "Nazrik hurls a spear at the enemy with the highest total healing done, dealing 300% (ATK-based) + 40% (SP-based) damage, stunning them for 3s, and reducing their healing by 90 for 15s.",
+          "active": [
+            "Nazrik hurls a spear at the enemy with the highest total healing done, dealing 300% (ATK-based) + 40% (SP-based) damage, stunning them for 3s, and reducing their healing by 90 for 15s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 390% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Healing",
+            "label": "healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 430.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 8.0,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Nazrik increases his Crit by 24 during battle. After inflicting a total of 15 Rend stacks on enemies, he gains an extra 12 Crit.",
+          "active": [
+            "Nazrik increases his Crit by 24 during battle.",
+            "After inflicting a total of 15 Rend stacks on enemies, he gains an extra 12 Crit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Nazrik increases his Crit by 30 during battle.",
+                "After inflicting a total of 15 Rend stacks on enemies, he gains an extra 15 Crit."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Nazrik increases his Crit by 36 during battle.",
+                "After inflicting a total of 15 Rend stacks on enemies, he gains an extra 18 Crit."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Pack Tactics": {
+        "category": "skill4",
+        "description": {
+          "raw": "Nazrik reduces his Prey's Crit Resist by 16. When allied units land a critical hit on his Prey, they inflict 1 stack of Rend. Each ally can apply only 1 Rend stack per second this way.",
+          "active": [
+            "Nazrik reduces his Prey's Crit Resist by 16.",
+            "When allied units land a critical hit on his Prey, they inflict 1 stack of Rend.",
+            "Each ally can apply only 1 Rend stack per second this way."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Reduces the Prey's Crit Resist by 24."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When the Prey has at least 15 Rend stacks, reduces their vitality by 50, and increases their damage taken by 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces the Prey's Crit Resist by 32."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Crit Resist",
+            "label": "debuff_offensive"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat"
+          }
+        ],
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Crit Resist",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Damage taken (EX+10)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Vitality (EX+10)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Each time Nazrik lands a critical hit on an enemy, the Crit DMG Boost of that hit increases by 0.8 for every 1% of Nazrik's crit rate.",
+          "active": [
+            "Each time Nazrik lands a critical hit on an enemy, the Crit DMG Boost of that hit increases by 0.8 for every 1% of Nazrik's crit rate."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Stacking",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ],
+      [
+        "true",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "crit"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "nazrik",
+    "display_name": "Nazrik",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Nazrik - Soulstalker",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "4s into battle, Nazrik marks the enemy who has taken the most damage as his Prey and prioritizes them as the target for all his skills.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When casting this skill, Nazrik silently prays before hurling a spear with a guaranteed critical hit, dealing 600% (ATK-based) + 70% (SP-based) true damage to an enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "After a short delay, he triggers all Rend stacks on that enemy, dealing 35% (ATK-based) + 3.5% (SP-based) extra damage per stack.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage of this skill's spear hurl to 630% (ATK-based) + 70% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage of this skill's spear hurl to 660% (ATK-based) + 70% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage of this skill's spear hurl to 690% (ATK-based) + 70% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage of this skill's spear hurl to 720% (ATK-based) + 70% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Whenever Nazrik lands a critical hit on an enemy with a spear throw from his normal attacks or skills, he deals extra damage equal to 6.5% + 0.8% (SP-based) of the enemy's initial max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The extra damage cannot exceed 180% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Each hit also reduces the enemy's max HP by the same amount, up to 40%.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Against bosses, the max HP reduction does not apply; instead, the extra damage is converted into true damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "This effect cannot be dispelled.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When an enemy affected by Rend casts their Ultimate, they take 35% (ATK-based) + 3.5% (SP-based) damage for each Rend stack they currently have.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the extra damage dealt to 7% + 0.8% (SP-based) of the enemy's max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the extra damage dealt to 7.5% + 0.8% (SP-based) of the enemy's max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the extra damage dealt to 8% + 0.8% (SP-based) of the enemy's max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Nazrik hurls a spear at the enemy with the highest total healing done, dealing 300% (ATK-based) + 40% (SP-based) damage, stunning them for 3s, and reducing their healing by 90 for 15s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases damage to 330% (ATK-based) + 40% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases damage to 360% (ATK-based) + 40% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases damage to 390% (ATK-based) + 40% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Nazrik increases his Crit by 24 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After inflicting a total of 15 Rend stacks on enemies, he gains an extra 12 Crit.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Nazrik increases his Crit by 30 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After inflicting a total of 15 Rend stacks on enemies, he gains an extra 15 Crit.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Nazrik increases his Crit by 36 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After inflicting a total of 15 Rend stacks on enemies, he gains an extra 18 Crit.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Nazrik reduces his Prey's Crit Resist by 16.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "When allied units land a critical hit on his Prey, they inflict 1 stack of Rend.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Each ally can apply only 1 Rend stack per second this way.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Reduces the Prey's Crit Resist by 24.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "When the Prey has at least 15 Rend stacks, reduces their vitality by 50, and increases their damage taken by 12%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Reduces the Prey's Crit Resist by 32.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Each time Nazrik lands a critical hit on an enemy, the Crit DMG Boost of that hit increases by 0.8 for every 1% of Nazrik's crit rate.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Rend Rupture": "Ultimate",
+        "Savage Wound": "Skill1",
+        "Staggering Strike": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Pack Tactics": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "True damage",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 720.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 790.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Stacking",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 38.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "debuff",
+              "label": "Max HP",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Healing",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 3.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 3.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 3.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 430.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Crit",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Crit Resist",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "Vitality",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "Damage taken",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "True damage",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 720.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 790.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "debuff",
+          "label": "Max HP",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "debuff",
+          "label": "Healing",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 300.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 3.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 3.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 3.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Crit",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "debuff",
+          "label": "Crit Resist",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Vitality",
+          "tier": "EX+10",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Damage taken",
+          "tier": "EX+10",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Stacking",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "Single target"
+        ],
+        [
+          "True damage",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {
+        "True damage": 900.0
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Crit"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 7,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "aa31157306bab08d1351a92982d19f2684cc714548d27c5bdf9a2acda3940370",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

@@ -1,0 +1,1028 @@
+{
+  "schema_version": 1,
+  "id": "cryonaia",
+  "display_name": "Cryonaia",
+  "local": {
+    "long_name": "Cryonaia - Arctic Revenant",
+    "faction": "hypogean",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2025-02-19",
+    "season": "Chains of Eternity",
+    "season_number": 3,
+    "skills": {
+      "Frostveil Domain": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield. This skill prioritizes enemy heroes who have dealt the most cumulative damage. In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter. When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage. When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated. Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed.",
+          "active": [
+            "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield.",
+            "This skill prioritizes enemy heroes who have dealt the most cumulative damage.",
+            "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter.",
+            "When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage.",
+            "When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated.",
+            "Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the value of Frost Shield to 1800% (ATK-based) + 250% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the value of Frost Shield to 2200% (ATK-based) + 250% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the value of Frost Shield to 2600% (ATK-based) + 250% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the value of Frost Shield to 3000% (ATK-based) + 250% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "immune",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Immune — Self"
+          }
+        ]
+      },
+      "Icicle Tempest": {
+        "category": "skill1",
+        "description": {
+          "raw": "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm. After casting Frostveil Domain, Cryonaia stops using this skill actively. Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield. The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path.",
+          "active": [
+            "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm.",
+            "After casting Frostveil Domain, Cryonaia stops using this skill actively.",
+            "Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield.",
+            "The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Enhances the full-sized ice storm to deal 50% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 25% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                "Also increases the smaller ice storms' damage to 25% (ATK-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Enhances the full-sized ice storm to deal 60% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 30% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                "Also increases the smaller ice storms' damage to 30% (ATK-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Enhances the full-sized ice storm to deal 70% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 35% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+                "Also increases the smaller ice storms' damage to 35% (ATK-based) + 3% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 77.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ],
+            "duration": 6.0,
+            "tick": 0.5
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 2.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "DoT"
+          }
+        ]
+      },
+      "Frigid Edge": {
+        "category": "skill2",
+        "description": {
+          "raw": "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit. While her Frost Shield is active, the cooldown of this skill is reduced to 3s.",
+          "active": [
+            "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit.",
+            "While her Frost Shield is active, the cooldown of this skill is reduced to 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 3.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Cryonaia increases her ATK by 7% during battle. For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times.",
+          "active": [
+            "Cryonaia increases her ATK by 7% during battle.",
+            "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Cryonaia increases her ATK by 10% during battle.",
+                "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.2%, stacking up to 6 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Cryonaia increases her ATK by 12% during battle.",
+                "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.5%, stacking up to 6 times."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Frozen in Time": {
+        "category": "skill4",
+        "description": {
+          "raw": "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter. Only Cryonaia can cast Ultimate while within the domain.",
+          "active": [
+            "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter.",
+            "Only Cryonaia can cast Ultimate while within the domain."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases enemies' damage taken to 130% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases enemies' damage taken to 200% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The biting cold of Eternal Winter freezes time itself.",
+                "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat"
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Damage taken (EX+5)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.",
+          "active": [
+            "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Enemy isolation (domain)",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield."
+        },
+        {
+          "label": "Battle time pause",
+          "tier": "ex+15",
+          "targeting": "Self",
+          "description": "The biting cold of Eternal Winter freezes time itself."
+        },
+        {
+          "label": "Battle time pause",
+          "tier": "ex+15",
+          "targeting": "Single target",
+          "description": "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
+        },
+        {
+          "label": "Instant defeat",
+          "tier": "supreme+",
+          "targeting": "Self",
+          "description": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Boss encounter",
+          "tier": "base",
+          "targeting": "Enemies",
+          "description": "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "Area"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "cryonaia",
+    "display_name": "Cryonaia",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Cryonaia - Arctic Revenant",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This skill prioritizes enemy heroes who have dealt the most cumulative damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% (SP-based) damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60, her ATK increases by 60%, and she cannot be defeated.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the value of Frost Shield to 1800% (ATK-based) + 250% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the value of Frost Shield to 2200% (ATK-based) + 250% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the value of Frost Shield to 2600% (ATK-based) + 250% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the value of Frost Shield to 3000% (ATK-based) + 250% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Cryonaia summons a powerful ice storm that sweeps across the battlefield for 6s, dealing 40% (ATK-based) + 7% (SP-based) damage every 0.5s to enemies in its path and 20% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile of the storm.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "After casting Frostveil Domain, Cryonaia stops using this skill actively.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Instead, she creates a full-sized ice storm and two smaller ones at the center of the battlefield, which lasts for the duration of her Frost Shield.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The smaller storms deal 20% (ATK-based) ATK + 3% (SP-based) damage every 0.5s to enemies caught in their path.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Enhances the full-sized ice storm to deal 50% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 25% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Also increases the smaller ice storms' damage to 25% (ATK-based) + 3% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Enhances the full-sized ice storm to deal 60% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 30% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Also increases the smaller ice storms' damage to 30% (ATK-based) + 3% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Enhances the full-sized ice storm to deal 70% (ATK-based) + 7% (SP-based) damage to enemies on its tile and 35% (ATK-based) + 3% (SP-based) damage to enemies within 1 tile.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Also increases the smaller ice storms' damage to 35% (ATK-based) + 3% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Cryonaia creates and launches 5 ice shards at an enemy, with each shard dealing 140% (ATK-based) + 20% (SP-based) damage to the enemy hit.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "While her Frost Shield is active, the cooldown of this skill is reduced to 3s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 160% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Cryonaia increases her ATK by 7% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1%, stacking up to 6 times.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Cryonaia increases her ATK by 10% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.2%, stacking up to 6 times.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Cryonaia increases her ATK by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For every 2s that the Frost Shield remains active, her ATK increases by an additional 1.5%, stacking up to 6 times.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into the domain of Eternal Winter.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Only Cryonaia can cast Ultimate while within the domain.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases enemies' damage taken to 130% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases enemies' damage taken to 200% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The biting cold of Eternal Winter freezes time itself.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Cryonaia can stop the battle time for up to 30s with Eternal Winter.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Frostveil Domain": "Ultimate",
+        "Icicle Tempest": "Skill1",
+        "Frigid Edge": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Frozen in Time": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Immune",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Conditional"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Enemy isolation (domain)",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Battle time pause",
+              "tier": "EX+15",
+              "targeting": "Self",
+              "qualitative": "The biting cold of Eternal Winter freezes time itself.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Battle time pause",
+              "tier": "EX+15",
+              "targeting": "Single target",
+              "qualitative": "Cryonaia can stop the battle time for up to 30s with Eternal Winter.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Instant defeat",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "qualitative": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.",
+              "grants": []
+            },
+            {
+              "kind": "requires",
+              "label": "Boss encounter",
+              "tier": "base",
+              "targeting": "Enemies",
+              "qualitative": "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 77.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": "selected_target",
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 70.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": 6.0,
+              "tick": 0.5,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": "selected_target",
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 220.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 12.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 200.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "Damage taken",
+              "tier": "EX+5",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 220.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": "selected_target",
+          "source_section": "Skill2"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 70.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": 6.0,
+          "tick": 0.5,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "path",
+          "area_direction": "selected_target",
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 12.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "debuff",
+          "label": "Damage taken",
+          "tier": "EX+5",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Immune",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "Conditional"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Enemy isolation (domain)",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summon in the domain for 12s, cutting them off from the rest of the battlefield.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Battle time pause",
+          "tier": "EX+15",
+          "targeting": "Self",
+          "qualitative": "The biting cold of Eternal Winter freezes time itself.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Battle time pause",
+          "tier": "EX+15",
+          "targeting": "Single target",
+          "qualitative": "Cryonaia can stop the battle time for up to 30s with Eternal Winter.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Instant defeat",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "qualitative": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.",
+          "grants": []
+        },
+        {
+          "kind": "requires",
+          "label": "Boss encounter",
+          "tier": "base",
+          "targeting": "Enemies",
+          "qualitative": "In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "Area, Single target"
+        ],
+        [
+          "DoT",
+          "Area"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Shield"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 5,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "513a058dd3462e71e8b8d081d01b4937471b07c0a7c1ee14e788c708e2fbe83a",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

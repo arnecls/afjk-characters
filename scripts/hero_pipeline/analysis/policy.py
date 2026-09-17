@@ -3,12 +3,7 @@
 from __future__ import annotations
 
 from types import MappingProxyType
-from threading import RLock
 from typing import Any, Mapping, cast, TypedDict
-
-from ..engine import overview, rewrite_summaries
-
-_POLICY_LOCK = RLock()
 
 
 class LocalPolicy(TypedDict, total=False):
@@ -264,123 +259,19 @@ def thaw_policy(policy: Mapping[str, Any]) -> dict[str, Any]:
     return thaw(policy)
 
 
-def apply_policy(policy: Mapping[str, Any]) -> dict[str, Any]:
-    """Copy relevant tunables onto the shared engine modules.
+def apply_local_policy(policy: Mapping[str, Any]) -> None:
+    """Copy local and calibration tunables onto the analysis text module."""
+    from . import text as rs
+    from .local import _apply_local_policy
 
-    Callers must restore previous values. Prefer ``policy_scope``.
-    """
-    rs = rewrite_summaries()
-    gen = overview()
-    previous = capture_engine_state()
-    local = policy["local"]
+    _apply_local_policy(policy["local"])
     calibration = policy["calibration"]
-    synergy = policy["synergy"]
-    replacement = policy["replacement"]
-    rs.ENERGY_FILL_RATE = local["energy_fill_rate"]
-    rs.ULT_ENERGY_CAPACITY = local["ult_energy_capacity"]
-    rs.INITIAL_CD_SKILL_WEIGHT = local["initial_cd_skill_weight"]
-    rs.INITIAL_CD_CAP = local["initial_cd_cap"]
-    rs.MIN_CYCLE_SECONDS = local["min_cycle_seconds"]
-    rs.PASSIVE_REFERENCE_CYCLE_SECONDS = local[
-        "passive_reference_cycle_seconds"
-    ]
-    rs.CONDITION_FREQUENT_SCORE = local["condition_frequent_score"]
-    rs.CONDITION_COOLDOWN_REFERENCE_SECONDS = local[
-        "condition_cooldown_reference_seconds"
-    ]
-    rs.CONDITION_COOLDOWN_FLOOR_MULT = local["condition_cooldown_floor_mult"]
-    rs.CONDITION_RARE_DOWNGRADE_STEPS = local[
-        "condition_rare_downgrade_steps"
-    ]
-    rs.MELEE_MAX_RANGE = local["melee_max_range"]
-    rs.NON_MELEE_MELEE_MAX_RANGE = local["non_melee_melee_max_range"]
     rs.CASTING_SPEED_FAST_THRESHOLD = calibration[
         "casting_speed_fast_threshold"
     ]
     rs.CASTING_SPEED_SLOW_THRESHOLD = calibration[
         "casting_speed_slow_threshold"
     ]
-    gen.TARGETING_WEIGHT = dict(synergy["targeting_weight"])
-    gen.MAG_WEIGHT = dict(synergy["mag_weight"])
-    gen.SUMMON_TARGETING_WEIGHT = synergy["summon_targeting_weight"]
-    gen.HASTE_FOR_ATK_SPD_SCORE_MULT = synergy[
-        "haste_for_atk_spd_score_mult"
-    ]
-    gen.FREQUENT_CONDITIONAL_SCORE = synergy["frequent_conditional_score"]
-    gen.SIGNATURE_FUEL_SPEED_MULT = dict(
-        synergy["signature_fuel_speed_mult"]
-    )
-    gen.SIGNATURE_FUEL_ENERGY_MULT = dict(
-        synergy["signature_fuel_energy_mult"]
-    )
-    gen.ENERGY_SYNERGY_SCORE_MULT = synergy["energy_synergy_score_mult"]
-    gen.HIGH_DAMAGE_ULT_ENERGY_PREF_MULT = synergy[
-        "high_damage_ult_energy_pref_mult"
-    ]
-    gen.IMPLICIT_FUEL_BASE = synergy["implicit_fuel_base"]
-    gen.EARLY_BATTLE_ENERGY_ULT_MULT = dict(
-        synergy["early_battle_energy_ult_mult"]
-    )
-    gen.DEFINING_TIER_SCORE_MULT = dict(synergy["defining_tier_score_mult"])
-    gen.PROXIMITY_MELEE_MAX_RANGE = synergy["proximity_melee_max_range"]
-    gen.PROXIMITY_DEFAULT_AURA_RADIUS = synergy[
-        "proximity_default_aura_radius"
-    ]
-    gen.PROXIMITY_RANGE_SLACK = synergy["proximity_range_slack"]
-    gen.PROXIMITY_RECEIVER_WHITELIST = frozenset(
-        synergy["proximity_receiver_whitelist"]
-    )
-    gen.PROXIMITY_PROVIDER_BLACKLIST = frozenset(
-        synergy["proximity_provider_blacklist"]
-    )
-    gen.SCALAR_SHARE_BOOST = synergy["scalar_share_boost"]
-    gen.SCALAR_BOUND_THRESHOLD = synergy["scalar_bound_threshold"]
-    gen.REPLACEMENT_MIN_SCORE = replacement["min_score"]
-    gen.REPLACEMENT_MAX = replacement["max_replacements"]
-    gen.REPLACEMENT_SAME_FACTION_MULT = replacement["same_faction_mult"]
-    gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = replacement[
-        "same_role_category_mult"
-    ]
-    gen.REPLACEMENT_SAME_MELEE_MULT = replacement["same_melee_mult"]
-    gen.REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE = {
-        role: dict(weights)
-        for role, weights in replacement["category_weights_by_role"].items()
-    }
-    return previous
-
-
-def capture_engine_state() -> dict[str, Any]:
-    """Snapshot mutable engine tunables."""
-    return thaw_policy(effective_defaults())
-
-
-def restore_engine_state(state: Mapping[str, Any]) -> None:
-    """Restore tunables captured by ``apply_policy``."""
-    apply_policy(state)
-
-
-class policy_scope:
-    """Apply a policy for one run and restore the previous tunables."""
-
-    def __init__(self, policy: Mapping[str, Any]) -> None:
-        self.policy = policy
-        self._previous: dict[str, Any] | None = None
-
-    def __enter__(self) -> Mapping[str, Any]:
-        _POLICY_LOCK.acquire()
-        try:
-            self._previous = apply_policy(self.policy)
-            return self.policy
-        except BaseException:
-            _POLICY_LOCK.release()
-            raise
-
-    def __exit__(self, *_exc: object) -> None:
-        try:
-            if self._previous is not None:
-                restore_engine_state(self._previous)
-        finally:
-            _POLICY_LOCK.release()
 
 
 def config_override_diff(config: Mapping[str, Any]) -> dict[str, Any]:

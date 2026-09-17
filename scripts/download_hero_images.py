@@ -54,7 +54,7 @@ def _icon_filename(value: str) -> str:
 
 def main() -> None:
     if not HEROES_JSON.exists():
-        print(f"Run render_site.py first ({HEROES_JSON.name} missing)")
+        print(f"Run just views first ({HEROES_JSON.name} missing)")
         sys.exit(1)
 
     payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))

@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "id": "bonnie",
+  "display_name": "Bonnie",
+  "source": {
+    "title": "Bonnie - Obsidian Claws",
+    "name": "Bonnie",
+    "tags": "Graveborn · Marksman · Magic",
+    "faction": "Graveborn",
+    "class": "Marksman",
+    "damage_type": "Magic",
+    "description": "A Marksman skilled at using dark magic to weaken enemies and transforming into mist to avoid danger.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Deathmark Arrow",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 Tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Bonnie fires magic arrows, dealing 180% (ATK-based) + 20% (SP-based) damage to each enemy twice. The magic arrrow deals 30% more damage to enemies afflicted by Aging and stuns them for 3 + 0.25 (SP-based)s.",
+          "active": [
+            "Bonnie fires magic arrows, dealing 180% (ATK-based) + 20% (SP-based) damage to each enemy twice.",
+            "The magic arrrow deals 30% more damage to enemies afflicted by Aging and stuns them for 3 + 0.25 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 190% (ATK-based) + 20% (SP-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based)"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 210% (ATK-based) + 20% (SP-based)"
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 220% (ATK-based) + 20% (SP-based)"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bonnie deals damage to all enemies, with increased damage and a stun effect on those afflicted by Aging."
+      },
+      {
+        "section": "Skill1",
+        "name": "Decay's Reach",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "10 Tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, Bonnie casts the Aging magic on the rearmost enemy, dealing 150% (ATK-based) + 10% (SP-based) damage and reducing their Haste by 30 until the battle ends. Bonnie prioritizes attacking this target afflicted by Aging. Whenever an allied hero deals magic damage to the enemy afflicted by aging, the effect is further enhanced, reducing their Haste by an extra 10. Each ally can only trigger the enhancement once, and the Aging magic can be enhanced up to 2 times. Once the Aging effect reaches its maximum stack, the afflicted enemy suffers a 30% + 3% (SP-based) reduction in their ATK and takes 100% damage every 1s.",
+          "active": [
+            "When a battle starts, Bonnie casts the Aging magic on the rearmost enemy, dealing 150% (ATK-based) + 10% (SP-based) damage and reducing their Haste by 30 until the battle ends.",
+            "Bonnie prioritizes attacking this target afflicted by Aging.",
+            "Whenever an allied hero deals magic damage to the enemy afflicted by aging, the effect is further enhanced, reducing their Haste by an extra 10.",
+            "Each ally can only trigger the enhancement once, and the Aging magic can be enhanced up to 2 times.",
+            "Once the Aging effect reaches its maximum stack, the afflicted enemy suffers a 30% + 3% (SP-based) reduction in their ATK and takes 100% damage every 1s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 160% (ATK-based) + 10% (SP-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 170% (ATK-based) + 10% (SP-based)"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 180% (ATK-based) + 10% (SP-based)"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bonnie casts the Aging magic on the rearmost enemy, reducing their Haste. Whenever any other allied hero deals magic damage to the enemy afflicted by Aging, the effect is further enhanced."
+      },
+      {
+        "section": "Skill2",
+        "name": "Nightfall Shift",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Bonnie transforms into a black mist, moving to a safe spot within 4 tiles and firing 6 arrows, each daling 35% (ATK-based) + 5% (SP-based) damage to an enemy. While in black mist form, Bonnie is invincible.",
+          "active": [
+            "Bonnie transforms into a black mist, moving to a safe spot within 4 tiles and firing 6 arrows, each daling 35% (ATK-based) + 5% (SP-based) damage to an enemy.",
+            "While in black mist form, Bonnie is invincible."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 40% (ATK-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 45% (ATK-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 50% (ATK-based) + 5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bonnie transforms into a black mist and moves to a safe spot."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Blight Surge",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 Tiles"
+        },
+        "description": {
+          "raw": "When Aging reaches its maximum stack or an Aged enemy is defeated, the effect spreads to the nearest 1 unafflicted enemy, dealing 260% (ATK-based) damage to each.",
+          "active": [
+            "When Aging reaches its maximum stack or an Aged enemy is defeated, the effect spreads to the nearest 1 unafflicted enemy, dealing 260% (ATK-based) damage to each."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by the spread of Aging to 270% (ATK-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Aging reaches its maximum stack or an Aged enemy is defeated, the effect spreads to the nearest 2 unafflicted enemies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage dealt by the spread of Aging to 280% (ATK-based)"
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Aging reaches its maximum stack or an Aged enemy is defeated, the effect spreads to an unafflicted enemy."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When the Aging effect reaches its maximum stack on an enemy, their magic damage taken is increased by 10%, with an extra 20% increase for magic damage taken from Ultimates.",
+          "active": [
+            "When the Aging effect reaches its maximum stack on an enemy, their magic damage taken is increased by 10%, with an extra 20% increase for magic damage taken from Ultimates."
+          ]
+        },
+        "description_lite": "When Aging reaches its maximum stack on an enemy, they take more magic damage."
+      }
+    ],
+    "range": 7,
+    "release_date": "2024-12-31",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

@@ -333,9 +333,9 @@ Also see:
 ## three data tiers
 
 The project separates raw source data, processed analysis data, and browser data:
-`data/heroes/<id>/generated.json` source, `generated.json` derived analysis, and
-`site/data/heroes.json`. Many bugs are classified by which tier first contains
-the wrong value.
+`data/heroes/<id>/source.json`, committed `analysis.json` plus in-memory
+calibration, and `site/data/heroes.json`. Many bugs are classified by which
+tier first contains the wrong value.
 
 Used in:
 
@@ -358,8 +358,8 @@ version control so analysis can be regenerated consistently.
 Used in:
 
 - [AI-generated data docs](docs/ai-generated-data.md)
-- [Per-hero generated source](data/heroes)
-- [Skill-effect sidecars](data/skill_effects)
+- [Per-hero source](data/heroes)
+- [AI hero data](data/heroes)
 
 Also see:
 
@@ -376,17 +376,22 @@ properties, not hero properties.
 
 ## hero bundle
 
-The three files under `data/heroes/<hero-id>/`: `generated.json`, `ai.json`,
-and `overrides.json`. Together they own all data specific to one roster hero.
-Roster-wide rankings remain derived values inside generated files and are
-recomputed from the complete manifest.
+The four files under `data/heroes/<hero-id>/`: `source.json`, `ai.json`,
+`overrides.json`, and `analysis.json`. Together they own all data specific to
+one roster hero. Roster-wide calibration and relationships are computed in
+memory at view time and are not stored in the bundle.
 
-## generated hero data
+## source hero data
 
-The per-hero `generated.json` file. It contains downloaded source fields,
-external stat facts, deterministic analysis, and ID-based synergy,
-beneficiary, and replacement results. Its provenance hashes identify stale
-analysis after source or curated input changes.
+The per-hero `source.json` file. It contains downloaded source fields and
+external stat facts. Download-only changes invalidate that hero's local
+analysis cache.
+
+## local analysis cache
+
+The per-hero `analysis.json` file. It stores rebuildable hero-local analysis
+keyed by hashes of source, analysis-relevant AI fields, overrides, and the
+analysis algorithm. Presentation-only AI fields do not invalidate this cache.
 
 ## AI hero data
 
@@ -423,6 +428,11 @@ movement, placement, and other values that do not need the rest of the roster.
 Roster-wide pass that assigns magnitude bands, true-damage labels, and casting
 speed labels by comparing local analyses to each other.
 
+## relationships
+
+In-memory synergy, beneficiary, and replacement rankings computed from
+calibrated analyses. They are not stored in `analysis.json`.
+
 ## policy
 
 Immutable tunables for one pipeline run, split into local, calibration,
@@ -443,7 +453,7 @@ Used in:
 
 - [Generated analysis](data/heroes)
 - [Skill analysis pipeline](docs/skill-analysis-pipeline.md)
-- [Site renderer](scripts/render_site.py)
+- [Site renderer](scripts/hero_pipeline/render/site.py)
 
 Also see:
 

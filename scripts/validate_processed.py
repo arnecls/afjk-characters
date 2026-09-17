@@ -26,7 +26,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import hero_schema as hs
+import hero_pipeline.analysis.serialize as hs
 import heroes_io as io
 import skill_effects_store as ses
 import buff_persistence as bp
@@ -155,7 +155,7 @@ def check_md_parity() -> list[str]:
             "heroes": [
                 {
                     "source": snapshot["bundles"][entry["id"]][
-                        "generated"
+                        "source"
                     ]["source"]
                 }
                 for entry in snapshot["manifest"]["heroes"]
@@ -234,9 +234,7 @@ def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
 
 
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
-    from hero_pipeline.engine import rewrite_summaries
-
-    rs = rewrite_summaries()
+    from hero_pipeline.analysis import text as rs
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
 
@@ -376,9 +374,7 @@ def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     from hero_pipeline.storage import load_ai_field
 
     errors: list[str] = []
-    from hero_pipeline.engine import overview
-
-    gen = overview()
+    from hero_pipeline.analysis import overview_facts as gen
 
     summaries = load_ai_field("skill_summaries")
 
@@ -846,20 +842,17 @@ def main() -> int:
         if md_errors:
             warnings["md_parity"] = md_errors
 
-    from hero_pipeline.storage import load_analyses, load_roster_snapshot
+    from hero_pipeline.storage import load_roster_snapshot
 
     snapshot = load_roster_snapshot()
     raw = {
         "heroes": [
-            snapshot["bundles"][entry["id"]]["generated"]["source"]
+            snapshot["bundles"][entry["id"]]["source"]["source"]
             for entry in snapshot["manifest"]["heroes"]
         ]
     }
-    stored = load_analyses(
-        snapshot["manifest"],
-        snapshot["bundles"],
-    )
     fresh = _rebuild_processed()
+    stored = fresh
 
     if "sidecar" in fail_on or "sidecar_lint" in fail_on:
         sidecar_errors, sidecar_warnings = check_skill_effects_sidecars(

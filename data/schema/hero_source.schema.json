@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/hero-source.schema.json",
+  "title": "Downloaded per-hero source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "display_name",
+    "source",
+    "external"
+  ],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "source": { "$ref": "#/$defs/source" },
+    "external": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["walk_speed", "stat_ranks"],
+      "properties": {
+        "walk_speed": {
+          "type": ["string", "null"],
+          "enum": ["zero", "slow", "normal", "fast", "veryfast", null]
+        },
+        "stat_ranks": {
+          "type": ["object", "null"]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title", "name", "skills"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "skills": { "type": "array", "minItems": 1 },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}

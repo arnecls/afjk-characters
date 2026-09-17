@@ -1,0 +1,1322 @@
+{
+  "schema_version": 1,
+  "id": "lenya",
+  "display_name": "Lenya",
+  "local": {
+    "long_name": "Lenya - Wild Cyclone",
+    "faction": "wilder",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-09-03",
+    "season": "Song of Strife",
+    "season_number": 1,
+    "skills": {
+      "Wild Duel": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Lenya targets the enemy who has dealt the highest cumulative damage and dashes at them, delivering a flying kick that deals 200% (ATK-based) + 20% (SP-based) damage and knocks them back in a straight line toward an open area. She then follows up with a second flying kick, dealing 200% (ATK-based) + 20% (SP-based) damage, before initiating a duel with that enemy. The duel lasts for 12s, during which both Lenya and the enemy prioritize attacking each other. Lenya's flying kick can stun the enemy for 2 seconds, and she is Unaffected while performing the kicks.",
+          "active": [
+            "Lenya targets the enemy who has dealt the highest cumulative damage and dashes at them, delivering a flying kick that deals 200% (ATK-based) + 20% (SP-based) damage and knocks them back in a straight line toward an open area.",
+            "She then follows up with a second flying kick, dealing 200% (ATK-based) + 20% (SP-based) damage, before initiating a duel with that enemy.",
+            "The duel lasts for 12s, during which both Lenya and the enemy prioritize attacking each other.",
+            "Lenya's flying kick can stun the enemy for 2 seconds, and she is Unaffected while performing the kicks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Lenya increases her flying kick's damage to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Lenya increases her flying kick's damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Lenya increases her flying kick's damage to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Lenya increases her flying kick's damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 260.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 300.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Knock back — Area"
+          },
+          {
+            "label": "Stun — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Tornado Strike": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Lenya blocks a normal attack from her current target if the target is within 1 tile. She then retaliates with a kick that deals 260% (ATK-based) + 25% (SP-based) damage and stuns the target for 2s. The effect can be triggered once every 6s and makes Lenya Unaffected while active. Active. Lenya performs a tornado kick, dealing 110% (ATK-based) damage 3 times to surrounding enemies.",
+          "passive": [
+            "Lenya blocks a normal attack from her current target if the target is within 1 tile.",
+            "She then retaliates with a kick that deals 260% (ATK-based) + 25% (SP-based) damage and stuns the target for 2s.",
+            "The effect can be triggered once every 6s and makes Lenya Unaffected while active."
+          ],
+          "active": [
+            "Lenya performs a tornado kick, dealing 110% (ATK-based) damage 3 times to surrounding enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 120% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 125% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 130% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 285.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "once",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Stun — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Flurry Kicks": {
+        "category": "skill2",
+        "description": {
+          "raw": "Lenya increases her Crit by 15. When dealing critical damage with her normal attacks, she immediately follows up with a power kick that deals 200% (ATK-based) + 30% (SP-based) damage and stuns the enemy for 1s.",
+          "active": [
+            "Lenya increases her Crit by 15.",
+            "When dealing critical damage with her normal attacks, she immediately follows up with a power kick that deals 200% (ATK-based) + 30% (SP-based) damage and stuns the enemy for 1s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Lenya increases her power kick's damage to 210% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Lenya increases her power kick's damage to 230% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Lenya increases her power kick's damage to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 270.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Winning Resolve": {
+        "category": "skill4",
+        "description": {
+          "raw": "Lenya unlocks her full potential once a duel begins, increasing her Crit DMG Boost by 55 and ATK by 15% during the duel. While at full potential, her Flurry Kicks skill delivers a super kick instead of a power kick, dealing 70% (ATK-based) damage 8 times and stunning the enemy for 2s.",
+          "active": [
+            "Lenya unlocks her full potential once a duel begins, increasing her Crit DMG Boost by 55 and ATK by 15% during the duel.",
+            "While at full potential, her Flurry Kicks skill delivers a super kick instead of a power kick, dealing 70% (ATK-based) damage 8 times and stunning the enemy for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Crit DMG Boost by 60 and ATK by 18%"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "If Lenya deals more damage than her target by the end of the duel, she is considered the winner.",
+                "Winning the duel increases the duration her full potential effects by 8s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Crit DMG Boost by 65 and ATK by 20%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "persistence": "unknown"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit DMG boost",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit DMG boost — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Reduces damage taken from enemies other than her target by 35%.",
+          "active": [
+            "Reduces damage taken from enemies other than her target by 35%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 800.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              }
+            ],
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 300.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "max_hp",
+      "shield",
+      "crit",
+      "crit_dmg_boost",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "lenya",
+    "display_name": "Lenya",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Lenya - Wild Cyclone",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Lenya targets the enemy who has dealt the highest cumulative damage and dashes at them, delivering a flying kick that deals 200% (ATK-based) + 20% (SP-based) damage and knocks them back in a straight line toward an open area.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She then follows up with a second flying kick, dealing 200% (ATK-based) + 20% (SP-based) damage, before initiating a duel with that enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The duel lasts for 12s, during which both Lenya and the enemy prioritize attacking each other.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lenya's flying kick can stun the enemy for 2 seconds, and she is Unaffected while performing the kicks.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lenya increases her flying kick's damage to 210% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lenya increases her flying kick's damage to 220% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lenya increases her flying kick's damage to 230% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lenya increases her flying kick's damage to 240% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lenya blocks a normal attack from her current target if the target is within 1 tile.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "She then retaliates with a kick that deals 260% (ATK-based) + 25% (SP-based) damage and stuns the target for 2s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The effect can be triggered once every 6s and makes Lenya Unaffected while active.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Lenya performs a tornado kick, dealing 110% (ATK-based) damage 3 times to surrounding enemies.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 120% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 125% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 130% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Lenya increases her Crit by 15.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "When dealing critical damage with her normal attacks, she immediately follows up with a power kick that deals 200% (ATK-based) + 30% (SP-based) damage and stuns the enemy for 1s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Lenya increases her power kick's damage to 210% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Lenya increases her power kick's damage to 230% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Lenya increases her power kick's damage to 240% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 12 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 16 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 20 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Lenya unlocks her full potential once a duel begins, increasing her Crit DMG Boost by 55 and ATK by 15% during the duel.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "While at full potential, her Flurry Kicks skill delivers a super kick instead of a power kick, dealing 70% (ATK-based) damage 8 times and stunning the enemy for 2s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases Crit DMG Boost by 60 and ATK by 18%",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "If Lenya deals more damage than her target by the end of the duel, she is considered the winner.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Winning the duel increases the duration her full potential effects by 8s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases Crit DMG Boost by 65 and ATK by 20%.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Reduces damage taken from enemies other than her target by 35%.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Wild Duel": "Ultimate",
+        "Tornado Strike": "Skill1",
+        "Flurry Kicks": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Winning Resolve": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock back",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 260.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 285.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Once"
+            }
+          ],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Crit",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 270.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Crit",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Crit DMG boost",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            },
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 800.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            },
+            {
+              "category": "buff",
+              "label": "Crit",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Knock back",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 285.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Crit",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "status_condition",
+              "status": "active_shield"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "numeric": 20.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Crit DMG boost",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "numeric": 20.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 800.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 300.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "Once"
+        }
+      ],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Physical",
+          "Area, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Haste",
+        "Max HP",
+        "Shield",
+        "Crit",
+        "Crit DMG Boost",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "af3110aefd462a5ea7b761c7e50c6de549160dcf86219dbef4e7571fc9c119a4",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

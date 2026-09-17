@@ -150,20 +150,27 @@
         },
         "positional_tile_buff_labels": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "proximity_aura_buff_labels": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "proximity_aura_radius": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "summary_effect_magnitudes": {
-          "$ref": "hero-generated.schema.json#/$defs/effectMagnitudes"
+          "$ref": "#/$defs/effectMagnitudes"
         },
         "scoring": {
-          "$ref": "hero-generated.schema.json#/$defs/scoring"
+          "$ref": "#/$defs/scoring"
         }
       }
     },
@@ -544,6 +551,236 @@
         "average",
         "fast"
       ]
+    },
+    "effectMagnitudes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "effects",
+        "summon_effects"
+      ],
+      "properties": {
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "low",
+              "average",
+              "high"
+            ]
+          }
+        },
+        "summon_effects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "low",
+              "average",
+              "high"
+            ]
+          }
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_damage_type",
+        "behavior_tags",
+        "summon_profile",
+        "prydwen_tiers",
+        "effects",
+        "skill_effect_magnitudes",
+        "named_allies",
+        "start_of_battle_output",
+        "early_battle_energy",
+        "effective_ally_energy",
+        "shield_payoff",
+        "ally_magic",
+        "ranged_damage",
+        "wide_area",
+        "ally_grant_detail",
+        "replacement_damage",
+        "signature_section"
+      ],
+      "properties": {
+        "primary_damage_type": {
+          "type": "string"
+        },
+        "behavior_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summon_profile": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "prydwen_tiers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "effects": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "magnitude",
+              "weight"
+            ],
+            "properties": {
+              "magnitude": {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "average",
+                  "high"
+                ]
+              },
+              "weight": {
+                "type": "number"
+              },
+              "signature_cc": {
+                "type": "boolean"
+              },
+              "battle_start_energy": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "skill_effect_magnitudes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "low",
+              "average",
+              "high"
+            ]
+          }
+        },
+        "named_allies": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ids",
+              "grants"
+            ],
+            "properties": {
+              "ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "grants": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string",
+                      "enum": [
+                        "low",
+                        "average",
+                        "high"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "start_of_battle_output": {
+          "type": "boolean"
+        },
+        "early_battle_energy": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effective_ally_energy": {
+          "type": "number"
+        },
+        "shield_payoff": {
+          "type": "boolean"
+        },
+        "ally_magic": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ranged_damage": {
+          "type": "boolean"
+        },
+        "wide_area": {
+          "type": "boolean"
+        },
+        "ally_grant_detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replacement_damage": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "signature_section": {
+          "type": "string"
+        }
+      }
     }
   }
 }

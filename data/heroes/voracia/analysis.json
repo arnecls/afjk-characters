@@ -1,0 +1,1235 @@
+{
+  "schema_version": 1,
+  "id": "voracia",
+  "display_name": "Voracia",
+  "local": {
+    "long_name": "Voracia - Feastweaver",
+    "faction": "mauler",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 10,
+    "release_date": "2026-08-06",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "The Main Course": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill. Active. Voracia remains unaffected. She summons a plate covering a 1-tile radius on a target tile. She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s. Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt. If enhanced by Fervor, this skill gains 70 Penetration when dealing damage. In Auto Battle, this skill prioritizes the area with the most enemies.",
+          "passive": [
+            "When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill."
+          ],
+          "active": [
+            "Voracia remains unaffected.",
+            "She summons a plate covering a 1-tile radius on a target tile.",
+            "She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s.",
+            "Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt.",
+            "If enhanced by Fervor, this skill gains 70 Penetration when dealing damage.",
+            "In Auto Battle, this skill prioritizes the area with the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 850% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 900% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 950% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 1000% (ATK-based) + 100% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1100.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 45.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 600.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Displace — Area"
+          },
+          {
+            "label": "Knock down — Area"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Prime Cut": {
+        "category": "skill1",
+        "description": {
+          "raw": "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles. If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage.",
+          "active": [
+            "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles.",
+            "If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases basic slash damage to 460% (ATK-based) + 50% (SP-based) and the extra slash's damage to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases basic slash damage to 470% (ATK-based) + 50% (SP-based) and the extra slash's damage to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases basic slash damage to 480% (ATK-based) + 50% (SP-based) and the extra slash's damage to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 7,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 730.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 5.0,
+        "initial_cooldown": 5.0,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Vino Inferno": {
+        "category": "skill2",
+        "description": {
+          "raw": "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies. She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s. If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range.",
+          "active": [
+            "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies.",
+            "She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s.",
+            "If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases roast damage to 50% (ATK-based) + 6% (SP-based) and the extra flame damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases roast damage to 55% (ATK-based) + 6% (SP-based) and the extra flame damage to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases roast damage to 60% (ATK-based) + 6% (SP-based) and the extra flame damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 240.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 0.5
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Voracia increases her ATK by 9% during battle. Once her appetite awakens, she increases her ATK further by 6%.",
+          "active": [
+            "Voracia increases her ATK by 9% during battle.",
+            "Once her appetite awakens, she increases her ATK further by 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Voracia increases her ATK by 12% during battle.",
+                "Once her appetite awakens, she increases her ATK further by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Voracia increases her ATK by 15% during battle.",
+                "Once her appetite awakens, she increases her ATK further by 10%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Chef's Choice": {
+        "category": "skill4",
+        "description": {
+          "raw": "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats. For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value. If the target is not a boss, they also permanently lose all Energy.",
+          "active": [
+            "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats.",
+            "For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value.",
+            "If the target is not a boss, they also permanently lose all Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the basic stats absorbed per devour to 37.5%, and raises the cap for each absorbed stat to 55% of the initial value of Voracia's corresponding stat."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When casting this skill, Voracia devours an additional enemy with the next highest cumulative damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the basic stats absorbed per devour to 40%, and raises the cap for each absorbed stat to 60% of the initial value of Voracia's corresponding stat."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 900.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Basic stats",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Basic stats — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt.",
+          "active": [
+            "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Max HP — Area",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Enemy grouping",
+          "tier": "base",
+          "targeting": "Enemies",
+          "description": "Voracia pulls nearby enemies to the target plate."
+        },
+        {
+          "label": "Enhanced form",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Damaging enough enemies grants Fervor to a skill."
+        },
+        {
+          "label": "Stat steal",
+          "tier": "mythic+",
+          "targeting": "Self",
+          "description": "After all skills gain Fervor, Voracia devours high-damage enemies and gains their basic stats."
+        },
+        {
+          "label": "Energy steal",
+          "tier": "mythic+",
+          "targeting": "Enemies",
+          "description": "A devoured non-boss enemy permanently loses all Energy."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area"
+      ],
+      [
+        "dot",
+        "Area"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "max_hp",
+      "def_penetration",
+      "physical_def",
+      "magic_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "voracia",
+    "display_name": "Voracia",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Voracia - Feastweaver",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Voracia remains unaffected.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She summons a plate covering a 1-tile radius on a target tile.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "If enhanced by Fervor, this skill gains 70 Penetration when dealing damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "In Auto Battle, this skill prioritizes the area with the most enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 850% (ATK-based) + 100% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 900% (ATK-based) + 100% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 950% (ATK-based) + 100% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 1000% (ATK-based) + 100% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases basic slash damage to 460% (ATK-based) + 50% (SP-based) and the extra slash's damage to 230% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases basic slash damage to 470% (ATK-based) + 50% (SP-based) and the extra slash's damage to 240% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases basic slash damage to 480% (ATK-based) + 50% (SP-based) and the extra slash's damage to 250% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases roast damage to 50% (ATK-based) + 6% (SP-based) and the extra flame damage to 260% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases roast damage to 55% (ATK-based) + 6% (SP-based) and the extra flame damage to 280% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases roast damage to 60% (ATK-based) + 6% (SP-based) and the extra flame damage to 300% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Voracia increases her ATK by 9% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Once her appetite awakens, she increases her ATK further by 6%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Voracia increases her ATK by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Once her appetite awakens, she increases her ATK further by 8%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Voracia increases her ATK by 15% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Once her appetite awakens, she increases her ATK further by 10%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "If the target is not a boss, they also permanently lose all Energy.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the basic stats absorbed per devour to 37.5%, and raises the cap for each absorbed stat to 55% of the initial value of Voracia's corresponding stat.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "When casting this skill, Voracia devours an additional enemy with the next highest cumulative damage dealt.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the basic stats absorbed per devour to 40%, and raises the cap for each absorbed stat to 60% of the initial value of Voracia's corresponding stat.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "The Main Course": "Ultimate",
+        "Prime Cut": "Skill1",
+        "Vino Inferno": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Chef's Choice": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Displace",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Knock down",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 4.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": 4.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 1100.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 45.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Enemy grouping",
+              "tier": "base",
+              "targeting": "Enemies",
+              "qualitative": "Voracia pulls nearby enemies to the target plate.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Enhanced form",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Damaging enough enemies grants Fervor to a skill.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 730.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 7,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Enhanced form",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Fervor grants an extra area slash.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": 5.0,
+              "tick": 0.5,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Enhanced form",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Fervor ends the damaging zone with an additional area hit.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Mythic+",
+              "targeting": "Area",
+              "numeric": 900.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Basic stats",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Stat steal",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "qualitative": "After all skills gain Fervor, Voracia devours high-damage enemies and gains their basic stats.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Energy steal",
+              "tier": "Mythic+",
+              "targeting": "Enemies",
+              "qualitative": "A devoured non-boss enemy permanently loses all Energy.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Max HP",
+              "tier": "Supreme+",
+              "targeting": "Area",
+              "numeric": 35.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Displace",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Knock down",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 4.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": 4.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 1100.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 45.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 240.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": 5.0,
+          "tick": 0.5,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Basic stats",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Max HP",
+          "tier": "Supreme+",
+          "targeting": "Area",
+          "numeric": 35.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Enemy grouping",
+          "tier": "base",
+          "targeting": "Enemies",
+          "qualitative": "Voracia pulls nearby enemies to the target plate.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Enhanced form",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Damaging enough enemies grants Fervor to a skill.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Stat steal",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "qualitative": "After all skills gain Fervor, Voracia devours high-damage enemies and gains their basic stats.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Energy steal",
+          "tier": "Mythic+",
+          "targeting": "Enemies",
+          "qualitative": "A devoured non-boss enemy permanently loses all Energy.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "Area"
+        ],
+        [
+          "DoT",
+          "Area"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Max HP",
+        "DEF Penetration",
+        "Physical DEF",
+        "Magic DEF"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 10,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "27aebcc18dfcf9aa62b09fc02df25f49ebf04841656fbd98c9758f407cafa380",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

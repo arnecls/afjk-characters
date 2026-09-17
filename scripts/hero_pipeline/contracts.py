@@ -58,22 +58,28 @@ class HeroOverrides(TypedDict, total=False):
     corrections: dict[str, Any]
 
 
-class HeroGenerated(TypedDict, total=False):
+class HeroSourceDocument(TypedDict, total=False):
     schema_version: int
     id: str
     display_name: str
     source: HeroSource
     external: dict[str, Any]
-    derived: dict[str, Any]
-    synergies: dict[str, Any]
+
+
+class HeroAnalysisDocument(TypedDict, total=False):
+    schema_version: int
+    id: str
+    display_name: str
+    local: dict[str, Any] | None
     provenance: dict[str, Any]
 
 
 class HeroBundle(TypedDict):
     manifest: HeroManifestEntry
-    generated: HeroGenerated
+    source: HeroSourceDocument
     ai: HeroAI
     overrides: HeroOverrides
+    analysis: HeroAnalysisDocument
 
 
 class RosterSnapshot(TypedDict):

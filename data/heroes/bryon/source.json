@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "id": "bryon",
+  "display_name": "Bryon",
+  "source": {
+    "title": "Bryon - Evergreen Sentinel",
+    "name": "Bryon",
+    "tags": "Wilder · Marksman · Magic",
+    "faction": "Wilder",
+    "class": "Marksman",
+    "damage_type": "Magic",
+    "description": "A magical Marksman who is gifted with extraordinary perception and has a falcon to fight with.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Falcon Raid",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "1000"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona. Active. Bryon consumes 300 - 80 (SP-based) Energy, calling Elona to deal 320% (ATK-based) damage to his current target. Elona remains on the battlefield, consuming increasing amounts of Energy over time. When she runs out of Energy or Bryon is defeated, Elona leaves the battlefield. Elona cannot be attacked and will ignore the terrain and prioritizes Bryon's target. Elona's normal attack deals 90% (ATK-based) damage.",
+          "passive": [
+            "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona."
+          ],
+          "active": [
+            "Bryon consumes 300 - 80 (SP-based) Energy, calling Elona to deal 320% (ATK-based) damage to his current target.",
+            "Elona remains on the battlefield, consuming increasing amounts of Energy over time.",
+            "When she runs out of Energy or Bryon is defeated, Elona leaves the battlefield.",
+            "Elona cannot be attacked and will ignore the terrain and prioritizes Bryon's target.",
+            "Elona's normal attack deals 90% (ATK-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Elona gains enhanced effects after 8s into a battle.",
+                "Normal attack damage is increased by 20%, and Haste is increased by 40.",
+                "The enhancements are reset when Elona leaves the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Elona gains enhanced thunderbolt effects after 18s into a battle, reducing Haste of adjacent enemies by 30 and dealing 40% (ATK-based) damage per second.",
+                "The enhancements are reset when Elona leaves the battlefield."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Elona's normal attack damage is increased to 100% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Elona's normal attack damage is increased to 110% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bryon summons Elona to deal damage to the current target and fight alongside."
+      },
+      {
+        "section": "Skill1",
+        "name": "Leafblade Gale",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "14s",
+          "Initial Cooldown": "0.125s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Bryon summons 4 magic leaves to attack the target. Each leaf deals 90% (ATK-based) + 10% (SP-based) damage.",
+          "active": [
+            "Bryon summons 4 magic leaves to attack the target.",
+            "Each leaf deals 90% (ATK-based) + 10% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "The damage dealt by each leaf is increased to 93% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "The damage dealt by each leaf is increased to 96% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "The damage dealt by each leaf is increased to 100% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bryon summons magic leaves to attack the enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Shadow Flash",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "16s",
+          "Initial Cooldown": "0.125s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Passive. Bryon's normal attacks and skills deal damage 2 times, absorbing targets' 50 Energy. Active. Bryon deals 190% (ATK-based) damage 2 times.",
+          "passive": [
+            "Bryon's normal attacks and skills deal damage 2 times, absorbing targets' 50 Energy."
+          ],
+          "active": [
+            "Bryon deals 190% (ATK-based) damage 2 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Bryon's normal attacks and skills deal damage 2 times, granting Elona's next normal attack with thunderbolts, dealing additional damage equal to 4% + 0,5% (SP-based) of enemy's current HP, along with a skill interruption effect.",
+                "The extra damage cannot exceed 240% + 15% (SP-based) of Bryon's ATK, up to 3 stacks."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Active.",
+                "Each damage dealt is increased to 195% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Active.",
+                "Each damage dealt is increased to 200% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Bryon deals multiple damage to enemies and absorbs their Energy. Active. Bryon deals damage 2 times."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Bryon increases his Haste by 10 during battle. He gains an extra 3 Haste when Elona is on the battlefield.",
+          "active": [
+            "Bryon increases his Haste by 10 during battle.",
+            "He gains an extra 3 Haste when Elona is on the battlefield."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Bryon increases his Haste by 13 during battle.",
+                "He gains an extra 4 Haste when Elona is on the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Bryon increases his Haste by 17 during battle.",
+                "He gains an extra 5 Haste when Elona is on the battlefield."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bryon's Haste increases during battle, and it further increases when Elona is on the battlefield."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Tacit Strike",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Elona deals 350% (ATK-based) damage to the enemy and stuns them for 3s when Bryon is being controlled or receives damage exceeding 15% of his max HP from a single hit. This skill takes effect once every 20s and can only be triggered when Elona is on the field.",
+          "active": [
+            "Elona deals 350% (ATK-based) damage to the enemy and stuns them for 3s when Bryon is being controlled or receives damage exceeding 15% of his max HP from a single hit.",
+            "This skill takes effect once every 20s and can only be triggered when Elona is on the field."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "When Bryon takes a fatal blow for the first time, Elona consumes all the Energy to block the fatal damage and restores 200% (ATK-based) HP for Bryon.",
+                "For the next 5s, Bryon cannot be targeted and recovers 40% (ATK-based) HP per second.",
+                "Then Elona departs from the battlefield and cannot be summoned for 10s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Elona's counterattack damage is increased to 400% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Elona's counterattack damage is increased to 450% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Bryon is being controlled or taking a single high-damage attack, Elona deals hhigh damage to the enemy and stuns them. Elona can block the fatal damage for Bryon."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Bryon generates two leaves beside Elona if the falcon is on the battlefield when Leafblade Gale is cast.",
+          "active": [
+            "Bryon generates two leaves beside Elona if the falcon is on the battlefield when Leafblade Gale is cast."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Bryon generates two leaves beside Elona when casting Leafblade Gale."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

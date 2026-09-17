@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "sonja",
+  "display_name": "Sonja",
+  "source": {
+    "title": "Sonja - Crimson Queenpin",
+    "name": "Sonja",
+    "tags": "Lightbearer · Warrior · Physical",
+    "faction": "Lightbearer",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A dashing Warrior who forms alliances and shares power with allies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Tempest Thrusts",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "3 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Sonja delivers 8 Piercing Strikes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 35% (ATK-based) + 4% (SP-based) damage. Each strike also deals extra damage equal to 4% of the enemy's current HP, up to 160% of Sonja's own ATK. She then charges to the far end of the struck area, dealing 180% (ATK-based) + 20% (SP-based) damage to enemies within it. While casting this skill, Sonja is immune to all control effects.",
+          "active": [
+            "Sonja delivers 8 Piercing Strikes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 35% (ATK-based) + 4% (SP-based) damage.",
+            "Each strike also deals extra damage equal to 4% of the enemy's current HP, up to 160% of Sonja's own ATK.",
+            "She then charges to the far end of the struck area, dealing 180% (ATK-based) + 20% (SP-based) damage to enemies within it.",
+            "While casting this skill, Sonja is immune to all control effects."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage of each Piercing Strike to 40% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of each Piercing Strike to 45% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of each Piercing Strike to 50% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of Sonja's charge to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sonja repeatedly attacks enemies within a designated frontal area, dealing damage multiple times before charging to the end of the targeted area to deal damage again."
+      },
+      {
+        "section": "Skill1",
+        "name": "Crimson Covenant",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Sonja forms Crimson Covenant with two allies placed to her left and right (prioritizing those in the front over those in the back), increasing their ATK by 10% + 1% (SP-based) and their Phys & Magic DEF by 15% + 1.5% (SP-based). While Crimson Covenant is active, the two allies gain an extra 3% + 0.3% (SP-based) ATK and 4% + 0.4% (SP-based) Phys & Magic DEF every 6s, stacking up to 6 times. Sonja is immune to all control effects while casting this skill. Crimson Covenant is terminated if either of the buffed allies is defeated. In this case, Sonja absorbs the accumulated stat bonuses from both allies, gaining them for herself until the battle ends.",
+          "active": [
+            "When a battle starts, Sonja forms Crimson Covenant with two allies placed to her left and right (prioritizing those in the front over those in the back), increasing their ATK by 10% + 1% (SP-based) and their Phys & Magic DEF by 15% + 1.5% (SP-based).",
+            "While Crimson Covenant is active, the two allies gain an extra 3% + 0.3% (SP-based) ATK and 4% + 0.4% (SP-based) Phys & Magic DEF every 6s, stacking up to 6 times.",
+            "Sonja is immune to all control effects while casting this skill.",
+            "Crimson Covenant is terminated if either of the buffed allies is defeated.",
+            "In this case, Sonja absorbs the accumulated stat bonuses from both allies, gaining them for herself until the battle ends."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases Crimson Covenant's initial ATK bonus to 13% + 1% (SP-based), and its initial Phys & Magic DEF bonus to 18% + 1.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Grants allies with Crimson Covenant an extra 4% + 0.3% (SP-based) ATK and 5% + 0.4% (SP-based) Phys & Magic DEF every 6s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases Crimson Covenant's initial ATK bonus to 16% + 1% (SP-based), and its initial Phys & Magic DEF bonus to 21% + 1.5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sonja forms a pact with allies on her left and right when a battle starts, continuously increasing their stats"
+      },
+      {
+        "section": "Skill2",
+        "name": "Stunning Reception",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Sonja spins, slashing enemies within 1 tile twice with her cloak. Each slash deals 120% (ATK-based) + 10% (SP-based) damage and stuns the enemies hit for 1 + 0.1 (SP-based)s.",
+          "active": [
+            "Sonja spins, slashing enemies within 1 tile twice with her cloak.",
+            "Each slash deals 120% (ATK-based) + 10% (SP-based) damage and stuns the enemies hit for 1 + 0.1 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increase the damage of each slash to 130% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increase the damage of each slash to 140% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Extends the stun duration to 1.5 + 0.1 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sonja deals damage and stuns nearby enemies twice."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Sonja increases her Haste by 7.2 during battle. She gains an extra 7.2 Haste after casting Tempest Thrusts for the first time.",
+          "active": [
+            "Sonja increases her Haste by 7.2 during battle.",
+            "She gains an extra 7.2 Haste after casting Tempest Thrusts for the first time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Sonja increases her Haste by 9.6 during battle.",
+                "She gains an extra 9.6 Haste after casting Tempest Thrusts for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Sonja increases her Haste by 12 during battle.",
+                "She gains an extra 12 Haste after casting Tempest Thrusts for the first time."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Unbreakable Bond",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Sonja gains 100 extra Initial Energy. She permanently enhances Crimson Covenant after casting her first Tempest Thrusts. Instead of only gaining stat bonuses when a buffed ally is defeated, she continuously benefits from the accumulated stat bonuses while the buffed allies are alive.",
+          "active": [
+            "Sonja gains 100 extra Initial Energy.",
+            "She permanently enhances Crimson Covenant after casting her first Tempest Thrusts.",
+            "Instead of only gaining stat bonuses when a buffed ally is defeated, she continuously benefits from the accumulated stat bonuses while the buffed allies are alive."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Sonja's Initial Energy to 200."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Enhancing the Crimson Covenant also reduces the damage taken by 40% for a covenant member if any other member is alive.",
+                "50% of the reduced damage is shared by other members, but this will not cause them to be defeated."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Enhancing the Crimson Covenant also reduces damage shared by other members to 40% of the total amount reduced."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sonja enhances Crimson Covenant after casting her first Tempest Thrusts"
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.",
+          "active": [
+            "Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing."
+          ]
+        },
+        "description_lite": "Sonja converts some of the damage dealt by Tempest Thrusts into self-healing."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-11-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

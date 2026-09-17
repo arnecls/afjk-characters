@@ -61,7 +61,7 @@ If all automated detections fail or produce an inaccurate result due to a unique
   note (e.g. Nara pulling enemies to her).
 - **`data/melee_overrides.json`** — set `is_melee` or `is_dual_range` when the melee class floor or weighted range math is wrong.
 
-Base **walk speed** (`generated.json.external.walk_speed`) is a separate
+Base **walk speed** (`source.json` `external.walk_speed`) is a separate
 game-data--derived
 attribute and is **not** part of movement detection or overrides.
 

@@ -14,8 +14,8 @@ try:
 except ImportError:  # pragma: no cover
     jsonschema = None  # type: ignore
 
-SCRIPTS = Path(__file__).resolve().parent
-ROOT = SCRIPTS.parent
+SCRIPTS = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 SCHEMA_DIR = ROOT / "data" / "schema"
 
 from healing_types import (
@@ -35,21 +35,10 @@ _RS = None
 def _rs():
     global _RS
     if _RS is None:
-        import importlib.util
+        from . import text as mod
         import sys
 
-        existing = sys.modules.get("rewrite_summaries")
-        if existing is not None:
-            _RS = existing
-            return _RS
-
-        spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-        )
-        mod = importlib.util.module_from_spec(spec)
-        sys.modules["rewrite_summaries"] = mod
-        assert spec.loader is not None
-        spec.loader.exec_module(mod)
+        sys.modules.setdefault("rewrite_summaries", mod)
         _RS = mod
     return _RS
 
@@ -1459,7 +1448,6 @@ def _validate_with_schema(data: dict[str, Any], schema: dict[str, Any]) -> None:
         "skills.schema.json",
         "game_properties.schema.json",
         "hero_walk_speeds.schema.json",
-        "hero_generated.schema.json",
     ):
         doc = json.loads((SCHEMA_DIR / name).read_text(encoding="utf-8"))
         store[doc["$id"]] = doc

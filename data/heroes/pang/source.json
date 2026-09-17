@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "id": "pang",
+  "display_name": "Pang",
+  "source": {
+    "title": "Pang - Bamboo Guardian",
+    "name": "Pang",
+    "tags": "Wilder · Warrior · Physical",
+    "faction": "Wilder",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A serene Warrior who empowers allies when their Energy is high. He always says his true strength isn't in his weapon, but in his mind.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Sky Splitter",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "2s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "500"
+        },
+        "description": {
+          "raw": "Pang enters a meditative state, focusing his chi before unleashing a powerful burst at the end of the meditation. The burst deals 350% (ATK-based) + 50% (SP-based) damage to enemies within 2 tiles. He then enters the Unyielding Force stance, which drains 150 Energy per second while active. Pang remains unaffected while casting this skill. In Unyielding Force stance, Pang increases his Haste by 60 and ATK by 17%, and unlocks Skybreach Strikes. Skybreach Strikes: Pang charges his strength, strikes an enemy 7 times with alternating palm attacks. Each strike deals 70% (ATK-based) damage. The final strike deals 150% (ATK-based) damage and stuns the enemy for 1.5s. When hitting a non-boss enemy, the final strike also prevent Energy recovery for 5s.",
+          "active": [
+            "Pang enters a meditative state, focusing his chi before unleashing a powerful burst at the end of the meditation.",
+            "The burst deals 350% (ATK-based) + 50% (SP-based) damage to enemies within 2 tiles.",
+            "He then enters the Unyielding Force stance, which drains 150 Energy per second while active.",
+            "Pang remains unaffected while casting this skill.",
+            "In Unyielding Force stance, Pang increases his Haste by 60 and ATK by 17%, and unlocks Skybreach Strikes.",
+            "Skybreach Strikes: Pang charges his strength, strikes an enemy 7 times with alternating palm attacks.",
+            "Each strike deals 70% (ATK-based) damage.",
+            "The final strike deals 150% (ATK-based) damage and stuns the enemy for 1.5s.",
+            "When hitting a non-boss enemy, the final strike also prevent Energy recovery for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the chi burst damage to 380% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 19%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the chi burst damage to 410% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 21%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the chi burst damage to 440% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 23%."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the chi burst damage to 470% (ATK-based) + 50% (SP-based), and the ATK bonus granted by Unyielding Force to 25%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pang focuses on his chi before unleashing a powerful burst that deals damage to nearby enemies. He then enters the Unyielding Force stance, which drains Energy while active. In the Unyielding Force stance, Pang gains extra Haste and ATK and unlocks Skybreach Strikes, which deal heavy damage to a single enemy and prevent the enemy from recovering Energy,"
+      },
+      {
+        "section": "Skill1",
+        "name": "Radiant Fist",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "7s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Pang strikes an enemy on the head, dealing 300% (ATK-based) + 40% (SP-based) damage. If he is in Unyielding Force stance, this strike deals an extra 12% of the enemy's current HP. The extra damage cannot exceed 240% (ATK-based).",
+          "active": [
+            "Pang strikes an enemy on the head, dealing 300% (ATK-based) + 40% (SP-based) damage.",
+            "If he is in Unyielding Force stance, this strike deals an extra 12% of the enemy's current HP.",
+            "The extra damage cannot exceed 240% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increase the damage dealt to 320% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 13% of the enemy's current HP.",
+                "The extra damage cannot exceed 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increase the damage dealt to 340% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 14% of the enemy's current HP.",
+                "The extra damage cannot exceed 280% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increase the damage dealt to 360% (ATK-based) + 40% (SP-based), and the extra damage dealt in Unyielding Force stance to 15% of the enemy's current HP.",
+                "The extra damage cannot exceed 300% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pang strikes an enemy on the head to deal heavy damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Zen Ward",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Active. Pang channels his chi, gaining a 340% (ATK-based) + 40% (SP-based) Chi Barrier for 9s. While the barrier is active, Pang remains unaffected. when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% (SP-based) damage to Pang's current target. Pang is also unaffected while channeling his chi.",
+          "active": [
+            "Pang channels his chi, gaining a 340% (ATK-based) + 40% (SP-based) Chi Barrier for 9s.",
+            "While the barrier is active, Pang remains unaffected.",
+            "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% (SP-based) damage to Pang's current target.",
+            "Pang is also unaffected while channeling his chi."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the Chi Barrier's shield value to 380% (ATK-based) + 40% (SP-based) and the razor leaves damage to 230% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the Chi Barrier's shield value to 420% (ATK-based) + 40% (SP-based) and the razor leaves damage to 250% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the Chi Barrier's shield value to 460% (ATK-based) + 40% (SP-based) and the razor leaves damage to 270% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pang gains a shield and remains unaffected while the shield is active. He deals damage to an enemy when the shield expires, breaks, or is reapplied."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Pang increases his ATK by 9% during the battle. He further increases his ATK by an extra 6% while in Unyielding Force stance.",
+          "active": [
+            "Pang increases his ATK by 9% during the battle.",
+            "He further increases his ATK by an extra 6% while in Unyielding Force stance."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Pang increases his ATK by 12% during the battle.",
+                "He further increases his ATK by an extra 8% while in Unyielding Force stance."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Pang increases his ATK by 15% during the battle.",
+                "He further increases his ATK by an extra 10% while in Unyielding Force stance."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Spirit Sync",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Pang increases the ATK of any unit shielded by his Chi Barrier by 15%.",
+          "active": [
+            "Pang increases the ATK of any unit shielded by his Chi Barrier by 15%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Pang increases the ATK of any unit shielded by his Chi Barrier by 17%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When an allied hero (other than Pang) reaches 850 Energy or higher, Pang grants them a Chi Barrier.",
+                "He can only shield the same ally once every 15s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Pang increases the ATK of any unit shielded by his Chi Barrier by 19%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pang increases the ATK of any unit shielded by his Chi Barrier."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. While in this stance, he gains 30 DEF Penetration.",
+          "active": [
+            "Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance.",
+            "While in this stance, he gains 30 DEF Penetration."
+          ]
+        },
+        "description_lite": "Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. While in this stance, he gains extra DEF Penetration."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-08-01",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

@@ -1,0 +1,981 @@
+{
+  "schema_version": 1,
+  "id": "salazer",
+  "display_name": "Salazer",
+  "local": {
+    "long_name": "Salazer - Lash of Bantus",
+    "faction": "graveborn",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Rain of Blades": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Salazer summons plenty of Flying Swords to launch 9 strikes to an enemy with the highest HP. Each strike deals 30% (ATK-based) damage plus damage equal to 5% + 0.5% (SP-based) of the target's current HP. Additional damage cannot exceed 150% + 10% (SP-based) of Salazer's ATK. Salazer prioritizes the enemy with the most HP.",
+          "active": [
+            "Salazer summons plenty of Flying Swords to launch 9 strikes to an enemy with the highest HP.",
+            "Each strike deals 30% (ATK-based) damage plus damage equal to 5% + 0.5% (SP-based) of the target's current HP.",
+            "Additional damage cannot exceed 150% + 10% (SP-based) of Salazer's ATK.",
+            "Salazer prioritizes the enemy with the most HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: The damage dealt by this skill gratns Salazer 50 Life Drain."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: The damage of each strike is increased to 32% (ATK-based) plus damage equal to 5.5% + 0.5% (SP-based) of the target's current HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: The damage of each strike is increased to 34% (ATK-based) plus damage equal to 6% + 0.5% (SP-based) of the target's current HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: The damage of each strike is increased to 36% (ATK-based) plus damage equal to 6.5% + 0.5% (SP-based) of the target's current HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 36.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enraptured Whip": {
+        "category": "skill1",
+        "description": {
+          "raw": "Salazer whips enemies within a 2-tile arc, dealing 180% (ATK-based) + 15% (SP-based) damage. When the target's HP ratio drops below 70%, Salazer launches one more attack to enemies within a 2-tile arc, dealing 230% (ATK-based) + 25% (SP-based) damage.",
+          "active": [
+            "Salazer whips enemies within a 2-tile arc, dealing 180% (ATK-based) + 15% (SP-based) damage.",
+            "When the target's HP ratio drops below 70%, Salazer launches one more attack to enemies within a 2-tile arc, dealing 230% (ATK-based) + 25% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage to 185% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 235% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage to 190% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage to 200% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.7,
+                "comparison": "below"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 275.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Spirit Shackles": {
+        "category": "skill2",
+        "description": {
+          "raw": "Salazer imprisons an enemy whose HP ratio is less than 70%, dealing 300% (ATK-based) damage and making them unable to move or act for 5 + 1.5 (SP-based)s. The skill can only be applied to each enemy once.",
+          "active": [
+            "Salazer imprisons an enemy whose HP ratio is less than 70%, dealing 300% (ATK-based) damage and making them unable to move or act for 5 + 1.5 (SP-based)s.",
+            "The skill can only be applied to each enemy once."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Everytime Salazer imprisons an enemy, he absorbs 8% of the enemy's ATK until the battle ends.",
+                "The skill can absorb up to 50% of Salazer's ATK in each battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Everytime Salazer imprisons an enemy, he absorbs 10% of the enemy's ATK until the battle ends.",
+                "The skill can absorb up to 50% of Salazer's ATK in each battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Everytime Salazer imprisons an enemy, he absorbs 12% of the enemy's ATK until the battle ends.",
+                "The skill can absorb up to 50% of Salazer's ATK in each battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.7,
+                "comparison": "below"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 6.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.7,
+                "comparison": "below"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Bind — Single target"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Reduces damage taken by 12% during battle.",
+          "active": [
+            "Reduces damage taken by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Soul Drench": {
+        "category": "skill4",
+        "description": {
+          "raw": "Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1 times without cooldown when a battle starts or an enemy is imprisoned. An extra whip strike will be attempted.",
+          "active": [
+            "Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1 times without cooldown when a battle starts or an enemy is imprisoned.",
+            "An extra whip strike will be attempted."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The Enraptured Whip deals additional damage equal to 5% of the enemy's current HP, granting 50 Life Drain to Salazer.",
+                "The additional damage cannot exceed 150% of Salazer's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Casts Enraptured Whip 2 times without cooldown."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The Enraptured Whip deals additional damage equal to 5.5% of the enemy's current HP, granting 52 Life Drain to Salazer.",
+                "The additional damage cannot exceed 160% of Salazer's ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 52.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain — Self (EX+5)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.",
+          "active": [
+            "Salazer recovers 150% (ATK-based) HP for every imprisoned enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Arc, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "max_hp"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "salazer",
+    "display_name": "Salazer",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Salazer - Lash of Bantus",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Salazer summons plenty of Flying Swords to launch 9 strikes to an enemy with the highest HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Each strike deals 30% (ATK-based) damage plus damage equal to 5% + 0.5% (SP-based) of the target's current HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Additional damage cannot exceed 150% + 10% (SP-based) of Salazer's ATK.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Salazer prioritizes the enemy with the most HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 51: The damage dealt by this skill gratns Salazer 50 Life Drain.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 111: The damage of each strike is increased to 32% (ATK-based) plus damage equal to 5.5% + 0.5% (SP-based) of the target's current HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 171: The damage of each strike is increased to 34% (ATK-based) plus damage equal to 6% + 0.5% (SP-based) of the target's current HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 231: The damage of each strike is increased to 36% (ATK-based) plus damage equal to 6.5% + 0.5% (SP-based) of the target's current HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Salazer whips enemies within a 2-tile arc, dealing 180% (ATK-based) + 15% (SP-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When the target's HP ratio drops below 70%, Salazer launches one more attack to enemies within a 2-tile arc, dealing 230% (ATK-based) + 25% (SP-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage to 185% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 235% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage to 190% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 240% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage to 200% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 250% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Salazer imprisons an enemy whose HP ratio is less than 70%, dealing 300% (ATK-based) damage and making them unable to move or act for 5 + 1.5 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The skill can only be applied to each enemy once.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Everytime Salazer imprisons an enemy, he absorbs 8% of the enemy's ATK until the battle ends.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The skill can absorb up to 50% of Salazer's ATK in each battle.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Everytime Salazer imprisons an enemy, he absorbs 10% of the enemy's ATK until the battle ends.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The skill can absorb up to 50% of Salazer's ATK in each battle.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Everytime Salazer imprisons an enemy, he absorbs 12% of the enemy's ATK until the battle ends.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The skill can absorb up to 50% of Salazer's ATK in each battle.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Reduces damage taken by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Reduces damage taken by 16% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Reduces damage taken by 20% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1 times without cooldown when a battle starts or an enemy is imprisoned.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "An extra whip strike will be attempted.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "The Enraptured Whip deals additional damage equal to 5% of the enemy's current HP, granting 50 Life Drain to Salazer.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "The additional damage cannot exceed 150% of Salazer's ATK.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Casts Enraptured Whip 2 times without cooldown.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The Enraptured Whip deals additional damage equal to 5.5% of the enemy's current HP, granting 52 Life Drain to Salazer.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The additional damage cannot exceed 160% of Salazer's ATK.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Rain of Blades": "Ultimate",
+        "Enraptured Whip": "Skill1",
+        "Spirit Shackles": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Soul Drench": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 36.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Lifedrain",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": 275.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 6.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 6.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Lifedrain",
+              "tier": "EX+5",
+              "targeting": "Self",
+              "numeric": 52.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 150.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Arc",
+          "numeric": 300.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "hp_threshold",
+              "hp_ratio": 0.7,
+              "comparison": "below"
+            }
+          ],
+          "area": "single",
+          "area_direction": "front",
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Lifedrain",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 52.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 6.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 6.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "hp_threshold",
+              "hp_ratio": 0.7,
+              "comparison": "below"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 150.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Physical",
+          "Arc, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Max HP"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "a2ac9de92f00fdaf93af2538dc43d7915a794ba1237789b4f6e67a6d312ba91b",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import copy
 import sys
 import unittest
 from pathlib import Path
@@ -10,50 +11,42 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-import heroes_io as io
-import hero_schema as hs
-from roster_analysis import analysis_modules, get_roster_analysis
+from hero_pipeline.analysis import text as rs
+from hero_pipeline.storage import load_roster_snapshot
 
 
 class MeleeDetectionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.rs, cls.gen = analysis_modules()
-        raw = io.load_heroes_data()
-        hero_records = raw["heroes"]
-        data_by_title = {r["title"]: r for r in hero_records}
-        heroes_stub = [cls.rs.hero_from_record(r) for r in hero_records]
-        hero_class_stub = {
-            h.title: cls.gen._parse_hero_class(
-                io.render_hero_block(data_by_title[h.title])
+        cls.rs = rs
+        snapshot = load_roster_snapshot()
+        cls.heroes: dict[str, tuple[object, list, dict]] = {}
+        for entry in snapshot["manifest"]["heroes"]:
+            source = copy.deepcopy(
+                snapshot["bundles"][entry["id"]]["source"]["source"]
             )
-            for h in heroes_stub
-        }
-        role_category_by_title = hs.build_role_category_by_title(
-            heroes_stub, data_by_title, hero_class_stub
+            hero = rs.hero_from_record(source)
+            skills = rs.load_skills_by_title_from_records([source])[hero.title]
+            cls.heroes[hero.title] = (hero, skills, source, entry["display_name"])
+
+    def _match(self, title_prefix: str) -> tuple[object, list, dict, str]:
+        return next(
+            value
+            for title, value in self.heroes.items()
+            if title.startswith(title_prefix)
         )
-        cls.analysis = get_roster_analysis(raw, role_category_by_title)
 
     def _is_melee(self, title_prefix: str) -> bool:
-        hero = next(
-            h for h in self.analysis.heroes if h.title.startswith(title_prefix)
-        )
-        skills = self.analysis.skills_by_title[hero.title]
-        hero_class = self.analysis.hero_class_by_title[hero.title]
-        short = self.analysis.display_by_title[hero.title]
+        hero, skills, source, short = self._match(title_prefix)
         return self.rs.compute_is_melee(
             skills,
-            hero_class=hero_class,
+            hero_class=source.get("class") or "",
             display_name=short,
-            default_range=hero.default_range,
+            default_range=source.get("range"),
         )
 
     def _is_dual_range(self, title_prefix: str) -> bool:
-        hero = next(
-            h for h in self.analysis.heroes if h.title.startswith(title_prefix)
-        )
-        skills = self.analysis.skills_by_title[hero.title]
-        short = self.analysis.display_by_title[hero.title]
+        _hero, skills, _source, short = self._match(title_prefix)
         return self.rs.compute_is_dual_range(skills, display_name=short)
 
     def test_melee_class_defaults(self) -> None:

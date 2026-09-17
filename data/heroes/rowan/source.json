@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "id": "rowan",
+  "display_name": "Rowan",
+  "source": {
+    "title": "Rowan - The Roamer",
+    "name": "Rowan",
+    "tags": "Lightbearer · Support · Magic",
+    "faction": "Lightbearer",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A witty Support who is skilled at providing high Energy and HP recovery for allies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Fatal Greed",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "400",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Rowan moves up to 1 tile and throws coins upon reaching the destination, recovering 250 + 30 (SP-based) Energy for surrounding allies within 2 tiles.",
+          "active": [
+            "Rowan moves up to 1 tile and throws coins upon reaching the destination, recovering 250 + 30 (SP-based) Energy for surrounding allies within 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Energy recovery to 260 + 30 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Energy recovery to 280 + 30 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Energy recovery to 300 + 30 (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Energy recovery to 320 + 30 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rowan moves for some distance and continuously recovers Energy for nearby allies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Smart Stall",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Rowan places 2 health potions on his trolley when a battle starts. Allies within 2 tiles with HP ratio below 50% automatically use a potion to recover 40% + 4% (SP-based) of their max HP by up to 800% + 65% (SP-based) of Rowan's ATK. Each ally can use up to 1 health potion every 6s.",
+          "active": [
+            "Rowan places 2 health potions on his trolley when a battle starts.",
+            "Allies within 2 tiles with HP ratio below 50% automatically use a potion to recover 40% + 4% (SP-based) of their max HP by up to 800% + 65% (SP-based) of Rowan's ATK.",
+            "Each ally can use up to 1 health potion every 6s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases recovery amount to 42% + 4% (SP-based) of allies' max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Places an energy potion when a battle starts.",
+                "When the Energy of an ally within 2 tiles exceeds 600, they automatically use this potion to recover 400 Energy."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases recovery amount to 45% + 4% (SP-based) of allies' max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rowan places health potions to recover HP for allies with low HP."
+      },
+      {
+        "section": "Skill2",
+        "name": "Quack Waltz",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "3.25s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% (SP-based) damage and absorbing 70 Energy.",
+          "active": [
+            "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% (SP-based) damage and absorbing 70 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "If all health potions have been used up, Bradduck no longer launches attack but instead replenishes Rowan's trolley with a health potion.",
+                "This effect can be triggered once every 3 times of Quack Waltz."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 190% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rowan calls on Bradduck to attack and absorb Energy from an enemy, or replenish a health potion instead."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Rowan increases his Haste by 7 during battle. His Haste is increased by an extra 6 before replenishing his trolley with Quack Waltz for the first time.",
+          "active": [
+            "Rowan increases his Haste by 7 during battle.",
+            "His Haste is increased by an extra 6 before replenishing his trolley with Quack Waltz for the first time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Rowan increases his Haste by 10 during battle.",
+                "His Haste is increased by an extra 8 before replenishing his trolley with Quack Waltz for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Rowan increases his Haste by 12 during battle.",
+                "His Haste is increased by an extra 10 before replenishing his trolley with Quack Waltz for the first time."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rowan increases his Haste during battle, with an extra Haste bonus before Bradduck replenishes his health potions."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Great Bargain",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "After selling 3 health potions, Rowan places a super health potion that recovers 60% of an ally's max HP and permanently increases their Phys DEF and Magic DEF by 30%. This effect can only trigger once per battle.",
+          "active": [
+            "After selling 3 health potions, Rowan places a super health potion that recovers 60% of an ally's max HP and permanently increases their Phys DEF and Magic DEF by 30%.",
+            "This effect can only trigger once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the recovery amount of super health potion to 65% of the ally's max HP, permanently increasing their Phys DEF and Magic DEF by 35%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Bradduck replenishes the health potions, one turns into a super health potion, triggered 1 time per battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the recovery amount of super health potion to 70% of the ally's max HP, permanently increasing their Phys DEF and Magic DEF by 40%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rowan places a super health potion that recovers an ally's HP and permanently increases their Phys DEF and Magic DEF."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Rowan places 1 more health potion when a battle starts using Smart Stall.",
+          "active": [
+            "Rowan places 1 more health potion when a battle starts using Smart Stall."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rowan places 1 more health potion using Smart Stall."
+      }
+    ],
+    "range": 3,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "B",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

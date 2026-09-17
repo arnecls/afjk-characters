@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Build heroes-overview.md (synergies + summaries) from Heroes.md skill data."""
+"""Hero-local scoring facts derived from analyzed skill text."""
 
 from __future__ import annotations
 
 import json
 import re
-import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -19,10 +18,9 @@ from healing_types import (
     normalize_healing_label,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
-SCRIPTS = ROOT / "scripts"
-if str(SCRIPTS) not in sys.path:
-    sys.path.insert(0, str(SCRIPTS))
+from . import text as _rs
+
+ROOT = Path(__file__).resolve().parents[3]
 
 from character_stat_ranks import (
     build_slug_ranks_map,
@@ -34,10 +32,6 @@ from character_stat_ranks import (
 HEROES_MD = ROOT / "Heroes.md"
 OVERVIEW_MD = ROOT / "heroes-overview.md"
 HEROES_DATA = ROOT / "data" / "heroes_data.json"
-
-from hero_pipeline.engine import rewrite_summaries
-
-_rs = rewrite_summaries()
 
 STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "ATK": ["ATK"],
@@ -3589,7 +3583,7 @@ def _role_category_by_title(
     heroes: list[_rs.Hero],
     block_by_title: dict[str, str],
 ) -> dict[str, str]:
-    import hero_schema as hs
+    from hero_pipeline.analysis import serialize as hs
     import heroes_io as io
 
     try:
@@ -3597,7 +3591,7 @@ def _role_category_by_title(
         return hs.role_category_by_title_from_processed(
             heroes, processed, short_name
         )
-    except (FileNotFoundError, KeyError):
+    except (FileNotFoundError, KeyError, ValueError):
         pass
     raw = io.load_heroes_data()
     records = {h["title"]: h for h in raw.get("heroes", [])}
@@ -3711,12 +3705,3 @@ def build_overview() -> str:
     return "\n".join(parts).rstrip() + "\n"
 
 
-def main() -> None:
-    """Retain the historical command while using the schema-native renderer."""
-    from render_overview import main as render
-
-    render()
-
-
-if __name__ == "__main__":
-    main()

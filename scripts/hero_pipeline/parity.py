@@ -1,255 +1,360 @@
-"""Differential comparison of roster data and public views."""
+"""Independent presentation-contract comparison for the pipeline rewrite.
+
+Fixtures are frozen from hero-split ``b7d7ed2``. Relationship sections may
+differ; numeric leaves and structurally compared text must match.
+"""
 
 from __future__ import annotations
 
 import json
+import math
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any, Mapping
 
 from .repository import Repository, current_repository
 
-SITE_TIMESTAMP_PATH = ("meta", "generated")
-ALLOWED_VIEW_RELPATHS = (
-    "Heroes.md",
-    "heroes-overview.md",
-    "heroes-overview.csv",
-    "site/data/heroes.json",
-    "site/data/heroes-overview.csv",
-    "site/data/mix-synergy-index.json",
-    "site/data/mix-config.json",
-    "site/data/mix-role-prominence.json",
-    "site/data/list-columns.json",
-    "site/data/counter-filter-combos.json",
+FIXTURE_DIR = Path(__file__).resolve().parent.parent / "fixtures" / "hero_split_b7d7ed2"
+CONTRACT_NAME = "presentation-contract.json"
+
+RELATIONSHIP_MARKDOWN_HEADINGS = (
+    "Units improving",
+    "Units benefitting most from",
+    "Best overall replacement",
+    "Buffs on allies",
+    "Energy provider",
+    "Healing",
+    "Similar Skills",
+    "Damage",
+    "Debuffs on enemies",
+    "Crowd Control",
 )
 
+SITE_RELATIONSHIP_KEYS = frozenset({"benefits_from", "replacements"})
 
-def _walk(value: Any, prefix: str = "") -> dict[str, Any]:
-    if isinstance(value, dict):
-        items: dict[str, Any] = {}
+
+def _plain(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return {str(key): _plain(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_plain(item) for item in value]
+    return value
+
+
+def normalize_text(value: str) -> str:
+    """NFC, LF newlines, strip trailing spaces, keep wording exact."""
+    text = unicodedata.normalize("NFC", value).replace("\r\n", "\n").replace("\r", "\n")
+    lines = [line.rstrip() for line in text.split("\n")]
+    while lines and not lines[-1]:
+        lines.pop()
+    return "\n".join(lines) + ("\n" if value.endswith("\n") else "")
+
+
+def _drop_relationship_markdown(markdown: str) -> str:
+    lines = markdown.split("\n")
+    kept: list[str] = []
+    skipping = False
+    for line in lines:
+        if line.startswith("### ") or line.startswith("#### "):
+            title = line.lstrip("#").strip()
+            skipping = any(
+                title.startswith(prefix)
+                for prefix in RELATIONSHIP_MARKDOWN_HEADINGS
+            )
+        if skipping:
+            continue
+        kept.append(line)
+    return normalize_text("\n".join(kept))
+
+
+def _drop_site_relationships(payload: Any) -> Any:
+    if not isinstance(payload, dict):
+        return payload
+    result = dict(payload)
+    meta = dict(result.get("meta") or {})
+    meta.pop("generated", None)
+    result["meta"] = meta
+    heroes = []
+    for hero in result.get("heroes") or []:
+        item = dict(hero)
+        sections = dict(item.get("sections") or {})
+        for key in SITE_RELATIONSHIP_KEYS:
+            sections.pop(key, None)
+        item["sections"] = sections
+        heroes.append(item)
+    result["heroes"] = heroes
+    return result
+
+
+def contract_hero(hero: Mapping[str, Any]) -> dict[str, Any]:
+    """Return one hero's view-facing facts without relationship lists."""
+    analysis = dict(hero.get("analysis") or {})
+    analysis.pop("scoring", None)
+    return {
+        "id": hero["id"],
+        "display_name": hero["display_name"],
+        "slug": hero["slug"],
+        "source": _plain(hero.get("source") or {}),
+        "display": _plain(hero.get("display") or {}),
+        "curated": _plain(hero.get("curated") or {}),
+        "analysis": _plain(analysis),
+    }
+
+
+def contract_from_view(
+    view: Mapping[str, Any],
+    *,
+    heroes_md: str,
+    overview_md: str,
+    overview_csv: str,
+    site_heroes: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Build the frozen presentation contract from rendered outputs."""
+    return {
+        "schema_version": 1,
+        "heroes": [
+            contract_hero(hero)
+            for hero in sorted(view["heroes"], key=lambda item: item["id"])
+        ],
+        "heroes_md": normalize_text(heroes_md),
+        "overview_md": _drop_relationship_markdown(overview_md),
+        "overview_csv": normalize_text(overview_csv),
+        "site_heroes": _drop_site_relationships(site_heroes),
+    }
+
+
+def load_contract(path: Path | None = None) -> dict[str, Any]:
+    fixture = path or (FIXTURE_DIR / CONTRACT_NAME)
+    return json.loads(fixture.read_text(encoding="utf-8"))
+
+
+def write_contract(contract: Mapping[str, Any], path: Path | None = None) -> Path:
+    fixture = path or (FIXTURE_DIR / CONTRACT_NAME)
+    fixture.parent.mkdir(parents=True, exist_ok=True)
+    fixture.write_text(
+        json.dumps(contract, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    return fixture
+
+
+def _is_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def _walk_numbers(value: Any, prefix: str = "") -> dict[str, float]:
+    if _is_number(value):
+        number = float(value)
+        if math.isnan(number) or math.isinf(number):
+            raise ValueError(f"non-finite numeric value at {prefix}")
+        return {prefix: number}
+    if isinstance(value, Mapping):
+        items: dict[str, float] = {}
         for key, item in value.items():
             path = f"{prefix}.{key}" if prefix else str(key)
-            items.update(_walk(item, path))
+            items.update(_walk_numbers(item, path))
         return items
     if isinstance(value, list):
         items = {}
         for index, item in enumerate(value):
-            path = f"{prefix}[{index}]"
-            items.update(_walk(item, path))
+            items.update(_walk_numbers(item, f"{prefix}[{index}]"))
         return items
-    return {prefix: value}
+    return {}
 
 
-def canonicalize(value: Any) -> Any:
-    """Return JSON-comparable structure with sorted object keys."""
-    return json.loads(json.dumps(value, sort_keys=True, ensure_ascii=False))
+def _walk_strings(value: Any, prefix: str = "") -> dict[str, str]:
+    if isinstance(value, str):
+        return {prefix: normalize_text(value)}
+    if isinstance(value, Mapping):
+        items: dict[str, str] = {}
+        for key, item in value.items():
+            path = f"{prefix}.{key}" if prefix else str(key)
+            items.update(_walk_strings(item, path))
+        return items
+    if isinstance(value, list):
+        items = {}
+        for index, item in enumerate(value):
+            items.update(_walk_strings(item, f"{prefix}[{index}]"))
+        return items
+    return {}
 
 
-def snapshot_roster(repository: Repository | None = None) -> dict[str, Any]:
-    """Capture manifest identity and every generated analysis document."""
-    from .storage import load_bundles, load_manifest
+def compare_numbers(baseline: Any, current: Any, *, prefix: str = "") -> list[str]:
+    before = _walk_numbers(baseline, prefix)
+    after = _walk_numbers(current, prefix)
+    errors: list[str] = []
+    for key in sorted(set(before) - set(after)):
+        errors.append(f"missing number {key}")
+    for key in sorted(set(after) - set(before)):
+        errors.append(f"added number {key}")
+    for key in sorted(set(before) & set(after)):
+        if before[key] != after[key]:
+            errors.append(
+                f"changed number {key}: {before[key]!r} -> {after[key]!r}"
+            )
+    return errors
 
-    repo = repository or current_repository()
-    with_repo = repo
-    from .repository import repository_scope
 
-    with repository_scope(with_repo):
-        manifest = load_manifest()
-        bundles = load_bundles(manifest)
-    heroes = {}
-    for entry in manifest["heroes"]:
-        hero_id = entry["id"]
-        generated = bundles[hero_id]["generated"]
-        heroes[hero_id] = {
-            "manifest": entry,
-            "analysis": (generated.get("derived") or {}).get("analysis"),
-            "synergies": generated.get("synergies"),
-            "schema_version": generated.get("schema_version"),
-            "display_name": generated.get("display_name"),
-            "source_title": (generated.get("source") or {}).get("title"),
-        }
-    return {
-        "ids": [entry["id"] for entry in manifest["heroes"]],
-        "heroes": heroes,
-    }
+def compare_strings(baseline: Any, current: Any, *, prefix: str = "") -> list[str]:
+    before = _walk_strings(baseline, prefix)
+    after = _walk_strings(current, prefix)
+    errors: list[str] = []
+    for key in sorted(set(before) - set(after)):
+        errors.append(f"missing text {key}")
+    for key in sorted(set(after) - set(before)):
+        errors.append(f"added text {key}")
+    for key in sorted(set(before) & set(after)):
+        if before[key] != after[key]:
+            errors.append(f"changed text {key}")
+    return errors
+
+
+_HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$")
+_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+_CODE_RE = re.compile(r"`([^`]+)`")
+
+
+def markdown_structure(text: str) -> list[str]:
+    """Ordered structural tokens for Markdown comparison."""
+    tokens: list[str] = []
+    for raw in normalize_text(text).split("\n"):
+        line = raw.strip()
+        if not line:
+            continue
+        heading = _HEADING_RE.match(line)
+        if heading:
+            tokens.append(f"h{len(heading.group(1))}:{heading.group(2)}")
+            continue
+        if line.startswith("- ") or line.startswith("* "):
+            body = line[2:]
+            tokens.append(f"li:{body}")
+        else:
+            tokens.append(f"p:{line}")
+        for match in _LINK_RE.finditer(line):
+            tokens.append(f"link:{match.group(1)}|{match.group(2)}")
+        for match in _CODE_RE.finditer(line):
+            tokens.append(f"code:{match.group(1)}")
+    return tokens
+
+
+def compare_markdown(baseline: str, current: str, *, label: str) -> list[str]:
+    before = markdown_structure(_drop_relationship_markdown(baseline))
+    after = markdown_structure(_drop_relationship_markdown(current))
+    if before == after:
+        return []
+    errors = [f"{label} structure differs"]
+    for index, (left, right) in enumerate(zip(before, after)):
+        if left != right:
+            errors.append(f"{label}[{index}]: {left} -> {right}")
+            break
+    if len(before) != len(after):
+        errors.append(
+            f"{label} token count {len(before)} -> {len(after)}"
+        )
+    return errors
+
+
+def compare_contracts(
+    baseline: Mapping[str, Any],
+    current: Mapping[str, Any],
+) -> list[str]:
+    """Return errors when the presentation contract regresses."""
+    errors: list[str] = []
+    before_ids = [hero["id"] for hero in baseline["heroes"]]
+    after_ids = [hero["id"] for hero in current["heroes"]]
+    if before_ids != after_ids:
+        errors.append(
+            f"hero identity order changed: {before_ids} -> {after_ids}"
+        )
+        return errors
+    after_by_id = {hero["id"]: hero for hero in current["heroes"]}
+    for hero in baseline["heroes"]:
+        other = after_by_id[hero["id"]]
+        prefix = hero["id"]
+        errors.extend(compare_numbers(hero, other, prefix=prefix))
+        errors.extend(compare_strings(hero, other, prefix=prefix))
+    errors.extend(
+        compare_markdown(
+            baseline["heroes_md"],
+            current["heroes_md"],
+            label="Heroes.md",
+        )
+    )
+    errors.extend(
+        compare_markdown(
+            baseline["overview_md"],
+            current["overview_md"],
+            label="heroes-overview.md",
+        )
+    )
+    if normalize_text(baseline["overview_csv"]) != normalize_text(
+        current["overview_csv"]
+    ):
+        errors.append("heroes-overview.csv differs")
+    errors.extend(
+        compare_numbers(
+            baseline["site_heroes"],
+            current["site_heroes"],
+            prefix="site",
+        )
+    )
+    errors.extend(
+        compare_strings(
+            baseline["site_heroes"],
+            current["site_heroes"],
+            prefix="site",
+        )
+    )
+    return errors
+
+
+def relationship_invariant_errors(view: Mapping[str, Any]) -> list[str]:
+    """Validate relationship lists without constraining membership."""
+    known = {hero["id"] for hero in view["heroes"]}
+    errors: list[str] = []
+    for hero in view["heroes"]:
+        hero_id = hero["id"]
+        refs = hero.get("references") or {}
+        rows = list(refs.get("synergies") or [])
+        previous: float | None = None
+        seen: list[str] = []
+        for row in rows:
+            provider = row.get("id") or row.get("provider_id")
+            if provider not in known:
+                errors.append(f"{hero_id}: unknown synergy provider {provider}")
+            if provider == hero_id:
+                errors.append(f"{hero_id}: self synergy")
+            score = float(row.get("score", 0))
+            if previous is not None and score > previous:
+                errors.append(f"{hero_id}: synergy scores are not ordered")
+            previous = score
+            seen.append(str(provider))
+        if len(seen) != len(set(seen)):
+            errors.append(f"{hero_id}: duplicate synergy providers")
+        for row in refs.get("beneficiaries") or []:
+            other = row.get("id") or row.get("hero_id")
+            if other not in known:
+                errors.append(f"{hero_id}: unknown beneficiary {other}")
+        for rows in (refs.get("replacements") or {}).values():
+            for row in rows:
+                other = row.get("id") or row.get("hero_id")
+                if other not in known:
+                    errors.append(f"{hero_id}: unknown replacement {other}")
+    return errors
 
 
 def snapshot_views(repository: Repository | None = None) -> dict[str, str]:
     """Read committed public view files as text."""
     repo = repository or current_repository()
     views: dict[str, str] = {}
-    for relpath in ALLOWED_VIEW_RELPATHS:
+    for relpath in (
+        "Heroes.md",
+        "heroes-overview.md",
+        "heroes-overview.csv",
+        "site/data/heroes.json",
+    ):
         path = repo.root / relpath
         if path.is_file():
             views[relpath] = path.read_text(encoding="utf-8")
     return views
-
-
-def _load_json_text(text: str) -> Any:
-    return json.loads(text)
-
-
-def _drop_site_timestamp(payload: Any) -> Any:
-    if not isinstance(payload, dict):
-        return payload
-    meta = dict(payload.get("meta") or {})
-    meta.pop("generated", None)
-    result = dict(payload)
-    result["meta"] = meta
-    return result
-
-
-def classify_json_delta(
-    before: Any,
-    after: Any,
-    *,
-    prefix: str = "",
-) -> dict[str, list[str]]:
-    """Classify pointer differences between two JSON values."""
-    before_map = _walk(canonicalize(before), prefix)
-    after_map = _walk(canonicalize(after), prefix)
-    before_keys = set(before_map)
-    after_keys = set(after_map)
-    removed = sorted(before_keys - after_keys)
-    added = sorted(after_keys - before_keys)
-    changed = sorted(
-        key
-        for key in before_keys & after_keys
-        if before_map[key] != after_map[key]
-    )
-    return {"removed": removed, "added": added, "changed": changed}
-
-
-def compare_rosters(
-    baseline: Mapping[str, Any],
-    current: Mapping[str, Any],
-) -> dict[str, Any]:
-    """Compare two roster snapshots and fail closed on missing heroes."""
-    baseline_ids = list(baseline["ids"])
-    current_ids = list(current["ids"])
-    missing_heroes = sorted(set(baseline_ids) - set(current_ids))
-    added_heroes = sorted(set(current_ids) - set(baseline_ids))
-    hero_deltas: dict[str, Any] = {}
-    for hero_id in baseline_ids:
-        if hero_id not in current["heroes"]:
-            continue
-        before = baseline["heroes"][hero_id]
-        after = current["heroes"][hero_id]
-        analysis = classify_json_delta(
-            before.get("analysis"),
-            after.get("analysis"),
-            prefix="analysis",
-        )
-        synergies = classify_json_delta(
-            before.get("synergies"),
-            after.get("synergies"),
-            prefix="synergies",
-        )
-        identity = classify_json_delta(
-            {
-                "display_name": before.get("display_name"),
-                "source_title": before.get("source_title"),
-            },
-            {
-                "display_name": after.get("display_name"),
-                "source_title": after.get("source_title"),
-            },
-        )
-        if any(
-            analysis[key] or synergies[key] or identity[key]
-            for key in ("removed", "added", "changed")
-        ):
-            hero_deltas[hero_id] = {
-                "analysis": analysis,
-                "synergies": synergies,
-                "identity": identity,
-            }
-    return {
-        "missing_heroes": missing_heroes,
-        "added_heroes": added_heroes,
-        "order_changed": baseline_ids != current_ids
-        and not missing_heroes
-        and not added_heroes,
-        "hero_deltas": hero_deltas,
-    }
-
-
-def compare_views(
-    baseline: Mapping[str, str],
-    current: Mapping[str, str],
-) -> dict[str, Any]:
-    """Compare public view files, ignoring site timestamps only."""
-    missing = sorted(set(baseline) - set(current))
-    added = sorted(set(current) - set(baseline))
-    changed: dict[str, str] = {}
-    for relpath in sorted(set(baseline) & set(current)):
-        before = baseline[relpath]
-        after = current[relpath]
-        if relpath.endswith(".json"):
-            before_obj = _load_json_text(before)
-            after_obj = _load_json_text(after)
-            if relpath.endswith("heroes.json"):
-                before_obj = _drop_site_timestamp(before_obj)
-                after_obj = _drop_site_timestamp(after_obj)
-            if canonicalize(before_obj) != canonicalize(after_obj):
-                changed[relpath] = "json"
-        elif before != after:
-            changed[relpath] = "bytes"
-    return {"missing": missing, "added": added, "changed": changed}
-
-
-def invariant_errors(roster_delta: Mapping[str, Any]) -> list[str]:
-    """Return errors that always fail a migration phase."""
-    errors: list[str] = []
-    for hero_id in roster_delta.get("missing_heroes") or []:
-        errors.append(f"missing hero: {hero_id}")
-    for hero_id, delta in (roster_delta.get("hero_deltas") or {}).items():
-        for section in ("analysis", "synergies"):
-            for path in delta[section]["removed"]:
-                errors.append(f"{hero_id} removed {path}")
-    return errors
-
-
-def write_delta_report(
-    roster_delta: Mapping[str, Any],
-    view_delta: Mapping[str, Any],
-    destination: Path,
-) -> None:
-    """Write a Markdown plus JSON report under ``destination``."""
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"roster": roster_delta, "views": view_delta}
-    destination.write_text(
-        json.dumps(canonicalize(payload), indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
-    lines = [
-        "# Per-hero migration delta",
-        "",
-        f"Missing heroes: {len(roster_delta.get('missing_heroes') or [])}",
-        f"Added heroes: {len(roster_delta.get('added_heroes') or [])}",
-        f"Heroes with field deltas: "
-        f"{len(roster_delta.get('hero_deltas') or {})}",
-        f"Changed views: {sorted((view_delta.get('changed') or {}).keys())}",
-        "",
-    ]
-    destination.with_suffix(".md").write_text(
-        "\n".join(lines),
-        encoding="utf-8",
-    )
-
-
-def large_semantic_delta(roster_delta: Mapping[str, Any]) -> bool:
-    """True when existing values changed across more than one hero."""
-    changed_heroes = []
-    for hero_id, delta in (roster_delta.get("hero_deltas") or {}).items():
-        if (
-            delta["analysis"]["changed"]
-            or delta["synergies"]["changed"]
-            or delta["identity"]["changed"]
-        ):
-            changed_heroes.append(hero_id)
-    ranking_changed = any(
-        "synergies.synergies" in path or "synergies.replacements" in path
-        for delta in (roster_delta.get("hero_deltas") or {}).values()
-        for path in delta["synergies"]["changed"]
-    )
-    return len(changed_heroes) > 1 or ranking_changed

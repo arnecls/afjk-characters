@@ -13,27 +13,15 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
 
 def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_rewrite_summaries()
 
 
 def _load_gen():
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_overview_facts()
 
 
 def _hero_blocks() -> dict[str, str]:
@@ -241,7 +229,7 @@ class PositionalTileRegressionTests(unittest.TestCase):
         gunnar = hero_by_short_name("Gunnar")
         perseus = hero_by_short_name("Perseus")
         proc = io.load_processed()
-        behavior = _load_rs().HeroBehavior(**proc["heroes"]["Perseus"]["behavior"])
+        behavior = _load_rs().HeroBehavior(**proc["heroes"]["perseus"]["behavior"])
         score, reasons = gen.score_combined_synergy(
             gunnar,
             perseus,

@@ -22,9 +22,9 @@ Phase C.
 1. `docs/ai-generated-data.md` section 5 — authoring rules
 2. This skill — **Validation gates** and **Explicit counters** below
 3. each hero's `ai.json` — current counter entries and play overviews
-4. each hero's `generated.json` — analyzed skills and source metadata
+4. each hero's `analysis.json` — analyzed skills
 5. each hero's `ai.json` — behavior tags and skill summaries
-6. `data/heroes/<hero-id>/generated.json` — `prydwen_tiers` + `damage_type`
+6. `data/heroes/<hero-id>/source.json` — `prydwen_tiers` + `damage_type`
 7. each hero's generated `external.stat_ranks` — Phys DEF / Magic DEF ranks (`low` /
    `average` / `high`) for Gate 2 damage-type bias
 9. `afkj-data/docs` (faq-pvp, combat-*-pvp) — private grounding only; never copy
@@ -487,7 +487,7 @@ zone block (see kit-fit cheat sheet and Explicit rows above).
 
 Edit the affected hero's `data/heroes/<hero-id>/ai.json`. Pipeline injects
 `#### Counter proposal`
-after Play overview via `format_behavior_section()` in `rewrite-summaries.py`.
+after Play overview via `format_behavior_section()` in local analysis.
 
 ```bash
 just render-site

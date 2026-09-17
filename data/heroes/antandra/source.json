@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "id": "antandra",
+  "display_name": "Antandra",
+  "source": {
+    "title": "Antandra - Desert Fury",
+    "name": "Antandra",
+    "tags": "Mauler · Tank · Physical",
+    "faction": "Mauler",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A brave Tank to provide an ally sustained protection in a battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Shield Assault",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Antandra sets her shield up and taunts enemies within 2 tiles for 1s, reducing her damage taken by 60%and becoming Unaffected for 5s. Afterward, she raises the shield to stun adjacent enemies for 2s and swings the spear, dealing 400% (ATK-based) damage to adjacent enemies and knocking them down, recovering 20% (HP-based) HР + 5% (SP-based) HP. Each enemy hit recovers her an extra 8% (HP-based) + 2% (SP-based).",
+          "active": [
+            "Antandra sets her shield up and taunts enemies within 2 tiles for 1s, reducing her damage taken by 60%and becoming Unaffected for 5s.",
+            "Afterward, she raises the shield to stun adjacent enemies for 2s and swings the spear, dealing 400% (ATK-based) damage to adjacent enemies and knocking them down, recovering 20% (HP-based) HР + 5% (SP-based) HP.",
+            "Each enemy hit recovers her an extra 8% (HP-based) + 2% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 420% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 440% (ATK-based)"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 450% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 460% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces incoming damage, stuns surrounding enemies with her shield after a while, and strikes down the enemies with her spear to deal damage and heal herself."
+      },
+      {
+        "section": "Skill1",
+        "name": "Shield Formation",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "15s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Antandra selects the frontmost ally (except herself) as the guarded ally when a battle starts. Antandra grants herself and the guarded ally shields that block damage equal to 15% + 5% (SP-based) of the ally's max HP for 5s, and the shield value is up to 500% (ATK-based) of her ATK. Antandra reselects another front-most all (except herself) as the guarded ally if the previous one is defeated.",
+          "active": [
+            "Antandra selects the frontmost ally (except herself) as the guarded ally when a battle starts.",
+            "Antandra grants herself and the guarded ally shields that block damage equal to 15% + 5% (SP-based) of the ally's max HP for 5s, and the shield value is up to 500% (ATK-based) of her ATK.",
+            "Antandra reselects another front-most all (except herself) as the guarded ally if the previous one is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Reduces the skill cooldown by 3s whenever the guarded ally loses 10% (HP-based) max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases the shield value to 20% + 5% (SP-based) of the guarded ally's max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the shield value to 25% + 5% (SP-based) of the guarded ally's max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Selects an ally to guard, granting them and herself shields."
+      },
+      {
+        "section": "Skill2",
+        "name": "Spear Barrage",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Antandra attacks the frontal area within 1-tile arc 3 times and reduces the targets' ATK by 20% for 6s + 1 (SP-based)s, with the first 2 hits dealing 100% (ATK-based) damage and the third hit dealing 120% (ATK-based) damage.",
+          "active": [
+            "Antandra attacks the frontal area within 1-tile arc 3 times and reduces the targets' ATK by 20% for 6s + 1 (SP-based)s, with the first 2 hits dealing 100% (ATK-based) damage and the third hit dealing 120% (ATK-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Increases the damage of 3rd attack to 140% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Increases the damage of 3rd attack to 160% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Increases the damage of 3rd attack to 180% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Attacks a frontal area 3 times, reducing the targets' ATK."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Antandra increases her Max HP by 17% during battle.",
+          "active": [
+            "Antandra increases her Max HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Antandra increases her Max HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Antandra increases her Max HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases max HP during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Gale Barrier",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Antandra rushes next to the guarded ally when their HP ratio drops below 50% for the first time, reducing their damage taken by 40% for 10s. This skill can only be used once for each guarded ally per battle.",
+          "active": [
+            "Antandra rushes next to the guarded ally when their HP ratio drops below 50% for the first time, reducing their damage taken by 40% for 10s.",
+            "This skill can only be used once for each guarded ally per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Rushes next to the guarded ally, recovering their Energy by 100 per second for 4s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Rushes next to the guarded ally, reducing their damage taken by 50%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Rushes next to the guarded ally, reducing their damage taken by 60%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rushes to the guarded ally to grant them damage reduction."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks.",
+          "active": [
+            "Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Antandra increases her Phys DEF when Shield Assault hits the enemy."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

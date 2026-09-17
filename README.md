@@ -122,9 +122,9 @@ PYTHONPATH=scripts .venv/bin/python -m unittest discover -s scripts -p 'test_*.p
 ### Pipeline overview
 
 ```
-download  →  data/heroes/<hero-id>/generated.json (source fields)
-analyze   →  data/heroes/<hero-id>/generated.json (analysis and synergies)
-render    →  Heroes.md
+download  →  data/heroes/<hero-id>/source.json
+analyze   →  data/heroes/<hero-id>/analysis.json (hero-local cache)
+views     →  Heroes.md
              heroes-overview.md
              heroes-overview.csv
              site/data/heroes.json  (skillCards read from processed skill_card_tags)
@@ -132,11 +132,11 @@ render    →  Heroes.md
 
 | Step | Script(s) | Role |
 | --- | --- | --- |
-| Download | `scripts/download_heroes.py` | Merge Fandom, Yaphalla, and Prydwen into hero-local source files |
-| Analyze | `scripts/hero_pipeline_cli.py` | Analysis, calibration, synergy, and replacement scoring |
-| Render | `scripts/render_heroes.py`, `render_overview.py`, `render_site.py` | Markdown, CSV, and site JSON from committed analysis |
-| Core library | `scripts/rewrite-summaries.py` | Detection, behavior, summaries (used by analyze) |
-| Scoring library | `scripts/generate-heroes-overview.py` | Synergy/replacement matchers (imported by analyze and render) |
+| Download | `scripts/hero_pipeline_cli.py download` | Merge Fandom, Yaphalla, and Prydwen into hero-local `source.json` |
+| Analyze | `scripts/hero_pipeline_cli.py analyze` | Refresh stale local analysis caches |
+| Views | `scripts/hero_pipeline_cli.py views` | Calibrate, score relationships in memory, render Markdown/CSV/site |
+| Local analysis | `scripts/hero_pipeline/analysis/` | Detection, behavior, and hero-local facts |
+| Relationships | `scripts/hero_pipeline/relationships/` | Synergy and replacement scoring |
 
 Configuration for analysis, synergy scoring, and display limits lives in
 `data/heroes_config.json`. AI-authored data and typed overrides live beside

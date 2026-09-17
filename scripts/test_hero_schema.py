@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tests for hero_schema.py and schema round-trip parity."""
+"""Tests for analysis serialization and schema round-trip parity."""
 
 from __future__ import annotations
 
@@ -14,34 +14,20 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import hero_schema as hs
+from hero_pipeline.analysis import serialize as hs
 import heroes_io as io
-from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels
+from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels, load_rewrite_summaries, load_overview_facts
 
 
 def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_rewrite_summaries()
 
 
 rs = _load_rs()
 
 
 def _load_gen():
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_overview_facts()
 
 
 gen = _load_gen()
@@ -144,7 +130,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_aliceth_full_ascension_numerics(self):
         processed = io.load_processed()
-        hero = processed["heroes"]["Aliceth"]
+        hero = io.processed_hero(processed, "Aliceth")
         sealed = hero["skills"]["Sealed Fate"]
         pen = next(
             e
@@ -839,7 +825,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_nara_eerie_execution_owns_max_hp_shockwave(self):
         processed = io.load_processed()
-        eerie = processed["heroes"]["Nara"]["skills"]["Eerie Execution"]
+        eerie = io.processed_hero(processed, "Nara")["skills"]["Eerie Execution"]
         max_hp = [
             effect
             for effect in eerie["effects"]
@@ -853,7 +839,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_nara_crimson_vengeance_keeps_only_physical_true_branches(self):
         processed = io.load_processed()
-        crimson = processed["heroes"]["Nara"]["skills"]["Crimson Vengeance"]
+        crimson = io.processed_hero(processed, "Nara")["skills"]["Crimson Vengeance"]
         damage_types = {
             effect["damage_type"]
             for effect in crimson["effects"]
@@ -964,7 +950,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
-        wings = processed["heroes"]["Aliceth"]["skills"][
+        wings = io.processed_hero(processed, "Aliceth")["skills"][
             "Aegis Wings"
         ]
         cc_types = {
@@ -1324,7 +1310,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotEqual(f"{buff_key}:buff", f"{debuff_key}:debuff")
 
     def test_skill_card_self_tag_implies_self_target(self):
-        import hero_schema as hs
+        from hero_pipeline.analysis import serialize as hs
 
         hero = self._hero_analyzed("Aliceth")
         section = rs.CATEGORY_TO_SECTION["skill3"]

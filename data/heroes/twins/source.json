@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "twins",
+  "display_name": "Twins",
+  "source": {
+    "title": "Elijah & Lailah - Celestial Twins",
+    "name": "Elijah & Lailah",
+    "tags": "Celestial · Support · Magic",
+    "faction": "Celestial",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A pair of divine beings united as one, specializing in linking allies and boosting their strength with powerful buffs.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Starlight Waltz",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "200"
+        },
+        "description": {
+          "raw": "Passive. Elijah and Lailah fight separately in battle but share the same HP and Energy pool. Their max HP is increased by 50%. Active. Elijah and Lailah perform an inspiring duo dance, increasing all allies' Haste by 60 + 4 (SP-based) for 7s. During the dance, allies linked through Stellar Bond become unaffected. The skill can be cast as long as Elijah is able to use Ultimate.",
+          "passive": [
+            "Elijah and Lailah fight separately in battle but share the same HP and Energy pool.",
+            "Their max HP is increased by 50%."
+          ],
+          "active": [
+            "Elijah and Lailah perform an inspiring duo dance, increasing all allies' Haste by 60 + 4 (SP-based) for 7s.",
+            "During the dance, allies linked through Stellar Bond become unaffected.",
+            "The skill can be cast as long as Elijah is able to use Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When actively used, extends the duration of the Haste bonus to 7.5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When actively used, extends the duration of the Haste bonus to 8s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "When actively used, extends the duration of the Haste bonus to 8.5s."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "When actively used, extends the duration of the Haste bonus to 9s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Elijah and Lailah greatly increase all allies' Haste and make allies linked through Stellar Bond unaffected."
+      },
+      {
+        "section": "Skill1",
+        "name": "Stellar Bond",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Elijah forms a Stellar Bond with Lailah when they align on the battlefield. Allied heroes placed in a straight path between the twins are also linked by Stellar Bond. Stellar Bond grants a permanent ATK bonus to all linked allies, including Elijah and Lailah. If no other allies are linked, Elijah and Lailah gain an ATK increase of 25%. However, for each additional ally linked, this ATK bonus is reduced by 5% for everyone linked by the bond. Active. Elijah channels a golden glow through the Stellar Bond link to Lailah, restoring 30 + 4 (SP-based) Energy for each ally along its path. Simultaneously, Lailah sends a green glow through the Stellar Bond link to Elijah, healing each ally along the path for an HP amount equal to 100% (ATK-based) + 10% (SP-based).",
+          "active": [
+            "Elijah forms a Stellar Bond with Lailah when they align on the battlefield.",
+            "Allied heroes placed in a straight path between the twins are also linked by Stellar Bond.",
+            "Stellar Bond grants a permanent ATK bonus to all linked allies, including Elijah and Lailah.",
+            "If no other allies are linked, Elijah and Lailah gain an ATK increase of 25%.",
+            "However, for each additional ally linked, this ATK bonus is reduced by 5% for everyone linked by the bond.",
+            "Elijah channels a golden glow through the Stellar Bond link to Lailah, restoring 30 + 4 (SP-based) Energy for each ally along its path.",
+            "Simultaneously, Lailah sends a green glow through the Stellar Bond link to Elijah, healing each ally along the path for an HP amount equal to 100% (ATK-based) + 10% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the Energy recovered by Elijah's golden glow to 35 + 4 (SP-based), and the HP recovered through Lailah's green glow to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the Energy recovered by Elijah's golden glow to 40 + 4 (SP-based), and the HP recovered through Lailah's green glow to 120% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the Energy recovered by Elijah's golden glow to 45 + 4 (SP-based), and the HP recovered through Lailah's green glow to 130% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Elijah and Lailah form a straight-line link, channeling blessings that recover allies' Energy and HP along the path."
+      },
+      {
+        "section": "Skill2",
+        "name": "Cosmic Protection",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Elijah grants Lailah and 1 weakest ally a 150% (ATK-based) + 15% (SP-based) shield that lasts for 4 + 0.4s (SP-based) and makes Lailah unaffected while the shield is active. Lailah casts Stellar Pulse on the tiles occupied by Elijah and 1 ally adjacent to enemies, dealing 110% (ATK-based) + 10% (SP-based) damage and inflicting blind for 4 + 0.4s (SP-based) on enemies within 1 tile of the target tiles. Stellar Pulse also knocks back enemies surrounding Lailah by 1 tile.",
+          "active": [
+            "Elijah grants Lailah and 1 weakest ally a 150% (ATK-based) + 15% (SP-based) shield that lasts for 4 + 0.4s (SP-based) and makes Lailah unaffected while the shield is active.",
+            "Lailah casts Stellar Pulse on the tiles occupied by Elijah and 1 ally adjacent to enemies, dealing 110% (ATK-based) + 10% (SP-based) damage and inflicting blind for 4 + 0.4s (SP-based) on enemies within 1 tile of the target tiles.",
+            "Stellar Pulse also knocks back enemies surrounding Lailah by 1 tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the shield value granted by Elijah to 160% (ATK-based) + 15% (SP-based).",
+                "Increases Lailah's Stellar Pulse damage to 120% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the shield value granted by Elijah to 170% (ATK-based) + 15% (SP-based).",
+                "Increases Lailah's Stellar Pulse damage to 130% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the shield value granted by Elijah to 180% (ATK-based) + 15% (SP-based).",
+                "Increases Lailah's Stellar Pulse damage to 140% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Elijah grants a shield to allies, while Lailah casts Stellar Pulse to deal damage and inflict blind on enemies surrounding her allies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Elijah and Lailah increase their Haste by 9 in battle. Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times.",
+          "active": [
+            "Elijah and Lailah increase their Haste by 9 in battle.",
+            "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 3, stacking up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Elijah and Lailah increase their Haste by 12 in battle.",
+                "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 4, stacking up to 3 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Elijah and Lailah increase their Haste by 15 in battle.",
+                "Each time they cast Starlight Waltz, they permanently increase the Haste of all allies linked through Stellar Bond by 5, stacking up to 3 times."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Elijah and Lailah increase their own Haste and grant extra Haste to allies linked through Stellar Bond each time they cast Starlight Waltz."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Starbound Harmony",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, if the allies (excluding Elijah and Lailah) linked through Stellar Bond all belong to the same faction, a special resonance effect is triggered. The resonance increases linked allies' Vitality by an extra 10 and their Energy gained by 10%. After all linked allies have cast their Ultimates while resonance is active, the bond unleashes a permanent energy burst, inspiring all allies and returning them 10% of their Energy cost each time they cast their Ultimate.",
+          "active": [
+            "When a battle starts, if the allies (excluding Elijah and Lailah) linked through Stellar Bond all belong to the same faction, a special resonance effect is triggered.",
+            "The resonance increases linked allies' Vitality by an extra 10 and their Energy gained by 10%.",
+            "After all linked allies have cast their Ultimates while resonance is active, the bond unleashes a permanent energy burst, inspiring all allies and returning them 10% of their Energy cost each time they cast their Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the Vitality bonus to 25 and the Energy gain bonus to 12% while the Stellar Bond resonance is active."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the Vitality bonus to 40 and the Energy gain bonus to 14% while the Stellar Bond resonance is active."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "After Stellar Bond unleashes an energy burst, increases the Energy returned to allies from each Ultimate cast to 15% of their Energy used."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When all linked allies belong to the same faction, Stellar Bond becomes stronger and is permanently enhanced after all linked allies use their Ultimate."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond. The increases for each linked ally are equal to 15% of the highest corresponding stats among other linked allies, but cannot exceed 30% of the original corresponding stats of Elijah and Lailah. These stat boosts are not included when calculating increases from this skill.",
+          "active": [
+            "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond.",
+            "The increases for each linked ally are equal to 15% of the highest corresponding stats among other linked allies, but cannot exceed 30% of the original corresponding stats of Elijah and Lailah.",
+            "These stat boosts are not included when calculating increases from this skill."
+          ]
+        }
+      }
+    ],
+    "range": 6,
+    "release_date": "2025-01-22",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "A+",
+      "dream_realm": "S+",
+      "dream_realm_endless": "S+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

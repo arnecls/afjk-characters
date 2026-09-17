@@ -1,0 +1,1021 @@
+{
+  "schema_version": 1,
+  "id": "shakir",
+  "display_name": "Shakir",
+  "local": {
+    "long_name": "Shakir - Furious Howl",
+    "faction": "mauler",
+    "class": "rogue",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Ravaging Claws": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected. Shakir consumes 60 Energy per second to maintain his wolf shape. Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks. Allies within the range of Lupine Aura reduce 20% + 2% (SP-based) taken damage and increase 10 + 3 (SP-based) Haste.",
+          "active": [
+            "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected.",
+            "Shakir consumes 60 Energy per second to maintain his wolf shape.",
+            "Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks.",
+            "Allies within the range of Lupine Aura reduce 20% + 2% (SP-based) taken damage and increase 10 + 3 (SP-based) Haste."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 20% + 2% (SP-based) and increase their Haste by 15 + 3 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 15 + 3 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 20 + 3 (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 25 + 3 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 190.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 28.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Damage taken — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock up — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Savage Cleave": {
+        "category": "skill1",
+        "description": {
+          "raw": "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% (SP-based) damage with his first 2 attacks and 160% + 20% (SP-based) damage with his 3rd attack. While in Wolf Form, this skill damages enemies within a frontal 1-tile arc.",
+          "active": [
+            "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% (SP-based) damage with his first 2 attacks and 160% + 20% (SP-based) damage with his 3rd attack.",
+            "While in Wolf Form, this skill damages enemies within a frontal 1-tile arc."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "The 3rd attack deals 180% + 20% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "The 3rd attack deals 200% + 20% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "The 3rd attack deals 220% + 20% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 240.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 6.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Wolf's Will": {
+        "category": "skill2",
+        "description": {
+          "raw": "Passive. Shakir gains 25 Ranged DEF. In Wolf Form, he is Unaffected and gains 30 + 5 (SP-based) Life Drain. Each non-summoned ally within Lupine Aura him 5% + 1% (SP-based) ATK.",
+          "passive": [
+            "Shakir gains 25 Ranged DEF.",
+            "In Wolf Form, he is Unaffected and gains 30 + 5 (SP-based) Life Drain.",
+            "Each non-summoned ally within Lupine Aura him 5% + 1% (SP-based) ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases passive Life Drain bonus to 40 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases passive Ranged DEF bonus to 30."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "form",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Shakir reduces his damage taken by 9% during battle. His damage taken is further reduced by 4% if at least 2 non-summoned allies are buffed by his Lupine Aura.",
+          "active": [
+            "Shakir reduces his damage taken by 9% during battle.",
+            "His damage taken is further reduced by 4% if at least 2 non-summoned allies are buffed by his Lupine Aura."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Shakir reduces his damage taken by 12% during battle.",
+                "His damage taken is further reduced by 5% if at least 2 non-summoned allies are buffed by his Lupine Aura."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Shakir reduces his damage taken by 15% during battle.",
+                "His damage taken is further reduced by 7% if at least 2 non-summoned allies are buffed by his Lupine Aura."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "All-Conquering": {
+        "category": "skill4",
+        "description": {
+          "raw": "Shakir can cast his Ultimate once his Energy exceeds 800. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
+          "active": [
+            "Shakir can cast his Ultimate once his Energy exceeds 800.",
+            "Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Shakir stays in Wolf Form and consumes no Energy within 7s each time after casting his Ultimate."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Each non-summoned ally within Lupine Aura can share the same bonus ATK from Wolf's Will."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Shakir can cast Ultimate upon reaching over 700 Energy."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Shakir reduces the target's Vitality by 60 within 4s of using the 3rd hit of Savage Cleave.",
+          "active": [
+            "Shakir reduces the target's Vitality by 60 within 4s of using the 3rd hit of Savage Cleave."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Vitality",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Transformation",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "haste",
+      "max_hp"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "shakir",
+    "display_name": "Shakir",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [
+      "Damage taken",
+      "Haste"
+    ],
+    "proximity_aura_radius": 2.0,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Shakir - Furious Howl",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Shakir consumes 60 Energy per second to maintain his wolf shape.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Allies within the range of Lupine Aura reduce 20% + 2% (SP-based) taken damage and increase 10 + 3 (SP-based) Haste.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Reduce the allies' damage taken within Lupine Aura by 20% + 2% (SP-based) and increase their Haste by 15 + 3 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 15 + 3 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 20 + 3 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 25 + 3 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% (SP-based) damage with his first 2 attacks and 160% + 20% (SP-based) damage with his 3rd attack.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "While in Wolf Form, this skill damages enemies within a frontal 1-tile arc.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The 3rd attack deals 180% + 20% (SP-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The 3rd attack deals 200% + 20% (SP-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The 3rd attack deals 220% + 20% (SP-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Shakir gains 25 Ranged DEF.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "In Wolf Form, he is Unaffected and gains 30 + 5 (SP-based) Life Drain.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Each non-summoned ally within Lupine Aura him 5% + 1% (SP-based) ATK.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases passive Life Drain bonus to 40 + 5 (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases passive Ranged DEF bonus to 30.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% + 1% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Shakir reduces his damage taken by 9% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His damage taken is further reduced by 4% if at least 2 non-summoned allies are buffed by his Lupine Aura.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Shakir reduces his damage taken by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His damage taken is further reduced by 5% if at least 2 non-summoned allies are buffed by his Lupine Aura.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Shakir reduces his damage taken by 15% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His damage taken is further reduced by 7% if at least 2 non-summoned allies are buffed by his Lupine Aura.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Shakir can cast his Ultimate once his Energy exceeds 800.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Shakir stays in Wolf Form and consumes no Energy within 7s each time after casting his Ultimate.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Each non-summoned ally within Lupine Aura can share the same bonus ATK from Wolf's Will.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Shakir can cast Ultimate upon reaching over 700 Energy.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Shakir reduces the target's Vitality by 60 within 4s of using the 3rd hit of Savage Cleave.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Ravaging Claws": "Ultimate",
+        "Savage Cleave": "Skill1",
+        "Wolf's Will": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "All-Conquering": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock up",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 190.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 28.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Transformation",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Lifedrain",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 30.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Form"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Vitality",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Knock up",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 240.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 28.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Lifedrain",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 30.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "debuff",
+          "label": "Vitality",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "Form"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Transformation",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "Area, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Haste",
+        "Max HP"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [
+        "Haste",
+        "Damage taken"
+      ],
+      "proximity_aura_radius": 2.0
+    }
+  },
+  "provenance": {
+    "inputs_hash": "e730d650b99da41ad765e52ad27a08c10f9cdfd0794d3f5205b701a46b1ed823",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

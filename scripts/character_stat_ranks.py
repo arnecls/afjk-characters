@@ -49,7 +49,7 @@ def load_character_stat_ranks(path: Path | None = None) -> dict:
         characters = {}
         for entry in manifest["heroes"]:
             ranks = (
-                bundles[entry["id"]]["generated"]
+                bundles[entry["id"]]["source"]
                 .get("external", {})
                 .get("stat_ranks")
             )

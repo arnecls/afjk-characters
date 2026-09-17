@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "florabelle",
+  "display_name": "Florabelle",
+  "source": {
+    "title": "Florabelle - Blooming Maiden",
+    "name": "Florabelle",
+    "tags": "Wilder · Warrior · Physical",
+    "faction": "Wilder",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A warrior adept at summoning various creatures to continuously deal damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Pounding Blow",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Florabelle summons Spiny when a battle starts. Spiny inherits 80% + 15% (SP-based) of Florabelle's Max HP, dealing 60% (ATK-based) damage with normal attacks. Spiny retreats to the pod when defeated, then rejoins the battle after 10s. Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air. Smashy inherits 220% of Florabelle's Max HP, dealing 120% (ATK-based) damage with normal attacks. Smashy takes 100% extra damage when under control effects. Florabelle casts the skill to remove all debuffs on Smashy and restore its HP to full, commanding Smashy to smash the target area ground again.",
+          "active": [
+            "Florabelle summons Spiny when a battle starts.",
+            "Spiny inherits 80% + 15% (SP-based) of Florabelle's Max HP, dealing 60% (ATK-based) damage with normal attacks.",
+            "Spiny retreats to the pod when defeated, then rejoins the battle after 10s.",
+            "Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air.",
+            "Smashy inherits 220% of Florabelle's Max HP, dealing 120% (ATK-based) damage with normal attacks.",
+            "Smashy takes 100% extra damage when under control effects.",
+            "Florabelle casts the skill to remove all debuffs on Smashy and restore its HP to full, commanding Smashy to smash the target area ground again."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Spiny's normal attack damage to 70% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When all three Bulbsprites are on the battlefield, summoning Smashy will instead trigger a coordinated attack from all Bulbsprites, dealing 400% (ATK-based) damage to all enemies within 3 tiles and knocking them into the air."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Spiny's normal attack damage to 80% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Smashy's normal attack damage to 220% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Summons Spiny when a battle starts. When actively used, summons Smashy and deals AoE damage."
+      },
+      {
+        "section": "Skill1",
+        "name": "Overgrowth",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Florabelle feeds a Bulbsprite with petalplum to transform them into a giant for 8s. Giant Bulbsprites will gain an extra 60 + 6 (SP-based) Haste and 60 Life Drain. When multiple Bulbsprites are on the field, this skill targets them in the order of Smashy, Swifty, and Spiny.",
+          "active": [
+            "Florabelle feeds a Bulbsprite with petalplum to transform them into a giant for 8s.",
+            "Giant Bulbsprites will gain an extra 60 + 6 (SP-based) Haste and 60 Life Drain.",
+            "When multiple Bulbsprites are on the field, this skill targets them in the order of Smashy, Swifty, and Spiny."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases Life Drain in giant form to 80."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases Life Drain in giant form to 100."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the duration of the giant form to 10s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Transforms a Bulbsprite into a giant, increasing their Haste and Life Drain."
+      },
+      {
+        "section": "Skill2",
+        "name": "Tiny Sharpshooter",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Florabelle summons Swifty in the back. Swifty has a 6-tile attack range, inherits 45% of Florabelle's Max HP, and deals 80% (ATK-based) + 10% (SP-based) damage with normal attacks. Casting this skill while Swifty is already on the battlefield initiates Swifty's Rapid Fire, unleashing 8 arrows at random targets, each dealing 70% (ATK-based) damage. Swifty cannot be summoned again for the next 8s after being defeated.",
+          "active": [
+            "Florabelle summons Swifty in the back.",
+            "Swifty has a 6-tile attack range, inherits 45% of Florabelle's Max HP, and deals 80% (ATK-based) + 10% (SP-based) damage with normal attacks.",
+            "Casting this skill while Swifty is already on the battlefield initiates Swifty's Rapid Fire, unleashing 8 arrows at random targets, each dealing 70% (ATK-based) damage.",
+            "Swifty cannot be summoned again for the next 8s after being defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases Swifty's normal attack damage to 95% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage of each arrow to 88% (ATK-based) when Swifty casts Rapid Fire."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases Swifty's normal attack damage to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Summons a ranged Bulbsprite into battle."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Florabelle increases her ATK by 10% during battle. She gains an extra 4% ATK when at least 2 of her summons are on the battlefield.",
+          "active": [
+            "Florabelle increases her ATK by 10% during battle.",
+            "She gains an extra 4% ATK when at least 2 of her summons are on the battlefield."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Florabelle increases her ATK by 14% during battle.",
+                "She gains an extra 6% ATK when at least 2 of her summons are on the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Florabelle increases her ATK by 18% during battle.",
+                "She gains an extra 8% ATK when at least 2 of her summons are on the battlefield."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Florabelle's ATK increases during battle, and it further increases when at least 2 of her summons are on the battlefield."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Protective Blessing",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Grants a Natural Blessing to allied summons upon their entrance to the battlefield, providing them with a permanent shield capable of absorbing damage equal to 280% of Florabelle's ATK.",
+          "active": [
+            "Grants a Natural Blessing to allied summons upon their entrance to the battlefield, providing them with a permanent shield capable of absorbing damage equal to 280% of Florabelle's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Boosts the shield granted by this skill to 330% of Florabelle's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Feeds the allied summon with the highest ATK with an unripe petalplum when Florabelle casts Overgrowth.",
+                "This transforms the summon into a giant, increasing their Haste by 27 and Life Drain by 32."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Boosts the shield granted by this skill to 350% of Florabelle's ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Grants a permanent shield to an allied summon when it enters the battlefield."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Allied Bulbsprites in their giant form are immune to control effects.",
+          "active": [
+            "Allied Bulbsprites in their giant form are immune to control effects."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-04-16",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "C",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

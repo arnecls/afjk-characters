@@ -1,0 +1,1098 @@
+{
+  "schema_version": 1,
+  "id": "eironn",
+  "display_name": "Eironn",
+  "local": {
+    "long_name": "Eironn - Stormsword",
+    "faction": "wilder",
+    "class": "rogue",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Verdant Cyclone": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Eironn combines the power of two swords and selects a tile, pulling in enemies within 2 tiles to the center. Then causes an explosion after a short delay, dealing 250% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles and immobilizing them for 3s. Eironn prioritizes selecting a tile with the most surrounding enemies.",
+          "active": [
+            "Eironn combines the power of two swords and selects a tile, pulling in enemies within 2 tiles to the center.",
+            "Then causes an explosion after a short delay, dealing 250% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles and immobilizing them for 3s.",
+            "Eironn prioritizes selecting a tile with the most surrounding enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 270% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 290% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 310% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 2.0,
+        "initial_energy": 200.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Bind — Area"
+          },
+          {
+            "label": "Displace — Area"
+          }
+        ]
+      },
+      "Ice Spike": {
+        "category": "skill1",
+        "description": {
+          "raw": "Eironn slashes to deal 110% (ATK-based) + 10% (SP-based) damage to enemies within a 3-tile arc and reduces their Haste by 50 for 5s. Later, Eironn stabs the target, dealing 220% (ATK-based) + 20% (SP-based) damage to the target and enemies in a 2-tile line behind them, reducing their Magic DEF by 40% for 5s.",
+          "active": [
+            "Eironn slashes to deal 110% (ATK-based) + 10% (SP-based) damage to enemies within a 3-tile arc and reduces their Haste by 50 for 5s.",
+            "Later, Eironn stabs the target, dealing 220% (ATK-based) + 20% (SP-based) damage to the target and enemies in a 2-tile line behind them, reducing their Magic DEF by 40% for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases slash damage to 115% (ATK-based) + 10% (SP-based) and stab damage to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases slash damage to 120% (ATK-based) + 10% (SP-based) and stab damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases slash damage to 125% (ATK-based) + 10% (SP-based) and stab damage to 250% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 270.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Haste — Arc",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Magic DEF",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Tempest Guard": {
+        "category": "skill2",
+        "description": {
+          "raw": "Eironn gains a shield that blocks 280% (ATK-based) + 30% (SP-based) damage for 10s. Additionally, Eironn gains 50% Dodge Rate while the shield is active.",
+          "active": [
+            "Eironn gains a shield that blocks 280% (ATK-based) + 30% (SP-based) damage for 10s.",
+            "Additionally, Eironn gains 50% Dodge Rate while the shield is active."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases shield value to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases shield value to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases Dodge Rate to 80%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 280.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              }
+            ],
+            "type": "buff",
+            "name": "Dodge chance",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "initial_energy": 1.0,
+        "skill_card_tags": [
+          {
+            "label": "Dodge chance — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Eironn increases his Ranged DEF by 15 during battle. He gains an extra 7 Ranged DEF when his HP drops below 50%.",
+          "active": [
+            "Eironn increases his Ranged DEF by 15 during battle.",
+            "He gains an extra 7 Ranged DEF when his HP drops below 50%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Eironn increases his Ranged DEF by 19 during battle.",
+                "He gains an extra 9 Ranged DEF when his HP drops below 50%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Eironn increases his Ranged DEF by 23 during battle.",
+                "He gains an extra 12 Ranged DEF when his HP drops below 50%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Ranged DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Ranged DEF — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Howling Hurricane": {
+        "category": "skill4",
+        "description": {
+          "raw": "Eironn casts Verdant Cyclone for the first time in each battle without consuming Energy, but the damage is reduced to 50% of the original.",
+          "active": [
+            "Eironn casts Verdant Cyclone for the first time in each battle without consuming Energy, but the damage is reduced to 50% of the original."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Reduces damage to 70% of the original."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases immobilize duration to 6s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces damage to 80% of the original."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 6.0
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Bind — Single target (EX+10)"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immobilized by Verdant Cyclone.",
+          "active": [
+            "Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immobilized by Verdant Cyclone."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic DEF",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Arc, Area"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "shield",
+      "physical_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "eironn",
+    "display_name": "Eironn",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Eironn - Stormsword",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Eironn combines the power of two swords and selects a tile, pulling in enemies within 2 tiles to the center.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Then causes an explosion after a short delay, dealing 250% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles and immobilizing them for 3s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Eironn prioritizes selecting a tile with the most surrounding enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 270% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 290% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 310% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 330% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Eironn slashes to deal 110% (ATK-based) + 10% (SP-based) damage to enemies within a 3-tile arc and reduces their Haste by 50 for 5s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Later, Eironn stabs the target, dealing 220% (ATK-based) + 20% (SP-based) damage to the target and enemies in a 2-tile line behind them, reducing their Magic DEF by 40% for 5s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases slash damage to 115% (ATK-based) + 10% (SP-based) and stab damage to 230% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases slash damage to 120% (ATK-based) + 10% (SP-based) and stab damage to 240% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases slash damage to 125% (ATK-based) + 10% (SP-based) and stab damage to 250% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Eironn gains a shield that blocks 280% (ATK-based) + 30% (SP-based) damage for 10s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Additionally, Eironn gains 50% Dodge Rate while the shield is active.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases shield value to 300% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases shield value to 320% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases Dodge Rate to 80%.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Eironn increases his Ranged DEF by 15 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "He gains an extra 7 Ranged DEF when his HP drops below 50%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Eironn increases his Ranged DEF by 19 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "He gains an extra 9 Ranged DEF when his HP drops below 50%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Eironn increases his Ranged DEF by 23 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "He gains an extra 12 Ranged DEF when his HP drops below 50%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Eironn casts Verdant Cyclone for the first time in each battle without consuming Energy, but the damage is reduced to 50% of the original.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Reduces damage to 70% of the original.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases immobilize duration to 6s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Reduces damage to 80% of the original.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immobilized by Verdant Cyclone.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Verdant Cyclone": "Ultimate",
+        "Ice Spike": "Skill1",
+        "Tempest Guard": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Howling Hurricane": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Displace",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 3.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": 3.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 350.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": 270.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": "front",
+              "source_section": "Skill1"
+            },
+            {
+              "category": "debuff",
+              "label": "Magic DEF",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 280.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "buff",
+              "label": "Dodge chance",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 320.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Ranged DEF",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "numeric": 6.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 6.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Magic DEF",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Displace",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 3.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": 3.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 350.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": "front",
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "debuff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "Arc",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "arc",
+          "area_direction": "front",
+          "source_section": "Skill1"
+        },
+        {
+          "category": "debuff",
+          "label": "Magic DEF",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 280.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Dodge chance",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 320.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "status_condition",
+              "status": "active_shield"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Ranged DEF",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "EX+10",
+          "targeting": "Single target",
+          "numeric": 6.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 6.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Magic",
+          "Arc, Area"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Shield",
+        "Physical DEF"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "3e7bafb7cbb4725f4b8ab0547d5177038b7f493f84e4b18638c17d83a70da331",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

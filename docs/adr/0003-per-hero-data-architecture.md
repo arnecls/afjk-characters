@@ -2,7 +2,9 @@
 
 ## Status
 
-Accepted (2026-09-16)
+Superseded (2026-09-17) for the four-file bundle and in-memory
+relationships. The identity, locality, and mapping-seam decisions remain
+in force.
 
 ## Context
 
@@ -25,19 +27,19 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
 
 1. `data/roster.json` is the ordered manifest and identity map. Its IDs are
    lowercase kebab-case and are used for structured cross-hero references.
-2. Every roster hero has exactly three files under
+2. Every roster hero has exactly four files under
    `data/heroes/<hero-id>/`:
-   - `generated.json` for downloaded source, external facts, deterministic
-     analysis, and roster-wide generated relationships;
+   - `source.json` for downloaded source and external facts;
    - `ai.json` for AI-authored skill effects, tags, summaries, and overviews;
-   - `overrides.json` for typed sparse corrections applied before analysis.
+   - `overrides.json` for typed sparse corrections applied before analysis;
+   - `analysis.json` for the committed hero-local analysis cache.
 3. `overrides.json` is always present, including when empty. Its schema names
    override sections instead of accepting arbitrary patches.
 4. Analysis, synergy, and presentation modules exchange schema-shaped
    mappings. JSON adapters validate at storage seams; renderers do not
    re-detect effects or infer polarity.
-5. Download-only changes mark generated analysis stale. Analysis is offline and
-   must be rerun before validation or rendering.
+5. Download-only changes mark local analysis stale. Roster calibration and
+   relationships are recomputed in memory when views are published.
 6. Aggregate hero JSON and roster-keyed AI files are not canonical inputs.
    Public Markdown, CSV, and site data remain generated projections.
 7. Existing `just` recipe names remain stable.
@@ -48,12 +50,11 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
   changes remain scattered and the aggregate remains an accidental interface.
 - Use two files by merging AI data into overrides: rejected because AI-authored
   source data and targeted corrections have different ownership and lifecycle.
+- Persist roster-wide relationships per hero: rejected because those values
+  always require the complete roster and duplicate scoring implementations.
 - Use immutable dataclasses between modules: rejected for this migration because
   conversions recreated the round-trip seam that currently loses analysis
   detail. Schema-shaped mappings preserve parity with persisted contracts.
-- Store synergies only in a roster-wide file: rejected because generated
-  per-hero output is the requested ownership model, although computation
-  remains roster-wide.
 
 ## Consequences
 
@@ -63,9 +64,5 @@ Hero names also have aliases. `Twins` is the display name for the downloaded
 - Stable IDs add a manifest migration when a display name changes.
 - Public output can stay byte-compatible while internal aggregate inputs are
   removed.
-- Generated documents may use schema version 2 for additive scoring facts and
-  a roster generation hash. Hero IDs are immutable and are not recomputed from
-  display names.
-- Scoring and presentation now consume ID-keyed generated analysis. Local
-  analysis still uses a named temporary adapter over the previous object
-  engine until that last internal graph is retired.
+- Local analysis caches are reused when their input hashes match. Calibration
+  and relationship lists are ephemeral per view build.

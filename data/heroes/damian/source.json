@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "id": "damian",
+  "display_name": "Damian",
+  "source": {
+    "title": "Damian - Woody Wonder",
+    "name": "Damian",
+    "tags": "Wilder · Support · Magic",
+    "faction": "Wilder",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "An intelligent Support hero who uses all sorts of inventions and gizmos to heal allies and disrupt enemy attacks.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Explode, my chariot!",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "200"
+        },
+        "description": {
+          "raw": "Passive. Damian cannot be attacked during the battle. He builds a toy chariot that inherits 85% + 10% (SP-based) of his HP and 100% of his other stats to take his place when a battle starts. He then stays out of the battlefield and will run away after all allies are defeated. Active If a toy chariot is present on the battlefield, Damian sends it charging at the target, causing it to explode and deal 320% (ATK-based) damage while blinding enemies within 1 tile for 3s. When the toy chariot explodes, Damian recovers 80 Energy for every 10% of its HP ratio. If there is no toy chariot, he builds a new one and moves it to the target location.",
+          "passive": [
+            "Damian cannot be attacked during the battle.",
+            "He builds a toy chariot that inherits 85% + 10% (SP-based) of his HP and 100% of his other stats to take his place when a battle starts.",
+            "He then stays out of the battlefield and will run away after all allies are defeated."
+          ],
+          "active": [
+            "If a toy chariot is present on the battlefield, Damian sends it charging at the target, causing it to explode and deal 320% (ATK-based) damage while blinding enemies within 1 tile for 3s.",
+            "When the toy chariot explodes, Damian recovers 80 Energy for every 10% of its HP ratio.",
+            "If there is no toy chariot, he builds a new one and moves it to the target location."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 330% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 340% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 350% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 360% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Damian builds or controls a toy chariot to blind enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Emergency Support!",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "7s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "If a toy chariot is present on the battlefield, Damian controls it to play music for the weakest ally within 3 tiles, recovering 120% (ATK-based) + 10% (SP-based) HP to this ally 4 times. If there is no toy chariot, Damian restores himself 300 Energy.",
+          "active": [
+            "If a toy chariot is present on the battlefield, Damian controls it to play music for the weakest ally within 3 tiles, recovering 120% (ATK-based) + 10% (SP-based) HP to this ally 4 times.",
+            "If there is no toy chariot, Damian restores himself 300 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the healing amount to 130% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the healing amount to 140% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the healing amount to 150% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Damian controls a toy chariot to recover ally's HP or his own Energy."
+      },
+      {
+        "section": "Skill2",
+        "name": "It's a Plane!",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "14s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Damian controls a toy plane to fly towards the farthest enemy and throw fireworks at them, dealing 250% (ATK-based) + 20% (SP-based) damage and stunning the target for 3s.",
+          "active": [
+            "Damian controls a toy plane to fly towards the farthest enemy and throw fireworks at them, dealing 250% (ATK-based) + 20% (SP-based) damage and stunning the target for 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases stun duration to 5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 275% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Damian controls a toy plane to stun the farthest enemy."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Inventor's Will",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Damian's toy chariot activates a music halo when it responds to Emergency Support! for the first time, inspiring non-summoned allies within 2 tiles and increasing their Haste by 40 for 10s.",
+          "active": [
+            "Damian's toy chariot activates a music halo when it responds to Emergency Support!",
+            "for the first time, inspiring non-summoned allies within 2 tiles and increasing their Haste by 40 for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Heals allies within 2 tiles for 80% (ATK-based) HP per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Inspires non-summoned allies and grants them 50 Haste."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Inspires non-summoned allies and grants them 55 Haste."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Damian's toy chariots increase the Haste of nearby allies heroes."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When casting Explode, my chariot! the blind duration is increased to 7s when the toy chariot's HP ratio is above 50%.",
+          "active": [
+            "When casting Explode, my chariot!",
+            "the blind duration is increased to 7s when the toy chariot's HP ratio is above 50%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "The blind duration increases when the toy chariot's HP ratio is high."
+      }
+    ],
+    "range": 20,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "B",
+      "dream_realm": "B",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

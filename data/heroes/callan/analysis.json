@@ -1,0 +1,1062 @@
+{
+  "schema_version": 1,
+  "id": "callan",
+  "display_name": "Callan",
+  "local": {
+    "long_name": "Callan - Grim Soulkeeper",
+    "faction": "graveborn",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2025-02-13",
+    "season": "Chains of Eternity",
+    "season_number": 3,
+    "skills": {
+      "Restless Guardian": {
+        "category": "ultimate",
+        "description": {
+          "raw": "When a battle starts, Callan gains a 200% (HP-based) shield and becomes unaffected. While the shield is active, Callan cannot move or act. The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius. Callan enters the battle when the shield expires Active. Callan maintains the shield for up to 10s, gaining a 100% (HP-based) + 5% (SP-based) shield and becomes unaffected. During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius.",
+          "active": [
+            "When a battle starts, Callan gains a 200% (HP-based) shield and becomes unaffected.",
+            "While the shield is active, Callan cannot move or act.",
+            "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius.",
+            "Callan enters the battle when the shield expires Callan maintains the shield for up to 10s, gaining a 100% (HP-based) + 5% (SP-based) shield and becomes unaffected.",
+            "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When actively used, increases the shield value to 110% (HP-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When actively used, increases the shield value to 120% (HP-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "When actively used, increases the shield value to 130% (HP-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "When actively used, increases the shield value to 140% (HP-based) + 5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "start_of_battle",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Flail Slam": {
+        "category": "skill1",
+        "description": {
+          "raw": "Callan swings his flail to deal 160% (ATK-based) damage to an enemy twice. He then slams them on the ground, dealing 150% (ATK-based) + 20% (SP-based) damage to all enemies in a rectangular area in front of him and knocking them down.",
+          "active": [
+            "Callan swings his flail to deal 160% (ATK-based) damage to an enemy twice.",
+            "He then slams them on the ground, dealing 150% (ATK-based) + 20% (SP-based) damage to all enemies in a rectangular area in front of him and knocking them down."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 240.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Knock down — All units"
+          }
+        ]
+      },
+      "Eternal Watch": {
+        "category": "skill2",
+        "description": {
+          "raw": "Callan converts 25% + 1% (SP-based) of the damage absorbed by his shield into golem's might during battle. Active. Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius. This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based). Each cast consumes up to 600% (ATK-based) of the stored might, with any excess reserved for the next cast.",
+          "active": [
+            "Callan converts 25% + 1% (SP-based) of the damage absorbed by his shield into golem's might during battle.",
+            "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius.",
+            "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+            "Each cast consumes up to 600% (ATK-based) of the stored might, with any excess reserved for the next cast."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Callan converts 28% + 1% (SP-based) of the damage absorbed by his shield into golem's might."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Callan converts 31% + 1% (SP-based) of the damage absorbed by his shield into golem's might."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Callan converts 35% + 1% (SP-based) of the damage absorbed by his shield into golem's might."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "cooldown": 5.0,
+        "skill_range": 2,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Callan increases his Vitality by 11 during battle.",
+          "active": [
+            "Callan increases his Vitality by 11 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Callan increases his Vitality by 15 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Callan increases his Vitality by 19 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Vitality",
+            "label": "buff_defensive",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Vitality — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hollowed Wrath": {
+        "category": "skill4",
+        "description": {
+          "raw": "When Callan or any non-summoned ally's HP falls below 30%, he lets out a wrathful howl, dealing 50% (ATK-based) damage per enemy to all enemies up to 8 times and stunning them for 0.5s. While casting this skill, Callan becomes unaffected. This skill can be used once per battle.",
+          "active": [
+            "When Callan or any non-summoned ally's HP falls below 30%, he lets out a wrathful howl, dealing 50% (ATK-based) damage per enemy to all enemies up to 8 times and stunning them for 0.5s.",
+            "While casting this skill, Callan becomes unaffected.",
+            "This skill can be used once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases stun duration to 2s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 70% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.3,
+                "comparison": "below"
+              },
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Stun — All units"
+          },
+          {
+            "label": "Stun — Single target (EX+10)"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When gaining a shield, Callan recovers HP equal to 15% of the shield's max value.",
+          "active": [
+            "When gaining a shield, Callan recovers HP equal to 15% of the shield's max value."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Damage absorption (allies)",
+          "tier": "base",
+          "targeting": "Area",
+          "description": "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius."
+        },
+        {
+          "label": "Damage absorption (allies)",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "description": "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius."
+        },
+        {
+          "label": "Stored damage release",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Callan converts 25% + 1% of the damage absorbed by his shield into golem's might during battle."
+        },
+        {
+          "label": "Stored damage release",
+          "tier": "base",
+          "targeting": "Area",
+          "description": "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius."
+        },
+        {
+          "label": "Stored damage release",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based)."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Stored resource threshold",
+          "tier": "base",
+          "description": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based)."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.625,
+      "max_hp": 0.375
+    },
+    "behavior": {},
+    "id": "callan",
+    "display_name": "Callan",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "skill1",
+    "hero": {
+      "title": "Callan - Grim Soulkeeper",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "When a battle starts, Callan gains a 200% (HP-based) shield and becomes unaffected.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "While the shield is active, Callan cannot move or act.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Callan enters the battle when the shield expires Callan maintains the shield for up to 10s, gaining a 100% (HP-based) + 5% (SP-based) shield and becomes unaffected.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When actively used, increases the shield value to 110% (HP-based) + 5% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When actively used, increases the shield value to 120% (HP-based) + 5% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When actively used, increases the shield value to 130% (HP-based) + 5% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When actively used, increases the shield value to 140% (HP-based) + 5% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Callan swings his flail to deal 160% (ATK-based) damage to an enemy twice.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "He then slams them on the ground, dealing 150% (ATK-based) + 20% (SP-based) damage to all enemies in a rectangular area in front of him and knocking them down.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage to 170% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage to 170% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage to 220% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Callan converts 25% + 1% (SP-based) of the damage absorbed by his shield into golem's might during battle.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Each cast consumes up to 600% (ATK-based) of the stored might, with any excess reserved for the next cast.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Callan converts 28% + 1% (SP-based) of the damage absorbed by his shield into golem's might.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Callan converts 31% + 1% (SP-based) of the damage absorbed by his shield into golem's might.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Callan converts 35% + 1% (SP-based) of the damage absorbed by his shield into golem's might.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Callan increases his Vitality by 11 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Callan increases his Vitality by 15 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Callan increases his Vitality by 19 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "When Callan or any non-summoned ally's HP falls below 30%, he lets out a wrathful howl, dealing 50% (ATK-based) damage per enemy to all enemies up to 8 times and stunning them for 0.5s.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "While casting this skill, Callan becomes unaffected.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "This skill can be used once per battle.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases damage to 60% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases stun duration to 2s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases damage to 70% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When gaining a shield, Callan recovers HP equal to 15% of the shield's max value.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Restless Guardian": "Ultimate",
+        "Flail Slam": "Skill1",
+        "Eternal Watch": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Hollowed Wrath": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Start of battle"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Damage absorption (allies)",
+              "tier": "base",
+              "targeting": "Area",
+              "qualitative": "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Damage absorption (allies)",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "qualitative": "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Stored damage release",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Callan converts 25% + 1% of the damage absorbed by his shield into golem's might during battle.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Stored damage release",
+              "tier": "base",
+              "targeting": "Area",
+              "qualitative": "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Stored damage release",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+              "grants": []
+            },
+            {
+              "kind": "requires",
+              "label": "Stored resource threshold",
+              "tier": "base",
+              "targeting": "—",
+              "qualitative": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Knock down",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Vitality",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "Mythic+",
+              "targeting": "All units",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.3,
+                  "comparison": "below"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 240.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Knock down",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Vitality",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "Mythic+",
+          "targeting": "All units",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "hp_threshold",
+              "hp_ratio": 0.3,
+              "comparison": "below"
+            },
+            {
+              "type": "unit_type",
+              "unit_type": "non_summoned"
+            }
+          ],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "EX+10",
+          "targeting": "Single target",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "Start of battle"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Damage absorption (allies)",
+          "tier": "base",
+          "targeting": "Area",
+          "qualitative": "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Damage absorption (allies)",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "qualitative": "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Stored damage release",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Callan converts 25% + 1% of the damage absorbed by his shield into golem's might during battle.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Stored damage release",
+          "tier": "base",
+          "targeting": "Area",
+          "qualitative": "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Stored damage release",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+          "grants": []
+        },
+        {
+          "kind": "requires",
+          "label": "Stored resource threshold",
+          "tier": "base",
+          "targeting": "—",
+          "qualitative": "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "All units"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Shield"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 0.625,
+        "Max HP": 0.375
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "f40ebe605f0b667b7259cf30f85bb9ed33e165ca7b2e6e3c273ce246130c0a8a",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

@@ -1,0 +1,1227 @@
+{
+  "schema_version": 1,
+  "id": "aurora",
+  "display_name": "Aurora",
+  "local": {
+    "long_name": "Aurora - Celestial of Dreams",
+    "faction": "celestial",
+    "class": "mage",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2026-01-30",
+    "season": "Tower of Memory",
+    "season_number": 6,
+    "skills": {
+      "Starlit Slumber": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Aurora summons her unicorn Sonny to her side and drifts into a deep sleep. Sonny inherits 140% + 20% (SP-based) of Aurora's HP and 120% + 10% (SP-based) of her other basic stats, then creates a rainbow aura that inspires allies. All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily. This skill can be cast even when Aurora is under control effects. While asleep, Aurora stays invincible. For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage. If Sonny gets defeated in battle, Aurora jolts awake. Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate. Passive. When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side. The frontmost enemy hero gets marked as the Nightmare. The mark reduces their Haste by 40, but increases their ATK 2%. Sonny rallies all allied summons to focus their attacks on the Nightmare.",
+          "passive": [
+            "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+            "The frontmost enemy hero gets marked as the Nightmare.",
+            "The mark reduces their Haste by 40, but increases their ATK 2%.",
+            "Sonny rallies all allied summons to focus their attacks on the Nightmare."
+          ],
+          "active": [
+            "Aurora summons her unicorn Sonny to her side and drifts into a deep sleep.",
+            "Sonny inherits 140% + 20% (SP-based) of Aurora's HP and 120% + 10% (SP-based) of her other basic stats, then creates a rainbow aura that inspires allies.",
+            "All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily.",
+            "This skill can be cast even when Aurora is under control effects.",
+            "While asleep, Aurora stays invincible.",
+            "For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage.",
+            "If Sonny gets defeated in battle, Aurora jolts awake.",
+            "Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Sonny inherits 160% + 20% (SP-based) of Aurora's HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Sonny inherits 180% + 20% (SP-based) of Aurora's HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Sonny inherits 200% + 20% (SP-based) of Aurora's HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Sonny inherits 220% + 20% (SP-based) of Aurora's HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Haste — Summons",
+            "polarity": "buff"
+          },
+          {
+            "label": "Invincible — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Single target",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Dreamspark Bunny": {
+        "category": "skill1",
+        "description": {
+          "raw": "This skill can only be used while Aurora is asleep. Aurora summons a magical bunny beside her that lasts for up to 12s. The magical bunny inherits 100% + 10% (SP-based) of Aurora's HP and 80% + 8% (SP-based) of her other basic stats, and deals 100% (ATK-based) damage with its normal attacks. When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% (SP-based) damage to all adjacent enemies.",
+          "active": [
+            "This skill can only be used while Aurora is asleep.",
+            "Aurora summons a magical bunny beside her that lasts for up to 12s.",
+            "The magical bunny inherits 100% + 10% (SP-based) of Aurora's HP and 80% + 8% (SP-based) of her other basic stats, and deals 100% (ATK-based) damage with its normal attacks.",
+            "When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% (SP-based) damage to all adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the bunny's detonation damage to 370% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the bunny's detonation damage to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the bunny's detonation damage to 430% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 470.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 1.5,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Plushification": {
+        "category": "skill2",
+        "description": {
+          "raw": "While Aurora is dreaming, reality within 2 tiles around her slowly gets overtaken by her dream. If an enemy stays in that area for 12s, they will be transformed into a unicorn plushie, leaving them unable to move or attack for 1 + 0.125 (SP-based)s. The longer an enemy remains in the area, the faster each subsequent transformation triggers (minimum 6s. This effect does not apply to unaffected enemies.",
+          "active": [
+            "While Aurora is dreaming, reality within 2 tiles around her slowly gets overtaken by her dream.",
+            "If an enemy stays in that area for 12s, they will be transformed into a unicorn plushie, leaving them unable to move or attack for 1 + 0.125 (SP-based)s.",
+            "The longer an enemy remains in the area, the faster each subsequent transformation triggers (minimum 6s.",
+            "This effect does not apply to unaffected enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Extends the unicorn plushie transformation duration to 1.5 + 0.125 (SP-based)s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Extends the unicorn plushie transformation duration to 5 + 0.125 (SP-based)s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Extends the unicorn plushie transformation duration to 2.5 + 0.125 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 1.125
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Bind — Area"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Aurora increases her ATK by 10% during battle. For every allied summon from a different ally on the battlefield, her ATK increases further by 1%, up to 5 times.",
+          "active": [
+            "Aurora increases her ATK by 10% during battle.",
+            "For every allied summon from a different ally on the battlefield, her ATK increases further by 1%, up to 5 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Aurora increases her ATK by 10% during battle.",
+                "For every allied summon from a different ally on the battlefield, her ATK increases further by 1.5%, up to 5 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Aurora increases her ATK by 10% during battle.",
+                "For every allied summon from a different ally on the battlefield, her ATK increases further by 2%, up to 5 times."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Dream Veil": {
+        "category": "skill4",
+        "description": {
+          "raw": "While asleep, Aurora opens her whimsical Dream Theater, boosting the damage of all allied summons by 4% and casting them in special roles. Melee summons all take on the role of powerful Knights and take 25% less damage. Ranged summons take on the role of graceful Princesses, allowing their normal attacks to deal extra damage equal to 20% of Aurora's ATK. As for Sonny, Aurora's unicorn friend, he plays the role of the Prince. He gets both the Knight's and Princess' buff and becomes unaffected.",
+          "active": [
+            "While asleep, Aurora opens her whimsical Dream Theater, boosting the damage of all allied summons by 4% and casting them in special roles.",
+            "Melee summons all take on the role of powerful Knights and take 25% less damage.",
+            "Ranged summons take on the role of graceful Princesses, allowing their normal attacks to deal extra damage equal to 20% of Aurora's ATK.",
+            "As for Sonny, Aurora's unicorn friend, he plays the role of the Prince.",
+            "He gets both the Knight's and Princess' buff and becomes unaffected."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increase all allied summons' damage dealt by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increase all allied summons' damage dealt by 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When allied summons deal damage to the enemy marked as Nightmare, 50% of the damage dealt ignores all enemy Phys & Magic DEF."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Damage dealt — Summons",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Summons",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius.",
+          "active": [
+            "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
+        },
+        {
+          "label": "Dream sleep (transformation)",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
+        },
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "While asleep, Aurora stays invincible."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "haste"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "aurora",
+    "display_name": "Aurora",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "skill1",
+    "hero": {
+      "title": "Aurora - Celestial of Dreams",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The frontmost enemy hero gets marked as the Nightmare.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The mark reduces their Haste by 40, but increases their ATK 2%.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Sonny rallies all allied summons to focus their attacks on the Nightmare.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Aurora summons her unicorn Sonny to her side and drifts into a deep sleep.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Sonny inherits 140% + 20% (SP-based) of Aurora's HP and 120% + 10% (SP-based) of her other basic stats, then creates a rainbow aura that inspires allies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This skill can be cast even when Aurora is under control effects.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "While asleep, Aurora stays invincible.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "If Sonny gets defeated in battle, Aurora jolts awake.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Sonny inherits 160% + 20% (SP-based) of Aurora's HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Sonny inherits 180% + 20% (SP-based) of Aurora's HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Sonny inherits 200% + 20% (SP-based) of Aurora's HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Sonny inherits 220% + 20% (SP-based) of Aurora's HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This skill can only be used while Aurora is asleep.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Aurora summons a magical bunny beside her that lasts for up to 12s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The magical bunny inherits 100% + 10% (SP-based) of Aurora's HP and 80% + 8% (SP-based) of her other basic stats, and deals 100% (ATK-based) damage with its normal attacks.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% (SP-based) damage to all adjacent enemies.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the bunny's detonation damage to 370% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the bunny's detonation damage to 400% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the bunny's detonation damage to 430% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "While Aurora is dreaming, reality within 2 tiles around her slowly gets overtaken by her dream.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "If an enemy stays in that area for 12s, they will be transformed into a unicorn plushie, leaving them unable to move or attack for 1 + 0.125 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The longer an enemy remains in the area, the faster each subsequent transformation triggers (minimum 6s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "This effect does not apply to unaffected enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Extends the unicorn plushie transformation duration to 1.5 + 0.125 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Extends the unicorn plushie transformation duration to 5 + 0.125 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Extends the unicorn plushie transformation duration to 2.5 + 0.125 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Aurora increases her ATK by 10% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For every allied summon from a different ally on the battlefield, her ATK increases further by 1%, up to 5 times.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Aurora increases her ATK by 10% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For every allied summon from a different ally on the battlefield, her ATK increases further by 1.5%, up to 5 times.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Aurora increases her ATK by 10% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For every allied summon from a different ally on the battlefield, her ATK increases further by 2%, up to 5 times.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "While asleep, Aurora opens her whimsical Dream Theater, boosting the damage of all allied summons by 4% and casting them in special roles.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Melee summons all take on the role of powerful Knights and take 25% less damage.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Ranged summons take on the role of graceful Princesses, allowing their normal attacks to deal extra damage equal to 20% of Aurora's ATK.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "As for Sonny, Aurora's unicorn friend, he plays the role of the Prince.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "He gets both the Knight's and Princess' buff and becomes unaffected.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increase all allied summons' damage dealt by 8%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increase all allied summons' damage dealt by 12%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "When allied summons deal damage to the enemy marked as Nightmare, 50% of the damage dealt ignores all enemy Phys & Magic DEF.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Starlit Slumber": "Ultimate",
+        "Dreamspark Bunny": "Skill1",
+        "Plushification": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Dream Veil": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Invincible",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 320.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 320.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 320.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "All summons",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Dream sleep (transformation)",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "While asleep, Aurora stays invincible.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 470.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Aurora summons a magical bunny beside her that lasts for up to 12s and deals damage with normal attacks.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 1.125,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": 1.125,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 10.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "Damage dealt",
+              "tier": "Mythic+",
+              "targeting": "All summons",
+              "numeric": 12.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "Mythic+",
+              "targeting": "All summons",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "debuff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Invincible",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 320.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 470.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 1.125,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": 1.125,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 10.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        }
+      ],
+      "summon_effects": [
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "All summons",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Damage dealt",
+          "tier": "Mythic+",
+          "targeting": "All summons",
+          "numeric": 12.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "Mythic+",
+          "targeting": "All summons",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Dream sleep (transformation)",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "While asleep, Aurora stays invincible.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "Area, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Haste"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 5,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "f89cf3ae93f5b4db424edd0555f69fcb6c3826ff662a16ff80bfb4ae4f3702bd",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

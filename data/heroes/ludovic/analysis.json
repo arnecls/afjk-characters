@@ -1,0 +1,1146 @@
+{
+  "schema_version": 1,
+  "id": "ludovic",
+  "display_name": "Ludovic",
+  "local": {
+    "long_name": "Ludovic - Wreathed Eternalist",
+    "faction": "graveborn",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 6,
+    "release_date": "2024-07-11",
+    "season": "Song of Strife",
+    "season_number": 1,
+    "skills": {
+      "Eternal Serenity": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Ludovic generates a field of everblooms with a total healing amount equal to 1200% of his current ATK at his position, restoring HP for adjacent allies by up to 150% (ATK-based) + 10% (SP-based) per second. Ludovic is unaffected while generating the everbloom field. The everbloom field will wither when its healing amount depletes but will restor 100% (ATK-based) per second and review when the healing amount is full. Active. Ludovic moves the everbloom field to a designated tile for it to release 3 healing waves, each restoring HP for all allies within 2 tiles by 110% (ATK-based). This takes effect even when the everbloom field is withered.",
+          "active": [
+            "Ludovic generates a field of everblooms with a total healing amount equal to 1200% of his current ATK at his position, restoring HP for adjacent allies by up to 150% (ATK-based) + 10% (SP-based) per second.",
+            "Ludovic is unaffected while generating the everbloom field.",
+            "The everbloom field will wither when its healing amount depletes but will restor 100% (ATK-based) per second and review when the healing amount is full.",
+            "Ludovic moves the everbloom field to a designated tile for it to release 3 healing waves, each restoring HP for all allies within 2 tiles by 110% (ATK-based).",
+            "This takes effect even when the everbloom field is withered."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases the healing amount of each healing wave to 120% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the healing amount of each healing wave to 130% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases the healing amount of each healing wave to 140% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the healing amount of each healing wave to 150% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          },
+          {
+            "label": "HoT",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Lifeweaver's Blooms": {
+        "category": "skill1",
+        "description": {
+          "raw": "Whenever a non-summoned enemy on the battlefield loses 40% (HP-based) of their HP, the everbloom field will absorb 15% (HP-based) of their max HP, up to 350% (ATK-based), as nutrients to restore its healing amount. Active. Ludovic hurls everblooms at the enemy with the highest accumulated damage dealt, making them lose HP equal to 40% (ATK-based) + 10% (SP-based) per second over the next 4s.",
+          "active": [
+            "Whenever a non-summoned enemy on the battlefield loses 40% (HP-based) of their HP, the everbloom field will absorb 15% (HP-based) of their max HP, up to 350% (ATK-based), as nutrients to restore its healing amount.",
+            "Ludovic hurls everblooms at the enemy with the highest accumulated damage dealt, making them lose HP equal to 40% (ATK-based) + 10% (SP-based) per second over the next 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the target's lost HP per second to 45% (ATK-based) + 10 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the target's lost HP per second to 50% (ATK-based) + 10 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the target's lost HP per second to 55% (ATK-based) + 10 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 55.0
+              }
+            ],
+            "duration": 4.0,
+            "tick": 1.0
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "DoT"
+          }
+        ]
+      },
+      "Ethereal Blooms": {
+        "category": "skill2",
+        "description": {
+          "raw": "Ludovic moves the everbloom field near the weakest ally and absorbs 9% + 1% (SP-based) of the nearest non-summoned enemy's HP, up to 250% (ATK-based), to restore the everbloom field's healing amount. herself",
+          "active": [
+            "Ludovic moves the everbloom field near the weakest ally and absorbs 9% + 1% (SP-based) of the nearest non-summoned enemy's HP, up to 250% (ATK-based), to restore the everbloom field's healing amount.",
+            "herself"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the amount of absorbed HP to 10% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the amount of absorbed HP to 11% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the amount of absorbed HP to 12% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 5.0,
+        "initial_cooldown": 5.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Ludovic increases his Healing by 9 during battle. His Healing will increase by an extra 2 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
+          "active": [
+            "Ludovic increases his Healing by 9 during battle.",
+            "His Healing will increase by an extra 2 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Ludovic increases his Healing by 11 during battle.",
+                "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Ludovic increases his Healing by 14 during battle.",
+                "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Ephemeral Berries": {
+        "category": "skill4",
+        "description": {
+          "raw": "Every 2 times the everbloom field absorbs nutrients through Lifeweaver's Blooms, it will produce an Ephemeral Berry that explodes after a short delay, dealing 100% (ATK-based) damage to all enemies and restoring 130% (ATK-based) HP for all allies within range.",
+          "active": [
+            "Every 2 times the everbloom field absorbs nutrients through Lifeweaver's Blooms, it will produce an Ephemeral Berry that explodes after a short delay, dealing 100% (ATK-based) damage to all enemies and restoring 130% (ATK-based) HP for all allies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage dealt to 110% (ATK-based) and HP restored to 140% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Permanently enhances the everbloom field upon the first 4 times it absorbs nutrients, restoring its healing amount by 50% (ATK-based) per second.",
+                "This takes effect even when the everbloom field is withered."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage dealt to 120% (ATK-based) and HP restored to 150% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 130.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 3.0,
+        "initial_cooldown": 1.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Whenever an enemy steps into the everbloom field, they will instantly take 120% (ATK-based) damage and be stunned for 3s. This effect can be triggered once for each enemy every 12s.",
+          "active": [
+            "Whenever an enemy steps into the everbloom field, they will instantly take 120% (ATK-based) damage and be stunned for 3s.",
+            "This effect can be triggered once for each enemy every 12s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [],
+    "scalar_stat_shares": {
+      "atk": 0.9230769230769231,
+      "max_hp": 0.07692307692307693
+    },
+    "behavior": {},
+    "id": "ludovic",
+    "display_name": "Ludovic",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Ludovic - Wreathed Eternalist",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Ludovic generates a field of everblooms with a total healing amount equal to 1200% of his current ATK at his position, restoring HP for adjacent allies by up to 150% (ATK-based) + 10% (SP-based) per second.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Ludovic is unaffected while generating the everbloom field.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The everbloom field will wither when its healing amount depletes but will restor 100% (ATK-based) per second and review when the healing amount is full.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Ludovic moves the everbloom field to a designated tile for it to release 3 healing waves, each restoring HP for all allies within 2 tiles by 110% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This takes effect even when the everbloom field is withered.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 51: Increases the healing amount of each healing wave to 120% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 111: Increases the healing amount of each healing wave to 130% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 171: Increases the healing amount of each healing wave to 140% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 231: Increases the healing amount of each healing wave to 150% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Whenever a non-summoned enemy on the battlefield loses 40% (HP-based) of their HP, the everbloom field will absorb 15% (HP-based) of their max HP, up to 350% (ATK-based), as nutrients to restore its healing amount.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Ludovic hurls everblooms at the enemy with the highest accumulated damage dealt, making them lose HP equal to 40% (ATK-based) + 10% (SP-based) per second over the next 4s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the target's lost HP per second to 45% (ATK-based) + 10 (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the target's lost HP per second to 50% (ATK-based) + 10 (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the target's lost HP per second to 55% (ATK-based) + 10 (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Ludovic moves the everbloom field near the weakest ally and absorbs 9% + 1% (SP-based) of the nearest non-summoned enemy's HP, up to 250% (ATK-based), to restore the everbloom field's healing amount.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "herself",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the amount of absorbed HP to 10% + 1% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the amount of absorbed HP to 11% + 1% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the amount of absorbed HP to 12% + 1% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Ludovic increases his Healing by 9 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His Healing will increase by an extra 2 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Ludovic increases his Healing by 11 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Ludovic increases his Healing by 14 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Every 2 times the everbloom field absorbs nutrients through Lifeweaver's Blooms, it will produce an Ephemeral Berry that explodes after a short delay, dealing 100% (ATK-based) damage to all enemies and restoring 130% (ATK-based) HP for all allies within range.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases damage dealt to 110% (ATK-based) and HP restored to 140% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Permanently enhances the everbloom field upon the first 4 times it absorbs nutrients, restoring its healing amount by 50% (ATK-based) per second.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "This takes effect even when the everbloom field is withered.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases damage dealt to 120% (ATK-based) and HP restored to 150% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Whenever an enemy steps into the everbloom field, they will instantly take 120% (ATK-based) damage and be stunned for 3s.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "This effect can be triggered once for each enemy every 12s.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Eternal Serenity": "Ultimate",
+        "Lifeweaver's Blooms": "Skill1",
+        "Ethereal Blooms": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Ephemeral Berries": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Healing over time",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 150.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 150.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Max HP-based damage",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 350.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 55.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 4.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 250.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "Mythic+",
+              "targeting": "Multiple targets",
+              "numeric": 130.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Mythic+",
+              "targeting": "All units",
+              "numeric": 120.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 3.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 3.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 120.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "buff",
+          "label": "Healing over time",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 150.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 150.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Max HP-based damage",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "unit_type",
+              "unit_type": "non_summoned"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 350.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "unit_type",
+              "unit_type": "non_summoned"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 55.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 4.0,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "unit_type",
+              "unit_type": "non_summoned"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "Mythic+",
+          "targeting": "Multiple targets",
+          "numeric": 130.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "numeric": 3.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 3.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Magic",
+          "All units, Single target"
+        ],
+        [
+          "DoT",
+          "Single target"
+        ],
+        [
+          "Max HP-based damage",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {
+        "Max HP-based damage": 22.5
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [],
+      "scalar_stat_shares": {
+        "ATK": 0.9230769230769231,
+        "Max HP": 0.07692307692307693
+      },
+      "default_range": 6,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "6415b11ac578956464106bd3ab8a7aafdcc88f10b527d8bbfc457b04139107b7",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

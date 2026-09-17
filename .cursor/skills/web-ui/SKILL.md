@@ -46,13 +46,13 @@ Task progress:
 | --- | --- | --- |
 | Wrong effect **missing or extra** on skill card | AI effect extraction | `data/heroes/<hero-id>/ai.json` → `just views` |
 | Tag string correct in JSON but **wrong chip** on screen | Display | `site/js/src/` (`TAG_DEFINITIONS`, chip helpers) → bundle |
-| Synergy/summary **wording** wrong in markdown and web | Generation | `scripts/generate-heroes-overview.py` / `rewrite-summaries.py` → `just render-site` |
+| Synergy/summary **wording** wrong in markdown and web | Generation | `scripts/hero_pipeline/relationships/` / local analysis → `just views` |
 | **Layout, color, filter, column** behavior | CSS / JS view code | `site/css/styles.css`, `site/js/src/` → bundle |
-| List view column **content** wrong | CSV pipeline | `scripts/overview-to-csv.py` → `just render-site` |
+| List view column **content** wrong | CSV pipeline | `scripts/hero_pipeline/presentation/format.py` → `just views` |
 
 **Skill cards:** tags are computed during `just analyze` and stored as
-`skill_card_tags` on each skill in the hero's generated analysis.
-`scripts/render_site.py` copies them into `site/data/heroes.json` →
+`skill_card_tags` on each skill in the hero's local analysis.
+`just views` copies them into `site/data/heroes.json` →
 `sections.skillCards[].tags`. It does **not** re-derive tags.
 
 After changing skill effects in `data/heroes/<hero-id>/ai.json`, run

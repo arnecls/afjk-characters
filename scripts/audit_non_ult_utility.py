@@ -13,9 +13,10 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import roster_analysis as ra
-
-rs, gen = ra.analysis_modules()
+from hero_pipeline.analysis import overview_facts as gen
+from hero_pipeline.analysis import text as rs
+from hero_pipeline.analysis.policy import make_policy
+from hero_pipeline.analysis.calibrate import analyze_bundles
 
 NON_ULT_SECTIONS = rs.NON_ULT_SKILL_SECTIONS
 SECTION_SUMMARY_KEY = {
@@ -268,7 +269,7 @@ def main() -> int:
         **(snapshot["manifest"].get("headers") or {}),
         "heroes": [
             copy.deepcopy(
-                snapshot["bundles"][entry["id"]]["generated"]["source"]
+                snapshot["bundles"][entry["id"]]["source"]["source"]
             )
             for entry in entries
         ],
@@ -296,28 +297,21 @@ def main() -> int:
         for entry in entries
     }
 
-    role_by_title = {
-        p["long_name"]: p["role_category"]
-        for p in processed["heroes"].values()
-    }
-    analysis = ra.get_roster_analysis(
-        raw,
-        role_by_title,
-        use_cache=False,
-    )
-
-    per_skill_speeds = rs.compute_per_skill_speeds(analysis.skills_by_title)
+    policy = make_policy()
+    heroes = analyze_bundles(snapshot, policy)
+    skills_by_title = rs.load_skills_by_title_from_records(raw["heroes"])
+    per_skill_speeds = rs.compute_per_skill_speeds(skills_by_title)
     damage_thresholds = rs.build_section_damage_thresholds(
-        analysis.heroes, analysis.skills_by_title
+        heroes, skills_by_title
     )
     damage_type_thresholds = rs.build_damage_type_thresholds(
-        analysis.heroes, analysis.skills_by_title
+        heroes, skills_by_title
     )
 
     proposed: dict[str, list[str]] = {}
-    for hero in analysis.heroes:
+    for hero in heroes:
         short = gen.short_name(hero.title)
-        skills = analysis.skills_by_title[hero.title]
+        skills = skills_by_title[hero.title]
         speeds = per_skill_speeds.get(hero.title, {})
         tags = frozenset(current_tags.get(short, []))
         ok, path, notes = qualifies_non_ult_utility(

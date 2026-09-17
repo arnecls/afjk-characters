@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "id": "kulu",
+  "display_name": "Kulu",
+  "source": {
+    "title": "Kulu - Blast Master",
+    "name": "Kulu",
+    "tags": "Hypogean · Marksman · Physical",
+    "faction": "Hypogean",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A Marksman with a passion for explosions. She can split the battlefield and relentlessly bombard enemies stuck on their side.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Blast Mayhem",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Passive. Kulu's normal attacks trigger an explosion that deals 80% (ATK-based) damage to the target and all adjacent units. All of Kulu's skills deal damage to both enemies and allies, but allies take 70% reduced damage. Active. Kulu unleashes her fury, bombarding the enemy side of the battlefield 14 times. Each strike hits a random tile, dealing 90% (ATK-based) + 10% (SP-based) damage to all units on the target tile and its surrounding area within 1 tile. At least 10 strikes will hit areas with 1 or more enemies within, and at least 6 of those will target the area with the most enemies. After the bombardment, Kulu summons a gigantified Boomboom to deal 250% (ATK-based) + 25% (SP-based) damage to all units on the enemy ide of the battlefield. Kulu only casts her Ultimate if there are enemies present on their side of the battlefield. She becomes unaffected while casting her Ultimate.",
+          "passive": [
+            "Kulu's normal attacks trigger an explosion that deals 80% (ATK-based) damage to the target and all adjacent units.",
+            "All of Kulu's skills deal damage to both enemies and allies, but allies take 70% reduced damage."
+          ],
+          "active": [
+            "Kulu unleashes her fury, bombarding the enemy side of the battlefield 14 times.",
+            "Each strike hits a random tile, dealing 90% (ATK-based) + 10% (SP-based) damage to all units on the target tile and its surrounding area within 1 tile.",
+            "At least 10 strikes will hit areas with 1 or more enemies within, and at least 6 of those will target the area with the most enemies.",
+            "After the bombardment, Kulu summons a gigantified Boomboom to deal 250% (ATK-based) + 25% (SP-based) damage to all units on the enemy ide of the battlefield.",
+            "Kulu only casts her Ultimate if there are enemies present on their side of the battlefield.",
+            "She becomes unaffected while casting her Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Each bombardment deals 100% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Each bombardment deals 110% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Each bombardment deals 120% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Each bombardment deals 130% (ATK-based) + 10% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "All of Kulu's skills deal damage to both enemies and allies. When used actively, she will relentless bombard the enemy side of the battlefield."
+      },
+      {
+        "section": "Skill1",
+        "name": "Demolition Zone",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "11s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Kulu bombs the enemy's border tiles closest to your side, creating debris that restricts movement and knocks back units on the affect tiles towards their own side of the battlefield. Debris blocking the center tile can be destroyed in 6 + 1 (ATK-based) hits, but debris on the other tiles are indestructible. Whenever the center debris is destroyed, Kulu marks the tile for an explosion that detonates after 8s, covering it with debris once again. Active. Kulu teleports to the nearest enemy, dealing 150% (ATK-based) + 20% (SP-based) damage to that enemy and knocking them into the air. She then returns to her original tile. If the target is on the allied side of the battlefield, Kulu knocks the enemy back toward their side by up to 3 tiles instead of knocking them into the air. Kulu is invincible while casting this skill.",
+          "passive": [
+            "When a battle starts, Kulu bombs the enemy's border tiles closest to your side, creating debris that restricts movement and knocks back units on the affect tiles towards their own side of the battlefield.",
+            "Debris blocking the center tile can be destroyed in 6 + 1 (ATK-based) hits, but debris on the other tiles are indestructible.",
+            "Whenever the center debris is destroyed, Kulu marks the tile for an explosion that detonates after 8s, covering it with debris once again."
+          ],
+          "active": [
+            "Kulu teleports to the nearest enemy, dealing 150% (ATK-based) + 20% (SP-based) damage to that enemy and knocking them into the air.",
+            "She then returns to her original tile.",
+            "If the target is on the allied side of the battlefield, Kulu knocks the enemy back toward their side by up to 3 tiles instead of knocking them into the air.",
+            "Kulu is invincible while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Damage is increased to 170% (ATK-based) + 20% (SP-based) when the skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Damage is increased to 190% (ATK-based) + 20% (SP-based) when the skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Damage is increased to 210% (ATK-based) + 20% (SP-based) when the skill is used actively."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Kulu bombs the enemy's border tiles closest your side, creating debris that restricts movement. When used actively, she deals damage to an enemy and knocks them into the air."
+      },
+      {
+        "section": "Skill2",
+        "name": "Boomboom Bash!",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "14s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 {{e|rearmost",
+          "active": [
+            "Kulu summons Boomboom, which bounces 3 times between enemies.",
+            "The first 2 bounces will target the 2 frontmost enemies, devouring them.",
+            "For the final bounce, Boomboom will target 1 {{e|rearmost"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Each bounce deals 120% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Each bounce deals 130% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Each bounce deals 140% (ATK-based) + 10% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Kulu summons Boomboom to devour 2 frontmost enemies an deliver them to the enemy side of the battlefield, triggering a series of explosions as it bounces."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Increases ATK by 6% during battle. Dealing damage to enemies will increase ATK by an extra 0.6%, stacking up to 50 times.",
+          "active": [
+            "Increases ATK by 6% during battle.",
+            "Dealing damage to enemies will increase ATK by an extra 0.6%, stacking up to 50 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 8% during battle.",
+                "Dealing damage to enemies will increase ATK by an extra 0.8%, stacking up to 50 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 10% during battle.",
+                "Dealing damage to enemies will increase ATK by an extra 1%, stacking up to 50 times."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK, with extra ATK increases when dealing damage to enemies."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Bombs Away!",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Kulu applies an explosive debuff to all enemies, increasing their damage taken by 10%, which lasts until the end of the battle. When an enemy with the explosive debuff is defeated, Kulu turns them into a doom bomb that detonates after 2s. The explosion deals 210% (ATK-based) damage to all enemy units within 2 tiles, plus extra damage equal to 15% of the defeated enemy's initial HP. The extra damage cannot exceed 300% (ATK-based) of Kulu's ATK.",
+          "active": [
+            "When a battle starts, Kulu applies an explosive debuff to all enemies, increasing their damage taken by 10%, which lasts until the end of the battle.",
+            "When an enemy with the explosive debuff is defeated, Kulu turns them into a doom bomb that detonates after 2s.",
+            "The explosion deals 210% (ATK-based) damage to all enemy units within 2 tiles, plus extra damage equal to 15% of the defeated enemy's initial HP.",
+            "The extra damage cannot exceed 300% (ATK-based) of Kulu's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The doom bomb explosion deals 240% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "The doom bomb explosion deals 270% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Each time a doom bomb detonates, Kulu enters Blast Mania for 10s.",
+                "While in Blast Mania, she gains 35 Penetration and the explosion radius of her normal attacks, Blast Mayhem, and Boomboom Bash skills expand to 2 tiles.",
+                "Subsequent detonations will extend the duration of Blast Mania, but the effects will not stack."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Kulu applies an explosive debuff to all enemies, turning them into doom bombs when they're defeated."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Kulu gains extra ATK SPD and Ranged DEF during battle. If there are no enemies on Kulu's half of the battlefield, her ATK SPD increases by 40 and her Ranged DEF increases by 40. For each enemy present on Kulu's half of the battlefield, the buff values decrease by 10, down to 20. Other allies on Kulu's half of the battlefield receive a portion of these buffs, benefiting by 50% of their values.",
+          "active": [
+            "Kulu gains extra ATK SPD and Ranged DEF during battle.",
+            "If there are no enemies on Kulu's half of the battlefield, her ATK SPD increases by 40 and her Ranged DEF increases by 40.",
+            "For each enemy present on Kulu's half of the battlefield, the buff values decrease by 10, down to 20.",
+            "Other allies on Kulu's half of the battlefield receive a portion of these buffs, benefiting by 50% of their values."
+          ]
+        },
+        "description_lite": "Kulu gains extra ATK SPD and Ranged DEF during battle, with the values based on the number of enemies on her half of the battlefield."
+      }
+    ],
+    "range": 6,
+    "release_date": "2025-05-26",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "S+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

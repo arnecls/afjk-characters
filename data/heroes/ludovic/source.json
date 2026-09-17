@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "id": "ludovic",
+  "display_name": "Ludovic",
+  "source": {
+    "title": "Ludovic - Wreathed Eternalist",
+    "name": "Ludovic",
+    "tags": "Graveborn · Support · Magic",
+    "faction": "Graveborn",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A reticent Support who heals allies and absorbs enemies' life force through everbloom flowers.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Eternal Serenity",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Ludovic generates a field of everblooms with a total healing amount equal to 1200% of his current ATK at his position, restoring HP for adjacent allies by up to 150% (ATK-based) + 10% (SP-based) per second. Ludovic is unaffected while generating the everbloom field. The everbloom field will wither when its healing amount depletes but will restor 100% (ATK-based) per second and review when the healing amount is full. Active. Ludovic moves the everbloom field to a designated tile for it to release 3 healing waves, each restoring HP for all allies within 2 tiles by 110% (ATK-based). This takes effect even when the everbloom field is withered.",
+          "active": [
+            "Ludovic generates a field of everblooms with a total healing amount equal to 1200% of his current ATK at his position, restoring HP for adjacent allies by up to 150% (ATK-based) + 10% (SP-based) per second.",
+            "Ludovic is unaffected while generating the everbloom field.",
+            "The everbloom field will wither when its healing amount depletes but will restor 100% (ATK-based) per second and review when the healing amount is full.",
+            "Ludovic moves the everbloom field to a designated tile for it to release 3 healing waves, each restoring HP for all allies within 2 tiles by 110% (ATK-based).",
+            "This takes effect even when the everbloom field is withered."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases the healing amount of each healing wave to 120% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the healing amount of each healing wave to 130% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases the healing amount of each healing wave to 140% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the healing amount of each healing wave to 150% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ludovic moves the everbloom field that releases healing waves to a designated tile to restore HP for allies within the range."
+      },
+      {
+        "section": "Skill1",
+        "name": "Lifeweaver's Blooms",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Whenever a non-summoned enemy on the battlefield loses 40% (HP-based) of their HP, the everbloom field will absorb 15% (HP-based) of their max HP, up to 350% (ATK-based), as nutrients to restore its healing amount. Active. Ludovic hurls everblooms at the enemy with the highest accumulated damage dealt, making them lose HP equal to 40% (ATK-based) + 10% (SP-based) per second over the next 4s.",
+          "active": [
+            "Whenever a non-summoned enemy on the battlefield loses 40% (HP-based) of their HP, the everbloom field will absorb 15% (HP-based) of their max HP, up to 350% (ATK-based), as nutrients to restore its healing amount.",
+            "Ludovic hurls everblooms at the enemy with the highest accumulated damage dealt, making them lose HP equal to 40% (ATK-based) + 10% (SP-based) per second over the next 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the target's lost HP per second to 45% (ATK-based) + 10 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the target's lost HP per second to 50% (ATK-based) + 10 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the target's lost HP per second to 55% (ATK-based) + 10 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The healing amount of the everbloom field will be restored when an enemy loses a certain amount of HP. Active. Ludovic deals damage to the enemy with the highest accumulated damage dealt and makes them lose HP."
+      },
+      {
+        "section": "Skill2",
+        "name": "Ethereal Blooms",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "5s",
+          "Skill Range": "Global",
+          "Initial Cooldown": "5s"
+        },
+        "description": {
+          "raw": "Ludovic moves the everbloom field near the weakest ally and absorbs 9% + 1% (SP-based) of the nearest non-summoned enemy's HP, up to 250% (ATK-based), to restore the everbloom field's healing amount. herself",
+          "active": [
+            "Ludovic moves the everbloom field near the weakest ally and absorbs 9% + 1% (SP-based) of the nearest non-summoned enemy's HP, up to 250% (ATK-based), to restore the everbloom field's healing amount.",
+            "herself"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the amount of absorbed HP to 10% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the amount of absorbed HP to 11% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the amount of absorbed HP to 12% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ludovic moves the everbloom field to the designated ally's position and absorbs the HP of 1 nearby enemy to restore the everbloom field's healing amount."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Ludovic increases his Healing by 9 during battle. His Healing will increase by an extra 2 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
+          "active": [
+            "Ludovic increases his Healing by 9 during battle.",
+            "His Healing will increase by an extra 2 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Ludovic increases his Healing by 11 during battle.",
+                "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Ludovic increases his Healing by 14 during battle.",
+                "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ludovic increases his Healing. His Healing will be further enhanced when the everbloom field accumulates a certain healing amount."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Ephemeral Berries",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "3s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Every 2 times the everbloom field absorbs nutrients through Lifeweaver's Blooms, it will produce an Ephemeral Berry that explodes after a short delay, dealing 100% (ATK-based) damage to all enemies and restoring 130% (ATK-based) HP for all allies within range.",
+          "active": [
+            "Every 2 times the everbloom field absorbs nutrients through Lifeweaver's Blooms, it will produce an Ephemeral Berry that explodes after a short delay, dealing 100% (ATK-based) damage to all enemies and restoring 130% (ATK-based) HP for all allies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage dealt to 110% (ATK-based) and HP restored to 140% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Permanently enhances the everbloom field upon the first 4 times it absorbs nutrients, restoring its healing amount by 50% (ATK-based) per second.",
+                "This takes effect even when the everbloom field is withered."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage dealt to 120% (ATK-based) and HP restored to 150% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Every few times the everbloom field absorbs nutrients through Lifeweaver's Blooms, it will produce a berry that explodes, dealing damage to enemies and healing allies within range."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Whenever an enemy steps into the everbloom field, they will instantly take 120% (ATK-based) damage and be stunned for 3s. This effect can be triggered once for each enemy every 12s.",
+          "active": [
+            "Whenever an enemy steps into the everbloom field, they will instantly take 120% (ATK-based) damage and be stunned for 3s.",
+            "This effect can be triggered once for each enemy every 12s."
+          ]
+        },
+        "description_lite": "Enemies who step into the everbloom field will take damage and be stunned."
+      }
+    ],
+    "range": 6,
+    "release_date": "2024-07-11",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "B",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

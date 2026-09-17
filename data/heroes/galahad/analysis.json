@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "id": "galahad",
+  "display_name": "Galahad",
+  "local": {
+    "long_name": "Galahad - Daughter of Dawn",
+    "faction": "mauler",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 10,
+    "release_date": "2025-12-18",
+    "season": "Thorns of Devotion",
+    "season_number": 5,
+    "skills": {
+      "Temporal Field": {
+        "category": "ultimate",
+        "description": {
+          "raw": "When Galahad casts her Ultimate, she consumes 400 Energy to deal 340% (ATK-based) + 50% (SP-based) damage to all enemies. She then begins to forming a 2-tile-radius magic circle centered on her position. The circle remains active as long as Galahad stays in the center. While the magic circle is forming, Galahad consumes 60 Energy second to increase the circle's forming progress by 10%. When forming progress reaches 100%, she stops consuming Energy and gains 30 Haste. Enemies inside the circle lose 10 Haste and 16% movement speed for every 10% of the circle's forming progress, up to a max reduction of 50 Haste and 80% movement speed. While Galahad stays at the center of her circle, whenever she casts a skill, a shadow of herself appears shortly after and casts the same skill. The shadow inherits 60% + 5% (SP-based) of Galahad's stats.",
+          "active": [
+            "When Galahad casts her Ultimate, she consumes 400 Energy to deal 340% (ATK-based) + 50% (SP-based) damage to all enemies.",
+            "She then begins to forming a 2-tile-radius magic circle centered on her position.",
+            "The circle remains active as long as Galahad stays in the center.",
+            "While the magic circle is forming, Galahad consumes 60 Energy second to increase the circle's forming progress by 10%.",
+            "When forming progress reaches 100%, she stops consuming Energy and gains 30 Haste.",
+            "Enemies inside the circle lose 10 Haste and 16% movement speed for every 10% of the circle's forming progress, up to a max reduction of 50 Haste and 80% movement speed.",
+            "While Galahad stays at the center of her circle, whenever she casts a skill, a shadow of herself appears shortly after and casts the same skill.",
+            "The shadow inherits 60% + 5% (SP-based) of Galahad's stats."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increase damage delt to 380% (ATK-based) + 50% (SP-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increase damage delt to 420% (ATK-based) + 50% (SP-based)"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increase damage delt to 460% (ATK-based) + 50% (SP-based)"
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increase damage delt to 500% (ATK-based) + 50% (SP-based)"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "debuff",
+            "name": "Movement speed",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 80.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Movement speed — Area",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Binding Loop": {
+        "category": "skill1",
+        "description": {
+          "raw": "Galahad deals 210% (ATK-based) + 30% (SP-based) damage to the enemy who has delt the most cumulative damage and immobilizes them for 4s. The immobilized target cannot move or act and loses HP equal to 50% of non-excess healing they have recived since they were last immobilized by this skill; the HP loss cannot exceed 500% (ATK-based). In boss fight, the HP loss becomes fixed at 125% (ATK-based). After the initial strike, Galahad expands this skill's range by 1 tile and deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within range, she repeats this sequence for a third strike.",
+          "active": [
+            "Galahad deals 210% (ATK-based) + 30% (SP-based) damage to the enemy who has delt the most cumulative damage and immobilizes them for 4s.",
+            "The immobilized target cannot move or act and loses HP equal to 50% of non-excess healing they have recived since they were last immobilized by this skill; the HP loss cannot exceed 500% (ATK-based).",
+            "In boss fight, the HP loss becomes fixed at 125% (ATK-based).",
+            "After the initial strike, Galahad expands this skill's range by 1 tile and deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within range, she repeats this sequence for a third strike."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases initial strike damage to 240% (ATK-based) + 30% (SP-based) and damage of the following two strikes 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases initial strike damage to 270% (ATK-based) + 30% (SP-based) and damage of the following two strikes 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases initial strike damage to 300% (ATK-based) + 30% (SP-based) and damage of the following two strikes 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 3.0,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Bind — Single target"
+          }
+        ]
+      },
+      "Chrono Ward": {
+        "category": "skill2",
+        "description": {
+          "raw": "Galahad casts a protection spell on the weakest ally, granting them a 480% (ATK-based) + 40% (SP-based) shield that lasts for 8s. When the shield expires, it deals 240% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "active": [
+            "Galahad casts a protection spell on the weakest ally, granting them a 480% (ATK-based) + 40% (SP-based) shield that lasts for 8s.",
+            "When the shield expires, it deals 240% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increase shield value to 520% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increase shield value to 560% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increase shield value to 600% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 640.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 5.0,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Galahad increases her ATK by 9% during battle. She also gains an extra 6% ATK when her magic circle is fully formed.",
+          "active": [
+            "Galahad increases her ATK by 9% during battle.",
+            "She also gains an extra 6% ATK when her magic circle is fully formed."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Galahad increases her ATK by 12% during battle.",
+                "She also gains an extra 8% ATK when her magic circle is fully formed."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Galahad increases her ATK by 15% during battle.",
+                "She also gains an extra 10% ATK when her magic circle is fully formed."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Time Recast": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.",
+          "active": [
+            "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
+            "When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle.",
+            "The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy.",
+            "A shadow is not considered a living hero and cannot be targeted by enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The summoned shadow now inherits 100% of the marked ally's basic stats."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer.",
+                "Every time Magister Merlin casts a skill, a shadow Merlin appears nearby and casts the same skill again, causing 60% as much HP loss as Merlin's original skill does."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The summoned shadow now inherits 120% of the marked ally's basic stats."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 10,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast. The steadfast effect granted by this skill cannot exceed a total of 30s.",
+          "active": [
+            "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast.",
+            "The steadfast effect granted by this skill cannot exceed a total of 30s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "steadfast",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_cooldown": 9999.0,
+        "skill_card_tags": [
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Steadfast — Self"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Artifact",
+          "tier": "ex+10",
+          "targeting": "Single target",
+          "description": "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer."
+        },
+        {
+          "label": "Summoning",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "When Galahad's magic circle is fully formed, she summons a shadow ally that remains on the battlefield."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Artifact buffs active",
+          "tier": "supreme+",
+          "targeting": "Self",
+          "description": "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Area, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "galahad",
+    "display_name": "Galahad",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Galahad - Daughter of Dawn",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "When Galahad casts her Ultimate, she consumes 400 Energy to deal 340% (ATK-based) + 50% (SP-based) damage to all enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She then begins to forming a 2-tile-radius magic circle centered on her position.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The circle remains active as long as Galahad stays in the center.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "While the magic circle is forming, Galahad consumes 60 Energy second to increase the circle's forming progress by 10%.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When forming progress reaches 100%, she stops consuming Energy and gains 30 Haste.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Enemies inside the circle lose 10 Haste and 16% movement speed for every 10% of the circle's forming progress, up to a max reduction of 50 Haste and 80% movement speed.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "While Galahad stays at the center of her circle, whenever she casts a skill, a shadow of herself appears shortly after and casts the same skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The shadow inherits 60% + 5% (SP-based) of Galahad's stats.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increase damage delt to 380% (ATK-based) + 50% (SP-based)",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increase damage delt to 420% (ATK-based) + 50% (SP-based)",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increase damage delt to 460% (ATK-based) + 50% (SP-based)",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increase damage delt to 500% (ATK-based) + 50% (SP-based)",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Galahad deals 210% (ATK-based) + 30% (SP-based) damage to the enemy who has delt the most cumulative damage and immobilizes them for 4s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The immobilized target cannot move or act and loses HP equal to 50% of non-excess healing they have recived since they were last immobilized by this skill; the HP loss cannot exceed 500% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "In boss fight, the HP loss becomes fixed at 125% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "After the initial strike, Galahad expands this skill's range by 1 tile and deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within range, she repeats this sequence for a third strike.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases initial strike damage to 240% (ATK-based) + 30% (SP-based) and damage of the following two strikes 160% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases initial strike damage to 270% (ATK-based) + 30% (SP-based) and damage of the following two strikes 180% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases initial strike damage to 300% (ATK-based) + 30% (SP-based) and damage of the following two strikes 200% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Galahad casts a protection spell on the weakest ally, granting them a 480% (ATK-based) + 40% (SP-based) shield that lasts for 8s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "When the shield expires, it deals 240% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increase shield value to 520% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 260% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increase shield value to 560% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 280% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increase shield value to 600% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 300% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Galahad increases her ATK by 9% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She also gains an extra 6% ATK when her magic circle is fully formed.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Galahad increases her ATK by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She also gains an extra 8% ATK when her magic circle is fully formed.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Galahad increases her ATK by 15% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She also gains an extra 10% ATK when her magic circle is fully formed.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "A shadow is not considered a living hero and cannot be targeted by enemies.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "The summoned shadow now inherits 100% of the marked ally's basic stats.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Every time Magister Merlin casts a skill, a shadow Merlin appears nearby and casts the same skill again, causing 60% as much HP loss as Merlin's original skill does.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The summoned shadow now inherits 120% of the marked ally's basic stats.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "The steadfast effect granted by this skill cannot exceed a total of 30s.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Temporal Field": "Ultimate",
+        "Binding Loop": "Skill1",
+        "Chrono Ward": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Time Recast": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 550.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "debuff",
+              "label": "Movement speed",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 80.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "debuff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Artifact",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "qualitative": "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer.",
+              "grants": []
+            },
+            {
+              "kind": "requires",
+              "label": "Artifact buffs active",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "qualitative": "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 4.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 4.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 330.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 640.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "qualitative": "When Galahad's magic circle is fully formed, she summons a shadow ally that remains on the battlefield.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Steadfast",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 640.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "debuff",
+          "label": "Movement speed",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 80.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "debuff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 4.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 4.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Steadfast",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Artifact",
+          "tier": "EX+10",
+          "targeting": "Single target",
+          "qualitative": "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer.",
+          "grants": []
+        },
+        {
+          "kind": "requires",
+          "label": "Artifact buffs active",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "qualitative": "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Summoning",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "qualitative": "When Galahad's magic circle is fully formed, she summons a shadow ally that remains on the battlefield.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "All units, Area, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Haste",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 10,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "57df367db137341db81f75d95542fe960b1e3a36e2fde3af9acd6974fd8f5b31",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

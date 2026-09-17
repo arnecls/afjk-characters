@@ -6,18 +6,18 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 ## Per-hero storage
 
 The canonical hero data is stored in `heroes/<hero-id>/` and ordered by
-`roster.json`. Every roster hero has exactly three files:
+`roster.json`. Every roster hero has exactly four files:
 
-- `generated.json` contains downloaded source fields, external stat facts,
-  deterministic analysis, and roster-wide synergy results.
+- `source.json` contains downloaded source fields and external stat facts.
 - `ai.json` contains skill-effect extraction, behavior tags, summon metadata,
   skill summaries, play overviews, and counter overviews.
 - `overrides.json` contains typed sparse corrections. It is always present,
   including when it contains only `{"schema_version": 1}`.
+- `analysis.json` contains the rebuildable hero-local analysis cache.
 
 Hero IDs are lowercase kebab-case and omit punctuation. `Twins` is the
-canonical ID for the downloaded `Elijah & Lailah` record. Cross-hero references
-in generated files use IDs; renderers resolve them to display names.
+canonical ID for the downloaded `Elijah & Lailah` record. Cross-hero
+references use IDs; renderers resolve them to display names.
 
 The former aggregate and roster-keyed files were removed after the parity
 cutover. Public Markdown, CSV, and site files remain generated projections.
@@ -27,14 +27,14 @@ cutover. Public Markdown, CSV, and site files remain generated projections.
 | File | Category | Notes |
 | --- | --- | --- |
 | [roster.json](roster.json) | **Manifest** | Ordered roster and stable hero IDs. |
-| [heroes/](heroes/) | **Canonical hero data** | Three files per hero: generated, AI, and typed overrides. |
+| [heroes/](heroes/) | **Canonical hero data** | Four files per hero: source, AI, overrides, and local analysis. |
 | [heroes/<hero-id>/overrides.json](heroes/) | **Manual configuration** | Typed per-hero corrections for placement, movement, melee/range, and signature selection. |
 | [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring, proximity-aura reach (`proximity_synergy`). |
 | [schema/](schema/) | **Manual configuration** | JSON Schema definitions used to validate processed data and tag enums. |
 
 ## Generated files
 
-`generated.json` is overwritten for the affected hero by download or analysis.
+`source.json` is overwritten for the affected hero by download.
 Download-only changes mark analysis stale until `just analyze` is run.
 
 The hero bundles are committed and reused without re-downloading
@@ -60,8 +60,8 @@ Edit these when tuning scoring, fixing edge cases, or extending validation:
   defaults; inactive tuning keys are documented migration compatibility data.
 - **`heroes/<hero-id>/overrides.json`** — typed signature, placement, movement,
   and melee/range corrections.
-- **`heroes/<hero-id>/generated.json`** — external walk-speed and stat-rank
-  facts are generated from afkj-data.
+- **`heroes/<hero-id>/source.json`** — downloaded skill text plus external
+  walk-speed and stat-rank facts from afkj-data.
 - **`schema/`** — contracts for hero bundles, generated analysis, effects, and
   allowed behavior-tag values.
   Update when adding new effect labels, tags, or processed fields.
@@ -70,15 +70,15 @@ Edit these when tuning scoring, fixing edge cases, or extending validation:
 
 ```
 roster.json
-    + heroes/<hero-id>/generated.json
+    + heroes/<hero-id>/source.json
     + heroes/<hero-id>/ai.json
     + heroes/<hero-id>/overrides.json
     + heroes_config.json
         ↓  just analyze
-heroes/<hero-id>/generated.json
-        ↓  just render
+heroes/<hero-id>/analysis.json
+        ↓  just views
 Heroes.md · heroes-overview.md · heroes-overview.csv · site/data/heroes.json
 ```
 
 Ephemeral caches (gitignored): `prydwen_reviews_cache.json` (Prydwen review text for
-`scripts/generate_play_overviews.py`), `.roster_analysis_cache.pkl` (speeds re-analysis).
+`scripts/generate_play_overviews.py`).

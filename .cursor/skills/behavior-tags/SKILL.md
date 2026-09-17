@@ -18,7 +18,7 @@ replacement scoring (Jaccard overlap in `scripts/generate-heroes-overview.py`).
 1. `.cursor/AGENTS.md` — **Behavior tags** section (definitions + 3–5 tag rule)
 2. `data/schema/tags.schema.json` — allowed tag enum (do not invent tags)
 3. `data/heroes/<hero-id>/ai.json` — current assignments
-4. `data/heroes/<hero-id>/generated.json` — `description`,
+4. `data/heroes/<hero-id>/source.json` — `description`,
    `description_lite`, skill text
 5. `data/heroes/<hero-id>/ai.json` — mechanic summaries per skill slot
 6. `data/heroes/<hero-id>/ai.json` — curated playstyle blurbs (good first pass
@@ -29,7 +29,7 @@ Optional context: `docs/ai-generated-data.md` section 2, `docs/replacement-algor
 ## Audit prompt
 
 Compare each hero's `behavior_tags` against skill descriptions in its
-`generated.json`, using the summaries and play overview in its `ai.json` to
+`source.json`, using the summaries and play overview in its `ai.json` to
 spot identity mismatches quickly.
 Are there any characters where the tags do not describe the character's skills
 sufficiently?

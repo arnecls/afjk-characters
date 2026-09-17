@@ -12,16 +12,11 @@ from types import SimpleNamespace
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
 
 def _load_gen():
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_overview_facts()
 
 
 gen = _load_gen()
@@ -65,14 +60,7 @@ def _shield_provider() -> SimpleNamespace:
 
 class ShieldMaxHpSynergyTests(unittest.TestCase):
     def test_shield_does_not_score_for_max_hp_only_receiver(self) -> None:
-        rs_spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries",
-            SCRIPTS / "rewrite-summaries.py",
-        )
-        rs = importlib.util.module_from_spec(rs_spec)
-        sys.modules["rewrite_summaries"] = rs
-        assert rs_spec.loader is not None
-        rs_spec.loader.exec_module(rs)
+        rs = load_rewrite_summaries()
 
         receiver = SimpleNamespace(
             title="Scaler - Hero",
@@ -601,12 +589,7 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
     def test_tasi_behavior_flags_slow_first_cast(self) -> None:
         import importlib.util
 
-        spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-        )
-        rs = importlib.util.module_from_spec(spec)
-        assert spec.loader is not None
-        spec.loader.exec_module(rs)
+        rs = load_rewrite_summaries()
         text = (Path(__file__).resolve().parent.parent / "Heroes.md").read_text(
             encoding="utf-8"
         )
@@ -717,14 +700,7 @@ class FaramorEnemyGroupingTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         # Earlier tests may stub the cache; force a fresh load from disk.
         gen._BEHAVIOR_TAGS = None
-        rs_spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries",
-            SCRIPTS / "rewrite-summaries.py",
-        )
-        cls.rs = importlib.util.module_from_spec(rs_spec)
-        sys.modules["rewrite_summaries"] = cls.rs
-        assert rs_spec.loader is not None
-        rs_spec.loader.exec_module(cls.rs)
+        cls.rs = load_rewrite_summaries()
 
         import heroes_io as io
 
@@ -866,14 +842,7 @@ class DisplaySynergyFallbackTests(unittest.TestCase):
 class ContinuousDamageMatcherTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        rs_spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries",
-            SCRIPTS / "rewrite-summaries.py",
-        )
-        cls.rs = importlib.util.module_from_spec(rs_spec)
-        sys.modules["rewrite_summaries"] = cls.rs
-        assert rs_spec.loader is not None
-        rs_spec.loader.exec_module(cls.rs)
+        cls.rs = load_rewrite_summaries()
 
         import heroes_io as io
 

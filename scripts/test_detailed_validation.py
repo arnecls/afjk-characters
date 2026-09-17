@@ -13,19 +13,14 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import hero_schema as hs
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
+from hero_pipeline.analysis import serialize as hs
 import skill_effects_store as ses
 
 
 def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_rewrite_summaries()
 
 
 rs = _load_rs()

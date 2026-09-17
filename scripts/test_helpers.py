@@ -2,6 +2,26 @@
 
 from __future__ import annotations
 
+import sys
+
+
+def load_rewrite_summaries():
+    """Return the local-analysis text module used by tests."""
+    from hero_pipeline.analysis import text
+
+    sys.modules["rewrite_summaries"] = text
+    return text
+
+
+def load_overview_facts(name: str = "gen_overview"):
+    """Return the scoring-facts module used by tests."""
+    from hero_pipeline.analysis import overview_facts
+
+    sys.modules[name] = overview_facts
+    sys.modules["gen_overview"] = overview_facts
+    sys.modules["generate_heroes_overview"] = overview_facts
+    return overview_facts
+
 
 def tag_labels(tags: list) -> list[str]:
     """Display labels from skill_card_tags (strings or {label, polarity?})."""

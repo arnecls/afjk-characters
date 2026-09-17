@@ -571,7 +571,7 @@ def _source_for_entry(
     entry: Mapping[str, Any],
     bundle: Mapping[str, Any],
 ) -> dict[str, Any]:
-    source = copy.deepcopy(bundle["generated"].get("source"))
+    source = copy.deepcopy(bundle["source"].get("source"))
     if not source:
         raise ValueError(f"missing source for hero {entry['id']}")
     if source.get("title") != entry["title"]:
@@ -586,6 +586,9 @@ def project_roster(
     inputs: Mapping[str, Any],
     policy: Mapping[str, Any] | None = None,
     config: Mapping[str, Any] | None = None,
+    *,
+    analyses: Mapping[str, Any] | None = None,
+    relationships: Mapping[str, Any] | None = None,
 ) -> PresentationRoster:
     """Return the sole ID-to-display/slug resolved output model."""
     manifest = copy.deepcopy(inputs["manifest"])
@@ -604,12 +607,22 @@ def project_roster(
             raise ValueError(f"missing bundle for hero {hero_id}")
         source = _source_for_entry(entry, bundle)
         analysis = copy.deepcopy(
-            (bundle["generated"].get("derived") or {}).get("analysis") or {}
+            (analyses or {}).get(hero_id)
+            or (bundle.get("analysis") or {}).get("local")
+            or {}
         )
         if not analysis:
             raise ValueError(f"missing analysis for hero {hero_id}")
-        stored = copy.deepcopy(bundle["generated"].get("synergies") or {})
-        external = bundle["generated"].get("external") or {}
+        stored = copy.deepcopy(
+            ((relationships or {}).get("heroes") or {}).get(hero_id)
+            or {
+                "synergies": [],
+                "beneficiaries": [],
+                "beneficiary_overflow_reasons": [],
+                "replacements": {},
+            }
+        )
+        external = bundle["source"].get("external") or {}
         heroes.append(
             {
                 "id": hero_id,

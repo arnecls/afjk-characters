@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "id": "chippy",
+  "display_name": "Chippy",
+  "local": {
+    "long_name": "Chippy - Acorn Knight",
+    "faction": "lightbearer",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Brothers-in-arms": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
+          "active": [
+            "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage to 320% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage to 340% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage to 350% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage to 360% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 360.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Take This!": {
+        "category": "skill1",
+        "description": {
+          "raw": "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
+          "active": [
+            "Chippy jumps to deal 240% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 250% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 270% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 270.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Eureka!": {
+        "category": "skill2",
+        "description": {
+          "raw": "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
+          "active": [
+            "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
+            "These attacks cannot deal critical damage and can only be triggered 1 time per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the chance to 3%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the chance to 4%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the chance to 5%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1000.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "chippy",
+    "display_name": "Chippy",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Chippy - Acorn Knight",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to 320% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to 340% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to 350% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to 360% (ATK-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 250% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 260% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 270% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the chance to 3%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the chance to 4%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the chance to 5%.",
+          "Skill2"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Brothers-in-arms": "Ultimate",
+        "Take This!": "Skill1",
+        "Eureka!": "Skill2"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 360.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 270.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 1000.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 1000.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Physical",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "89cd599e9e71803e9c5df4d445dcde1a8af7a90925f6f7be5494e7aa9c978736",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

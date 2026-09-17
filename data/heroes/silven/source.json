@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "id": "silven",
+  "display_name": "Silven",
+  "source": {
+    "title": "Silven - Heir of Glory",
+    "name": "Silven",
+    "tags": "Lightbearer · Marksman · Magic",
+    "faction": "Lightbearer",
+    "class": "Marksman",
+    "damage_type": "Magic",
+    "description": "A Marksman with a strong sense of chivalry, skilled in using magic to control flying swords and manipulate gravity.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Aloft Edge",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "500"
+        },
+        "description": {
+          "raw": "Silven summons 6 flying blades. For the next 8s, normal attacks will launch the summoned blades at enemies, with each blade dealing 70% (ATK-based) + 9% (SP-based) damage.",
+          "active": [
+            "Silven summons 6 flying blades.",
+            "For the next 8s, normal attacks will launch the summoned blades at enemies, with each blade dealing 70% (ATK-based) + 9% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Each blade deals 75% (ATK-based) + 9% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Each blade deals 80% (ATK-based) + 9% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Each blade deals 85% (ATK-based) + 9% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Each blade deals 90% (ATK-based) + 9% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Silven summons flying blades to attack enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Gravity Collapse",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "0.125s",
+          "Skill Range": "12 tiles"
+        },
+        "description": {
+          "raw": "When a flying blade sent by Silven's normal attacks hits an enemy, it leaves a Blademark. After performing 4 normal attacks, Silven's next normal attack turns into Gravity Collapse on the enemy with the most Blademarks. Gravity Collapse deals 200% (ATK-based) + 30% (SP-based) damage, knocks the enemy down for 2s, and detonates all Blademarks on hat enemy to deal an extra 36% (ATK-based) + 3% (SP-based) damage. If Aloft Edge is active, increases the range of Gravity Collapse by 1 tile, and launches extra flying blades, dealing 48% (ATK-based) + 6% (SP-based) damage 6 times.",
+          "active": [
+            "When a flying blade sent by Silven's normal attacks hits an enemy, it leaves a Blademark.",
+            "After performing 4 normal attacks, Silven's next normal attack turns into Gravity Collapse on the enemy with the most Blademarks.",
+            "Gravity Collapse deals 200% (ATK-based) + 30% (SP-based) damage, knocks the enemy down for 2s, and detonates all Blademarks on hat enemy to deal an extra 36% (ATK-based) + 3% (SP-based) damage.",
+            "If Aloft Edge is active, increases the range of Gravity Collapse by 1 tile, and launches extra flying blades, dealing 48% (ATK-based) + 6% (SP-based) damage 6 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage of Gravity Collapse to 220% (ATK-based) + 30% (SP-based).",
+                "While Aloft Edge is active, increases damage per blade to 52 (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage of Gravity Collapse to 220% (ATK-based) + 30% (SP-based).",
+                "While Aloft Edge is active, increases damage per blade to 56 (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage of Gravity Collapse to 220% (ATK-based) + 30% (SP-based).",
+                "While Aloft Edge is active, increases damage per blade to 60 (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Silven knocks the enemy down with the force of gravity and detonates the Blademarks on them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Tempered Field",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, Silven sets up a Tempered Field around himself, increasing his Ranged DEF by 48 while the field is active. Silven's flying blades sharpen when passing through the field, dealing extra true damage equal to 1.3% + 0.2% (SP-based) of the target's max HP, up to 14% (ATK-based) + 2% (SP-based). The field disappears if Silven moves, and will reappear after he stands still for 3s.",
+          "active": [
+            "When a battle starts, Silven sets up a Tempered Field around himself, increasing his Ranged DEF by 48 while the field is active.",
+            "Silven's flying blades sharpen when passing through the field, dealing extra true damage equal to 1.3% + 0.2% (SP-based) of the target's max HP, up to 14% (ATK-based) + 2% (SP-based).",
+            "The field disappears if Silven moves, and will reappear after he stands still for 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases extra true damage to 1.4% + 0.2% (SP-based) of the target's max HP, up to 16% (ATK-based) + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases extra true damage to 1.4% + 0.2% (SP-based) of the target's max HP, up to 18% (ATK-based) + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases extra true damage to 1.4% + 0.2% (SP-based) of the target's max HP, up to 20% (ATK-based) + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Silven sets up a field to enhance his flying blades."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 21 during battle.",
+          "active": [
+            "Increases ATK SPD by 21 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 27 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 33 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Oath of Fealty",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "When Silven receives a temporary stat buff from an ally, he immediately recovers 300 Energy and permanently gains 4 Penetration. He also permanently increases the ATK SPD of both himself and that ally by 16. This effect can only by triggered once per ally.",
+          "active": [
+            "When Silven receives a temporary stat buff from an ally, he immediately recovers 300 Energy and permanently gains 4 Penetration.",
+            "He also permanently increases the ATK SPD of both himself and that ally by 16.",
+            "This effect can only by triggered once per ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the Penetration Silven gains to 6."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "After the effect triggers 2 times, Silven gains an extra 15% ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the Penetration Silven gains to 8."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Silven receives a temporary stat buff from an ally, he gains Energy, Penetration and ATK SPD."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When up against powerful foes, Silven's knightly spirit kick in, allowing him to deal 25% more damage to enemies whose current HP ratio is higher than 50%.",
+          "active": [
+            "When up against powerful foes, Silven's knightly spirit kick in, allowing him to deal 25% more damage to enemies whose current HP ratio is higher than 50%."
+          ]
+        },
+        "description_lite": "Silven deals more damage to enemies with a high HP ratio."
+      }
+    ],
+    "range": 7,
+    "release_date": "2026-02-13",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "A+",
+      "dream_realm": "S",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

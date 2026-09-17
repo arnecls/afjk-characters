@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "dionel",
+  "display_name": "Dionel",
+  "source": {
+    "title": "Dionel - Venus of Dawn",
+    "name": "Dionel",
+    "tags": "Celestial · Marksman · Physical",
+    "faction": "Celestial",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "An outstanding Marksman who makes a big difference under allied reinforcement and continuously deals massive AoE damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Dawn Light",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Skill Range": "0 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% (SP-based) damage to all adjacent enemies. The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based).",
+          "active": [
+            "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% (SP-based) damage to all adjacent enemies.",
+            "The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Gains a Nectar Feast buff within the effect duration.",
+                "Using this skill won't shorten its duration until the skill ends if Dionel has already been buffed."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the damage of to 180% (ATK-based) + 15% (SP-based) and the damage of its last hit to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: The skill duration is extended by 2s if Dionel achieves an Assist or Defeat on an enemy hero, triggered only once per casting."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the damage of to 190% (ATK-based) + 15% (SP-based) and the damage of its last hit to 270% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dionel soars into the air and unleashes a wave of . The last hit deals extra damage and knocks the enemy into the air."
+      },
+      {
+        "section": "Skill1",
+        "name": "Starry Void",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% (SP-based) damage to all enemies along the way.",
+          "passive": [
+            "Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% (SP-based) damage to all enemies along the way."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Increases the Penetration attack damage to 150% + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Flashes to a better attacking position if not in a good spot, triggered once every 6s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the Penetration attack damage to 155% + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases the range of normal attacks and allow them to penetrate targets."
+      },
+      {
+        "section": "Skill2",
+        "name": "Nectar Feast",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "22s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally. Active. Dionel drinks the divine nectar to increase 20% + 2% (SP-based) ATK and 20 + 3 (SP-based) ATK SPD for 12s.",
+          "passive": [
+            "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally."
+          ],
+          "active": [
+            "Dionel drinks the divine nectar to increase 20% + 2% (SP-based) ATK and 20 + 3 (SP-based) ATK SPD for 12s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: For each Intoxication stack, the ATK bonus is increased to 16%, and the ATK SPD bonus is increased to 16."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: For each Intoxication stack, the ATK bonus is increased to 18%, and the ATK SPD bonus is increased to 18."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: The bonuses from active casting are increased to 25% + 2% (SP-based) ATK and 25 + 3 (SP-based) ATK SPD."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dionel gains extra buff when boosted by allied heroes and increase ATK and ATK SPD when actively used."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Dionel's normal attack permanently increases his ATK SPD by 3 during battle, for a maximum ATK SPD bonus of 30.",
+          "active": [
+            "Dionel's normal attack permanently increases his ATK SPD by 3 during battle, for a maximum ATK SPD bonus of 30."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Dionel's normal attack permanently increases his ATK SPD by 4 during battle, for a maximum ATK SPD bonus of 40."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Dionel's normal attack permanently increases his ATK SPD by 5 during battle, for a maximum ATK SPD bonus of 50."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dionel's normal attack permanently increases his ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Celestial Spear",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "15s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Dionel summons a light spear after a short delay, dealing 200% (ATK-based) true damage to all enemies, up to 3 casting per battle. The skill is only available when the owned Intoxication is fully stacked.",
+          "active": [
+            "Dionel summons a light spear after a short delay, dealing 200% (ATK-based) true damage to all enemies, up to 3 casting per battle.",
+            "The skill is only available when the owned Intoxication is fully stacked."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Increases the skill damage dealt to 210% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Deals extra true damage equal to 20% of the target's current HP when first casting the skill in a battle.",
+                "Reduces target's Vitality by 60 in the next 8s.",
+                "The extra damage is no more than 1000% of ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Increases the skill damage dealt to 220% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dionel deals true damage to all enemies. Only available when the owned intoxication is fully stacked."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Dionel increases Execution by 20 within the duration of Nectar Feast if it's been activated.",
+          "active": [
+            "Dionel increases Execution by 20 within the duration of Nectar Feast if it's been activated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dionel increases Execution within the duration of Nectar Feast if it's been activated."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

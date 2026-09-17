@@ -10,12 +10,11 @@ Instead of manually typing out every synergy for every hero, the system relies o
 
 ```mermaid
 graph TD
-    Sources[Web Sources<br>Fandom, Yaphalla, Prydwen] -->|Download| RawData[`data/heroes/<id>/generated.json`]
-    Sidecars[AI hero data<br>`data/heroes/<id>/ai.json`] -->|Analyze| Processed[`generated.json analysis`]
-    RawData -->|Analyze| Processed
-    Processed -->|Score Synergies| Synergies[`generated.json synergies`]
-    Processed -->|Render| Output[Markdown and Web Viewer]
-    Synergies -->|Render| Output
+    Sources[Web Sources<br>Fandom, Yaphalla, Prydwen] -->|Download| RawData[`data/heroes/<id>/source.json`]
+    Sidecars[AI hero data<br>`data/heroes/<id>/ai.json`] -->|Analyze| Local[`analysis.json` cache]
+    RawData -->|Analyze| Local
+    Local -->|Calibrate + Score| Memory[In-memory roster results]
+    Memory -->|Render| Output[Markdown and Web Viewer]
 ```
 
 ---
@@ -28,7 +27,7 @@ The pipeline begins by scraping the latest character data from community sources
 - **Meta Tiers**: Sourced from the [Prydwen Tier List](https://www.prydwen.gg/afk-journey/tier-list) to ensure replacements are meta-viable.
 
 The ordered [`data/roster.json`](../data/roster.json) manifest identifies each
-hero. Raw text is saved in that hero's `generated.json`; it is not assembled
+hero. Raw text is saved in that hero's `source.json`; it is not assembled
 into a canonical roster file.
 
 ### Stage 2: Skill Processing (Analyze — pass 1)
@@ -41,17 +40,16 @@ skill when adding a hero or when skill text changes.
 
 [`scripts/hero_pipeline_cli.py`](../scripts/hero_pipeline_cli.py) runs offline
 per-hero analysis and roster calibration. Local analysis reads one hero
-bundle. Roster calibration then assigns magnitude and speed labels. Synergy
-scoring uses those calibrated records and writes ID-based results in the same
-publication as analysis (see [ADR 0004](adr/0004-staged-publication.md)).
+bundle and writes `analysis.json`. Roster calibration and relationship
+scoring run in memory during `just views`.
 
 1. **Load sidecar** — `scripts/skill_effects_store.py` reads the hero's JSON;
    missing or stale sidecars fail `just validate`.
 2. **Apply effects** — `apply_sidecar_to_hero()` builds per-skill `skill_slices`
    with effects, summon effects, immunities, and special effects.
-3. **Post-process** — script-side regex still runs on top of sidecar data:
-   upgrade numerics, magnitudes, benefit stats, movement, placement constraints,
-   proximity auras, and skill-card tag formatting.
+3. **Post-process** — local analysis still derives upgrade numerics, magnitudes,
+   benefit stats, movement, placement constraints, proximity auras, and
+   skill-card tag formatting.
 
 **Example:**
 
@@ -68,30 +66,27 @@ publication as analysis (see [ADR 0004](adr/0004-staged-publication.md)).
 }
 ```
 
-This processed data is saved in each hero's `generated.json`. Curated inputs
+This processed data is saved in each hero's `analysis.json`. Curated inputs
 and typed corrections are read from that hero's `ai.json` and `overrides.json`.
 
 ### Stage 3: Synergy & Replacement Scoring (Analyze — pass 2)
-[`scripts/process_synergies.py`](../scripts/process_synergies.py) is a thin
-entry point for `just analyze-synergies`. Production scoring lives in
-[`scripts/hero_pipeline/synergy/scoring.py`](../scripts/hero_pipeline/synergy/scoring.py)
-and reads compact facts from generated analysis. It does not reparse skill
+[`just views`](../justfile) calibrates the roster and scores relationships in
+memory. Production scoring lives in
+[`scripts/hero_pipeline/relationships/scoring.py`](../scripts/hero_pipeline/relationships/scoring.py)
+and reads compact facts from calibrated analysis. It does not reparse skill
 prose or reconstruct aggregate roster files.
 
 It looks at what a hero **provides** (e.g., Haste buffs, Magic damage) and
 matches it against what another hero **requires** (e.g., a slow Ultimate that
 needs Haste, or a passive that triggers on allied Magic damage). The results
-are saved in each hero's `generated.json` using stable IDs. Display limits
-are applied later in presentation.
+scoring uses those calibrated records. Relationship lists are ephemeral.
 
 ### Stage 4: Rendering (Views)
-[`scripts/render_overview.py`](../scripts/render_overview.py) and
-[`scripts/render_site.py`](../scripts/render_site.py) consume the structured
-projection and produce `heroes-overview.md`, `heroes-overview.csv`, and
-`site/data/heroes.json`. [`scripts/render_heroes.py`](../scripts/render_heroes.py)
-regenerates `Heroes.md` from the manifest and hero-local source. Rendering does
-not re-run skill-text detection — run `just analyze` first when generated data
-is stale.
+[`scripts/hero_pipeline_cli.py`](../scripts/hero_pipeline_cli.py) `views`
+calibrates the roster, scores relationships in memory, and writes
+`Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and
+`site/data/heroes.json`. Rendering does not re-run skill-text detection —
+run `just analyze` first when local caches are stale.
 
 See also [synergy algorithm](synergy-algorithm.md), [replacement algorithm](replacement-algorithm.md), and [AI-generated data](ai-generated-data.md) for curated metadata used during analyze/render.
 

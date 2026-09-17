@@ -7,7 +7,7 @@ import json
 import re
 from typing import Any
 
-import hero_schema as hs
+from hero_pipeline.analysis import serialize as hs
 
 PERSISTENCE_VALUES = frozenset({"temporary", "permanent", "unknown"})
 

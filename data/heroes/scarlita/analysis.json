@@ -1,0 +1,1208 @@
+{
+  "schema_version": 1,
+  "id": "scarlita",
+  "display_name": "Scarlita",
+  "local": {
+    "long_name": "Scarlita - Herald of Compassion",
+    "faction": "celestial",
+    "class": "warrior",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Divine Quake": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Scarlita slashes the ground in the specified direction to create a 3-tile-wide Rock Wave, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies in this direction and knocking them back to the edge of the battlefield. Scarlita then charges and strikes, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within the radius of a 2-tile arc and stunning them for 1s. The skill damage is increased by 10% for each surviving ally besides Scarlita. She is Unaffected when casting this skill.",
+          "active": [
+            "Scarlita slashes the ground in the specified direction to create a 3-tile-wide Rock Wave, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies in this direction and knocking them back to the edge of the battlefield.",
+            "Scarlita then charges and strikes, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within the radius of a 2-tile arc and stunning them for 1s.",
+            "The skill damage is increased by 10% for each surviving ally besides Scarlita.",
+            "She is Unaffected when casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases the damage dealt by slash and strike to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the stun duration to 1.5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases the damage of this skill by 12% for each surviving ally besides Scarlita."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the stun duration to 2s."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_count": -1,
+            "area_direction": "front",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 240.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Knock back — All units"
+          },
+          {
+            "label": "Stun — Arc"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Sanctified Verdict": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Scarlita blinks to the backline, ascends to the sky, and hovers over the battlefield. While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends. 15s into the battle or when there are 2 or fewer surviving non-summoned allies beside her, Scarlita descends near the frontmost enemy. She smashes the ground upon landing, dealing 200% (ATK-based) + 20% (SP-based) damage to the enemies within 2 tiles and knocking them into the air, stunning them for 4s.",
+          "active": [
+            "When a battle starts, Scarlita blinks to the backline, ascends to the sky, and hovers over the battlefield.",
+            "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends.",
+            "15s into the battle or when there are 2 or fewer surviving non-summoned allies beside her, Scarlita descends near the frontmost enemy.",
+            "She smashes the ground upon landing, dealing 200% (ATK-based) + 20% (SP-based) damage to the enemies within 2 tiles and knocking them into the air, stunning them for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Scarlita recovers an extra 150 Energy if she descends after 15s into the battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Scarlita gains an extra 15% ATK boost till the end of the battle if she descends after 15s into a battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 150.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 240.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Invincible — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock up — Area"
+          },
+          {
+            "label": "Stun — Area"
+          }
+        ]
+      },
+      "Valkyrie Spirit": {
+        "category": "skill2",
+        "description": {
+          "raw": "Scarlita sends the weakest non-summoned ally a blessing while in the air, granting them a shield equal to 15% (HP-based) of Scarlita's max HP for 3s. Every time Scarlita wields her axe after descending on the battlefield, she deals 135% (ATK-based) + 10% (SP-based) damage to the enemies within a 2-tile arc and knocks them down. This skill damage increases by 10% for each surviving non-summoned ally besides herself",
+          "active": [
+            "Scarlita sends the weakest non-summoned ally a blessing while in the air, granting them a shield equal to 15% (HP-based) of Scarlita's max HP for 3s.",
+            "Every time Scarlita wields her axe after descending on the battlefield, she deals 135% (ATK-based) + 10% (SP-based) damage to the enemies within a 2-tile arc and knocks them down.",
+            "This skill damage increases by 10% for each surviving non-summoned ally besides herself"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the shield value to 18% (HP-based) of Scarlita"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the shield value to 20% (HP-based) of Scarlita."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage of this skill by 12% for each surviving non-summoned ally other than Scarlita."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 145.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 3.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Shield (Supreme+)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock down — Arc"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Scarlita increases Execution by 4 for each blessing she sends while in the air.",
+          "active": [
+            "Scarlita increases Execution by 4 for each blessing she sends while in the air."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Scarlita increases Execution by 5 for each blessing she sends while in the air."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Scarlita increases Execution by 6 for each blessing she sends while in the air."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Execution",
+            "label": "buff_offensive",
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Execution — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Divine Wrath": {
+        "category": "skill4",
+        "description": {
+          "raw": "Scarlita deals true damage if there are at least 4 surviving non-summoned allies other than herself on the battlefield",
+          "active": [
+            "Scarlita deals true damage if there are at least 4 surviving non-summoned allies other than herself on the battlefield"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Scarlita deals true damage if there are at least 3 surviving non-summoned allies other than herself on the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Scarlita's skills knock the non-boss enemies with HP lower than 180% (ATK-based) and HP ratio below 20% out of the battlefield.",
+                "The enemy sent out the combat this way cannot return and is considered defeated."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Scarlita's skills knock the non-boss enemies with HP lower than 180% (ATK-based) and HP ratio below 25% out of the battlefield.",
+                "The enemy sent out the combat this way cannot return and is considered defeated."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie Spirit to protect them, with the amount equal to 50% of Scarlita's own Phys DEF and Magic DEF.",
+          "active": [
+            "Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie Spirit to protect them, with the amount equal to 50% of Scarlita's own Phys DEF and Magic DEF."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "All units, Arc, Area"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "execution",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.7272727272727273,
+      "max_hp": 0.2727272727272727
+    },
+    "behavior": {},
+    "id": "scarlita",
+    "display_name": "Scarlita",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "skill4",
+    "hero": {
+      "title": "Scarlita - Herald of Compassion",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Scarlita slashes the ground in the specified direction to create a 3-tile-wide Rock Wave, dealing 200% (ATK-based) + 20% (SP-based) damage to all enemies in this direction and knocking them back to the edge of the battlefield.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Scarlita then charges and strikes, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within the radius of a 2-tile arc and stunning them for 1s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The skill damage is increased by 10% for each surviving ally besides Scarlita.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She is Unaffected when casting this skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 51: Increases the damage dealt by slash and strike to 220% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 111: Increases the stun duration to 1.5s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 171: Increases the damage of this skill by 12% for each surviving ally besides Scarlita.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 231: Increases the stun duration to 2s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When a battle starts, Scarlita blinks to the backline, ascends to the sky, and hovers over the battlefield.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "15s into the battle or when there are 2 or fewer surviving non-summoned allies beside her, Scarlita descends near the frontmost enemy.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "She smashes the ground upon landing, dealing 200% (ATK-based) + 20% (SP-based) damage to the enemies within 2 tiles and knocking them into the air, stunning them for 4s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Scarlita recovers an extra 150 Energy if she descends after 15s into the battle.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Scarlita gains an extra 15% ATK boost till the end of the battle if she descends after 15s into a battle.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 220% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Scarlita sends the weakest non-summoned ally a blessing while in the air, granting them a shield equal to 15% (HP-based) of Scarlita's max HP for 3s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Every time Scarlita wields her axe after descending on the battlefield, she deals 135% (ATK-based) + 10% (SP-based) damage to the enemies within a 2-tile arc and knocks them down.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "This skill damage increases by 10% for each surviving non-summoned ally besides herself",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the shield value to 18% (HP-based) of Scarlita",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the shield value to 20% (HP-based) of Scarlita.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the damage of this skill by 12% for each surviving non-summoned ally other than Scarlita.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Scarlita increases Execution by 4 for each blessing she sends while in the air.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Scarlita increases Execution by 5 for each blessing she sends while in the air.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Scarlita increases Execution by 6 for each blessing she sends while in the air.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Scarlita deals true damage if there are at least 4 surviving non-summoned allies other than herself on the battlefield",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Scarlita deals true damage if there are at least 3 surviving non-summoned allies other than herself on the battlefield.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Scarlita's skills knock the non-boss enemies with HP lower than 180% (ATK-based) and HP ratio below 20% out of the battlefield.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "The enemy sent out the combat this way cannot return and is considered defeated.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Scarlita's skills knock the non-boss enemies with HP lower than 180% (ATK-based) and HP ratio below 25% out of the battlefield.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The enemy sent out the combat this way cannot return and is considered defeated.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie Spirit to protect them, with the amount equal to 50% of Scarlita's own Phys DEF and Magic DEF.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Divine Quake": "Ultimate",
+        "Sanctified Verdict": "Skill1",
+        "Valkyrie Spirit": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Divine Wrath": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock back",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Conditional"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Invincible",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 220.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 150.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 4.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": 4.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Knock up",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock down",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": 145.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Skill2"
+            },
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Execution",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Knock back",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 240.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "arc",
+          "area_direction": "front",
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Arc",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "arc",
+          "area_direction": "front",
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Invincible",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 220.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 150.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 4.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": 4.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Knock up",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Knock down",
+          "tier": "base",
+          "targeting": "Arc",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "arc",
+          "area_direction": "front",
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "numeric": 20.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Execution",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "Conditional"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "All units, Arc, Area"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Execution",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 0.7272727272727273,
+        "Max HP": 0.2727272727272727
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "9afc780ffa00609a2b7552a8ac757d907a7f6ad3d6832921cc78edf5d1925ef1",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

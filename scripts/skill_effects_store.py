@@ -16,7 +16,7 @@ DATA = ROOT / "data"
 SKILL_EFFECTS_DIR = DATA / "skill_effects"
 SCHEMA_PATH = DATA / "schema" / "skill_effects.schema.json"
 
-import hero_schema as hs
+from hero_pipeline.analysis import serialize as hs
 
 import buff_persistence as bp
 

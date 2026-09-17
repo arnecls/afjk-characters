@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "id": "taichi-agumon",
+  "display_name": "Taichi & Agumon",
+  "source": {
+    "title": "Taichi & Agumon - Courage Duo",
+    "name": "Taichi & Agumon",
+    "tags": "Dimensional · Warrior · Physical",
+    "faction": "Dimensional",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "Taichi is a fifth grader with strong leadership and the drive to take action, and he holds the Crest of Courage. His partner is Agumon, an energetic Digimon.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Gaia Force",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "500"
+        },
+        "description": {
+          "raw": "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy. The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills. When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area. Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based). Wargreymon is unaffected while casting this skill. Passive. Taichi does not directly ioin the battle, remaining invincible on the sidelines. Everv 3s. Taichi cheers for Agumon, restoring 150 Energy for him. If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250.",
+          "passive": [
+            "Taichi does not directly ioin the battle, remaining invincible on the sidelines.",
+            "Everv 3s.",
+            "Taichi cheers for Agumon, restoring 150 Energy for him.",
+            "If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250."
+          ],
+          "active": [
+            "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy.",
+            "The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills.",
+            "When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area.",
+            "Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based).",
+            "Wargreymon is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Gaia Force's damage per hit to 170% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Gaia Force's damage per hit to 180% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Gaia Force's damage per hit to 190% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Gaia Force's damage per hit to 200% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The first time Agumon casts his Ultimate, he Digivolves into Wargreymon. On subsequent Ultimate casts, Wargreymon fires Gaia Force, dealing heavy damage to enemies in a large area."
+      },
+      {
+        "section": "Skill1",
+        "name": "Brave Tornado",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position. He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s. Wargreymon is invincible while casting this skill. Damage from this skill gains 60 extra DEF Penetration.",
+          "active": [
+            "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position.",
+            "He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s.",
+            "Wargreymon is invincible while casting this skill.",
+            "Damage from this skill gains 60 extra DEF Penetration."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage dealt to every enemy in his path to 440% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage dealt to every enemy in his path to 460% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage dealt to every enemy in his path to 480% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Wargreymon pierces through all enemies, dealing damage to every enemy in his path and stunning them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Recovery Shield",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "14s",
+          "Initial Cooldown": "9s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s. While the shield is active, Wargreymon remains unaffected. When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value. When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill.",
+          "active": [
+            "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s.",
+            "While the shield is active, Wargreymon remains unaffected.",
+            "When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value.",
+            "When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the shield value granted by this skill to 800% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the shield value granted by this skill to 900% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the shield value granted by this skill to 1000% (ATK-based) + 100% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Wargreymon gains a shield and remains unaffected while the shield is active. When the shield expires, he recovers HP based on the remaining shield value."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 9% during battle. After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%.",
+          "active": [
+            "Increases ATK by 9% during battle.",
+            "After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 12% during battle.",
+                "After assisting or defeating a non-summoned enemy, increases ATK by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 15% during battle.",
+                "After assisting or defeating a non-summoned enemy, increases ATK by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK during battle, and increases it further after assisting or defeating a non-summoned enemy."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Dramon Killer",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP. If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them.",
+          "active": [
+            "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP.",
+            "If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                ":Increases the HP loss caused to 160% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Wargreymon deals damage to an enemy with a skill or normal attack, he deals extra damage equal to 15% of the enemy's lost HP.",
+                "This extra damage cannot exceed Wargreymon's 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the HP loss caused to 180% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Wargreymon inflicts HP loss multiple times. When only one enemy remains on the battlefield and their HP is below a certain threshold, Wargreymon instantly defeats them."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s. If Gabumon receives the power of courage, he gains 300 extra Energy.",
+          "active": [
+            "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s.",
+            "If Gabumon receives the power of courage, he gains 300 extra Energy."
+          ]
+        },
+        "description_lite": "Increases the ATK of allies behind when a battle starts."
+      }
+    ],
+    "range": 7,
+    "release_date": "2026-08-18",
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "veryfast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

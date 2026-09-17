@@ -1,0 +1,1118 @@
+{
+  "schema_version": 1,
+  "id": "soren",
+  "display_name": "Soren",
+  "local": {
+    "long_name": "Soren - Silent Fury",
+    "faction": "mauler",
+    "class": "rogue",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-05-31",
+    "season": "Song of Strife",
+    "season_number": 1,
+    "skills": {
+      "Whirlwind Swing": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Soren selects a tile and rushes there to swing his weapon, dealing 250% (ATK-based) + 10% (SP-based) damage to adjacent enemies and knocking them back 1 tile. If the targets collide with allies, enemies, terrain, or battlefield borders along their path, they take 400% (ATK-based) + 20% (SP-based) damage and are stunned for 2.5s. This skill prioritizes targeting the tile that will cause the most enemies to collide when cast automatically.",
+          "active": [
+            "Soren selects a tile and rushes there to swing his weapon, dealing 250% (ATK-based) + 10% (SP-based) damage to adjacent enemies and knocking them back 1 tile.",
+            "If the targets collide with allies, enemies, terrain, or battlefield borders along their path, they take 400% (ATK-based) + 20% (SP-based) damage and are stunned for 2.5s.",
+            "This skill prioritizes targeting the tile that will cause the most enemies to collide when cast automatically."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Soren deals 400% (ATK-based) + 20% (SP-based) damage an stuns another enemy for 2.5s if the target knocked back by this skill collides with them."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the collision damage to 410% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the collision damage to 420% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the collision damage to 430% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 450.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.5
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 80.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Energy — Self (Supreme+)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock back — Area"
+          },
+          {
+            "label": "Stun — Multiple targets"
+          }
+        ]
+      },
+      "Repel Sweep": {
+        "category": "skill1",
+        "description": {
+          "raw": "Soren swings his weapon to deal 180% (ATK-based) + 10% (SP-based) damage to an enemy in melee range, knocking them back 1 tile. If the target collides with allies, enemies, terrain, or battlefield borders along their path, they take 250% (ATK-based) + 20% (SP-based) damage and are stunned for 1.5s. Soren repositions himself to ensure maximum collisions between targets when casting this skill.",
+          "active": [
+            "Soren swings his weapon to deal 180% (ATK-based) + 10% (SP-based) damage to an enemy in melee range, knocking them back 1 tile.",
+            "If the target collides with allies, enemies, terrain, or battlefield borders along their path, they take 250% (ATK-based) + 20% (SP-based) damage and are stunned for 1.5s.",
+            "Soren repositions himself to ensure maximum collisions between targets when casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases base damage to 210% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the collision damage to 270% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Extends the stun duration upon collision to 2s."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 290.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 1.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          }
+        ],
+        "cooldown": 11.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock back — Single target"
+          },
+          {
+            "label": "Stun — Multiple targets"
+          }
+        ]
+      },
+      "Deflecting Swing": {
+        "category": "skill2",
+        "description": {
+          "raw": "Soren reduces the damage taken from a single attack that exceeds 10% of his max HP by 70%, resetting the cooldown of Repel Sweep. This effect can be triggers once every 7 - 1 (SP-based)s.",
+          "active": [
+            "Soren reduces the damage taken from a single attack that exceeds 10% of his max HP by 70%, resetting the cooldown of Repel Sweep.",
+            "This effect can be triggers once every 7 - 1 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the DMG reduction ratio to 80%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the DMG reduction ratio to 90%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Reduces the skill cooldown to 6 - 1 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield (Supreme+)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "MIncreases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Dusk Rejuvenation": {
+        "category": "skill4",
+        "description": {
+          "raw": "Soren gains 60 Haste and recovers 4% of his max HP and 40 Energy per second for 12s when his HP ratio drops below 60%. This effect can only be triggered once per battle.",
+          "active": [
+            "Soren gains 60 Haste and recovers 4% of his max HP and 40 Energy per second for 12s when his HP ratio drops below 60%.",
+            "This effect can only be triggered once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Soren removes all control effects when this skill is triggered.",
+                "It can b triggered repeatedly in a single battle, with a cooldown of 25s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the bonus Haste to 80 while this skill is active."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the HP recovery to 5% of max HP per second while this skill is active."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.6,
+                "comparison": "below"
+              }
+            ],
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Increases the knockback distance of the Repel Sweep to 2 tiles when Deflecting Swing is triggered, dealing extra damage equal to 50% of the blocked damage.",
+          "active": [
+            "Increases the knockback distance of the Repel Sweep to 2 tiles when Deflecting Swing is triggered, dealing extra damage equal to 50% of the blocked damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Multiple targets"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "haste",
+      "max_hp",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "soren",
+    "display_name": "Soren",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Soren - Silent Fury",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Soren selects a tile and rushes there to swing his weapon, dealing 250% (ATK-based) + 10% (SP-based) damage to adjacent enemies and knocking them back 1 tile.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "If the targets collide with allies, enemies, terrain, or battlefield borders along their path, they take 400% (ATK-based) + 20% (SP-based) damage and are stunned for 2.5s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This skill prioritizes targeting the tile that will cause the most enemies to collide when cast automatically.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Soren deals 400% (ATK-based) + 20% (SP-based) damage an stuns another enemy for 2.5s if the target knocked back by this skill collides with them.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the collision damage to 410% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the collision damage to 420% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the collision damage to 430% (ATK-based) + 20% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Soren swings his weapon to deal 180% (ATK-based) + 10% (SP-based) damage to an enemy in melee range, knocking them back 1 tile.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "If the target collides with allies, enemies, terrain, or battlefield borders along their path, they take 250% (ATK-based) + 20% (SP-based) damage and are stunned for 1.5s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Soren repositions himself to ensure maximum collisions between targets when casting this skill.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases base damage to 210% (ATK-based) + 10% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the collision damage to 270% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Extends the stun duration upon collision to 2s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Soren reduces the damage taken from a single attack that exceeds 10% of his max HP by 70%, resetting the cooldown of Repel Sweep.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "This effect can be triggers once every 7 - 1 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the DMG reduction ratio to 80%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the DMG reduction ratio to 90%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces the skill cooldown to 6 - 1 (SP-based)s.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 12 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 16 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "MIncreases Haste by 20 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Soren gains 60 Haste and recovers 4% of his max HP and 40 Energy per second for 12s when his HP ratio drops below 60%.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "This effect can only be triggered once per battle.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Soren removes all control effects when this skill is triggered.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "It can b triggered repeatedly in a single battle, with a cooldown of 25s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases the bonus Haste to 80 while this skill is active.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the HP recovery to 5% of max HP per second while this skill is active.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Increases the knockback distance of the Repel Sweep to 2 tiles when Deflecting Swing is triggered, dealing extra damage equal to 50% of the blocked damage.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Whirlwind Swing": "Ultimate",
+        "Repel Sweep": "Skill1",
+        "Deflecting Swing": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Dusk Rejuvenation": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock back",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 450.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": 2.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 80.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock back",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": 290.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": 1.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 1.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 100.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 60.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.6,
+                  "comparison": "below"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Knock back",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 450.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "numeric": 2.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 80.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Knock back",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "numeric": 100.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 60.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "hp_threshold",
+              "hp_ratio": 0.6,
+              "comparison": "below"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Physical",
+          "Area, Multiple targets"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Haste",
+        "Max HP",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "0f51394f6b963fe1baf1786c0fa1f90506cb7eb46ec870c5aa0eee97a257a983",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

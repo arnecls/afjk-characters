@@ -1,0 +1,1601 @@
+{
+  "schema_version": 1,
+  "id": "cecia",
+  "display_name": "Cecia",
+  "local": {
+    "long_name": "Cecia - Requiem of Thorns",
+    "faction": "graveborn",
+    "class": "marksman",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Queen's Summons": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Cecia summons Mr. Cralyle to a selected tile to assist. Mr. Carlyle inherits all of Cecia's stats and his normal attack deals 170% (ATK-based) + 12% (SP-based) damage to enemies within a 1-tile arc. He gains an extra 45% max HP but loses 4% of max HP per second. When Mr.Caryle is summoned, he Initiates Tangled Agony to entangle enemies within 2 tiles, dealing 140% (ATK-based) damage per second for 2s. The entangled enemies cannot move or act. If Mr.Carlyle is already on battlefield when this skill is used again, the skill restores his HP to Max, allowing him to cast the Tangled Agony again.",
+          "active": [
+            "Cecia summons Mr.",
+            "Cralyle to a selected tile to assist.",
+            "Mr.",
+            "Carlyle inherits all of Cecia's stats and his normal attack deals 170% (ATK-based) + 12% (SP-based) damage to enemies within a 1-tile arc.",
+            "He gains an extra 45% max HP but loses 4% of max HP per second.",
+            "When Mr.Caryle is summoned, he Initiates Tangled Agony to entangle enemies within 2 tiles, dealing 140% (ATK-based) damage per second for 2s.",
+            "The entangled enemies cannot move or act.",
+            "If Mr.Carlyle is already on battlefield when this skill is used again, the skill restores his HP to Max, allowing him to cast the Tangled Agony again."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Mr.",
+                "Carlyle's max HP is increased by an extra 60%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Mr.",
+                "Cralyle's normal attack deals 175% (ATK-based) + 12% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Mr.",
+                "Cralyle's normal attack deals 180% (ATK-based) + 12% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Mr.",
+                "Cralyle's normal attack deals 185% (ATK-based) + 12% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 197.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 185.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 185.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Max HP — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Bind — Area"
+          }
+        ]
+      },
+      "Earth's Offering": {
+        "category": "skill1",
+        "description": {
+          "raw": "Cecia gains power from the earth to increase her and Mr. Carlyle's ATK SPD by 45 + 5 (SP-based) for 8s.",
+          "active": [
+            "Cecia gains power from the earth to increase her and Mr.",
+            "Carlyle's ATK SPD by 45 + 5 (SP-based) for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases ATK SPD by 50 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Mr.",
+                "Carlyle's next normal attack will be replaced with Thundering Quake, dealing 320% (ATK-based) damage to all surrounding enemies within 2 tiles and gaining 15 Life Drain."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases ATK SPD by 55 + 5 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "cooldown": 12.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Lifedrain — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Agonizing Puncture": {
+        "category": "skill2",
+        "description": {
+          "raw": "Passive. Cecia and Mr. Carlyle gain 20 + 2 (SP-based) DEF Penetration. Cecia's next normal attack is enhanced after she uses 3 normal attacks, dealing 220% (ATK-based) damage.",
+          "passive": [
+            "Cecia and Mr.",
+            "Carlyle gain 20 + 2 (SP-based) DEF Penetration.",
+            "Cecia's next normal attack is enhanced after she uses 3 normal attacks, dealing 220% (ATK-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Cecia's DEF Penetration gained from the passive effect is increased to 25 + 2 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The enhanced normal attack deals 225% (ATK-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The enhanced normal attack deals 230% (ATK-based) damage."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 27.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 230.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_summon_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 27.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "DEF Penetration — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF Penetration — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Cecia increases her ATK SPD by 15. She gains an extra 9 ATK SPD while Mr. Carlyle is on the battlefield.",
+          "active": [
+            "Cecia increases her ATK SPD by 15.",
+            "She gains an extra 9 ATK SPD while Mr.",
+            "Carlyle is on the battlefield."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Cecia increases her ATK SPD by 20.",
+                "She gains an extra 12 ATK SPD while Mr.",
+                "Carlyle is on the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Cecia increases her ATK SPD by 25.",
+                "She gains an extra 15 ATK SPD while Mr.",
+                "Carlyle is on the battlefield."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Trial of Thorns": {
+        "category": "skill4",
+        "description": {
+          "raw": "Cecia entangles an enemy with reinforced Thorns, dealing 60% (ATK-based) damage every second and the target cannot move or act for 4s. Cecia absorbs 1.5% of Phys DEF and Magic DEF from the target every second. The absorbed stats last until the battle ends and are also shared by Mr. Carlyle. Cecia can only absorb each target up to 8 times. This skill prioritizes enemies who have not reached the limit and are not in the control immunity status.",
+          "active": [
+            "Cecia entangles an enemy with reinforced Thorns, dealing 60% (ATK-based) damage every second and the target cannot move or act for 4s.",
+            "Cecia absorbs 1.5% of Phys DEF and Magic DEF from the target every second.",
+            "The absorbed stats last until the battle ends and are also shared by Mr.",
+            "Carlyle.",
+            "Cecia can only absorb each target up to 8 times.",
+            "This skill prioritizes enemies who have not reached the limit and are not in the control immunity status."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Absorbs 1 of the target's Vitality each time when stealing stats."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the entangled target's damake taken per second to 70% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the entangled target's damake taken per second to 80% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 4.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "duration": 4.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          }
+        ],
+        "cooldown": 15.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Magic DEF",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Vitality (EX+5)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Bind — Single target"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Reduces the required normal attacks to trigger Agonizing Puncture by 1.",
+          "active": [
+            "Reduces the required normal attacks to trigger Agonizing Puncture by 1."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Cecia summons Mr. Carlyle to a selected tile to assist in battle."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Enemy not CC-immune",
+          "tier": "mythic+",
+          "targeting": "Enemies",
+          "description": "This skill prioritizes enemies who have not reached the limit and are not in the control immunity status."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Arc, Single target"
+      ],
+      [
+        "dot",
+        "Area, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk_spd",
+      "def_penetration",
+      "physical_def",
+      "magic_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "cecia",
+    "display_name": "Cecia",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Cecia - Requiem of Thorns",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Cecia summons Mr.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Cralyle to a selected tile to assist.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Mr.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Carlyle inherits all of Cecia's stats and his normal attack deals 170% (ATK-based) + 12% (SP-based) damage to enemies within a 1-tile arc.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "He gains an extra 45% max HP but loses 4% of max HP per second.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When Mr.Caryle is summoned, he Initiates Tangled Agony to entangle enemies within 2 tiles, dealing 140% (ATK-based) damage per second for 2s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The entangled enemies cannot move or act.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "If Mr.Carlyle is already on battlefield when this skill is used again, the skill restores his HP to Max, allowing him to cast the Tangled Agony again.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 51: Mr.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Carlyle's max HP is increased by an extra 60%.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 111: Mr.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Cralyle's normal attack deals 175% (ATK-based) + 12% (SP-based) damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 171: Mr.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Cralyle's normal attack deals 180% (ATK-based) + 12% (SP-based) damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Unlocks at level 231: Mr.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Cralyle's normal attack deals 185% (ATK-based) + 12% (SP-based) damage.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Cecia gains power from the earth to increase her and Mr.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Carlyle's ATK SPD by 45 + 5 (SP-based) for 8s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases ATK SPD by 50 + 5 (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Mr.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Carlyle's next normal attack will be replaced with Thundering Quake, dealing 320% (ATK-based) damage to all surrounding enemies within 2 tiles and gaining 15 Life Drain.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases ATK SPD by 55 + 5 (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Cecia and Mr.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Carlyle gain 20 + 2 (SP-based) DEF Penetration.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Cecia's next normal attack is enhanced after she uses 3 normal attacks, dealing 220% (ATK-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Cecia's DEF Penetration gained from the passive effect is increased to 25 + 2 (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The enhanced normal attack deals 225% (ATK-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The enhanced normal attack deals 230% (ATK-based) damage.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Cecia increases her ATK SPD by 15.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She gains an extra 9 ATK SPD while Mr.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Carlyle is on the battlefield.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Cecia increases her ATK SPD by 20.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She gains an extra 12 ATK SPD while Mr.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Carlyle is on the battlefield.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Cecia increases her ATK SPD by 25.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She gains an extra 15 ATK SPD while Mr.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Carlyle is on the battlefield.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Cecia entangles an enemy with reinforced Thorns, dealing 60% (ATK-based) damage every second and the target cannot move or act for 4s.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Cecia absorbs 1.5% of Phys DEF and Magic DEF from the target every second.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "The absorbed stats last until the battle ends and are also shared by Mr.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Carlyle.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Cecia can only absorb each target up to 8 times.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "This skill prioritizes enemies who have not reached the limit and are not in the control immunity status.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Absorbs 1 of the target's Vitality each time when stealing stats.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases the entangled target's damake taken per second to 70% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the entangled target's damake taken per second to 80% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Reduces the required normal attacks to trigger Agonizing Puncture by 1.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Queen's Summons": "Ultimate",
+        "Earth's Offering": "Skill1",
+        "Agonizing Puncture": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Trial of Thorns": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Arc",
+              "numeric": 197.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "arc",
+              "area_direction": "front",
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 185.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "Max HP",
+              "tier": "base",
+              "targeting": "Owned summons",
+              "numeric": 185.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Cecia summons Mr. Carlyle to a selected tile to assist in battle.",
+              "grants": []
+            },
+            {
+              "kind": "requires",
+              "label": "Enemy not CC-immune",
+              "tier": "Mythic+",
+              "targeting": "Enemies",
+              "qualitative": "This skill prioritizes enemies who have not reached the limit and are not in the control immunity status.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 60.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "base",
+              "targeting": "Owned summons",
+              "numeric": 60.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 320.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Lifedrain",
+              "tier": "base",
+              "targeting": "Owned summons",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "DEF Penetration",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 27.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 230.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "DEF Penetration",
+              "tier": "base",
+              "targeting": "Owned summons",
+              "numeric": 27.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 4.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 4.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 80.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 4.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "Phys DEF",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "Magic DEF",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "Vitality",
+              "tier": "EX+5",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Arc",
+          "numeric": 230.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": "front",
+          "source_section": "Skill2"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 185.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": 4.0,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "ATK SPD",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 60.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "DEF Penetration",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 27.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": 4.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 4.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Phys DEF",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Magic DEF",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Vitality",
+          "tier": "EX+5",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [
+        {
+          "category": "buff",
+          "label": "Max HP",
+          "tier": "base",
+          "targeting": "Owned summons",
+          "numeric": 185.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "ATK SPD",
+          "tier": "base",
+          "targeting": "Owned summons",
+          "numeric": 60.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 320.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Lifedrain",
+          "tier": "base",
+          "targeting": "Owned summons",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "DEF Penetration",
+          "tier": "base",
+          "targeting": "Owned summons",
+          "numeric": 27.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        }
+      ],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Cecia summons Mr. Carlyle to a selected tile to assist in battle.",
+          "grants": []
+        },
+        {
+          "kind": "requires",
+          "label": "Enemy not CC-immune",
+          "tier": "Mythic+",
+          "targeting": "Enemies",
+          "qualitative": "This skill prioritizes enemies who have not reached the limit and are not in the control immunity status.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "Arc, Single target"
+        ],
+        [
+          "DoT",
+          "Area, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK SPD",
+        "DEF Penetration",
+        "Physical DEF",
+        "Magic DEF"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 5,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "103e69baed9783b2add2a51f6869a9f3fde32d345e6cc43c445a9a1a471bacbe",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

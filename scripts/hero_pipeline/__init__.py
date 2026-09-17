@@ -7,7 +7,7 @@ from .storage import (
     display_name_for_title,
     hero_id_for_display,
     load_manifest,
-    load_roster_inputs,
+    load_roster_snapshot,
 )
 
 __all__ = [
@@ -17,5 +17,5 @@ __all__ = [
     "display_name_for_title",
     "hero_id_for_display",
     "load_manifest",
-    "load_roster_inputs",
+    "load_roster_snapshot",
 ]

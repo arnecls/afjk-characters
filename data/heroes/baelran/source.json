@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "id": "baelran",
+  "display_name": "Baelran",
+  "source": {
+    "title": "Baelran - Dawnblade",
+    "name": "Baelran",
+    "tags": "Celestial · Warrior · Physical",
+    "faction": "Celestial",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A noble, fearless Warrior who grows stronger as the battle goes on.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Celestial Rise",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Baelran gains a shield equal to 80% + 5% (SP-based) of his initial HP and receives 300% (HP-based) bonus max HP. This bonus max HP does not raise Baelran's current HP and decreases by 2% every second. When Baelran is restored to his max HP, he spreads his wings, deals 10% (HP-based) damage to enemies within 2 tiles, and enters Celestial Form. While in Celestial Form, the bonus max HP no longer decreases, and his normal attacks all strike enemies within a 1-tile arc in front of him. Baelran is unaffected while receiving bonus max HP and while transitioning into Celestial Form. Active. Baelran channels divine power into his blade, dealing 280% (ATK-based) + 40% (SP-based) true damage to all enemies within a 3-tile arc in front of him. He then restores HP equal to 40% of the damage dealt by the active strike.",
+          "passive": [
+            "When a battle starts, Baelran gains a shield equal to 80% + 5% (SP-based) of his initial HP and receives 300% (HP-based) bonus max HP.",
+            "This bonus max HP does not raise Baelran's current HP and decreases by 2% every second.",
+            "When Baelran is restored to his max HP, he spreads his wings, deals 10% (HP-based) damage to enemies within 2 tiles, and enters Celestial Form.",
+            "While in Celestial Form, the bonus max HP no longer decreases, and his normal attacks all strike enemies within a 1-tile arc in front of him.",
+            "Baelran is unaffected while receiving bonus max HP and while transitioning into Celestial Form."
+          ],
+          "active": [
+            "Baelran channels divine power into his blade, dealing 280% (ATK-based) + 40% (SP-based) true damage to all enemies within a 3-tile arc in front of him.",
+            "He then restores HP equal to 40% of the damage dealt by the active strike."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by the active strike to 300% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by the active strike to 320% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by the active strike to 340% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by the active strike to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Baelran gains a shield and bonus HP that gradually decreases over time. Baelran enters the Celestial Form when he is restored to max HP. When Baelran casts this skill, he deals true damage to enemies within a 3-tile arc in front of him and restores HP."
+      },
+      {
+        "section": "Skill1",
+        "name": "Sanctified Surge",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Initial Cooldown": "9999s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Baelran restores 2% (HP-based) HP every second. While in Celestial Form, his blade is permanently imbued with Divine Light, dealing an extra 1.5% (HP-based) + 0.3% (SP-based) true damage with each hit.",
+          "passive": [
+            "Baelran restores 2% (HP-based) HP every second.",
+            "While in Celestial Form, his blade is permanently imbued with Divine Light, dealing an extra 1.5% (HP-based) + 0.3% (SP-based) true damage with each hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the extra damage grated by Divine Light to 1.8% (HP-based) + 0.3% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the extra damage grated by Divine Light to 2.1% (HP-based) + 0.3% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the extra damage grated by Divine Light to 2.5% (HP-based) + 0.3% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Baelran gradually restores HP during battle. In Celestial Form, his attacks deal extra true damage with each hit."
+      },
+      {
+        "section": "Skill2",
+        "name": "Wrath Cleave",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "4a",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Baelran knocks his target into the air with an upward slash, dealing 180% (ATK-based) + 20% (SP-based) damage. He then slams his sword down, dealing 300% (ATK-based) + 40% (SP-based) damage to enemies within a 3-tile rectangular area in front of him, knocking them down for 2s.",
+          "active": [
+            "Baelran knocks his target into the air with an upward slash, dealing 180% (ATK-based) + 20% (SP-based) damage.",
+            "He then slams his sword down, dealing 300% (ATK-based) + 40% (SP-based) damage to enemies within a 3-tile rectangular area in front of him, knocking them down for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increase the slam damage to 320% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increase the slam damage to 340% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increase the slam damage to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Baelran knocks an enemy into the air, then knocks down all enemies in a rectangular area in front of him."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Baelran increases his Haste by 9 during battle, and further increases it by 3 when he enters Celestial Form or enhanced Celestial Form.",
+          "active": [
+            "Baelran increases his Haste by 9 during battle, and further increases it by 3 when he enters Celestial Form or enhanced Celestial Form."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Baelran increases his Haste by 12 during battle, and further increases it by 4 when he enters Celestial Form or enhanced Celestial Form."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Baelran increases his Haste by 15 during battle, and further increases it by 5 when he enters Celestial Form or enhanced Celestial Form."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Baelran increases his Haste, and further increases it when he enters Celestial Form or enhanced Celestial Form."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Divine Dominance",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When Baelran enters Celestial Form, he fully regains the bonus max HP granted by Celestial Rise. If he is restored to max HP again, he enters an enhanced Celestial Form, dealing 10% (HP-based) true damage to enemies within 2 tiles and becoming unaffected permanently. When casting Celestial Rise, Baelran calls down Divine Light strikes on every tile within the affected area, dealing 6% (HP-based) true damage per strike. If an enemy is hit multiple times, the damage they take from each successive strike is reduced by 10%.",
+          "active": [
+            "When Baelran enters Celestial Form, he fully regains the bonus max HP granted by Celestial Rise.",
+            "If he is restored to max HP again, he enters an enhanced Celestial Form, dealing 10% (HP-based) true damage to enemies within 2 tiles and becoming unaffected permanently.",
+            "When casting Celestial Rise, Baelran calls down Divine Light strikes on every tile within the affected area, dealing 6% (HP-based) true damage per strike.",
+            "If an enemy is hit multiple times, the damage they take from each successive strike is reduced by 10%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by each Divine Light strike to 8% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the damage dealt by each Divine Light strike to 10% (HP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Baelran enters Celestial Form, he dispels all debuffs on himself an permanently increases his ATK by 10%.",
+                "Upon entering enhanced Celestial Form, Baelran calls down Divine Light strikes on every tile within 2 tiles of him, dealing 10% (HP-based) true damage per strike to enemies hit."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Baelran enters Celestial Form, he fully regains the bonus max HP granted by Celestial Rise. If he is restored to max HP again, he enters an enhanced Celestial Form, becoming unaffected permanently and empowering his Ultimate to call down Divine Light strikes that deal true damage."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "The extra damage from Baelran's Sanctified Surge can also reduce the max HP of non-boss enemies by 70% of the damage dealt. This max HP reduction cannot exceed 40% of the target's max HP or 800% (ATK-based) of Baelran's ATK, whichever is lower. When fighting against boss enemies, this skill does not reduce max HP; instead, it causes them to lose 0.7% (HP-based) HP.",
+          "active": [
+            "The extra damage from Baelran's Sanctified Surge can also reduce the max HP of non-boss enemies by 70% of the damage dealt.",
+            "This max HP reduction cannot exceed 40% of the target's max HP or 800% (ATK-based) of Baelran's ATK, whichever is lower.",
+            "When fighting against boss enemies, this skill does not reduce max HP; instead, it causes them to lose 0.7% (HP-based) HP."
+          ]
+        },
+        "description_lite": "The extra damage from Baelran's Sanctified Surge reduces the max HP of non-boss enemies by a set percentage, or causes extra HP loss to bosses."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-06-26",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A+",
+      "dream_realm": "A",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

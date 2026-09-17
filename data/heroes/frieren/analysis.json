@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "id": "frieren",
+  "display_name": "Frieren",
+  "local": {
+    "long_name": "Frieren - The Legendary Mage",
+    "faction": "dimensional",
+    "class": "mage",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 7,
+    "release_date": "2026-05-01",
+    "season": "Tower of Memory",
+    "season_number": 6,
+    "skills": {
+      "Zoltraak": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Frieren moves to the rearmost position that maximizes the number of enemies her Ultimate can hit. The Ultimate strikes enemies in a 3-tile rectangular area for 3s, dealing 220% (ATK-based) + 30% (SP-based) damage per second and 1400% (ATK-based) + 180% (SP-based) true damage evenly split among all enemies hit.",
+          "active": [
+            "Frieren moves to the rearmost position that maximizes the number of enemies her Ultimate can hit.",
+            "The Ultimate strikes enemies in a 3-tile rectangular area for 3s, dealing 220% (ATK-based) + 30% (SP-based) damage per second and 1400% (ATK-based) + 180% (SP-based) true damage evenly split among all enemies hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage per second to 240% (ATK-based) + 30% (SP-based), and the extra true damage to 1500% (ATK-based) + 180% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage per second to 260% (ATK-based) + 30% (SP-based), and the extra true damage to 1600% (ATK-based) + 180% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage per second to 280% (ATK-based) + 30% (SP-based), and the extra true damage to 1700% (ATK-based) + 180% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage per second to 300% (ATK-based) + 30% (SP-based), and the extra true damage to 1800% (ATK-based) + 180% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1580.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "duration": 3.0,
+            "tick": 1.0
+          }
+        ],
+        "initial_energy": 350.0,
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "DoT"
+          }
+        ]
+      },
+      "Lightning: Judradjim": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Frieren conceals her magic, making enemies less likely to target her. 15s into the battle, she amplifies her magic power, increasing her damage dealt by 60%, replacing her normal attack with Lightning: Judradjim, and no longer being a low-priority target for enemies. Lightning: Judradjim strikes an enemy 3 times, each hit dealing 220% (ATK-based) + 25% (SP-based) damage, and the final hit stuns the target for 0.5s. After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK.",
+          "active": [
+            "When a battle starts, Frieren conceals her magic, making enemies less likely to target her.",
+            "15s into the battle, she amplifies her magic power, increasing her damage dealt by 60%, replacing her normal attack with Lightning: Judradjim, and no longer being a low-priority target for enemies.",
+            "Lightning: Judradjim strikes an enemy 3 times, each hit dealing 220% (ATK-based) + 25% (SP-based) damage, and the final hit stuns the target for 0.5s.",
+            "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases Lightning: Judradjim's damage per hit to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases Lightning: Judradjim's damage per hit to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases Lightning: Judradjim's damage per hit to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 275.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 7,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Hellfire: Vollzanbel": {
+        "category": "skill2",
+        "description": {
+          "raw": "Frieren casts Hellfire: Vollzanbel, dealing 300% (ATK-based) + 30% (SP-based) damage to the target and adjacent enemies and burning the area for 5s. Enemies in the burning area lose 35% (ATK-based) HP every 0.5s, and their Vitality is reduced by 20+ 5 (SP-based). After Frieren amplifies her magic power, this skill's cooldown is reduced by 50%.",
+          "active": [
+            "Frieren casts Hellfire: Vollzanbel, dealing 300% (ATK-based) + 30% (SP-based) damage to the target and adjacent enemies and burning the area for 5s.",
+            "Enemies in the burning area lose 35% (ATK-based) HP every 0.5s, and their Vitality is reduced by 20+ 5 (SP-based).",
+            "After Frieren amplifies her magic power, this skill's cooldown is reduced by 50%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 30+ 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 40+ 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 50+ 5 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "DoT",
+            "label": "dot"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 7,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "DoT — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Vitality",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Frieren increases her ATK by 9% during battle. After amplifying her magic power, she increases her ATK by an extra 6%.",
+          "active": [
+            "Frieren increases her ATK by 9% during battle.",
+            "After amplifying her magic power, she increases her ATK by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Frieren increases her ATK by 12% during battle.",
+                "After amplifying her magic power, she increases her ATK by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Frieren increases her ATK by 15% during battle.",
+                "After amplifying her magic power, she increases her ATK by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Defensive Spell": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a battle starts, Frieren casts defensive magic on herself and the frontmost ally. When either takes damage exceeding 10% of their initial max HP, the excess damage is reduced by 75%.",
+          "active": [
+            "When a battle starts, Frieren casts defensive magic on herself and the frontmost ally.",
+            "When either takes damage exceeding 10% of their initial max HP, the excess damage is reduced by 75%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The excess damage is reduced by 80%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "While the frontmost ally remains alive, Frieren increases her Haste by 35."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The excess damage is reduced by 85%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 35.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self (EX+10)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "5s after Frieren amplifies her magic power, she knocks the enemy with the most cumulative damage dealt into the air and hurls them toward the edge of the battlefield, dealing 800% (ATK-based) damage and knocking them down for 2s.",
+          "active": [
+            "5s after Frieren amplifies her magic power, she knocks the enemy with the most cumulative damage dealt into the air and hurls them toward the edge of the battlefield, dealing 800% (ATK-based) damage and knocking them down for 2s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 2.0
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 800.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Knock down — Single target"
+          },
+          {
+            "label": "Knock up — Single target"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": [
+        {
+          "label": "Named ally on team",
+          "tier": "base",
+          "targeting": "Allies",
+          "description": "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "All units, Area"
+      ],
+      [
+        "true",
+        "All units"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "haste"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "frieren",
+    "display_name": "Frieren",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Frieren - The Legendary Mage",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Frieren moves to the rearmost position that maximizes the number of enemies her Ultimate can hit.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The Ultimate strikes enemies in a 3-tile rectangular area for 3s, dealing 220% (ATK-based) + 30% (SP-based) damage per second and 1400% (ATK-based) + 180% (SP-based) true damage evenly split among all enemies hit.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage per second to 240% (ATK-based) + 30% (SP-based), and the extra true damage to 1500% (ATK-based) + 180% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage per second to 260% (ATK-based) + 30% (SP-based), and the extra true damage to 1600% (ATK-based) + 180% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage per second to 280% (ATK-based) + 30% (SP-based), and the extra true damage to 1700% (ATK-based) + 180% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage per second to 300% (ATK-based) + 30% (SP-based), and the extra true damage to 1800% (ATK-based) + 180% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When a battle starts, Frieren conceals her magic, making enemies less likely to target her.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "15s into the battle, she amplifies her magic power, increasing her damage dealt by 60%, replacing her normal attack with Lightning: Judradjim, and no longer being a low-priority target for enemies.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Lightning: Judradjim strikes an enemy 3 times, each hit dealing 220% (ATK-based) + 25% (SP-based) damage, and the final hit stuns the target for 0.5s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases Lightning: Judradjim's damage per hit to 230% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases Lightning: Judradjim's damage per hit to 240% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases Lightning: Judradjim's damage per hit to 250% (ATK-based) + 25% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Frieren casts Hellfire: Vollzanbel, dealing 300% (ATK-based) + 30% (SP-based) damage to the target and adjacent enemies and burning the area for 5s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Enemies in the burning area lose 35% (ATK-based) HP every 0.5s, and their Vitality is reduced by 20+ 5 (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "After Frieren amplifies her magic power, this skill's cooldown is reduced by 50%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 30+ 5 (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 40+ 5 (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 50+ 5 (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Frieren increases her ATK by 9% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After amplifying her magic power, she increases her ATK by an extra 6%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Frieren increases her ATK by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After amplifying her magic power, she increases her ATK by an extra 8%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Frieren increases her ATK by 15% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After amplifying her magic power, she increases her ATK by an extra 10%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "When a battle starts, Frieren casts defensive magic on herself and the frontmost ally.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "When either takes damage exceeding 10% of their initial max HP, the excess damage is reduced by 75%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "The excess damage is reduced by 80%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "While the frontmost ally remains alive, Frieren increases her Haste by 35.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The excess damage is reduced by 85%.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "5s after Frieren amplifies her magic power, she knocks the enemy with the most cumulative damage dealt into the air and hurls them toward the edge of the battlefield, dealing 800% (ATK-based) damage and knocking them down for 2s.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Zoltraak": "Ultimate",
+        "Lightning: Judradjim": "Skill1",
+        "Hellfire: Vollzanbel": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Defensive Spell": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "True damage",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 1580.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": 3.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 0.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 0.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 275.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "requires",
+              "label": "Named ally on team",
+              "tier": "base",
+              "targeting": "Allies",
+              "qualitative": "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 330.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": 5.0,
+              "tick": 0.5,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "debuff",
+              "label": "Vitality",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "EX+10",
+              "targeting": "Self",
+              "numeric": 35.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock up",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            },
+            {
+              "category": "cc",
+              "label": "Knock down",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 800.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "True damage",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 1580.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 300.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": 5.0,
+          "tick": 0.5,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 0.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 0.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 800.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        },
+        {
+          "category": "debuff",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "debuff",
+          "label": "Vitality",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "EX+10",
+          "targeting": "Self",
+          "numeric": 35.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "cc",
+          "label": "Knock up",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        },
+        {
+          "category": "cc",
+          "label": "Knock down",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "requires",
+          "label": "Named ally on team",
+          "tier": "base",
+          "targeting": "Allies",
+          "qualitative": "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "Area, Single target"
+        ],
+        [
+          "DoT",
+          "All units, Area"
+        ],
+        [
+          "True damage",
+          "All units"
+        ]
+      ],
+      "damage_scores": {
+        "True damage": 3300.0
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Haste"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 7,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "01d5b451df77b6a43007220f60a406434ff9902896d797d7346fa86049ac0a7b",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

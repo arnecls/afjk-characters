@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "eironn",
+  "display_name": "Eironn",
+  "source": {
+    "title": "Eironn - Stormsword",
+    "name": "Eironn",
+    "tags": "Wilder · Rogue · Magic",
+    "faction": "Wilder",
+    "class": "Rogue",
+    "damage_type": "Magic",
+    "description": "A Rogue skilled at attracting enemies and working well with allies who can deal AoE damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Verdant Cyclone",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "2s",
+          "Skill Range": "Global",
+          "Initial Energy": "200"
+        },
+        "description": {
+          "raw": "Eironn combines the power of two swords and selects a tile, pulling in enemies within 2 tiles to the center. Then causes an explosion after a short delay, dealing 250% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles and immobilizing them for 3s. Eironn prioritizes selecting a tile with the most surrounding enemies.",
+          "active": [
+            "Eironn combines the power of two swords and selects a tile, pulling in enemies within 2 tiles to the center.",
+            "Then causes an explosion after a short delay, dealing 250% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles and immobilizing them for 3s.",
+            "Eironn prioritizes selecting a tile with the most surrounding enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 270% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 290% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 310% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eironn summons magical swords, pulling nearby enemies to the center, dealing damage, and immobilizing them."
+      },
+      {
+        "section": "Skill1",
+        "name": "Ice Spike",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "7s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Eironn slashes to deal 110% (ATK-based) + 10% (SP-based) damage to enemies within a 3-tile arc and reduces their Haste by 50 for 5s. Later, Eironn stabs the target, dealing 220% (ATK-based) + 20% (SP-based) damage to the target and enemies in a 2-tile line behind them, reducing their Magic DEF by 40% for 5s.",
+          "active": [
+            "Eironn slashes to deal 110% (ATK-based) + 10% (SP-based) damage to enemies within a 3-tile arc and reduces their Haste by 50 for 5s.",
+            "Later, Eironn stabs the target, dealing 220% (ATK-based) + 20% (SP-based) damage to the target and enemies in a 2-tile line behind them, reducing their Magic DEF by 40% for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases slash damage to 115% (ATK-based) + 10% (SP-based) and stab damage to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases slash damage to 120% (ATK-based) + 10% (SP-based) and stab damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases slash damage to 125% (ATK-based) + 10% (SP-based) and stab damage to 250% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eironn deals AoE damage with two swords and reduces enemies' Haste and Magic DEF."
+      },
+      {
+        "section": "Skill2",
+        "name": "Tempest Guard",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "1 tile"
+        },
+        "description": {
+          "raw": "Eironn gains a shield that blocks 280% (ATK-based) + 30% (SP-based) damage for 10s. Additionally, Eironn gains 50% Dodge Rate while the shield is active.",
+          "active": [
+            "Eironn gains a shield that blocks 280% (ATK-based) + 30% (SP-based) damage for 10s.",
+            "Additionally, Eironn gains 50% Dodge Rate while the shield is active."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases shield value to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases shield value to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases Dodge Rate to 80%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eironn gains a shield and the ability to dodge."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Eironn increases his Ranged DEF by 15 during battle. He gains an extra 7 Ranged DEF when his HP drops below 50%.",
+          "active": [
+            "Eironn increases his Ranged DEF by 15 during battle.",
+            "He gains an extra 7 Ranged DEF when his HP drops below 50%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Eironn increases his Ranged DEF by 19 during battle.",
+                "He gains an extra 9 Ranged DEF when his HP drops below 50%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Eironn increases his Ranged DEF by 23 during battle.",
+                "He gains an extra 12 Ranged DEF when his HP drops below 50%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eironn increases his Ranged DEF during battle. He gains extra Ranged DEF when his HP is low."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Howling Hurricane",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Eironn casts Verdant Cyclone for the first time in each battle without consuming Energy, but the damage is reduced to 50% of the original.",
+          "active": [
+            "Eironn casts Verdant Cyclone for the first time in each battle without consuming Energy, but the damage is reduced to 50% of the original."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Reduces damage to 70% of the original."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases immobilize duration to 6s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces damage to 80% of the original."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eironn can cast Verdant Cyclone on any tile when a battle starts."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immobilized by Verdant Cyclone.",
+          "active": [
+            "Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immobilized by Verdant Cyclone."
+          ]
+        },
+        "description_lite": "Eironn reduces an extra Magic DEF on a target if they are immobilized by Verdant Cyclone."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

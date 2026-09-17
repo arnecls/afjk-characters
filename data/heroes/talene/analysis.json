@@ -1,0 +1,959 @@
+{
+  "schema_version": 1,
+  "id": "talene",
+  "display_name": "Talene",
+  "local": {
+    "long_name": "Talene - Resurging Flame",
+    "faction": "celestial",
+    "class": "mage",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": true,
+    "default_range": 3,
+    "release_date": "2024-07-03",
+    "season": "Song of Strife",
+    "season_number": 1,
+    "skills": {
+      "Divine Conflagration": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Talene flies to a designated tile in the center of the battlefield, consumes 12.5% of her max HP and 250 Energy per second to shoot a 5-tile flame, dealing 150% + 20% (SP-based) damage and extra damage equal to 170% + 5% (SP-based) of her lost HP to enemies within range. The extra damage is shared among all hit enemies. Talene can cast this skill even when she is out of Energy, but the HP consumed per second will increase to 20% This skill ends when there are no more enemies within range.",
+          "active": [
+            "Talene flies to a designated tile in the center of the battlefield, consumes 12.5% of her max HP and 250 Energy per second to shoot a 5-tile flame, dealing 150% + 20% (SP-based) damage and extra damage equal to 170% + 5% (SP-based) of her lost HP to enemies within range.",
+            "The extra damage is shared among all hit enemies.",
+            "Talene can cast this skill even when she is out of Energy, but the HP consumed per second will increase to 20% This skill ends when there are no more enemies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt per second to 160% (ATK-based) + 20% (SP-based) and extra damage to 190% (ATK-based) + 5% (SP-based) of her lost HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt per second to 170% (ATK-based) + 20% (SP-based) and extra damage to 210% (ATK-based) + 5% (SP-based) of her lost HP"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt per second to 180% (ATK-based) + 20% (SP-based) and extra damage to 230% (ATK-based) + 5% (SP-based) of her lost HP"
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt per second to 190% (ATK-based) + 20% (SP-based) and extra damage to 250% (ATK-based) + 5% (SP-based) of her lost HP"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "initial_energy": 0.0,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Radiant Resurgence": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Whenever Talene loses 10% of her max HP, she will release a warm current that restores 40% (ATK-based) HP for the weakest allied hero. Whenever she restores 10% of her max HP, she will unleash a torrent that deals 50% (ATK-based) damage to the healthiest enemy. Active. Talene consumes 20% of her max HP to summon Divine Fire in the area with the most enemies, dealing 200% (ATK-based) + 10% (SP-based) damage that comes with an extra 40 + 3 (SP-based) Life Drain to adjacent enemies.",
+          "passive": [
+            "Whenever Talene loses 10% of her max HP, she will release a warm current that restores 40% (ATK-based) HP for the weakest allied hero.",
+            "Whenever she restores 10% of her max HP, she will unleash a torrent that deals 50% (ATK-based) damage to the healthiest enemy."
+          ],
+          "active": [
+            "Talene consumes 20% of her max HP to summon Divine Fire in the area with the most enemies, dealing 200% (ATK-based) + 10% (SP-based) damage that comes with an extra 40 + 3 (SP-based) Life Drain to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage dealt to 215% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage dealt to 230% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage dealt to 240% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "cooldown": 8.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Blazing Ascension": {
+        "category": "skill2",
+        "description": {
+          "raw": "Talene transforms into a ball of flame whenever she is defeated. During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% (SP-based) damage to enemies within 2 tiles and knocking them 1 tile back. After each resurrection, her Vitality during the flame state will be reduced permanently by 33.",
+          "active": [
+            "Talene transforms into a ball of flame whenever she is defeated.",
+            "During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% (SP-based) damage to enemies within 2 tiles and knocking them 1 tile back.",
+            "After each resurrection, her Vitality during the flame state will be reduced permanently by 33."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "After each resurrection, Talene's Vitality will be reduced by 32."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "After each resurrection, Talene's Vitality will be reduced by 31"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "After each resurrection, Talene's Vitality will be reduced by 30."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 160.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Knock back — Area"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Talene increases her ATK by 8% for up to 32% whenever she has consumed 50% of her max HP.",
+          "active": [
+            "Talene increases her ATK by 8% for up to 32% whenever she has consumed 50% of her max HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Talene increases her ATK by 9% for up to 36% whenever she has consumed 50% of her max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Talene increases her ATK by 10% for up to 40% whenever she has consumed 50% of her max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Pyre of Renewal": {
+        "category": "skill4",
+        "description": {
+          "raw": "Talene grants Pyre of Renewal to the frontmost allied hero other than herself from the beginning of the battle until the end. Pyre of Renewal carrier will deal damage equal to 50% of their ATK per second to adjacent enemies and restore HP equal to 25% of their damage dealt. Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks.",
+          "active": [
+            "Talene grants Pyre of Renewal to the frontmost allied hero other than herself from the beginning of the battle until the end.",
+            "Pyre of Renewal carrier will deal damage equal to 50% of their ATK per second to adjacent enemies and restore HP equal to 25% of their damage dealt.",
+            "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 55% of their ATK, and HP recovery to 30% of their damage dealt."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 60% of their ATK, and HP recovery to 35% of their damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Pyre of Renewal reaches the maximum number of stacks and its carrier is defeated, all stacks will be consumed to transform the carrier into a ball of flame.",
+                "The carrier will then resurrect in 3s with 50% of their max HP.",
+                "This effect can only be triggered once in each battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Talene increases her HP recovered per second to 15% while in the flame state when defeated for the first time in a battle.",
+          "active": [
+            "Talene increases her HP recovered per second to 15% while in the flame state when defeated for the first time in a battle."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "on_defeat"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "duration": 2,
+            "tick": 1.0
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Talene transforms into a ball of flame whenever she is defeated."
+        },
+        {
+          "label": "Transformation",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Talene transforms into a ball of flame whenever she is defeated."
+        },
+        {
+          "label": "Stacking",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
+        },
+        {
+          "label": "Ally DoT on enemies",
+          "tier": "mythic+",
+          "targeting": "Area",
+          "description": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "max_hp",
+      "healing"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "talene",
+    "display_name": "Talene",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Talene - Resurging Flame",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Talene flies to a designated tile in the center of the battlefield, consumes 12.5% of her max HP and 250 Energy per second to shoot a 5-tile flame, dealing 150% + 20% (SP-based) damage and extra damage equal to 170% + 5% (SP-based) of her lost HP to enemies within range.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The extra damage is shared among all hit enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Talene can cast this skill even when she is out of Energy, but the HP consumed per second will increase to 20% This skill ends when there are no more enemies within range.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage dealt per second to 160% (ATK-based) + 20% (SP-based) and extra damage to 190% (ATK-based) + 5% (SP-based) of her lost HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage dealt per second to 170% (ATK-based) + 20% (SP-based) and extra damage to 210% (ATK-based) + 5% (SP-based) of her lost HP",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage dealt per second to 180% (ATK-based) + 20% (SP-based) and extra damage to 230% (ATK-based) + 5% (SP-based) of her lost HP",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage dealt per second to 190% (ATK-based) + 20% (SP-based) and extra damage to 250% (ATK-based) + 5% (SP-based) of her lost HP",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Whenever Talene loses 10% of her max HP, she will release a warm current that restores 40% (ATK-based) HP for the weakest allied hero.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Whenever she restores 10% of her max HP, she will unleash a torrent that deals 50% (ATK-based) damage to the healthiest enemy.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Talene consumes 20% of her max HP to summon Divine Fire in the area with the most enemies, dealing 200% (ATK-based) + 10% (SP-based) damage that comes with an extra 40 + 3 (SP-based) Life Drain to adjacent enemies.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage dealt to 215% (ATK-based) + 10% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage dealt to 230% (ATK-based) + 10% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage dealt to 240% (ATK-based) + 10% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Talene transforms into a ball of flame whenever she is defeated.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% (SP-based) damage to enemies within 2 tiles and knocking them 1 tile back.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "After each resurrection, her Vitality during the flame state will be reduced permanently by 33.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "After each resurrection, Talene's Vitality will be reduced by 32.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "After each resurrection, Talene's Vitality will be reduced by 31",
+          "Skill2"
+        ],
+        [
+          "base",
+          "After each resurrection, Talene's Vitality will be reduced by 30.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Talene increases her ATK by 8% for up to 32% whenever she has consumed 50% of her max HP.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Talene increases her ATK by 9% for up to 36% whenever she has consumed 50% of her max HP.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Talene increases her ATK by 10% for up to 40% whenever she has consumed 50% of her max HP.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Talene grants Pyre of Renewal to the frontmost allied hero other than herself from the beginning of the battle until the end.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Pyre of Renewal carrier will deal damage equal to 50% of their ATK per second to adjacent enemies and restore HP equal to 25% of their damage dealt.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 55% of their ATK, and HP recovery to 30% of their damage dealt.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 60% of their ATK, and HP recovery to 35% of their damage dealt.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "When Pyre of Renewal reaches the maximum number of stacks and its carrier is defeated, all stacks will be consumed to transform the carrier into a ball of flame.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "The carrier will then resurrect in 3s with 50% of their max HP.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "This effect can only be triggered once in each battle.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Talene increases her HP recovered per second to 15% while in the flame state when defeated for the first time in a battle.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Divine Conflagration": "Ultimate",
+        "Radiant Resurgence": "Skill1",
+        "Blazing Ascension": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Pyre of Renewal": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Cheat death",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Talene transforms into a ball of flame whenever she is defeated.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Transformation",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Talene transforms into a ball of flame whenever she is defeated.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Stacking",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "qualitative": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 250.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Lifedrain",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Knock back",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 160.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 10.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Ally DoT on enemies",
+              "tier": "Mythic+",
+              "targeting": "Area",
+              "qualitative": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Healing over time",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "on_defeat"
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 250.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Lifedrain",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Knock back",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 10.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Healing over time",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "battle_phase",
+              "phase": "on_defeat"
+            },
+            {
+              "type": "duration_gate",
+              "gate": "first_time"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Talene transforms into a ball of flame whenever she is defeated.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Transformation",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Talene transforms into a ball of flame whenever she is defeated.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Stacking",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "qualitative": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Ally DoT on enemies",
+          "tier": "Mythic+",
+          "targeting": "Area",
+          "qualitative": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "Area"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Max HP",
+        "Healing"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 3,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "209bbe5f31e85c723eb91207787064d0369921a2f43513997710560561758fb5",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

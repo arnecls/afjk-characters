@@ -119,19 +119,9 @@ def main() -> int:
         ses.short_name(h["title"]): h for h in raw["heroes"]
     }
     updated = 0
-    if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_roster_inputs
+    from hero_pipeline.storage import load_ai_field
 
-        sidecars = load_roster_inputs()["curated"]["skill_effects"]
-        documents = sorted(sidecars.items())
-    else:
-        documents = [
-            (
-                path.stem,
-                json.loads(path.read_text(encoding="utf-8")),
-            )
-            for path in sorted(ses.SKILL_EFFECTS_DIR.glob("*.json"))
-        ]
+    documents = sorted(load_ai_field("skill_effects").items())
     for hero_short, doc in documents:
         record = heroes_by_short.get(hero_short)
         if record is None and hero_short == "Twins":

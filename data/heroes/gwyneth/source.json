@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "gwyneth",
+  "display_name": "Gwyneth",
+  "source": {
+    "title": "Gwyneth - Dragonslayer Knight",
+    "name": "Gwyneth",
+    "tags": "Lightbearer · Marksman · Physical",
+    "faction": "Lightbearer",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A master of the greatbow, this Marksman fires devastating arrows that punch straight through enemy defenses.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Hailing Arrows",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage. Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%. Active. Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles. Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s. For each wave of arrows, subsequent hits on the same target deal 80% less damage. This skill prioritizes the area with the most enemies.",
+          "passive": [
+            "After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage.",
+            "Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%."
+          ],
+          "active": [
+            "Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles.",
+            "Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s.",
+            "For each wave of arrows, subsequent hits on the same target deal 80% less damage.",
+            "This skill prioritizes the area with the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt to 290% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt to 310% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt to 330% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt to 350% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gwyneth rains down arrows, dealing damage to enemies within range."
+      },
+      {
+        "section": "Skill1",
+        "name": "Fulgur Arrow",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "8 tiles"
+        },
+        "description": {
+          "raw": "Passive. Gwyneth's normal attacks follow a 3-attack cycle. Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s.",
+          "passive": [
+            "Gwyneth's normal attacks follow a 3-attack cycle.",
+            "Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the lightning splash damage dealt to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the lightning splash damage dealt to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the lightning splash damage dealt to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gwyneth fires a Fulgur Arrow, dealing splash damage and inflicting control effects on enemies near the target."
+      },
+      {
+        "section": "Skill2",
+        "name": "Flare Arrow",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "8 tiles"
+        },
+        "description": {
+          "raw": "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire. It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s. While burned, the target has their Vitality reduced by 40. This effect cannot stack.",
+          "active": [
+            "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire.",
+            "It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s.",
+            "While burned, the target has their Vitality reduced by 40.",
+            "This effect cannot stack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 510% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 530% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 550% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gwyneth fires a Flare Arrow, dealing higher damage to the target and burning them."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 15 during battle. If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9.",
+          "active": [
+            "Increases ATK SPD by 15 during battle.",
+            "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 20 during battle.",
+                "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 12."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 25 during battle.",
+                "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 15."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD and gains an additional increase when there are no enemies nearby."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Fulgur Flare",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "8 tiles"
+        },
+        "description": {
+          "raw": "Gwyneth's normal attack damage is increased by 20%. The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash.",
+          "active": [
+            "Gwyneth's normal attack damage is increased by 20%.",
+            "The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 5: Increases Gwyneth's normal attack damage by 25%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 10: When an arrow is imbued with the power of both lightning and fire, it also deals extra damage to the main target equal to 10% of their max HP.",
+                "This extra damage cannot exceed 360% of Gwyneth's ATK.",
+                "All damage dealt by this arrow also ignores 60% of enemies' Phys DEF damage reduction, and 4% of all other damage taken reduction effects.",
+                "In non-boss battles, this second value is increased to 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 15: Increases Gwyneth's normal attack damage by 30%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gwyneth triggers the Flare Arrow and Fulgur Arrow simultaneously, dealing high damage to the target and applying both arrows' effects at the same time."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {
+          "Cooldown": "2s"
+        },
+        "description": {
+          "raw": "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%.",
+          "active": [
+            "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%."
+          ]
+        },
+        "description_lite": "Gwyneth reduces her normal attack interval when there are no enemies nearby."
+      }
+    ],
+    "range": 8,
+    "release_date": "2026-05-29",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "S+",
+      "dream_realm": "S",
+      "dream_realm_endless": "S"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

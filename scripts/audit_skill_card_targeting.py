@@ -47,7 +47,7 @@ def audit_live_tags(rs_mod) -> list[str]:
     issues: list[str] = []
     snapshot = load_roster_snapshot()
     for entry in snapshot["manifest"]["heroes"]:
-        record = snapshot["bundles"][entry["id"]]["generated"]["source"]
+        record = snapshot["bundles"][entry["id"]]["source"]["source"]
         hero = rs_mod.hero_from_record(record)
         rs_mod.analyze_hero(hero)
         title = hero.title.split(" - ")[0]
@@ -116,7 +116,7 @@ def audit_stored_tags_with_suffix() -> list[str]:
 
 
 def main() -> int:
-    from hero_pipeline.engine import rewrite_summaries
+    from hero_pipeline.analysis import text as rewrite_summaries
 
     rs_mod = rewrite_summaries()
     live_issues = audit_live_tags(rs_mod)

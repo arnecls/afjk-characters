@@ -1,0 +1,1289 @@
+{
+  "schema_version": 1,
+  "id": "athalia",
+  "display_name": "Athalia",
+  "local": {
+    "long_name": "Athalia - Harbinger of Justice",
+    "faction": "celestial",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2025-03-27",
+    "season": "Chains of Eternity",
+    "season_number": 3,
+    "skills": {
+      "Unbroken Retribution": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%. Active. Athalia leaps into the air and strikes the enemy with the highest cumulative damage dealt, dealing 150% (ATK-based) + 27% (SP-based) true damage plus extra true damage equal to 30% + 3% (SP-based) of all enemies' total HP lost she has recorded. The extra true damage cannot exceed 1500% (ATK-based) + 150% (SP-based). Enemies hit are knocked down for 0.5s, and Athalia remains invincible while casting this skill. After using this skill, she resets her record of enemies' HP loss to zero.",
+          "passive": [
+            "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%."
+          ],
+          "active": [
+            "Athalia leaps into the air and strikes the enemy with the highest cumulative damage dealt, dealing 150% (ATK-based) + 27% (SP-based) true damage plus extra true damage equal to 30% + 3% (SP-based) of all enemies' total HP lost she has recorded.",
+            "The extra true damage cannot exceed 1500% (ATK-based) + 150% (SP-based).",
+            "Enemies hit are knocked down for 0.5s, and Athalia remains invincible while casting this skill.",
+            "After using this skill, she resets her record of enemies' HP loss to zero."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the true damage dealt to 180% (ATK-based) + 27% (SP-based) when the skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the true damage dealt to 210% (ATK-based) + 27% (SP-based) when the skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the true damage dealt to 240% (ATK-based) + 27% (SP-based) when the skill is used actively."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the true damage dealt to 270% (ATK-based) + 27% (SP-based) when the skill is used actively."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 297.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 33.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 0.5
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_ultimate",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 300.0,
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Knock down — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Vengeance Charge": {
+        "category": "skill1",
+        "description": {
+          "raw": "Athalia targets the enemy with the highest cumulative damage dealt and dashes to the tile behind them. The dash deals 360% (ATK-based) + 40% (SP-based) damage to the target and 280% (ATK-based) + 30% (SP-based) damage to enemies in its path. Athalia is invincible during the dash.",
+          "active": [
+            "Athalia targets the enemy with the highest cumulative damage dealt and dashes to the tile behind them.",
+            "The dash deals 360% (ATK-based) + 40% (SP-based) damage to the target and 280% (ATK-based) + 30% (SP-based) damage to enemies in its path.",
+            "Athalia is invincible during the dash."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to the target to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to the target to 440% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to the target to 480% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 520.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Execution",
+            "label": "buff_offensive",
+            "persistence": "unknown"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 2.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Execution — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Vanguard's Renewal": {
+        "category": "skill2",
+        "description": {
+          "raw": "Athalia transforms into a lance, striking adjacent enemies 6 times, with each hit dealing 20% (ATK-based) + 3% (SP-based) damage. While casting this skill, Athalia becomes unaffected, reduces damage taken by 60% + 2% (SP-based), and recovers 150% (ATK-based) + 15% (SP-based) HP.",
+          "active": [
+            "Athalia transforms into a lance, striking adjacent enemies 6 times, with each hit dealing 20% (ATK-based) + 3% (SP-based) damage.",
+            "While casting this skill, Athalia becomes unaffected, reduces damage taken by 60% + 2% (SP-based), and recovers 150% (ATK-based) + 15% (SP-based) HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Each hit deals 25% (ATK-based) + 3% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Each hit deals 30% (ATK-based) + 3% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Each hit deals 35% (ATK-based) + 3% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 165.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              },
+              {
+                "type": "battle_phase",
+                "phase": "conditional"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 165.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              },
+              {
+                "type": "battle_phase",
+                "phase": "conditional"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 5.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Crit by 12 during battle. When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 30.",
+          "active": [
+            "Increases Crit by 12 during battle.",
+            "When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 30."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Crit by 16 during battle.",
+                "When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 40."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Crit by 20 during battle.",
+                "When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 50."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Divine Verdict": {
+        "category": "skill4",
+        "description": {
+          "raw": "Every second use of Vengeance Charge, Athalia's dash simultaneously unleashes Sacred Slashes, striking the two straight paths with the most enemies. Each slash deals 200% (ATK-based) damage to all enemies in its paths. These slashes prioritize straight paths that do not overlap with the dash path of the Vengeance Charge that triggers them.",
+          "active": [
+            "Every second use of Vengeance Charge, Athalia's dash simultaneously unleashes Sacred Slashes, striking the two straight paths with the most enemies.",
+            "Each slash deals 200% (ATK-based) damage to all enemies in its paths.",
+            "These slashes prioritize straight paths that do not overlap with the dash path of the Vengeance Charge that triggers them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases skill damage to 240% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases skill damage to 280% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When casting Vengeance Charge, Athalia increases her Execution by 50.",
+                "Whenever she assists or defeats an enemy or uses her Ultimate, the cooldown of Vengeance Charge resets."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 280.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 800% (ATK-based).",
+          "active": [
+            "Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 800% (ATK-based)."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 800.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%."
+        },
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Athalia remains invincible while casting this skill."
+        },
+        {
+          "label": "Transformation",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Athalia transforms into a lance, striking adjacent enemies 6 times, with each hit dealing 20% (ATK-based) + 3% damage."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
+      ],
+      [
+        "true",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "max_hp",
+      "crit",
+      "execution"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "athalia",
+    "display_name": "Athalia",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Athalia - Harbinger of Justice",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Athalia leaps into the air and strikes the enemy with the highest cumulative damage dealt, dealing 150% (ATK-based) + 27% (SP-based) true damage plus extra true damage equal to 30% + 3% (SP-based) of all enemies' total HP lost she has recorded.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The extra true damage cannot exceed 1500% (ATK-based) + 150% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Enemies hit are knocked down for 0.5s, and Athalia remains invincible while casting this skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "After using this skill, she resets her record of enemies' HP loss to zero.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the true damage dealt to 180% (ATK-based) + 27% (SP-based) when the skill is used actively.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the true damage dealt to 210% (ATK-based) + 27% (SP-based) when the skill is used actively.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the true damage dealt to 240% (ATK-based) + 27% (SP-based) when the skill is used actively.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the true damage dealt to 270% (ATK-based) + 27% (SP-based) when the skill is used actively.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Athalia targets the enemy with the highest cumulative damage dealt and dashes to the tile behind them.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The dash deals 360% (ATK-based) + 40% (SP-based) damage to the target and 280% (ATK-based) + 30% (SP-based) damage to enemies in its path.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Athalia is invincible during the dash.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to the target to 400% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to the target to 440% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to the target to 480% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Athalia transforms into a lance, striking adjacent enemies 6 times, with each hit dealing 20% (ATK-based) + 3% (SP-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "While casting this skill, Athalia becomes unaffected, reduces damage taken by 60% + 2% (SP-based), and recovers 150% (ATK-based) + 15% (SP-based) HP.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Each hit deals 25% (ATK-based) + 3% (SP-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Each hit deals 30% (ATK-based) + 3% (SP-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Each hit deals 35% (ATK-based) + 3% (SP-based) damage.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases Crit by 12 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 30.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Crit by 16 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 40.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Crit by 20 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "When dealing damage to the enemy with the highest cumulative damage dealt, Crit is further increased by 50.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Every second use of Vengeance Charge, Athalia's dash simultaneously unleashes Sacred Slashes, striking the two straight paths with the most enemies.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Each slash deals 200% (ATK-based) damage to all enemies in its paths.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "These slashes prioritize straight paths that do not overlap with the dash path of the Vengeance Charge that triggers them.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases skill damage to 240% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases skill damage to 280% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "When casting Vengeance Charge, Athalia increases her Execution by 50.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Whenever she assists or defeats an enemy or uses her Ultimate, the cooldown of Vengeance Charge resets.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 800% (ATK-based).",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Unbroken Retribution": "Ultimate",
+        "Vengeance Charge": "Skill1",
+        "Vanguard's Renewal": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Divine Verdict": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "True damage",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 297.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "HP loss",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 33.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Knock down",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 0.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 0.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On ultimate"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Cheat death",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Athalia remains invincible while casting this skill.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 520.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": "selected_target",
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 520.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": "selected_target",
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Execution",
+              "tier": "EX+15",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Athalia is invincible during the dash.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 165.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 165.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": "frequent",
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": "frequent",
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Transformation",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Athalia transforms into a lance, striking adjacent enemies 6 times, with each hit dealing 20% (ATK-based) + 3% damage.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "Mythic+",
+              "targeting": "Area",
+              "numeric": 280.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": "selected_target",
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "numeric": 800.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "True damage",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 297.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "HP loss",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 33.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Knock down",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 0.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 0.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 800.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": "selected_target",
+          "source_section": "Unlocks at Supreme+"
+        },
+        {
+          "category": "buff",
+          "label": "Execution",
+          "tier": "EX+15",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 165.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": "frequent",
+          "conditions": [
+            {
+              "type": "status_condition",
+              "status": "active_state"
+            },
+            {
+              "type": "battle_phase",
+              "phase": "conditional"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": "frequent",
+          "conditions": [
+            {
+              "type": "status_condition",
+              "status": "active_state"
+            },
+            {
+              "type": "battle_phase",
+              "phase": "conditional"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On ultimate"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Athalia remains invincible while casting this skill.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Transformation",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Athalia transforms into a lance, striking adjacent enemies 6 times, with each hit dealing 20% (ATK-based) + 3% damage.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "Area, Single target"
+        ],
+        [
+          "HP loss",
+          "Single target"
+        ],
+        [
+          "True damage",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {
+        "True damage": 750.0
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Max HP",
+        "Crit",
+        "Execution"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "857491b460c966b4f1a482447eeded77d32ca5e7e21d74860ab5f9893f3a9975",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

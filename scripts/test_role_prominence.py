@@ -11,24 +11,11 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
 
 def _load_modules():
-    spec_rs = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    rs = importlib.util.module_from_spec(spec_rs)
-    sys.modules["rewrite_summaries"] = rs
-    assert spec_rs.loader is not None
-    spec_rs.loader.exec_module(rs)
-
-    spec_gen = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    gen = importlib.util.module_from_spec(spec_gen)
-    sys.modules["gen_overview"] = gen
-    assert spec_gen.loader is not None
-    spec_gen.loader.exec_module(gen)
-    return rs, gen
+    return load_rewrite_summaries(), load_overview_facts()
 
 
 rs, gen = _load_modules()

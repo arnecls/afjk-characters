@@ -1,0 +1,1439 @@
+{
+  "schema_version": 1,
+  "id": "saida",
+  "display_name": "Saida",
+  "local": {
+    "long_name": "Saida - Vampiric Vine",
+    "faction": "hypogean",
+    "class": "rogue",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2025-08-01",
+    "season": "Echoes of Dissent",
+    "season_number": 4,
+    "skills": {
+      "Seed Siphon": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Active. Saida teleports in front of an enemy, preventing them from moving or acting. She deals 520% (ATK-based) + 60% (SP-based) damage and drains 220 + 20 (SP-based) Energy from the enemy. Saida remains unaffected while doing this and plants a Drain Seed in the enemy. She prioritizes enemies without a Drain Seed. This seed drops to the ground if its host is defeated or if Saida uses her Ultimate on its host again. Up to 8 Drain Seeds can exist on the battlefield at the same time. In boss fights, Drain Seeds on the ground will not obstruct unit movement. Passive. Every 2.5s, Drain Seeds deal 250% (ATK-based) damage to its host and reduces their Energy by 120.",
+          "passive": [
+            "Every 2.5s, Drain Seeds deal 250% (ATK-based) damage to its host and reduces their Energy by 120."
+          ],
+          "active": [
+            "Saida teleports in front of an enemy, preventing them from moving or acting.",
+            "She deals 520% (ATK-based) + 60% (SP-based) damage and drains 220 + 20 (SP-based) Energy from the enemy.",
+            "Saida remains unaffected while doing this and plants a Drain Seed in the enemy.",
+            "She prioritizes enemies without a Drain Seed.",
+            "This seed drops to the ground if its host is defeated or if Saida uses her Ultimate on its host again.",
+            "Up to 8 Drain Seeds can exist on the battlefield at the same time.",
+            "In boss fights, Drain Seeds on the ground will not obstruct unit movement."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the skill damage to 540% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the skill damage to 560% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the skill damage to 580% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the skill damage to 600% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 240.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 660.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 600.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Energy",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Bind — Single target"
+          },
+          {
+            "label": "Displace — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Crimson Claim": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Saida restores extra HP equal to 100% of the damage dealt by her normal attacks and skills. Any excess healing from this effect is converted into a shield. The shield value cannot exceed 3000% (ATK-based) + 300% (SP-based). Active. Saida forms a blood spike to pierce an enemy, dealing 420% (ATK-based) + 40% (SP-based) damage an interrupting their action. If any Drain Seeds are within 1 tile of the enemy, each one also forms blood spikes to strike that enemy, dealing 30% (ATK-based) damage.",
+          "passive": [
+            "Saida restores extra HP equal to 100% of the damage dealt by her normal attacks and skills.",
+            "Any excess healing from this effect is converted into a shield.",
+            "The shield value cannot exceed 3000% (ATK-based) + 300% (SP-based)."
+          ],
+          "active": [
+            "Saida forms a blood spike to pierce an enemy, dealing 420% (ATK-based) + 40% (SP-based) damage an interrupting their action.",
+            "If any Drain Seeds are within 1 tile of the enemy, each one also forms blood spikes to strike that enemy, dealing 30% (ATK-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increase damage to 430% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increase damage to 440% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increase damage to 450% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "interrupt"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 490.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 6.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Interrupt — Single target"
+          }
+        ]
+      },
+      "Revenant Sprout": {
+        "category": "skill2",
+        "description": {
+          "raw": "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% (SP-based) HP. She prioritizes the oldest seed available and restores an extra 2.5% (HP-based) for each second the consumed seed existed. The extra HP cannot exceed 50% (HP-based).",
+          "active": [
+            "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% (SP-based) HP.",
+            "She prioritizes the oldest seed available and restores an extra 2.5% (HP-based) for each second the consumed seed existed.",
+            "The extra HP cannot exceed 50% (HP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Saida restores 3% (HP-based) for each second the consumed seed existed.",
+                "The extra HP restored cannot exceed 60% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Saida restores 3.5% (HP-based) for each second the consumed seed existed.",
+                "The extra HP restored cannot exceed 70% (HP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Saida restores 4% (HP-based) for each second the consumed seed existed.",
+                "The extra HP restored cannot exceed 80% (HP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 4.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Saida reduces her damage taken by 12% during battle. She further reduces her damage taken by an extra 2% for each existing Drain Seed, up to a maximum of 10%.",
+          "active": [
+            "Saida reduces her damage taken by 12% during battle.",
+            "She further reduces her damage taken by an extra 2% for each existing Drain Seed, up to a maximum of 10%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Saida reduces her damage taken by 16% during battle.",
+                "She further reduces her damage taken by an extra 3% for each existing Drain Seed, up to a maximum of 15%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Saida reduces her damage taken by 20% during battle.",
+                "She further reduces her damage taken by an extra 4% for each existing Drain Seed, up to a maximum of 20%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Deepening Roots": {
+        "category": "skill4",
+        "description": {
+          "raw": "Saida reduces the damage dealt by enemies afflicted with a Drain Seed by 35%. Each time she casts her Ultimate, the interval between Drain Seed attack effects is shortened by 0.5s, up to a maximum reduction of 1.5s for the current battle.",
+          "active": [
+            "Saida reduces the damage dealt by enemies afflicted with a Drain Seed by 35%.",
+            "Each time she casts her Ultimate, the interval between Drain Seed attack effects is shortened by 0.5s, up to a maximum reduction of 1.5s for the current battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by Drain Seeds to 290% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the damage dealt by Drain Seeds to 330% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Saida has shortened the interval between Drain Seed's attack effects to its limit with Deepening Roots, she deals 1200% (ATK-based) damage to all enemies and traps them with blood spikes, preventing them from moving or acting.",
+                "If an enemy becomes unaffected, they are temporarily freed, but the trap resumes once the unaffected effect ends.",
+                "Each enemy is always trapped for a total of 45s, losing 160% (ATK-based) HP per second while trapped."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage dealt",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "bind"
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1200.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1200.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 1.0
+          },
+          {
+            "type": "immunity",
+            "tier": "ex+15",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic (EX+15)"
+          },
+          {
+            "label": "DoT (EX+15)"
+          },
+          {
+            "label": "Damage dealt",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Bind — All units (EX+15)"
+          },
+          {
+            "label": "Unaffected — Self (EX+15)"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These seeds do not harm allies but grant them a shield that can absorb 800% (ATK-based) damage.",
+          "active": [
+            "When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes.",
+            "These seeds do not harm allies but grant them a shield that can absorb 800% (ATK-based) damage."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 800.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Shield — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% HP."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Boss encounter",
+          "tier": "base",
+          "description": "In boss fights, Drain Seeds on the ground will not obstruct unit movement."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Area, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "max_hp"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.6538461538461539,
+      "max_hp": 0.34615384615384615
+    },
+    "behavior": {},
+    "id": "saida",
+    "display_name": "Saida",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Saida - Vampiric Vine",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Every 2.5s, Drain Seeds deal 250% (ATK-based) damage to its host and reduces their Energy by 120.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Saida teleports in front of an enemy, preventing them from moving or acting.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She deals 520% (ATK-based) + 60% (SP-based) damage and drains 220 + 20 (SP-based) Energy from the enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Saida remains unaffected while doing this and plants a Drain Seed in the enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "She prioritizes enemies without a Drain Seed.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This seed drops to the ground if its host is defeated or if Saida uses her Ultimate on its host again.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Up to 8 Drain Seeds can exist on the battlefield at the same time.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "In boss fights, Drain Seeds on the ground will not obstruct unit movement.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the skill damage to 540% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the skill damage to 560% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the skill damage to 580% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the skill damage to 600% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Saida restores extra HP equal to 100% of the damage dealt by her normal attacks and skills.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Any excess healing from this effect is converted into a shield.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The shield value cannot exceed 3000% (ATK-based) + 300% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Saida forms a blood spike to pierce an enemy, dealing 420% (ATK-based) + 40% (SP-based) damage an interrupting their action.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "If any Drain Seeds are within 1 tile of the enemy, each one also forms blood spikes to strike that enemy, dealing 30% (ATK-based) damage.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increase damage to 430% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increase damage to 440% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increase damage to 450% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% (SP-based) HP.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "She prioritizes the oldest seed available and restores an extra 2.5% (HP-based) for each second the consumed seed existed.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The extra HP cannot exceed 50% (HP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Saida restores 3% (HP-based) for each second the consumed seed existed.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The extra HP restored cannot exceed 60% (HP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Saida restores 3.5% (HP-based) for each second the consumed seed existed.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The extra HP restored cannot exceed 70% (HP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Saida restores 4% (HP-based) for each second the consumed seed existed.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The extra HP restored cannot exceed 80% (HP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Saida reduces her damage taken by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She further reduces her damage taken by an extra 2% for each existing Drain Seed, up to a maximum of 10%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Saida reduces her damage taken by 16% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She further reduces her damage taken by an extra 3% for each existing Drain Seed, up to a maximum of 15%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Saida reduces her damage taken by 20% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "She further reduces her damage taken by an extra 4% for each existing Drain Seed, up to a maximum of 20%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Saida reduces the damage dealt by enemies afflicted with a Drain Seed by 35%.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Each time she casts her Ultimate, the interval between Drain Seed attack effects is shortened by 0.5s, up to a maximum reduction of 1.5s for the current battle.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the damage dealt by Drain Seeds to 290% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases the damage dealt by Drain Seeds to 330% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "When Saida has shortened the interval between Drain Seed's attack effects to its limit with Deepening Roots, she deals 1200% (ATK-based) damage to all enemies and traps them with blood spikes, preventing them from moving or acting.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "If an enemy becomes unaffected, they are temporarily freed, but the trap resumes once the unaffected effect ends.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Each enemy is always trapped for a total of 45s, losing 160% (ATK-based) HP per second while trapped.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "These seeds do not harm allies but grant them a shield that can absorb 800% (ATK-based) damage.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Seed Siphon": "Ultimate",
+        "Crimson Claim": "Skill1",
+        "Revenant Sprout": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Deepening Roots": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Displace",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 660.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Cheat death",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% HP.",
+              "grants": []
+            },
+            {
+              "kind": "requires",
+              "label": "Boss encounter",
+              "tier": "base",
+              "targeting": "—",
+              "qualitative": "In boss fights, Drain Seeds on the ground will not obstruct unit movement.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 100.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Interrupt",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 490.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 4.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Damage taken",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Damage dealt",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "cc",
+              "label": "Bind",
+              "tier": "EX+15",
+              "targeting": "All units",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "EX+15",
+              "targeting": "All units",
+              "numeric": 1200.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "EX+15",
+              "targeting": "Single target",
+              "numeric": 1200.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "EX+15",
+              "targeting": "Self",
+              "timing": "Conditional"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "Supreme+",
+              "targeting": "Multiple targets",
+              "numeric": 800.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "debuff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 240.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Displace",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 1200.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 100.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Interrupt",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 4.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Damage taken",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "debuff",
+          "label": "Damage dealt",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "cc",
+          "label": "Bind",
+          "tier": "EX+15",
+          "targeting": "All units",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "EX+15",
+          "targeting": "Single target",
+          "numeric": 1200.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "Supreme+",
+          "targeting": "Multiple targets",
+          "numeric": 800.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% HP.",
+          "grants": []
+        },
+        {
+          "kind": "requires",
+          "label": "Boss encounter",
+          "tier": "base",
+          "targeting": "—",
+          "qualitative": "In boss fights, Drain Seeds on the ground will not obstruct unit movement.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "All units, Area, Single target"
+        ],
+        [
+          "DoT",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Max HP"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 0.6538461538461539,
+        "Max HP": 0.34615384615384615
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "a385608499787329d6234885baa494bd74014dd811ba52bbc3b2db32386229f4",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

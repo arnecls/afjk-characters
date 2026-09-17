@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "id": "perseus",
+  "display_name": "Perseus",
+  "source": {
+    "title": "Perseus - Chosen Champion",
+    "name": "Perseus",
+    "tags": "Lightbearer · Warrior · Physical",
+    "faction": "Lightbearer",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A Warrior blessed by the God of Harvest, skilled with spear and shield.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Divine Rend",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "3 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Perseus chooses a direction and marches 3 tiles forward with dazzling spearwork. Along the way, he deals 85% (ATK-based) + 10% (SP-based) damage to adjacent enemies 11 times and continuously knocks them back in the direction of his march. At the end of the march, Perseus performs a mighty shield bash, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies within 1 tiles and stunning them for 2s. Perseus stays unaffected while casting this skill.",
+          "active": [
+            "Perseus chooses a direction and marches 3 tiles forward with dazzling spearwork.",
+            "Along the way, he deals 85% (ATK-based) + 10% (SP-based) damage to adjacent enemies 11 times and continuously knocks them back in the direction of his march.",
+            "At the end of the march, Perseus performs a mighty shield bash, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies within 1 tiles and stunning them for 2s.",
+            "Perseus stays unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Perseus' damage during his march to 90% (ATK-based) + 10% (SP-based) and his shield bash damage to 290% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Perseus' damage during his march to 95% (ATK-based) + 10% (SP-based) and his shield bash damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Perseus' damage during his march to 100% (ATK-based) + 10% (SP-based) and his shield bash damage to 310% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Perseus' damage during his march to 105% (ATK-based) + 10% (SP-based) and his shield bash damage to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Perseus marches continuously in one direction while swinging his spear."
+      },
+      {
+        "section": "Skill1",
+        "name": "Spear-Shield Combo",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Perseus swings both his spear and shield in a circle to strike nearby enemies. With his spear, he deals 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies. With his shield, he deals 140% (ATK-based) + 10% (SP-based) damage to adjacent enemies while gaining a shield value equal to 360% (ATK-based) of his ATK plus 80% of the damage dealt for 6s. While the shield lasts, his ATK SPD increases by 35.",
+          "active": [
+            "Perseus swings both his spear and shield in a circle to strike nearby enemies.",
+            "With his spear, he deals 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+            "With his shield, he deals 140% (ATK-based) + 10% (SP-based) damage to adjacent enemies while gaining a shield value equal to 360% (ATK-based) of his ATK plus 80% of the damage dealt for 6s.",
+            "While the shield lasts, his ATK SPD increases by 35."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases spear swing damage to 210% (ATK-based) + 20% (SP-based) and shield swing damage to 150% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases spear swing damage to 220% (ATK-based) + 20% (SP-based) and shield swing damage to 160% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases spear swing damage to 230% (ATK-based) + 20% (SP-based) and shield swing damage to 170% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Perseus swings his spear and shield, dealing damage to nearby enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Fertile Ground",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Before Perseus takes heavy damage, the ground within 1 tile around him turns fertile. Allies standing on this fertile ground have their ATK increased by 14.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 19% + 2.5% (SP-based). When Perseus' HP drops below 40% of his initial HP for the first time, he draws power from the fertile ground, increasing his max HP permanently by 60% + 6% (SP-based) and healing for the same amount. Once this power is drawn the fertile ground withers away permanently.",
+          "active": [
+            "Before Perseus takes heavy damage, the ground within 1 tile around him turns fertile.",
+            "Allies standing on this fertile ground have their ATK increased by 14.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 19% + 2.5% (SP-based).",
+            "When Perseus' HP drops below 40% of his initial HP for the first time, he draws power from the fertile ground, increasing his max HP permanently by 60% + 6% (SP-based) and healing for the same amount.",
+            "Once this power is drawn the fertile ground withers away permanently."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Allies standing on the fertile ground now have their ATK increased by 15.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 21% + 2.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Allies standing on the fertile ground now have their ATK increased by 16.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 23% + 2.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Allies standing on the fertile ground now have their ATK increased by 17.5% + 1.5% (SP-based) and Phys & Magic DEF increased by 25% + 2.5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Perseus grants buffs to allies standing on fertile ground."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases his ATK by 9% in battle. Further increases his ATK by 6% when he has temporary stat buffs from allies.",
+          "active": [
+            "Increases his ATK by 9% in battle.",
+            "Further increases his ATK by 6% when he has temporary stat buffs from allies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases his ATK by 12% in battle.",
+                "Further increases his ATK by 8% when he has temporary stat buffs from allies."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases his ATK by 15% in battle.",
+                "Further increases his ATK by 10% when he has temporary stat buffs from allies."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases his ATK in battle. Further increases his ATK after receiving temporary stat buffs."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Divine Grace",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Perseus is blessed by Bountiful Grace. When he gains a temporary stat buffs, its effect is increased by 20%. Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%. This effect stacks up 4 times.",
+          "active": [
+            "Perseus is blessed by Bountiful Grace.",
+            "When he gains a temporary stat buffs, its effect is increased by 20%.",
+            "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%.",
+            "This effect stacks up 4 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "When Perseus gains a temporary stat buff, its effect is increased by 30%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Perseus has 2 temporary stat buffs from different allies, the damage he deals is converted to true damage, and he comes unaffected.",
+                "This effect lasts at least 6s each time it's triggered."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Perseus gains a temporary stat buff, its effect is increased by 40%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Perseus gains stronger effects from any temporary stat buffs he receives."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Expands the range of fertile ground by 1 tiles.",
+          "active": [
+            "Expands the range of fertile ground by 1 tiles."
+          ]
+        },
+        "description_lite": "Expands the range of fertile ground."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-09-26",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

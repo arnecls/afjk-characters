@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "aurora",
+  "display_name": "Aurora",
+  "source": {
+    "title": "Aurora - Celestial of Dreams",
+    "name": "Aurora",
+    "tags": "Celestial · Mage · Magic",
+    "faction": "Celestial",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A Celestial Mage who governs the realm of dreams and has the power to turn them into reality.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Starlit Slumber",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Aurora summons her unicorn Sonny to her side and drifts into a deep sleep. Sonny inherits 140% + 20% (SP-based) of Aurora's HP and 120% + 10% (SP-based) of her other basic stats, then creates a rainbow aura that inspires allies. All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily. This skill can be cast even when Aurora is under control effects. While asleep, Aurora stays invincible. For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage. If Sonny gets defeated in battle, Aurora jolts awake. Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate. Passive. When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side. The frontmost enemy hero gets marked as the Nightmare. The mark reduces their Haste by 40, but increases their ATK 2%. Sonny rallies all allied summons to focus their attacks on the Nightmare.",
+          "passive": [
+            "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side.",
+            "The frontmost enemy hero gets marked as the Nightmare.",
+            "The mark reduces their Haste by 40, but increases their ATK 2%.",
+            "Sonny rallies all allied summons to focus their attacks on the Nightmare."
+          ],
+          "active": [
+            "Aurora summons her unicorn Sonny to her side and drifts into a deep sleep.",
+            "Sonny inherits 140% + 20% (SP-based) of Aurora's HP and 120% + 10% (SP-based) of her other basic stats, then creates a rainbow aura that inspires allies.",
+            "All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily.",
+            "This skill can be cast even when Aurora is under control effects.",
+            "While asleep, Aurora stays invincible.",
+            "For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage.",
+            "If Sonny gets defeated in battle, Aurora jolts awake.",
+            "Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Sonny inherits 160% + 20% (SP-based) of Aurora's HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Sonny inherits 180% + 20% (SP-based) of Aurora's HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Sonny inherits 200% + 20% (SP-based) of Aurora's HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Sonny inherits 220% + 20% (SP-based) of Aurora's HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aurora falls asleep and becomes invincible, summoning her unicorn Sonny to strengthen allied summons and attack enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Dreamspark Bunny",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "1.5s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "This skill can only be used while Aurora is asleep. Aurora summons a magical bunny beside her that lasts for up to 12s. The magical bunny inherits 100% + 10% (SP-based) of Aurora's HP and 80% + 8% (SP-based) of her other basic stats, and deals 100% (ATK-based) damage with its normal attacks. When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% (SP-based) damage to all adjacent enemies.",
+          "active": [
+            "This skill can only be used while Aurora is asleep.",
+            "Aurora summons a magical bunny beside her that lasts for up to 12s.",
+            "The magical bunny inherits 100% + 10% (SP-based) of Aurora's HP and 80% + 8% (SP-based) of her other basic stats, and deals 100% (ATK-based) damage with its normal attacks.",
+            "When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% (SP-based) damage to all adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the bunny's detonation damage to 370% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the bunny's detonation damage to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the bunny's detonation damage to 430% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aurora summons a magical bunny that attacks enemies. The bunny detonates when its duration ends, dealing AoE damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Plushification",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "While Aurora is dreaming, reality within 2 tiles around her slowly gets overtaken by her dream. If an enemy stays in that area for 12s, they will be transformed into a unicorn plushie, leaving them unable to move or attack for 1 + 0.125 (SP-based)s. The longer an enemy remains in the area, the faster each subsequent transformation triggers (minimum 6s. This effect does not apply to unaffected enemies.",
+          "active": [
+            "While Aurora is dreaming, reality within 2 tiles around her slowly gets overtaken by her dream.",
+            "If an enemy stays in that area for 12s, they will be transformed into a unicorn plushie, leaving them unable to move or attack for 1 + 0.125 (SP-based)s.",
+            "The longer an enemy remains in the area, the faster each subsequent transformation triggers (minimum 6s.",
+            "This effect does not apply to unaffected enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Extends the unicorn plushie transformation duration to 1.5 + 0.125 (SP-based)s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Extends the unicorn plushie transformation duration to 5 + 0.125 (SP-based)s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Extends the unicorn plushie transformation duration to 2.5 + 0.125 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "If an enemy stays near Aurora long enough, they will be transformed into a unicorn plushie for a while."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {},
+        "description": {
+          "raw": "Aurora increases her ATK by 10% during battle. For every allied summon from a different ally on the battlefield, her ATK increases further by 1%, up to 5 times.",
+          "active": [
+            "Aurora increases her ATK by 10% during battle.",
+            "For every allied summon from a different ally on the battlefield, her ATK increases further by 1%, up to 5 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Aurora increases her ATK by 10% during battle.",
+                "For every allied summon from a different ally on the battlefield, her ATK increases further by 1.5%, up to 5 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Aurora increases her ATK by 10% during battle.",
+                "For every allied summon from a different ally on the battlefield, her ATK increases further by 2%, up to 5 times."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aurora increases her ATK. For every allied summon from a different ally on the battlefield, her ATK increases further."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Dream Veil",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "While asleep, Aurora opens her whimsical Dream Theater, boosting the damage of all allied summons by 4% and casting them in special roles. Melee summons all take on the role of powerful Knights and take 25% less damage. Ranged summons take on the role of graceful Princesses, allowing their normal attacks to deal extra damage equal to 20% of Aurora's ATK. As for Sonny, Aurora's unicorn friend, he plays the role of the Prince. He gets both the Knight's and Princess' buff and becomes unaffected.",
+          "active": [
+            "While asleep, Aurora opens her whimsical Dream Theater, boosting the damage of all allied summons by 4% and casting them in special roles.",
+            "Melee summons all take on the role of powerful Knights and take 25% less damage.",
+            "Ranged summons take on the role of graceful Princesses, allowing their normal attacks to deal extra damage equal to 20% of Aurora's ATK.",
+            "As for Sonny, Aurora's unicorn friend, he plays the role of the Prince.",
+            "He gets both the Knight's and Princess' buff and becomes unaffected."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increase all allied summons' damage dealt by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increase all allied summons' damage dealt by 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When allied summons deal damage to the enemy marked as Nightmare, 50% of the damage dealt ignores all enemy Phys & Magic DEF."
+              ]
+            }
+          ]
+        },
+        "description_lite": "While Aurora is asleep, allied summons are enhanced, and Sonny becomes unaffected."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius.",
+          "active": [
+            "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius."
+          ]
+        },
+        "description_lite": "If Aurora's Energy is above a certain threshold while she's asleep, the range of Plushification increases."
+      }
+    ],
+    "range": 5,
+    "release_date": "2026-01-30",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "B",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

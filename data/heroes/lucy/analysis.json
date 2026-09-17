@@ -1,0 +1,956 @@
+{
+  "schema_version": 1,
+  "id": "lucy",
+  "display_name": "Lucy",
+  "local": {
+    "long_name": "Lucy - Celestial Spirit Mage",
+    "faction": "dimensional",
+    "class": "mage",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 3,
+    "release_date": "2025-05-01",
+    "season": "Chains of Eternity",
+    "season_number": 3,
+    "skills": {
+      "Celestial Spirit Summon": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle. Aquarius has 120% of Lucy's max HP and 100% of Lucy's other stats. Upon entering battle, Aquarius immediately conjures a water swirl that strikes the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area. The affected enemies are knocked into the air and stunned for 2s. The water swirl attack repeats every 10s. Aquarius' normal attack deals 100% (ATK-based) + 10% (SP-based) damage with a range of 10 tiles.",
+          "active": [
+            "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle.",
+            "Aquarius has 120% of Lucy's max HP and 100% of Lucy's other stats.",
+            "Upon entering battle, Aquarius immediately conjures a water swirl that strikes the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area.",
+            "The affected enemies are knocked into the air and stunned for 2s.",
+            "The water swirl attack repeats every 10s.",
+            "Aquarius' normal attack deals 100% (ATK-based) + 10% (SP-based) damage with a range of 10 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 325% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 375% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 400% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 430.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          }
+        ],
+        "skill_range": 1,
+        "initial_energy": 700.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Knock up — Single target"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Lucy Kick": {
+        "category": "skill1",
+        "description": {
+          "raw": "Lucy delivers a powerful kick to the enemy who has dealt the most cumulative damage, dealing 240% (ATK-based) + 20% (SP-based) damage and stunning them for 2.5s. After the kick, she returns to her original tile. Lucy remains unaffected while using this skill.",
+          "active": [
+            "Lucy delivers a powerful kick to the enemy who has dealt the most cumulative damage, dealing 240% (ATK-based) + 20% (SP-based) damage and stunning them for 2.5s.",
+            "After the kick, she returns to her original tile.",
+            "Lucy remains unaffected while using this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 5.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Stun — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Star Dress: Aquarius Form": {
+        "category": "skill2",
+        "description": {
+          "raw": "Lucy's Ultimate transforms her into Aquarius for the rest of the battle. While in this form, she conjures water swirls that strike the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area. The water swirl also knocks enemies into the air and stuns them for 2s. In Aquarius form, Lucy's attack range extends to 10 tiles.",
+          "active": [
+            "Lucy's Ultimate transforms her into Aquarius for the rest of the battle.",
+            "While in this form, she conjures water swirls that strike the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area.",
+            "The water swirl also knocks enemies into the air and stuns them for 2s.",
+            "In Aquarius form, Lucy's attack range extends to 10 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases enemies' taken damage to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases enemies' taken damage to 370% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases enemies' taken damage to 400% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 430.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Knock up — Single target"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Water Barrier": {
+        "category": "skill4",
+        "description": {
+          "raw": "Aquarius, or Lucy in Aquarius form, can cast Water Barrier to grant a shield that blocks 450% (ATK-based) damage to the weakest ally, lasting 8s.",
+          "active": [
+            "Aquarius, or Lucy in Aquarius form, can cast Water Barrier to grant a shield that blocks 450% (ATK-based) damage to the weakest ally, lasting 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield's value to 500% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the shielded ally's Ranged DEF by 50 while the shield is active.r"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield's value to 550% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 450.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 8.0,
+        "skill_card_tags": [
+          {
+            "label": "Shield",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases by 80.",
+          "active": [
+            "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases by 80."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle with normal attacks."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk_spd",
+      "haste"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "lucy",
+    "display_name": "Lucy",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "skill2",
+    "hero": {
+      "title": "Lucy - Celestial Spirit Mage",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Aquarius has 120% of Lucy's max HP and 100% of Lucy's other stats.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Upon entering battle, Aquarius immediately conjures a water swirl that strikes the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The affected enemies are knocked into the air and stunned for 2s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The water swirl attack repeats every 10s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Aquarius' normal attack deals 100% (ATK-based) + 10% (SP-based) damage with a range of 10 tiles.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to Aquarius' water swirl to 325% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to Aquarius' water swirl to 350% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to Aquarius' water swirl to 375% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage to Aquarius' water swirl to 400% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lucy delivers a powerful kick to the enemy who has dealt the most cumulative damage, dealing 240% (ATK-based) + 20% (SP-based) damage and stunning them for 2.5s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "After the kick, she returns to her original tile.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Lucy remains unaffected while using this skill.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 260% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 280% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 300% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Lucy's Ultimate transforms her into Aquarius for the rest of the battle.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "While in this form, she conjures water swirls that strike the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The water swirl also knocks enemies into the air and stuns them for 2s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "In Aquarius form, Lucy's attack range extends to 10 tiles.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases enemies' taken damage to 350% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases enemies' taken damage to 370% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases enemies' taken damage to 400% (ATK-based) + 30% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 12 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 16 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Haste by 20 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Aquarius, or Lucy in Aquarius form, can cast Water Barrier to grant a shield that blocks 450% (ATK-based) damage to the weakest ally, lasting 8s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the shield's value to 500% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases the shielded ally's Ranged DEF by 50 while the shield is active.r",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the shield's value to 550% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases by 80.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Celestial Spirit Summon": "Ultimate",
+        "Lucy Kick": "Skill1",
+        "Star Dress: Aquarius Form": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Water Barrier": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 430.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Knock up",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle with normal attacks.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 320.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 430.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "cc",
+              "label": "Knock up",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 450.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 430.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 2.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Knock up",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": 450.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle with normal attacks.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "All units, Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK SPD",
+        "Haste"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 3,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "77991b7e110f0dfb28161981e0d4200b81c6e1abd779f61cacdd7730c3d48680",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

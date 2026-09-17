@@ -22,7 +22,7 @@ pipeline output, use [web-ui](../web-ui/SKILL.md).
 
 | Phase | Goal | Key outputs |
 |-------|------|-------------|
-| **A — Register + download** | Hero name in sources; raw skill text in repo | `data/roster.json`, hero `generated.json` |
+| **A — Register + download** | Hero name in sources; raw skill text in repo | `data/roster.json`, hero `source.json` |
 | **B — Detection gaps** | New flavor text parsed into effects | hero `ai.json`, tests, generated analysis |
 | **C — Curated metadata** | Identity skill, tags, walk speed, summaries, play blurb | hero `ai.json` |
 | **D — Overrides** | Fix auto-detect edge cases only when wrong | hero `overrides.json` |
@@ -31,7 +31,7 @@ pipeline output, use [web-ui](../web-ui/SKILL.md).
 Commands (agent runs these):
 
 ```bash
-just download    # Phase A — network; refreshes hero-local generated.json
+just download    # Phase A — network; refreshes hero-local source.json
 just views       # Phases B–E after detection changes — analyze + render (no network)
 just validate    # Phase E — schema + semantic checks
 ```
@@ -46,15 +46,15 @@ Task progress:
 - [ ] A1. Confirm hero name, display name, and any alias (Twins ↔ Elijah & Lailah)
 - [ ] A2. Register in scripts/sources_web.py HERO_NAMES if Fandom-listed
 - [ ] A3. Run just download; review warnings for this hero
-- [ ] A4. Read raw skill block in the hero's generated.json
+- [ ] A4. Read raw skill block in the hero's source.json
 - [ ] B1. Run scoped analyze_hero debug snippet
 - [ ] B2. Run scoped gap-scan snippet
 - [ ] B3. Walk sentences per skill; ask user on each unresolved gap
-- [ ] B4. Patch rewrite-summaries.py + regression test + CACHE_VERSION bump per fix
+- [ ] B4. Patch local analysis + regression test; bump ALGORITHM_VERSION if detection changed
 - [ ] B5. Run just views; re-check this hero until gaps closed or user stops
 - [ ] C1. Add signature correction to the hero's overrides.json if needed
 - [ ] C2. Add behavior_tags to the hero's ai.json
-- [ ] C3. Add walk speed to the hero's generated.json external facts
+- [ ] C3. Add walk speed to the hero's source.json external facts
 - [ ] C4. Add skill summaries to the hero's ai.json
 - [ ] C5. Add play overview to the hero's ai.json
 - [ ] C6. Add counter overview to the hero's ai.json
@@ -74,8 +74,8 @@ Before editing anything, establish:
 
 | Field | Where used |
 |-------|------------|
-| **Data name** | `heroes_data.json` `name` field (e.g. `Elijah & Lailah`) |
-| **Display name** | Curated JSON keys, `heroes-overview.md` (e.g. `Twins`) |
+| **Data name** | `source.json` `name` field (e.g. `Elijah & Lailah`) |
+| **Display name** | roster `display_name` and overview headings (e.g. `Twins`) |
 | **Fandom slug** | Wiki page title — usually matches data name |
 | **Prydwen slug** | `scripts/sources_web.py` `_PRYDWEN_SLUGS` if non-obvious |
 
@@ -88,7 +88,15 @@ Alias map lives in `scripts/heroes_io.py` (`DISPLAY_NAME_ALIASES`). Prydwen
 slug overrides in `scripts/sources_web.py` (`_PRYDWEN_SLUGS`,
 `_PRYDWEN_DISPLAY_NAMES`).
 
-### A2. Register for Fandom fetch
+### A2. Register identity
+
+Create the four-file bundle and roster entry:
+
+```bash
+python3 scripts/hero_pipeline_cli.py init <hero-id> \
+  --display-name "Display" \
+  --title "Name - Title"
+```
 
 Add the hero to `HERO_NAMES` in `scripts/sources_web.py` when the hero has a
 Fandom wiki page.
@@ -111,7 +119,7 @@ Read stdout for this hero:
 
 ### A4. Inspect raw data
 
-Read the new hero block in `data/heroes_data.json`. Confirm:
+Read the new hero block in `data/heroes/<hero-id>/source.json`. Confirm:
 
 - Each skill has `description.raw`, `active`/`passive`, and `upgrades`
 - `meta` fields present where expected (Cooldown, Skill Range, Initial Energy)
@@ -128,7 +136,7 @@ This phase walks each sentence against detected output and **stops to ask the
 user** when a mechanic is visible in text but missing from `effects`.
 
 Reference: `.cursor/AGENTS.md` (damage types, CC, buffs, targeting,
-immunities). Detection engine: `scripts/rewrite-summaries.py`.
+immunities). Detection engine: `scripts/hero_pipeline/analysis/text.py`.
 
 ### B1. Print current detection
 
@@ -180,7 +188,7 @@ From `docs/skill-analysis-pipeline.md`:
 |------|--------|-------------|
 | **New mechanic** | Brand-new verb or game term (e.g. "roots" → Bind) | Add regex to the right rule table |
 | **Broken pattern** | Known mechanic, new sentence structure breaks regex | Extend existing pattern or chunk split in `heroes_io.py` |
-| **Spurious match** | Flavor text triggers wrong effect | Add guard in `rewrite-summaries.py`; do not add a new rule |
+| **Spurious match** | Flavor text triggers wrong effect | Add guard in local analysis; do not add a new rule |
 
 When unsure between new mechanic and broken pattern, show the sentence and
 ask — do not guess silently.
@@ -189,13 +197,14 @@ ask — do not guess silently.
 
 Per confirmed gap:
 
-1. Patch `scripts/rewrite-summaries.py` (primary) or `scripts/heroes_io.py`
-   (sentence splitting) or `scripts/hero_schema.py` (schema mapping).
+1. Patch `scripts/hero_pipeline/analysis/text.py` (primary) or
+   `scripts/heroes_io.py` (sentence splitting) or
+   `scripts/hero_pipeline/analysis/serialize.py` (schema mapping).
 2. Add a regression test in the matching `scripts/test_*.py` using the
    **literal hero sentence** as fixture text.
-3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py`.
+3. Bump `ALGORITHM_VERSION` in `scripts/hero_pipeline/analysis/local.py`.
 4. Run `just views`.
-5. Re-read this hero in `data/heroes_data_processed.json` and
+5. Re-read this hero in `data/heroes/<id>/analysis.json` and
    `site/data/heroes.json` `skillCards` for the changed section.
 
 For display-only issues (correct JSON, wrong chip color), see
@@ -346,7 +355,7 @@ If skill card chips look wrong despite correct processed JSON, see
 Summarize:
 
 1. **Hero** — data name, display name, source status (Fandom/Yaphalla/Prydwen)
-2. **Detection fixes** — patterns added, tests added, CACHE_VERSION bumped
+2. **Detection fixes** — patterns added, tests added, ALGORITHM_VERSION bumped
 3. **Curated files** — which JSON entries were added
 4. **Overrides** — any manual override files touched (or "none")
 5. **Open items** — Prydwen tiers still `?`, deferred sentences, schema gaps
@@ -355,22 +364,17 @@ Summarize:
 
 ## Debug snippets
 
-Set `NAME` to the hero's **data name** from `heroes_data.json`.
+Set `NAME` to the hero's **data name** from `source.json`.
 
 ### Scoped analyze_hero
 
 ```bash
 python3 - <<'PY'
-import importlib.util, sys
+import sys
 from pathlib import Path
 SCRIPTS = Path("scripts")
 sys.path.insert(0, str(SCRIPTS))
-spec = importlib.util.spec_from_file_location(
-    "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-)
-rs = importlib.util.module_from_spec(spec)
-sys.modules["rewrite_summaries"] = spec.loader.load_module()
-spec.loader.exec_module(rs)
+from hero_pipeline.analysis import text as rs
 import heroes_io as io
 
 NAME = "Kazim"  # change to data name
@@ -503,11 +507,10 @@ processed data, try both names if one fails.
 ## Example sequence (Kazim, commit `edf1ab1`)
 
 1. Added `"Kazim"` to `HERO_NAMES` in `sources_web.py`
-2. `just download` → `heroes_data.json` skill text
-3. Detection patches in `rewrite-summaries.py` + tests for new phrasing
-4. Curated: `signature_skills.json`, `hero_behavior_tags.json`,
-   `hero_walk_speeds.json`, `heroes_data_skill_summary.json`
-5. `just views` → processed, synergies, overview, site
+2. `just download` → `source.json` skill text
+3. Detection patches in local analysis + tests for new phrasing
+4. Curated fields in that hero's `ai.json` and `overrides.json`
+5. `just views` → analysis cache, overview, site
 6. Wiki combat icon in `site/assets/portraits/Kazim.png`
 7. `hero_play_overviews.json` added in follow-up commit
 

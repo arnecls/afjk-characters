@@ -25,34 +25,24 @@ _gen: Any = None
 
 
 def load_rs():
-    """Load rewrite-summaries once per process."""
+    """Load local-analysis text helpers once per process."""
     global _rs
     if _rs is not None:
         return _rs
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
+    from hero_pipeline.analysis import text as module
     sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
     _rs = module
     return module
 
 
 def load_gen():
-    """Load generate-heroes-overview once per process."""
+    """Load overview scoring helpers once per process."""
     global _gen
     if _gen is not None:
         return _gen
-    rs = load_rs()
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
+    load_rs()
+    from hero_pipeline.analysis import overview_facts as module
     sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
     _gen = module
     return module
 

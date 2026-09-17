@@ -12,46 +12,32 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
 import json
 
 import buff_persistence as bp
-import hero_schema as hs
+from hero_pipeline.analysis import serialize as hs
 import heroes_io as io
 import skill_effects_store as ses
 
 
 def _load_tags() -> dict[str, list[str]]:
     if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_roster_inputs
+        from hero_pipeline.storage import load_ai_field
 
-        return load_roster_inputs()["curated"]["behavior_tags"]
+        return load_ai_field("behavior_tags")
     return json.loads(
         (ROOT / "data" / "hero_behavior_tags.json").read_text()
     )
 
 
 def _load_rewrite_summaries():
-    if "rewrite_summaries" in sys.modules:
-        return sys.modules["rewrite_summaries"]
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = mod
-    spec.loader.exec_module(mod)
-    return mod
+    return load_rewrite_summaries()
 
 
 def _load_generate_overview():
-    if "generate_heroes_overview" in sys.modules:
-        return sys.modules["generate_heroes_overview"]
-    spec = importlib.util.spec_from_file_location(
-        "generate_heroes_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["generate_heroes_overview"] = mod
-    spec.loader.exec_module(mod)
-    return mod
+    return load_overview_facts("generate_heroes_overview")
 
 
 class BuffPersistenceTests(unittest.TestCase):

@@ -1,0 +1,1059 @@
+{
+  "schema_version": 1,
+  "id": "kafra",
+  "display_name": "Kafra",
+  "local": {
+    "long_name": "Kafra - Gale Rider",
+    "faction": "wilder",
+    "class": "warrior",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Gale Thrust": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. Kafra prioritizes attacking the enemy who carries Forest Mark. Kafra inflicts a Forest Mark on an enemy when casting Ultimate and launches a mighty strike, dealing 500% (ATK-based) + 50% (SP-based) damage and knocking them back for 2-tile. Only 1 Forest Mark exists per attack.",
+          "passive": [
+            "Kafra prioritizes attacking the enemy who carries Forest Mark.",
+            "Kafra inflicts a Forest Mark on an enemy when casting Ultimate and launches a mighty strike, dealing 500% (ATK-based) + 50% (SP-based) damage and knocking them back for 2-tile.",
+            "Only 1 Forest Mark exists per attack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 510% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 520% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 530% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 550% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Marked target (focus fire)",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 3.0,
+        "initial_cooldown": 0.5,
+        "skill_range": 1,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Marked target (focus fire)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock back — Single target"
+          }
+        ]
+      },
+      "Relentless Chase": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a marked enemy is out of Kafra's attack range, Kafra charges towards the enemy, dealing 280% (ATK-based) damage and stunning them for 1.5 + 0.5 (SP-based)s. If there's no marked enemy, Kafra marks the nearest enemy and casts the skill.",
+          "active": [
+            "When a marked enemy is out of Kafra's attack range, Kafra charges towards the enemy, dealing 280% (ATK-based) damage and stunning them for 1.5 + 0.5 (SP-based)s.",
+            "If there's no marked enemy, Kafra marks the nearest enemy and casts the skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 290% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 300% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 320% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 520.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 2.5,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Forest's Wrath": {
+        "category": "skill2",
+        "description": {
+          "raw": "The Forest Mark reduces the enemy's Phys DEF by 6%. When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% (SP-based) HP every 0.375s for 1.125s.",
+          "active": [
+            "The Forest Mark reduces the enemy's Phys DEF by 6%.",
+            "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% (SP-based) HP every 0.375s for 1.125s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Reduces Phys DEF by 9%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces Phys DEF by 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces Phys DEF by 15%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Marked target (focus fire)",
+            "label": "debuff_stat"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Marked target (focus fire)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Sylvan Banishment": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a marked enemy receives healing from other enemies, Kafra jumps to the healer and attacks them, dealing 250% (ATK-based) damage and reducing their Haste by 40 for 5s. Kafra is unaffected during the period.",
+          "active": [
+            "When a marked enemy receives healing from other enemies, Kafra jumps to the healer and attacks them, dealing 250% (ATK-based) damage and reducing their Haste by 40 for 5s.",
+            "Kafra is unaffected during the period."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Kafra gains a shield that can block 350% (ATK-based) damage for 5s while casting this skill."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases damage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 270% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 3.0,
+        "initial_cooldown": 1.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Haste",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "The damage of Relentless Chase's first casting in battle is increased to 520% (ATK-based).",
+          "active": [
+            "The damage of Relentless Chase's first casting in battle is increased to 520% (ATK-based)."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Marked target (focus fire)",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Kafra prioritizes attacking the enemy who carries Forest Mark."
+        },
+        {
+          "label": "Marked target (focus fire)",
+          "tier": "base",
+          "targeting": "Area",
+          "description": "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% HP every 0.375s for 1.125s."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "kafra",
+    "display_name": "Kafra",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Kafra - Gale Rider",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Kafra prioritizes attacking the enemy who carries Forest Mark.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Kafra inflicts a Forest Mark on an enemy when casting Ultimate and launches a mighty strike, dealing 500% (ATK-based) + 50% (SP-based) damage and knocking them back for 2-tile.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Only 1 Forest Mark exists per attack.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 510% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 520% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 530% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 550% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When a marked enemy is out of Kafra's attack range, Kafra charges towards the enemy, dealing 280% (ATK-based) damage and stunning them for 1.5 + 0.5 (SP-based)s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "If there's no marked enemy, Kafra marks the nearest enemy and casts the skill.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 290% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 300% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage to 320% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The Forest Mark reduces the enemy's Phys DEF by 6%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% (SP-based) HP every 0.375s for 1.125s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces Phys DEF by 9%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces Phys DEF by 12%.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Reduces Phys DEF by 15%.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK by 16% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK by 20% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "When a marked enemy receives healing from other enemies, Kafra jumps to the healer and attacks them, dealing 250% (ATK-based) damage and reducing their Haste by 40 for 5s.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Kafra is unaffected during the period.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Kafra gains a shield that can block 350% (ATK-based) damage for 5s while casting this skill.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases damage to 260% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases damage to 270% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "The damage of Relentless Chase's first casting in battle is increased to 520% (ATK-based).",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Gale Thrust": "Ultimate",
+        "Relentless Chase": "Skill1",
+        "Forest's Wrath": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Sylvan Banishment": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Marked target (focus fire)",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Knock back",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 600.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Marked target (focus fire)",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Kafra prioritizes attacking the enemy who carries Forest Mark.",
+              "grants": []
+            },
+            {
+              "kind": "provides",
+              "label": "Marked target (focus fire)",
+              "tier": "base",
+              "targeting": "Area",
+              "qualitative": "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% HP every 0.375s for 1.125s.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 520.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Phys DEF",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "debuff",
+              "label": "Marked target (focus fire)",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Haste",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 350.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "debuff",
+          "label": "Marked target (focus fire)",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Knock back",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 600.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "debuff",
+          "label": "Phys DEF",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 20.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "debuff",
+          "label": "Haste",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Marked target (focus fire)",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Kafra prioritizes attacking the enemy who carries Forest Mark.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Marked target (focus fire)",
+          "tier": "base",
+          "targeting": "Area",
+          "qualitative": "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% HP every 0.375s for 1.125s.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Shield"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 1,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "0da2850ba6878a047d62845b7194b8bc07038e74934a212e3ba9526e40586014",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

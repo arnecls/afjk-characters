@@ -1,10 +1,10 @@
 # AFK Journey hero data pipeline.
 # Run `just` (or `just -l`) to list recipes.
 #
-# Pipeline: download -> analyze -> render
-#   download : data/roster.json + data/heroes/*/generated.json
-#   analyze  : data/heroes/*/generated.json analysis and synergies
-#   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
+# Pipeline: download -> analyze -> views
+#   download : data/roster.json + data/heroes/*/source.json
+#   analyze  : data/heroes/*/analysis.json (hero-local cache)
+#   views    : calibrate + relationships in memory; Heroes.md, overview, CSV, site
 
 default:
     @just --list
@@ -23,13 +23,13 @@ ensure-venv:
       .venv/bin/pip install -q -r requirements.txt
     fi
 
-# Refresh per-hero generated source files from live sources.
+# Refresh per-hero source files from live sources.
 download:
-    python3 scripts/download_heroes.py
+    python3 scripts/hero_pipeline_cli.py download
 
 # Validate processed JSON vs Heroes.md and pipeline parity.
 validate: ensure-venv
-    .venv/bin/python scripts/validate_processed.py
+    .venv/bin/python scripts/hero_pipeline_cli.py validate
 
 # Strict types for the schema-first pipeline package only.
 typecheck: ensure-venv
@@ -46,34 +46,31 @@ test: ensure-venv
 test-serial: ensure-venv
     .venv/bin/python -m unittest discover -s scripts -p 'test_*.py' -v
 
-# Analyse per-hero source files -> per-hero generated analysis and synergies.
+# Refresh stale local analysis caches.
 analyze: ensure-venv
     .venv/bin/python scripts/hero_pipeline_cli.py analyze
 
-# Recompute roster-wide synergies from per-hero generated analysis.
+# Recompute roster-wide relationships in memory and publish views.
 analyze-synergies: ensure-venv
-    .venv/bin/python scripts/process_synergies.py
+    .venv/bin/python scripts/hero_pipeline_cli.py views
 
-# Render Heroes.md from the manifest and hero-local generated source.
-render-heroes:
-    python3 scripts/render_heroes.py
+# Render Heroes.md, overview, CSV, and browser-visible files.
+render-heroes: ensure-venv
+    .venv/bin/python scripts/hero_pipeline_cli.py views
 
-# Render heroes-overview.md + heroes-overview.csv.
-render-overview:
-    python3 scripts/render_overview.py
+# Render heroes-overview.md + heroes-overview.csv (same views command).
+render-overview: render-heroes
 
 # Build site/data from overview views, cache faction/class icons, bundle JS.
 render-site: render-overview
-    python3 scripts/render_site.py
     python3 scripts/download_hero_images.py
     python3 scripts/bundle_js.py
 
-
 # Render all view files.
-render: render-heroes render-site
+render: render-site
 
 # Regenerate views from committed hero bundles (no network).
-views: analyze render
+views: render
 
 # Full pipeline: refresh data from the web, then regenerate views.
 all: download analyze render

@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "id": "zorya",
+  "display_name": "Zorya",
+  "source": {
+    "title": "Zorya - Watcher in Stone",
+    "name": "Zorya",
+    "tags": "Graveborn · Warrior · Magic",
+    "faction": "Graveborn",
+    "class": "Warrior",
+    "damage_type": "Magic",
+    "description": "A Warrior who can turn into stone and quickly recover HP.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Guardian's Ring",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. Zorya's skill are powerful and have short cooldowns, but she can only use them while awake. When a battle starts, Zorya enter a dormant state. While dormant, she remains invincible and recovers 85 Energy and 7% max HP per second. Once her Energy is full, Zorya awakens and join the fight. Every time Zorya awakens, she jumps to the area with the most enemies, dealing 300% (ATK-based) + 4% (SP-based) damage to enemies within 2 tiles and stunning them for 2s. While awake, she is steadfast and consumes 70 Energy per second. When her Energy is fully depleted, she returns to her dormant state. Zorya's Energy cannot be modified by sources other than this skill. Instead, for every 10 Energy she would have gained, her ATK permanently increases by 1%, stacking up to 100 times.",
+          "passive": [
+            "Zorya's skill are powerful and have short cooldowns, but she can only use them while awake.",
+            "When a battle starts, Zorya enter a dormant state.",
+            "While dormant, she remains invincible and recovers 85 Energy and 7% max HP per second.",
+            "Once her Energy is full, Zorya awakens and join the fight.",
+            "Every time Zorya awakens, she jumps to the area with the most enemies, dealing 300% (ATK-based) + 4% (SP-based) damage to enemies within 2 tiles and stunning them for 2s.",
+            "While awake, she is steadfast and consumes 70 Energy per second.",
+            "When her Energy is fully depleted, she returns to her dormant state.",
+            "Zorya's Energy cannot be modified by sources other than this skill.",
+            "Instead, for every 10 Energy she would have gained, her ATK permanently increases by 1%, stacking up to 100 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Zorya's landing damage to 320% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Zorya's landing damage to 340% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Zorya's landing damage to 360% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Zorya's landing damage to 380% (ATK-based) + 4% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Zorya alternates between dormant and awake states. Every time she awakens, she jumps to near enemies and deals damage."
+      },
+      {
+        "section": "Skill1",
+        "name": "Gargoyle Rampart",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Passive. When Zorya awakens, her skin hardens like stone, reducing her damage taken by 70%. This effect gradually fades over 10s. Active. Zorya summons arcane wings that sweep forward in a 2-tile arc, dealing 270% (ATK-based) + 30% (SP-based) damage to enemies hit and knocking them down for 2s.",
+          "passive": [
+            "When Zorya awakens, her skin hardens like stone, reducing her damage taken by 70%.",
+            "This effect gradually fades over 10s."
+          ],
+          "active": [
+            "Zorya summons arcane wings that sweep forward in a 2-tile arc, dealing 270% (ATK-based) + 30% (SP-based) damage to enemies hit and knocking them down for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases this skill's damage to 280% (ATK-based) + 30% (SP-based) when actively used."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases this skill's damage to 290% (ATK-based) + 30% (SP-based) when actively used."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases this skill's damage to 300% (ATK-based) + 30% (SP-based) when actively used."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Zorya awakens, she reduces her damage taken. Active. Zorya deals damage to enemies in front and knocks them down."
+      },
+      {
+        "section": "Skill2",
+        "name": "Devouring Strike",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Passive. While awake, Zorya gains bloodlust, increasing her Life Drain by 20. Whenever an enemy hero is defeated within 2 tiles, she immediately heals herself for 30% of her max HP. Active. Zorya deals 85% (ATK-based) + 10% (SP-based) damage to all enemies within 2 tiles twice. Then, she launches an intimidating strike on the targets within range, dealing 250% (ATK-based) + 30% (SP-based) damage, plus extra damage equal to 15% of their lost HP. The extra damage cannot exceed 150% (ATK-based).",
+          "passive": [
+            "While awake, Zorya gains bloodlust, increasing her Life Drain by 20.",
+            "Whenever an enemy hero is defeated within 2 tiles, she immediately heals herself for 30% of her max HP."
+          ],
+          "active": [
+            "Zorya deals 85% (ATK-based) + 10% (SP-based) damage to all enemies within 2 tiles twice.",
+            "Then, she launches an intimidating strike on the targets within range, dealing 250% (ATK-based) + 30% (SP-based) damage, plus extra damage equal to 15% of their lost HP.",
+            "The extra damage cannot exceed 150% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage of the two active strikes to 90% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage of the two active strikes to 95% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 270% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage of the two active strikes to 100% (ATK-based) + 10% (SP-based) and the base damage of the intimidating strike to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Zorya awakens, she increases her Life Drain. When this skill is used actively, she deals damage to nearby enemies multiple times."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases damage dealt by 9% during battle. If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 3%.",
+          "active": [
+            "Increases damage dealt by 9% during battle.",
+            "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 3%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases damage dealt by 12% during battle.",
+                "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 4%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases damage dealt by 15% during battle.",
+                "If there are 2 or more enemies within 2 tiles, increases damage dealt by an extra 5%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increase damage dealt, with an extra damage increase when there are 2 or more enemies nearby."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Intimidating Field",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "While Zorya is awake, she creates a 2-tile forcefield around herself, causing all enemies within it to lose 80% movement speed and 60 Haste, while increasing her own Haste by 20. Whenever an allied hero casts their Ultimate, the Haste bonus from the forcefield permanently increases by 15, stacking up to 4 times.",
+          "active": [
+            "While Zorya is awake, she creates a 2-tile forcefield around herself, causing all enemies within it to lose 80% movement speed and 60 Haste, while increasing her own Haste by 20.",
+            "Whenever an allied hero casts their Ultimate, the Haste bonus from the forcefield permanently increases by 15, stacking up to 4 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the Haste granted by the forcefield to 30."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "As long as Zorya's HP ratio remains above 50%, she stays unaffected."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the Haste granted by the forcefield to 40."
+              ]
+            }
+          ]
+        },
+        "description_lite": "While awake, Zorya creates a forcefield that reduces affected enemies' movement speed and Haste, while greatly boosting her own Haste."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state. This effect can trigger once per battle.",
+          "active": [
+            "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state.",
+            "This effect can trigger once per battle."
+          ]
+        },
+        "description_lite": "When Zorya takes a fatal blow, she avoids defeat and immediately enters the dormán state."
+      }
+    ],
+    "range": 2,
+    "release_date": "2026-03-05",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

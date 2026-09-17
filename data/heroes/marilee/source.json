@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "id": "marilee",
+  "display_name": "Marilee",
+  "source": {
+    "title": "Marilee - Forest's Arrow",
+    "name": "Marilee",
+    "tags": "Lightbearer · Marksman · Physical",
+    "faction": "Lightbearer",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A deft Marksman who is better positioned farther from enemies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Mid-Air Shot",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "3 tiles",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Marilee leaps up to 2 tiles in any direction, shooting the 2 closest enemies to her initial tile and dealing 125% (ATK-based) + 15% (SP-based) damage to them.",
+          "active": [
+            "Marilee leaps up to 2 tiles in any direction, shooting the 2 closest enemies to her initial tile and dealing 125% (ATK-based) + 15% (SP-based) damage to them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Leaps up to 3 tiles."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 135% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 145% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 155% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marilee leaps to a far location while shooting at targets."
+      },
+      {
+        "section": "Skill1",
+        "name": "Mighty Arrow",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Marilee briefly charges up her next normal attack after every 2 normal attacks, dealing 160% (ATK-based) + 10% (SP-based) damage and stunning the target for 0.5s.",
+          "active": [
+            "Marilee briefly charges up her next normal attack after every 2 normal attacks, dealing 160% (ATK-based) + 10% (SP-based) damage and stunning the target for 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 180% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 190% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marilee launches a might shoot and stuns a target after every 2 normal attacks."
+      },
+      {
+        "section": "Skill2",
+        "name": "Hyperfocus",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Marilee increases ATK by 4% + 1% (SP-based) and ATK SPD by 25 when there's no enemy within 2 tiles.",
+          "active": [
+            "Marilee increases ATK by 4% + 1% (SP-based) and ATK SPD by 25 when there's no enemy within 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases ATK by 11% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases ATK by 14% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases ATK by 17% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marilee increases ATK and ATK SPD when no enemies are nearby."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Crit DMG Boost by 30 during battle.",
+          "active": [
+            "Increases Crit DMG Boost by 30 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Crit DMG Boost by 40 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Crit DMG Boost by 50 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Crit DMG Boost during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Battlefield Learning",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Marilee increases her ATK by 5% when allies cast an Ultimate, up to 6 stacks. Her normal attacks deal true damage after reaching max stacks.",
+          "active": [
+            "Marilee increases her ATK by 5% when allies cast an Ultimate, up to 6 stacks.",
+            "Her normal attacks deal true damage after reaching max stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Gains an extra stack of Battlefield Learning when Hyperfocus takes effect for every 10s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases each stack of ATK bonus to 7.5%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases each stack of ATK bonus to 8.5%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marilee increases her ATK when allies cast an Ultimate. Her normal attacks deal true damage after reaching max stacks."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Marilee reduces the required no-enemy range for triggering Hyperfocus by 1 tile.",
+          "active": [
+            "Marilee reduces the required no-enemy range for triggering Hyperfocus by 1 tile."
+          ]
+        },
+        "description_lite": "Marilee triggers Hyperfocus more easily."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "B",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

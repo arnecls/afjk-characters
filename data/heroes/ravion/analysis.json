@@ -1,0 +1,1544 @@
+{
+  "schema_version": 1,
+  "id": "ravion",
+  "display_name": "Ravion",
+  "local": {
+    "long_name": "Ravion - Twilight's Burden",
+    "faction": "wilder",
+    "class": "rogue",
+    "role_category": "specialist",
+    "is_energy_provider": true,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 4,
+    "release_date": "2025-09-19",
+    "season": "Echoes of Dissent",
+    "season_number": 4,
+    "skills": {
+      "Killer Flush": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Ravion launches 15 leaf cards to attack an enemy. Each card deals 40% (ATK-based) + 6% (SP-based) damage plus extra damage equal to 6% of the enemy's lost HP. The extra damage cannot exceed 120% of Ravion's ATK per card. Ravion is unaffected while casting this skill.",
+          "active": [
+            "Ravion launches 15 leaf cards to attack an enemy.",
+            "Each card deals 40% (ATK-based) + 6% (SP-based) damage plus extra damage equal to 6% of the enemy's lost HP.",
+            "The extra damage cannot exceed 120% of Ravion's ATK per card.",
+            "Ravion is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases each card's damage to 45% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases each card's damage to 50% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases each card's damage to 55% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases each card's damage to 60% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 66.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 2.0,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Designated Duty": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Ravion assigns an Objective to each of the 2 rearmost allies. Allies complete their objective by their dealing damage equal to 2000% of Ravion's initial ATK or assisting or defeating an enemy. Upon completion, the ally recovers 150 Energy and increases their ATK by 12% + 1.5% (SP-based) of Ravion's initial ATK for 30s. In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it. After 2 allies have completed their Objectives, Ravion actives Mortal Ace. Mortal Ace: Ravion teleports behind the enemy with the highest cumulative damage dealt, reduces their ATK and Phys DEF by 30% for 8s, then strikes them 2 times, each hit dealing 140% (ATK-based) + 20% (SP-based) damage, and knocking them down. Using Mortal Ace also resets Phantom Gambit's cooldown, while Ravion remains unaffected during the Mortal Ace attack.",
+          "active": [
+            "When a battle starts, Ravion assigns an Objective to each of the 2 rearmost allies.",
+            "Allies complete their objective by their dealing damage equal to 2000% of Ravion's initial ATK or assisting or defeating an enemy.",
+            "Upon completion, the ally recovers 150 Energy and increases their ATK by 12% + 1.5% (SP-based) of Ravion's initial ATK for 30s.",
+            "In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it.",
+            "After 2 allies have completed their Objectives, Ravion actives Mortal Ace.",
+            "Mortal Ace: Ravion teleports behind the enemy with the highest cumulative damage dealt, reduces their ATK and Phys DEF by 30% for 8s, then strikes them 2 times, each hit dealing 140% (ATK-based) + 20% (SP-based) damage, and knocking them down.",
+            "Using Mortal Ace also resets Phantom Gambit's cooldown, while Ravion remains unaffected during the Mortal Ace attack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the ATK boost allies receive from completing the Objective to 13% + 1.5% (SP-based) of Ravion's initial ATK.",
+                "Increases Mortal Ace's damage to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the ATK boost allies receive from completing the Objective to 14% + 1.5% (SP-based) of Ravion's initial ATK.",
+                "Increases Mortal Ace's damage to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the ATK boost allies receive from completing the Objective to 15% + 1.5% (SP-based) of Ravion's initial ATK.",
+                "Increases Mortal Ace's damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 150.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "ATK — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Single target",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Displace — Single target"
+          },
+          {
+            "label": "Knock down — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Phantom Gambit": {
+        "category": "skill2",
+        "description": {
+          "raw": "Ravion teleports 3 times, each time targeting a tile within 3 tiles of his current position. The first 2 teleports target the tile with the most enemies, dealing 120% (ATK-based) + 15% (SP-based) damage to all enemies within 1 tiles upon arrival; the third teleport moves Ravion to a tile within rage that is farthest from enemies. Ravion is unaffected while casting this skill.",
+          "active": [
+            "Ravion teleports 3 times, each time targeting a tile within 3 tiles of his current position.",
+            "The first 2 teleports target the tile with the most enemies, dealing 120% (ATK-based) + 15% (SP-based) damage to all enemies within 1 tiles upon arrival; the third teleport moves Ravion to a tile within rage that is farthest from enemies.",
+            "Ravion is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the impact damage to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the impact damage to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the impact damage to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 165.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 10.0,
+        "skill_range": 4,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Displace — Area"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Ravion increases his ATK by 9% in battle. He further increases his ATK by 6% after his first Mortal Ace attack.",
+          "active": [
+            "Ravion increases his ATK by 9% in battle.",
+            "He further increases his ATK by 6% after his first Mortal Ace attack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Ravion increases his ATK by 12% in battle.",
+                "He further increases his ATK by 8% after his first Mortal Ace attack."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Ravion increases his ATK by 15% in battle.",
+                "He further increases his ATK by 10% after his first Mortal Ace attack."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Shadow Patron": {
+        "category": "skill4",
+        "description": {
+          "raw": "After Ravion uses his first Mortal Ace attack, he permanently increases Haste by 25 and ATK by 25% of his initial ATK for himself and any allies who have completed their Objectives.",
+          "active": [
+            "After Ravion uses his first Mortal Ace attack, he permanently increases Haste by 25 and ATK by 25% of his initial ATK for himself and any allies who have completed their Objectives."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 30% of his initial ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 35% of his initial ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Lifedrain (EX+10)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When an ally accepts the Objective from Ravion, they increase their ATK by 15% and become unaffected, These effects last for 5s.",
+          "active": [
+            "When an ally accepts the Objective from Ravion, they increase their ATK by 15% and become unaffected, These effects last for 5s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Single target",
+            "target": "ally",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": [
+        {
+          "label": "Boss encounter",
+          "tier": "base",
+          "targeting": "Allies",
+          "description": "In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "ravion",
+    "display_name": "Ravion",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Ravion - Twilight's Burden",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Ravion launches 15 leaf cards to attack an enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Each card deals 40% (ATK-based) + 6% (SP-based) damage plus extra damage equal to 6% of the enemy's lost HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The extra damage cannot exceed 120% of Ravion's ATK per card.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Ravion is unaffected while casting this skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases each card's damage to 45% (ATK-based) + 6% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases each card's damage to 50% (ATK-based) + 6% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases each card's damage to 55% (ATK-based) + 6% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases each card's damage to 60% (ATK-based) + 6% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When a battle starts, Ravion assigns an Objective to each of the 2 rearmost allies.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Allies complete their objective by their dealing damage equal to 2000% of Ravion's initial ATK or assisting or defeating an enemy.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Upon completion, the ally recovers 150 Energy and increases their ATK by 12% + 1.5% (SP-based) of Ravion's initial ATK for 30s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "After 2 allies have completed their Objectives, Ravion actives Mortal Ace.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Mortal Ace: Ravion teleports behind the enemy with the highest cumulative damage dealt, reduces their ATK and Phys DEF by 30% for 8s, then strikes them 2 times, each hit dealing 140% (ATK-based) + 20% (SP-based) damage, and knocking them down.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Using Mortal Ace also resets Phantom Gambit's cooldown, while Ravion remains unaffected during the Mortal Ace attack.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the ATK boost allies receive from completing the Objective to 13% + 1.5% (SP-based) of Ravion's initial ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases Mortal Ace's damage to 160% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the ATK boost allies receive from completing the Objective to 14% + 1.5% (SP-based) of Ravion's initial ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases Mortal Ace's damage to 180% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases the ATK boost allies receive from completing the Objective to 15% + 1.5% (SP-based) of Ravion's initial ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases Mortal Ace's damage to 200% (ATK-based) + 20% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Ravion teleports 3 times, each time targeting a tile within 3 tiles of his current position.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The first 2 teleports target the tile with the most enemies, dealing 120% (ATK-based) + 15% (SP-based) damage to all enemies within 1 tiles upon arrival; the third teleport moves Ravion to a tile within rage that is farthest from enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Ravion is unaffected while casting this skill.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the impact damage to 130% (ATK-based) + 15% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the impact damage to 140% (ATK-based) + 15% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the impact damage to 150% (ATK-based) + 15% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Ravion increases his ATK by 9% in battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "He further increases his ATK by 6% after his first Mortal Ace attack.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Ravion increases his ATK by 12% in battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "He further increases his ATK by 8% after his first Mortal Ace attack.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Ravion increases his ATK by 15% in battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "He further increases his ATK by 10% after his first Mortal Ace attack.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "After Ravion uses his first Mortal Ace attack, he permanently increases Haste by 25 and ATK by 25% of his initial ATK for himself and any allies who have completed their Objectives.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 30% of his initial ATK.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5s.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 35% of his initial ATK.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When an ally accepts the Objective from Ravion, they increase their ATK by 15% and become unaffected, These effects last for 5s.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Killer Flush": "Ultimate",
+        "Designated Duty": "Skill1",
+        "Phantom Gambit": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Shadow Patron": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "HP loss",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 6.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 66.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "requires",
+              "label": "Boss encounter",
+              "tier": "base",
+              "targeting": "Allies",
+              "qualitative": "In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": 12.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": 150.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "debuff",
+              "label": "ATK",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "debuff",
+              "label": "Phys DEF",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 30.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Knock down",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Displace",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 220.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Displace",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 165.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Mythic+",
+              "targeting": "Multiple targets",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "Mythic+",
+              "targeting": "Multiple targets",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Lifedrain",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": "rare",
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Supreme+",
+              "targeting": "Multiple targets",
+              "numeric": 15.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "Supreme+",
+              "targeting": "Single target",
+              "timing": "Conditional"
+            }
+          ],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "HP loss",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 6.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 220.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "numeric": 150.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "debuff",
+          "label": "ATK",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "debuff",
+          "label": "Phys DEF",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 30.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Knock down",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Displace",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "cc",
+          "label": "Displace",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 15.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "Mythic+",
+          "targeting": "Multiple targets",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Lifedrain",
+          "tier": "EX+10",
+          "targeting": "Single target",
+          "numeric": 20.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": "rare",
+          "conditions": [
+            {
+              "type": "battle_phase",
+              "phase": "once_per_battle"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On skill"
+        },
+        {
+          "immunity_type": "Unaffected",
+          "tier": "Supreme+",
+          "targeting": "Single target",
+          "timing": "Conditional"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "requires",
+          "label": "Boss encounter",
+          "tier": "base",
+          "targeting": "Allies",
+          "qualitative": "In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "Area, Single target"
+        ],
+        [
+          "HP loss",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {
+        "HP loss": 9.0
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Haste",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 4,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "729dcad023ccef3064dc95290490fbaf979c8593508d459af1d58acc91a21ab7",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

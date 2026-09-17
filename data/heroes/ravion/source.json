@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "ravion",
+  "display_name": "Ravion",
+  "source": {
+    "title": "Ravion - Twilight's Burden",
+    "name": "Ravion",
+    "tags": "Wilder · Rogue · Physical",
+    "faction": "Wilder",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A Rogue who wields throwing blades and assigns objectives to allies, unlocking battle bonuses when allies complete them.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Killer Flush",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "2s",
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Ravion launches 15 leaf cards to attack an enemy. Each card deals 40% (ATK-based) + 6% (SP-based) damage plus extra damage equal to 6% of the enemy's lost HP. The extra damage cannot exceed 120% of Ravion's ATK per card. Ravion is unaffected while casting this skill.",
+          "active": [
+            "Ravion launches 15 leaf cards to attack an enemy.",
+            "Each card deals 40% (ATK-based) + 6% (SP-based) damage plus extra damage equal to 6% of the enemy's lost HP.",
+            "The extra damage cannot exceed 120% of Ravion's ATK per card.",
+            "Ravion is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases each card's damage to 45% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases each card's damage to 50% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases each card's damage to 55% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases each card's damage to 60% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ravion deals damage to an enemy with multiple hits. Each hit also deals extra damage equal to a percentage of the enemy's lost HP."
+      },
+      {
+        "section": "Skill1",
+        "name": "Designated Duty",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Ravion assigns an Objective to each of the 2 rearmost allies. Allies complete their objective by their dealing damage equal to 2000% of Ravion's initial ATK or assisting or defeating an enemy. Upon completion, the ally recovers 150 Energy and increases their ATK by 12% + 1.5% (SP-based) of Ravion's initial ATK for 30s. In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it. After 2 allies have completed their Objectives, Ravion actives Mortal Ace. Mortal Ace: Ravion teleports behind the enemy with the highest cumulative damage dealt, reduces their ATK and Phys DEF by 30% for 8s, then strikes them 2 times, each hit dealing 140% (ATK-based) + 20% (SP-based) damage, and knocking them down. Using Mortal Ace also resets Phantom Gambit's cooldown, while Ravion remains unaffected during the Mortal Ace attack.",
+          "active": [
+            "When a battle starts, Ravion assigns an Objective to each of the 2 rearmost allies.",
+            "Allies complete their objective by their dealing damage equal to 2000% of Ravion's initial ATK or assisting or defeating an enemy.",
+            "Upon completion, the ally recovers 150 Energy and increases their ATK by 12% + 1.5% (SP-based) of Ravion's initial ATK for 30s.",
+            "In boss fights, each Objective is set to be completed exactly 20 seconds after an ally receives it.",
+            "After 2 allies have completed their Objectives, Ravion actives Mortal Ace.",
+            "Mortal Ace: Ravion teleports behind the enemy with the highest cumulative damage dealt, reduces their ATK and Phys DEF by 30% for 8s, then strikes them 2 times, each hit dealing 140% (ATK-based) + 20% (SP-based) damage, and knocking them down.",
+            "Using Mortal Ace also resets Phantom Gambit's cooldown, while Ravion remains unaffected during the Mortal Ace attack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the ATK boost allies receive from completing the Objective to 13% + 1.5% (SP-based) of Ravion's initial ATK.",
+                "Increases Mortal Ace's damage to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the ATK boost allies receive from completing the Objective to 14% + 1.5% (SP-based) of Ravion's initial ATK.",
+                "Increases Mortal Ace's damage to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the ATK boost allies receive from completing the Objective to 15% + 1.5% (SP-based) of Ravion's initial ATK.",
+                "Increases Mortal Ace's damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ravion assigns Objectives to his allies. When an ally completes their Objective, they recover Energy and gain an ATK boost. This also unlocks Ravion's Mortal Ace attack, which deals damage to an enemy, reduces their ATK and Phys DEF, and knocks them down."
+      },
+      {
+        "section": "Skill2",
+        "name": "Phantom Gambit",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "4 tiles",
+          "Initial Cooldown": "10s"
+        },
+        "description": {
+          "raw": "Ravion teleports 3 times, each time targeting a tile within 3 tiles of his current position. The first 2 teleports target the tile with the most enemies, dealing 120% (ATK-based) + 15% (SP-based) damage to all enemies within 1 tiles upon arrival; the third teleport moves Ravion to a tile within rage that is farthest from enemies. Ravion is unaffected while casting this skill.",
+          "active": [
+            "Ravion teleports 3 times, each time targeting a tile within 3 tiles of his current position.",
+            "The first 2 teleports target the tile with the most enemies, dealing 120% (ATK-based) + 15% (SP-based) damage to all enemies within 1 tiles upon arrival; the third teleport moves Ravion to a tile within rage that is farthest from enemies.",
+            "Ravion is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the impact damage to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the impact damage to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the impact damage to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ravion teleports 3 times on the battlefield. The first 2 teleports deal damage to nearby enemies, and the third moves him to a spot away from enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Ravion increases his ATK by 9% in battle. He further increases his ATK by 6% after his first Mortal Ace attack.",
+          "active": [
+            "Ravion increases his ATK by 9% in battle.",
+            "He further increases his ATK by 6% after his first Mortal Ace attack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Ravion increases his ATK by 12% in battle.",
+                "He further increases his ATK by 8% after his first Mortal Ace attack."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Ravion increases his ATK by 15% in battle.",
+                "He further increases his ATK by 10% after his first Mortal Ace attack."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Ravion increases his ATK in battle. He further increases his ATK after his first Mortal Ace attack."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Shadow Patron",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "After Ravion uses his first Mortal Ace attack, he permanently increases Haste by 25 and ATK by 25% of his initial ATK for himself and any allies who have completed their Objectives.",
+          "active": [
+            "After Ravion uses his first Mortal Ace attack, he permanently increases Haste by 25 and ATK by 25% of his initial ATK for himself and any allies who have completed their Objectives."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 30% of his initial ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 35% of his initial ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After Ravion uses his first Mortal Ace attack, he permanently boosts ATK and Haste for himself and any allies who have completed their Obectives."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When an ally accepts the Objective from Ravion, they increase their ATK by 15% and become unaffected, These effects last for 5s.",
+          "active": [
+            "When an ally accepts the Objective from Ravion, they increase their ATK by 15% and become unaffected, These effects last for 5s."
+          ]
+        },
+        "description_lite": "When an ally accepts Ravion's Objective, they temporarily increase their ATK and becoming unaffected for a short period."
+      }
+    ],
+    "range": 4,
+    "release_date": "2025-09-19",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A+",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

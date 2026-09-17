@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "id": "marcille",
+  "display_name": "Marcille",
+  "source": {
+    "title": "Marcille - Elven Mage",
+    "name": "Marcille",
+    "tags": "Dimensional · Mage · Magic",
+    "faction": "Dimensional",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "The most brilliant female student in the school's history, she weaves a colorful tapestry of spells through chanting.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Silver-White Wings that Streak Across the Skies",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Passive. All of Marcille's skills require chanting to cast. Her chanting speed is affected by both Haste and ATK SPD, and she continuously attempts to cast her various skills. Each time Marcille finishes chanting, she permanently increases her Haste by 10 and Energy Recover Rate by 5%, stacking up to 10 times. Active. Marcille immediately spends 200 Energy and continues to chant ata a cost of 80 Energy per second. Summons Sky Fish to dash across the battlefield and deal 500% (ATK-based) + 50% (SP-based) damage to enemies in its path. The base chanting frequency for summoning Sky Fish is once every 2s.",
+          "passive": [
+            "All of Marcille's skills require chanting to cast.",
+            "Her chanting speed is affected by both Haste and ATK SPD, and she continuously attempts to cast her various skills.",
+            "Each time Marcille finishes chanting, she permanently increases her Haste by 10 and Energy Recover Rate by 5%, stacking up to 10 times."
+          ],
+          "active": [
+            "Marcille immediately spends 200 Energy and continues to chant ata a cost of 80 Energy per second.",
+            "Summons Sky Fish to dash across the battlefield and deal 500% (ATK-based) + 50% (SP-based) damage to enemies in its path.",
+            "The base chanting frequency for summoning Sky Fish is once every 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by Sky Fish to 520% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by Sky Fish to 530% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by Sky Fish to 540% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by Sky Fish to 550% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "All of Marcille's skills require chanting to cast. When actively used, she continuously summons Sky Fish to attack enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Explosive Spell",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "1s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "After chanting for 3s, Marcille unleashes an Explosive Spell in the area with the most enemies, dealing 300% (ATK-based) + 40% (SP-based) damage to all enemies within a 1-tile radius.",
+          "active": [
+            "After chanting for 3s, Marcille unleashes an Explosive Spell in the area with the most enemies, dealing 300% (ATK-based) + 40% (SP-based) damage to all enemies within a 1-tile radius."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 330% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 370% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After chanting for a while, Marcille unleashes an Explosive Spell, dealing AOE damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Magical Flash",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Cooldown": "2s"
+        },
+        "description": {
+          "raw": "After chanting for 2s, Marcille generates a magical flash of light around an ally surrounded by enemies, recovering 300% (ATK-based) + 30% (SP-based) of the ally's HP, while dealing 240% (ATK-based) + 30% (SP-based) damage to all nearby enemies and blinding them for 4 + 0.4 (SP-based)s.",
+          "active": [
+            "After chanting for 2s, Marcille generates a magical flash of light around an ally surrounded by enemies, recovering 300% (ATK-based) + 30% (SP-based) of the ally's HP, while dealing 240% (ATK-based) + 30% (SP-based) damage to all nearby enemies and blinding them for 4 + 0.4 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After chanting for a while, Marcille unleashes a magical flash, healing an ally while damaging and blinding nearby enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Marcille increases her Haste by 10 during battle. While chanting to cast her Ultimate, she increases Haste by an additional 6.",
+          "active": [
+            "Marcille increases her Haste by 10 during battle.",
+            "While chanting to cast her Ultimate, she increases Haste by an additional 6."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Marcille increases her Haste by 14 during battle.",
+                "While chanting to cast her Ultimate, she increases Haste by an additional 7."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Marcille increases her Haste by 18 during battle.",
+                "While chanting to cast her Ultimate, she increases Haste by an additional 8."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marcille increases her Haste during battle. While chanting to cast her Ultimate, she increases her Haste by an additional amount."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Ancient Magic",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global",
+          "Cooldown": "6s",
+          "Initial Cooldown": "6s"
+        },
+        "description": {
+          "raw": "Marcille generates an ancient magic circle at her feet. After chanting for 3s, Marcille revives an allied hero and recovers 400% (ATK-based) HP for them. This skill can only be cast once per battle. During Battle preparation, if there is an ally placed 1 tile in front of Marcille, this skill will target that ally. However, if Laios is on the team, this skill can revive him one additional time (no position requirement and does not consume the skill's use limit), but this can only trigger once per battle. If the chanting is interrupted, this skill cannot be recast for 5s.",
+          "active": [
+            "Marcille generates an ancient magic circle at her feet.",
+            "After chanting for 3s, Marcille revives an allied hero and recovers 400% (ATK-based) HP for them.",
+            "This skill can only be cast once per battle.",
+            "During Battle preparation, if there is an ally placed 1 tile in front of Marcille, this skill will target that ally.",
+            "However, if Laios is on the team, this skill can revive him one additional time (no position requirement and does not consume the skill's use limit), but this can only trigger once per battle.",
+            "If the chanting is interrupted, this skill cannot be recast for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Revived allies recover 450% (ATK-based) HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "While chanting to cast this skill, the ancient magic circle deals 250% (ATK-based) damage each second to all enemies and converts 100% of the damage dealt into additional HP for the revived ally."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Revived allies recover 500% (ATK-based) HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After chanting for a while, Marcille casts ancient magic to revive a fallen allied hero."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "During battle, Marcille recovers 10 additional Energy per second for each ally who is currently providing her with a buff, up to 3 stacks. At 3 stacks, she becomes unaffected.",
+          "active": [
+            "During battle, Marcille recovers 10 additional Energy per second for each ally who is currently providing her with a buff, up to 3 stacks.",
+            "At 3 stacks, she becomes unaffected."
+          ]
+        },
+        "description_lite": "Marcille recovers additional Energy while buffed by allies."
+      }
+    ],
+    "range": 6,
+    "release_date": "2025-11-28",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "S",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "id": "chippy",
+  "display_name": "Chippy",
+  "source": {
+    "title": "Chippy - Acorn Knight",
+    "name": "Chippy",
+    "tags": "Lightbearer · Tank · Physical",
+    "faction": "Lightbearer",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "An unreliable Hamster Warrior that has a small chance in dealing high damage with normal attacks.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Brothers-in-arms",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy.",
+          "active": [
+            "Chippy calls in two of his hamster friends into battle and stands on their shoulders to deal 300% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage to 320% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage to 340% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage to 350% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage to 360% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Chippy calls in two hamster friends for help."
+      },
+      {
+        "section": "Skill1",
+        "name": "Take This!",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Chippy jumps to deal 240% (ATK-based) damage to the enemy.",
+          "active": [
+            "Chippy jumps to deal 240% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 250% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 270% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Chippy jumps to deal damage to the enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Eureka!",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "7s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These attacks cannot deal critical damage and can only be triggered 1 time per battle.",
+          "active": [
+            "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage.",
+            "These attacks cannot deal critical damage and can only be triggered 1 time per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the chance to 3%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the chance to 4%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the chance to 5%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Chippy has a chance to deal high damage with normal attacks."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ def main() -> None:
     for entry in manifest["heroes"]:
         hero_id = entry["id"]
         bundle = bundles[hero_id]
-        source = bundle["generated"]["source"]
+        source = bundle["source"]["source"]
         ai = copy.deepcopy(bundle["ai"])
         doc = ai.get("skill_effects")
         if doc:
@@ -41,27 +41,7 @@ def main() -> None:
                 repository.heroes_dir / hero_id / "ai.json",
                 ai,
             )
-        generated = copy.deepcopy(bundle["generated"])
-        provenance = generated.setdefault("provenance", {})
-        provenance["source_hash"] = canonical_hash(
-            generated.get("source")
-        )
-        provenance["ai_hash"] = canonical_hash(ai)
-        provenance["overrides_hash"] = canonical_hash(
-            bundle["overrides"]
-        )
-        provenance["analysis_inputs_hash"] = canonical_hash(
-            {
-                "source": generated.get("source"),
-                "ai": ai,
-                "overrides": bundle["overrides"],
-            }
-        )
-        write_json_atomic(
-            repository.heroes_dir / hero_id / "generated.json",
-            generated,
-        )
-    print(f"Refreshed {changed} skill source hashes")
+        print(f"Refreshed {changed} skill source hashes")
 
 
 if __name__ == "__main__":

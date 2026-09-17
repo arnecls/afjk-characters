@@ -1,0 +1,782 @@
+{
+  "schema_version": 1,
+  "id": "mirael",
+  "display_name": "Mirael",
+  "local": {
+    "long_name": "Mirael - Scarlet Sorceress",
+    "faction": "lightbearer",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 3,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Winged Flame": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Mirael selects a direction and summons a 3-tile wide wall of flame, dealing 600% (ATK-based) + 60% (SP-based) damage to burned enemies.",
+          "active": [
+            "Mirael selects a direction and summons a 3-tile wide wall of flame, dealing 600% (ATK-based) + 60% (SP-based) damage to burned enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 610% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 620% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 630% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 700.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 1.25,
+        "skill_range": 11,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Bone Sear": {
+        "category": "skill1",
+        "description": {
+          "raw": "Mirael burns and deals 35% (ATK-based) + 4% (SP-based) damage every second to 1 enemy for 10s. This skill prioritizes the unburned enemies.",
+          "active": [
+            "Mirael burns and deals 35% (ATK-based) + 4% (SP-based) damage every second to 1 enemy for 10s.",
+            "This skill prioritizes the unburned enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage per second to 37% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage per second to 40% (ATK-based) + 4% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage per second to 45% (ATK-based) + 4% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 45.0
+              }
+            ],
+            "duration": 10.0,
+            "tick": 1.0
+          }
+        ],
+        "cooldown": 6.0,
+        "initial_cooldown": 1.25,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          }
+        ]
+      },
+      "Fireball Singe": {
+        "category": "skill2",
+        "description": {
+          "raw": "Mirael shoots a fireball, dealing 250% (ATK-based) + 20% (SP-based) damage to a target and 160% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "active": [
+            "Mirael shoots a fireball, dealing 250% (ATK-based) + 20% (SP-based) damage to a target and 160% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Mirael shoots a fireball, dealing 260% (ATK-based) + 20% (SP-based) damage to a target and 180% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Mirael shoots a fireball, dealing 270% (ATK-based) + 20% (SP-based) damage to a target and 190% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Mirael shoots a fireball, dealing 280% (ATK-based) + 20% (SP-based) damage to a target and 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 1.25,
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK SPD by 21 during battle.",
+          "active": [
+            "Increases ATK SPD by 21 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 27 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 33 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 33.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Dance of Flames": {
+        "category": "skill4",
+        "description": {
+          "raw": "Mirael uses Fireball Singe as her normal attack for the rest of the battle after casting Winged Flame for the first time. Fireball Singe shoots 2 fireballs each time, each dealing 150% (ATK-based) + 15% (SP-based) damage to the target and 100% (ATK-based) + 15% (SP-based) damage to the adjacent enemies.",
+          "active": [
+            "Mirael uses Fireball Singe as her normal attack for the rest of the battle after casting Winged Flame for the first time.",
+            "Fireball Singe shoots 2 fireballs each time, each dealing 150% (ATK-based) + 15% (SP-based) damage to the target and 100% (ATK-based) + 15% (SP-based) damage to the adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Burns 2 enemies with Bone Sear for the rest of the battle after casting Winged Fame for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases each fireball damage to 160% (ATK-based) + 15% (SP-based) on the target and 110% (ATK-based) + 15% (SP-based) on adjacent enemies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases each fireball damage to 170% (ATK-based) + 15% (SP-based) on the target and 120% (ATK-based) + 15% (SP-based) on adjacent enemies."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 185.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Mirael increases the burning duration of Bone Sear by 4s.",
+          "active": [
+            "Mirael increases the burning duration of Bone Sear by 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk_spd"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "mirael",
+    "display_name": "Mirael",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Mirael - Scarlet Sorceress",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Mirael selects a direction and summons a 3-tile wide wall of flame, dealing 600% (ATK-based) + 60% (SP-based) damage to burned enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 610% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 620% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 630% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases damage to 640% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Mirael burns and deals 35% (ATK-based) + 4% (SP-based) damage every second to 1 enemy for 10s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "This skill prioritizes the unburned enemies.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage per second to 37% (ATK-based) + 4% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage per second to 40% (ATK-based) + 4% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage per second to 45% (ATK-based) + 4% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Mirael shoots a fireball, dealing 250% (ATK-based) + 20% (SP-based) damage to a target and 160% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Mirael shoots a fireball, dealing 260% (ATK-based) + 20% (SP-based) damage to a target and 180% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Mirael shoots a fireball, dealing 270% (ATK-based) + 20% (SP-based) damage to a target and 190% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Mirael shoots a fireball, dealing 280% (ATK-based) + 20% (SP-based) damage to a target and 200% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK SPD by 21 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK SPD by 27 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK SPD by 33 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Mirael uses Fireball Singe as her normal attack for the rest of the battle after casting Winged Flame for the first time.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Fireball Singe shoots 2 fireballs each time, each dealing 150% (ATK-based) + 15% (SP-based) damage to the target and 100% (ATK-based) + 15% (SP-based) damage to the adjacent enemies.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Burns 2 enemies with Bone Sear for the rest of the battle after casting Winged Fame for the first time.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases each fireball damage to 160% (ATK-based) + 15% (SP-based) on the target and 110% (ATK-based) + 15% (SP-based) on adjacent enemies.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases each fireball damage to 170% (ATK-based) + 15% (SP-based) on the target and 120% (ATK-based) + 15% (SP-based) on adjacent enemies.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Mirael increases the burning duration of Bone Sear by 4s.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Winged Flame": "Ultimate",
+        "Bone Sear": "Skill1",
+        "Fireball Singe": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Dance of Flames": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 700.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 45.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 10.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 300.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 33.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 185.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "Mythic+",
+              "targeting": "Area",
+              "numeric": 185.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 700.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 45.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 10.0,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "ATK SPD",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 33.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Magic",
+          "Area, Single target"
+        ],
+        [
+          "DoT",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK SPD"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 3,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "cdd199b2ad042d040cc8adade69fc5c11e590d291cbb7dc48cbc1b2e815e5981",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

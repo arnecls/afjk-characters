@@ -33,7 +33,7 @@ from effect_labels import (
     display_effect_name,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[3]
 
 DMG_CC_IMMUNITY_LABEL = "DMG+CC immunity"
 
@@ -70,21 +70,20 @@ def _per_hero_curated(name: str) -> dict | None:
     result: dict = {}
     for entry in snapshot["manifest"]["heroes"]:
         bundle = snapshot["bundles"][entry["id"]]
-        generated = bundle["generated"]
+        source_doc = bundle["source"]
+        local = (bundle.get("analysis") or {}).get("local") or {}
         ai = bundle["ai"]
         overrides = bundle["overrides"]
         display = entry["display_name"]
         value = None
         if name == "signature_skills":
             value = {}
-            calculated = (generated.get("derived") or {}).get(
-                "signature_calculated"
-            )
+            calculated = local.get("signature_calculated")
             if calculated:
                 value["signature_calculated"] = calculated
             value.update(overrides.get("signature") or {})
         elif name == "hero_walk_speeds":
-            value = (generated.get("external") or {}).get("walk_speed")
+            value = (source_doc.get("external") or {}).get("walk_speed")
         elif name == "behavior_tags":
             value = list(ai.get("behavior_tags") or [])
         elif name == "skill_summaries":
@@ -7888,7 +7887,7 @@ def _skill_names_by_display() -> dict[str, dict[str, str]]:
     snapshot = load_roster_snapshot()
     result: dict[str, dict[str, str]] = {}
     for entry in snapshot["manifest"]["heroes"]:
-        hero = snapshot["bundles"][entry["id"]]["generated"]["source"]
+        hero = snapshot["bundles"][entry["id"]]["source"]["source"]
         display = entry["display_name"]
         by_category: dict[str, str] = {}
         for skill in hero.get("skills", []):
@@ -8372,6 +8371,15 @@ NON_BUFFABLE_SIGNATURE_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"once per battle", re.I),
     re.compile(r"the first time", re.I),
 )
+
+
+def infer_signature_calculated(source: dict, hero_id: str = "") -> str:
+    """Return the identity skill category for one hero."""
+    from .signature_defaults import SIGNATURE_CALCULATED
+
+    if hero_id and hero_id in SIGNATURE_CALCULATED:
+        return SIGNATURE_CALCULATED[hero_id]
+    return "ultimate"
 
 
 def _signature_is_buffable(section_text: str) -> bool:
@@ -9018,7 +9026,9 @@ def build_behavior_for_heroes(
         alternative = None
         if raw_sig:
             effective_cat = _effective_signature_category(raw_sig)
-            calculated_cat = raw_sig["signature_calculated"]
+            calculated_cat = raw_sig.get("signature_calculated") or (
+                raw_sig.get("signature_override") or "ultimate"
+            )
             defining = _signature_entry_for_category(raw_sig, effective_cat)
             if calculated_cat != effective_cat:
                 alternative = _signature_entry_for_category(

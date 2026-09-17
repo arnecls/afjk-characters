@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "id": "hepler",
+  "display_name": "Hepler",
+  "source": {
+    "title": "Hepler - Master of Forms",
+    "name": "Hepler",
+    "tags": "Mauler · Tank · Physical",
+    "faction": "Mauler",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A strange Tank who protects allies in battle with his signature transfiguration magic.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Form Shift",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "Hepler enters Altered Form, dealing 230% (ATK-based) + 35% (SP-based) damage to all enemies within 2 tiles and taunting them for 5s. He also gains 4 Spark stacks. While Hepler in Altered Form, Remedial Class and Extra Credit are enhanced and have shorter cooldowns, but each costs 1 Spark stack to cast. When Hepler runs out of Spark stacks, he reverts to his True Form, dealing 230% (ATK-based) + 35% (SP-based) damage to enemies within 2 tiles and blinding them for 5s.",
+          "active": [
+            "Hepler enters Altered Form, dealing 230% (ATK-based) + 35% (SP-based) damage to all enemies within 2 tiles and taunting them for 5s.",
+            "He also gains 4 Spark stacks.",
+            "While Hepler in Altered Form, Remedial Class and Extra Credit are enhanced and have shorter cooldowns, but each costs 1 Spark stack to cast.",
+            "When Hepler runs out of Spark stacks, he reverts to his True Form, dealing 230% (ATK-based) + 35% (SP-based) damage to enemies within 2 tiles and blinding them for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt when entering Altered Form to 260% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 230% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt when entering Altered Form to 290% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 290% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt when entering Altered Form to 320% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 320% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt when entering Altered Form to 350% (ATK-based) + 35% (SP-based), and increases the damage dealt when reverting to True Form to 350% (ATK-based) + 35% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hepler enters Altered Form, dealing damage to nearby enemies and taunting them. He also gains a set number of Spark stacks. While in Altered Form, his other skills are enhanced, but cost Spark stacks to cast. When Hepler runs out of Spark stacks, he reverts to his True Form, dealing damage to enemies and blinding them."
+      },
+      {
+        "section": "Skill1",
+        "name": "Remedial Class",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "While in True Form, Hepler unleashes destructive magic at an enemy, dealing 300% (ATK-based) + 30% (SP-based) damage and reducing the target's Haste by 60 for 3 + 0.3 (SP-based)s. While in Altered Form, Hepler strikes the target with powerful blows, dealing 360% (ATK-based) + 45% (SP-based) damage to the target and enemies within 1 tile around them, and stunning them for 3 + 0.3 (SP-based)s.",
+          "active": [
+            "While in True Form, Hepler unleashes destructive magic at an enemy, dealing 300% (ATK-based) + 30% (SP-based) damage and reducing the target's Haste by 60 for 3 + 0.3 (SP-based)s.",
+            "While in Altered Form, Hepler strikes the target with powerful blows, dealing 360% (ATK-based) + 45% (SP-based) damage to the target and enemies within 1 tile around them, and stunning them for 3 + 0.3 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "While in True Form, increase the Haste reduction from Hepler's magic attack to 70.",
+                "While in Altered Form, increases the damage of Hepler's powerful blow to 390% (ATK-based) + 45% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "While in True Form, increase the Haste reduction from Hepler's magic attack to 80.",
+                "While in Altered Form, increases the damage of Hepler's powerful blow to 420% (ATK-based) + 45% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "While in True Form, increase the Haste reduction from Hepler's magic attack to 90.",
+                "While in Altered Form, increases the damage of Hepler's powerful blow to 450% (ATK-based) + 45% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "While in True Form, Hepler deals damage to a single enemy and greatly reduces their Haste. While in Altered Form, Hepler deals AoE damage and stuns enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Extra Credit",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "While in True Form, Hepler casts a healing spell on the weakest ally, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s. While in Altered Form, Hepler casts a healing spell on the 3 weakest allies and grant them toughened skin, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s and granting them a 400% (ATK-based) + 64% (SP-based) shield for 15s.",
+          "active": [
+            "While in True Form, Hepler casts a healing spell on the weakest ally, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s.",
+            "While in Altered Form, Hepler casts a healing spell on the 3 weakest allies and grant them toughened skin, healing them for 130% (ATK-based) + 16% (SP-based) HP per second for 6s and granting them a 400% (ATK-based) + 64% (SP-based) shield for 15s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP restored by the healing spell to 140% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 480% (ATK-based) + 64% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP restored by the healing spell to 150% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 560% (ATK-based) + 64% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP restored by the healing spell to 160% (ATK-based) + 16% (SP-based) per second and the shield value gained from toughened skin to 640% (ATK-based) + 64% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "While in True Form, Hepler continuously heals 1 ally. While in Altered Form, Hepler continuously heals multiple allies and grants them shields."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Reduces damage taken by 9% during battle. While in Altered Form, further reduces damage taken by 6%.",
+          "active": [
+            "Reduces damage taken by 9% during battle.",
+            "While in Altered Form, further reduces damage taken by 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 12% during battle.",
+                "While in Altered Form, further reduces damage taken by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 15% during battle.",
+                "While in Altered Form, further reduces damage taken by 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces damage taken. While in Altered Form, further reduces the damage taken."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Fur-ious Rescue",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Hepler protects the frontmost adjacent allied hero. The first time that ally would take a fatal blow, they instead ignore the damage. At the same time, Hepler heals the ally and grants them toughened skin for 5s, and transforms them into a small animal that runs toward the back of the battlefield. While in animal form, the ally becomes invincible for 3s.",
+          "active": [
+            "When a battle starts, Hepler protects the frontmost adjacent allied hero.",
+            "The first time that ally would take a fatal blow, they instead ignore the damage.",
+            "At the same time, Hepler heals the ally and grants them toughened skin for 5s, and transforms them into a small animal that runs toward the back of the battlefield.",
+            "While in animal form, the ally becomes invincible for 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the duration of healing and toughened skin granted by this skill to 7s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Hepler gains ATK equal to 30% of the protected ally's initial ATK, while that ally gains max HP equal to 40% of Hepler's initial HP.",
+                "The ATK Hepler gains from this skill cannot exceed 80% of his own initial ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the duration of healing and toughened skin granted by this skill to 9s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hepler protects 1 allied hero from the first fatal blow they would take, grants them healing and a shield, then briefly transforms them into an animal that runs toward the back of the battlefield."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Whenever Hepler spends Spark stacks, he and the protected ally permanently increase their Phys & Magic DEF by 6% and reduce their damage taken by 3%, stacking up to 10 times.",
+          "active": [
+            "Whenever Hepler spends Spark stacks, he and the protected ally permanently increase their Phys & Magic DEF by 6% and reduce their damage taken by 3%, stacking up to 10 times."
+          ]
+        },
+        "description_lite": "Whenever Hepler spends Spark stacks, he and the protected ally permanently increase their Phys & Magic DEF and reduce their damage taken."
+      }
+    ],
+    "range": 1,
+    "release_date": "2026-04-09",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

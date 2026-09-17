@@ -366,6 +366,19 @@ def load_processed() -> dict:
     return load_per_hero()
 
 
+def processed_hero(processed: dict, name: str) -> dict:
+    """Return one processed hero by roster ID, display name, or title prefix."""
+    heroes = processed["heroes"]
+    if name in heroes:
+        return heroes[name]
+    for hero_id, hero in heroes.items():
+        long_name = str(hero.get("long_name") or "")
+        short = long_name.split(" - ", 1)[0]
+        if name in {hero_id, short, long_name} or long_name.startswith(name):
+            return hero
+    raise KeyError(name)
+
+
 def load_synergies() -> dict:
     from hero_pipeline.storage import load_synergies as load_per_hero
 

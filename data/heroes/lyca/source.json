@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "id": "lyca",
+  "display_name": "Lyca",
+  "source": {
+    "title": "Lyca - Keeper of Glades",
+    "name": "Lyca",
+    "tags": "Wilder · Marksman · Physical",
+    "faction": "Wilder",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A Marksman who is skilled at lowering enemy's Phys DEF and imbuing buffs to allies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Comet Archery",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "11 tiles",
+          "Initial Energy": "200",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Lyca fires a comet-like arrow in a chosen direction, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within 5 tiles along its path and leaving Nebula Reflection for 7s. The allies under Nebula Reflection summon meteors to deal extra damage equal to 50% of their ATK to the target while using normal attacks.",
+          "active": [
+            "Lyca fires a comet-like arrow in a chosen direction, dealing 200% (ATK-based) + 20% (SP-based) damage to enemies within 5 tiles along its path and leaving Nebula Reflection for 7s.",
+            "The allies under Nebula Reflection summon meteors to deal extra damage equal to 50% of their ATK to the target while using normal attacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 270% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lyca fires a comet-like arrow, dealing damage to enemies in its path. Allies within range summon meteors with their normal attacks, dealing extra damage to the target."
+      },
+      {
+        "section": "Skill1",
+        "name": "Empyrean Blessing",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lyca bestows blessings of the stars, increasing all allies' ATK SPD by 25 + 5 (SP-based) for 6s. This effect is triggered immediately when a battle starts and grants all allies 120 Energy.",
+          "active": [
+            "Lyca bestows blessings of the stars, increasing all allies' ATK SPD by 25 + 5 (SP-based) for 6s.",
+            "This effect is triggered immediately when a battle starts and grants all allies 120 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases ATK SPD to 30 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases effect duration to 8s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases ATK SPD to 40 + 5 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lyca bestows blessings of the stars on all allies, increasing their ATK SPD. She also grants them extra Energy on the first cast."
+      },
+      {
+        "section": "Skill2",
+        "name": "Nova Fall",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lyca summons meteors to attack all enemies, dealing 100% (ATK-based) damage and reducing their Phys DEF by 10% for 5s + 1.5 (SP-based)s.",
+          "active": [
+            "Lyca summons meteors to attack all enemies, dealing 100% (ATK-based) damage and reducing their Phys DEF by 10% for 5s + 1.5 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 120% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces their Phys DEF by 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 130% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lyca summons meteors to attack all enemies, reducing their Phys DEF."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 21 during battle.",
+          "active": [
+            "Increases ATK SPD by 21 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 27 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 33 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Meteor Catastrophe",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lyca summons meteors when a battle starts, directing them to attack targets with her normal attacks, dealing 40% (ATK-based) physical damage.",
+          "active": [
+            "Lyca summons meteors when a battle starts, directing them to attack targets with her normal attacks, dealing 40% (ATK-based) physical damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage to 50% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Shoots an aerolite at a shielded enemy, dealing 350% (ATK-based) damage.",
+                "If the shield breaks, the target is stunned for 4s.",
+                "Only 1 aerolite can be shot every 10s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases aerolite damage to 450% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lyca summons meteors to assist in battle."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Lyca reduces the target's Phys DEF by 25% for 6s if they are hit by Comet Archery.",
+          "active": [
+            "Lyca reduces the target's Phys DEF by 25% for 6s if they are hit by Comet Archery."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lyca reduces the target's Phys DEF if they are hit by Comet Archery."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "B",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

@@ -6,20 +6,18 @@ This document summarizes the content and purpose of each AI-generated file, and 
 
 ## Current storage model
 
-AI-authored data is stored in `data/heroes/<hero-id>/ai.json`, beside the
-downloaded and deterministic data in `generated.json`. Every hero also has an
-`overrides.json` for typed sparse corrections. The roster-keyed files described
-below document the fields and prompts, but are compatibility material for the
-migration and should not be edited for new changes.
+AI-authored data is stored in `data/heroes/<hero-id>/ai.json`, beside
+downloaded `source.json` and the rebuildable `analysis.json` cache. Every
+hero also has an `overrides.json` for typed sparse corrections.
 
 For the historical prompts below, map `heroes_data.json` to the hero's
-`generated.json`, `skill_effects/<short_name>.json` to
+`source.json`, `skill_effects/<short_name>.json` to
 `ai.json.skill_effects`, and each other roster-keyed file to its corresponding
 field in `ai.json` or `overrides.json`.
 
 Skill effects remain keyed by raw skill section and ascension tier inside the
-hero's `ai.json`. Their `source_hash` is checked against that hero's generated
-skill description. Cross-hero references in generated data use roster IDs.
+hero's `ai.json`. Their `source_hash` is checked against that hero's source
+skill description. Cross-hero references use roster IDs.
 
 ---
 
@@ -43,7 +41,7 @@ Use the [extract-skill-effects](../.cursor/skills/extract-skill-effects/SKILL.md
 skill workflow: read skill text, emit schema-valid JSON, validate, show diff,
 get approval, save, run `just views` and `just validate`.
 
-Do not patch regex rule tables in `rewrite-summaries.py` for effect fixes.
+Do not patch regex rule tables in local analysis for effect fixes.
 
 ---
 

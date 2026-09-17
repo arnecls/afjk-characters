@@ -12,16 +12,11 @@ from types import SimpleNamespace
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
 
 def _load_gen():
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_overview_facts()
 
 
 gen = _load_gen()

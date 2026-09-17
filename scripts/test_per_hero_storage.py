@@ -33,7 +33,7 @@ class PerHeroStorageTests(unittest.TestCase):
         ):
             self.assertFalse((DATA / name).exists(), name)
 
-    def test_every_manifest_hero_has_three_files(self) -> None:
+    def test_every_manifest_hero_has_four_files(self) -> None:
         manifest = load_manifest()
         bundles = load_bundles(manifest)
         self.assertEqual(len(manifest["heroes"]), 125)
@@ -43,26 +43,23 @@ class PerHeroStorageTests(unittest.TestCase):
         )
         for entry in manifest["heroes"]:
             bundle = bundles[entry["id"]]
-            self.assertEqual(bundle["generated"]["id"], entry["id"])
-            self.assertEqual(bundle["generated"]["display_name"], entry["display_name"])
+            self.assertEqual(bundle["source"]["id"], entry["id"])
+            self.assertEqual(
+                bundle["source"]["display_name"],
+                entry["display_name"],
+            )
             self.assertEqual(bundle["ai"]["schema_version"], 1)
             self.assertEqual(bundle["overrides"]["schema_version"], 1)
+            self.assertEqual(bundle["analysis"]["schema_version"], 1)
 
-    def test_snapshot_relationships_remain_id_based(self) -> None:
+    def test_snapshot_source_titles_match_manifest(self) -> None:
         snapshot = load_roster_snapshot()
         self.assertEqual(len(snapshot["manifest"]["heroes"]), 125)
         for entry in snapshot["manifest"]["heroes"]:
-            stored = snapshot["bundles"][entry["id"]]["generated"][
-                "synergies"
-            ]
-            for row in stored["synergies"]:
-                self.assertIn("provider_id", row)
-                self.assertNotIn("provider", row)
-            for row in stored["beneficiaries"]:
-                self.assertIn("hero_id", row)
-                self.assertNotIn("name", row)
+            source = snapshot["bundles"][entry["id"]]["source"]["source"]
+            self.assertEqual(source["title"], entry["title"])
 
-    def test_schema_and_freshness_validation(self) -> None:
+    def test_schema_validation_accepts_empty_local_cache(self) -> None:
         manifest = load_manifest()
         bundles = load_bundles(manifest)
         self.assertEqual(validate_schema_documents(manifest, bundles), [])

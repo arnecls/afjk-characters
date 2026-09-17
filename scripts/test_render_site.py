@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-import render_site
+from hero_pipeline.pipeline import views as publish_views
 from hero_pipeline.presentation.site_payload import build_mix_config
 
 HEROES_JSON = ROOT / "site" / "data" / "heroes.json"
@@ -27,7 +27,7 @@ class RenderSiteTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         if not HEROES_JSON.exists():
-            render_site.main()
+            publish_views()
 
     def test_hero_count_matches_overview(self) -> None:
         overview_names = HERO_RE.findall(OVERVIEW_MD.read_text(encoding="utf-8"))

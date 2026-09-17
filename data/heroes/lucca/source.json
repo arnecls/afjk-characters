@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "lucca",
+  "display_name": "Lucca",
+  "source": {
+    "title": "Lucca - Stalwart Fighter",
+    "name": "Lucca",
+    "tags": "Lightbearer · Tank · Physical",
+    "faction": "Lightbearer",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A brave tank capable of protecting teammates behind.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Quake Slam",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place. When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile. The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s. Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline.",
+          "active": [
+            "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place.",
+            "When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile.",
+            "The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s.",
+            "Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucca slams an enemy in place or to his original tile, stunning both the target and nearby enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Ruthless Ram",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s. He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s.",
+          "active": [
+            "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s.",
+            "He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value to 360% + 3% (SP-based) Phys DEF plus 360% + 3% (SP-based) Magic DEF."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value to 380% + 3% (SP-based) Phys DEF plus 380% + 3% (SP-based) Magic DEF."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value to 400% + 3% (SP-based) Phys DEF plus 400% + 3% (SP-based) Magic DEF."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucca gains a shield, then interrupts and disarms an enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Courageous Call",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "6s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s. This skill can be cast while Lucca is under dispellable control effects.",
+          "active": [
+            "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s.",
+            "This skill can be cast while Lucca is under dispellable control effects."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Reduces damage taken by 28% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces damage taken by 31% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces damage taken by 35% + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucca removes dispellable debuffs from himself and reduces his damage taken."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases max HP by 17% during battle.",
+          "active": [
+            "Increases max HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases max HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases max HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases max HP during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Unshakeable Ties",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lucca maintains a solid fighting stance, remaining Steadfast during battle. For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK. Allies supporting Lucca also receive a 5% boost to their ATK.",
+          "active": [
+            "Lucca maintains a solid fighting stance, remaining Steadfast during battle.",
+            "For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK.",
+            "Allies supporting Lucca also receive a 5% boost to their ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield value to 240% of the ally's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "If at least 2 allies are placed to support Lucca, expands Ruthless Ram's area of effect to a 1-tile arc."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield value to 260% of the ally's ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucca remains Steadfast and gains a shield for each ally placed behind him."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Lucca recovers 15% (HP-based) HP when casting Courageous Call.",
+          "active": [
+            "Lucca recovers 15% (HP-based) HP when casting Courageous Call."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucca recovers HP when casting Courageous Call."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-10-29",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

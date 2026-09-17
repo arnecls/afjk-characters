@@ -1,0 +1,1228 @@
+{
+  "schema_version": 1,
+  "id": "taichi-agumon",
+  "display_name": "Taichi & Agumon",
+  "local": {
+    "long_name": "Taichi & Agumon - Courage Duo",
+    "faction": "dimensional",
+    "class": "warrior",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 7,
+    "release_date": "2026-08-18",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Gaia Force": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy. The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills. When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area. Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based). Wargreymon is unaffected while casting this skill. Passive. Taichi does not directly ioin the battle, remaining invincible on the sidelines. Everv 3s. Taichi cheers for Agumon, restoring 150 Energy for him. If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250.",
+          "passive": [
+            "Taichi does not directly ioin the battle, remaining invincible on the sidelines.",
+            "Everv 3s.",
+            "Taichi cheers for Agumon, restoring 150 Energy for him.",
+            "If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250."
+          ],
+          "active": [
+            "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy.",
+            "The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills.",
+            "When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area.",
+            "Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based).",
+            "Wargreymon is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Gaia Force's damage per hit to 170% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Gaia Force's damage per hit to 180% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Gaia Force's damage per hit to 190% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Gaia Force's damage per hit to 200% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 400.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 500.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Brave Tornado": {
+        "category": "skill1",
+        "description": {
+          "raw": "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position. He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s. Wargreymon is invincible while casting this skill. Damage from this skill gains 60 extra DEF Penetration.",
+          "active": [
+            "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position.",
+            "He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s.",
+            "Wargreymon is invincible while casting this skill.",
+            "Damage from this skill gains 60 extra DEF Penetration."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage dealt to every enemy in his path to 440% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage dealt to every enemy in his path to 460% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage dealt to every enemy in his path to 480% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 520.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Stun — path"
+          }
+        ]
+      },
+      "Recovery Shield": {
+        "category": "skill2",
+        "description": {
+          "raw": "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s. While the shield is active, Wargreymon remains unaffected. When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value. When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill.",
+          "active": [
+            "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s.",
+            "While the shield is active, Wargreymon remains unaffected.",
+            "When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value.",
+            "When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the shield value granted by this skill to 800% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the shield value granted by this skill to 900% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the shield value granted by this skill to 1000% (ATK-based) + 100% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1000.0
+              }
+            ],
+            "duration": 10.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 14.0,
+        "initial_cooldown": 9.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK by 9% during battle. After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%.",
+          "active": [
+            "Increases ATK by 9% during battle.",
+            "After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 12% during battle.",
+                "After assisting or defeating a non-summoned enemy, increases ATK by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 15% during battle.",
+                "After assisting or defeating a non-summoned enemy, increases ATK by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Dramon Killer": {
+        "category": "skill4",
+        "description": {
+          "raw": "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP. If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them.",
+          "active": [
+            "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP.",
+            "If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                ":Increases the HP loss caused to 160% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Wargreymon deals damage to an enemy with a skill or normal attack, he deals extra damage equal to 15% of the enemy's lost HP.",
+                "This extra damage cannot exceed Wargreymon's 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the HP loss caused to 180% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 650.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 4.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s. If Gabumon receives the power of courage, he gains 300 extra Energy.",
+          "active": [
+            "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s.",
+            "If Gabumon receives the power of courage, he gains 300 extra Energy."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "path",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "duration": 20.0,
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — path",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ],
+      [
+        "hp_loss",
+        "Area"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "shield",
+      "energy",
+      "def_penetration"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "taichi-agumon",
+    "display_name": "Taichi & Agumon",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Taichi & Agumon - Courage Duo",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "Taichi does not directly ioin the battle, remaining invincible on the sidelines.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Everv 3s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Taichi cheers for Agumon, restoring 150 Energy for him.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "If Agumon has not yet Digivolved into Wargreymon, the Energy restored by this cheer is increased by 250.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Agumon uses Baby Flame as his normal attack, dealing 150% (ATK-based) damage to an enemy.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "The first time Agumon uses his Ultimate, he Digivolves into Wargreymon, permanently increasing his HP by 100% and ATK by 50%, and unlocking new skills.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When casting Ultimate as Wargreymon, he fires Gaia Force at his current target, dealing 160% (ATK-based) + 20% (SP-based) damage 7 times to enemies within 3 tiles of the target area.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Damage dealt to enemies at the center is increased to 220% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Wargreymon is unaffected while casting this skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Gaia Force's damage per hit to 170% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 240% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Gaia Force's damage per hit to 180% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 260% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Gaia Force's damage per hit to 190% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 280% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Gaia Force's damage per hit to 200% (ATK-based) + 20% (SP-based); increases damage taken by enemies at the center to 300% (ATK-based) + 30% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Wargreymon spins at high speed, piercing through all enemies one by one before returning to his original position.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "He deals 420% (ATK-based) + 40% (SP-based) damage to each enemy hit and stuns them for 2s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Wargreymon is invincible while casting this skill.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Damage from this skill gains 60 extra DEF Penetration.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage dealt to every enemy in his path to 440% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage dealt to every enemy in his path to 460% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases damage dealt to every enemy in his path to 480% (ATK-based) + 40% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Wargreymon gains a shield equal to 700% (ATK-based) + 100% (SP-based) for 10s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "While the shield is active, Wargreymon remains unaffected.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "When the shield expires, Wargreymon recovers HP equal to 150% (ATK-based) + 10% (SP-based) of the remaining shield value.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "When Agumon Digivolves into Wargreymon, Wargreymon immediately gains the shield from this skill.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the shield value granted by this skill to 800% (ATK-based) + 100% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the shield value granted by this skill to 900% (ATK-based) + 100% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the shield value granted by this skill to 1000% (ATK-based) + 100% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK by 9% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After assisting or defeating a non-summoned enemy, increases ATK by an extra 6%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK by 12% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After assisting or defeating a non-summoned enemy, increases ATK by an extra 8%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases ATK by 15% during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "After assisting or defeating a non-summoned enemy, increases ATK by an extra 10%.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Wargreymon slashes the enemy 3 times, with each slash causing them to lose 140% (ATK-based) HP.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "If only 1 enemy remains on the battlefield and their HP is below 650% (ATK-based), Wargreymon instead dashes through the enemy and instantly defeats them.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          ":Increases the HP loss caused to 160% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "When Wargreymon deals damage to an enemy with a skill or normal attack, he deals extra damage equal to 15% of the enemy's lost HP.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "This extra damage cannot exceed Wargreymon's 180% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the HP loss caused to 180% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When a battle starts, Wargreymon shares the power of courage with allies, increasing his own ATK and the ATK of all allies positioned behind him by 25% of his ATK for 20s.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "If Gabumon receives the power of courage, he gains 300 extra Energy.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Gaia Force": "Ultimate",
+        "Brave Tornado": "Skill1",
+        "Recovery Shield": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Dramon Killer": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 400.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 330.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 3,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "On skill"
+            }
+          ],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 520.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 2.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": 2.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Shield",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 1000.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 10.0,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 150.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Unaffected",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Conditional"
+            }
+          ],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "HP loss",
+              "tier": "Mythic+",
+              "targeting": "Area",
+              "numeric": 180.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 650.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Supreme+",
+              "targeting": "Area",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": 20.0,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "path",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 400.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 650.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 3,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 2.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": 2.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "path",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Shield",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 1000.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 10.0,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 150.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "damage",
+          "label": "HP loss",
+          "tier": "Mythic+",
+          "targeting": "Area",
+          "numeric": 180.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Supreme+",
+          "targeting": "Area",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": 20.0,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "path",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Unaffected",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "On skill"
+        }
+      ],
+      "special_effects": [],
+      "damage_entries": [
+        [
+          "Physical",
+          "Area, Single target"
+        ],
+        [
+          "HP loss",
+          "Area"
+        ]
+      ],
+      "damage_scores": {
+        "HP loss": 22.5
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Shield",
+        "Energy",
+        "DEF Penetration"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 7,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "d751c6610dd17d560c35b0934040e6c49d993c3b0f60821eeb7cb2233085cd29",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

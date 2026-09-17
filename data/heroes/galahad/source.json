@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "galahad",
+  "display_name": "Galahad",
+  "source": {
+    "title": "Galahad - Daughter of Dawn",
+    "name": "Galahad",
+    "tags": "Mauler · Mage · Magic",
+    "faction": "Mauler",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A wise and kind-hearted Mage who wields a wide range of powerful spells.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Temporal Field",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "When Galahad casts her Ultimate, she consumes 400 Energy to deal 340% (ATK-based) + 50% (SP-based) damage to all enemies. She then begins to forming a 2-tile-radius magic circle centered on her position. The circle remains active as long as Galahad stays in the center. While the magic circle is forming, Galahad consumes 60 Energy second to increase the circle's forming progress by 10%. When forming progress reaches 100%, she stops consuming Energy and gains 30 Haste. Enemies inside the circle lose 10 Haste and 16% movement speed for every 10% of the circle's forming progress, up to a max reduction of 50 Haste and 80% movement speed. While Galahad stays at the center of her circle, whenever she casts a skill, a shadow of herself appears shortly after and casts the same skill. The shadow inherits 60% + 5% (SP-based) of Galahad's stats.",
+          "active": [
+            "When Galahad casts her Ultimate, she consumes 400 Energy to deal 340% (ATK-based) + 50% (SP-based) damage to all enemies.",
+            "She then begins to forming a 2-tile-radius magic circle centered on her position.",
+            "The circle remains active as long as Galahad stays in the center.",
+            "While the magic circle is forming, Galahad consumes 60 Energy second to increase the circle's forming progress by 10%.",
+            "When forming progress reaches 100%, she stops consuming Energy and gains 30 Haste.",
+            "Enemies inside the circle lose 10 Haste and 16% movement speed for every 10% of the circle's forming progress, up to a max reduction of 50 Haste and 80% movement speed.",
+            "While Galahad stays at the center of her circle, whenever she casts a skill, a shadow of herself appears shortly after and casts the same skill.",
+            "The shadow inherits 60% + 5% (SP-based) of Galahad's stats."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increase damage delt to 380% (ATK-based) + 50% (SP-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increase damage delt to 420% (ATK-based) + 50% (SP-based)"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increase damage delt to 460% (ATK-based) + 50% (SP-based)"
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increase damage delt to 500% (ATK-based) + 50% (SP-based)"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Galahad deals damage to all enemies and creates a magic circle that consumes Energy as it forms. When the circle reaches full power, she gains a buff. The circle stays active as long as Galahad remains at it's center. While she is at its center, whenever she casts a skill, a shadow appears that casts the same skill."
+      },
+      {
+        "section": "Skill1",
+        "name": "Binding Loop",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Galahad deals 210% (ATK-based) + 30% (SP-based) damage to the enemy who has delt the most cumulative damage and immobilizes them for 4s. The immobilized target cannot move or act and loses HP equal to 50% of non-excess healing they have recived since they were last immobilized by this skill; the HP loss cannot exceed 500% (ATK-based). In boss fight, the HP loss becomes fixed at 125% (ATK-based). After the initial strike, Galahad expands this skill's range by 1 tile and deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within range, she repeats this sequence for a third strike.",
+          "active": [
+            "Galahad deals 210% (ATK-based) + 30% (SP-based) damage to the enemy who has delt the most cumulative damage and immobilizes them for 4s.",
+            "The immobilized target cannot move or act and loses HP equal to 50% of non-excess healing they have recived since they were last immobilized by this skill; the HP loss cannot exceed 500% (ATK-based).",
+            "In boss fight, the HP loss becomes fixed at 125% (ATK-based).",
+            "After the initial strike, Galahad expands this skill's range by 1 tile and deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within range, she repeats this sequence for a third strike."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases initial strike damage to 240% (ATK-based) + 30% (SP-based) and damage of the following two strikes 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases initial strike damage to 270% (ATK-based) + 30% (SP-based) and damage of the following two strikes 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases initial strike damage to 300% (ATK-based) + 30% (SP-based) and damage of the following two strikes 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Galahad immobilizes the enemy who has delt the most cumulative damage, causing them to lose HP based on the healing they recived. Then she deals damage to enemies in a wider range."
+      },
+      {
+        "section": "Skill2",
+        "name": "Chrono Ward",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Galahad casts a protection spell on the weakest ally, granting them a 480% (ATK-based) + 40% (SP-based) shield that lasts for 8s. When the shield expires, it deals 240% (ATK-based) + 20% (SP-based) damage to adjacent enemies.",
+          "active": [
+            "Galahad casts a protection spell on the weakest ally, granting them a 480% (ATK-based) + 40% (SP-based) shield that lasts for 8s.",
+            "When the shield expires, it deals 240% (ATK-based) + 20% (SP-based) damage to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increase shield value to 520% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increase shield value to 560% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increase shield value to 600% (ATK-based) + 40% (SP-based) and the damage delt when the shield expires to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Galahad grants a shield to the weakest ally. When the shield expires, it deals damage to nearby enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Galahad increases her ATK by 9% during battle. She also gains an extra 6% ATK when her magic circle is fully formed.",
+          "active": [
+            "Galahad increases her ATK by 9% during battle.",
+            "She also gains an extra 6% ATK when her magic circle is fully formed."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Galahad increases her ATK by 12% during battle.",
+                "She also gains an extra 8% ATK when her magic circle is fully formed."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Galahad increases her ATK by 15% during battle.",
+                "She also gains an extra 10% ATK when her magic circle is fully formed."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Galahad increases her ATK, with an extra ATK increas when her magic circle is fully formed."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Time Recast",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.",
+          "active": [
+            "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
+            "When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle.",
+            "The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy.",
+            "A shadow is not considered a living hero and cannot be targeted by enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The summoned shadow now inherits 100% of the marked ally's basic stats."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer.",
+                "Every time Magister Merlin casts a skill, a shadow Merlin appears nearby and casts the same skill again, causing 60% as much HP loss as Merlin's original skill does."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The summoned shadow now inherits 120% of the marked ally's basic stats."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Once the magic circle is fully formed, Galahad summons a shadow of an allied hero from the start of the battle to fight alongside her for a while."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {
+          "Initial Cooldown": "9999s"
+        },
+        "description": {
+          "raw": "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast. The steadfast effect granted by this skill cannot exceed a total of 30s.",
+          "active": [
+            "While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second and becomes steadfast.",
+            "The steadfast effect granted by this skill cannot exceed a total of 30s."
+          ]
+        },
+        "description_lite": "Galahad continuously recovers Energy and becomes steadfast while affected by Merlin's buffs."
+      }
+    ],
+    "range": 10,
+    "release_date": "2025-12-18",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "B",
+      "dream_realm": "A+",
+      "dream_realm_endless": "S+"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

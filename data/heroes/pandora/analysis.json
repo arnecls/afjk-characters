@@ -1,0 +1,1399 @@
+{
+  "schema_version": 1,
+  "id": "pandora",
+  "display_name": "Pandora",
+  "local": {
+    "long_name": "Pandora - Hope Unleashed",
+    "faction": "dimensional",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": true,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2025-08-01",
+    "season": "Echoes of Dissent",
+    "season_number": 4,
+    "skills": {
+      "Panic Projection": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Pandora's box holds both calamity and hope. Passive. Pandora herself is protected by hope and is not affected by this skill. Active. Pandora opens the box to unleash calamity, causing all units on the battlefield to flee in fright toward their own side for 5s and lose 50% (ATK-based) + 5% (SP-based) HP per 0.5s in the process. When the fright effect wears off, their ATK is reduced by 10% for 8s. This attack reduction effect can stack up to 3 times.",
+          "passive": [
+            "Pandora herself is protected by hope and is not affected by this skill."
+          ],
+          "active": [
+            "Pandora's box holds both calamity and hope.",
+            "Pandora opens the box to unleash calamity, causing all units on the battlefield to flee in fright toward their own side for 5s and lose 50% (ATK-based) + 5% (SP-based) HP per 0.5s in the process.",
+            "When the fright effect wears off, their ATK is reduced by 10% for 8s.",
+            "This attack reduction effect can stack up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases enemy's HP loss to 55% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases enemy's HP loss to 60% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases enemy's HP loss to 65% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases enemy's HP loss to 70% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "frighten"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive"
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "ATK",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Frighten — All units"
+          }
+        ]
+      },
+      "Boxed Blessing": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Pandora pulls the rearmost ally into her box, making them invincible but unable to cast skills. After 4s, the ally is released from the box. If Pandora is alive when that happens, the ally gains 1000 Energy, as well as 35% + 5% (SP-based) ATK for the next 10s.",
+          "active": [
+            "When a battle starts, Pandora pulls the rearmost ally into her box, making them invincible but unable to cast skills.",
+            "After 4s, the ally is released from the box.",
+            "If Pandora is alive when that happens, the ally gains 1000 Energy, as well as 35% + 5% (SP-based) ATK for the next 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "When released from the box, the ally gains 40% + 5% (SP-based) ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "When released from the box, the ally gains 45% + 5% (SP-based) ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "When released from the box, the ally gains 50% + 5% (SP-based) ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy",
+            "polarity": "buff"
+          },
+          {
+            "label": "Invincible",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Tainted Tribute": {
+        "category": "skill2",
+        "description": {
+          "raw": "Passive. Each time Pandora casts her skills, she restores 290% (ATK-based) + 25% (SP-based) HP and 90 + 10 (SP-based) Energy to the ally she released from her box. At the same time, the box applies Corruption, a permanent debuff that increases damage taken by 10%, to both Pandora and one random enemy not yet affected by Corruption. Pandora's Corruption can stack up to 4 times, while the enemy's Corruption does not stack. Active. Pandora inflicts a random number of unique debuffs on an enemy over the next 10s, prioritizing enemies not already affected by this skill. The number of unique debuffs is equal to Pandora's current Corruption stacks. These debuffs may include: reducing Haste by 45, reducing Energy recovery by 45%, reducing Vitality by 45, or causing the affected unit's normal attacks to have a 45% chance to miss. These effects do not stack.",
+          "passive": [
+            "Each time Pandora casts her skills, she restores 290% (ATK-based) + 25% (SP-based) HP and 90 + 10 (SP-based) Energy to the ally she released from her box.",
+            "At the same time, the box applies Corruption, a permanent debuff that increases damage taken by 10%, to both Pandora and one random enemy not yet affected by Corruption.",
+            "Pandora's Corruption can stack up to 4 times, while the enemy's Corruption does not stack."
+          ],
+          "active": [
+            "Pandora inflicts a random number of unique debuffs on an enemy over the next 10s, prioritizing enemies not already affected by this skill.",
+            "The number of unique debuffs is equal to Pandora's current Corruption stacks.",
+            "These debuffs may include: reducing Haste by 45, reducing Energy recovery by 45%, reducing Vitality by 45, or causing the affected unit's normal attacks to have a 45% chance to miss.",
+            "These effects do not stack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP and Energy restored to the ally to 300% (ATK-based) + 25% (SP-based) and 100 + 10 (SP-based), respectively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP and Energy restored to the ally to 310% (ATK-based) + 25% (SP-based) and 110 + 10 (SP-based), respectively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP and Energy restored to the ally to 320% (ATK-based) + 25% (SP-based) and 120 + 10 (SP-based), respectively."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 290.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 45.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 45.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 5.0,
+        "initial_cooldown": 6.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Energy",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Haste",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Vitality",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "During battle, Pandora's max HP increases by 12%, and by an additional 6% after being corrupted by her box.",
+          "active": [
+            "During battle, Pandora's max HP increases by 12%, and by an additional 6% after being corrupted by her box."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "During battle, Pandora's max HP increases by 18%, and by an additional 9% after being corrupted by her box."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "During battle, Pandora's max HP increases by 24%, and by an additional 12% after being corrupted by her box."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 24.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Max HP",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Eternal Legacy": {
+        "category": "skill4",
+        "description": {
+          "raw": "After Pandora is defeated, the box stays on the battlefield. It's indestructible, unaffected, and won't be prioritized as a target. It has an Energy cap of 1,000 ad recovers 45 Energy per second. At full Energy the box unleashes Panic Projection again, but without the HP loss effect. Every 5s, it also casts Tainted Tribute on a random enemy but inflicts only one random debuff.",
+          "active": [
+            "After Pandora is defeated, the box stays on the battlefield.",
+            "It's indestructible, unaffected, and won't be prioritized as a target.",
+            "It has an Energy cap of 1,000 ad recovers 45 Energy per second.",
+            "At full Energy the box unleashes Panic Projection again, but without the HP loss effect.",
+            "Every 5s, it also casts Tainted Tribute on a random enemy but inflicts only one random debuff."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the box's Energy recovery to 55 per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Panic Projection's ATK reduction effect on enemies becomes permanent."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the box's Energy recovery to 65 per second."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 65.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive"
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK (EX+10)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "The ally pulled into Pandora's box is permanently protected by hope, making them immune to Panic Projection. This effect remains even after Pandora is defeated.",
+          "active": [
+            "The ally pulled into Pandora's box is permanently protected by hope, making them immune to Panic Projection.",
+            "This effect remains even after Pandora is defeated."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Pandora herself is protected by hope and is not affected by Panic Projection."
+        },
+        {
+          "label": "Summoning",
+          "tier": "mythic+",
+          "targeting": "Self",
+          "description": "After Pandora is defeated, the box stays on the battlefield, casting her skills on its own Energy cycle."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "dot",
+        "All units"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "pandora",
+    "display_name": "Pandora",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Pandora - Hope Unleashed",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Pandora herself is protected by hope and is not affected by this skill.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Pandora's box holds both calamity and hope.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Pandora opens the box to unleash calamity, causing all units on the battlefield to flee in fright toward their own side for 5s and lose 50% (ATK-based) + 5% (SP-based) HP per 0.5s in the process.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When the fright effect wears off, their ATK is reduced by 10% for 8s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "This attack reduction effect can stack up to 3 times.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases enemy's HP loss to 55% (ATK-based) + 5% (SP-based) every 0.5s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases enemy's HP loss to 60% (ATK-based) + 5% (SP-based) every 0.5s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases enemy's HP loss to 65% (ATK-based) + 5% (SP-based) every 0.5s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases enemy's HP loss to 70% (ATK-based) + 5% (SP-based) every 0.5s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When a battle starts, Pandora pulls the rearmost ally into her box, making them invincible but unable to cast skills.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "After 4s, the ally is released from the box.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "If Pandora is alive when that happens, the ally gains 1000 Energy, as well as 35% + 5% (SP-based) ATK for the next 10s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When released from the box, the ally gains 40% + 5% (SP-based) ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When released from the box, the ally gains 45% + 5% (SP-based) ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When released from the box, the ally gains 50% + 5% (SP-based) ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Each time Pandora casts her skills, she restores 290% (ATK-based) + 25% (SP-based) HP and 90 + 10 (SP-based) Energy to the ally she released from her box.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "At the same time, the box applies Corruption, a permanent debuff that increases damage taken by 10%, to both Pandora and one random enemy not yet affected by Corruption.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Pandora's Corruption can stack up to 4 times, while the enemy's Corruption does not stack.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Pandora inflicts a random number of unique debuffs on an enemy over the next 10s, prioritizing enemies not already affected by this skill.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The number of unique debuffs is equal to Pandora's current Corruption stacks.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "These debuffs may include: reducing Haste by 45, reducing Energy recovery by 45%, reducing Vitality by 45, or causing the affected unit's normal attacks to have a 45% chance to miss.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "These effects do not stack.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases HP and Energy restored to the ally to 300% (ATK-based) + 25% (SP-based) and 100 + 10 (SP-based), respectively.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases HP and Energy restored to the ally to 310% (ATK-based) + 25% (SP-based) and 110 + 10 (SP-based), respectively.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases HP and Energy restored to the ally to 320% (ATK-based) + 25% (SP-based) and 120 + 10 (SP-based), respectively.",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "During battle, Pandora's max HP increases by 12%, and by an additional 6% after being corrupted by her box.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "During battle, Pandora's max HP increases by 18%, and by an additional 9% after being corrupted by her box.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "During battle, Pandora's max HP increases by 24%, and by an additional 12% after being corrupted by her box.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "After Pandora is defeated, the box stays on the battlefield.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "It's indestructible, unaffected, and won't be prioritized as a target.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "It has an Energy cap of 1,000 ad recovers 45 Energy per second.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "At full Energy the box unleashes Panic Projection again, but without the HP loss effect.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Every 5s, it also casts Tainted Tribute on a random enemy but inflicts only one random debuff.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the box's Energy recovery to 55 per second.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Panic Projection's ATK reduction effect on enemies becomes permanent.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the box's Energy recovery to 65 per second.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "The ally pulled into Pandora's box is permanently protected by hope, making them immune to Panic Projection.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "This effect remains even after Pandora is defeated.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Panic Projection": "Ultimate",
+        "Boxed Blessing": "Skill1",
+        "Tainted Tribute": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Eternal Legacy": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "cc",
+              "label": "Frighten",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 70.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": 5.0,
+              "tick": 0.5,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "debuff",
+              "label": "ATK",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Pandora herself is protected by hope and is not affected by Panic Projection.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Invincible",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 50.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "When a battle starts, Pandora pulls the rearmost ally into her box, making them invincible but unable to cast skills.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 290.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "debuff",
+              "label": "Damage taken",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "debuff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "debuff",
+              "label": "Vitality",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 45.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "debuff",
+              "label": "Haste",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 45.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Max HP",
+              "tier": "Legendary+",
+              "targeting": "Single target",
+              "numeric": 24.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 65.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "debuff",
+              "label": "ATK",
+              "tier": "EX+10",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "qualitative": "After Pandora is defeated, the box stays on the battlefield, casting her skills on its own Energy cycle.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "cc",
+          "label": "Frighten",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 70.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": 5.0,
+          "tick": 0.5,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "zone",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "debuff",
+          "label": "ATK",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Invincible",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [
+            {
+              "type": "battle_phase",
+              "phase": "start_of_battle"
+            }
+          ],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 50.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 290.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "debuff",
+          "label": "Damage taken",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "debuff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "debuff",
+          "label": "Vitality",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 45.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "debuff",
+          "label": "Haste",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 45.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Max HP",
+          "tier": "Legendary+",
+          "targeting": "Single target",
+          "numeric": 24.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "numeric": 65.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Pandora herself is protected by hope and is not affected by Panic Projection.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Summoning",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "qualitative": "After Pandora is defeated, the box stays on the battlefield, casting her skills on its own Energy cycle.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "DoT",
+          "All units"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 5,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "97eaefcd2dfb6f65fccefe986389ca61b8a898413b19815982e5784506671203",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

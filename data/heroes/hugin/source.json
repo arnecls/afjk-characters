@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "id": "hugin",
+  "display_name": "Hugin",
+  "source": {
+    "title": "Hugin - Maverick Smith",
+    "name": "Hugin",
+    "tags": "Lightbearer · Support · Physical",
+    "faction": "Lightbearer",
+    "class": "Support",
+    "damage_type": "Physical",
+    "description": "A Support capable of enhancing allies and wielding an anvil.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Unstoppable!",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "600",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Passive. Hugin sets his anvil on the tile where he is placed during battle preparation. As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced. Active. Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength. The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s.",
+          "passive": [
+            "Hugin sets his anvil on the tile where he is placed during battle preparation.",
+            "As his normal attacks and skills require the anvil, he will remain near it throughout the battle and will always return to it if displaced."
+          ],
+          "active": [
+            "Hugin forges a Gear of Might for the ally dealing the highest cumulative damage, boosting their combat strength.",
+            "The gear increases the ally's ATK by 6% + 1% (SP-based) of Hugin's base ATK and increases their Haste by 80 for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the ATK boost to 7% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the ATK boost to 8% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the ATK boost to 9% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the ATK boost to 10% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hugin increases the ATK and Haste of the ally with the highest cumulative damage dealt."
+      },
+      {
+        "section": "Skill1",
+        "name": "Titan's Aegis",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s.",
+          "active": [
+            "Hugin crafts a cogshield for the weakest ally, allowing them to block 600% (ATK-based) + 60% (SP-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value to 620% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value to 660% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hugin grants a shield to the weakest ally."
+      },
+      {
+        "section": "Skill2",
+        "name": "Mechanized Bond",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK. The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis. This buff disappears when the ally leaves the sigil.",
+          "active": [
+            "When a battle starts, Hugin etches a mechanical sigil one tile behind him, granting ally on this tile an ATK bonus equal to 14% + 2% (SP-based) of Hugin's base ATK.",
+            "The buffed ally recovers an extra 75 Energy whenever Hugin casts Titan's Aegis.",
+            "This buff disappears when the ally leaves the sigil."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the ATK boost to 16% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the ATK boost to 18% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the ATK boost to 20% + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hugin increases the ATK of the ally 1 tile behind him. The buffed ally also recovers Energy whenever Hugin casts Titan's Aegis."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus Hugin",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Steelbound Kinship",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s.",
+          "active": [
+            "Hugin crafts enhanced cogshields for the 2 weakest allies when casting Unstoppable!, granting each with a shield that blocks 800% (ATK-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield value to 850%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Grants control immunity to allies protected by an enhanced cogshield while it's active."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield value to 900%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When casting Unstoppable!, Hugin grants shields to the 2 weakest allies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force Hugin",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage.",
+          "active": [
+            "While the cogshield or enhanced cogshield is active, the protected ally also takes 30% less damage."
+          ]
+        },
+        "description_lite": "While active, the shield Hugin grants also reduces the protected ally's damage taken."
+      }
+    ],
+    "range": 20,
+    "release_date": "2024-12-17",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "A",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

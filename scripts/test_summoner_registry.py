@@ -12,6 +12,8 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_rewrite_summaries, load_overview_facts
+
 import skill_effects_store as ses
 import summoner_registry as sr
 
@@ -19,34 +21,20 @@ ROOT = SCRIPTS.parent
 
 
 def _load_roster_inputs() -> tuple[dict, dict[str, list[str]]]:
-    if (ROOT / "data" / "roster.json").exists():
-        from hero_pipeline.storage import load_roster_inputs
+    from hero_pipeline.storage import load_ai_field, load_roster_snapshot
 
-        inputs = load_roster_inputs()
-        return inputs["raw"], inputs["curated"]["behavior_tags"]
-    return (
-        json.loads(
-            (ROOT / "data" / "heroes_data.json").read_text(
-                encoding="utf-8"
-            )
-        ),
-        json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text(
-                encoding="utf-8"
-            )
-        ),
-    )
+    snapshot = load_roster_snapshot()
+    raw = {
+        "heroes": [
+            snapshot["bundles"][entry["id"]]["source"]["source"]
+            for entry in snapshot["manifest"]["heroes"]
+        ]
+    }
+    return raw, load_ai_field("behavior_tags")
 
 
 def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_rewrite_summaries()
 
 
 rs = _load_rs()

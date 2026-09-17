@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "granny-dahnie",
+  "display_name": "Granny Dahnie",
+  "source": {
+    "title": "Granny Dahnie - Forest Guardian",
+    "name": "Granny Dahnie",
+    "tags": "Wilder · Tank · Physical",
+    "faction": "Wilder",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A Wilder Tank who owns Glimmerbloom equipment, can absorb enemies' Energy, and can reduce enemies' Haste when taking damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Threshold of Jade",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "2 tiles",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Granny Dahnie summons Parasitic Grass within 2 tiles for 3s. Every second, enemies within range cannot move or act and lose 25 + 5 (SP-based) Energy and at least 60% (ATK-based) HP. The total amount of their lost HP is 130% (ATK-based). Granny Dahnie also recovers an equal amount of HP. She is unaffected while Parasitic Grass exists.",
+          "active": [
+            "Granny Dahnie summons Parasitic Grass within 2 tiles for 3s.",
+            "Every second, enemies within range cannot move or act and lose 25 + 5 (SP-based) Energy and at least 60% (ATK-based) HP.",
+            "The total amount of their lost HP is 130% (ATK-based).",
+            "Granny Dahnie also recovers an equal amount of HP.",
+            "She is unaffected while Parasitic Grass exists."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "The total amount of enemies' lost HP is increased to 140% (ATK-based) per second, and each enemy's minimum HP loss is increased to 65% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "The Energy loss per second of enemies in range is increased to 35 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "The total amount of enemies' lost HP is increased to 150% (ATK-based) per second, and each enemy's minimum HP loss is increased to 70% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "The total amount of enemies' lost HP is increased to 160% (ATK-based) per second, and each enemy's minimum HP loss is increased to 75% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Granny Dahnie summons Parasitic Grass to immobilize the enemies in range, absorb their HP and reduce their Energy. She is immune to control effects during the effect."
+      },
+      {
+        "section": "Skill1",
+        "name": "Seed Cannon",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When an enemy deals total damage equal to 15% of Granny Dahnie's max HP to her, Granny Dahnie shoots Parasitic Seeds at this enemy, dealing 120% (ATK-based) + 15% (SP-based) damage and reducing their Haste by 40 for 6s.",
+          "active": [
+            "When an enemy deals total damage equal to 15% of Granny Dahnie's max HP to her, Granny Dahnie shoots Parasitic Seeds at this enemy, dealing 120% (ATK-based) + 15% (SP-based) damage and reducing their Haste by 40 for 6s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Reduces the enemy's Haste by 50."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Reduces the enemy's Haste by 55."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Reduces the enemy's Haste by 60."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When an enemy deals a certain amount of total damage to Granny Dahnie, she attacks them back with Parasitic Seeds, reducing their Haste."
+      },
+      {
+        "section": "Skill2",
+        "name": "Angry Taunt",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Granny Dahnie taunts an enemy for 3s and instantly recovers 140% (ATK-based) + 15% (SP-based) HP. This skill prioritizes the enemy who targets the weakest ally.",
+          "active": [
+            "Granny Dahnie taunts an enemy for 3s and instantly recovers 140% (ATK-based) + 15% (SP-based) HP.",
+            "This skill prioritizes the enemy who targets the weakest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Granny Dahnie recovers 150% (ATK-based) + 15% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Granny Dahnie recovers 160% (ATK-based) + 15% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Granny Dahnie recovers 170% (ATK-based) + 15% (SP-based) HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Granny Dahnie taunts an enemy and recovers HP."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Granny Dahnie increases her Vitality by 11 during battle. She gains an extra 3 Vitality while casting Threshold of Jade.",
+          "active": [
+            "Granny Dahnie increases her Vitality by 11 during battle.",
+            "She gains an extra 3 Vitality while casting Threshold of Jade."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Granny Dahnie increases her Vitality by 15 during battle.",
+                "She gains an extra 4 Vitality while casting Threshold of Jade."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Granny Dahnie increases her Vitality by 19 during battle.",
+                "She gains an extra 5 Vitality while casting Threshold of Jade."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Granny Dahnie's Vitality increases during battle. She gains extra Vitality while casting Threshold of Jade."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Glimmerbloom Blessings",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When Granny Dahnie's HP ratio is lower than 50%, the Glimmerbloom Shield grows bigger, increasing her Phys DEF by 50% and Magic DEF by 50% and recovering 100% (ATK-based) HP every second. The skill lasts 12s and can be cast once every battle.",
+          "active": [
+            "When Granny Dahnie's HP ratio is lower than 50%, the Glimmerbloom Shield grows bigger, increasing her Phys DEF by 50% and Magic DEF by 50% and recovering 100% (ATK-based) HP every second.",
+            "The skill lasts 12s and can be cast once every battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Recovers 105% (ATK-based) HP every second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Gains unaffected when skill takes effect."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Recovers 110% (ATK-based) HP every second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Granny Dahnie's HP is low, she gains Phys DEF, Magic DEF, and recovers HP."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon.",
+          "active": [
+            "Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Granny Dahnie recovers HP when shooting seeds using Seed Cannon."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "B",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

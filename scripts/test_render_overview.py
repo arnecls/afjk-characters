@@ -15,6 +15,7 @@ sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io
 from hero_pipeline.analysis.policy import make_policy
 from hero_pipeline.contracts import PresentationRoster, RosterSnapshot
+from hero_pipeline.pipeline import score
 from hero_pipeline.presentation.format import _join_names, format_summary
 from hero_pipeline.presentation.project import project_roster
 from hero_pipeline.storage import load_roster_snapshot
@@ -28,11 +29,14 @@ class PresentationProjectionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.config = io.load_config()
-        cls.snapshot = load_roster_snapshot()
+        processed, relationships, snapshot = score()
+        cls.snapshot = snapshot
         cls.view = project_roster(
-            cls.snapshot,
+            snapshot,
             policy=make_policy(cls.config),
             config=cls.config,
+            analyses=processed["heroes"],
+            relationships=relationships,
         )
 
     def test_project_roster_size(self) -> None:
@@ -47,6 +51,12 @@ class PresentationProjectionTests(unittest.TestCase):
             self.snapshot,
             policy=make_policy(self.config),
             config=self.config,
+            analyses={hero["id"]: hero["analysis"] for hero in self.view["heroes"]},
+            relationships={
+                "heroes": {
+                    hero["id"]: hero["synergies"] for hero in self.view["heroes"]
+                }
+            },
         )
         elapsed = time.perf_counter() - t0
         self.assertLess(elapsed, 2.0)

@@ -9,14 +9,13 @@ description: >-
 
 # Extract skill effects
 
-AI-authored effect data per hero. Replaces regex detection in
-`scripts/rewrite-summaries.py`. Pipeline reads it from `ai.json` via the
-hero-pipeline storage seam; no regex edits for effect fixes.
+AI-authored effect data per hero. Pipeline reads it from `ai.json` via the
+hero-pipeline storage seam; do not edit regex tables for effect fixes.
 
 ## When to use
 
 - New hero after `just download` (instead of regex gap fixes)
-- Skill text changed in a hero's `generated.json` (hash stale in
+- Skill text changed in a hero's `source.json` (hash stale in
   `just validate`)
 - Wrong/missing effects in processed JSON or site skill chips
 - User asks to re-extract or fix detection for one hero
@@ -25,7 +24,7 @@ hero-pipeline storage seam; no regex edits for effect fixes.
 
 | Source | Use for |
 |--------|---------|
-| `data/heroes/<hero-id>/generated.json` | Full skill text, sections, upgrades |
+| `data/heroes/<hero-id>/source.json` | Full skill text, sections, upgrades |
 | `description_lite` | Cross-check mechanics; preferred for validation |
 | `data/schema/game_properties.schema.json` | CC, damage types, stats, immunities |
 | `data/schema/skills.schema.json` | Effect shape (`$defs/effect`) |
@@ -85,15 +84,13 @@ import importlib.util, json, sys
 from pathlib import Path
 SCRIPTS = Path("scripts")
 sys.path.insert(0, str(SCRIPTS))
-import heroes_io as io, skill_effects_store as ses, hero_schema as hs
+import heroes_io as io, skill_effects_store as ses
+from hero_pipeline.analysis import serialize as hs
+from hero_pipeline.analysis import text as rs
 
 NAME = "Aliceth"  # short or title substring
 raw = io.load_heroes_data()
 record = next(r for r in raw["heroes"] if NAME.lower() in r["title"].lower())
-spec = importlib.util.spec_from_file_location("rs", SCRIPTS / "rewrite-summaries.py")
-rs = importlib.util.module_from_spec(spec)
-sys.modules["rewrite_summaries"] = rs
-spec.loader.exec_module(rs)
 
 old = rs.hero_from_record(record)
 rs.analyze_hero(old)
@@ -167,7 +164,7 @@ just validate
   Combat Fury adjacency) need `Ally DoT on enemies` in `special_provides`
   when the ally is the damage source. Wording like `damage … each time` on
   cooldowns is **not** DoT.
-- **Do not** edit `rewrite-summaries.py` regex tables for effect fixes (removed).
+- **Do not** edit local-analysis regex tables for effect fixes.
 
 ## Staleness
 

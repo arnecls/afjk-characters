@@ -164,7 +164,7 @@ strength. **Conditional (rare)** lowers magnitude by two steps; some labels
 ## Meta tiers (Prydwen)
 
 Per-mode strength ratings (`S+`, `S`, `A+`, `A`, `B`, `C`, `?`) are stored on
-each hero's `generated.json` source as `prydwen_tiers` (`afk_stages`, `dream_realm`,
+each hero's `source.json` as `prydwen_tiers` (`afk_stages`, `dream_realm`,
 `dream_realm_endless`, `pvp`). Sourced from the
 [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list) via character
 pages during `just download`. Shown at the top of each hero's behavior section
@@ -206,7 +206,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah).
   Each Movement bullet also includes **base walk speed** from
-  `generated.json.external.walk_speed` (`zero` / `slow` / `normal` / `fast` /
+  `source.json` `external.walk_speed` (`zero` / `slow` / `normal` / `fast` /
   `veryfast`), sourced from afkj-data `Unit.WalkSpeed`. Stored as
   `behavior.walk_speed`. Markdown form:
   `Movement: {label} ({note}); walk speed {tier}`. Site and list view

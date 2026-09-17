@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "id": "soren",
+  "display_name": "Soren",
+  "source": {
+    "title": "Soren - Silent Fury",
+    "name": "Soren",
+    "tags": "Mauler · Rogue · Physical",
+    "faction": "Mauler",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A silent yet fierce Rogue, adept at using terrain to outmatch enemies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Whirlwind Swing",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Soren selects a tile and rushes there to swing his weapon, dealing 250% (ATK-based) + 10% (SP-based) damage to adjacent enemies and knocking them back 1 tile. If the targets collide with allies, enemies, terrain, or battlefield borders along their path, they take 400% (ATK-based) + 20% (SP-based) damage and are stunned for 2.5s. This skill prioritizes targeting the tile that will cause the most enemies to collide when cast automatically.",
+          "active": [
+            "Soren selects a tile and rushes there to swing his weapon, dealing 250% (ATK-based) + 10% (SP-based) damage to adjacent enemies and knocking them back 1 tile.",
+            "If the targets collide with allies, enemies, terrain, or battlefield borders along their path, they take 400% (ATK-based) + 20% (SP-based) damage and are stunned for 2.5s.",
+            "This skill prioritizes targeting the tile that will cause the most enemies to collide when cast automatically."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Soren deals 400% (ATK-based) + 20% (SP-based) damage an stuns another enemy for 2.5s if the target knocked back by this skill collides with them."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the collision damage to 410% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the collision damage to 420% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the collision damage to 430% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Rushes to the selected target and knocks back nearby enemies, dealing extra damage and stunning them if they collide with other entities."
+      },
+      {
+        "section": "Skill1",
+        "name": "Repel Sweep",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "11s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Soren swings his weapon to deal 180% (ATK-based) + 10% (SP-based) damage to an enemy in melee range, knocking them back 1 tile. If the target collides with allies, enemies, terrain, or battlefield borders along their path, they take 250% (ATK-based) + 20% (SP-based) damage and are stunned for 1.5s. Soren repositions himself to ensure maximum collisions between targets when casting this skill.",
+          "active": [
+            "Soren swings his weapon to deal 180% (ATK-based) + 10% (SP-based) damage to an enemy in melee range, knocking them back 1 tile.",
+            "If the target collides with allies, enemies, terrain, or battlefield borders along their path, they take 250% (ATK-based) + 20% (SP-based) damage and are stunned for 1.5s.",
+            "Soren repositions himself to ensure maximum collisions between targets when casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases base damage to 210% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the collision damage to 270% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Extends the stun duration upon collision to 2s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Deals damage to a target and knocks them back, dealing additional damage and stunning them upon collision."
+      },
+      {
+        "section": "Skill2",
+        "name": "Deflecting Swing",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Soren reduces the damage taken from a single attack that exceeds 10% of his max HP by 70%, resetting the cooldown of Repel Sweep. This effect can be triggers once every 7 - 1 (SP-based)s.",
+          "active": [
+            "Soren reduces the damage taken from a single attack that exceeds 10% of his max HP by 70%, resetting the cooldown of Repel Sweep.",
+            "This effect can be triggers once every 7 - 1 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the DMG reduction ratio to 80%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the DMG reduction ratio to 90%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Reduces the skill cooldown to 6 - 1 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Blocks a powerful single attack and resets the cooldown of Repel Sweep."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "MIncreases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Dusk Rejuvenation",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Soren gains 60 Haste and recovers 4% of his max HP and 40 Energy per second for 12s when his HP ratio drops below 60%. This effect can only be triggered once per battle.",
+          "active": [
+            "Soren gains 60 Haste and recovers 4% of his max HP and 40 Energy per second for 12s when his HP ratio drops below 60%.",
+            "This effect can only be triggered once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Soren removes all control effects when this skill is triggered.",
+                "It can b triggered repeatedly in a single battle, with a cooldown of 25s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the bonus Haste to 80 while this skill is active."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the HP recovery to 5% of max HP per second while this skill is active."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste and recovers HP and Energy when his HP is low."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Increases the knockback distance of the Repel Sweep to 2 tiles when Deflecting Swing is triggered, dealing extra damage equal to 50% of the blocked damage.",
+          "active": [
+            "Increases the knockback distance of the Repel Sweep to 2 tiles when Deflecting Swing is triggered, dealing extra damage equal to 50% of the blocked damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases the knockback distance of the next Repel Sweep when triggering Deflecting Swing, dealing extra damage."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-05-31",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

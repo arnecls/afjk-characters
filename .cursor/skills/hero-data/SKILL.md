@@ -1,7 +1,7 @@
 ---
 name: validate-hero-data
 description: >-
-  Audits detected skill effects in per-hero generated.json against hero
+  Audits detected skill effects in per-hero analysis.json against hero
   skill descriptions and ai.json play overviews. Use when asked to
   validate, audit, or review detection quality; fix detection for one hero or
   skill (e.g. wrong buff/debuff, missing damage type, wrong targeting); run
@@ -12,7 +12,7 @@ description: >-
 # Validate hero data
 
 Manual audit of the detection pipeline output. Compare each skill's parsed
-`effects` in a hero's `generated.json` against its full `description`
+`effects` in a hero's `analysis.json` against its full `description`
 (raw text plus active/passive and max-tier upgrade lines).
 
 **Do not** automate this audit with a one-off script or bulk unittest. Read
@@ -42,7 +42,7 @@ end-to-end like a mini validation pass — do not only patch JSON by hand.
 ```
 Task progress (single hero):
 - [ ] 1. Symptom — note what user saw (processed JSON, skill card, overview, synergy)
-- [ ] 2. Read skill text — hero `generated.json` description (active + max-tier upgrades)
+- [ ] 2. Read skill text — hero `source.json` description (active + max-tier upgrades)
 - [ ] 3. Read detected output — effects[], skill_card_tags, benefit_stats (if relevant)
 - [ ] 4. Cross-check display — site/data/heroes.json skillCards; chip polarity in site/js/app.js if tags look right in JSON but wrong on site
 - [ ] 5. Reproduce — hero_from_record + analyze_hero (see debug snippet below)
@@ -94,7 +94,7 @@ For one clause in isolation, edit the matching tier in the hero's
 
 | Layer | Where to look |
 |-------|----------------|
-| Detection | hero `generated.json` → `analysis.skills` effects and tags |
+| Detection | hero `analysis.json` → `skills` effects and tags |
 | Site cards | `site/data/heroes.json` → `sections.skillCards[].tags` |
 | Chip styling | `site/js/app.js` → `TAG_DEFINITIONS` (debuff labels need explicit entries, e.g. `Haste debuff`, `Phys DEF debuff`, `Damage dealt debuff`) |
 | Overview CSV | `heroes-overview.csv` debuff columns; label `Damage dealt` maps to column `Damage dealt debuff` |
@@ -160,7 +160,7 @@ Task progress:
 - [ ] 7. Write docs/validation-detailed-YYYY-MM-DD.md
 - [ ] 8. Synergy spot-check — grep false buff replacements for fixed heroes
 - [ ] 9. Prioritize fixes; patch detection; add regression tests
-- [ ] 10. Bump roster_analysis CACHE_VERSION if detection changed; just views && just validate
+- [ ] 10. Bump ALGORITHM_VERSION in local analysis if detection changed; just views && just validate
 - [ ] 11. Re-run pre-scan; move closed rows to Resolved
 ```
 

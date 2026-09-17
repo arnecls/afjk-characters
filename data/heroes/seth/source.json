@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "id": "seth",
+  "display_name": "Seth",
+  "source": {
+    "title": "Seth - Swift Shadow",
+    "name": "Seth",
+    "tags": "Mauler · Rogue · Physical",
+    "faction": "Mauler",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A swift Assassin who is skilled at ambushing injured targets.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Shadow Strike",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target. Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill. Seth prioritizes selecting the weakest enemy as the target.",
+          "active": [
+            "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target.",
+            "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
+            "Seth prioritizes selecting the weakest enemy as the target."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage while jumping to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases HP recovery from each Bloodlust stack to 15% of the total damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage while jumping to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage while jumping to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Seth flashes forward an enemy and deals multiple attacks."
+      },
+      {
+        "section": "Skill1",
+        "name": "Predator's Lunge",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6.5s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP. The additional damage cannot exceed 400% of his ATK.",
+          "active": [
+            "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP.",
+            "The additional damage cannot exceed 400% of his ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 180% (ATK-based) + 15% (SP-based).."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Seth pounces on the weakest nearby enemy and deals damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Hunter Instinct",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks. Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based). Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust.",
+          "active": [
+            "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks.",
+            "Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based).",
+            "Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Gains a stack of Bloodlust when the HP of a non-summoned enemy first falls below 50%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases Haste by 12 + 1.5 (SP-based) and Life Drain by 10 + 1 (SP-based) permanently with each stack of Bloodlust."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Gains 25 Crit when he first triggers Bloodlust."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Seth gains stat bonuses when an enemy's HP is too low."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Hunting Spree",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated.",
+          "active": [
+            "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases Energy recovery to 240."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Energy recovery to 260."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Seth immediately resets the cooldown of Predator's Lunge and recovers some Energy when a non-summoned enemy is defeated."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge.",
+          "active": [
+            "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge."
+          ]
+        },
+        "description_lite": "Seth reduces the target's Phys DEF by an extra amount if he carries Bloodlust when casting Predator's Lunge."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

@@ -1,0 +1,1438 @@
+{
+  "schema_version": 1,
+  "id": "gunnar",
+  "display_name": "Gunnar",
+  "local": {
+    "long_name": "Gunnar - Iron Doom",
+    "faction": "hypogean",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 20,
+    "release_date": "2026-03-05",
+    "season": "Tower of Memory",
+    "season_number": 6,
+    "skills": {
+      "Annihilation Directive": {
+        "category": "ultimate",
+        "description": {
+          "raw": "When a battle starts, if there is an ally placed 1 tile behind Gunnar, he summons a Doomfield at that ally's location, increasing their normal attack range by 3 and ATK by 25% + 2.5% (SP-based) of Gunnar's initial ATK. He and the ally remain steadfast until Gunnar is defeated, or until 3s after the ally leaves the Doomfield. During battle, Gunnar locks onto and prioritizes attacking the enemy targeted by the ally standing on his Doomfield. Active. Gunnar deals 320% (ATK-based) + 30% (SP-based) damage 2 times to all enemies within 2 tiles of the target tile,then launches a Doomsday Meteor that deals 470% (ATK-based) + 50% (SP-based) damage to all enemies within range and sets the ground on fire for 15s. Enemies standing in the fire take 80% (ATK-based) + 8% (SP-based) damage every second and lose 40 Vitality. When cast automatically, Gunnar prioritizes targeting the enemy area that allows him to hit the most enemies.",
+          "active": [
+            "When a battle starts, if there is an ally placed 1 tile behind Gunnar, he summons a Doomfield at that ally's location, increasing their normal attack range by 3 and ATK by 25% + 2.5% (SP-based) of Gunnar's initial ATK.",
+            "He and the ally remain steadfast until Gunnar is defeated, or until 3s after the ally leaves the Doomfield.",
+            "During battle, Gunnar locks onto and prioritizes attacking the enemy targeted by the ally standing on his Doomfield.",
+            "Gunnar deals 320% (ATK-based) + 30% (SP-based) damage 2 times to all enemies within 2 tiles of the target tile,then launches a Doomsday Meteor that deals 470% (ATK-based) + 50% (SP-based) damage to all enemies within range and sets the ground on fire for 15s.",
+            "Enemies standing in the fire take 80% (ATK-based) + 8% (SP-based) damage every second and lose 40 Vitality.",
+            "When cast automatically, Gunnar prioritizes targeting the enemy area that allows him to hit the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 490% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 510% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 530% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 550% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Attack range",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ],
+            "duration": 15.0,
+            "tick": 1.0
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "steadfast",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "steadfast",
+            "timing": "conditional",
+            "targeting_label": "Single target",
+            "target": "ally",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          },
+          {
+            "label": "Attack range",
+            "polarity": "buff"
+          },
+          {
+            "label": "Vitality",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Steadfast — Self"
+          },
+          {
+            "label": "Steadfast — Single target"
+          }
+        ]
+      },
+      "Bombing Engine": {
+        "category": "skill1",
+        "description": {
+          "raw": "Gunnar fires his cannons 6 times, each time dealing 65% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to his locked-on target. If there is a Doomfield active, the ally within the Doomfield will also launch 6 coordinated attacks, dealing damage to the locked-on target equal to 6% + 0.5% (SP-based) their max HP and stunning them for 0.5s. This damage cannot exceed Gunnar's 100% (ATK-based).",
+          "active": [
+            "Gunnar fires his cannons 6 times, each time dealing 65% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to his locked-on target.",
+            "If there is a Doomfield active, the ally within the Doomfield will also launch 6 coordinated attacks, dealing damage to the locked-on target equal to 6% + 0.5% (SP-based) their max HP and stunning them for 0.5s.",
+            "This damage cannot exceed Gunnar's 100% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Each cannon strike deals 70% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Each cannon strike deals 75% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Each cannon strike deals 80% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 88.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.5
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Absolute Defense": {
+        "category": "skill2",
+        "description": {
+          "raw": "Gunnar lets out a roar, granting himself a shield that absorbs 450% (ATK-based) + 60% (SP-based) damage. He also grants a shield that absorbs 400% (ATK-based) + 40% (SP-based) damage for 6s to every ally behind him. If there is a Doomfield active, the Doomfield gets strengthened, increasing the ATK SPD of the ally within it by 40 + 4 (SP-based) for 8s.",
+          "active": [
+            "Gunnar lets out a roar, granting himself a shield that absorbs 450% (ATK-based) + 60% (SP-based) damage.",
+            "He also grants a shield that absorbs 400% (ATK-based) + 40% (SP-based) damage for 6s to every ally behind him.",
+            "If there is a Doomfield active, the Doomfield gets strengthened, increasing the ATK SPD of the ally within it by 40 + 4 (SP-based) for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the value of the shield Gunnar gives himself to 500% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the value of the shield Gunnar gives himself to 550% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the value of the shield Gunnar gives himself to 600% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 12.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Ranged DEF and Vitality by 10. For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 7.",
+          "active": [
+            "Increases Ranged DEF and Vitality by 10.",
+            "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 7."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Ranged DEF and Vitality by 12.",
+                "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 8."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Ranged DEF and Vitality by 15.",
+                "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 9."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Ranged DEF",
+            "label": "buff_defensive",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Vitality",
+            "label": "buff_defensive",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Ranged DEF",
+            "polarity": "buff"
+          },
+          {
+            "label": "Vitality",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Fire Suppression": {
+        "category": "skill4",
+        "description": {
+          "raw": "Whenever the ally within Gunnar's Doomfield deals total damage equal to 1400% of Gunnar's initial ATK; Gunnar automatically launches a missile at his locked-on target, dealing 500% (ATK-based) damage and recovering HP equal to 100% of the damage dealt.",
+          "active": [
+            "Whenever the ally within Gunnar's Doomfield deals total damage equal to 1400% of Gunnar's initial ATK; Gunnar automatically launches a missile at his locked-on target, dealing 500% (ATK-based) damage and recovering HP equal to 100% of the damage dealt."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the missile damage to 550% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the missile damage to 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1400.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Invincible (EX+15)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "If an area set on fire is struck again by Doomsday Meteor, the area becomes permanently scorched. The fire no longer expires, and enemies within the scorched area cannot heal or gain shields.",
+          "active": [
+            "If an area set on fire is struck again by Doomsday Meteor, the area becomes permanently scorched.",
+            "The fire no longer expires, and enemies within the scorched area cannot heal or gain shields."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "debuff",
+            "name": "Healing",
+            "label": "healing"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Area",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "ex+15",
+          "targeting": "Single target",
+          "description": "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "All units, Area, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk_spd"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "gunnar",
+    "display_name": "Gunnar",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "skill1",
+    "hero": {
+      "title": "Gunnar - Iron Doom",
+      "damage_type": "Physical",
+      "skill_chunks": [
+        [
+          "base",
+          "When a battle starts, if there is an ally placed 1 tile behind Gunnar, he summons a Doomfield at that ally's location, increasing their normal attack range by 3 and ATK by 25% + 2.5% (SP-based) of Gunnar's initial ATK.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "He and the ally remain steadfast until Gunnar is defeated, or until 3s after the ally leaves the Doomfield.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "During battle, Gunnar locks onto and prioritizes attacking the enemy targeted by the ally standing on his Doomfield.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Gunnar deals 320% (ATK-based) + 30% (SP-based) damage 2 times to all enemies within 2 tiles of the target tile,then launches a Doomsday Meteor that deals 470% (ATK-based) + 50% (SP-based) damage to all enemies within range and sets the ground on fire for 15s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Enemies standing in the fire take 80% (ATK-based) + 8% (SP-based) damage every second and lose 40 Vitality.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "When cast automatically, Gunnar prioritizes targeting the enemy area that allows him to hit the most enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Doomsday Meteor's damage dealt to all enemies within range to 490% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Doomsday Meteor's damage dealt to all enemies within range to 510% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Doomsday Meteor's damage dealt to all enemies within range to 530% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Doomsday Meteor's damage dealt to all enemies within range to 550% (ATK-based) + 50% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Gunnar fires his cannons 6 times, each time dealing 65% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to his locked-on target.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "If there is a Doomfield active, the ally within the Doomfield will also launch 6 coordinated attacks, dealing damage to the locked-on target equal to 6% + 0.5% (SP-based) their max HP and stunning them for 0.5s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "This damage cannot exceed Gunnar's 100% (ATK-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Each cannon strike deals 70% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Each cannon strike deals 75% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Each cannon strike deals 80% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Gunnar lets out a roar, granting himself a shield that absorbs 450% (ATK-based) + 60% (SP-based) damage.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "He also grants a shield that absorbs 400% (ATK-based) + 40% (SP-based) damage for 6s to every ally behind him.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "If there is a Doomfield active, the Doomfield gets strengthened, increasing the ATK SPD of the ally within it by 40 + 4 (SP-based) for 8s.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the value of the shield Gunnar gives himself to 500% (ATK-based) + 60% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the value of the shield Gunnar gives himself to 550% (ATK-based) + 60% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the value of the shield Gunnar gives himself to 600% (ATK-based) + 60% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Increases Ranged DEF and Vitality by 10.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 7.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Ranged DEF and Vitality by 12.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 8.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Increases Ranged DEF and Vitality by 15.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 9.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Whenever the ally within Gunnar's Doomfield deals total damage equal to 1400% of Gunnar's initial ATK; Gunnar automatically launches a missile at his locked-on target, dealing 500% (ATK-based) damage and recovering HP equal to 100% of the damage dealt.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the missile damage to 550% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases the missile damage to 600% (ATK-based).",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "If an area set on fire is struck again by Doomsday Meteor, the area becomes permanently scorched.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "The fire no longer expires, and enemies within the scorched area cannot heal or gain shields.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Annihilation Directive": "Ultimate",
+        "Bombing Engine": "Skill1",
+        "Absolute Defense": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Fire Suppression": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 25.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "Attack range",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 550.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 600.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "debuff",
+              "label": "Vitality",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "DoT",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 550.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 15.0,
+              "tick": 1.0,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [
+            {
+              "immunity_type": "Steadfast",
+              "tier": "base",
+              "targeting": "Self",
+              "timing": "Conditional"
+            },
+            {
+              "immunity_type": "Steadfast",
+              "tier": "base",
+              "targeting": "Single target",
+              "timing": "Conditional"
+            }
+          ],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Invincibility",
+              "tier": "EX+15",
+              "targeting": "Single target",
+              "qualitative": "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 88.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 0.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 0.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Max HP-based damage",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 6.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Ranged DEF",
+              "tier": "Legendary+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            },
+            {
+              "category": "buff",
+              "label": "Vitality",
+              "tier": "Legendary+",
+              "targeting": "Single target",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 100.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "damage",
+              "label": "Physical",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 600.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Invincible",
+              "tier": "EX+15",
+              "targeting": "Single target",
+              "numeric": 1400.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Healing",
+              "tier": "Supreme+",
+              "targeting": "Area",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 25.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Attack range",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 550.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Physical",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 600.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "debuff",
+          "label": "Vitality",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "DoT",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 550.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 15.0,
+          "tick": 1.0,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 0.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 0.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "damage",
+          "label": "Max HP-based damage",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 6.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "ATK SPD",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Ranged DEF",
+          "tier": "Legendary+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Vitality",
+          "tier": "Legendary+",
+          "targeting": "Single target",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "numeric": 100.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Invincible",
+          "tier": "EX+15",
+          "targeting": "Single target",
+          "numeric": 1400.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "debuff",
+          "label": "Healing",
+          "tier": "Supreme+",
+          "targeting": "Area",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [
+        {
+          "immunity_type": "Steadfast",
+          "tier": "base",
+          "targeting": "Self",
+          "timing": "Conditional"
+        },
+        {
+          "immunity_type": "Steadfast",
+          "tier": "base",
+          "targeting": "Single target",
+          "timing": "Conditional"
+        }
+      ],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Invincibility",
+          "tier": "EX+15",
+          "targeting": "Single target",
+          "qualitative": "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Physical",
+          "All units, Area, Single target"
+        ],
+        [
+          "DoT",
+          "Single target"
+        ],
+        [
+          "Max HP-based damage",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK SPD"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 20,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "9a340a588b6cef04ed4a89a7c511381efdfb9f2622467910ddc6e09dcede6960",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

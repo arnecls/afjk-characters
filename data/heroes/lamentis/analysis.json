@@ -1,0 +1,1368 @@
+{
+  "schema_version": 1,
+  "id": "lamentis",
+  "display_name": "Lamentis",
+  "local": {
+    "long_name": "Lamentis - Cosmic Hellion",
+    "faction": "hypogean",
+    "class": "marksman",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 7,
+    "release_date": "2026-07-02",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Malevolent Gaze": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+          "active": [
+            "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+            "Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+            "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 680% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 720% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 760% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 820.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 0,
+        "initial_energy": 600.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Multiple targets",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Stun — Multiple targets"
+          }
+        ]
+      },
+      "Starcrusher": {
+        "category": "skill1",
+        "description": {
+          "raw": "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based).",
+          "active": [
+            "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP.",
+            "The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases base damage to 220% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases base damage to 230% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases base damage to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 22.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 270.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Astral Fission": {
+        "category": "skill2",
+        "description": {
+          "raw": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+          "active": [
+            "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+            "The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP.",
+            "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+            "Up to 6 apostles can exist on the battlefield at the same time.",
+            "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 50% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 55% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 60% + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+          "active": [
+            "Lamentis and his apostles gain 20 ATK SPD.",
+            "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Lamentis and his apostles gain 25 ATK SPD.",
+                "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Lamentis and his apostles gain 30 ATK SPD.",
+                "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Omnisight": {
+        "category": "skill4",
+        "description": {
+          "raw": "Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.",
+          "active": [
+            "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+            "Each stack of Growth increases basic stats by 4%.",
+            "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+            "Lamentis can have up to 20 stacks of Growth."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the basic stats granted by each stack of Growth to 5%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the basic stats granted by each stack of Growth to 6%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+                "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+                "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "ex+15",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 240.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Basic stats",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "True damage (EX+15)"
+          },
+          {
+            "label": "Direct healing — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Basic stats — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (EX+15)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+          "active": [
+            "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Stacking",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "Lamentis can have up to 20 stacks of Growth."
+        },
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles that fight on the battlefield."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ],
+      [
+        "true",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk_spd",
+      "healing",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "lamentis",
+    "display_name": "Lamentis",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Lamentis - Cosmic Hellion",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 640% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 680% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 720% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases the damage dealt to 760% (ATK-based) + 60% (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases base damage to 220% (ATK-based) + 30% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases base damage to 230% (ATK-based) + 30% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases base damage to 240% (ATK-based) + 30% (SP-based).",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Up to 6 apostles can exist on the battlefield at the same time.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the ATK percentage inherited by the apostles to 50% + 6% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the ATK percentage inherited by the apostles to 55% + 6% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases the ATK percentage inherited by the apostles to 60% + 6% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Lamentis and his apostles gain 20 ATK SPD.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Lamentis and his apostles gain 25 ATK SPD.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Lamentis and his apostles gain 30 ATK SPD.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Each stack of Growth increases basic stats by 4%.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "Lamentis can have up to 20 stacks of Growth.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the basic stats granted by each stack of Growth to 5%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "Increases the basic stats granted by each stack of Growth to 6%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Malevolent Gaze": "Ultimate",
+        "Starcrusher": "Skill1",
+        "Astral Fission": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Omnisight": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Max HP",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": null,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "cc",
+              "label": "Stun",
+              "tier": "base",
+              "targeting": "Multiple targets",
+              "numeric": 3.5,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": 3.5,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "All units",
+              "numeric": 820.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": -1,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "zone",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            },
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 60.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "base",
+              "targeting": "Owned summons",
+              "numeric": 60.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Stacking",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "qualitative": "Lamentis can have up to 20 stacks of Growth.",
+              "grants": []
+            }
+          ]
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "Max HP-based damage",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 22.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 270.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Self",
+              "numeric": 80.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Self",
+              "qualitative": "Lamentis sacrifices 5% of his max HP to create 2 apostles that fight on the battlefield.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 30.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "ATK SPD",
+              "tier": "Legendary+",
+              "targeting": "Owned summons",
+              "numeric": 30.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "damage",
+              "label": "True damage",
+              "tier": "EX+15",
+              "targeting": "Single target",
+              "numeric": 240.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "EX+15",
+              "targeting": "Self",
+              "numeric": 80.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "EX+15",
+              "targeting": "Self",
+              "numeric": 20.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [
+            {
+              "category": "buff",
+              "label": "Basic stats",
+              "tier": "Mythic+",
+              "targeting": "Owned summons",
+              "numeric": 6.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "unknown",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        }
+      },
+      "effects": [
+        {
+          "category": "debuff",
+          "label": "Max HP",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "numeric": null,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "cc",
+          "label": "Stun",
+          "tier": "base",
+          "targeting": "Multiple targets",
+          "numeric": 3.5,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": 3.5,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "All units",
+          "numeric": 820.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": -1,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "ATK SPD",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 60.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "damage",
+          "label": "Max HP-based damage",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 22.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Self",
+          "numeric": 80.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "damage",
+          "label": "True damage",
+          "tier": "EX+15",
+          "targeting": "Single target",
+          "numeric": 240.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "EX+15",
+          "targeting": "Self",
+          "numeric": 80.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "EX+15",
+          "targeting": "Self",
+          "numeric": 20.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "summon_effects": [
+        {
+          "category": "buff",
+          "label": "ATK SPD",
+          "tier": "base",
+          "targeting": "Owned summons",
+          "numeric": 60.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ultimate"
+        },
+        {
+          "category": "buff",
+          "label": "Basic stats",
+          "tier": "Mythic+",
+          "targeting": "Owned summons",
+          "numeric": 6.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "unknown",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        }
+      ],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Stacking",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "qualitative": "Lamentis can have up to 20 stacks of Growth.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Self",
+          "qualitative": "Lamentis sacrifices 5% of his max HP to create 2 apostles that fight on the battlefield.",
+          "grants": []
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "All units, Single target"
+        ],
+        [
+          "Max HP-based damage",
+          "Single target"
+        ],
+        [
+          "True damage",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {
+        "True damage": 360.0
+      },
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK SPD",
+        "Healing",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 7,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "eb44dde940ab2f50c6d60ecdf80af83702ac242a7d35d7e03a14dde0b75fed04",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "nerion",
+  "display_name": "Nerion",
+  "source": {
+    "title": "Nerion - Bereaved Tide",
+    "name": "Nerion",
+    "tags": "Graveborn · Marksman · Magic",
+    "faction": "Graveborn",
+    "class": "Marksman",
+    "damage_type": "Magic",
+    "description": "A Marksman who commands the power of the ocean. Once his enemies start to drown in his tides, they are as good as dead.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Drowning Doom",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Passive. When an enemy has been under control effects for 6s, they take 350% (ATK-based) + 35% (SP-based) damage and are afflicted with drowning. Nerion deals 30% (ATK-based) more damage to drowning enemies. And both effects last until the end of the battle. This passive effect takes only 4s to trigger on enemies that deal magic damage. Active. Nerion empowers himself with the force of the tide for 12s. While this effect lasts, his ATK and ATK SPD are increased by 22% and 60+ 8 (SP-based) respectively, and his normal attacks gain the Deluge effect: when a normal attack hits, it bounces between drowning enemies, dealing 220% (ATK-based) + 30% (SP-based) extra damage. Each unit can be hit by the bounce up to 1 time.",
+          "passive": [
+            "When an enemy has been under control effects for 6s, they take 350% (ATK-based) + 35% (SP-based) damage and are afflicted with drowning.",
+            "Nerion deals 30% (ATK-based) more damage to drowning enemies.",
+            "And both effects last until the end of the battle.",
+            "This passive effect takes only 4s to trigger on enemies that deal magic damage."
+          ],
+          "active": [
+            "Nerion empowers himself with the force of the tide for 12s.",
+            "While this effect lasts, his ATK and ATK SPD are increased by 22% and 60+ 8 (SP-based) respectively, and his normal attacks gain the Deluge effect: when a normal attack hits, it bounces between drowning enemies, dealing 220% (ATK-based) + 30% (SP-based) extra damage.",
+            "Each unit can be hit by the bounce up to 1 time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "While empowered by the force of the tide, Nerion's ATK increases to 24%, and the extra damage dealt by Deluge increases to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "While empowered by the force of the tide, Nerion's ATK increases to 26%, and the extra damage dealt by Deluge increases to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "While empowered by the force of the tide, Nerion's ATK increases to 28%, and the extra damage dealt by Deluge increases to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "While empowered by the force of the tide, Nerion's ATK increases to 30%, and the extra damage dealt by Deluge increases to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Enemies affected by control effects can be afflicted with Nerion's drowning effect and take increased damage. After Nerion casts his Ultimate, his ATK and ATK SPD increase, and his normal attacks can bounce between drowning enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Tidal Rebuke",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "7 tiles"
+        },
+        "description": {
+          "raw": "After every 3 normal attacks, Nerion's next normal attack becomes enhanced. Upon hitting a target, the enhanced normal attack knocks the target back 1 tile, deals 270% (ATK-based) + 30% (SP-based) damage, and stuns them for 2s.",
+          "active": [
+            "After every 3 normal attacks, Nerion's next normal attack becomes enhanced.",
+            "Upon hitting a target, the enhanced normal attack knocks the target back 1 tile, deals 270% (ATK-based) + 30% (SP-based) damage, and stuns them for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 360% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After every few normal attacks, Nerion's next normal attack is enhanced. Upon hitting a target, the enhanced normal attack knocks the target back, deals extra damage, and stuns them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Riptide Wrath",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Nerion throws his spear at the area with the most enemies. Upon hitting the target tile, the spear deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within 1 tile. 2s later, a raging current erupts, knocking all enemies within the same area into the air and dealing 210% (ATK-based) + 30% (SP-based) damage.",
+          "active": [
+            "Nerion throws his spear at the area with the most enemies.",
+            "Upon hitting the target tile, the spear deals 140% (ATK-based) + 20% (SP-based) damage to all enemies within 1 tile.",
+            "2s later, a raging current erupts, knocking all enemies within the same area into the air and dealing 210% (ATK-based) + 30% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the spear's damage dealt upon hitting the target tile to 160% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the spear's damage dealt upon hitting the target tile to 180% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 270% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the spear's damage dealt upon hitting the target tile to 200% (ATK-based) + 20% (SP-based); increases the damage dealt by the following current attack to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Nerion deals damage to enemies within an area, then after a short delay, knocks enemies in the area into the air and deals damage again."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 21 during battle.",
+          "active": [
+            "Increases ATK SPD by 21 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 27 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 33 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Abyssal Embrace",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, Nerion applies the drowning effect to the rearmost enemy. Drowning enemies have their ATK and Haste reduced by 20% and 40 respectively, and take 50% (ATK-based) damage every time they have been under control effects for 0.5s.",
+          "active": [
+            "When a battle starts, Nerion applies the drowning effect to the rearmost enemy.",
+            "Drowning enemies have their ATK and Haste reduced by 20% and 40 respectively, and take 50% (ATK-based) damage every time they have been under control effects for 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Drowning enemies take 60% (ATK-based) damage every 0.5s while they are under control effects."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Whenever Nerion applies the drowning effect, he immediately gains a permanent Tidal Shield equal to 600% (ATK-based).",
+                "The shield takes 60% less damage from magic attacks."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Drowning enemies take 70% (ATK-based) damage every 0.5s while they are under control effects."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Nerion applies the drowning effect to the rearmost enemy. Drowning enemies have their ATK and Haste reduced and take continuous damage while under control effects."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide. While permanently empowered, Nerion gains 30 extra Penetration if he has more than 800 Energy.",
+          "active": [
+            "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide.",
+            "While permanently empowered, Nerion gains 30 extra Penetration if he has more than 800 Energy."
+          ]
+        },
+        "description_lite": "When all non-summoned enemies are under the drowning effect, Nerion becomes permanently empowered by the force of the tide and increases his Penetration."
+      }
+    ],
+    "range": 7,
+    "release_date": "2026-05-15",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

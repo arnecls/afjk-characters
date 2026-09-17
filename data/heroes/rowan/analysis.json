@@ -1,0 +1,1177 @@
+{
+  "schema_version": 1,
+  "id": "rowan",
+  "display_name": "Rowan",
+  "local": {
+    "long_name": "Rowan - The Roamer",
+    "faction": "lightbearer",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": true,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 3,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Fatal Greed": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Rowan moves up to 1 tile and throws coins upon reaching the destination, recovering 250 + 30 (SP-based) Energy for surrounding allies within 2 tiles.",
+          "active": [
+            "Rowan moves up to 1 tile and throws coins upon reaching the destination, recovering 250 + 30 (SP-based) Energy for surrounding allies within 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Energy recovery to 260 + 30 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Energy recovery to 280 + 30 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Energy recovery to 300 + 30 (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Energy recovery to 320 + 30 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 350.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Energy — Area",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Smart Stall": {
+        "category": "skill1",
+        "description": {
+          "raw": "Rowan places 2 health potions on his trolley when a battle starts. Allies within 2 tiles with HP ratio below 50% automatically use a potion to recover 40% + 4% (SP-based) of their max HP by up to 800% + 65% (SP-based) of Rowan's ATK. Each ally can use up to 1 health potion every 6s.",
+          "active": [
+            "Rowan places 2 health potions on his trolley when a battle starts.",
+            "Allies within 2 tiles with HP ratio below 50% automatically use a potion to recover 40% + 4% (SP-based) of their max HP by up to 800% + 65% (SP-based) of Rowan's ATK.",
+            "Each ally can use up to 1 health potion every 6s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases recovery amount to 42% + 4% (SP-based) of allies' max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Places an energy potion when a battle starts.",
+                "When the Energy of an ally within 2 tiles exceeds 600, they automatically use this potion to recover 400 Energy."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases recovery amount to 45% + 4% (SP-based) of allies' max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 45.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 400.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Area",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Quack Waltz": {
+        "category": "skill2",
+        "description": {
+          "raw": "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% (SP-based) damage and absorbing 70 Energy.",
+          "active": [
+            "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% (SP-based) damage and absorbing 70 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "If all health potions have been used up, Bradduck no longer launches attack but instead replenishes Rowan's trolley with a health potion.",
+                "This effect can be triggered once every 3 times of Quack Waltz."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 190% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 70.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 3.25,
+        "initial_cooldown": 1.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Energy",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Rowan increases his Haste by 7 during battle. His Haste is increased by an extra 6 before replenishing his trolley with Quack Waltz for the first time.",
+          "active": [
+            "Rowan increases his Haste by 7 during battle.",
+            "His Haste is increased by an extra 6 before replenishing his trolley with Quack Waltz for the first time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Rowan increases his Haste by 10 during battle.",
+                "His Haste is increased by an extra 8 before replenishing his trolley with Quack Waltz for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Rowan increases his Haste by 12 during battle.",
+                "His Haste is increased by an extra 10 before replenishing his trolley with Quack Waltz for the first time."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 12.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Great Bargain": {
+        "category": "skill4",
+        "description": {
+          "raw": "After selling 3 health potions, Rowan places a super health potion that recovers 60% of an ally's max HP and permanently increases their Phys DEF and Magic DEF by 30%. This effect can only trigger once per battle.",
+          "active": [
+            "After selling 3 health potions, Rowan places a super health potion that recovers 60% of an ally's max HP and permanently increases their Phys DEF and Magic DEF by 30%.",
+            "This effect can only trigger once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the recovery amount of super health potion to 65% of the ally's max HP, permanently increasing their Phys DEF and Magic DEF by 35%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Bradduck replenishes the health potions, one turns into a super health potion, triggered 1 time per battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the recovery amount of super health potion to 70% of the ally's max HP, permanently increasing their Phys DEF and Magic DEF by 40%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic DEF",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Rowan places 1 more health potion when a battle starts using Smart Stall.",
+          "active": [
+            "Rowan places 1 more health potion when a battle starts using Smart Stall."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Energy steal",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% damage and absorbing 70 Energy."
+        },
+        {
+          "label": "Named ally on team",
+          "tier": "supreme+",
+          "targeting": "Allies",
+          "description": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Once per battle",
+          "tier": "mythic+",
+          "description": "This effect can only trigger once per battle."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Single target"
+      ]
+    ],
+    "damage_magnitudes": {},
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "max_hp",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "behavior": {},
+    "id": "rowan",
+    "display_name": "Rowan",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "signature_calculated": "ultimate",
+    "hero": {
+      "title": "Rowan - The Roamer",
+      "damage_type": "Magic",
+      "skill_chunks": [
+        [
+          "base",
+          "Rowan moves up to 1 tile and throws coins upon reaching the destination, recovering 250 + 30 (SP-based) Energy for surrounding allies within 2 tiles.",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Energy recovery to 260 + 30 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Energy recovery to 280 + 30 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Energy recovery to 300 + 30 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Increases Energy recovery to 320 + 30 (SP-based).",
+          "Ultimate"
+        ],
+        [
+          "base",
+          "Rowan places 2 health potions on his trolley when a battle starts.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Allies within 2 tiles with HP ratio below 50% automatically use a potion to recover 40% + 4% (SP-based) of their max HP by up to 800% + 65% (SP-based) of Rowan's ATK.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Each ally can use up to 1 health potion every 6s.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases recovery amount to 42% + 4% (SP-based) of allies' max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Places an energy potion when a battle starts.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "When the Energy of an ally within 2 tiles exceeds 600, they automatically use this potion to recover 400 Energy.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Increases recovery amount to 45% + 4% (SP-based) of allies' max HP.",
+          "Skill1"
+        ],
+        [
+          "base",
+          "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% (SP-based) damage and absorbing 70 Energy.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "If all health potions have been used up, Bradduck no longer launches attack but instead replenishes Rowan's trolley with a health potion.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "This effect can be triggered once every 3 times of Quack Waltz.",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases damage to 190% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "base",
+          "Increases damage to 230% (ATK-based) + 20% (SP-based).",
+          "Skill2"
+        ],
+        [
+          "Legendary+",
+          "Rowan increases his Haste by 7 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His Haste is increased by an extra 6 before replenishing his trolley with Quack Waltz for the first time.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Rowan increases his Haste by 10 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His Haste is increased by an extra 8 before replenishing his trolley with Quack Waltz for the first time.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "Rowan increases his Haste by 12 during battle.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Legendary+",
+          "His Haste is increased by an extra 10 before replenishing his trolley with Quack Waltz for the first time.",
+          "Unlocks at Legendary+"
+        ],
+        [
+          "Mythic+",
+          "After selling 3 health potions, Rowan places a super health potion that recovers 60% of an ally's max HP and permanently increases their Phys DEF and Magic DEF by 30%.",
+          "Ex. Skill"
+        ],
+        [
+          "Mythic+",
+          "This effect can only trigger once per battle.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+5",
+          "Increases the recovery amount of super health potion to 65% of the ally's max HP, permanently increasing their Phys DEF and Magic DEF by 35%.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+10",
+          "When Bradduck replenishes the health potions, one turns into a super health potion, triggered 1 time per battle.",
+          "Ex. Skill"
+        ],
+        [
+          "EX+15",
+          "Increases the recovery amount of super health potion to 70% of the ally's max HP, permanently increasing their Phys DEF and Magic DEF by 40%.",
+          "Ex. Skill"
+        ],
+        [
+          "Supreme+",
+          "Rowan places 1 more health potion when a battle starts using Smart Stall.",
+          "Unlocks at Supreme+"
+        ],
+        [
+          "Supreme+",
+          "Level 2 (Unlocks with {{Item|Shadow Essence",
+          "Unlocks at Supreme+"
+        ]
+      ],
+      "skill_name_to_section": {
+        "Fatal Greed": "Ultimate",
+        "Smart Stall": "Skill1",
+        "Quack Waltz": "Skill2",
+        "Hero Focus": "Unlocks at Legendary+",
+        "Great Bargain": "Ex. Skill",
+        "Enhance Force": "Unlocks at Supreme+"
+      },
+      "skill_slices": {
+        "Ultimate": {
+          "section": "Ultimate",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 350.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Ultimate"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill1": {
+          "section": "Skill1",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Direct healing",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 45.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            },
+            {
+              "category": "buff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Area",
+              "numeric": 400.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": 2,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "radius",
+              "area_direction": null,
+              "source_section": "Skill1"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Skill2": {
+          "section": "Skill2",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "debuff",
+              "label": "Energy",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 70.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            },
+            {
+              "category": "damage",
+              "label": "Magic",
+              "tier": "base",
+              "targeting": "Single target",
+              "numeric": 250.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": null,
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Skill2"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Energy steal",
+              "tier": "base",
+              "targeting": "Single target",
+              "qualitative": "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% damage and absorbing 70 Energy.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Legendary+": {
+          "section": "Unlocks at Legendary+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Haste",
+              "tier": "Legendary+",
+              "targeting": "Self",
+              "numeric": 12.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Legendary+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": []
+        },
+        "Ex. Skill": {
+          "section": "Ex. Skill",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "Max HP",
+              "tier": "Mythic+",
+              "targeting": "Self",
+              "numeric": 70.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Phys DEF",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            },
+            {
+              "category": "buff",
+              "label": "Magic DEF",
+              "tier": "Mythic+",
+              "targeting": "Single target",
+              "numeric": 40.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "permanent",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Ex. Skill"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "requires",
+              "label": "Once per battle",
+              "tier": "Mythic+",
+              "targeting": "—",
+              "qualitative": "This effect can only trigger once per battle.",
+              "grants": []
+            }
+          ]
+        },
+        "Unlocks at Supreme+": {
+          "section": "Unlocks at Supreme+",
+          "tier": "base",
+          "effects": [
+            {
+              "category": "buff",
+              "label": "ATK",
+              "tier": "Supreme+",
+              "targeting": "Self",
+              "numeric": 30.0,
+              "qualitative": "",
+              "magnitude": "average",
+              "area_count": null,
+              "target_count": null,
+              "duration": null,
+              "tick": null,
+              "persistence": "temporary",
+              "conditional": null,
+              "conditions": [],
+              "area": "single",
+              "area_direction": null,
+              "source_section": "Unlocks at Supreme+"
+            }
+          ],
+          "summon_effects": [],
+          "cc_immunities": [],
+          "special_effects": [
+            {
+              "kind": "provides",
+              "label": "Named ally on team",
+              "tier": "Supreme+",
+              "targeting": "Allies",
+              "qualitative": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
+              "grants": [
+                [
+                  "Healing",
+                  "average"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "effects": [
+        {
+          "category": "buff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 400.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "buff",
+          "label": "Direct healing",
+          "tier": "base",
+          "targeting": "Area",
+          "numeric": 45.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": 2,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "radius",
+          "area_direction": null,
+          "source_section": "Skill1"
+        },
+        {
+          "category": "debuff",
+          "label": "Energy",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 70.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "damage",
+          "label": "Magic",
+          "tier": "base",
+          "targeting": "Single target",
+          "numeric": 250.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": null,
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Skill2"
+        },
+        {
+          "category": "buff",
+          "label": "Haste",
+          "tier": "Legendary+",
+          "targeting": "Self",
+          "numeric": 12.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Legendary+"
+        },
+        {
+          "category": "buff",
+          "label": "Max HP",
+          "tier": "Mythic+",
+          "targeting": "Self",
+          "numeric": 70.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Phys DEF",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "Magic DEF",
+          "tier": "Mythic+",
+          "targeting": "Single target",
+          "numeric": 40.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "permanent",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Ex. Skill"
+        },
+        {
+          "category": "buff",
+          "label": "ATK",
+          "tier": "Supreme+",
+          "targeting": "Self",
+          "numeric": 30.0,
+          "qualitative": "",
+          "magnitude": "average",
+          "area_count": null,
+          "target_count": null,
+          "duration": null,
+          "tick": null,
+          "persistence": "temporary",
+          "conditional": null,
+          "conditions": [],
+          "area": "single",
+          "area_direction": null,
+          "source_section": "Unlocks at Supreme+"
+        }
+      ],
+      "summon_effects": [],
+      "cc_immunities": [],
+      "special_effects": [
+        {
+          "kind": "provides",
+          "label": "Energy steal",
+          "tier": "base",
+          "targeting": "Single target",
+          "qualitative": "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% damage and absorbing 70 Energy.",
+          "grants": []
+        },
+        {
+          "kind": "requires",
+          "label": "Once per battle",
+          "tier": "Mythic+",
+          "targeting": "—",
+          "qualitative": "This effect can only trigger once per battle.",
+          "grants": []
+        },
+        {
+          "kind": "provides",
+          "label": "Named ally on team",
+          "tier": "Supreme+",
+          "targeting": "Allies",
+          "qualitative": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
+          "grants": [
+            [
+              "Healing",
+              "average"
+            ]
+          ]
+        }
+      ],
+      "damage_entries": [
+        [
+          "Magic",
+          "Single target"
+        ]
+      ],
+      "damage_scores": {},
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "ATK",
+        "Haste",
+        "Max HP",
+        "Energy"
+      ],
+      "scalar_stat_shares": {
+        "ATK": 1.0
+      },
+      "default_range": 3,
+      "positional_tile_buff_labels": [],
+      "proximity_aura_buff_labels": [],
+      "proximity_aura_radius": null
+    }
+  },
+  "provenance": {
+    "inputs_hash": "508650f455e3cf566e851e49de0f8974bd067bc6fe647ed9d203c0e9386ed831",
+    "algorithm_hash": "079114bb43cdb79de6137796e68ed3ac63575ee90f47da747f6e296d65c6f9f8"
+  }
+}
