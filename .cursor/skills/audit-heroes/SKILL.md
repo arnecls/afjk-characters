@@ -1,5 +1,5 @@
 ---
-name: validate-hero-data
+name: audit-heroes
 description: >-
   Audits detected skill effects in per-hero analysis.json against hero
   skill descriptions and ai.json play overviews. Use when asked to
@@ -9,7 +9,7 @@ description: >-
   sections.
 ---
 
-# Validate hero data
+# Audit hero data
 
 Manual audit of the detection pipeline output. Compare each skill's parsed
 `effects` in a hero's `analysis.json` against its full `description`
