@@ -24,20 +24,41 @@ from effect_labels import (
     display_effect_name,
 )
 
-from .records import (
-    CcImmunity,
-    Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
+from .records import EffectRecord
+from .detector_common import (
+    CONDITION_COOLDOWN_FLOOR_MULT,
+    CONDITION_COOLDOWN_REFERENCE_SECONDS,
+    CONDITION_FREQUENT_SCORE,
+    CONDITION_RARE_DOWNGRADE_STEPS,
+    FREQUENT_CONDITIONAL_PATTERNS,
+    RARE_CONDITIONAL_PATTERNS,
+    _DURATION_GATE_PATTERNS,
+    _DURATION_ONCE_EVERY_RE,
+    _DURATION_ONCE_PER_ENEMY_EVERY_RE,
+    _HP_RATIO_ABOVE_RE,
+    _HP_RATIO_BELOW_RE,
+    _HP_RATIO_LOWER_THAN_RE,
+    _STACK_AT_MAX_RE,
+    _STACK_UP_TO_RE,
+    _STACK_UP_TO_STACKS_RE,
+    _STATUS_CONDITION_PATTERNS,
+    _SYNERGY_EXCLUDE_DURATION_GATES,
+    _UNIT_TYPE_PATTERNS,
+    _policy_local,
 )
 
-from .detector_common import *
+def _text_has_blind_enemy_hp_dot(text: str) -> bool:
+    """Enemy HP drain while blinded — DoT gated on Blind, not a separate debuff."""
+    return bool(
+        re.search(
+            r"blinded enemies lose \d+(?:\.\d+)?(?:\s*%\s*)?"
+            r"(?:\([^)]*\)\s*)?hp per second",
+            text,
+            re.I,
+        )
+    )
+
+
 def classify_buff_condition(text: str) -> str | None:
     t = text.lower()
     for pat in RARE_CONDITIONAL_PATTERNS:
@@ -173,12 +194,12 @@ def parse_conditions_from_text(text: str, category: str) -> list[dict[str, Any]]
             )
             break
 
-    for pat, status in _STATUS_CONDITION_PATTERNS:
-        if re.search(pat, t, re.I):
+    for pattern, status in _STATUS_CONDITION_PATTERNS:
+        if re.search(pattern, t, re.I):
             out.append({"type": "status_condition", "status": status})
 
-    for pat, unit_type in _UNIT_TYPE_PATTERNS:
-        if re.search(pat, t, re.I):
+    for pattern, unit_type in _UNIT_TYPE_PATTERNS:
+        if re.search(pattern, t, re.I):
             out.append({"type": "unit_type", "unit_type": unit_type})
 
     out.extend(_parse_duration_gates(text))
@@ -204,13 +225,13 @@ def _conditional_to_conditions(conditional: str | None) -> list[dict[str, Any]]:
         return [{"type": "battle_phase", "phase": "conditional"}]
     return [{"type": "battle_phase", "phase": "conditional"}]
 
-def _resolved_effect_conditions(effect: Effect) -> list[dict[str, Any]]:
+def _resolved_effect_conditions(effect: EffectRecord) -> list[dict[str, Any]]:
     conditions = list(effect.get("conditions") or [])
     if conditions:
         return conditions
     return _conditional_to_conditions(effect["conditional"])
 
-def _effect_condition_profile(effect: Effect) -> dict[str, Any]:
+def _effect_condition_profile(effect: EffectRecord) -> dict[str, Any]:
     """Synergy/magnitude flags from structured conditions and legacy strings."""
     excluded = False
     frequent_like = False
@@ -246,11 +267,11 @@ def _effect_condition_profile(effect: Effect) -> dict[str, Any]:
         "cooldown_interval": cooldown_interval,
     }
 
-def effect_synergy_excluded(effect: Effect) -> bool:
+def effect_synergy_excluded(effect: EffectRecord) -> bool:
     """True when effect should not count for synergy (rare / once-per-battle)."""
     return bool(_effect_condition_profile(effect)["excluded"])
 
-def effect_synergy_multiplier(effect: Effect) -> float:
+def effect_synergy_multiplier(effect: EffectRecord) -> float:
     """1.0 default; frequent-like penalty; 0.0 when excluded."""
     profile = _effect_condition_profile(effect)
     if profile["excluded"]:
@@ -271,7 +292,7 @@ def effect_synergy_multiplier(effect: Effect) -> float:
         )
     return mult
 
-def effect_magnitude_downgrade_steps(effect: Effect) -> int:
+def effect_magnitude_downgrade_steps(effect: EffectRecord) -> int:
     """Downgrade steps for assign_magnitudes (rare / once-per-battle)."""
     if _effect_condition_profile(effect)["excluded"]:
         return _policy_local(
@@ -279,7 +300,7 @@ def effect_magnitude_downgrade_steps(effect: Effect) -> int:
         )
     return 0
 
-def effect_throughput_gate_multiplier(effect: Effect) -> float:
+def effect_throughput_gate_multiplier(effect: EffectRecord) -> float:
     """Cooldown scaling from structured conditions; 1.0 when unconditional."""
     interval = _effect_condition_profile(effect)["cooldown_interval"]
     if interval and interval > 0:
@@ -292,12 +313,9 @@ def effect_throughput_gate_multiplier(effect: Effect) -> float:
         )
     return 1.0
 
-def effect_has_structured_cooldown(effect: Effect) -> bool:
+def effect_has_structured_cooldown(effect: EffectRecord) -> bool:
     interval = _effect_condition_profile(effect)["cooldown_interval"]
     return interval is not None and interval > 0
 
 def _buff_condition(category: str, text: str) -> str | None:
     return _effect_condition(category, text)
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

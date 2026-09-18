@@ -12,7 +12,7 @@ def spec_from_overrides(overrides: Mapping[str, Any] | None) -> dict[str, Any]:
 
 
 def apply_skill_corrections(
-    hero: dict[str, Any], spec: Mapping[str, Any] | None
+    hero: Mapping[str, Any], spec: Mapping[str, Any] | None
 ) -> None:
     """Apply schema-defined slice corrections after sidecar post-processing."""
     post = (spec or {}).get("skill_postprocess") or {}

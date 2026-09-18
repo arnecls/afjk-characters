@@ -10,6 +10,7 @@ from .effect_merge import _effect_dedupe_key
 from .records import (
     CcImmunity,
     Effect,
+    EffectRecord,
     SpecialEffect,
     is_cc_immunity,
 )
@@ -289,7 +290,7 @@ def working_effects_from_skills(
     }
 
 
-def _copy_effect(effect: Mapping[str, Any]) -> dict[str, Any]:
+def _copy_effect(effect: Mapping[str, Any]) -> EffectRecord:
     return Effect(
         category=effect["category"],
         label=effect["label"],

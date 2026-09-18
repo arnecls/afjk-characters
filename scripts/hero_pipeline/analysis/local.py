@@ -11,6 +11,7 @@ from ..contracts import HeroBundle, HeroManifestEntry, LocalAnalysis
 from . import behavior as bh
 from . import serialize as hs
 from .postprocess import _postprocess_analyzed_hero
+from .records import HeroRecord
 from .skill_chunks import hero_from_record, load_skills_by_title_from_records
 
 ALGORITHM_VERSION = "local-analysis-v10"
@@ -58,8 +59,8 @@ def _analyze_local_bundle(
         raise FileNotFoundError(
             f"missing skill effects for hero {entry['id']!r}"
         )
-    hero: dict[str, Any] = hero_from_record(copy.deepcopy(source))
-    skill_effects.apply_sidecar_to_hero(hero, copy.deepcopy(sidecar))
+    hero: HeroRecord = hero_from_record(copy.deepcopy(source))
+    skill_effects.apply_sidecar_to_hero(cast(dict[str, Any], hero), copy.deepcopy(sidecar))
     from .skill_corrections import spec_from_overrides
 
     hero["skill_corrections"] = spec_from_overrides(bundle.get("overrides"))

@@ -25,19 +25,12 @@ from effect_labels import (
 )
 
 from .records import (
-    CcImmunity,
-    Effect,
     Hero,
-    HeroBehavior,
-    PlacementConstraint,
+    HeroRecord,
     SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
+    SkillMetaRecord,
 )
-
-from .detector_common import *
+from .detector_common import EX_TIER_RE, SECTION_TIERS
 def parse_level_tier(line: str, section: str) -> str:
     ex = EX_TIER_RE.search(line)
     if ex:
@@ -62,7 +55,7 @@ def _split_passive_active_chunk(text: str) -> list[str]:
         out.append(parts[1].strip())
     return out or [text]
 
-def parse_hero_block(block: str) -> Hero:
+def parse_hero_block(block: str) -> HeroRecord:
     lines = block.splitlines()
     title = lines[0].replace("## ", "").strip()
     dmg = ""
@@ -188,7 +181,7 @@ def skill_chunks_from_skill(skill: dict) -> list[tuple[str, str, str]]:
             chunks.append((tier, sent, section))
     return chunks
 
-def hero_from_record(hero_record: dict) -> Hero:
+def hero_from_record(hero_record: dict) -> HeroRecord:
     """Build an analysis Hero directly from a heroes_data.json record."""
     from heroes_io import normalize_skill_description
 
@@ -214,11 +207,11 @@ def hero_from_record(hero_record: dict) -> Hero:
 
 def load_skills_by_title_from_records(
     heroes: list[dict],
-) -> dict[str, list[SkillMeta]]:
+) -> dict[str, list[SkillMetaRecord]]:
     from heroes_io import render_hero_block
     from .skill_meta import load_skill_meta
 
-    skills_by_title: dict[str, list[SkillMeta]] = {}
+    skills_by_title: dict[str, list[SkillMetaRecord]] = {}
     for hero in heroes:
         block = render_hero_block(hero)
         skills_by_title[hero["title"]] = load_skill_meta(block)
@@ -226,14 +219,11 @@ def load_skills_by_title_from_records(
 
 def load_skills_by_title_from_blocks(
     blocks: list[str],
-) -> dict[str, list[SkillMeta]]:
-    skills_by_title: dict[str, list[SkillMeta]] = {}
+) -> dict[str, list[SkillMetaRecord]]:
+    skills_by_title: dict[str, list[SkillMetaRecord]] = {}
     from .skill_meta import load_skill_meta
 
     for block in blocks:
         title = block.splitlines()[0].replace("## ", "").strip()
         skills_by_title[title] = load_skill_meta(block)
     return skills_by_title
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

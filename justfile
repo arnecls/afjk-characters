@@ -62,6 +62,10 @@ analyze-synergies: ensure-venv
 render-heroes: ensure-venv
     .venv/bin/python scripts/hero_pipeline_cli.py views
 
+# Render views, then fail if committed outputs drifted besides the timestamp.
+assert-rendered-outputs: ensure-venv
+    .venv/bin/python scripts/assert_rendered_outputs.py
+
 # Render heroes-overview.md + heroes-overview.csv (same views command).
 render-overview: render-heroes
 

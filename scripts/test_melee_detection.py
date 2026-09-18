@@ -12,8 +12,12 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 from hero_pipeline.analysis import behavior as bh
-from hero_pipeline.analysis import effects as rs
-from hero_pipeline.storage import load_roster_snapshot
+from hero_pipeline.analysis.detector_common import prime_curated_cache
+from hero_pipeline.analysis.skill_chunks import (
+    hero_from_record,
+    load_skills_by_title_from_records,
+)
+from hero_pipeline.storage import load_roster_inputs, load_roster_snapshot
 
 
 class MeleeDetectionTests(unittest.TestCase):
@@ -21,13 +25,14 @@ class MeleeDetectionTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.rs = bh
         snapshot = load_roster_snapshot()
+        prime_curated_cache(load_roster_inputs())
         cls.heroes: dict[str, tuple[object, list, dict]] = {}
         for entry in snapshot["manifest"]["heroes"]:
             source = copy.deepcopy(
                 snapshot["bundles"][entry["id"]]["source"]["source"]
             )
-            hero = rs.hero_from_record(source)
-            skills = rs.load_skills_by_title_from_records([source])[hero["title"]]
+            hero = hero_from_record(source)
+            skills = load_skills_by_title_from_records([source])[hero["title"]]
             cls.heroes[hero["title"]] = (hero, skills, source, entry["display_name"])
 
     def _match(self, title_prefix: str) -> tuple[object, list, dict, str]:

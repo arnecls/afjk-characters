@@ -35,5 +35,5 @@ jobs:
       - name: Test
         run: python3 -m pytest scripts/ -n auto
 
-      - name: Render views
-        run: python3 scripts/hero_pipeline_cli.py views
+      - name: Render views and assert no drift
+        run: python3 scripts/assert_rendered_outputs.py

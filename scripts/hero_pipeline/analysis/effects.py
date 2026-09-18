@@ -2,6 +2,6 @@
 
 from __future__ import annotations
 
-from .detector_common import wire_detector_modules
+from .postprocess import analyze_working
 
-globals().update(wire_detector_modules())
+__all__ = ["analyze_working"]

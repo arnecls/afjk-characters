@@ -9,22 +9,47 @@ def load_working_analysis():
     """Return detector and behavior helpers for working-analysis tests."""
     import json
     from pathlib import Path
+    import types
 
     import skill_effects_store as ses
-    from hero_pipeline.analysis import behavior, effects
+    from hero_pipeline.analysis import (
+        behavior,
+        conditions,
+        crowd_control,
+        damage,
+        detector_common,
+        effect_merge,
+        numeric,
+        postprocess,
+        records,
+        skill_chunks,
+        skill_meta,
+        targeting,
+    )
     from hero_pipeline.analysis.skill_corrections import spec_from_overrides
 
     namespace = types.SimpleNamespace()
-    namespace.__dict__.update(
-        {key: value for key, value in effects.__dict__.items() if key != "__builtins__"}
-    )
-    namespace.__dict__.update(
-        {
-            key: value
-            for key, value in behavior.__dict__.items()
-            if key != "__builtins__"
-        }
-    )
+    for module in (
+        records,
+        detector_common,
+        skill_chunks,
+        targeting,
+        numeric,
+        crowd_control,
+        conditions,
+        damage,
+        effect_merge,
+        postprocess,
+        skill_meta,
+        behavior,
+    ):
+        namespace.__dict__.update(
+            {
+                key: value
+                for key, value in module.__dict__.items()
+                if key != "__builtins__"
+            }
+        )
 
     def analyze_hero(hero, sidecar=None):
         if sidecar is None:
@@ -44,9 +69,10 @@ def load_working_analysis():
                 hero["skill_corrections"] = spec_from_overrides(
                     json.loads(override_path.read_text(encoding="utf-8"))
                 )
-        effects.analyze_working(hero, sidecar)
+        postprocess.analyze_working(hero, sidecar)
 
     namespace.analyze_hero = analyze_hero
+    namespace.analyze_working = postprocess.analyze_working
     return namespace
 
 

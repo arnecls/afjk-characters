@@ -7,12 +7,14 @@ import json
 import re
 from functools import lru_cache
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
+jsonschema: Any = None
 try:
-    import jsonschema
+    import jsonschema as _jsonschema
+    jsonschema = _jsonschema
 except ImportError:  # pragma: no cover
-    jsonschema = None  # type: ignore
+    pass
 
 SCRIPTS = Path(__file__).resolve().parents[2]
 ROOT = Path(__file__).resolve().parents[3]
@@ -34,13 +36,38 @@ _RS = None
 def _rs():
     global _RS
     if _RS is None:
-        from . import behavior, effects
+        from . import (
+            behavior,
+            conditions,
+            crowd_control,
+            damage,
+            detector_common,
+            effect_merge,
+            numeric,
+            postprocess,
+            records,
+            skill_chunks,
+            targeting,
+        )
 
         class _Modules:
             def __getattr__(self, name: str) -> Any:
-                if hasattr(behavior, name):
-                    return getattr(behavior, name)
-                return getattr(effects, name)
+                for module in (
+                    behavior,
+                    postprocess,
+                    detector_common,
+                    targeting,
+                    numeric,
+                    crowd_control,
+                    conditions,
+                    damage,
+                    effect_merge,
+                    skill_chunks,
+                    records,
+                ):
+                    if hasattr(module, name):
+                        return getattr(module, name)
+                raise AttributeError(name)
 
         _RS = _Modules()
     return _RS
@@ -1000,7 +1027,7 @@ def _build_skill_record(
     skill: dict[str, Any],
     slice_: Any | None,
     primary_dmg: str,
-) -> dict[str, Any]:
+) -> tuple[str, dict[str, Any]]:
     section = skill["section"]
     name = skill.get("name") or section
     record: dict[str, Any] = {

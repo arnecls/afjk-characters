@@ -25,19 +25,25 @@ from effect_labels import (
 )
 
 from .records import (
-    CcImmunity,
-    Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
+    CcImmunityRecord,
+    EffectRecord,
+    HeroRecord,
 )
-
-from .detector_common import *
+from .detector_common import (
+    OWN_SUMMON_BUFF_TARGETING,
+    ALL_SUMMON_BUFF_TARGETING,
+    _COMPANION_UNIT_PATTERNS,
+    _ENERGY_AMOUNT_RE,
+    _LD_AMOUNT,
+    _RESTORE_BUFF_LABELS,
+    _SELF_STAT_NOUN,
+    _SELF_STAT_VERB,
+    _START_OF_BATTLE_ULTIMATE_CAST,
+    _SUMMON_EFFECT_OBJECT,
+    _TARGETING_PRIORITY,
+    _TIMING_PRIORITY,
+    curated_display_name,
+)
 def _prefer_targeting(candidate: str, current: str) -> str:
     cp = _TARGETING_PRIORITY.get(candidate, 99)
     cu = _TARGETING_PRIORITY.get(current, 99)
@@ -676,12 +682,12 @@ def _resolve_buff_targeting(
 def _clause_around(t: str, pos: int) -> str:
     """Sentence-like span around a regex match for ally vs enemy checks."""
     start = 0
-    for m in re.finditer(r"(?<!\d)\.(?:\s|$)", t[:pos]):
-        start = m.end()
+    for match in re.finditer(r"(?<!\d)\.(?:\s|$)", t[:pos]):
+        start = match.end()
     end = len(t)
-    m = re.search(r"(?<!\d)\.(?:\s|$)", t[pos:])
-    if m:
-        end = pos + m.start()
+    closer = re.search(r"(?<!\d)\.(?:\s|$)", t[pos:])
+    if closer:
+        end = pos + closer.start()
     return t[start:end]
 
 def _clause_targets_all_summons(clause: str) -> bool:
@@ -1066,8 +1072,6 @@ def detect_immunity_timing(text: str) -> str:
 def _is_enemy_untargetable_context(text: str) -> bool:
     """True when untargetable describes an enemy state, not self anti-CC."""
     t = text.lower()
-    if _is_enemy_untargetable_clause(t):
-        return True
     if re.search(
         r"defeated or becomes? untargetable|"
         r"if (?:the |that )?enemy becomes? untargetable|"
@@ -1497,7 +1501,7 @@ def text_has_summon_unit(t: str) -> bool:
             return True
     return False
 
-def hero_fields_summon_units(hero: Hero) -> bool:
+def hero_fields_summon_units(hero: HeroRecord) -> bool:
     from summoner_registry import profile_for
 
     short = curated_display_name(
@@ -1538,6 +1542,3 @@ def detect_damage_targeting(text: str) -> str:
     if tgt == "Self":
         return _detect_targeting_enemy_override(text)
     return tgt
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

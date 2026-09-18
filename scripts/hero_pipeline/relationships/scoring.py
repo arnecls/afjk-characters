@@ -3,7 +3,7 @@
 from __future__ import annotations
 import re
 from collections import defaultdict
-from typing import Any, Callable, Mapping
+from typing import Any, Callable, Mapping, cast, cast
 from healing_types import (
     DIRECT_HEALING_LABEL,
     HEALING_OVER_TIME_LABEL,
@@ -16,23 +16,18 @@ from healing_types import (
 _healing_profile_label = healing_profile_label
 from ..analysis.records import (
     Effect,
+    EffectRecord,
     Hero,
     HeroBehavior,
+    HeroBehaviorRecord,
+    HeroRecord,
     SkillMeta,
+    SkillMetaRecord,
     SkillSlice,
     SpecialEffect,
+    SpecialEffectRecord,
 )
 
-
-class _Records:
-    Hero = Hero
-    Effect = Effect
-    HeroBehavior = HeroBehavior
-    SkillMeta = SkillMeta
-    SpecialEffect = SpecialEffect
-    STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
-    TRUE_DAMAGE_TYPES = None  # set below
-    DEFAULT_ROLE_CATEGORY = "specialist"
 
 _TIER = {
     "base": "Base",
@@ -60,7 +55,7 @@ def _number(value: Any) -> float | None:
     return None
 
 
-def _effect(row: Mapping[str, Any], section: str) -> Effect | None:
+def _effect(row: Mapping[str, Any], section: str) -> EffectRecord | None:
     kind = row.get("type")
     if kind == "immunity":
         return None
@@ -110,7 +105,7 @@ def _effect(row: Mapping[str, Any], section: str) -> Effect | None:
     )
 
 
-def _effect_key(effect: Effect) -> str:
+def _effect_key(effect: EffectRecord) -> str:
     parts: tuple[str, ...]
     if effect["category"] == "buff" and effect["label"] in HP_RECOVERY_LABELS:
         parts = (
@@ -128,11 +123,14 @@ def _effect_key(effect: Effect) -> str:
     return "|".join(parts)
 
 
-def _merge_effects(effects: list[Effect]) -> list[Effect]:
-    merged: dict[tuple[str, ...], Effect] = {}
+def _merge_effects(effects: list[EffectRecord]) -> list[EffectRecord]:
+    merged: dict[tuple[str, ...], EffectRecord] = {}
     order: list[tuple[str, ...]] = []
     for original in effects:
-        effect = {**original, "conditions": list(original["conditions"])}
+        effect = cast(
+            EffectRecord,
+            {**original, "conditions": list(original["conditions"])},
+        )
         key: tuple[str, ...]
         if effect["category"] == "buff" and effect["label"] in HP_RECOVERY_LABELS:
             key = (
@@ -195,7 +193,9 @@ def _merge_effects(effects: list[Effect]) -> list[Effect]:
 
 
 
-_rs = _Records()
+TRUE_DAMAGE_TYPES = frozenset({"True damage", "Max HP-based damage", "HP loss"})
+DEFAULT_ROLE_CATEGORY = "specialist"
+STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
 
 STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "ATK": ["ATK"],
@@ -214,9 +214,9 @@ STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "Magic DEF": ["DEF", "Magic DEF"],
 }
 _BUFF_LABEL_TO_STATS: dict[str, list[str]] = {}
-for _stat, _labels in STAT_TO_BUFF_LABELS.items():
+for _buff_stat, _labels in STAT_TO_BUFF_LABELS.items():
     for _label in _labels:
-        _BUFF_LABEL_TO_STATS.setdefault(_label, []).append(_stat)
+        _BUFF_LABEL_TO_STATS.setdefault(_label, []).append(_buff_stat)
 ALLY_TARGETINGS = frozenset(
     {"Single target", "Multiple targets", "Arc", "Area", "All units"}
 )
@@ -372,7 +372,7 @@ _SORT_BY_ID: dict[str, str] = {}
 
 def _as_mapping(value: Any) -> Any:
     if isinstance(value, Mapping):
-        converted = dict(value)
+        converted: dict[str, Any] = dict(value)
     elif hasattr(value, "__dict__") and not isinstance(value, type):
         converted = {}
         for key, item in vars(value).items():
@@ -468,16 +468,16 @@ def _tag_set(value: Any) -> frozenset[str]:
     return frozenset()
 
 
-def _is_same_hero(provider: _rs.Hero, receiver: _rs.Hero) -> bool:
+def _is_same_hero(provider: HeroRecord, receiver: HeroRecord) -> bool:
     """True when provider and receiver are the same roster hero."""
     return _hero_identity(provider) == _hero_identity(receiver)
 
 
-def receiver_stats(hero: _rs.Hero) -> list[str]:
+def receiver_stats(hero: HeroRecord) -> list[str]:
     return [s for s in hero["benefit_stats"] if s != "Primary damage type (unit)"]
 
 
-def stat_buff_targeting_weight(receiver: _rs.Hero, stat: str, targeting: str) -> float:
+def stat_buff_targeting_weight(receiver: HeroRecord, stat: str, targeting: str) -> float:
     """Flat reach weight for Units improving one receiver (see replacements)."""
     del receiver, stat, targeting
     return SYNERGY_STAT_BUFF_REACH_WEIGHT
@@ -486,14 +486,14 @@ def stat_buff_targeting_weight(receiver: _rs.Hero, stat: str, targeting: str) ->
 MOVING_RECEIVER_MOVEMENTS = frozenset({"moving", "high movement"})
 
 
-def _provider_has_static_tile_buffer_tag(provider: _rs.Hero) -> bool:
+def _provider_has_static_tile_buffer_tag(provider: HeroRecord) -> bool:
     tags = provider.get("behavior_tags")
     if tags is not None:
-        return _rs.STATIC_TILE_BUFFER_TAG in tags
+        return STATIC_TILE_BUFFER_TAG in tags
     return _facts()._provider_has_static_tile_buffer_tag(provider)
 
 
-def receiver_has_summoner_tag(hero: _rs.Hero) -> bool:
+def receiver_has_summoner_tag(hero: HeroRecord) -> bool:
     tags = hero.get("behavior_tags")
     profile = hero.get("summon_profile") or {}
     if tags is not None:
@@ -501,7 +501,7 @@ def receiver_has_summoner_tag(hero: _rs.Hero) -> bool:
     return _facts().receiver_has_summoner_tag(hero)
 
 
-def receiver_has_ranged_summons(hero: _rs.Hero) -> bool:
+def receiver_has_ranged_summons(hero: HeroRecord) -> bool:
     profile = hero.get("summon_profile")
     if profile is not None:
         return bool(profile.get("has_ranged_summons"))
@@ -509,7 +509,7 @@ def receiver_has_ranged_summons(hero: _rs.Hero) -> bool:
 
 
 def ally_buff_applies_to_receiver(
-    provider: _rs.Hero, effect: _rs.Effect, receiver_movement: str
+    provider: HeroRecord, effect: EffectRecord, receiver_movement: str
 ) -> bool:
     """Whether an ally buff can help this receiver in synergy scoring."""
     if effect["category"] != "buff" or effect["targeting"] not in ALLY_TARGETINGS:
@@ -533,14 +533,14 @@ def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
     return [(label, 1.0) for label in STAT_TO_BUFF_LABELS.get(stat, [])]
 
 
-def provider_skill_text(hero: _rs.Hero) -> str:
+def provider_skill_text(hero: HeroRecord) -> str:
     chunks = hero.get("skill_chunks") or []
     if chunks:
         return " ".join(t for _, t, _ in chunks).lower()
     return ""
 
 
-def provider_damage_types(hero: _rs.Hero) -> set[str]:
+def provider_damage_types(hero: HeroRecord) -> set[str]:
     types: set[str] = set()
     if hero["damage_type"]:
         types.add(hero["damage_type"])
@@ -549,7 +549,7 @@ def provider_damage_types(hero: _rs.Hero) -> set[str]:
     return types
 
 
-def provider_best_enemy_targeting(hero: _rs.Hero, damage_type: str) -> str:
+def provider_best_enemy_targeting(hero: HeroRecord, damage_type: str) -> str:
     best = "Single target"
     best_w = 0.0
     for dt, tgt in hero["damage_entries"]:
@@ -565,7 +565,7 @@ def provider_best_enemy_targeting(hero: _rs.Hero, damage_type: str) -> str:
     return best
 
 
-def provider_has_start_of_battle_output(hero: _rs.Hero) -> bool:
+def provider_has_start_of_battle_output(hero: HeroRecord) -> bool:
     hero = _as_mapping(hero)
     if _has_field(hero, "start_of_battle_output"):
         return bool(hero["start_of_battle_output"])
@@ -584,14 +584,14 @@ def _is_self_battle_start_energy(text: str) -> bool:
     return False
 
 
-def provider_early_battle_ally_energy(provider: _rs.Hero) -> tuple[float, str] | None:
+def provider_early_battle_ally_energy(provider: HeroRecord) -> tuple[float, str] | None:
     provider = _as_mapping(provider)
     if _has_field(provider, "early_battle_energy"):
         return provider["early_battle_energy"]
     return _facts().provider_early_battle_ally_energy(provider)
 
 
-def is_energy_provider(provider: _rs.Hero) -> bool:
+def is_energy_provider(provider: HeroRecord) -> bool:
     if "is_energy_provider" in provider:
         return bool(provider["is_energy_provider"])
     return any(
@@ -602,7 +602,7 @@ def is_energy_provider(provider: _rs.Hero) -> bool:
     )
 
 
-def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
+def _healing_effect_is_ally_provider(effect: EffectRecord) -> bool:
     """True when a parsed effect restores ally HP (not Healing stat buffs)."""
     if effect["category"] != "buff":
         return False
@@ -610,17 +610,17 @@ def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
         return False
     if effect["targeting"] not in ALLY_TARGETINGS:
         return False
-    if _rs.effect_synergy_excluded(effect):
+    if effect_synergy_excluded(effect):
         return False
     return True
 
 
-def is_healing_provider(provider: _rs.Hero) -> bool:
+def is_healing_provider(provider: HeroRecord) -> bool:
     """True when the hero restores ally HP (instant or over time)."""
     return any(_healing_effect_is_ally_provider(e) for e in provider["effects"])
 
 
-def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
+def receiver_wants_early_battle_energy(behavior: HeroBehaviorRecord) -> bool:
     """Early Energy helps when the curated signature Ultimate is slow."""
     behavior = _as_mapping(behavior)
     if (
@@ -632,7 +632,7 @@ def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
     return behavior["signature_first_cast_needs_energy"]
 
 
-def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
+def receiver_prefers_ultimate_energy(receiver: HeroRecord) -> bool:
     receiver = _as_mapping(receiver)
     tags = receiver.get("behavior_tags")
     if tags is None:
@@ -650,14 +650,14 @@ def receiver_prefers_ultimate_energy(receiver: _rs.Hero) -> bool:
     return True
 
 
-def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
+def _effect_is_battle_start_ally_energy(effect: EffectRecord) -> bool:
     if "battle_start_energy" in effect:
         return bool(effect["battle_start_energy"])
     return _facts()._effect_is_battle_start_ally_energy(effect)
 
 
 def score_early_battle_energy_synergy(
-    provider: _rs.Hero, receiver: _rs.Hero, receiver_behavior: _rs.HeroBehavior
+    provider: HeroRecord, receiver: HeroRecord, receiver_behavior: HeroBehaviorRecord
 ) -> tuple[float, list[str]]:
     provider = _as_mapping(provider)
     receiver = _as_mapping(receiver)
@@ -683,14 +683,14 @@ def score_early_battle_energy_synergy(
     return (pts, [f"Energy via {detail}{fuel_tag}"])
 
 
-def provider_buffs_at_battle_start(provider: _rs.Hero) -> bool:
+def provider_buffs_at_battle_start(provider: HeroRecord) -> bool:
     provider = _as_mapping(provider)
     if _has_field(provider, "start_of_battle_output"):
         return bool(provider["start_of_battle_output"])
     return _facts().provider_buffs_at_battle_start(provider)
 
 
-def provider_has_special(hero: _rs.Hero, label: str) -> bool:
+def provider_has_special(hero: HeroRecord, label: str) -> bool:
     hero = _as_mapping(hero)
     return any(
         (
@@ -700,7 +700,7 @@ def provider_has_special(hero: _rs.Hero, label: str) -> bool:
     )
 
 
-def provider_enemy_debuffs(hero: _rs.Hero) -> list[_rs.Effect]:
+def provider_enemy_debuffs(hero: HeroRecord) -> list[EffectRecord]:
     hero = _as_mapping(hero)
     return [
         e
@@ -709,7 +709,7 @@ def provider_enemy_debuffs(hero: _rs.Hero) -> list[_rs.Effect]:
     ]
 
 
-def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_knock_up_from_allies(provider: HeroRecord) -> tuple[float, str] | None:
     provider = _as_mapping(provider)
     if not _has_field(provider, "wide_area"):
         return _facts().match_knock_up_from_allies(provider)
@@ -745,7 +745,7 @@ def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     return (pts, f"{' + '.join(tags)} ({tgt.lower()})")
 
 
-def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
+def _ally_grant_detail(provider: HeroRecord, fallback: str) -> str:
     if "ally_grant_detail" in provider:
         return provider["ally_grant_detail"] or fallback
     return _facts()._ally_grant_detail(provider, fallback)
@@ -763,7 +763,7 @@ _BURN_OR_MAGIC_ENEMY_EFFECT_RE = re.compile(
 )
 
 
-def _provider_grants_ally_combat_effect(provider: _rs.Hero, text: str) -> bool:
+def _provider_grants_ally_combat_effect(provider: HeroRecord, text: str) -> bool:
     if any(
         (
             se["kind"] == "provides"
@@ -783,7 +783,7 @@ def _provider_grants_ally_combat_effect(provider: _rs.Hero, text: str) -> bool:
         re.I,
     ):
         return True
-    return bool(_rs._is_ally_grant_phrase(text.lower()))
+    return bool(_is_ally_grant_phrase(text.lower()))
 
 
 def _provider_allies_apply_magic_via_hits(text: str) -> bool:
@@ -793,20 +793,20 @@ def _provider_allies_apply_magic_via_hits(text: str) -> bool:
         return False
     return bool(
         _BURN_OR_MAGIC_ENEMY_EFFECT_RE.search(text)
-        or _rs._text_has_dot_damage(text)
+        or _text_has_dot_damage(text)
         or re.search(
             "taking damage equal to .{0,80}every \\d+\\.?\\d*\\s*s\\b", text, re.I
         )
     )
 
 
-def match_ally_enabled_magic_damage(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_ally_enabled_magic_damage(provider: HeroRecord) -> tuple[float, str] | None:
     if "ally_magic" in provider:
         return provider["ally_magic"]
     return _facts().match_ally_enabled_magic_damage(provider)
 
 
-def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_magic_damage_allies(provider: HeroRecord) -> tuple[float, str] | None:
     ally_match = match_ally_enabled_magic_damage(provider)
     if ally_match:
         return ally_match
@@ -831,7 +831,7 @@ def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
 _PERSISTENT_DAMAGE_DEBUFF_LABELS = frozenset({"Burn debuff", "DoT"})
 
 
-def _effect_is_enemy_persistent_damage(effect: _rs.Effect) -> bool:
+def _effect_is_enemy_persistent_damage(effect: EffectRecord) -> bool:
     """Structured enemy DoT, recurring HP loss, or burn-style debuffs."""
     effect = _as_mapping(effect)
     if effect["targeting"] == "Self" or effect["targeting"] not in ALLY_TARGETINGS:
@@ -848,7 +848,7 @@ def _effect_is_enemy_persistent_damage(effect: _rs.Effect) -> bool:
     return False
 
 
-def _provider_structured_persistent_damage(provider: _rs.Hero) -> list[_rs.Effect]:
+def _provider_structured_persistent_damage(provider: HeroRecord) -> list[EffectRecord]:
     provider = _as_mapping(provider)
     return [
         effect
@@ -857,7 +857,7 @@ def _provider_structured_persistent_damage(provider: _rs.Hero) -> list[_rs.Effec
     ]
 
 
-def _format_persistent_damage_detail(effects: list[_rs.Effect]) -> str:
+def _format_persistent_damage_detail(effects: list[EffectRecord]) -> str:
     parts: list[str] = []
     if any(
         (
@@ -898,13 +898,13 @@ def _format_persistent_damage_detail(effects: list[_rs.Effect]) -> str:
     return " + ".join(parts) if parts else "continuous damage"
 
 
-def match_ally_dot_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_ally_dot_on_enemies(provider: HeroRecord) -> tuple[float, str] | None:
     if not provider_has_special(provider, "Ally DoT on enemies"):
         return None
     return (4.0, _ally_grant_detail(provider, "Ally-granted DoT"))
 
 
-def match_ally_debuff_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_ally_debuff_on_enemies(provider: HeroRecord) -> tuple[float, str] | None:
     if provider_has_special(provider, "Ally Vitality debuff on enemies"):
         return (3.5, _ally_grant_detail(provider, "Ally-granted Vitality debuff"))
     if provider_has_special(provider, "Ally debuff on enemies"):
@@ -912,7 +912,7 @@ def match_ally_debuff_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None
     return None
 
 
-def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_dot_damage(provider: HeroRecord) -> tuple[float, str] | None:
     ally_dot = match_ally_dot_on_enemies(provider)
     effects = _provider_structured_persistent_damage(provider)
     if not effects and (not ally_dot):
@@ -953,7 +953,7 @@ _CC_SUSTAINED_LABELS = frozenset(
 _GROUPING_CC_LABELS = frozenset({"Displace", "Bind", "Stun", "Sleep", "Knock down"})
 
 
-def match_enemy_grouping(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_enemy_grouping(provider: HeroRecord) -> tuple[float, str] | None:
     tags = provider.get("behavior_tags")
     if tags is None:
         return _facts().match_enemy_grouping(provider)
@@ -991,7 +991,7 @@ def match_enemy_grouping(provider: _rs.Hero) -> tuple[float, str] | None:
     return (pts, ", ".join(detail_parts))
 
 
-def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_cc_on_enemies(provider: HeroRecord) -> tuple[float, str] | None:
     provider = _as_mapping(provider)
     cc_effects = [
         e
@@ -1013,7 +1013,7 @@ def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
     return (tw * mw * 2.0, detail)
 
 
-def receiver_primary_damage_kind(receiver: _rs.Hero) -> str:
+def receiver_primary_damage_kind(receiver: HeroRecord) -> str:
     """Return ``physical`` or ``magic`` from the hero's primary damage type."""
     receiver = _as_mapping(receiver)
     raw = str(receiver.get("damage_type") or "Physical").strip().lower()
@@ -1029,7 +1029,7 @@ def _matching_enemy_def_debuff_labels(kind: str) -> frozenset[str]:
 
 
 def receiver_wants_enemy_defense_reduction(
-    receiver: _rs.Hero, role_category: str | None
+    receiver: HeroRecord, role_category: str | None
 ) -> bool:
     """True when a damage dealer lacks meaningful true-family damage."""
     receiver = _as_mapping(receiver)
@@ -1042,7 +1042,7 @@ def receiver_wants_enemy_defense_reduction(
     return True
 
 
-def receiver_self_shreds_defense(receiver: _rs.Hero) -> bool:
+def receiver_self_shreds_defense(receiver: HeroRecord) -> bool:
     """True when the receiver already applies matching enemy DEF amps."""
     receiver = _as_mapping(receiver)
     labels = _matching_enemy_def_debuff_labels(receiver_primary_damage_kind(receiver))
@@ -1057,7 +1057,7 @@ def receiver_self_shreds_defense(receiver: _rs.Hero) -> bool:
 
 
 def match_enemy_defense_reduction(
-    provider: _rs.Hero, receiver: _rs.Hero
+    provider: HeroRecord, receiver: HeroRecord
 ) -> tuple[float, str] | None:
     """Score type-matched DEF shred / Damage taken / ally DEF Penetration."""
     provider = _as_mapping(provider)
@@ -1077,7 +1077,7 @@ def match_enemy_defense_reduction(
         elif (
             effect["category"] == "buff"
             and effect["label"] == _DEF_PENETRATION_BUFF
-            and (not _rs.effect_synergy_excluded(effect))
+            and (not effect_synergy_excluded(effect))
         ):
             tw = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
             mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
@@ -1093,7 +1093,7 @@ def match_enemy_defense_reduction(
 
 
 def score_enemy_defense_synergy(
-    provider: _rs.Hero, receiver: _rs.Hero, role_category: str | None
+    provider: HeroRecord, receiver: HeroRecord, role_category: str | None
 ) -> tuple[float, list[str]]:
     """Automatic DEF-shred synergy for qualifying damage dealers."""
     provider = _as_mapping(provider)
@@ -1110,7 +1110,7 @@ def score_enemy_defense_synergy(
 
 
 def match_ranged_damage_allies(
-    provider: _rs.Hero, hero_class: str = ""
+    provider: HeroRecord, hero_class: str = ""
 ) -> tuple[float, str] | None:
     provider = _as_mapping(provider)
     if not (provider.get("ranged_damage") or hero_class == "Marksman"):
@@ -1121,7 +1121,7 @@ def match_ranged_damage_allies(
     return (pts, "ranged attacks")
 
 
-def match_debuff_on_target(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_debuff_on_target(provider: HeroRecord) -> tuple[float, str] | None:
     candidates: list[tuple[float, str]] = []
     ally_debuff = match_ally_debuff_on_enemies(provider)
     if ally_debuff:
@@ -1141,13 +1141,13 @@ def match_debuff_on_target(provider: _rs.Hero) -> tuple[float, str] | None:
     return max(candidates, key=lambda x: x[0])
 
 
-def match_stellar_bond(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_stellar_bond(provider: HeroRecord) -> tuple[float, str] | None:
     if provider_has_special(provider, "Ally positioning link"):
         return (4.5, "Ally positioning link")
     return None
 
 
-def match_multiple_debuffs(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_multiple_debuffs(provider: HeroRecord) -> tuple[float, str] | None:
     ally_debuff = match_ally_debuff_on_enemies(provider)
     debuffs = provider_enemy_debuffs(provider)
     labels = {e["label"] for e in debuffs}
@@ -1168,7 +1168,7 @@ def match_multiple_debuffs(provider: _rs.Hero) -> tuple[float, str] | None:
     return None
 
 
-def match_ally_ultimate_casts(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_ally_ultimate_casts(provider: HeroRecord) -> tuple[float, str] | None:
     if provider_has_start_of_battle_output(provider):
         return (4.5, "Start-of-battle Ultimate")
     energy_buffs = [
@@ -1191,7 +1191,7 @@ def match_ally_ultimate_casts(provider: _rs.Hero) -> tuple[float, str] | None:
     return None
 
 
-def match_enemy_defeat(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_enemy_defeat(provider: HeroRecord) -> tuple[float, str] | None:
     if provider_has_special(provider, "Instant defeat"):
         return (5.0, "Instant defeat")
     if provider_has_special(provider, "HP threshold strike"):
@@ -1208,7 +1208,7 @@ def match_enemy_defeat(provider: _rs.Hero) -> tuple[float, str] | None:
 
 
 def match_party_composition(
-    provider: _rs.Hero, hero_class: str = ""
+    provider: HeroRecord, hero_class: str = ""
 ) -> tuple[float, str] | None:
     if hero_class not in PARTY_COMPOSITION_CLASSES:
         return None
@@ -1216,7 +1216,7 @@ def match_party_composition(
 
 
 def match_named_ally_on_team(
-    provider: _rs.Hero, req: _rs.SpecialEffect
+    provider: HeroRecord, req: SpecialEffectRecord
 ) -> tuple[float, str] | None:
     provider = _as_mapping(provider)
     req = _as_mapping(req)
@@ -1235,7 +1235,7 @@ def _named_ally_text_mentions_hero(text: str, hero_name: str) -> bool:
 
 
 def score_named_ally_provides(
-    provider: _rs.Hero, receiver: _rs.Hero
+    provider: HeroRecord, receiver: HeroRecord
 ) -> tuple[float, list[str]]:
     provider = _as_mapping(provider)
     receiver = _as_mapping(receiver)
@@ -1282,12 +1282,12 @@ def _format_ally_stat_buff_grant(
 
 
 def _ally_stat_buff_synergy(
-    provider: _rs.Hero, receiver_movement: str = ""
+    provider: HeroRecord, receiver_movement: str = ""
 ) -> tuple[float, int, bool] | None:
     """Providers that grant temporary ally stat buffs (Perseus, Silven enabler)."""
     import buff_persistence as bp
 
-    ally_buffs: list[_rs.Effect] = []
+    ally_buffs: list[EffectRecord] = []
     slices = provider.get("skill_slices") or {}
     source_effects = [
         effect
@@ -1298,7 +1298,7 @@ def _ally_stat_buff_synergy(
         if (
             effect["targeting"] in ALLY_TARGETINGS
             and bp.is_runtime_temporary_stat_buff(effect)
-            and (not _rs.effect_synergy_excluded(effect))
+            and (not effect_synergy_excluded(effect))
         ):
             ally_buffs.append(effect)
     if not ally_buffs:
@@ -1308,7 +1308,7 @@ def _ally_stat_buff_synergy(
         if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
             continue
         score = SYNERGY_STAT_BUFF_REACH_WEIGHT * MAG_WEIGHT.get(effect["magnitude"], 1.0)
-        score *= _rs.effect_synergy_multiplier(effect)
+        score *= effect_synergy_multiplier(effect)
         if score <= 0:
             continue
         if effect["label"] not in best_by_label or score > best_by_label[effect["label"]]:
@@ -1323,7 +1323,7 @@ def _ally_stat_buff_synergy(
     return (pts, n, start_of_battle)
 
 
-def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_ally_stat_buffs(provider: HeroRecord) -> tuple[float, str] | None:
     result = _ally_stat_buff_synergy(provider)
     if not result:
         return None
@@ -1334,7 +1334,7 @@ def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
     )
 
 
-def match_adjacent_allies(provider: _rs.Hero) -> tuple[float, str] | None:
+def match_adjacent_allies(provider: HeroRecord) -> tuple[float, str] | None:
     ally_buffs = [
         e
         for e in provider["effects"]
@@ -1358,10 +1358,10 @@ def _make_enabler_matchers(
     hero_class_by_title: dict[str, str],
 ) -> dict[str, Callable[..., tuple[float, str] | None]]:
 
-    def ranged(p: _rs.Hero) -> tuple[float, str] | None:
+    def ranged(p: HeroRecord) -> tuple[float, str] | None:
         return match_ranged_damage_allies(p, hero_class_by_title.get(p["title"], ""))
 
-    def party(p: _rs.Hero) -> tuple[float, str] | None:
+    def party(p: HeroRecord) -> tuple[float, str] | None:
         return match_party_composition(p, hero_class_by_title.get(p["title"], ""))
 
     return {
@@ -1383,13 +1383,13 @@ def _make_enabler_matchers(
     }
 
 
-def receiver_requires(hero: _rs.Hero) -> list[_rs.SpecialEffect]:
+def receiver_requires(hero: HeroRecord) -> list[SpecialEffectRecord]:
     return [se for se in hero["special_effects"] if se["kind"] == "requires"]
 
 
 def score_enabler_synergy(
-    provider: _rs.Hero,
-    receiver: _rs.Hero,
+    provider: HeroRecord,
+    receiver: HeroRecord,
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
     receiver_movement: str = "",
 ) -> tuple[float, list[str]]:
@@ -1583,29 +1583,29 @@ def format_reason_for_display(reason: str) -> str:
     return reason
 
 
-def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
+def receiver_benefits_from_shields(receiver: HeroRecord) -> bool:
     """True when a receiver explicitly benefits from external shield uptime."""
     return receiver_benefits_from_external_shields(receiver)
 
 
-def receiver_benefits_from_external_shields(receiver: _rs.Hero) -> bool:
+def receiver_benefits_from_external_shields(receiver: HeroRecord) -> bool:
     if "shield_payoff" in receiver:
         return receiver["shield_payoff"]
     return _facts().receiver_benefits_from_external_shields(receiver)
 
 
-def _receiver_scalar_share(receiver: _rs.Hero, stat: str) -> float:
+def _receiver_scalar_share(receiver: HeroRecord, stat: str) -> float:
     receiver = _as_mapping(receiver)
     shares = receiver.get("scalar_stat_shares") or {}
     return float(shares.get(stat, 0.0))
 
 
-def receiver_stat_bound(receiver: _rs.Hero, stat: str) -> bool:
+def receiver_stat_bound(receiver: HeroRecord, stat: str) -> bool:
     """True when skill-text scalars show the kit is strongly tied to this stat."""
     return _receiver_scalar_share(receiver, stat) >= SCALAR_BOUND_THRESHOLD
 
 
-def scalar_stat_score_mult(receiver: _rs.Hero, stat: str) -> float:
+def scalar_stat_score_mult(receiver: HeroRecord, stat: str) -> float:
     """Boost-only multiplier for ATK / Max HP buff synergy on scalar-bound kits."""
     if stat not in ("ATK", "Max HP"):
         return 1.0
@@ -1619,7 +1619,7 @@ def _has_all_summons_buff_reason(reasons: list[str]) -> bool:
     return any(("(all summons" in r for r in reasons))
 
 
-def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
+def should_exclude_synergy(reasons: list[str], receiver: HeroRecord) -> bool:
     """Drop weak or irrelevant synergy lines from the ranked list."""
     receiver = _as_mapping(receiver)
     if _has_all_summons_buff_reason(reasons):
@@ -1641,7 +1641,7 @@ def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
 
 
 def _stats_for_synergy_scoring(
-    receiver: _rs.Hero, signature_speed: str
+    receiver: HeroRecord, signature_speed: str
 ) -> list[tuple[str, bool]]:
     """Return (stat, implicit) pairs to score for stat-buff synergies."""
     benefit = receiver_stats(receiver)
@@ -1672,11 +1672,11 @@ def receiver_can_reach_proximity_aura(
 
 
 def score_synergy(
-    provider: _rs.Hero,
-    receiver: _rs.Hero,
+    provider: HeroRecord,
+    receiver: HeroRecord,
     receiver_movement: str = "",
     signature_speed: str = "average",
-    receiver_behavior: _rs.HeroBehavior | None = None,
+    receiver_behavior: HeroBehaviorRecord | None = None,
 ) -> tuple[float, list[str]]:
     provider = _as_mapping(provider)
     receiver = _as_mapping(receiver)
@@ -1703,7 +1703,7 @@ def score_synergy(
                 continue
             if effect["targeting"] not in ALLY_TARGETINGS:
                 continue
-            if _rs.effect_synergy_excluded(effect):
+            if effect_synergy_excluded(effect):
                 continue
             if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
                 continue
@@ -1726,7 +1726,7 @@ def score_synergy(
             tw = stat_buff_targeting_weight(receiver, stat, effect["targeting"])
             mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
             pts = tw * mw * mult_by_label[effect["label"]]
-            pts *= _rs.effect_synergy_multiplier(effect)
+            pts *= effect_synergy_multiplier(effect)
             pts *= scalar_stat_score_mult(receiver, stat)
             if pts <= 0:
                 continue
@@ -1765,7 +1765,7 @@ def score_synergy(
 
 
 def score_summon_synergy(
-    provider: _rs.Hero, receiver: _rs.Hero
+    provider: HeroRecord, receiver: HeroRecord
 ) -> tuple[float, list[str]]:
     """Match all-summons buffs to summoner-tagged receivers."""
     provider = _as_mapping(provider)
@@ -1778,18 +1778,18 @@ def score_summon_synergy(
     for effect in provider["summon_effects"]:
         if effect["category"] != "buff":
             continue
-        if _rs.is_own_summon_buff_targeting(effect["targeting"]):
+        if is_own_summon_buff_targeting(effect["targeting"]):
             continue
-        if not _rs.is_all_summon_buff_targeting(effect["targeting"]):
+        if not is_all_summon_buff_targeting(effect["targeting"]):
             continue
-        if _rs.effect_synergy_excluded(effect):
+        if effect_synergy_excluded(effect):
             continue
         if effect["label"] == RANGED_DAMAGE_SUMMON_LABEL and (
             not receiver_has_ranged_summons(receiver)
         ):
             continue
         mw = MAG_WEIGHT.get(effect["magnitude"], 1.0)
-        pts = SUMMON_TARGETING_WEIGHT * mw * _rs.effect_synergy_multiplier(effect)
+        pts = SUMMON_TARGETING_WEIGHT * mw * effect_synergy_multiplier(effect)
         if pts <= 0:
             continue
         cond = f", conditional ({effect["conditional"]})" if effect["conditional"] else ""
@@ -1808,10 +1808,10 @@ def score_summon_synergy(
 
 
 def score_combined_synergy(
-    provider: _rs.Hero,
-    receiver: _rs.Hero,
+    provider: HeroRecord,
+    receiver: HeroRecord,
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
-    receiver_behavior: _rs.HeroBehavior,
+    receiver_behavior: HeroBehaviorRecord,
     receiver_movement: str = "",
     signature_speed: str = "average",
     role_category: str | None = None,
@@ -1847,10 +1847,10 @@ def score_combined_synergy(
 
 
 def rank_synergy_entries(
-    receiver: _rs.Hero,
-    heroes: list[_rs.Hero],
+    receiver: HeroRecord,
+    heroes: list[HeroRecord],
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
-    behavior_by_title: dict[str, _rs.HeroBehavior],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
     tiers_by_title: dict[str, dict[str, str]] | None = None,
     role_category_by_title: dict[str, str] | None = None,
 ) -> list[tuple[float, list[str], str]]:
@@ -1888,10 +1888,10 @@ def rank_synergy_entries(
 
 
 def rank_synergies(
-    receiver: _rs.Hero,
-    heroes: list[_rs.Hero],
+    receiver: HeroRecord,
+    heroes: list[HeroRecord],
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
-    behavior_by_title: dict[str, _rs.HeroBehavior],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
     role_category_by_title: dict[str, str] | None = None,
 ) -> list[tuple[str, list[str], float]]:
     return [
@@ -1906,7 +1906,7 @@ def rank_synergies(
     ]
 
 
-def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
+def _beneficiary_overflow_reasons(provider: HeroRecord) -> list[str]:
     """Why a provider lands on many receivers' top-five synergy lists."""
     reasons: list[str] = []
     ally_buffs = [
@@ -1914,7 +1914,7 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
         for e in provider["effects"]
         if e["category"] == "buff"
         and e["targeting"] in ALLY_TARGETINGS
-        and (not _rs.effect_synergy_excluded(e))
+        and (not effect_synergy_excluded(e))
     ]
     labels = {e["label"] for e in ally_buffs}
     targetings = {e["targeting"] for e in ally_buffs}
@@ -1939,32 +1939,32 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
 
 
 def _replacement_effect_weight(
-    effect: _rs.Effect,
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
+    effect: EffectRecord,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None,
 ) -> float:
     """Global raw strength for replacement profiles (ignores per-role magnitude)."""
     targeting = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
     skills = (skills_by_title or {}).get(hero["title"], [])
-    if skills and _rs._effect_uses_throughput(effect["category"], effect["label"]):
-        raw = _rs._effect_throughput_score(effect, hero, skills)
+    if skills and _effect_uses_throughput(effect["category"], effect["label"]):
+        raw = _effect_throughput_score(effect, hero, skills)
         if raw and raw > 0:
             return targeting * raw
     if effect["category"] == "cc":
         duration = effect["numeric"]
         if duration is None or duration <= 0:
-            duration = _rs.extract_cc_duration(effect["qualitative"].lower(), effect["label"])
+            duration = extract_cc_duration(effect["qualitative"].lower(), effect["label"])
         if duration and duration > 0:
             return targeting * duration
         return targeting * 1.0
-    gate_mult = _rs.effect_throughput_gate_multiplier(effect)
+    gate_mult = effect_throughput_gate_multiplier(effect)
     if effect["numeric"] is not None and effect["numeric"] > 0:
         return targeting * effect["numeric"] * gate_mult
     return targeting * 1.0
 
 
 def _hero_provider_profile(
-    hero: _rs.Hero, skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None
+    hero: HeroRecord, skills_by_title: dict[str, list[SkillMetaRecord]] | None = None
 ) -> dict[str, float]:
     """Weighted ally-buff profile for what a hero provides to allies."""
     profile: dict[str, float] = {}
@@ -1975,7 +1975,7 @@ def _hero_provider_profile(
             continue
         if effect["targeting"] not in ALLY_TARGETINGS:
             continue
-        if _rs.effect_synergy_excluded(effect):
+        if effect_synergy_excluded(effect):
             continue
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
         profile[effect["label"]] = max(profile.get(effect["label"], 0.0), weight)
@@ -2016,15 +2016,15 @@ def _healing_type_coverage(
 
 
 def _healing_effect_weight(
-    effect: _rs.Effect,
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
+    effect: EffectRecord,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None,
 ) -> float:
     """Throughput-based ally-healing weight for replacement scoring."""
     targeting = TARGETING_WEIGHT.get(effect["targeting"], 1.0)
     skills = (skills_by_title or {}).get(hero["title"], [])
     if skills:
-        throughput = _rs._effect_throughput_score(effect, hero, skills)
+        throughput = _effect_throughput_score(effect, hero, skills)
         if throughput > 0:
             return throughput * targeting
     if effect["numeric"] is not None and effect["numeric"] > 0:
@@ -2033,7 +2033,7 @@ def _healing_effect_weight(
 
 
 def _hero_healing_profile(
-    hero: _rs.Hero, skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None
+    hero: HeroRecord, skills_by_title: dict[str, list[SkillMetaRecord]] | None = None
 ) -> dict[str, float]:
     """Weighted ally-healing profile for replacement scoring (raw throughput)."""
     profile: dict[str, float] = {}
@@ -2089,13 +2089,13 @@ def _prominence_sum(weights: dict[str, float]) -> float:
     return sum(weights.values())
 
 
-def _hero_all_prominence_effects(hero: _rs.Hero) -> list[_rs.Effect]:
+def _hero_all_prominence_effects(hero: HeroRecord) -> list[EffectRecord]:
     return list(hero["effects"]) + list(hero["summon_effects"])
 
 
 def hero_damage_dealer_prominence(
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> float:
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
@@ -2109,12 +2109,12 @@ def hero_damage_dealer_prominence(
 
 
 def hero_tank_prominence(
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> float:
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if _rs.effect_synergy_excluded(effect):
+        if effect_synergy_excluded(effect):
             continue
         if effect["targeting"] not in SELF_OR_ALLY_TARGETINGS:
             continue
@@ -2130,12 +2130,12 @@ def hero_tank_prominence(
 
 
 def hero_support_prominence(
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> float:
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if _rs.effect_synergy_excluded(effect):
+        if effect_synergy_excluded(effect):
             continue
         if _healing_effect_is_ally_provider(effect):
             weight = _healing_effect_weight(effect, hero, skills_by_title)
@@ -2147,12 +2147,12 @@ def hero_support_prominence(
 
 
 def hero_specialist_prominence(
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> float:
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if _rs.effect_synergy_excluded(effect):
+        if effect_synergy_excluded(effect):
             continue
         if effect["category"] in ("debuff", "cc"):
             if effect["targeting"] == "Self":
@@ -2167,8 +2167,8 @@ def hero_specialist_prominence(
 
 
 def hero_role_prominence_scores(
-    hero: _rs.Hero,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    hero: HeroRecord,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> dict[str, float]:
     return {
         "damage_dealer": hero_damage_dealer_prominence(hero, skills_by_title),
@@ -2179,8 +2179,8 @@ def hero_role_prominence_scores(
 
 
 def build_mix_role_prominence_index(
-    summary_heroes: dict[str, _rs.Hero],
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
+    summary_heroes: dict[str, HeroRecord],
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None,
     slug_by_name: dict[str, str],
 ) -> dict:
     by_short = {short_name(title): hero for title, hero in summary_heroes.items()}
@@ -2222,7 +2222,7 @@ def _targeting_for_ally_energy_text(text: str, default: str = "Single target") -
     return default
 
 
-def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
+def _hero_effective_ally_energy_provided(hero: HeroRecord) -> float:
     hero = _as_mapping(hero)
     if _has_field(hero, "effective_ally_energy"):
         return float(hero.get("effective_ally_energy") or 0)
@@ -2270,7 +2270,7 @@ def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
 
 
 def _hero_damage_profile(
-    hero: _rs.Hero, skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None
+    hero: HeroRecord, skills_by_title: dict[str, list[SkillMetaRecord]] | None = None
 ) -> dict[str, float]:
     return dict(hero["replacement_damage"])
 
@@ -2280,13 +2280,13 @@ def _signature_sections() -> dict[str, str]:
 
 
 def _cc_effect_in_signature(
-    effect: _rs.Effect, hero: _rs.Hero, sig_section: str, sig_name: str
+    effect: EffectRecord, hero: HeroRecord, sig_section: str, sig_name: str
 ) -> bool:
     return effect["signature_cc"]
 
 
 def _hero_debuff_profile(
-    hero: _rs.Hero, skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None
+    hero: HeroRecord, skills_by_title: dict[str, list[SkillMetaRecord]] | None = None
 ) -> dict[str, float]:
     """Weighted enemy debuff profile."""
     profile: dict[str, float] = {}
@@ -2301,10 +2301,10 @@ def _hero_debuff_profile(
 
 
 def _hero_cc_profile(
-    hero: _rs.Hero,
+    hero: HeroRecord,
     sig_section: str = "",
     sig_name: str = "",
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> tuple[dict[str, float], bool]:
     """Weighted enemy CC profile; signature-skill CC is boosted."""
     profile: dict[str, float] = {}
@@ -2329,7 +2329,7 @@ def _damage_replacement_coverage(
     profile_candidate: dict[str, float],
 ) -> float:
     general = _replacement_coverage(profile_source, profile_candidate)
-    true_source = types_source & _rs.TRUE_DAMAGE_TYPES
+    true_source = types_source & TRUE_DAMAGE_TYPES
     if not true_source:
         return general
     type_cov = len(true_source & types_candidate) / len(true_source)
@@ -2562,10 +2562,10 @@ def _replacement_rank_score(
 
 def _replacement_category_weights(role: str | None) -> dict[str, float]:
     """Normalized per-category weights for overall replacement scoring."""
-    role_key = role or _rs.DEFAULT_ROLE_CATEGORY
+    role_key = role or DEFAULT_ROLE_CATEGORY
     raw = REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE.get(
         role_key,
-        REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE.get(_rs.DEFAULT_ROLE_CATEGORY, {}),
+        REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE.get(DEFAULT_ROLE_CATEGORY, {}),
     )
     weights = {key: float(raw.get(key, 0.0)) for key in REPLACEMENT_CATEGORIES}
     total = sum(weights.values())
@@ -2714,11 +2714,11 @@ def _rank_replacement_category(
 
 
 def compute_replacement_scores(
-    heroes: list[_rs.Hero],
-    behavior_by_title: dict[str, _rs.HeroBehavior],
+    heroes: list[HeroRecord],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
     faction_by_title: dict[str, str] | None = None,
     role_category_by_title: dict[str, str] | None = None,
-    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
     is_melee_by_title: dict[str, bool] | None = None,
 ) -> dict[str, dict[str, list[dict]]]:
     """Per-category replacement lists for each hero (0–1 similarity per category)."""
@@ -2863,9 +2863,9 @@ def compute_replacement_scores(
 
 
 def build_synergy_entries_by_receiver(
-    heroes: list[_rs.Hero],
+    heroes: list[HeroRecord],
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
-    behavior_by_title: dict[str, _rs.HeroBehavior],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
     role_category_by_title: dict[str, str] | None = None,
 ) -> dict[str, list[tuple[float, list[str], str]]]:
     """Full synergy ranking per receiver (no top-N cap)."""
@@ -2891,9 +2891,9 @@ def format_synergy_entries(entries: list[tuple[float, list[str], str]]) -> list[
 
 
 def build_beneficiaries_index(
-    heroes: list[_rs.Hero],
+    heroes: list[HeroRecord],
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
-    behavior_by_title: dict[str, _rs.HeroBehavior],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
     synergy_entries_by_receiver: (
         dict[str, list[tuple[float, list[str], str]]] | None
     ) = None,
@@ -2935,8 +2935,8 @@ def build_beneficiaries_index(
 
 
 def _score_all(
-    heroes_by_id: dict[str, _rs.Hero],
-    behavior_by_id: dict[str, _rs.HeroBehavior],
+    heroes_by_id: dict[str, HeroRecord],
+    behavior_by_id: dict[str, HeroBehaviorRecord],
 ) -> dict[str, Any]:
     """Return complete ID-keyed synergy data."""
     global _DISPLAY_BY_ID, _SORT_BY_ID
@@ -2966,7 +2966,10 @@ def _score_all(
         behavior_by_id,
         factions,
         roles,
-        {hero["id"]: [object()] for hero in heroes},
+        cast(
+            dict[str, list[SkillMetaRecord]],
+            {hero["id"]: [object()] for hero in heroes},
+        ),
         melee,
     )
     return {
@@ -3011,10 +3014,10 @@ def _score_all(
 def load_scoring_inputs(
     snapshot: Mapping[str, Any],
     analyses: Mapping[str, Any] | None = None,
-) -> tuple[dict[str, Hero], dict[str, HeroBehavior]]:
+) -> tuple[dict[str, HeroRecord], dict[str, HeroBehaviorRecord]]:
     """Return ID-keyed scoring mappings from calibrated analysis."""
-    heroes: dict[str, Hero] = {}
-    behaviors: dict[str, HeroBehavior] = {}
+    heroes: dict[str, HeroRecord] = {}
+    behaviors: dict[str, HeroBehaviorRecord] = {}
     for entry in snapshot["manifest"]["heroes"]:
         analysis = (analyses or {}).get(entry["id"])
         if not analysis:
@@ -3022,12 +3025,12 @@ def load_scoring_inputs(
         scoring = analysis.get("scoring")
         if not scoring:
             raise ValueError(f"missing scoring facts for {entry['id']}")
-        effects: list[Effect] = []
-        summon_effects: list[Effect] = []
+        effects: list[EffectRecord] = []
+        summon_effects: list[EffectRecord] = []
         skill_slices: dict[str, Any] = {}
         for skill in analysis.get("skills", {}).values():
             section = str(skill.get("category") or "")
-            current: list[Effect] = []
+            current: list[EffectRecord] = []
             for row in skill.get("effects") or []:
                 effect = _effect(row, section)
                 if effect is None:
@@ -3157,16 +3160,11 @@ def load_scoring_inputs(
 
 
 def score_all(
-    heroes_by_id: dict[str, _rs.Hero],
-    behavior_by_id: dict[str, _rs.HeroBehavior],
+    heroes_by_id: dict[str, HeroRecord],
+    behavior_by_id: dict[str, HeroBehaviorRecord],
 ) -> dict[str, Any]:
     """Score ID-keyed runtime records."""
     return _score_all(heroes_by_id, behavior_by_id)
-
-
-TRUE_DAMAGE_TYPES = frozenset({"True damage", "Max HP-based damage", "HP loss"})
-DEFAULT_ROLE_CATEGORY = "specialist"
-STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
 
 
 def _damage_type(value: str) -> str:
@@ -3209,7 +3207,7 @@ def _stat(value: str) -> str:
     )
 
 
-def _condition_profile(effect: Effect) -> tuple[bool, bool, float | None]:
+def _condition_profile(effect: EffectRecord) -> tuple[bool, bool, float | None]:
     excluded = effect["conditional"] == "rare"
     frequent = effect["conditional"] in {"frequent", "on blind"}
     cooldown = None
@@ -3227,11 +3225,11 @@ def _condition_profile(effect: Effect) -> tuple[bool, bool, float | None]:
     return excluded, frequent, cooldown
 
 
-def effect_synergy_excluded(effect: Effect) -> bool:
+def effect_synergy_excluded(effect: EffectRecord) -> bool:
     return _condition_profile(effect)[0]
 
 
-def effect_synergy_multiplier(effect: Effect) -> float:
+def effect_synergy_multiplier(effect: EffectRecord) -> float:
     excluded, frequent, cooldown = _condition_profile(effect)
     if excluded:
         return 0.0
@@ -3241,7 +3239,7 @@ def effect_synergy_multiplier(effect: Effect) -> float:
     return result
 
 
-def effect_throughput_gate_multiplier(effect: Effect) -> float:
+def effect_throughput_gate_multiplier(effect: EffectRecord) -> float:
     cooldown = _condition_profile(effect)[2]
     return max(0.35, 10.0 / cooldown) if cooldown else 1.0
 
@@ -3261,16 +3259,16 @@ def _effect_uses_throughput(category: str, label: str) -> bool:
 
 
 def _effect_throughput_score(
-    effect: Effect,
-    _hero: Hero,
-    _skills: list[SkillMeta],
+    effect: EffectRecord,
+    _hero: HeroRecord,
+    _skills: list[SkillMetaRecord],
 ) -> float:
     return float(effect["scoring_weight"] or 0)
 
 
 def hero_replacement_damage_profile(
-    hero: Hero,
-    _skills: list[SkillMeta] | None,
+    hero: HeroRecord,
+    _skills: list[SkillMetaRecord] | None,
 ) -> dict[str, float]:
     return dict(hero["replacement_damage"])
 
@@ -3301,17 +3299,3 @@ def _is_ally_grant_phrase(_text: str) -> bool:
 
 def _text_has_dot_damage(_text: str) -> bool:
     return False
-
-_rs.TRUE_DAMAGE_TYPES = TRUE_DAMAGE_TYPES
-_rs.DEFAULT_ROLE_CATEGORY = DEFAULT_ROLE_CATEGORY
-_rs.STATIC_TILE_BUFFER_TAG = STATIC_TILE_BUFFER_TAG
-_rs.effect_synergy_excluded = effect_synergy_excluded
-_rs.effect_synergy_multiplier = effect_synergy_multiplier
-_rs.effect_throughput_gate_multiplier = effect_throughput_gate_multiplier
-_rs._effect_uses_throughput = _effect_uses_throughput
-_rs._effect_throughput_score = _effect_throughput_score
-_rs.is_own_summon_buff_targeting = is_own_summon_buff_targeting
-_rs.is_all_summon_buff_targeting = is_all_summon_buff_targeting
-_rs._is_ally_grant_phrase = _is_ally_grant_phrase
-_rs._text_has_dot_damage = _text_has_dot_damage
-_rs.extract_cc_duration = extract_cc_duration

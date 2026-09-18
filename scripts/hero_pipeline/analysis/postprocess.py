@@ -25,24 +25,58 @@ from effect_labels import (
 )
 
 from .records import (
-    CcImmunity,
-    Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
+    EffectRecord,
+    HeroRecord,
+    SkillSliceRecord,
+    SpecialEffectRecord,
 )
-
-from .detector_common import *
+from .detector_common import (
+    BENEFIT_STAT_ORDER,
+    BUFF_LABEL_TO_BENEFIT_STATS,
+    CATEGORY_TO_SECTION,
+    DAMAGE_TYPE_SORT_KEY,
+    POSITIONAL_CHUNK_BUFF_HINTS,
+    POSITIONAL_TILE_PATTERNS,
+    PROVIDER_PROXIMITY_AURA_PATTERNS,
+    PROXIMITY_AURA_EXCLUDE_PATTERNS,
+    SECTION_TIERS,
+    _ALWAYS_HIGH_BUFFS,
+    _ALWAYS_MEDIUM_DEBUFFS,
+    _BENEFIT_STAT_TEXT_PATTERNS,
+    _DEBUFF_REQUIRE_LABELS,
+    _FALLBACK_DAMAGE_THRESHOLDS,
+    _MAG_ORDER,
+    _SCALAR_ATK_ANNOTATION_RE,
+    _SCALAR_HP_ANNOTATION_RE,
+    _SELF_APPLIED_AGING_RE,
+    _SUMMARY_SECTION_RE,
+    _WIDER_THAN_SINGLE,
+    _chunk_is_companion_focused,
+)
+from .damage import (
+    _accumulate_true_damage_scores,
+    _chunk_deals_enemy_damage,
+    _text_has_self_hp_cost,
+    detect_damage_types,
+)
+from .numeric import (
+    _extract_damage_amount,
+    _normalize_effect_text,
+    extract_number,
+    extract_timed_duration,
+    parse_area_tile_count,
+    parse_path_area_cue,
+    parse_proximity_aura_radius,
+)
+from .effect_merge import _rebuild_hero_aggregates_from_slices
+from .crowd_control import cc_magnitude_from_duration, extract_cc_duration
+from .conditions import effect_magnitude_downgrade_steps
+from .targeting import effect_targets_self_only
 def _chunk_has_positional_tile_buff(text: str) -> bool:
     t = text.lower()
     return any(re.search(pat, t) for pat in POSITIONAL_TILE_PATTERNS)
 
-def detect_positional_tile_buff_labels(hero: Hero) -> frozenset[str]:
+def detect_positional_tile_buff_labels(hero: HeroRecord) -> frozenset[str]:
     labels: set[str] = set()
     for _tier, text, _section in hero["skill_chunks"]:
         if not _chunk_has_positional_tile_buff(text):
@@ -59,7 +93,7 @@ def _chunk_has_proximity_aura_buff(text: str) -> bool:
         return False
     return any(re.search(pat, t) for pat in PROVIDER_PROXIMITY_AURA_PATTERNS)
 
-def _effect_from_clause(effect: Effect, clause: str) -> bool:
+def _effect_from_clause(effect: EffectRecord, clause: str) -> bool:
     """True when an effect was parsed from this clause text."""
     qual = (effect["qualitative"] or "").strip()
     if not qual:
@@ -75,7 +109,7 @@ def _effect_from_clause(effect: Effect, clause: str) -> bool:
     return False
 
 def _apply_path_area_to_clause_effects(
-    effects: list[Effect], text: str
+    effects: list[EffectRecord], text: str
 ) -> None:
     """Set path spatial fields on clause-scoped enemy effects."""
     cue = parse_path_area_cue(text)
@@ -99,19 +133,8 @@ def _resolve_area_count(text: str, targeting: str) -> int | None:
     parsed = parse_area_tile_count(text)
     return parsed if parsed is not None else 2
 
-def _merge_area_count(
-    current: int | None, text: str, targeting: str, *, from_cue: bool
-) -> int | None:
-    if targeting != "Area":
-        return current
-    parsed = parse_area_tile_count(text)
-    if parsed is not None:
-        return parsed
-    if not from_cue:
-        return current
-    return current if current is not None else 2
 
-def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float | None]:
+def detect_proximity_aura_buff_labels(hero: HeroRecord) -> tuple[frozenset[str], float | None]:
     labels: set[str] = set()
     max_radius: float | None = None
     for _tier, text, _section in hero["skill_chunks"]:
@@ -143,10 +166,10 @@ def _debuff_state_self_applied_in_text(text: str) -> bool:
         return True
     return False
 
-def _hero_combined_skill_text(hero: Hero) -> str:
+def _hero_combined_skill_text(hero: HeroRecord) -> str:
     return " ".join(text for _, text, _ in hero["skill_chunks"])
 
-def _filter_self_satisfied_debuff_requires(hero: Hero) -> None:
+def _filter_self_satisfied_debuff_requires(hero: HeroRecord) -> None:
     """Drop partner debuff requires satisfied by the hero's own kit."""
     combined = _hero_combined_skill_text(hero)
     should_filter = (
@@ -159,7 +182,7 @@ def _filter_self_satisfied_debuff_requires(hero: Hero) -> None:
     if not should_filter:
         return
 
-    def _keep(se: SpecialEffect) -> bool:
+    def _keep(se: SpecialEffectRecord) -> bool:
         return not (
             se["kind"] == "requires" and se["label"] in _DEBUFF_REQUIRE_LABELS
         )
@@ -174,6 +197,7 @@ def _filter_self_satisfied_debuff_requires(hero: Hero) -> None:
 
 def _is_ally_grant_phrase(t: str) -> bool:
     """Skill text grants a token, buff, or effect to one or more allies."""
+    return False
 
 def _is_buff_scalar_upgrade_chunk(text: str) -> bool:
     """Tier-upgrade line that only bumps buff numbers, not new grants."""
@@ -229,7 +253,7 @@ def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
         or re.search(r"increase (?:the )?slam damage to \d+", t)
     )
 
-def _hero_needs_external_healing(hero: Hero) -> bool:
+def _hero_needs_external_healing(hero: HeroRecord) -> bool:
     """Self HP drain / sacrifice during skills → benefits from ally healing."""
     for _tier, text, _section in hero["skill_chunks"]:
         if _chunk_is_companion_focused(text):
@@ -238,7 +262,7 @@ def _hero_needs_external_healing(hero: Hero) -> bool:
             return True
     return False
 
-def _hero_provides_ally_healing(hero: Hero) -> bool:
+def _hero_provides_ally_healing(hero: HeroRecord) -> bool:
     """True when the hero's kit primarily restores ally HP."""
     sustain_labels = {
         DIRECT_HEALING_LABEL,
@@ -256,32 +280,11 @@ def _hero_provides_ally_healing(hero: Hero) -> bool:
             return True
     return False
 
-def _hero_skill_text(hero: Hero) -> str:
+def _hero_skill_text(hero: HeroRecord) -> str:
     return " ".join(t for _, t, _ in hero["skill_chunks"]).lower()
 
-def _chunk_is_companion_focused(text: str) -> bool:
-    """True when the chunk describes the companion, not the hero's own scaling."""
-    t = text.lower()
-    if not re.search(
-        r"\b(?:mr\. carlyle|falcon elona|silhouette|companion|summoned unit|"
-        r"inherits all of)\b",
-        t,
-    ):
-        return False
-    if re.search(
-        r"\b(?:she|he) (?:absorb|entangle|gain|increases?|casts?|summons?|deals?)\b|"
-        r"\b\w+ (?:absorb|entangle|steal|gain)s?\b|"
-        r"\b\w+ and mr\. carlyle gain\b",
-        t,
-    ):
-        return False
-    return not re.search(
-        r"\b(?:her|him|herself|himself|she|he) and\b|"
-        r"\bincreases? (?:her |his )",
-        t,
-    )
 
-def _effect_buffs_caster(effect: Effect) -> bool:
+def _effect_buffs_caster(effect: EffectRecord) -> bool:
     t = effect["qualitative"].lower()
     if re.search(r"\bmr\. carlyle\b", t) and not re.search(
         r"\b(?:her|him|herself|himself|she|he) and\b", t
@@ -298,7 +301,7 @@ def _effect_buffs_caster(effect: Effect) -> bool:
         or effect_targets_self_only(t, effect["label"], effect["category"])
     )
 
-def _stats_from_self_buffs(hero: Hero) -> set[str]:
+def _stats_from_self_buffs(hero: HeroRecord) -> set[str]:
     stats: set[str] = set()
     for effect in hero["effects"]:
         if effect["category"] != "buff":
@@ -309,7 +312,7 @@ def _stats_from_self_buffs(hero: Hero) -> set[str]:
             stats.add(stat)
     return stats
 
-def _seed_benefit_stats_from_text(hero: Hero) -> None:
+def _seed_benefit_stats_from_text(hero: HeroRecord) -> None:
     """Infer benefit stats from skill text before sidecar-only refinement."""
     seeded: list[str] = []
     for _tier, text, _section in hero["skill_chunks"]:
@@ -328,7 +331,7 @@ def _seed_benefit_stats_from_text(hero: Hero) -> None:
             seeded.append(stat)
     hero["benefit_stats"] = seeded
 
-def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
+def _text_supports_benefit_stat(hero: HeroRecord, stat: str) -> bool:
     """Keep text-inferred stats only when self-relevant, not companion noise."""
     for tier, text, _section in hero["skill_chunks"]:
         if _chunk_is_companion_focused(text):
@@ -408,7 +411,7 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
                 return True
     return False
 
-def compute_scalar_stat_shares(hero: Hero) -> dict[str, float]:
+def compute_scalar_stat_shares(hero: HeroRecord) -> dict[str, float]:
     """Share of (ATK-based) vs (HP-based) scalars in skill text; SP ignored."""
     atk_count = 0
     hp_count = 0
@@ -427,7 +430,7 @@ def compute_scalar_stat_shares(hero: Hero) -> dict[str, float]:
         shares["Max HP"] = hp_count / total
     return shares
 
-def refine_benefit_stats(hero: Hero) -> None:
+def refine_benefit_stats(hero: HeroRecord) -> None:
     """Drop incidental pattern matches; keep stats the hero actually scales with."""
     from_buffs = _stats_from_self_buffs(hero)
     from_text = {
@@ -483,7 +486,7 @@ def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
         return bool(re.search(r"\bmovement speed\b", t))
     return True
 
-def _scalar_upgrade_targets_effect(upgrade_text: str, effect: Effect) -> bool:
+def _scalar_upgrade_targets_effect(upgrade_text: str, effect: EffectRecord) -> bool:
     """True when a tier-upgrade chunk applies to this effect row."""
     qual = (effect["qualitative"] or "").strip().lower()
     if not qual:
@@ -650,7 +653,7 @@ def _cross_skill_reference_target(
     return default_section
 
 def _finalize_skill_slice_effects(
-    slices: dict[str, SkillSlice], section_texts: dict[str, list[str]]
+    slices: dict[str, SkillSliceRecord], section_texts: dict[str, list[str]]
 ) -> None:
     """Fill cross-chunk DoT duration and area radius from combined skill text."""
     for section, sl in slices.items():
@@ -687,9 +690,9 @@ def _finalize_skill_slice_effects(
                     eff["area_count"] = area_count
         _prune_redundant_narrow_targeting(sl)
 
-def _prune_redundant_narrow_targeting(sl: SkillSlice) -> None:
+def _prune_redundant_narrow_targeting(sl: SkillSliceRecord) -> None:
     """Drop same-tier Single-target chips when a wider targeting exists."""
-    groups: dict[tuple[str, str, str], list[Effect]] = {}
+    groups: dict[tuple[str, str, str], list[EffectRecord]] = {}
     for effect in sl["effects"]:
         if effect["category"] not in ("buff", "debuff", "cc"):
             continue
@@ -721,7 +724,7 @@ def _prune_redundant_narrow_targeting(sl: SkillSlice) -> None:
         return
     sl["effects"] = [e for e in sl["effects"] if id(e) not in drop_ids]
 
-def analyze_working(hero: Hero, sidecar: Any) -> None:
+def analyze_working(hero: HeroRecord, sidecar: Any) -> None:
     """Populate working analysis from an explicit sidecar mapping."""
     import skill_effects_store as ses
 
@@ -746,7 +749,7 @@ def analyze_working(hero: Hero, sidecar: Any) -> None:
 class SkillEffectsNotFoundError(FileNotFoundError):
     """Raised when a hero has no AI-extracted skill effects sidecar."""
 
-def _section_texts_from_chunks(hero: Hero) -> dict[str, list[str]]:
+def _section_texts_from_chunks(hero: HeroRecord) -> dict[str, list[str]]:
     section_texts: dict[str, list[str]] = {}
     for _tier, text, section in hero["skill_chunks"]:
         sec = section or ""
@@ -756,7 +759,7 @@ def _section_texts_from_chunks(hero: Hero) -> dict[str, list[str]]:
         section_texts.setdefault(target_section, []).append(text)
     return section_texts
 
-def _damage_map_from_slices(slices: dict[str, SkillSlice]) -> dict[str, set[str]]:
+def _damage_map_from_slices(slices: dict[str, SkillSliceRecord]) -> dict[str, set[str]]:
     damage_map: dict[str, set[str]] = {}
     for sl in slices.values():
         for eff in sl["effects"]:
@@ -765,7 +768,7 @@ def _damage_map_from_slices(slices: dict[str, SkillSlice]) -> dict[str, set[str]
             damage_map.setdefault(eff["label"], set()).add(eff["targeting"] or "Unknown")
     return damage_map
 
-def _apply_text_upgrades_to_slices(hero: Hero, primary_dmg: str) -> None:
+def _apply_text_upgrades_to_slices(hero: HeroRecord, primary_dmg: str) -> None:
     """Apply numeric/path tweaks from upgrade sentences to loaded sidecar effects."""
     for _tier, text, section in hero["skill_chunks"]:
         sec = section or ""
@@ -778,7 +781,7 @@ def _apply_text_upgrades_to_slices(hero: Hero, primary_dmg: str) -> None:
         _apply_path_area_to_clause_effects(sl["effects"], text)
         _apply_scalar_upgrades(sl["effects"], text, primary_dmg)
 
-def _postprocess_analyzed_hero(hero: Hero, primary_dmg: str) -> None:
+def _postprocess_analyzed_hero(hero: HeroRecord, primary_dmg: str) -> None:
     """Shared finalize steps after skill_slices are populated."""
     _apply_text_upgrades_to_slices(hero, primary_dmg)
     section_texts = _section_texts_from_chunks(hero)
@@ -817,7 +820,7 @@ def _effect_uses_throughput(category: str, label: str) -> bool:
         return False
     return category in ("buff", "debuff")
 
-def qualitative_magnitude(e: Effect) -> str:
+def qualitative_magnitude(e: EffectRecord) -> str:
     t = e["qualitative"].lower()
     if e["category"] == "cc":
         dur = e["numeric"] if e["numeric"] is not None else extract_cc_duration(t, e["label"])
@@ -863,7 +866,7 @@ def downgrade_magnitude(mag: str, steps: int) -> str:
     idx = max(0, _MAG_ORDER.index(mag) - steps)
     return _MAG_ORDER[idx]
 
-def apply_conditional_magnitude(effect: Effect) -> None:
+def apply_conditional_magnitude(effect: EffectRecord) -> None:
     if effect["category"] != "buff":
         return
     if effect["label"] in _ALWAYS_HIGH_BUFFS:
@@ -910,14 +913,4 @@ def strip_summaries_from_heroes_md(text: str) -> str:
     )
     return stripped.rstrip() + "\n"
 
-def curated_display_name(display: str) -> str:
-    """Map wiki display name to curated JSON keys (signature skills, etc.)."""
-    from hero_pipeline.storage import display_names_by_id, resolve_hero_id
 
-    try:
-        return display_names_by_id()[resolve_hero_id(display)]
-    except KeyError:
-        return display
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

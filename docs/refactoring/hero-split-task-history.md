@@ -2,9 +2,10 @@
 
 Status: active  
 Branch: `hero-split`  
-Current commit: `e13266b` (`Align Hero Split docs and tests`)  
+Current commit: `769f85f` (`Add quality hardening tasks…`); Priority 5
+landed in the working tree  
 Baseline: `main` at `69940ed`  
-Last reviewed: 2026-09-17
+Last reviewed: 2026-09-18
 
 This document is the working history and backlog for the architectural rewrite.
 It records the target, the correctness contract, the decisions already made,
@@ -24,9 +25,10 @@ closes or changes one of the decisions below.
 
 The rewrite now uses the four-file bundle, ID-keyed schema mappings, one
 relationship scorer, and split hero-local detectors. Frozen public-output
-parity still holds (459 tests at the Priority 2 gate). Remaining work is
-operator CLI scope, semantic validation, and non-deployment CI. GitHub Pages
-workflow repair is deferred.
+parity still holds. Operator integration and quality hardening (render
+drift guard plus full core mypy) are closed. Remaining items are the
+deliberate deferrals in section 8. GitHub Pages workflow repair stays
+deferred.
 
 The current runtime model is:
 
@@ -62,10 +64,13 @@ signals, not acceptance targets:
   26 functions over 100 lines, 6,034 branch nodes
 - `hero-split` at `9e49a4f`: 63 files, 29,118 lines, 1,146 functions,
   22 functions over 100 lines, 5,720 branch nodes
-- Largest current production module: `relationships/scoring.py`, 3,319 lines
-- Other large modules: `analysis/behavior.py` at 2,914 lines,
-  `analysis/scoring_facts.py` at 1,870 lines, and `analysis/targeting.py`
-  at 1,548 lines. `analysis/effects.py` is a wiring module.
+- working tree after Priority 5: 63 files, 29,333 lines, 1,153 functions,
+  22 functions over 100 lines; largest module 3,301 lines
+- Largest current production module: `relationships/scoring.py`, 3,301 lines
+- Other large modules: `analysis/behavior.py` at 2,931 lines,
+  `analysis/scoring_facts.py` at 1,886 lines, and `analysis/targeting.py`
+  at 1,544 lines. `analysis/effects.py` is a narrow `analyze_working`
+  orchestrator.
 
 The rewrite therefore must not claim that total code complexity is lower than
 `main`. The measurable improvement is ownership: no reconstruction helper, no
@@ -432,7 +437,10 @@ The major branch milestones are:
 - `4edb2f7` — calibrate from ID-keyed local analysis; own all relationship scoring
 - `9e49a4f` — split hero-local detectors; typed Cassadee corrections; no hidden analyze I/O
 - `e13266b` — align docs, tests, complexity, and benchmark evidence
-- this commit — views are full-roster; validate-semantics and pipeline CI
+- operator-integration slice — views are full-roster; validate-semantics
+  and pipeline CI
+- this slice — whole-tree render drift guard; TypedDict records; explicit
+  detector imports; mypy `ignore_errors` removed from all 16 core modules
 
 ## 7. Current todo list
 
@@ -483,18 +491,29 @@ Pages deploy remains unchanged and is deferred below.
 
 ### Priority 5 — quality hardening
 
-- [ ] **Prevent rendered-output drift.**
+- [x] **Prevent rendered-output drift.**
+- [x] **Complete type checking for core modules.**
 
-  `.github/workflows/pipeline.yml` renders the public views, but it does not
-  assert afterward that the working tree is clean. CI therefore proves that
-  rendering succeeds, not that committed generated views are current and
-  deterministic.
+`scripts/assert_rendered_outputs.py` snapshots the working tree against
+HEAD after `hero_pipeline_cli.py views`. The only allowed difference is
+`site/data/heroes.json` `meta.generated` when it is a well-formed UTC
+`YYYY-MM-DDTHH:MM:SSZ` timestamp. Comparison is byte-for-byte, so
+CRLF/LF drift is visible. `just assert-rendered-outputs` is the local
+recipe; `.github/workflows/pipeline.yml` runs that helper instead of a
+render-only step.
 
-- [ ] **Complete type checking for core modules.**
+`analysis/records.py` now exposes TypedDict contracts while keeping the
+`Effect(...)`, `Hero(...)`, `SkillMeta(...)`, and related mapping
+factories. Detector modules use explicit ownership-safe imports;
+`analysis/effects.py` re-exports `analyze_working` only. `mypy.ini` has
+no `ignore_errors` sections. `just typecheck` reports Success on all 41
+`scripts/hero_pipeline` files.
 
-  Mypy reports 41 checked files, but 16 core analysis and scoring modules have
-  `ignore_errors = true`. The type-checking gate therefore does not yet protect
-  the pipeline's most complex code.
+Verification: schema/cache validation OK; semantic validation OK; mypy
+Success, 41 files; pytest 470 passed (70 warnings, 89 subtests). After
+views, the ten public artifacts match HEAD except `meta.generated`. The
+helper compares the whole tree to HEAD, so a locally dirty source tree
+fails until CI's clean checkout.
 
 ## 8. Accepted or deferred issues
 
@@ -540,6 +559,6 @@ The Hero Split rewrite is complete when all of the following are true:
 - single-hero initialization and authored changes are local to the manifest
   and hero bundle;
 - `just validate`, `just validate-semantics`, `just typecheck`, `just test`,
-  and the non-deployment pipeline CI pass;
+  `just assert-rendered-outputs`, and the non-deployment pipeline CI pass;
 - complexity and performance measurements show fewer migration conversions and
   duplicate implementations, rather than only renamed or relocated code.

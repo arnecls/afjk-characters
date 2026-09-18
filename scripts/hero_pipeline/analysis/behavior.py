@@ -7,7 +7,7 @@ import re
 import statistics
 from collections import defaultdict
 from pathlib import Path
-from typing import Any
+from typing import Any, Mapping, cast
 
 from healing_types import (
     DIRECT_HEALING_LABEL,
@@ -18,13 +18,25 @@ from healing_types import (
 from .records import (
     Hero,
     HeroBehavior,
+    HeroBehaviorRecord,
+    HeroRecord,
+    EffectRecord,
+    CcImmunityRecord,
     PlacementConstraint,
+    PlacementConstraintRecord,
     SkillMeta,
+    SkillMetaRecord,
     SkillOverviewMetrics,
+    SkillOverviewMetricsRecord,
     SkillSlice,
+    SkillSliceRecord,
+    is_cc_immunity,
 )
-from .effects import (
-    CATEGORY_TO_SECTION,
+from .detector_common import (
+    BEHAVIOR_TAGS_FILE,
+    CATEGORY_TO_SECTION as _IMPORTED_CATEGORY_TO_SECTION,
+    COUNTER_OVERVIEW_FILE,
+    DAMAGE_TARGETING_WEIGHT,
     DAMAGE_TYPE_SORT_KEY,
     HEROES2_MD,
     HEROES_MD,
@@ -32,35 +44,34 @@ from .effects import (
     MOVEMENT_OVERRIDES_FILE,
     PLACEMENT_CONSTRAINT_OVERRIDES_FILE,
     PLAY_OVERVIEW_FILE,
-    COUNTER_OVERVIEW_FILE,
     SIGNATURE_SKILLS_FILE,
     SKILL_SUMMARY_FILE,
+    TIER_ORDER,
+    TRUE_DAMAGE_TYPES,
     WALK_SPEED_VALUES,
     WALK_SPEEDS_FILE,
-    BEHAVIOR_TAGS_FILE,
-    TRUE_DAMAGE_TYPES,
-    TIER_ORDER,
     _SUMMARY_SECTION_RE,
-    _all_amounts,
-    _chunk_deals_enemy_damage,
     _chunk_is_companion_focused,
-    _chunk_targets_enemies,
-    _chunk_throughput_score,
-    _damage_frequency_multiplier,
     _per_hero_curated,
     _policy_calibration,
     _policy_local,
-    _quantile_thresholds,
-    _score_true_damage_chunk,
-    _skill_card_tier_suffix,
     curated_display_name,
-    detect_damage_targeting,
+)
+from .numeric import _all_amounts
+from .damage import (
+    _chunk_deals_enemy_damage,
+    _chunk_targets_enemies,
+    _chunk_throughput_score,
+    _damage_frequency_multiplier,
+    _score_true_damage_chunk,
     detect_damage_types,
+)
+from .postprocess import _quantile_thresholds, _skill_card_tier_suffix, strip_summaries_from_heroes_md
+from .targeting import (
+    detect_damage_targeting,
     is_all_summon_buff_targeting,
     is_own_summon_buff_targeting,
-    strip_summaries_from_heroes_md,
     text_has_start_of_battle_ultimate,
-    DAMAGE_TARGETING_WEIGHT,
 )
 from .skill_meta import (
     load_skill_meta,
@@ -366,8 +377,8 @@ def _skill_deals_damage(text: str) -> bool:
 
 
 def _movement_range_candidates(
-    skills: list[SkillMeta],
-) -> list[SkillMeta]:
+    skills: list[SkillMetaRecord],
+) -> list[SkillMetaRecord]:
     """Skills whose range reflects how far the hero moves to fight."""
     ranged = _offensive_attack_range_candidates(skills)
     normal_attack = [
@@ -393,10 +404,10 @@ def _skill_active_is_self_only(text: str) -> bool:
 
 
 def _offensive_attack_range_candidates(
-    skills: list[SkillMeta],
-) -> list[SkillMeta]:
+    skills: list[SkillMetaRecord],
+) -> list[SkillMetaRecord]:
     """Offensive skills with a finite listed range (Ultimate, Skill1, Skill2)."""
-    candidates: list[SkillMeta] = []
+    candidates: list[SkillMetaRecord] = []
     for skill in skills:
         if skill["section"] not in BEHAVIOR_RANGE_SECTIONS:
             continue
@@ -410,7 +421,7 @@ def _offensive_attack_range_candidates(
     return candidates
 
 
-def _positive_offensive_ranges(skills: list[SkillMeta]) -> list[float]:
+def _positive_offensive_ranges(skills: list[SkillMetaRecord]) -> list[float]:
     """Effective tile ranges above zero from offensive attack skills."""
     return [
         effective
@@ -419,17 +430,17 @@ def _positive_offensive_ranges(skills: list[SkillMeta]) -> list[float]:
     ]
 
 
-def _min_positive_offensive_range(skills: list[SkillMeta]) -> float | None:
+def _min_positive_offensive_range(skills: list[SkillMetaRecord]) -> float | None:
     positive = _positive_offensive_ranges(skills)
     return min(positive) if positive else None
 
 
-def _max_offensive_attack_range(skills: list[SkillMeta]) -> float | None:
+def _max_offensive_attack_range(skills: list[SkillMetaRecord]) -> float | None:
     positive = _positive_offensive_ranges(skills)
     return max(positive) if positive else None
 
 
-def _effective_movement_range(skill: SkillMeta) -> float:
+def _effective_movement_range(skill: SkillMetaRecord) -> float:
     """Listed Skill Range capped by frontal-arc depth when present."""
     assert skill["range_tiles"] is not None
     text = _hero_movement_text(skill["text"])
@@ -440,7 +451,7 @@ def _effective_movement_range(skill: SkillMeta) -> float:
 
 
 def _weighted_attack_range(
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     *,
     default_range: int | None = None,
 ) -> float | None:
@@ -467,7 +478,7 @@ def _weighted_attack_range(
 
 
 def compute_is_melee(
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     *,
     hero_class: str,
     display_name: str = "",
@@ -521,7 +532,7 @@ def compute_is_melee(
 
 
 def compute_is_dual_range(
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     *,
     display_name: str = "",
 ) -> bool:
@@ -553,7 +564,7 @@ def _movement_from_range(avg_range: float) -> str:
     return "stationary"
 
 
-def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
+def compute_movement(skills: list[SkillMetaRecord]) -> tuple[str, str]:
     """Return (movement label, short rationale)."""
     all_text = " ".join(s["text"] for s in skills)
     hero_text = _hero_movement_text(all_text)
@@ -641,7 +652,7 @@ def _load_behavior_tags() -> dict[str, frozenset[str]]:
 
 def _melee_movement_floor_skipped(
     behavior_tags: frozenset[str],
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
 ) -> bool:
     if STATIC_TILE_BUFFER_TAG in behavior_tags:
         return True
@@ -659,7 +670,7 @@ def _apply_melee_movement_floor(
     *,
     hero_class: str,
     behavior_tags: frozenset[str],
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
 ) -> tuple[str, str]:
     """Warrior/rogue/tank default to moving unless static/summon exceptions."""
     if hero_class not in MELEE_HERO_CLASSES:
@@ -686,7 +697,7 @@ def _apply_movement_override(
 
 
 def compute_casting_scores(
-    skills_by_title: dict[str, list[SkillMeta]],
+    skills_by_title: dict[str, list[SkillMetaRecord]],
 ) -> dict[str, float]:
     """Higher value = slower (raw weighted seconds)."""
     scores: dict[str, float] = {}
@@ -785,7 +796,7 @@ SIGNATURE_SKILL_SECTION_KEYS: dict[str, str] = {
 
 
 def compute_per_skill_speeds(
-    skills_by_title: dict[str, list[SkillMeta]],
+    skills_by_title: dict[str, list[SkillMetaRecord]],
 ) -> dict[str, dict[str, str]]:
     """Per-hero speed labels for ult, non-ult composite, and each skill."""
     raw_scores: dict[str, dict[str, float]] = {}
@@ -1015,7 +1026,7 @@ def _load_counter_overviews() -> dict[str, str]:
     return json.loads(COUNTER_OVERVIEW_FILE.read_text(encoding="utf-8"))
 
 
-def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint]]:
+def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraintRecord]]:
     per_hero = _per_hero_curated("placement_constraint_overrides")
     if per_hero is not None:
         return {
@@ -1030,7 +1041,7 @@ def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint
     raw = json.loads(
         PLACEMENT_CONSTRAINT_OVERRIDES_FILE.read_text(encoding="utf-8")
     )
-    result: dict[str, list[PlacementConstraint]] = {}
+    result: dict[str, list[PlacementConstraintRecord]] = {}
     for name, entries in raw.items():
         result[name] = [
             PlacementConstraint(kind=e["kind"], text=e["text"])
@@ -1055,7 +1066,7 @@ def _clause_has_ally_not_enemy(clause: str) -> bool:
 
 
 def _add_constraint(
-    found: list[PlacementConstraint],
+    found: list[PlacementConstraintRecord],
     seen: set[tuple[str, str]],
     kind: str,
     text: str,
@@ -1068,11 +1079,11 @@ def _add_constraint(
 
 
 def detect_placement_constraints(
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     display_name: str = "",
-    overrides: dict[str, list[PlacementConstraint]] | None = None,
+    overrides: Mapping[str, list[Any]] | None = None,
     block_text: str = "",
-) -> list[PlacementConstraint]:
+) -> list[PlacementConstraintRecord]:
     """Detect ally/self placement and composition constraints from skill text."""
     override_map = overrides if overrides is not None else (
         _load_placement_constraint_overrides()
@@ -1086,7 +1097,7 @@ def detect_placement_constraints(
     if not combined.strip():
         return []
 
-    found: list[PlacementConstraint] = []
+    found: list[PlacementConstraintRecord] = []
     seen: set[tuple[str, str]] = set()
 
     grant_range = re.search(
@@ -1463,7 +1474,7 @@ def _signature_is_buffable(section_text: str) -> bool:
 
 
 def _signature_section_text(
-    skills: list[SkillMeta], section: str
+    skills: list[SkillMetaRecord], section: str
 ) -> str:
     skill = _skill_by_section(skills, section)
     return skill["text"] if skill else ""
@@ -1472,7 +1483,7 @@ def _signature_section_text(
 def _effective_synergy_signature(
     primary: dict | None,
     alternative: dict | None,
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     speeds: dict[str, str],
 ) -> tuple[str, bool]:
     """Return (speed label, is_ultimate) for synergy fuel weighting."""
@@ -1514,7 +1525,7 @@ def _signature_skill_speed_label(
     return per_skill.get(key, "average")
 
 
-def _hero_has_section(hero: Hero, skills: list[SkillMeta], section: str) -> bool:
+def _hero_has_section(hero: HeroRecord, skills: list[SkillMetaRecord], section: str) -> bool:
     if section in hero["skill_slices"]:
         return True
     return any(skill["section"] == section for skill in skills)
@@ -1543,7 +1554,7 @@ def _score_damage_chunk(
     targeting: str,
     *,
     section: str = "",
-    skills: list[SkillMeta] | None = None,
+    skills: list[SkillMetaRecord] | None = None,
 ) -> float:
     if targeting == "Self" and not _chunk_targets_enemies(text):
         return 0.0
@@ -1562,10 +1573,10 @@ def _score_damage_chunk(
 
 
 def _section_damage_score(
-    hero: Hero,
+    hero: HeroRecord,
     section: str,
     primary_dmg: str,
-    skills: list[SkillMeta] | None = None,
+    skills: list[SkillMetaRecord] | None = None,
 ) -> float:
     max_score = 0.0
     for _tier, text, sec in hero["skill_chunks"]:
@@ -1585,10 +1596,10 @@ def _section_damage_score(
 
 
 def _section_damage_type_scores(
-    hero: Hero,
+    hero: HeroRecord,
     section: str,
     primary_dmg: str,
-    skills: list[SkillMeta] | None = None,
+    skills: list[SkillMetaRecord] | None = None,
 ) -> dict[str, float]:
     scores: dict[str, float] = {}
     for _tier, text, sec in hero["skill_chunks"]:
@@ -1609,8 +1620,8 @@ def _section_damage_type_scores(
 
 
 def hero_replacement_damage_profile(
-    hero: Hero,
-    skills: list[SkillMeta] | None = None,
+    hero: HeroRecord,
+    skills: list[SkillMetaRecord] | None = None,
 ) -> dict[str, float]:
     """Global per-damage-type throughput for replacement scoring."""
     profile: dict[str, float] = {}
@@ -1629,8 +1640,8 @@ def hero_replacement_damage_profile(
 
 
 def build_damage_type_thresholds(
-    heroes: list[Hero],
-    skills_by_title: dict[str, list[SkillMeta]] | None = None,
+    heroes: list[HeroRecord],
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> dict[str, tuple[float, float]]:
     skills_map = skills_by_title or {}
     by_type: dict[str, list[float]] = defaultdict(list)
@@ -1685,8 +1696,8 @@ def _damage_score_to_magnitude(score: float, thresholds: tuple[float, float]) ->
 
 
 def build_section_damage_thresholds(
-    heroes: list[Hero],
-    skills_by_title: dict[str, list[SkillMeta]] | None = None,
+    heroes: list[HeroRecord],
+    skills_by_title: dict[str, list[SkillMetaRecord]] | None = None,
 ) -> tuple[float, float]:
     skills_map = skills_by_title or {}
     scores: list[float] = []
@@ -1750,7 +1761,7 @@ def _extra_initial_energy_from_text(text: str) -> float:
 
 
 def _hero_effective_ultimate_initial_energy(
-    all_skills: list[SkillMeta] | None,
+    all_skills: list[SkillMetaRecord] | None,
 ) -> float:
     """Ultimate meta IE plus the largest ascension bonus anywhere in the kit."""
     if not all_skills:
@@ -1769,8 +1780,8 @@ def _hero_effective_ultimate_initial_energy(
 
 
 def _ultimate_first_cast_seconds(
-    skill: SkillMeta | None,
-    all_skills: list[SkillMeta] | None = None,
+    skill: SkillMetaRecord | None,
+    all_skills: list[SkillMetaRecord] | None = None,
 ) -> float:
     """Seconds until the ultimate can begin casting (energy fill + initial CD)."""
     if skill is None:
@@ -1790,8 +1801,8 @@ def _ultimate_first_cast_seconds(
 def _section_has_fast_first_cast(
     text: str,
     section: str,
-    skill: SkillMeta | None,
-    all_skills: list[SkillMeta] | None = None,
+    skill: SkillMetaRecord | None,
+    all_skills: list[SkillMetaRecord] | None = None,
 ) -> bool:
     """True when the skill's first use is unusually quick."""
     if section == "Ultimate" and skill:
@@ -1826,7 +1837,7 @@ def _section_has_fast_first_cast(
 
 
 def _signature_first_cast_needs_energy(
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     defining: dict | None,
     synergy_is_ult: bool,
 ) -> bool:
@@ -1852,8 +1863,8 @@ def _normalize_first_cast_speed(speed: str, first_cast_speed: str) -> str:
 
 
 def _normalize_skill_overview_metrics(
-    metrics: SkillOverviewMetrics,
-) -> SkillOverviewMetrics:
+    metrics: SkillOverviewMetricsRecord,
+) -> SkillOverviewMetricsRecord:
     metrics["first_cast_speed"] = _normalize_first_cast_speed(
         metrics["speed"], metrics["first_cast_speed"]
     )
@@ -1863,7 +1874,7 @@ def _normalize_skill_overview_metrics(
 def _section_first_cast_speed_label(
     speeds: dict[str, str],
     section: str,
-    skills: list[SkillMeta],
+    skills: list[SkillMetaRecord],
     has_section: bool,
 ) -> str:
     if not has_section:
@@ -1876,7 +1887,7 @@ def _section_first_cast_speed_label(
 
 
 def _section_effect_metrics(
-    hero: Hero, section: str
+    hero: HeroRecord, section: str
 ) -> tuple[str, str, str]:
     sl = hero["skill_slices"].get(section)
     if not sl:
@@ -1898,18 +1909,18 @@ def _section_effect_metrics(
     )
 
 
-def _empty_skill_overview_metrics() -> SkillOverviewMetrics:
+def _empty_skill_overview_metrics() -> SkillOverviewMetricsRecord:
     return SkillOverviewMetrics()
 
 
 def compute_section_skill_metrics(
-    hero: Hero,
-    skills: list[SkillMeta],
+    hero: HeroRecord,
+    skills: list[SkillMetaRecord],
     section: str,
     speeds: dict[str, str],
     damage_thresholds: tuple[float, float],
     damage_type_thresholds: dict[str, tuple[float, float]],
-) -> SkillOverviewMetrics:
+) -> SkillOverviewMetricsRecord:
     if not _hero_has_section(hero, skills, section):
         return _empty_skill_overview_metrics()
     primary = hero["damage_type"] or "Physical"
@@ -1936,13 +1947,13 @@ def compute_section_skill_metrics(
 
 
 def compute_skill_overview(
-    hero: Hero,
-    skills: list[SkillMeta],
+    hero: HeroRecord,
+    skills: list[SkillMetaRecord],
     speeds: dict[str, str],
     defining: dict | None,
     damage_thresholds: tuple[float, float],
     damage_type_thresholds: dict[str, tuple[float, float]],
-) -> dict[str, SkillOverviewMetrics]:
+) -> dict[str, SkillOverviewMetricsRecord]:
     sig_section = defining.get("section", "Ultimate") if defining else None
     signature = (
         compute_section_skill_metrics(
@@ -2009,13 +2020,13 @@ def compute_skill_overview(
 
 
 def build_behavior_for_heroes(
-    heroes: list[Hero],
+    heroes: list[HeroRecord],
     display_names: dict[str, str],
     heroes2_text: str | None = None,
     heroes_text: str | None = None,
     hero_class_by_title: dict[str, str] | None = None,
     *,
-    skills_by_title_input: dict[str, list[SkillMeta]] | None = None,
+    skills_by_title_input: dict[str, list[SkillMetaRecord]] | None = None,
     block_by_title_input: dict[str, str] | None = None,
     signature_by_display_input: dict[str, dict] | None = None,
     placement_overrides_input: dict[str, list[dict]] | None = None,
@@ -2023,7 +2034,7 @@ def build_behavior_for_heroes(
     walk_speeds_input: dict[str, str] | None = None,
     behavior_tags_input: dict[str, list[str]] | None = None,
     skill_names_by_display_input: dict[str, dict[str, str]] | None = None,
-) -> dict[str, HeroBehavior]:
+) -> dict[str, HeroBehaviorRecord]:
     """Compute movement and casting speed for each hero title."""
     if skills_by_title_input is not None and block_by_title_input is not None:
         skills_by_title = skills_by_title_input
@@ -2085,7 +2096,7 @@ def build_behavior_for_heroes(
         heroes, skills_by_title
     )
 
-    result: dict[str, HeroBehavior] = {}
+    result: dict[str, HeroBehaviorRecord] = {}
     for hero in heroes:
         skills = skills_by_title[hero["title"]]
         movement, note = compute_movement(skills)
@@ -2105,12 +2116,14 @@ def build_behavior_for_heroes(
         hero_class = class_by_title.get(
             hero.get("id") or hero["title"], ""
         ).lower()
-        tags = behavior_tags.get(hero_id) or behavior_tags.get(curated, frozenset())
+        tags = frozenset(
+            behavior_tags.get(hero_id) or behavior_tags.get(curated) or ()
+        )
         movement, note = _apply_melee_movement_floor(
             movement,
             note,
             hero_class=hero_class,
-            behavior_tags=tags,
+            behavior_tags=frozenset(tags or ()),
             skills=skills,
         )
         movement, note = _apply_movement_override(
@@ -2123,17 +2136,18 @@ def build_behavior_for_heroes(
         raw_sig = signature_by_display.get(hero_id) or signature_by_display.get(
             curated
         )
+        raw_sig_map = raw_sig if isinstance(raw_sig, dict) else None
         defining = None
         alternative = None
-        if raw_sig:
-            effective_cat = _effective_signature_category(raw_sig)
-            calculated_cat = raw_sig.get("signature_calculated") or (
-                raw_sig.get("signature_override") or "ultimate"
+        if raw_sig_map:
+            effective_cat = _effective_signature_category(raw_sig_map)
+            calculated_cat = raw_sig_map.get("signature_calculated") or (
+                raw_sig_map.get("signature_override") or "ultimate"
             )
-            defining = _signature_entry_for_category(raw_sig, effective_cat)
+            defining = _signature_entry_for_category(raw_sig_map, effective_cat)
             if calculated_cat != effective_cat:
                 alternative = _signature_entry_for_category(
-                    raw_sig, calculated_cat
+                    raw_sig_map, calculated_cat
                 )
         placement_constraints = detect_placement_constraints(
             skills,
@@ -2167,13 +2181,13 @@ def build_behavior_for_heroes(
                         skill_names_by_display_input.get(hero_id)
                         or skill_names_by_display_input.get(curated, {})
                     ).get(
-                        _effective_signature_category(raw_sig),
+                        _effective_signature_category(raw_sig or {}),
                         "",
                     )
                     if skill_names_by_display_input is not None
                     else _skill_name_for_category(
                         curated,
-                        _effective_signature_category(raw_sig),
+                        _effective_signature_category(raw_sig or {}),
                     )
                 ),
                 signature_skill_is_ult=bool(defining.get("is_ultimate")),
@@ -2207,9 +2221,9 @@ def build_behavior_for_heroes(
 
 
 def _skill_overview_metrics(
-    overview: dict[str, SkillOverviewMetrics] | dict[str, dict[str, str]],
+    overview: dict[str, SkillOverviewMetricsRecord] | dict[str, dict[str, str]],
     key: str,
-) -> SkillOverviewMetrics:
+) -> SkillOverviewMetricsRecord:
     raw = overview.get(key, {})
     if isinstance(raw, dict) and raw:
         return _normalize_skill_overview_metrics(
@@ -2221,7 +2235,10 @@ def _skill_overview_metrics(
                 buffs=raw.get("buffs", "none"),
                 debuffs=raw.get("debuffs", "none"),
                 damage_types=dict(
-                    raw.get("damage_types") or raw.get("true_damage", {})
+                    cast(
+                        Mapping[str, str],
+                        raw.get("damage_types") or raw.get("true_damage") or {},
+                    )
                 ),
             )
         )
@@ -2242,11 +2259,12 @@ def _behavior_bullet(label: str, body: str) -> str:
     return f"- **{label}**: {body}"
 
 
-def _format_skill_overview_line(label: str, metrics: SkillOverviewMetrics) -> str:
+def _format_skill_overview_line(label: str, metrics: SkillOverviewMetricsRecord) -> str:
+    values = cast(Mapping[str, str], metrics)
     parts = [
-        f"{name} `{metrics[attr]}`"
+        f"{name} `{values[attr]}`"
         for attr, name in _SKILL_OVERVIEW_FIELD_ORDER
-        if metrics[attr] != "none"
+        if values[attr] != "none"
     ]
     if not parts:
         return _behavior_bullet(label, "—")
@@ -2299,7 +2317,7 @@ _SKILL_CARD_CC_TARGETING_SUFFIX = re.compile(
 )
 
 
-def _skill_card_targeting_label(effect: Effect) -> str:
+def _skill_card_targeting_label(effect: EffectRecord) -> str:
     """Skill-card targeting suffix; path area maps to ``path`` not ``Area``."""
     if effect.get("area") == "path":
         return "path"
@@ -2307,7 +2325,7 @@ def _skill_card_targeting_label(effect: Effect) -> str:
 
 
 def _skill_card_disambiguate_keys(
-    sl: SkillSlice,
+    sl: SkillSliceRecord,
 ) -> tuple[set[tuple[str, str]], set[str]]:
     """Group keys and display labels needing explicit targeting suffixes."""
     from collections import defaultdict
@@ -2342,20 +2360,24 @@ def _skill_card_disambiguate_keys(
 
 
 def _skill_card_use_explicit_targeting(
-    effect: Effect | CcImmunity,
+    effect: EffectRecord | CcImmunityRecord,
     *,
     category: str,
     group_keys: set[tuple[str, str]],
     label_keys: set[str],
 ) -> bool:
-    immunity_type = effect.get("immunity_type")
-    if immunity_type is not None:
+    if is_cc_immunity(effect):
+        immunity = cast(CcImmunityRecord, effect)
+        immunity_type = immunity["immunity_type"]
         return (
             ("immunity", immunity_type) in group_keys
             or _skill_card_tag_label(immunity_type) in label_keys
         )
-    return (effect["category"], effect["label"]) in group_keys or (
-        _skill_card_tag_label(effect["label"]) in label_keys
+    effect_row = cast(EffectRecord, effect)
+    category_name = effect_row["category"]
+    label = effect_row["label"]
+    return (category_name, label) in group_keys or (
+        _skill_card_tag_label(label) in label_keys
     )
 
 
@@ -2452,7 +2474,7 @@ def _canonical_skill_card_chip_key(tag: str) -> str:
 
 
 def _format_signature_skill_body(
-    display_name: str, behavior: HeroBehavior
+    display_name: str, behavior: HeroBehaviorRecord
 ) -> str:
     name = behavior["signature_skill_name"]
     if behavior["signature_skill_is_ult"]:
@@ -2466,7 +2488,7 @@ def _format_signature_skill_body(
 
 
 def signature_skill_category(
-    display_name: str, behavior: HeroBehavior
+    display_name: str, behavior: HeroBehaviorRecord
 ) -> str | None:
     if not behavior["signature_skill_name"]:
         return None
@@ -2498,7 +2520,7 @@ def _skill_card_tag_with_tier(
 
 
 def _skill_card_damage_labels(
-    hero: Hero, slice_: SkillSlice, category: str
+    hero: HeroRecord, slice_: SkillSliceRecord, category: str
 ) -> list[str]:
     """Damage chip labels from analyzed effects (not raw text re-parse)."""
     labels: list[str] = []
@@ -2514,9 +2536,9 @@ def _skill_card_damage_labels(
 
 
 def format_skill_card_tags(
-    hero: Hero,
+    hero: HeroRecord,
     category: str,
-    skills: list[SkillMeta] | None = None,
+    skills: list[SkillMetaRecord] | None = None,
 ) -> list[dict[str, str]]:
     """Deduped chip labels for one skill card (no magnitude tiers)."""
     section = CATEGORY_TO_SECTION.get(category)
@@ -2670,10 +2692,10 @@ def _skill_detail_for_category(
 
 
 def format_skill_cards(
-    hero: Hero,
+    hero: HeroRecord,
     skill_summaries: dict[str, str] | None,
     hero_categories: set[str] | None,
-    skills: list[SkillMeta] | None = None,
+    skills: list[SkillMetaRecord] | None = None,
     source_skills: list[dict] | None = None,
     skill_card_tags_by_category: dict[str, list[str]] | None = None,
 ) -> list[dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]]]:
@@ -2689,18 +2711,16 @@ def format_skill_cards(
         if not summary:
             continue
         label = CATEGORY_DISPLAY_LABELS.get(category, category)
-        tags = (
-            (skill_card_tags_by_category or {}).get(category)
-            if skill_card_tags_by_category
-            else None
-        )
-        if tags is None:
-            tags = format_skill_card_tags(hero, category, skills)
+        resolved_tags: list[dict[str, str]] | list[str]
+        if skill_card_tags_by_category and category in skill_card_tags_by_category:
+            resolved_tags = skill_card_tags_by_category[category]
+        else:
+            resolved_tags = format_skill_card_tags(hero, category, skills)
         card: dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]] = {
             "category": category,
             "label": label,
             "summary": summary,
-            "tags": tags,
+            "tags": resolved_tags,
         }
         detail = _skill_detail_for_category(source_skills, category)
         if detail:
@@ -2749,8 +2769,8 @@ def format_prydwen_tiers_line(tiers: dict[str, str]) -> str:
 
 
 def _primary_damage_type_magnitude(
-    behavior: HeroBehavior,
-    hero: Hero,
+    behavior: HeroBehaviorRecord,
+    hero: HeroRecord,
     merged: dict[str, str],
 ) -> str:
     primary = hero["damage_type"]
@@ -2772,8 +2792,8 @@ def _primary_damage_type_magnitude(
 
 
 def _hero_skill_overview_damage_types(
-    behavior: HeroBehavior,
-    hero: Hero | None = None,
+    behavior: HeroBehaviorRecord,
+    hero: HeroRecord | None = None,
 ) -> dict[str, str]:
     overview = behavior["skill_overview"] or {}
     sig_metrics = _skill_overview_metrics(overview, "signature")
@@ -2801,7 +2821,7 @@ def _hero_skill_overview_damage_types(
     return result
 
 
-def format_movement_behavior_body(behavior: HeroBehavior) -> str:
+def format_movement_behavior_body(behavior: HeroBehaviorRecord) -> str:
     """Format the Movement bullet body including base walk speed."""
     body = f"{behavior["movement"]} ({behavior["movement_note"]})"
     if behavior["walk_speed"]:
@@ -2811,14 +2831,14 @@ def format_movement_behavior_body(behavior: HeroBehavior) -> str:
 
 def format_behavior_section(
     display_name: str,
-    behavior: HeroBehavior,
+    behavior: HeroBehaviorRecord,
     *,
     skill_summaries: dict[str, str] | None = None,
     hero_categories: set[str] | None = None,
     include_skill_summaries: bool = True,
     include_stats_overview: bool = True,
     prydwen_tiers: dict[str, str] | None = None,
-    hero: Hero | None = None,
+    hero: HeroRecord | None = None,
     behavior_tags: list[str] | None = None,
     play_overview: str | None = None,
     counter_overview: str | None = None,

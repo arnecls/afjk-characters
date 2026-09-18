@@ -24,20 +24,10 @@ from effect_labels import (
     display_effect_name,
 )
 
-from .records import (
-    CcImmunity,
-    Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
-)
-
-from .detector_common import *
+from .records import EffectRecord
+from .detector_common import _CC_LABEL_KEYWORDS, _CC_NO_DURATION_LABELS
+from .targeting import _clause_around
+from .numeric import _normalize_effect_text, _pair_sum_amount
 def _cc_duration_context_ok(before: str) -> bool:
     """Reject durations tied to shields, DEF debuffs, or cooldowns."""
     return not re.search(
@@ -430,6 +420,3 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     ):
         return True
     return False
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

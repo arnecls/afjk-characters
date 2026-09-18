@@ -6,7 +6,7 @@ import re
 from typing import Any, Mapping
 
 from .policy import frozen_defaults
-from .records import SkillMeta
+from .records import SkillMeta, SkillMetaRecord
 
 _CHANNEL_DURATION_RE = re.compile(
     r"\bfor\s+(\d+(?:\.\d+)?)\s*(?:\+\s*[\d.]+\s*)?s\b",
@@ -24,11 +24,11 @@ def _parse_meta_number(value: str) -> float | None:
     return float(match.group(1)) if match else None
 
 
-def load_skill_meta(block: str) -> list[SkillMeta]:
+def load_skill_meta(block: str) -> list[SkillMetaRecord]:
     """Parse per-skill range, cooldown, energy, and description text."""
     from .detector_common import SECTION_TIERS
 
-    skills: list[SkillMeta] = []
+    skills: list[SkillMetaRecord] = []
     if not block:
         return skills
 
@@ -108,7 +108,7 @@ def from_schema_skill(
     skill: Mapping[str, Any],
     *,
     source_skill: Mapping[str, Any] | None = None,
-) -> SkillMeta:
+) -> SkillMetaRecord:
     """Build casting metadata from schema skill fields and source meta."""
     from .schema_effects import CATEGORY_TO_SECTION
 
@@ -146,15 +146,15 @@ def from_schema_skill(
 
 
 def skill_by_section(
-    skills: list[SkillMeta], section: str
-) -> SkillMeta | None:
+    skills: list[SkillMetaRecord], section: str
+) -> SkillMetaRecord | None:
     for skill in skills:
         if skill["section"] == section:
             return skill
     return None
 
 
-def skill_casting_time(skill: SkillMeta | None) -> float:
+def skill_casting_time(skill: SkillMetaRecord | None) -> float:
     """Cooldown plus weighted initial delay for a non-ult skill."""
     if skill is None:
         return 0.0
@@ -166,7 +166,7 @@ def skill_casting_time(skill: SkillMeta | None) -> float:
     return cd + icd * _policy_local("initial_cd_skill_weight", 0.5)
 
 
-def ult_casting_time(skills: list[SkillMeta]) -> float:
+def ult_casting_time(skills: list[SkillMetaRecord]) -> float:
     ult = skill_by_section(skills, "Ultimate")
     if ult is None:
         return 0.0

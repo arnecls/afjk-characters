@@ -24,20 +24,37 @@ from effect_labels import (
     display_effect_name,
 )
 
-from .records import (
-    CcImmunity,
-    Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
+from .records import EffectRecord, HeroRecord, SkillMetaRecord
+from .detector_common import (
+    DAMAGE_TARGETING_WEIGHT,
+    MIN_CYCLE_SECONDS,
+    PASSIVE_REFERENCE_CYCLE_SECONDS,
+    TRUE_DAMAGE_TYPES,
+    _DOT_EXCLUDE_MIDDLE,
+    _LOST_HP_DAMAGE_EXCLUDE_RE,
+    _LOST_HP_SCALING_RES,
+    _MAX_HP_DAMAGE_EXCLUDE_RE,
+    _SELF_HP_COST_RE,
+    _TARGET_MAX_HP_DAMAGE_RES,
+    _TRUE_DAMAGE_MAX_HP_RE,
+    _chunk_is_companion_focused,
+    _policy_local,
 )
-
-from .detector_common import *
+from .targeting import (
+    _clause_around,
+    _is_enemy_damage_threshold_trigger,
+    detect_damage_targeting,
+)
+from .numeric import (
+    _extract_damage_amount,
+    _has_instant_atk_damage,
+    _normalize_effect_text,
+)
+from .conditions import (
+    _text_has_blind_enemy_hp_dot,
+    effect_has_structured_cooldown,
+    effect_throughput_gate_multiplier,
+)
 def _effect_match_scopes(text: str, pattern: str) -> list[str]:
     """Clause scopes for each regex match (debuff / CC targeting)."""
     t = text.lower()
@@ -114,17 +131,6 @@ def _dot_is_channeled_skill_damage(text: str) -> bool:
             r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\).{0,60}"
             r"every second.{0,40}and immobiliz",
             t,
-        )
-    )
-
-def _text_has_blind_enemy_hp_dot(text: str) -> bool:
-    """Enemy HP drain while blinded — DoT gated on Blind, not a separate debuff."""
-    return bool(
-        re.search(
-            r"blinded enemies lose \d+(?:\.\d+)?(?:\s*%\s*)?"
-            r"(?:\([^)]*\)\s*)?hp per second",
-            text,
-            re.I,
         )
     )
 
@@ -474,8 +480,8 @@ def _effect_frequency_multiplier(text: str) -> float:
 
 def _effect_cycle_time(
     section: str,
-    skill: SkillMeta | None,
-    skills: list[SkillMeta],
+    skill: SkillMetaRecord | None,
+    skills: list[SkillMetaRecord],
 ) -> float:
     """Seconds between repeated casts of the effect's source skill."""
     from .skill_meta import skill_casting_time, ult_casting_time
@@ -497,7 +503,7 @@ def _effect_cycle_time(
     )
 
 def _section_skill_text(
-    hero: Hero, skills: list[SkillMeta], section: str
+    hero: HeroRecord, skills: list[SkillMetaRecord], section: str
 ) -> str:
     from .skill_meta import skill_by_section
 
@@ -508,9 +514,9 @@ def _section_skill_text(
     return " ".join(parts)
 
 def _effect_throughput_score(
-    effect: Effect,
-    hero: Hero,
-    skills: list[SkillMeta],
+    effect: EffectRecord,
+    hero: HeroRecord,
+    skills: list[SkillMetaRecord],
 ) -> float:
     base = effect["numeric"]
     if base is None or base <= 0:
@@ -530,7 +536,7 @@ def _effect_throughput_score(
 def _chunk_throughput_score(
     burst: float,
     section: str,
-    skills: list[SkillMeta] | None,
+    skills: list[SkillMetaRecord] | None,
 ) -> float:
     if burst <= 0 or not skills:
         return burst
@@ -547,7 +553,7 @@ def _score_true_damage_chunk(
     targeting: str,
     *,
     section: str = "",
-    skills: list[SkillMeta] | None = None,
+    skills: list[SkillMetaRecord] | None = None,
 ) -> float:
     if targeting == "Self" and not _chunk_targets_enemies(text):
         return 0.0
@@ -559,7 +565,7 @@ def _score_true_damage_chunk(
     burst = weight * amount * freq
     return _chunk_throughput_score(burst, section, skills)
 
-def _accumulate_true_damage_scores(hero: Hero, primary_dmg: str) -> None:
+def _accumulate_true_damage_scores(hero: HeroRecord, primary_dmg: str) -> None:
     for _tier, text, _section in hero["skill_chunks"]:
         if _chunk_is_companion_focused(text):
             continue
@@ -1108,6 +1114,3 @@ def _buff_match_is_ally_atk_penalty(clause: str) -> bool:
     if not _debuff_match_is_ally_atk_penalty(clause):
         return False
     return bool(re.search(r"atk bonus is reduced|atk.{0,20}reduc", clause.lower()))
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

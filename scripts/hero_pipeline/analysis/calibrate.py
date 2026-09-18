@@ -22,7 +22,7 @@ from . import schema_effects as se
 from . import scoring_facts as gen
 from . import serialize as hs
 from . import magnitudes as mag
-from .records import SkillMeta
+from .records import SkillMeta, HeroRecord
 from .skill_meta import from_schema_skill
 from .damage import _effect_throughput_score
 
@@ -98,7 +98,7 @@ def calibrate_roster(
     context: AnalysisContext = {
         "skills_by_id": skills_by_id,
         "hero_class_by_id": class_by_id,
-        "behavior_by_id": behavior_by_id,
+        "behavior_by_id": cast(dict[str, object], behavior_by_id),
     }
     return (
         cast(ProcessedRoster, processed),
@@ -145,7 +145,7 @@ def _working_record(
     analysis: Mapping[str, Any],
     *,
     stamp_sections: bool,
-) -> dict[str, Any]:
+) -> HeroRecord:
     converted = se.working_effects_from_skills(
         analysis,
         stamp_sections=stamp_sections,
@@ -278,7 +278,7 @@ def _effect_key(effect: Any) -> str:
 
 
 def _extra_analysis_fields(
-    working: Mapping[str, Any],
+    working: HeroRecord,
     summary: Mapping[str, Any],
     *,
     skills: list[Any],
@@ -442,7 +442,7 @@ def _extra_analysis_fields(
 
 
 def _serialize_processed(
-    working_records: list[dict[str, Any]],
+    working_records: list[HeroRecord],
     snapshot: Mapping[str, Any],
     behavior_by_id: Mapping[str, Any],
     analyses_by_id: Mapping[str, LocalAnalysis],
@@ -507,7 +507,7 @@ def _serialize_processed(
             }
         )
         processed_heroes[hero_id] = serialized
-    schema_heroes = {}
+    schema_heroes: dict[str, dict[str, Any]] = {}
     local_only = {
         "id",
         "display_name",
@@ -518,9 +518,11 @@ def _serialize_processed(
         "proximity_aura_buff_labels",
         "proximity_aura_radius",
     }
-    for hero_id, row in processed_heroes.items():
+    for hero_id, serialized_row in processed_heroes.items():
         schema_heroes[hero_id] = {
-            key: value for key, value in row.items() if key not in local_only
+            key: value
+            for key, value in serialized_row.items()
+            if key not in local_only
         }
     hs.validate_processed({"heroes": schema_heroes})
     summaries = [

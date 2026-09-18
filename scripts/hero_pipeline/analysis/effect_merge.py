@@ -27,17 +27,37 @@ from effect_labels import (
 from .records import (
     CcImmunity,
     Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
+    EffectRecord,
+    HeroRecord,
+    SkillSliceRecord,
     SpecialEffect,
+    SpecialEffectRecord,
+    CcImmunityRecord,
     is_cc_immunity,
 )
+from .detector_common import TIER_ORDER, _HP_RECOVERY_EFFECT_LABELS
+from .conditions import _merge_conditional, _merge_conditions_lists
+from .targeting import (
+    _prefer_buff_targeting,
+    _prefer_timing,
+    _prefer_wider_targeting,
+    _text_has_targeting_cue,
+)
+from .numeric import parse_area_tile_count
 
-from .detector_common import *
+def _merge_area_count(
+    current: int | None, text: str, targeting: str, *, from_cue: bool
+) -> int | None:
+    if targeting != "Area":
+        return current
+    parsed = parse_area_tile_count(text)
+    if parsed is not None:
+        return parsed
+    if not from_cue:
+        return current
+    return current if current is not None else 2
+
+
 def _buff_dedupe_targeting_bucket(targeting: str | None) -> str | None:
     """Keep Self and ally buff rows separate when they share a label."""
     if not targeting:
@@ -62,7 +82,7 @@ def _effect_dedupe_key(
         return (category, label, targeting)
     return (category, label)
 
-def _copy_effect(effect: Effect) -> Effect:
+def _copy_effect(effect: EffectRecord) -> EffectRecord:
     return Effect(
         category=effect["category"],
         label=effect["label"],
@@ -83,7 +103,7 @@ def _copy_effect(effect: Effect) -> Effect:
         source_section=effect["source_section"],
     )
 
-def _merge_effect_records(into: Effect, src: Effect) -> None:
+def _merge_effect_records(into: EffectRecord, src: EffectRecord) -> None:
     """Merge a parsed slice effect into a roster aggregate effect."""
     if TIER_ORDER.get(src["tier"], 99) < TIER_ORDER.get(into["tier"], 99):
         into["tier"] = src["tier"]
@@ -144,9 +164,9 @@ def _merge_effect_records(into: Effect, src: Effect) -> None:
     if src["area_direction"] is not None:
         into["area_direction"] = src["area_direction"]
 
-def _merge_effects_from_list(effects: list[Effect]) -> list[Effect]:
+def _merge_effects_from_list(effects: list[EffectRecord]) -> list[EffectRecord]:
     """Merge per-skill effects into one roster-wide list."""
-    merged: list[Effect] = []
+    merged: list[EffectRecord] = []
     for src in effects:
         key = _effect_dedupe_key(
             src["category"], src["label"], src["source_section"], targeting=src["targeting"]
@@ -165,9 +185,9 @@ def _merge_effects_from_list(effects: list[Effect]) -> list[Effect]:
         _merge_effect_records(existing[0], src)
     return merged
 
-def _merge_cc_immunity_records(records: list[CcImmunity]) -> list[CcImmunity]:
+def _merge_cc_immunity_records(records: list[CcImmunityRecord]) -> list[CcImmunityRecord]:
     # Keep distinct targeting (Self vs ally Single target) as separate rows.
-    merged: dict[tuple[str, str], CcImmunity] = {}
+    merged: dict[tuple[str, str], CcImmunityRecord] = {}
     for imm in records:
         key = (imm["immunity_type"], imm["targeting"])
         cur = merged.get(key)
@@ -182,9 +202,9 @@ def _merge_cc_immunity_records(records: list[CcImmunity]) -> list[CcImmunity]:
     return list(merged.values())
 
 def _merge_special_effect_records(
-    records: list[SpecialEffect],
-) -> list[SpecialEffect]:
-    merged: dict[tuple[str, str, str], SpecialEffect] = {}
+    records: list[SpecialEffectRecord],
+) -> list[SpecialEffectRecord]:
+    merged: dict[tuple[str, str, str], SpecialEffectRecord] = {}
     for se in records:
         key = (se["kind"], se["label"], se["targeting"])
         cur = merged.get(key)
@@ -206,16 +226,16 @@ def _merge_special_effect_records(
             cur["grants"] = list(se["grants"])
     return list(merged.values())
 
-def _rebuild_hero_aggregates_from_slices(hero: Hero) -> None:
+def _rebuild_hero_aggregates_from_slices(hero: HeroRecord) -> None:
     """Rebuild roster effects from finalized per-skill slices.
 
     Per-skill slices stay scoped correctly; merging unrelated clauses can
     inflate buff numerics when damage thresholds share a label (e.g. ATK).
     """
-    effects: list[Effect] = []
-    summon: list[Effect] = []
-    immunities: list[CcImmunity] = []
-    special: list[SpecialEffect] = []
+    effects: list[EffectRecord] = []
+    summon: list[EffectRecord] = []
+    immunities: list[CcImmunityRecord] = []
+    special: list[SpecialEffectRecord] = []
     for sl in hero["skill_slices"].values():
         effects.extend(sl["effects"])
         summon.extend(sl["summon_effects"])
@@ -225,6 +245,3 @@ def _rebuild_hero_aggregates_from_slices(hero: Hero) -> None:
     hero["summon_effects"] = _merge_effects_from_list(summon)
     hero["cc_immunities"] = _merge_cc_immunity_records(immunities)
     hero["special_effects"] = _merge_special_effect_records(special)
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()

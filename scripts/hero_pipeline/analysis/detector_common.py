@@ -2,18 +2,11 @@
 
 from __future__ import annotations
 
-from __future__ import annotations
-
 import json
-
 import re
-
 import statistics
-
 from collections import defaultdict
-
 from pathlib import Path
-
 from typing import Any, Mapping
 
 from .records import (
@@ -43,8 +36,6 @@ from effect_labels import (
     canonical_effect_name,
     display_effect_name,
 )
-
-"""Deep mapping-native effect analysis for one hero bundle."""
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -771,69 +762,35 @@ def _per_hero_curated(name: str) -> dict | None:
     """Return primed curated input, or None so callers can use file fallbacks."""
     return _PER_HERO_CURATED_CACHE.get(name)
 
-
-__all__ = [name for name in globals() if not name.startswith("__")]
-
-_WIRING = False
-_WIRED_NS: dict[str, object] | None = None
-_SKIP = {
-    "__annotations__",
-    "__builtins__",
-    "__cached__",
-    "__doc__",
-    "__file__",
-    "__loader__",
-    "__name__",
-    "__package__",
-    "__spec__",
-    "_WIRING",
-    "_WIRED_NS",
-    "_SKIP",
-    "wire_detector_modules",
-}
-
-
-def wire_detector_modules() -> dict[str, object]:
-    """Copy detector callables into every sibling module's globals."""
-    global _WIRING, _WIRED_NS
-    if _WIRED_NS is not None:
-        return _WIRED_NS
-    if _WIRING:
-        return {}
-    _WIRING = True
-    from . import (
-        conditions,
-        crowd_control,
-        damage,
-        detector_common,
-        effect_merge,
-        numeric,
-        postprocess,
-        skill_chunks,
-        targeting,
+def _chunk_is_companion_focused(text: str) -> bool:
+    """True when the chunk describes the companion, not the hero's own scaling."""
+    t = text.lower()
+    if not re.search(
+        r"\b(?:mr\. carlyle|falcon elona|silhouette|companion|summoned unit|"
+        r"inherits all of)\b",
+        t,
+    ):
+        return False
+    if re.search(
+        r"\b(?:she|he) (?:absorb|entangle|gain|increases?|casts?|summons?|deals?)\b|"
+        r"\b\w+ (?:absorb|entangle|steal|gain)s?\b|"
+        r"\b\w+ and mr\. carlyle gain\b",
+        t,
+    ):
+        return False
+    return not re.search(
+        r"\b(?:her|him|herself|himself|she|he) and\b|"
+        r"\bincreases? (?:her |his )",
+        t,
     )
 
-    modules = (
-        detector_common,
-        skill_chunks,
-        targeting,
-        numeric,
-        crowd_control,
-        conditions,
-        damage,
-        effect_merge,
-        postprocess,
-    )
-    namespace: dict[str, object] = {}
-    for module in modules:
-        for name, value in vars(module).items():
-            if name in _SKIP or name.startswith("__"):
-                continue
-            namespace[name] = value
-    for module in modules:
-        for name, value in namespace.items():
-            if name not in vars(module):
-                setattr(module, name, value)
-    _WIRED_NS = namespace
-    _WIRING = False
-    return namespace
+
+def curated_display_name(display: str) -> str:
+    """Map wiki display name to curated JSON keys (signature skills, etc.)."""
+    from hero_pipeline.storage import display_names_by_id, resolve_hero_id
+
+    try:
+        return display_names_by_id()[resolve_hero_id(display)]
+    except KeyError:
+        return display
+

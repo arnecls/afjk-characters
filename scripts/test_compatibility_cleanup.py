@@ -121,6 +121,8 @@ class CompatibilityCleanupTests(unittest.TestCase):
         self.assertNotIn("def hero_from_local", joined)
         self.assertNotIn("def hero_from_analysis", joined)
         self.assertNotIn("from .effects import *", joined)
+        self.assertNotIn("from .detector_common import *", joined)
+        self.assertNotIn("def wire_detector_modules", joined)
         self.assertNotIn("def walk_speed_for_display", joined)
         self.assertNotIn("del local_policy", joined)
         self.assertNotIn("del policy", joined)

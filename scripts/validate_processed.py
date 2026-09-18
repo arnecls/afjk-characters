@@ -32,6 +32,10 @@ import skill_effects_store as ses
 import buff_persistence as bp
 import summoner_registry as sr
 from hero_pipeline.storage import display_names_by_id, load_ai_by_id
+from hero_pipeline.analysis.crowd_control import (
+    cc_described_on_referenced_skill,
+    cc_keyword_has_real_match,
+)
 
 HEROES_MD = ROOT / "Heroes.md"
 SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
@@ -221,7 +225,7 @@ def _cc_has_real_match(
 ) -> bool:
     """True when CC regex matched a non-spurious clause in skill text."""
     label = _CC_LABEL_MAP.get(cc, cc)
-    return rs.cc_keyword_has_real_match(
+    return cc_keyword_has_real_match(
         label,
         pat,
         full_desc,
@@ -241,7 +245,6 @@ def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
 
 
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
-    from hero_pipeline.analysis import effects as rs
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
 
@@ -288,7 +291,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                     if not re.search(pat, text):
                         continue
                     if not _cc_has_real_match(
-                        rs,
+                        None,
                         cc,
                         pat,
                         text,
@@ -312,7 +315,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                 if imm == "untargetable" and _UNTARGETABLE_SKIP_RE.search(text):
                     continue
                 if re.search(pat, text) and imm not in imm_found:
-                    if rs.cc_described_on_referenced_skill(
+                    if cc_described_on_referenced_skill(
                         desc_text, skill_name, skill_names
                     ):
                         continue

@@ -24,20 +24,8 @@ from effect_labels import (
     display_effect_name,
 )
 
-from .records import (
-    CcImmunity,
-    Effect,
-    Hero,
-    HeroBehavior,
-    PlacementConstraint,
-    SkillMeta,
-    SkillOverviewMetrics,
-    SkillSlice,
-    SpecialEffect,
-    is_cc_immunity,
-)
-
-from .detector_common import *
+from .records import EffectRecord
+from .detector_common import _NON_PERCENT_DEBUFF_LABELS, _STAT_LABELS_NO_GENERIC
 def extract_number(text: str, label: str = "", *, category: str = "") -> float | None:
     text = _normalize_effect_text(text)
     if "(scaled)" in text.lower() or "<hp>" in text.lower():
@@ -960,6 +948,3 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
         if re.search(r"\btrue damage\b", text, re.I):
             return 1.0
     return None
-from .detector_common import wire_detector_modules
-
-wire_detector_modules()
