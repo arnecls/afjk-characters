@@ -82,3 +82,7 @@ views: render
 
 # Full pipeline: refresh data from the web, then regenerate views.
 all: download analyze render
+
+# Serve the site locally.
+serve:
+    python3 -m http.server 8000 --directory site
