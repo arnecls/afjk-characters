@@ -15,6 +15,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 from hero_pipeline.analysis import scoring_facts as gen
 from hero_pipeline.analysis import behavior as rs
+from hero_pipeline.analysis.skill_chunks import load_skills_by_title_from_records
 from hero_pipeline.analysis.policy import make_policy
 from hero_pipeline.analysis.calibrate import analyze_bundles
 
@@ -99,7 +100,15 @@ def is_ultimate_support(summary_text: str, skill_text: str) -> bool:
 
 
 def high_field_count(metrics: rs.SkillOverviewMetrics) -> int:
+    if isinstance(metrics, dict):
+        return sum(1 for field in METRIC_FIELDS if metrics.get(field) == "high")
     return sum(1 for field in METRIC_FIELDS if getattr(metrics, field) == "high")
+
+
+def _metric_value(metrics, field: str) -> str:
+    if isinstance(metrics, dict):
+        return str(metrics.get(field) or "none")
+    return str(getattr(metrics, field))
 
 
 def peak_damage_effect_mag(hero, section: str) -> str:
@@ -145,7 +154,7 @@ def compute_hero_utility(
         )
         heal, buffs, debuffs = rs._section_effect_metrics(hero, section)
         peak_dmg = peak_damage_effect_mag(hero, section)
-        dmg_pts = max(MAG_PTS[metrics["damage"]], MAG_PTS[peak_dmg])
+        dmg_pts = max(MAG_PTS[_metric_value(metrics, "damage")], MAG_PTS[peak_dmg])
         buff_pts = MAG_PTS[buffs]
         utility_pts = (
             dmg_pts
@@ -179,7 +188,7 @@ def compute_hero_utility(
         if highs or utility_pts >= 2:
             notes.append(
                 f"{section}: {highs} high, {utility_pts} util "
-                f"(dmg={metrics["damage"]}/{peak_dmg})"
+                f"(dmg={_metric_value(metrics, 'damage')}/{peak_dmg})"
             )
 
     return totals, notes
@@ -299,8 +308,28 @@ def main() -> int:
     }
 
     policy = make_policy()
-    heroes = analyze_bundles(snapshot)
-    skills_by_title = rs.load_skills_by_title_from_records(raw["heroes"])
+    # Rebuild working HeroRecords (skill_slices + title/damage_type) rather than
+    # serialized LocalAnalysis docs from analyze_bundles().
+    from hero_pipeline.analysis.skill_chunks import hero_from_record
+    from hero_pipeline.analysis.postprocess import _postprocess_analyzed_hero
+    import skill_effects_store as skill_effects
+    from hero_pipeline.analysis.skill_corrections import spec_from_overrides
+    from heroes_io import normalize_hero_skills
+
+    heroes = []
+    for entry in entries:
+        bundle = snapshot["bundles"][entry["id"]]
+        source = copy.deepcopy(bundle["source"]["source"])
+        normalize_hero_skills(source)
+        sidecar = bundle["ai"].get("skill_effects")
+        if sidecar is None:
+            continue
+        hero = hero_from_record(copy.deepcopy(source))
+        skill_effects.apply_sidecar_to_hero(hero, copy.deepcopy(sidecar))
+        hero["skill_corrections"] = spec_from_overrides(bundle.get("overrides"))
+        _postprocess_analyzed_hero(hero, hero["damage_type"] or "Physical")
+        heroes.append(hero)
+    skills_by_title = load_skills_by_title_from_records(raw["heroes"])
     per_skill_speeds = rs.compute_per_skill_speeds(skills_by_title)
     damage_thresholds = rs.build_section_damage_thresholds(
         heroes, skills_by_title

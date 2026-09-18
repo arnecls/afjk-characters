@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import json
 import shutil
 import tempfile
@@ -116,6 +117,57 @@ class CombinedPublicationTests(unittest.TestCase):
             self.assertEqual(reloaded["local"]["id"], "aliceth")
             self.assertEqual(reloaded["provenance"]["algorithm_hash"], "a" * 64)
             self.assertEqual(reloaded["schema_version"], 2)
+
+    def test_algorithm_bump_skips_write_when_local_unchanged(self) -> None:
+        from hero_pipeline.analysis.service import refresh_local_caches
+        from hero_pipeline.storage import analysis_inputs_hash, analysis_is_fresh
+
+        self.repo = _mini_repo(["aliceth"])
+        with repository_scope(self.repo):
+            path = self.repo.heroes_dir / "aliceth" / "analysis.json"
+            snapshot = {
+                "manifest": load_manifest(),
+                "bundles": load_bundles(),
+            }
+            bundle = snapshot["bundles"]["aliceth"]
+            local = copy.deepcopy(bundle["analysis"]["local"])
+            old_algo = "b" * 64
+            write_local_analyses(
+                {"aliceth": local},
+                snapshot=snapshot,
+                algorithm_hash=old_algo,
+            )
+            snapshot["bundles"] = load_bundles(load_manifest())
+            before = path.read_bytes()
+            new_algo = "c" * 64
+
+            from unittest.mock import patch
+
+            with patch(
+                "hero_pipeline.analysis.service.algorithm_hash",
+                return_value=new_algo,
+            ), patch(
+                "hero_pipeline.analysis.service.analyze_local",
+                return_value=copy.deepcopy(local),
+            ):
+                written = refresh_local_caches(snapshot, force=True)
+
+            self.assertEqual(written, {})
+            self.assertEqual(path.read_bytes(), before)
+            reloaded = load_bundles(load_manifest())["aliceth"]
+            self.assertEqual(
+                reloaded["analysis"]["provenance"]["algorithm_hash"],
+                old_algo,
+            )
+            self.assertTrue(analysis_is_fresh(reloaded, new_algo))
+            self.assertEqual(
+                reloaded["analysis"]["provenance"]["inputs_hash"],
+                analysis_inputs_hash(
+                    reloaded["source"],
+                    reloaded["ai"],
+                    reloaded["overrides"],
+                ),
+            )
 
     def test_failed_score_leaves_files_unchanged(self) -> None:
         self.repo = _mini_repo(["aliceth"])

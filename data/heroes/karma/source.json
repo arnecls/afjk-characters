@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "karma",
+  "display_name": "Karma",
+  "source": {
+    "title": "Karma - Twinborn Malice",
+    "name": "Karma",
+    "tags": "Graveborn · Tank · Physical",
+    "faction": "Graveborn",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Unfettered Carnage",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "500"
+        },
+        "description": {
+          "raw": "Karma strikes an enemy with his battleaxe, dealing 400% (ATK-based) + 40% (SP-based) damage and stunning the target for 2.5s. After 1s, an explosion erupts within 1 tile of the impact tile, dealing 400% (ATK-based) + 50% (SP-based) damage plus extra damage equal to 40% of the total healing Karma has received since this skill was last cast. The extra damage cannot exceed 500% (ATK-based). Karma recovers 10% HP for each non-summoned enemy hit by the explosion. For each non-summoned enemy defeated during the battle, this healing increases by that same amount.",
+          "active": [
+            "Karma strikes an enemy with his battleaxe, dealing 400% (ATK-based) + 40% (SP-based) damage and stunning the target for 2.5s.",
+            "After 1s, an explosion erupts within 1 tile of the impact tile, dealing 400% (ATK-based) + 50% (SP-based) damage plus extra damage equal to 40% of the total healing Karma has received since this skill was last cast.",
+            "The extra damage cannot exceed 500% (ATK-based).",
+            "Karma recovers 10% HP for each non-summoned enemy hit by the explosion.",
+            "For each non-summoned enemy defeated during the battle, this healing increases by that same amount."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the explosion's base damage to 420% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 11% of his max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the explosion's base damage to 440% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 12% of his max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the explosion's base damage to 460% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 13% of his max HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the explosion's base damage to 500% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 15% of his max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Karma strikes an enemy with his battleaxe, dealing damage to the target and nearby enemies while restoring his own HP."
+      },
+      {
+        "section": "Skill1",
+        "name": "Toxic Mosh Pit",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Kar drenches himself in special potions, leaving behind a pool with a 1-tile radius at his location that lasts for 6s. The pool deals 100% (ATK-based) + 10% (SP-based) damage every second to enemies within it and restores 140% (ATK-based) + 20% (SP-based) HP to Karma every second. At the same time, Mar swings his battleaxe to deal 300% (ATK-based) + 30% (SP-based) damage to nearby enemies.",
+          "active": [
+            "Kar drenches himself in special potions, leaving behind a pool with a 1-tile radius at his location that lasts for 6s.",
+            "The pool deals 100% (ATK-based) + 10% (SP-based) damage every second to enemies within it and restores 140% (ATK-based) + 20% (SP-based) HP to Karma every second.",
+            "At the same time, Mar swings his battleaxe to deal 300% (ATK-based) + 30% (SP-based) damage to nearby enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases HP restored per second to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases HP restored per second to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases HP restored per second to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Karma leaves a toxic pool at his location that restores his HP while he swings his battleaxe at nearby enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Bottled Bloodlust",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Kar downs a potion, restoring 20% of his max HP every second for 5s. Mar then unleashes a rapid 3-hit axe flurry against enemies in a 1-tile frontal arc, dealing 140% (ATK-based) + 20% (SP-based) damage per hit. The final hit also knocks targets down for 2s.",
+          "active": [
+            "Kar downs a potion, restoring 20% of his max HP every second for 5s.",
+            "Mar then unleashes a rapid 3-hit axe flurry against enemies in a 1-tile frontal arc, dealing 140% (ATK-based) + 20% (SP-based) damage per hit.",
+            "The final hit also knocks targets down for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage of each axe strike to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage of each axe strike to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage of each axe strike to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Karma continuously restores HP, then unleashes a flurry of axe strikes at enemies in front of him."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Karma gains 11 Vitality during battle.",
+          "active": [
+            "Karma gains 11 Vitality during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Karma gains 15 Vitality during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Karma gains 19 Vitality during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Vitality during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Sanguine Growth",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Karma grows stronger from the healing he receives. For every 35% of his initial max HP he receives in healing, his max HP increases by 40% (up to 200%) and he grows slightly larger in size. At max stacks, Karma also gains 60% Phys & Magic DEF and 50 Resilience, and the damage range of Unfettered Carnage, Toxic Mosh Pit, and Bottled Bloodlust is increased by 1 tile.",
+          "active": [
+            "Karma grows stronger from the healing he receives.",
+            "For every 35% of his initial max HP he receives in healing, his max HP increases by 40% (up to 200%) and he grows slightly larger in size.",
+            "At max stacks, Karma also gains 60% Phys & Magic DEF and 50 Resilience, and the damage range of Unfettered Carnage, Toxic Mosh Pit, and Bottled Bloodlust is increased by 1 tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the max HP gained each time to 45% and the max HP increase limit to 225%.",
+                "At max stacks, Karma gains an extra 70% Phys & Magic DEF."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Once the max HP increase from this skill reaches its limit, Karma permanently gains steadfast.",
+                "In addition, his axe strikes from Toxic Mosh Pit and Bottled Bloodlust deal 15% (HP-based) extra magic damage on hit."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the max HP gained each time to 50% and the max HP increase limit to 250%.",
+                "At max stacks, Karma gains 80% Phys & Magic DEF."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When receiving healing, Karma increases his max HP and gains extra Phys & Magic DEF and Resilience."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "While affected by his own potions, Karma takes 50% less damage. This effect cannot stack.",
+          "active": [
+            "While affected by his own potions, Karma takes 50% less damage.",
+            "This effect cannot stack."
+          ]
+        },
+        "description_lite": "Karma reduces the damage he takes while affected by his own potions."
+      }
+    ],
+    "range": 1,
+    "release_date": "2026-09-17",
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

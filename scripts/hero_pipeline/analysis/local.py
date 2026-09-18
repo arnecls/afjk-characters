@@ -14,10 +14,16 @@ from .postprocess import _postprocess_analyzed_hero
 from .records import HeroRecord
 from .skill_chunks import hero_from_record, load_skills_by_title_from_records
 
-ALGORITHM_VERSION = "local-analysis-v10"
+ALGORITHM_VERSION = "local-analysis-v11"
 
 
 def algorithm_hash() -> str:
+    """Stamp written into analysis provenance when ``local`` content changes.
+
+    Bumping ``ALGORITHM_VERSION`` does not by itself rewrite every hero file.
+    Use ``analyze --force`` after a detector change; unchanged locals keep
+    their previous algorithm_hash.
+    """
     from ..storage import canonical_hash
     from .policy import effective_defaults
 

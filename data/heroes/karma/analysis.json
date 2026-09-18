@@ -1,0 +1,882 @@
+{
+  "schema_version": 2,
+  "id": "karma",
+  "display_name": "Karma",
+  "local": {
+    "long_name": "Karma - Twinborn Malice",
+    "faction": "graveborn",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2026-09-17",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Unfettered Carnage": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Karma strikes an enemy with his battleaxe, dealing 400% (ATK-based) + 40% (SP-based) damage and stunning the target for 2.5s. After 1s, an explosion erupts within 1 tile of the impact tile, dealing 400% (ATK-based) + 50% (SP-based) damage plus extra damage equal to 40% of the total healing Karma has received since this skill was last cast. The extra damage cannot exceed 500% (ATK-based). Karma recovers 10% HP for each non-summoned enemy hit by the explosion. For each non-summoned enemy defeated during the battle, this healing increases by that same amount.",
+          "active": [
+            "Karma strikes an enemy with his battleaxe, dealing 400% (ATK-based) + 40% (SP-based) damage and stunning the target for 2.5s.",
+            "After 1s, an explosion erupts within 1 tile of the impact tile, dealing 400% (ATK-based) + 50% (SP-based) damage plus extra damage equal to 40% of the total healing Karma has received since this skill was last cast.",
+            "The extra damage cannot exceed 500% (ATK-based).",
+            "Karma recovers 10% HP for each non-summoned enemy hit by the explosion.",
+            "For each non-summoned enemy defeated during the battle, this healing increases by that same amount."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the explosion's base damage to 420% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 11% of his max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the explosion's base damage to 440% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 12% of his max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the explosion's base damage to 460% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 13% of his max HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the explosion's base damage to 500% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 15% of his max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "initial_energy": 500.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Toxic Mosh Pit": {
+        "category": "skill1",
+        "description": {
+          "raw": "Kar drenches himself in special potions, leaving behind a pool with a 1-tile radius at his location that lasts for 6s. The pool deals 100% (ATK-based) + 10% (SP-based) damage every second to enemies within it and restores 140% (ATK-based) + 20% (SP-based) HP to Karma every second. At the same time, Mar swings his battleaxe to deal 300% (ATK-based) + 30% (SP-based) damage to nearby enemies.",
+          "active": [
+            "Kar drenches himself in special potions, leaving behind a pool with a 1-tile radius at his location that lasts for 6s.",
+            "The pool deals 100% (ATK-based) + 10% (SP-based) damage every second to enemies within it and restores 140% (ATK-based) + 20% (SP-based) HP to Karma every second.",
+            "At the same time, Mar swings his battleaxe to deal 300% (ATK-based) + 30% (SP-based) damage to nearby enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases HP restored per second to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases HP restored per second to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases HP restored per second to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 110.0
+              }
+            ],
+            "duration": 6.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ],
+            "duration": 6.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Bottled Bloodlust": {
+        "category": "skill2",
+        "description": {
+          "raw": "Kar downs a potion, restoring 20% of his max HP every second for 5s. Mar then unleashes a rapid 3-hit axe flurry against enemies in a 1-tile frontal arc, dealing 140% (ATK-based) + 20% (SP-based) damage per hit. The final hit also knocks targets down for 2s.",
+          "active": [
+            "Kar downs a potion, restoring 20% of his max HP every second for 5s.",
+            "Mar then unleashes a rapid 3-hit axe flurry against enemies in a 1-tile frontal arc, dealing 140% (ATK-based) + 20% (SP-based) damage per hit.",
+            "The final hit also knocks targets down for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage of each axe strike to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage of each axe strike to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage of each axe strike to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 2.0
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 4.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock down — Arc"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Karma gains 11 Vitality during battle.",
+          "active": [
+            "Karma gains 11 Vitality during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Karma gains 15 Vitality during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Karma gains 19 Vitality during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Vitality",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 19.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Vitality — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Sanguine Growth": {
+        "category": "skill4",
+        "description": {
+          "raw": "Karma grows stronger from the healing he receives. For every 35% of his initial max HP he receives in healing, his max HP increases by 40% (up to 200%) and he grows slightly larger in size. At max stacks, Karma also gains 60% Phys & Magic DEF and 50 Resilience, and the damage range of Unfettered Carnage, Toxic Mosh Pit, and Bottled Bloodlust is increased by 1 tile.",
+          "active": [
+            "Karma grows stronger from the healing he receives.",
+            "For every 35% of his initial max HP he receives in healing, his max HP increases by 40% (up to 200%) and he grows slightly larger in size.",
+            "At max stacks, Karma also gains 60% Phys & Magic DEF and 50 Resilience, and the damage range of Unfettered Carnage, Toxic Mosh Pit, and Bottled Bloodlust is increased by 1 tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the max HP gained each time to 45% and the max HP increase limit to 225%.",
+                "At max stacks, Karma gains an extra 70% Phys & Magic DEF."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Once the max HP increase from this skill reaches its limit, Karma permanently gains steadfast.",
+                "In addition, his axe strikes from Toxic Mosh Pit and Bottled Bloodlust deal 15% (HP-based) extra magic damage on hit."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the max HP gained each time to 50% and the max HP increase limit to 250%.",
+                "At max stacks, Karma gains 80% Phys & Magic DEF."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 1,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 1,
+                "stack_comparison": "at_max"
+              }
+            ],
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 1,
+                "stack_comparison": "at_max"
+              }
+            ],
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 1,
+                "stack_comparison": "at_max"
+              }
+            ],
+            "type": "buff",
+            "name": "Resilience",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "ex+10",
+            "immunity_type": "steadfast",
+            "timing": "permanent",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage (EX+10)"
+          },
+          {
+            "label": "Magic DEF — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Resilience — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Magic DEF — Self (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF — Self (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Magic DEF — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Steadfast — Self (EX+10)"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "While affected by his own potions, Karma takes 50% less damage. This effect cannot stack.",
+          "active": [
+            "While affected by his own potions, Karma takes 50% less damage.",
+            "This effect cannot stack."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Stacked resource",
+          "tier": "base",
+          "targeting": "Area",
+          "description": "Explosion deals extra damage equal to 40% of healing received since the last cast, capped at 500% (ATK-based)."
+        },
+        {
+          "label": "Stacking",
+          "tier": "mythic+",
+          "targeting": "Self",
+          "description": "Healing received relative to initial max HP increases max HP in stacks and enlarges Karma; at max stacks skill damage range increases by 1 tile."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Arc, Area, Single target"
+      ],
+      [
+        "dot",
+        "Area"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "max_hp",
+      "resilience",
+      "physical_def",
+      "magic_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.9444444444444444,
+      "max_hp": 0.05555555555555555
+    },
+    "id": "karma",
+    "display_name": "Karma",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Karma strikes an enemy with his battleaxe, dealing 400% (ATK-based) + 40% (SP-based) damage and stunning the target for 2.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After 1s, an explosion erupts within 1 tile of the impact tile, dealing 400% (ATK-based) + 50% (SP-based) damage plus extra damage equal to 40% of the total healing Karma has received since this skill was last cast.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The extra damage cannot exceed 500% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Karma recovers 10% HP for each non-summoned enemy hit by the explosion.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "For each non-summoned enemy defeated during the battle, this healing increases by that same amount.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the explosion's base damage to 420% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 11% of his max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the explosion's base damage to 440% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 12% of his max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the explosion's base damage to 460% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 13% of his max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the explosion's base damage to 500% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 15% of his max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Kar drenches himself in special potions, leaving behind a pool with a 1-tile radius at his location that lasts for 6s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The pool deals 100% (ATK-based) + 10% (SP-based) damage every second to enemies within it and restores 140% (ATK-based) + 20% (SP-based) HP to Karma every second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "At the same time, Mar swings his battleaxe to deal 300% (ATK-based) + 30% (SP-based) damage to nearby enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases HP restored per second to 160% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases HP restored per second to 180% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases HP restored per second to 200% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Kar downs a potion, restoring 20% of his max HP every second for 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Mar then unleashes a rapid 3-hit axe flurry against enemies in a 1-tile frontal arc, dealing 140% (ATK-based) + 20% (SP-based) damage per hit.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The final hit also knocks targets down for 2s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each axe strike to 160% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each axe strike to 180% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of each axe strike to 200% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Karma gains 11 Vitality during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Karma gains 15 Vitality during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Karma gains 19 Vitality during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Karma grows stronger from the healing he receives.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "For every 35% of his initial max HP he receives in healing, his max HP increases by 40% (up to 200%) and he grows slightly larger in size.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "At max stacks, Karma also gains 60% Phys & Magic DEF and 50 Resilience, and the damage range of Unfettered Carnage, Toxic Mosh Pit, and Bottled Bloodlust is increased by 1 tile.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the max HP gained each time to 45% and the max HP increase limit to 225%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "At max stacks, Karma gains an extra 70% Phys & Magic DEF.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Once the max HP increase from this skill reaches its limit, Karma permanently gains steadfast.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "In addition, his axe strikes from Toxic Mosh Pit and Bottled Bloodlust deal 15% (HP-based) extra magic damage on hit.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the max HP gained each time to 50% and the max HP increase limit to 250%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "At max stacks, Karma gains 80% Phys & Magic DEF.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "While affected by his own potions, Karma takes 50% less damage.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This effect cannot stack.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "a169331ec6a76c52b37d06fd8b50c19e75d36cfbb37dc4eee9cdd3f2024bd050",
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+  }
+}

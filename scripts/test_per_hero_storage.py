@@ -36,7 +36,7 @@ class PerHeroStorageTests(unittest.TestCase):
     def test_every_manifest_hero_has_four_files(self) -> None:
         manifest = load_manifest()
         bundles = load_bundles(manifest)
-        self.assertEqual(len(manifest["heroes"]), 125)
+        self.assertEqual(len(manifest["heroes"]), 126)
         self.assertEqual(
             {entry["id"] for entry in manifest["heroes"]},
             set(bundles),
@@ -54,7 +54,7 @@ class PerHeroStorageTests(unittest.TestCase):
 
     def test_snapshot_source_titles_match_manifest(self) -> None:
         snapshot = load_roster_inputs()
-        self.assertEqual(len(snapshot["manifest"]["heroes"]), 125)
+        self.assertEqual(len(snapshot["manifest"]["heroes"]), 126)
         for entry in snapshot["manifest"]["heroes"]:
             source = snapshot["bundles"][entry["id"]]["source"]["source"]
             self.assertEqual(source["title"], entry["title"])

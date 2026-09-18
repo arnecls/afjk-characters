@@ -1,0 +1,607 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Karma - Twinborn Malice",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "d6cc83a3c2602a5bfa9765e91c0aefc77d9fae5beabcb03b8cadd070e2950d6f",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 400.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 2.5
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 500.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Stacked resource",
+                "tier": "base",
+                "targeting": "Area",
+                "description": "Explosion deals extra damage equal to 40% of healing received since the last cast, capped at 500% (ATK-based)."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "fb37a51fef6f956f9deb9039ed58bb25e613ab6baf221798188b093a51b92f43",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "dot",
+                "damage_type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "duration": 6,
+                "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "duration": 6,
+                "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "47a134a21539cdedd29c67252bc481f8ee3507066624821cb828220e6026e9cb",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 5,
+                "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "arc",
+                "target_count": -1,
+                "area_direction": "front",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "arc",
+                "target_count": -1,
+                "area_direction": "front",
+                "type": "crowd_control",
+                "cc-type": "knock_down",
+                "duration": 2.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "ab6f52297fccaa24598696b372cfe7b9ae2887a0fb1b5306d1bc778e51765201",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Vitality",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 19.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "edc11590778c2ea7f4d04f9eb488fdb917988c6cf42369ab663899815f297d96",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 1,
+                    "stack_comparison": "up_to"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Phys DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 1,
+                    "stack_comparison": "at_max"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 1,
+                    "stack_comparison": "at_max"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Resilience",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 1,
+                    "stack_comparison": "at_max"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "mythic+",
+                "targeting": "Self",
+                "description": "Healing received relative to initial max HP increases max HP in stacks and enlarges Karma; at max stacks skill damage range increases by 1 tile."
+              }
+            ],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 225.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Phys DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "ex+10",
+                "immunity_type": "steadfast",
+                "timing": "permanent",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Phys DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 80.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 80.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "8e8730bd36329e33cfb8d4add59067e0f06cd22faaaf8beed05bfd34290dd617",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "dot-specialist",
+    "high-initial-energy",
+    "hp-scaling",
+    "non-ult-utility"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "stun a nearby enemy, then explode for healing-scaled area damage and self heal",
+    "skill1": "leave a DoT pool that also heals self, while dealing nearby physical damage",
+    "skill2": "potion heals over time, then frontal axe flurry with knock down",
+    "skill3": "gain Vitality for the battle",
+    "skill4": "convert healing into stacked max HP; at max stacks gain DEF and Resilience",
+    "skill5": "take reduced damage while under own potions"
+  },
+  "play_overview": "Karma is a melee frontliner who **converts healing into permanent max HP growth**, then layers Phys DEF, Magic DEF, and Resilience once stacks cap. His toxic pool ticks **DoT on enemies** while healing him, and his potion skill sustains him through a **knock-down axe flurry**. The ultimate slams for a **stun**, then explodes for area damage that **scales with healing received** since the last cast and tops him up per enemy hero hit. At higher exclusive ranks he becomes **steadfast** and adds max-HP-based damage on axe strikes, while potions cut damage taken. He snowballs in **long fights with steady healers**, but struggles when burst deletes him before stacks build or when healing is scarce. Short skirmishes leave his growth and healing-scaled explosion underfed.",
+  "counter_overview": "Karma is a melee frontliner who **snowballs max HP from healing**, then locks Phys DEF, Magic DEF, and Resilience at max stacks while his pool and potion skills keep topping him up; the ultimate stuns then explodes for healing-scaled damage. Cut the heal loop early with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so stacks and the explosion stay weak — if they park a dedicated healer, also pressure that battery or lock ally heals with [[Dunlingr]]. Both DEF ranks run high, so finish him with true-damage melee like [[Himmel]] or [[Zorya]] before steadfast and potion damage reduction make the trade sticky. Do not bank on knockback or pulls once exclusive ranks grant steadfast."
+}

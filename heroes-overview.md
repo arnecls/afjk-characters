@@ -2274,13 +2274,13 @@ Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Mikola**.
   - Energy (multiple targets, average) `signature fuel`
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
   - Enemy defense via Phys DEF debuff (single target, average)
-- **Rowan**
-  - Phys DEF (single target, average)
-  - Magic DEF (single target, high)
-  - Energy (area, high) `signature fuel`
-  - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
 - **Laios**
   - Enemy defense via Phys DEF debuff (area, high)
+- **Rowan**
+  - Phys DEF (single target, average)
+  - Magic DEF (single target, average)
+  - Energy (area, high) `signature fuel`
+  - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
 - **Lyca**
   - ATK SPD (all units, low) `signature fuel`
   - Energy (all units, low) `signature fuel`
@@ -3764,7 +3764,7 @@ Common buffers are **Contess**, **Kazim**, **Mikola**, or **Parisa**.
 
 ### Units benefitting most from Evie
 
-Evie provides ATK to single targets `average` and Direct healing to single targets `low`.
+Evie provides ATK to single targets `average` and Direct healing to single targets `average`.
 
 **41** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -3823,7 +3823,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Evie
 
 - ATK — Single target — `average`
-- Direct healing — Single target — `low`
+- Direct healing — Single target — `average`
 
 #### Debuffs provided by Evie
 
@@ -4690,7 +4690,7 @@ Common buffers are **Mikola**, **Twins**, **Lorsan**, or **Smokey & Meerky**.
 
 - **Rowan**
   - Phys DEF (single target, average)
-  - Magic DEF (single target, high)
+  - Magic DEF (single target, average)
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
 - **Tilaya**
   - DEF (area, high)
@@ -5508,7 +5508,7 @@ Common buffers are **Mikola**, **Kazim**, **Smokey & Meerky**, or **Parisa**.
 
 ### Units benefitting most from Hewynn
 
-Hewynn provides Direct healing to single targets `high`, Healing over time to all units `high`, Damage taken (Mythic+) to all units `low`, and Haste (Supreme+) to single targets `average`.
+Hewynn provides Direct healing to single targets `high`, Healing over time to all units `average`, Damage taken (Mythic+) to all units `low`, and Haste (Supreme+) to single targets `average`.
 
 **11** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -5551,7 +5551,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Hewynn
 
 - Direct healing — Single target — `high`
-- Healing over time — All units — `high`
+- Healing over time — All units — `average`
 - Damage taken (Mythic+) — All units — `low`
 - Haste (Supreme+) — Single target — `average`
 
@@ -6275,7 +6275,7 @@ Common buffers are **Smokey & Meerky**, **Kazim**, **Mikola**, or **Twins**.
 
 Isabella provides ATK to single targets `low` — conditional (frequent), ATK SPD to single targets `low`, Direct healing to single targets `high`, Haste to single targets `low`, Magic DEF to single targets `low`, Phys DEF to single targets `low`, and Vitality to single targets `low`.
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**11** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -6478,6 +6478,125 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 
 - Unaffected (Mythic+) — Self — On skill
 - Knock back — Single target — `low`
+- Stun — Single target — `average`
+
+## Karma
+
+### Karma's behavior
+
+- **Signature skill**: Unfettered Carnage (ultimate)
+- **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
+- **Behavior tags**: `aoe-damage` `dot-specialist` `high-initial-energy` `hp-scaling` `non-ult-utility`
+- **Damage types**: Physical `high`, DoT `average`
+
+#### Play overview
+
+Karma is a melee frontliner who **converts healing into permanent max HP growth**, then layers Phys DEF, Magic DEF, and Resilience once stacks cap. His toxic pool ticks **DoT on enemies** while healing him, and his potion skill sustains him through a **knock-down axe flurry**. The ultimate slams for a **stun**, then explodes for area damage that **scales with healing received** since the last cast and tops him up per enemy hero hit. At higher exclusive ranks he becomes **steadfast** and adds max-HP-based damage on axe strikes, while potions cut damage taken. He snowballs in **long fights with steady healers**, but struggles when burst deletes him before stacks build or when healing is scarce. Short skirmishes leave his growth and healing-scaled explosion underfed.
+
+#### Counter proposal
+
+Karma is a melee frontliner who **snowballs max HP from healing**, then locks Phys DEF, Magic DEF, and Resilience at max stacks while his pool and potion skills keep topping him up; the ultimate stuns then explodes for healing-scaled damage. Cut the heal loop early with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so stacks and the explosion stay weak — if they park a dedicated healer, also pressure that battery or lock ally heals with [[Dunlingr]]. Both DEF ranks run high, so finish him with true-damage melee like [[Himmel]] or [[Zorya]] before steadfast and potion damage reduction make the trade sticky. Do not bank on knockback or pulls once exclusive ranks grant steadfast.
+
+#### Stats overview
+
+- **Categories**: Basic Stats `high`, Offensive Stats `high`, Defensive Stats `high`, Other Stats `average`
+- **Stats**: HP `high`, ATK `high`, Phys DEF `high`, Magic DEF `high`, Haste `high`, ATK SPD `high`
+
+
+#### Skill overview
+
+- **Signature skill (ult)**: speed `fast`, heal `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
+
+##### Ultimate
+
+stun a nearby enemy, then explode for healing-scaled area damage and self heal
+
+##### Skill 1
+
+leave a DoT pool that also heals self, while dealing nearby physical damage
+
+##### Skill 2
+
+potion heals over time, then frontal axe flurry with knock down
+
+##### Legendary+
+
+gain Vitality for the battle
+
+##### Mythic+
+
+convert healing into stacked max HP; at max stacks gain DEF and Resilience
+
+##### Supreme+
+
+take reduced damage while under own potions
+
+### Units improving Karma
+
+Look for units providing: `Max HP` `Resilience` `Physical DEF` `Magic DEF`  
+Common buffers are **Twins**, **Mikola**, or **Rowan**.
+
+- **Tilaya**
+  - Max HP (area, average)
+  - DEF (area, high)
+  - DEF (area, high)
+- **Isabella**
+  - Phys DEF (single target, low)
+  - Magic DEF (single target, low)
+- **Perseus**
+  - Phys DEF (multiple targets, low)
+  - Magic DEF (multiple targets, low)
+- **Solise**
+  - DEF (single target, low)
+  - DEF (single target, low)
+- **Lucca**
+  - Magic DEF (area, low)
+- **Lumont**
+  - Phys DEF (multiple targets, low)
+
+### Units benefitting most from Karma
+
+- Carolina (3.0 / 5)
+- Nerion (2.7 / 5)
+- Alsa (2.0 / 5)
+
+### Units that can act as a replacement for Karma
+
+**Similar Skills**
+
+- Silven (50% `high-initial-energy` `hp-scaling` `non-ult-utility`)
+- Lamentis (42% `aoe-damage` `high-initial-energy` `hp-scaling`)
+- Scarlita (42% `aoe-damage` `hp-scaling` `non-ult-utility`)
+
+**Damage**
+
+- Brutus (100% `Physical` `DoT`)
+- Gwyneth (100% `Physical` `DoT`)
+
+**Crowd Control**
+
+- Callan (100% `Knock down` `Stun`)
+- Zorya (100% `Knock down` `Stun`)
+- Antandra (95% `Knock down` `Stun`)
+
+### Summary for Karma
+
+#### Karma Provides
+
+- Stacked resource — Area
+- Stacking (Mythic+) — Self
+
+#### Damage types dealt by Karma
+
+- Physical — Arc, Area, Single target
+- DoT — Area
+- Max HP-based damage — Single target
+
+#### Crowd Control provided by Karma
+
+- Steadfast (EX+10) — Self — Permanent
+- Knock down — Arc — `average`
 - Stun — Single target — `average`
 
 ## Kazim
@@ -6863,7 +6982,7 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Rowan**
   - Phys DEF (single target, average)
-  - Magic DEF (single target, high)
+  - Magic DEF (single target, average)
   - Energy (area, high) `signature fuel`
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
 - **Sonja**
@@ -8092,6 +8211,7 @@ _No synergy partners matched stat buffs or enablers._
 Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in an area `low`.
 
 - Kazim (3.4 / 5)
+- Karma (1.5 / 5)
 
 ### Units that can act as a replacement for Lucca
 
@@ -8642,9 +8762,7 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 Lumont provides Phys DEF to multiple targets `low`.
 
-- Carolina (3.7 / 5)
-- Nerion (3.2 / 5)
-- Alsa (2.4 / 5)
+- Karma (1.5 / 5)
 
 ### Units that can act as a replacement for Lumont
 
@@ -9378,7 +9496,7 @@ Common buffers are **Smokey & Meerky**, **Kazim**, **Twins**, or **Rolan**.
 
 Mikola provides ATK to all units `low`, DEF to multiple targets `average`, Direct healing to multiple targets `average`, Haste to multiple targets `average`, Magic DEF to multiple targets `average`, and Vitality (EX+10) to multiple targets `high`.
 
-**62** units include this provider among their top 6 synergy partners. Why the match is common:
+**63** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -10550,7 +10668,7 @@ Common buffers are **Rowan**, **Thador**, **Ravion**, or **Twins**.
 
 Pandora provides ATK to single targets `high`, Direct healing to single targets `high`, Energy to single targets `low`, Invincible to single targets `high`, and Max HP (Legendary+) to single targets `low`.
 
-**94** units include this provider among their top 6 synergy partners. Why the match is common:
+**95** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -11134,6 +11252,7 @@ Perseus provides ATK to multiple targets `average`, Magic DEF to multiple target
 - Lily May (3.6 / 5)
 - Faramor (3.5 / 5)
 - Hepler (3.0 / 5)
+- Karma (2.0 / 5)
 
 ### Units that can act as a replacement for Perseus
 
@@ -12132,10 +12251,10 @@ Rowan provides Direct healing in an area `low`, Energy in an area `high`, Magic 
 
 These are the **4** strongest pairings: 
 
-- Seth (4.5 / 5)
 - Shemira (3.5 / 5)
 - Zorya (3.3 / 5)
 - Marcille (3.2 / 5)
+- Cryonaia (2.9 / 5)
 
 ### Units that can act as a replacement for Rowan
 
@@ -12198,7 +12317,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Seed Siphon (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-shielder` `cheat-death` `energy-inhibitor` `high-initial-energy`
-- **Damage types**: Magic `high`, DoT `average`
+- **Damage types**: Magic `high`, DoT `low`
 
 #### Play overview
 
@@ -12757,7 +12876,7 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 - **Rowan**
   - Energy (area, high) `signature fuel`
   - Phys DEF (single target, average)
-  - Magic DEF (single target, high)
+  - Magic DEF (single target, average)
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
 - **Thador**
   - Crit (single target, average)
@@ -13841,6 +13960,7 @@ Solise provides ATK to single targets `low`, Direct healing to all units `high`,
 
 - Bonnie (5.0 / 5)
 - Phraesto (2.1 / 5)
+- Karma (2.0 / 5)
 - Kruger (1.8 / 5)
 
 ### Units that can act as a replacement for Solise
@@ -13973,7 +14093,7 @@ Common buffers are **Rolan**, **Twins**, **Ravion**, or **Kazim**.
 
 Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targets `low`.
 
-**18** units include this provider among their top 6 synergy partners. Why the match is common:
+**19** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -15131,13 +15251,13 @@ Common buffers are **Rolan**, **Twins**, **Contess**, or **Evie**.
 
 Tilaya provides DEF (EX+10) in an area `high` and Max HP (EX+10) in an area `average`.
 
-**9** units include this provider among their top 6 synergy partners. Why the match is common:
+**10** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
-- Granny Dahnie (4.1 / 5)
+- Karma (5.0 / 5)
 - Hepler (3.8 / 5)
 - Laios (3.4 / 5)
 - Voracia (2.3 / 5)
@@ -15267,7 +15387,7 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Rolan**, or **Dunlingr**.
 
 Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `average`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `average`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**73** units include this provider among their top 6 synergy partners. Why the match is common:
+**74** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner

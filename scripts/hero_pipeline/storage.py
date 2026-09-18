@@ -443,8 +443,15 @@ def load_analyses(
 
 def analysis_is_fresh(
     bundle: Mapping[str, Any],
-    algorithm_hash: str,
+    algorithm_hash: str | None = None,
 ) -> bool:
+    """True when the on-disk local cache matches current inputs.
+
+    ``algorithm_hash`` is kept for callers. A detector bump alone does not
+    mark the cache stale: refresh recomputes, then rewrites the file only
+    when ``local`` content changes (see ``refresh_local_caches``).
+    """
+    del algorithm_hash  # API compat; equality is not a freshness gate.
     document = bundle["analysis"]
     local = document.get("local")
     provenance = document.get("provenance") or {}
@@ -455,15 +462,14 @@ def analysis_is_fresh(
     hero_id = (bundle.get("manifest") or {}).get("id") or bundle["source"].get("id")
     if local.get("id") != hero_id:
         return False
+    if not provenance.get("algorithm_hash"):
+        return False
     expected = analysis_inputs_hash(
         bundle["source"],
         bundle["ai"],
         bundle["overrides"],
     )
-    return (
-        provenance.get("inputs_hash") == expected
-        and provenance.get("algorithm_hash") == algorithm_hash
-    )
+    return provenance.get("inputs_hash") == expected
 
 
 def publish_documents(documents: list[tuple[Path, Any]]) -> None:

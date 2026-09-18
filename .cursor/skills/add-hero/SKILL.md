@@ -198,6 +198,11 @@ Add one generalized mechanic summary for every skill category that exists:
 cross-check. Summaries contain mechanics, not numbers, hero names, skill
 names, named companions, or visual flavor nouns.
 
+These texts are the skill-card short descriptions on the site. Keep them
+concise like the rest of the roster (~5–20 words, max ~120 characters): one
+core beat per skill, not a full kit paraphrase. Prefer the shortest wording
+that still names the main mechanic.
+
 ### 4.3 Play overview
 
 Write the short play overview from the current skill data and, when useful,

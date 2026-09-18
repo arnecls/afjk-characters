@@ -10257,3 +10257,85 @@ While Zorya is awake, she creates a 2-tile forcefield around herself, causing al
 *Unlocks at Supreme+*
 
 When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state. This effect can trigger once per battle.
+
+## Karma - Twinborn Malice
+
+*Graveborn · Tank · Physical*
+
+### Ultimate
+
+**Unfettered Carnage**
+*Unlocks at Level 1*
+
+- Skill Range: 1 tile
+- Initial Energy: 500
+
+Karma strikes an enemy with his battleaxe, dealing 400% (ATK-based) + 40% (SP-based) damage and stunning the target for 2.5s. After 1s, an explosion erupts within 1 tile of the impact tile, dealing 400% (ATK-based) + 50% (SP-based) damage plus extra damage equal to 40% of the total healing Karma has received since this skill was last cast. The extra damage cannot exceed 500% (ATK-based). Karma recovers 10% HP for each non-summoned enemy hit by the explosion. For each non-summoned enemy defeated during the battle, this healing increases by that same amount.
+
+- Level 2 — Unlocks at Level 51: Increases the explosion's base damage to 420% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 11% of his max HP.
+- Level 3 — Unlocks at Level 111: Increases the explosion's base damage to 440% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 12% of his max HP.
+- Level 4 — Unlocks at Level 171: Increases the explosion's base damage to 460% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 13% of his max HP.
+- Level 5 — Unlocks at Level 231: Increases the explosion's base damage to 500% (ATK-based) + 50% (SP-based) and the HP restored per enemy hit to 15% of his max HP.
+
+### Skill1
+
+**Toxic Mosh Pit**
+*Unlocks at Level 11*
+
+- Cooldown: 8s
+- Skill Range: 1 tile
+
+Kar drenches himself in special potions, leaving behind a pool with a 1-tile radius at his location that lasts for 6s. The pool deals 100% (ATK-based) + 10% (SP-based) damage every second to enemies within it and restores 140% (ATK-based) + 20% (SP-based) HP to Karma every second. At the same time, Mar swings his battleaxe to deal 300% (ATK-based) + 30% (SP-based) damage to nearby enemies.
+
+- Level 2 — Unlocks at Level 71: Increases HP restored per second to 160% (ATK-based) + 20% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases HP restored per second to 180% (ATK-based) + 20% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases HP restored per second to 200% (ATK-based) + 20% (SP-based).
+
+### Skill2
+
+**Bottled Bloodlust**
+*Unlocks at Level 31*
+
+- Cooldown: 10s
+- Initial Cooldown: 4s
+- Skill Range: 1 tile
+
+Kar downs a potion, restoring 20% of his max HP every second for 5s. Mar then unleashes a rapid 3-hit axe flurry against enemies in a 1-tile frontal arc, dealing 140% (ATK-based) + 20% (SP-based) damage per hit. The final hit also knocks targets down for 2s.
+
+- Level 2 — Unlocks at Level 91: Increases the damage of each axe strike to 160% (ATK-based) + 20% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the damage of each axe strike to 180% (ATK-based) + 20% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the damage of each axe strike to 200% (ATK-based) + 20% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Karma gains 11 Vitality during battle.
+
+- Level 2: Karma gains 15 Vitality during battle.
+- Level 3: Karma gains 19 Vitality during battle.
+
+### Ex. Skill
+
+**Sanguine Growth**
+*Unlocks at Mythic+*
+
+- Skill Range: 1 tile
+
+Karma grows stronger from the healing he receives. For every 35% of his initial max HP he receives in healing, his max HP increases by 40% (up to 200%) and he grows slightly larger in size. At max stacks, Karma also gains 60% Phys & Magic DEF and 50 Resilience, and the damage range of Unfettered Carnage, Toxic Mosh Pit, and Bottled Bloodlust is increased by 1 tile.
+
+- Level 2 — Unlocks at EX. +5: Increases the max HP gained each time to 45% and the max HP increase limit to 225%. At max stacks, Karma gains an extra 70% Phys & Magic DEF.
+- Level 3 — Unlocks at EX. +10: Once the max HP increase from this skill reaches its limit, Karma permanently gains steadfast. In addition, his axe strikes from Toxic Mosh Pit and Bottled Bloodlust deal 15% (HP-based) extra magic damage on hit.
+- Level 4 — Unlocks at EX. +15: Increases the max HP gained each time to 50% and the max HP increase limit to 250%. At max stacks, Karma gains 80% Phys & Magic DEF.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+- Skill Range: 1 tile
+
+While affected by his own potions, Karma takes 50% less damage. This effect cannot stack.

@@ -484,6 +484,18 @@ def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
         return bool(re.search(r"\b(?:atk|atk bonus)\b", t))
     if label == "Movement speed":
         return bool(re.search(r"\bmovement speed\b", t))
+    if label == "Resilience":
+        return bool(re.search(r"\bresilience\b", t))
+    if label == "Phys DEF":
+        return bool(
+            re.search(r"\bphys(?:ical)?(?:\s*&\s*magic)?\s*def\b", t)
+            or re.search(r"\bphys(?:ical)? and magic def\b", t)
+        )
+    if label == "Magic DEF":
+        return bool(
+            re.search(r"\bmagic(?:\s*&\s*phys(?:ical)?)?\s*def\b", t)
+            or re.search(r"\bphys(?:ical)?(?:\s*&\s*|\s+and\s+)magic def\b", t)
+        )
     return True
 
 def _scalar_upgrade_targets_effect(upgrade_text: str, effect: EffectRecord) -> bool:

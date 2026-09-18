@@ -151,7 +151,9 @@ Task progress:
 - [ ] 7. Write docs/validation-detailed-YYYY-MM-DD.md
 - [ ] 8. Synergy spot-check — grep false buff replacements for fixed heroes
 - [ ] 9. Prioritize fixes; patch detection; add regression tests
-- [ ] 10. Bump ALGORITHM_VERSION in local analysis if detection changed; just views && just validate
+- [ ] 10. Bump ALGORITHM_VERSION in local analysis if detection changed; run
+      `python3 scripts/hero_pipeline_cli.py analyze --force` (rewrites only
+      heroes whose `local` content changes), then just views && just validate
 - [ ] 11. Re-run pre-scan; move closed rows to Resolved
 ```
 

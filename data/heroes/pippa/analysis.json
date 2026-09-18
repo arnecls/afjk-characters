@@ -248,7 +248,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 200.0
+                "value": 140.0
               }
             ],
             "duration": 3.0,
@@ -731,6 +731,6 @@
   },
   "provenance": {
     "inputs_hash": "4e814b9cd8326b93ae5f093dfa258005e39bade62dd93a389ac05f52a0ffd401",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

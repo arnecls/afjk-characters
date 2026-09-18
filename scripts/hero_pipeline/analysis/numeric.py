@@ -887,14 +887,17 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:the )?target's max hp",
         ]
     elif dmg_type == "DoT":
+        # Require an interval cue so one-shot axe/slam ATK% lines do not
+        # inflate DoT numerics via the loose atk-based fallback below.
+        _sp = r"(?:\s*\((?:sp|pwr)-based\))?"
         patterns = [
-            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage per second",
-            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage.{0,40}per second",
-            r"take(?:s)? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage per second",
-            r"deals? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage every second",
-            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage every second",
-            r"continue(?:s)? to take (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage per second",
-            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%.{0,40}per second",
+            rf"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}\s+damage per second",
+            rf"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}\s+damage.{{0,40}}per second",
+            rf"take(?:s)? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}\s+damage per second",
+            rf"deals? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}\s+damage every second",
+            rf"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}\s+damage every second",
+            rf"continue(?:s)? to take (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}\s+damage per second",
+            rf"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%{_sp}.{{0,40}}per second",
             r"increases? enemy'?s? hp loss to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
             r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*hp per 0\.\d+s",
             r"deals? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\).{0,30}damage to the enemy every second",
@@ -933,11 +936,23 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
     if amounts:
         return max(amounts)
 
-    if dmg_type in ("Physical", "Magic", "Ranged", "DoT"):
+    if dmg_type in ("Physical", "Magic", "Ranged"):
         for m in re.finditer(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
             if _is_damage_cap_context(text.lower(), m.start()):
                 continue
             if _is_shield_context(text.lower(), m.start()):
+                continue
+            return float(m.group(1))
+    if dmg_type == "DoT":
+        # Only accept a bare ATK% when the match sits in a tick clause.
+        lowered = text.lower()
+        for m in re.finditer(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
+            if _is_damage_cap_context(lowered, m.start()):
+                continue
+            if _is_shield_context(lowered, m.start()):
+                continue
+            window = lowered[m.start() : m.end() + 48]
+            if not re.search(r"(?:every|per)\s+(?:second|0\.\d+s|\d+(?:\.\d+)?s)", window):
                 continue
             return float(m.group(1))
     if dmg_type == "True damage":

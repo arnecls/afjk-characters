@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Mapping
+from typing import Any, Mapping
 
 from ..contracts import (
     AnalysisContext,
@@ -13,6 +13,7 @@ from ..contracts import (
 )
 from ..storage import (
     analysis_is_fresh,
+    canonical_hash,
     load_local_analyses,
     write_local_analyses,
 )
@@ -22,11 +23,23 @@ from .local import algorithm_hash, analyze_local
 from .policy import make_policy, PipelinePolicy
 
 
+def _local_content_equal(left: Any, right: Any) -> bool:
+    return canonical_hash(left) == canonical_hash(right)
+
+
 def refresh_local_caches(
     snapshot: RosterSnapshot,
     hero_ids: set[str] | None = None,
+    *,
+    force: bool = False,
 ) -> dict[str, LocalAnalysis]:
-    """Recompute stale local analysis caches and persist them."""
+    """Recompute stale local analysis caches and persist changed ones.
+
+    By default only input-stale bundles are recomputed. Pass ``force=True``
+    after a detector bump (``ALGORITHM_VERSION``) to recompute selected
+    heroes. Files are rewritten only when the ``local`` payload changes;
+    an unchanged result keeps the previous ``algorithm_hash`` on disk.
+    """
     prime_curated_cache(snapshot)
     algo = algorithm_hash()
     selected = hero_ids or {
@@ -35,12 +48,23 @@ def refresh_local_caches(
     stale: dict[str, LocalAnalysis] = {}
     for hero_id in selected:
         bundle = snapshot["bundles"][hero_id]
-        if analysis_is_fresh(bundle, algo):
+        inputs_fresh = analysis_is_fresh(bundle, algo)
+        if inputs_fresh and not force:
             continue
-        stale[hero_id] = analyze_local(
+        new_local = analyze_local(
             bundle["manifest"],
             bundle,
         )
+        document = bundle["analysis"]
+        old_local = document.get("local")
+        if (
+            inputs_fresh
+            and isinstance(old_local, dict)
+            and _local_content_equal(old_local, new_local)
+        ):
+            # Force recompute matched disk — keep the existing stamp.
+            continue
+        stale[hero_id] = new_local
     if stale:
         write_local_analyses(
             stale,

@@ -27,6 +27,11 @@ def main() -> None:
 
     analyze_p = sub.add_parser("analyze", help="refresh stale local caches")
     analyze_p.add_argument("--hero")
+    analyze_p.add_argument(
+        "--force",
+        action="store_true",
+        help="recompute even when inputs are fresh (detector bumps)",
+    )
 
     views_p = sub.add_parser(
         "views",
@@ -52,7 +57,7 @@ def main() -> None:
         print(f"Downloaded source for {scope} ({count} web records)")
         return
     if args.command == "analyze":
-        count = analyze(hero_id=args.hero)
+        count = analyze(hero_id=args.hero, force=args.force)
         print(f"Refreshed {count} local analysis caches")
         return
     if args.command == "views":

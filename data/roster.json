@@ -1131,6 +1131,16 @@
       "aliases": [
         "Zorya"
       ]
+    },
+    {
+      "id": "karma",
+      "display_name": "Karma",
+      "title": "Karma - Twinborn Malice",
+      "order": 125,
+      "aliases": [
+        "Karma",
+        "Twinborn Malice"
+      ]
     }
   ]
 }

@@ -55,12 +55,13 @@ def download(*, hero_id: str | None = None) -> int:
     return len(data.get("heroes") or [])
 
 
-def analyze(*, hero_id: str | None = None) -> int:
+def analyze(*, hero_id: str | None = None, force: bool = False) -> int:
     """Refresh stale local analysis caches."""
     snapshot = _snapshot()
     stale = refresh_local_caches(
         snapshot,
         {hero_id} if hero_id else None,
+        force=force,
     )
     return len(stale)
 
