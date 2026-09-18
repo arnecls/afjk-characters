@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "id": "shemira",
+  "display_name": "Shemira",
+  "source": {
+    "title": "Shemira - Corpsemaker",
+    "name": "Shemira",
+    "tags": "Graveborn · Mage · Magic",
+    "faction": "Graveborn",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A mage skilled in commanding ghosts, capable of stealing health during combat.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Phantom Procession",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Passive. Any ghosts summoned by Ghostly Tribute join the bombardment. Active. Shemira summons 10 ghosts to bombard random enemies for 10s. Each ghost deals 110% (ATK-based) + 15% (SP-based) damage to an enemy target. When a ghost deals damage, Shemira heals herself for 50% + 5% (SP-based) of the damage dealt. When the ghost returns to her, she heals herself again for 50% + 5% (SP-based) of that damage. The percentage of the ghosts' damage drops to 50% once any enemy has been struck 15 times or more by the ghosts. The strike count resets whenever Shemira casts her Ultimate.",
+          "passive": [
+            "Any ghosts summoned by Ghostly Tribute join the bombardment."
+          ],
+          "active": [
+            "Shemira summons 10 ghosts to bombard random enemies for 10s.",
+            "Each ghost deals 110% (ATK-based) + 15% (SP-based) damage to an enemy target.",
+            "When a ghost deals damage, Shemira heals herself for 50% + 5% (SP-based) of the damage dealt.",
+            "When the ghost returns to her, she heals herself again for 50% + 5% (SP-based) of that damage.",
+            "The percentage of the ghosts' damage drops to 50% once any enemy has been struck 15 times or more by the ghosts.",
+            "The strike count resets whenever Shemira casts her Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by each ghost to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by each ghost to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by each ghost to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by each ghost to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Summons ghosts to bombard random enemies on the battlefield."
+      },
+      {
+        "section": "Skill1",
+        "name": "Sacrificial Orb",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Shemira sacrifices 10% of her current HP to summon the Wailing Orb from the spectral rift 4 tiles away, dealing 320% (ATK-based) + 40% (SP-based) damage to enemies in its path.",
+          "active": [
+            "Shemira sacrifices 10% of her current HP to summon the Wailing Orb from the spectral rift 4 tiles away, dealing 320% (ATK-based) + 40% (SP-based) damage to enemies in its path."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 340% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 380% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira sacrifices her HP to deal damage to enemies in a straight line."
+      },
+      {
+        "section": "Skill2",
+        "name": "Ghastly Tribute",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Whenever allies' HP or shield value loss reaches 50% of Shemira's max HP, she summons 1 ghost to her side. Shemira can summon up to 5 ghosts outside her Ultimate. Active. Shemira sacrifices 15% of her current HP to deal true damage to a single enemy equal to 24% + 3% (SP-based) of their max HP. This damage cannot exceed 800% (ATK-based). If Shemira has any ghost summoned, she sacrifices one to strike the target and enemies within 1 tile of the target, dealing true damage equal to 20% + 2% (SP-based) of their max HP. The damage each enemy takes cannot exceed 500% (ATK-based).",
+          "passive": [
+            "Whenever allies' HP or shield value loss reaches 50% of Shemira's max HP, she summons 1 ghost to her side.",
+            "Shemira can summon up to 5 ghosts outside her Ultimate."
+          ],
+          "active": [
+            "Shemira sacrifices 15% of her current HP to deal true damage to a single enemy equal to 24% + 3% (SP-based) of their max HP.",
+            "This damage cannot exceed 800% (ATK-based).",
+            "If Shemira has any ghost summoned, she sacrifices one to strike the target and enemies within 1 tile of the target, dealing true damage equal to 20% + 2% (SP-based) of their max HP.",
+            "The damage each enemy takes cannot exceed 500% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to a single enemy to 26% + 3% (SP-based) of their max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to a single enemy to 28% + 3% (SP-based) of their max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to a single enemy to 30% + 3% (SP-based) of their max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira sacrifices her HP to deal damage. She can also sacrifice ghosts to deal extra AoE damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Shemira's Energy recovery from attacks increases by 24% during battle. After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 6%.",
+          "active": [
+            "Shemira's Energy recovery from attacks increases by 24% during battle.",
+            "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Shemira's Energy recovery from attacks increases by 32% during battle.",
+                "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Shemira's Energy recovery from attacks increases by 40% during battle.",
+                "After summoning 3 ghosts, her Energy recovery from attacks increases by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira's Energy recovery from attacks increases. After summoning 3 ghosts, her Energy recovery from attacks increases even further."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Spectral Barrier",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Whenever Shemira takes a total of 30% of her max HP in damage or reaches the max number of summoned ghosts, she sacrifices 1 ghost to gain a shield that lasts for 5s. The shield can absorb 250% (ATK-based) damage. When the shield expires, Shemira unleashes its remaining power again all enemies, dealing damage equal to the shield's remaining value.",
+          "active": [
+            "Whenever Shemira takes a total of 30% of her max HP in damage or reaches the max number of summoned ghosts, she sacrifices 1 ghost to gain a shield that lasts for 5s.",
+            "The shield can absorb 250% (ATK-based) damage.",
+            "When the shield expires, Shemira unleashes its remaining power again all enemies, dealing damage equal to the shield's remaining value."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield's value to 270% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When a ghost attacks its target during Shemira's Ultimate, it deals extra true damage equal to 3% of the target's max HP.",
+                "This damage cannot exceed 90% (ATK-based).",
+                "The attack also inflicts Max HP Reduction, lowering the target's max HP by the amount of damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield's value to 300% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shemira sacrifices a ghost to gain a shield. When the shield expires, she unleashes the remaining power of the shield to deal damage to all enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Each time a hero is defeated, Shemira summons 1 ghost.",
+          "active": [
+            "Each time a hero is defeated, Shemira summons 1 ghost."
+          ]
+        },
+        "description_lite": "Each time a hero is defeated, Shemira summons a ghost."
+      }
+    ],
+    "range": 4,
+    "release_date": "2025-04-24",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

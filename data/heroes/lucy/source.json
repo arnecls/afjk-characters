@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "id": "lucy",
+  "display_name": "Lucy",
+  "source": {
+    "title": "Lucy - Celestial Spirit Mage",
+    "name": "Lucy",
+    "tags": "Dimensional · Mage · Magic",
+    "faction": "Dimensional",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A Celestial Spirit Mage who can summon Celestial Spirits using Gate Keys to assist in battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Celestial Spirit Summon",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "700"
+        },
+        "description": {
+          "raw": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle. Aquarius has 120% of Lucy's max HP and 100% of Lucy's other stats. Upon entering battle, Aquarius immediately conjures a water swirl that strikes the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area. The affected enemies are knocked into the air and stunned for 2s. The water swirl attack repeats every 10s. Aquarius' normal attack deals 100% (ATK-based) + 10% (SP-based) damage with a range of 10 tiles.",
+          "active": [
+            "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle.",
+            "Aquarius has 120% of Lucy's max HP and 100% of Lucy's other stats.",
+            "Upon entering battle, Aquarius immediately conjures a water swirl that strikes the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area.",
+            "The affected enemies are knocked into the air and stunned for 2s.",
+            "The water swirl attack repeats every 10s.",
+            "Aquarius' normal attack deals 100% (ATK-based) + 10% (SP-based) damage with a range of 10 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 325% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 375% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage to Aquarius' water swirl to 400% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucy calls out Aquarius, a Celestial Spirit, to assist her in battle. Aquarius inherits some of Lucy's stats. Upon entering battle, Aquarius immediately starts a water swirl attack that deals AoE damage, knocks enemies into the air, and stuns them. This water swirl attack repeats at regular intervals."
+      },
+      {
+        "section": "Skill1",
+        "name": "Lucy Kick",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lucy delivers a powerful kick to the enemy who has dealt the most cumulative damage, dealing 240% (ATK-based) + 20% (SP-based) damage and stunning them for 2.5s. After the kick, she returns to her original tile. Lucy remains unaffected while using this skill.",
+          "active": [
+            "Lucy delivers a powerful kick to the enemy who has dealt the most cumulative damage, dealing 240% (ATK-based) + 20% (SP-based) damage and stunning them for 2.5s.",
+            "After the kick, she returns to her original tile.",
+            "Lucy remains unaffected while using this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucy kicks the enemy who has dealt the most cumulative damage, dealing damage and stunning them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Star Dress: Aquarius Form",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lucy's Ultimate transforms her into Aquarius for the rest of the battle. While in this form, she conjures water swirls that strike the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area. The water swirl also knocks enemies into the air and stuns them for 2s. In Aquarius form, Lucy's attack range extends to 10 tiles.",
+          "active": [
+            "Lucy's Ultimate transforms her into Aquarius for the rest of the battle.",
+            "While in this form, she conjures water swirls that strike the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area.",
+            "The water swirl also knocks enemies into the air and stuns them for 2s.",
+            "In Aquarius form, Lucy's attack range extends to 10 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases enemies' taken damage to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases enemies' taken damage to 370% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases enemies' taken damage to 400% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucy's Ultimate transforms her into Aquarius. While in this form, she conjures water swirls to deal AoE damage, knocking enemies into the air, and stun them."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Water Barrier",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "Global",
+          "Initial Cooldown": "8s"
+        },
+        "description": {
+          "raw": "Aquarius, or Lucy in Aquarius form, can cast Water Barrier to grant a shield that blocks 450% (ATK-based) damage to the weakest ally, lasting 8s.",
+          "active": [
+            "Aquarius, or Lucy in Aquarius form, can cast Water Barrier to grant a shield that blocks 450% (ATK-based) damage to the weakest ally, lasting 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield's value to 500% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the shielded ally's Ranged DEF by 50 while the shield is active.r"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield's value to 550% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aquarius, or Lucy in Aquarius form, can cast Water Barrier to grant a shield to the weakest ally."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases by 80.",
+          "active": [
+            "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases by 80."
+          ]
+        },
+        "description_lite": "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases."
+      }
+    ],
+    "range": 3,
+    "release_date": "2025-05-01",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

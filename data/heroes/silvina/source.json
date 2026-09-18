@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "id": "silvina",
+  "display_name": "Silvina",
+  "source": {
+    "title": "Silvina - The Taken Breath",
+    "name": "Silvina",
+    "tags": "Graveborn · Rogue · Physical",
+    "faction": "Graveborn",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "An Assassin who can prevent enemies from casting skills, and teleport to their side instantly at the start of battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Shadow Slayer",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "2s",
+          "Skill Range": "1 Tiles",
+          "Initial Energy": "400",
+          "Initial Cooldown": "2s"
+        },
+        "description": {
+          "raw": "Silvina deals 300% (ATK-based) + 50% (SP-based) damage to an enemy and reduces their Energy by 200.",
+          "active": [
+            "Silvina deals 300% (ATK-based) + 50% (SP-based) damage to an enemy and reduces their Energy by 200."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 320% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 340% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 360% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the Energy reduction to 300."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Silvina deals damage to the enemy with the most Energy, reducing their Energy."
+      },
+      {
+        "section": "Skill1",
+        "name": "First Strike",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Silvina marks the closest enemy in a symmetrical position, flashes next to them, and launches an attack when a battle starts, dealing 300% (ATK-based) + 25% (SP-based) damage.",
+          "active": [
+            "Silvina marks the closest enemy in a symmetrical position, flashes next to them, and launches an attack when a battle starts, dealing 300% (ATK-based) + 25% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 320% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 340% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "This attack stuns the enemy for 5s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Silvina flashes next to the closest enemy in a symmetrical position and damages them when a battle starts."
+      },
+      {
+        "section": "Skill2",
+        "name": "Blade Vortex",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Silvina's normal attack becomes Whirl Assault for the first 12s of battle. Each Whirl Assault deals 140% (ATK-based) + 10% (SP-based) damage. Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2 (SP-based)s.",
+          "active": [
+            "Silvina's normal attack becomes Whirl Assault for the first 12s of battle.",
+            "Each Whirl Assault deals 140% (ATK-based) + 10% (SP-based) damage.",
+            "Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Each Whirl Assault deals 150% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Each Whirl Assault deals 160% (ATK-based) + 10% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Each Whirl Assault deals 170% (ATK-based) + 10% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Silvina's normal attacks are replaced by Whirl Attacks for a short time when a battle starts."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Increases Crit by 24 during battle.",
+          "active": [
+            "Increases Crit by 24 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Crit by 32 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Crit by 40 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Crit during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Shield of Light",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Silvina gains a shield that can block up to 450% (ATK-based) damage after casting First Strike.",
+          "active": [
+            "Silvina gains a shield that can block up to 450% (ATK-based) damage after casting First Strike."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases shield value to 500% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When a marked enemy is defeated, Silvina frightens enemies within 2 tiles of the defeated enemy for 4s while Blade Vortex is in effect."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases shield value to 600% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gains a shield at the start of a battle."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.",
+          "active": [
+            "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault."
+          ]
+        },
+        "description_lite": "Silvina reduces the target's Vitality with each Whirl Assault."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

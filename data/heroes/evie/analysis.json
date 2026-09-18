@@ -1,0 +1,731 @@
+{
+  "schema_version": 2,
+  "id": "evie",
+  "display_name": "Evie",
+  "local": {
+    "long_name": "Evie - Royal Envoy",
+    "faction": "lightbearer",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 20,
+    "release_date": "2026-05-07",
+    "season": "Tower of Memory",
+    "season_number": 6,
+    "skills": {
+      "Intel Chase": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. When a battle starts, Evie teleports to the symmetrical tile on the enemy side and enters concealment. While concealed, Evie is invincible and accumulates 120 Detection points every second. She loses 500 Detection points each time an ally casts their Ultimate. When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible. As soon as Evie enters concealment. she starts gathering intel on all non-summoned enemies within 1 tile. Once complete, she continues investigating the remaining non-summoned enemies one at a time, prioritizing from nearest to farthest based on their starting positions relative to her. Each investigation takes 4.5s, and when it is completed, Evie gains 150 Energy. After gathering intel on all those enemies, Evie teleports back to her original tile and loses her invincibility. Active. Evie interrogates the enemy with the highest cumulative damage dealt for 6s. During the interrogation, she deals 180% (ATK-based) + 18% (SP-based) damage to the enemy every second and immobilizes them. If she has already gathered intel on the target, the skill also silences them during the interrogation.",
+          "passive": [
+            "When a battle starts, Evie teleports to the symmetrical tile on the enemy side and enters concealment.",
+            "While concealed, Evie is invincible and accumulates 120 Detection points every second.",
+            "She loses 500 Detection points each time an ally casts their Ultimate.",
+            "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible.",
+            "As soon as Evie enters concealment.",
+            "she starts gathering intel on all non-summoned enemies within 1 tile.",
+            "Once complete, she continues investigating the remaining non-summoned enemies one at a time, prioritizing from nearest to farthest based on their starting positions relative to her.",
+            "Each investigation takes 4.5s, and when it is completed, Evie gains 150 Energy.",
+            "After gathering intel on all those enemies, Evie teleports back to her original tile and loses her invincibility."
+          ],
+          "active": [
+            "Evie interrogates the enemy with the highest cumulative damage dealt for 6s.",
+            "During the interrogation, she deals 180% (ATK-based) + 18% (SP-based) damage to the enemy every second and immobilizes them.",
+            "If she has already gathered intel on the target, the skill also silences them during the interrogation."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases interrogation duration to 6.5s when this skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases interrogation duration to 7s when this skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases interrogation duration to 7.5s when this skill is used actively."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases interrogation duration to 8s when this skill is used actively."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 8.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 198.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "silence",
+            "duration": 8.0
+          }
+        ],
+        "initial_energy": 200.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Invincible — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Bind — Single target"
+          },
+          {
+            "label": "Displace — Single target"
+          },
+          {
+            "label": "Silence — Single target"
+          }
+        ]
+      },
+      "Pointed Proof": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. When Evie finishes gathering intel on an enemy hero, that enemy hero's Magic DEF is permanently reduced by 20% + 2% (SP-based). If she manages to gather intel on all surviving enemy heroes while concealed, the Magic DEF of all enemies is reduced by an extra 25% + 2.5% (SP-based). Active. Evie dashes to the nearest enemy and strikes them twice with her dagger. dealing 220% (ATK-based)damage with each hit.",
+          "passive": [
+            "When Evie finishes gathering intel on an enemy hero, that enemy hero's Magic DEF is permanently reduced by 20% + 2% (SP-based).",
+            "If she manages to gather intel on all surviving enemy heroes while concealed, the Magic DEF of all enemies is reduced by an extra 25% + 2.5% (SP-based)."
+          ],
+          "active": [
+            "Evie dashes to the nearest enemy and strikes them twice with her dagger.",
+            "dealing 220% (ATK-based)damage with each hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage dealt to 230% (ATK-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage dealt to 240% (ATK-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage dealt to 250% (ATK-based) when this skill is used actively."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic DEF — Single target",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Magic DEF — All units",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Foretold Favor": {
+        "category": "skill2",
+        "description": {
+          "raw": "When a battle starts, Evie summons a quill to follow the rearmost ally. Afterward, every 3s, the quill switches to the ally with the highest cumulative damage dealt, restoring 120% (ATK-based) HP to them every second and increasing their ATK by 20% + 2% (SP-based). When the ally with the quill has dealt damage equal to 250% of their initial ATK, the quill shoots 1 healing orb at each of the 2 weakest allies other than the ally the quill is following. restoring 45% (ATK-based) + 6% (SP-based) HP to them. The effect can trigger once every 0.5s.",
+          "active": [
+            "When a battle starts, Evie summons a quill to follow the rearmost ally.",
+            "Afterward, every 3s, the quill switches to the ally with the highest cumulative damage dealt, restoring 120% (ATK-based) HP to them every second and increasing their ATK by 20% + 2% (SP-based).",
+            "When the ally with the quill has dealt damage equal to 250% of their initial ATK, the quill shoots 1 healing orb at each of the 2 weakest allies other than the ally the quill is following.",
+            "restoring 45% (ATK-based) + 6% (SP-based) HP to them.",
+            "The effect can trigger once every 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the orb's healing amount to 50% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the orb's healing amount to 55% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the orb's healing amount to 60% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Healing by 11 during battle.",
+          "active": [
+            "Increases Healing by 11 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 15 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 19 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Tactical Briefing": {
+        "category": "skill4",
+        "description": {
+          "raw": "If Evie gathers intel on every surviving enemy hero without being revealed, she shares her findings with her allies. With their weaknesses exposed, these enemies deal 25% less damage for the rest of the battle. In non-boss battles, the duration of dispellable debuffs inflicted on allies by these enemies is also reduced by 30%.",
+          "active": [
+            "If Evie gathers intel on every surviving enemy hero without being revealed, she shares her findings with her allies.",
+            "With their weaknesses exposed, these enemies deal 25% less damage for the rest of the battle.",
+            "In non-boss battles, the duration of dispellable debuffs inflicted on allies by these enemies is also reduced by 30%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the reduction to enemy damage dealt to 30% and the reduction to their debuff durations to 40%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Enemies also take 25% more magic damage after Evie shares her findings with allies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the reduction to enemy damage dealt to 35% and the reduction to their debuff durations to 50%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage dealt",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "debuff",
+            "name": "Debuff duration",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Debuff duration",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Damage dealt",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Debuff duration — Multiple targets",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Debuff duration — Single target (EX+5)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "After gathering intel on all surviving enemy heroes while concealed, Evie summons an extra quill to follow the ally with the second-highest cumulative damage dealt. Each ally can only be followed by one quill.",
+          "active": [
+            "After gathering intel on all surviving enemy heroes while concealed, Evie summons an extra quill to follow the ally with the second-highest cumulative damage dealt.",
+            "Each ally can only be followed by one quill."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "While concealed, Evie is invincible and accumulates 120 Detection points every second."
+        },
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "All units",
+          "description": "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Passive with internal cooldown",
+          "tier": "base",
+          "description": "The effect can trigger once every 0.5s."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "evie",
+    "display_name": "Evie",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "skill1",
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Evie teleports to the symmetrical tile on the enemy side and enters concealment.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While concealed, Evie is invincible and accumulates 120 Detection points every second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "She loses 500 Detection points each time an ally casts their Ultimate.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "As soon as Evie enters concealment.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "she starts gathering intel on all non-summoned enemies within 1 tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Once complete, she continues investigating the remaining non-summoned enemies one at a time, prioritizing from nearest to farthest based on their starting positions relative to her.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each investigation takes 4.5s, and when it is completed, Evie gains 150 Energy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After gathering intel on all those enemies, Evie teleports back to her original tile and loses her invincibility.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Evie interrogates the enemy with the highest cumulative damage dealt for 6s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During the interrogation, she deals 180% (ATK-based) + 18% (SP-based) damage to the enemy every second and immobilizes them.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If she has already gathered intel on the target, the skill also silences them during the interrogation.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 6.5s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 7s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 7.5s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases interrogation duration to 8s when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Evie finishes gathering intel on an enemy hero, that enemy hero's Magic DEF is permanently reduced by 20% + 2% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If she manages to gather intel on all surviving enemy heroes while concealed, the Magic DEF of all enemies is reduced by an extra 25% + 2.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Evie dashes to the nearest enemy and strikes them twice with her dagger.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "dealing 220% (ATK-based)damage with each hit.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 230% (ATK-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 240% (ATK-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 250% (ATK-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When a battle starts, Evie summons a quill to follow the rearmost ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Afterward, every 3s, the quill switches to the ally with the highest cumulative damage dealt, restoring 120% (ATK-based) HP to them every second and increasing their ATK by 20% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When the ally with the quill has dealt damage equal to 250% of their initial ATK, the quill shoots 1 healing orb at each of the 2 weakest allies other than the ally the quill is following.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "restoring 45% (ATK-based) + 6% (SP-based) HP to them.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The effect can trigger once every 0.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the orb's healing amount to 50% (ATK-based) + 6% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the orb's healing amount to 55% (ATK-based) + 6% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the orb's healing amount to 60% (ATK-based) + 6% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 11 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 19 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "If Evie gathers intel on every surviving enemy hero without being revealed, she shares her findings with her allies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "With their weaknesses exposed, these enemies deal 25% less damage for the rest of the battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "In non-boss battles, the duration of dispellable debuffs inflicted on allies by these enemies is also reduced by 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the reduction to enemy damage dealt to 30% and the reduction to their debuff durations to 40%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Enemies also take 25% more magic damage after Evie shares her findings with allies.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the reduction to enemy damage dealt to 35% and the reduction to their debuff durations to 50%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After gathering intel on all surviving enemy heroes while concealed, Evie summons an extra quill to follow the ally with the second-highest cumulative damage dealt.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Each ally can only be followed by one quill.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "d8327bd2d8ae1cf1f63767a3c0376fa23119a70acdb156e0b729cbf301725461",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

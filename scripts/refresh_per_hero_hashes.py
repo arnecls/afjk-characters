@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Refresh generated source hashes after the per-hero migration."""
+
+from __future__ import annotations
+
+import copy
+
+import skill_effects_store as sidecars
+from hero_pipeline.repository import current_repository
+from hero_pipeline.storage import (
+    canonical_hash,
+    load_bundles,
+    load_manifest,
+    write_json_atomic,
+)
+
+
+def main() -> None:
+    repository = current_repository()
+    manifest = load_manifest()
+    bundles = load_bundles(manifest)
+    changed = 0
+    for entry in manifest["heroes"]:
+        hero_id = entry["id"]
+        bundle = bundles[hero_id]
+        source = bundle["source"]["source"]
+        ai = copy.deepcopy(bundle["ai"])
+        doc = ai.get("skill_effects")
+        if doc:
+            for section, skill_doc in doc.get("skills", {}).items():
+                skill = next(
+                    skill
+                    for skill in source["skills"]
+                    if skill["section"] == section
+                )
+                expected = sidecars.compute_skill_source_hash(skill)
+                if skill_doc.get("source_hash") != expected:
+                    skill_doc["source_hash"] = expected
+                    changed += 1
+            write_json_atomic(
+                repository.heroes_dir / hero_id / "ai.json",
+                ai,
+            )
+        print(f"Refreshed {changed} skill source hashes")
+
+
+if __name__ == "__main__":
+    main()

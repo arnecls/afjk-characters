@@ -12,18 +12,14 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
+
 import heroes_io as io
 
 
 def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_working_analysis()
 
 
 rs = _load_rs()
@@ -124,7 +120,7 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
         self.assertEqual(before, after)
 
     def test_guiding_light_sentences_and_chunks(self) -> None:
-        data = io.load_json(io.HEROES_DATA)
+        data = io.load_heroes_data()
         aliceth = next(h for h in data["heroes"] if h["name"] == "Aliceth")
         skill = next(s for s in aliceth["skills"] if s.get("name") == "Guiding Light")
         desc = skill["description"]
@@ -141,7 +137,7 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
 
 
     def test_sealed_fate_includes_mark_sentences(self) -> None:
-        data = io.load_json(io.HEROES_DATA)
+        data = io.load_heroes_data()
         aliceth = next(h for h in data["heroes"] if h["name"] == "Aliceth")
         skill = next(s for s in aliceth["skills"] if s.get("name") == "Sealed Fate")
         chunks = rs.skill_chunks_from_skill(skill)
@@ -151,9 +147,9 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
         rs.analyze_hero(hero)
         section = skill["section"]
         labels = [
-            e.label
-            for e in hero.skill_slices[section].effects
-            if e.category == "debuff"
+            e["label"]
+            for e in hero["skill_slices"][section]["effects"]
+            if e["category"] == "debuff"
         ]
         self.assertIn("Marked target (focus fire)", labels)
 
@@ -194,7 +190,7 @@ class SkillChunksTests(unittest.TestCase):
 
 class MigrationParityTests(unittest.TestCase):
     def test_reconstruct_heroes_md_unchanged_after_normalize(self) -> None:
-        data = io.load_json(io.HEROES_DATA)
+        data = io.load_heroes_data()
         before = io.reconstruct_heroes_md(data)
         for hero in data["heroes"]:
             for skill in hero.get("skills", []):

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "id": "korin",
+  "display_name": "Korin",
+  "source": {
+    "title": "Korin - Wood Warden",
+    "name": "Korin",
+    "tags": "Lightbearer · Warrior · Physical",
+    "faction": "Lightbearer",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A Warrior who has magic arms and is skilled at dealing high damage to ranged enemies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Demonseal Spear",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Korin sweeps his spear at enemies within 2 tiles, dealing 70% (ATK-based) + 10% (SP-based) damage 4 times and immobilizing them for 2s. Hitting adjacent enemies will also knock them back 1 tile.",
+          "active": [
+            "Korin sweeps his spear at enemies within 2 tiles, dealing 70% (ATK-based) + 10% (SP-based) damage 4 times and immobilizing them for 2s.",
+            "Hitting adjacent enemies will also knock them back 1 tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases immobilize duration to 4s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 75% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 80% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 85% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Korin knocks back nearby enemies and immobilizes them."
+      },
+      {
+        "section": "Skill1",
+        "name": "Defiance Charge",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Korin jumps next to the weakest ally, granting both of them a shield that blocks 300% (ATK-based) + 20% (SP-based) damage for 5s. Korin then dashes to the closest enemy, dealing 180% (ATK-based) + 15% (SP-based) true damage.",
+          "active": [
+            "Korin jumps next to the weakest ally, granting both of them a shield that blocks 300% (ATK-based) + 20% (SP-based) damage for 5s.",
+            "Korin then dashes to the closest enemy, dealing 180% (ATK-based) + 15% (SP-based) true damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value to 320% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 200% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Korin jumps next to an ally, granting them a shield and dealing true damage to enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Air Strike",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Korin deals a guaranteed critical strike to enemies 1 tile beyond. For every 1% of his crit rate, his critical damage is increased by 1% + 0.1% (SP-based).",
+          "active": [
+            "Korin deals a guaranteed critical strike to enemies 1 tile beyond.",
+            "For every 1% of his crit rate, his critical damage is increased by 1% + 0.1% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "For every 1% of his crit rate, his critical damage is increased by 1.2% + 0.1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "For every 1% of his crit rate, his critical damage is increased by 1.5% + 0.1% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "For every 1% of his crit rate, his critical damage is increased by 1.6% + 0.1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Korin deals a guaranteed critical strike to enemies 1 tile beyond."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Vine Arms",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When Korin and the allies within 2 tiles cast their Ultimates 3 times in total, Korin's arms feel nature's power and enchant his spear with Wilder magic, dealing additional true damage equal to 2% of the targets' max HP for 8s with follow-up attacks, and the extra damage cannot exceed 40% of Korin's ATK.",
+          "active": [
+            "When Korin and the allies within 2 tiles cast their Ultimates 3 times in total, Korin's arms feel nature's power and enchant his spear with Wilder magic, dealing additional true damage equal to 2% of the targets' max HP for 8s with follow-up attacks, and the extra damage cannot exceed 40% of Korin's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases ATK SPD by 60 during the skill."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases additional true damage to 2.5% of the targets' max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases additional true damage to 2.8% of the targets' max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Korin deals additional true damage to enemies when he and allied heroes cast a certain amount of Ultimates."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Korin reduces damage taken from enemy beyond 1 tile by 25%.",
+          "active": [
+            "Korin reduces damage taken from enemy beyond 1 tile by 25%."
+          ]
+        },
+        "description_lite": "Korin reduces damage taken from enemy beyond 1 tile."
+      }
+    ],
+    "range": 2,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

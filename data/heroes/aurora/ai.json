@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Aurora - Celestial of Dreams",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "dc87069b6e2e96dbd6108dadd65e34d1740e70c9e5e30a006ed2421e77f42d4d",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Haste",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Invincible",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All summons",
+                "is_max_known": true,
+                "target": "all_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "unknown"
+              }
+            ],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
+              },
+              {
+                "label": "Dream sleep (transformation)",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
+              },
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "While asleep, Aurora stays invincible."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "78016732d440c19599753d5adfbb85365ef36123614a97306eeb190c6b835c36",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 470.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Aurora summons a magical bunny beside her that lasts for up to 12s and deals damage with normal attacks."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "545ae17c34235358614e2f02807d2c4b7ae7518f54decb1206aed94d4b7be549",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "crowd_control",
+                "cc-type": "bind",
+                "duration": 1.125
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "f4700330bf3e412fd9375e0257df178a40a764dafd4bf4ca530ff02989df2cfa",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "66c3864edabafe423f9e1161b161bd96f31b878c6eff646d07265eadcb4e7631",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [],
+            "summon_effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "All summons",
+                "is_max_known": true,
+                "target": "all_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "All summons",
+                "is_max_known": true,
+                "target": "all_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "mythic+",
+                "immunity_type": "unaffected",
+                "timing": "on_skill",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "3f2df84f5bf4a57984e7a144645e0b64a674326a2bfb56ecc13cba820b439136",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "invincibility",
+    "mark-target",
+    "summoner"
+  ],
+  "summon_profile": {
+    "has_ranged_summons": false,
+    "sources": [
+      {
+        "section": "Ultimate",
+        "tier": "base"
+      },
+      {
+        "section": "Skill1",
+        "tier": "base"
+      }
+    ]
+  },
+  "skill_summaries": {
+    "ultimate": "fall asleep and become invincible, summoning companion to buff allied summons and attack enemies",
+    "skill1": "summon companion that attacks enemies, detonating for AoE damage on expiry",
+    "skill2": "nearby enemies lingering too long are transformed into harmless form",
+    "skill3": "ATK scales with variety of allied summons on field",
+    "skill4": "while asleep, allied summons enhanced and companion becomes unaffected",
+    "skill5": "high energy during sleep expands transformation field radius"
+  },
+  "play_overview": "Aurora summons a companion that **attacks and detonates for AoE damage**, then falls asleep to become **invincible** while buffing allied summons. Nearby enemies who linger are **transformed into harmless forms**, and her ATK scales with **summon variety** on the field. While asleep, allied summons are **enhanced** and her companion becomes unaffected. She shines beside **summon-heavy teams** but adds little when allies field few bodies or fights end before her sleep cycle.",
+  "counter_overview": "Aurora **sleeps from battle start** and is **invincible** while dreaming — never bank burst on her sleep form. **Sonny and allied summons** do the damage, focusing the **Nightmare-marked** frontliner while Dream Veil amps the summon line. Delete or shred the **summon providers** with lasting wide ultimates like [[Shemira]] or [[Gwyneth]], and race with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] before plush fields and summon ATK stacks take over."
+}

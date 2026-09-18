@@ -12,6 +12,9 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
+
 import heroes_io as io  # noqa: E402
 import skill_effects_store as ses  # noqa: E402
 
@@ -22,10 +25,10 @@ def _load_module(name: str, filename: str):
     assert spec.loader is not None
     sys.modules[name] = module
     spec.loader.exec_module(module)
-    return module
+    return sys.modules[spec.name]
 
 
-rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
+rs = load_working_analysis()
 vp = _load_module("validate_processed", "validate_processed.py")
 
 

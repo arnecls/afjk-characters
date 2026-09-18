@@ -54,7 +54,7 @@ count when the unit fights on-field.
 royal marksman volleys; **spell-form** damage (Mehira voidlings, Shemira
 ghosts).
 
-Curated roster: `data/hero_summon_profiles.json`.
+Curated roster: each hero's `ai.json` `summon_profile` field.
 
 ## `dot-specialist` vs debuffs / HoT / channels
 

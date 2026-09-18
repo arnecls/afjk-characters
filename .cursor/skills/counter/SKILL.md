@@ -1,7 +1,7 @@
 ---
 name: counter
 description: >-
-  Writes or refreshes PVP counter overviews in data/hero_counter_overviews.json
+  Writes or refreshes PVP counter overviews in each hero's ai.json
   for one hero, a named subset, or the full roster. Use when a new hero is added,
   when counter text needs updating, or when following docs/ai-generated-data.md
   section 5. Maintains the Explicit counters list in this skill.
@@ -10,7 +10,8 @@ description: >-
 # Counter proposal
 
 Author short PVP counter advice per hero for the site viewer **Counter proposal**
-section (after Play overview). Output: `data/hero_counter_overviews.json`.
+section (after Play overview). Output: the `counter_overview` field in
+`data/heroes/<hero-id>/ai.json`.
 
 **Scope:** one hero, a named subset, heroes missing an entry, or a full roster
 refresh. For new heroes, run after play overview in [add-hero](../add-hero/SKILL.md)
@@ -20,12 +21,11 @@ Phase C.
 
 1. `docs/ai-generated-data.md` section 5 — authoring rules
 2. This skill — **Validation gates** and **Explicit counters** below
-3. `data/hero_counter_overviews.json` — current entries
-4. `data/hero_play_overviews.json` — how the hero plays (threat context)
-5. `data/hero_behavior_tags.json` — pick counter units by combat role
-6. `data/heroes_data_processed.json` + `data/heroes_data_skill_summary.json`
-7. `data/heroes_data.json` — `prydwen_tiers.pvp` + `damage_type` for assassin pick
-8. `data/character_stat_ranks.json` — Phys DEF / Magic DEF ranks (`low` /
+3. each hero's `ai.json` — current counter entries and play overviews
+4. each hero's `analysis.json` — analyzed skills
+5. each hero's `ai.json` — behavior tags and skill summaries
+6. `data/heroes/<hero-id>/source.json` — `prydwen_tiers` + `damage_type`
+7. each hero's generated `external.stat_ranks` — Phys DEF / Magic DEF ranks (`low` /
    `average` / `high`) for Gate 2 damage-type bias
 9. `afkj-data/docs` (faq-pvp, combat-*-pvp) — private grounding only; never copy
    implementation jargon into public counter text
@@ -485,8 +485,9 @@ zone block (see kit-fit cheat sheet and Explicit rows above).
 
 ### 7. Write and render
 
-Edit `data/hero_counter_overviews.json`. Pipeline injects `#### Counter proposal`
-after Play overview via `format_behavior_section()` in `rewrite-summaries.py`.
+Edit the affected hero's `data/heroes/<hero-id>/ai.json`. Pipeline injects
+`#### Counter proposal`
+after Play overview via `format_behavior_section()` in local analysis.
 
 ```bash
 just render-site

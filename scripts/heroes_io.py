@@ -352,28 +352,50 @@ def save_json(path: Path, data: Any) -> None:
 
 
 def load_heroes_data() -> dict:
-    data = load_json(HEROES_DATA)
+    from hero_pipeline.storage import load_raw_roster
+
+    data = load_raw_roster()
     for hero in data.get("heroes", []):
         normalize_hero_skills(hero)
     return data
 
 
 def load_processed() -> dict:
-    return load_json(HEROES_DATA_PROCESSED)
+    from hero_pipeline.storage import load_processed as load_per_hero
+
+    return load_per_hero()
+
+
+def processed_hero(processed: dict, name: str) -> dict:
+    """Return one processed hero by roster ID, display name, or title prefix."""
+    heroes = processed["heroes"]
+    if name in heroes:
+        return heroes[name]
+    for hero_id, hero in heroes.items():
+        long_name = str(hero.get("long_name") or "")
+        short = long_name.split(" - ", 1)[0]
+        if name in {hero_id, short, long_name} or long_name.startswith(name):
+            return hero
+    raise KeyError(name)
 
 
 def load_synergies() -> dict:
-    return load_json(HEROES_DATA_SYNERGIES)
+    from hero_pipeline.storage import load_synergies as load_per_hero
+
+    return load_per_hero()
 
 
 def load_config() -> dict:
-    return load_json(HEROES_CONFIG)
+    from hero_pipeline.storage import load_config as load_pipeline_config
+
+    return load_pipeline_config()
 
 
 def load_seasons() -> list[dict]:
     """Return season name/start_date records from data/seasons.json."""
-    payload = load_json(SEASONS_JSON)
-    return list(payload.get("seasons", []))
+    from hero_pipeline.storage import load_seasons as load_pipeline_seasons
+
+    return load_pipeline_seasons()
 
 
 # ---------------------------------------------------------------------------

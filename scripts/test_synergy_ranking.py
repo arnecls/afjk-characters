@@ -12,19 +12,10 @@ from types import SimpleNamespace
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-
-def _load_gen():
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
 
 
-gen = _load_gen()
 
 
 def _hero(title: str) -> SimpleNamespace:
@@ -65,14 +56,7 @@ def _shield_provider() -> SimpleNamespace:
 
 class ShieldMaxHpSynergyTests(unittest.TestCase):
     def test_shield_does_not_score_for_max_hp_only_receiver(self) -> None:
-        rs_spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries",
-            SCRIPTS / "rewrite-summaries.py",
-        )
-        rs = importlib.util.module_from_spec(rs_spec)
-        sys.modules["rewrite_summaries"] = rs
-        assert rs_spec.loader is not None
-        rs_spec.loader.exec_module(rs)
+        rs = load_working_analysis()
 
         receiver = SimpleNamespace(
             title="Scaler - Hero",
@@ -163,7 +147,7 @@ class SynergyTierRankingTests(unittest.TestCase):
         ranked.sort(
             key=lambda x: (
                 -gen._prydwen_tier_preference(
-                    tiers.get(receiver.title, {}),
+                    tiers.get(getattr(receiver, "title"), {}),
                     tiers.get(x[2], {}),
                 ),
                 -x[0],
@@ -348,12 +332,12 @@ class SynergySelfFilterTests(unittest.TestCase):
         from test_roster_cache import full_roster
 
         heroes, matchers, behavior = full_roster()
-        lyca = next(h for h in heroes if gen.short_name(h.title) == "Lyca")
+        lyca = next(h for h in heroes if gen.short_name(h["title"]) == "Lyca")
         entries = gen.rank_synergy_entries(lyca, heroes, matchers, behavior)
         providers = {gen.short_name(title) for _score, _reasons, title in entries}
         self.assertNotIn("Lyca", providers)
         score, reasons = gen.score_combined_synergy(
-            lyca, lyca, matchers, behavior[lyca.title]
+            lyca, lyca, matchers, behavior[lyca["title"]]
         )
         self.assertEqual(score, 0.0)
         self.assertEqual(reasons, [])
@@ -601,12 +585,7 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
     def test_tasi_behavior_flags_slow_first_cast(self) -> None:
         import importlib.util
 
-        spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-        )
-        rs = importlib.util.module_from_spec(spec)
-        assert spec.loader is not None
-        spec.loader.exec_module(rs)
+        rs = load_working_analysis()
         text = (Path(__file__).resolve().parent.parent / "Heroes.md").read_text(
             encoding="utf-8"
         )
@@ -621,12 +600,12 @@ class SlowFirstCastEnergyTests(unittest.TestCase):
                 break
         hero = rs.parse_hero_block(blocks["Tasi"])
         rs.analyze_hero(hero)
-        display = {hero.title: "Tasi"}
+        display = {hero["title"]: "Tasi"}
         behavior = rs.build_behavior_for_heroes(
             [hero], display, heroes_text=text
-        )[hero.title]
-        self.assertTrue(behavior.signature_first_cast_needs_energy)
-        self.assertTrue(behavior.signature_skill_is_ult)
+        )[hero["title"]]
+        self.assertTrue(behavior["signature_first_cast_needs_energy"])
+        self.assertTrue(behavior["signature_skill_is_ult"])
 
 
 class ThadorEarlyEnergyTests(unittest.TestCase):
@@ -717,14 +696,7 @@ class FaramorEnemyGroupingTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         # Earlier tests may stub the cache; force a fresh load from disk.
         gen._BEHAVIOR_TAGS = None
-        rs_spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries",
-            SCRIPTS / "rewrite-summaries.py",
-        )
-        cls.rs = importlib.util.module_from_spec(rs_spec)
-        sys.modules["rewrite_summaries"] = cls.rs
-        assert rs_spec.loader is not None
-        rs_spec.loader.exec_module(cls.rs)
+        cls.rs = load_working_analysis()
 
         import heroes_io as io
 
@@ -751,13 +723,13 @@ class FaramorEnemyGroupingTests(unittest.TestCase):
         heroes = [self._analyzed(name) for name in ("Eironn", "Isabella")]
         matchers = gen._make_enabler_matchers({})
         behavior = self.rs.build_behavior_for_heroes(
-            [faramor], {faramor.title: "Faramor"}, heroes_text=""
-        )[faramor.title]
+            [faramor], {faramor["title"]: "Faramor"}, heroes_text=""
+        )[faramor["title"]]
         ranked = gen.rank_synergy_entries(
             faramor,
             heroes,
             matchers,
-            {faramor.title: behavior},
+            {faramor["title"]: behavior},
         )
         providers = {title for _score, _reasons, title in ranked}
         self.assertIn("Eironn - Stormsword", providers)
@@ -866,14 +838,7 @@ class DisplaySynergyFallbackTests(unittest.TestCase):
 class ContinuousDamageMatcherTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        rs_spec = importlib.util.spec_from_file_location(
-            "rewrite_summaries",
-            SCRIPTS / "rewrite-summaries.py",
-        )
-        cls.rs = importlib.util.module_from_spec(rs_spec)
-        sys.modules["rewrite_summaries"] = cls.rs
-        assert rs_spec.loader is not None
-        rs_spec.loader.exec_module(cls.rs)
+        cls.rs = load_working_analysis()
 
         import heroes_io as io
 

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/hero-ai.schema.json",
+  "title": "AI-authored per-hero data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "skill_effects",
+    "behavior_tags",
+    "summon_profile",
+    "skill_summaries",
+    "play_overview",
+    "counter_overview"
+  ],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "skill_effects": {
+      "type": ["object", "null"],
+      "description": "The former per-hero skill-effect sidecar."
+    },
+    "behavior_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "summon_profile": { "type": ["object", "null"] },
+    "skill_summaries": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "play_overview": { "type": ["string", "null"] },
+    "counter_overview": { "type": ["string", "null"] }
+  }
+}

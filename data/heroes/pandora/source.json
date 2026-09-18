@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "id": "pandora",
+  "display_name": "Pandora",
+  "source": {
+    "title": "Pandora - Hope Unleashed",
+    "name": "Pandora",
+    "tags": "Dimensional · Support · Magic",
+    "faction": "Dimensional",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A Support wielding a mysterious box that lets her bring havoc and chaos to the battlefield.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Panic Projection",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Pandora's box holds both calamity and hope. Passive. Pandora herself is protected by hope and is not affected by this skill. Active. Pandora opens the box to unleash calamity, causing all units on the battlefield to flee in fright toward their own side for 5s and lose 50% (ATK-based) + 5% (SP-based) HP per 0.5s in the process. When the fright effect wears off, their ATK is reduced by 10% for 8s. This attack reduction effect can stack up to 3 times.",
+          "passive": [
+            "Pandora herself is protected by hope and is not affected by this skill."
+          ],
+          "active": [
+            "Pandora's box holds both calamity and hope.",
+            "Pandora opens the box to unleash calamity, causing all units on the battlefield to flee in fright toward their own side for 5s and lose 50% (ATK-based) + 5% (SP-based) HP per 0.5s in the process.",
+            "When the fright effect wears off, their ATK is reduced by 10% for 8s.",
+            "This attack reduction effect can stack up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases enemy's HP loss to 55% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases enemy's HP loss to 60% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases enemy's HP loss to 65% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases enemy's HP loss to 70% (ATK-based) + 5% (SP-based) every 0.5s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pandora opens her box and lets disaster loose. Everyone on the battlefield, friend or foe, is affected. She alone is spared."
+      },
+      {
+        "section": "Skill1",
+        "name": "Boxed Blessing",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Pandora pulls the rearmost ally into her box, making them invincible but unable to cast skills. After 4s, the ally is released from the box. If Pandora is alive when that happens, the ally gains 1000 Energy, as well as 35% + 5% (SP-based) ATK for the next 10s.",
+          "active": [
+            "When a battle starts, Pandora pulls the rearmost ally into her box, making them invincible but unable to cast skills.",
+            "After 4s, the ally is released from the box.",
+            "If Pandora is alive when that happens, the ally gains 1000 Energy, as well as 35% + 5% (SP-based) ATK for the next 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "When released from the box, the ally gains 40% + 5% (SP-based) ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "When released from the box, the ally gains 45% + 5% (SP-based) ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "When released from the box, the ally gains 50% + 5% (SP-based) ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Pandora pulls an ally into her box and restores their Energy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Tainted Tribute",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "5s",
+          "Initial Cooldown": "6s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Each time Pandora casts her skills, she restores 290% (ATK-based) + 25% (SP-based) HP and 90 + 10 (SP-based) Energy to the ally she released from her box. At the same time, the box applies Corruption, a permanent debuff that increases damage taken by 10%, to both Pandora and one random enemy not yet affected by Corruption. Pandora's Corruption can stack up to 4 times, while the enemy's Corruption does not stack. Active. Pandora inflicts a random number of unique debuffs on an enemy over the next 10s, prioritizing enemies not already affected by this skill. The number of unique debuffs is equal to Pandora's current Corruption stacks. These debuffs may include: reducing Haste by 45, reducing Energy recovery by 45%, reducing Vitality by 45, or causing the affected unit's normal attacks to have a 45% chance to miss. These effects do not stack.",
+          "passive": [
+            "Each time Pandora casts her skills, she restores 290% (ATK-based) + 25% (SP-based) HP and 90 + 10 (SP-based) Energy to the ally she released from her box.",
+            "At the same time, the box applies Corruption, a permanent debuff that increases damage taken by 10%, to both Pandora and one random enemy not yet affected by Corruption.",
+            "Pandora's Corruption can stack up to 4 times, while the enemy's Corruption does not stack."
+          ],
+          "active": [
+            "Pandora inflicts a random number of unique debuffs on an enemy over the next 10s, prioritizing enemies not already affected by this skill.",
+            "The number of unique debuffs is equal to Pandora's current Corruption stacks.",
+            "These debuffs may include: reducing Haste by 45, reducing Energy recovery by 45%, reducing Vitality by 45, or causing the affected unit's normal attacks to have a 45% chance to miss.",
+            "These effects do not stack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP and Energy restored to the ally to 300% (ATK-based) + 25% (SP-based) and 100 + 10 (SP-based), respectively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP and Energy restored to the ally to 310% (ATK-based) + 25% (SP-based) and 110 + 10 (SP-based), respectively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP and Energy restored to the ally to 320% (ATK-based) + 25% (SP-based) and 120 + 10 (SP-based), respectively."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pandora is corrupted by her box, allowing her to inflict debuffs on enemies based on her current Corruption stacks."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "During battle, Pandora's max HP increases by 12%, and by an additional 6% after being corrupted by her box.",
+          "active": [
+            "During battle, Pandora's max HP increases by 12%, and by an additional 6% after being corrupted by her box."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "During battle, Pandora's max HP increases by 18%, and by an additional 9% after being corrupted by her box."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "During battle, Pandora's max HP increases by 24%, and by an additional 12% after being corrupted by her box."
+              ]
+            }
+          ]
+        },
+        "description_lite": "During battle, Pandora's max HP increases, and by an extra amount after being corrupted by her box."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Eternal Legacy",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "After Pandora is defeated, the box stays on the battlefield. It's indestructible, unaffected, and won't be prioritized as a target. It has an Energy cap of 1,000 ad recovers 45 Energy per second. At full Energy the box unleashes Panic Projection again, but without the HP loss effect. Every 5s, it also casts Tainted Tribute on a random enemy but inflicts only one random debuff.",
+          "active": [
+            "After Pandora is defeated, the box stays on the battlefield.",
+            "It's indestructible, unaffected, and won't be prioritized as a target.",
+            "It has an Energy cap of 1,000 ad recovers 45 Energy per second.",
+            "At full Energy the box unleashes Panic Projection again, but without the HP loss effect.",
+            "Every 5s, it also casts Tainted Tribute on a random enemy but inflicts only one random debuff."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the box's Energy recovery to 55 per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Panic Projection's ATK reduction effect on enemies becomes permanent."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the box's Energy recovery to 65 per second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Pandora's box remains on the battlefield after she is defeated and cannot be destroyed."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "The ally pulled into Pandora's box is permanently protected by hope, making them immune to Panic Projection. This effect remains even after Pandora is defeated.",
+          "active": [
+            "The ally pulled into Pandora's box is permanently protected by hope, making them immune to Panic Projection.",
+            "This effect remains even after Pandora is defeated."
+          ]
+        },
+        "description_lite": "Allies placed inside the box are immune to Pandora's Ultimate."
+      }
+    ],
+    "range": 5,
+    "release_date": "2025-08-01",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

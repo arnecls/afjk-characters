@@ -1,0 +1,626 @@
+{
+  "schema_version": 2,
+  "id": "solise",
+  "display_name": "Solise",
+  "local": {
+    "long_name": "Solise - Floral Wonder",
+    "faction": "wilder",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 6,
+    "release_date": "2026-01-30",
+    "season": "Tower of Memory",
+    "season_number": 6,
+    "skills": {
+      "Life's Embrace": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Solise enters a nature-attuned state, releasing 3 waves of healing across the battlefield that each restores 140% (ATK-based) + 22% (SP-based) HP to affected allies. If an allied Bulbsprite is affected by one of her healing waves, it sends a water ring from its host' position, dealing 30% (ATK-based) + 3% (SP-based) damage to all enemies. Solide becomes unaffected while casting this skill.",
+          "active": [
+            "Solise enters a nature-attuned state, releasing 3 waves of healing across the battlefield that each restores 140% (ATK-based) + 22% (SP-based) HP to affected allies.",
+            "If an allied Bulbsprite is affected by one of her healing waves, it sends a water ring from its host' position, dealing 30% (ATK-based) + 3% (SP-based) damage to all enemies.",
+            "Solide becomes unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases healing to 160% (ATK-based) + 22% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases healing to 180% (ATK-based) + 22% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases healing to 200% (ATK-based) + 22% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases healing to 220% (ATK-based) + 22% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 242.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 450.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Direct healing — All units",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Lifebloom Buds": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Solise sends a Bulb to each non-summoned ally, blessing them with nature's gift. These Bulbs provide 40% (ATK-based) + 10% (SP-based) healing to their host every 3s. Solise becomes unaffected while casting this skill. During battle, each Bulb can store any excess healing its host receives. When this stores healing reaches 600% of Solise's initial ATK, the Bulb blooms into a Bulbsprite. The Bulbsprite permanently increases its host's ATK by a value equal to 15% + 1.5% (SP-based) of Solise' initial ATK. Even when Solise is defeated in battle, the effects from her Bulbs and Bulbsprites stay active. But they can't grow or respond to her anymore.",
+          "active": [
+            "When a battle starts, Solise sends a Bulb to each non-summoned ally, blessing them with nature's gift.",
+            "These Bulbs provide 40% (ATK-based) + 10% (SP-based) healing to their host every 3s.",
+            "Solise becomes unaffected while casting this skill.",
+            "During battle, each Bulb can store any excess healing its host receives.",
+            "When this stores healing reaches 600% of Solise's initial ATK, the Bulb blooms into a Bulbsprite.",
+            "The Bulbsprite permanently increases its host's ATK by a value equal to 15% + 1.5% (SP-based) of Solise' initial ATK.",
+            "Even when Solise is defeated in battle, the effects from her Bulbs and Bulbsprites stay active.",
+            "But they can't grow or respond to her anymore."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the healing provided by a Bulb to 60% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the healing provided by a Bulb to 80% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the healing provided by a Bulb to 100% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "HoT",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Floral Favor": {
+        "category": "skill2",
+        "description": {
+          "raw": "Solise infuses her magic into potions to help restore 190% (ATK-based) + 25% (SP-based) HP to the weakest 2 allies. When Solise heals an ally who already has a Bulbsprite with them, her healing grants a permanent shield that absorbs 250% (ATK-based) + 25% (SP-based) damage. The shield value cannot exceed 900% (ATK-based).",
+          "active": [
+            "Solise infuses her magic into potions to help restore 190% (ATK-based) + 25% (SP-based) HP to the weakest 2 allies.",
+            "When Solise heals an ally who already has a Bulbsprite with them, her healing grants a permanent shield that absorbs 250% (ATK-based) + 25% (SP-based) damage.",
+            "The shield value cannot exceed 900% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases healing to 210% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases healing to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases healing to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK by 10% during battle. Gains an extra 5% ATK when an allied Bulbsprite is present.",
+          "active": [
+            "Increases ATK by 10% during battle.",
+            "Gains an extra 5% ATK when an allied Bulbsprite is present."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 12% during battle.",
+                "Gains an extra 8% ATK when an allied Bulbsprite is present."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 14% during battle.",
+                "Gains an extra 11% ATK when an allied Bulbsprite is present."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Resonant Bloom": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a Bulb blooms into a Bulbsprite, it grants its host a permanent blessing, increasing their Phys & Magic DEF by a value equal to 4% of Solise's initial ATK. When the total excess healing a Bulbsprite's host receives reaches 600% of Solise's initial ATK, the Bulbsprite permanently levels up, and its host gains ATK equal to 7% of Solise's initial ATK. The Bulbsprite can be upgraded this way up to 3 times.",
+          "active": [
+            "When a Bulb blooms into a Bulbsprite, it grants its host a permanent blessing, increasing their Phys & Magic DEF by a value equal to 4% of Solise's initial ATK.",
+            "When the total excess healing a Bulbsprite's host receives reaches 600% of Solise's initial ATK, the Bulbsprite permanently levels up, and its host gains ATK equal to 7% of Solise's initial ATK.",
+            "The Bulbsprite can be upgraded this way up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Once a Bulb blooms into a Bulbsprite, its host gains Phys & Magic DEF equal to 6% of Solise's initial ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "After a Bulbsprite reaches its max level, it permanently increases its host's max HP by 450% of Solise's initial ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Once a Bulb blooms into a Bulbsprite, its host gains Phys & Magic DEF equal to 8% of Solise's initial ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 8.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DEF",
+            "polarity": "buff"
+          },
+          {
+            "label": "Magic DEF",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extra damage equal to 2% of the total excess healing it has stored during its Bulbsprite phase. The extra damage cannot exceed 110% of Solise's initial ATK.",
+          "active": [
+            "While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extra damage equal to 2% of the total excess healing it has stored during its Bulbsprite phase.",
+            "The extra damage cannot exceed 110% of Solise's initial ATK."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Ally blessing",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "When a Bulb blooms into a Bulbsprite, it grants its host a permanent blessing, increasing their Phys & Magic DEF by a value equal to 4% of Solise's initial ATK."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units"
+      ]
+    ],
+    "benefit_stats": [
+      "atk"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "solise",
+    "display_name": "Solise",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Solise enters a nature-attuned state, releasing 3 waves of healing across the battlefield that each restores 140% (ATK-based) + 22% (SP-based) HP to affected allies.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If an allied Bulbsprite is affected by one of her healing waves, it sends a water ring from its host' position, dealing 30% (ATK-based) + 3% (SP-based) damage to all enemies.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Solide becomes unaffected while casting this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases healing to 160% (ATK-based) + 22% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases healing to 180% (ATK-based) + 22% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases healing to 200% (ATK-based) + 22% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases healing to 220% (ATK-based) + 22% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Solise sends a Bulb to each non-summoned ally, blessing them with nature's gift.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "These Bulbs provide 40% (ATK-based) + 10% (SP-based) healing to their host every 3s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Solise becomes unaffected while casting this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "During battle, each Bulb can store any excess healing its host receives.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When this stores healing reaches 600% of Solise's initial ATK, the Bulb blooms into a Bulbsprite.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The Bulbsprite permanently increases its host's ATK by a value equal to 15% + 1.5% (SP-based) of Solise' initial ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Even when Solise is defeated in battle, the effects from her Bulbs and Bulbsprites stay active.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "But they can't grow or respond to her anymore.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing provided by a Bulb to 60% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing provided by a Bulb to 80% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing provided by a Bulb to 100% (ATK-based) + 10% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Solise infuses her magic into potions to help restore 190% (ATK-based) + 25% (SP-based) HP to the weakest 2 allies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When Solise heals an ally who already has a Bulbsprite with them, her healing grants a permanent shield that absorbs 250% (ATK-based) + 25% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The shield value cannot exceed 900% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases healing to 210% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases healing to 230% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases healing to 250% (ATK-based) + 25% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 10% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Gains an extra 5% ATK when an allied Bulbsprite is present.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Gains an extra 8% ATK when an allied Bulbsprite is present.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 14% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Gains an extra 11% ATK when an allied Bulbsprite is present.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a Bulb blooms into a Bulbsprite, it grants its host a permanent blessing, increasing their Phys & Magic DEF by a value equal to 4% of Solise's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When the total excess healing a Bulbsprite's host receives reaches 600% of Solise's initial ATK, the Bulbsprite permanently levels up, and its host gains ATK equal to 7% of Solise's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The Bulbsprite can be upgraded this way up to 3 times.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Once a Bulb blooms into a Bulbsprite, its host gains Phys & Magic DEF equal to 6% of Solise's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "After a Bulbsprite reaches its max level, it permanently increases its host's max HP by 450% of Solise's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Once a Bulb blooms into a Bulbsprite, its host gains Phys & Magic DEF equal to 8% of Solise's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extra damage equal to 2% of the total excess healing it has stored during its Bulbsprite phase.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The extra damage cannot exceed 110% of Solise's initial ATK.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "b66663a0888691d89649b3a008141f96172b8774ee4af83792a8c454f6eef8fb",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

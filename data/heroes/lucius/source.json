@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "id": "lucius",
+  "display_name": "Lucius",
+  "source": {
+    "title": "Lucius - The Lightbringer",
+    "name": "Lucius",
+    "tags": "Lightbearer · Tank · Physical",
+    "faction": "Lightbearer",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A Support Tank who can grant shields to multiple allies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Divine Light Aegis",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s.",
+          "active": [
+            "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases shield value to 490% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases shield value to 500% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases shield value to 510% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases shield value to 520% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucius provides allies with a shield."
+      },
+      {
+        "section": "Skill1",
+        "name": "Divine Bash",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile. He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s.",
+          "active": [
+            "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile.",
+            "He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Stuns the enemy for 1s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases shield value to 310% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases shield value to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucius bashes with his shield, dealing damage to an enemy and knocking them back, while gaining a shield for himself."
+      },
+      {
+        "section": "Skill2",
+        "name": "Divine Light Blessing",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally.",
+          "active": [
+            "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases shield effect gained by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases shield effect gained by 14%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases shield effect gained by 20%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucius heals an ally when gaining a shield."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Healing by 11 during battle.",
+          "active": [
+            "Increases Healing by 11 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 15 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 19 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Healing during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Sacred Beam",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "13s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s.",
+          "active": [
+            "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Gains a 3% (HP-based) shield for 4s per every enemy hit."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Reduces enemies' ATK by 10%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces enemies' ATK by 12%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lucius deals damage to enemies in a frontal area and reduces their ATK."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Lucius heals 1 more ally with Divine Light Blessing.",
+          "active": [
+            "Lucius heals 1 more ally with Divine Light Blessing."
+          ]
+        },
+        "description_lite": "Lucius heals an additional ally with Divine Light Blessing."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

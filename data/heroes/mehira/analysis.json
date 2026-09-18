@@ -1,0 +1,646 @@
+{
+  "schema_version": 2,
+  "id": "mehira",
+  "display_name": "Mehira",
+  "local": {
+    "long_name": "Mehira - Mind Cager",
+    "faction": "hypogean",
+    "class": "mage",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 3,
+    "release_date": "2025-10-30",
+    "season": "Thorns of Devotion",
+    "season_number": 5,
+    "skills": {
+      "Euphoric Rush": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Mehira marks a target area with her kiss, striking all enemies within 2 tiles 6 times, with each strike dealing 50% (ATK-based) + 5% (SP-based) damage. After a short delay, she unleashes a powerful blast in the same area, dealing 170% (ATK-based) + 25% (SP-based) damage. Enemies hit by the powerful blast become charmed for 3s.",
+          "active": [
+            "Mehira marks a target area with her kiss, striking all enemies within 2 tiles 6 times, with each strike dealing 50% (ATK-based) + 5% (SP-based) damage.",
+            "After a short delay, she unleashes a powerful blast in the same area, dealing 170% (ATK-based) + 25% (SP-based) damage.",
+            "Enemies hit by the powerful blast become charmed for 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 215.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "charm",
+            "duration": 3.0
+          }
+        ],
+        "cooldown": 2.0,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Charm — Single target"
+          }
+        ]
+      },
+      "Blissful Whip": {
+        "category": "skill1",
+        "description": {
+          "raw": "Mehira lashes her whip at all units, friend or foe, in a 3-tile frontal arc 5 times. Each hit causes a unit to lose 20% (ATK-based) + 3% (SP-based) HP. If an allied unit is hit, they gain 25 Haste for 8s, and their HP loss from this skill is reduced by 90%. Mehira always targets the direction that hits the most enemies.",
+          "active": [
+            "Mehira lashes her whip at all units, friend or foe, in a 3-tile frontal arc 5 times.",
+            "Each hit causes a unit to lose 20% (ATK-based) + 3% (SP-based) HP.",
+            "If an allied unit is hit, they gain 25 Haste for 8s, and their HP loss from this skill is reduced by 90%.",
+            "Mehira always targets the direction that hits the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the HP loss caused by each whip hit to 24% (ATK-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the HP loss caused by each whip hit to 28% (ATK-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the HP loss caused by each whip hit to 32% (ATK-based) + 3% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 23.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 5.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Haste — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Alluring Mirage": {
+        "category": "skill2",
+        "description": {
+          "raw": "Mehira summons an illusion of herself on the tile closest to the enemy lineup, bewitching all enemies and making them rush mindlessly toward the illusion for 2.2 + 0.1 (SP-based)s. When a battle starts, she summons such an illusion on a symmetrical tile across from where she stands.",
+          "active": [
+            "Mehira summons an illusion of herself on the tile closest to the enemy lineup, bewitching all enemies and making them rush mindlessly toward the illusion for 2.2 + 0.1 (SP-based)s.",
+            "When a battle starts, she summons such an illusion on a symmetrical tile across from where she stands."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the duration of the betwitched state to 2.3 + 0.1 (SP-based)s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the duration of the betwitched state to 2.4 + 0.1 (SP-based)s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the duration of the betwitched state to 2.5 + 0.1 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "charm"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat"
+          }
+        ],
+        "cooldown": 15.0,
+        "initial_cooldown": 15.0,
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken (Supreme+)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Charm — All units"
+          },
+          {
+            "label": "Displace — All units"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Life Drain by 8. Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 6%, up to 18%.",
+          "active": [
+            "Increases Life Drain by 8.",
+            "Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 6%, up to 18%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Life Drain by 10.",
+                "Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 8%, up to 24%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Life Drain by 12.",
+                "Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 10%, up to 30%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "persistence": "unknown"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Total Devotion": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a battle starts, Mehira summons 3 voidlings around her. Each voidling attacks an enemy every 1.5s, dealing 40% (ATK-based) damage. If Mehira takes a hit that would reduce her HP below 20%, she sacrifices a voidling to block that damage. She then becomes untargetable for 2.5s and instantly recovers 20% of her max HP.",
+          "active": [
+            "When a battle starts, Mehira summons 3 voidlings around her.",
+            "Each voidling attacks an enemy every 1.5s, dealing 40% (ATK-based) damage.",
+            "If Mehira takes a hit that would reduce her HP below 20%, she sacrifices a voidling to block that damage.",
+            "She then becomes untargetable for 2.5s and instantly recovers 20% of her max HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by each voidling attack to 50% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the damage dealt by each voidling attack to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Mehira stores any excess healing she receives.",
+                "Each time the stored amount reaches 50% of her inital max HP, she summons one extra voidling, up to 3 per battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "untargetable",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Untargetable — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bewitched with her Alluring Mirage by 15%. This effect does not stack.",
+          "active": [
+            "Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bewitched with her Alluring Mirage by 15%.",
+            "This effect does not stack."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "HP threshold strike",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "If Mehira takes a hit that would reduce her HP below 20%, she sacrifices a voidling to block that damage."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "haste",
+      "max_hp"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "mehira",
+    "display_name": "Mehira",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Mehira marks a target area with her kiss, striking all enemies within 2 tiles 6 times, with each strike dealing 50% (ATK-based) + 5% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After a short delay, she unleashes a powerful blast in the same area, dealing 170% (ATK-based) + 25% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Enemies hit by the powerful blast become charmed for 3s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Mehira lashes her whip at all units, friend or foe, in a 3-tile frontal arc 5 times.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each hit causes a unit to lose 20% (ATK-based) + 3% (SP-based) HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If an allied unit is hit, they gain 25 Haste for 8s, and their HP loss from this skill is reduced by 90%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Mehira always targets the direction that hits the most enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP loss caused by each whip hit to 24% (ATK-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP loss caused by each whip hit to 28% (ATK-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP loss caused by each whip hit to 32% (ATK-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Mehira summons an illusion of herself on the tile closest to the enemy lineup, bewitching all enemies and making them rush mindlessly toward the illusion for 2.2 + 0.1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When a battle starts, she summons such an illusion on a symmetrical tile across from where she stands.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the duration of the betwitched state to 2.3 + 0.1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the duration of the betwitched state to 2.4 + 0.1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the duration of the betwitched state to 2.5 + 0.1 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Life Drain by 8.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 6%, up to 18%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Life Drain by 10.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 8%, up to 24%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Life Drain by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time the total healing Mehira receives from any sources reaches 40% of her initial max HP, her ATK increases by 10%, up to 30%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, Mehira summons 3 voidlings around her.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each voidling attacks an enemy every 1.5s, dealing 40% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "If Mehira takes a hit that would reduce her HP below 20%, she sacrifices a voidling to block that damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "She then becomes untargetable for 2.5s and instantly recovers 20% of her max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt by each voidling attack to 50% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the damage dealt by each voidling attack to 60% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Mehira stores any excess healing she receives.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Each time the stored amount reaches 50% of her inital max HP, she summons one extra voidling, up to 3 per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bewitched with her Alluring Mirage by 15%.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This effect does not stack.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "9f2785a5a6ff360aef160ce15047b11d2639fb88eb4e035cd30a60137c55ae64",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

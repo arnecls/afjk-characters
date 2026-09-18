@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "id": "saida",
+  "display_name": "Saida",
+  "source": {
+    "title": "Saida - Vampiric Vine",
+    "name": "Saida",
+    "tags": "Hypogean · Rogue · Magic",
+    "faction": "Hypogean",
+    "class": "Rogue",
+    "damage_type": "Magic",
+    "description": "A cunning Rogue who values survival above all, she plants Drain Seeds to siphon life and Energy from her enemies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Seed Siphon",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "Active. Saida teleports in front of an enemy, preventing them from moving or acting. She deals 520% (ATK-based) + 60% (SP-based) damage and drains 220 + 20 (SP-based) Energy from the enemy. Saida remains unaffected while doing this and plants a Drain Seed in the enemy. She prioritizes enemies without a Drain Seed. This seed drops to the ground if its host is defeated or if Saida uses her Ultimate on its host again. Up to 8 Drain Seeds can exist on the battlefield at the same time. In boss fights, Drain Seeds on the ground will not obstruct unit movement. Passive. Every 2.5s, Drain Seeds deal 250% (ATK-based) damage to its host and reduces their Energy by 120.",
+          "passive": [
+            "Every 2.5s, Drain Seeds deal 250% (ATK-based) damage to its host and reduces their Energy by 120."
+          ],
+          "active": [
+            "Saida teleports in front of an enemy, preventing them from moving or acting.",
+            "She deals 520% (ATK-based) + 60% (SP-based) damage and drains 220 + 20 (SP-based) Energy from the enemy.",
+            "Saida remains unaffected while doing this and plants a Drain Seed in the enemy.",
+            "She prioritizes enemies without a Drain Seed.",
+            "This seed drops to the ground if its host is defeated or if Saida uses her Ultimate on its host again.",
+            "Up to 8 Drain Seeds can exist on the battlefield at the same time.",
+            "In boss fights, Drain Seeds on the ground will not obstruct unit movement."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the skill damage to 540% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the skill damage to 560% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the skill damage to 580% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the skill damage to 600% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Saida teleports to an enemy and plants a Drain Seed in them. The Drain Seed periodically deals damage to the host and reduces their Energy."
+      },
+      {
+        "section": "Skill1",
+        "name": "Crimson Claim",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Passive. Saida restores extra HP equal to 100% of the damage dealt by her normal attacks and skills. Any excess healing from this effect is converted into a shield. The shield value cannot exceed 3000% (ATK-based) + 300% (SP-based). Active. Saida forms a blood spike to pierce an enemy, dealing 420% (ATK-based) + 40% (SP-based) damage an interrupting their action. If any Drain Seeds are within 1 tile of the enemy, each one also forms blood spikes to strike that enemy, dealing 30% (ATK-based) damage.",
+          "passive": [
+            "Saida restores extra HP equal to 100% of the damage dealt by her normal attacks and skills.",
+            "Any excess healing from this effect is converted into a shield.",
+            "The shield value cannot exceed 3000% (ATK-based) + 300% (SP-based)."
+          ],
+          "active": [
+            "Saida forms a blood spike to pierce an enemy, dealing 420% (ATK-based) + 40% (SP-based) damage an interrupting their action.",
+            "If any Drain Seeds are within 1 tile of the enemy, each one also forms blood spikes to strike that enemy, dealing 30% (ATK-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increase damage to 430% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increase damage to 440% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increase damage to 450% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Saida restores HP when she deals damage. Any excess healing from this effect is converted into a shield. Active. Saida deals damage to an enemy, commanding nearby Drain Seeds to damage the same enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Revenant Sprout",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% (SP-based) HP. She prioritizes the oldest seed available and restores an extra 2.5% (HP-based) for each second the consumed seed existed. The extra HP cannot exceed 50% (HP-based).",
+          "active": [
+            "When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% (SP-based) HP.",
+            "She prioritizes the oldest seed available and restores an extra 2.5% (HP-based) for each second the consumed seed existed.",
+            "The extra HP cannot exceed 50% (HP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Saida restores 3% (HP-based) for each second the consumed seed existed.",
+                "The extra HP restored cannot exceed 60% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Saida restores 3.5% (HP-based) for each second the consumed seed existed.",
+                "The extra HP restored cannot exceed 70% (HP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Saida restores 4% (HP-based) for each second the consumed seed existed.",
+                "The extra HP restored cannot exceed 80% (HP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Saida is defeated, she consume a Drain Seed to revive."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Saida reduces her damage taken by 12% during battle. She further reduces her damage taken by an extra 2% for each existing Drain Seed, up to a maximum of 10%.",
+          "active": [
+            "Saida reduces her damage taken by 12% during battle.",
+            "She further reduces her damage taken by an extra 2% for each existing Drain Seed, up to a maximum of 10%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Saida reduces her damage taken by 16% during battle.",
+                "She further reduces her damage taken by an extra 3% for each existing Drain Seed, up to a maximum of 15%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Saida reduces her damage taken by 20% during battle.",
+                "She further reduces her damage taken by an extra 4% for each existing Drain Seed, up to a maximum of 20%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Saida reduces her damage taken during battle. She further reduces her damage taken for each existing Drain Seed."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Deepening Roots",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Saida reduces the damage dealt by enemies afflicted with a Drain Seed by 35%. Each time she casts her Ultimate, the interval between Drain Seed attack effects is shortened by 0.5s, up to a maximum reduction of 1.5s for the current battle.",
+          "active": [
+            "Saida reduces the damage dealt by enemies afflicted with a Drain Seed by 35%.",
+            "Each time she casts her Ultimate, the interval between Drain Seed attack effects is shortened by 0.5s, up to a maximum reduction of 1.5s for the current battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by Drain Seeds to 290% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the damage dealt by Drain Seeds to 330% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Saida has shortened the interval between Drain Seed's attack effects to its limit with Deepening Roots, she deals 1200% (ATK-based) damage to all enemies and traps them with blood spikes, preventing them from moving or acting.",
+                "If an enemy becomes unaffected, they are temporarily freed, but the trap resumes once the unaffected effect ends.",
+                "Each enemy is always trapped for a total of 45s, losing 160% (ATK-based) HP per second while trapped."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Saida shortens the interval between Drain Seed attack effects each time she uses her Ultimate."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These seeds do not harm allies but grant them a shield that can absorb 800% (ATK-based) damage.",
+          "active": [
+            "When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes.",
+            "These seeds do not harm allies but grant them a shield that can absorb 800% (ATK-based) damage."
+          ]
+        },
+        "description_lite": "When a battle starts, Saida plants Drain Seeds in nearby allies."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-08-01",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "S",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

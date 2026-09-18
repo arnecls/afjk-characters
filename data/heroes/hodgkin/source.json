@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "hodgkin",
+  "display_name": "Hodgkin",
+  "source": {
+    "title": "Hodgkin - Reviled Captain",
+    "name": "Hodgkin",
+    "tags": "Graveborn · Warrior · Physical",
+    "faction": "Graveborn",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A brutal Warrior who deals AoE damage without regard for teammates' safety.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Cannon Fire",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Hodgkin fires a cannon at each enemy hero in sequence, dealing 320% (ATK-based) + 30% (SP-based) damage to hit enemy and their adjacent enemies. Allies adjacent to the hit enemy will also take 100% (ATK-based). If any unit is hit by the cannon more than twice, the damage from subsequent hits is reduced to 20%. Hodgkin can fire at least 5 cannons with this skill.",
+          "active": [
+            "Hodgkin fires a cannon at each enemy hero in sequence, dealing 320% (ATK-based) + 30% (SP-based) damage to hit enemy and their adjacent enemies.",
+            "Allies adjacent to the hit enemy will also take 100% (ATK-based).",
+            "If any unit is hit by the cannon more than twice, the damage from subsequent hits is reduced to 20%.",
+            "Hodgkin can fire at least 5 cannons with this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases cannon damage to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases cannon damage to 340% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases cannon damage to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases cannon damage to 360% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hodgkin deals AoE damage by firing cannons at his enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Phantom Respite",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "18s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Hodgkin enters an ethereal state for 8 + 0.5 (SP-based)s, during which he is immune to physical damage and recovers 70% (ATK-based) + 10% (SP-based) HP per second. Passive. When Hodgkin casts Cannon Fire, he immediately enters the ethereal state for 4s.",
+          "passive": [
+            "When Hodgkin casts Cannon Fire, he immediately enters the ethereal state for 4s."
+          ],
+          "active": [
+            "Hodgkin enters an ethereal state for 8 + 0.5 (SP-based)s, during which he is immune to physical damage and recovers 70% (ATK-based) + 10% (SP-based) HP per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Recovers 80% (ATK-based) + 10% (SP-based) HP per second during ethereal state."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Recovers 90% (ATK-based) + 10% (SP-based) HP per second during ethereal state."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Recovers 100% (ATK-based) + 10% (SP-based) HP per second during ethereal state."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hodgkin enters an ethereal state, during which he is immune to physical damage and recovers HP."
+      },
+      {
+        "section": "Skill2",
+        "name": "Rending Cleave",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "3 Tiles"
+        },
+        "description": {
+          "raw": "Hodgkin deals 240% (ATK-based) + 30% (SP-based) damage to enemies within a 2-tile arc and steals 70 + 5 (SP-based) Energy from them.",
+          "active": [
+            "Hodgkin deals 240% (ATK-based) + 30% (SP-based) damage to enemies within a 2-tile arc and steals 70 + 5 (SP-based) Energy from them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage dealt to 260% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage dealt to 280% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage dealt to 300% (ATK-based) + 30% (SP-based) and Energy stolen to 80 + 5 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hodgkin deals damage to enemies within the radius of an arc and steals their Energy."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Hodgkin increases his ATK by 9% during battle. His ATK increases by an extra 6% during his ethereal state.",
+          "active": [
+            "Hodgkin increases his ATK by 9% during battle.",
+            "His ATK increases by an extra 6% during his ethereal state."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Hodgkin increases his ATK by 12% during battle.",
+                "His ATK increases by an extra 8% during his ethereal state."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Hodgkin increases his ATK by 15% during battle.",
+                "His ATK increases by an extra 10% during his ethereal state."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hodgkin increases his ATK, gaining an extra boost while in ethereal state."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Ardent Believers",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks. When a unit affected by unvoidbound magic is defeated, they trigger an explosion that deals damage equal to 120% (ATK-based) plus an extra 10% of the defeated unit's max HP to the adjacent enemies. This extra damage cannot exceed 200% (ATK-based) of Hodgkin's ATK. The targeted enemies also lose 200 Energy.",
+          "active": [
+            "Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks.",
+            "When a unit affected by unvoidbound magic is defeated, they trigger an explosion that deals damage equal to 120% (ATK-based) plus an extra 10% of the defeated unit's max HP to the adjacent enemies.",
+            "This extra damage cannot exceed 200% (ATK-based) of Hodgkin's ATK.",
+            "The targeted enemies also lose 200 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases explosion damage to 140% (ATK-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Applies voidbound magic to any unit hit by Cannon Fire that does not already have it.",
+                "The energy loss from this kind of explosion is reduced to 70%.",
+                "The skill also applies voidbound magic to Breakable Walls within range."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases explosion damage to 160% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hodgkin summons Dead Tide Warriors into the battle, dealing AoE damage and reducing enemies' Energy upon defeat."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s.",
+          "active": [
+            "Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hodgkin reduces the Phys DEF of enemies hit by the cannon."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-11-11",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "low",
+        "Phys DEF": "low",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

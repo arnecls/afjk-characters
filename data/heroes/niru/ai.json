@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Niru - Soul Collector",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "1fa9e7a42d332b48bffa8f4db816ba055706db946ae7dc50d17d209873f2397e",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Spirit form protection",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+              },
+              {
+                "label": "Start-of-battle cast",
+                "tier": "mythic+",
+                "targeting": "Self",
+                "description": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+              },
+              {
+                "label": "Spirit form protection",
+                "tier": "ex+5",
+                "targeting": "All units",
+                "description": "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+              }
+            ],
+            "special_requires": [
+              {
+                "label": "Ally blessing active",
+                "tier": "base",
+                "targeting": "Allies",
+                "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+              },
+              {
+                "label": "Enemy defeat",
+                "tier": "base",
+                "targeting": "Allies",
+                "description": "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+              }
+            ]
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "24aad706519968535506e93b6b01b57ea4059811053eec936975a6eeb254cdf0",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 0.45
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 600.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "c26c634be9e619e618e599a5153ac15f89929af11f64310b3b037837e7b35120",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 195.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "fff6820b1f57bb839a003ae90d6944ab8514352a2cc662f2529c39b886ed388b",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "7706167370018343da85867545a68d488c5f2437bdb787380c40e56063b1e268",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "401c109d78ed0cb1b1f1ce3eca9684d137a948182fb1f419b872cc104d599685",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "duration": 8.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Named ally on team",
+                "tier": "supreme+",
+                "targeting": "Allies",
+                "description": "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.",
+                "grants": [
+                  {
+                    "label": "Phys DEF",
+                    "magnitude": "high"
+                  },
+                  {
+                    "label": "Magic DEF",
+                    "magnitude": "high"
+                  }
+                ]
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "ally-healer",
+    "assassin",
+    "battle-start-ult",
+    "heal-inhibitor",
+    "hp-scaling"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "store one ally's soul; they continue fighting in spirit form after fatal blow",
+    "skill1": "attack weakest enemy, dealing more damage the lower their HP",
+    "skill2": "drain all enemies' HP to heal the weakest ally",
+    "skill3": "battle max HP increase",
+    "skill4": "cast ultimate at battle start without consuming energy",
+    "skill5": "attack briefly prevents target from recovering HP"
+  },
+  "play_overview": "Niru stores an ally soul at battle start so they **keep fighting in spirit form** after a fatal blow, preserving output from a key carry. She strikes the weakest foe for **bonus damage at low HP**, drains enemy HP to **heal the weakest ally**, and grows battle max HP to stay relevant on the field. Her opening ultimate **costs no energy**, letting the spirit safeguard trigger immediately. Attacks also briefly **block target healing**, adding soft anti-sustain on her pressure target. She is a **battle-start safety net** for one ally with drain-based sustain for the team. Without a **worthy soul target** or fights that end before spirit triggers, much of her protection sits idle.",
+  "counter_overview": "Niru's Arena threat is a **battle-start ultimate** that stores an ally soul so they keep fighting in **spirit form** after a fatal blow, plus drain heals into the weakest ally and brief heal-block on her pressure target. Expect her free opener to **soak a Lily May cancel** meant for someone else — if you need a wind-up interrupt, pair [[Pandora]] with [[Lily May]] rather than banking the first cancel. Delete the **soul-bound carry** before the fatal blow with [[filter:backline-assassin]] like [[Ravion]] or [[Himmel]], or finish them through the spirit window with lasting wide ultimates like [[Shemira]] or [[Gwyneth]]; race your carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] so spirit never matters."
+}

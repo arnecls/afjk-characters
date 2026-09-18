@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "id": "faramor",
+  "display_name": "Faramor",
+  "source": {
+    "title": "Faramor - Silverfang Mantle",
+    "name": "Faramor",
+    "tags": "Wilder · Rogue · Physical",
+    "faction": "Wilder",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A devout Rogue, relentless in hunting down enemies with healing powers.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Sanctified Circle",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Faramor consumes 250 - 10 (SP-based) Energy to summon a 1-tile magic circle, centered on his current target, dealing 210% (ATK-based) + 20% (SP-based) true damage to enemies caught inside. While the circle is active, he consumes 120 Energy per second to maintain it. Enemies within the circle cannot heal; every 0.5s, they take 35% (ATK-based) true damage, plus extra true damage equal to 20% of their lost HP. The extra true damage cannot exceed 240% of Faramor's ATK. If no enemies remain in the circle for 1s, the skill ends immediately.",
+          "active": [
+            "Faramor consumes 250 - 10 (SP-based) Energy to summon a 1-tile magic circle, centered on his current target, dealing 210% (ATK-based) + 20% (SP-based) true damage to enemies caught inside.",
+            "While the circle is active, he consumes 120 Energy per second to maintain it.",
+            "Enemies within the circle cannot heal; every 0.5s, they take 35% (ATK-based) true damage, plus extra true damage equal to 20% of their lost HP.",
+            "The extra true damage cannot exceed 240% of Faramor's ATK.",
+            "If no enemies remain in the circle for 1s, the skill ends immediately."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt when summoning the magic circle to 220% (ATK-based) + 20% (SP-based) and the subsequent damage to 40% (ATK-based) per hit."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt when summoning the magic circle to 230% (ATK-based) + 20% (SP-based) and the subsequent damage to 45% (ATK-based) per hit."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt when summoning the magic circle to 240% (ATK-based) + 20% (SP-based) and the subsequent damage to 50% (ATK-based) per hit."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt when summoning the magic circle to 250% (ATK-based) + 20% (SP-based) and the subsequent damage to 55% (ATK-based) per hit."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Faramor summons a magic circle to deal true damage to enemies within and prevents them from recovering HP."
+      },
+      {
+        "section": "Skill1",
+        "name": "Glory's Embrace",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Faramor prays to imbue his weapon with sacred power, gaining a shield that can absorb 200% (ATK-based) + 20% (SP-based) damage while dealing 250% (ATK-based) + 25% (SP-based) damage to his current target. The shield lasts for 6s. If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage.",
+          "active": [
+            "Faramor prays to imbue his weapon with sacred power, gaining a shield that can absorb 200% (ATK-based) + 20% (SP-based) damage while dealing 250% (ATK-based) + 25% (SP-based) damage to his current target.",
+            "The shield lasts for 6s.",
+            "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to the target to 260% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to the target to 270% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to the target to 280% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Faramor prays, imbuing his weapon with sacred power, gaining a shield while dealing damage to his current target."
+      },
+      {
+        "section": "Skill2",
+        "name": "Sacred Pledge",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. During battle preparation, Faramor can bless an adjacent allied hero, prioritizing those placed behind him. Active. Faramor increases ATK by 12% + 1.5% (SP-based) for 10s for both himself and the hero he blesses, automatically reapplying the buff when it expires. Every 3s while the buff is active, Faramor also deals 100% (ATK-based) damage to enemies within 1 tile of both himself and the blessed hero, stunning the affected enemies for 0.5s.",
+          "passive": [
+            "During battle preparation, Faramor can bless an adjacent allied hero, prioritizing those placed behind him."
+          ],
+          "active": [
+            "Faramor increases ATK by 12% + 1.5% (SP-based) for 10s for both himself and the hero he blesses, automatically reapplying the buff when it expires.",
+            "Every 3s while the buff is active, Faramor also deals 100% (ATK-based) damage to enemies within 1 tile of both himself and the blessed hero, stunning the affected enemies for 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Faramor increases the ATK of himself and the blessed allied hero by 13% + 1.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Faramor increases the ATK of himself and the blessed allied hero by 14% + 1.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Faramor increases the ATK of himself and the blessed allied hero by 15% + 1.5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Faramor blesses an ally, increasing the ATK of both himself and the ally while stunning nearby enemies within 1 tile of each."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Bitter Requiem",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Faramor replaces his normal attacks with Glory's Embrace while his magic circle is active, but the shield value he gains from Glory's Embrace is capped at 600% (ATK-based). The magic circle also weakens the enemies within it, allowing allies to deal extra true damage equal to 75% of their ATK. Each ally can only trigger the true damage once every 1s.",
+          "active": [
+            "Faramor replaces his normal attacks with Glory's Embrace while his magic circle is active, but the shield value he gains from Glory's Embrace is capped at 600% (ATK-based).",
+            "The magic circle also weakens the enemies within it, allowing allies to deal extra true damage equal to 75% of their ATK.",
+            "Each ally can only trigger the true damage once every 1s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the extra true damage dealt by allies to 80% of their ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When an enemy is defeated within the magic circle, grants Faramor 10% ATK and expands the circle's radius to 2 tiles.",
+                "This effect can only trigger once per battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the extra true damage dealt by allies to 85% of their ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "While active, the magic circle enhances Faramor's abilities and allows allies to deal extra true damage to enemies inside."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "If an enemy revives within Faramor's magic circle after their HP drops to 0, Faramor will reduce their Vitality by 50.",
+          "active": [
+            "If an enemy revives within Faramor's magic circle after their HP drops to 0, Faramor will reduce their Vitality by 50."
+          ]
+        },
+        "description_lite": "Faramor reduces the Vitality of enemies who revive within his magic circle."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-04-02",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "B",
+      "dream_realm": "S",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

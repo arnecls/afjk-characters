@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "id": "brutus",
+  "display_name": "Brutus",
+  "source": {
+    "title": "Brutus - Blood Claw",
+    "name": "Brutus",
+    "tags": "Mauler · Warrior · Physical",
+    "faction": "Mauler",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A valiant warrior who is indomitable in the front line.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Whirlwind Wrath",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Skill Range": "1 tile",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Brutus spins Mountain's Roar at high speed and deals 110% (ATK-based) + 15% (SP-based) damage every second to adjacent enemies within 1 tile for 4s. He is unaffected while spinning.",
+          "active": [
+            "Brutus spins Mountain's Roar at high speed and deals 110% (ATK-based) + 15% (SP-based) damage every second to adjacent enemies within 1 tile for 4s.",
+            "He is unaffected while spinning."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 120% (ATK-based) + 15% (SP-based)"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Brutus is immune to control effects while spinning.",
+                "This skill's duration stacks with the duration of his other damage immunities."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 130% (ATK-based) + 15% (SP-based)"
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 140% (ATK-based) + 15% (SP-based)"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Brutus spins his sword, dealing damage to adjacent enemies every second."
+      },
+      {
+        "section": "Skill1",
+        "name": "Ferocious Roar",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Brutus roars with rage, taunting surrounding enemies within 2 tiles for 1.5 + 0.5 (SP-based)s and reducing their Phys DEF by 15% for 9s.",
+          "active": [
+            "Brutus roars with rage, taunting surrounding enemies within 2 tiles for 1.5 + 0.5 (SP-based)s and reducing their Phys DEF by 15% for 9s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Reduces surrounding enemies' Phys DEF by 20%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Reduces surrounding enemies' Phys DEF by 25%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Reduces surrounding enemies' Phys DEF by 30%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Brutus roars, taunting nearby enemies and reducing their Phys DEF."
+      },
+      {
+        "section": "Skill2",
+        "name": "Indomitable",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Brutus is immune to the first fatal blow he receives. He is then immune to all damage and becomes unaffected for 5 + 1 (SP-based)s.",
+          "active": [
+            "Brutus is immune to the first fatal blow he receives.",
+            "He is then immune to all damage and becomes unaffected for 5 + 1 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Immunity grants 25 Life Drain and 25% ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Immunity grants 35 Life Drain and 30% ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Immunity grants 35 Life Drain and 35% ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Brutus is immune to the first fatal blow, and physical and magic damage for a short time."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Brutus increases his Life Drain by 10 during battle. He gains an extra 5 Life Drain during his Ultimate.",
+          "active": [
+            "Brutus increases his Life Drain by 10 during battle.",
+            "He gains an extra 5 Life Drain during his Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Brutus increases his Life Drain by 13 during battle.",
+                "He gains an extra 7 Life Drain during his Ultimate."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Brutus increases his Life Drain by 16 during battle.",
+                "He gains an extra 8 Life Drain during his Ultimate."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Brutus increases his Life Drain during battle, and it further increases when using Whirlwind Wrath."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Cleaving Strike",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "5s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Brutus cleaves with all his might to enemies within 1-tile arc in front after receiving physical damage 10 times from adjacent enemies, dealing 200% (ATK-based) damage plus 12% of the target's max HP. The total damage cannot exceed 750% (ATK-based). Brutus also gains 30% Life Drain. This skill can be triggered once every 5s.",
+          "active": [
+            "Brutus cleaves with all his might to enemies within 1-tile arc in front after receiving physical damage 10 times from adjacent enemies, dealing 200% (ATK-based) damage plus 12% of the target's max HP.",
+            "The total damage cannot exceed 750% (ATK-based).",
+            "Brutus also gains 30% Life Drain.",
+            "This skill can be triggered once every 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Brutus deals 230% (ATK-based) damage plus 12% of the target's max HP with this skill (the total damage cannot exceed 780% of his ATK)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Removes the cooldown limit for this skill.",
+                "Brutus can cast this skill for every 10 physical damage attacks he takes from adjacent enemies."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Brutus deals 260% (ATK-based) damage plus 12% of the target's max HP with this skill (the total damage cannot exceed 780% of his ATK)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Brutus cleaves enemies in front and gains Life Drain after receiving physical damage several times from adjacent enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "The duration of damage immunity and unaffected status from Indomitable is increased by 1s.",
+          "active": [
+            "The duration of damage immunity and unaffected status from Indomitable is increased by 1s."
+          ]
+        },
+        "description_lite": "Brutus increases the skill duration of Indomitable."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "B",
+      "dream_realm": "B",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

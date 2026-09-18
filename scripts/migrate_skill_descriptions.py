@@ -24,18 +24,22 @@ def migrate_document(data: dict) -> int:
 
 
 def main() -> int:
-    data = io.load_json(io.HEROES_DATA)
+    data = io.load_heroes_data()
     before_md = io.reconstruct_heroes_md(data)
     changed = migrate_document(data)
     after_md = io.reconstruct_heroes_md(data)
     if before_md != after_md:
         print("ERROR: Heroes.md would change after migration", file=sys.stderr)
         return 1
-    io.save_json(io.HEROES_DATA, data)
-    print(
-        f"Migrated {changed} skills in {io.HEROES_DATA.relative_to(io.ROOT)} "
-        f"(Heroes.md unchanged)"
-    )
+    if (io.DATA / "roster.json").exists():
+        from hero_pipeline.storage import write_source_roster
+
+        write_source_roster(data)
+        output = "hero-local generated files"
+    else:
+        io.save_json(io.HEROES_DATA, data)
+        output = str(io.HEROES_DATA.relative_to(io.ROOT))
+    print(f"Migrated {changed} skills in {output} (Heroes.md unchanged)")
     return 0
 
 

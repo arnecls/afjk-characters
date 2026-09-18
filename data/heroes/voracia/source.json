@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "voracia",
+  "display_name": "Voracia",
+  "source": {
+    "title": "Voracia - Feastweaver",
+    "name": "Voracia",
+    "tags": "Mauler · Mage · Magic",
+    "faction": "Mauler",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "An elegant gourmet and deadly Mage who effortlessly slices through enemies in battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "The Main Course",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "Passive. When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill. Active. Voracia remains unaffected. She summons a plate covering a 1-tile radius on a target tile. She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s. Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt. If enhanced by Fervor, this skill gains 70 Penetration when dealing damage. In Auto Battle, this skill prioritizes the area with the most enemies.",
+          "passive": [
+            "When Voracia deals damage to at least 3 enemies or all surviving enemies with a skill, her appetite awakens, immediately granting Fervor to that skill."
+          ],
+          "active": [
+            "Voracia remains unaffected.",
+            "She summons a plate covering a 1-tile radius on a target tile.",
+            "She uses her threads to pull enemies within 2 tiles onto the plate, knocking them down for 4s.",
+            "Voracia then samples the \"food\" on the plate, dealing 800% (ATK-based) + 100% (SP-based) damage to each enemy and healing herself for 45% + 4% (SP-based) of the actual damage dealt.",
+            "If enhanced by Fervor, this skill gains 70 Penetration when dealing damage.",
+            "In Auto Battle, this skill prioritizes the area with the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 850% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 900% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 950% (ATK-based) + 100% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 1000% (ATK-based) + 100% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. When Voracia deals damage to multiple enemies with a skill, that skill is permanently enhanced. Active. Voracia deals damage to enemies in the target area and heals herself."
+      },
+      {
+        "section": "Skill1",
+        "name": "Prime Cut",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "5s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles. If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage.",
+          "active": [
+            "Voracia slashes through the area with the most enemies using her dining knife, dealing 450% (ATK-based) + 50% (SP-based) damage to each enemy within 7 tiles.",
+            "If enhanced by Fervor, she performs an extra slash that deals 220% (ATK-based) + 25% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases basic slash damage to 460% (ATK-based) + 50% (SP-based) and the extra slash's damage to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases basic slash damage to 470% (ATK-based) + 50% (SP-based) and the extra slash's damage to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases basic slash damage to 480% (ATK-based) + 50% (SP-based) and the extra slash's damage to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Voracia slashes enemies within range several times with her dining knife."
+      },
+      {
+        "section": "Skill2",
+        "name": "Vino Inferno",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "7s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies. She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s. If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range.",
+          "active": [
+            "Voracia splashes red wine over a 1-tile area, prioritizing the area with the most enemies.",
+            "She then roasts enemies in the area with magic for 5s, dealing 45% (ATK-based) + 6% (SP-based) damage every 0.5s.",
+            "If enhanced by Fervor, the wine ignites at the end of the roast, bursting into flames and dealing an extra 240% (ATK-based) + 30% (SP-based) damage to enemies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases roast damage to 50% (ATK-based) + 6% (SP-based) and the extra flame damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases roast damage to 55% (ATK-based) + 6% (SP-based) and the extra flame damage to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases roast damage to 60% (ATK-based) + 6% (SP-based) and the extra flame damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Voracia roasts enemies in an area with red wine and magic, dealing continuous damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Voracia increases her ATK by 9% during battle. Once her appetite awakens, she increases her ATK further by 6%.",
+          "active": [
+            "Voracia increases her ATK by 9% during battle.",
+            "Once her appetite awakens, she increases her ATK further by 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Voracia increases her ATK by 12% during battle.",
+                "Once her appetite awakens, she increases her ATK further by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Voracia increases her ATK by 15% during battle.",
+                "Once her appetite awakens, she increases her ATK further by 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK during battle, with an extra increase once Voracia's appetite awakens.C"
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Chef's Choice",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats. For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value. If the target is not a boss, they also permanently lose all Energy.",
+          "active": [
+            "Once all her skills have gained Fervor, Voracia opens her jaws and devours the enemy with the highest cumulative damage dealt, dealing 900% (ATK-based) damage and gaining 35% of that enemy's basic stats.",
+            "For each devour, the value gained per stat cannot exceed 50% of her corresponding initial stat value.",
+            "If the target is not a boss, they also permanently lose all Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the basic stats absorbed per devour to 37.5%, and raises the cap for each absorbed stat to 55% of the initial value of Voracia's corresponding stat."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When casting this skill, Voracia devours an additional enemy with the next highest cumulative damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the basic stats absorbed per devour to 40%, and raises the cap for each absorbed stat to 60% of the initial value of Voracia's corresponding stat."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Once all her skills are enhanced, Voracia devours an enemy to absorb some of their stats and causes them to permanently lose all their Energy."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt.",
+          "active": [
+            "When The Main Course deals damage, it also inflicts max HP reduction equal to 35% of the damage dealt."
+          ]
+        },
+        "description_lite": "The Main Course also inflicts max HP reduction when dealing damage."
+      }
+    ],
+    "range": 10,
+    "release_date": "2026-08-06",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

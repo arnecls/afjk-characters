@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "phraesto",
+  "display_name": "Phraesto",
+  "source": {
+    "title": "Phraesto - Misty Scorpion",
+    "name": "Phraesto",
+    "tags": "Hypogean · Tank · Magic",
+    "faction": "Hypogean",
+    "class": "Tank",
+    "damage_type": "Magic",
+    "description": "A cunning Tank who is good at confusing enemies with powerful illusions.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Futile Echo",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "1.25s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage. This Illusion inherits 100% of Phraesto stats and can cast all his skills. When both Phraesto and his Illusion are positioned in the same row, they each receive a 30% damage reduction effect, lasting until one of them is defeated. Active: Phraesto deals 200% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles, recovering himself 160% (ATK-based) + 15% (SP-based) HP for each enemy hit.",
+          "active": [
+            "Passive: Phraesto sacrifices 12% of his max HP, summoning an identical Illusion during the preparation stage.",
+            "This Illusion inherits 100% of Phraesto stats and can cast all his skills.",
+            "When both Phraesto and his Illusion are positioned in the same row, they each receive a 30% damage reduction effect, lasting until one of them is defeated.",
+            "Active: Phraesto deals 200% (ATK-based) + 20% (SP-based) damage to enemies within 2 tiles, recovering himself 160% (ATK-based) + 15% (SP-based) HP for each enemy hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases the damage dealt to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the damage dealt to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases the damage dealt to 320% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the damage dealt to 360% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Phraesto sacrifices max HP to summon an Illusion who can cast all his skills. Active. Phraesto deals damage to enemies nearby and recovers his HP for each enemy hit."
+      },
+      {
+        "section": "Skill1",
+        "name": "Crimson Contract",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "14s",
+          "Initial Cooldown": "4s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Phraesto and his Illusion each sign a permanent contract with different allied heroes placed 1 tile behind them when a battle starts, reducing the recipient's HP by 6%. Phraesto increases the recipient's Energy Recovery Speed by 14%, while the llusion increases the recipient's DMG Reduction by 14%. The terms of each contract remain undetected by enemies before the battle starts. Active: Phraesto launches 3 strikes against an enemy in front, dealing 100% (ATK-based) + 10% (SP-based) damage with the first 2 hits and 140% (ATK-based) + 20% (SP-based) damage with the 3rd hit.",
+          "active": [
+            "Phraesto and his Illusion each sign a permanent contract with different allied heroes placed 1 tile behind them when a battle starts, reducing the recipient's HP by 6%.",
+            "Phraesto increases the recipient's Energy Recovery Speed by 14%, while the llusion increases the recipient's DMG Reduction by 14%.",
+            "The terms of each contract remain undetected by enemies before the battle starts.",
+            "Active: Phraesto launches 3 strikes against an enemy in front, dealing 100% (ATK-based) + 10% (SP-based) damage with the first 2 hits and 140% (ATK-based) + 20% (SP-based) damage with the 3rd hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Phraesto grants his recipient an extra 80 Energy.",
+                "The Illusion grants the recipient a 180% (ATK-based) shield for 6s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases the damage of the 3rd hit to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the damage of the 3rd hit to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto and his Illusion each sign a permanent contract with different allied heroes positioned behind them at the start of every battle. Active. Deals damage to a frontal enemy 3 times."
+      },
+      {
+        "section": "Skill2",
+        "name": "Vicious Sting",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "11s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Phrases to stings an enemy in front, dealing 50% (ATK-based) damage and inflicting them with Paralyzing Venom for 6s. Enemies afflicted with Paralyzing Venom have their Haste reduced by 30 and Vitality reduced by 45. They also lose 2% + 0.4% (SP-based) of their max HP per second, while restoring 3% of the caster's max HP per second. Enemy HP loss can't exceed 40% of Phraesto ATK per second.",
+          "active": [
+            "Phrases to stings an enemy in front, dealing 50% (ATK-based) damage and inflicting them with Paralyzing Venom for 6s.",
+            "Enemies afflicted with Paralyzing Venom have their Haste reduced by 30 and Vitality reduced by 45.",
+            "They also lose 2% + 0.4% (SP-based) of their max HP per second, while restoring 3% of the caster's max HP per second.",
+            "Enemy HP loss can't exceed 40% of Phraesto ATK per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Increases the enemy's lost HP per second to 2.5% + 0.4% (SP-based) of their max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Increases the max HP ratio restored per second for Paralyzing Venom's caster to 4.5%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Increases the enemy's lost HP per second to 3.3% + 0.4% (SP-based) of their max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto inflicts an enemy with Paralyzing Venom, making them lose HP constantly and reducing their stats."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 30%. Whenever one of them loses 10% of max HP, the other gains 15 Energy.",
+          "active": [
+            "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 30%.",
+            "Whenever one of them loses 10% of max HP, the other gains 15 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 40%.",
+                "Whenever one of them loses 10% of max HP, the other gains 20 Energy."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Phraesto increases the Phys & Magic DEF of both himself and his Illusion by 50%.",
+                "Whenever one of them loses 10% of max HP, the other gains 25 Energy."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto increases the Phys & Magic DEF of both himself and his Illusion. Whenever one of them loses HP, the other gains Energy."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Foggy Whisper",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Phraesto taunts the enemy who dealt the most damage if his Illusion is defeated before he is, dealing 500% (ATK-based) damage and stunning them for 4.5s.",
+          "active": [
+            "Phraesto taunts the enemy who dealt the most damage if his Illusion is defeated before he is, dealing 500% (ATK-based) damage and stunning them for 4.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Increases the skill damage to 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Increases the skill damage to 700% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Phraesto summons a new Illusion in front of himself if the previous Illusion is defeated before he is.",
+                "The new Illusion inherits on 60% of Phraesto's max HP.",
+                "Triggers once at most per battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Phraesto deals damage to an enemy and stuns them if the Illusion is defeated before he is."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s.",
+          "active": [
+            "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s."
+          ]
+        },
+        "description_lite": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield when a battle starts."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-06-06",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

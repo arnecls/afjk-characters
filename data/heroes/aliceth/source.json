@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "aliceth",
+  "display_name": "Aliceth",
+  "source": {
+    "title": "Aliceth - Radiant Wings",
+    "name": "Aliceth",
+    "tags": "Celestial · Marksman · Physical",
+    "faction": "Celestial",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A Marksman who transforms her wings into a mighty bow and empowers an ally with divine power to strike enemies under her mark.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Radiant Rain",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "8 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Aliceth flies into the air and fires 6 volleys of 3 arrows in rapid succession at an enemy. Each arrow deals 100% (ATK-based) + 10% (SP-based) damage, plus extra damage equal to 5% of the enemy's lost HP. The extra damage cannot exceed 50% (ATK-based). Aliceth remains invincible while airborne.",
+          "active": [
+            "Aliceth flies into the air and fires 6 volleys of 3 arrows in rapid succession at an enemy.",
+            "Each arrow deals 100% (ATK-based) + 10% (SP-based) damage, plus extra damage equal to 5% of the enemy's lost HP.",
+            "The extra damage cannot exceed 50% (ATK-based).",
+            "Aliceth remains invincible while airborne."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the base damage of each arrow to 105% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the base damage of each arrow to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the base damage of each arrow to 115% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the base damage of each arrow to 120% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aliceth flies into the air and fires arrows at an enemy."
+      },
+      {
+        "section": "Skill1",
+        "name": "Guiding Light",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "7s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "8 tiles"
+        },
+        "description": {
+          "raw": "Passive. Aliceth grants an ally Brightfeather, prioritizing the nearest ally in her row. After that, ally deals ranged damage 3 times, they unleash a feather for an additional strike, dealing 120% (ATK-based) + 20% (SP-based) damage. This strike can occur once every 0.5s. If the ally granted Brightfeather is a ranged unit, their normal attack range is increased by 5 tiles. The ally loses Brightfeather if they are defeated. Active. Aliceth shoots a charged arrow at enemy, dealing 380% (ATK-based) + 50% (SP-based) damage, knocking them back 6 tiles, and stunning them for 2.5s.",
+          "passive": [
+            "Aliceth grants an ally Brightfeather, prioritizing the nearest ally in her row.",
+            "After that, ally deals ranged damage 3 times, they unleash a feather for an additional strike, dealing 120% (ATK-based) + 20% (SP-based) damage.",
+            "This strike can occur once every 0.5s.",
+            "If the ally granted Brightfeather is a ranged unit, their normal attack range is increased by 5 tiles.",
+            "The ally loses Brightfeather if they are defeated."
+          ],
+          "active": [
+            "Aliceth shoots a charged arrow at enemy, dealing 380% (ATK-based) + 50% (SP-based) damage, knocking them back 6 tiles, and stunning them for 2.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage of the charged arrow to 420% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage of the charged arrow to 460% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage of the charged arrow to 500% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Aliceth grants an ally Brightfeather, allowing them to unleash a feather strike after dealing damage a set number of times. Active. Aliceth strikes an enemy for heavy damage, knocking them back and stunning them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Sealed Fate",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Aliceth places her Mark of Judgement on the farthest enemy. She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 (SP-based) Penetration. Passive. After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced. The enchanted mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30% (SP-based). If the marked enemy is defeated or becomes untargetable, Aliceth shifts the mark to a new enemy, resetting the mark's duration counter.",
+          "passive": [
+            "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced.",
+            "The enchanted mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30% (SP-based).",
+            "If the marked enemy is defeated or becomes untargetable, Aliceth shifts the mark to a new enemy, resetting the mark's duration counter."
+          ],
+          "active": [
+            "When a battle starts, Aliceth places her Mark of Judgement on the farthest enemy.",
+            "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 (SP-based) Penetration."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 40 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 45 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 50 + 5 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aliceth marks the farthest enemy. She and allies with Brightfeather will prioritize attacking the marked enemy."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Aliceth increases her ATK by 9% in battle. After the first enemy affected by her Mark of Judgement is defeated, Aliceth and allies with Brightfeather gain an extra 6% ATK.",
+          "active": [
+            "Aliceth increases her ATK by 9% in battle.",
+            "After the first enemy affected by her Mark of Judgement is defeated, Aliceth and allies with Brightfeather gain an extra 6% ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Aliceth increases her ATK by 13% in battle.",
+                "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 8% ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Aliceth increases her ATK by 16% in battle.",
+                "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 10% ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Aliceth increases her ATK in battle. After the first enemy affected by her Mark of Judgement is defeated, Aliceth and allies with Brightfeather gain extra ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Aegis Wings",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat. The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based). Afterward, Aliceth or the ally is moved to a safe spot within 4 tiles. But allies who are unaffected or steadfast will not be moved. This skill can trigger once per hero.",
+          "active": [
+            "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat.",
+            "The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based).",
+            "Afterward, Aliceth or the ally is moved to a safe spot within 4 tiles.",
+            "But allies who are unaffected or steadfast will not be moved.",
+            "This skill can trigger once per hero."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The affected hero recovers 35% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "The affected hero recovers 40% (HP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "For every 4 feather unleashed by an ally with Brightfeather, a burst of light erupts, dealing 330% (ATK-based) damage to adjacent enemies and blinding them for 3s.",
+                "Blinded enemies lose 40% (ATK-based) HP per second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant Rain is enhanced to fire 1 extra arrow volley for the rest of the battle. Through this, she can fire up to 6 extra arrow volleys in total.",
+          "active": [
+            "For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant Rain is enhanced to fire 1 extra arrow volley for the rest of the battle.",
+            "Through this, she can fire up to 6 extra arrow volleys in total."
+          ]
+        },
+        "description_lite": "Each time an ally with Brightfeather unleashes a set number of feathers, Aliceth's Ultimate is enhanced to fire additional volleys of arrows with each cast."
+      }
+    ],
+    "range": 8,
+    "release_date": "2025-09-26",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "S",
+      "dream_realm": "B",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

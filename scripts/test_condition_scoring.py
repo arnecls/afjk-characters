@@ -11,21 +11,10 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
-spec = importlib.util.spec_from_file_location(
-    "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-)
-rs = importlib.util.module_from_spec(spec)
-sys.modules["rewrite_summaries"] = spec
-assert spec.loader is not None
-spec.loader.exec_module(rs)
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
 
-spec_gen = importlib.util.spec_from_file_location(
-    "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-)
-gen = importlib.util.module_from_spec(spec_gen)
-sys.modules["gen_overview"] = spec_gen
-assert spec_gen.loader is not None
-spec_gen.loader.exec_module(gen)
+rs = load_working_analysis()
 
 
 def _buff(**kwargs) -> rs.Effect:
@@ -81,7 +70,7 @@ class ConditionScoringTests(unittest.TestCase):
             conditions=[{"type": "duration_gate", "gate": "once_per_battle"}],
         )
         rs.apply_conditional_magnitude(effect)
-        self.assertEqual(effect.magnitude, "low")
+        self.assertEqual(effect["magnitude"], "low")
 
     def test_score_synergy_skips_structured_once_per_battle(self) -> None:
         provider = rs.Hero(

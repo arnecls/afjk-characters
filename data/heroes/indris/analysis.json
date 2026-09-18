@@ -1,0 +1,704 @@
+{
+  "schema_version": 2,
+  "id": "indris",
+  "display_name": "Indris",
+  "local": {
+    "long_name": "Indris - Chain Breaker",
+    "faction": "wilder",
+    "class": "marksman",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 15,
+    "release_date": "2025-05-23",
+    "season": "Echoes of Dissent",
+    "season_number": 4,
+    "skills": {
+      "Spellbane Shot": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) + 20% (SP-based) damage. The shot disables the enemy's stat buffs for 8s and reduces their Phys & Magic DEF by 20% for the rest of the battle. Unstackable. The buff-disabling effect doesn't work on Bosses.",
+          "active": [
+            "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) + 20% (SP-based) damage.",
+            "The shot disables the enemy's stat buffs for 8s and reduces their Phys & Magic DEF by 20% for the rest of the battle.",
+            "Unstackable.",
+            "The buff-disabling effect doesn't work on Bosses."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When Indris fires a silencing arrow at a target with exposed weakness, he deals extra true damage equal to 20% of the exposed target's max HP.",
+                "The true damage cannot exceed 500% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of the silencing arrow to 260% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of the silencing arrow to 280% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of the silencing arrow to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          }
+        ],
+        "initial_energy": 200.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Magic DEF",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "True Sight": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed. Indris' normal attacks deal 60% (ATK-based) + 6% (SP-based) extra true damage to enemies with exposed weakness. This effect can trigger once every 4s per enemy. In addition, Indris' normal attack fires 3 arrows, each dealing 165% (ATK-based) + 20% (SP-based) damage. The arrows prioritize different enemies with exposed weaknesses. If all 3 arrows hit the same target, the second and third arrows deal 25% less damage.",
+          "passive": [
+            "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed.",
+            "Indris' normal attacks deal 60% (ATK-based) + 6% (SP-based) extra true damage to enemies with exposed weakness.",
+            "This effect can trigger once every 4s per enemy.",
+            "In addition, Indris' normal attack fires 3 arrows, each dealing 165% (ATK-based) + 20% (SP-based) damage.",
+            "The arrows prioritize different enemies with exposed weaknesses.",
+            "If all 3 arrows hit the same target, the second and third arrows deal 25% less damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage of each arrow triggered by True Sight to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage of each arrow triggered by True Sight to 175% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage of each arrow triggered by True Sight to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Arcane Binding": {
+        "category": "skill2",
+        "description": {
+          "raw": "Indris knocks back all enemies within 2 tiles, pushing them out of the 2-tile area surrounding him. He then casts a binding spell on the nearest enemy, dealing 170% (ATK-based) + 20% (SP-based) damage and immobilizing them for 5s.",
+          "active": [
+            "Indris knocks back all enemies within 2 tiles, pushing them out of the 2-tile area surrounding him.",
+            "He then casts a binding spell on the nearest enemy, dealing 170% (ATK-based) + 20% (SP-based) damage and immobilizing them for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 190% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 5.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 5.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Bind — Single target"
+          },
+          {
+            "label": "Knock back — Area"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Indris increases his ATK by 6% during battle, plus an extra 9% if an enemy has exposed weakness.",
+          "active": [
+            "Indris increases his ATK by 6% during battle, plus an extra 9% if an enemy has exposed weakness."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Indris increases his ATK by 8% during battle, plus an extra 12% if an enemy has exposed weakness."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Indris increases his ATK by 10% during battle, plus an extra 15% if an enemy has exposed weakness."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "debuffed"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Windpiercer": {
+        "category": "skill4",
+        "description": {
+          "raw": "Each time Indris triggers the exposed weakness damage bonus, he increases his ATK SPD by 40 for 6s. Unstackable.",
+          "active": [
+            "Each time Indris triggers the exposed weakness damage bonus, he increases his ATK SPD by 40 for 6s.",
+            "Unstackable."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 50."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Indris' normal attacks reduce the target's Phys DEF by 20% for 6s.",
+                "Unstackable."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 60."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF (EX+10)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "After hitting an enemy with Arcane Binding, Indris's normal attacks can trigger the exposed weakness damage bonus without cooldown for 5s.",
+          "active": [
+            "After hitting an enemy with Arcane Binding, Indris's normal attacks can trigger the exposed weakness damage bonus without cooldown for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": [
+        {
+          "label": "Multiple debuffs on target",
+          "tier": "base",
+          "targeting": "Enemies",
+          "description": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed."
+        },
+        {
+          "label": "Passive with internal cooldown",
+          "tier": "base",
+          "targeting": "Enemies",
+          "description": "This effect can trigger once every 4s per enemy."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ],
+      [
+        "true",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "atk_spd"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "indris",
+    "display_name": "Indris",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) + 20% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The shot disables the enemy's stat buffs for 8s and reduces their Phys & Magic DEF by 20% for the rest of the battle.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unstackable.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The buff-disabling effect doesn't work on Bosses.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Indris fires a silencing arrow at a target with exposed weakness, he deals extra true damage equal to 20% of the exposed target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The true damage cannot exceed 500% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of the silencing arrow to 260% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of the silencing arrow to 280% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of the silencing arrow to 300% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Indris' normal attacks deal 60% (ATK-based) + 6% (SP-based) extra true damage to enemies with exposed weakness.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This effect can trigger once every 4s per enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In addition, Indris' normal attack fires 3 arrows, each dealing 165% (ATK-based) + 20% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The arrows prioritize different enemies with exposed weaknesses.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If all 3 arrows hit the same target, the second and third arrows deal 25% less damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow triggered by True Sight to 170% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow triggered by True Sight to 175% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage of each arrow triggered by True Sight to 180% (ATK-based) + 20% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Indris knocks back all enemies within 2 tiles, pushing them out of the 2-tile area surrounding him.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He then casts a binding spell on the nearest enemy, dealing 170% (ATK-based) + 20% (SP-based) damage and immobilizing them for 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 180% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 190% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 200% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Indris increases his ATK by 6% during battle, plus an extra 9% if an enemy has exposed weakness.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Indris increases his ATK by 8% during battle, plus an extra 12% if an enemy has exposed weakness.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Indris increases his ATK by 10% during battle, plus an extra 15% if an enemy has exposed weakness.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Each time Indris triggers the exposed weakness damage bonus, he increases his ATK SPD by 40 for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unstackable.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 50.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Indris' normal attacks reduce the target's Phys DEF by 20% for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Unstackable.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the ATK SPD Indris gains when triggering the exposed weakness damage bonus to 60.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "After hitting an enemy with Arcane Binding, Indris's normal attacks can trigger the exposed weakness damage bonus without cooldown for 5s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "d42c2d3480a4655e68765b0390c4511161777715dc893a50a30cfbb3ee326a1b",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

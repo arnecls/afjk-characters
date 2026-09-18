@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "id": "kordan",
+  "display_name": "Kordan",
+  "source": {
+    "title": "Kordan - Ironblood Chieftain",
+    "name": "Kordan",
+    "tags": "Mauler · Warrior · Physical",
+    "faction": "Mauler",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A Warrior who thrives in head-on combat and becomes stronger with each kill.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Dominance Ring",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "1000"
+        },
+        "description": {
+          "raw": "When casting this skill, Kordan raises his blade and challenges 1 enemy within 1 tile, immobilizing the target for 5s. At the same time, he summons a hunting circle around him and his target, dealing 180% (ATK-based) damage to all enemies within the circle and knocking back other ranged enemies out of the circle. The hunting circle stays active for 16s. All units within the hunting circle take 60% less damage and healing from any outside source. Meanwhile, allied units within the circle gain 20% + 3% (SP-based) ATK, 40 Life Drain, and deal 20% + 3% (SP-based) more damage. Kordan can keep only one circle active at a time. This skill starts with 1,000 Energy.",
+          "active": [
+            "When casting this skill, Kordan raises his blade and challenges 1 enemy within 1 tile, immobilizing the target for 5s.",
+            "At the same time, he summons a hunting circle around him and his target, dealing 180% (ATK-based) damage to all enemies within the circle and knocking back other ranged enemies out of the circle.",
+            "The hunting circle stays active for 16s.",
+            "All units within the hunting circle take 60% less damage and healing from any outside source.",
+            "Meanwhile, allied units within the circle gain 20% + 3% (SP-based) ATK, 40 Life Drain, and deal 20% + 3% (SP-based) more damage.",
+            "Kordan can keep only one circle active at a time.",
+            "This skill starts with 1,000 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the extra ATK, damage bonus, and Life Drain granted to allies within the circle to 24% + 3% (SP-based), 24% + 3% (SP-based), and 45 respectively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the extra ATK, damage bonus, and Life Drain granted to allies within the circle to 28% + 3% (SP-based), 28% + 3% (SP-based), and 50 respectively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the extra ATK, damage bonus, and Life Drain granted to allies within the circle to 32% + 3% (SP-based), 32% + 3% (SP-based), and 55 respectively."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the extra ATK, damage bonus, and Life Drain granted to allies within the circle to 36% + 3% (SP-based), 36% + 3% (SP-based), and 605 respectively."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Kordan creates a hunting circle. All units inside take reduced damage and receive less healing from outside sources, while allied units inside gain extra ATK and Life Drain."
+      },
+      {
+        "section": "Skill1",
+        "name": "Fury Slash",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Kordan charges up briefly before unleashing a sweeping slash, dealing 280% (ATK-based) + 40% (SP-based) damage to an enemy. He also gains a shield equal to 100% of the damage dealt, plus an additional 300% (ATK-based). The shield lasts 15s.",
+          "active": [
+            "Kordan charges up briefly before unleashing a sweeping slash, dealing 280% (ATK-based) + 40% (SP-based) damage to an enemy.",
+            "He also gains a shield equal to 100% of the damage dealt, plus an additional 300% (ATK-based).",
+            "The shield lasts 15s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 340% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 460% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Kordan deals damage to an enemy and converts a portion of the damage dealt into a shield."
+      },
+      {
+        "section": "Skill2",
+        "name": "Sundering Strike",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Kordan leaps high, slamming his blade down on the enemy to deal 350% (ATK-based) + 50% (SP-based) damage and knock them down.",
+          "active": [
+            "Kordan leaps high, slamming his blade down on the enemy to deal 350% (ATK-based) + 50% (SP-based) damage and knock them down."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 400% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 450% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 500% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Kordan knocks down an enemy, dealing damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Rage Unleashed",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When Kordan achieves his first assist or defeat of a non-summoned enemy within the hunting circle, or after he has fought inside the circle for 20s, his Fury Slash and Sundering Strike become enhanced. Enhanced Fury Slash: Deals extra damage equal to 30% of the target's lost HP, up to 600% (ATK-based). Enhanced Sundering Strike: Allows Kordan to also knock his target into the air, increasing the duration of the subsequent knockdown for 2s and dealing 300% (ATK-based) extra damage.",
+          "active": [
+            "When Kordan achieves his first assist or defeat of a non-summoned enemy within the hunting circle, or after he has fought inside the circle for 20s, his Fury Slash and Sundering Strike become enhanced.",
+            "Enhanced Fury Slash: Deals extra damage equal to 30% of the target's lost HP, up to 600% (ATK-based).",
+            "Enhanced Sundering Strike: Allows Kordan to also knock his target into the air, increasing the duration of the subsequent knockdown for 2s and dealing 300% (ATK-based) extra damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the extra damage dealt by Fury Slash to 35% of the target's lost HP, up to 700% (ATK-based).",
+                "Also increases the extra damage dealt by Sundering Strike to 350%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40, staking up to 3 times.",
+                "Each assist or defeat also restores 15% of his max HP every second for 3s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the extra damage dealt by Fury Slash to 40% of the target's lost HP, up to 800% (ATK-based).",
+                "Also increases the extra damage dealt by Sundering Strike to 400%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The first time Kordan assists or defeats an enemy within the hunting circle, he permanently enhances other skills."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps to a new target and moves the circle to his new position. Repositioning the circle extends its duration by 10s. All allies within the circle also gain 50 Penetration.",
+          "active": [
+            "Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps to a new target and moves the circle to his new position.",
+            "Repositioning the circle extends its duration by 10s.",
+            "All allies within the circle also gain 50 Penetration."
+          ]
+        },
+        "description_lite": "Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps to a new target and moves the circle to his new position."
+      }
+    ],
+    "range": 1,
+    "release_date": "2026-01-15",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

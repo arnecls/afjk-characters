@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import importlib.util
 import json
 import re
 import subprocess
@@ -14,8 +13,7 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import heroes_io as io
-from test_helpers import tag_labels
+from test_helpers import load_working_analysis, tag_labels
 
 TIER_SUFFIX_RE = re.compile(
     r"\s*\((Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)\s*$",
@@ -27,17 +25,6 @@ TARGETING_BEFORE_TIER_RE = re.compile(
     r"\s*\(",
     re.I,
 )
-
-
-def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
 
 
 def _parse_targeting_from_tag(label: str) -> str:
@@ -55,36 +42,39 @@ def _parse_targeting_from_tag(label: str) -> str:
 
 
 def audit_live_tags(rs_mod) -> list[str]:
+    from hero_pipeline.storage import load_roster_snapshot
+
     issues: list[str] = []
-    data = io.load_heroes_data()
-    for record in data["heroes"]:
+    snapshot = load_roster_snapshot()
+    for entry in snapshot["manifest"]["heroes"]:
+        record = snapshot["bundles"][entry["id"]]["source"]["source"]
         hero = rs_mod.hero_from_record(record)
         rs_mod.analyze_hero(hero)
-        title = hero.title.split(" - ")[0]
+        title = hero["title"].split(" - ")[0]
         for category in ("ultimate", "skill1", "skill2", "skill3", "skill4", "skill5"):
             section = rs_mod.CATEGORY_TO_SECTION.get(category)
-            sl = hero.skill_slices.get(section)
+            sl = hero["skill_slices"].get(section)
             if not sl:
                 continue
             disambiguate_groups, disambiguate_labels = rs_mod._skill_card_disambiguate_keys(
                 sl
             )
             live = tag_labels(rs_mod.format_skill_card_tags(hero, category))
-            for effect in sl.effects:
-                if effect.category not in ("buff", "debuff", "cc"):
+            for effect in sl["effects"]:
+                if effect["category"] not in ("buff", "debuff", "cc"):
                     continue
                 targeting = rs_mod._skill_card_targeting_label(effect)
                 if targeting in ("Single target", ""):
                     continue
                 expected = rs_mod._skill_card_tag_with_tier(
-                    effect.label,
+                    effect["label"],
                     targeting,
-                    effect.tier,
+                    effect["tier"],
                     category,
-                    is_cc=effect.category == "cc",
+                    is_cc=effect["category"] == "cc",
                     explicit_targeting=rs_mod._skill_card_use_explicit_targeting(
                         effect,
-                        category=effect.category,
+                        category=effect["category"],
                         group_keys=disambiguate_groups,
                         label_keys=disambiguate_labels,
                     ),
@@ -94,7 +84,7 @@ def audit_live_tags(rs_mod) -> list[str]:
                 related = [
                     tag
                     for tag in live
-                    if rs_mod._skill_card_tag_label(effect.label) in tag
+                    if rs_mod._skill_card_tag_label(effect["label"]) in tag
                 ]
                 if related and any(
                     targeting.lower() in tag.lower()
@@ -103,7 +93,7 @@ def audit_live_tags(rs_mod) -> list[str]:
                 ):
                     continue
                 issues.append(
-                    f"{title}/{category}: {effect.label} wants {targeting}, "
+                    f"{title}/{category}: {effect["label"]} wants {targeting}, "
                     f"have {related}"
                 )
     return issues
@@ -126,7 +116,7 @@ def audit_stored_tags_with_suffix() -> list[str]:
 
 
 def main() -> int:
-    rs_mod = _load_rs()
+    rs_mod = load_working_analysis()
     live_issues = audit_live_tags(rs_mod)
     stored_issues = audit_stored_tags_with_suffix()
     chip_proc = subprocess.run(

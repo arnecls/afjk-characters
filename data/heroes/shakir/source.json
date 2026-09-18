@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "id": "shakir",
+  "display_name": "Shakir",
+  "source": {
+    "title": "Shakir - Furious Howl",
+    "name": "Shakir",
+    "tags": "Mauler · Rogue · Physical",
+    "faction": "Mauler",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A ferocious Warrior who can dominate the battlefield, especially in his Wolf Mode.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Ravaging Claws",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected. Shakir consumes 60 Energy per second to maintain his wolf shape. Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks. Allies within the range of Lupine Aura reduce 20% + 2% (SP-based) taken damage and increase 10 + 3 (SP-based) Haste.",
+          "active": [
+            "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected.",
+            "Shakir consumes 60 Energy per second to maintain his wolf shape.",
+            "Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks.",
+            "Allies within the range of Lupine Aura reduce 20% + 2% (SP-based) taken damage and increase 10 + 3 (SP-based) Haste."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 20% + 2% (SP-based) and increase their Haste by 15 + 3 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 15 + 3 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 20 + 3 (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Reduce the allies' damage taken within Lupine Aura by 25% + 2% (SP-based) and increase their Haste by 25 + 3 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shakir transforms into a wolf with more powerful combat capabilities."
+      },
+      {
+        "section": "Skill1",
+        "name": "Savage Cleave",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% (SP-based) damage with his first 2 attacks and 160% + 20% (SP-based) damage with his 3rd attack. While in Wolf Form, this skill damages enemies within a frontal 1-tile arc.",
+          "active": [
+            "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% (SP-based) damage with his first 2 attacks and 160% + 20% (SP-based) damage with his 3rd attack.",
+            "While in Wolf Form, this skill damages enemies within a frontal 1-tile arc."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "The 3rd attack deals 180% + 20% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "The 3rd attack deals 200% + 20% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "The 3rd attack deals 220% + 20% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shakir launches 3 consecutive strikes, dealing AoE damage while in Wolf Form."
+      },
+      {
+        "section": "Skill2",
+        "name": "Wolf's Will",
+        "unlock": "Unlocks at Level 31",
+        "meta": {},
+        "description": {
+          "raw": "Passive. Shakir gains 25 Ranged DEF. In Wolf Form, he is Unaffected and gains 30 + 5 (SP-based) Life Drain. Each non-summoned ally within Lupine Aura him 5% + 1% (SP-based) ATK.",
+          "passive": [
+            "Shakir gains 25 Ranged DEF.",
+            "In Wolf Form, he is Unaffected and gains 30 + 5 (SP-based) Life Drain.",
+            "Each non-summoned ally within Lupine Aura him 5% + 1% (SP-based) ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases passive Life Drain bonus to 40 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases passive Ranged DEF bonus to 30."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gains Ranged DEF and Life Drain while in Wolf Form."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Shakir reduces his damage taken by 9% during battle. His damage taken is further reduced by 4% if at least 2 non-summoned allies are buffed by his Lupine Aura.",
+          "active": [
+            "Shakir reduces his damage taken by 9% during battle.",
+            "His damage taken is further reduced by 4% if at least 2 non-summoned allies are buffed by his Lupine Aura."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Shakir reduces his damage taken by 12% during battle.",
+                "His damage taken is further reduced by 5% if at least 2 non-summoned allies are buffed by his Lupine Aura."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Shakir reduces his damage taken by 15% during battle.",
+                "His damage taken is further reduced by 7% if at least 2 non-summoned allies are buffed by his Lupine Aura."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shakir's damage taken is reduced during battle and is further reduced when multiple non-summoned allies are buffed by Lupine Aura."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "All-Conquering",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {},
+        "description": {
+          "raw": "Shakir can cast his Ultimate once his Energy exceeds 800. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
+          "active": [
+            "Shakir can cast his Ultimate once his Energy exceeds 800.",
+            "Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Shakir stays in Wolf Form and consumes no Energy within 7s each time after casting his Ultimate."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Each non-summoned ally within Lupine Aura can share the same bonus ATK from Wolf's Will."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Shakir can cast Ultimate upon reaching over 700 Energy."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shakir into wolf in advance."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Shakir reduces the target's Vitality by 60 within 4s of using the 3rd hit of Savage Cleave.",
+          "active": [
+            "Shakir reduces the target's Vitality by 60 within 4s of using the 3rd hit of Savage Cleave."
+          ]
+        },
+        "description_lite": "Shakir casts Savage Cleave to reduce the target's Vitality"
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "B",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

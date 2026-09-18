@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "id": "velara",
+  "display_name": "Velara",
+  "source": {
+    "title": "Velara - Pale Votary",
+    "name": "Velara",
+    "tags": "Wilder · Support · Magic",
+    "faction": "Wilder",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A support who summons a circle that weakens enemies and empowers allies within it.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Ruthless Rite",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Velara summons 4 dormant magic circles on the battlefield. Each circle awakens after accumulating 1000 Energy. When a circle awakens, it affects all units within 2 tiles, restoring 40% (ATK-based) + 8% (SP-based) HP to allies and reducing enemies' Haste by 30 + 5 (SP-based). Active. Velara channels her Energy into one of her dormant circles until it awakens. If all circles are already awakened, she instead expands their area of effect to cover the entire battlefield and transfers 30% + 3% (SP-based) of basic stats from all enemies, then evenly distributing them among all allied units, lasting for 10s. The transferred stats that each ally receives cannot exceed 45% of Velara's starting stats. In boss fights, allies will always receive the maximum amount of transferred stats.",
+          "passive": [
+            "When a battle starts, Velara summons 4 dormant magic circles on the battlefield.",
+            "Each circle awakens after accumulating 1000 Energy.",
+            "When a circle awakens, it affects all units within 2 tiles, restoring 40% (ATK-based) + 8% (SP-based) HP to allies and reducing enemies' Haste by 30 + 5 (SP-based)."
+          ],
+          "active": [
+            "Velara channels her Energy into one of her dormant circles until it awakens.",
+            "If all circles are already awakened, she instead expands their area of effect to cover the entire battlefield and transfers 30% + 3% (SP-based) of basic stats from all enemies, then evenly distributing them among all allied units, lasting for 10s.",
+            "The transferred stats that each ally receives cannot exceed 45% of Velara's starting stats.",
+            "In boss fights, allies will always receive the maximum amount of transferred stats."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Awakened magic circle restores 50% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 35 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Awakened magic circle restores 60% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 40 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Awakened magic circle restores 70% (ATK-based) + 80% (SP-based) HP to allies and reduces enemies' Haste by 45 + 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Awakened magic circle restores 80% (ATK-based) + 80% (SP-based)|ult"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Velara summons magic circles that can be awakened to affect nearby allies and enemies. Once all magic circles are awakened, their effects extend across the entire battlefield."
+      },
+      {
+        "section": "Skill1",
+        "name": "Sinbound Shackles",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "5s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Velara immobilizes the enemy with the highest cumulative damage dealt, reducing their Haste by 50 + 10 (SP-based) and their Phys & Magic DEF by 45% + 6% (SP-based) for 5s. Each awakened magic circle extends this duration by 0.5s.",
+          "active": [
+            "Velara immobilizes the enemy with the highest cumulative damage dealt, reducing their Haste by 50 + 10 (SP-based) and their Phys & Magic DEF by 45% + 6% (SP-based) for 5s.",
+            "Each awakened magic circle extends this duration by 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the Haste reduction to 55 + 10 (SP-based), and Phys & Magic DEF reduction to 50% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the Haste reduction to 60 + 10 (SP-based), and Phys & Magic DEF reduction to 55% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the Haste reduction to 70 + 10 (SP-based), and Phys & Magic DEF reduction to 60% + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Velara immobilizes the enemy with the highest cumulative damage dealt and reduces their stats."
+      },
+      {
+        "section": "Skill2",
+        "name": "Merciful Harvest",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "If Velara is placed within a magic circle when a battle starts, that circle is immediately awakened. Otherwise, the circle farthest from her position is awakened instead. Passive. Every 3s, each magic circle gains Energy based on the stat reduction debuffs on enemies within 2 tiles. For each unique ally who inflicted any of those debuffs, the circle gains 24 + 4 (SP-based) Energy.",
+          "passive": [
+            "Every 3s, each magic circle gains Energy based on the stat reduction debuffs on enemies within 2 tiles.",
+            "For each unique ally who inflicted any of those debuffs, the circle gains 24 + 4 (SP-based) Energy."
+          ],
+          "active": [
+            "If Velara is placed within a magic circle when a battle starts, that circle is immediately awakened.",
+            "Otherwise, the circle farthest from her position is awakened instead."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the Energy gained from each debuff to 26 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the Energy gained from each debuff to 28 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the Energy gained from each debuff to 32 + 4 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Velara awakens a magic circle when a battle starts. Magic circles gain Energy from nearby enemies affected by stat reduction debuffs."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Velara increases her Haste by 12 during battle. When all her magic circles are awakened, her Haste is increased by an extra 3.",
+          "active": [
+            "Velara increases her Haste by 12 during battle.",
+            "When all her magic circles are awakened, her Haste is increased by an extra 3."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Velara increases her Haste by 15 during battle.",
+                "When all her magic circles are awakened, her Haste is increased by an extra 4."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Velara increases her Haste by 18 during battle.",
+                "When all her magic circles are awakened, her Haste is increased by an extra 5."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Velara increases her Haste, with an extra boost when all magic circles are awakened."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Graceful Edict",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a magic circle awakens, it fires a mystic bolt to the weakest unit within 2 tiles. If the unit is an ally, they gain a 500% (ATK-based) shield for 8s; if it's an enemy, they take 300% (ATK-based) damage. Each awakened magic circle increases value applied or damage dealt by this skill by 10%.",
+          "active": [
+            "When a magic circle awakens, it fires a mystic bolt to the weakest unit within 2 tiles.",
+            "If the unit is an ally, they gain a 500% (ATK-based) shield for 8s; if it's an enemy, they take 300% (ATK-based) damage.",
+            "Each awakened magic circle increases value applied or damage dealt by this skill by 10%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield value granted by Graceful Edict to 550% (ATK-based) and the damage it deals to 350%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Every 10s in battle, each awakened magic circle fires a mystic bolt at the weakest unit on the battlefield."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield value granted by Graceful Edict to 600% (ATK-based) and the damage it deals to 400%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Awakened magic circles periodically apply effects to the weakest units."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "After all magic circles are awakened, casting Ruthless Rite expands their area of effect to cover the entire battlefield until the battle ends. Each subsequent cast makes allied units unaffected and increases their damage dealt by 5% for 5s.",
+          "active": [
+            "After all magic circles are awakened, casting Ruthless Rite expands their area of effect to cover the entire battlefield until the battle ends.",
+            "Each subsequent cast makes allied units unaffected and increases their damage dealt by 5% for 5s."
+          ]
+        },
+        "description_lite": "After all magic circles are awakened, Ruthless Rite causes them to cover the entire battlefield until the battle ends. Each subsequent cast makes allies unaffected and increases their damage."
+      }
+    ],
+    "range": 5,
+    "release_date": "2025-06-26",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "B",
+      "dream_realm": "S",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "schema_version": 2,
+  "id": "lucius",
+  "display_name": "Lucius",
+  "local": {
+    "long_name": "Lucius - The Lightbringer",
+    "faction": "lightbearer",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Divine Light Aegis": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s.",
+          "active": [
+            "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases shield value to 490% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases shield value to 500% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases shield value to 510% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases shield value to 520% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 470.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Shield — Area",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Divine Bash": {
+        "category": "skill1",
+        "description": {
+          "raw": "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile. He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s.",
+          "active": [
+            "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile.",
+            "He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Stuns the enemy for 1s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases shield value to 310% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases shield value to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 1.0
+          }
+        ],
+        "cooldown": 8.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock back — Single target"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Divine Light Blessing": {
+        "category": "skill2",
+        "description": {
+          "raw": "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally.",
+          "active": [
+            "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases shield effect gained by 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases shield effect gained by 14%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases shield effect gained by 20%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Healing by 11 during battle.",
+          "active": [
+            "Increases Healing by 11 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 15 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Healing by 19 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Healing",
+            "label": "buff_healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 19.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Sacred Beam": {
+        "category": "skill4",
+        "description": {
+          "raw": "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s.",
+          "active": [
+            "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Gains a 3% (HP-based) shield for 4s per every enemy hit."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Reduces enemies' ATK by 10%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces enemies' ATK by 12%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 8.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 90.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 13.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "ATK — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "ATK — Single target (EX+10)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Lucius heals 1 more ally with Divine Light Blessing.",
+          "active": [
+            "Lucius heals 1 more ally with Divine Light Blessing."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "buff"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.9166666666666666,
+      "max_hp": 0.08333333333333333
+    },
+    "id": "lucius",
+    "display_name": "Lucius",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Lucius selects a tile and grants allies on it and adjacent tiles a shield that blocks 470% (ATK-based) + 40% (SP-based) damage for 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases shield value to 490% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases shield value to 500% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases shield value to 510% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases shield value to 520% (ATK-based) + 40% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lucius bashes with his shield, dealing 70% (ATK-based) damage to an enemy and knocking them back 1 tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He also gains a shield that blocks 300% (ATK-based) + 30% (SP-based) damage for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Stuns the enemy for 1s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases shield value to 310% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases shield value to 320% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When gaining a shield, Lucius uses Healing Power to recover HP that equals 80% (ATK-based) + 10% (SP-based) + 20% of shield value for 1 weakest ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases shield effect gained by 8%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases shield effect gained by 14%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases shield effect gained by 20%.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 11 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Healing by 19 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lucius shoots a Divine Light covering the frontal area (3-tile wide and 4-tile long), dealing 90% (ATK-based) damage to all enemies within and reducing their ATK by 8% for 4s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains a 3% (HP-based) shield for 4s per every enemy hit.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Reduces enemies' ATK by 10%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Reduces enemies' ATK by 12%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lucius heals 1 more ally with Divine Light Blessing.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "cb38144333ae0b672fa9e1ee6100153d30e5bbb27b5464b3f218f3d483611fba",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

@@ -1,515 +1,338 @@
 ---
 name: add-hero
 description: >-
-  End-to-end workflow for adding a new AFK Journey hero to the database: roster
-  registration, download from web sources, interactive sentence-by-sentence
-  detection-gap resolution for new skill-text flavors, curated AI metadata,
-  overrides, and validation. Use when asked to add a new hero, new character,
-  or ingest a newly released unit into heroes_data.json and the pipeline.
+  Adds exactly one new AFK Journey hero to the current per-hero roster:
+  source download, AI sidecar and metadata, local analysis, generated views,
+  portrait assets, and structural, semantic, and presentation validation.
+  Use when adding a new hero, character, or roster unit.
 ---
 
-# Add hero
+# Add one hero
 
-End-to-end workflow for adding one new hero to the roster. Covers ingest from
-live web sources through detection fixes, curated metadata, and validation.
+Use this skill for **one new hero per run**. It is the orchestration workflow
+for the current split-hero architecture. Detailed authoring rules live in the
+specialized skills linked below; do not duplicate them here.
 
-**Scope:** one new hero per run. For roster-wide detection audits, use
-[hero-data](../hero-data/SKILL.md). For tag-only updates on existing heroes,
-use [behavior-tags](../behavior-tags/SKILL.md). For site display fixes after
-pipeline output, use [web-ui](../web-ui/SKILL.md).
+The run is complete only when the hero has source data, curated AI data,
+fresh local analysis, generated views, a valid portrait, and passing
+validation. A source or asset that is not available may be registered
+provisionally, but the result must be reported as **BLOCKED / INCOMPLETE**.
+Never report a blocked intake as complete.
 
-## Pipeline phases
+Related skills:
 
-| Phase | Goal | Key outputs |
-|-------|------|-------------|
-| **A — Register + download** | Hero name in sources; raw skill text in repo | `data/heroes_data.json` |
-| **B — Detection gaps** | New flavor text parsed into effects | `scripts/rewrite-summaries.py`, tests, `heroes_data_processed.json` |
-| **C — Curated metadata** | Identity skill, tags, walk speed, summaries, play blurb | AI JSON files under `data/` + `hero_walk_speeds.json` |
-| **D — Overrides** | Fix auto-detect edge cases only when wrong | `placement_constraint_overrides.json`, `movement_overrides.json`, `melee_overrides.json` |
-| **E — Validate + verify** | Schema, semantics, character portrait, site | `just validate`, `site/assets/portraits/` |
+- [extract-skill-effects](../extract-skill-effects/SKILL.md) — authoritative
+  per-tier skill-effect sidecar extraction
+- [behavior-tags](../behavior-tags/SKILL.md) — curated combat-role tags
+- [counter](../counter/SKILL.md) — PVP counter overview and validation gates
+- [hero-data](../hero-data/SKILL.md) — manual source-versus-analysis audit
+- [web-ui](../web-ui/SKILL.md) — display-only site problems
 
-Commands (agent runs these):
+Primary references:
+
+- [data README](../../data/README.md)
+- [pipeline reference](../../docs/skill-analysis-pipeline.md)
+- [AI data rules](../../docs/ai-generated-data.md)
+- [.cursor/AGENTS.md](../../.cursor/AGENTS.md)
+
+## Completion checklist
+
+Track this checklist for the named hero. Every checked item must have the
+evidence described by its completion criterion.
+
+```text
+- [ ] 0. Scope and identity are confirmed.
+- [ ] 1. Stable ID and four-file bundle are initialized.
+- [ ] 2. Source data and external facts are downloaded and complete.
+- [ ] 3. Skill-effect sidecar is complete, hashed, and schema-valid.
+- [ ] 4. Curated AI metadata is complete in the hero bundle.
+- [ ] 5. Local analysis is fresh and manually audited against skill text.
+- [ ] 6. Full-roster views and portrait assets are generated.
+- [ ] 7. Structural, semantic, automated, and presentation checks pass.
+- [ ] 8. Final report distinguishes complete from blocked or deferred work.
+```
+
+## 0. Scope and identity
+
+Before changing files, establish these values from the source pages and the
+repository conventions:
+
+| Value | Contract |
+| --- | --- |
+| Stable ID | Lowercase kebab-case; the directory and cross-hero identity |
+| Display name | Site, overview, portrait filename, and curated metadata key |
+| Source name | Downloaded `source.json` name; may differ from display name |
+| Title | Source title stored in the roster manifest |
+| Aliases | Fandom, Yaphalla, or Prydwen names that identify the same hero |
+
+Check the Fandom hero list, Yaphalla hero index, and Prydwen character page.
+Read the current manifest and the hero-name/alias maps before inventing a
+slug. The known `Elijah & Lailah` / `Twins` split is the model for an alias,
+not a reason to add a second roster hero.
+
+**Completion criterion:** the ID, display name, source name, title, and aliases
+are written down and there is no duplicate manifest identity.
+
+## 1. Initialize the split-hero bundle
+
+Initialize before downloading:
 
 ```bash
-just download    # Phase A — network; refreshes heroes_data.json
-just views       # Phases B–E after detection changes — analyze + render (no network)
-just validate    # Phase E — schema + semantic checks
+python3 scripts/hero_pipeline_cli.py init <hero-id> \
+  --display-name "Display Name" \
+  --title "Source Name - Subtitle" \
+  --alias "Source Name"
 ```
 
-Full pipeline reference: `docs/skill-analysis-pipeline.md`, `data/README.md`,
-`justfile`.
+This creates the manifest entry and:
 
-## Task progress
-
-```
-Task progress:
-- [ ] A1. Confirm hero name, display name, and any alias (Twins ↔ Elijah & Lailah)
-- [ ] A2. Register in scripts/sources_web.py HERO_NAMES if Fandom-listed
-- [ ] A3. Run just download; review warnings for this hero
-- [ ] A4. Read raw skill block in data/heroes_data.json
-- [ ] B1. Run scoped analyze_hero debug snippet
-- [ ] B2. Run scoped gap-scan snippet
-- [ ] B3. Walk sentences per skill; ask user on each unresolved gap
-- [ ] B4. Patch rewrite-summaries.py + regression test + CACHE_VERSION bump per fix
-- [ ] B5. Run just views; re-check this hero until gaps closed or user stops
-- [ ] C1. Add signature_skills.json entry
-- [ ] C2. Add hero_behavior_tags.json entry (behavior-tags skill rules)
-- [ ] C3. Add hero_walk_speeds.json entry from afkj-data walking_speed.md
-- [ ] C4. Add heroes_data_skill_summary.json entries per skill category
-- [ ] C5. Add hero_play_overviews.json entry
-- [ ] C6. Add hero_counter_overviews.json entry (counter skill)
-- [ ] D1. Check placement / movement / melee; add overrides only if wrong
-- [ ] E1. Run just validate; fix hero-specific issues
-- [ ] E2. Confirm character portrait and site/data/heroes.json for this hero
-- [ ] E3. Report files touched and open items
+```text
+data/heroes/<hero-id>/source.json
+data/heroes/<hero-id>/ai.json
+data/heroes/<hero-id>/overrides.json
+data/heroes/<hero-id>/analysis.json
 ```
 
----
+`analysis.json` is a rebuildable cache. Do not author it manually.
+`overrides.json` should remain at `{"schema_version": 1}` until a computed
+behavior mismatch is observed.
 
-## Phase A — Register + download
+If the hero has a Fandom page, add its source name to
+`HERO_NAMES` in `scripts/sources_web.py`, and add only evidence-based
+Prydwen slug/display aliases to `PRYDWEN_SLUG_ALIASES` or
+`PRYDWEN_NAME_ALIASES`. A Yaphalla-only record still needs this initialized
+bundle: source merging may discover it, but `write_source_roster()` rejects
+downloaded heroes without a pre-existing bundle.
 
-### A1. Confirm names
+**Completion criterion:** `roster.json` contains one ordered entry and all four
+files exist under the matching hero ID.
 
-Before editing anything, establish:
+## 2. Download and inspect source data
 
-| Field | Where used |
-|-------|------------|
-| **Data name** | `heroes_data.json` `name` field (e.g. `Elijah & Lailah`) |
-| **Display name** | Curated JSON keys, `heroes-overview.md` (e.g. `Twins`) |
-| **Fandom slug** | Wiki page title — usually matches data name |
-| **Prydwen slug** | `scripts/sources_web.py` `_PRYDWEN_SLUGS` if non-obvious |
-
-Check spelling against:
-
-- [Fandom hero list](https://afk-journey.fandom.com/wiki/Hero/List)
-- [Yaphalla heroes index](https://www.yaphalla.com/heroes)
-
-Alias map lives in `scripts/heroes_io.py` (`DISPLAY_NAME_ALIASES`). Prydwen
-slug overrides in `scripts/sources_web.py` (`_PRYDWEN_SLUGS`,
-`_PRYDWEN_DISPLAY_NAMES`).
-
-### A2. Register for Fandom fetch
-
-Add the hero to `HERO_NAMES` in `scripts/sources_web.py` when the hero has a
-Fandom wiki page.
-
-**Skip** when the hero is Yaphalla-only: `merge_sources` in
-`scripts/heroes_io.py` auto-appends heroes found on Yaphalla but missing from
-the Fandom pool.
-
-### A3. Download
+Run the scoped command after initialization:
 
 ```bash
-just download
+python3 scripts/hero_pipeline_cli.py download --hero <hero-id>
 ```
 
-Read stdout for this hero:
+`--hero` limits which initialized bundle is written; the downloader still
+fetches the live Fandom, Yaphalla, and Prydwen pools. Use `just download` only
+when refreshing the whole roster.
 
-- `fandom ✗` — name mismatch or page not live yet
-- Missing Prydwen tiers (`?` in `prydwen_tiers`) — OK for brand-new releases
-- Empty or partial skills — check Yaphalla gap-fill before proceeding
+Inspect `data/heroes/<hero-id>/source.json` and confirm:
 
-### A4. Inspect raw data
+- the downloaded `source.name`, title, and display name resolve to the
+  manifest entry;
+- every available skill slot has raw text, active/passive text, upgrades,
+  and expected metadata such as range, cooldown, and initial energy;
+- `description_lite` is present where the source provides it;
+- Prydwen tiers and role categories are present, or their absence is recorded
+  as a release-source limitation;
+- `external.walk_speed` is one of `zero`, `slow`, `normal`, `fast`, or
+  `veryfast`; and
+- `external.stat_ranks` is populated from the sibling `afkj-data` game-data
+  documentation when available.
 
-Read the new hero block in `data/heroes_data.json`. Confirm:
+Do not invent walk speed, stat ranks, a missing skill, or a missing tier.
+If the game data table has no walk-speed row, regenerate that table or report
+the intake blocked. If a web source is not live yet, keep the bundle explicit
+but stop the completion path and report the missing source.
 
-- Each skill has `description.raw`, `active`/`passive`, and `upgrades`
-- `meta` fields present where expected (Cooldown, Skill Range, Initial Energy)
-- `description_lite` from Yaphalla when available (useful for Phase C)
+**Completion criterion:** every expected skill and external fact is either
+present and inspected or listed as a concrete blocked item; no placeholder
+value is presented as sourced data.
 
-Do not proceed to Phase B until skill text is present for every slot.
+## 3. Build the skill-effect sidecar
 
----
+Invoke [extract-skill-effects](../extract-skill-effects/SKILL.md) for this
+hero. Treat `data/heroes/<hero-id>/ai.json.skill_effects` as the source of
+truth for effects. Read the full active/passive text and every ascension and
+EX tier before authoring.
 
-## Phase B — Interactive detection-gap loop
+The sidecar must cover, where present:
 
-New heroes almost always introduce skill phrasing the regex engine has not seen.
-This phase walks each sentence against detected output and **stops to ask the
-user** when a mechanic is visible in text but missing from `effects`.
+- damage types, healing, shields, Energy, buffs, and debuffs;
+- CC and anti-CC/immunity effects;
+- targeting from the same clause as each effect;
+- true-damage subtypes, DoT intervals, conditions, and durations;
+- `special_provides` and `special_requires`;
+- summon effects and summoning provides for a genuine battlefield summon;
+- `persistence` on every positive ally stat buff; and
+- `source_hash` and `is_max_known` for every skill.
 
-Reference: `.cursor/AGENTS.md` (damage types, CC, buffs, targeting,
-immunities). Detection engine: `scripts/rewrite-summaries.py`.
+Use schema vocabulary and the semantics in `.cursor/AGENTS.md`. Preserve
+fully ascended values and do not copy area reach from a neighboring clause.
+Do not edit regex tables or resurrect aggregate files for a new mechanic.
+Most new-hero gaps are sidecar data. If the evidence instead exposes a
+reusable downloader, schema, validator, or pipeline defect, fix that shared
+defect only with a focused regression test and record it in the final report.
 
-### B1. Print current detection
+Validate the draft with the extraction skill, show the old-versus-new effect
+diff, then save it. A missing or stale sidecar is not an acceptable
+intermediate completion state.
 
-Run the scoped debug snippet (see [Debug snippets](#debug-snippets)) with the
-hero's **data name**. Note `effects`, `cc_immunities`, and `skill_card_tags`
-per skill section.
+**Completion criterion:** the sidecar validates, every source skill has a
+matching hash and tier data, and its effects explain the mechanics in the
+fully ascended text.
 
-### B2. Pre-flag gaps
+## 4. Complete hero-local AI metadata
 
-Run the scoped gap-scan snippet for the same hero. It reuses keyword patterns
-from `scripts/validate_processed.py` (`_CC_KEYWORDS`, `_ANTI_CC_KEYWORDS`) and
-flags `cc_missing`, `anti_cc_missing`, and `empty_effects` candidates.
+Keep all curated metadata in this hero's `ai.json`. Do not create or update
+the removed roster-keyed aggregate files.
 
-Treat gap-scan hits as **triage**, not ground truth — confirm each against
-skill text before patching.
+### 4.1 Behavior tags and summons
 
-### B3. Sentence-by-sentence walk
+Invoke [behavior-tags](../behavior-tags/SKILL.md). Choose a small,
+alphabetically sorted set, normally three to five allowed enum values, that
+describes how the hero is played. Check the full tag definitions, including
+`temporary-stat-buffer`, `dot-specialist`, `summoner`, `battle-start-burst`,
+`high-initial-energy`, and `non-ult-utility`.
 
-For each skill section (`Ultimate`, `Skill 1`, …, `Ex`):
+If the hero is a genuine battlefield summoner, complete the `summon_profile`
+and registry requirements. Transient spell effects are not summons.
 
-1. Collect sentences from `description.active`, `description.passive`, and
-   max-tier `upgrades` text (fully ascended comparison per AGENTS.md).
-2. For each sentence, ask: does every mechanical claim appear in `effects`,
-   `cc_immunities`, or `synergy_profile` for this section?
-3. When a sentence contains a mechanic with **no** matching detection row,
-   **stop and ask the user** before patching. Present:
+### 4.2 Skill summaries
 
-   - The exact sentence (quote verbatim)
-   - Current detection for that skill section (or "none")
-   - Your classification guess: damage type / buff / debuff / CC / immunity /
-     special provide / special require / targeting-only / flavor-only
-   - Which rule table likely needs a change:
-     `BUFF_RULES`, `DEBUFF_RULES`, `CC_RULES`, `SPECIAL_PROVIDES_RULES`,
-     `SPECIAL_REQUIRES_RULES`, damage-type detector, targeting heuristic, or
-     a spurious-match guard (`_cc_match_is_spurious`, etc.)
-   - Proposed fix in one sentence
+Add one generalized mechanic summary for every skill category that exists:
+`ultimate`, `skill1` through `skill5`. Use `description_lite` as a
+cross-check. Summaries contain mechanics, not numbers, hero names, skill
+names, named companions, or visual flavor nouns.
 
-   Offer choices: **confirm classification**, **edit classification**, **skip
-   (flavor-only / deferred)**, or **stop early**.
+### 4.3 Play overview
 
-4. On confirm, apply fix (B4), then re-run detection for **this skill only**
-   before moving to the next sentence.
+Write the short play overview from the current skill data and, when useful,
+the Prydwen review. Follow the AI data rules: explain setup, strengths, and
+failure conditions without game modes, class/faction/rarity, investment
+advice, or copied source prose.
 
-### Failure modes (classify before asking)
+### 4.4 Counter overview
 
-From `docs/skill-analysis-pipeline.md`:
+Invoke [counter](../counter/SKILL.md) after the analysis data and play
+overview are available. Apply all validation gates: hittability, role and
+damage type, protected allies, threat/delete timing, high mobility, and
+mid-fight placement. Resolve every named hero and filter marker.
 
-| Mode | Signal | Typical fix |
-|------|--------|-------------|
-| **New mechanic** | Brand-new verb or game term (e.g. "roots" → Bind) | Add regex to the right rule table |
-| **Broken pattern** | Known mechanic, new sentence structure breaks regex | Extend existing pattern or chunk split in `heroes_io.py` |
-| **Spurious match** | Flavor text triggers wrong effect | Add guard in `rewrite-summaries.py`; do not add a new rule |
+### 4.5 Signature and sparse corrections
 
-When unsure between new mechanic and broken pattern, show the sentence and
-ask — do not guess silently.
+The signature is normally calculated by analysis. Add only an observed
+correction in `overrides.json.signature`, using `signature_override` or
+`speed_override`. Add movement, melee/range, or placement corrections only
+when generated behavior is demonstrably wrong. Base walk speed belongs in
+`source.json.external`, not in an override.
 
-### B4. Apply each confirmed fix
+**Completion criterion:** `ai.json` has valid effects, tags, conditional
+summon data, all summaries, play overview, and counter overview; any
+override has an observed reason.
 
-Per confirmed gap:
+## 5. Analyze and manually audit
 
-1. Patch `scripts/rewrite-summaries.py` (primary) or `scripts/heroes_io.py`
-   (sentence splitting) or `scripts/hero_schema.py` (schema mapping).
-2. Add a regression test in the matching `scripts/test_*.py` using the
-   **literal hero sentence** as fixture text.
-3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py`.
-4. Run `just views`.
-5. Re-read this hero in `data/heroes_data_processed.json` and
-   `site/data/heroes.json` `skillCards` for the changed section.
-
-For display-only issues (correct JSON, wrong chip color), see
-[hero-data](../hero-data/SKILL.md) **Detection vs display** — may need
-`site/js/app.js` `TAG_DEFINITIONS` instead of detection changes.
-
-### B5. Exit condition
-
-Repeat B3–B4 until:
-
-- Gap scan reports no issues for this hero, **and**
-- Sentence walk finds no unresolved mechanics, **or**
-- User says stop early (document remaining gaps in final report).
-
-Optional: run `python3 scripts/generate-heroes-overview.py` directly to print
-enabler-pattern scan for phrases not yet in `SPECIAL_REQUIRES_RULES` — not
-part of default `just views`.
-
----
-
-## Phase C — Curated AI metadata
-
-Keys use the hero **display name** from `heroes-overview.md` (e.g. `Twins`,
-not `Elijah & Lailah`). Prompts and rules: `docs/ai-generated-data.md`.
-
-Add entries for the new hero only.
-
-### C1. Signature skill — `data/signature_skills.json`
-
-Pick the skill that defines combat identity. Rules in `.cursor/AGENTS.md`
-**Signature skill** section.
-
-```json
-"HeroName": {
-  "signature_calculated": "skill1"
-}
-```
-
-Add `signature_override` only when curated identity differs from calculated.
-Add `speed_override` when cast-speed label should differ.
-
-After `just views`, verify `signature_calculated` matches pipeline output;
-override only when Prydwen/community identity disagrees with auto-pick.
-
-### C2. Behavior tags — `data/hero_behavior_tags.json`
-
-Follow [behavior-tags](../behavior-tags/SKILL.md) in full:
-
-- 3–5 tags from `data/schema/tags.schema.json` enum only
-- Describe playstyle identity, not every minor effect
-- Do not invent new enum values without user approval
-
-### C3. Walk speed — `data/hero_walk_speeds.json`
-
-Required for every hero. Look up the **display name** in sibling
-`afkj-data/docs/walking_speed.md` (afkj-data `Unit.WalkSpeed`) and copy the
-textual tier:
-
-- Allowed: `zero`, `slow`, `normal`, `fast`, `veryfast`
-- Keys use overview display names (`Twins`, not `Elijah & Lailah`)
-- **Do not invent or default** a value — if the hero is missing from
-  `walking_speed.md`, stop and ask the user to regenerate game data first.
-  `just validate` fails (`walk_speed` check) when any roster hero lacks a
-  row.
-
-### C4. Skill summaries — `data/heroes_data_skill_summary.json`
-
-One entry per skill category that exists (`ultimate`, `skill1`–`skill5`).
-Authoring rules in `.cursor/AGENTS.md` **Skill summary authoring** and
-`docs/ai-generated-data.md` section 3:
-
-- Mechanics only — no hero names, skill names, or numbers
-- Cross-check `description_lite` in `heroes_data.json`
-- Use schema vocabulary (`HP-loss`, `knock down`, `AoE`, etc.)
-
-### C5. Play overview — `data/hero_play_overviews.json`
-
-Bootstrap from Prydwen when available:
+After changing `skill_effects`, `behavior_tags`, `summon_profile`, or
+overrides, refresh the local cache:
 
 ```bash
-python3 scripts/generate_play_overviews.py
+python3 scripts/hero_pipeline_cli.py analyze --hero <hero-id>
 ```
 
-Then edit the new hero's entry per `docs/ai-generated-data.md` section 4 and
-AGENTS.md: 4–6 sentences, ~900 chars, no game modes, bold sparingly.
+Read the resulting `data/heroes/<hero-id>/analysis.json` and compare every
+skill's raw/upgrade text with its `effects`, `skill_card_tags`, targeting,
+benefit stats, movement, placement, signature, and special mechanics. Use
+[hero-data](../hero-data/SKILL.md) in single-hero mode. Missing or wrong
+effects are fixed in the hero sidecar first; shared code changes require a
+literal-text regression test.
 
-### C6. Counter proposal — `data/hero_counter_overviews.json`
+Run the roster-wide script checks that consume the new analysis:
 
-Follow [counter](../counter/SKILL.md): 3–5 sentences, PVP/Arena
-OK, `[[Hero]]` markers for named units, prefer high Prydwen PVP tiers.
+```bash
+python3 scripts/audit_non_ult_utility.py
+```
 
----
+Confirm the new hero's tag/utility result and investigate any contradiction
+before continuing. Do not use `--apply` to let an audit silently replace
+curated tags.
 
-## Phase D — Overrides (only when needed)
+**Completion criterion:** local analysis is fresh, the manual text-to-analysis
+audit has no unresolved mechanical discrepancy, and any shared fix has its
+focused regression test.
 
-Check computed behavior in `data/heroes_data_processed.json` → `behavior` for
-this hero. Add override entries **only** when auto-detection is visibly wrong.
+## 6. Render views and assets
 
-| File | When |
-|------|------|
-| `data/placement_constraint_overrides.json` | Ally composition or tile placement rules detection cannot parse |
-| `data/movement_overrides.json` | Tactical movement label wrong (stationary vs moving, dual units, etc.) — not base walk speed |
-| `data/melee_overrides.json` | `is_melee` or `is_dual_range` wrong for synergy range scoring |
+First publish local projections without asset-network work:
 
-Do not add overrides preemptively — prefer detection fixes in Phase B.
+```bash
+python3 scripts/hero_pipeline_cli.py views
+```
 
----
+Then run the complete site recipe:
 
-## Phase E — Validate + verify
+```bash
+just render-site
+```
 
-### E1. Validate
+The site recipe regenerates views, downloads shared icons, resolves each
+hero's Fandom gallery combat portrait, and rebuilds the JavaScript bundle.
+Portraits are stored as:
+
+```text
+site/assets/portraits/<Display Name>.png
+```
+
+The portrait downloader requests the original Fandom image revision and
+validates the resulting PNG/WebP/JPEG bytes. A missing or invalid new portrait
+causes the recipe to fail. Do not substitute page art, full character art, or
+an arbitrary CDN thumbnail.
+
+**Completion criterion:** the hero appears exactly once in `Heroes.md`,
+`heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json`; its
+site slug, skill cards, behavior, relationships, and portrait all resolve.
+
+## 7. Validate all boundaries
+
+Run the checks in this order:
 
 ```bash
 just validate
+just validate-semantics
+just typecheck
+just test
+just assert-rendered-outputs
 ```
 
-Fix hero-specific issues:
+Use `just test-serial` when a test failure needs readable debugging output.
+`just validate` checks bundle schemas and cache freshness. The semantic
+command additionally checks sidecar hashes, effect semantics, targeting,
+stat-buff persistence, summaries, walk speed, counter markers, and
+reanalysis parity. `assert-rendered-outputs` must be interpreted against the
+intended new-hero diff, not bypassed.
 
-- `cc_missing` / `anti_cc_missing` — return to Phase B
-- `empty_effects` — missing detection or passive-only mis-flag
-- `skill_summary` lint — hero names or digits in summaries
-- `walk_speed` missing/unknown — return to C3; regenerate game data walk table first
-- Missing play overview — warning for new hero until C5 complete
-- Sidecar CC lint (`sidecar_lint`) — keyword in skill text without a matching
-  CC effect; now a hard error. Fix the sidecar or confirm a shared-text guard
-  covers cross-skill / spurious phrasing.
+Spot-check the hero in the site page, including skill chips, summary text,
+counter pills, portrait loading, and list-view filters. If detection JSON is
+correct but a chip is styled or worded incorrectly, use [web-ui](../web-ui/SKILL.md)
+instead of altering sidecar semantics.
 
-### E2. Verify outputs
+**Completion criterion:** all required commands pass, intended generated
+outputs contain the hero, and the site spot-check has no hero-specific issue.
 
-Confirm for this hero:
+## 8. Report complete or blocked
 
-| Artifact | Path |
-| --- | --- |
-| Skill text | `Heroes.md` |
-| Synergies + behavior | `heroes-overview.md` |
-| Site bundle | `site/data/heroes.json` |
-| Character portrait | `site/assets/portraits/<DisplayName>.png` |
+Report:
 
-For the character portrait, use the Fandom gallery combat icon named
-`Hero_<DisplayName>.png`; see [CONTEXT.md](../../CONTEXT.md) — Character
-portrait.
+1. hero ID, source name, display name, aliases, and source status;
+2. files changed in the hero bundle and any shared code/regression test;
+3. sidecar effects, tags, summaries, play overview, counter overview, and
+   overrides completed;
+4. local analysis, generated views, portrait, and validation evidence; and
+5. open items such as missing source pages, unavailable Prydwen tiers,
+   missing game-data facts, deferred mechanics, or blocked portraits.
 
-If skill card chips look wrong despite correct processed JSON, see
-[web-ui](../web-ui/SKILL.md).
-
-### E3. Report to user
-
-Summarize:
-
-1. **Hero** — data name, display name, source status (Fandom/Yaphalla/Prydwen)
-2. **Detection fixes** — patterns added, tests added, CACHE_VERSION bumped
-3. **Curated files** — which JSON entries were added
-4. **Overrides** — any manual override files touched (or "none")
-5. **Open items** — Prydwen tiers still `?`, deferred sentences, schema gaps
-
----
-
-## Debug snippets
-
-Set `NAME` to the hero's **data name** from `heroes_data.json`.
-
-### Scoped analyze_hero
-
-```bash
-python3 - <<'PY'
-import importlib.util, sys
-from pathlib import Path
-SCRIPTS = Path("scripts")
-sys.path.insert(0, str(SCRIPTS))
-spec = importlib.util.spec_from_file_location(
-    "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-)
-rs = importlib.util.module_from_spec(spec)
-sys.modules["rewrite_summaries"] = spec.loader.load_module()
-spec.loader.exec_module(rs)
-import heroes_io as io
-
-NAME = "Kazim"  # change to data name
-record = next(r for r in io.load_heroes_data()["heroes"] if r.get("name") == NAME)
-hero = rs.hero_from_record(record)
-rs.analyze_hero(hero)
-for sec, sl in sorted(hero.skill_slices.items()):
-    if not sl.effects and not sl.cc_immunities:
-        continue
-    print("===", sec)
-    for e in sl.effects:
-        print(" ", e.category, e.label, e.targeting, e.tier,
-              getattr(e, "numeric", None))
-    for imm in sl.cc_immunities:
-        print(" ", "immunity", imm.immunity_type, imm.targeting)
-PY
-```
-
-For one clause in isolation:
-
-```python
-rs.analyze_text(effects, [], {}, [], tier, text, primary_dmg)
-```
-
-### Scoped gap scan (one hero)
-
-Mirrors `scripts/validate_processed.py` keyword checks. Confirm each hit
-manually — same skip rules as full validator are not all replicated here.
-
-```bash
-python3 - <<'PY'
-import importlib.util, json, re, sys
-from pathlib import Path
-
-SCRIPTS = Path("scripts")
-sys.path.insert(0, str(SCRIPTS))
-import heroes_io as io
-
-NAME = "Kazim"  # change to data name (processed JSON key)
-processed = json.loads(Path("data/heroes_data_processed.json").read_text())
-hero = processed["heroes"].get(NAME)
-if not hero:
-    # try display alias
-    from heroes_io import NAME_ALIASES
-    alt = {v: k for k, v in NAME_ALIASES.items()}
-    NAME = alt.get(NAME, NAME)
-    hero = processed["heroes"].get(NAME)
-assert hero, f"hero not in processed: {NAME!r}"
-
-CC_KEYWORDS = {
-    "stun": r"\bstun(?:s|ned|ning)?\b",
-    "knock_back": r"\bknock(?:s|ing)? (?:them |the enemy |enemies )?(?:\d+ tiles? )?back\b",
-    "knock_down": r"\bknock(?:s|ing)? (?:the enemy|an enemy|them) down\b",
-    "knock_up": r"\bknock(?:s|ing|ed)? .{0,25}?(?:in(?:to)?) the air\b",
-    "frighten": r"\bfrighten(?:ing|ed|s)?\b",
-    "silence": r"(?<! of )silenc(?:e|es|ed|ing)",
-    "charm": r"\bcharm(?:ed|s|ing)?\b",
-    "sleep": r"\b(?:asleep|hypnotiz)",
-    "bind": r"\b(?:bind(?:ing|s)?|immobiliz|entangl|imprison)\b",
-    "freeze": r"\bfreez(?:e|es|ed|ing) (?!time itself)(?!and defeats)\b",
-}
-ANTI_CC = {
-    "unaffected": r"(?:becomes?|is|remain|making|grants?|granted|linked).{0,60}unaffected",
-    "steadfast": r"(?:becomes?|is|grants?|granted).{0,40}steadfast",
-    "immune": r"\bimmune to (?:damage and )?control\b",
-    "untargetable": r"(?:becomes?|is|making|grants?|granted).{0,60}untargetable",
-    "cleanse": r"removes? all dispellable debuffs",
-}
-
-def cc_types(effects):
-    out = set()
-    for e in effects:
-        if e.get("type") == "cc":
-            out.add(e.get("cc-type", ""))
-        if e.get("cc-type"):
-            out.add(e["cc-type"])
-    return out
-
-def imm_types(effects):
-    return {e.get("immunity_type") for e in effects if e.get("type") == "immunity"}
-
-for skill_name, skill in hero.get("skills", {}).items():
-    desc = skill.get("description", "")
-    text = io.skill_description_text(skill) if isinstance(desc, dict) else str(desc)
-    tl = text.lower()
-    effects = skill.get("effects", [])
-    passive = skill.get("passive_only", False)
-    print(f"\n--- {NAME} / {skill_name} ---")
-    if not passive and not effects:
-        print("  FLAG empty_effects")
-    cc_found = cc_types(effects)
-    for cc, pat in CC_KEYWORDS.items():
-        if passive or not re.search(pat, tl):
-            continue
-        mapped = "bind" if cc == "freeze" else cc
-        if mapped not in cc_found and cc not in cc_found:
-            print(f"  FLAG cc_missing: {cc}")
-    imm_found = imm_types(effects)
-    for imm, pat in ANTI_CC.items():
-        if re.search(pat, tl) and imm not in imm_found:
-            print(f"  FLAG anti_cc_missing: {imm}")
-PY
-```
-
-Re-run after each `just views` cycle.
-
----
-
-## Name aliases
-
-| Data name (`heroes_data.json`) | Display name (curated JSON, overview) |
-|-------------------------------|---------------------------------------|
-| `Elijah & Lailah` | `Twins` |
-
-Pipeline uses display name in processed JSON and overview. When searching
-processed data, try both names if one fails.
-
----
+Use **COMPLETE** only when the completion criteria above are satisfied. If
+registration succeeded but any required source, external fact, AI field,
+analysis, portrait, generated view, or validation check is missing, report
+**BLOCKED / INCOMPLETE** and name the exact next action.
 
 ## Non-goals
 
-- **Full roster validation** — use [hero-data](../hero-data/SKILL.md) full-roster
-  mode after the hero is added.
-- **Yaphalla-only `HERO_NAMES` edit** — not needed; gapfill handles it.
-- **New schema enum values** — ask user before adding tags or effect labels.
-- **Deployment** — out of scope; local `just views` only.
-
----
-
-## Example sequence (Kazim, commit `edf1ab1`)
-
-1. Added `"Kazim"` to `HERO_NAMES` in `sources_web.py`
-2. `just download` → `heroes_data.json` skill text
-3. Detection patches in `rewrite-summaries.py` + tests for new phrasing
-4. Curated: `signature_skills.json`, `hero_behavior_tags.json`,
-   `hero_walk_speeds.json`, `heroes_data_skill_summary.json`
-5. `just views` → processed, synergies, overview, site
-6. Wiki combat icon in `site/assets/portraits/Kazim.png`
-7. `hero_play_overviews.json` added in follow-up commit
-
-Use this as a file-touch checklist, not a guarantee every new hero needs the
-same detection scope.
+- Adding more than one hero in a single run.
+- Rebuilding the full-roster effect audit; use [hero-data](../hero-data/SKILL.md).
+- Inventing schema enum values or provisional external facts.
+- Editing generated aggregate files that no longer exist.
+- Deployment or hosting changes.

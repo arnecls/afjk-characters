@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Validate heroes_data_processed.json against Heroes.md skill text.
+"""Validate per-hero bundles against Heroes.md and local analysis caches.
 
 Assumes a fully ascended roster: numeric checks compare processed values to
 the strongest parseable number across all skill levels and ascension tiers,
 not base unlock values.
 
 Checks:
-- Heroes.md matches reconstruct_heroes_md(heroes_data.json)
-- Re-analysis output matches committed processed JSON
+- Heroes.md matches reconstructed source from hero bundles
+- Committed analysis.json local caches match fresh analyze_local output
 - JSON Schema validation
 - Semantic issues: passive_only misuse, wiki markup, (scaled) gaps, CC gaps
 """
@@ -15,7 +15,6 @@ Checks:
 from __future__ import annotations
 
 import argparse
-import importlib.util
 import json
 import re
 import sys
@@ -27,14 +26,18 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import hero_schema as hs
+import hero_pipeline.analysis.serialize as hs
 import heroes_io as io
 import skill_effects_store as ses
 import buff_persistence as bp
 import summoner_registry as sr
+from hero_pipeline.storage import display_names_by_id, load_ai_by_id
+from hero_pipeline.analysis.crowd_control import (
+    cc_described_on_referenced_skill,
+    cc_keyword_has_real_match,
+)
 
 HEROES_MD = ROOT / "Heroes.md"
-PROCESSED = io.HEROES_DATA_PROCESSED
 SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
 SKILL_SUMMARY_SCHEMA = ROOT / "data" / "schema" / "skill_summary.schema.json"
 PLAY_OVERVIEW = ROOT / "data" / "hero_play_overviews.json"
@@ -135,26 +138,35 @@ _FREEZE_SKIP_RE = re.compile(
 )
 
 
-def _load_module(name: str, filename: str):
-    spec = importlib.util.spec_from_file_location(name, SCRIPTS / filename)
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules[name] = mod
-    spec.loader.exec_module(mod)
-    return mod
-
-
 def _rebuild_processed() -> dict[str, Any]:
-    rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
-    gen = _load_module("gen_overview", "generate-heroes-overview.py")
-    from process_heroes import build_processed
+    from hero_pipeline.analysis.service import analyze_roster
+    from hero_pipeline.storage import load_config, load_roster_snapshot
 
-    data = io.load_heroes_data()
-    return build_processed(data)
+    processed, _heroes, _context, _policy = analyze_roster(
+        load_roster_snapshot(),
+        load_config(),
+    )
+    return processed
 
 
 def check_md_parity() -> list[str]:
-    data = io.load_heroes_data()
-    recon = io.reconstruct_heroes_md(data)
+    from hero_pipeline.render.markdown import render_heroes
+    from hero_pipeline.storage import load_roster_snapshot
+
+    snapshot = load_roster_snapshot()
+    recon = render_heroes(
+        {
+            "manifest": snapshot["manifest"],
+            "heroes": [
+                {
+                    "source": snapshot["bundles"][entry["id"]][
+                        "source"
+                    ]["source"]
+                }
+                for entry in snapshot["manifest"]["heroes"]
+            ],
+        }
+    )
     md = HEROES_MD.read_text(encoding="utf-8")
     if md == recon:
         return []
@@ -175,13 +187,19 @@ def check_md_parity() -> list[str]:
     return errors
 
 
-def check_reanalysis_parity(stored: dict[str, Any], fresh: dict[str, Any]) -> list[str]:
-    if stored == fresh:
-        return []
-    errors = []
-    for title in sorted(set(stored["heroes"]) | set(fresh["heroes"])):
-        if stored["heroes"].get(title) != fresh["heroes"].get(title):
-            errors.append(f"processed drift: {title}")
+def check_local_analysis_parity() -> list[str]:
+    """Compare committed local caches with a fresh analyze_local pass."""
+    from hero_pipeline.analysis.local import analyze_local
+    from hero_pipeline.storage import load_roster_inputs
+
+    snapshot = load_roster_inputs()
+    errors: list[str] = []
+    for entry in snapshot["manifest"]["heroes"]:
+        bundle = snapshot["bundles"][entry["id"]]
+        stored = (bundle.get("analysis") or {}).get("local")
+        fresh = analyze_local(entry, bundle)
+        if stored != fresh:
+            errors.append(f"local analysis drift: {entry['id']}")
     return errors[:20]
 
 
@@ -207,7 +225,7 @@ def _cc_has_real_match(
 ) -> bool:
     """True when CC regex matched a non-spurious clause in skill text."""
     label = _CC_LABEL_MAP.get(cc, cc)
-    return rs.cc_keyword_has_real_match(
+    return cc_keyword_has_real_match(
         label,
         pat,
         full_desc,
@@ -227,7 +245,6 @@ def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
 
 
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
-    rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
 
@@ -274,7 +291,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                     if not re.search(pat, text):
                         continue
                     if not _cc_has_real_match(
-                        rs,
+                        None,
                         cc,
                         pat,
                         text,
@@ -298,7 +315,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                 if imm == "untargetable" and _UNTARGETABLE_SKIP_RE.search(text):
                     continue
                 if re.search(pat, text) and imm not in imm_found:
-                    if rs.cc_described_on_referenced_skill(
+                    if cc_described_on_referenced_skill(
                         desc_text, skill_name, skill_names
                     ):
                         continue
@@ -317,51 +334,45 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
     return issues
 
 
+def _processed_by_display(processed: dict[str, Any]) -> dict[str, Any]:
+    """Join ID-keyed analysis onto display names for curated coverage checks."""
+    from hero_pipeline.storage import load_manifest
+
+    names = {
+        entry["id"]: entry["display_name"]
+        for entry in load_manifest()["heroes"]
+    }
+    heroes: dict[str, Any] = {}
+    for hero_id, hero in processed["heroes"].items():
+        heroes[names.get(hero_id, hero_id)] = hero
+    return {"heroes": heroes}
+
+
 def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
-    """Validate hero_walk_speeds.json schema and exact roster coverage."""
+    """Validate walk-speed coverage by stable hero ID."""
+    from hero_pipeline.storage import load_walk_speeds
+
     errors: list[str] = []
-    if not WALK_SPEEDS.exists():
-        return ["missing hero_walk_speeds.json"]
+    speeds = load_walk_speeds()
+    heroes = processed["heroes"]
 
-    try:
-        speeds = json.loads(WALK_SPEEDS.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"walk speed JSON parse error: {exc}"]
-
-    if jsonschema_available() and WALK_SPEEDS_SCHEMA.is_file():
-        try:
-            schema = json.loads(WALK_SPEEDS_SCHEMA.read_text(encoding="utf-8"))
-            import jsonschema
-
-            store: dict[str, object] = {}
-            for sibling in WALK_SPEEDS_SCHEMA.parent.glob("*.schema.json"):
-                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
-                sid = sibling_schema.get("$id")
-                if sid:
-                    store[sid] = sibling_schema
-            schema_dir = WALK_SPEEDS_SCHEMA.parent.resolve().as_uri() + "/"
-            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
-            jsonschema.validate(speeds, schema, resolver=resolver)
-        except Exception as exc:
-            errors.append(f"walk speed schema validation failed: {exc}")
-
-    expected = set(processed["heroes"])
+    expected = set(heroes)
     found = set(speeds) if isinstance(speeds, dict) else set()
-    for short in sorted(expected - found):
-        errors.append(f"walk speed missing for {short}")
-    for short in sorted(found - expected):
-        errors.append(f"walk speed unknown hero {short}")
+    for hero_id in sorted(expected - found):
+        errors.append(f"walk speed missing for {hero_id}")
+    for hero_id in sorted(found - expected):
+        errors.append(f"walk speed unknown hero {hero_id}")
 
-    for short, hero in processed["heroes"].items():
+    for hero_id, hero in heroes.items():
         behavior = hero.get("behavior") or {}
         walk = behavior.get("walk_speed")
         if not walk:
-            errors.append(f"processed walk_speed missing for {short}")
+            errors.append(f"processed walk_speed missing for {hero_id}")
             continue
-        expected_walk = speeds.get(short) if isinstance(speeds, dict) else None
+        expected_walk = speeds.get(hero_id) if isinstance(speeds, dict) else None
         if expected_walk and walk != expected_walk:
             errors.append(
-                f"processed walk_speed mismatch for {short}: "
+                f"processed walk_speed mismatch for {hero_id}: "
                 f"{walk!r} != {expected_walk!r}"
             )
     return errors
@@ -369,37 +380,12 @@ def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
 
 def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     """Validate heroes_data_skill_summary.json coverage and basic lint."""
+    processed = _processed_by_display(processed)
+    summaries = load_ai_by_id("skill_summaries")
+    names = display_names_by_id()
+    summaries = {names[hero_id]: value for hero_id, value in summaries.items()}
     errors: list[str] = []
-    gen = _load_module("gen_overview", "generate-heroes-overview.py")
-
-    if not SKILL_SUMMARY.exists():
-        errors.append("missing heroes_data_skill_summary.json")
-        return errors
-
-    try:
-        summaries = json.loads(SKILL_SUMMARY.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"skill summary JSON parse error: {exc}"]
-
-    if jsonschema_available():
-        try:
-            schema = json.loads(SKILL_SUMMARY_SCHEMA.read_text(encoding="utf-8"))
-            import jsonschema
-
-            # Pre-load all sibling schema files into the resolver's store
-            # so relative $ref URIs are served locally instead of over
-            # the network (all schema $ids use the afkj.local fake host).
-            store: dict[str, object] = {}
-            for sibling in SKILL_SUMMARY_SCHEMA.parent.glob("*.schema.json"):
-                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
-                sid = sibling_schema.get("$id")
-                if sid:
-                    store[sid] = sibling_schema
-            schema_dir = SKILL_SUMMARY_SCHEMA.parent.resolve().as_uri() + "/"
-            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
-            jsonschema.validate(summaries, schema, resolver=resolver)
-        except Exception as exc:
-            errors.append(f"skill summary schema validation failed: {exc}")
+    from hero_pipeline.analysis import scoring_facts as gen
 
     expected: dict[str, set[str]] = {}
     skill_names: dict[str, dict[str, str]] = {}
@@ -467,32 +453,10 @@ def check_play_overviews(
     """Validate hero_play_overviews.json coverage and basic lint."""
     errors: list[str] = []
     warnings: list[str] = []
-
-    if not PLAY_OVERVIEW.exists():
-        warnings.append("missing hero_play_overviews.json")
-        return errors, warnings
-
-    try:
-        overviews = json.loads(PLAY_OVERVIEW.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"play overview JSON parse error: {exc}"], warnings
-
-    if jsonschema_available():
-        try:
-            schema = json.loads(PLAY_OVERVIEW_SCHEMA.read_text(encoding="utf-8"))
-            import jsonschema
-
-            store: dict[str, object] = {}
-            for sibling in PLAY_OVERVIEW_SCHEMA.parent.glob("*.schema.json"):
-                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
-                sid = sibling_schema.get("$id")
-                if sid:
-                    store[sid] = sibling_schema
-            schema_dir = PLAY_OVERVIEW_SCHEMA.parent.resolve().as_uri() + "/"
-            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
-            jsonschema.validate(overviews, schema, resolver=resolver)
-        except Exception as exc:
-            errors.append(f"play overview schema validation failed: {exc}")
+    processed = _processed_by_display(processed)
+    overviews = load_ai_by_id("play_overview")
+    names = display_names_by_id()
+    overviews = {names[hero_id]: value for hero_id, value in overviews.items()}
 
     expected = set(processed["heroes"])
     for short in sorted(expected):
@@ -667,33 +631,10 @@ def check_counter_overviews(processed: dict[str, Any]) -> tuple[list[str], list[
     errors.extend(combo_errors)
     warnings.extend(combo_warnings)
 
-    if not COUNTER_OVERVIEW.exists():
-        warnings.append("missing hero_counter_overviews.json")
-        return errors, warnings
-
-    try:
-        overviews = json.loads(COUNTER_OVERVIEW.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return [f"counter overview JSON parse error: {exc}"], warnings
-
-    if jsonschema_available():
-        try:
-            schema = json.loads(
-                COUNTER_OVERVIEW_SCHEMA.read_text(encoding="utf-8")
-            )
-            import jsonschema
-
-            store: dict[str, object] = {}
-            for sibling in COUNTER_OVERVIEW_SCHEMA.parent.glob("*.schema.json"):
-                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
-                sid = sibling_schema.get("$id")
-                if sid:
-                    store[sid] = sibling_schema
-            schema_dir = COUNTER_OVERVIEW_SCHEMA.parent.resolve().as_uri() + "/"
-            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
-            jsonschema.validate(overviews, schema, resolver=resolver)
-        except Exception as exc:
-            errors.append(f"counter overview schema validation failed: {exc}")
+    processed = _processed_by_display(processed)
+    overviews = load_ai_by_id("counter_overview")
+    names = display_names_by_id()
+    overviews = {names[hero_id]: value for hero_id, value in overviews.items()}
 
     expected = set(processed["heroes"])
     for short, text in overviews.items():
@@ -807,8 +748,9 @@ def check_skill_effects_sidecars(
 def check_summoner_registry(
     raw: dict[str, Any],
 ) -> list[str]:
-    tags_path = ROOT / "data" / "hero_behavior_tags.json"
-    behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
+    tags = load_ai_by_id("behavior_tags")
+    names = display_names_by_id()
+    behavior_tags = {names[hero_id]: value for hero_id, value in tags.items()}
     errors, _warnings = sr.check_summoner_consistency(
         behavior_tags,
         raw["heroes"],
@@ -820,13 +762,30 @@ def check_summoner_registry(
 def check_temporary_stat_buffer_tags(
     raw: dict[str, Any],
 ) -> list[str]:
-    tags_path = ROOT / "data" / "hero_behavior_tags.json"
-    behavior_tags = json.loads(tags_path.read_text(encoding="utf-8"))
+    tags = load_ai_by_id("behavior_tags")
+    names = display_names_by_id()
+    behavior_tags = {names[hero_id]: value for hero_id, value in tags.items()}
     return bp.check_temporary_stat_buffer_consistency(
         behavior_tags,
         raw["heroes"],
         ses.load_sidecar,
     )
+
+
+def check_per_hero_layout() -> list[str]:
+    """Validate the manifest, four-file bundles, and freshness hashes."""
+    from hero_pipeline.storage import (
+        load_bundles,
+        load_manifest,
+        validate_schema_documents,
+    )
+
+    try:
+        manifest = load_manifest()
+        bundles = load_bundles(manifest)
+    except Exception as exc:
+        return [f"per-hero storage could not load: {exc}"]
+    return validate_schema_documents(manifest, bundles)
 
 
 def jsonschema_available() -> bool:
@@ -856,6 +815,7 @@ def main() -> int:
             "semantic",
             "play_overview",
             "counter_overview",
+            "per_hero",
         ],
         help="Check groups that cause a non-zero exit when failing",
     )
@@ -871,20 +831,37 @@ def main() -> int:
     errors: list[str] = []
     warnings: dict[str, list[str]] = {}
 
+    layout_errors = check_per_hero_layout()
+    if "per_hero" in fail_on:
+        if layout_errors:
+            errors.extend(layout_errors)
+        else:
+            print("OK: per-hero manifest and bundles are valid")
+    elif layout_errors:
+        warnings["per_hero"] = layout_errors
+
     if "md_parity" in fail_on:
         md_errors = check_md_parity()
         if md_errors:
             errors.extend(md_errors)
         else:
-            print("OK: Heroes.md matches heroes_data.json")
+            print("OK: Heroes.md matches hero-local generated source")
     else:
         md_errors = check_md_parity()
         if md_errors:
             warnings["md_parity"] = md_errors
 
-    raw = io.load_heroes_data()
-    stored = json.loads(PROCESSED.read_text(encoding="utf-8"))
+    from hero_pipeline.storage import load_roster_snapshot
+
+    snapshot = load_roster_snapshot()
+    raw = {
+        "heroes": [
+            snapshot["bundles"][entry["id"]]["source"]["source"]
+            for entry in snapshot["manifest"]["heroes"]
+        ]
+    }
     fresh = _rebuild_processed()
+    stored = fresh
 
     if "sidecar" in fail_on or "sidecar_lint" in fail_on:
         sidecar_errors, sidecar_warnings = check_skill_effects_sidecars(
@@ -926,13 +903,13 @@ def main() -> int:
             warnings["temporary_stat_buffer"] = tsb_errors
 
     if "reanalysis" in fail_on:
-        drift = check_reanalysis_parity(stored, fresh)
+        drift = check_local_analysis_parity()
         if drift:
             errors.extend(drift)
         else:
-            print("OK: processed JSON matches re-analysis output")
+            print("OK: local analysis caches match fresh local analysis")
     else:
-        drift = check_reanalysis_parity(stored, fresh)
+        drift = check_local_analysis_parity()
         if drift:
             warnings["reanalysis"] = drift
 

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "sinbad",
+  "display_name": "Sinbad",
+  "source": {
+    "title": "Sinbad - Seaside Savant",
+    "name": "Sinbad",
+    "tags": "Lightbearer · Rogue · Physical",
+    "faction": "Lightbearer",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "An agile Rogue adept at assessing the battlefield and countering the enemy.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Whizzing Edge",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Passive. Sinbad's skills also deal normal attack damage and his casting speed is affected by both his ATK SPD and Haste. Active. Sinbad lands as many hits as possible on the enemy over the next 3s, dealing 100% (ATK-based) + 15% (SP-based) damage per hit. After these successive attacks, he delivers one final strike that deals 240% (ATK-based) damage.",
+          "passive": [
+            "Sinbad's skills also deal normal attack damage and his casting speed is affected by both his ATK SPD and Haste."
+          ],
+          "active": [
+            "Sinbad lands as many hits as possible on the enemy over the next 3s, dealing 100% (ATK-based) + 15% (SP-based) damage per hit.",
+            "After these successive attacks, he delivers one final strike that deals 240% (ATK-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage of each successive hit to 105% (ATK-based) + 15% (SP-based), and the final strike to 250% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of each successive hit to 110% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of each successive hit to 115% (ATK-based) + 15% (SP-based), and the final strike to 270% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of each successive hit to 120% (ATK-based) + 15% (SP-based), and the final strike to 280% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Deals damage multiple times to the enemy."
+      },
+      {
+        "section": "Skill1",
+        "name": "Tracker's Instincts",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Initial Cooldown": "6s",
+          "Skill Range": "Global",
+          "Cooldown": "6s"
+        },
+        "description": {
+          "raw": "6s into a battle, Sinbad vaults behind his allies and starts assessing his enemies' strengths. He marks the enemy dealing the most damage as the \"hitter\" and the one taking the most damage as the \"guard.\" These marks last for 30s. Sinbad then charges at the \"hitter\" and then the \"guard\", dealing 120% (ATK-based) + 10% (SP-based) damage to each target 4 times. The attack also reduces the \"hitter's\" ATK by 45% and increases the \"guard's\" damage taken by 25%. Both debuffs expire when their respective marks expire. When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time. The debuffs are reduces to 20% of the original effect when used against Bosses.",
+          "active": [
+            "6s into a battle, Sinbad vaults behind his allies and starts assessing his enemies' strengths.",
+            "He marks the enemy dealing the most damage as the \"hitter\" and the one taking the most damage as the \"guard.\" These marks last for 30s.",
+            "Sinbad then charges at the \"hitter\" and then the \"guard\", dealing 120% (ATK-based) + 10% (SP-based) damage to each target 4 times.",
+            "The attack also reduces the \"hitter's\" ATK by 45% and increases the \"guard's\" damage taken by 25%.",
+            "Both debuffs expire when their respective marks expire.",
+            "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time.",
+            "The debuffs are reduces to 20% of the original effect when used against Bosses."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Reduce the \"hitter's\" ATK by 50% and increases the \"guard's\" damage taken by 30%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Reduce the \"hitter's\" ATK by 55% and increases the \"guard's\" damage taken by 35%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Reduce the \"hitter's\" ATK by 60% and increases the \"guard's\" damage taken by 40%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sinbad assesses his enemies' strength, focusing his attacks on the one dealing the most damage and the one taking the most damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Duo Cut",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "4s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Sinbad swings his double-headed blade twice, dealing 210% (ATK-based) + 20% (SP-based) damage per hit to his target.",
+          "active": [
+            "Sinbad swings his double-headed blade twice, dealing 210% (ATK-based) + 20% (SP-based) damage per hit to his target."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage of each hit to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage of each hit to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage of each hit to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sinbad attacks the target twice."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK SPD by 21 during battle.",
+          "active": [
+            "Increases ATK SPD by 21 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 27 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 33 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Adaptive Prowess",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Sinbad studies the fighting styles of the \"hitter\" and the \"guard\" to strengthen the debuffs he applies. If the \"hitter\" deals more normal attack damage, Sinbad's debuff will reduce their ATK SPD by 60; if they deal more skill damage, the debuff will reduce their Energy Recovery efficiency by 60%. For the \"guard\", if they depend more on healing from allies or themselves, Sinbad's debuff will reduce their Vitality by 60; if they rely more on damage mitigations, the debuff will reduce their Phys DEF and Magic DEF by 30%.",
+          "active": [
+            "Sinbad studies the fighting styles of the \"hitter\" and the \"guard\" to strengthen the debuffs he applies.",
+            "If the \"hitter\" deals more normal attack damage, Sinbad's debuff will reduce their ATK SPD by 60; if they deal more skill damage, the debuff will reduce their Energy Recovery efficiency by 60%.",
+            "For the \"guard\", if they depend more on healing from allies or themselves, Sinbad's debuff will reduce their Vitality by 60; if they rely more on damage mitigations, the debuff will reduce their Phys DEF and Magic DEF by 30%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "<!--"
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "If an enemy is marked as \"hitter\" or \"guard\" in two consecutive assessments, their ATK is further reduced by 20% if marked as \"hitter\", and they take 10% more damage if marked as \"guard\"."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Reduces the \"hitter's\" ATK by an extra 30%.",
+                "Increases the \"guard's\" damage taken by an extra 15%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sinbad studies the fighting styles of the \"hitter\" and the \"guard\" to further weaken them in battle."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Duo Cut deals 140% (ATK-based) more damage to enemies marked as \"hitter\" or \"guard.\"",
+          "active": [
+            "Duo Cut deals 140% (ATK-based) more damage to enemies marked as \"hitter\" or \"guard.\""
+          ]
+        },
+        "description_lite": "Sinbad deals extra damage to enemies he has marked."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-10-02",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "B",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

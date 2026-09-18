@@ -1,0 +1,627 @@
+{
+  "schema_version": 2,
+  "id": "reinier",
+  "display_name": "Reinier",
+  "local": {
+    "long_name": "Reinier - Symmetric Sin",
+    "faction": "hypogean",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Mutual Reflection": {
+        "category": "ultimate",
+        "description": {
+          "raw": "If non-summoned allies outnumber non-summoned enemies, Reinier selects an enemy, dealing 230% (ATK-based) + 20 (SP-based), and teleporting to another dimension with the target for 10s. Otherwise, only the target will be teleported to another dimension while Reinier remains on the battlefield. If the target is under Steadfast or Unaffected, or if the target is the only non-summoned enemy alive, Reinier will deal 450% (ATK-based) damage instead of entering another dimension. This skill prioritizes the healthiest non-summoned enemy.",
+          "active": [
+            "If non-summoned allies outnumber non-summoned enemies, Reinier selects an enemy, dealing 230% (ATK-based) + 20 (SP-based), and teleporting to another dimension with the target for 10s.",
+            "Otherwise, only the target will be teleported to another dimension while Reinier remains on the battlefield.",
+            "If the target is under Steadfast or Unaffected, or if the target is the only non-summoned enemy alive, Reinier will deal 450% (ATK-based) damage instead of entering another dimension.",
+            "This skill prioritizes the healthiest non-summoned enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Mutual Reflection works on an extra enemy if non-summoned enemies outnumber non-summoned allies by at least 2.",
+                "Reduces the duration of transferring this enemy to another dimension to 7s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases the damage to 250% (ATK-based) + 20 (SP-based).",
+                "The damage is increased to 460% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases the damage to 260% (ATK-based) + 20 (SP-based).",
+                "The damage is increased to 480% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases the damage to 270% (ATK-based) + 20 (SP-based).",
+                "The damage is increased to 500% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 1.25,
+        "initial_cooldown": 1.25,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Displace — Multiple targets"
+          }
+        ]
+      },
+      "Dynamic Balance": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Reinier switches an adjacent ally's position with an enemy if they're in symmetrical positions. Whenever the enemy takes damage, the ally restores HP equal to 45% of the enemy's taken damage till a battle ends. The total HP recovery amount by this means is no more than 1000% (ATK-based) + 100% (SP-based) in a consecutive 8s.",
+          "active": [
+            "When a battle starts, Reinier switches an adjacent ally's position with an enemy if they're in symmetrical positions.",
+            "Whenever the enemy takes damage, the ally restores HP equal to 45% of the enemy's taken damage till a battle ends.",
+            "The total HP recovery amount by this means is no more than 1000% (ATK-based) + 100% (SP-based) in a consecutive 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Restores allied hero's HP equal to 46% of the damage dealt."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Restores allied hero's HP equal to 48% of the damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Restores allied hero's HP equal to 50% of the damage dealt."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Golden Ratio": {
+        "category": "skill2",
+        "description": {
+          "raw": "Reinier launches a mighty strike against the healthiest enemy through the portal, interrupting them and dealing 45% (ATK-based) + 3% (SP-based) damage 8 times. Afterward, Reineir punches and knocks them into the air, dealing 120% (ATK-based) damage. If the enemy's HP ratio is above 61.8%, then each hit attaches extra damage equal to 1% of their current HP, up to 20% ATK.",
+          "active": [
+            "Reinier launches a mighty strike against the healthiest enemy through the portal, interrupting them and dealing 45% (ATK-based) + 3% (SP-based) damage 8 times.",
+            "Afterward, Reineir punches and knocks them into the air, dealing 120% (ATK-based) damage.",
+            "If the enemy's HP ratio is above 61.8%, then each hit attaches extra damage equal to 1% of their current HP, up to 20% ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Reinier senses satisfaction when enemy's HP ratio drops below 61.8% for the first time, recovering 200% (ATK-based) HP and 80 Energy."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: The damage of each strike is increased to 1.2% of the enemy's current HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Reinier shares satisfaction with allies when each enemy's HP ratio drops below 61.8% for the first time, granting all allies 120% (ATK-based) HP and 50 Energy."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "interrupt"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          }
+        ],
+        "cooldown": 12.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Interrupt — Single target"
+          },
+          {
+            "label": "Knock up — Single target"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Reinier's Dynamic Balance increases the target's ATK by 7% when cast on an ally or reduces the target ATK by 7% when cast on an enemy.",
+          "active": [
+            "Reinier's Dynamic Balance increases the target's ATK by 7% when cast on an ally or reduces the target ATK by 7% when cast on an enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reinier's Dynamic Balance increases the target's ATK by 10% when cast on an ally or reduces the target ATK by 10% when cast on an enemy."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reinier's Dynamic Balance increases the target's ATK by 12% when cast on an ally or reduces the target ATK by 12% when cast on an enemy."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Tuned Art": {
+        "category": "skill4",
+        "description": {
+          "raw": "Reinier deals 200% (ATK-based) damage to the enemy and knocks them down when casting Dynamic Balance, increasing their damage taken by 25% till the battle ends.",
+          "active": [
+            "Reinier deals 200% (ATK-based) damage to the enemy and knocks them down when casting Dynamic Balance, increasing their damage taken by 25% till the battle ends."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Increases the damage dealt to the enemy to 250% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Reduces the position-switched ally's damage taken by 25% till the battle ends."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Damage taken (EX+10)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock down — Single target"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Reinier increases the allied herp's ATK by 4% till the battle ends if they're in a symmetrical position with an enemy hero.",
+          "active": [
+            "Reinier increases the allied herp's ATK by 4% till the battle ends if they're in a symmetrical position with an enemy hero."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Multiple targets, Single target"
+      ]
+    ],
+    "benefit_stats": [],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "reinier",
+    "display_name": "Reinier",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "If non-summoned allies outnumber non-summoned enemies, Reinier selects an enemy, dealing 230% (ATK-based) + 20 (SP-based), and teleporting to another dimension with the target for 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Otherwise, only the target will be teleported to another dimension while Reinier remains on the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If the target is under Steadfast or Unaffected, or if the target is the only non-summoned enemy alive, Reinier will deal 450% (ATK-based) damage instead of entering another dimension.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This skill prioritizes the healthiest non-summoned enemy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 51: Mutual Reflection works on an extra enemy if non-summoned enemies outnumber non-summoned allies by at least 2.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Reduces the duration of transferring this enemy to another dimension to 7s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 111: Increases the damage to 250% (ATK-based) + 20 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The damage is increased to 460% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases the damage to 260% (ATK-based) + 20 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The damage is increased to 480% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases the damage to 270% (ATK-based) + 20 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The damage is increased to 500% (ATK-based) if the target is steadfast, unaffected, or the only non-summoned unit alive.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Reinier switches an adjacent ally's position with an enemy if they're in symmetrical positions.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Whenever the enemy takes damage, the ally restores HP equal to 45% of the enemy's taken damage till a battle ends.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The total HP recovery amount by this means is no more than 1000% (ATK-based) + 100% (SP-based) in a consecutive 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Restores allied hero's HP equal to 46% of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Restores allied hero's HP equal to 48% of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Restores allied hero's HP equal to 50% of the damage dealt.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Reinier launches a mighty strike against the healthiest enemy through the portal, interrupting them and dealing 45% (ATK-based) + 3% (SP-based) damage 8 times.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Afterward, Reineir punches and knocks them into the air, dealing 120% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If the enemy's HP ratio is above 61.8%, then each hit attaches extra damage equal to 1% of their current HP, up to 20% ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Reinier senses satisfaction when enemy's HP ratio drops below 61.8% for the first time, recovering 200% (ATK-based) HP and 80 Energy.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: The damage of each strike is increased to 1.2% of the enemy's current HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Reinier shares satisfaction with allies when each enemy's HP ratio drops below 61.8% for the first time, granting all allies 120% (ATK-based) HP and 50 Energy.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Reinier's Dynamic Balance increases the target's ATK by 7% when cast on an ally or reduces the target ATK by 7% when cast on an enemy.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reinier's Dynamic Balance increases the target's ATK by 10% when cast on an ally or reduces the target ATK by 10% when cast on an enemy.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reinier's Dynamic Balance increases the target's ATK by 12% when cast on an ally or reduces the target ATK by 12% when cast on an enemy.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Reinier deals 200% (ATK-based) damage to the enemy and knocks them down when casting Dynamic Balance, increasing their damage taken by 25% till the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Increases the damage dealt to the enemy to 250% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Reduces the position-switched ally's damage taken by 25% till the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Reinier increases the allied herp's ATK by 4% till the battle ends if they're in a symmetrical position with an enemy hero.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "925460be2b538f440b65931e4879b420b6bf56130843248ca1240cdbe002cacd",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

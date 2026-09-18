@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "movement": {
+    "movement": "mostly stationary",
+    "note": "pulls enemies; moves on failed pull"
+  }
+}

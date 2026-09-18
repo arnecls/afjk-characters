@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "id": "isabella",
+  "display_name": "Isabella",
+  "source": {
+    "title": "Isabella - The Taken Soul",
+    "name": "Isabella",
+    "tags": "Graveborn · Support · Magic",
+    "faction": "Graveborn",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "An introverted Support who can track allies' buffs and reapplies them again.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Grimoire Pact",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "When a battle starts, Isabella selects the frontmost allied hero as her companion. If the companion is defeated Isabella will select a new one. Whenever the companion receives a stat boosts to ATK, ATK SPD, Haste, Phys DEF, Magic DEF, or Vitality, Isabella gains a permanent stack of spell note corresponding to that stat. Each type of spell note can stack up to 3 times. Note that stat boosts granted by Isabella's spell notes themselves do not trigger additional stacks of spell notes. When Isabella casts her Ultimate, she increases her companion's ATK by 15% + 1.5% (SP-based) for 6s. Additionally, each spell note stack Isabella carries will increase the companion's corresponding stat: ATK, Phys DEF and Magic DEF: +15% per stack. ATK SPD, Haste and Vitality: +15 per stack.",
+          "active": [
+            "When a battle starts, Isabella selects the frontmost allied hero as her companion.",
+            "If the companion is defeated Isabella will select a new one.",
+            "Whenever the companion receives a stat boosts to ATK, ATK SPD, Haste, Phys DEF, Magic DEF, or Vitality, Isabella gains a permanent stack of spell note corresponding to that stat.",
+            "Each type of spell note can stack up to 3 times.",
+            "Note that stat boosts granted by Isabella's spell notes themselves do not trigger additional stacks of spell notes.",
+            "When Isabella casts her Ultimate, she increases her companion's ATK by 15% + 1.5% (SP-based) for 6s.",
+            "Additionally, each spell note stack Isabella carries will increase the companion's corresponding stat: ATK, Phys DEF and Magic DEF: +15% per stack.",
+            "ATK SPD, Haste and Vitality: +15 per stack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When Isabella uses her Ultimate, the buff she grants to her companion lasts 6.5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When Isabella uses her Ultimate, the buff she grants to her companion lasts 7s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "When Isabella uses her Ultimate, the buff she grants to her companion lasts 7.5s."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "When Isabella uses her Ultimate, the buff she grants to her companion lasts 8s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Isabella selects the frontmost ally as her companion. When she casts her Ultimate, she grants the companion powerful buffs."
+      },
+      {
+        "section": "Skill1",
+        "name": "Lingering Grace",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Isabella targets only her companion with this skill, healing them for 340% (ATK-based) + 40% (SP-based) HP and then dealing 150% (ATK-based) damage to enemies adjacent to her companion. 100% of the damage dealt is also converted into extra healing for her companion.",
+          "active": [
+            "Isabella targets only her companion with this skill, healing them for 340% (ATK-based) + 40% (SP-based) HP and then dealing 150% (ATK-based) damage to enemies adjacent to her companion.",
+            "100% of the damage dealt is also converted into extra healing for her companion."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the amount of direct healing to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the amount of direct healing to 380% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the amount of direct healing to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Isabella heals her companion and deals damage to enemies around them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Hexward",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "After her companion is affected by control effects for 5s, Isabella can make them unaffected for 2.5 + 0.25 (SP-based)s. This effect can only trigger once every 5s. Additionally, when an enemy hero deals 350% (ATK-based) damage to her companion, Isabella reduces that enemy's ATK by 60% (ATK-based) + 7% (SP-based) for 5s. This effect can only trigger once every 5s.",
+          "active": [
+            "After her companion is affected by control effects for 5s, Isabella can make them unaffected for 2.5 + 0.25 (SP-based)s.",
+            "This effect can only trigger once every 5s.",
+            "Additionally, when an enemy hero deals 350% (ATK-based) damage to her companion, Isabella reduces that enemy's ATK by 60% (ATK-based) + 7% (SP-based) for 5s.",
+            "This effect can only trigger once every 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the ATK reduction inflicted by Isabella to 65% (ATK-based) + 7% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the ATK reduction inflicted by Isabella to 70% (ATK-based) + 7% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the ATK reduction inflicted by Isabella to 75% (ATK-based) + 7% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After her companion is affected by control effects, Isabella can make them unaffected. Additionally, when her companion takes damage, Isabella can reduce the attacker's ATK."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Assistance by 30 during battle.",
+          "active": [
+            "Increases Assistance by 30 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Assistance by 40 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Assistance by 50 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Assistance."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Retributive Echo",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When Isabella casts her Ultimate, she also debuffs the enemy hero who has dealt the most damage to her companion, temporarily reducing the stats linked to active spell note stacks from Isabella's Ultimate. The debuffs last 8s and are 80% effective as the corresponding buffs from spell note stacks.",
+          "active": [
+            "When Isabella casts her Ultimate, she also debuffs the enemy hero who has dealt the most damage to her companion, temporarily reducing the stats linked to active spell note stacks from Isabella's Ultimate.",
+            "The debuffs last 8s and are 80% effective as the corresponding buffs from spell note stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases debuff effectiveness to 90% of the original buff value."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When a buff from Isabella's Ultimate expires, she recovers 180 Energy for every spell note type at maximum stacks.",
+                "Each time Isabella casts her Ultimate, she can recover up to 540 Energy this way."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases debuff effectiveness to 100% of the original buff value."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When casting her Ultimate, Isabella also debuffs an enemy hero."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note.",
+          "active": [
+            "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note."
+          ]
+        },
+        "description_lite": "Whenever Isabella's companion receives a powerful buff, Isabella gains an extra stack of spell note."
+      }
+    ],
+    "range": 5,
+    "release_date": "2025-10-10",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "B",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

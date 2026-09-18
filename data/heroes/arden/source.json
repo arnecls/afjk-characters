@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "id": "arden",
+  "display_name": "Arden",
+  "source": {
+    "title": "Arden - Oak Sage",
+    "name": "Arden",
+    "tags": "Wilder · Mage · Magic",
+    "faction": "Wilder",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A wise Mage who can summon lightning to attack enemies under control effects.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Force of Nature",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Cooldown": "3s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "Global",
+          "Initial Energy": "200"
+        },
+        "description": {
+          "raw": "Arden selects a tile and casts lightning strikes on all surrounding enemies within 2 tiles, dealing 160% (ATK-based) + 20% (SP-based) damage and creating dark cloud that cover the area for 7s. The dark cloud will repeatedly strike controlled enemies below with lightning, dealing 80% (ATK-based) + 10% (SP-based) damage each time. An enemy can only be struck once every 2s. Arden prioritizes selecting the tile with the most surrounding enemies when casting the lightning strikes.",
+          "active": [
+            "Arden selects a tile and casts lightning strikes on all surrounding enemies within 2 tiles, dealing 160% (ATK-based) + 20% (SP-based) damage and creating dark cloud that cover the area for 7s.",
+            "The dark cloud will repeatedly strike controlled enemies below with lightning, dealing 80% (ATK-based) + 10% (SP-based) damage each time.",
+            "An enemy can only be struck once every 2s.",
+            "Arden prioritizes selecting the tile with the most surrounding enemies when casting the lightning strikes."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Deals 180% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 90% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Deals 190% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 95% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Deals 200% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 100% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Deals 210% (ATK-based) + 20% (SP-based) damage with the first lightning strike, and 110% (ATK-based) + 10% (SP-based) damage with the subsequent lightning strike."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Arden creates a dark cloud that strikes enemies with lightning for several seconds. Enemies are subjected to more lightning strikes when controlled."
+      },
+      {
+        "section": "Skill1",
+        "name": "Entangling Vines",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Arden summons vines to entangle 2 closest enemies for 2 + 0.25 (SP-based)s, making them unable to move or act while dealing 50% (ATK-based) damage every 1s. Arden prioritizes enemies under the dark cloud.",
+          "active": [
+            "Arden summons vines to entangle 2 closest enemies for 2 + 0.25 (SP-based)s, making them unable to move or act while dealing 50% (ATK-based) damage every 1s.",
+            "Arden prioritizes enemies under the dark cloud."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 55% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 65% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Arden summons vines to entangle 2 enemies and deals continuous damage to them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Nature's Resilience",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Arden recovers 12 + 3 (SP-based) Energy whenever a non-summoned enemy is controlled. This effect can trigger once per enemy every 2s.",
+          "active": [
+            "Arden recovers 12 + 3 (SP-based) Energy whenever a non-summoned enemy is controlled.",
+            "This effect can trigger once per enemy every 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Triggers once per enemy every 1.5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Triggers once per enemy every 1s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Arden recovers 15 + 3 (SP-based) Energy."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Arden recovers Energy for himself when enemies are controlled."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Spring Thunderstorm",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Arden casts Entangling Vines on all enemies under the dark cloud once after casting Force of Nature.",
+          "active": [
+            "Arden casts Entangling Vines on all enemies under the dark cloud once after casting Force of Nature."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the range of Force of Nature to 3 tiles."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the duration of Entangling Vines to 3s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the duration of Entangling Vines to 3.5s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Arden entangles enemies under the dark cloud immediately after casting Force of Nature."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Arden reduces the lightning strike interval of Force of Nature for the same enemy by 1s.",
+          "active": [
+            "Arden reduces the lightning strike interval of Force of Nature for the same enemy by 1s."
+          ]
+        },
+        "description_lite": "Arden reduces the lightning strike interval of Force of Nature for the same enemy."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

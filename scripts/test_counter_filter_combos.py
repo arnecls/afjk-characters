@@ -20,9 +20,10 @@ def _load_vp():
         "validate_processed", SCRIPTS / "validate_processed.py"
     )
     module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
     assert spec.loader is not None
     spec.loader.exec_module(module)
-    return module
+    return sys.modules[spec.name]
 
 
 vp = _load_vp()

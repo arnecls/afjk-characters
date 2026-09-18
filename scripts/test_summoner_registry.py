@@ -12,21 +12,39 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
+
 import skill_effects_store as ses
 import summoner_registry as sr
 
 ROOT = SCRIPTS.parent
 
 
-def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+def _load_roster_inputs() -> tuple[dict, dict[str, list[str]]]:
+    from hero_pipeline.storage import (
+        display_names_by_id,
+        load_ai_by_id,
+        load_roster_inputs,
     )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+
+    snapshot = load_roster_inputs()
+    raw = {
+        "heroes": [
+            snapshot["bundles"][entry["id"]]["source"]["source"]
+            for entry in snapshot["manifest"]["heroes"]
+        ]
+    }
+    names = display_names_by_id()
+    tags = {
+        names[hero_id]: value
+        for hero_id, value in load_ai_by_id("behavior_tags").items()
+    }
+    return raw, tags
+
+
+def _load_rs():
+    return load_working_analysis()
 
 
 rs = _load_rs()
@@ -44,19 +62,12 @@ class SummonerRegistryTests(unittest.TestCase):
         self.assertNotIn("Chippy", heroes)
 
     def test_registry_matches_behavior_tags(self):
-        tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text(encoding="utf-8")
-        )
+        _raw, tags = _load_roster_inputs()
         tagged = {name for name, t in tags.items() if "summoner" in t}
         self.assertEqual(tagged, set(sr.summoner_heroes()))
 
     def test_sidecars_align_with_registry(self):
-        raw = json.loads(
-            (ROOT / "data" / "heroes_data.json").read_text(encoding="utf-8")
-        )
-        tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text(encoding="utf-8")
-        )
+        raw, tags = _load_roster_inputs()
         errors, _warnings = sr.check_summoner_consistency(
             tags, raw["heroes"], ses.load_sidecar
         )

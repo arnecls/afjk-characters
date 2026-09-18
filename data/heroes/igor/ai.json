@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Igor - Mad Dagger",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "4e4b1bf5847ef4f439c5546a02e432f65c7965cdba4c0518e7ea85af3b43e5b0",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 290.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "steadfast",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "1a526ad46da068bd873c05fd469b0a1e20b2ec64f9e9bd3b895e5a237c955255",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.7,
+                    "comparison": "above"
+                  }
+                ],
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "duration": 4.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "5570d25453bb0b6e19ba2bb5974165cc387c85b59f098c63fa946ee72058766a",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 3.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "a9167583b894bf8f3bb4990b38c705d600767f050b4fbbd0efdfd18e998a3bc7",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  },
+                  {
+                    "type": "battle_phase",
+                    "phase": "conditional"
+                  }
+                ],
+                "type": "buff",
+                "name": "Lifedrain",
+                "label": "buff_stat",
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "4ed034dace02238286ced95a348e4f401dc6578ff03783d70c29c829afb86a9b",
+        "is_max_known": true,
+        "tiers": {
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "duration": 5.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "dee6f82538e1d0e1b8d662da5a544e5e34239fbe45d64de314ed10f20ea9e682",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "cheat-death",
+    "heal-inhibitor",
+    "life-drain",
+    "self-repositioner",
+    "untargetable"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "deal damage to all enemies",
+    "skill1": "leap to an active marker, dealing area damage, then deactivate it",
+    "skill2": "dodge fatal blows by leaping to markers with HP recovery",
+    "skill3": "life drain elevated after first fatal blow dodge trigger",
+    "skill4": "extend leap-explosion range when HP ratio is high",
+    "skill5": "battle-start ultimate summons an extra marker"
+  },
+  "play_overview": "Igor places **battle-start markers** and leaps to them for **AoE explosions**, with an extra marker from his opening ultimate cast. Fatal blows trigger a **dodge leap** with HP recovery, and life drain rises after the first dodge proc. High HP ratio **widens explosion range**, letting him kite through danger while staying aggressive. His ultimate hits **all enemies** once markers are spent in sequence. He excels as a **mobile opener** that survives focus fire through repositioning. **Immobilize or marker denial** before he leaps leaves him exposed with modest sustained output.",
+  "counter_overview": "Igor seeds **battle-start tombstones**, leaps for AoE explosions while **Steadfast** on markers, and dodges fatal blows with untargetable hops plus HP recovery. Single-target assassins miss as he relocates. Answer with lasting wide ultimates like [[Shemira]] or [[Frieren]], cancel Funereal Ring with [[Lily May]] on the opening beat, and cut his sustain with [[filter:heal-inhibitor]] like [[Satrana]] or [[Gwyneth]]. Clear tombstones between leaps so his dodge has nowhere safe to land."
+}

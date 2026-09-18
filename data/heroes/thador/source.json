@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "id": "thador",
+  "display_name": "Thador",
+  "source": {
+    "title": "Thador - Ironsworn General",
+    "name": "Thador",
+    "tags": "Wilder · Tank · Physical",
+    "faction": "Wilder",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A tough and reliable Tank who can summon ritual zones.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Moonveil Manifest",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "0 tiles",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Thador slams the ground with his shield, dealing 320% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and conjuring a ritual zone for the Moonveil Rite. The ritual zone lasts for 12s and reduces the Crit DMG DEF of enemies within by 40. When enemies have accumulated damage totaling 1500% of Thador's initial ATK while inside the zone, he unleashes a shadow eruption dealing 160% of Team ATK damage to each enemy inside the zone. Each ally is then healed for 80% of the eruption's total damage dealt. The eruption can trigger once per Moonveil Rite.",
+          "active": [
+            "Thador slams the ground with his shield, dealing 320% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and conjuring a ritual zone for the Moonveil Rite.",
+            "The ritual zone lasts for 12s and reduces the Crit DMG DEF of enemies within by 40.",
+            "When enemies have accumulated damage totaling 1500% of Thador's initial ATK while inside the zone, he unleashes a shadow eruption dealing 160% of Team ATK damage to each enemy inside the zone.",
+            "Each ally is then healed for 80% of the eruption's total damage dealt.",
+            "The eruption can trigger once per Moonveil Rite."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage of the eruption to 170% of the Team ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of the eruption to 180% of the Team ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of the eruption to 190% of the Team ATK."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of the eruption to 200% of the Team ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thador deals AoE damage and performs the Moonveil Rite, inflicting debuffs on affected enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Darkmoon Pact",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Passive. During battle preparation, Thador designates the ally placed 1 tile behind him as his lieutenant. While Thador remains alive, his lieutenant gains 15 + 1.5 (SP-based) Crit. Active. Thador grants both himself and his lieutenant a shield that absorbs 350% (ATK-based) + 35% (SP-based) damage for 8s.",
+          "passive": [
+            "During battle preparation, Thador designates the ally placed 1 tile behind him as his lieutenant.",
+            "While Thador remains alive, his lieutenant gains 15 + 1.5 (SP-based) Crit."
+          ],
+          "active": [
+            "Thador grants both himself and his lieutenant a shield that absorbs 350% (ATK-based) + 35% (SP-based) damage for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value granted by this skill to 360% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value granted by this skill to 370% (ATK-based) + 35% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value granted by this skill to 380% (ATK-based) + 35% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thador designates an ally as his lieutenant, increasing their Crit. When casting this skill, Thador grants a shield to both himself and his lieutenant."
+      },
+      {
+        "section": "Skill2",
+        "name": "Crescent Cleave",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "6s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Thador swings his curved blade in a 2-tile crescent arc, dealing 310% (ATK-based) + 30% (SP-based) damage to enemies in front of him and knocking them down for 1.5s.",
+          "active": [
+            "Thador swings his curved blade in a 2-tile crescent arc, dealing 310% (ATK-based) + 30% (SP-based) damage to enemies in front of him and knocking them down for 1.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 340% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thador swings his blade, dealing damage to enemies in front of him and knocking them down."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Reduces damage taken by 12% during battle.",
+          "active": [
+            "Reduces damage taken by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Umbral Descent",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When Thador's lieutenant casts Ultimate for the first time, Thador summons the Darkmoon over the battlefield. While active, the Darkmoon deals 80% (ATK-based) damage to each enemy every 0.5s and reduces their Phys & Magic DEF by 55%. After 6s, the Darkmoon fades, dealing 520% (ATK-based) damage to each enemy. This effect can trigger once per battle.",
+          "active": [
+            "When Thador's lieutenant casts Ultimate for the first time, Thador summons the Darkmoon over the battlefield.",
+            "While active, the Darkmoon deals 80% (ATK-based) damage to each enemy every 0.5s and reduces their Phys & Magic DEF by 55%.",
+            "After 6s, the Darkmoon fades, dealing 520% (ATK-based) damage to each enemy.",
+            "This effect can trigger once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage when the effect ends to 540% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Grants Thador's lieutenant 350 Energy when a battle starts."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage when the effect ends to 560% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Thador's lieutenant casts Ultimate for the first time, Thador deals damage to all enemies and reduces their Phys & Magic DEF."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Thador restores 5% of his max HP every second as long as his lieutenant is alive.",
+          "active": [
+            "Thador restores 5% of his max HP every second as long as his lieutenant is alive."
+          ]
+        },
+        "description_lite": "Thador continuously restores his own HP while his lieutenant is alive."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-07-10",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "A+",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

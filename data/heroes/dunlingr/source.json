@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "id": "dunlingr",
+  "display_name": "Dunlingr",
+  "source": {
+    "title": "Dunlingr - Eternal Voice",
+    "name": "Dunlingr",
+    "tags": "Celestial · Tank · Magic",
+    "faction": "Celestial",
+    "class": "Tank",
+    "damage_type": "Magic",
+    "description": "A formidable tank who can impose an order that everyone on the battlefield must follow.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Echo of Silence",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Dunlingr designates the Bell of Order as either {{Icon",
+          "active": [
+            "Dunlingr designates the Bell of Order as either {{Icon"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dunlingr sets the stage for the battle's order before a battle starts, ensuring everyone follows it for a period of time. Active. Dunlingr enforces the order again for an additional period of time."
+      },
+      {
+        "section": "Skill1",
+        "name": "Grand Resonance",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Dunlingr releases a shockwave covering the frontal area (3-tile wide and 3-tile long), dealing 4 hits of 40% (ATK-based) + 5% (SP-based) damage each to enemies within. If the Bell of Order is set to Spellbind, Dunlingr reduces the enemies' ATK SPD by an extra 60 for 4s If the Bell of Order is set to Curelock, Dunlingr deals extra damage equal to 3% of the enemies' lost HP, up to 30% of his own ATK.",
+          "active": [
+            "Dunlingr releases a shockwave covering the frontal area (3-tile wide and 3-tile long), dealing 4 hits of 40% (ATK-based) + 5% (SP-based) damage each to enemies within.",
+            "If the Bell of Order is set to Spellbind, Dunlingr reduces the enemies' ATK SPD by an extra 60 for 4s If the Bell of Order is set to Curelock, Dunlingr deals extra damage equal to 3% of the enemies' lost HP, up to 30% of his own ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 45% (ATK-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 50% (ATK-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 55% (ATK-based) + {5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dunlingr deals damage to enemies in front of him and applies additional effects based on the specified order he has set."
+      },
+      {
+        "section": "Skill2",
+        "name": "Harmonic Soundwall",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "If the Bell of Order is set to Spellbind, Dunlingr gains a shield that absorbs 130% (ATK-based) + 20% (SP-based) damage whenever an enemy casts their Ultimate, lasting until the battle ends. If the Bell of Order is set to Curelock, Dunlingr gains a shield that absorbs 130% (ATK-based) + 20% (SP-based) damage each time he loses 20% of his max HP, lasting until the battle ends.",
+          "active": [
+            "If the Bell of Order is set to Spellbind, Dunlingr gains a shield that absorbs 130% (ATK-based) + 20% (SP-based) damage whenever an enemy casts their Ultimate, lasting until the battle ends.",
+            "If the Bell of Order is set to Curelock, Dunlingr gains a shield that absorbs 130% (ATK-based) + 20% (SP-based) damage each time he loses 20% of his max HP, lasting until the battle ends."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases shield value to 140% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases shield value to 150% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases shield value to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dunlingr gains a shield whenever conditions of the specified order are met."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Dunlingr reduces damage taken by 10% during the battle. While the order is in effect, he further reduces damage taken by an extra 5%.",
+          "active": [
+            "Dunlingr reduces damage taken by 10% during the battle.",
+            "While the order is in effect, he further reduces damage taken by an extra 5%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Dunlingr reduces damage taken by 12% during the battle While the order is in effect, he further reduces damage taken by an extra 6%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Dunlingr reduces damage taken by 16% during the battle While the order is in effect, he further reduces damage taken by an extra 8%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Clemency Chime",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Dunlingr protects the farthest non-summoned ally, ensuring they are not affected by his order until the ally is defeated.",
+          "active": [
+            "Dunlingr protects the farthest non-summoned ally, ensuring they are not affected by his order until the ally is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the protected ally's ATK by 2%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the protected ally's ATK by 4%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the protected ally's Haste by 20."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dunlingr ensures the farthest ally is not affected by his order."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6s if the order is set to e Spellbind, or provides them with 25 Life Drain for 6s if the order is set to Curelock.",
+          "active": [
+            "Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6s if the order is set to e Spellbind, or provides them with 25 Life Drain for 6s if the order is set to Curelock."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Dunlingr increases ATK SPD or Life Drain for allies upon casting Echo of Silence."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-09-09",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "S+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

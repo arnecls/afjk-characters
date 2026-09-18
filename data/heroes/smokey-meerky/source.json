@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "id": "smokey-meerky",
+  "display_name": "Smokey & Meerky",
+  "source": {
+    "title": "Smokey & Meerky - Wasteland Apothecary",
+    "name": "Smokey & Meerky",
+    "tags": "Mauler · Support · Magic",
+    "faction": "Mauler",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A Support who can heal and imbue buffs to nearby allies continuously.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Special Aroma",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0",
+          "Cooldown": "1s",
+          "Initial Cooldown": "1s"
+        },
+        "description": {
+          "raw": "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling. While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second. Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted. Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile. - Improved Aroma II: Grants 30 haste to all allies within the aroma.",
+          "active": [
+            "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
+            "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
+            "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
+            "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
+            "- Improved Aroma II: Grants 30 haste to all allies within the aroma."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 24% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 27% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 29% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 31% (ATK-based) per second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky create an aroma and provide continuous healing. Actively using the skill levels up the aroma."
+      },
+      {
+        "section": "Skill1",
+        "name": "Energizing Formula",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based). Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
+          "active": [
+            "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
+            "Additionally, for each non-summoned ally affected, they recover 5 Energy per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "ATK buff increases to 18% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Energy recovery increases to 8 per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "ATK buff increases to 20% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky increase the ATK of allies within the aroma and recover Energy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Quick Recovery",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "5s",
+          "Skill Range": "2 tiles",
+          "Initial Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
+          "active": [
+            "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Healing increases to 100% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Healing increases to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Healing increases to 120% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky recover HP for allies within the aroma."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Smokey & Meerky passively increase their ATK by 6%. If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+          "active": [
+            "Smokey & Meerky passively increase their ATK by 6%.",
+            "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky increase their ATK, and the ATK bonus is further increased when there are 3 or more non-summoned allies within the aroma."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Withering Potion",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile. Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second. However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
+          "active": [
+            "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
+            "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
+            "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Smokey & Meerky gain Improved Aroma III, dealing more damage to enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
+          "active": [
+            "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based)."
+          ]
+        },
+        "description_lite": "Smokey & Meerky use Special Aroma to recover more HP."
+      }
+    ],
+    "range": 8,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

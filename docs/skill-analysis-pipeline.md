@@ -10,12 +10,11 @@ Instead of manually typing out every synergy for every hero, the system relies o
 
 ```mermaid
 graph TD
-    Sources[Web Sources<br>Fandom, Yaphalla, Prydwen] -->|Download| RawData[`heroes_data.json`]
-    Sidecars[AI skill-effect sidecars<br>`data/skill_effects/*.json`] -->|Analyze| Processed[`heroes_data_processed.json`]
-    RawData -->|Analyze| Processed
-    Processed -->|Score Synergies| Synergies[`heroes_data_synergies.json`]
-    Processed -->|Render| Output[Markdown and Web Viewer]
-    Synergies -->|Render| Output
+    Sources[Web Sources<br>Fandom, Yaphalla, Prydwen] -->|Download| RawData[`data/heroes/<id>/source.json`]
+    Sidecars[AI hero data<br>`data/heroes/<id>/ai.json`] -->|Analyze| Local[`analysis.json` cache]
+    RawData -->|Analyze| Local
+    Local -->|Calibrate + Score| Memory[In-memory roster results]
+    Memory -->|Render| Output[Markdown and Web Viewer]
 ```
 
 ---
@@ -27,28 +26,30 @@ The pipeline begins by scraping the latest character data from community sources
 - **Skill Text & Stats**: Sourced primarily from the [Fandom Wiki](https://afk-journey.fandom.com/wiki/Hero/List) and [Yaphalla](https://www.yaphalla.com/heroes).
 - **Meta Tiers**: Sourced from the [Prydwen Tier List](https://www.prydwen.gg/afk-journey/tier-list) to ensure replacements are meta-viable.
 
-All of this raw text is merged and saved into a single source of truth: [`data/heroes_data.json`](../data/heroes_data.json).
+The ordered [`data/roster.json`](../data/roster.json) manifest identifies each
+hero. Raw text is saved in that hero's `source.json`; it is not assembled
+into a canonical roster file.
 
 ### Stage 2: Skill Processing (Analyze — pass 1)
 
 Skill **effects** (buffs, debuffs, CC, damage types, healing, shields, energy,
-immunities, special provides/requires) are authored in AI sidecars at
-[`data/skill_effects/<short_name>.json`](../data/skill_effects/). Use the
+immunities, special provides/requires) are authored in each hero's `ai.json`.
+Use the
 [extract-skill-effects](../.cursor/skills/extract-skill-effects/SKILL.md)
 skill when adding a hero or when skill text changes.
 
-[`scripts/process_heroes.py`](../scripts/process_heroes.py) reconstructs hero
-markdown from `heroes_data.json`, runs per-hero analysis, and writes structured
-output. The analysis entry point is `analyze_hero()` in
-[`scripts/rewrite-summaries.py`](../scripts/rewrite-summaries.py):
+[`scripts/hero_pipeline_cli.py`](../scripts/hero_pipeline_cli.py) runs offline
+per-hero analysis and roster calibration. Local analysis reads one hero
+bundle and writes `analysis.json`. Roster calibration and relationship
+scoring run in memory during `just views`.
 
 1. **Load sidecar** — `scripts/skill_effects_store.py` reads the hero's JSON;
    missing or stale sidecars fail `just validate`.
 2. **Apply effects** — `apply_sidecar_to_hero()` builds per-skill `skill_slices`
    with effects, summon effects, immunities, and special effects.
-3. **Post-process** — script-side regex still runs on top of sidecar data:
-   upgrade numerics, magnitudes, benefit stats, movement, placement constraints,
-   proximity auras, and skill-card tag formatting.
+3. **Post-process** — local analysis still derives upgrade numerics, magnitudes,
+   benefit stats, movement, placement constraints, proximity auras, and
+   skill-card tag formatting.
 
 **Example:**
 
@@ -65,19 +66,27 @@ output. The analysis entry point is `analyze_hero()` in
 }
 ```
 
-This processed data is saved to
-[`data/heroes_data_processed.json`](../data/heroes_data_processed.json).
-Curated inputs (`signature_skills.json`, `hero_behavior_tags.json`,
-`hero_walk_speeds.json`, placement/movement/melee overrides) are read during
-this step but not overwritten.
+This processed data is saved in each hero's `analysis.json`. Curated inputs
+and typed corrections are read from that hero's `ai.json` and `overrides.json`.
 
 ### Stage 3: Synergy & Replacement Scoring (Analyze — pass 2)
-[`scripts/process_synergies.py`](../scripts/process_synergies.py) evaluates every possible pair of heroes using matchers from [`scripts/generate-heroes-overview.py`](../scripts/generate-heroes-overview.py) (shared scoring library, not a separate render step).
+[`just views`](../justfile) calibrates the roster and scores relationships in
+memory. Production scoring lives in
+[`scripts/hero_pipeline/relationships/scoring.py`](../scripts/hero_pipeline/relationships/scoring.py)
+and reads compact facts from calibrated analysis. It does not reparse skill
+prose or reconstruct aggregate roster files.
 
-It looks at what a hero **provides** (e.g., Haste buffs, Magic damage) and matches it against what another hero **requires** (e.g., a slow Ultimate that needs Haste, or a passive that triggers on allied Magic damage). The results are saved to [`data/heroes_data_synergies.json`](../data/heroes_data_synergies.json).
+It looks at what a hero **provides** (e.g., Haste buffs, Magic damage) and
+matches it against what another hero **requires** (e.g., a slow Ultimate that
+needs Haste, or a passive that triggers on allied Magic damage). The results
+scoring uses those calibrated records. Relationship lists are ephemeral.
 
 ### Stage 4: Rendering (Views)
-[`scripts/render_overview.py`](../scripts/render_overview.py) and [`scripts/render_site.py`](../scripts/render_site.py) read the committed JSON and produce `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json`. [`scripts/render_heroes.py`](../scripts/render_heroes.py) regenerates `Heroes.md` from `heroes_data.json`. Rendering does not re-run skill-text detection — run `just analyze` first when processed data changes.
+[`scripts/hero_pipeline_cli.py`](../scripts/hero_pipeline_cli.py) `views`
+calibrates the roster, scores relationships in memory, and writes
+`Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and
+`site/data/heroes.json`. Rendering does not re-run skill-text detection —
+run `just analyze` first when local caches are stale.
 
 See also [synergy algorithm](synergy-algorithm.md), [replacement algorithm](replacement-algorithm.md), and [AI-generated data](ai-generated-data.md) for curated metadata used during analyze/render.
 
@@ -119,10 +128,11 @@ To combat this, the project relies on:
 - `just validate` — schema checks, sidecar staleness, and coarse semantic CC-gap
   hints in `scripts/validate_processed.py`
 - Validation snapshots under `docs/validation-*.md`
-- Manual or AI-generated overrides (`signature_skills.json`, behavior tags,
-  movement/melee overrides)
+- Manual or AI-generated overrides in each hero's `ai.json` and
+  `overrides.json`
 - The [hero-data](../.cursor/skills/hero-data/SKILL.md) audit workflow
 
-Fix missing or wrong effects by editing `data/skill_effects/<hero>.json` via
+Fix missing or wrong effects by editing
+`data/heroes/<hero-id>/ai.json` via
 [extract-skill-effects](../.cursor/skills/extract-skill-effects/SKILL.md), then
 run `just views`.

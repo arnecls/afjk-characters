@@ -1,0 +1,933 @@
+{
+  "schema_version": 2,
+  "id": "natsu",
+  "display_name": "Natsu",
+  "local": {
+    "long_name": "Natsu - Fire Dragon Slayer Mage",
+    "faction": "dimensional",
+    "class": "warrior",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2025-05-01",
+    "season": "Chains of Eternity",
+    "season_number": 3,
+    "skills": {
+      "Lightning Fire Dragon's Roar/Fire Dragon King's Roar": {
+        "category": "ultimate",
+        "description": {
+          "raw": "During battle preparation, choose between Lightning Fire Dragon mode and Fire Dragon King Mode for Natsu. Lightning Fire Dragon King Mode focuses on debuffing enemies, while Fire Dragon King Mode delivers higher damage. In Lighting Fire Dragon Mode, Natsu deals 1400% (ATK-based) + 160% (SP-based) damage to all enemies within a 3-tile frontal arc and stuns them for 3s. In Fire Dragon King Mode, Natsu deals 2400% (ATK-based) + 280% (SP-based) damage to all enemies within a 3-tile frontal arc.",
+          "active": [
+            "During battle preparation, choose between Lightning Fire Dragon mode and Fire Dragon King Mode for Natsu.",
+            "Lightning Fire Dragon King Mode focuses on debuffing enemies, while Fire Dragon King Mode delivers higher damage.",
+            "In Lighting Fire Dragon Mode, Natsu deals 1400% (ATK-based) + 160% (SP-based) damage to all enemies within a 3-tile frontal arc and stuns them for 3s.",
+            "In Fire Dragon King Mode, Natsu deals 2400% (ATK-based) + 280% (SP-based) damage to all enemies within a 3-tile frontal arc."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 1450% (ATK-based) + 160% (SP-based) damage.",
+                "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 1500% (ATK-based) + 160% (SP-based) damage.",
+                "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 1550% (ATK-based) + 160% (SP-based) damage.",
+                "In Fire Dragon King Mode, Natsu deals 2700% (ATK-based) + 280% (SP-based) damage."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 1600% (ATK-based) + 160% (SP-based) damage.",
+                "In Fire Dragon King Mode, Natsu deals 2800% (ATK-based) + 280% (SP-based) damage."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "lightning_fire_dragon"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "lightning_fire_dragon"
+              },
+              {
+                "type": "skill_mode",
+                "mode": "fire_dragon_king"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 3080.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 11,
+        "initial_energy": 500.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Stun — Arc"
+          }
+        ]
+      },
+      "Lightning Fire Dragon's Iron Fist/Fire Dragon King's Iron Fist": {
+        "category": "skill1",
+        "description": {
+          "raw": "In Lightning Fire Dragon Mode, deals 500% (ATK-based) + 56% (SP-based) damage to the enemy who has deal the most cumulative damage, while reducing their Haste by 80. The Haste reduction effect diminishes over 5s until it expires. In Fire Dragon King Mode, Natsu strikes an adjacent enemy, dealing damage equal to 44% + 5% (SP-based) of the target's max HP and knocking them down for 0.5s. This damage cannot exceed 1000% (ATK-based) + 100% (SP-based) of Natsu's ATK.",
+          "active": [
+            "In Lightning Fire Dragon Mode, deals 500% (ATK-based) + 56% (SP-based) damage to the enemy who has deal the most cumulative damage, while reducing their Haste by 80.",
+            "The Haste reduction effect diminishes over 5s until it expires.",
+            "In Fire Dragon King Mode, Natsu strikes an adjacent enemy, dealing damage equal to 44% + 5% (SP-based) of the target's max HP and knocking them down for 0.5s.",
+            "This damage cannot exceed 1000% (ATK-based) + 100% (SP-based) of Natsu's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 520% (ATK-based) + 56% (SP-based) damage.",
+                "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 46% + 5% (SP-based) of the target's max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 540% (ATK-based) + 56% (SP-based) damage.",
+                "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 48% + 5% (SP-based) of the target's max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu deals 560% (ATK-based) + 56% (SP-based) damage.",
+                "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 50% + 5% (SP-based) of the target's max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "lightning_fire_dragon"
+              }
+            ],
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 80.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "lightning_fire_dragon"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 616.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "fire_dragon_king"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "fire_dragon_king"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Haste",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock down — Single target"
+          }
+        ]
+      },
+      "Fiery Ties": {
+        "category": "skill2",
+        "description": {
+          "raw": "This skill triggers only once per battle after the first defeat of an ally. Fueled by rage, Natsu increases his ATK and DEF by 27% + 3% (SP-based) of the defeated ally's corresponding stats. Additionally, if the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5.",
+          "active": [
+            "This skill triggers only once per battle after the first defeat of an ally.",
+            "Fueled by rage, Natsu increases his ATK and DEF by 27% + 3% (SP-based) of the defeated ally's corresponding stats.",
+            "Additionally, if the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Natsu's ATK, Phys DEF, and Magic DEF increase by 28% + 3% (SP-based) of the defeated ally's corresponding stats."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Natsu's ATK, Phys DEF, and Magic DEF increase by 29% + 3% (SP-based) of the defeated ally's corresponding stats."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Natsu's ATK, Phys DEF, and Magic DEF increase by 30% + 3% (SP-based) of the defeated ally's corresponding stats."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "ally": true
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "ally": true
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "ally": true
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 5.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "ally": true
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Crit DMG boost",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit DMG boost — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "In Lightning Fire Dragon Mode, Natsu increases his Haste by 9. In Fire Dragon King Mode, he increases his ATK by 12%.",
+          "active": [
+            "In Lightning Fire Dragon Mode, Natsu increases his Haste by 9.",
+            "In Fire Dragon King Mode, he increases his ATK by 12%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu increases his Haste by 12.",
+                "In Fire Dragon King Mode, he increases his ATK by 16%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "In Lightning Fire Dragon Mode, Natsu increases his Haste by 15.",
+                "In Fire Dragon King Mode, he increases his ATK by 20%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "lightning_fire_dragon"
+              }
+            ],
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "fire_dragon_king"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "\"Salamander\" Natsu": {
+        "category": "skill4",
+        "description": {
+          "raw": "When Natsu deals damage, he reduces the target's max HP by 40% of the actual damage dealt. This effect does not apply to bosses and the max HP reduction per enemy cannot exceed 800% of Natsu's ATK.",
+          "active": [
+            "When Natsu deals damage, he reduces the target's max HP by 40% of the actual damage dealt.",
+            "This effect does not apply to bosses and the max HP reduction per enemy cannot exceed 800% of Natsu's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Natsu reduces the target's max HP by 45% of the actual damage dealt."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "While enemies are under any debuff inflicted by Natsu, their max HP drops by 20% of Natsu's ATK every 0.5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Natsu reduces the target's max HP by 50% of the actual damage dealt."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage"
+              },
+              {
+                "type": "unit_type",
+                "unit_type": "non_boss"
+              }
+            ],
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "debuffed"
+              },
+              {
+                "type": "unit_type",
+                "unit_type": "non_boss"
+              }
+            ],
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": -1.0,
+            "tick": 0.5
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "DoT (EX+10)"
+          },
+          {
+            "label": "Max HP",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he burns the enemy for 5s, dealing 80% (ATK-based) damage every 0.5s.",
+          "active": [
+            "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he burns the enemy for 5s, dealing 80% (ATK-based) damage every 0.5s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage",
+                "self": true
+              }
+            ],
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 0.5
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Form or stance active",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "During battle preparation, choose Lightning Fire Dragon mode or Fire Dragon King mode."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Named ally on team",
+          "tier": "base",
+          "targeting": "Allies",
+          "description": "If the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Arc, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "crit",
+      "crit_dmg_boost",
+      "physical_def",
+      "magic_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "natsu",
+    "display_name": "Natsu",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "skill1",
+    "skill_chunks": [
+      [
+        "base",
+        "During battle preparation, choose between Lightning Fire Dragon mode and Fire Dragon King Mode for Natsu.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lightning Fire Dragon King Mode focuses on debuffing enemies, while Fire Dragon King Mode delivers higher damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lighting Fire Dragon Mode, Natsu deals 1400% (ATK-based) + 160% (SP-based) damage to all enemies within a 3-tile frontal arc and stuns them for 3s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2400% (ATK-based) + 280% (SP-based) damage to all enemies within a 3-tile frontal arc.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1450% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1500% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2600% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1550% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2700% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 1600% (ATK-based) + 160% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu deals 2800% (ATK-based) + 280% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, deals 500% (ATK-based) + 56% (SP-based) damage to the enemy who has deal the most cumulative damage, while reducing their Haste by 80.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The Haste reduction effect diminishes over 5s until it expires.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, Natsu strikes an adjacent enemy, dealing damage equal to 44% + 5% (SP-based) of the target's max HP and knocking them down for 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 1000% (ATK-based) + 100% (SP-based) of Natsu's ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 520% (ATK-based) + 56% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 46% + 5% (SP-based) of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 540% (ATK-based) + 56% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 48% + 5% (SP-based) of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Lightning Fire Dragon Mode, Natsu deals 560% (ATK-based) + 56% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "In Fire Dragon King Mode, he strikes an adjacent enemy, dealing damage equal to 50% + 5% (SP-based) of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This skill triggers only once per battle after the first defeat of an ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Fueled by rage, Natsu increases his ATK and DEF by 27% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Additionally, if the allied Lucy is defeated, Natsu increases his Crit by 5 and Crit DMG Boost by 5.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Natsu's ATK, Phys DEF, and Magic DEF increase by 28% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Natsu's ATK, Phys DEF, and Magic DEF increase by 29% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Natsu's ATK, Phys DEF, and Magic DEF increase by 30% + 3% (SP-based) of the defeated ally's corresponding stats.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "In Lightning Fire Dragon Mode, Natsu increases his Haste by 9.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Fire Dragon King Mode, he increases his ATK by 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Lightning Fire Dragon Mode, Natsu increases his Haste by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Fire Dragon King Mode, he increases his ATK by 16%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Lightning Fire Dragon Mode, Natsu increases his Haste by 15.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "In Fire Dragon King Mode, he increases his ATK by 20%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When Natsu deals damage, he reduces the target's max HP by 40% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This effect does not apply to bosses and the max HP reduction per enemy cannot exceed 800% of Natsu's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Natsu reduces the target's max HP by 45% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "While enemies are under any debuff inflicted by Natsu, their max HP drops by 20% of Natsu's ATK every 0.5s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Natsu reduces the target's max HP by 50% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he burns the enemy for 5s, dealing 80% (ATK-based) damage every 0.5s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "720ac66e9cb045a077369388b0494b625a45d47390f596976211792153ec5593",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

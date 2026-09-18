@@ -60,11 +60,13 @@ def build_from_web() -> dict:
 
 
 def main() -> None:
+    from hero_pipeline.storage import MANIFEST_PATH, write_source_roster
+
     data = build_from_web()
-    io.save_json(io.HEROES_DATA, data)
     n = len(data["heroes"])
+    write_source_roster(data)
     print(
-        f"Wrote {io.HEROES_DATA.relative_to(io.ROOT)} "
+        f"Wrote {MANIFEST_PATH.relative_to(io.ROOT)} "
         f"({n} heroes, Fandom + Yaphalla gap-fill + Prydwen tiers/categories)"
     )
 

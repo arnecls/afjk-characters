@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/hero-overrides.schema.json",
+  "title": "Typed per-hero overrides",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version"],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "signature_override": { "type": "string" },
+        "speed_override": { "type": "string" }
+      }
+    },
+    "movement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["movement"],
+      "properties": {
+        "movement": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "melee": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "is_melee": { "type": "boolean" },
+        "is_dual_range": { "type": "boolean" }
+      },
+      "minProperties": 1
+    },
+    "placement_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "text"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ally_placement",
+              "ally_composition",
+              "self_placement"
+            ]
+          },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "corrections": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

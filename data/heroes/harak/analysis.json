@@ -1,0 +1,694 @@
+{
+  "schema_version": 2,
+  "id": "harak",
+  "display_name": "Harak",
+  "local": {
+    "long_name": "Harak - Deepsea Ravager",
+    "faction": "hypogean",
+    "class": "warrior",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-11-19",
+    "season": "Waves of Intrigue",
+    "season_number": 2,
+    "skills": {
+      "Vicious Bite": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Harak launches a vicious assault, striking an enemy 10 times, each dealing 60% (ATK-based) + 10% (SP-based) damage. Each strike also deals extra damage equal to 6% of the enemy's lost HP, up to 120% of Harak's own ATK. The final strike deals 200% (ATK-based) + 20% (SP-based) damage and knocks the enemy down. While casting this skill, Harak remains Unaffected and prevents the enemy from recovering HP for 6s, causing them to lose 40% (ATK-based) HP per second.",
+          "active": [
+            "Harak launches a vicious assault, striking an enemy 10 times, each dealing 60% (ATK-based) + 10% (SP-based) damage.",
+            "Each strike also deals extra damage equal to 6% of the enemy's lost HP, up to 120% of Harak's own ATK.",
+            "The final strike deals 200% (ATK-based) + 20% (SP-based) damage and knocks the enemy down.",
+            "While casting this skill, Harak remains Unaffected and prevents the enemy from recovering HP for 6s, causing them to lose 40% (ATK-based) HP per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage of each successive strike to 70% (ATK-based) + 10% (SP-based), And the damage of the final strike to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage of each successive strike to 80% (ATK-based) + 10% (SP-based), And the damage of the final strike to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage of each successive strike to 90% (ATK-based) + 10% (SP-based), And the damage of the final strike to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage of each successive strike to 100% (ATK-based) + 10% (SP-based), And the damage of the final strike to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 260.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "debuff",
+            "name": "Healing",
+            "label": "debuff_healing"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 1,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Healing",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock down — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Tidal Assault": {
+        "category": "skill1",
+        "description": {
+          "raw": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
+          "active": [
+            "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "cooldown": 15.0,
+        "initial_cooldown": 5.0,
+        "skill_card_tags": [
+          {
+            "label": "Invincible — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Flesh Feast": {
+        "category": "skill2",
+        "description": {
+          "raw": "Passive. Harak enters feast mode when a battle starts, increasing Crit by 35 + 6 (SP-based) and Haste by 50 for 12s. Assissting and defeating a unit resets the duration of feast mode. Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them. During this time, he is Unaffected. Harak cannot devour an enemy whose HP exceeds 200% (ATK-based) of his own ATK. In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle.",
+          "passive": [
+            "Harak enters feast mode when a battle starts, increasing Crit by 35 + 6 (SP-based) and Haste by 50 for 12s.",
+            "Assissting and defeating a unit resets the duration of feast mode.",
+            "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them.",
+            "During this time, he is Unaffected.",
+            "Harak cannot devour an enemy whose HP exceeds 200% (ATK-based) of his own ATK.",
+            "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases Crit granted by feast mode to 40 + 6 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases Crit granted by feast mode to 45 + 6 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases Crit granted by feast mode to 50 + 6 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Execution",
+            "label": "debuff_offensive"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Execution",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Harak increases Life Drain by 8 during battle. Each time he assists or defeats an enemy, he gains an extra 1 Life Drain, up to a maximum of 4.",
+          "active": [
+            "Harak increases Life Drain by 8 during battle.",
+            "Each time he assists or defeats an enemy, he gains an extra 1 Life Drain, up to a maximum of 4."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Harak increases Life Drain by 10 during battle.",
+                "Each time he assists or defeats an enemy, he gains an extra 2 Life Drain, up to a maximum of 8."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Harak increases Life Drain by 12 during battle.",
+                "Each time he assists or defeats an enemy, he gains an extra 3 Life Drain, up to a maximum of 12."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 3.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Ravenous Digestion": {
+        "category": "skill4",
+        "description": {
+          "raw": "Upon assisting or defeating a unit, Harak gains 60% of their ATK and 60% of their max HP, up to 220% of his base ATK and 220% of his max HP.",
+          "active": [
+            "Upon assisting or defeating a unit, Harak gains 60% of their ATK and 60% of their max HP, up to 220% of his base ATK and 220% of his max HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Gains up to 240% of his base ATK and 240% of his max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Gains up to 260% of his base ATK and 260% of his max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Recovers HP when assisting or defeating a unit, with the recovery amount equal to 50% of the defeated unit's max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "ex+15",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 3,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self (EX+15)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
+          "active": [
+            "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 700.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown."
+        },
+        {
+          "label": "Instant defeat",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Boss encounter",
+          "tier": "base",
+          "targeting": "Allies",
+          "description": "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "haste",
+      "max_hp",
+      "crit",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "harak",
+    "display_name": "Harak",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Harak launches a vicious assault, striking an enemy 10 times, each dealing 60% (ATK-based) + 10% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each strike also deals extra damage equal to 6% of the enemy's lost HP, up to 120% of Harak's own ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The final strike deals 200% (ATK-based) + 20% (SP-based) damage and knocks the enemy down.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While casting this skill, Harak remains Unaffected and prevents the enemy from recovering HP for 6s, causing them to lose 40% (ATK-based) HP per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each successive strike to 70% (ATK-based) + 10% (SP-based), And the damage of the final strike to 210% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each successive strike to 80% (ATK-based) + 10% (SP-based), And the damage of the final strike to 220% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each successive strike to 90% (ATK-based) + 10% (SP-based), And the damage of the final strike to 230% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage of each successive strike to 100% (ATK-based) + 10% (SP-based), And the damage of the final strike to 240% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 250% (ATK-based) + 25% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Harak enters feast mode when a battle starts, increasing Crit by 35 + 6 (SP-based) and Haste by 50 for 12s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Assissting and defeating a unit resets the duration of feast mode.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "During this time, he is Unaffected.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Harak cannot devour an enemy whose HP exceeds 200% (ATK-based) of his own ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Crit granted by feast mode to 40 + 6 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Crit granted by feast mode to 45 + 6 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Crit granted by feast mode to 50 + 6 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Harak increases Life Drain by 8 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time he assists or defeats an enemy, he gains an extra 1 Life Drain, up to a maximum of 4.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Harak increases Life Drain by 10 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time he assists or defeats an enemy, he gains an extra 2 Life Drain, up to a maximum of 8.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Harak increases Life Drain by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each time he assists or defeats an enemy, he gains an extra 3 Life Drain, up to a maximum of 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Upon assisting or defeating a unit, Harak gains 60% of their ATK and 60% of their max HP, up to 220% of his base ATK and 220% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains up to 240% of his base ATK and 240% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Gains up to 260% of his base ATK and 260% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Recovers HP when assisting or defeating a unit, with the recovery amount equal to 50% of the defeated unit's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "31760791655f9b59ce8887717e71e348605903a4ef21bf7abcf77848c554cd06",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

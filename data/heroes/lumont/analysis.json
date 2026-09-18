@@ -1,0 +1,729 @@
+{
+  "schema_version": 2,
+  "id": "lumont",
+  "display_name": "Lumont",
+  "local": {
+    "long_name": "Lumont - Benign Horn",
+    "faction": "mauler",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Lumont's Charge": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Lumont selects a tile in range and charges at it, knocking enemies in his path back toward the selected tile. When Lumont reaches the selected tile, he deals 240% (ATK-based) + 30% (SP-based) damage to all adjacent enemies and taunts them for 3s. Lumont is unaffected while casting this skill.",
+          "active": [
+            "Lumont selects a tile in range and charges at it, knocking enemies in his path back toward the selected tile.",
+            "When Lumont reaches the selected tile, he deals 240% (ATK-based) + 30% (SP-based) damage to all adjacent enemies and taunts them for 3s.",
+            "Lumont is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Taunts enemies for 4s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "crowd_control",
+            "cc-type": "taunt",
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 8,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Knock back — path"
+          },
+          {
+            "label": "Taunt — path"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Totem Ward": {
+        "category": "skill1",
+        "description": {
+          "raw": "Lumont gains a shield from Totem ward that blocks 450% (ATK-based) + 40% (SP-based) damage for 12s. For every adjacent enemy, the shield value is increased by 30%. He also increases Phys DEF of 2 closest allies by 30% for 7s.",
+          "active": [
+            "Lumont gains a shield from Totem ward that blocks 450% (ATK-based) + 40% (SP-based) damage for 12s.",
+            "For every adjacent enemy, the shield value is increased by 30%.",
+            "He also increases Phys DEF of 2 closest allies by 30% for 7s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value by 35% for every adjacent enemy."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value by 40% for every adjacent enemy."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value by 45% for every adjacent enemy."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_defensive",
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 15.0,
+        "initial_cooldown": 4.0,
+        "skill_card_tags": [
+          {
+            "label": "Phys DEF — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "War Stomp": {
+        "category": "skill2",
+        "description": {
+          "raw": "Lumont stomps the ground dealing 240% (ATK-based) damage to adjacent enemies and stunning them for 1 + 0.25 (SP-based)s.",
+          "active": [
+            "Lumont stomps the ground dealing 240% (ATK-based) damage to adjacent enemies and stunning them for 1 + 0.25 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases dmaage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces this skill's cooldown by 1s for every enemy hit."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases dmaage to 280% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.25
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 280.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 6.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Stun — Area"
+          },
+          {
+            "label": "Stun — Area (Supreme+)"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Lumont increases his Haste by 9 during battle. His Haste is increased by an extra 6 when there are at least 2 enemies nearby.",
+          "active": [
+            "Lumont increases his Haste by 9 during battle.",
+            "His Haste is increased by an extra 6 when there are at least 2 enemies nearby."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Lumont increases his Haste by 12 during battle.",
+                "His Haste is increased by an extra 8 when there are at least 2 enemies nearby."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Lumont increases his Haste by 15 during battle.",
+                "His Haste is increased by an extra 10 when there are at least 2 enemies nearby."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Totem Slam": {
+        "category": "skill4",
+        "description": {
+          "raw": "Lumont slams the ground with totem 3 times after receiving damage equal to 40% of his max HP, dealing 150% (ATK-based) damage to enemies within 1, 2, and 3 tiles in order and reducing their ATK by 25% for 6s. His 3rd slam also knocks the enemies hit into the air. Lumont is unaffected while casting this skill.",
+          "active": [
+            "Lumont slams the ground with totem 3 times after receiving damage equal to 40% of his max HP, dealing 150% (ATK-based) damage to enemies within 1, 2, and 3 tiles in order and reducing their ATK by 25% for 6s.",
+            "His 3rd slam also knocks the enemies hit into the air.",
+            "Lumont is unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Gains an extra skill attempt when a battle starts or an ally is defeated for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases damage to 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 210% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 1.0
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_cooldown": 0.25,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Shield — Self (Supreme+)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock up — Single target"
+          },
+          {
+            "label": "Stun — Single target (Supreme+)"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.",
+          "active": [
+            "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 7.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 1.0
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "haste",
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.9166666666666666,
+      "max_hp": 0.08333333333333333
+    },
+    "id": "lumont",
+    "display_name": "Lumont",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Lumont selects a tile in range and charges at it, knocking enemies in his path back toward the selected tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Lumont reaches the selected tile, he deals 240% (ATK-based) + 30% (SP-based) damage to all adjacent enemies and taunts them for 3s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lumont is unaffected while casting this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 260% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Taunts enemies for 4s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 280% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage to 300% (ATK-based) + 30% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lumont gains a shield from Totem ward that blocks 450% (ATK-based) + 40% (SP-based) damage for 12s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "For every adjacent enemy, the shield value is increased by 30%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He also increases Phys DEF of 2 closest allies by 30% for 7s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value by 35% for every adjacent enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value by 40% for every adjacent enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value by 45% for every adjacent enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Lumont stomps the ground dealing 240% (ATK-based) damage to adjacent enemies and stunning them for 1 + 0.25 (SP-based)s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases dmaage to 260% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces this skill's cooldown by 1s for every enemy hit.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases dmaage to 280% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Lumont increases his Haste by 9 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Haste is increased by an extra 6 when there are at least 2 enemies nearby.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Lumont increases his Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Haste is increased by an extra 8 when there are at least 2 enemies nearby.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Lumont increases his Haste by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "His Haste is increased by an extra 10 when there are at least 2 enemies nearby.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lumont slams the ground with totem 3 times after receiving damage equal to 40% of his max HP, dealing 150% (ATK-based) damage to enemies within 1, 2, and 3 tiles in order and reducing their ATK by 25% for 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "His 3rd slam also knocks the enemies hit into the air.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Lumont is unaffected while casting this skill.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Gains an extra skill attempt when a battle starts or an ally is defeated for the first time.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases damage to 180% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases damage to 210% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "9422f7eb88ee1ed808f0ba0041596cd34ac1aab05f4327970284f7f4dfa5b3b1",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

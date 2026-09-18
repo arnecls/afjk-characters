@@ -1,0 +1,637 @@
+{
+  "schema_version": 2,
+  "id": "smokey-meerky",
+  "display_name": "Smokey & Meerky",
+  "local": {
+    "long_name": "Smokey & Meerky - Wasteland Apothecary",
+    "faction": "mauler",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": true,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 8,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Special Aroma": {
+        "category": "ultimate",
+        "description": {
+          "raw": "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling. While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second. Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted. Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile. - Improved Aroma II: Grants 30 haste to all allies within the aroma.",
+          "active": [
+            "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
+            "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
+            "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
+            "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
+            "- Improved Aroma II: Grants 30 haste to all allies within the aroma."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 24% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 27% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 29% (ATK-based) per second."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "HP recovery increases to 31% (ATK-based) per second."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 170.0
+              }
+            ],
+            "duration": -1.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 170.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 2,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "HoT — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Area",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Energizing Formula": {
+        "category": "skill1",
+        "description": {
+          "raw": "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based). Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
+          "active": [
+            "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
+            "Additionally, for each non-summoned ally affected, they recover 5 Energy per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "ATK buff increases to 18% + 1% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Energy recovery increases to 8 per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "ATK buff increases to 20% + 1% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 8.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Area",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Quick Recovery": {
+        "category": "skill2",
+        "description": {
+          "raw": "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
+          "active": [
+            "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Healing increases to 100% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Healing increases to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Healing increases to 120% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 5.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 2,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Area",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Smokey & Meerky passively increase their ATK by 6%. If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+          "active": [
+            "Smokey & Meerky passively increase their ATK by 6%.",
+            "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Withering Potion": {
+        "category": "skill4",
+        "description": {
+          "raw": "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile. Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second. However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
+          "active": [
+            "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
+            "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
+            "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 14.0
+              }
+            ],
+            "duration": 10.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 0.1
+          }
+        ],
+        "skill_range": 4,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Stun — Area"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
+          "active": [
+            "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based)."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "dot",
+        "Area"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "smokey-meerky",
+    "display_name": "Smokey & Meerky",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "skill1",
+    "skill_chunks": [
+      [
+        "base",
+        "After the battle starts, Smokey & Meerky immediately create a special aroma within 2 tiles, continuously emitting its effects while channeling.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While the aroma is present, Smokey & Meerky recover 50 Energy per second, and all allies inside the area of effect regain 21% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Passive: Smokey & Meerky cannot maintain the aroma if they are under Control Effects and cannot recreate it for 4 seconds once it is interrupted.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Active: Smokey & Meerky heal all allies within the aroma by 170% (ATK-based) + 15% (SP-based), and the aroma permanently enhances as follows: - Improved Aroma I: Expands the area of effect by 1 tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "- Improved Aroma II: Grants 30 haste to all allies within the aroma.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 24% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 27% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 29% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "HP recovery increases to 31% (ATK-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Additionally, for each non-summoned ally affected, they recover 5 Energy per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "ATK buff increases to 18% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Energy recovery increases to 8 per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "ATK buff increases to 20% + 1% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Healing increases to 100% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Healing increases to 110% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Healing increases to 120% (ATK-based) + 10% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Smokey & Meerky passively increase their ATK by 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "The Special Aroma gains a third upgrade, increasing its area of effect by 1 tile.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Additionally, when the skill reaches its third enhancement for the first time, the aroma is empowered for 10 seconds, causing all enemies within range to lose 12% of their max HP per second.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "However, the HP lost cannot exceed 200% of Smokey & Meerky’s ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Enemy HP loss per second increases to 14%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Enemies in range stunned for 0.1s every time they lose HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Enemy HP loss per second increases to 15%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Whenever Smokey & Meerky use Special Aroma, their healing is increased by 30% (ATK-based).",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "97938e4826d5380854bc4d84dd26bd9e6a4e17bb33d8cd5c97af889d04946dd8",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

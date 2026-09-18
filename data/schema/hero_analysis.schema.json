@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/hero-analysis.schema.json",
+  "title": "Hero-local analysis cache",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "display_name",
+    "local",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "local": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/localAnalysis"
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inputs_hash",
+        "algorithm_hash"
+      ],
+      "properties": {
+        "inputs_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "algorithm_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "localAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "display_name",
+        "long_name",
+        "skills",
+        "synergy_profile",
+        "signature_calculated"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "long_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "faction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role_category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "is_energy_provider": {
+          "type": "boolean"
+        },
+        "is_melee": {
+          "type": "boolean"
+        },
+        "is_dual_range": {
+          "type": "boolean"
+        },
+        "default_range": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "release_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "season": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "season_number": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "skills": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "synergy_profile": {
+          "type": "object"
+        },
+        "damage_entries": {
+          "type": "array"
+        },
+        "benefit_stats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scalar_stat_shares": {
+          "type": "object"
+        },
+        "positional_tile_buff_labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proximity_aura_buff_labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proximity_aura_radius": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "signature_calculated": {
+          "type": "string",
+          "minLength": 1
+        },
+        "skill_chunks": {
+          "type": "array"
+        },
+        "primary_damage_type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

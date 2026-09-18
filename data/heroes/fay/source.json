@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "id": "fay",
+  "display_name": "Fay",
+  "source": {
+    "title": "Fay - Colorful Dancer",
+    "name": "Fay",
+    "tags": "Lightbearer · Support · Magic",
+    "faction": "Lightbearer",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A Support who wields an ancient gemstone that can enhance allies over a large area.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Vibrant Dance",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "3 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Fay selects a direction and casts vitality magic to frontal allies within a 3-tile arc, restoring 300% (ATK-based) + 30% (SP-based) HP and increasing their ATK by 12% for 8s.",
+          "active": [
+            "Fay selects a direction and casts vitality magic to frontal allies within a 3-tile arc, restoring 300% (ATK-based) + 30% (SP-based) HP and increasing their ATK by 12% for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases effect duration to 9s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the ATK of allies within range by 14%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the ATK SPD of allies within range by 15."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases effect duration to 10s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Fay enhances and heals allies within range."
+      },
+      {
+        "section": "Skill1",
+        "name": "Healing Gemstones",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "11s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Fay heals the weakest allied hero, restoring 50% (ATK-based) HP per second for 4 + 1.5 (SP-based)s.",
+          "active": [
+            "Fay heals the weakest allied hero, restoring 50% (ATK-based) HP per second for 4 + 1.5 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases HP restored per second to 55% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases HP restored per second to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases HP restored per second to 65% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Fay heals 1 ally over time."
+      },
+      {
+        "section": "Skill2",
+        "name": "Blinding Light",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "9s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Fay smacks a gem at an enemy. She causes an explosion when the skill hits, dealing 150% (ATK-based) + 15% (SP-based) damage to adjacent enemies and restoring 150% (ATK-based) + 15% (SP-based) HP to all allies within range.",
+          "active": [
+            "Fay smacks a gem at an enemy.",
+            "She causes an explosion when the skill hits, dealing 150% (ATK-based) + 15% (SP-based) damage to adjacent enemies and restoring 150% (ATK-based) + 15% (SP-based) HP to all allies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increase damage to 155% (ATK-based) + 15% (SP-based) and HP restored to 155% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The gem has 2 forms and 2 different buffs.",
+                "It becomes a ruby if the target deals physical damage, reducing enemies' Phys DEF by 10% and increasing allies' Phys DEF by 10% for 5s.",
+                "It becomes a Sapphire if the target deals magic damage, reducing enemies' Magic DEF by 10% and increasing allies' Magic DEF by 10% for 5s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increase damage to 160% (ATK-based) + 15% (SP-based) and HP restored to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Fay smacks a gem, damaging enemies and healing allies in range."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases HP by 17% during battle.",
+          "active": [
+            "Increases HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases HP during battle"
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Grand Entrance",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Fay grants the buffs of Vibrant Dance and Healing Gemstones on the allied hero deployed 1 tile in front when a battle starts.",
+          "active": [
+            "Fay grants the buffs of Vibrant Dance and Healing Gemstones on the allied hero deployed 1 tile in front when a battle starts."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Also increases the allied hero's Vitality by 15 till the end of a battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the allied hero's Vitality by 20."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the allied hero's Vitality by 25."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Fay enhances and heals the ally deployed on the tile in front of herself when the battle starts."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When an ally's HP ratio drops below 50% for the first time during Healing Gemstones takes effect, Fay heals the ally by 200% (ATK-based) HP. This effect can only be triggered once each time this skill is used.",
+          "active": [
+            "When an ally's HP ratio drops below 50% for the first time during Healing Gemstones takes effect, Fay heals the ally by 200% (ATK-based) HP.",
+            "This effect can only be triggered once each time this skill is used."
+          ]
+        },
+        "description_lite": "Fay grants a low-HP ally powerful healing once when Healing Gemstones takes effect."
+      }
+    ],
+    "range": 3,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

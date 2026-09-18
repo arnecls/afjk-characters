@@ -3,12 +3,8 @@
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parent.parent
-PROFILES_PATH = ROOT / "data" / "hero_summon_profiles.json"
 SUMMONER_BEHAVIOR_TAG = "summoner"
 SUMMONING_LABEL = "Summoning"
 
@@ -18,10 +14,13 @@ _profiles: dict[str, dict[str, Any]] | None = None
 def load_profiles() -> dict[str, dict[str, Any]]:
     global _profiles
     if _profiles is None:
-        if not PROFILES_PATH.exists():
-            _profiles = {}
-        else:
-            _profiles = json.loads(PROFILES_PATH.read_text(encoding="utf-8"))
+        from hero_pipeline.storage import load_ai_by_id, display_names_by_id
+
+        profiles = load_ai_by_id("summon_profile")
+        names = display_names_by_id()
+        _profiles = {
+            names[hero_id]: value for hero_id, value in profiles.items()
+        }
     return _profiles
 
 

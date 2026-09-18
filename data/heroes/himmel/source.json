@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "id": "himmel",
+  "display_name": "Himmel",
+  "source": {
+    "title": "Himmel - The Legendary Hero",
+    "name": "Himmel",
+    "tags": "Dimensional · Warrior · Physical",
+    "faction": "Dimensional",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A hopeless do-gooder with a flair for the dramatic. Though driven by a grand quest to defeat the Demon King, he can never resist stopping to help anyone in need along the way.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Heroic Slash",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "3 tiles",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Himmel delivers 9 consecutive slashes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 60% (ATK-based) + 6% (SP-based) damage. He then follows up with a massive sweep that deals 220% (ATK-based) + 30% (SP-based) damage to all enemies in front of him, plus extra true damage equal to 15% + 2% (SP-based) of the target's max HP. The extra true damage cannot exceed 300% (ATK-based) + 30% (SP-based).",
+          "active": [
+            "Himmel delivers 9 consecutive slashes on enemies in a designated frontal area (3-tile wide and 3-tile long), each dealing 60% (ATK-based) + 6% (SP-based) damage.",
+            "He then follows up with a massive sweep that deals 220% (ATK-based) + 30% (SP-based) damage to all enemies in front of him, plus extra true damage equal to 15% + 2% (SP-based) of the target's max HP.",
+            "The extra true damage cannot exceed 300% (ATK-based) + 30% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the final sweep damage to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the final sweep damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the final sweep damage to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the final sweep damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Himmel slashes forward repeatedly before finishing with a massive sweep."
+      },
+      {
+        "section": "Skill1",
+        "name": "Heroic Dash",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains while casting this skill.",
+          "active": [
+            "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s.",
+            "He then returns to his original position.",
+            "Himmel remains while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt to 380% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Himmel dashes at 2 enemies, striking them and knocking them down."
+      },
+      {
+        "section": "Skill2",
+        "name": "Hero Party",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "6s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class. Himmel inspires all party members, increasing their basic stats by 12% (ATK-based) + 1% (SP-based) and granting them a shared permanent shield equal to 1500% + 100% (SP-based) of Himmel's initial ATK. Active. Himmel strikes the target 4 times, each dealing 120% (ATK-based) + 20% (SP-based) damage, then converts 30% + 2% (SP-based) of the damage dealt into healing for all party members.",
+          "passive": [
+            "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class.",
+            "Himmel inspires all party members, increasing their basic stats by 12% (ATK-based) + 1% (SP-based) and granting them a shared permanent shield equal to 1500% + 100% (SP-based) of Himmel's initial ATK."
+          ],
+          "active": [
+            "Himmel strikes the target 4 times, each dealing 120% (ATK-based) + 20% (SP-based) damage, then converts 30% + 2% (SP-based) of the damage dealt into healing for all party members."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage per strike to 140% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage per strike to 160% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage per strike to 180% (ATK-based) + 20% (SP-based) when Himmel actively casts this skill."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. When a battle starts, Himmel forms a Hero Party with allies. Active. Himmel deals damage to enemies in front of him."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Blue-Moon Blessings",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, blue-moon weed petals sweep across the battlefield, bestowing blessings on Himmel and his party members: Tank & Support: Increases their max HP by 150% (ATK-based) of Himmel's initial ATK. Mage & Himmel: Increases their ATK by 8% of Himmel's initial ATK. If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30.",
+          "active": [
+            "When a battle starts, blue-moon weed petals sweep across the battlefield, bestowing blessings on Himmel and his party members: Tank & Support: Increases their max HP by 150% (ATK-based) of Himmel's initial ATK.",
+            "Mage & Himmel: Increases their ATK by 8% of Himmel's initial ATK.",
+            "If Frieren is part of Himmel's Hero Party, Himmel places a flower wreath on her, permanently increasing both Himmel's and Frieren's Penetration by 30."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The Tank and Support members increase their max HP by 200% (ATK-based) of Himmel's initial ATK.",
+                "while the Mage member and Himmel increase their ATK by 10% of Himmel's initial ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "10s into a battle, the Blue-Moon Blessings sweep across the battlefield again, healing all party members for 40% of their max HP and removing all their debuffs.",
+                "For each surviving party member, increases Himmel's ATK by 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The Tank and Support members increase their max HP by 250% of Himmel's initial ATK, while the Mage member and Himmel increase their ATK by 12% of Himmel's initial ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, blue-moon weed petals sweep across the battlefield, granting blessings."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Himmel has the same fighting spirit that once drove him to challenge the Demon King. In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets.",
+          "active": [
+            "Himmel has the same fighting spirit that once drove him to challenge the Demon King.",
+            "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets."
+          ]
+        },
+        "description_lite": "Himmel and his party members cause increased HP loss on bosses."
+      }
+    ],
+    "range": 1,
+    "release_date": "2026-05-01",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "A+",
+      "dream_realm": "S+",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

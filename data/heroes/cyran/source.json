@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "cyran",
+  "display_name": "Cyran",
+  "source": {
+    "title": "Cyran - Umbral Weaver",
+    "name": "Cyran",
+    "tags": "Lightbearer · Mage · Magic",
+    "faction": "Lightbearer",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "An ambitious Mage who casts a wide range of spells to confound enemies in battle.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Gravitic Requiem",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Cyran selects a tile and summons a black hole that lasts for 5s, with its center covering a 1-tile radius. Every 0.25s, enemies within the center take 16% (ATK-based) + 2% (SP-based) damage, and those outside the center but within 4 tiles take 6% (ATK-based) + 1% (SP-based) damage. All enemies on the battlefield are pulled toward the center, with the gravitational force increasing as they get closer. Non-Boss enemies within the center are immediately defeated if their current HP is below Cyran's 600% (ATK-based) + 20% (SP-based) and their HP ratio is below 15% + 1% (SP-based).",
+          "active": [
+            "Cyran selects a tile and summons a black hole that lasts for 5s, with its center covering a 1-tile radius.",
+            "Every 0.25s, enemies within the center take 16% (ATK-based) + 2% (SP-based) damage, and those outside the center but within 4 tiles take 6% (ATK-based) + 1% (SP-based) damage.",
+            "All enemies on the battlefield are pulled toward the center, with the gravitational force increasing as they get closer.",
+            "Non-Boss enemies within the center are immediately defeated if their current HP is below Cyran's 600% (ATK-based) + 20% (SP-based) and their HP ratio is below 15% + 1% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the black hole's damage to enemies within the center to 17% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 7% (ATK-based) + 1% (SP-based) per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the black hole's damage to enemies within the center to 18% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 8% (ATK-based) + 1% (SP-based) per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the black hole's damage to enemies within the center to 19% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 9% (ATK-based) + 1% (SP-based) per second."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the black hole's damage to enemies within the center to 20% (ATK-based) + 2% (SP-based) per 0.25s, and to enemies at the edges to 10% (ATK-based) + 1% (SP-based) per second."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cyran summons a black hole that continuously pulls enemies toward its center while dealing damage. Enemies with low HP within the center are immediately defeated."
+      },
+      {
+        "section": "Skill1",
+        "name": "Arcane Barrage",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Cyran casts 3 magic orbs towards the area with the most enemies, dealing 65% (ATK-based) + 7% (SP-based) damage to adjacent enemies.",
+          "active": [
+            "Cyran casts 3 magic orbs towards the area with the most enemies, dealing 65% (ATK-based) + 7% (SP-based) damage to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 70% (ATK-based) + 7% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 75% (ATK-based) + 7% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 80% (ATK-based) + 7% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cyran casts 3 magic orbs to deal damage to enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Cursed Grasp",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "9s",
+          "Skill Range": "6 tiles"
+        },
+        "description": {
+          "raw": "Cyran uses magic to lift the nearest enemy into the air, imprisoning them for 1s before hurling them into the area with the most enemies. This knocks the target down for 0.5s and deals 150% (ATK-based) + 10% (SP-based) damage to enemies within 1 tile of the target. When casting this skill, Cyran prioritizes targeting an enemy who is neither unaffected nor steadfast.",
+          "active": [
+            "Cyran uses magic to lift the nearest enemy into the air, imprisoning them for 1s before hurling them into the area with the most enemies.",
+            "This knocks the target down for 0.5s and deals 150% (ATK-based) + 10% (SP-based) damage to enemies within 1 tile of the target.",
+            "When casting this skill, Cyran prioritizes targeting an enemy who is neither unaffected nor steadfast."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 160% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 180% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cyran uses magic to lift the nearest enemy and hurls them into the area with the most enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When in battle, Cyran increases his Crit by 18, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 12.",
+          "active": [
+            "When in battle, Cyran increases his Crit by 18, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 12."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "When in battle, Cyran increases his Crit by 24, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 16."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "When in battle, Cyran increases his Crit by 30, and after defeating an enemy with Gravitic Requiem, his Crit is further increased by 20."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Crit during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Mystic Recollection",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected. Confining Spell: Deals 25% (ATK-based) damage to the rearmost enemy, imprisoning them for 1.5s and preventing from moving or acting. Starshard Spell: Conjures a dark flame across the battlefield, dealing 40% (ATK-based) true damage to all enemies and reducing their ATK SPD by 20 for 5s.",
+          "active": [
+            "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected.",
+            "Confining Spell: Deals 25% (ATK-based) damage to the rearmost enemy, imprisoning them for 1.5s and preventing from moving or acting.",
+            "Starshard Spell: Conjures a dark flame across the battlefield, dealing 40% (ATK-based) true damage to all enemies and reducing their ATK SPD by 20 for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases dark flame damage to 45% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "If Merlin is present on the enemy side, Merlin is silenced for 8s when a battle starts, preventing Merlin from casting any skills.",
+                "Any skills Merlin would've cast when a battle starts are triggered after silence ends, at which point Cyran loses 5% of his current HP.",
+                "If Merlin is absent on the enemy side, Cyran permanently increases his ATK by 10%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases dark flame damage to 50% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cyran draws on spells from his memories, casting them when a battle starts to enhance himself an attack enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Gains extra 200 initial Energy.",
+          "active": [
+            "Gains extra 200 initial Energy."
+          ]
+        },
+        "description_lite": "Gains extra Energy."
+      }
+    ],
+    "range": 6,
+    "release_date": "2025-02-26",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

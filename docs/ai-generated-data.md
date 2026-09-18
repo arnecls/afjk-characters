@@ -4,6 +4,21 @@ The `data/` directory contains several JSON files that are considered **source d
 
 This document summarizes the content and purpose of each AI-generated file, and provides the actual prompts used to generate and update them (sourced from the agent history). You can use these prompts to ask the AI to update the files when new heroes are added.
 
+## Current storage model
+
+AI-authored data is stored in `data/heroes/<hero-id>/ai.json`, beside
+downloaded `source.json` and the rebuildable `analysis.json` cache. Every
+hero also has an `overrides.json` for typed sparse corrections.
+
+For the historical prompts below, map `heroes_data.json` to the hero's
+`source.json`, `skill_effects/<short_name>.json` to
+`ai.json.skill_effects`, and each other roster-keyed file to its corresponding
+field in `ai.json` or `overrides.json`.
+
+Skill effects remain keyed by raw skill section and ascension tier inside the
+hero's `ai.json`. Their `source_hash` is checked against that hero's source
+skill description. Cross-hero references use roster IDs.
+
 ---
 
 ## 5. `skill_effects/<short_name>.json`
@@ -18,7 +33,7 @@ staleness checks.
 
 **Source of truth** for effect detection (buffs, debuffs, CC, damage, healing,
 shields, energy, immunities, special provides/requires). The pipeline loads
-these files in `analyze_hero()` instead of regex parsing.
+these files in `analyze_local()` instead of regex parsing.
 
 ### Prompt to Update
 
@@ -26,7 +41,7 @@ Use the [extract-skill-effects](../.cursor/skills/extract-skill-effects/SKILL.md
 skill workflow: read skill text, emit schema-valid JSON, validate, show diff,
 get approval, save, run `just views` and `just validate`.
 
-Do not patch regex rule tables in `rewrite-summaries.py` for effect fixes.
+Do not patch regex rule tables in local analysis for effect fixes.
 
 ---
 

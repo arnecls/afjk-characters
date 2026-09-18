@@ -1,0 +1,605 @@
+{
+  "schema_version": 2,
+  "id": "kruger",
+  "display_name": "Kruger",
+  "local": {
+    "long_name": "Kruger - Dauntless Warrior",
+    "faction": "mauler",
+    "class": "warrior",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Devastating Axe": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Kruger launches a mighty slash to knock down an enemy for 1.5s, dealing 450% (ATK-based) + 50% (SP-based) damage and inflicting them with 3 stacks of Shatter Armor. Each stack reduces the target's Phys DEF by 10%, up to 4 stacks on a target.",
+          "active": [
+            "Kruger launches a mighty slash to knock down an enemy for 1.5s, dealing 450% (ATK-based) + 50% (SP-based) damage and inflicting them with 3 stacks of Shatter Armor.",
+            "Each stack reduces the target's Phys DEF by 10%, up to 4 stacks on a target."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: If Kruger is present, the ally inflicts enemies with an extra stack of Shatter Armor when reducing their Phys DEF."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 465% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 480% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 500% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 4,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 1.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock down — Single target"
+          }
+        ]
+      },
+      "Smashing Assault": {
+        "category": "skill1",
+        "description": {
+          "raw": "Kruger slashes an enemy, dealing 240% (ATK-based) damage and inflicting them with a stack of Shatter Armor.",
+          "active": [
+            "Kruger slashes an enemy, dealing 240% (ATK-based) damage and inflicting them with a stack of Shatter Armor."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Increase damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increase damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increase damage to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 290.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 5.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Vital Strike": {
+        "category": "skill2",
+        "description": {
+          "raw": "Kruger launches a powerful attack on adjacent enemies with at least 4 stacks of Shatter Armor and not affected by Vulnerable, dealing 400% (ATK-based) + 50% (SP-based) damage and inflicting Vulnerable. For Vulnerable enemies, their physical damage taken is increased by 40%, and 40% of their damage taken in transformed to Kruger's HP.",
+          "active": [
+            "Kruger launches a powerful attack on adjacent enemies with at least 4 stacks of Shatter Armor and not affected by Vulnerable, dealing 400% (ATK-based) + 50% (SP-based) damage and inflicting Vulnerable.",
+            "For Vulnerable enemies, their physical damage taken is increased by 40%, and 40% of their damage taken in transformed to Kruger's HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Increases damage to 440% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Increases damage to 480% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Increases damage to 520% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Vulnerable",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 570.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat"
+          }
+        ],
+        "cooldown": 2.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Damage taken",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Vulnerable — Area",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Ranged DEF by 16 during battle.",
+          "active": [
+            "Increases Ranged DEF by 16 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Ranged DEF by 21 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Ranged DEF by 26 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Ranged DEF",
+            "label": "buff_defensive",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Ranged DEF — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Ruthless Vanguard": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a battle starts, Kruger gains a shield that blocks damage equal to 40% (HP-based) for 15s if no allies are present within the surrounding 1 tile. The shield also grants him control immunity. Additionally, Kruger gains 30 Life Drain when no allies are detected within the surrounding 1 tile.",
+          "active": [
+            "When a battle starts, Kruger gains a shield that blocks damage equal to 40% (HP-based) for 15s if no allies are present within the surrounding 1 tile.",
+            "The shield also grants him control immunity.",
+            "Additionally, Kruger gains 30 Life Drain when no allies are detected within the surrounding 1 tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Increases the shield value to 44% (HP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Removes the distance limit for Vital Strike (the other restrictions remain).",
+                "Kruger can rush to Vulnerable enemies and cast Vital Strike to deal damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Increases the shield value to 48% (HP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is defeated by Vital Strike, stacking up to 2 stacks.",
+          "active": [
+            "Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is defeated by Vital Strike, stacking up to 2 stacks."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Stacking",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Each stack reduces the target's Phys DEF by 10%, up to 4 stacks on a target."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Vulnerable enemy",
+          "tier": "base",
+          "targeting": "Enemies",
+          "description": "For Vulnerable enemies, their physical damage taken is increased by 40%, and 40% of their damage taken in transformed to Kruger's HP."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "shield",
+      "physical_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.8,
+      "max_hp": 0.2
+    },
+    "id": "kruger",
+    "display_name": "Kruger",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Kruger launches a mighty slash to knock down an enemy for 1.5s, dealing 450% (ATK-based) + 50% (SP-based) damage and inflicting them with 3 stacks of Shatter Armor.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each stack reduces the target's Phys DEF by 10%, up to 4 stacks on a target.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 51: If Kruger is present, the ally inflicts enemies with an extra stack of Shatter Armor when reducing their Phys DEF.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 111: Increases damage to 465% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Increases damage to 480% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Increases damage to 500% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Kruger slashes an enemy, dealing 240% (ATK-based) damage and inflicting them with a stack of Shatter Armor.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Increase damage to 260% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Increase damage to 260% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increase damage to 260% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Kruger launches a powerful attack on adjacent enemies with at least 4 stacks of Shatter Armor and not affected by Vulnerable, dealing 400% (ATK-based) + 50% (SP-based) damage and inflicting Vulnerable.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For Vulnerable enemies, their physical damage taken is increased by 40%, and 40% of their damage taken in transformed to Kruger's HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Increases damage to 440% (ATK-based) + 50% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Increases damage to 480% (ATK-based) + 50% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Increases damage to 520% (ATK-based) + 50% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Ranged DEF by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Ranged DEF by 21 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Ranged DEF by 26 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, Kruger gains a shield that blocks damage equal to 40% (HP-based) for 15s if no allies are present within the surrounding 1 tile.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The shield also grants him control immunity.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Additionally, Kruger gains 30 Life Drain when no allies are detected within the surrounding 1 tile.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: Increases the shield value to 44% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Removes the distance limit for Vital Strike (the other restrictions remain).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Kruger can rush to Vulnerable enemies and cast Vital Strike to deal damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: Increases the shield value to 48% (HP-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is defeated by Vital Strike, stacking up to 2 stacks.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "044d8f5ba7f93f0d242ecec899267bfcd103baed45070f7777fb59b149e716a4",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

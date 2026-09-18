@@ -1,0 +1,592 @@
+{
+  "schema_version": 2,
+  "id": "mikola",
+  "display_name": "Mikola",
+  "local": {
+    "long_name": "Mikola - Warbeat Compere",
+    "faction": "mauler",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-08-19",
+    "season": "Song of Strife",
+    "season_number": 1,
+    "skills": {
+      "Dauntless Hymn": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Mikola generates a 2-tile Courage Sphere that follows her around, increasing Haste by 40 and Ranged DEF by 10 for all allies within range, while increasing her own Haste by 30 and Ranged DEF by 10. When Mikola deals total damage equal to 300% of her initial ATK while Courage Sphere is around, a Healing Wave will emerge, restoring 80% (ATK-based) + 10% (SP-based) HP to all allies within range. Courage Sphere lasts for 10s.",
+          "active": [
+            "Mikola generates a 2-tile Courage Sphere that follows her around, increasing Haste by 40 and Ranged DEF by 10 for all allies within range, while increasing her own Haste by 30 and Ranged DEF by 10.",
+            "When Mikola deals total damage equal to 300% of her initial ATK while Courage Sphere is around, a Healing Wave will emerge, restoring 80% (ATK-based) + 10% (SP-based) HP to all allies within range.",
+            "Courage Sphere lasts for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the healing amount of Healing Wave to 90% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the duration of Courage Sphere to 12s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the healing amount of Healing Wave to 100% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the healing amount of Healing Wave to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 110.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 2,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Heroic Duel": {
+        "category": "skill1",
+        "description": {
+          "raw": "Mikola generates an Honor Arena spanning the battlefield when a battle starts, lasting until the battle ends. The side with more units within the arena will gain control of it after maintaining the advantage for 3s. Mikola restores all allies' HP by 12% (ATK-based) + 2% (SP-based) per second and increases their ATK by 14% + 1% (SP-based) when her side gains control of the Honor Arena.",
+          "active": [
+            "Mikola generates an Honor Arena spanning the battlefield when a battle starts, lasting until the battle ends.",
+            "The side with more units within the arena will gain control of it after maintaining the advantage for 3s.",
+            "Mikola restores all allies' HP by 12% (ATK-based) + 2% (SP-based) per second and increases their ATK by 14% + 1% (SP-based) when her side gains control of the Honor Arena."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases all allies' ATK by 16% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases all allies' ATK by 18% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases all allies' ATK by 20% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 14.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — All units",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Vigorous Call": {
+        "category": "skill2",
+        "description": {
+          "raw": "Mikola rings her bell, restoring 130% (ATK-based) + 20% (SP-based) HP and increasing Phys and Magic DEF by 40% for herself and the 2 weakest allies for 5s.",
+          "active": [
+            "Mikola rings her bell, restoring 130% (ATK-based) + 20% (SP-based) HP and increasing Phys and Magic DEF by 40% for herself and the 2 weakest allies for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP recovery amount to 150% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP recovery amount to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP recovery amount to 190% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 130.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 1.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Magic DEF — Multiple targets",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Mikola increases her ATK by 9% during battle. She gains an extra 6% ATK when her side gains control of the Honor Arena.",
+          "active": [
+            "Mikola increases her ATK by 9% during battle.",
+            "She gains an extra 6% ATK when her side gains control of the Honor Arena."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Mikola increases her ATK by 12% during battle.",
+                "She gains an extra 8% ATK when her side gains control of the Honor Arena."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Mikola increases her ATK by 15% during battle.",
+                "She gains an extra 10% ATK when her side gains control of the Honor Arena."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Passionate Opening": {
+        "category": "skill4",
+        "description": {
+          "raw": "Mikola enhances her Courage Sphere after it has been active for 6s, granting Combat Fury to all allied heroes (except herself) within range, and dealing damage equal to 50% of her ATK per second to enemies adjacent to these allies. The enhancements reset when the Courage Sphere disappears.",
+          "active": [
+            "Mikola enhances her Courage Sphere after it has been active for 6s, granting Combat Fury to all allied heroes (except herself) within range, and dealing damage equal to 50% of her ATK per second to enemies adjacent to these allies.",
+            "The enhancements reset when the Courage Sphere disappears."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 60% of her ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases 30 Vitality for allies carrying Combat Fury."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 70% of her ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "ex+10",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Vitality",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 70.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 2,
+        "skill_card_tags": [
+          {
+            "label": "Vitality — Multiple targets (EX+10)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena.",
+          "active": [
+            "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena."
+          ]
+        },
+        "effects": [
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Ally DoT on enemies",
+          "tier": "mythic+",
+          "targeting": "Area",
+          "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [],
+    "benefit_stats": [
+      "atk",
+      "haste"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "mikola",
+    "display_name": "Mikola",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Mikola generates a 2-tile Courage Sphere that follows her around, increasing Haste by 40 and Ranged DEF by 10 for all allies within range, while increasing her own Haste by 30 and Ranged DEF by 10.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When Mikola deals total damage equal to 300% of her initial ATK while Courage Sphere is around, a Healing Wave will emerge, restoring 80% (ATK-based) + 10% (SP-based) HP to all allies within range.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Courage Sphere lasts for 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the healing amount of Healing Wave to 90% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the duration of Courage Sphere to 12s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the healing amount of Healing Wave to 100% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the healing amount of Healing Wave to 110% (ATK-based) + 10% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Mikola generates an Honor Arena spanning the battlefield when a battle starts, lasting until the battle ends.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The side with more units within the arena will gain control of it after maintaining the advantage for 3s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Mikola restores all allies' HP by 12% (ATK-based) + 2% (SP-based) per second and increases their ATK by 14% + 1% (SP-based) when her side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases all allies' ATK by 16% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases all allies' ATK by 18% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases all allies' ATK by 20% (ATK-based) + 1% (SP-based) when Mikola's side gains control of the Honor Arena.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Mikola rings her bell, restoring 130% (ATK-based) + 20% (SP-based) HP and increasing Phys and Magic DEF by 40% for herself and the 2 weakest allies for 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP recovery amount to 150% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP recovery amount to 170% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases HP recovery amount to 190% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Mikola increases her ATK by 9% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 6% ATK when her side gains control of the Honor Arena.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Mikola increases her ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 8% ATK when her side gains control of the Honor Arena.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Mikola increases her ATK by 15% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "She gains an extra 10% ATK when her side gains control of the Honor Arena.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Mikola enhances her Courage Sphere after it has been active for 6s, granting Combat Fury to all allied heroes (except herself) within range, and dealing damage equal to 50% of her ATK per second to enemies adjacent to these allies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The enhancements reset when the Courage Sphere disappears.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 60% of her ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases 30 Vitality for allies carrying Combat Fury.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases Mikola's damage dealt per second to enemies adjacent to allies carrying Combat Fury to 70% of her ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "bdd7a31828f8bfdec5fffab1980ad3bbca4b7671fe0e81d3d05ed46d6127659f",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

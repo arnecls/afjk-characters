@@ -1,0 +1,644 @@
+{
+  "schema_version": 2,
+  "id": "daimon",
+  "display_name": "Daimon",
+  "local": {
+    "long_name": "Daimon - Forsaken Child",
+    "faction": "graveborn",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 3,
+    "release_date": "2025-06-05",
+    "season": "Echoes of Dissent",
+    "season_number": 4,
+    "skills": {
+      "Dolly Defender": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. Daimon's guardian spirit, Stitchy, fights alongside him in battle, automatically attacking the enemy closest to Daimon for 90% (ATK-based) damage. Stitchy cannot be targeted or attacked, and is defeated when Daimon is defeated. Active. Daimon commands Stitchy to unleash an X-shaped slash at the area with the most enemies, dealing true damage equal to 20% + 3% (SP-based) of each target's max HP. This damage cannot exceed 500% (ATK-based). Daimon and his two weakest allies then gain a shield equal to 60% of the damage dealt, lasting for 8s.",
+          "passive": [
+            "Daimon's guardian spirit, Stitchy, fights alongside him in battle, automatically attacking the enemy closest to Daimon for 90% (ATK-based) damage.",
+            "Stitchy cannot be targeted or attacked, and is defeated when Daimon is defeated."
+          ],
+          "active": [
+            "Daimon commands Stitchy to unleash an X-shaped slash at the area with the most enemies, dealing true damage equal to 20% + 3% (SP-based) of each target's max HP.",
+            "This damage cannot exceed 500% (ATK-based).",
+            "Daimon and his two weakest allies then gain a shield equal to 60% of the damage dealt, lasting for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the X-shaped slash damage to 22% + 3% (SP-based) of the target's max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the X-shaped slash damage to 23% + 3% (SP-based) of the target's max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the X-shaped slash damage to 24% + 3% (SP-based) of the target's max HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the X-shaped slash damage to 25% + 3% (SP-based) of the target's max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 90.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 28.0
+              }
+            ]
+          }
+        ],
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Max HP-based damage"
+          }
+        ]
+      },
+      "Playtime Plunder": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Every 8s, Stitchy unleashes a powerful attack that deals true damage to the target and adjacent enemies, equal to 20% of the target's max HP. The true damage cannot exceed 400% (ATK-based). 100% of the damage dealt is then converted into a shield for Daimon that lasts for 8s. Active. Daimon drains 17% + 2% (SP-based) of an enemy's max HP and converts it into a shield for himself, lasting 8s. The shield value cannot exceed 250% (ATK-based).",
+          "passive": [
+            "Every 8s, Stitchy unleashes a powerful attack that deals true damage to the target and adjacent enemies, equal to 20% of the target's max HP.",
+            "The true damage cannot exceed 400% (ATK-based).",
+            "100% of the damage dealt is then converted into a shield for Daimon that lasts for 8s."
+          ],
+          "active": [
+            "Daimon drains 17% + 2% (SP-based) of an enemy's max HP and converts it into a shield for himself, lasting 8s.",
+            "The shield value cannot exceed 250% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield conversion rate when Daimon actively casts the skill to 18% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield conversion rate when Daimon actively casts the skill to 19% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield conversion rate when Daimon actively casts the skill to 20% + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Buddy Barrier": {
+        "category": "skill2",
+        "description": {
+          "raw": "Daimon forms a bond with the ally placed behind him during battle preparation. Whenever Daimon gains a shield, the bonded ally also receives 24% + 3% (SP-based) of that shield for the same duration. While shielded by Daimon, the bonded ally gains an extra 15 + 1 (SP-based) Life Drain and 25% + 2% (SP-based) ATK. If the bonded ally is defeated, Daimon will immediately bond with the weakest ally.",
+          "active": [
+            "Daimon forms a bond with the ally placed behind him during battle preparation.",
+            "Whenever Daimon gains a shield, the bonded ally also receives 24% + 3% (SP-based) of that shield for the same duration.",
+            "While shielded by Daimon, the bonded ally gains an extra 15 + 1 (SP-based) Life Drain and 25% + 2% (SP-based) ATK.",
+            "If the bonded ally is defeated, Daimon will immediately bond with the weakest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "The bonded ally receives 26% + 3% (SP-based) of the shield that Daimon gains."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The bonded ally receives 28% + 3% (SP-based) of the shield that Daimon gains."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The bonded ally receives 30% + 3% (SP-based) of the shield that Daimon gains."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Daimon reduces his damage taken by 10% during the battle. While shielded, he further reduces damage taken by an extra 5%.",
+          "active": [
+            "Daimon reduces his damage taken by 10% during the battle.",
+            "While shielded, he further reduces damage taken by an extra 5%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Daimon reduces his damage taken by 14% during the battle.",
+                "While shielded, he further reduces damage taken by an extra 6%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Daimon reduces his damage taken by 18% during the battle.",
+                "While shielded, he further reduces damage taken by an extra 7%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Guardian Howl": {
+        "category": "skill4",
+        "description": {
+          "raw": "Whenever Daimon's cumulative damage taken and shield value loss combined exceed 70% of his max HP, Stitchy returns to him and lets out a terrifying roar, frightening enemies within 3 tiles. The enemy who dealt the most damage to Daimon will also be frightened. The effect lasts for 2s and triggers once every 10s.",
+          "active": [
+            "Whenever Daimon's cumulative damage taken and shield value loss combined exceed 70% of his max HP, Stitchy returns to him and lets out a terrifying roar, frightening enemies within 3 tiles.",
+            "The enemy who dealt the most damage to Daimon will also be frightened.",
+            "The effect lasts for 2s and triggers once every 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Stitchy returns to Daimon whenever Daimon's cumulative damage taken and shield value loss combined exceed 50% of his max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Stitchy's roar unleashes deafening shockwaves, affecting enemies within 3 tiles and the enemy who dealt the most damage to Daimon.",
+                "The roar deals damage equal to 5% of each enemy's max HP every 0.5s for 2s.",
+                "This damage cannot exceed 100% (ATK-based).",
+                "Stitchy converts 100% of the damage dealt into a shield for Daimon which lasts for 8s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage of Stitchy's roar to 6% of each enemy's max HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "crowd_control",
+            "cc-type": "frighten"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 0.5
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DoT (EX+10)"
+          },
+          {
+            "label": "Frighten — Area"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When an allied hero's shield expires, converts 50% of the remaining shield value into healing for that hero.",
+          "active": [
+            "When an allied hero's shield expires, converts 50% of the remaining shield value into healing for that hero."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Daimon's guardian spirit fights alongside him in battle with normal attacks."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Single target"
+      ],
+      [
+        "dot",
+        "Area"
+      ],
+      [
+        "max_hp",
+        "Area"
+      ]
+    ],
+    "benefit_stats": [
+      "max_hp",
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "daimon",
+    "display_name": "Daimon",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Daimon's guardian spirit, Stitchy, fights alongside him in battle, automatically attacking the enemy closest to Daimon for 90% (ATK-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Stitchy cannot be targeted or attacked, and is defeated when Daimon is defeated.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Daimon commands Stitchy to unleash an X-shaped slash at the area with the most enemies, dealing true damage equal to 20% + 3% (SP-based) of each target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This damage cannot exceed 500% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Daimon and his two weakest allies then gain a shield equal to 60% of the damage dealt, lasting for 8s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the X-shaped slash damage to 22% + 3% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the X-shaped slash damage to 23% + 3% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the X-shaped slash damage to 24% + 3% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the X-shaped slash damage to 25% + 3% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Every 8s, Stitchy unleashes a powerful attack that deals true damage to the target and adjacent enemies, equal to 20% of the target's max HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The true damage cannot exceed 400% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "100% of the damage dealt is then converted into a shield for Daimon that lasts for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Daimon drains 17% + 2% (SP-based) of an enemy's max HP and converts it into a shield for himself, lasting 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The shield value cannot exceed 250% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield conversion rate when Daimon actively casts the skill to 18% + 2% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield conversion rate when Daimon actively casts the skill to 19% + 2% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield conversion rate when Daimon actively casts the skill to 20% + 2% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Daimon forms a bond with the ally placed behind him during battle preparation.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Whenever Daimon gains a shield, the bonded ally also receives 24% + 3% (SP-based) of that shield for the same duration.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "While shielded by Daimon, the bonded ally gains an extra 15 + 1 (SP-based) Life Drain and 25% + 2% (SP-based) ATK.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If the bonded ally is defeated, Daimon will immediately bond with the weakest ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The bonded ally receives 26% + 3% (SP-based) of the shield that Daimon gains.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The bonded ally receives 28% + 3% (SP-based) of the shield that Daimon gains.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The bonded ally receives 30% + 3% (SP-based) of the shield that Daimon gains.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Daimon reduces his damage taken by 10% during the battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "While shielded, he further reduces damage taken by an extra 5%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Daimon reduces his damage taken by 14% during the battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "While shielded, he further reduces damage taken by an extra 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Daimon reduces his damage taken by 18% during the battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "While shielded, he further reduces damage taken by an extra 7%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Whenever Daimon's cumulative damage taken and shield value loss combined exceed 70% of his max HP, Stitchy returns to him and lets out a terrifying roar, frightening enemies within 3 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The enemy who dealt the most damage to Daimon will also be frightened.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The effect lasts for 2s and triggers once every 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Stitchy returns to Daimon whenever Daimon's cumulative damage taken and shield value loss combined exceed 50% of his max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Stitchy's roar unleashes deafening shockwaves, affecting enemies within 3 tiles and the enemy who dealt the most damage to Daimon.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The roar deals damage equal to 5% of each enemy's max HP every 0.5s for 2s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "This damage cannot exceed 100% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Stitchy converts 100% of the damage dealt into a shield for Daimon which lasts for 8s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage of Stitchy's roar to 6% of each enemy's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When an allied hero's shield expires, converts 50% of the remaining shield value into healing for that hero.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "e2691ea06e4e047030ab23eeca1f254f83214378dc718867cc4c4d8576455d53",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

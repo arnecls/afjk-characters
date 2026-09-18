@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "id": "nara",
+  "display_name": "Nara",
+  "source": {
+    "title": "Nara - Wrathful Wraith",
+    "name": "Nara",
+    "tags": "Graveborn · Rogue · Physical",
+    "faction": "Graveborn",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A cold-blooded killer, lethal against those who dare to show a moment of weakness.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Crimson Vengeance",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 Tiles",
+          "Initial Energy": "750"
+        },
+        "description": {
+          "raw": "Nara gains 750 Energy when a battle starts. After charging up briefly, she deals 320% (ATK-based) + 35% (SP-based) damage to the target. If she target's HP ratio is lover than 40%, Nara deals 560% (ATK-based) + 60% (SP-based) true damage instead. In Auto Battle, this skill won't be used against non-boss enemy heroes whose HP ratio is above 40%.",
+          "active": [
+            "Nara gains 750 Energy when a battle starts.",
+            "After charging up briefly, she deals 320% (ATK-based) + 35% (SP-based) damage to the target.",
+            "If she target's HP ratio is lover than 40%, Nara deals 560% (ATK-based) + 60% (SP-based) true damage instead.",
+            "In Auto Battle, this skill won't be used against non-boss enemy heroes whose HP ratio is above 40%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 330% (ATK-based) + 35% (SP-based), and increases true damage to 570% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 340% (ATK-based) + 35% (SP-based), and increases true damage to 580% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 350% (ATK-based) + 35% (SP-based), and increases true damage to 590% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 360% (ATK-based) + 35% (SP-based), and increases true damage to 600% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Nara swings her axe at an enemy hero, dealing more damage to the target with lower HP ratio."
+      },
+      {
+        "section": "Skill1",
+        "name": "Phantom Chains",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "4s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range. The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK. This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical",
+          "active": [
+            "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range.",
+            "The target loses 3.5% + 0.5% (SP-based) HP for every tile they are pulled, up to 250% of Nara's ATK.",
+            "This skill won't defeat the enemy and prioritizes attacking the closest enemy in a {{e|symmetrical"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the HP lost per tile pulled to 4% + 0.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the HP lost per tile pulled to 4,5% + 0.5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the HP lost per tile pulled to 5% + 0.5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Nara pulls an enemy hero outside of her attack range toward her."
+      },
+      {
+        "section": "Skill2",
+        "name": "Killer Kick",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Nara kicks a nearby enemy, dealing 130% (ATK-based) + 15% (SP-based) damage, knocking them into the air and down for 2s. She then follows up with 3 rapid hits, each dealing 80% (ATK-based) + 8% (SP-based) damage.",
+          "active": [
+            "Nara kicks a nearby enemy, dealing 130% (ATK-based) + 15% (SP-based) damage, knocking them into the air and down for 2s.",
+            "She then follows up with 3 rapid hits, each dealing 80% (ATK-based) + 8% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases kicking damage to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases kicking damage to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases kicking damage to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Nara knocks the enemy into the air and down, then rapidly deals damage 3 times."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Nara increases her ATK by 10% during battle. After an Assist or Defeat, her ATK increases by an extra 15%.",
+          "active": [
+            "Nara increases her ATK by 10% during battle.",
+            "After an Assist or Defeat, her ATK increases by an extra 15%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Nara increases her ATK by 12% during battle.",
+                "After an Assist or Defeat, her ATK increases by an extra 17%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Nara increases her ATK by 14% during battle.",
+                "After an Assist or Defeat, her ATK increases by an extra 20%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Nara increases her ATK during battle. She gains extra ATK after an Assist or Defeat."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Eerie Execution",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 Tiles"
+        },
+        "description": {
+          "raw": "After defeating an enemy hero with Crimson Vengeance, Nara releases a 2-tile shockwave, dealing damage equal to 8% of the defeated target's max HP to all enemies within the area. This shockwave also heals all allies within the area by 8% of the defeated target's max HP. The damage dealth and healing from this skill cannot exceed 600% of Nara's ATK.",
+          "active": [
+            "After defeating an enemy hero with Crimson Vengeance, Nara releases a 2-tile shockwave, dealing damage equal to 8% of the defeated target's max HP to all enemies within the area.",
+            "This shockwave also heals all allies within the area by 8% of the defeated target's max HP.",
+            "The damage dealth and healing from this skill cannot exceed 600% of Nara's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage to 10% of the defeated target's max HP, and healing to 10% of the defeated target's max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "When Nara's Energy is full, she casts Phantom Chains on an enemy outside of her normal attack range with an HP ratio below 40%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 15% of the defeated target's max HP, and healing to 15% of the defeated target's max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "After defeating an enemy hero with Crimson Vengeance, Nara releases a shockwave that damages enemies and heals allies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "After defating an enemy with Crimson Vengeance, Nara instantly recovers 250 Energy.",
+          "active": [
+            "After defating an enemy with Crimson Vengeance, Nara instantly recovers 250 Energy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "After defating an enemy with Crimson Vengeance, Nara recovers Energy."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-09-09",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

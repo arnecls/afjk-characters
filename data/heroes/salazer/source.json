@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "id": "salazer",
+  "display_name": "Salazer",
+  "source": {
+    "title": "Salazer - Lash of Bantus",
+    "name": "Salazer",
+    "tags": "Graveborn · Rogue · Physical",
+    "faction": "Graveborn",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A Rogue who can imprison enemies with low HP.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Rain of Blades",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Salazer summons plenty of Flying Swords to launch 9 strikes to an enemy with the highest HP. Each strike deals 30% (ATK-based) damage plus damage equal to 5% + 0.5% (SP-based) of the target's current HP. Additional damage cannot exceed 150% + 10% (SP-based) of Salazer's ATK. Salazer prioritizes the enemy with the most HP.",
+          "active": [
+            "Salazer summons plenty of Flying Swords to launch 9 strikes to an enemy with the highest HP.",
+            "Each strike deals 30% (ATK-based) damage plus damage equal to 5% + 0.5% (SP-based) of the target's current HP.",
+            "Additional damage cannot exceed 150% + 10% (SP-based) of Salazer's ATK.",
+            "Salazer prioritizes the enemy with the most HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: The damage dealt by this skill gratns Salazer 50 Life Drain."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: The damage of each strike is increased to 32% (ATK-based) plus damage equal to 5.5% + 0.5% (SP-based) of the target's current HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: The damage of each strike is increased to 34% (ATK-based) plus damage equal to 6% + 0.5% (SP-based) of the target's current HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: The damage of each strike is increased to 36% (ATK-based) plus damage equal to 6.5% + 0.5% (SP-based) of the target's current HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Summons flying swords to deal damage to the enemy."
+      },
+      {
+        "section": "Skill1",
+        "name": "Enraptured Whip",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Salazer whips enemies within a 2-tile arc, dealing 180% (ATK-based) + 15% (SP-based) damage. When the target's HP ratio drops below 70%, Salazer launches one more attack to enemies within a 2-tile arc, dealing 230% (ATK-based) + 25% (SP-based) damage.",
+          "active": [
+            "Salazer whips enemies within a 2-tile arc, dealing 180% (ATK-based) + 15% (SP-based) damage.",
+            "When the target's HP ratio drops below 70%, Salazer launches one more attack to enemies within a 2-tile arc, dealing 230% (ATK-based) + 25% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage to 185% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 235% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage to 190% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage to 200% (ATK-based) + 15% (SP-based) and the damage of additional whip attack to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Salazer whips enemies within the radius of an arc, dealing extra damage once if the enemy's HP ratio is low after being hit."
+      },
+      {
+        "section": "Skill2",
+        "name": "Spirit Shackles",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Salazer imprisons an enemy whose HP ratio is less than 70%, dealing 300% (ATK-based) damage and making them unable to move or act for 5 + 1.5 (SP-based)s. The skill can only be applied to each enemy once.",
+          "active": [
+            "Salazer imprisons an enemy whose HP ratio is less than 70%, dealing 300% (ATK-based) damage and making them unable to move or act for 5 + 1.5 (SP-based)s.",
+            "The skill can only be applied to each enemy once."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Everytime Salazer imprisons an enemy, he absorbs 8% of the enemy's ATK until the battle ends.",
+                "The skill can absorb up to 50% of Salazer's ATK in each battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Everytime Salazer imprisons an enemy, he absorbs 10% of the enemy's ATK until the battle ends.",
+                "The skill can absorb up to 50% of Salazer's ATK in each battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Everytime Salazer imprisons an enemy, he absorbs 12% of the enemy's ATK until the battle ends.",
+                "The skill can absorb up to 50% of Salazer's ATK in each battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Salazer deals massive damage to an enemy with a low HP ratio, making them unable to move or act."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Reduces damage taken by 12% during battle.",
+          "active": [
+            "Reduces damage taken by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Soul Drench",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1 times without cooldown when a battle starts or an enemy is imprisoned. An extra whip strike will be attempted.",
+          "active": [
+            "Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1 times without cooldown when a battle starts or an enemy is imprisoned.",
+            "An extra whip strike will be attempted."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The Enraptured Whip deals additional damage equal to 5% of the enemy's current HP, granting 50 Life Drain to Salazer.",
+                "The additional damage cannot exceed 150% of Salazer's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Casts Enraptured Whip 2 times without cooldown."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The Enraptured Whip deals additional damage equal to 5.5% of the enemy's current HP, granting 52 Life Drain to Salazer.",
+                "The additional damage cannot exceed 160% of Salazer's ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The Enraptured Whip has no cooldown after a battle starts or an enemy is imprisoned. A guaranteed whip attempt will be added."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.",
+          "active": [
+            "Salazer recovers 150% (ATK-based) HP for every imprisoned enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Salazer heals himself after imprisoning an enemy."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

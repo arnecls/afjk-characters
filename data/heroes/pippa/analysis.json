@@ -1,0 +1,736 @@
+{
+  "schema_version": 2,
+  "id": "pippa",
+  "display_name": "Pippa",
+  "local": {
+    "long_name": "Pippa - The Muddled Magician",
+    "faction": "wilder",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2026-03-20",
+    "season": "Tower of Memory",
+    "season_number": 6,
+    "skills": {
+      "Wild Shift": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Pippa immobilizes 2 rearmost enemies, then teleports them onto a target tile and drops them, dealing 200% (ATK-based) + 50% (SP-based) damage to the enemy on that tile and knocking them down. When auto-cast is on, Pippa prioritizes targeting the tile of the frontmost enemy. Passive. Whenever Pippa casts a skill, the skill has a 20% chance to go out of control. When this happens, the skill target is teleported to a random location on the enemy side of the battlefield, sometimes ending up in very unexpected places! Pippa remains unaffected while casting the skill.",
+          "passive": [
+            "Whenever Pippa casts a skill, the skill has a 20% chance to go out of control.",
+            "When this happens, the skill target is teleported to a random location on the enemy side of the battlefield, sometimes ending up in very unexpected places!",
+            "Pippa remains unaffected while casting the skill."
+          ],
+          "active": [
+            "Pippa immobilizes 2 rearmost enemies, then teleports them onto a target tile and drops them, dealing 200% (ATK-based) + 50% (SP-based) damage to the enemy on that tile and knocking them down.",
+            "When auto-cast is on, Pippa prioritizes targeting the tile of the frontmost enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the impact damage to 250% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the impact damage to 300% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the impact damage to 350% (ATK-based)+ 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the impact damage to 400% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "crowd_control",
+            "cc-type": "bind"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 450.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 300.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Bind — Multiple targets"
+          },
+          {
+            "label": "Displace — Multiple targets"
+          },
+          {
+            "label": "Knock down — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Mad Missiles": {
+        "category": "skill1",
+        "description": {
+          "raw": "Pippa fires 9 magic missiles at enemies in quick succession, each missile dealing 60% (ATK-based) + 6% (SP-based) damage. If the skill goes out of control, the missiles strike random targets on the battlefield, including allies!",
+          "active": [
+            "Pippa fires 9 magic missiles at enemies in quick succession, each missile dealing 60% (ATK-based) + 6% (SP-based) damage.",
+            "If the skill goes out of control, the missiles strike random targets on the battlefield, including allies!"
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the number of magic missiles fired to 10."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the number of magic missiles fired to 11."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the number of magic missiles fired to 12."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 66.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 7.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Botanical Woe": {
+        "category": "skill2",
+        "description": {
+          "raw": "Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only ls, drifting like a moonflower.",
+          "active": [
+            "Pippa summons magical plants in the area with the most enemies.",
+            "The plants cover a 1-tile area and persist for 3s.",
+            "Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150.",
+            "If this skill goes out of control, the plants last only ls, drifting like a moonflower."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the impact damage to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the impact damage to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the impact damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ],
+            "duration": 3.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 2.0,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Energy — Area",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Haste by 10 during battle. After casting 4 skills without going out of control, Haste is further increased by 5.",
+          "active": [
+            "Increases Haste by 10 during battle.",
+            "After casting 4 skills without going out of control, Haste is further increased by 5."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 12 during battle.",
+                "After casting 4 skills without going out of control, Haste is further increased by 8."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 15 during battle.",
+                "After casting 4 skills without going out of control, Haste is further increased by 10."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "skill_cast"
+              },
+              {
+                "type": "count",
+                "count": 4
+              }
+            ],
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Mage's Bloom": {
+        "category": "skill4",
+        "description": {
+          "raw": "Pippa's skills will not go out of control the first time they are cast, and every skill cast has a 30% chance to trigger mutation. After mutation triggers, whenever Wild Shift, Mad Missiles, or Botanical Woe deals damage, Pippa deals extra true damage equal to 80% of the original damage to enemies adjacent to the target and immobilizes them for 2s.",
+          "active": [
+            "Pippa's skills will not go out of control the first time they are cast, and every skill cast has a 30% chance to trigger mutation.",
+            "After mutation triggers, whenever Wild Shift, Mad Missiles, or Botanical Woe deals damage, Pippa deals extra true damage equal to 80% of the original damage to enemies adjacent to the target and immobilizes them for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt to 90% of the original damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Pippa grows more confident in her magic each time she uses it.",
+                "After she casts her Ultimate 4 times, her magic no longer goes out of control, and her chance to trigger mutation increases to 60%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage dealt to 100% of the original damage."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 2.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Bind — Area"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When Pippa's Wild Shift triggers a mutation, the enemy on the target tile becomes immobilized. The 2 teleported enemies continue falling through portals for 1.5s before landing on the target tile, taking extra damage equal to 20% of their max HP. This extra damage cannot exceed 400% of Pippa's ATK.",
+          "active": [
+            "When Pippa's Wild Shift triggers a mutation, the enemy on the target tile becomes immobilized.",
+            "The 2 teleported enemies continue falling through portals for 1.5s before landing on the target tile, taking extra damage equal to 20% of their max HP.",
+            "This extra damage cannot exceed 400% of Pippa's ATK."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Bind — Single target"
+          },
+          {
+            "label": "Displace — Multiple targets"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "Area"
+      ],
+      [
+        "max_hp",
+        "Multiple targets"
+      ],
+      [
+        "true",
+        "Area"
+      ]
+    ],
+    "benefit_stats": [
+      "haste"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "pippa",
+    "display_name": "Pippa",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Whenever Pippa casts a skill, the skill has a 20% chance to go out of control.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When this happens, the skill target is teleported to a random location on the enemy side of the battlefield, sometimes ending up in very unexpected places!",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Pippa remains unaffected while casting the skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Pippa immobilizes 2 rearmost enemies, then teleports them onto a target tile and drops them, dealing 200% (ATK-based) + 50% (SP-based) damage to the enemy on that tile and knocking them down.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When auto-cast is on, Pippa prioritizes targeting the tile of the frontmost enemy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 250% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 300% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 350% (ATK-based)+ 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 400% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Pippa fires 9 magic missiles at enemies in quick succession, each missile dealing 60% (ATK-based) + 6% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If the skill goes out of control, the missiles strike random targets on the battlefield, including allies!",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the number of magic missiles fired to 10.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the number of magic missiles fired to 11.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the number of magic missiles fired to 12.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Pippa summons magical plants in the area with the most enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The plants cover a 1-tile area and persist for 3s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If this skill goes out of control, the plants last only ls, drifting like a moonflower.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 160% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 180% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 200% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 10 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After casting 4 skills without going out of control, Haste is further increased by 5.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After casting 4 skills without going out of control, Haste is further increased by 8.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After casting 4 skills without going out of control, Haste is further increased by 10.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Pippa's skills will not go out of control the first time they are cast, and every skill cast has a 30% chance to trigger mutation.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "After mutation triggers, whenever Wild Shift, Mad Missiles, or Botanical Woe deals damage, Pippa deals extra true damage equal to 80% of the original damage to enemies adjacent to the target and immobilizes them for 2s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt to 90% of the original damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Pippa grows more confident in her magic each time she uses it.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "After she casts her Ultimate 4 times, her magic no longer goes out of control, and her chance to trigger mutation increases to 60%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt to 100% of the original damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When Pippa's Wild Shift triggers a mutation, the enemy on the target tile becomes immobilized.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The 2 teleported enemies continue falling through portals for 1.5s before landing on the target tile, taking extra damage equal to 20% of their max HP.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This extra damage cannot exceed 400% of Pippa's ATK.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "4e814b9cd8326b93ae5f093dfa258005e39bade62dd93a389ac05f52a0ffd401",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

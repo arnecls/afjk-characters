@@ -1,0 +1,722 @@
+{
+  "schema_version": 2,
+  "id": "alna",
+  "display_name": "Alna",
+  "local": {
+    "long_name": "Alna - Frozen Mother",
+    "faction": "celestial",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2026-01-08",
+    "season": "Thorns of Devotion",
+    "season_number": 5,
+    "skills": {
+      "Winter Anthem": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. When a battle starts, Alna blankets the battlefield in frost, reducing Haste by 40 and range by 2 tiles for all units except herself. Active. Alna lets out a battle cry and summons a blizzard, which removes the Haste buffs from all enemies and deals 40% (ATK-based) + 6% (SP-based) damage to each enemy every 0.5s for 8s. While the blizzard is active, when Alna or the Winter Warrior takes damage, they recover 50% + 5% (SP-based) of the HP lost from that damage over the next 10s.",
+          "passive": [
+            "When a battle starts, Alna blankets the battlefield in frost, reducing Haste by 40 and range by 2 tiles for all units except herself."
+          ],
+          "active": [
+            "Alna lets out a battle cry and summons a blizzard, which removes the Haste buffs from all enemies and deals 40% (ATK-based) + 6% (SP-based) damage to each enemy every 0.5s for 8s.",
+            "While the blizzard is active, when Alna or the Winter Warrior takes damage, they recover 50% + 5% (SP-based) of the HP lost from that damage over the next 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the impact damage to 45% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the impact damage to 50% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the impact damage to 55% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the impact damage to 60% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": 8.0,
+            "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_blizzard"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 55.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — All units",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Shared Resolve": {
+        "category": "skill1",
+        "description": {
+          "raw": "During battle preparation, Alna selects an ally placed in the same row as herself to become the Winter Warrior. That ally is immune to Winter Anthem's Haste reduction effect, and their max HP is permanently increased by 15% + 1.5% (SP-based). Active. Alna thrusts her spear to deal 340% (ATK-based) + 40% (SP-based) damage to enemies, restoring 100% + 10% (SP-based) HP to herself and the Winter Warrior.",
+          "active": [
+            "During battle preparation, Alna selects an ally placed in the same row as herself to become the Winter Warrior.",
+            "That ally is immune to Winter Anthem's Haste reduction effect, and their max HP is permanently increased by 15% + 1.5% (SP-based).",
+            "Alna thrusts her spear to deal 340% (ATK-based) + 40% (SP-based) damage to enemies, restoring 100% + 10% (SP-based) HP to herself and the Winter Warrior."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the impact damage to 360% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the impact damage to 380% (ATK-based) + 40% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the impact damage to 400% (ATK-based) + 40% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 400.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 440.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 110.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Wild Whirl": {
+        "category": "skill2",
+        "description": {
+          "raw": "Alna repeatedly swings her spear, striking enemies within a 1-tile arc in front of her twice, with each hit dealing 120% (ATK-based) + 15% (SP-based) damage. She then sweeps her spear around, dealing 240% (ATK-based) + 30% (SP-based) damage to all surrounding enemies and reducing their Haste by 50 for 8s.",
+          "active": [
+            "Alna repeatedly swings her spear, striking enemies within a 1-tile arc in front of her twice, with each hit dealing 120% (ATK-based) + 15% (SP-based) damage.",
+            "She then sweeps her spear around, dealing 240% (ATK-based) + 30% (SP-based) damage to all surrounding enemies and reducing their Haste by 50 for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage of the first 2 strikes to 130% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage of the first 2 strikes to 140% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage of the first 2 strikes to 150% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "front",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 290.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 3.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Haste — Area",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Reduces the damage taken by 10% during battle. For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 5 times.",
+          "active": [
+            "Reduces the damage taken by 10% during battle.",
+            "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 5 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces the damage taken by 14% during battle.",
+                "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 6 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces the damage taken by 18% during battle.",
+                "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 7 times."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Chilling Presence": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a battle starts and every 20s thereafter, Alna envelops herself in icy winds, becoming immune to damage and control effects for 4s.",
+          "active": [
+            "When a battle starts and every 20s thereafter, Alna envelops herself in icy winds, becoming immune to damage and control effects for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Extends this skill's damage and control immunity to 5s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Extends this skill's damage and control immunity to 6s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "After casting Chilling Presence, Alna also grants the Winter Warrior the same immunity effects.",
+                "The first time either Alna's or the Winter Warrior's HP drops bellow 50% in battle, Chilling Presence triggers automatically for both.",
+                "This effect can only be triggered 1 time per hero per battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 2.0
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "immune",
+            "timing": "start_of_battle",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 20.0,
+        "skill_card_tags": [
+          {
+            "label": "Vitality — Area (Supreme+)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Bind — Area (Supreme+)"
+          },
+          {
+            "label": "Immune — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Alna and her Winter Warrior gain a 15% increase to their basic stats until one of them is defeated. The first time either of them leaves the Chilling Presence state, Alna or the Winter Warior will freeze enemies within 1 tile for 2s and reduce those enemies' Vitality by 50 for 10s.",
+          "active": [
+            "Alna and her Winter Warrior gain a 15% increase to their basic stats until one of them is defeated.",
+            "The first time either of them leaves the Chilling Presence state, Alna or the Winter Warior will freeze enemies within 1 tile for 2s and reduce those enemies' Vitality by 50 for 10s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Basic stats",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Basic stats",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Ally empower",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "During battle preparation, Alna selects an ally placed in the same row as herself to become the Winter Warrior."
+        },
+        {
+          "label": "DMG+CC immunity",
+          "tier": "ex+15",
+          "targeting": "Single target",
+          "description": "After casting Chilling Presence, Alna also grants the Winter Warrior the same immunity effects."
+        },
+        {
+          "label": "DMG+CC immunity",
+          "tier": "mythic+",
+          "targeting": "Self",
+          "description": "When a battle starts and every 20s thereafter, Alna envelops herself in icy winds, becoming immune to damage and control effects for 4s."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "All units"
+      ]
+    ],
+    "benefit_stats": [
+      "max_hp"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "alna",
+    "display_name": "Alna",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "skill2",
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Alna blankets the battlefield in frost, reducing Haste by 40 and range by 2 tiles for all units except herself.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Alna lets out a battle cry and summons a blizzard, which removes the Haste buffs from all enemies and deals 40% (ATK-based) + 6% (SP-based) damage to each enemy every 0.5s for 8s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While the blizzard is active, when Alna or the Winter Warrior takes damage, they recover 50% + 5% (SP-based) of the HP lost from that damage over the next 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 45% (ATK-based) + 6% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 50% (ATK-based) + 6% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 55% (ATK-based) + 6% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 60% (ATK-based) + 6% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During battle preparation, Alna selects an ally placed in the same row as herself to become the Winter Warrior.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "That ally is immune to Winter Anthem's Haste reduction effect, and their max HP is permanently increased by 15% + 1.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Alna thrusts her spear to deal 340% (ATK-based) + 40% (SP-based) damage to enemies, restoring 100% + 10% (SP-based) HP to herself and the Winter Warrior.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 360% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 380% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 400% (ATK-based) + 40% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Alna repeatedly swings her spear, striking enemies within a 1-tile arc in front of her twice, with each hit dealing 120% (ATK-based) + 15% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "She then sweeps her spear around, dealing 240% (ATK-based) + 30% (SP-based) damage to all surrounding enemies and reducing their Haste by 50 for 8s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of the first 2 strikes to 130% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of the first 2 strikes to 140% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage of the first 2 strikes to 150% (ATK-based) + 15% (SP-based), and the final strike to 260% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Reduces the damage taken by 10% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 5 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reduces the damage taken by 14% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 6 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Reduces the damage taken by 18% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 7 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts and every 20s thereafter, Alna envelops herself in icy winds, becoming immune to damage and control effects for 4s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Extends this skill's damage and control immunity to 5s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Extends this skill's damage and control immunity to 6s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "After casting Chilling Presence, Alna also grants the Winter Warrior the same immunity effects.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "The first time either Alna's or the Winter Warrior's HP drops bellow 50% in battle, Chilling Presence triggers automatically for both.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "This effect can only be triggered 1 time per hero per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Alna and her Winter Warrior gain a 15% increase to their basic stats until one of them is defeated.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The first time either of them leaves the Chilling Presence state, Alna or the Winter Warior will freeze enemies within 1 tile for 2s and reduce those enemies' Vitality by 50 for 10s.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "bfbccfbc3ddb3b7c1bf86c9fd1297024f6a1033923eec8700c196ecbabe9425d",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

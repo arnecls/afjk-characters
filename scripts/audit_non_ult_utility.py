@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-import json
+import copy
 import re
 import sys
 from dataclasses import dataclass
@@ -13,10 +13,10 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import heroes_io as io
-import roster_analysis as ra
-
-rs, gen = ra.analysis_modules()
+from hero_pipeline.analysis import scoring_facts as gen
+from hero_pipeline.analysis import behavior as rs
+from hero_pipeline.analysis.policy import make_policy
+from hero_pipeline.analysis.calibrate import analyze_bundles
 
 NON_ULT_SECTIONS = rs.NON_ULT_SKILL_SECTIONS
 SECTION_SUMMARY_KEY = {
@@ -72,14 +72,14 @@ class HeroUtility:
 
 def _skill_section_text(skills: list, section: str) -> str:
     for skill in skills:
-        if skill.section == section:
-            return skill.text or ""
+        if skill["section"] == section:
+            return skill["text"] or ""
     return ""
 
 
 def _ultimate_skill(skills: list):
     for skill in skills:
-        if skill.section == "Ultimate":
+        if skill["section"] == "Ultimate":
             return skill
     return None
 
@@ -104,13 +104,13 @@ def high_field_count(metrics: rs.SkillOverviewMetrics) -> int:
 
 def peak_damage_effect_mag(hero, section: str) -> str:
     """Highest damage-effect magnitude in a section's skill slice."""
-    sl = hero.skill_slices.get(section)
+    sl = hero["skill_slices"].get(section)
     if not sl:
         return "none"
     mags = [
-        e.magnitude
-        for e in sl.effects + sl.summon_effects
-        if e.category == "damage"
+        e["magnitude"]
+        for e in sl["effects"] + sl["summon_effects"]
+        if e["category"] == "damage"
     ]
     if not mags:
         return "none"
@@ -145,7 +145,7 @@ def compute_hero_utility(
         )
         heal, buffs, debuffs = rs._section_effect_metrics(hero, section)
         peak_dmg = peak_damage_effect_mag(hero, section)
-        dmg_pts = max(MAG_PTS[metrics.damage], MAG_PTS[peak_dmg])
+        dmg_pts = max(MAG_PTS[metrics["damage"]], MAG_PTS[peak_dmg])
         buff_pts = MAG_PTS[buffs]
         utility_pts = (
             dmg_pts
@@ -179,7 +179,7 @@ def compute_hero_utility(
         if highs or utility_pts >= 2:
             notes.append(
                 f"{section}: {highs} high, {utility_pts} util "
-                f"(dmg={metrics.damage}/{peak_dmg})"
+                f"(dmg={metrics["damage"]}/{peak_dmg})"
             )
 
     return totals, notes
@@ -228,7 +228,7 @@ def qualifies_non_ult_utility(
         return False, "", ["blocked by ult-reliant tag"]
 
     ult = _ultimate_skill(skills)
-    if ult and rs.text_has_start_of_battle_ultimate(ult.text, "Ultimate"):
+    if ult and rs.text_has_start_of_battle_ultimate(ult["text"], "Ultimate"):
         return False, "", ["blocked by start-of-battle ultimate"]
 
     totals, notes = compute_hero_utility(
@@ -253,35 +253,67 @@ def qualifies_non_ult_utility(
 
 
 def main() -> int:
+    from hero_pipeline.storage import (
+        load_analyses,
+        load_roster_inputs,
+        ids_by_display_name,
+        update_ai_by_id,
+    )
+
     apply = "--apply" in sys.argv
-    raw = json.loads(io.HEROES_DATA.read_text(encoding="utf-8"))
-    processed = json.loads(io.HEROES_DATA_PROCESSED.read_text(encoding="utf-8"))
-    summaries_by_short = json.loads(
-        (ROOT / "data" / "heroes_data_skill_summary.json").read_text(encoding="utf-8")
+    snapshot = load_roster_inputs()
+    entries = sorted(
+        snapshot["manifest"]["heroes"],
+        key=lambda entry: entry["order"],
     )
-    current_tags = json.loads(
-        (ROOT / "data" / "hero_behavior_tags.json").read_text(encoding="utf-8")
-    )
-
-    role_by_title = {
-        p["long_name"]: p["role_category"]
-        for p in processed["heroes"].values()
+    raw = {
+        **(snapshot["manifest"].get("headers") or {}),
+        "heroes": [
+            copy.deepcopy(
+                snapshot["bundles"][entry["id"]]["source"]["source"]
+            )
+            for entry in entries
+        ],
     }
-    analysis = ra.get_roster_analysis(raw, role_by_title)
+    processed = load_analyses(
+        snapshot["manifest"],
+        snapshot["bundles"],
+    )
+    summaries_by_short = {
+        entry["display_name"]: copy.deepcopy(
+            snapshot["bundles"][entry["id"]]["ai"].get(
+                "skill_summaries"
+            )
+            or {}
+        )
+        for entry in entries
+    }
+    current_tags = {
+        entry["display_name"]: list(
+            snapshot["bundles"][entry["id"]]["ai"].get(
+                "behavior_tags"
+            )
+            or []
+        )
+        for entry in entries
+    }
 
-    per_skill_speeds = rs.compute_per_skill_speeds(analysis.skills_by_title)
+    policy = make_policy()
+    heroes = analyze_bundles(snapshot)
+    skills_by_title = rs.load_skills_by_title_from_records(raw["heroes"])
+    per_skill_speeds = rs.compute_per_skill_speeds(skills_by_title)
     damage_thresholds = rs.build_section_damage_thresholds(
-        analysis.heroes, analysis.skills_by_title
+        heroes, skills_by_title
     )
     damage_type_thresholds = rs.build_damage_type_thresholds(
-        analysis.heroes, analysis.skills_by_title
+        heroes, skills_by_title
     )
 
     proposed: dict[str, list[str]] = {}
-    for hero in analysis.heroes:
-        short = gen.short_name(hero.title)
-        skills = analysis.skills_by_title[hero.title]
-        speeds = per_skill_speeds.get(hero.title, {})
+    for hero in heroes:
+        short = gen.short_name(hero["title"])
+        skills = skills_by_title[hero["title"]]
+        speeds = per_skill_speeds.get(hero["title"], {})
         tags = frozenset(current_tags.get(short, []))
         ok, path, notes = qualifies_non_ult_utility(
             hero,
@@ -299,8 +331,7 @@ def main() -> int:
     print(f"\n{len(proposed)} heroes qualify for {TAG}")
 
     if apply:
-        tags_path = ROOT / "data" / "hero_behavior_tags.json"
-        tag_data = json.loads(tags_path.read_text(encoding="utf-8"))
+        tag_data = {name: list(values) for name, values in current_tags.items()}
         changed = 0
         for short in tag_data:
             has_tag = TAG in tag_data[short]
@@ -312,11 +343,14 @@ def main() -> int:
             elif not should and has_tag:
                 tag_data[short] = [t for t in tag_data[short] if t != TAG]
                 changed += 1
-        tags_path.write_text(
-            json.dumps(tag_data, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
+        by_id = ids_by_display_name()
+        update_ai_by_id(
+            "behavior_tags",
+            {by_id[name]: tags for name, tags in tag_data.items()},
         )
-        print(f"Applied {TAG} updates to {changed} heroes in hero_behavior_tags.json")
+        print(
+            f"Applied {TAG} updates to {changed} heroes in hero-local files"
+        )
 
     return 0
 

@@ -12,36 +12,38 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
+
 import json
 
 import buff_persistence as bp
-import hero_schema as hs
+from hero_pipeline.analysis import serialize as hs
 import heroes_io as io
 import skill_effects_store as ses
 
 
-def _load_rewrite_summaries():
-    if "rewrite_summaries" in sys.modules:
-        return sys.modules["rewrite_summaries"]
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+def _load_tags() -> dict[str, list[str]]:
+    if (ROOT / "data" / "roster.json").exists():
+        from hero_pipeline.storage import display_names_by_id, load_ai_by_id
+
+        names = display_names_by_id()
+        return {
+            names[hero_id]: tags
+            for hero_id, tags in load_ai_by_id("behavior_tags").items()
+        }
+    return json.loads(
+        (ROOT / "data" / "hero_behavior_tags.json").read_text()
     )
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = mod
-    spec.loader.exec_module(mod)
-    return mod
+
+
+def _load_working_analysis():
+    return load_working_analysis()
 
 
 def _load_generate_overview():
-    if "generate_heroes_overview" in sys.modules:
-        return sys.modules["generate_heroes_overview"]
-    spec = importlib.util.spec_from_file_location(
-        "generate_heroes_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["generate_heroes_overview"] = mod
-    spec.loader.exec_module(mod)
-    return mod
+    from hero_pipeline.relationships import scoring as module
+    return module
 
 
 class BuffPersistenceTests(unittest.TestCase):
@@ -66,7 +68,7 @@ class BuffPersistenceTests(unittest.TestCase):
         self.assertEqual(bp.classify_persistence(effect, text), "permanent")
 
     def test_round_trip_persistence_on_effect(self):
-        rs = _load_rewrite_summaries()
+        rs = _load_working_analysis()
         effect = rs.Effect(
             category="buff",
             label="ATK",
@@ -78,7 +80,7 @@ class BuffPersistenceTests(unittest.TestCase):
         schema = hs.effect_to_schema(effect)
         self.assertEqual(schema.get("persistence"), "temporary")
         restored = hs.schema_effect_to_effect(schema)
-        self.assertEqual(getattr(restored, "persistence", None), "temporary")
+        self.assertEqual(restored.get("persistence"), "temporary")
 
     def test_perseus_requires_temporary_buff_label(self):
         doc = ses.load_sidecar("Perseus - Fertile Guardian")
@@ -116,7 +118,7 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
         self.assertFalse(bp.is_temporary_ally_stat_buff_effect(no_summon))
 
     def test_roster_tag_parity(self):
-        tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
+        tags = _load_tags()
         raw = io.load_heroes_data()
         errors = bp.check_temporary_stat_buffer_consistency(
             tags,
@@ -150,7 +152,7 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
 
     def test_pandora_counts_as_temporary_provider(self):
         # Boxed Blessing grants the released ally ATK for the next 10s.
-        tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
+        tags = _load_tags()
         self.assertIn(bp.TEMPORARY_STAT_BUFFER_TAG, tags.get("Pandora", []))
         raw = io.load_heroes_data()
         record = next(r for r in raw["heroes"] if r["name"] == "Pandora")
@@ -160,7 +162,7 @@ class TemporaryStatBufferTagTests(unittest.TestCase):
         )
 
     def test_removed_false_positives_are_not_tagged(self):
-        tags = json.loads((ROOT / "data" / "hero_behavior_tags.json").read_text())
+        tags = _load_tags()
         for hero in (
             "Frieren",
             "Gwyneth",
@@ -261,7 +263,7 @@ class SidecarTargetingTests(unittest.TestCase):
 class TemporaryBuffSynergyTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        rs = _load_rewrite_summaries()
+        rs = _load_working_analysis()
         go = _load_generate_overview()
         cls.rs = rs
         cls.go = go
@@ -272,7 +274,7 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
 
     def _hero(self, prefix: str):
         for hero in self.heroes:
-            if prefix.lower() in hero.title.lower():
+            if prefix.lower() in hero["title"].lower():
                 return hero
         raise AssertionError(f"hero not found: {prefix}")
 
@@ -345,9 +347,7 @@ class SpecialRequiresValidationTests(unittest.TestCase):
         self.assertTrue(errors)
 
     def test_zandrok_remains_temporary_stat_buffer_provider(self):
-        tags = json.loads(
-            (ROOT / "data" / "hero_behavior_tags.json").read_text()
-        )
+        tags = _load_tags()
         self.assertIn(bp.TEMPORARY_STAT_BUFFER_TAG, tags.get("Zandrok", []))
 
 

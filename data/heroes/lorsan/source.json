@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "lorsan",
+  "display_name": "Lorsan",
+  "source": {
+    "title": "Lorsan - Windweaver Protector",
+    "name": "Lorsan",
+    "tags": "Wilder · Support · Magic",
+    "faction": "Wilder",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A free-spirited Support who transfers damage between enemies by linking them with wind magic.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Whispering Tempest",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Lorsan channels his power to summon a storm centered on the frontmost enemy, lasting for 5s. Enemies within 2 tiles of the target are affected by the storm, suffering a 30 + 3 (SP-based) Haste reduction and taking from 50% (ATK-based) + 6% (SP-based) damage from Lorsan every 0.5s.",
+          "active": [
+            "Lorsan channels his power to summon a storm centered on the frontmost enemy, lasting for 5s.",
+            "Enemies within 2 tiles of the target are affected by the storm, suffering a 30 + 3 (SP-based) Haste reduction and taking from 50% (ATK-based) + 6% (SP-based) damage from Lorsan every 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the storm damage per hit to 55% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the storm damage per hit to 60% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the storm damage per hit to 65% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the storm damage per hit to 70% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lorsan summons a storm, dealing continuous damage to enemies within its range and reducing their Haste."
+      },
+      {
+        "section": "Skill1",
+        "name": "Stormbound Retribution",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Lorsan links the nearest and farthest enemy heroes to each other with Stormbound Chain. The chain transfers 70% + 10% (SP-based) of the damage taken by one of the linked enemies to the other. Damage transferred by the chain cannot exceed 500% of Lorsan's ATK and will not defeat the enemy. The chain breaks when its total damage dealt to both enemies reaches 900% of Lorsan's initial ATK, or if one of the linked enemies is defeated.",
+          "active": [
+            "When a battle starts, Lorsan links the nearest and farthest enemy heroes to each other with Stormbound Chain.",
+            "The chain transfers 70% + 10% (SP-based) of the damage taken by one of the linked enemies to the other.",
+            "Damage transferred by the chain cannot exceed 500% of Lorsan's ATK and will not defeat the enemy.",
+            "The chain breaks when its total damage dealt to both enemies reaches 900% of Lorsan's initial ATK, or if one of the linked enemies is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage transferred to the linked enemy to 80% + 10% (SP-based) of the original damage.",
+                "Increases the total damage both enemies take from the chain to 900%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage transferred to the linked enemy to 90% + 10% (SP-based) of the original damage.",
+                "Increases the total damage both enemies take from the chain to 900%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage transferred to the linked enemy to 100% + 10% (SP-based) of the original damage.",
+                "Increases the total damage both enemies take from the chain to 900%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Lorsan links the nearest and farthest enemy heroes to each other with Stormbound Chain."
+      },
+      {
+        "section": "Skill2",
+        "name": "Zephyr's Embrace",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lorsan protects the weakest ally with Zephyr's Embrace for 6s. While active, the protected ally gains 50 Dodge, 30 + 3 (SP-based) Haste, and recovers 90% (ATK-based) + 12% (SP-based) HP per second.",
+          "active": [
+            "Lorsan protects the weakest ally with Zephyr's Embrace for 6s.",
+            "While active, the protected ally gains 50 Dodge, 30 + 3 (SP-based) Haste, and recovers 90% (ATK-based) + 12% (SP-based) HP per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases HP recovered per second to 100% (ATK-based) + 12% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases HP recovered per second to 110% (ATK-based) + 12% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases HP recovered per second to 120% (ATK-based) + 12% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lorsan continuously recovers HP for the weakest ally while increasing their Dodge and Haste."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Lorsan increases his ATK by 9% during battle. When Stormbound Chain breaks for the first time, Lorsan's ATK is increased by an extra 6%.",
+          "active": [
+            "Lorsan increases his ATK by 9% during battle.",
+            "When Stormbound Chain breaks for the first time, Lorsan's ATK is increased by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Lorsan increases his ATK by 12% during battle.",
+                "When Stormbound Chain breaks for the first time, Lorsan's ATK is increased by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Lorsan increases his ATK by 15% during battle.",
+                "When Stormbound Chain breaks for the first time, Lorsan's ATK is increased by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lorsan increases his ATK in battle. When Stormbound Chain breaks for the first time, his ATK is further increased."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Turbulent Resurgence",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lorsan recovers 200% (ATK-based) of HP for all allies when Stormbound Chain breaks. He will then cast Stormbound Chain again, with a maximum of 3 casts per battle.",
+          "active": [
+            "Lorsan recovers 200% (ATK-based) of HP for all allies when Stormbound Chain breaks.",
+            "He will then cast Stormbound Chain again, with a maximum of 3 casts per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 5: Increases HP recovered to 300% (ATK-based) when Stormbound Chain breaks."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 10: Stuns the last linked 2 enemies for 5s when Stormbound Chain breaks."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 15: Increases HP recovered to 400% (ATK-based) when Stormbound Chain breaks."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Stormbound Chain breaks, Lorsan heals all allies then casts Stormbound Chain again."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "While Zephyr's Embrace is active, the protected target becomes unaffected.",
+          "active": [
+            "While Zephyr's Embrace is active, the protected target becomes unaffected."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Zephyr's Embrace also makes the protected target unaffected."
+      }
+    ],
+    "range": 5,
+    "release_date": "2025-01-17",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "average",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

@@ -11,15 +11,12 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
+
 import heroes_io as io
 
-_spec = importlib.util.spec_from_file_location(
-    "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-)
-_rs = importlib.util.module_from_spec(_spec)
-sys.modules["rewrite_summaries"] = _rs
-assert _spec.loader is not None
-_spec.loader.exec_module(_rs)
+_rs = load_working_analysis()
 
 
 class MergeSourcesTests(unittest.TestCase):

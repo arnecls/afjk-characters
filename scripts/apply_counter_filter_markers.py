@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Apply [[filter:id]] like [[Hero]] markers to hero_counter_overviews.json."""
+"""Apply counter filter markers to hero-local AI documents."""
 
 from __future__ import annotations
 
 import csv
-import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-COUNTER_PATH = ROOT / "data" / "hero_counter_overviews.json"
 CSV_PATH = ROOT / "heroes-overview.csv"
-TAGS_PATH = ROOT / "data" / "hero_behavior_tags.json"
 
 HERO_RE = re.compile(r"\[\[([^\]]+)\]\]")
 FILTER_RE = re.compile(r"\[\[filter:([a-z0-9-]+)\]\]")
@@ -51,7 +48,11 @@ def load_csv() -> dict[str, dict[str, str]]:
 
 
 def load_tags() -> dict[str, list[str]]:
-    return json.loads(TAGS_PATH.read_text(encoding="utf-8"))
+    from hero_pipeline.storage import load_ai_by_id, display_names_by_id
+
+    data = load_ai_by_id("behavior_tags")
+    names = display_names_by_id()
+    return {names[hero_id]: tags for hero_id, tags in data.items()}
 
 
 def combo_for_hero(hero: str, tags: dict[str, list[str]], rows: dict) -> str | None:
@@ -277,17 +278,25 @@ def transform_text(text: str, tags: dict, rows: dict) -> str:
 
 
 def main() -> None:
+    from hero_pipeline.storage import (
+        load_ai_by_id,
+        display_names_by_id,
+        ids_by_display_name,
+        update_ai_by_id,
+    )
+
     tags = load_tags()
     rows = load_csv()
-    data = json.loads(COUNTER_PATH.read_text(encoding="utf-8"))
-    updated = {
-        hero: transform_text(text, tags, rows) for hero, text in data.items()
+    data = load_ai_by_id("counter_overview")
+    names = display_names_by_id()
+    updated_display = {
+        names[hero_id]: transform_text(text, tags, rows)
+        for hero_id, text in data.items()
     }
-    COUNTER_PATH.write_text(
-        json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    print(f"Updated {len(updated)} entries in {COUNTER_PATH.name}")
+    by_id = ids_by_display_name()
+    updated = {by_id[name]: text for name, text in updated_display.items()}
+    update_ai_by_id("counter_overview", updated)
+    print(f"Updated {len(updated)} entries in hero-local files")
 
 
 if __name__ == "__main__":

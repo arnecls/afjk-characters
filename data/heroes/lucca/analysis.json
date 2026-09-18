@@ -1,0 +1,704 @@
+{
+  "schema_version": 2,
+  "id": "lucca",
+  "display_name": "Lucca",
+  "local": {
+    "long_name": "Lucca - Stalwart Fighter",
+    "faction": "lightbearer",
+    "class": "tank",
+    "role_category": "tank",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-10-29",
+    "season": "Waves of Intrigue",
+    "season_number": 2,
+    "skills": {
+      "Quake Slam": {
+        "category": "ultimate",
+        "description": {
+          "raw": "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place. When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile. The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s. Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline.",
+          "active": [
+            "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place.",
+            "When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile.",
+            "The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s.",
+            "Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 230% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 240% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_down"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 260.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "immune",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 600.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Knock down — Area"
+          },
+          {
+            "label": "Knock up — Area"
+          },
+          {
+            "label": "Stun — Area"
+          },
+          {
+            "label": "Immune — Self"
+          }
+        ]
+      },
+      "Ruthless Ram": {
+        "category": "skill1",
+        "description": {
+          "raw": "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s. He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s.",
+          "active": [
+            "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s.",
+            "He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value to 360% + 3% (SP-based) Phys DEF plus 360% + 3% (SP-based) Magic DEF."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value to 380% + 3% (SP-based) Phys DEF plus 380% + 3% (SP-based) Magic DEF."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value to 400% + 3% (SP-based) Phys DEF plus 400% + 3% (SP-based) Magic DEF."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 340.0
+              }
+            ],
+            "duration": 8.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "interrupt"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "disarm",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 165.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 3.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Disarm — Single target"
+          },
+          {
+            "label": "Interrupt — Single target"
+          }
+        ]
+      },
+      "Courageous Call": {
+        "category": "skill2",
+        "description": {
+          "raw": "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s. This skill can be cast while Lucca is under dispellable control effects.",
+          "active": [
+            "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s.",
+            "This skill can be cast while Lucca is under dispellable control effects."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Reduces damage taken by 28% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces damage taken by 31% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces damage taken by 35% + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 6.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self (Supreme+)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases max HP by 17% during battle.",
+          "active": [
+            "Increases max HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases max HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases max HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 29.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Unshakeable Ties": {
+        "category": "skill4",
+        "description": {
+          "raw": "Lucca maintains a solid fighting stance, remaining Steadfast during battle. For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK. Allies supporting Lucca also receive a 5% boost to their ATK.",
+          "active": [
+            "Lucca maintains a solid fighting stance, remaining Steadfast during battle.",
+            "For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK.",
+            "Allies supporting Lucca also receive a 5% boost to their ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the shield value to 240% of the ally's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "If at least 2 allies are placed to support Lucca, expands Ruthless Ram's area of effect to a 1-tile arc."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the shield value to 260% of the ally's ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 5.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 260.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "steadfast",
+            "timing": "permanent",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Steadfast — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Lucca recovers 15% (HP-based) HP when casting Courageous Call.",
+          "active": [
+            "Lucca recovers 15% (HP-based) HP when casting Courageous Call."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic DEF — Area",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "max_hp",
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.8571428571428571,
+      "max_hp": 0.14285714285714285
+    },
+    "id": "lucca",
+    "display_name": "Lucca",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "When targeting an adjacent enemy, Lucca knocks them into the air and then slams them down in place.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When targeting an enemy located closer to his allied backline, Lucca will rush at them and slam them to his original tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The slam deals 200% (ATK-based) + 20% (SP-based) damage to the target and their adjacent enemies, stunning them for 2s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lucca is immune to control effects while casting this skill, and if auto cast is enabled, he will prioritize targets that are closer to his allied backline.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 210% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 220% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Lucca gains a shield that absorbs damage equal to 340% + 3% (SP-based) of his Phys DEF plus 340% + 3% (SP-based) of his Magic DEF for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He then shoulders into an enemy, dealing 150% (ATK-based) + 15% (SP-based) damage, interrupting them, and disarming them for 4s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 360% + 3% (SP-based) Phys DEF plus 360% + 3% (SP-based) Magic DEF.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 380% + 3% (SP-based) Phys DEF plus 380% + 3% (SP-based) Magic DEF.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 400% + 3% (SP-based) Phys DEF plus 400% + 3% (SP-based) Magic DEF.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Lucca unleashes a fierce roar, removing all dispellable debuffs from himself and reducing his damage taken by 25% + 2% (SP-based) for the next 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This skill can be cast while Lucca is under dispellable control effects.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces damage taken by 28% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces damage taken by 31% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Reduces damage taken by 35% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 17% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 23% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 29% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Lucca maintains a solid fighting stance, remaining Steadfast during battle.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "For each ally placed in an adjacent tile behind him when a battle starts, he gains a shield equal to 220% of the ally's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Allies supporting Lucca also receive a 5% boost to their ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the shield value to 240% of the ally's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If at least 2 allies are placed to support Lucca, expands Ruthless Ram's area of effect to a 1-tile arc.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the shield value to 260% of the ally's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Lucca recovers 15% (HP-based) HP when casting Courageous Call.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "0de0d86b5b54cd555e4f164a058c0bf8c45e58cb69614282a7cb5b2be9d382f7",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

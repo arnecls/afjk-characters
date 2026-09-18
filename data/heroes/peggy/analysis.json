@@ -1,0 +1,743 @@
+{
+  "schema_version": 2,
+  "id": "peggy",
+  "display_name": "Peggy",
+  "local": {
+    "long_name": "Peggy - Empire's Jewel",
+    "faction": "lightbearer",
+    "class": "support",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 6,
+    "release_date": "2026-07-02",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Princess Rally": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. When a battle starts, Peggy summons 2 royal guards to join the fray. The royal guards inherit 120% + 16% (SP-based) of Peggy's HP and 50% + 7% (SP-based) of her ATK. If Peggy is defeated, all royal guards immediately leave the battlefield. Active. Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP. If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield. Peggy then orders these royal guards to protect all allies for 12s. During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
+          "passive": [
+            "When a battle starts, Peggy summons 2 royal guards to join the fray.",
+            "The royal guards inherit 120% + 16% (SP-based) of Peggy's HP and 50% + 7% (SP-based) of her ATK.",
+            "If Peggy is defeated, all royal guards immediately leave the battlefield."
+          ],
+          "active": [
+            "Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP.",
+            "If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield.",
+            "Peggy then orders these royal guards to protect all allies for 12s.",
+            "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "The roval quards inherit 130% + 16% (SP-based) of Peggy's HP and 55% + 7% (SP-based) of her ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "The roval quards inherit 140% + 16% (SP-based) of Peggy's HP and 60% + 7% (SP-based) of her ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "The roval quards inherit 150% + 16% (SP-based) of Peggy's HP and 65% + 7% (SP-based) of her ATK."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "The roval quards inherit 160% + 16% (SP-based) of Peggy's HP and 70% + 7% (SP-based) of her ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 75.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "initial_energy": 600.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Royal Scroll": {
+        "category": "skill1",
+        "description": {
+          "raw": "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% (SP-based) HP per second for 8s.",
+          "active": [
+            "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% (SP-based) HP per second for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the HP restored per second to 160% (ATK-based) + 18% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the HP restored per second to 170% (ATK-based) + 18% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the HP restored per second to 180% (ATK-based) + 18% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ],
+            "duration": 8.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ],
+            "duration": 8.0,
+            "tick": 1.0
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 2.0,
+        "skill_card_tags": [
+          {
+            "label": "HoT — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "HoT — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Royal Barrage": {
+        "category": "skill2",
+        "description": {
+          "raw": "Peggy summons a royal marksman in the backline to assist in battle. The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% (SP-based) damage to 2 frontmost enemies. Enemies hit by the armor-piercing arrows take 22% + 3% (SP-based) more ranged damage for the next 5s. During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2% (SP-based).",
+          "active": [
+            "Peggy summons a royal marksman in the backline to assist in battle.",
+            "The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% (SP-based) damage to 2 frontmost enemies.",
+            "Enemies hit by the armor-piercing arrows take 22% + 3% (SP-based) more ranged damage for the next 5s.",
+            "During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3% (SP-based).",
+                "For allied summons, their additional ranged damage against these enemies is increased to 16% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3% (SP-based).",
+                "For allied summons, their additional ranged damage against these enemies is increased to 18% + 2% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3% (SP-based).",
+                "For allied summons, their additional ranged damage against these enemies is increased to 20% + 2% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Ranged damage",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 22.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Ranged damage",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 16.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "cooldown": 12.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Ranged damage — Summons",
+            "polarity": "buff"
+          },
+          {
+            "label": "Ranged damage — Single target",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Haste by 10. If 2 royal guards are on the battlefield, further increases Haste by 5.",
+          "active": [
+            "Increases Haste by 10.",
+            "If 2 royal guards are on the battlefield, further increases Haste by 5."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 12.",
+                "If 2 royal guards are on the battlefield, further increases Haste by 8."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 15.",
+                "If 2 royal guards are on the battlefield, further increases Haste by 10."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Royal Protection": {
+        "category": "skill4",
+        "description": {
+          "raw": "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.",
+          "active": [
+            "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by royal sword moves to 240% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "The royal guards gain a 1-tile glory aura.",
+                "All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage dealt by royal sword moves to 280% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 280.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Shield — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Multiple targets (EX+10)",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.",
+          "active": [
+            "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF",
+            "label": "buff_summon_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — Summons",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF — Summons",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "When a battle starts, Peggy summons 2 royal guards to join the fray."
+        },
+        {
+          "label": "Damage absorption (allies)",
+          "tier": "base",
+          "targeting": "All units",
+          "description": "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Multiple targets"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "shield"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "peggy",
+    "display_name": "Peggy",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": 2.0,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "When a battle starts, Peggy summons 2 royal guards to join the fray.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The royal guards inherit 120% + 16% (SP-based) of Peggy's HP and 50% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If Peggy is defeated, all royal guards immediately leave the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Peggy then orders these royal guards to protect all allies for 12s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 130% + 16% (SP-based) of Peggy's HP and 55% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 140% + 16% (SP-based) of Peggy's HP and 60% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 150% + 16% (SP-based) of Peggy's HP and 65% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The roval quards inherit 160% + 16% (SP-based) of Peggy's HP and 70% + 7% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% (SP-based) HP per second for 8s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP restored per second to 160% (ATK-based) + 18% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP restored per second to 170% (ATK-based) + 18% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the HP restored per second to 180% (ATK-based) + 18% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Peggy summons a royal marksman in the backline to assist in battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% (SP-based) damage to 2 frontmost enemies.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Enemies hit by the armor-piercing arrows take 22% + 3% (SP-based) more ranged damage for the next 5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For allied summons, their additional ranged damage against these enemies is increased to 16% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For allied summons, their additional ranged damage against these enemies is increased to 18% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "For allied summons, their additional ranged damage against these enemies is increased to 20% + 2% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 10.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 2 royal guards are on the battlefield, further increases Haste by 5.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 2 royal guards are on the battlefield, further increases Haste by 8.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Haste by 15.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 2 royal guards are on the battlefield, further increases Haste by 10.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt by royal sword moves to 240% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The royal guards gain a 1-tile glory aura.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt by royal sword moves to 280% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "4681446f98525f20bd46f9794426e5c9adc0cec6e59ceccdd059f01003e5536e",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

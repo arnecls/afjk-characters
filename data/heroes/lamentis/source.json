@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "lamentis",
+  "display_name": "Lamentis",
+  "source": {
+    "title": "Lamentis - Cosmic Hellion",
+    "name": "Lamentis",
+    "tags": "Hypogean · Marksman · Magic",
+    "faction": "Hypogean",
+    "class": "Marksman",
+    "damage_type": "Magic",
+    "description": "A trigger-happy Marksman who calls on apostles to help him tear through the enemy.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Malevolent Gaze",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "0 tiles",
+          "Initial Energy": "600"
+        },
+        "description": {
+          "raw": "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+          "active": [
+            "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+            "Lamentis then deals 600% (ATK-based) + 60% (SP-based) damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+            "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 640% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 680% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 720% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 760% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lamentis commands his apostles to control enemies, then deals heavy damage to all enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Starcrusher",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based).",
+          "active": [
+            "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% (SP-based) damage plus extra damage equal to 20% + 2% (SP-based) of the target's max HP.",
+            "The extra damage cannot exceed 240% (ATK-based) + 30% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases base damage to 220% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases base damage to 230% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases base damage to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Every third normal attack, Lamentis deals heavy extra damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Astral Fission",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+          "active": [
+            "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+            "The apostles last 12s and inherit 45% + 6% (SP-based) of Lamentis' ATK and 80% + 8% (SP-based) of his HP.",
+            "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+            "Up to 6 apostles can exist on the battlefield at the same time.",
+            "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 50% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 55% + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the ATK percentage inherited by the apostles to 60% + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Lamentis sacrifices HP to summon apostles to fight alongside him."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+          "active": [
+            "Lamentis and his apostles gain 20 ATK SPD.",
+            "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Lamentis and his apostles gain 25 ATK SPD.",
+                "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Lamentis and his apostles gain 30 ATK SPD.",
+                "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK SPD during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Omnisight",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.",
+          "active": [
+            "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+            "Each stack of Growth increases basic stats by 4%.",
+            "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+            "Lamentis can have up to 20 stacks of Growth."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the basic stats granted by each stack of Growth to 5%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the basic stats granted by each stack of Growth to 6%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+                "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+                "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain."
+              ]
+            }
+          ]
+        },
+        "description_lite": "The apostles gain basic stat buffs when using normal attacks, and pass those buffs on to Lamentis when they merge back into him."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+          "active": [
+            "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs."
+          ]
+        },
+        "description_lite": "Lamentis gains part of the buffs applied to his apostles."
+      }
+    ],
+    "range": 7,
+    "release_date": "2026-07-02",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A+"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

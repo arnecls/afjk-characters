@@ -4,7 +4,7 @@ Per-hero synergy picks and summaries derived from skill text in
 [Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.
 Synergy: stat buff tags under **Units improving X**, and
 enabler partners matching **Requires** special effects.
-Up to five partners by combined score. Omitted: ATK-only, Max HP
+Up to 6 partners by combined score. Omitted: ATK-only, Max HP
 buff-only, and Shield-only (unless the hero benefits from shields).
 Rare conditional buffs score lower.
 Meta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).
@@ -14501,12 +14501,12 @@ Common buffers are **Rolan**, **Contess**, **Evie**, or **Twins**.
   - ATK (multiple targets, high)
 - **Taichi & Agumon**
   - ATK (area, high)
-- **Fay**
-  - ATK (arc, low)
-  - Direct healing (arc, high)
 - **Solise**
   - ATK (single target, low)
   - Direct healing (all units, high)
+- **Isabella**
+  - ATK (single target, low, conditional (frequent))
+  - Direct healing (single target, high)
 
 ### Units benefitting most from Talene
 

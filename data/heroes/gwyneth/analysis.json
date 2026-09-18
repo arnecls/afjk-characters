@@ -1,0 +1,687 @@
+{
+  "schema_version": 2,
+  "id": "gwyneth",
+  "display_name": "Gwyneth",
+  "local": {
+    "long_name": "Gwyneth - Dragonslayer Knight",
+    "faction": "lightbearer",
+    "class": "marksman",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 8,
+    "release_date": "2026-05-29",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Hailing Arrows": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage. Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%. Active. Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles. Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s. For each wave of arrows, subsequent hits on the same target deal 80% less damage. This skill prioritizes the area with the most enemies.",
+          "passive": [
+            "After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage.",
+            "Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%."
+          ],
+          "active": [
+            "Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles.",
+            "Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s.",
+            "For each wave of arrows, subsequent hits on the same target deal 80% less damage.",
+            "This skill prioritizes the area with the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt to 290% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt to 310% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt to 330% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt to 350% (ATK-based) + 35% (SP-based) when this skill is used actively."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 385.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 0.1
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 2.0
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Bind — Area"
+          }
+        ]
+      },
+      "Fulgur Arrow": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Gwyneth's normal attacks follow a 3-attack cycle. Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s.",
+          "passive": [
+            "Gwyneth's normal attacks follow a 3-attack cycle.",
+            "Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the lightning splash damage dealt to 240% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the lightning splash damage dealt to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the lightning splash damage dealt to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "silence",
+            "duration": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 310.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 8,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Silence — Single target"
+          },
+          {
+            "label": "Stun — Area"
+          }
+        ]
+      },
+      "Flare Arrow": {
+        "category": "skill2",
+        "description": {
+          "raw": "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire. It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s. While burned, the target has their Vitality reduced by 40. This effect cannot stack.",
+          "active": [
+            "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire.",
+            "It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s.",
+            "While burned, the target has their Vitality reduced by 40.",
+            "This effect cannot stack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 510% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 530% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 550% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ],
+            "duration": 4.0,
+            "tick": 0.25
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive"
+          }
+        ],
+        "skill_range": 8,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Vitality",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK SPD by 15 during battle. If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9.",
+          "active": [
+            "Increases ATK SPD by 15 during battle.",
+            "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 20 during battle.",
+                "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 12."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK SPD by 25 during battle.",
+                "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 15."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Fulgur Flare": {
+        "category": "skill4",
+        "description": {
+          "raw": "Gwyneth's normal attack damage is increased by 20%. The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash.",
+          "active": [
+            "Gwyneth's normal attack damage is increased by 20%.",
+            "The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 5: Increases Gwyneth's normal attack damage by 25%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 10: When an arrow is imbued with the power of both lightning and fire, it also deals extra damage to the main target equal to 10% of their max HP.",
+                "This extra damage cannot exceed 360% of Gwyneth's ATK.",
+                "All damage dealt by this arrow also ignores 60% of enemies' Phys DEF damage reduction, and 4% of all other damage taken reduction effects.",
+                "In non-boss battles, this second value is increased to 12%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Equipment Level 15: Increases Gwyneth's normal attack damage by 30%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive"
+          }
+        ],
+        "skill_range": 8,
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%.",
+          "active": [
+            "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%."
+          ]
+        },
+        "effects": [],
+        "cooldown": 2.0,
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "atk_spd"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "gwyneth",
+    "display_name": "Gwyneth",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "After charging up for a longer time, Gwyneth's normal attack fires an arrow that deals 360% (ATK-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Every point of ATK SPD or Haste further increases her normal attack damage by 0.1%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Gwyneth selects a tile and rains arrows over it and all tiles within 2 tiles.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Enemies on each affected tile take 270% (ATK-based) + 35% (SP-based) damage and become immobilized for 2s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "For each wave of arrows, subsequent hits on the same target deal 80% less damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This skill prioritizes the area with the most enemies.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 290% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 310% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 330% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 350% (ATK-based) + 35% (SP-based) when this skill is used actively.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Gwyneth's normal attacks follow a 3-attack cycle.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Every 3rd attack is imbued with the power of lightning, silencing the target for 1s, dealing 220% (ATK-based) + 30% (SP-based) lightning splash damage to all enemies within 2 tiles of the target, and stunning affected enemies for 0.5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the lightning splash damage dealt to 240% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the lightning splash damage dealt to 260% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the lightning splash damage dealt to 280% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The 2nd attack in Gwyneth's normal attack cycle is imbued with the power of fire.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "It deals 490% (ATK-based) damage and burns the target, causing them to take 20% (ATK-based) + 2% (SP-based) damage every 0.25s for 4s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "While burned, the target has their Vitality reduced by 40.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect cannot stack.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 510% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 530% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 550% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 15 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 9.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 12.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK SPD by 25 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If there are no enemies within 1 tiles for 3s, she further increases ATK SPD by 15.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Gwyneth's normal attack damage is increased by 20%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Equipment Level 5: Increases Gwyneth's normal attack damage by 25%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Equipment Level 10: When an arrow is imbued with the power of both lightning and fire, it also deals extra damage to the main target equal to 10% of their max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This extra damage cannot exceed 360% of Gwyneth's ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "All damage dealt by this arrow also ignores 60% of enemies' Phys DEF damage reduction, and 4% of all other damage taken reduction effects.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "In non-boss battles, this second value is increased to 12%.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Equipment Level 15: Increases Gwyneth's normal attack damage by 30%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "If there are no enemies within 1 tiles for 3s, Gwyneth focuses her aim, reducing the interval between her normal attacks by 40%.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "84ddd12f46ba8c4370dc00563ae7f0b10bc3e700074388cc579bc2233248e453",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

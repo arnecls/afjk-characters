@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "cassadee",
+  "display_name": "Cassadee",
+  "source": {
+    "title": "Cassadee - Azure Prodigy",
+    "name": "Cassadee",
+    "tags": "Lightbearer · Mage · Magic",
+    "faction": "Lightbearer",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A Mage who is skilled at dealing AoE damage and imbuing buffs to allies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Running Tide",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "5 tiles",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies in the path and knocking them back for 2 tiles.",
+          "active": [
+            "Cassadee selects a direction and invokes a 3-tile-wide wave, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies in the path and knocking them back for 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 340% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cassadee knocks back and deals damage to enemies in a straight line."
+      },
+      {
+        "section": "Skill1",
+        "name": "Undercurrent",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "5 tiles"
+        },
+        "description": {
+          "raw": "Cassadee creates a water column beneath an enemy, knocking them into the air while dealing 240% (ATK-based) damage and stunning them for 1.5 + 0.2 (SP-based)s.",
+          "active": [
+            "Cassadee creates a water column beneath an enemy, knocking them into the air while dealing 240% (ATK-based) damage and stunning them for 1.5 + 0.2 (SP-based)s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 280% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 300% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cassadee deals a lot of damage to an enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Tidal Strength",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Cassadee selects the nearest ally when a battle starts (prioritizing the ally behind herself), granting them the blessing of Tidal Strength. She deals extra 60% (ATK-based) magic damage to the enemy once when the blessed ally hits them with normal attacks. The blessing vanishes after this effect is triggered 9 times. Cassadee will bless this ally again after 9 - 1 (SP-based)s. This effect can't be dispelled.",
+          "active": [
+            "Cassadee selects the nearest ally when a battle starts (prioritizing the ally behind herself), granting them the blessing of Tidal Strength.",
+            "She deals extra 60% (ATK-based) magic damage to the enemy once when the blessed ally hits them with normal attacks.",
+            "The blessing vanishes after this effect is triggered 9 times.",
+            "Cassadee will bless this ally again after 9 - 1 (SP-based)s.",
+            "This effect can't be dispelled."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the extra damage to 70% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Blesses the nearest ally after the previous one is defeated, with the blessing cooldown reduced to 5 - 1 (SP-based)s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the extra damage to 80% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cassadee blesses an ally and deals extra damage to the enemy hit by the blessed ally's normal attacks."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Cassadee increases her Haste by 12 during battle. She gains an extra 2 Haste when the first ally blessed by Tidal Strength is alive.",
+          "active": [
+            "Cassadee increases her Haste by 12 during battle.",
+            "She gains an extra 2 Haste when the first ally blessed by Tidal Strength is alive."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Cassadee increases her Haste by 15 during battle.",
+                "She gains an extra 4 Haste when the first ally blessed by Tidal Strength is alive."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Cassadee increases her Haste by 18 during battle.",
+                "She gains an extra 6 Haste when the first ally blessed by Tidal Strength is alive."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cassadee's Haste is increased during battle and even more if the first ally blessed by Tidal Strength is alive."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Tidal Blessing",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Cassadee grants temporary blessings to all allies in the path of Running Tide, enhancing their next 6 normal attacks with the effect of Tidal Strength.",
+          "active": [
+            "Cassadee grants temporary blessings to all allies in the path of Running Tide, enhancing their next 6 normal attacks with the effect of Tidal Strength."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Empowers the allies' next 8 normal attacks with the effect of Tidal Strength."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Casts Undercurrent on an enemy who has taken 6 hits from Tidal Strength."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Empowers the allies' next 9 normal attacks with the effect of Tidal Strength."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cassadee grants temporary Tidal Strength blessings to all allies in the path of Running Tide."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10s.",
+          "active": [
+            "Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Cassadee reduces Magic DEF of enemies hit by Running Tide for a while."
+      }
+    ],
+    "range": 3,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

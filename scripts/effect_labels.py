@@ -4,59 +4,6 @@ from __future__ import annotations
 
 import re
 
-# Legacy label -> canonical name (any category).
-_LEGACY_TO_CANONICAL: dict[str, str] = {
-    "Damage taken reduction": "Damage taken",
-    "Damage taken debuff": "Damage taken",
-    "Damage dealt buff": "Damage dealt",
-    "Damage dealt debuff": "Damage dealt",
-    "Magic damage reduction": "Magic damage",
-    "Magic damage amplification": "Magic damage",
-    "Energy recovery": "Energy",
-    "Energy drain": "Energy",
-    "Energy recovery debuff": "Energy",
-    "Healing stat buff": "Healing",
-    "Healing debuff": "Healing",
-    "Ally empower buff": "Ally empower",
-    "Exemption buff": "Exemption",
-    "Basic stats buff": "Basic stats",
-    "Basic stats debuff": "Basic stats",
-    "ATK buff": "ATK",
-    "ATK debuff": "ATK",
-    "ATK SPD buff": "ATK SPD",
-    "ATK SPD debuff": "ATK SPD",
-    "Haste buff": "Haste",
-    "Haste debuff": "Haste",
-    "Crit buff": "Crit",
-    "DEF Penetration buff": "DEF Penetration",
-    "DEF buff": "DEF",
-    "Phys DEF buff": "Phys DEF",
-    "Phys DEF debuff": "Phys DEF",
-    "Magic DEF buff": "Magic DEF",
-    "Magic DEF debuff": "Magic DEF",
-    "Ranged DEF buff": "Ranged DEF",
-    "Max HP buff": "Max HP",
-    "Max HP debuff": "Max HP",
-    "Lifedrain buff": "Lifedrain",
-    "Execution buff": "Execution",
-    "Execution debuff": "Execution",
-    "Attack range buff": "Attack range",
-    "Vitality buff": "Vitality",
-    "Vitality debuff": "Vitality",
-    "Dodge chance buff": "Dodge chance",
-    "Movement speed buff": "Movement speed",
-    "Movement speed debuff": "Movement speed",
-    "DoT debuff": "DoT",
-    "Debuff duration debuff": "Debuff duration",
-    "Crit Resist debuff": "Crit Resist",
-    "Vulnerable debuff": "Vulnerable",
-    "Tidal Strength buff": "Tidal Strength",
-    "Resilience buff": "Resilience",
-    "Poison debuff": "Poison",
-    "Artifact buff": "Artifact",
-    "Stacking buff": "Stacking",
-}
-
 BUFF_EFFECT_TYPES: list[str] = [
     "ATK",
     "Basic stats",
@@ -116,8 +63,6 @@ def canonical_effect_label(label: str, category: str) -> str:
     text = (label or "").strip()
     if not text:
         return text
-    if text in _LEGACY_TO_CANONICAL:
-        return _LEGACY_TO_CANONICAL[text]
     if category == "buff" and text.casefold().endswith(" buff"):
         return text[: -len(" buff")].rstrip()
     if category == "debuff" and text.casefold().endswith(" debuff"):

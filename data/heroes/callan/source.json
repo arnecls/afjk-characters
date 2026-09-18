@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "id": "callan",
+  "display_name": "Callan",
+  "source": {
+    "title": "Callan - Grim Soulkeeper",
+    "name": "Callan",
+    "tags": "Graveborn · Tank · Magic",
+    "faction": "Graveborn",
+    "class": "Tank",
+    "damage_type": "Magic",
+    "description": "A steadfast Tank, masterfully wielding his shield to defend his allies with unwavering strength.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Restless Guardian",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "When a battle starts, Callan gains a 200% (HP-based) shield and becomes unaffected. While the shield is active, Callan cannot move or act. The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius. Callan enters the battle when the shield expires Active. Callan maintains the shield for up to 10s, gaining a 100% (HP-based) + 5% (SP-based) shield and becomes unaffected. During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius.",
+          "active": [
+            "When a battle starts, Callan gains a 200% (HP-based) shield and becomes unaffected.",
+            "While the shield is active, Callan cannot move or act.",
+            "The shield's value drops by 20% per second and can absorb 50% physical and magic damage taken by allies within a 2-tile radius.",
+            "Callan enters the battle when the shield expires Callan maintains the shield for up to 10s, gaining a 100% (HP-based) + 5% (SP-based) shield and becomes unaffected.",
+            "During this time, the shield absorbs 50% physical or magic damage taken by allies in a 2-tile radius."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When actively used, increases the shield value to 110% (HP-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When actively used, increases the shield value to 120% (HP-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "When actively used, increases the shield value to 130% (HP-based) + 5% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "When actively used, increases the shield value to 140% (HP-based) + 5% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "At the start of the battle or when actively used, Callan gains a shield that absorbs damage for allies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Flail Slam",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Callan swings his flail to deal 160% (ATK-based) damage to an enemy twice. He then slams them on the ground, dealing 150% (ATK-based) + 20% (SP-based) damage to all enemies in a rectangular area in front of him and knocking them down.",
+          "active": [
+            "Callan swings his flail to deal 160% (ATK-based) damage to an enemy twice.",
+            "He then slams them on the ground, dealing 150% (ATK-based) + 20% (SP-based) damage to all enemies in a rectangular area in front of him and knocking them down."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Callan deals damage multiple times to a target enemy, knocking the target and nearby enemies down."
+      },
+      {
+        "section": "Skill2",
+        "name": "Eternal Watch",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "5s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Callan converts 25% + 1% (SP-based) of the damage absorbed by his shield into golem's might during battle. Active. Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius. This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based). Each cast consumes up to 600% (ATK-based) of the stored might, with any excess reserved for the next cast.",
+          "active": [
+            "Callan converts 25% + 1% (SP-based) of the damage absorbed by his shield into golem's might during battle.",
+            "Callan unleashes the stored golem's might to deal an equal amount of damage to enemies within a 2-tile radius.",
+            "This skill can only be used when the amount of stored golem's might exceeds 350% (ATK-based).",
+            "Each cast consumes up to 600% (ATK-based) of the stored might, with any excess reserved for the next cast."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Callan converts 28% + 1% (SP-based) of the damage absorbed by his shield into golem's might."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Callan converts 31% + 1% (SP-based) of the damage absorbed by his shield into golem's might."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Callan converts 35% + 1% (SP-based) of the damage absorbed by his shield into golem's might."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Callan converts the damage absorbed by his shield into golem's might. When the stored golem's might reaches a threshold, unleashes it to deal AoE damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Callan increases his Vitality by 11 during battle.",
+          "active": [
+            "Callan increases his Vitality by 11 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Callan increases his Vitality by 15 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Callan increases his Vitality by 19 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Callan increases his Vitality."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Hollowed Wrath",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When Callan or any non-summoned ally's HP falls below 30%, he lets out a wrathful howl, dealing 50% (ATK-based) damage per enemy to all enemies up to 8 times and stunning them for 0.5s. While casting this skill, Callan becomes unaffected. This skill can be used once per battle.",
+          "active": [
+            "When Callan or any non-summoned ally's HP falls below 30%, he lets out a wrathful howl, dealing 50% (ATK-based) damage per enemy to all enemies up to 8 times and stunning them for 0.5s.",
+            "While casting this skill, Callan becomes unaffected.",
+            "This skill can be used once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases stun duration to 2s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 70% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When Callan or an ally's HP drops low, he unleashes a devastating attack, dealing massive damage to nearby enemies and stunning them. This skill can be used once per battle."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When gaining a shield, Callan recovers HP equal to 15% of the shield's max value.",
+          "active": [
+            "When gaining a shield, Callan recovers HP equal to 15% of the shield's max value."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Callan recovers a certain amount of HP when gaining a shield."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-02-13",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A+",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

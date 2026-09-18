@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "id": "satrana",
+  "display_name": "Satrana",
+  "source": {
+    "title": "Satrana - Ember Enchantress",
+    "name": "Satrana",
+    "tags": "Mauler · Mage · Magic",
+    "faction": "Mauler",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A Keeper of Flames who can sustain tremendous damage, reduce enemy's Vitality, and deal continuous damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Fiery Dance",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "2 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Satrana does the fiery dance, dealing 240% (ATK-based) damage to surrounding enemies within 2 tiles. She is invincible during the effect.",
+          "active": [
+            "Satrana does the fiery dance, dealing 240% (ATK-based) damage to surrounding enemies within 2 tiles.",
+            "She is invincible during the effect."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "The last strike of this skill charms enemies for 2 + 0.25 (SP-based)s, making them only use normal attacks while charmed."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage to 260% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 280% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 300% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Satrana deals continuous damage to enemies and is invincible during the effect."
+      },
+      {
+        "section": "Skill1",
+        "name": "Vixen Rush",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Satrana scratches enemies in a 1-tile arc twice. Each strike deals 110% (ATK-based) damage plus 2.5% + 0.5% (SP-based) target's max HP. The additional damage cannot exceed 75% + 10% (SP-based) of Satrana's ATK. The damage dealt by this skill grants Satrana 100 Life Drain.",
+          "active": [
+            "Satrana scratches enemies in a 1-tile arc twice.",
+            "Each strike deals 110% (ATK-based) damage plus 2.5% + 0.5% (SP-based) target's max HP.",
+            "The additional damage cannot exceed 75% + 10% (SP-based) of Satrana's ATK.",
+            "The damage dealt by this skill grants Satrana 100 Life Drain."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 115% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 120% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 130% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Satrana attacks enemies within the radius of an arc and gains Life Drain."
+      },
+      {
+        "section": "Skill2",
+        "name": "Ignite Passions",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Satrana grants Sparks to allies within 2 tiles when a battle starts. When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s and reducing their Vitality by 20. The skill damage cannot exceed 45% + 5% (SP-based) of Satrana's ATK. The effect lasts until the battle ends.",
+          "active": [
+            "Satrana grants Sparks to allies within 2 tiles when a battle starts.",
+            "When Satrana or allies with Sparks deal damage to an enemy for 3 times, the target is burned, taking damage equal to 0.8% + 0.2% (SP-based) of max HP every 1s and reducing their Vitality by 20.",
+            "The skill damage cannot exceed 45% + 5% (SP-based) of Satrana's ATK.",
+            "The effect lasts until the battle ends."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "When all enemies or a total of 5 enemies have been ignited, the Vitality reduction is increased to 60."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 1% + 0.2% (SP-based) of the target's max HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "When all enemy heroes or 5 enemy heroes have been ignited, the damage is increased to 2% of max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Satrana or allies with Sparks ignite enemies, reducing their Vitality and dealing continuous damage to them."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Reduces damage taken by 12% during battle.",
+          "active": [
+            "Reduces damage taken by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Reduces damage taken by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Reduces damage taken during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Radiant Vigor",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When an enemy hero is ignited, the magic damage taken by Satrana is reduced by 16% until the battle ends. Satrana grants this effect to a nearby ally when one more enemy hero is ignited.",
+          "active": [
+            "When an enemy hero is ignited, the magic damage taken by Satrana is reduced by 16% until the battle ends.",
+            "Satrana grants this effect to a nearby ally when one more enemy hero is ignited."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Each ignited enemy hero grants Satrana 200 Energy."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases Satrana's magic DMG Reduction to 20%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Satrana's magic DMG Reduction to 22%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Satrana ignites enemies, causing her and her allies to take less magic damage."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a total of 5 enemy heroes have been ignited.",
+          "active": [
+            "Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a total of 5 enemy heroes have been ignited."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Vixen Rush's cooldown is removed when all enemy heroes have been ignited."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "A",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

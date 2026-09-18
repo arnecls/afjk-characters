@@ -1,0 +1,519 @@
+{
+  "schema_version": 2,
+  "id": "niru",
+  "display_name": "Niru",
+  "local": {
+    "long_name": "Niru - Soul Collector",
+    "faction": "graveborn",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Soul Shepherd": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP. The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second. Once its HP runs out, the Spirit will be defeated.",
+          "active": [
+            "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP.",
+            "The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second.",
+            "Once its HP runs out, the Spirit will be defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Ally in Spirit form deals 55% + 5% (SP-based)} of the original damage."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Ally in Spirit form deals 65% + 5% (SP-based)} of the original damage."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "cooldown": 1.0,
+        "initial_energy": 0.0,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Soul Reaping": {
+        "category": "skill1",
+        "description": {
+          "raw": "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP. The additional damage cannot exceed 450% (ATK-based).",
+          "active": [
+            "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP.",
+            "The additional damage cannot exceed 450% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases additional damage to 0.35 times of the target's lost HP, up to 525% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases additional damage to 0.4 times of the target's lost HP, up to 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases additional damage to 0.45 times of the target's lost HP, up to 600% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 0.45
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 6.0,
+        "skill_card_tags": [
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Spirit Devour": {
+        "category": "skill2",
+        "description": {
+          "raw": "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based). He then restores an equal amount of HP to the weakest ally.",
+          "active": [
+            "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based).",
+            "He then restores an equal amount of HP to the weakest ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "The damage dealt to each enemy is increased to 160% (ATK-based) + 15% (SP-based), plus 3,5% of the target's max HP, up to 80% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The damage dealt to each enemy is increased to 170% (ATK-based) + 15% (SP-based), plus 3% of the target's max HP, up to 90% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The damage dealt to each enemy is increased to 180% (ATK-based) + 15% (SP-based), plus 5% of the target's max HP, up to 100% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 195.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 8.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases HP by 17% during battle.",
+          "active": [
+            "Increases HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Ethereal Form": {
+        "category": "skill4",
+        "description": {
+          "raw": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself.",
+          "active": [
+            "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Until all allies enter Spirit form for 10s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Until all allies enter Spirit form for 12s."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 3,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Niru's Soul Reaping prevents the enemy from recovering HP for 8s.",
+          "active": [
+            "Niru's Soul Reaping prevents the enemy from recovering HP for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Healing",
+            "label": "debuff_healing"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Healing",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Spirit form protection",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+        },
+        {
+          "label": "Start-of-battle cast",
+          "tier": "mythic+",
+          "targeting": "Self",
+          "description": "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself."
+        },
+        {
+          "label": "Spirit form protection",
+          "tier": "ex+5",
+          "targeting": "All units",
+          "description": "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
+        },
+        {
+          "label": "Named ally on team",
+          "tier": "supreme+",
+          "targeting": "Allies",
+          "description": "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.",
+          "grants": [
+            {
+              "label": "Phys DEF",
+              "magnitude": "high"
+            },
+            {
+              "label": "Magic DEF",
+              "magnitude": "high"
+            }
+          ]
+        }
+      ],
+      "requires": [
+        {
+          "label": "Ally blessing active",
+          "tier": "base",
+          "targeting": "Allies",
+          "description": "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form."
+        },
+        {
+          "label": "Enemy defeat",
+          "tier": "base",
+          "targeting": "Allies",
+          "description": "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character)."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "niru",
+    "display_name": "Niru",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Niru prioritizes the weakest ally and cast a spell to protect them for a fatal blow, turning them into a Spirit and restoring their HP to 45% of max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The Spirit can only deal 45% + 5% (SP-based) of its original damage while losing an increasing amount of HP every second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Once its HP runs out, the Spirit will be defeated.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 51: For every (up to 5) non-summoned enemy defeated, the blessed ally restores an extra 10% of max HP when entering the Spirit form.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 111: For every non-summoned enemy defeated, they ally in Spirit form restores 10% of max HP (up to 5 times for each character).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Ally in Spirit form deals 55% + 5% (SP-based)} of the original damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Ally in Spirit form deals 65% + 5% (SP-based)} of the original damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Niru attacks the weakest enemy, dealing 120% (ATK-based) + 20% (SP-based) damage plus damage equal to 0.3 times the target's lost HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The additional damage cannot exceed 450% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases additional damage to 0.35 times of the target's lost HP, up to 525% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases additional damage to 0.4 times of the target's lost HP, up to 600% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases additional damage to 0.45 times of the target's lost HP, up to 600% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Niru drains the life force of all enemies, dealin 150% (ATK-based) + 15% (SP-based) damage to each enemy, plus 3% of the target's max HP, up to 70% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He then restores an equal amount of HP to the weakest ally.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The damage dealt to each enemy is increased to 160% (ATK-based) + 15% (SP-based), plus 3,5% of the target's max HP, up to 80% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The damage dealt to each enemy is increased to 170% (ATK-based) + 15% (SP-based), plus 3% of the target's max HP, up to 90% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The damage dealt to each enemy is increased to 180% (ATK-based) + 15% (SP-based), plus 5% of the target's max HP, up to 100% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases HP by 17% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases HP by 23% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases HP by 29% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Niru casts Ultimate on the nearest ally without consuming Energy when a battle starts, prioritizing the ally behind himself.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "The spirit will not lose HP over time until all allies enter Spirit form for 8s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Until all allies enter Spirit form for 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Until all allies enter Spirit form for 12s.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Niru's Soul Reaping prevents the enemy from recovering HP for 8s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "0428cde9085e6f9459b3ef7c53cf167a3ccd0e3b7841ed6f7601667a67766cbc",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

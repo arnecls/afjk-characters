@@ -140,7 +140,7 @@ Synergy ranking and roster-wide magnitude bands assume every hero is **fully
 ascended**: all skill slots unlock (Ultimate through Supreme+ / EX tiers), and
 numeric comparison uses the **strongest parseable value** per effect label
 across skill level lines — not the base unlock value. This is implemented in
-`_merge_effects_from_list()` in `rewrite-summaries.py` (max numeric wins).
+`_merge_effects_from_list()` in `analysis/serialize.py` (max numeric wins).
 Processed JSON may set `is_max_known: false` when higher tiers still
 use `(scaled)` placeholders in source text.
 
@@ -152,7 +152,7 @@ roster** (same effect label), not same-role peers only.
 
 - **Buffs / debuffs** — parsed % compared within the same label across
   all heroes (quantiles when enough data); debuffs also reward
-  `all enemies` reach. `assign_magnitudes()` in `rewrite-summaries.py`.
+  `all enemies` reach. `assign_magnitudes()` in `analysis/magnitudes.py`.
 - **Crowd control** — duration-based (≥5s → high, ≥2s → average).
 - **HP loss / max-HP / true damage** — composite score from %, targeting, and
   frequency; roster-wide quantiles in `assign_damage_magnitudes()`.
@@ -164,7 +164,7 @@ strength. **Conditional (rare)** lowers magnitude by two steps; some labels
 ## Meta tiers (Prydwen)
 
 Per-mode strength ratings (`S+`, `S`, `A+`, `A`, `B`, `C`, `?`) are stored on
-each hero in `heroes_data.json` as `prydwen_tiers` (`afk_stages`, `dream_realm`,
+each hero's `source.json` as `prydwen_tiers` (`afk_stages`, `dream_realm`,
 `dream_realm_endless`, `pvp`). Sourced from the
 [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list) via character
 pages during `just download`. Shown at the top of each hero's behavior section
@@ -185,7 +185,7 @@ Regenerate overview (and strip stray summaries from Heroes.md if present):
 
 `python3 scripts/generate-heroes-overview.py`
 
-Summary/synergy rules live in `scripts/rewrite-summaries.py` (library).
+Summary/synergy rules live in `scripts/hero_pipeline/relationships/scoring.py`.
 
 ## Behavior (movement & casting speed)
 
@@ -195,7 +195,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   `high movement`, or `moving / stationary` (dual units). Derived from
   per-skill `Skill Range`, cooldown-weighted attack ranges, and
   repositioning phrases in skill text. Special cases in
-  `compute_movement()` in `rewrite-summaries.py`: off-battlefield heroes
+  `compute_movement()` in `analysis/behavior.py`: off-battlefield heroes
   (Damian), summon controllers (Bryon), dual units (Twins), constant
   movers (Rhys), dormant/rooted cycles (Zorya, Ulmus), explicit hero
   repositioning (Rowan), brief aerial reposition (Scarlita), pull-to-self
@@ -206,7 +206,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah).
   Each Movement bullet also includes **base walk speed** from
-  `data/hero_walk_speeds.json` (`zero` / `slow` / `normal` / `fast` /
+  `source.json` `external.walk_speed` (`zero` / `slow` / `normal` / `fast` /
   `veryfast`), sourced from afkj-data `Unit.WalkSpeed`. Stored as
   `behavior.walk_speed`. Markdown form:
   `Movement: {label} ({note}); walk speed {tier}`. Site and list view
@@ -216,14 +216,14 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   buffs/debuffs. Missing walk-speed rows fail `just validate`
   (`walk_speed` check group); do not invent provisional values.
 - **Signature skill** — the one skill that most characterises how the
-  hero is played. Stored in `data/signature_skills.json` (key =
-  display name from `heroes-overview.md`). Each entry has
+  hero is played. Stored in each hero's generated/override files (key =
+  manifest ID). Each entry has
   `signature_calculated` (best repeatable, buffable skill by category:
   `ultimate`, `skill1`, `skill2`, `skill4`) and optional
   `signature_override` when the curated identity skill differs.
   Effective signature = `signature_override ?? signature_calculated`.
   Optional `speed_override` applies to the effective signature.
-  Skill names resolve from `heroes_data.json`; shown in the behavior
+  Skill names resolve from the hero's generated source; shown in the behavior
   block as `**Signature skill**: {name} [(ultimate)]`.
   Often the Ultimate, but not always. Pick the skill that defines the
   unit's identity in combat.
@@ -259,7 +259,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   damage**, a final `- **True damage**: {type} \`{mag}\`, …` line lists types
   (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
-  `rewrite-summaries.py`; stored in `behavior.skill_overview`. Speed uses
+  `analysis/behavior.py`; stored in `behavior.skill_overview`. Speed uses
   `compute_per_skill_speeds()` roster-wide quantiles. Damage scores per skill
   section from chunk text (roster-wide quantiles). Heal/buffs/debuffs peak
   magnitudes from `skill_slices` effects. Non-ultimate row aggregates
@@ -275,29 +275,30 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 
 **Skill cards** (site character sheet) — chip tags under each skill summary
 in `site/data/heroes.json` → `sections.skillCards`. Tags are computed during
-`just analyze` from the same `analyze_hero()` pass as processed JSON:
+`just analyze` from `analyze_local()` and stored on the hero-local cache:
 
 - **Damage chips** — labels from `skill_slices[section].effects` (category
   `damage`), not a second pass over raw skill text.
 - **Buff / debuff / CC / immunity chips** — same `skill_slices` effects.
 
-Stored on each skill as `skill_card_tags` in `heroes_data_processed.json`.
-`render_site.py` reads those tags (does not re-derive). After changing
-effects in `data/skill_effects/<short_name>.json`, run `just views`
-(analyze + render) so processed JSON and the site stay aligned.
+Stored on each skill as `skill_card_tags` in the hero's generated analysis.
+`scripts/hero_pipeline_cli.py views` reads those tags (does not re-derive).
+After changing effects in `data/heroes/<hero-id>/ai.json`, run `just views`
+so processed JSON and the site stay aligned.
 
 **Skill effect extraction** (AI-authored sidecar, not regex):
 
-- Source of truth: `data/skill_effects/<short_name>.json` per hero.
-- `analyze_hero()` loads sidecar via `scripts/skill_effects_store.py`.
+- Source of truth: `data/heroes/<hero-id>/ai.json` per hero.
+- `analyze_local()` applies `ai.json.skill_effects` through
+  `scripts/skill_effects_store.py`.
 - Each skill entry stores `source_hash`; stale hash fails `just validate`.
 - To fix detection: re-extract with the extract-skill-effects skill — do not
-  edit regex rule tables (removed from `rewrite-summaries.py`).
+  edit regex rule tables.
 
 **Skill summary authoring** (AI-generated, not scripted):
 
-- Read fully ascended `description` from `heroes_data_processed.json`.
-- Cross-check against `description_lite` in `heroes_data.json` for each
+- Read fully ascended `description` from the hero's generated analysis.
+- Cross-check against `description_lite` in the hero's generated source for each
   skill slot — it is the preferred source for validating mechanics and
   catching missing or invented effects.
 - Write a **short mechanic summary** using **generalized game vocabulary**
@@ -349,7 +350,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
 
 ## Behavior tags
 
-Curated combat-role tags live in `data/hero_behavior_tags.json`; allowed values
+Curated combat-role tags live in each hero's `ai.json`; allowed values
 are enumerated in `data/schema/tags.schema.json`. Tags drive **Similar Skills**
 replacement scoring (Jaccard overlap on shared tags in
 `generate-heroes-overview.py`). Any hero pair with at least one shared tag can
@@ -459,7 +460,7 @@ skill effect.
   placed on or remaining on the battlefield beyond the cast animation.
   Timed or untargetable fighters qualify; transient attacks/effects (e.g.
   Marcille Sky Fish) do not. Curated roster and source skills live in
-  `data/hero_summon_profiles.json`.
+  each hero's `ai.json` `summon_profile`.
 - taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
 - temporary-stat-buffer: Grants at least one **temporary** ally stat buff
   (`persistence: temporary` on an ally-targeted positive stat effect in the

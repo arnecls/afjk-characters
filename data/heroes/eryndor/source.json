@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "eryndor",
+  "display_name": "Eryndor",
+  "source": {
+    "title": "Eryndor - Veiled Viceroy",
+    "name": "Eryndor",
+    "tags": "Graveborn · Mage · Magic",
+    "faction": "Graveborn",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A mage who lurks in the shadows, outwitting his opponents through cunning trickery.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Forced Game",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "8 tiles",
+          "Initial Energy": "550"
+        },
+        "description": {
+          "raw": "Eryndor invites all non-summoned enemies to play his game. Each enemy independently rolls a die to determine their outcome. Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times. Each stack of Woe reduces the enemy's roll by 1. If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times. Ervndor can claim stats from each enemy up to 3 times. The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats.",
+          "active": [
+            "Eryndor invites all non-summoned enemies to play his game.",
+            "Each enemy independently rolls a die to determine their outcome.",
+            "Whenever a different ally inflicts a stat reduction effect on an enemy, that enemy permanently gains 1 stack of Woe, stacking up to 3 times.",
+            "Each stack of Woe reduces the enemy's roll by 1.",
+            "If the final roll is 3 or lower, the enemy loses the game, surrendering 20% + 2% of their ATK and 15% + 1.5% (SP-based) of their max HP to Eryndor and taking 160% (ATK-based) damage 3 times.",
+            "Ervndor can claim stats from each enemy up to 3 times.",
+            "The total ATK and max HP Ervndor gains this wav cannot exceed 100% + 10% (SP-based) of his corresponding stats."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to an enemy who loses Eryndor's game to 170% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to an enemy who loses Eryndor's game to 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to an enemy who loses Eryndor's game to 190% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to an enemy who loses Eryndor's game to 200% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eryndor invites all enemy heroes to play his game. Enemies who lose the game surrender stats to Eryndor and take damage."
+      },
+      {
+        "section": "Skill1",
+        "name": "Unfurling Blades",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "6s",
+          "Skill Range": "8 tiles"
+        },
+        "description": {
+          "raw": "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade. Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based).",
+          "active": [
+            "Eryndor unleashes 9 fan blades to strike non-summoned enemies in order from lowest to highest HP percentage, dealing 70% (ATK-based) + 10% (SP-based) damage per blade.",
+            "Each stack of Woe on a target further increases the damage they take from this skill by 10% + 1% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage of each hit to 75% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage of each hit to 80% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage of each hit to 85% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eryndor strikes all non-summoned enemies with his fan blades, dealing more damage for each stack of Woe on the target."
+      },
+      {
+        "section": "Skill2",
+        "name": "Veiled Return",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "8 tiles"
+        },
+        "description": {
+          "raw": "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage. The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile. Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill. Shields granted by this skill last for 8s.",
+          "active": [
+            "Eryndor throws a spinning fan into the area with the most enemies and gains a shield that absorbs 300% (ATK-based) damage.",
+            "The fan remains in that area for 1.5s, dealing 170% (ATK-based) + 20% (SP-based) damage 4 times to enemies within 1 tile.",
+            "Upon the fan's return, Eryndor gains an extra shield equal to 20% + 2% (SP-based) of the actual damage dealt by this skill.",
+            "Shields granted by this skill last for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 190% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eryndor throws his fan into the area with the most enemies, dealing continuous damage and gaining shields."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Eryndor gains 10 Haste during battle. When an enemy loses his game, he gains an extra 6 Haste.",
+          "active": [
+            "Eryndor gains 10 Haste during battle.",
+            "When an enemy loses his game, he gains an extra 6 Haste."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Eryndor gains 14 Haste during battle.",
+                "When an enemy loses his game, he gains an extra 7 Haste."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Eryndor gains 18 Haste during battle.",
+                "When an enemy loses his game, he gains an extra 8 Haste."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Eryndor increases his Haste, with an additional increase when an enemy loses his game."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "All is Lost",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy. Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits.",
+          "active": [
+            "When Eryndor uses his Ultimate, if an enemy loses his game, his Ultimate lands 1 extra hit that deals 200% (ATK-based) damage to that enemy.",
+            "Each subsequent loss by that enemy increases the number of extra hits they take by 1, up to 3 hits."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by extra hits to 225% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Once a non-boss enemy has lost Eryndor's game 2 times, they are permanently stripped of all stat buffs for the rest of the battle, and their ATK is further reduced by 15% of Eryndor's ATK, down to a minimum of 20% of the target's initial ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage dealt by extra hits to 250% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Enemies who lose Eryndor's game take extra damage multiple times."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee. The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat.",
+          "active": [
+            "When a battle starts, Eryndor collects 7% of every non-summoned enemy's basic stats as an entry fee.",
+            "The total amount collected for each stat cannot exceed 35% of Eryndor's corresponding stat."
+          ]
+        },
+        "description_lite": "Eryndor collects a portion of enemy heroes' basic stats as an entry fee when a battle starts."
+      }
+    ],
+    "range": 8,
+    "release_date": "2026-09-03",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "S",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

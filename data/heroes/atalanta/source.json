@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "id": "atalanta",
+  "display_name": "Atalanta",
+  "source": {
+    "title": "Atalanta - Fortune Finder",
+    "name": "Atalanta",
+    "tags": "Lightbearer · Marksman · Physical",
+    "faction": "Lightbearer",
+    "class": "Marksman",
+    "damage_type": "Physical",
+    "description": "A nimble Marksman who knows how to deal AoE damage at medium and short-range distances.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Wild Sniper",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "3 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Atalanta selects a tile and dashes there, shooting a powerful penetrative bolt in the target direction, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies along a 1-tile wide path and stunning them for 2s.",
+          "active": [
+            "Atalanta selects a tile and dashes there, shooting a powerful penetrative bolt in the target direction, dealing 280% (ATK-based) + 30% (SP-based) damage to all enemies along a 1-tile wide path and stunning them for 2s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When Atalanta hits an enemy with this skill, she triggers the explosion of Scorching Gift at the target's location, dealing 75% of the skill's damage.",
+                "Scorching Gift can only deal damage 3 times to an enemy in this way each time Atalanta casts her Ultimate."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage to 340% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Atalanta dashes forward and shoots a powerful penetrative bolt in a direction."
+      },
+      {
+        "section": "Skill1",
+        "name": "Sweet Encounter",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Atalanta swings her whip at an enemy, dealing 130% (ATK-based) + 15% (SP-based) damage, knocking them back 2 tiles, and immobilizing them for 3s. If there is another enemy behind the target within range, Atalanta will instead knock the target towards that enemy, dealing damage and immobilizing both of them.",
+          "active": [
+            "Atalanta swings her whip at an enemy, dealing 130% (ATK-based) + 15% (SP-based) damage, knocking them back 2 tiles, and immobilizing them for 3s.",
+            "If there is another enemy behind the target within range, Atalanta will instead knock the target towards that enemy, dealing damage and immobilizing both of them."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "If Atalanta knocks the target into another enemy, the two enemies take damage from each other.",
+                "The damage received is equal to 150% of the other side's ATK, up to 300% of Atalanta's ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Atalanta knocks an enemy back. If another enemy is behind the target within range, skill's effects are applied to both of them."
+      },
+      {
+        "section": "Skill2",
+        "name": "Scorching Gift",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Atalanta shoots an explosive bolt that explodes upon hitting an enemy, dealing 190% (ATK-based) + 20% (SP-based) damage to the target and adjacent enemies.",
+          "active": [
+            "Atalanta shoots an explosive bolt that explodes upon hitting an enemy, dealing 190% (ATK-based) + 20% (SP-based) damage to the target and adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The explosion range is increases to 2 tiles.",
+                "However, enemies in the outermost circle of the explosion only take 60% of the original damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Atalanta shoots a powerful explosive bolt."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Atalanta increases her Haste by 12 during battle. She gains an extra 2 Haste after dealing damage to 3 different enemies within 3s.",
+          "active": [
+            "Atalanta increases her Haste by 12 during battle.",
+            "She gains an extra 2 Haste after dealing damage to 3 different enemies within 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Atalanta increases her Haste by 15 during battle.",
+                "She gains an extra 4 Haste after dealing damage to 3 different enemies within 3s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Atalanta increases her Haste by 18 during battle.",
+                "She gains an extra 6 Haste after dealing damage to 3 different enemies within 3s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Atalanta's Haste increases during battle. She gains extra Haste after dealing damage to 3 different enemies within seconds."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Sleight of Hand",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Sweet Encounter can be cast 2 times in a row when a battle starts, prioritizing different targets. Passive. The damage dealt by Sweet Encounter is increased by 6%.",
+          "passive": [
+            "The damage dealt by Sweet Encounter is increased by 6%."
+          ],
+          "active": [
+            "Sweet Encounter can be cast 2 times in a row when a battle starts, prioritizing different targets."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The bonus damage ratio of Sweet Encounter is increased to 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Atalanta steals 10% ATK and 10% Phys DEF from the target every time she hits her main target with Sweet Encounter.",
+                "This effect cannot be stacked on the same target, and the stolen stats will be returned in 8s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The bonus damage ratio of Sweet Encounter is increased to 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Sweet Encounter can be cast multiple times in a row when a battle starts."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Sniper.",
+          "active": [
+            "Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Sniper."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Atalanta heals herself when Wild Sniper hits the enemy directly."
+      }
+    ],
+    "range": 4,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "low",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

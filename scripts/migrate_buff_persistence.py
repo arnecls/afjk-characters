@@ -119,14 +119,16 @@ def main() -> int:
         ses.short_name(h["title"]): h for h in raw["heroes"]
     }
     updated = 0
-    for path in sorted(ses.SKILL_EFFECTS_DIR.glob("*.json")):
-        doc = json.loads(path.read_text(encoding="utf-8"))
-        hero_short = path.stem
+    from hero_pipeline.storage import display_names_by_id, load_ai_by_id, load_roster_inputs
+
+    snapshot = load_roster_inputs()
+    names = display_names_by_id()
+    documents = sorted(
+        (names[hero_id], doc)
+        for hero_id, doc in load_ai_by_id("skill_effects").items()
+    )
+    for hero_short, doc in documents:
         record = heroes_by_short.get(hero_short)
-        if record is None and hero_short == "Twins":
-            record = next(
-                h for h in raw["heroes"] if h["title"].startswith("Elijah")
-            )
         if record is None:
             print(f"skip {hero_short}: no heroes_data record")
             continue

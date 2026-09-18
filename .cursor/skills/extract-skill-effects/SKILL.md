@@ -2,21 +2,21 @@
 name: extract-skill-effects
 description: >-
   Extract schema-valid skill effects from hero skill text into
-  data/skill_effects/<short_name>.json. Use when adding a hero, when skill
+  data/heroes/<hero-id>/ai.json. Use when adding a hero, when skill
   text changes, or when fixing wrong/missing buffs, debuffs, CC, damage types,
   healing, shields, energy, immunities, or special provides/requires.
 ---
 
 # Extract skill effects
 
-AI-authored sidecar per hero. Replaces regex detection in
-`scripts/rewrite-summaries.py`. Pipeline reads sidecars via
-`analyze_hero()`; no regex edits for effect fixes.
+AI-authored effect data per hero. Pipeline reads it from `ai.json` via the
+hero-pipeline storage seam; do not edit regex tables for effect fixes.
 
 ## When to use
 
 - New hero after `just download` (instead of regex gap fixes)
-- Skill text changed in `heroes_data.json` (hash stale in `just validate`)
+- Skill text changed in a hero's `source.json` (hash stale in
+  `just validate`)
 - Wrong/missing effects in processed JSON or site skill chips
 - User asks to re-extract or fix detection for one hero
 
@@ -24,7 +24,7 @@ AI-authored sidecar per hero. Replaces regex detection in
 
 | Source | Use for |
 |--------|---------|
-| `data/heroes_data.json` | Full skill text, sections, upgrades |
+| `data/heroes/<hero-id>/source.json` | Full skill text, sections, upgrades |
 | `description_lite` | Cross-check mechanics; preferred for validation |
 | `data/schema/game_properties.schema.json` | CC, damage types, stats, immunities |
 | `data/schema/skills.schema.json` | Effect shape (`$defs/effect`) |
@@ -32,7 +32,7 @@ AI-authored sidecar per hero. Replaces regex detection in
 
 ## Output
 
-`data/skill_effects/<short_name>.json`:
+`data/heroes/<hero-id>/ai.json` (`skill_effects` field):
 
 ```json
 {
@@ -80,29 +80,18 @@ Task progress:
 
 ```bash
 python3 - <<'PY'
-import importlib.util, json, sys
+import sys
 from pathlib import Path
-SCRIPTS = Path("scripts")
-sys.path.insert(0, str(SCRIPTS))
-import heroes_io as io, skill_effects_store as ses, hero_schema as hs
+sys.path.insert(0, str(Path("scripts")))
+from hero_pipeline.analysis.local import analyze_local
+from hero_pipeline.storage import load_roster_inputs
 
-NAME = "Aliceth"  # short or title substring
-raw = io.load_heroes_data()
-record = next(r for r in raw["heroes"] if NAME.lower() in r["title"].lower())
-spec = importlib.util.spec_from_file_location("rs", SCRIPTS / "rewrite-summaries.py")
-rs = importlib.util.module_from_spec(spec)
-sys.modules["rewrite_summaries"] = rs
-spec.loader.exec_module(rs)
-
-old = rs.hero_from_record(record)
-rs.analyze_hero(old)
-new_doc = ses.export_sidecar_from_hero(old, record)  # replace with your draft
-# Or: build draft manually, then compare processed output:
-new_hero = rs.hero_from_record(record)
-ses.apply_sidecar_to_hero(new_hero, new_doc)
-rs.assign_magnitudes([new_hero], {})
-print("OLD effects:", len(old.effects), "NEW slice effects:",
-      sum(len(s.effects) for s in new_hero.skill_slices.values()))
+HERO_ID = "aliceth"
+snapshot = load_roster_inputs()
+entry = next(row for row in snapshot["manifest"]["heroes"] if row["id"] == HERO_ID)
+analysis = analyze_local(entry, snapshot["bundles"][HERO_ID])
+print("skills", len(analysis["skills"]))
+print("effects", sum(len(skill.get("effects") or []) for skill in analysis["skills"].values()))
 PY
 ```
 
@@ -166,7 +155,7 @@ just validate
   Combat Fury adjacency) need `Ally DoT on enemies` in `special_provides`
   when the ally is the damage source. Wording like `damage … each time` on
   cooldowns is **not** DoT.
-- **Do not** edit `rewrite-summaries.py` regex tables for effect fixes (removed).
+- **Do not** edit local-analysis regex tables for effect fixes.
 
 ## Staleness
 

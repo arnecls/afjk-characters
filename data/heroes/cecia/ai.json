@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Cecia - Requiem of Thorns",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "2e3b4f2a9467d66c2f71f86b79fd0e1cad23c559bb2a067811dd4c2569e888e6",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "arc",
+                "target_count": -1,
+                "area_count": 1,
+                "area_direction": "front",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 197.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "crowd_control",
+                "cc-type": "bind",
+                "duration": 2.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "dot",
+                "damage_type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 185.0
+                  }
+                ],
+                "duration": 2,
+                "tick": 1.0
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 185.0
+                  }
+                ],
+                "persistence": "unknown"
+              }
+            ],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Cecia summons Mr. Carlyle to a selected tile to assist in battle."
+              }
+            ],
+            "special_requires": [
+              {
+                "label": "Enemy not CC-immune",
+                "tier": "mythic+",
+                "targeting": "Enemies",
+                "description": "This skill prioritizes enemies who have not reached the limit and are not in the control immunity status."
+              }
+            ]
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "100bba8211e6373e4dfd416b7eed811ae5f6ce6b843d6e40da07c636fb2b08c8",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "temporary"
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Lifedrain",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "unknown"
+              }
+            ],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "c1bb4c8c1ff3476f9c03d728a46fc52620eff3709097b52458b0d0f3223578d7",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 27.0
+                  }
+                ],
+                "persistence": "unknown"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 230.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 27.0
+                  }
+                ],
+                "persistence": "unknown"
+              }
+            ],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "0208e926d68b19d709b92d6cd573e9eaec2db227649b22881aeb915c112aa269",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "persistence": "unknown"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "594532e881b13771651e18caa75bb05f634bba6c723a73fa6ca63d0d8574b700",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "crowd_control",
+                "cc-type": "bind",
+                "duration": 4.0
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "damage_type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 80.0
+                  }
+                ],
+                "duration": 4,
+                "tick": 1.0
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Phys DEF",
+                "label": "debuff_defensive"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Magic DEF",
+                "label": "debuff_defensive"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "c94e9d48b0ccb6a40e0f17a6357ac6b9dc30f463e5ee94b3593b2f15c9481f23",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "dot-specialist",
+    "enemy-debuffer",
+    "mass-cc",
+    "summoner"
+  ],
+  "summon_profile": {
+    "has_ranged_summons": false,
+    "sources": [
+      {
+        "section": "Ultimate",
+        "tier": "base"
+      }
+    ]
+  },
+  "skill_summaries": {
+    "ultimate": "summon companion to assist in battle",
+    "skill1": "increase own and companion ATK speed",
+    "skill2": "periodic enhanced normal attack dealing heavy damage",
+    "skill3": "ATK speed scales with companion presence on battlefield",
+    "skill4": "bind an enemy and drain their stats",
+    "skill5": "reduce normal attacks needed to trigger enhanced attack"
+  },
+  "play_overview": "Cecia fights alongside a **permanent companion**, raising both their attack speeds and landing periodic **enhanced heavy strikes**. She binds an enemy to **drain their stats**, and attack speed scales while the companion stays on the field. Her ultimate **re-summons the companion** for another burst of pressure. She is a **solid carry** with bind and steady DPS but struggles against **tanky single targets** that resist bind.",
+  "counter_overview": "Cecia and her **permanent companion** stack attack speed and **enhanced heavy strikes**, while she **binds a target to drain stats** into both fighters. Race to delete her before companion uptime and bind steal snowball — both defenses are **high**, so lean on true-damage rear pressure with [[filter:backline-assassin]] like [[Himmel]] or [[Ravion]], or [[filter:backline-inhibit]] like [[Bonnie]]'s Aging inhibit. Park a **tanky frontliner** on the bind so the drain never finds a soft carry."
+}

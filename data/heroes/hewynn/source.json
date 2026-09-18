@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "id": "hewynn",
+  "display_name": "Hewynn",
+  "source": {
+    "title": "Hewynn - Tender Leaf",
+    "name": "Hewynn",
+    "tags": "Wilder · Support · Magic",
+    "faction": "Wilder",
+    "class": "Support",
+    "damage_type": "Magic",
+    "description": "A tender water spirit who is skilled at continuous healing.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Rain Prayer",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "Global",
+          "Initial Energy": "200"
+        },
+        "description": {
+          "raw": "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s.",
+          "active": [
+            "Hewynn heals all allies for 95% (ATK-based) + 5% (SP-based) HP per second for 9s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Healing amount per second is increased to 100% (ATK-based) + 5% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Healing amount per second is increased to 105% (ATK-based) + 5% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Healing amount per second is increased to 110% (ATK-based) + 5% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Healing amount per second is increased to 115% (ATK-based) + 5% (SP-based) HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn continuously heals all allies for a duration of time."
+      },
+      {
+        "section": "Skill1",
+        "name": "Healing Wave",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "5s",
+          "Initial Cooldown": "1.25s",
+          "Skill Range": "4 tiles"
+        },
+        "description": {
+          "raw": "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP.",
+          "active": [
+            "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% (SP-based) of their HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases HP recovery to 290% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases HP recovery to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Hewynn's skill grants this effect once every 3s to 1 weakest ally while casting her Ultimate."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn heals an ally for a small amount of HP."
+      },
+      {
+        "section": "Skill2",
+        "name": "Revitalize",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%. This effect can trigger once every 8 - 1 (SP-based)s per ally.",
+          "active": [
+            "Hewynn heals an ally, granting an extra 120% (ATK-based) HP if their HP ratio is below 50%.",
+            "This effect can trigger once every 8 - 1 (SP-based)s per ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Heals an ally and removes all their dispellable debuffs, triggering once every 6 - 1 (SP-based)s per ally."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Heals once every 6 - 1 (SP-based)s per ally, and removes dispellable debuffs once every 4 - 1 (SP-based)s per ally."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the extra healing amount to 130% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn heals allies and removes their dispellable debuffs."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Hewynn increases her ATK by 9% during battle. She gains an extra 6% ATK after casting Rain Prayer for the first time.",
+          "active": [
+            "Hewynn increases her ATK by 9% during battle.",
+            "She gains an extra 6% ATK after casting Rain Prayer for the first time."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Hewynn increases her ATK by 12% during battle.",
+                "She gains an extra 8% ATK after casting Rain Prayer for the first time."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Hewynn increases her ATK by 14% during battle.",
+                "She gains an extra 10% ATK after casting Rain Prayer for the first time."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn increases her ATK during battle. She gains extra ATK after casting Rain Prayer for the first time."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Tranquility",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Hewynn is unaffected for 6s while casting Rain Prayer. During this time, all allies take 30% less damage.",
+          "active": [
+            "Hewynn is unaffected for 6s while casting Rain Prayer.",
+            "During this time, all allies take 30% less damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Hewynn has 300 Initial Energy.",
+                "While Rain Prayer is effective, all allies take 32% less damage."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "While Rain Prayer is effective, all allies take 34% less damage and receive buffs from Revitalize."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "While Rain Prayer is effective, all allies take 36% less damage."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Hewynn is immune to control effects and reduces damage taken by allies while casting Rain Prayer."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect.",
+          "active": [
+            "Hewynn also grants the healed ally 30 Haste for 6s when Revitalize is in effect."
+          ]
+        },
+        "description_lite": "Hewynn increases the target's Haste for seconds when Revitalize is in effect."
+      }
+    ],
+    "range": 4,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "support"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

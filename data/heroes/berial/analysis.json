@@ -1,0 +1,666 @@
+{
+  "schema_version": 2,
+  "id": "berial",
+  "display_name": "Berial",
+  "local": {
+    "long_name": "Berial - Sinister Jester",
+    "faction": "hypogean",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Scared Swamp": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Berial flies beneath the enemy, hiding within their shadow and dealing 36% (ATK-based) damage every 0.25s, absorbing 15 + 5 (SP-based) Energy, lasting up to 5s. Berial is Invincible during the effect. Then he jumps out from the shadow, dealing 320% (ATK-based) + 30% (SP-based) damage to adjacent enemies and frightening them for 4s.",
+          "active": [
+            "Berial flies beneath the enemy, hiding within their shadow and dealing 36% (ATK-based) damage every 0.25s, absorbing 15 + 5 (SP-based) Energy, lasting up to 5s.",
+            "Berial is Invincible during the effect.",
+            "Then he jumps out from the shadow, dealing 320% (ATK-based) + 30% (SP-based) damage to adjacent enemies and frightening them for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Deals 38% (ATK-based) damage to enemies every 0.25s when hiding in the shadow."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Deals 40% (ATK-based) damage to enemies every 0.25s when hiding in the shadow."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Deals 42% (ATK-based) damage to enemies every 0.25s when hiding in the shadow.."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Deals 45% (ATK-based) damage to enemies every 0.25s when hiding in the shadow."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 0.25
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "frighten",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 10,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Energy",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Frighten — Area"
+          }
+        ]
+      },
+      "Shadow Trick": {
+        "category": "skill1",
+        "description": {
+          "raw": "Berial hides within the shadow, and becomes Invincible while hidden. If there are isolated enemies on the battlefield, Berial will move to each isolated target in turn, dealing 300% (ATK-based) + 30% (SP-based) damage to each target. Otherwise, he will stay in the shadow, recover a total of 300% (ATK-based) HP before returning to his original tile.",
+          "active": [
+            "Berial hides within the shadow, and becomes Invincible while hidden.",
+            "If there are isolated enemies on the battlefield, Berial will move to each isolated target in turn, dealing 300% (ATK-based) + 30% (SP-based) damage to each target.",
+            "Otherwise, he will stay in the shadow, recover a total of 300% (ATK-based) HP before returning to his original tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Increases the damage dealt to the isolated targets to 310% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases the damage dealt to the isolated targets to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the damage dealt to the isolated targets to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 380.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 20.0,
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Devil's Contract": {
+        "category": "skill2",
+        "description": {
+          "raw": "Berial hides within the shadow for 10s after being defeated. However, during which, if a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 40% (HP-based) + 6% (SP-based) HP. This effect can only be triggered once per battle.",
+          "active": [
+            "Berial hides within the shadow for 10s after being defeated.",
+            "However, during which, if a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 40% (HP-based) + 6% (SP-based) HP.",
+            "This effect can only be triggered once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Increases Berial's restored HP to 45% (HP-based) + 6% (SP-based) of his max HP after revival."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Increases Berial's restored HP to 50% (HP-based) + 6% (SP-based) of his max HP after revival."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Increases Berial's restored HP to 60% (HP-based) + 6% (SP-based) of his max HP after revival."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "on_defeat"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              },
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Berial reduces the damage dealt by an isolated enemy by 6% and increases their damage taken by 3%.",
+          "active": [
+            "Berial reduces the damage dealt by an isolated enemy by 6% and increases their damage taken by 3%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Berial reduces the damage dealt by an isolated enemy by 8% and increases their damage taken by 4%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Berial reduces the damage dealt by an isolated enemy by 10% and increases their damage taken by 5%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage dealt",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 5.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage dealt",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Damage taken",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Shadow Reflection": {
+        "category": "skill4",
+        "description": {
+          "raw": "If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and generate a Silhouette that inherits 50% of Berial's ATK, HP and 100% of other stats. This Silhouette loses 8% of its max HP per second. This effect can only be triggered once on the same target within 20s, and the Silhouette can only deal damage by normal attacks.",
+          "active": [
+            "If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and generate a Silhouette that inherits 50% of Berial's ATK, HP and 100% of other stats.",
+            "This Silhouette loses 8% of its max HP per second.",
+            "This effect can only be triggered once on the same target within 20s, and the Silhouette can only deal damage by normal attacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: The Silhouette inherits 70% of Berial's ATK and HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Enemies lose 40 Energy when they receive damage from the Silhouette."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: The Silhouette inherits 80% of Berial's ATK and HP."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 180.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 10,
+        "skill_card_tags": [
+          {
+            "label": "Energy",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Increases the hiding duration after being defeated by 10s.",
+          "active": [
+            "Increases the hiding duration after being defeated by 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Berial is Invincible during the effect."
+        },
+        {
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Berial hides within the shadow for 10s after being defeated. If a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 60% (HP-based) + 6% HP."
+        },
+        {
+          "label": "Summoning",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and generate a Silhouette that inherits 50% of Berial's ATK, HP and 100% of other stats."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [],
+    "scalar_stat_shares": {
+      "atk": 0.7333333333333333,
+      "max_hp": 0.26666666666666666
+    },
+    "id": "berial",
+    "display_name": "Berial",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Berial flies beneath the enemy, hiding within their shadow and dealing 36% (ATK-based) damage every 0.25s, absorbing 15 + 5 (SP-based) Energy, lasting up to 5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Berial is Invincible during the effect.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Then he jumps out from the shadow, dealing 320% (ATK-based) + 30% (SP-based) damage to adjacent enemies and frightening them for 4s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 51: Deals 38% (ATK-based) damage to enemies every 0.25s when hiding in the shadow.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 111: Deals 40% (ATK-based) damage to enemies every 0.25s when hiding in the shadow.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 171: Deals 42% (ATK-based) damage to enemies every 0.25s when hiding in the shadow..",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Unlocks at level 231: Deals 45% (ATK-based) damage to enemies every 0.25s when hiding in the shadow.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Berial hides within the shadow, and becomes Invincible while hidden.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If there are isolated enemies on the battlefield, Berial will move to each isolated target in turn, dealing 300% (ATK-based) + 30% (SP-based) damage to each target.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Otherwise, he will stay in the shadow, recover a total of 300% (ATK-based) HP before returning to his original tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 71: Increases the damage dealt to the isolated targets to 310% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 131: Increases the damage dealt to the isolated targets to 320% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Unlocks at level 191: Increases the damage dealt to the isolated targets to 350% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Berial hides within the shadow for 10s after being defeated.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "However, during which, if a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 40% (HP-based) + 6% (SP-based) HP.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can only be triggered once per battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 91: Increases Berial's restored HP to 45% (HP-based) + 6% (SP-based) of his max HP after revival.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 151: Increases Berial's restored HP to 50% (HP-based) + 6% (SP-based) of his max HP after revival.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Unlocks at level 211: Increases Berial's restored HP to 60% (HP-based) + 6% (SP-based) of his max HP after revival.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Berial reduces the damage dealt by an isolated enemy by 6% and increases their damage taken by 3%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Berial reduces the damage dealt by an isolated enemy by 8% and increases their damage taken by 4%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Berial reduces the damage dealt by an isolated enemy by 10% and increases their damage taken by 5%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and generate a Silhouette that inherits 50% of Berial's ATK, HP and 100% of other stats.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This Silhouette loses 8% of its max HP per second.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This effect can only be triggered once on the same target within 20s, and the Silhouette can only deal damage by normal attacks.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 5: The Silhouette inherits 70% of Berial's ATK and HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 10: Enemies lose 40 Energy when they receive damage from the Silhouette.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Unlocks at Exclusive Weapon level 15: The Silhouette inherits 80% of Berial's ATK and HP.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Increases the hiding duration after being defeated by 10s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "b1616e444405e4d19319b57217964d7d5eb1ea3111c9dcbc5cd81882671627b0",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

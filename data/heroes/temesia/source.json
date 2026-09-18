@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "id": "temesia",
+  "display_name": "Temesia",
+  "source": {
+    "title": "Temesia - Lightsavior",
+    "name": "Temesia",
+    "tags": "Lightbearer · Tank · Physical",
+    "faction": "Lightbearer",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A fearless Tank excels at sustainable charging and smashing the enemies' backline.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Knight's Heart",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "1 tile",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Passive. Temesia does not perform normal attacks. Instead, she selects the farthest enemy and charges toward them dealing 125% (ATK-based) damage + 10% (SP-based) damage to all enemies in her path. Upon reaching the target, she changes direction and restores 180 Energy. Temesia's attack animation speed is not affected by her ATK SPD or Haste. Each point of ATK SPD or Haste increases her charge damage by 1%. Active. Temesia summons her mount Dawn to leap forward, dealing 300% (ATK-based) damage to adjacent enemies and knocking them down. Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks.",
+          "passive": [
+            "Temesia does not perform normal attacks.",
+            "Instead, she selects the farthest enemy and charges toward them dealing 125% (ATK-based) damage + 10% (SP-based) damage to all enemies in her path.",
+            "Upon reaching the target, she changes direction and restores 180 Energy.",
+            "Temesia's attack animation speed is not affected by her ATK SPD or Haste.",
+            "Each point of ATK SPD or Haste increases her charge damage by 1%."
+          ],
+          "active": [
+            "Temesia summons her mount Dawn to leap forward, dealing 300% (ATK-based) damage to adjacent enemies and knocking them down.",
+            "Her charge speed will be increased by 10% (ATK-based) afterward, up to 2 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 130% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 140% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 150% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt by Temesia's charge to 160% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Tamesia charges on the battlefield, dealing damage to all enemies on her path. Active. Tamesia summons her mount on leap forward, dealing damage and knocking back adjacent enemies down, and increasing her charge speed."
+      },
+      {
+        "section": "Skill1",
+        "name": "Iron Heel",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Temesia commands her mount Down to kick an enemy while changing the charge direction, dealing 150% (ATK-based) + 15% (SP-based) damage and inflicting an interruption effect. Reduces the enemy's damage dealt by 15% (ATK-based) for 5s.",
+          "active": [
+            "Temesia commands her mount Down to kick an enemy while changing the charge direction, dealing 150% (ATK-based) + 15% (SP-based) damage and inflicting an interruption effect.",
+            "Reduces the enemy's damage dealt by 15% (ATK-based) for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Restores 10% (ATK-based) of lost HP when changing the charge direction."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia deals damage and reduces damage dealt by the enemy when charging in the opposite direction"
+      },
+      {
+        "section": "Skill2",
+        "name": "Courage Sword",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Temesia wields her broadsword to attack adjacent enemies four times while charging, dealing damage that is equal to 40% (ATK-based) + 5% (SP-based) of the targets' ATK. Each damage doesn't exceed 70% (ATK-based) + 7% (SP-based) of her ATK.",
+          "active": [
+            "Temesia wields her broadsword to attack adjacent enemies four times while charging, dealing damage that is equal to 40% (ATK-based) + 5% (SP-based) of the targets' ATK.",
+            "Each damage doesn't exceed 70% (ATK-based) + 7% (SP-based) of her ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Each damage is increased to 45% (ATK-based) + 5% (SP-based) of the targets' ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Each damage is increased to 50% (ATK-based) + 5% (SP-based) of the targets' ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Each damage is increased to 60% (ATK-based) + 5% (SP-based) of the targets' ATK.."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia deals damage to the surrounding enemies based on the targets ATK"
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Temesia increases her ATK by 11% (ATK-based) during battle. She also gains an extra 2% ATK the first time she casts Knight's Heart.",
+          "active": [
+            "Temesia increases her ATK by 11% (ATK-based) during battle.",
+            "She also gains an extra 2% ATK the first time she casts Knight's Heart."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Temesia increases her ATK by 14% (ATK-based) during battle.",
+                "She also gains an extra 3% ATK the first time she casts Knight's Heart."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Temesia increases her ATK by 18% (ATK-based) during battle.",
+                "She also gains an extra 4% ATK the first time she casts Knight's Heart."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesisa's ATK increases during battle. She gains extra ATK after the first Knight's cast."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Invincible Fury",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, turning the charge damage into true damage.",
+          "active": [
+            "Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, turning the charge damage into true damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Restores 1% of her max HP per second under this status."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Restores 1.2% of her max HP per second under this status."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Restores 1.4% of her max HP per second under this status."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia gains permanent control immunity and turns the charge damage into true damage after casting Ultimate several times."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.",
+          "active": [
+            "Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Tamesia reduces the enemys phys DEF if they are hit by the Knight's Heart."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "B",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

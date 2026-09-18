@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "walker",
+  "display_name": "Walker",
+  "source": {
+    "title": "Walker - Wildland Outlaw",
+    "name": "Walker",
+    "tags": "Lightbearer · Rogue · Physical",
+    "faction": "Lightbearer",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A steadfast Rogue who undertakes the bounties of the mightiest enemies and defeats them.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Six-Shot",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast. Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s. Subsequent hits on the same target deal 50% damage.",
+          "active": [
+            "Walker loads his revolver with 6 bullets, randomly shooting at enemies in front, prioritizing enemies not hit during this cast.",
+            "Each bullet deals 50% (ATK-based) damage plus 5% + 1% (SP-based) of the target's max HP (the bonus damage is up to 60% (ATK-based)), stunning the target for 1.5 + 0.2 (SP-based)s.",
+            "Subsequent hits on the same target deal 50% damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: When the enemies in front include a target marked with Bounty Pursuit, the remaining bullets will be directed at the targeted enemy after shooting all others."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 55% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 60% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases stun duration to 2 + 0.2 (SP-based)s."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker fires at enemies in front one by one after loading bullets, dealing damage and stunning them."
+      },
+      {
+        "section": "Skill1",
+        "name": "Shotgun Blast",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area. His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage. Walker's normal attack range cannot be buffed any further.",
+          "active": [
+            "Walker shoots 3 penetrative bullets using normal attacks, dealing damage to enemies in the frontal area.",
+            "His main target will always receive damage from 3 bullets, each with 34% (ATK-based) + 6% (SP-based) damage.",
+            "Walker's normal attack range cannot be buffed any further."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Walker's normal attacks stun enemies for 0.125s upon dealing critical hits."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases each bullet's damage dealt to 37% (ATK-based) + 6% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases each bullet's damage dealt to 40% (ATK-based) + 6% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker's normal attacks are enhanced to cause AoE damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Bounty Pursuit",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts. Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based). Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated.",
+          "active": [
+            "Walker claims the bounty on the enemy with the highest accumulated damage dealt 10s after a battle starts.",
+            "Walker prioritizes attacking this enemy upon claiming the bounty, increasing his damage dealt by 25% + 5% (SP-based) and reducing his damage taken by 18% + 5% (SP-based).",
+            "Walker gains 5 + 3 (SP-based) Crit Boost (up to 15 + 9 (SP-based)) till the battle ends when the targeted enemy is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+                "Each shot deals 50% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based))."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Walker can claim the bounty again after the previous targeted enemy is defeated."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Upon claiming the bounty, Walker fires 3 shots at the enemy who is marked with it.",
+                "Each shot deals 55% (ATK-based) damage plus the damage equal to 4% of the target's lost HP (the bonus damage is up to 25% (ATK-based))."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker prioritizes attacking the enemy with the highest accumulated damage dealt, during which he gains a buff."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Crit DMG Boost by 30 during battle.",
+          "active": [
+            "Increases Crit DMG Boost by 30 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Crit DMG Boost by 40 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Crit DMG Boost by 50 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Crit DMG Boost during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Aerial Thunder",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade. The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding. The above skill effect only takes effect once when multiple grenades hit the same target.",
+          "active": [
+            "Walker throws a grenade at each of the 3 enemies when a battle starts, then uses his revolver to detonate the grenade.",
+            "The enemies within a 1-tile arc will be stunned for 2s, taking 140% (ATK-based) damage and losing 10% Phys DEF in 15s upon grenades exploding.",
+            "The above skill effect only takes effect once when multiple grenades hit the same target."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: Reduces the enemies' Crit Resist by 10 in 15s."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Increases damage to 150%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: Increases damage to 160%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker throws grenades at the beginning of a battle, dealing AoE damage and stunning his enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time. This shield lasts till the target is defeated.",
+          "active": [
+            "Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time.",
+            "This shield lasts till the target is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Walker gains a shield when dealing damage to the bounty target for the first time."
+      }
+    ],
+    "range": 2,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "low",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

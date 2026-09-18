@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "viperian",
+  "display_name": "Viperian",
+  "source": {
+    "title": "Viperian - Shadow Serpent",
+    "name": "Viperian",
+    "tags": "Graveborn · Mage · Magic",
+    "faction": "Graveborn",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A Graveborn Mage who specializes in life rituals and is able to deal a lot of AoE damage.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Spiritual Viper",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "250"
+        },
+        "description": {
+          "raw": "Passive. Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%. During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed. Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them. Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%. Active. Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies. He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed.",
+          "passive": [
+            "Viperian burns HP as much as possible when a battle starts, sending Darkvipers to possess all enemies until his HP is below 60%.",
+            "During this skill, he is Unaffected while losing 7% max HP for each Darkviper deployed.",
+            "Every possessed enemy drops 20 Energy on Hit, losing 1% (HP-based) HP per second to sustain the survivability of the Darkviper on them.",
+            "Viperian calls a Darkviper back to recover 14% (HP-based) HP when is HP ratio is below 30%."
+          ],
+          "active": [
+            "Viperian deals 280% (ATK-based) + 20% (SP-based) damage to all possessed enemies.",
+            "He inflicts the nearest enemy with the same effect and Darkviper possession if no enemy on the battlefield is possessed."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases damage to 290% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Increases damage to 300% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases damage to 310% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases damage to 320% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Viperian burns HP and sends Darkvipers to possess the enemies, dealing massive damage."
+      },
+      {
+        "section": "Skill1",
+        "name": "Soul Ravager",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "5 Tiles"
+        },
+        "description": {
+          "raw": "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt.",
+          "active": [
+            "Viperian drains HP from the healthiest enemy, dealing 210% (ATK-based) + 25% (SP-based) damage and recovering HP that equals the damage dealt."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Viperian drains HP from the healthiest enemy."
+      },
+      {
+        "section": "Skill2",
+        "name": "Enchantment Fang",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "10s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies. Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based).",
+          "active": [
+            "Passive: Darkvipers launch Tearing Bite once every 3s during the battle, dealing 65% (ATK-based) damage once to all the possessed enemies.",
+            "Active: Viperian burns 10% max HP to enhance the next Tearing Bite, dealing 140% (ATK-based) damage to the target and reducing thier Energy by 60 + 15 (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases Common Tearing Bite damage to 75% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases Enhanced Tearing Bite damage to 150% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces the target's Energy by 100 + 15 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Darkvipers launch Tearing Bite periodically to deal damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Increases Haste by 12 during battle.",
+          "active": [
+            "Increases Haste by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Haste by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Haste during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Crimson Waltz",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Cooldown": "30s",
+          "Initial Cooldown": "10s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
+          "active": [
+            "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
+            "He is Unaffected during the skill casting.",
+            "This skill can be triggered once every 30s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage to 450% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Darkvipers gain 2 enhancements after the skill is cast."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases damage to 480% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Burns HP to deal massive damage to all enemies when having a higher HP portion."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.",
+          "active": [
+            "Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Darkvipers return when the possessed enemies are defeated, recovering HP and Energy for Viperian."
+      }
+    ],
+    "range": 5,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "slow",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "average",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

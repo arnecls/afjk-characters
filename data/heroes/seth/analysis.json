@@ -1,0 +1,645 @@
+{
+  "schema_version": 2,
+  "id": "seth",
+  "display_name": "Seth",
+  "local": {
+    "long_name": "Seth - Swift Shadow",
+    "faction": "mauler",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Shadow Strike": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target. Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill. Seth prioritizes selecting the weakest enemy as the target.",
+          "active": [
+            "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target.",
+            "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
+            "Seth prioritizes selecting the weakest enemy as the target."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage while jumping to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases HP recovery from each Bloodlust stack to 15% of the total damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage while jumping to 170% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage while jumping to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Invincible — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Bind — Single target"
+          }
+        ]
+      },
+      "Predator's Lunge": {
+        "category": "skill1",
+        "description": {
+          "raw": "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP. The additional damage cannot exceed 400% of his ATK.",
+          "active": [
+            "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP.",
+            "The additional damage cannot exceed 400% of his ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 160% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 170% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 180% (ATK-based) + 15% (SP-based).."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 195.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 200.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive"
+          }
+        ],
+        "cooldown": 6.5,
+        "initial_cooldown": 2.0,
+        "skill_card_tags": [
+          {
+            "label": "HP loss"
+          },
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Energy — Self (Mythic+)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF (Supreme+)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hunter Instinct": {
+        "category": "skill2",
+        "description": {
+          "raw": "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks. Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based). Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust.",
+          "active": [
+            "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks.",
+            "Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based).",
+            "Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Gains a stack of Bloodlust when the HP of a non-summoned enemy first falls below 50%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases Haste by 12 + 1.5 (SP-based) and Life Drain by 10 + 1 (SP-based) permanently with each stack of Bloodlust."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Gains 25 Crit when he first triggers Bloodlust."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 12.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Hunting Spree": {
+        "category": "skill4",
+        "description": {
+          "raw": "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated.",
+          "active": [
+            "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases Energy recovery to 240."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases Energy recovery to 260."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge.",
+          "active": [
+            "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill."
+        },
+        {
+          "label": "Stacking",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "crit",
+      "energy",
+      "physical_def",
+      "magic_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "seth",
+    "display_name": "Seth",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Seth flashes forward toward an enemy, dealing 100% (ATK-based) damage 3 times, then freezes them briefly and jumps to deal 150% (ATK-based) + 20% (SP-based) more damage to the target.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Seth prioritizes selecting the weakest enemy as the target.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage while jumping to 160% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases HP recovery from each Bloodlust stack to 15% of the total damage dealt.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage while jumping to 170% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases damage while jumping to 180% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Seth pounces on the weakest enemy in range and deals 150% (ATK-based) + 15% (SP-based) damage plus 25% of the target's lost HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The additional damage cannot exceed 400% of his ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 160% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 170% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases damage to 180% (ATK-based) + 15% (SP-based)..",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy first falls below 33%, up to 3 stacks.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each stack permanently increases his Haste by 10 + 1.5 (SP-based) and Life Drain by 7 + 1 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Gains a stack of Bloodlust when the HP of a non-summoned enemy first falls below 50%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases Haste by 12 + 1.5 (SP-based) and Life Drain by 10 + 1 (SP-based) permanently with each stack of Bloodlust.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Gains 25 Crit when he first triggers Bloodlust.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 16% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 20% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Seth immediately resets the cooldown of Predator's Lunge and recovers 200 Energy when a non-summoned enemy is defeated.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases Energy recovery to 240.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases Energy recovery to 260.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "0a10615dc9faa7ba6bdcb725a3435ea3e9f1c8bdcf23194e9b12644afb888882",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

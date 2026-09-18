@@ -1,10 +1,10 @@
 # AFK Journey hero data pipeline.
 # Run `just` (or `just -l`) to list recipes.
 #
-# Pipeline: download -> process -> render
-#   download : data/heroes_data.json          (Fandom baseline + Yaphalla gaps)
-#   process  : data/heroes_data_processed.json + heroes_data_synergies.json
-#   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
+# Pipeline: download -> analyze -> views
+#   download : data/roster.json + data/heroes/*/source.json
+#   analyze  : data/heroes/*/analysis.json (hero-local cache)
+#   views    : calibrate + relationships in memory; Heroes.md, overview, CSV, site
 
 default:
     @just --list
@@ -23,13 +23,21 @@ ensure-venv:
       .venv/bin/pip install -q -r requirements.txt
     fi
 
-# Refresh data/heroes_data.json from live sources (Fandom, Yaphalla, Prydwen).
+# Refresh per-hero source files from live sources.
 download:
-    python3 scripts/download_heroes.py
+    python3 scripts/hero_pipeline_cli.py download
 
 # Validate processed JSON vs Heroes.md and pipeline parity.
 validate: ensure-venv
+    .venv/bin/python scripts/hero_pipeline_cli.py validate
+
+# Content and semantic checks against local caches and AI sidecars.
+validate-semantics: ensure-venv
     .venv/bin/python scripts/validate_processed.py
+
+# Strict types for the schema-first pipeline package only.
+typecheck: ensure-venv
+    .venv/bin/python -m mypy --config-file mypy.ini scripts/hero_pipeline
 
 # Parallel pytest (~2–3 min after caching). Uses -n auto when peak RSS ≤ 1.5 GB.
 test: ensure-venv
@@ -42,35 +50,35 @@ test: ensure-venv
 test-serial: ensure-venv
     .venv/bin/python -m unittest discover -s scripts -p 'test_*.py' -v
 
-# Analyse data/heroes_data.json -> processed + synergies JSON.
+# Refresh stale local analysis caches.
 analyze: ensure-venv
-    .venv/bin/python scripts/process_heroes.py
-    .venv/bin/python scripts/process_synergies.py
+    .venv/bin/python scripts/hero_pipeline_cli.py analyze
 
-# Recompute roster-wide synergies from existing processed data.
+# Recompute roster-wide relationships in memory and publish views.
 analyze-synergies: ensure-venv
-    .venv/bin/python scripts/process_synergies.py
+    .venv/bin/python scripts/hero_pipeline_cli.py views
 
-# Render Heroes.md from data/heroes_data.json.
-render-heroes:
-    python3 scripts/render_heroes.py
+# Render Heroes.md, overview, CSV, and browser-visible files.
+render-heroes: ensure-venv
+    .venv/bin/python scripts/hero_pipeline_cli.py views
 
-# Render heroes-overview.md + heroes-overview.csv.
-render-overview:
-    python3 scripts/render_overview.py
+# Render views, then fail if committed outputs drifted besides the timestamp.
+assert-rendered-outputs: ensure-venv
+    .venv/bin/python scripts/assert_rendered_outputs.py
+
+# Render heroes-overview.md + heroes-overview.csv (same views command).
+render-overview: render-heroes
 
 # Build site/data from overview views, cache faction/class icons, bundle JS.
 render-site: render-overview
-    python3 scripts/render_site.py
     python3 scripts/download_hero_images.py
     python3 scripts/bundle_js.py
 
-
 # Render all view files.
-render: render-heroes render-site
+render: render-site
 
-# Regenerate views from the committed data/heroes_data.json (no network).
-views: analyze render
+# Regenerate views from committed hero bundles (no network).
+views: render
 
 # Full pipeline: refresh data from the web, then regenerate views.
 all: download analyze render

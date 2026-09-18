@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "id": "thoran",
+  "display_name": "Thoran",
+  "source": {
+    "title": "Thoran - Fallen King",
+    "name": "Thoran",
+    "tags": "Graveborn · Tank · Physical",
+    "faction": "Graveborn",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A Tank who can revive himself and reflect damage back to attackers.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Soul Retaliation",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 Tiles",
+          "Initial Energy": "200",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Thoran charges up for a moment to slash at enemies within range, dealing 200% (ATK-based) + 20% (SP-based) damage plus 180% (ATK-based) of the damage received during the charge. He also gains 20% Life Drain. Thoran is Unaffected while casting this skill.",
+          "active": [
+            "Thoran charges up for a moment to slash at enemies within range, dealing 200% (ATK-based) + 20% (SP-based) damage plus 180% (ATK-based) of the damage received during the charge.",
+            "He also gains 20% Life Drain.",
+            "Thoran is Unaffected while casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Increases additional damage to 200% (ATK-based) of the damage received during the charge."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Thoran's soul will complete the slash if this skill is interrupted."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Increases additional damage to 220% (ATK-based) of the damage received during the charge."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Increases additional damage to 240% (ATK-based) of the damage received during the charge."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thoran charges up to slash at enemies in range, dealing damage plus a percentage of damage received during the charge, and gains Life Drain."
+      },
+      {
+        "section": "Skill1",
+        "name": "Soul Plunder",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "15s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Thoran targets the non-soul-plundered enemy with the highest HP and drains 18% + 1.5% (SP-based) of the target's current HP to increase his max HP by the same amount. He also causes this target to receive 13% more damage for the rest of the battle. Drained HP limit: 600% (ATK-based) of Thoran's ATK.",
+          "active": [
+            "Thoran targets the non-soul-plundered enemy with the highest HP and drains 18% + 1.5% (SP-based) of the target's current HP to increase his max HP by the same amount.",
+            "He also causes this target to receive 13% more damage for the rest of the battle.",
+            "Drained HP limit: 600% (ATK-based) of Thoran's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Increases drained HP to 20% + 1.5% (SP-based) of the enemy's current HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases the enemy's received damage to 16% for the rest of the battle."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the enemy's received damage to 17% for the rest of the battle."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Enhancement: Thoran's Ultimate drains an additional 20% of the current HP from all enemies affected by Soul Plunder to increase his max HP by the same amount."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thoran drains a portion of the HP from the enemy with the highest HP to increase his own HP."
+      },
+      {
+        "section": "Skill2",
+        "name": "Resurrection",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "2 Tiles"
+        },
+        "description": {
+          "raw": "Thoran will resurrect with 40% (HP-based) + 4% (SP-based) HP restored after a short time when defeated. This effect can be triggered once per battle.",
+          "active": [
+            "Thoran will resurrect with 40% (HP-based) + 4% (SP-based) HP restored after a short time when defeated.",
+            "This effect can be triggered once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Thoran can revive himself with 50% (HP-based) + 4% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Thoran can revive himself with 60% (HP-based) + 4% (SP-based) HP."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Gains 500 Energy when the skill is triggered."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thoran will resurrect with a portion of his HP restored after a short time when defeated; this effect can be triggered once per battle."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 Tiles"
+        },
+        "description": {
+          "raw": "Thoran's normal attacks and skills increase his Energy Recovery by 24%. His Energy Recovery is increased by an extra 6% when Resurrection is not triggered.",
+          "active": [
+            "Thoran's normal attacks and skills increase his Energy Recovery by 24%.",
+            "His Energy Recovery is increased by an extra 6% when Resurrection is not triggered."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Energy Recovery to 32%; additional increase when Resurrection is not triggered to 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Energy Recovery to 40%; additional increase when Resurrection is not triggered to 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Thoran's normal attacks and skills increase his Energy Recovery; this increase is higher when Resurrection is not triggered."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Soul Pact",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP. After that, Thoran no longer takes damage for this ally.",
+          "active": [
+            "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
+            "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
+            "After that, Thoran no longer takes damage for this ally."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "25% of the damage dealt by this ally heals Thoran when the pact exists."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the healing amount that Thoran receives from the ally's damage dealt to 30%."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the healing amount that Thoran receives from the ally's damage dealt to 35%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take a portion of damage for this ally until the battle ends. When Thoran is defeated, this ally sacrifices a portion of their current HP to save and heal Thoran."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Thoran drains another 20% of the current HP from all enemies affected by Soul Plunder when casting Soul Retaliation, increasing his max HP by the same amount.",
+          "active": [
+            "Thoran drains another 20% of the current HP from all enemies affected by Soul Plunder when casting Soul Retaliation, increasing his max HP by the same amount."
+          ]
+        },
+        "description_lite": "Thoran drains HP from the enemy again when casting Soul Retaliation."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "B",
+      "pvp": "B",
+      "dream_realm": "A+",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

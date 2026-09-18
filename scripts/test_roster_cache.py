@@ -25,34 +25,25 @@ _gen: Any = None
 
 
 def load_rs():
-    """Load rewrite-summaries once per process."""
+    """Load local-analysis text helpers once per process."""
     global _rs
     if _rs is not None:
         return _rs
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    _rs = module
-    return module
+    from test_helpers import load_working_analysis
+
+    _rs = load_working_analysis()
+    sys.modules["rewrite_summaries"] = _rs
+    return _rs
 
 
 def load_gen():
-    """Load generate-heroes-overview once per process."""
+    """Load relationship scoring helpers once per process."""
     global _gen
     if _gen is not None:
         return _gen
-    rs = load_rs()
-    spec = importlib.util.spec_from_file_location(
-        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
+    load_rs()
+    from hero_pipeline.relationships import scoring as module
+
     _gen = module
     return module
 
@@ -142,11 +133,12 @@ def analyze_heroes_from_blocks(
 
     rs = load_rs()
     gen = load_gen()
+    from hero_pipeline.analysis import scoring_facts as facts
     heroes = [rs.parse_hero_block(b) for b in blocks]
-    block_by_title = {h.title: b for h, b in zip(heroes, blocks)}
+    block_by_title = {h["title"]: b for h, b in zip(heroes, blocks)}
     for hero in heroes:
         rs.analyze_hero(hero)
-    role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
+    role_category_by_title = facts._role_category_by_title(heroes, block_by_title)
     skills = rs.load_skills_by_title_from_blocks(blocks)
     rs.assign_magnitudes(heroes, skills)
     result = (heroes, block_by_title, role_category_by_title)
@@ -162,23 +154,24 @@ def full_roster() -> tuple[list, Any, Any]:
 
     rs = load_rs()
     gen = load_gen()
+    from hero_pipeline.analysis import scoring_facts as facts
     blocks = hero_blocks()
     heroes = []
     block_by_title: dict[str, str] = {}
     for block in blocks:
         hero = rs.parse_hero_block(block)
         heroes.append(hero)
-        block_by_title[hero.title] = block
+        block_by_title[hero["title"]] = block
     for hero in heroes:
         rs.analyze_hero(hero)
     skills = skills_by_title()
-    role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
+    role_category_by_title = facts._role_category_by_title(heroes, block_by_title)
     rs.assign_magnitudes(heroes, skills)
     classes = {
-        h.title: gen._parse_hero_class(block_by_title[h.title]) for h in heroes
+        h["title"]: gen._parse_hero_class(block_by_title[h["title"]]) for h in heroes
     }
     matchers = gen._make_enabler_matchers(classes)
-    display = {h.title: gen.short_name(h.title) for h in heroes}
+    display = {h["title"]: gen.short_name(h["title"]) for h in heroes}
     behavior = rs.build_behavior_for_heroes(
         heroes, display
     )

@@ -1,0 +1,1275 @@
+#!/usr/bin/env python3
+"""Bridge between legacy Hero analysis objects and heroes.schema.json."""
+
+from __future__ import annotations
+
+import json
+import re
+from functools import lru_cache
+from pathlib import Path
+from typing import Any, Callable
+
+jsonschema: Any = None
+try:
+    import jsonschema as _jsonschema
+    jsonschema = _jsonschema
+except ImportError:  # pragma: no cover
+    pass
+
+SCRIPTS = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
+SCHEMA_DIR = ROOT / "data" / "schema"
+
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    HEALING_TYPE_DIRECT,
+    HEALING_TYPE_OVER_TIME,
+    healing_type_display,
+    healing_type_from_label,
+    is_hp_recovery_label,
+)
+
+_RS = None
+
+
+def _rs():
+    global _RS
+    if _RS is None:
+        from . import (
+            behavior,
+            conditions,
+            crowd_control,
+            damage,
+            detector_common,
+            effect_merge,
+            numeric,
+            postprocess,
+            records,
+            skill_chunks,
+            targeting,
+        )
+
+        class _Modules:
+            def __getattr__(self, name: str) -> Any:
+                for module in (
+                    behavior,
+                    postprocess,
+                    detector_common,
+                    targeting,
+                    numeric,
+                    crowd_control,
+                    conditions,
+                    damage,
+                    effect_merge,
+                    skill_chunks,
+                    records,
+                ):
+                    if hasattr(module, name):
+                        return getattr(module, name)
+                raise AttributeError(name)
+
+        _RS = _Modules()
+    return _RS
+
+# ---------------------------------------------------------------------------
+# Display <-> schema enum conversion
+# ---------------------------------------------------------------------------
+
+_LOWERCASE_PARTICLES = frozenset(
+    {"back", "of", "per", "on", "the", "up", "down", "control"}
+)
+
+# Non-obvious labels that are not plain lower/underscore transforms.
+_STAT_SCHEMA_ALIASES = {
+    "phys def": "physical_def",
+    "physical def": "physical_def",
+}
+_DAMAGE_SCHEMA_ALIASES = {
+    "true damage": "true",
+    "hp loss": "hp_loss",
+    "max hp-based damage": "max_hp",
+    "damage over time (dot)": "dot",
+    "dot": "dot",
+}
+_DAMAGE_DISPLAY_ALIASES = {
+    "true": "True damage",
+    "hp_loss": "HP loss",
+    "max_hp": "Max HP-based damage",
+    "dot": "DoT",
+}
+_TIMING_DISPLAY_ALIASES = {
+    "once_per_battle": "Once",
+    "on_skill": "On skill",
+    "start_of_battle": "Start of battle",
+    "on_ultimate": "On ultimate",
+}
+
+ROLE_CATEGORIES = frozenset(
+    {"damage_dealer", "specialist", "support", "tank"}
+)
+
+_CLASS_ROLE_CATEGORY_FALLBACK = {
+    "tank": "tank",
+    "support": "support",
+}
+
+_STAT_ABBREVIATIONS = frozenset(
+    {"atk", "def", "dmg", "hp", "spd", "crit", "resist"}
+)
+
+
+def _display_phrase_to_schema(display: str) -> str:
+    """Convert display text to a schema enum token."""
+    return display.strip().lower().replace(" ", "_")
+
+
+def _schema_token_to_title(schema: str) -> str:
+    """Convert a schema token to title-cased words."""
+    return schema.replace("_", " ").title()
+
+
+def _schema_token_to_phrase(schema: str) -> str:
+    """Convert a schema token to a human phrase with lowercase particles."""
+    words = schema.split("_")
+    out: list[str] = []
+    for index, word in enumerate(words):
+        if index > 0 and word in _LOWERCASE_PARTICLES:
+            out.append(word)
+        else:
+            out.append(word.capitalize())
+    return " ".join(out)
+
+
+def _schema_stat_to_display(schema: str) -> str:
+    """Render a schema stat token using game abbreviations."""
+    return " ".join(
+        part.upper() if part in _STAT_ABBREVIATIONS else part.capitalize()
+        for part in schema.split("_")
+    )
+
+
+def _normalize_display_key(display: str) -> str:
+    return re.sub(r"\s+", " ", display.strip().lower())
+
+
+_SECTION_TO_CATEGORY = {
+    "Ultimate": "ultimate",
+    "Skill1": "skill1",
+    "Skill2": "skill2",
+    "Unlocks at Legendary+": "skill3",
+    "Ex. Skill": "skill4",
+    "Unlocks at Supreme+": "skill5",
+}
+_CATEGORY_TO_SECTION = {
+    category: section for section, category in _SECTION_TO_CATEGORY.items()
+}
+
+
+from .schema_effects import (
+    is_placeholder_schema_effect as _is_placeholder_schema_effect,
+    merge_effects as _merge_effects,
+    merge_immunities as _merge_immunities,
+    merge_special_effects as _merge_special_effects,
+    schema_effect_to_effect,
+    stamp_source_section as _stamp_source_section,
+    synergy_mechanic_to_special,
+)
+
+_META_RE = re.compile(r"^([\d.]+)")
+
+
+def to_schema_faction(display: str | None) -> str:
+    if not display:
+        raise ValueError("missing faction")
+    token = display.strip()
+    if "_" not in token and token.lower() == token:
+        return token.lower()
+    singular = re.sub(r"s$", "", token, flags=re.IGNORECASE)
+    return singular.lower()
+
+
+def to_display_faction(schema: str) -> str:
+    return _schema_token_to_title(schema)
+
+
+def to_schema_class(display: str | None) -> str:
+    if not display:
+        raise ValueError("missing class")
+    return display.strip().lower()
+
+
+def to_display_class(schema: str) -> str:
+    return _schema_token_to_title(schema)
+
+
+def to_schema_tier(display: str) -> str:
+    if not display or display == "base":
+        return "base"
+    token = display.strip()
+    if token.lower() == token and "_" in token:
+        return token
+    if token.lower() == token:
+        return token
+    if re.fullmatch(r"EX\+\d+", token, re.IGNORECASE):
+        return token.lower()
+    if re.fullmatch(r"R\d+", token, re.IGNORECASE):
+        return token.lower()
+    if match := re.fullmatch(r"Paragon (\d+)", token, re.IGNORECASE):
+        return f"paragon_{match.group(1)}"
+    if token.endswith("+"):
+        return token.lower()
+    return _display_phrase_to_schema(token)
+
+
+def to_display_tier(schema: str) -> str:
+    if schema == "base":
+        return "base"
+    if match := re.fullmatch(r"ex\+(\d+)", schema):
+        return f"EX+{match.group(1)}"
+    if match := re.fullmatch(r"r(\d+)", schema):
+        return f"R{match.group(1)}"
+    if match := re.fullmatch(r"paragon_(\d+)", schema):
+        return f"Paragon {match.group(1)}"
+    if schema.endswith("+"):
+        return schema.capitalize()
+    return _schema_token_to_title(schema)
+
+
+def to_schema_stat(display: str) -> str:
+    key = _normalize_display_key(display)
+    if key in _STAT_SCHEMA_ALIASES:
+        return _STAT_SCHEMA_ALIASES[key]
+    return _display_phrase_to_schema(display)
+
+
+def to_display_stat(schema: str) -> str:
+    return _schema_stat_to_display(schema)
+
+
+def to_schema_damage_type(display: str) -> str:
+    key = _normalize_display_key(display)
+    if key in _DAMAGE_SCHEMA_ALIASES:
+        return _DAMAGE_SCHEMA_ALIASES[key]
+    return _display_phrase_to_schema(display)
+
+
+def to_display_damage_type(schema: str) -> str:
+    if schema in _DAMAGE_DISPLAY_ALIASES:
+        return _DAMAGE_DISPLAY_ALIASES[schema]
+    return _schema_token_to_title(schema)
+
+
+_CC_SCHEMA_ALIASES = {"pin": "bind", "freeze": "bind"}
+
+
+def to_schema_cc(label: str) -> str:
+    token = _display_phrase_to_schema(label)
+    return _CC_SCHEMA_ALIASES.get(token, token)
+
+
+def to_display_cc(schema: str) -> str:
+    schema = _CC_SCHEMA_ALIASES.get(schema, schema)
+    return _schema_token_to_phrase(schema)
+
+
+def to_schema_immunity(display: str) -> str:
+    return _display_phrase_to_schema(display)
+
+
+def to_display_immunity(schema: str) -> str:
+    return _schema_token_to_title(schema)
+
+
+def to_schema_timing(display: str) -> str:
+    return _display_phrase_to_schema(display)
+
+
+def to_display_timing(schema: str) -> str:
+    if schema in _TIMING_DISPLAY_ALIASES:
+        return _TIMING_DISPLAY_ALIASES[schema]
+    return _schema_token_to_phrase(schema)
+
+
+def to_display_healing_type(schema: str) -> str:
+    return healing_type_display(schema)
+
+
+def to_schema_healing_type(label: str) -> str | None:
+    return healing_type_from_label(label)
+
+
+def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -> str:
+    low = label.lower()
+    if category == "cc":
+        return "cc"
+    if "shield" in low:
+        return "shield"
+    ht = healing_type_from_label(label)
+    if ht == HEALING_TYPE_OVER_TIME:
+        return "hot"
+    if ht == HEALING_TYPE_DIRECT:
+        return "healing"
+    if category == "buff" and summon:
+        if "atk" in low or "haste" in low:
+            return "buff_summon_offensive"
+        if "shield" in low or "def" in low:
+            return "buff_summon_defensive"
+        return "buff_summon_stat"
+    if category == "debuff":
+        if low == "hp loss":
+            return "debuff_hp_loss"
+        if "dot" in low or "burn" in low or "bleed" in low:
+            return "dot"
+        if any(x in low for x in ("atk", "haste", "crit", "execution")):
+            return "debuff_offensive"
+        if any(x in low for x in ("def", "shield", "vitality", "resilience")):
+            return "debuff_defensive"
+        if "healing" in low:
+            return "debuff_healing"
+        return "debuff_stat"
+    if category == "damage":
+        if label == "DoT":
+            return "dot"
+        if label in ("HP loss", "Max HP-based damage", "True damage"):
+            return f"damage_{to_schema_damage_type(label)}"
+        return "damage_normal"
+    if category == "buff":
+        if any(x in low for x in ("atk", "haste", "crit", "execution")):
+            return "buff_offensive"
+        if any(x in low for x in ("def", "shield", "vitality", "resilience")):
+            return "buff_defensive"
+        if "healing" in low:
+            return "buff_healing"
+        return "buff_stat"
+    return "damage_normal"
+
+
+@lru_cache
+def _stat_label_needles() -> tuple[str, ...]:
+    """Display stat phrases to search in effect labels (longest first)."""
+    props = json.loads(
+        (SCHEMA_DIR / "game_properties.schema.json").read_text(encoding="utf-8")
+    )
+    needles = [to_display_stat(token) for token in props["$defs"]["stat"]["enum"]]
+    # Labels sometimes abbreviate before to_display_stat's canonical form.
+    needles.append("Phys DEF")
+    return tuple(sorted(set(needles), key=len, reverse=True))
+
+
+def _stat_from_label(label: str) -> str | None:
+    label_fold = label.casefold()
+    for needle in _stat_label_needles():
+        if needle.casefold() in label_fold:
+            return to_schema_stat(needle)
+    return None
+
+
+def _schema_target_from_buff_targeting(targeting: str) -> str | None:
+    rs = _rs()
+    if rs.is_all_summon_buff_targeting(targeting):
+        return "all_summons"
+    if rs.is_own_summon_buff_targeting(targeting):
+        return "own_summons"
+    return None
+
+
+def _targeting_to_schema(
+    targeting: str,
+    category: str,
+    *,
+    summon: bool = False,
+    area_count: int | None = None,
+    target_count: int | None = None,
+    area: str | None = None,
+    area_direction: str | None = None,
+) -> dict[str, Any]:
+    if targeting == "Self":
+        return {"target": "self", "area": "single", "target_count": 1}
+    summon_target = _schema_target_from_buff_targeting(targeting)
+    if summon or summon_target is not None:
+        target = summon_target or "own_summons"
+        return {"target": target, "area": "single", "target_count": 1}
+    ally_cats = {"buff"}
+    is_ally = category in ally_cats and targeting != "Single target"
+    is_ally = is_ally or (
+        category == "buff"
+        and targeting in ("Single target", "Multiple targets", "Arc", "Area", "All units")
+    )
+    if category == "buff" and targeting == "Self":
+        return {"target": "self", "area": "single", "target_count": 1}
+    base = "ally" if is_ally else "enemy"
+    if targeting == "Single target":
+        return {"target": base, "area": "single", "target_count": 1}
+    if targeting == "Multiple targets":
+        count = target_count if target_count is not None else 3
+        return {"target": base, "area": "single", "target_count": count}
+    if targeting == "Arc":
+        return {"target": base, "area": "arc", "target_count": -1, "area_direction": "front"}
+    if targeting == "Area":
+        count = area_count if area_count is not None else 2
+        return {
+            "target": base,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": count,
+        }
+    if targeting == "All units":
+        return {"target": base, "area": "zone", "target_count": -1, "area_count": -1}
+    result = {"target": base, "area": "single", "target_count": 1}
+    if area:
+        result["area"] = area
+        if area_count is not None:
+            result["area_count"] = area_count
+        if area_direction:
+            result["area_direction"] = area_direction
+        if area in ("arc", "radius", "path", "rectangle", "zone"):
+            result["target_count"] = -1
+    return result
+
+
+def _schema_to_targeting(
+    effect: dict[str, Any], category: str
+) -> str:
+    label = effect.get("targeting_label")
+    if label:
+        return label
+    rs = _rs()
+    target = effect.get("target", "enemy")
+    area = effect.get("area", "single")
+    if target == "self":
+        return "Self"
+    if target in ("summon", "own_summons"):
+        return rs.OWN_SUMMON_BUFF_TARGETING
+    if target == "all_summons":
+        return rs.ALL_SUMMON_BUFF_TARGETING
+    if area == "arc":
+        return "Arc"
+    if area in ("radius", "rectangle", "path"):
+        return "Area"
+    if area == "zone" and effect.get("area_count") == -1:
+        return "All units"
+    count = effect.get("target_count", 1)
+    if count not in (1, None):
+        return "Multiple targets"
+    return "Single target"
+
+
+def _conditional_to_conditions(conditional: str | None) -> list[dict[str, Any]]:
+    if not conditional:
+        return []
+    if conditional == "rare":
+        return [{"type": "battle_phase", "phase": "once_per_battle"}]
+    if conditional == "on blind":
+        return [{"type": "battle_phase", "phase": "on_blind"}]
+    if conditional == "frequent":
+        return [{"type": "battle_phase", "phase": "conditional"}]
+    return [{"type": "battle_phase", "phase": "conditional"}]
+
+
+def _conditions_to_conditional(conditions: list[dict[str, Any]] | None) -> str | None:
+    if not conditions:
+        return None
+    for cond in conditions:
+        if cond.get("type") == "battle_phase":
+            phase = cond.get("phase")
+            if phase == "once_per_battle":
+                return "rare"
+            if phase == "on_blind":
+                return "on blind"
+            if phase == "conditional":
+                return "frequent"
+    return None
+
+
+_FLAT_VALUE_LABELS = frozenset(
+    {
+        "Haste",
+        "Energy",
+        "Crit",
+        "Crit DMG boost",
+        "DEF Penetration",
+        "ATK SPD",
+        "Movement speed",
+        "Lifedrain",
+        "Vitality",
+    }
+)
+
+
+def _value_from_numeric(numeric: float | None, label: str = "") -> Any:
+    if numeric is None:
+        return None
+    value_type = "flat" if label in _FLAT_VALUE_LABELS else "percentage"
+    return [{"type": value_type, "value": numeric}]
+
+
+def _resolve_effect_numeric(effect: Any, label: str) -> float | None:
+    """Numeric magnitude with qualitative-text fallback."""
+    n = effect["numeric"]
+    if n is not None:
+        return n
+    text = effect["qualitative"] or ""
+    if not text:
+        return None
+    rs = _rs()
+    if is_hp_recovery_label(label):
+        amounts = rs._healing_amounts(text)
+        if amounts:
+            return max(amounts)
+    return rs.extract_number(text, label, category=effect["category"])
+
+
+def _apply_schema_value(
+    out: dict[str, Any], numeric: float | None, label: str
+) -> None:
+    val = _value_from_numeric(numeric, label)
+    if val is not None:
+        out["value"] = val
+
+
+def _effect_duration(effect: Any, label: str) -> float | None:
+    dur = effect.get("duration")
+    if dur is not None:
+        return dur
+    text = effect["qualitative"] or ""
+    if not text:
+        return None
+    return _rs().extract_timed_duration(text, label)
+
+
+def _apply_effect_persistence(out: dict[str, Any], effect: Any) -> None:
+    persistence = effect.get("persistence")
+    if persistence:
+        out["persistence"] = persistence
+
+
+def _apply_effect_duration(
+    out: dict[str, Any], effect: Any, label: str
+) -> None:
+    dur = _effect_duration(effect, label)
+    if dur is not None:
+        out["duration"] = dur
+
+
+def _dot_tick_from_text(text: str) -> float:
+    t = text.lower()
+    if m := re.search(
+        r"every\s+(\d+(?:\.\d+)?)\s*s(?:ec(?:ond)?s?)?", t
+    ):
+        return float(m.group(1))
+    if re.search(r"every second|per second|damage per second", t):
+        return 1.0
+    return 1.0
+
+
+def _dot_duration_from_text(text: str) -> int:
+    t = text.lower()
+    for pat in (
+        r"lasting for (\d+(?:\.\d+)?)\s*s\b",
+        r"storm.{0,60}lasting for (\d+(?:\.\d+)?)\s*s",
+        r"every\s+\d+(?:\.\d+)?\s*s(?:ec(?:ond)?s?)?\s+for\s+"
+        r"(\d+(?:\.\d+)?)\s*s",
+        r"for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"lasts for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"for (?:the next )?(\d+(?:\.\d+)?)\s*s\b",
+        r"every second for (\d+(?:\.\d+)?)\s*s",
+        r"inflicts? .{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+        r"lasts for (\d+(?:\.\d+)?)\s*s\b",
+        r"(?:the )?skill lasts (\d+(?:\.\d+)?)\s*s\b",
+        r"while .{0,40}active.{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+    ):
+        if m := re.search(pat, t):
+            if m.lastindex and m.lastindex >= 2 and m.group(2) is not None:
+                return max(1, int(float(m.group(1)) + float(m.group(2))))
+            return max(1, int(float(m.group(1))))
+    tick = _dot_tick_from_text(text)
+    if tick < 1.0 and re.search(r"every\s+\d+(?:\.\d+)?\s*s", t):
+        if m := re.search(r"for (\d+(?:\.\d+)?)\s*s\b", t):
+            return max(1, int(float(m.group(1))))
+    return 2
+
+
+def _numeric_from_value(value: Any) -> float | None:
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        num = float(value)
+        return None if num == 0 else num
+    if isinstance(value, list) and value:
+        first = value[0]
+        if isinstance(first, dict) and "value" in first:
+            num = float(first["value"])
+            return None if num == 0 else num
+    return None
+
+
+def _schema_effect_is_complete(effect: dict[str, Any]) -> bool:
+    """Drop effects that omit schema-required magnitudes (no value: 0 placeholders)."""
+    etype = effect.get("type")
+    if etype in ("heal", "shield", "damage", "range_increase", "stat_mod"):
+        return effect.get("value") is not None
+    if etype == "dot":
+        return (
+            effect.get("value") is not None
+            and effect.get("duration") is not None
+            and effect.get("tick") is not None
+        )
+    return True
+
+
+def _spatial_from_effect(
+    effect: Any,
+    category: str,
+    *,
+    summon: bool = False,
+) -> dict[str, Any]:
+    """Map legacy targeting plus optional area overrides to schema spatial fields."""
+    spatial = _targeting_to_schema(
+        effect["targeting"],
+        category,
+        summon=summon,
+        area_count=effect.get("area_count"),
+        target_count=effect.get("target_count"),
+        area=effect.get("area"),
+        area_direction=effect.get("area_direction"),
+    )
+    effect_area = effect.get("area")
+    effect_area_dir = effect.get("area_direction")
+    if effect_area:
+        spatial["area"] = effect_area
+    if effect_area_dir:
+        spatial["area_direction"] = effect_area_dir
+    area_count = effect.get("area_count")
+    if area_count is not None and spatial.get("area") in (
+        "radius",
+        "path",
+        "rectangle",
+        "arc",
+        "zone",
+    ):
+        spatial["area_count"] = area_count
+    return spatial
+
+
+def _legacy_spatial_from_schema(effect: dict[str, Any]) -> dict[str, Any]:
+    """Extract area fields for round-trip into legacy Effect objects."""
+    area = effect.get("area")
+    fields: dict[str, Any] = {}
+    if area:
+        fields["area"] = area
+    area_direction = effect.get("area_direction")
+    if area_direction:
+        fields["area_direction"] = area_direction
+    area_count = effect.get("area_count")
+    if area_count is not None:
+        fields["area_count"] = area_count
+    return fields
+
+
+def effect_to_schema(
+    effect: Any,
+    *,
+    summon: bool = False,
+    is_max_known: bool = True,
+) -> dict[str, Any]:
+    """Convert legacy Effect to skills.schema.json effect."""
+    category = effect["category"]
+    summon_scope = _schema_target_from_buff_targeting(effect["targeting"])
+    is_summon_buff = summon or summon_scope is not None
+    out: dict[str, Any] = {
+        "tier": to_schema_tier(effect["tier"]),
+        "targeting_label": effect["targeting"],
+        "is_max_known": is_max_known,
+    }
+    out.update(
+        _spatial_from_effect(
+            effect,
+            category,
+            summon=is_summon_buff,
+        )
+    )
+    conditions = list(effect.get("conditions") or [])
+    legacy = _conditional_to_conditions(effect["conditional"])
+    if legacy:
+        seen = {tuple(sorted(c.items())) for c in conditions}
+        for cond in legacy:
+            key = tuple(sorted(cond.items()))
+            if key not in seen:
+                conditions.append(cond)
+                seen.add(key)
+    if conditions:
+        out["conditions"] = conditions
+
+    if category == "cc":
+        out["type"] = "crowd_control"
+        out["cc-type"] = to_schema_cc(effect["label"])
+        if effect["numeric"] is not None:
+            out["duration"] = effect["numeric"]
+        return out
+
+    if category == "buff":
+        stat = _stat_from_label(effect["label"])
+        if (
+            stat
+            and "buff" in effect["label"].lower()
+            and effect["numeric"] is not None
+            and not is_summon_buff
+        ):
+            out["type"] = "stat_mod"
+            out["stat"] = stat
+            out["name"] = _rs().canonical_effect_name(effect["label"], "buff")
+            _apply_schema_value(
+                out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
+            )
+            _apply_effect_duration(out, effect, effect["label"])
+            _apply_effect_persistence(out, effect)
+            out["label"] = _label_to_effect_label(
+                category, effect["label"], summon=is_summon_buff
+            )
+            return out
+        if "shield" in effect["label"].lower():
+            out["type"] = "shield"
+            out["name"] = effect["label"]
+            _apply_schema_value(
+                out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
+            )
+            _apply_effect_duration(out, effect, effect["label"])
+            return out
+        if is_hp_recovery_label(effect["label"]):
+            ht = healing_type_from_label(effect["label"])
+            assert ht is not None
+            out["type"] = "heal" if ht == HEALING_TYPE_DIRECT else "dot"
+            out["healing_type"] = ht
+            out["name"] = effect["label"]
+            _apply_schema_value(
+                out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
+            )
+            if out["type"] == "dot":
+                explicit_duration = effect.get("duration")
+                if explicit_duration is not None:
+                    out["duration"] = explicit_duration
+                else:
+                    dur = _effect_duration(effect, effect["label"])
+                    if dur is not None:
+                        out["duration"] = max(1, int(float(dur)))
+                    else:
+                        out["duration"] = _dot_duration_from_text(
+                            effect["qualitative"]
+                        )
+                tick = effect.get("tick")
+                out["tick"] = (
+                    tick
+                    if tick is not None
+                    else _dot_tick_from_text(effect["qualitative"])
+                )
+                if "value" not in out:
+                    out["type"] = "heal"
+                    out.pop("tick", None)
+            else:
+                _apply_effect_duration(out, effect, effect["label"])
+            return out
+        out["type"] = "buff"
+        out["name"] = _rs().canonical_effect_name(effect["label"], "buff")
+        out["label"] = _label_to_effect_label(
+            category, effect["label"], summon=is_summon_buff
+        )
+        _apply_schema_value(
+            out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
+        )
+        _apply_effect_duration(out, effect, effect["label"])
+        _apply_effect_persistence(out, effect)
+        return out
+
+    if category == "debuff":
+        out["type"] = "debuff"
+        out["name"] = _rs().canonical_effect_name(effect["label"], "debuff")
+        out["label"] = _label_to_effect_label(category, effect["label"])
+        _apply_schema_value(
+            out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
+        )
+        _apply_effect_duration(out, effect, effect["label"])
+        return out
+
+    if category == "damage":
+        if effect["label"] == "DoT":
+            out["type"] = "dot"
+        else:
+            out["type"] = "damage"
+        out["damage_type"] = to_schema_damage_type(effect["label"])
+        out["name"] = effect["label"]
+        out["label"] = _label_to_effect_label(category, effect["label"])
+        amount = effect["numeric"]
+        if amount is None:
+            amount = _rs()._extract_damage_amount(
+                effect["qualitative"], effect["label"]
+            )
+        _apply_schema_value(out, amount, effect["label"])
+        if out["type"] == "dot":
+            dur = effect.get("duration")
+            if dur is not None:
+                out["duration"] = dur
+            else:
+                out["duration"] = _dot_duration_from_text(effect["qualitative"])
+            tick = effect.get("tick")
+            out["tick"] = (
+                tick
+                if tick is not None
+                else _dot_tick_from_text(effect["qualitative"])
+            )
+        return out
+
+    out["type"] = "buff"
+    out["name"] = effect["label"]
+    return out
+
+
+def cc_immunity_to_schema(imm: Any) -> dict[str, Any]:
+    out: dict[str, Any] = {
+        "type": "immunity",
+        "tier": to_schema_tier(imm["tier"]),
+        "immunity_type": to_schema_immunity(imm["immunity_type"]),
+        "timing": to_schema_timing(imm["timing"]),
+        "targeting_label": imm["targeting"],
+    }
+    out.update(_targeting_to_schema(imm["targeting"], "buff"))
+    return out
+
+
+def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> Any:
+    """Convert schema effect to a working effect mapping."""
+    rs = _rs()
+
+    etype = effect["type"]
+    tier = to_display_tier(effect.get("tier", "base"))
+    targeting = _schema_to_targeting(effect, "buff")
+    numeric = _numeric_from_value(effect.get("value"))
+    conditional = _conditions_to_conditional(effect.get("conditions"))
+    schema_conditions = list(effect.get("conditions") or [])
+    spatial = _legacy_spatial_from_schema(effect)
+    duration = effect.get("duration")
+    tick = effect.get("tick")
+    persistence = effect.get("persistence")
+
+    if etype == "crowd_control":
+        label = to_display_cc(effect.get("cc-type", "stun"))
+        duration = effect.get("duration") or effect.get("stun")
+        if duration is not None and numeric is None:
+            numeric = float(duration)
+        return rs.Effect(
+            category="cc",
+            label=label,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            persistence=persistence,
+            **spatial,
+        )
+
+    if etype == "immunity":
+        imm = rs.CcImmunity(
+            immunity_type=to_display_immunity(effect.get("immunity_type", "immune")),
+            tier=tier,
+            targeting=targeting,
+            timing=to_display_timing(effect.get("timing", "conditional")),
+        )
+        return imm
+
+    if etype in ("heal", "dot") and effect.get("healing_type"):
+        label = healing_type_display(effect["healing_type"])
+        return rs.Effect(
+            category="buff",
+            label=label,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
+            **spatial,
+        )
+
+    if etype in ("buff", "stat_mod", "shield", "heal"):
+        name = effect.get("name", "Buff")
+        dur_val = float(duration) if duration is not None else None
+        return rs.Effect(
+            category="buff",
+            label=name,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=dur_val,
+            persistence=persistence,
+            **spatial,
+        )
+
+    if etype == "debuff":
+        name = (effect.get("name", "Debuff") or "Debuff").strip()
+        return rs.Effect(
+            category="debuff",
+            label=name,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            **spatial,
+        )
+
+    if etype == "damage":
+        name = effect.get("name", "Damage")
+        return rs.Effect(
+            category="damage",
+            label=name,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            **spatial,
+        )
+
+    if etype == "dot" and effect.get("damage_type"):
+        return rs.Effect(
+            category="damage",
+            label="DoT",
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
+            **spatial,
+        )
+
+    name = effect.get("name", etype.replace("_", " ").title())
+    return rs.Effect(
+        category="buff",
+        label=name,
+        tier=tier,
+        targeting=targeting,
+        numeric=numeric,
+        qualitative="",
+        conditional=conditional,
+        conditions=schema_conditions,
+        **spatial,
+    )
+
+
+def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:
+    out: dict[str, Any] = {
+        "label": se["label"],
+        "tier": to_schema_tier(se["tier"]),
+    }
+    if se.get("targeting") and se.get("targeting") != "—":
+        out["targeting"] = se["targeting"]
+    if se.get("qualitative"):
+        out["description"] = se["qualitative"].strip()
+    if se.get("grants"):
+        out["grants"] = [
+            {"label": label, "magnitude": magnitude}
+            for label, magnitude in se["grants"]
+        ]
+    return out
+
+
+def _skill_description_structured(skill: dict[str, Any]) -> dict[str, Any]:
+    from heroes_io import (
+        is_structured_description,
+        normalize_skill_description,
+        skill_description_raw,
+        skill_upgrades,
+    )
+
+    work = dict(skill)
+    if not is_structured_description(work.get("description")):
+        normalize_skill_description(work)
+    desc = work["description"]
+    out: dict[str, Any] = {
+        "raw": desc.get("raw") or skill_description_raw(desc),
+    }
+    if desc.get("passive"):
+        out["passive"] = desc["passive"]
+    if desc.get("active"):
+        out["active"] = desc["active"]
+    upgrades = skill_upgrades(work)
+    if upgrades:
+        out["upgrades"] = upgrades
+    return out
+
+
+def _parse_meta_number(raw: str | None) -> float | None:
+    if not raw:
+        return None
+    m = _META_RE.search(str(raw))
+    return float(m.group(1)) if m else None
+
+
+def _parse_skill_range(raw: str | None) -> int | None:
+    val = _parse_meta_number(raw)
+    return int(val) if val is not None else None
+
+
+def _build_skill_record(
+    skill: dict[str, Any],
+    slice_: Any | None,
+    primary_dmg: str,
+) -> tuple[str, dict[str, Any]]:
+    section = skill["section"]
+    name = skill.get("name") or section
+    record: dict[str, Any] = {
+        "category": _SECTION_TO_CATEGORY.get(section, "passive"),
+        "description": _skill_description_structured(skill),
+        "effects": [],
+    }
+    tier = slice_["tier"] if slice_ else "base"
+    schema_tier = to_schema_tier(tier)
+    if schema_tier != "base":
+        record["tier"] = schema_tier
+
+    meta = skill.get("meta") or {}
+    cd = _parse_meta_number(meta.get("Cooldown"))
+    if cd is not None:
+        record["cooldown"] = cd
+    icd = _parse_meta_number(meta.get("Initial Cooldown"))
+    if icd is not None:
+        record["initial_cooldown"] = icd
+    sr = _parse_skill_range(meta.get("Skill Range"))
+    if sr is not None:
+        record["skill_range"] = sr
+    ie = _parse_meta_number(meta.get("Initial Energy"))
+    if ie is not None:
+        record["initial_energy"] = ie
+
+    description = record["description"]
+    desc_text = (
+        description.get("raw", "")
+        if isinstance(description, dict)
+        else str(description)
+    )
+    has_scaled = "(scaled)" in desc_text.lower() or "<hp>" in desc_text.lower()
+
+    effects: list[dict[str, Any]] = []
+    if slice_:
+        for eff in _merge_effects(slice_["effects"]):
+            schema_eff = effect_to_schema(eff, is_max_known=not has_scaled)
+            if _schema_effect_is_complete(schema_eff):
+                effects.append(schema_eff)
+        for eff in _merge_effects(slice_["summon_effects"]):
+            schema_eff = effect_to_schema(
+                eff, is_max_known=not has_scaled
+            )
+            if _schema_effect_is_complete(schema_eff):
+                effects.append(schema_eff)
+        for imm in _merge_immunities(slice_["cc_immunities"]):
+            effects.append(cc_immunity_to_schema(imm))
+
+    if not effects:
+        record["passive_only"] = True
+    record["effects"] = effects
+    return name, record
+
+
+def resolve_role_category(hero_record: dict[str, Any]) -> str:
+    """Resolve Prydwen role category from hero record or class fallback."""
+    category = hero_record.get("role_category")
+    if category in ROLE_CATEGORIES:
+        return category
+    hero_class = to_schema_class(hero_record.get("class"))
+    return _CLASS_ROLE_CATEGORY_FALLBACK.get(hero_class, "damage_dealer")
+
+
+def build_role_category_by_title(
+    heroes: list[Any],
+    records_by_title: dict[str, dict[str, Any]] | None = None,
+    class_by_title: dict[str, str] | None = None,
+) -> dict[str, str]:
+    """Map hero analysis titles to role categories for peer comparisons."""
+    records = records_by_title or {}
+    classes = class_by_title or {}
+    out: dict[str, str] = {}
+    for hero in heroes:
+        title = hero["title"]
+        record = dict(records.get(title, {}))
+        if "class" not in record and title in classes:
+            record["class"] = classes[title]
+        out[title] = resolve_role_category(record)
+    return out
+
+
+def role_category_by_title_from_processed(
+    heroes: list[Any],
+    processed: dict[str, Any],
+    short_name_fn: Any,
+) -> dict[str, str]:
+    """Build title → role map from processed hero JSON."""
+    by_short = processed.get("heroes", {})
+    out: dict[str, str] = {}
+    for hero in heroes:
+        short = short_name_fn(hero["title"])
+        record = by_short.get(short, {})
+        long_name = record.get("long_name", hero["title"])
+        out[hero["title"]] = record.get("role_category") or resolve_role_category(
+            {"long_name": long_name, "class": record.get("class")}
+        )
+    return out
+
+
+def map_date_to_season(
+    release_date: str | None,
+    seasons: list[dict],
+) -> tuple[str | None, int | None]:
+    """Map a hero release date (YYYY-MM-DD) to season name and index (S0, S1, …)."""
+    if not release_date or not seasons:
+        return None, None
+    ordered = sorted(seasons, key=lambda s: s["start_date"])
+    matched = ordered[0]["name"]
+    matched_number = 0
+    for index, season in enumerate(ordered):
+        if release_date >= season["start_date"]:
+            matched = season["name"]
+            matched_number = index
+        else:
+            break
+    return matched, matched_number
+
+
+def serialize_processed_hero(
+    hero: Any,
+    hero_record: dict[str, Any],
+    *,
+    is_energy_provider: bool,
+    is_melee: bool,
+    is_dual_range: bool,
+    behavior: dict[str, Any],
+    season: str | None = None,
+    season_number: int | None = None,
+) -> dict[str, Any]:
+    provides = [
+        special_to_synergy_mechanic(se)
+        for se in _merge_special_effects(hero["special_effects"])
+        if se["kind"] == "provides"
+    ]
+    requires = [
+        special_to_synergy_mechanic(se)
+        for se in _merge_special_effects(hero["special_effects"])
+        if se["kind"] == "requires"
+    ]
+
+    skills: dict[str, Any] = {}
+    primary = hero["damage_type"] or hero_record.get("damage_type") or "Physical"
+    rs = _rs()
+    for skill in hero_record.get("skills", []):
+        section = skill["section"]
+        slice_ = hero["skill_slices"].get(section)
+        skill_name, skill_rec = _build_skill_record(skill, slice_, primary)
+        category = _SECTION_TO_CATEGORY.get(section)
+        if category:
+            skill_rec["skill_card_tags"] = rs.format_skill_card_tags(
+                hero, category
+            )
+        skills[skill_name] = skill_rec
+
+    damage_entries = [
+        [to_schema_damage_type(dt), reach]
+        for dt, reach in hero["damage_entries"]
+    ]
+    damage_magnitudes = {
+        to_schema_damage_type(dt): mag
+        for dt, mag in hero["damage_magnitudes"].items()
+    }
+    benefit_stats = [to_schema_stat(s) for s in hero["benefit_stats"]]
+    scalar_stat_shares = {
+        to_schema_stat(stat): share
+        for stat, share in (hero.get("scalar_stat_shares") or {}).items()
+    }
+    raw_range = hero_record.get("range")
+    default_range = int(raw_range) if raw_range is not None else None
+
+    return {
+        "long_name": hero_record.get("title") or hero["title"],
+        "faction": to_schema_faction(hero_record.get("faction")),
+        "class": to_schema_class(hero_record.get("class")),
+        "role_category": resolve_role_category(hero_record),
+        "is_energy_provider": is_energy_provider,
+        "is_melee": is_melee,
+        "is_dual_range": is_dual_range,
+        "default_range": default_range,
+        "release_date": hero_record.get("release_date"),
+        "season": season,
+        "season_number": season_number,
+        "skills": skills,
+        "synergy_profile": {"provides": provides, "requires": requires},
+        "damage_entries": damage_entries,
+        "damage_magnitudes": damage_magnitudes,
+        "benefit_stats": benefit_stats,
+        "scalar_stat_shares": scalar_stat_shares,
+        "behavior": behavior,
+    }
+
+
+_SCHEMA: dict[str, Any] | None = None
+_SYNERGIES_SCHEMA: dict[str, Any] | None = None
+
+
+def _load_schema() -> dict[str, Any]:
+    global _SCHEMA
+    if _SCHEMA is None:
+        import json
+
+        path = SCHEMA_DIR / "heroes.schema.json"
+        _SCHEMA = json.loads(path.read_text(encoding="utf-8"))
+    return _SCHEMA
+
+
+def _load_synergies_schema() -> dict[str, Any]:
+    global _SYNERGIES_SCHEMA
+    if _SYNERGIES_SCHEMA is None:
+        import json
+
+        path = SCHEMA_DIR / "heroes_synergies.schema.json"
+        _SYNERGIES_SCHEMA = json.loads(path.read_text(encoding="utf-8"))
+    return _SYNERGIES_SCHEMA
+
+
+def _validate_with_schema(data: dict[str, Any], schema: dict[str, Any]) -> None:
+    if jsonschema is None:
+        raise RuntimeError(
+            "jsonschema is required for validation; install with: "
+            "pip install jsonschema"
+        )
+    import json
+
+    store: dict[str, Any] = {
+        schema["$id"]: schema,
+    }
+    for name in (
+        "skills.schema.json",
+        "game_properties.schema.json",
+        "hero_walk_speeds.schema.json",
+    ):
+        doc = json.loads((SCHEMA_DIR / name).read_text(encoding="utf-8"))
+        store[doc["$id"]] = doc
+    resolver = jsonschema.RefResolver.from_schema(schema, store=store)
+    jsonschema.validate(data, schema, resolver=resolver)
+
+
+def validate_processed(data: dict[str, Any]) -> None:
+    _validate_with_schema(data, _load_schema())
+
+
+def validate_synergies(data: dict[str, Any]) -> None:
+    _validate_with_schema(data, _load_synergies_schema())

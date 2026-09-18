@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "talene",
+  "display_name": "Talene",
+  "source": {
+    "title": "Talene - Resurging Flame",
+    "name": "Talene",
+    "tags": "Celestial · Mage · Magic",
+    "faction": "Celestial",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "An elegant Mage who specializes in converting HP into magic power and possesses the ability of self-resurrection.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Divine Conflagration",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Talene flies to a designated tile in the center of the battlefield, consumes 12.5% of her max HP and 250 Energy per second to shoot a 5-tile flame, dealing 150% + 20% (SP-based) damage and extra damage equal to 170% + 5% (SP-based) of her lost HP to enemies within range. The extra damage is shared among all hit enemies. Talene can cast this skill even when she is out of Energy, but the HP consumed per second will increase to 20% This skill ends when there are no more enemies within range.",
+          "active": [
+            "Talene flies to a designated tile in the center of the battlefield, consumes 12.5% of her max HP and 250 Energy per second to shoot a 5-tile flame, dealing 150% + 20% (SP-based) damage and extra damage equal to 170% + 5% (SP-based) of her lost HP to enemies within range.",
+            "The extra damage is shared among all hit enemies.",
+            "Talene can cast this skill even when she is out of Energy, but the HP consumed per second will increase to 20% This skill ends when there are no more enemies within range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage dealt per second to 160% (ATK-based) + 20% (SP-based) and extra damage to 190% (ATK-based) + 5% (SP-based) of her lost HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage dealt per second to 170% (ATK-based) + 20% (SP-based) and extra damage to 210% (ATK-based) + 5% (SP-based) of her lost HP"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage dealt per second to 180% (ATK-based) + 20% (SP-based) and extra damage to 230% (ATK-based) + 5% (SP-based) of her lost HP"
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage dealt per second to 190% (ATK-based) + 20% (SP-based) and extra damage to 250% (ATK-based) + 5% (SP-based) of her lost HP"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Talene consumes her HP to shoot flames at enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Radiant Resurgence",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "8s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Whenever Talene loses 10% of her max HP, she will release a warm current that restores 40% (ATK-based) HP for the weakest allied hero. Whenever she restores 10% of her max HP, she will unleash a torrent that deals 50% (ATK-based) damage to the healthiest enemy. Active. Talene consumes 20% of her max HP to summon Divine Fire in the area with the most enemies, dealing 200% (ATK-based) + 10% (SP-based) damage that comes with an extra 40 + 3 (SP-based) Life Drain to adjacent enemies.",
+          "passive": [
+            "Whenever Talene loses 10% of her max HP, she will release a warm current that restores 40% (ATK-based) HP for the weakest allied hero.",
+            "Whenever she restores 10% of her max HP, she will unleash a torrent that deals 50% (ATK-based) damage to the healthiest enemy."
+          ],
+          "active": [
+            "Talene consumes 20% of her max HP to summon Divine Fire in the area with the most enemies, dealing 200% (ATK-based) + 10% (SP-based) damage that comes with an extra 40 + 3 (SP-based) Life Drain to adjacent enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage dealt to 215% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage dealt to 230% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage dealt to 240% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive Talene restores HP for allies when she loses HP and deals damage to enemies when she is healed. Active. Talene summons Divine Fire to deal damage to enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Blazing Ascension",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Talene transforms into a ball of flame whenever she is defeated. During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% (SP-based) damage to enemies within 2 tiles and knocking them 1 tile back. After each resurrection, her Vitality during the flame state will be reduced permanently by 33.",
+          "active": [
+            "Talene transforms into a ball of flame whenever she is defeated.",
+            "During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% (SP-based) damage to enemies within 2 tiles and knocking them 1 tile back.",
+            "After each resurrection, her Vitality during the flame state will be reduced permanently by 33."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "After each resurrection, Talene's Vitality will be reduced by 32."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "After each resurrection, Talene's Vitality will be reduced by 31"
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "After each resurrection, Talene's Vitality will be reduced by 30."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Talene transforms into a ball of flame whenever she is defeated, during which her HP will restore over time. She can resurrect when her HP reaches a certain value."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Talene increases her ATK by 8% for up to 32% whenever she has consumed 50% of her max HP.",
+          "active": [
+            "Talene increases her ATK by 8% for up to 32% whenever she has consumed 50% of her max HP."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Talene increases her ATK by 9% for up to 36% whenever she has consumed 50% of her max HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Talene increases her ATK by 10% for up to 40% whenever she has consumed 50% of her max HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Talene increases her ATK after she has consumed a certain amount of HP."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Pyre of Renewal",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Talene grants Pyre of Renewal to the frontmost allied hero other than herself from the beginning of the battle until the end. Pyre of Renewal carrier will deal damage equal to 50% of their ATK per second to adjacent enemies and restore HP equal to 25% of their damage dealt. Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks.",
+          "active": [
+            "Talene grants Pyre of Renewal to the frontmost allied hero other than herself from the beginning of the battle until the end.",
+            "Pyre of Renewal carrier will deal damage equal to 50% of their ATK per second to adjacent enemies and restore HP equal to 25% of their damage dealt.",
+            "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 55% of their ATK, and HP recovery to 30% of their damage dealt."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 60% of their ATK, and HP recovery to 35% of their damage dealt."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When Pyre of Renewal reaches the maximum number of stacks and its carrier is defeated, all stacks will be consumed to transform the carrier into a ball of flame.",
+                "The carrier will then resurrect in 3s with 50% of their max HP.",
+                "This effect can only be triggered once in each battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Talene enhances the frontmost allied hero, allowing them to deal continuous damage to adjacent enemies."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Talene increases her HP recovered per second to 15% while in the flame state when defeated for the first time in a battle.",
+          "active": [
+            "Talene increases her HP recovered per second to 15% while in the flame state when defeated for the first time in a battle."
+          ]
+        },
+        "description_lite": "Talene increases her HP recovery rate when defeated for the first time."
+      }
+    ],
+    "range": 3,
+    "release_date": "2024-07-03",
+    "prydwen_tiers": {
+      "afk_stages": "A",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "average"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "average"
+      }
+    }
+  }
+}

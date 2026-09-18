@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Valen - Roving Swordsman",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "ee0b6149cfbfa34beda5b64cd4bb055c14e18f65d33b6100287f9a392795c44d",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 12.0,
+                "persistence": "temporary"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Valen is invincible while striking."
+              },
+              {
+                "label": "Form or stance active",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "After striking, Valen gains Invigoration for 12s."
+              },
+              {
+                "label": "Stacking",
+                "tier": "mythic+",
+                "targeting": "Self",
+                "description": "When casting Thunder Swordwork during Invigoration, he permanently gains 13% ATK, up to 10 stacks."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "fac32ed9bf970fc752a6bcfde1648e94e882ae8606c9e54f7c696a1f4c422283",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 115.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 115.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": [
+              {
+                "label": "Form or stance active",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "During Invigoration, forked lightning strikes up to 2 nearby enemies for equal damage."
+              }
+            ]
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "87dbb4f3e9e340ff5378bc9d7d1ac4079a0b4992b6f7e61ef45a3faa93f1484e",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 220.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": [
+              {
+                "label": "Form or stance active",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Valen casts Fury Thunder Strike only while Invigoration is active."
+              }
+            ]
+          },
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 3.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "e40e956cfd6022b08e372e2d57dc72a3302d6c0ef13d5657a69bccdd1751aacd",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "172df5bc45a4d0473ee1f91125da16abe8827a0ea3464a38c7dab86ccfc53b70",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Form or stance active",
+                "tier": "mythic+",
+                "targeting": "Self",
+                "description": "Valen gains permanent Invigoration."
+              }
+            ],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  },
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 1.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "05b5d7e19b3b3865521de37967798717e67858c60d3998e34048b2effc1dd029",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 500.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "mass-cc"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "launch multiple strikes within range and gain Invigoration buff state",
+    "skill1": "three-hit consecutive strikes; chain lightning to nearby during buff",
+    "skill2": "AoE lightning burst available only while buffed",
+    "skill3": "battle ATK increase",
+    "skill4": "permanent buff state; buff activations stack ATK bonus",
+    "skill5": "lightning AoE also stuns enemies"
+  },
+  "play_overview": "Valen launches **multiple strikes within range** and enters a permanent **Invigoration buff state** that defines his entire rotation. Three-hit consecutive strikes **chain lightning to nearby foes** while buffed, and a separate skill delivers **AoE lightning burst** only during the buff window for spread damage. Buff activations **stack ATK bonus** over repeated casts, compounding personal damage through the fight, and lightning AoE also stuns enemies for control alongside raw burst output. He is a buff-gated damage dealer who needs Invigoration uptime to access his best skills. Without **grouped enemies for chain lightning**, his burst and stun payoff shrink sharply.",
+  "counter_overview": "Valen's Arena threat is **Thunder Swordwork** — he is **invincible while striking**, then rides **Invigoration** into chain lightning and an **AoE stun** that snowballs ATK stacks. You **cannot burst him during the invincible cast**; after it ends the fight hinges on Invigoration uptime and how tightly you are clumped for forked lightning. Cancel the ultimate with [[Lily May]], **spread** so chains waste themselves, and punish the soft window with Magic melee like [[Eironn]] or lasting [[Shemira]] once he is hittable."
+}

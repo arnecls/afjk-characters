@@ -2,4 +2,5 @@ jsonschema>=4.0
 rjsmin
 pytest>=8.0
 pytest-xdist>=3.5
+mypy>=1.8
 

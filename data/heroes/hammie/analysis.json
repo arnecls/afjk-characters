@@ -1,0 +1,310 @@
+{
+  "schema_version": 2,
+  "id": "hammie",
+  "display_name": "Hammie",
+  "local": {
+    "long_name": "Hammie - Acorn Mage",
+    "faction": "lightbearer",
+    "class": "support",
+    "role_category": "support",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 5,
+    "release_date": "2024-03-27",
+    "season": "Starter Story",
+    "season_number": 0,
+    "skills": {
+      "Pretty Fireball": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Hammie charges up to shoot a fireball, dealing 260% (ATK-based) damage to the enemy.",
+          "active": [
+            "Hammie charges up to shoot a fireball, dealing 260% (ATK-based) damage to the enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage to 280% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage to 300% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage to 320% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage to 340% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 340.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 1.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 5,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "You'll Be Fine": {
+        "category": "skill1",
+        "description": {
+          "raw": "Hammie heals the weakest ally for 160% (ATK-based) HP and increases their ATK by 10% for 5s.",
+          "active": [
+            "Hammie heals the weakest ally for 160% (ATK-based) HP and increases their ATK by 10% for 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the healing amount to 170% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the healing amount to 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the healing amount to 190% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "I'm Hungry": {
+        "category": "skill2",
+        "description": {
+          "raw": "Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70%.",
+          "active": [
+            "Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "The healing amount is increased to 230% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "The healing amount is increased to 240% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "The healing amount is increased to 250% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.7,
+                "comparison": "below"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 7.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 5,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "hammie",
+    "display_name": "Hammie",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Hammie charges up to shoot a fireball, dealing 260% (ATK-based) damage to the enemy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage to 280% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage to 300% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage to 320% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage to 340% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Hammie heals the weakest ally for 160% (ATK-based) HP and increases their ATK by 10% for 5s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 170% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 180% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the healing amount to 190% (ATK-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70%.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The healing amount is increased to 230% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The healing amount is increased to 240% (ATK-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The healing amount is increased to 250% (ATK-based).",
+        "Skill2"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "1de022056c19c44a61c0e7838b60f13208070ec71e20e67584d25cbac3067b0b",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

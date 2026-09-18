@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "valen",
+  "display_name": "Valen",
+  "source": {
+    "title": "Valen - Roving Swordsman",
+    "name": "Valen",
+    "tags": "Lightbearer · Warrior · Physical",
+    "faction": "Lightbearer",
+    "class": "Warrior",
+    "damage_type": "Physical",
+    "description": "A Warrior who is skilled at dealing AoE damage and becomes stronger under his enhanced mode.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Thunder Swordwork",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "Global",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Valen selects a tile and launches 7 Swift Strikes at the selected tile and its adjacent tiles. Each strike deals 70% (ATK-based) + 10% (SP-based) damage to all targets. Valen is invincible while striking. After striking, Valen gains Invigoration for 12s, increasing his ATK by 20%.",
+          "active": [
+            "Valen selects a tile and launches 7 Swift Strikes at the selected tile and its adjacent tiles.",
+            "Each strike deals 70% (ATK-based) + 10% (SP-based) damage to all targets.",
+            "Valen is invincible while striking.",
+            "After striking, Valen gains Invigoration for 12s, increasing his ATK by 20%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increasing damage to 75% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increasing damage to 80% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increasing damage to 85% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increasing damage to 90% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valen launches several strikes within range and gains Invigoration."
+      },
+      {
+        "section": "Skill1",
+        "name": "Unseen Blade",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Valen strikes the target 3 times. Each strike deals 100% (ATK-based) + 10% (SP-based) damage. During Invigoration, Valen generates forked lightning with each strike, dealing equal damage to the target and up to 2 nearby enemies within 2 tiles.",
+          "active": [
+            "Valen strikes the target 3 times.",
+            "Each strike deals 100% (ATK-based) + 10% (SP-based) damage.",
+            "During Invigoration, Valen generates forked lightning with each strike, dealing equal damage to the target and up to 2 nearby enemies within 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases damage to 105% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases damage to 110% (ATK-based) + 10% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases damage to 115% (ATK-based) + 10% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valen strikes the enemy 3 times and deals chain damage to other enemies during Invigoration."
+      },
+      {
+        "section": "Skill2",
+        "name": "Fury Thunder Strike",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "11s",
+          "Skill Range": "2 tiles"
+        },
+        "description": {
+          "raw": "Valen casts his lightning strike only when he gains Invigoration, dealing 190% (ATK-based) + 20% (SP-based) damage to all enemies within 2 tiles.",
+          "active": [
+            "Valen casts his lightning strike only when he gains Invigoration, dealing 190% (ATK-based) + 20% (SP-based) damage to all enemies within 2 tiles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage to 210% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage to 220% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valen casts lightning strike only when he gains Invigoration, dealing damage to nearby enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Eternal Thunder",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Valen gains permanent Invigoration. When casting Thunder Swordwork during Invigoration, he permanently gains 10% ATK bonus, up to 10 stacks.",
+          "active": [
+            "Valen gains permanent Invigoration.",
+            "When casting Thunder Swordwork during Invigoration, he permanently gains 10% ATK bonus, up to 10 stacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases each stack of ATK bonus to 12%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Triggers a lightning strike during a normal attack after gaining Invigoration, dealing equal amount of normal attack damage to an enemy within 2 tiles."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases each stack of ATK bonus to 13%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valen gains permanent Invigoration and increasing ATK bonus."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Valen inflicts a 3s stun with his Fury Thunder Strike.",
+          "active": [
+            "Valen inflicts a 3s stun with his Fury Thunder Strike."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Valen stuns the enemy with Fury Thunder Strike."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "C",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "average",
+        "Phys DEF": "average",
+        "Magic DEF": "low",
+        "Haste": "low",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

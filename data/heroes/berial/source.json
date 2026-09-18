@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "berial",
+  "display_name": "Berial",
+  "source": {
+    "title": "Berial - Sinister Jester",
+    "name": "Berial",
+    "tags": "Hypogean · Rogue · Magic",
+    "faction": "Hypogean",
+    "class": "Rogue",
+    "damage_type": "Magic",
+    "description": "An Assassin excels at dodging damage by hiding in shadow and dealing damage to the isolated target.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Scared Swamp",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Initial Cooldown": "1s",
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0",
+          "Cooldown": "1s"
+        },
+        "description": {
+          "raw": "Berial flies beneath the enemy, hiding within their shadow and dealing 36% (ATK-based) damage every 0.25s, absorbing 15 + 5 (SP-based) Energy, lasting up to 5s. Berial is Invincible during the effect. Then he jumps out from the shadow, dealing 320% (ATK-based) + 30% (SP-based) damage to adjacent enemies and frightening them for 4s.",
+          "active": [
+            "Berial flies beneath the enemy, hiding within their shadow and dealing 36% (ATK-based) damage every 0.25s, absorbing 15 + 5 (SP-based) Energy, lasting up to 5s.",
+            "Berial is Invincible during the effect.",
+            "Then he jumps out from the shadow, dealing 320% (ATK-based) + 30% (SP-based) damage to adjacent enemies and frightening them for 4s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 51: Deals 38% (ATK-based) damage to enemies every 0.25s when hiding in the shadow."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 111: Deals 40% (ATK-based) damage to enemies every 0.25s when hiding in the shadow."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 171: Deals 42% (ATK-based) damage to enemies every 0.25s when hiding in the shadow.."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 231: Deals 45% (ATK-based) damage to enemies every 0.25s when hiding in the shadow."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Berial hides within the shadow and follows the target, dealing damage to the target and absorbing Energy continuously, during which he becomes Invincible. Then he jumps out to damage and frighten adjacent enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Shadow Trick",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "20s",
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "Berial hides within the shadow, and becomes Invincible while hidden. If there are isolated enemies on the battlefield, Berial will move to each isolated target in turn, dealing 300% (ATK-based) + 30% (SP-based) damage to each target. Otherwise, he will stay in the shadow, recover a total of 300% (ATK-based) HP before returning to his original tile.",
+          "active": [
+            "Berial hides within the shadow, and becomes Invincible while hidden.",
+            "If there are isolated enemies on the battlefield, Berial will move to each isolated target in turn, dealing 300% (ATK-based) + 30% (SP-based) damage to each target.",
+            "Otherwise, he will stay in the shadow, recover a total of 300% (ATK-based) HP before returning to his original tile."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 71: Increases the damage dealt to the isolated targets to 310% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 131: Increases the damage dealt to the isolated targets to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 191: Increases the damage dealt to the isolated targets to 350% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Berial hides within the shadow. If isolated enemies exist, he moves toward the targets and deals damage. Otherwise, restoring HP continuously within the shadow and returning to his original tile."
+      },
+      {
+        "section": "Skill2",
+        "name": "Devil's Contract",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Berial hides within the shadow for 10s after being defeated. However, during which, if a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 40% (HP-based) + 6% (SP-based) HP. This effect can only be triggered once per battle.",
+          "active": [
+            "Berial hides within the shadow for 10s after being defeated.",
+            "However, during which, if a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 40% (HP-based) + 6% (SP-based) HP.",
+            "This effect can only be triggered once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 91: Increases Berial's restored HP to 45% (HP-based) + 6% (SP-based) of his max HP after revival."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 151: Increases Berial's restored HP to 50% (HP-based) + 6% (SP-based) of his max HP after revival."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at level 211: Increases Berial's restored HP to 60% (HP-based) + 6% (SP-based) of his max HP after revival."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Berial hides within the shadow for a while after being defeated. Upon a non-summoned enemy is taken down, he will revive from the vanquished enemy and restore a certain amount of HP."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Berial reduces the damage dealt by an isolated enemy by 6% and increases their damage taken by 3%.",
+          "active": [
+            "Berial reduces the damage dealt by an isolated enemy by 6% and increases their damage taken by 3%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Berial reduces the damage dealt by an isolated enemy by 8% and increases their damage taken by 4%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Berial reduces the damage dealt by an isolated enemy by 10% and increases their damage taken by 5%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Berlal reduces the damage dealt by an isolated enemy and increases the damage they take."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Shadow Reflection",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "10 tiles"
+        },
+        "description": {
+          "raw": "If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and generate a Silhouette that inherits 50% of Berial's ATK, HP and 100% of other stats. This Silhouette loses 8% of its max HP per second. This effect can only be triggered once on the same target within 20s, and the Silhouette can only deal damage by normal attacks.",
+          "active": [
+            "If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and generate a Silhouette that inherits 50% of Berial's ATK, HP and 100% of other stats.",
+            "This Silhouette loses 8% of its max HP per second.",
+            "This effect can only be triggered once on the same target within 20s, and the Silhouette can only deal damage by normal attacks."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 5: The Silhouette inherits 70% of Berial's ATK and HP."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 10: Enemies lose 40 Energy when they receive damage from the Silhouette."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": null,
+              "text": [
+                "Unlocks at Exclusive Weapon level 15: The Silhouette inherits 80% of Berial's ATK and HP."
+              ]
+            }
+          ]
+        },
+        "description_lite": "If non-summoned enemies remain isolated for a while, they will generate a Silhouette that loses its HP over time and can only deal damage by normal attacks."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "Increases the hiding duration after being defeated by 10s.",
+          "active": [
+            "Increases the hiding duration after being defeated by 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Level 2 (Unlocks with {{Item|Shadow Essence"
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases the hiding duration after being defeated."
+      }
+    ],
+    "range": 1,
+    "release_date": "2024-03-27",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "B",
+      "dream_realm": "C",
+      "dream_realm_endless": "C"
+    },
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "low",
+        "offensive": "average",
+        "defensive": "low",
+        "other": "low"
+      },
+      "stats": {
+        "HP": "low",
+        "ATK": "high",
+        "Phys DEF": "low",
+        "Magic DEF": "low",
+        "Haste": "high",
+        "ATK SPD": "low"
+      }
+    }
+  }
+}

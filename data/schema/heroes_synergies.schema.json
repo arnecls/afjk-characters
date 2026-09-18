@@ -54,13 +54,13 @@
     },
     "synergy": {
       "type": "object",
-      "required": ["provider", "reasons", "score"],
+            "required": ["provider_id", "reasons", "score"],
       "additionalProperties": false,
       "properties": {
-        "provider": {
+        "provider_id": {
           "type": "string",
           "minLength": 1,
-          "description": "Display name of the synergy provider hero."
+          "description": "Roster ID of the synergy provider hero."
         },
         "reasons": {
           "type": "array",
@@ -77,10 +77,10 @@
     },
     "beneficiary": {
       "type": "object",
-      "required": ["name", "score"],
+      "required": ["hero_id", "score"],
       "additionalProperties": false,
       "properties": {
-        "name": {
+        "hero_id": {
           "type": "string",
           "minLength": 1
         },
@@ -143,10 +143,10 @@
     },
     "replacementMatch": {
       "type": "object",
-      "required": ["name", "score", "matches"],
+      "required": ["hero_id", "score", "matches"],
       "additionalProperties": false,
       "properties": {
-        "name": {
+        "hero_id": {
           "type": "string",
           "minLength": 1
         },
@@ -165,10 +165,10 @@
     },
     "similarSkillMatch": {
       "type": "object",
-      "required": ["name", "score", "matches"],
+      "required": ["hero_id", "score", "matches"],
       "additionalProperties": false,
       "properties": {
-        "name": {
+        "hero_id": {
           "type": "string",
           "minLength": 1
         },

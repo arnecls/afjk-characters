@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "id": "frieren",
+  "display_name": "Frieren",
+  "source": {
+    "title": "Frieren - The Legendary Mage",
+    "name": "Frieren",
+    "tags": "Dimensional · Mage · Magic",
+    "faction": "Dimensional",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A thousand-year-old elven Mage. While she struggles to read human emotions, her curiosity for magic knows no bounds.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Zoltraak",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "350"
+        },
+        "description": {
+          "raw": "Frieren moves to the rearmost position that maximizes the number of enemies her Ultimate can hit. The Ultimate strikes enemies in a 3-tile rectangular area for 3s, dealing 220% (ATK-based) + 30% (SP-based) damage per second and 1400% (ATK-based) + 180% (SP-based) true damage evenly split among all enemies hit.",
+          "active": [
+            "Frieren moves to the rearmost position that maximizes the number of enemies her Ultimate can hit.",
+            "The Ultimate strikes enemies in a 3-tile rectangular area for 3s, dealing 220% (ATK-based) + 30% (SP-based) damage per second and 1400% (ATK-based) + 180% (SP-based) true damage evenly split among all enemies hit."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases damage per second to 240% (ATK-based) + 30% (SP-based), and the extra true damage to 1500% (ATK-based) + 180% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases damage per second to 260% (ATK-based) + 30% (SP-based), and the extra true damage to 1600% (ATK-based) + 180% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases damage per second to 280% (ATK-based) + 30% (SP-based), and the extra true damage to 1700% (ATK-based) + 180% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases damage per second to 300% (ATK-based) + 30% (SP-based), and the extra true damage to 1800% (ATK-based) + 180% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Frieren deals heavy damage to enemies in a 3-tile rectangular area."
+      },
+      {
+        "section": "Skill1",
+        "name": "Lightning: Judradjim",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Skill Range": "7 tiles"
+        },
+        "description": {
+          "raw": "When a battle starts, Frieren conceals her magic, making enemies less likely to target her. 15s into the battle, she amplifies her magic power, increasing her damage dealt by 60%, replacing her normal attack with Lightning: Judradjim, and no longer being a low-priority target for enemies. Lightning: Judradjim strikes an enemy 3 times, each hit dealing 220% (ATK-based) + 25% (SP-based) damage, and the final hit stuns the target for 0.5s. After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK.",
+          "active": [
+            "When a battle starts, Frieren conceals her magic, making enemies less likely to target her.",
+            "15s into the battle, she amplifies her magic power, increasing her damage dealt by 60%, replacing her normal attack with Lightning: Judradjim, and no longer being a low-priority target for enemies.",
+            "Lightning: Judradjim strikes an enemy 3 times, each hit dealing 220% (ATK-based) + 25% (SP-based) damage, and the final hit stuns the target for 0.5s.",
+            "After fighting alongside Himmel for 5s, Frieren immediately amplifies her magic power, ignoring the time restriction, and gains a permanent ATK bonus equal to 30% of Himmel's initial ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases Lightning: Judradjim's damage per hit to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases Lightning: Judradjim's damage per hit to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases Lightning: Judradjim's damage per hit to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "When a battle starts, Frieren conceals her magic. After a short time, she amplifies her magic power, increasing her damage and replacing her normal attack with Lightning: Judradjim, which deals higher damage and can stun enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Hellfire: Vollzanbel",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "7 tiles"
+        },
+        "description": {
+          "raw": "Frieren casts Hellfire: Vollzanbel, dealing 300% (ATK-based) + 30% (SP-based) damage to the target and adjacent enemies and burning the area for 5s. Enemies in the burning area lose 35% (ATK-based) HP every 0.5s, and their Vitality is reduced by 20+ 5 (SP-based). After Frieren amplifies her magic power, this skill's cooldown is reduced by 50%.",
+          "active": [
+            "Frieren casts Hellfire: Vollzanbel, dealing 300% (ATK-based) + 30% (SP-based) damage to the target and adjacent enemies and burning the area for 5s.",
+            "Enemies in the burning area lose 35% (ATK-based) HP every 0.5s, and their Vitality is reduced by 20+ 5 (SP-based).",
+            "After Frieren amplifies her magic power, this skill's cooldown is reduced by 50%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 30+ 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 40+ 5 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Reduces the Vitality of enemies burned by Hellfire: Vollzanbel by 50+ 5 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Frieren causes continuous HP loss and reduces the Vitality of the target and adjacent enemies. After amplifying her magic power, she casts this skill more frequently."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Frieren increases her ATK by 9% during battle. After amplifying her magic power, she increases her ATK by an extra 6%.",
+          "active": [
+            "Frieren increases her ATK by 9% during battle.",
+            "After amplifying her magic power, she increases her ATK by an extra 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Frieren increases her ATK by 12% during battle.",
+                "After amplifying her magic power, she increases her ATK by an extra 8%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Frieren increases her ATK by 15% during battle.",
+                "After amplifying her magic power, she increases her ATK by an extra 10%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Defensive Spell",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, Frieren casts defensive magic on herself and the frontmost ally. When either takes damage exceeding 10% of their initial max HP, the excess damage is reduced by 75%.",
+          "active": [
+            "When a battle starts, Frieren casts defensive magic on herself and the frontmost ally.",
+            "When either takes damage exceeding 10% of their initial max HP, the excess damage is reduced by 75%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "The excess damage is reduced by 80%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "While the frontmost ally remains alive, Frieren increases her Haste by 35."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The excess damage is reduced by 85%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Frieren reduces damage taken by herself and the frontmost ally."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "5s after Frieren amplifies her magic power, she knocks the enemy with the most cumulative damage dealt into the air and hurls them toward the edge of the battlefield, dealing 800% (ATK-based) damage and knocking them down for 2s.",
+          "active": [
+            "5s after Frieren amplifies her magic power, she knocks the enemy with the most cumulative damage dealt into the air and hurls them toward the edge of the battlefield, dealing 800% (ATK-based) damage and knocking them down for 2s."
+          ]
+        },
+        "description_lite": "Frieren knocks the enemy with the highest cumulative damage dealt into the air before knocking them down."
+      }
+    ],
+    "range": 7,
+    "release_date": "2026-05-01",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "S+",
+      "dream_realm": "S+",
+      "dream_realm_endless": "S+"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

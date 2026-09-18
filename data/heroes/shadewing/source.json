@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "id": "shadewing",
+  "display_name": "Shadewing",
+  "source": {
+    "title": "Shadewing - Undying Vow",
+    "name": "Shadewing",
+    "tags": "Graveborn · Rogue · Magic",
+    "faction": "Graveborn",
+    "class": "Rogue",
+    "damage_type": "Magic",
+    "description": "A Rogue who fights with instinct and curse, he deals continuous damage that slowly pushes his enemies toward death.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Crimson Venom",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "10 tiles",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "Shadewing inflicts Crimson Venom on an enemy for 10s. While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP. The extra damage cannot exceed 100% (ATK-based).",
+          "active": [
+            "Shadewing inflicts Crimson Venom on an enemy for 10s.",
+            "While affected by Crimson Venom, the enemy takes damage every second equal to 60% (ATK-based) + 8% (SP-based), plus extra damage equal to 5% of the enemy's lost HP.",
+            "The extra damage cannot exceed 100% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 65% (ATK-based) + 8% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 70% (ATK-based) + 8% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 75% (ATK-based) + 8% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Crimson Venom's base damage per second to 80% (ATK-based) + 8% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing deals heavy continuous damage to an enemy, and each hit deals extra damage based on the enemy's lost HP."
+      },
+      {
+        "section": "Skill1",
+        "name": "Razor Talons",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Skill Range": "1 tile",
+          "Initial Cooldown": "3s"
+        },
+        "description": {
+          "raw": "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage. He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again. The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s.",
+          "active": [
+            "Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage.",
+            "He then rips it free, tearing the wound open and dealing 70% (ATK-based) damage again.",
+            "The enemy continues to take 120% (ATK-based) + 20% (SP-based) damage per second for the next 5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage of the two claw strikes to 75% (ATK-based) and the damage dealt per second from the resulting wound to 140% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage of the two claw strikes to 80% (ATK-based) and the damage dealt per second from the resulting wound to 160% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage of the two claw strikes to 85% (ATK-based) and the damage dealt per second from the resulting wound to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing deals minor damage to an enemy, followed by more continuous damage."
+      },
+      {
+        "section": "Skill2",
+        "name": "Withering Curse",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.",
+          "active": [
+            "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies.",
+            "During the flight, Shadewing is invincible.",
+            "Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value.",
+            "When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP.",
+            "This damage cannot exceed 600% (ATK-based) + 90% (SP-based).",
+            "The curse lashes out at most once every 3s per enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt when the curse lashes out to 30% + 4% (SP-based) of the enemy's max HP.",
+                "This damage cannot exceed 700% (ATK-based) + 90% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt when the curse lashes out to 35% + 4% (SP-based) of the enemy's max HP.",
+                "This damage cannot exceed 800% (ATK-based) + 90% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt when the curse lashes out to 40% + 4% (SP-based) of the enemy's max HP.",
+                "This damage cannot exceed 900% (ATK-based) + 90% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing converts any continuous damage enemies take into curse value. Once the curse value reaches a set threshold, it lashes out, dealing heavy damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases ATK by 12% during battle.",
+          "active": [
+            "Increases ATK by 12% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 16% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 20% during battle."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases ATK."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Curse Feast",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%. When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration.",
+          "active": [
+            "Every time Withering Curse lashes out, Shadewing recovers 100 Energy and permanently increases his damage dealt by 6%, up to 36%.",
+            "When an Enemy with Crimson Venom is defeated, Shadewing reclaims the venom's residual essence and recovers 50 Energy for each second of Crimson Venom's remaining duration."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 42%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Converts 85% of the damage dealt by Withering Curse's lash into true damage."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the max damage boost Shadewing can gain from Withering Curse's lash to 48%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Shadewing recovers Energy and gains a permanent damage boost whenever Withering Curse lashes out or an enemy with Crimson Venom is defeated."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP. He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK. The effects last until the end of the battle.",
+          "active": [
+            "When a battle starts, Shadewing targets the ally 1 tile in front of him and drains 10% of their current HP.",
+            "He also gains a 30% ATK boost, 30 Life Drain, and a shield equal to 500% of the HP drained, up to 500% of his ATK.",
+            "The effects last until the end of the battle."
+          ]
+        },
+        "description_lite": "When a battle starts, Shadewing drains HP from the ally 1 tile in front of him to gain a shield and stat bonuses."
+      }
+    ],
+    "range": 1,
+    "release_date": "2025-11-13",
+    "prydwen_tiers": {
+      "afk_stages": "A+",
+      "pvp": "A",
+      "dream_realm": "A",
+      "dream_realm_endless": "A"
+    },
+    "role_category": "specialist"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "average",
+        "offensive": "high",
+        "defensive": "average",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "average",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "schema_version": 2,
+  "id": "ulmus",
+  "display_name": "Ulmus",
+  "local": {
+    "long_name": "Ulmus - Grove Keeper",
+    "faction": "wilder",
+    "class": "tank",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2024-06-20",
+    "season": "Song of Strife",
+    "season_number": 1,
+    "skills": {
+      "Ancient Tenacity": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% (SP-based) HP. When rooted, Ulmus is Unaffected and unable to move. His normal attacks become ranged and deal an additional 50% damage to enemies surrounding the primary target. Active. Ulmus attacks an enemy, knocking the target and adjacent enemies into the air, dealing 200% (ATK-based) + 20% (SP-based) damage plus an extra 4% (HP-based) damage. This skill prioritizes the area with the most enemies within his attack range.",
+          "passive": [
+            "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% (SP-based) HP.",
+            "When rooted, Ulmus is Unaffected and unable to move.",
+            "His normal attacks become ranged and deal an additional 50% damage to enemies surrounding the primary target."
+          ],
+          "active": [
+            "Ulmus attacks an enemy, knocking the target and adjacent enemies into the air, dealing 200% (ATK-based) + 20% (SP-based) damage plus an extra 4% (HP-based) damage.",
+            "This skill prioritizes the area with the most enemies within his attack range."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt to 210%|ult (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt to 220%|ult (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt to 230%|ult (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt to 240%|ult (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.3,
+                "comparison": "below"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              },
+              {
+                "type": "battle_phase",
+                "phase": "conditional"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 1,
+        "initial_energy": 0.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock up — Area"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Verdant Barrier": {
+        "category": "skill1",
+        "description": {
+          "raw": "Ulmus gains a 25% (HP-based) + 3% (SP-based) shield that lasts 10s. When the shield breaks, it deals 160% (ATK-based) + 15% (SP-based) damage to surrounding enemies. If Ulmus is rooted, he will grant the shield to the frontmost ally instead.",
+          "active": [
+            "Ulmus gains a 25% (HP-based) + 3% (SP-based) shield that lasts 10s.",
+            "When the shield breaks, it deals 160% (ATK-based) + 15% (SP-based) damage to surrounding enemies.",
+            "If Ulmus is rooted, he will grant the shield to the frontmost ally instead."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the shield value to 28% (HP-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the shield value to 32% (HP-based) + 3% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the shield value to 35% (HP-based) + 3% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 175.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          }
+        ],
+        "cooldown": 14.0,
+        "initial_cooldown": 3.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Knock back — Area (Supreme+)"
+          }
+        ]
+      },
+      "Way of the Forest": {
+        "category": "skill2",
+        "description": {
+          "raw": "Passive. Ulmus recovers 3.5% + 0.5% (SP-based) of his lost HP per second. When rooted, he will instead recover 30 + 4 (SP-based) Energy per second.",
+          "passive": [
+            "Ulmus recovers 3.5% + 0.5% (SP-based) of his lost HP per second.",
+            "When rooted, he will instead recover 30 + 4 (SP-based) Energy per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the HP recovery per second to 4% + 0.5% (SP-based), or the Energy recovery to 32 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the HP recovery per second to 4.5% + 0.5% (SP-based), or the Energy recovery to 34 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the HP recovery per second to 5% + 0.5% (SP-based), or the Energy recovery to 36 + 4 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 3.5
+              }
+            ],
+            "duration": 2.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases max HP by 17% during battle.",
+          "active": [
+            "Increases max HP by 17% during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases max HP by 23% during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases max HP by 29% during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [],
+        "skill_range": 1,
+        "passive_only": true,
+        "skill_card_tags": []
+      },
+      "Prowling Roots": {
+        "category": "skill4",
+        "description": {
+          "raw": "Ulmus extends his roots to trap vulnerable enemies on the battlefield. Whenever an enemy target is knocked down, knocked into the air or affected by other displacement effects, Ulmus binds the target to the ground, increasing the knockdown duration by 2 and dealing 80% (ATK-based) damage. This effect can only affect the same enemy once every 10s.",
+          "active": [
+            "Ulmus extends his roots to trap vulnerable enemies on the battlefield.",
+            "Whenever an enemy target is knocked down, knocked into the air or affected by other displacement effects, Ulmus binds the target to the ground, increasing the knockdown duration by 2 and dealing 80% (ATK-based) damage.",
+            "This effect can only affect the same enemy once every 10s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt to 100%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Gains 60 Life Drain when dealing damage with this skill."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage dealt to 120%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "bind"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "unknown"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Lifedrain — Self (EX+10)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Bind — Single target"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant Barrier breaks or vanishes.",
+          "active": [
+            "Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant Barrier breaks or vanishes."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% HP."
+        }
+      ],
+      "requires": [
+        {
+          "label": "Vulnerable enemy",
+          "tier": "mythic+",
+          "targeting": "Enemies",
+          "description": "Ulmus extends his roots to trap vulnerable enemies on the battlefield."
+        }
+      ]
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "shield",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 0.5384615384615384,
+      "max_hp": 0.46153846153846156
+    },
+    "id": "ulmus",
+    "display_name": "Ulmus",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "skill2",
+    "skill_chunks": [
+      [
+        "base",
+        "When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% (SP-based) HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When rooted, Ulmus is Unaffected and unable to move.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "His normal attacks become ranged and deal an additional 50% damage to enemies surrounding the primary target.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Ulmus attacks an enemy, knocking the target and adjacent enemies into the air, dealing 200% (ATK-based) + 20% (SP-based) damage plus an extra 4% (HP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This skill prioritizes the area with the most enemies within his attack range.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 210%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 220%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 230%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 240%|ult (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Ulmus gains a 25% (HP-based) + 3% (SP-based) shield that lasts 10s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When the shield breaks, it deals 160% (ATK-based) + 15% (SP-based) damage to surrounding enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If Ulmus is rooted, he will grant the shield to the frontmost ally instead.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 28% (HP-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 32% (HP-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the shield value to 35% (HP-based) + 3% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Ulmus recovers 3.5% + 0.5% (SP-based) of his lost HP per second.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When rooted, he will instead recover 30 + 4 (SP-based) Energy per second.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP recovery per second to 4% + 0.5% (SP-based), or the Energy recovery to 32 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP recovery per second to 4.5% + 0.5% (SP-based), or the Energy recovery to 34 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the HP recovery per second to 5% + 0.5% (SP-based), or the Energy recovery to 36 + 4 (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 17% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 23% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases max HP by 29% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Ulmus extends his roots to trap vulnerable enemies on the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Whenever an enemy target is knocked down, knocked into the air or affected by other displacement effects, Ulmus binds the target to the ground, increasing the knockdown duration by 2 and dealing 80% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "This effect can only affect the same enemy once every 10s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt to 100%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Gains 60 Life Drain when dealing damage with this skill.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt to 120%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant Barrier breaks or vanishes.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "7add15c77c1babedfb05eeaf1dafdda6ef5e6bbae3c7ab2e758e4e0ad02fd0b7",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}

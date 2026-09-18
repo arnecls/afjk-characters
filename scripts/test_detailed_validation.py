@@ -13,19 +13,15 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
-import hero_schema as hs
+from test_helpers import load_working_analysis
+from hero_pipeline.relationships import scoring as gen
+
+from hero_pipeline.analysis import serialize as hs
 import skill_effects_store as ses
 
 
 def _load_rs():
-    spec = importlib.util.spec_from_file_location(
-        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
-    )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["rewrite_summaries"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    return load_working_analysis()
 
 
 rs = _load_rs()
@@ -83,7 +79,7 @@ class SchemaSerializationTests(unittest.TestCase):
         }
         legacy = hs.schema_effect_to_effect(sidecar_effect)
         processed = hs.effect_to_schema(hs._merge_effects([legacy])[0])
-        self.assertEqual(legacy.tick, 0.25)
+        self.assertEqual(legacy["tick"], 0.25)
         self.assertEqual(processed["tick"], 0.25)
         self.assertEqual(processed["duration"], 4)
 
@@ -103,8 +99,8 @@ class SchemaSerializationTests(unittest.TestCase):
         }
         legacy = hs.schema_effect_to_effect(sidecar_effect)
         processed = hs.effect_to_schema(hs._merge_effects([legacy])[0])
-        self.assertEqual(legacy.tick, 0.5)
-        self.assertEqual(legacy.duration, -1.0)
+        self.assertEqual(legacy["tick"], 0.5)
+        self.assertEqual(legacy["duration"], -1.0)
         self.assertEqual(processed["tick"], 0.5)
         self.assertEqual(processed["duration"], -1.0)
 
@@ -127,8 +123,9 @@ class ExplicitPeriodicTickTests(unittest.TestCase):
     def test_confirmed_sidecar_ticks_match_explicit_source_intervals(self):
         for (hero, section, tier), expected_tick in self.EXPECTED_TICKS.items():
             with self.subTest(hero=hero, section=section):
-                sidecar_path = ROOT / "data" / "skill_effects" / f"{hero}.json"
-                sidecar = json.loads(sidecar_path.read_text())
+                sidecar = ses.load_sidecar(hero)
+                self.assertIsNotNone(sidecar)
+                assert sidecar is not None
                 effects = sidecar["skills"][section]["tiers"][tier]["effects"]
                 ticks = [
                     effect["tick"]
@@ -239,8 +236,9 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
             old_target,
         ) in self.EXPECTED_TARGETS:
             with self.subTest(hero=hero, section=section, identifier=identifier):
-                sidecar_path = ROOT / "data" / "skill_effects" / f"{hero}.json"
-                sidecar = json.loads(sidecar_path.read_text())
+                sidecar = ses.load_sidecar(hero)
+                self.assertIsNotNone(sidecar)
+                assert sidecar is not None
                 rows = sidecar["skills"][section]["tiers"][tier][bucket]
                 matches = [
                     row
@@ -258,9 +256,9 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
     def test_niru_named_ally_def_buffs_stay_conditional(self):
         # The DEF boost only lands when Shemira or Daimon is on the team, so
         # it belongs in special_provides.grants, not in unconditional effects.
-        sidecar = json.loads(
-            (ROOT / "data" / "skill_effects" / "Niru.json").read_text()
-        )
+        sidecar = ses.load_sidecar("Niru")
+        self.assertIsNotNone(sidecar)
+        assert sidecar is not None
         tier = sidecar["skills"]["Unlocks at Supreme+"]["tiers"]["supreme+"]
         buff_names = {
             row.get("name")
@@ -280,8 +278,10 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
     def test_edited_sidecars_are_schema_valid(self):
         for hero in sorted(self.EDITED_SIDECARS):
             with self.subTest(hero=hero):
-                sidecar_path = ROOT / "data" / "skill_effects" / f"{hero}.json"
-                ses.validate_sidecar_doc(json.loads(sidecar_path.read_text()))
+                sidecar = ses.load_sidecar(hero)
+                self.assertIsNotNone(sidecar)
+                assert sidecar is not None
+                ses.validate_sidecar_doc(sidecar)
 
     def test_prescan_ally_healing_rows_remain_unchanged(self):
         expected_rows = [
@@ -292,8 +292,9 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
         ]
         for hero, section, effect_type, name in expected_rows:
             with self.subTest(hero=hero, effect_type=effect_type):
-                sidecar_path = ROOT / "data" / "skill_effects" / f"{hero}.json"
-                sidecar = json.loads(sidecar_path.read_text())
+                sidecar = ses.load_sidecar(hero)
+                self.assertIsNotNone(sidecar)
+                assert sidecar is not None
                 rows = sidecar["skills"][section]["tiers"]["base"]["effects"]
                 matches = [
                     row

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "gunnar",
+  "display_name": "Gunnar",
+  "source": {
+    "title": "Gunnar - Iron Doom",
+    "name": "Gunnar",
+    "tags": "Hypogean · Tank · Physical",
+    "faction": "Hypogean",
+    "class": "Tank",
+    "damage_type": "Physical",
+    "description": "A Tank who specializes in heavy bombardment, supporting allies with powerful long-range fire.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Annihilation Directive",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "0"
+        },
+        "description": {
+          "raw": "When a battle starts, if there is an ally placed 1 tile behind Gunnar, he summons a Doomfield at that ally's location, increasing their normal attack range by 3 and ATK by 25% + 2.5% (SP-based) of Gunnar's initial ATK. He and the ally remain steadfast until Gunnar is defeated, or until 3s after the ally leaves the Doomfield. During battle, Gunnar locks onto and prioritizes attacking the enemy targeted by the ally standing on his Doomfield. Active. Gunnar deals 320% (ATK-based) + 30% (SP-based) damage 2 times to all enemies within 2 tiles of the target tile,then launches a Doomsday Meteor that deals 470% (ATK-based) + 50% (SP-based) damage to all enemies within range and sets the ground on fire for 15s. Enemies standing in the fire take 80% (ATK-based) + 8% (SP-based) damage every second and lose 40 Vitality. When cast automatically, Gunnar prioritizes targeting the enemy area that allows him to hit the most enemies.",
+          "active": [
+            "When a battle starts, if there is an ally placed 1 tile behind Gunnar, he summons a Doomfield at that ally's location, increasing their normal attack range by 3 and ATK by 25% + 2.5% (SP-based) of Gunnar's initial ATK.",
+            "He and the ally remain steadfast until Gunnar is defeated, or until 3s after the ally leaves the Doomfield.",
+            "During battle, Gunnar locks onto and prioritizes attacking the enemy targeted by the ally standing on his Doomfield.",
+            "Gunnar deals 320% (ATK-based) + 30% (SP-based) damage 2 times to all enemies within 2 tiles of the target tile,then launches a Doomsday Meteor that deals 470% (ATK-based) + 50% (SP-based) damage to all enemies within range and sets the ground on fire for 15s.",
+            "Enemies standing in the fire take 80% (ATK-based) + 8% (SP-based) damage every second and lose 40 Vitality.",
+            "When cast automatically, Gunnar prioritizes targeting the enemy area that allows him to hit the most enemies."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 490% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 510% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 530% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases Doomsday Meteor's damage dealt to all enemies within range to 550% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Passive. Gunnar summons a Doomfield at the location of the ally placed 1 tile behind him, enhancing that ally. Gunnar prioritizes locking onto the enemy targeted by that ally. Active. Gunnar deals massive AoE damage, setting the target area on fire for a while."
+      },
+      {
+        "section": "Skill1",
+        "name": "Bombing Engine",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "10s",
+          "Initial Cooldown": "3s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Gunnar fires his cannons 6 times, each time dealing 65% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to his locked-on target. If there is a Doomfield active, the ally within the Doomfield will also launch 6 coordinated attacks, dealing damage to the locked-on target equal to 6% + 0.5% (SP-based) their max HP and stunning them for 0.5s. This damage cannot exceed Gunnar's 100% (ATK-based).",
+          "active": [
+            "Gunnar fires his cannons 6 times, each time dealing 65% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to his locked-on target.",
+            "If there is a Doomfield active, the ally within the Doomfield will also launch 6 coordinated attacks, dealing damage to the locked-on target equal to 6% + 0.5% (SP-based) their max HP and stunning them for 0.5s.",
+            "This damage cannot exceed Gunnar's 100% (ATK-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Each cannon strike deals 70% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Each cannon strike deals 75% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Each cannon strike deals 80% (ATK-based) + 8% (SP-based) damage to all enemies adjacent to Gunnar's locked-on target."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gunnar fires his cannons multiple times, dealing damage to all enemies in target areas."
+      },
+      {
+        "section": "Skill2",
+        "name": "Absolute Defense",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Gunnar lets out a roar, granting himself a shield that absorbs 450% (ATK-based) + 60% (SP-based) damage. He also grants a shield that absorbs 400% (ATK-based) + 40% (SP-based) damage for 6s to every ally behind him. If there is a Doomfield active, the Doomfield gets strengthened, increasing the ATK SPD of the ally within it by 40 + 4 (SP-based) for 8s.",
+          "active": [
+            "Gunnar lets out a roar, granting himself a shield that absorbs 450% (ATK-based) + 60% (SP-based) damage.",
+            "He also grants a shield that absorbs 400% (ATK-based) + 40% (SP-based) damage for 6s to every ally behind him.",
+            "If there is a Doomfield active, the Doomfield gets strengthened, increasing the ATK SPD of the ally within it by 40 + 4 (SP-based) for 8s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the value of the shield Gunnar gives himself to 500% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the value of the shield Gunnar gives himself to 550% (ATK-based) + 60% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the value of the shield Gunnar gives himself to 600% (ATK-based) + 60% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Gunnar gains a powerful shield while granting a shield to every ally behind him. At the same time, he empowers the ally within his Doomfield."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Increases Ranged DEF and Vitality by 10. For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 7.",
+          "active": [
+            "Increases Ranged DEF and Vitality by 10.",
+            "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 7."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Ranged DEF and Vitality by 12.",
+                "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 8."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Ranged DEF and Vitality by 15.",
+                "For each allied hero standing behind this hero, increases Ranged DEF and Vitality by an extra 9."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increases Ranged DEF and Vitality. For each allied hero standing behind this hero, Ranged DEF and Vitality are increased further."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Fire Suppression",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "3 tiles"
+        },
+        "description": {
+          "raw": "Whenever the ally within Gunnar's Doomfield deals total damage equal to 1400% of Gunnar's initial ATK; Gunnar automatically launches a missile at his locked-on target, dealing 500% (ATK-based) damage and recovering HP equal to 100% of the damage dealt.",
+          "active": [
+            "Whenever the ally within Gunnar's Doomfield deals total damage equal to 1400% of Gunnar's initial ATK; Gunnar automatically launches a missile at his locked-on target, dealing 500% (ATK-based) damage and recovering HP equal to 100% of the damage dealt."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the missile damage to 550% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the missile damage to 600% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Whenever an ally within Gunnar's Doomfield deals a certain amount of damage, he fires an extra missile that deals damage and restores his HP based on the damage dealt."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "If an area set on fire is struck again by Doomsday Meteor, the area becomes permanently scorched. The fire no longer expires, and enemies within the scorched area cannot heal or gain shields.",
+          "active": [
+            "If an area set on fire is struck again by Doomsday Meteor, the area becomes permanently scorched.",
+            "The fire no longer expires, and enemies within the scorched area cannot heal or gain shields."
+          ]
+        },
+        "description_lite": "If an area is already set on fire, striking it again with Doomsday Meteor intensifies the fire, preventing affected enemies from healing or gaining shields."
+      }
+    ],
+    "range": 20,
+    "release_date": "2026-03-05",
+    "prydwen_tiers": {
+      "afk_stages": "S",
+      "pvp": "S+",
+      "dream_realm": "S+",
+      "dream_realm_endless": "S"
+    },
+    "role_category": "tank"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "low",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "average",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

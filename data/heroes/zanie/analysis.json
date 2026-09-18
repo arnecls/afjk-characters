@@ -1,0 +1,799 @@
+{
+  "schema_version": 2,
+  "id": "zanie",
+  "display_name": "Zanie",
+  "local": {
+    "long_name": "Zanie - Timeless Tinkerer",
+    "faction": "lightbearer",
+    "class": "marksman",
+    "role_category": "specialist",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 20,
+    "release_date": "2025-08-28",
+    "season": "Echoes of Dissent",
+    "season_number": 4,
+    "skills": {
+      "Vein Pulse": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. Zanie has her max HP reduced by 15%. When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK. These turrets are immobile and unaffected. Each turret fires lasers at random enemies within 5 tiles, dealing damage equal to 100% of the laser turret's ATK. If the 2 turrets start the battle within 2 tiles of each other, they become linked, combining their energy to fire at the nearest enemy, dealing damage equal to 55% of the laser turrets' total ATK every 0.5s. This combined attack also reduces the target's shield value by up to 30% of the laser turrets' total ATK. Active. Zanie increases ATK SPD by 15 + 4 (SP-based) and ATK by 20% + 2% (SP-based) for herself and her laser turrets for 10s. During this time, laser turret attacks deal extra damage equal to 3% of the target's current HP, up to 60% of the laser turret's ATK.",
+          "passive": [
+            "Zanie has her max HP reduced by 15%.",
+            "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK.",
+            "These turrets are immobile and unaffected.",
+            "Each turret fires lasers at random enemies within 5 tiles, dealing damage equal to 100% of the laser turret's ATK.",
+            "If the 2 turrets start the battle within 2 tiles of each other, they become linked, combining their energy to fire at the nearest enemy, dealing damage equal to 55% of the laser turrets' total ATK every 0.5s.",
+            "This combined attack also reduces the target's shield value by up to 30% of the laser turrets' total ATK."
+          ],
+          "active": [
+            "Zanie increases ATK SPD by 15 + 4 (SP-based) and ATK by 20% + 2% (SP-based) for herself and her laser turrets for 10s.",
+            "During this time, laser turret attacks deal extra damage equal to 3% of the target's current HP, up to 60% of the laser turret's ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "When actively used, increases ATK SPD by 20 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "When actively used, increases ATK SPD by 25 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "When actively used, increases ATK SPD by 30 + 4 (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "When actively used, increases ATK SPD by 35 + 4 (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 35.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 35.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "initial_energy": 9.0,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Iron Defense": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. When a battle starts, Zanie builds a gun turret in front of her. The turret inherits 70% of her max HP and ATK. Its normal attack has a range of 3 tiles and deals damage equal to 100% + 10% (SP-based) of the gun turret's ATK, prioritizing the enemy closest to any laser turret. After 2 normal attacks, the gun turret charges up its next attack into a devastating heavy barrage that fires 6 consecutive rounds at the enemy. Each round deals damage equal to 50% of the gun turret's ATK, stuns the enemy for 0.5s, and knocks them back.",
+          "passive": [
+            "When a battle starts, Zanie builds a gun turret in front of her.",
+            "The turret inherits 70% of her max HP and ATK.",
+            "Its normal attack has a range of 3 tiles and deals damage equal to 100% + 10% (SP-based) of the gun turret's ATK, prioritizing the enemy closest to any laser turret.",
+            "After 2 normal attacks, the gun turret charges up its next attack into a devastating heavy barrage that fires 6 consecutive rounds at the enemy.",
+            "Each round deals damage equal to 50% of the gun turret's ATK, stuns the enemy for 0.5s, and knocks them back."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "The gun turret now inherits 75% of Zanie's max HP and ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "The gun turret now inherits 80% of Zanie's max HP and ATK."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "The gun turret now inherits 85% of Zanie's max HP and ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 110.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Knock back — Single target"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Field Repairs": {
+        "category": "skill2",
+        "description": {
+          "raw": "Passive. When her gun turret is destroyed, Zanie moves to its remains to fully repair it and grant it a shield that can block 500% (ATK-based) damage. She then returns to her original position. This effect can only be triggered once per battle. Active. Zaniemoves to the weakest|weakest laser turret to repair it, restoring 300% (ATK-based) + 45% (SP-based) HP and granting it a shield that blocks 500% (ATK-based) + 50% (SP-based) damage. Zanie then returns to her original position.",
+          "passive": [
+            "When her gun turret is destroyed, Zanie moves to its remains to fully repair it and grant it a shield that can block 500% (ATK-based) damage.",
+            "She then returns to her original position.",
+            "This effect can only be triggered once per battle."
+          ],
+          "active": [
+            "Zaniemoves to the weakest|weakest laser turret to repair it, restoring 300% (ATK-based) + 45% (SP-based) HP and granting it a shield that blocks 500% (ATK-based) + 50% (SP-based) damage.",
+            "Zanie then returns to her original position."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "When actively used, increases HP restored to a turret to 350% (ATK-based) + 45% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "When actively used, increases HP restored to a turret to 400% (ATK-based) + 45% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "When actively used, increases HP restored to a turret to 450% (ATK-based) + 45% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 450.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 6.0,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases Penetration by 12 during battle.",
+          "active": [
+            "Increases Penetration by 12 during battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases Penetration by 16 during battle."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases Penetration by 20 during battle."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "DEF Penetration — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Precision Overload": {
+        "category": "skill4",
+        "description": {
+          "raw": "Every 22s, Zanie upgrades one of her turrets, increasing its max HP and ATK by 40% and expanding its range by 1 tiles. She will prioritize upgrading the frontmost laser turret. Each turret can only be upgraded once per battle.",
+          "active": [
+            "Every 22s, Zanie upgrades one of her turrets, increasing its max HP and ATK by 40% and expanding its range by 1 tiles.",
+            "She will prioritize upgrading the frontmost laser turret.",
+            "Each turret can only be upgraded once per battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Max HP and ATK boosts for upgraded turrets are increased to 50%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Reduces this skill's cooldown to 15s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Max HP and ATK boosts for upgraded turrets are increased to 60%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 15.0,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Owned",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and dealing damage equal to 100% of the turret's ATK per second for 5s. The burn effect cannot stack. If the turret is linked to the other laser turret, the burn effect also reduces the enemy's Phys DEF by 30%.",
+          "active": [
+            "When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and dealing damage equal to 100% of the turret's ATK per second for 5s.",
+            "The burn effect cannot stack.",
+            "If the turret is linked to the other laser turret, the burn effect also reduces the enemy's Phys DEF by 30%."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "ATK",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "When a battle starts, she deploys 2 laser turrets that inherit HP and ATK."
+        },
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "When a battle starts, Zanie builds a gun turret in front of her."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Single target"
+      ],
+      [
+        "dot",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "atk_spd",
+      "def_penetration"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "zanie",
+    "display_name": "Zanie",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Zanie has her max HP reduced by 15%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "These turrets are immobile and unaffected.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each turret fires lasers at random enemies within 5 tiles, dealing damage equal to 100% of the laser turret's ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If the 2 turrets start the battle within 2 tiles of each other, they become linked, combining their energy to fire at the nearest enemy, dealing damage equal to 55% of the laser turrets' total ATK every 0.5s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This combined attack also reduces the target's shield value by up to 30% of the laser turrets' total ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Zanie increases ATK SPD by 15 + 4 (SP-based) and ATK by 20% + 2% (SP-based) for herself and her laser turrets for 10s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During this time, laser turret attacks deal extra damage equal to 3% of the target's current HP, up to 60% of the laser turret's ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 20 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 25 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 30 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When actively used, increases ATK SPD by 35 + 4 (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Zanie builds a gun turret in front of her.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The turret inherits 70% of her max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Its normal attack has a range of 3 tiles and deals damage equal to 100% + 10% (SP-based) of the gun turret's ATK, prioritizing the enemy closest to any laser turret.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After 2 normal attacks, the gun turret charges up its next attack into a devastating heavy barrage that fires 6 consecutive rounds at the enemy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each round deals damage equal to 50% of the gun turret's ATK, stuns the enemy for 0.5s, and knocks them back.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The gun turret now inherits 75% of Zanie's max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The gun turret now inherits 80% of Zanie's max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The gun turret now inherits 85% of Zanie's max HP and ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "When her gun turret is destroyed, Zanie moves to its remains to fully repair it and grant it a shield that can block 500% (ATK-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "She then returns to her original position.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect can only be triggered once per battle.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Zaniemoves to the weakest|weakest laser turret to repair it, restoring 300% (ATK-based) + 45% (SP-based) HP and granting it a shield that blocks 500% (ATK-based) + 50% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Zanie then returns to her original position.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When actively used, increases HP restored to a turret to 350% (ATK-based) + 45% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When actively used, increases HP restored to a turret to 400% (ATK-based) + 45% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "When actively used, increases HP restored to a turret to 450% (ATK-based) + 45% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases Penetration by 12 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Penetration by 16 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases Penetration by 20 during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Every 22s, Zanie upgrades one of her turrets, increasing its max HP and ATK by 40% and expanding its range by 1 tiles.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "She will prioritize upgrading the frontmost laser turret.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each turret can only be upgraded once per battle.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Max HP and ATK boosts for upgraded turrets are increased to 50%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Reduces this skill's cooldown to 15s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Max HP and ATK boosts for upgraded turrets are increased to 60%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and dealing damage equal to 100% of the turret's ATK per second for 5s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "The burn effect cannot stack.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "If the turret is linked to the other laser turret, the burn effect also reduces the enemy's Phys DEF by 30%.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "9f2f1b4b13bb4e5d84b337c0a5aab597c7947dae3a9dae1c6a404979ca6a7047",
+    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+  }
+}
