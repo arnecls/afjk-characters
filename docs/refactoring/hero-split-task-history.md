@@ -24,11 +24,13 @@ closes or changes one of the decisions below.
 ## Current snapshot
 
 The rewrite now uses the four-file bundle, ID-keyed schema mappings, one
-relationship scorer, and split hero-local detectors. Frozen public-output
-parity still holds. Operator integration and quality hardening (render
-drift guard plus full core mypy) are closed. Remaining items are the
-deliberate deferrals in section 8. GitHub Pages workflow repair stays
-deferred.
+relationship scorer, and split hero-local detectors. The historical
+`b7d7ed2` public-output parity oracle was used to close the migration and is
+now retired. Current committed outputs are protected by the render drift
+guard, focused relationship invariants, and domain regressions. Operator
+integration and quality hardening (render drift guard plus full core mypy) are
+closed. Remaining items are the deliberate deferrals in section 8. GitHub
+Pages workflow repair stays deferred.
 
 The current runtime model is:
 
@@ -48,8 +50,8 @@ Each of the 125 roster heroes has four canonical files:
 - `data/heroes/<hero-id>/overrides.json` — sparse typed corrections
 - `data/heroes/<hero-id>/analysis.json` — hash-keyed local analysis cache
 
-Before this document was added, the worktree was clean. Focused parity and
-compatibility tests pass: 14 tests, with one existing `jsonschema.RefResolver`
+Before this document was added, the worktree was clean. Focused pipeline and
+compatibility tests pass, with one existing `jsonschema.RefResolver`
 deprecation warning. The last recorded full-suite result before the latest
 analysis split was 453 passing tests; rerun the complete gates before merging.
 
@@ -118,39 +120,37 @@ shape.
 
 These are the acceptance requirements for architectural changes.
 
-### Required public-output parity
+### Historical migration parity
+
+The migration captured the approved public outputs from `b7d7ed2` and
+compared the complete Markdown, CSV, and browser-visible artifact set. This
+historical oracle closed with the refactor and its fixture and comparator are
+no longer part of the normal test suite.
+
+The migration established the following correctness expectations:
 
 - Every roster hero remains present, with the same manifest identity and
   ordering.
-- Numeric values displayed in the public views remain exactly equal. No
-  numeric field may silently disappear.
-- Textual values remain semantically identical: wording, labels, headings,
-  links, inline code, punctuation, case, and ordered content must not change.
-- `heroes-overview.md` and `heroes-overview.csv` remain byte-identical unless
-  a separately documented data bug is fixed.
-- The broader `Heroes.md` artifact is also covered by the frozen contract.
-- Browser-consumed JSON under `site/data` is recursively equal, including
-  keys, booleans, nulls, IDs, values, and list order. The only current
-  exception is the generated timestamp in
-  `site/data/heroes.json.meta.generated`.
-- `site/data/heroes-overview.csv` is compared as ordered CSV rows. Its line
-  endings intentionally differ from the root CSV.
-- Relationship rows must remain valid: known IDs only, no self-links, no
-  duplicates, deterministic ordering, and descending scores.
+- Numeric values displayed in public views do not silently disappear.
+- Textual values preserve wording, labels, headings, links, inline code,
+  punctuation, case, and ordered content.
+- Relationship rows use known IDs, contain no self-links or duplicates, and
+  remain deterministically ordered by descending score.
 
-The current parity test is intentionally strict and compares relationship
-artifacts too. Earlier planning allowed synergy lists to change if their
-invariants remained valid, because relationship ranking is a separate
-algorithmic concern. That relaxation has not been adopted by the current
-frozen gate. If it becomes necessary, exempt only the explicitly named
-relationship fields and keep the invariant checks.
+### Current output correctness
+
+- Generated public files must agree with the current renderers. The
+  render-drift guard compares the working tree with `HEAD`, allowing only a
+  valid generated timestamp.
+- Focused render, analysis, publication, semantic, and relationship tests
+  cover behavior that is too specific for the tree-level drift guard.
 
 ### Allowed internal changes
 
 - The v2 internal schema and per-hero layout may change because they are not
   released as a public contract.
-- Internal generated data may be compacted or reorganized when the public
-  parity contract still passes.
+- Internal generated data may be compacted or reorganized when the current
+  output and focused correctness checks still pass.
 - Roster-wide relationships may remain ephemeral rather than being persisted
   into every hero bundle.
 - A genuine data bug may be fixed, but it must be isolated in a reviewed
@@ -158,18 +158,16 @@ relationship fields and keep the invariant checks.
   broad output delta must never be accepted as an accidental side effect of
   an architectural change.
 
-### Parity gates
+### Current correctness gates
 
-The primary implementation is in
-[`scripts/hero_pipeline/parity.py`](../../scripts/hero_pipeline/parity.py) and
-[`scripts/test_presentation_contract.py`](../../scripts/test_presentation_contract.py).
-Every migration slice should pass:
+Every migration or pipeline slice should pass:
 
 ```text
-focused parity and compatibility tests
+focused pipeline, render, relationship, and compatibility tests
 schema validation and cache freshness
 type checking for scripts/hero_pipeline
 the complete test suite
+rendered-output drift checks in a clean checkout
 ```
 
 ## 3. Main metrics and definitions
@@ -376,9 +374,11 @@ public legacy names and dataclasses are gone.
 
 ### Verification and documentation
 
-- Added a frozen presentation fixture from the approved hero-split baseline.
-- Added exact root Markdown/CSV checks, recursive site-data checks, ordered
-  site CSV checks, and relationship invariants.
+- Used a frozen presentation fixture from the approved hero-split baseline to
+  close the migration; the historical fixture and exact artifact comparator
+  were retired after completion.
+- Retained relationship invariants and focused domain regressions without a
+  historical output dependency.
 - Added compatibility tests that prevent retired files, wildcard facades,
   ignored policy arguments, display-name joins, and reconstruction APIs from
   returning.
@@ -421,6 +421,15 @@ public legacy names and dataclasses are gone.
 - The latest review at commit `546f4ef` measured a smaller largest module and
   six closed risk items, but also confirmed that some complexity was renamed
   or moved rather than deleted.
+
+### 2026-09-18: migration oracle retirement
+
+- Retired the `b7d7ed2` presentation fixture, freezer, and comparison module
+  after the refactor completed.
+- Kept the current-`HEAD` rendered-output drift guard as the generated-output
+  consistency check.
+- Kept relationship invariants plus condition, Soul Pact, and replacement
+  regressions as fixture-independent tests.
 
 ### Commit sequence
 
@@ -513,7 +522,8 @@ Verification: schema/cache validation OK; semantic validation OK; mypy
 Success, 41 files; pytest 470 passed (70 warnings, 89 subtests). After
 views, the ten public artifacts match HEAD except `meta.generated`. The
 helper compares the whole tree to HEAD, so a locally dirty source tree
-fails until CI's clean checkout.
+fails until CI's clean checkout. The historical `b7d7ed2` oracle is retired;
+the helper and focused regressions are the ongoing output checks.
 
 ## 8. Accepted or deferred issues
 
@@ -551,10 +561,10 @@ The Hero Split rewrite is complete when all of the following are true:
   inputs, runtime Hero reconstruction, or duplicate scoring;
 - `effects.py` owns only hero-local detection and has concrete seams for any
   extracted responsibilities;
-- all public numeric values are exact and all public textual values are
-  semantically identical to the approved baseline;
-- root Markdown/CSV bytes and browser-visible site data pass the strict
-  parity gate, with only the documented generated timestamp exception;
+- all public numeric values and public textual values remain covered by the
+  current rendered-output and focused regression checks;
+- root Markdown/CSV bytes and browser-visible site data agree with the
+  current renderer, with only the documented generated timestamp exception;
 - relationship outputs satisfy deterministic ID/reference invariants;
 - single-hero initialization and authored changes are local to the manifest
   and hero bundle;

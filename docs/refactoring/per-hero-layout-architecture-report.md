@@ -68,7 +68,9 @@ Directional complexity of non-test Python under `scripts/` at commit
 
 Total line count is still above `main` (23,528). The win is ownership: no
 duplicate `score_synergy`, no reconstruction helper, and no 6,690-line
-`effects.py`. Frozen public-output parity remains the acceptance gate.
+`effects.py`. Frozen public-output parity was the migration acceptance gate;
+the completed migration now uses current-`HEAD` rendered-output drift checks
+and focused boundary regressions.
 
 The original review found that the end-to-end pipeline was not schema-first yet. The new `hero_pipeline`
 package currently adapts the per-hero layout into the aggregate dictionaries,
@@ -366,8 +368,8 @@ Severity: high test gap
 
 `test_per_hero_storage.py` verifies aggregate-file absence, bundle presence,
 ID/name projection round trips, and current schema/freshness validity. These
-are useful migration fixtures, but they do not execute the new composition
-root or mutation paths.
+are useful storage checks, but they do not execute the new composition root
+or mutation paths.
 
 Missing coverage includes:
 
@@ -380,7 +382,7 @@ Missing coverage includes:
 
 Suggested improvement:
 
-Add tests by boundary rather than adding more fixture assertions:
+Add tests by boundary rather than relying on historical output fixtures:
 
 1. storage contract tests using temporary bundle directories;
 2. analysis tests from one bundle to one generated mapping;
@@ -536,7 +538,8 @@ data loads.
 
 Delete dual-layout branches, aggregate projections, legacy ID/name converters,
 global config mutation, dynamic legacy imports, unused adapters, and obsolete
-tests.
+tests. The historical `b7d7ed2` output fixture and its comparison harness are
+also migration-only artifacts and are retired after this phase.
 
 Exit criterion: searching production scripts for aggregate data filenames,
 `legacy`, runtime `roster.json` feature detection, and imports of the old
@@ -548,7 +551,9 @@ The findings should be converted into measurable migration work rather than
 treated as a request for a broad rewrite:
 
 1. Create one issue per finding, preserving its completion criterion.
-2. Capture current generated Markdown, CSV, and site JSON as parity fixtures.
+2. During migration, capture current generated Markdown, CSV, and site JSON as
+   parity fixtures. This was completed for `b7d7ed2`; the historical fixture
+   is retired after the migration closes.
 3. Add timing and peak-memory measurements for `analyze` and `render` before
    removing adapters.
 4. Track the number of production references to each compatibility function.

@@ -103,6 +103,18 @@ class RenderSiteTests(unittest.TestCase):
                     self.assertNotRegex(detail, r"\d+%")
         self.assertGreater(found, 0)
 
+    def test_sinbad_debuff_replacements_keep_cassadee(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        sinbad = next(hero for hero in payload["heroes"] if hero["slug"] == "sinbad")
+        debuffs = next(
+            row
+            for row in sinbad["sections"]["replacements"]
+            if row["category"] == "Debuffs on enemies"
+        )
+        slugs = [entry["slug"] for entry in debuffs["entries"]]
+        self.assertEqual(slugs, ["cassadee", "shadewing", "evie"])
+        self.assertEqual(debuffs["entries"][0]["score"], 0.5486)
+
     def test_sections_present(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
         for hero in payload["heroes"]:
