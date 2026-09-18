@@ -481,6 +481,21 @@ Fresh-cache `just analyze` three-run median 0.476s (0.463–0.484), peak RSS
 
 Pages deploy remains unchanged and is deferred below.
 
+### Priority 5 — quality hardening
+
+- [ ] **Prevent rendered-output drift.**
+
+  `.github/workflows/pipeline.yml` renders the public views, but it does not
+  assert afterward that the working tree is clean. CI therefore proves that
+  rendering succeeds, not that committed generated views are current and
+  deterministic.
+
+- [ ] **Complete type checking for core modules.**
+
+  Mypy reports 41 checked files, but 16 core analysis and scoring modules have
+  `ignore_errors = true`. The type-checking gate therefore does not yet protect
+  the pipeline's most complex code.
+
 ## 8. Accepted or deferred issues
 
 These are known but not part of the current closure sequence.
