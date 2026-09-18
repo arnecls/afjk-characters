@@ -223,14 +223,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Healing",
-            "label": "healing",
+            "label": "debuff_healing",
             "value": [
               {
                 "type": "percentage",
                 "value": 300.0
               }
-            ],
-            "duration": 3.0
+            ]
           },
           {
             "tier": "base",
@@ -270,7 +269,7 @@
             "label": "Physical"
           },
           {
-            "label": "Direct healing",
+            "label": "Healing",
             "polarity": "debuff"
           },
           {

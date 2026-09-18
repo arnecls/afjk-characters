@@ -34,9 +34,7 @@ from healing_types import (
     HEALING_OVER_TIME_LABEL,
     HEALING_STAT_BUFF_LABEL,
     HP_RECOVERY_LABELS,
-    LEGACY_DIRECT_HEALING_LABEL,
     is_hp_recovery_label,
-    normalize_healing_label,
 )
 
 from effect_labels import (

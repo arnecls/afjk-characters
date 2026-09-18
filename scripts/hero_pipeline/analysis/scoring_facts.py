@@ -16,7 +16,6 @@ from healing_types import (
     healing_profile_key,
     healing_profile_label,
     is_hp_recovery_label,
-    normalize_healing_label,
 )
 
 from . import effects as _rs

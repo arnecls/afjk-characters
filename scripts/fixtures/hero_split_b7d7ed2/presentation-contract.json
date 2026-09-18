@@ -39528,7 +39528,7 @@
                 "area": "radius",
                 "area_count": 2,
                 "is_max_known": true,
-                "label": "healing",
+                "label": "debuff_healing",
                 "name": "Healing",
                 "target": "enemy",
                 "target_count": -1,
@@ -39539,7 +39539,7 @@
             ],
             "skill_card_tags": [
               {
-                "label": "Direct healing — Area",
+                "label": "Healing — Area",
                 "polarity": "debuff"
               }
             ]
@@ -42621,9 +42621,8 @@
                     "type": "status_condition"
                   }
                 ],
-                "duration": 6.0,
                 "is_max_known": true,
-                "label": "healing",
+                "label": "debuff_healing",
                 "name": "Healing",
                 "target": "enemy",
                 "target_count": 1,
@@ -42651,7 +42650,7 @@
                 "label": "HP loss"
               },
               {
-                "label": "Direct healing",
+                "label": "Healing",
                 "polarity": "debuff"
               },
               {
@@ -42887,7 +42886,7 @@
                 "type": "status_condition"
               }
             ],
-            "duration": 6.0,
+            "duration": null,
             "label": "Healing",
             "magnitude": "low",
             "numeric": null,
@@ -48650,9 +48649,8 @@
                     "type": "hp_threshold"
                   }
                 ],
-                "duration": 4.0,
                 "is_max_known": true,
-                "label": "healing",
+                "label": "debuff_healing",
                 "name": "Healing",
                 "target": "enemy",
                 "target_count": 1,
@@ -48666,7 +48664,7 @@
                 "label": "Physical"
               },
               {
-                "label": "Direct healing (Mythic+)",
+                "label": "Healing (Mythic+)",
                 "polarity": "debuff"
               }
             ],
@@ -48765,9 +48763,8 @@
             "effects": [
               {
                 "area": "single",
-                "duration": 5.0,
                 "is_max_known": true,
-                "label": "healing",
+                "label": "debuff_healing",
                 "name": "Healing",
                 "target": "enemy",
                 "target_count": 1,
@@ -48778,7 +48775,7 @@
             ],
             "skill_card_tags": [
               {
-                "label": "Direct healing (EX+5)",
+                "label": "Healing (EX+5)",
                 "polarity": "debuff"
               }
             ],
@@ -48998,7 +48995,7 @@
                 "type": "hp_threshold"
               }
             ],
-            "duration": 5.0,
+            "duration": null,
             "label": "Healing",
             "magnitude": "low",
             "numeric": null,
@@ -66881,14 +66878,15 @@
             "effects": [
               {
                 "area": "single",
-                "healing_type": "direct",
                 "is_max_known": true,
-                "name": "Direct healing",
+                "label": "buff_healing",
+                "name": "Healing",
+                "persistence": "permanent",
                 "target": "self",
                 "target_count": 1,
                 "targeting_label": "Self",
                 "tier": "legendary+",
-                "type": "heal",
+                "type": "buff",
                 "value": [
                   {
                     "type": "percentage",
@@ -66899,7 +66897,7 @@
             ],
             "skill_card_tags": [
               {
-                "label": "Direct healing — Self",
+                "label": "Healing — Self",
                 "polarity": "buff"
               }
             ],
@@ -67018,6 +67016,7 @@
             "average",
             "low",
             "average",
+            "low",
             "low",
             "low"
           ],
@@ -67247,6 +67246,24 @@
             "targeting": "Multiple targets",
             "tick": null,
             "tier": "base"
+          },
+          {
+            "area": "single",
+            "area_count": null,
+            "area_direction": null,
+            "category": "buff",
+            "conditional": null,
+            "conditions": [],
+            "duration": null,
+            "label": "Healing",
+            "magnitude": "low",
+            "numeric": 19.0,
+            "persistence": "permanent",
+            "source_section": "",
+            "target_count": 1,
+            "targeting": "Self",
+            "tick": null,
+            "tier": "Legendary+"
           },
           {
             "area": "radius",
@@ -79803,9 +79820,8 @@
             "effects": [
               {
                 "area": "single",
-                "duration": 3.0,
                 "is_max_known": true,
-                "label": "healing",
+                "label": "debuff_healing",
                 "name": "Healing",
                 "target": "enemy",
                 "target_count": 1,
@@ -79855,7 +79871,7 @@
                 "label": "Physical"
               },
               {
-                "label": "Direct healing",
+                "label": "Healing",
                 "polarity": "debuff"
               },
               {
@@ -80064,7 +80080,7 @@
             "category": "debuff",
             "conditional": null,
             "conditions": [],
-            "duration": 3.0,
+            "duration": null,
             "label": "Healing",
             "magnitude": "average",
             "numeric": 300.0,
@@ -81675,9 +81691,8 @@
             "effects": [
               {
                 "area": "single",
-                "duration": 8.0,
                 "is_max_known": true,
-                "label": "healing",
+                "label": "debuff_healing",
                 "name": "Healing",
                 "target": "enemy",
                 "target_count": 1,
@@ -81688,7 +81703,7 @@
             ],
             "skill_card_tags": [
               {
-                "label": "Direct healing",
+                "label": "Healing",
                 "polarity": "debuff"
               }
             ]
@@ -82153,7 +82168,7 @@
             "category": "debuff",
             "conditional": null,
             "conditions": [],
-            "duration": 8.0,
+            "duration": null,
             "label": "Healing",
             "magnitude": "low",
             "numeric": null,
@@ -96312,18 +96327,19 @@
             "effects": [
               {
                 "area": "single",
-                "healing_type": "direct",
                 "is_max_known": true,
-                "name": "Direct healing",
+                "label": "buff_healing",
+                "name": "Healing",
+                "persistence": "permanent",
                 "target": "self",
                 "target_count": 1,
                 "targeting_label": "Self",
                 "tier": "legendary+",
-                "type": "heal",
+                "type": "buff",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 15.0
+                    "value": 20.0
                   }
                 ]
               },
@@ -96348,11 +96364,11 @@
             ],
             "skill_card_tags": [
               {
-                "label": "Direct healing — Self",
+                "label": "Damage taken — Self",
                 "polarity": "buff"
               },
               {
-                "label": "Damage taken — Self",
+                "label": "Healing — Self",
                 "polarity": "buff"
               }
             ],
@@ -96680,6 +96696,7 @@
             "average",
             "average",
             "average",
+            "average",
             "low",
             "average",
             "low",
@@ -96869,7 +96886,7 @@
             "tier": "base"
           },
           {
-            "area": "single",
+            "area": "radius",
             "area_count": 1,
             "area_direction": null,
             "category": "buff",
@@ -96881,7 +96898,7 @@
             "numeric": 1200.0,
             "persistence": null,
             "source_section": "",
-            "target_count": 1,
+            "target_count": -1,
             "targeting": "All units",
             "tick": null,
             "tier": "base"
@@ -96975,6 +96992,24 @@
             "targeting": "Area",
             "tick": null,
             "tier": "base"
+          },
+          {
+            "area": "single",
+            "area_count": null,
+            "area_direction": null,
+            "category": "buff",
+            "conditional": null,
+            "conditions": [],
+            "duration": null,
+            "label": "Healing",
+            "magnitude": "average",
+            "numeric": 20.0,
+            "persistence": "permanent",
+            "source_section": "",
+            "target_count": 1,
+            "targeting": "Self",
+            "tick": null,
+            "tier": "Legendary+"
           },
           {
             "area": "single",

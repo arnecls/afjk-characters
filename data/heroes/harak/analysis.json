@@ -118,8 +118,7 @@
             ],
             "type": "debuff",
             "name": "Healing",
-            "label": "healing",
-            "duration": 6.0
+            "label": "debuff_healing"
           },
           {
             "type": "immunity",
@@ -142,7 +141,7 @@
             "label": "HP loss"
           },
           {
-            "label": "Direct healing",
+            "label": "Healing",
             "polarity": "debuff"
           },
           {

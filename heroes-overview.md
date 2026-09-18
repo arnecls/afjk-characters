@@ -14501,12 +14501,12 @@ Common buffers are **Rolan**, **Contess**, **Evie**, or **Twins**.
   - ATK (multiple targets, high)
 - **Taichi & Agumon**
   - ATK (area, high)
-- **Fay**
-  - ATK (arc, low)
-  - Direct healing (arc, high)
 - **Solise**
   - ATK (single target, low)
   - Direct healing (all units, high)
+- **Isabella**
+  - ATK (single target, low, conditional (frequent))
+  - Direct healing (single target, high)
 
 ### Units benefitting most from Talene
 

@@ -8,7 +8,6 @@ from effect_labels import BUFF_EFFECT_TYPES, DEBUFF_EFFECT_TYPES
 from healing_types import (
     DIRECT_HEALING_LABEL,
     HEALING_OVER_TIME_LABEL,
-    normalize_healing_label,
 )
 
 from .project import SECTION_BY_CATEGORY, TIER_ORDER, TRUE_DAMAGE_TYPES
@@ -1151,10 +1150,9 @@ def build_csv_row(hero: Mapping[str, Any]) -> list[str]:
     debuff_types = set(DEBUFF_EFFECT_TYPES)
     for effect in _buff_effects(hero, include_self=True):
         label = str(effect["label"])
-        normalized = normalize_healing_label(label)
-        if normalized == HEALING_OVER_TIME_LABEL:
+        if label == HEALING_OVER_TIME_LABEL:
             flags["HoT"] = True
-        elif normalized == DIRECT_HEALING_LABEL:
+        elif label == DIRECT_HEALING_LABEL:
             add("Healing", value(effect))
         elif label == "Shield":
             add("Shields", value(effect))

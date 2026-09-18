@@ -533,12 +533,12 @@
             "area_count": 2,
             "type": "debuff",
             "name": "Healing",
-            "label": "healing"
+            "label": "debuff_healing"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Direct healing — Area",
+            "label": "Healing — Area",
             "polarity": "debuff"
           }
         ]

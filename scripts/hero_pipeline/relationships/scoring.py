@@ -11,7 +11,6 @@ from healing_types import (
     healing_profile_key,
     healing_profile_label,
     is_hp_recovery_label,
-    normalize_healing_label,
 )
 
 _healing_profile_label = healing_profile_label
@@ -2042,7 +2041,7 @@ def _hero_healing_profile(
         if not _healing_effect_is_ally_provider(effect):
             continue
         key = healing_profile_key(
-            normalize_healing_label(effect["label"]), effect["source_section"]
+            effect["label"], effect["source_section"]
         )
         weight = _healing_effect_weight(effect, hero, skills_by_title)
         profile[key] = max(profile.get(key, 0.0), weight)

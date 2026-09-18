@@ -13,8 +13,6 @@ from healing_types import (
     DIRECT_HEALING_LABEL,
     HEALING_OVER_TIME_LABEL,
     HP_RECOVERY_LABELS,
-    LEGACY_DIRECT_HEALING_LABEL,
-    normalize_healing_label,
 )
 
 from .records import (
@@ -215,7 +213,7 @@ SECTION_TO_SPEED_KEY: dict[str, str] = {
     "Skill2": "skill2",
     "Ex. Skill": "ex",
 }
-_SKILL_HEAL_LABELS = HP_RECOVERY_LABELS | {LEGACY_DIRECT_HEALING_LABEL}
+_SKILL_HEAL_LABELS = HP_RECOVERY_LABELS
 _MAG_SCORE = {"none": 0, "low": 1, "average": 2, "high": 3}
 _SPEED_SCORE = {"none": 0, "slow": 1, "average": 2, "fast": 3}
 _SCORE_TO_MAG = {0: "none", 1: "low", 2: "average", 3: "high"}
@@ -2287,7 +2285,7 @@ def _merge_damage_types(*tier_damage: dict[str, str]) -> dict[str, str]:
 
 def _skill_card_tag_label(label: str) -> str:
     """Display label for a skill-card chip (HoT shorthand on cards)."""
-    norm = normalize_healing_label(label.strip())
+    norm = label.strip()
     if norm == HEALING_OVER_TIME_LABEL:
         return "HoT"
     if norm == DIRECT_HEALING_LABEL:
@@ -2442,7 +2440,7 @@ def _canonical_skill_card_chip_key(tag: str) -> str:
     for cc in _SKILL_CARD_CC_KEYS:
         if low == cc.lower() or low.startswith(cc.lower() + " "):
             return cc.lower()
-    norm_label = normalize_healing_label(text)
+    norm_label = text
     if low == "hot" or norm_label == HEALING_OVER_TIME_LABEL:
         return f"hot{targeting_key}{tier_key}"
     if norm_label == DIRECT_HEALING_LABEL:

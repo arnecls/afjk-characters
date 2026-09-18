@@ -14,9 +14,7 @@ from healing_types import (
     HEALING_OVER_TIME_LABEL,
     HEALING_STAT_BUFF_LABEL,
     HP_RECOVERY_LABELS,
-    LEGACY_DIRECT_HEALING_LABEL,
     is_hp_recovery_label,
-    normalize_healing_label,
 )
 
 from effect_labels import (
@@ -245,7 +243,6 @@ def _hero_provides_ally_healing(hero: Hero) -> bool:
     sustain_labels = {
         DIRECT_HEALING_LABEL,
         HEALING_OVER_TIME_LABEL,
-        LEGACY_DIRECT_HEALING_LABEL,
     }
     ally_targetings = {
         "Single target",
@@ -476,7 +473,7 @@ def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
                 t,
             )
         )
-    if label in (*HP_RECOVERY_LABELS, LEGACY_DIRECT_HEALING_LABEL):
+    if label in HP_RECOVERY_LABELS:
         return bool(re.search(r"\b(?:recover|restore|heal|healing)\b", t))
     if label == "Shield":
         return bool(re.search(r"\b(?:shield|chi barrier)\b", t))
@@ -587,7 +584,7 @@ def _apply_scalar_upgrades(
         if amt is not None:
             bump("damage", "True damage", amt)
 
-    for heal_label in (*HP_RECOVERY_LABELS, LEGACY_DIRECT_HEALING_LABEL):
+    for heal_label in HP_RECOVERY_LABELS:
         amt = extract_number(text, heal_label)
         if amt is not None:
             bump("buff", heal_label, amt)
@@ -670,10 +667,7 @@ def _finalize_skill_slice_effects(
         hot_dur = extract_timed_duration(combined, HEALING_OVER_TIME_LABEL)
         if hot_dur is not None:
             for eff in sl["effects"]:
-                if is_hp_recovery_label(eff["label"]) and eff["label"] in (
-                    HEALING_OVER_TIME_LABEL,
-                    LEGACY_DIRECT_HEALING_LABEL,
-                ) and (
+                if eff["label"] == HEALING_OVER_TIME_LABEL and (
                     eff["duration"] is None or hot_dur > eff["duration"]
                 ):
                     eff["duration"] = hot_dur

@@ -168,8 +168,7 @@
             ],
             "type": "debuff",
             "name": "Healing",
-            "label": "healing",
-            "duration": 4.0
+            "label": "debuff_healing"
           }
         ],
         "cooldown": 1.0,
@@ -179,7 +178,7 @@
             "label": "Physical"
           },
           {
-            "label": "Direct healing (Mythic+)",
+            "label": "Healing (Mythic+)",
             "polarity": "debuff"
           }
         ]
@@ -345,14 +344,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Healing",
-            "label": "healing",
-            "duration": 5.0
+            "label": "debuff_healing"
           }
         ],
         "skill_range": 10,
         "skill_card_tags": [
           {
-            "label": "Direct healing (EX+5)",
+            "label": "Healing (EX+5)",
             "polarity": "debuff"
           }
         ]

@@ -10,7 +10,6 @@ from healing_types import (
     DIRECT_HEALING_LABEL,
     HEALING_OVER_TIME_LABEL,
     healing_type_display,
-    normalize_healing_label,
 )
 
 from ..contracts import (
@@ -266,9 +265,7 @@ def _display_effect(
         common.update(
             {
                 "category": "buff",
-                "label": normalize_healing_label(
-                    str(raw.get("name", "Buff"))
-                ),
+                "label": str(raw.get("name", "Buff")),
             }
         )
         return "effect", common

@@ -295,13 +295,12 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Healing",
-            "label": "healing",
-            "duration": 8.0
+            "label": "debuff_healing"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Direct healing",
+            "label": "Healing",
             "polarity": "debuff"
           }
         ]

@@ -26,7 +26,6 @@ from healing_types import (
     healing_type_display,
     healing_type_from_label,
     is_hp_recovery_label,
-    normalize_healing_label,
 )
 
 _RS = None
@@ -715,7 +714,7 @@ def effect_to_schema(
             assert ht is not None
             out["type"] = "heal" if ht == HEALING_TYPE_DIRECT else "dot"
             out["healing_type"] = ht
-            out["name"] = normalize_healing_label(effect["label"])
+            out["name"] = effect["label"]
             _apply_schema_value(
                 out, _resolve_effect_numeric(effect, effect["label"]), effect["label"]
             )
@@ -870,7 +869,7 @@ def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> An
         )
 
     if etype in ("buff", "stat_mod", "shield", "heal"):
-        name = normalize_healing_label(effect.get("name", "Buff"))
+        name = effect.get("name", "Buff")
         dur_val = float(duration) if duration is not None else None
         return rs.Effect(
             category="buff",

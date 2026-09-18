@@ -395,15 +395,16 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
-            "type": "heal",
-            "healing_type": "direct",
-            "name": "Direct healing",
+            "type": "buff",
+            "name": "Healing",
+            "label": "buff_healing",
             "value": [
               {
                 "type": "percentage",
-                "value": 15.0
+                "value": 20.0
               }
-            ]
+            ],
+            "persistence": "permanent"
           },
           {
             "tier": "legendary+",
@@ -427,11 +428,11 @@
         "skill_range": 1,
         "skill_card_tags": [
           {
-            "label": "Direct healing — Self",
+            "label": "Damage taken — Self",
             "polarity": "buff"
           },
           {
-            "label": "Damage taken — Self",
+            "label": "Healing — Self",
             "polarity": "buff"
           }
         ]

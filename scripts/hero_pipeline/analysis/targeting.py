@@ -14,9 +14,7 @@ from healing_types import (
     HEALING_OVER_TIME_LABEL,
     HEALING_STAT_BUFF_LABEL,
     HP_RECOVERY_LABELS,
-    LEGACY_DIRECT_HEALING_LABEL,
     is_hp_recovery_label,
-    normalize_healing_label,
 )
 
 from effect_labels import (
@@ -1219,11 +1217,9 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     ):
         return "Multiple targets"
     if category == "buff" and label in (
-        "Healing over time",
         "Energy",
         "Shield",
         *HP_RECOVERY_LABELS,
-        LEGACY_DIRECT_HEALING_LABEL,
     ):
         if re.search(r"\beach ally along (?:the |its )?path\b", t):
             return "Multiple targets"
