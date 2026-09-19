@@ -10,6 +10,7 @@ window.AFKJ.config = {
     Physical: { emoji: "⚔️", cls: "chip-damage" },
     Magic: { emoji: "🪄", cls: "chip-damage" },
     "HP loss": { emoji: "💔", cls: "chip-damage" },
+    "Lost HP-based damage": { emoji: "💔", cls: "chip-damage" },
     Melee: { emoji: "🗡️", cls: "chip-damage" },
     Ranged: { emoji: "🏹", cls: "chip-damage" },
     "True damage": { emoji: "♾️", cls: "chip-damage" },
@@ -104,6 +105,7 @@ window.AFKJ.config = {
     "high-damage-ult": { emoji: "💣", cls: "chip-role" },
     "high-initial-energy": { emoji: "🔋", cls: "chip-role" },
     "hp-scaling": { emoji: "❤️", cls: "chip-role" },
+    "hp-loss": { emoji: "💔", cls: "chip-role" },
     invincibility: { emoji: "👑", cls: "chip-role" },
     "life-drain": { emoji: "🩸", cls: "chip-role" },
     "mark-target": { emoji: "🎯", cls: "chip-role" },
@@ -182,7 +184,9 @@ window.AFKJ.config = {
     "high-initial-energy":
       "Ultimate starts with high Initial Energy when fully built (~fast fill).",
     "hp-scaling":
-      "Damage, survivability, or effects scale strongly with HP values.",
+      "Non-damage survivability or combat effects scale strongly with HP values.",
+    "hp-loss":
+      "Relies on repeated or defining direct enemy HP-loss effects where the target loses HP.",
     invincibility:
       "Grants damage and/or control immunity windows to self or allies.",
     "life-drain":

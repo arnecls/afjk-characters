@@ -21,6 +21,7 @@ window.AFKJ = window.AFKJ || {};
 
   const SKILL_CARD_DAMAGE_KEYS = [
     "HP loss",
+    "Lost HP-based damage",
     "Max HP damage",
     "Max HP-based damage",
     "True damage",
