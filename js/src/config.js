@@ -56,6 +56,7 @@ window.AFKJ.config = {
     "Basic stats": { emoji: "📈", cls: "chip-stat" },
     Vitality: { emoji: "🌿", cls: "chip-stat" },
     "Damage taken": { emoji: "🛡️", cls: "chip-stat" },
+    "HP loss modifier": { emoji: "📐", cls: "chip-stat" },
     "Damage dealt": { emoji: "⚔️", cls: "chip-stat" },
     "Ranged damage": { emoji: "🏹", cls: "chip-stat" },
     "Dodge chance": { emoji: "🛡️", cls: "chip-stat" },
