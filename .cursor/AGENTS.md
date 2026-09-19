@@ -750,6 +750,11 @@ effects instead.
   parse as **Damage taken** with `type` buff (reduction) or debuff
   (vulnerability). List view uses separate column ids (`damage_taken_buff`,
   `damage_taken_debuff`) with the same display label.
+- **HP loss modifier** — separate hook family from **Damage taken** (`OnHpLoss*`
+  / `MakeHpLoss*`; more or less HP loss taken or dealt). Store as **HP loss
+  modifier** with buff/debuff polarity. List columns: `hp_loss_modifier_buff`,
+  `hp_loss_modifier_debuff`. Do not conflate with direct **HP loss** damage
+  delivery or **lost-HP-based damage** formulas.
 - **Magic damage** — store and parse as **Magic damage** with `type` buff
   (reduction / mitigation) or debuff (amplification / vulnerability). Same
   display label in summaries; polarity from section or metadata.

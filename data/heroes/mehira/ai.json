@@ -95,6 +95,24 @@
                   }
                 ],
                 "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "buff",
+                "name": "HP loss modifier",
+                "label": "buff_hp_loss_modifier",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -131,25 +149,6 @@
                 "area_count": -1,
                 "type": "crowd_control",
                 "cc-type": "charm"
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Damage taken",
-                "label": "debuff_stat"
               }
             ],
             "summon_effects": [],
@@ -251,7 +250,25 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Damage taken",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

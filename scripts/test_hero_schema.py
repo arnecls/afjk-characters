@@ -704,7 +704,8 @@ class RoundTripTests(unittest.TestCase):
         hp_loss = next(
             e
             for e in expulsion["effects"]
-            if e["category"] == "debuff" and e["label"] == "HP loss"
+            if e["category"] == "debuff"
+            and e["label"] == "HP loss modifier"
         )
         self.assertEqual(hp_loss["targeting"], "Single target")
         self.assertTrue(
@@ -713,9 +714,24 @@ class RoundTripTests(unittest.TestCase):
         )
         tags = rs.format_skill_card_tags(hero, "skill4")
         self.assertIn(
-            {"label": "HP loss", "polarity": "debuff"},
+            {"label": "HP loss modifier", "polarity": "debuff"},
             tags,
         )
+
+    def test_hp_loss_modifier_list_columns(self):
+        from effect_labels import build_list_columns, column_id_for_effect
+
+        self.assertEqual(
+            column_id_for_effect("HP loss modifier", polarity="buff"),
+            "hp_loss_modifier_buff",
+        )
+        self.assertEqual(
+            column_id_for_effect("HP loss modifier", polarity="debuff"),
+            "hp_loss_modifier_debuff",
+        )
+        ids = {c["id"] for c in build_list_columns()}
+        self.assertIn("hp_loss_modifier_buff", ids)
+        self.assertIn("hp_loss_modifier_debuff", ids)
 
     def test_contess_quiet_period_energy_is_ultimate_cast_based(self):
         data = io.load_heroes_data()

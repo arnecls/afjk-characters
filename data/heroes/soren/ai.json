@@ -128,18 +128,6 @@
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 1.5
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Damage taken",
-                "label": "buff_stat",
-                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -165,6 +153,12 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],

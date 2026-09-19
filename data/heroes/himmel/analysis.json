@@ -414,41 +414,28 @@
         "effects": [
           {
             "tier": "supreme+",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
-            "target": "enemy",
+            "target": "ally",
             "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Damage taken",
-            "label": "debuff_stat"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
-            "damage_type": "true",
-            "name": "True damage",
-            "label": "damage_true",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "buff",
+            "name": "HP loss modifier",
+            "label": "buff_hp_loss_modifier",
             "value": [
               {
                 "type": "percentage",
                 "value": 12.0
               }
-            ]
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "True damage"
-          },
-          {
-            "label": "Damage taken",
-            "polarity": "debuff"
+            "label": "HP loss modifier — All units",
+            "polarity": "buff"
           }
         ]
       }
@@ -466,6 +453,12 @@
               "magnitude": "average"
             }
           ]
+        },
+        {
+          "label": "Boss encounter",
+          "tier": "supreme+",
+          "targeting": "Allies",
+          "description": "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets."
         }
       ],
       "requires": [
@@ -474,11 +467,6 @@
           "tier": "base",
           "targeting": "Allies",
           "description": "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class."
-        },
-        {
-          "label": "Boss encounter",
-          "tier": "supreme+",
-          "description": "In Boss Fights, Himmel and his party members cause 12% more HP loss on boss targets."
         },
         {
           "label": "Named ally on team",
@@ -499,7 +487,7 @@
       ],
       [
         "true",
-        "All units, Single target"
+        "All units"
       ]
     ],
     "benefit_stats": [
@@ -681,7 +669,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "fb75fe9806220c9c6eff728733ee5bc85c2cd5825a0c1d65ca4990f9ffe91677",
+    "inputs_hash": "bf230688ad838d4be16c5ef288f24b4315456aebbb49bc13702f398b4846322e",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

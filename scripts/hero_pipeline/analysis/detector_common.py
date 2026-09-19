@@ -162,6 +162,7 @@ _NON_PERCENT_DEBUFF_LABELS = frozenset(
         "Marked target (focus fire)",
         "Vulnerable",
         "Damage taken",
+        "HP loss modifier",
     }
 )
 
@@ -176,6 +177,7 @@ _STAT_LABELS_NO_GENERIC = frozenset(
         "Energy",
         "Crit",
         "Damage taken",
+        "HP loss modifier",
         "Healing over time",
         "DEF",
         "Basic stats",

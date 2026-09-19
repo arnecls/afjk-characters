@@ -527,8 +527,8 @@
               }
             ],
             "type": "debuff",
-            "name": "HP loss",
-            "label": "debuff_hp_loss",
+            "name": "HP loss modifier",
+            "label": "debuff_hp_loss_modifier",
             "value": [
               {
                 "type": "percentage",
@@ -596,7 +596,7 @@
             "label": "HP loss (EX+15)"
           },
           {
-            "label": "HP loss",
+            "label": "HP loss modifier",
             "polarity": "debuff"
           },
           {
@@ -947,7 +947,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "494538553c0079777463ee332e0cd45c4577b8da2df5fcc4b94683a87599d975",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "a8155e0199e5dbe82d46d7e4aa83d3645176fa8a88c56ef0a95857162bb7d8b2",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

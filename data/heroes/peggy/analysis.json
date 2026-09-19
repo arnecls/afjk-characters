@@ -87,7 +87,7 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Damage taken",
+            "name": "HP loss modifier",
             "label": "buff_summon_stat",
             "value": [
               {
@@ -95,7 +95,8 @@
                 "value": 75.0
               }
             ],
-            "persistence": "permanent"
+            "duration": 12.0,
+            "persistence": "temporary"
           }
         ],
         "initial_energy": 600.0,
@@ -105,7 +106,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Damage taken — Owned",
+            "label": "HP loss modifier — Owned",
             "polarity": "buff"
           }
         ]
@@ -737,7 +738,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4681446f98525f20bd46f9794426e5c9adc0cec6e59ceccdd059f01003e5536e",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "ef0b577ec74a3f79213c2ecc28676b0541232af962106ba04080aeb7cca7ae6b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

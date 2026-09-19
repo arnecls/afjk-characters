@@ -211,6 +211,8 @@
         "debuff_defensive",
         "debuff_healing",
         "debuff_hp_loss",
+        "buff_hp_loss_modifier",
+        "debuff_hp_loss_modifier",
         "debuff_stat",
         "dot",
         "hot",

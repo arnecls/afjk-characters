@@ -319,6 +319,8 @@ def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -
             return "buff_summon_defensive"
         return "buff_summon_stat"
     if category == "debuff":
+        if low == "hp loss modifier":
+            return "debuff_hp_loss_modifier"
         if low == "hp loss":
             return "debuff_hp_loss"
         if "dot" in low or "burn" in low or "bleed" in low:
@@ -342,6 +344,8 @@ def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -
             return f"damage_{to_schema_damage_type(label)}"
         return "damage_normal"
     if category == "buff":
+        if low == "hp loss modifier":
+            return "buff_hp_loss_modifier"
         if any(x in low for x in ("atk", "haste", "crit", "execution")):
             return "buff_offensive"
         if any(x in low for x in ("def", "shield", "vitality", "resilience")):

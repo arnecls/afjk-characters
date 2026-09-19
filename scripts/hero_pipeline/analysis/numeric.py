@@ -31,6 +31,21 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
     if "(scaled)" in text.lower() or "<hp>" in text.lower():
         return None
     t = text.lower()
+    if label == "HP loss modifier" and category == "buff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"hp loss from this skill is reduced by (\d+(?:\.\d+)?)\s*%",
+                r"(?:their |the guards'? )?hp loss is reduced by "
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"guards'? own hp loss is reduced by (\d+(?:\.\d+)?)\s*%",
+                r"cause (\d+(?:\.\d+)?)\s*%\s*more hp loss",
+                r"(\d+(?:\.\d+)?)\s*%\s*more hp loss on boss",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "Damage taken" and category == "buff":
         amounts = _all_amounts(
             text,
@@ -39,9 +54,6 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
                 r"reduce(?:s|d)? .{0,40}damage taken .{0,20}by "
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
-                r"(?:their |the guards'? )?hp loss is reduced by "
-                r"(\d+(?:\.\d+)?)\s*%",
-                r"guards'? own hp loss is reduced by (\d+(?:\.\d+)?)\s*%",
             ],
         )
         if amounts:
@@ -73,6 +85,7 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
         "Haste",
         "Energy",
         "Damage taken",
+        "HP loss modifier",
         "Damage dealt",
         "Magic damage",
         "Movement speed",
@@ -172,6 +185,32 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
         )
         if amounts:
             return max(amounts)
+    if label == "HP loss modifier":
+        if is_debuff:
+            amounts = _all_amounts(
+                text,
+                [
+                    r"take (\d+(?:\.\d+)?)\s*%\s*more hp loss",
+                    r"(\d+(?:\.\d+)?)\s*%\s*more hp loss",
+                ],
+            )
+            if amounts:
+                return max(amounts)
+            return None
+        amounts = _all_amounts(
+            text,
+            [
+                r"hp loss from this skill is reduced by (\d+(?:\.\d+)?)\s*%",
+                r"(?:their |the guards'? )?hp loss is reduced by "
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"guards'? own hp loss is reduced by (\d+(?:\.\d+)?)\s*%",
+                r"cause (\d+(?:\.\d+)?)\s*%\s*more hp loss",
+                r"(\d+(?:\.\d+)?)\s*%\s*more hp loss on boss",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "Damage taken":
         if is_debuff:
             amounts = _all_amounts(
@@ -192,9 +231,6 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
                 r"reduce(?:s|d)? .{0,40}damage taken .{0,20}by "
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
-                r"(?:their |the guards'? )?hp loss is reduced by "
-                r"(\d+(?:\.\d+)?)\s*%",
-                r"guards'? own hp loss is reduced by (\d+(?:\.\d+)?)\s*%",
             ],
         )
         if amounts:

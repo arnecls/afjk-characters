@@ -205,18 +205,6 @@
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 1.5
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Damage taken",
-            "label": "buff_stat",
-            "persistence": "permanent"
           }
         ],
         "cooldown": 11.0,
@@ -224,10 +212,6 @@
         "skill_card_tags": [
           {
             "label": "Physical"
-          },
-          {
-            "label": "Damage taken — Self",
-            "polarity": "buff"
           },
           {
             "label": "Knock back — Single target"
@@ -280,6 +264,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -627,7 +617,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0f51394f6b963fe1baf1786c0fa1f90506cb7eb46ec870c5aa0eee97a257a983",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a8ce64de28fc757d6cb438703a91834aab0fdfc6760dc078221c6a8479c9661c",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

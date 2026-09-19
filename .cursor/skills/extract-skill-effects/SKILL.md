@@ -117,6 +117,11 @@ just validate
 - **True damage categories:** keep direct HP loss separate from True damage.
   Max-HP and lost-HP labels describe formulas. When a clause explicitly uses
   a delivery type together with an HP formula, keep the delivery label.
+- **HP loss modifier vs Damage taken:** use effect name **HP loss modifier**
+  (`buff_hp_loss_modifier` / `debuff_hp_loss_modifier`) for more/less HP loss
+  taken or HP loss dealt (`OnHpLoss*` / `MakeHpLoss*` hooks). Keep **Damage
+  taken** for normal hit vulnerability/reduction only (`TakeDamage` /
+  `OnDamaged*`).
 - **Freeze/frozen** → Bind CC type.
 - **Disarm/disarming** → Disarm CC type.
 - **Polarity:** buff vs debuff via effect `type`, not label suffix.

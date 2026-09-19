@@ -336,27 +336,12 @@
                 "value": 200.0
               }
             ]
-          },
-          {
-            "tier": "ex+5",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Damage taken",
-            "label": "debuff_stat"
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
           {
             "label": "Magic"
-          },
-          {
-            "label": "Damage taken (EX+5)",
-            "polarity": "debuff"
           }
         ]
       },
@@ -641,7 +626,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "513a058dd3462e71e8b8d081d01b4937471b07c0a7c1ee14e788c708e2fbe83a",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "894562790932971b38c8a2a509c63ebb6960a00a69ee72a41d2400f4726f3fc9",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

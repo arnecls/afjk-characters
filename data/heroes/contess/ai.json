@@ -381,8 +381,8 @@
                   }
                 ],
                 "type": "debuff",
-                "name": "HP loss",
-                "label": "debuff_hp_loss",
+                "name": "HP loss modifier",
+                "label": "debuff_hp_loss_modifier",
                 "value": [
                   {
                     "type": "percentage",

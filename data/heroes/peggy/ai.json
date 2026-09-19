@@ -35,15 +35,16 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Damage taken",
-                "label": "buff_stat",
+                "name": "HP loss modifier",
+                "label": "buff_hp_loss_modifier",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 75.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "duration": 12.0
               }
             ],
             "immunities": [],

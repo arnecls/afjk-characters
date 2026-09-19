@@ -168,6 +168,24 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "HP loss modifier",
+            "label": "buff_hp_loss_modifier",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 90.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "cooldown": 10.0,
@@ -176,6 +194,10 @@
         "skill_card_tags": [
           {
             "label": "HP loss"
+          },
+          {
+            "label": "HP loss modifier — Multiple targets",
+            "polarity": "buff"
           },
           {
             "label": "Haste — Multiple targets",
@@ -237,27 +259,12 @@
             "area_count": -1,
             "type": "crowd_control",
             "cc-type": "charm"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Damage taken",
-            "label": "debuff_stat"
           }
         ],
         "cooldown": 15.0,
         "initial_cooldown": 15.0,
         "skill_range": 3,
         "skill_card_tags": [
-          {
-            "label": "Damage taken (Supreme+)",
-            "polarity": "debuff"
-          },
           {
             "label": "Charm — All units"
           },
@@ -421,9 +428,31 @@
             "This effect does not stack."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Damage taken",
+            "polarity": "debuff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -640,7 +669,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9e9682c3117252f4746c5786e65fb3fdf5cca25ddd58f3f492e48da77e197a82",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "b85e57a9ec1fffd42e9844d6dfcac90deb2c730f44a2e64cf58f85899ea2b003",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

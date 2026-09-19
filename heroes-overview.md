@@ -2595,7 +2595,7 @@ These are the **4** strongest pairings:
 - Max HP — Single target — `low`
 - ATK (Legendary+) — Single target — `low`
 - Energy (Legendary+) — Single target — `low`
-- HP loss (Mythic+) — Single target — `average`
+- HP loss modifier (Mythic+) — Single target — `average`
 
 #### Crowd Control provided by Contess
 
@@ -2631,7 +2631,7 @@ These are the **4** strongest pairings:
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`
-- **Non-ultimate**: speed `fast`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, damage `high`
 
 ##### Ultimate
 
@@ -2660,39 +2660,36 @@ instantly defeat weakened enemies inside domain
 ### Units improving Cryonaia
 
 Look for units providing: `ATK` `Shield`  
-Common buffers are **Evie**, **Aliceth**, **Rolan**, or **Kordan**.
+Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 - **Pandora**
   - ATK (single target, high)
   - Energy (single target, low) `signature fuel`
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
   - Enemy defense via Damage taken debuff (single target, low)
+- **Thador**
+  - Energy (single target, high) `signature fuel`
+  - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
+  - Enemy defense via Magic DEF debuff (single target, high)
 - **Ravion**
   - ATK (multiple targets, high)
   - Energy (multiple targets, average) `signature fuel`
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
-- **Thador**
-  - Energy (single target, high) `signature fuel`
-  - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
-  - Enemy defense via Magic DEF debuff (single target, high)
 - **Rowan**
   - Energy (area, high) `signature fuel`
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
-- **Lyca**
-  - Energy (all units, low) `signature fuel`
-  - ATK SPD (all units, low) `signature fuel`
-  - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
-- **Hugin**
-  - ATK (multiple targets, low)
-  - Energy (single target, average, conditional (frequent)) `signature fuel`
-  - ATK SPD via Haste (multiple targets, high) `signature fuel`
+- **Kulu**
+  - ATK (single target, low)
+  - Enemy defense via Damage taken debuff (all units, low)
+- **Sinbad**
+  - Enemy defense via Magic DEF debuff (multiple targets, average)
 
 ### Units benefitting most from Cryonaia
 
 - Bonnie (3.4 / 5)
 - Shadewing (2.9 / 5)
-- Eryndor (1.3 / 5)
+- Himmel (2.1 / 5)
 
 ### Units that can act as a replacement for Cryonaia
 
@@ -2708,12 +2705,6 @@ Common buffers are **Evie**, **Aliceth**, **Rolan**, or **Kordan**.
 - Cyran (72% `DoT` `Magic`)
 - Frieren (70% `DoT` `Magic`)
 
-**Debuffs on enemies**
-
-- Himmel (100% `Damage taken`)
-- Mehira (100% `Damage taken`)
-- Kulu (100% `Damage taken`)
-
 ### Summary for Cryonaia
 
 #### Cryonaia Provides
@@ -2727,10 +2718,6 @@ Common buffers are **Evie**, **Aliceth**, **Rolan**, or **Kordan**.
 
 - Magic — Area, Single target
 - DoT — Area
-
-#### Debuffs provided by Cryonaia
-
-- Damage taken (EX+5) — Single target — `low`
 
 #### Crowd Control provided by Cryonaia
 
@@ -5657,7 +5644,7 @@ Himmel also requires a party **with the right composition** and/or specific **na
 
 ### Units benefitting most from Himmel
 
-Himmel provides Basic stats to single targets `average`.
+Himmel provides Basic stats to single targets `average` and HP loss modifier (Supreme+) to all units `low`.
 
 - Niru (5.0 / 5)
 - Frieren (2.6 / 5)
@@ -5666,8 +5653,7 @@ Himmel provides Basic stats to single targets `average`.
 
 **Buffs on allies**
 
-- Velara (100% `Basic stats`)
-- Alna (100% `Basic stats`)
+- Mehira (78% `HP loss modifier`)
 
 **Similar Skills**
 
@@ -5681,12 +5667,6 @@ Himmel provides Basic stats to single targets `average`.
 - Athalia (98% `True damage` `Physical`)
 - Frieren (97% `True damage`)
 
-**Debuffs on enemies**
-
-- Mehira (100% `Damage taken`)
-- Kulu (100% `Damage taken`)
-- Pandora (100% `Damage taken`)
-
 **Crowd Control**
 
 - Frieren (100% `Knock down`)
@@ -5698,20 +5678,18 @@ Himmel provides Basic stats to single targets `average`.
 #### Himmel Provides
 
 - Named ally on team (Mythic+) — Allies
+- Boss encounter (Supreme+) — Allies
 
 #### Damage types dealt by Himmel
 
 - Physical — All units, Multiple targets, Single target
 - Max HP-based damage — All units
-- True damage — All units, Single target — `high`
+- True damage — All units — `high`
 
 #### Buffs provided by Himmel
 
 - Basic stats — Single target — `average`
-
-#### Debuffs provided by Himmel
-
-- Damage taken (Supreme+) — Single target — `low`
+- HP loss modifier (Supreme+) — All units — `low`
 
 #### Crowd Control provided by Himmel
 
@@ -6688,7 +6666,7 @@ Kazim also requires units **providing knock up**
 
 Kazim provides Haste to multiple targets `average` and ATK (Mythic+) to single targets `high`.
 
-**51** units include this provider among their top 6 synergy partners. Why the match is common:
+**50** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -6881,9 +6859,9 @@ Koko provides ATK to all units `low`, Damage taken to all units `low`, Direct he
 
 **Debuffs on enemies**
 
-- Himmel (100% `Damage taken`)
 - Mehira (100% `Damage taken`)
 - Kulu (100% `Damage taken`)
+- Pandora (100% `Damage taken`)
 
 **Crowd Control**
 
@@ -7393,7 +7371,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 Kulu provides ATK (Legendary+) to single targets `low`.
 
-**15** units include this provider among their top 6 synergy partners. Why the match is common:
+**16** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -7401,8 +7379,8 @@ These are the **4** strongest pairings:
 
 - Marilee (3.1 / 5)
 - Arden (2.3 / 5)
+- Cryonaia (2.3 / 5)
 - Galahad (2.3 / 5)
-- Natsu (2.3 / 5)
 
 ### Units that can act as a replacement for Kulu
 
@@ -9295,7 +9273,7 @@ Marilee provides ATK (EX+10) to single targets `low`.
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -9351,7 +9329,7 @@ Common buffers are **Rolan**, **Smokey & Meerky**, **Lorsan**, or **Twins**.
 
 ### Units benefitting most from Mehira
 
-Mehira provides Haste to multiple targets `average`.
+Mehira provides HP loss modifier to multiple targets `high` and Haste to multiple targets `average`.
 
 **8** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -9365,12 +9343,6 @@ These are the **4** strongest pairings:
 - Viperian (2.4 / 5)
 
 ### Units that can act as a replacement for Mehira
-
-**Buffs on allies**
-
-- Rolan (100% `Haste`)
-- Twins (100% `Haste`)
-- Hugin (100% `Haste`)
 
 **Similar Skills**
 
@@ -9386,9 +9358,9 @@ These are the **4** strongest pairings:
 
 **Debuffs on enemies**
 
-- Himmel (100% `Damage taken`)
 - Kulu (100% `Damage taken`)
-- Pandora (100% `Damage taken`)
+- Reinier (100% `Damage taken`)
+- Kruger (80% `Damage taken`)
 
 **Crowd Control**
 
@@ -9407,11 +9379,12 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Mehira
 
+- HP loss modifier — Multiple targets — `high`
 - Haste — Multiple targets — `average`
 
 #### Debuffs provided by Mehira
 
-- Damage taken (Supreme+) — Single target — `low`
+- Damage taken — Single target — `low`
 
 #### Crowd Control provided by Mehira
 
@@ -10684,9 +10657,9 @@ Pandora provides ATK to single targets `high`, Direct healing to single targets 
 
 These are the **4** strongest pairings: 
 
-- Cryonaia (5.0 / 5)
 - Indris (4.8 / 5)
 - Nerion (4.7 / 5)
+- Cryonaia (4.1 / 5)
 - Alsa (3.6 / 5)
 
 ### Units that can act as a replacement for Pandora
@@ -12272,7 +12245,7 @@ These are the **4** strongest pairings:
 - Shemira (3.5 / 5)
 - Zorya (3.3 / 5)
 - Marcille (3.2 / 5)
-- Cryonaia (2.9 / 5)
+- Cryonaia (2.4 / 5)
 
 ### Units that can act as a replacement for Rowan
 
@@ -13707,7 +13680,7 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 ### Units benefitting most from Sinbad
 
-**13** units include this provider among their top 6 synergy partners. Why the match is common:
+**14** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -13844,7 +13817,7 @@ Common buffers are **Contess**, **Evie**, **Mikola**, or **Parisa**.
 
 Smokey & Meerky provides ATK in an area `average`, Direct healing in an area `high`, Energy in an area `low`, Haste in an area `average`, and Healing over time in an area `high`.
 
-**78** units include this provider among their top 6 synergy partners. Why the match is common:
+**77** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -15033,7 +15006,7 @@ These are the **4** strongest pairings:
 
 - Shemira (4.8 / 5)
 - Marcille (4.5 / 5)
-- Cryonaia (3.7 / 5)
+- Cryonaia (3.4 / 5)
 - Orion (2.9 / 5)
 
 ### Units that can act as a replacement for Thador
@@ -15171,9 +15144,9 @@ Look for units providing: `Max HP` `Energy`
 
 **Debuffs on enemies**
 
+- Mehira (100% `Damage taken`)
 - Kulu (100% `Damage taken`)
 - Reinier (100% `Damage taken`)
-- Himmel (97% `Damage taken`)
 
 ### Summary for Thoran
 

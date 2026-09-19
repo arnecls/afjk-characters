@@ -35,7 +35,7 @@
                 "target_count": -1,
                 "type": "debuff",
                 "name": "Max HP",
-                "label": "debuff_hp_loss",
+                "label": "debuff_stat",
                 "value": [
                   {
                     "type": "percentage",

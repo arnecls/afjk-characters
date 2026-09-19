@@ -27,6 +27,7 @@ POSITIVE_STAT_BUFF_LABELS = frozenset(
 NON_STAT_BUFF_NAMES = frozenset(
     {
         "Damage taken",
+        "HP loss modifier",
         "Energy",
         "Invincible",
         "Damage dealt",

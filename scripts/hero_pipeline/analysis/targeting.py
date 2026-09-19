@@ -513,7 +513,7 @@ def _resolve_buff_targeting(
         r"\b(?:wind field covers|covers) the entire battlefield\b", full
     ) and re.search(r"\ballies\b", full):
         return "All units"
-    if label == "Damage taken" and re.search(
+    if label == "HP loss modifier" and re.search(
         r"(?:their |the guards'? )?hp loss is reduced by", t
     ) and re.search(r"\b(?:royal )?guards?\b", t):
         return OWN_SUMMON_BUFF_TARGETING

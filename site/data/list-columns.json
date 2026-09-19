@@ -48,6 +48,12 @@
     "group": "buff"
   },
   {
+    "id": "hp_loss_modifier_buff",
+    "label": "HP loss modifier",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
     "id": "damage_dealt_buff",
     "label": "Damage dealt",
     "polarity": "buff",
@@ -158,6 +164,12 @@
   {
     "id": "damage_taken_debuff",
     "label": "Damage taken",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "hp_loss_modifier_debuff",
+    "label": "HP loss modifier",
     "polarity": "debuff",
     "group": "debuff"
   },
