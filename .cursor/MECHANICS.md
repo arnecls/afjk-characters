@@ -109,3 +109,82 @@ truth; synergy matches only `persistence: temporary` buffs for receivers with
 - Gunnar: Skill
 - Evie: Skill
 - Kazim: Skill
+
+## Phantimals (Soul Pact)
+
+Phantimals are seasonal allied creatures summoned through **Soul Pact**, which
+replaced Faction Talents. Field three heroes from a faction to unlock that
+faction's Phantimal; Celestials and Hypogeans share one faction pool. Place the
+Phantimal during battle preparation, and it fights as an additional unit.
+
+Phantimals level through seasonal progression, unlocking or strengthening
+skills. Each can apply a **Spirit Mark** to a position-based ally, granting a
+distinct bonus or interaction. Soul Pact and its progression are seasonal and
+only apply in modes that enable the system.
+
+### Known phantimals
+
+#### Season 5 — Thorns of Devotion
+
+- **Wilder — Snow Stomper:** Global magic damage-over-time, Haste reduction,
+  permanent DEF cuts, and true damage; marks an ally to add freezing
+  snowballs.
+- **Lightbearer — Tesio (Carmine Foreman):** Healing, HP equalization,
+  knockback, ranged damage/DEF support, shields, and ally Energy support.
+- **Mauler — Lone Gaze:** Phantom-wolf bleed and Vitality reduction, opening
+  pursuit mark, knockdown, and a damage-focused backline Spirit Mark.
+- **Graveborn — Grim Executioner:** Stationary tank with pull, taunt, shields,
+  damage reduction, Vitality/DEF steal, rear-enemy imprisonment, and an
+  HP-loss zone for the marked ally.
+- **Celestial/Hypogean — Illucia the Unveiler:** Meteor and teleport AoE,
+  temporary cat-form shutdown, true-damage black holes, and immobilization.
+
+#### Season 6 — Tower of Memory
+
+- **Wilder — Bloom Mother:** Stationary, steadfast AoE mage with knockback,
+  immobilization, flower-based scaling, stuns, healing, and a defensive zone.
+- **Lightbearer — Sigmund:** Melee magic bruiser with AoE knock-up, DEF
+  bonuses, normal-attack damage, and a Spirit Mark that grants ATK SPD and
+  shields.
+- **Mauler — Alpha Bear:** Stationary AoE damage, knock-up, DEF reduction,
+  honey-marked true damage over time, Vitality reduction, and melee support.
+- **Graveborn — Shadowed Charon:** Amplifies stat debuffs, deals extra damage
+  to debuffed enemies, steals ATK, and applies burn and Haste reduction.
+- **Celestial/Hypogean — Skyclops:** Summons healing and damaging wings, then
+  inflicts HP loss and max-HP reduction; also heals, buffs ATK, and shields.
+
+#### Season 7 — Crown of Ashes
+
+- **Wilder — Blightshroom:** Spreading spores, recurring damage, DEF and
+  Energy reduction, knock-up/knock-down, and a full-field damaging slow.
+- **Lightbearer — Aurelian (Ever-Fair Broker):** Damage-and-healing flower,
+  ally damage reduction and Haste, ATK-stealing contracts, and marked-ally
+  normal-attack healing.
+- **Mauler — Orson (Riven Spine):** Fury-based damage reduction and
+  Unaffected state, self-healing, battlefield knockdowns, taunt, and ally
+  damage protection.
+- **Graveborn — Necrodrakon (Deathless Wings):** Converts enemy HP loss into
+  healing, reduces healing received, adds true damage and stuns, and creates a
+  damaging Haste/movement-speed-reduction mire.
+- **Celestial/Hypogean — Midnight Hunter (Nocturne Judicator/Oathbound
+  Spear):** Alternates defensive and offensive forms, scales through Ancient
+  Blessings, deals true damage and knockdowns, revives once, and shares ATK,
+  Haste, and healing with its marked ally.
+
+#### Season 8 — Veil of Memories
+
+- **Lightbearer — Gervan:** Crescent/Full Moon states, immobilizing moon
+  shadow, true-damage scythe, ally ATK and Energy recovery, and enemy Energy
+  reduction.
+- **Wilder — Seralyth:** Shielded, Unaffected channel with recurring true
+  damage; weakens enemies, reduces stats, knocks them down, and empowers the
+  marked ally against weakened targets.
+- **Mauler — Crystal Beetle:** Invincible aerial projectiles, Crystal Marks,
+  battle-start blindness, ally movement speed, knock-up/knock-down, and a
+  defensive Haste/Steadfast Spirit Mark.
+- **Graveborn — Plague Creeper:** Known for recurring damage with enemy Haste
+  and movement-speed reduction; detailed skill text remains incomplete in the
+  linked wiki.
+- **Celestial/Hypogean — Wedge of Matter and Wedge of Power:** Linked pair
+  providing damage, healing, DEF/ATK reduction, stat and Haste marks, damage
+  reduction, and slowing damage zones.
