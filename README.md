@@ -4,7 +4,13 @@
 behavior, structured skill summaries, and replacement suggestions for the full
 roster.
 
-This repository collects and analyzes hero skill data for [AFK Journey](https://afk-journey.fandom.com/wiki/AFK_Journey). Skill text is sourced primarily from the [AFK Journey Fandom wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla](https://www.yaphalla.com/heroes). Meta tier ratings (S+, S, A, etc. per game mode) come from the [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list). Skill text is parsed to extract buffs, debuffs, crowd control, damage types, and team synergies.
+This repository collects and analyzes hero skill data for [AFK Journey](https://afk-journey.fandom.com/wiki/AFK_Journey). Skill text is sourced primarily from the [AFK Journey Fandom wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla](https://www.yaphalla.com/heroes). Meta tier ratings (S+, S, A, etc. per game mode) come from the [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list). Skill text is parsed to extract buffs, debuffs, crowd control, damage types, and team synergies. Character play overview and counter propsals are AI generated from available data with additional input coming from community videos by [Puzzle](https://www.youtube.com/@PuzzleAFKJ) and [Elfe](https://www.youtube.com/@ElfeYT).
+
+## Content warning
+
+Most of the data and all of the code in this repository is AI generated.  
+Due to the amount of data, only a couple of characters have been reviewed.  
+If you spot any issues, please report them.
 
 ## What is in this repository
 
