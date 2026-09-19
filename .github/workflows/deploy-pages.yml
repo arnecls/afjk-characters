@@ -27,9 +27,9 @@ jobs:
 
       - name: Build site data
         run: |
-          python3 scripts/render_overview.py
-          python3 scripts/render_site.py
+          python3 scripts/hero_pipeline_cli.py views
           python3 scripts/download_hero_images.py
+          python3 scripts/bundle_js.py
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
