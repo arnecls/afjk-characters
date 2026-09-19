@@ -65,9 +65,9 @@
             "area": "single",
             "target_count": 1,
             "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
             "value": [
               {
                 "type": "percentage",
@@ -108,7 +108,7 @@
         "initial_energy": 0.0,
         "skill_card_tags": [
           {
-            "label": "HP loss"
+            "label": "Lost HP-based damage"
           },
           {
             "label": "Physical"
@@ -647,7 +647,7 @@
         "Single target"
       ],
       [
-        "hp_loss",
+        "lost_hp",
         "Single target"
       ]
     ],
@@ -879,7 +879,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0eef52ba4b0d2c8560e955287bf98da0c863ca6bcc5e8d1b3ae383d2e46ef179",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "62941714d30e5eb057c7a8938a3028973199381e0babbc985be221686b97ae3e",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

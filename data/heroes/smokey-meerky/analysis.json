@@ -433,12 +433,40 @@
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 0.1
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 14.0
+              }
+            ]
           }
         ],
         "skill_range": 4,
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Stun — Area"
@@ -465,6 +493,10 @@
     "damage_entries": [
       [
         "dot",
+        "Area"
+      ],
+      [
+        "hp_loss",
         "Area"
       ]
     ],
@@ -631,7 +663,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "97938e4826d5380854bc4d84dd26bd9e6a4e17bb33d8cd5c97af889d04946dd8",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "abfc3d09e0d35969af749d4842cc5ddd086dc04816b7a6f0049f051110f25848",
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

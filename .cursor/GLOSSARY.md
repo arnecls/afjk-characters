@@ -799,9 +799,9 @@ Also see:
 
 ## true damage
 
-Damage that ignores defensive stats and shields. The project treats HP-loss and
-Max HP damage as more specific true-damage subtypes when those precise patterns
-apply.
+Damage that ignores defensive stats and shields through the true-damage delivery
+type. Max-HP-based and lost-HP-based damage are formulas and do not inherently
+ignore defences or shields.
 
 Used in:
 
@@ -813,13 +813,14 @@ Also see:
 
 - [HP-loss](#hp-loss)
 - [Max HP damage](#max-hp-damage)
+- [Lost HP damage](#lost-hp-damage)
 - [quality indicators](#quality-indicators)
 
 ## HP-loss
 
-Specialized true-damage subtype scaling on the target's lost HP. In skill
-summary wording, use `HP-loss` for the damage type and reserve other HP phrases
-for healing triggers or HP cap changes.
+Direct HP reduction applied to a target. In skill summary wording, use
+`HP-loss` for this delivery type, and reserve lost-HP phrases for damage
+formulas.
 
 Used in:
 
@@ -831,6 +832,7 @@ Also see:
 
 - [true damage](#true-damage)
 - [Max HP damage](#max-hp-damage)
+- [Lost HP damage](#lost-hp-damage)
 - [skill summary](#skill-summary)
 
 ## Max HP damage
@@ -850,6 +852,11 @@ Also see:
 - [true damage](#true-damage)
 - [HP-loss](#hp-loss)
 - [display layer](#display-layer)
+
+## Lost HP damage
+
+Damage calculated from the target's already-lost HP. The display label is
+`Lost HP-based damage`; it is distinct from direct HP-loss delivery.
 
 ## special provides
 

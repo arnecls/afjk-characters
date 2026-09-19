@@ -37,6 +37,25 @@
                 "target_count": -1,
                 "area_count": -1,
                 "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 17.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
                 "damage_type": "max_hp",
                 "name": "Max HP-based damage",
                 "label": "damage_max_hp",
@@ -267,9 +286,9 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
                 "value": [
                   {
                     "type": "percentage",

@@ -823,7 +823,7 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(?:extra )?true damage equal to (\d+(?:\.\d+)?)\s*%\s+of "
             r".{0,60}max\s+hp",
         ]
-    elif dmg_type == "HP loss":
+    elif dmg_type == "Lost HP-based damage":
         patterns = [
             r"extra true damage equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
             r"(\d+(?:\.\d+)?)\s*%\s+of\s+all enemies' total hp lost",
@@ -847,6 +847,11 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(?:the )?target's lost hp",
             r"extra damage to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:her|his|their) lost hp",
+        ]
+    elif dmg_type == "HP loss":
+        patterns = [
+            r"(?:lose|loses|losing|causes? .{0,30}to lose)\s+"
+            r"(\d+(?:\.\d+)?)\s*%\s*(?:\([^)]*\)\s*)?hp\b",
             r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+hp for every tile",
             r"hp lost per tile pulled to (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)",
             r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+hp for every",

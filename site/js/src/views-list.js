@@ -167,6 +167,7 @@ window.AFKJ = window.AFKJ || {};
     True: "True damage",
     "HP Loss": "HP loss",
     "Max HP": "Max HP damage",
+    "Lost HP": "Lost HP-based damage",
   };
 
   let columnFilterPointerHandler = null;

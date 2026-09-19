@@ -20,7 +20,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Movement**: stationary (avg attack range 8.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `backline-assassin` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility` `temporary-stat-buffer`
 - **Ally composition**: grants Brightfeather to nearest ally in her row
-- **Damage types**: Physical `high`, DoT `low`, HP loss `average`
+- **Damage types**: Physical `high`, DoT `low`, Lost HP-based damage `average`
 
 #### Play overview
 
@@ -89,7 +89,7 @@ Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 
 Aliceth provides Attack range to single targets `high`, DEF Penetration to multiple targets `high`, ATK (Legendary+) to multiple targets `average`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
 
-**36** units include this provider among their top 6 synergy partners. Why the match is common:
+**38** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -104,15 +104,15 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Scarlita (43% `execute` `hp-scaling` `non-ult-utility`)
-- Athalia (40% `backline-assassin` `hp-scaling` `non-ult-utility`)
 - Parisa (40% `ally-buffer` `mark-target` `temporary-stat-buffer`)
+- Kazim (36% `ally-buffer` `mark-target` `non-ult-utility` `temporary-stat-buffer`)
+- Rolan (36% `ally-buffer` `non-ult-utility` `temporary-stat-buffer`)
 
 **Damage**
 
-- Athalia (100% `Physical`)
-- Nara (100% `Physical`)
-- Faramor (93% `Physical` `DoT` `HP loss`)
+- Alna (100% `Physical` `DoT`)
+- Athalia (100% `Physical` `Lost HP-based damage`)
+- Kordan (100% `Physical` `Lost HP-based damage`)
 
 **Crowd Control**
 
@@ -136,7 +136,7 @@ These are the **4** strongest pairings:
 
 - Physical — Area, Single target
 - DoT — Single target — conditional (on blind)
-- HP loss — Single target — `average`
+- Lost HP-based damage — Single target
 
 #### Buffs provided by Aliceth
 
@@ -410,8 +410,8 @@ Alsa also requires units **applying crowd control** to enemies
 **Similar Skills**
 
 - Kulu (100% `battlefield-modification` `self-repositioner`)
+- Marilee (60% `self-repositioner`)
 - Rhys (48% `self-repositioner`)
-- Marilee (40% `self-repositioner`)
 
 **Damage**
 
@@ -548,7 +548,7 @@ Antandra provides Damage taken (Mythic+) to single targets `low` — conditional
 
 - Lumont (83% `Crowd Control` `Damage` `Debuffs on enemies`)
 - Hepler (61% `Crowd Control` `Damage`)
-- Phraesto (59% `Buffs on allies` `Crowd Control`)
+- Phraesto (58% `Buffs on allies` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -700,13 +700,13 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 - Gwyneth (56% `Damage` `Crowd Control`)
 - Voracia (55% `Damage`)
-- Faramor (51% `Damage`)
+- Faramor (53% `Damage`)
 
 **Similar Skills**
 
 - Valen (80% `aoe-damage` `mass-cc`)
-- Viperian (60% `aoe-damage` `dot-specialist`)
 - Gwyneth (48% `dot-specialist` `mass-cc`)
+- Tasi (48% `aoe-damage` `mass-cc`)
 
 **Damage**
 
@@ -820,6 +820,7 @@ Common buffers are **Mikola**, **Rolan**, **Smokey & Meerky**, or **Kazim**.
 
 ### Units benefitting most from Atalanta
 
+- Harak (2.5 / 5)
 - Salazer (2.5 / 5)
 - Silvina (2.5 / 5)
 
@@ -835,7 +836,7 @@ Common buffers are **Mikola**, **Rolan**, **Smokey & Meerky**, or **Kazim**.
 
 - Rhys (80% `aoe-damage` `self-repositioner`)
 - Dionel (48% `aoe-damage` `self-repositioner`)
-- Tasi (40% `aoe-damage` `self-repositioner`)
+- Marilee (48% `self-repositioner`)
 
 **Damage**
 
@@ -887,8 +888,8 @@ Common buffers are **Mikola**, **Rolan**, **Smokey & Meerky**, or **Kazim**.
 
 - **Signature skill**: Unbroken Retribution (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
-- **Behavior tags**: `backline-assassin` `hp-scaling` `non-ult-utility` `self-repositioner`
-- **Damage types**: Physical `high`, True damage `high`
+- **Behavior tags**: `backline-assassin` `non-ult-utility` `self-repositioner`
+- **Damage types**: Physical `high`, Lost HP-based damage `high`, True damage `high`
 
 #### Play overview
 
@@ -962,21 +963,21 @@ Look for units providing: `Max HP` `CRIT` `Execution`
 
 **Best overall replacement**
 
-- Nara (63% `Damage` `Crowd Control`)
-- Baelran (61% `Damage` `Crowd Control`)
-- Faramor (53% `Damage`)
+- Sylphira (70% `Damage` `Crowd Control`)
+- Baelran (68% `Damage` `Crowd Control`)
+- Himmel (66% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
-- Marilee (60% `hp-scaling` `self-repositioner`)
-- Silven (40% `hp-scaling` `non-ult-utility`)
-- Aliceth (40% `backline-assassin` `hp-scaling` `non-ult-utility`)
+- Lenya (48% `backline-assassin` `self-repositioner`)
+- Marilee (40% `self-repositioner`)
+- Himmel (33% `backline-assassin` `self-repositioner`)
 
 **Damage**
 
-- Faramor (100% `True damage` `Physical`)
-- Nara (100% `Physical` `True damage`)
-- Baelran (81% `True damage` `Physical`)
+- Himmel (100% `True damage` `Physical`)
+- Sylphira (100% `True damage`)
+- Faramor (100% `True damage` `Lost HP-based damage` `Physical`)
 
 **Crowd Control**
 
@@ -995,7 +996,7 @@ Look for units providing: `Max HP` `CRIT` `Execution`
 #### Damage types dealt by Athalia
 
 - Physical — Area, Single target
-- HP loss — Single target
+- Lost HP-based damage — Single target
 - True damage — Single target — `high`
 
 #### Crowd Control provided by Athalia
@@ -1100,7 +1101,7 @@ These are the **4** strongest pairings:
 
 - Zanie (33% `summoner`)
 - Florabelle (25% `summoner`)
-- Nazrik (20% `mark-target`)
+- Nazrik (25% `mark-target`)
 
 **Damage**
 
@@ -1156,7 +1157,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Celestial Rise (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `hp-scaling`
-- **Damage types**: Physical `high`, True damage `average`
+- **Damage types**: Physical `high`, True damage `high`
 
 #### Play overview
 
@@ -1237,14 +1238,14 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Twins**.
 **Similar Skills**
 
 - Shemira (50% `hp-scaling`)
-- Marilee (50% `hp-scaling`)
 - Zorya (40% `hp-scaling`)
+- Zandrok (30% `hp-scaling`)
 
 **Damage**
 
 - Frieren (100% `True damage`)
+- Himmel (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
-- Athalia (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -1368,14 +1369,14 @@ extend stealth duration after own defeat
 
 **Best overall replacement**
 
-- Saida (58% `Debuffs on enemies`)
+- Saida (57% `Debuffs on enemies`)
 - Cryonaia (55% `Damage`)
 
 **Similar Skills**
 
 - Bryon (51% `cheat-death` `energy-inhibitor` `summoner`)
 - Vala (40% `assassin` `energy-inhibitor` `stealth`)
-- Saida (34% `cheat-death` `energy-inhibitor`)
+- Saida (30% `cheat-death` `energy-inhibitor`)
 
 **Damage**
 
@@ -1576,7 +1577,7 @@ Bonnie also requires units **dealing magic damage**
 #### Skill overview
 
 - **Signature skill**: speed `fast`, buffs `average`
-- **Ultimate**: speed `slow`, damage `low`
+- **Ultimate**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -1609,35 +1610,35 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Brutus
 
-**8** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
 - Florabelle (3.7 / 5)
+- Harak (3.7 / 5)
 - Marilee (3.7 / 5)
 - Lenya (3.3 / 5)
-- Pang (3.1 / 5)
 
 ### Units that can act as a replacement for Brutus
 
 **Best overall replacement**
 
-- Lumont (54% `Crowd Control`)
-- Hepler (51% `Crowd Control`)
+- Lumont (58% `Crowd Control`)
+- Hepler (55% `Crowd Control`)
 
 **Similar Skills**
 
 - Antandra (41% `aoe-damage` `taunt`)
-- Thoran (40% `cheat-death` `life-drain`)
 - Igor (37% `aoe-damage` `cheat-death` `life-drain`)
+- Thoran (34% `cheat-death` `life-drain`)
 
 **Damage**
 
-- Gunnar (100% `Physical` `DoT`)
-- Himmel (100% `Physical`)
-- Valka (100% `Physical`)
+- Himmel (99% `Max HP-based damage` `Physical`)
+- Alna (82% `Physical` `DoT`)
+- Hodgkin (74% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -1657,7 +1658,7 @@ These are the **4** strongest pairings:
 
 - Physical — Arc
 - DoT — Area
-- Max HP-based damage — Arc — `high`
+- Max HP-based damage — Arc
 
 #### Debuffs provided by Brutus
 
@@ -1767,7 +1768,7 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 **Similar Skills**
 
 - Berial (51% `cheat-death` `energy-inhibitor` `summoner`)
-- Saida (50% `cheat-death` `energy-inhibitor` `high-initial-energy`)
+- Saida (42% `cheat-death` `energy-inhibitor` `high-initial-energy`)
 - Pang (41% `energy-inhibitor` `high-initial-energy`)
 
 **Damage**
@@ -1896,7 +1897,7 @@ Common buffers are **Contess**.
 
 **Similar Skills**
 
-- Korin (33% `ally-shielder`)
+- Korin (50% `ally-shielder`)
 - Hepler (30% `ally-shielder`)
 - Lucca (30% `ally-shielder`)
 
@@ -2015,6 +2016,7 @@ Carolina also requires units **applying crowd control** to enemies
 
 - Mirael (2.1 / 5)
 - Odie (2.1 / 5)
+- Pippa (2.1 / 5)
 
 ### Units that can act as a replacement for Carolina
 
@@ -2149,10 +2151,16 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Cassadee
 
+**5** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **4** strongest pairings: 
+
 - Alsa (3.0 / 5)
-- Kazim (2.8 / 5)
 - Mirael (2.1 / 5)
 - Odie (2.1 / 5)
+- Pippa (2.1 / 5)
 
 ### Units that can act as a replacement for Cassadee
 
@@ -2305,7 +2313,7 @@ Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Mikola**.
 
 - Shadewing (60% `dot-specialist` `enemy-debuffer`)
 - Arden (48% `dot-specialist` `mass-cc`)
-- Pandora (42% `enemy-debuffer` `mass-cc` `summoner`)
+- Gwyneth (40% `dot-specialist` `mass-cc`)
 
 **Damage**
 
@@ -2417,7 +2425,7 @@ rare chance for massive single normal attack damage
 
 **Similar Skills**
 
-- Marilee (60% `self-repositioner`)
+- Marilee (100% `self-repositioner`)
 - Alsa (50% `self-repositioner`)
 - Kulu (50% `self-repositioner`)
 
@@ -2442,7 +2450,7 @@ rare chance for massive single normal attack damage
 - **Signature skill**: Detention Pass (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-healer` `ally-shielder` `enemy-debuffer` `energy-inhibitor` `interrupt` `stealth` `temporary-stat-buffer` `untargetable`
-- **Damage types**: Magic `low`
+- **Damage types**: Magic `low`, HP loss `average`
 
 #### Play overview
 
@@ -2461,7 +2469,7 @@ rare chance for massive single normal attack damage
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, heal `average`, buffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -2551,9 +2559,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Faramor (100% `HP loss`)
-- Ravion (100% `HP loss`)
-- Aliceth (100% `HP loss`)
+- Frieren (100% `HP loss`)
+- Rolan (100% `HP loss`)
+- Saida (100% `HP loss`)
 
 **Crowd Control**
 
@@ -2572,6 +2580,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Contess
 
 - DoT — Single target
+- HP loss — Single target — `average`
 
 #### Buffs provided by Contess
 
@@ -2691,7 +2700,7 @@ Common buffers are **Evie**, **Aliceth**, **Rolan**, or **Kordan**.
 
 - Orion (30% `cc-immunity` `high-damage-ult`)
 - Alna (28% `cc-immunity` `invincibility`)
-- Shemira (24% `high-damage-ult`)
+- Lily May (25% `cc-immunity` `invincibility`)
 
 **Damage**
 
@@ -2811,9 +2820,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 **Similar Skills**
 
+- Scarlita (40% `aoe-damage` `execute`)
 - Eironn (34% `aoe-damage` `enemy-grouping`)
 - Lamentis (34% `aoe-damage` `high-initial-energy`)
-- Scarlita (34% `aoe-damage` `execute`)
 
 **Damage**
 
@@ -2864,7 +2873,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 - **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `ally-shielder` `hp-scaling` `non-ult-utility` `summoner` `temporary-stat-buffer`
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
-- **Damage types**: Magic `low`, Max HP-based damage `high`
+- **Damage types**: Magic `low`, True damage `average`
 
 #### Play overview
 
@@ -2950,15 +2959,15 @@ Daimon provides Lifedrain to single targets `low`.
 
 **Similar Skills**
 
-- Scarlita (42% `ally-shielder` `hp-scaling` `non-ult-utility`)
-- Korin (40% `ally-shielder` `hp-scaling`)
 - Thador (34% `ally-shielder` `temporary-stat-buffer`)
+- Lumont (34% `non-ult-utility` `temporary-stat-buffer`)
+- Gunnar (30% `ally-shielder` `temporary-stat-buffer`)
 
 **Damage**
 
-- Ludovic (100% `Magic` `Max HP-based damage`)
-- Brutus (100% `Max HP-based damage`)
-- Nara (100% `Max HP-based damage`)
+- Frieren (100% `Magic` `True damage`)
+- Silven (100% `Magic` `True damage`)
+- Sylphira (100% `Magic` `True damage`)
 
 **Crowd Control**
 
@@ -2976,7 +2985,8 @@ Daimon provides Lifedrain to single targets `low`.
 
 - Magic — Single target
 - DoT — Area
-- Max HP-based damage — Area — `high`
+- Max HP-based damage — Area
+- True damage — Area — `average`
 
 #### Buffs provided by Daimon
 
@@ -3140,7 +3150,7 @@ Damian provides Direct healing to single targets `average` and Haste (Mythic+) t
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `heal-inhibitor` `self-repositioner` `untargetable`
-- **Damage types**: Physical `average`, True damage `average`
+- **Damage types**: Physical `average`, True damage `high`
 
 #### Play overview
 
@@ -3227,9 +3237,9 @@ Dionel also requires units **buffing them**
 
 **Best overall replacement**
 
-- Frieren (73% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Nara (72% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Faramor (71% `Damage` `Debuffs on enemies`)
+- Frieren (72% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Faramor (72% `Damage` `Debuffs on enemies`)
+- Nara (71% `Damage` `Debuffs on enemies` `Crowd Control`)
 
 **Similar Skills**
 
@@ -3239,9 +3249,9 @@ Dionel also requires units **buffing them**
 
 **Damage**
 
+- Himmel (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical`)
-- Baelran (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -3265,7 +3275,7 @@ Dionel also requires units **buffing them**
 #### Damage types dealt by Dionel
 
 - Physical — Area
-- True damage — All units — `average`
+- True damage — All units — `high`
 
 #### Debuffs provided by Dionel
 
@@ -3285,7 +3295,7 @@ Dionel also requires units **buffing them**
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: moving (avg attack range 2.9 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `heal-inhibitor` `interrupt` `temporary-stat-buffer`
-- **Damage types**: Magic `average`, HP loss `low`
+- **Damage types**: Magic `average`
 
 #### Play overview
 
@@ -3360,7 +3370,7 @@ Common buffers are **Rolan**, **Lorsan**, **Smokey & Meerky**, or **Twins**.
 
 Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single targets `average`, ATK SPD (Supreme+) to all units `low`, and Lifedrain (Supreme+) to all units `low`.
 
-**27** units include this provider among their top 6 synergy partners. Why the match is common:
+**25** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -3373,6 +3383,11 @@ These are the **4** strongest pairings:
 
 ### Units that can act as a replacement for Dunlingr
 
+**Best overall replacement**
+
+- Sylphira (61% `Crowd Control` `Damage`)
+- Orion (52% `Crowd Control` `Damage`)
+
 **Buffs on allies**
 
 - Zandrok (70% `Healing` `Haste`)
@@ -3380,15 +3395,15 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
+- Faramor (57% `ally-buffer` `aoe-damage` `heal-inhibitor` `temporary-stat-buffer`)
 - Alna (54% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
-- Faramor (50% `ally-buffer` `aoe-damage` `heal-inhibitor` `temporary-stat-buffer`)
 - Sonja (50% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
-- Niru (100% `Magic` `HP loss`)
-- Zorya (100% `Magic` `HP loss`)
-- Shadewing (95% `Magic` `HP loss`)
+- Frieren (100% `Magic`)
+- Rolan (100% `Magic`)
+- Silven (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -3412,7 +3427,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Dunlingr
 
 - Magic — All units, Area
-- HP loss — Single target — `low`
+- Lost HP-based damage — Single target
 
 #### Buffs provided by Dunlingr
 
@@ -3514,8 +3529,8 @@ Common buffers are **Mikola**, **Rowan**, **Twins**, or **Smokey & Meerky**.
 **Similar Skills**
 
 - Walker (51% `aoe-damage` `battle-start-burst` `mass-cc`)
-- Mehira (45% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Tasi (41% `aoe-damage` `mass-cc`)
+- Valen (40% `aoe-damage` `mass-cc`)
 
 **Damage**
 
@@ -3847,9 +3862,9 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Sanctified Circle (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
-- **Behavior tags**: `ally-buffer` `aoe-damage` `dot-specialist` `heal-inhibitor` `hp-scaling` `temporary-stat-buffer`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `dot-specialist` `heal-inhibitor` `temporary-stat-buffer`
 - **Ally composition**: bless adjacent ally at battle prep; prioritizes tile behind
-- **Damage types**: Physical `high`, DoT `high`, HP loss `high`, True damage `high`
+- **Damage types**: Physical `high`, DoT `high`, Lost HP-based damage `high`, True damage `high`
 
 #### Play overview
 
@@ -3934,21 +3949,21 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 **Best overall replacement**
 
-- Orion (73% `Debuffs on enemies` `Crowd Control`)
-- Nazrik (64% `Debuffs on enemies` `Crowd Control`)
-- Nara (59% `Damage` `Debuffs on enemies`)
+- Orion (92% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Nazrik (75% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Frieren (61% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
-- Perseus (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
-- Parisa (51% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
-- Dunlingr (50% `ally-buffer` `aoe-damage` `heal-inhibitor` `temporary-stat-buffer`)
+- Perseus (72% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Parisa (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
+- Sonja (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
-- Athalia (100% `True damage` `Physical`)
-- Nara (99% `True damage` `Physical`)
-- Frieren (55% `True damage` `DoT`)
+- Athalia (100% `True damage` `Lost HP-based damage` `Physical`)
+- Nara (98% `True damage` `Physical`)
+- Indris (95% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -3968,7 +3983,7 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 - Physical — Area, Single target
 - DoT — Area
-- HP loss — Area — `high`
+- Lost HP-based damage — Area
 - True damage — Area — `high`
 
 #### Debuffs provided by Faramor
@@ -4092,7 +4107,7 @@ Fay provides ATK to arc `low`, Direct healing to arc `high`, Healing over time t
 
 - Smokey & Meerky (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 - Hewynn (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
-- Ludovic (80% `ally-healer` `aoe-healing`)
+- Velara (72% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -4219,8 +4234,8 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Galahad (60% `aoe-damage` `summoner`)
 - Zanie (50% `summoner`)
+- Galahad (48% `aoe-damage` `summoner`)
 - Lamentis (40% `aoe-damage` `summoner`)
 
 **Damage**
@@ -4262,9 +4277,9 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Zoltraak (ultimate)
 - **Movement**: stationary (avg attack range 7.0 tiles); walk speed fast
-- **Behavior tags**: `aoe-damage` `backline-assassin` `backline-inhibit` `dot-specialist` `heal-inhibitor` `high-damage-ult` `self-repositioner`
+- **Behavior tags**: `aoe-damage` `backline-assassin` `backline-inhibit` `dot-specialist` `heal-inhibitor` `high-damage-ult` `hp-loss` `self-repositioner`
 - **Ally composition**: frontmost ally shares damage reduction with this hero
-- **Damage types**: Magic `high`, DoT `high`, True damage `high`
+- **Damage types**: Magic `high`, DoT `high`, HP loss `high`, True damage `high`
 
 #### Play overview
 
@@ -4342,15 +4357,9 @@ Frieren also requires specific **named allies**
 
 **Similar Skills**
 
-- Himmel (60% `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`)
-- Orion (44% `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult`)
-- Evie (30% `backline-assassin` `backline-inhibit` `self-repositioner`)
-
-**Damage**
-
-- Cyran (82% `DoT` `Magic` `True damage`)
-- Faramor (72% `True damage` `DoT`)
-- Athalia (66% `True damage`)
+- Himmel (53% `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`)
+- Orion (40% `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult`)
+- Faramor (30% `aoe-damage` `dot-specialist` `heal-inhibitor`)
 
 **Crowd Control**
 
@@ -4364,6 +4373,7 @@ Frieren also requires specific **named allies**
 
 - Magic — Area, Single target
 - DoT — All units, Area
+- HP loss — Area — `high`
 - True damage — All units — `high`
 
 #### Debuffs provided by Frieren
@@ -4385,7 +4395,7 @@ Frieren also requires specific **named allies**
 
 - **Signature skill**: Time Recast (Mythic+)
 - **Movement**: stationary (avg attack range 10.0 tiles); walk speed normal
-- **Behavior tags**: `ally-shielder` `aoe-damage` `backline-inhibit` `summoner`
+- **Behavior tags**: `ally-shielder` `aoe-damage` `backline-inhibit` `hp-loss` `summoner`
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
 - **Damage types**: Magic `high`
 
@@ -4466,20 +4476,19 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 **Best overall replacement**
 
-- Saida (54% `Damage` `Crowd Control`)
-- Natsu (52% `Damage`)
+- Saida (57% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
-- Florabelle (60% `aoe-damage` `summoner`)
-- Phraesto (42% `ally-shielder` `aoe-damage` `summoner`)
-- Lucy (42% `ally-shielder` `backline-inhibit` `summoner`)
+- Phraesto (50% `ally-shielder` `aoe-damage` `hp-loss` `summoner`)
+- Florabelle (48% `aoe-damage` `summoner`)
+- Lucy (37% `ally-shielder` `backline-inhibit` `summoner`)
 
 **Damage**
 
 - Saida (100% `Magic`)
-- Sylphira (100% `Magic`)
-- Cryonaia (100% `Magic`)
+- Viperian (86% `Magic`)
+- Ludovic (85% `Magic`)
 
 **Debuffs on enemies**
 
@@ -4501,6 +4510,7 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 #### Damage types dealt by Galahad
 
 - Magic — All units, Area, Single target
+- HP loss — Single target
 
 #### Debuffs provided by Galahad
 
@@ -4637,7 +4647,7 @@ Gerda provides Direct healing in an area `average` and Healing over time to sing
 
 - **Signature skill**: Threshold of Jade (ultimate)
 - **Movement**: moving (melee class); walk speed normal
-- **Behavior tags**: `energy-inhibitor` `hp-scaling` `taunt`
+- **Behavior tags**: `energy-inhibitor` `hp-loss` `hp-scaling` `taunt`
 - **Damage types**: Physical `low`, DoT `low`
 
 #### Play overview
@@ -4715,22 +4725,17 @@ Common buffers are **Mikola**, **Twins**, **Lorsan**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Granny Dahnie
 
-**Best overall replacement**
-
-- Hepler (52% `Crowd Control` `Damage` `Debuffs on enemies`)
-- Brutus (50% `Crowd Control` `Damage`)
-
 **Similar Skills**
 
-- Pippa (40% `energy-inhibitor` `hp-scaling`)
-- Baelran (33% `hp-scaling`)
-- Lily May (30% `energy-inhibitor` `hp-scaling`)
+- Viperian (33% `energy-inhibitor` `hp-loss`)
+- Saida (28% `energy-inhibitor` `hp-loss`)
+- Baelran (25% `hp-scaling`)
 
 **Damage**
 
-- Gunnar (100% `Physical` `DoT`)
-- Gwyneth (100% `Physical` `DoT`)
-- Thador (100% `Physical` `DoT`)
+- Thoran (100% `Physical`)
+- Nara (100% `Physical`)
+- Harak (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -4750,6 +4755,7 @@ Common buffers are **Mikola**, **Twins**, **Lorsan**, or **Smokey & Meerky**.
 
 - Physical — Single target
 - DoT — Single target
+- HP loss — Single target
 
 #### Debuffs provided by Granny Dahnie
 
@@ -4851,14 +4857,15 @@ Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, A
 
 **Similar Skills**
 
-- Phraesto (54% `ally-shielder` `aoe-damage` `heal-inhibitor`)
+- Phraesto (48% `ally-shielder` `aoe-damage` `heal-inhibitor`)
 - Dunlingr (45% `aoe-damage` `heal-inhibitor` `temporary-stat-buffer`)
 - Hugin (42% `ally-shielder` `static-tile-buffer` `temporary-stat-buffer`)
 
 **Damage**
 
 - Gwyneth (100% `Physical` `DoT`)
-- Himmel (98% `Physical`)
+- Thador (100% `Physical` `DoT`)
+- Alna (100% `Physical` `DoT`)
 
 **Crowd Control**
 
@@ -4907,7 +4914,7 @@ Gunnar provides ATK to single targets `high`, ATK SPD to single targets `low`, A
 - **Signature skill**: Hailing Arrows (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles); walk speed normal
 - **Behavior tags**: `dot-specialist` `heal-inhibitor` `mass-cc` `non-ult-utility`
-- **Damage types**: Physical `high`, DoT `high`, Max HP-based damage `low`
+- **Damage types**: Physical `high`, DoT `high`
 
 #### Play overview
 
@@ -4998,7 +5005,7 @@ Common buffers are **Rolan**, **Smokey & Meerky**, **Aliceth**, or **Kazim**.
 
 **Damage**
 
-- Shemira (78% `Max HP-based damage`)
+- Frieren (50% `DoT`)
 
 **Debuffs on enemies**
 
@@ -5018,7 +5025,7 @@ Common buffers are **Rolan**, **Smokey & Meerky**, **Aliceth**, or **Kazim**.
 
 - Physical — Area, Single target
 - DoT — Single target
-- Max HP-based damage — Single target — `low`
+- Max HP-based damage — Single target
 
 #### Debuffs provided by Gwyneth
 
@@ -5149,8 +5156,8 @@ Hammie provides ATK to single targets `low`.
 
 - **Signature skill**: Flesh Feast (Skill 2)
 - **Movement**: high movement (repositioning skills); walk speed normal
-- **Behavior tags**: `assassin` `execute` `heal-inhibitor` `life-drain`
-- **Damage types**: Physical `low`, HP loss `average`
+- **Behavior tags**: `assassin` `execute` `heal-inhibitor` `hp-loss` `life-drain`
+- **Damage types**: Physical `low`, HP loss `low`
 
 #### Play overview
 
@@ -5199,47 +5206,45 @@ after enough assists or defeats, ultimate recovers energy on cast
 ### Units improving Harak
 
 Look for units providing: `Haste` `Max HP` `CRIT` `Energy`  
-Common buffers are **Rolan**, **Twins**, **Thador**, or **Smokey & Meerky**.
+Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Ravion**.
 
-- **Shakir**
-  - Haste (area, high) `signature fuel`
-- **Zandrok**
-  - Haste (area, average, conditional (frequent)) `signature fuel`
-  - Max HP (multiple targets, low)
-- **Hewynn**
-  - Haste (single target, average) `signature fuel`
-- **Mehira**
-  - Haste (multiple targets, average) `signature fuel`
-- **Damian**
-  - Haste (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Isabella**
-  - Haste (single target, low) `signature fuel`
+- **Laios**
+  - Enemy defense via Phys DEF debuff (area, high)
+- **Brutus**
+  - Enemy defense via Phys DEF debuff (area, average)
+- **Kulu**
+  - Enemy defense via Damage taken debuff (all units, low)
+- **Atalanta**
+  - Enemy defense via Phys DEF debuff (single target, high)
+- **Kafra**
+  - Enemy defense via Phys DEF debuff (single target, high)
+- **Kruger**
+  - Enemy defense via Phys DEF debuff (area, low)
 
 ### Units benefitting most from Harak
 
 - Niru (3.7 / 5)
 - Vala (1.8 / 5)
-- Indris (1.5 / 5)
+- Shadewing (1.7 / 5)
 
 ### Units that can act as a replacement for Harak
 
 **Best overall replacement**
 
 - Nara (77% `Damage` `Crowd Control` `Similar Skills`)
-- Seth (72% `Damage` `Similar Skills`)
-- Athalia (65% `Damage` `Crowd Control`)
+- Thoran (51% `Damage`)
 
 **Similar Skills**
 
-- Seth (60% `assassin` `life-drain`)
-- Nara (50% `assassin` `execute` `heal-inhibitor`)
-- Shakir (40% `heal-inhibitor` `life-drain`)
+- Nara (57% `assassin` `execute` `heal-inhibitor` `hp-loss`)
+- Seth (48% `assassin` `life-drain`)
+- Shakir (33% `heal-inhibitor` `life-drain`)
 
 **Damage**
 
-- Himmel (100% `Physical`)
-- Faramor (100% `Physical` `HP loss`)
-- Ravion (100% `Physical` `HP loss`)
+- Saida (100% `HP loss`)
+- Thoran (100% `Physical`)
+- Nara (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -5263,7 +5268,9 @@ Common buffers are **Rolan**, **Twins**, **Thador**, or **Smokey & Meerky**.
 #### Damage types dealt by Harak
 
 - Physical — Single target
-- HP loss — Single target — `average`
+- DoT — Single target
+- HP loss — Single target — `low`
+- Lost HP-based damage — Single target
 
 #### Debuffs provided by Harak
 
@@ -5569,7 +5576,7 @@ These are the **4** strongest pairings:
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`
 - **Ally composition**: place Mage, Tank, and Support within 1 tile at battle start (Hero Party)
-- **Damage types**: Physical `high`
+- **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `high`
 
 #### Play overview
 
@@ -5588,7 +5595,7 @@ These are the **4** strongest pairings:
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
-- **Ultimate**: speed `fast`, damage `average`
+- **Ultimate**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -5664,15 +5671,15 @@ Himmel provides Basic stats to single targets `average`.
 
 **Similar Skills**
 
-- Frieren (60% `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`)
+- Frieren (53% `aoe-damage` `backline-assassin` `backline-inhibit` `self-repositioner`)
 - Evie (45% `backline-assassin` `backline-inhibit` `self-repositioner`)
-- Perseus (33% `ally-buffer` `aoe-damage`)
+- Athalia (33% `backline-assassin` `self-repositioner`)
 
 **Damage**
 
-- Faramor (81% `Physical`)
-- Athalia (81% `Physical`)
-- Gwyneth (67% `Physical`)
+- Faramor (100% `True damage` `Physical`)
+- Athalia (98% `True damage` `Physical`)
+- Frieren (97% `True damage`)
 
 **Debuffs on enemies**
 
@@ -5695,8 +5702,8 @@ Himmel provides Basic stats to single targets `average`.
 #### Damage types dealt by Himmel
 
 - Physical — All units, Multiple targets, Single target
-- HP loss — Single target
 - Max HP-based damage — All units
+- True damage — All units, Single target — `high`
 
 #### Buffs provided by Himmel
 
@@ -5719,7 +5726,7 @@ Himmel provides Basic stats to single targets `average`.
 - **Signature skill**: Cannon Fire (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `enemy-debuffer` `energy-inhibitor` `heal-inhibitor` `summoner`
-- **Damage types**: Physical `high`, Max HP-based damage `high`
+- **Damage types**: Physical `high`, Max HP-based damage `average`
 
 #### Play overview
 
@@ -5805,9 +5812,9 @@ Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 
 **Damage**
 
-- Himmel (100% `Physical`)
-- Brutus (100% `Physical` `Max HP-based damage`)
+- Kruger (100% `Physical`)
 - Valka (100% `Physical`)
+- Igor (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -5825,7 +5832,7 @@ Common buffers are **Contess**, **Evie**, **Kazim**, or **Mikola**.
 #### Damage types dealt by Hodgkin
 
 - Physical — Arc, Area
-- Max HP-based damage — Area — `high`
+- Max HP-based damage — Area
 
 #### Debuffs provided by Hodgkin
 
@@ -5920,8 +5927,8 @@ These are the **4** strongest pairings:
 
 - Koko (5.0 / 5)
 - Twins (5.0 / 5)
+- Silven (3.2 / 5)
 - Bryon (2.8 / 5)
-- Silven (2.8 / 5)
 
 ### Units that can act as a replacement for Hugin
 
@@ -6064,7 +6071,7 @@ battle-start ultimate summons an extra marker
 - **Signature skill**: Spellbane Shot (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed fast
 - **Behavior tags**: `enemy-debuffer` `interrupt`
-- **Damage types**: Physical `low`, Max HP-based damage `low`, True damage `low`
+- **Damage types**: Physical `low`, True damage `average`
 
 #### Play overview
 
@@ -6145,6 +6152,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 **Best overall replacement**
 
+- Faramor (55% `Damage`)
 - Korin (53% `Damage` `Crowd Control`)
 - Pippa (50% `Damage` `Crowd Control`)
 
@@ -6156,9 +6164,9 @@ Indris also requires units **putting multiple debuffs** on enemies
 
 **Damage**
 
-- Nara (100% `Physical` `True damage` `Max HP-based damage`)
-- Korin (98% `Physical` `True damage` `Max HP-based damage`)
-- Pippa (94% `True damage`)
+- Himmel (100% `Physical` `True damage`)
+- Faramor (100% `Physical` `True damage`)
+- Athalia (100% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -6177,7 +6185,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 #### Damage types dealt by Indris
 
 - Physical — Single target
-- Max HP-based damage — Single target — `low`
+- Max HP-based damage — Single target
 - True damage — Single target — `average`
 
 #### Debuffs provided by Indris
@@ -6282,8 +6290,8 @@ Isabella provides ATK to single targets `low` — conditional (frequent), ATK SP
 These are the **4** strongest pairings: 
 
 - Lily May (5.0 / 5)
+- Silven (5.0 / 5)
 - Dionel (4.5 / 5)
-- Silven (4.5 / 5)
 - Perseus (4.0 / 5)
 
 ### Units that can act as a replacement for Isabella
@@ -6436,8 +6444,8 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 **Similar Skills**
 
 - Sinbad (51% `assassin` `enemy-debuffer` `mark-target`)
-- Vala (33% `assassin` `mark-target` `self-repositioner`)
-- Bonnie (30% `enemy-debuffer` `non-ult-utility`)
+- Silven (33% `mark-target` `non-ult-utility`)
+- Athalia (33% `non-ult-utility` `self-repositioner`)
 
 **Damage**
 
@@ -6565,14 +6573,15 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 
 **Similar Skills**
 
-- Silven (50% `high-initial-energy` `hp-scaling` `non-ult-utility`)
 - Lamentis (42% `aoe-damage` `high-initial-energy` `hp-scaling`)
-- Scarlita (42% `aoe-damage` `hp-scaling` `non-ult-utility`)
+- Daimon (36% `hp-scaling` `non-ult-utility`)
+- Eryndor (34% `aoe-damage` `high-initial-energy`)
 
 **Damage**
 
-- Brutus (100% `Physical` `DoT`)
+- Alna (100% `Physical` `DoT`)
 - Gwyneth (100% `Physical` `DoT`)
+- Kruger (90% `Physical`)
 
 **Crowd Control**
 
@@ -6608,7 +6617,7 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 - **Signature skill**: Soaring Falcon (Skill 1)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `high-initial-energy` `invincibility` `mark-target` `mass-cc` `non-ult-utility` `temporary-stat-buffer`
-- **Damage types**: Physical `high`, Max HP-based damage `average`
+- **Damage types**: Physical `high`, True damage `average`
 
 #### Play overview
 
@@ -6679,7 +6688,7 @@ Kazim also requires units **providing knock up**
 
 Kazim provides Haste to multiple targets `average` and ATK (Mythic+) to single targets `high`.
 
-**52** units include this provider among their top 6 synergy partners. Why the match is common:
+**51** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -6691,10 +6700,6 @@ These are the **4** strongest pairings:
 - Dionel (3.6 / 5)
 
 ### Units that can act as a replacement for Kazim
-
-**Best overall replacement**
-
-- Zandrok (52% `Crowd Control` `Damage` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -6710,9 +6715,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Valka (100% `Physical`)
-- Nara (100% `Physical` `Max HP-based damage`)
-- Hodgkin (100% `Physical` `Max HP-based damage`)
+- Nazrik (100% `Physical` `True damage`)
+- Valka (100% `Physical` `True damage`)
+- Nara (100% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -6737,7 +6742,8 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Kazim
 
 - Physical — Area, Single target
-- Max HP-based damage — Single target — `average`
+- Max HP-based damage — Single target
+- True damage — Single target — `average`
 
 #### Buffs provided by Kazim
 
@@ -6921,7 +6927,7 @@ Koko provides ATK to all units `low`, Damage taken to all units `low`, Direct he
 - **Signature skill**: Dominance Ring (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `high-initial-energy` `hp-scaling` `self-repositioner` `temporary-stat-buffer`
-- **Damage types**: Physical `high`
+- **Damage types**: Physical `high`, Lost HP-based damage `high`
 
 #### Play overview
 
@@ -7000,15 +7006,15 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 
 Kordan provides ATK in an area `low`, Lifedrain in an area `average`, and DEF Penetration (Supreme+) in an area `high`.
 
-**30** units include this provider among their top 6 synergy partners. Why the match is common:
+**33** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
 - Pang (5.0 / 5)
-- Silven (5.0 / 5)
 - Perseus (4.8 / 5)
+- Orion (3.9 / 5)
 - Alsa (3.8 / 5)
 
 ### Units that can act as a replacement for Kordan
@@ -7021,13 +7027,13 @@ These are the **4** strongest pairings:
 
 - Laios (42% `ally-buffer` `high-initial-energy` `temporary-stat-buffer`)
 - Zandrok (41% `hp-scaling` `temporary-stat-buffer`)
-- Marilee (40% `hp-scaling` `self-repositioner`)
+- Koko (40% `ally-buffer` `temporary-stat-buffer`)
 
 **Damage**
 
-- Alna (100% `Physical`)
-- Faramor (100% `Physical` `HP loss`)
-- Athalia (100% `Physical`)
+- Faramor (100% `Lost HP-based damage` `Physical`)
+- Athalia (100% `Physical` `Lost HP-based damage`)
+- Shakir (86% `Physical`)
 
 **Crowd Control**
 
@@ -7040,6 +7046,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Kordan
 
 - Physical — Area, Single target
+- Lost HP-based damage — Single target
 
 #### Buffs provided by Kordan
 
@@ -7062,8 +7069,8 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Demonseal Spear (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
-- **Behavior tags**: `ally-shielder` `hp-scaling`
-- **Damage types**: Physical `low`, Max HP-based damage `low`, True damage `average`
+- **Behavior tags**: `ally-shielder`
+- **Damage types**: Physical `low`, True damage `average`
 
 #### Play overview
 
@@ -7082,7 +7089,7 @@ These are the **4** strongest pairings:
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -7151,15 +7158,15 @@ Korin provides Shield to single targets `average`.
 
 **Similar Skills**
 
-- Baelran (60% `hp-scaling`)
-- Scarlita (48% `ally-shielder` `hp-scaling`)
-- Daimon (40% `ally-shielder` `hp-scaling`)
+- Callan (50% `ally-shielder`)
+- Ulmus (40% `ally-shielder`)
+- Lucca (40% `ally-shielder`)
 
 **Damage**
 
-- Lamentis (100% `True damage`)
-- Nara (100% `True damage` `Physical` `Max HP-based damage`)
-- Temesia (100% `Physical` `True damage`)
+- Frieren (100% `True damage`)
+- Himmel (100% `True damage` `Physical`)
+- Faramor (100% `True damage` `Physical`)
 
 **Crowd Control**
 
@@ -7172,8 +7179,8 @@ Korin provides Shield to single targets `average`.
 #### Damage types dealt by Korin
 
 - Physical — Area
-- Max HP-based damage — Area — `low`
-- True damage — Single target — `average`
+- Max HP-based damage — Area
+- True damage — Area, Single target — `average`
 
 #### Buffs provided by Korin
 
@@ -7386,7 +7393,7 @@ Common buffers are **Ravion**, **Kazim**, **Mikola**, or **Smokey & Meerky**.
 
 Kulu provides ATK (Legendary+) to single targets `low`.
 
-**13** units include this provider among their top 6 synergy partners. Why the match is common:
+**15** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -7412,8 +7419,8 @@ These are the **4** strongest pairings:
 **Similar Skills**
 
 - Alsa (100% `battlefield-modification` `self-repositioner`)
+- Marilee (50% `self-repositioner`)
 - Soren (40% `self-repositioner`)
-- Marilee (33% `self-repositioner`)
 
 **Damage**
 
@@ -7543,14 +7550,14 @@ Common buffers are **Mikola**, **Twins**, **Ravion**, or **Rolan**.
 
 Laios provides ATK to multiple targets `low` — conditional (rare), Haste in an area `low` — conditional (rare), Healing over time in an area `low` — conditional (rare), Magic DEF in an area `low` — conditional (rare), and Phys DEF in an area `low` — conditional (rare).
 
-**15** units include this provider among their top 6 synergy partners. Why the match is common:
+**17** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
 - Florabelle (5.0 / 5)
-- Marilee (5.0 / 5)
+- Harak (5.0 / 5)
 - Lenya (4.5 / 5)
 - Eryndor (2.7 / 5)
 
@@ -7601,7 +7608,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Omnisight (Mythic+)
 - **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `high-initial-energy` `hp-scaling` `mass-cc` `summoner`
-- **Damage types**: Magic `high`, True damage `average`
+- **Damage types**: Magic `high`, Max HP-based damage `low`, True damage `average`
 
 #### Play overview
 
@@ -7688,9 +7695,9 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Rolan**, or **Twins**.
 
 **Damage**
 
-- Sylphira (94% `Magic` `True damage`)
-- Nara (85% `True damage`)
-- Korin (83% `True damage`)
+- Frieren (100% `Magic` `True damage`)
+- Cyran (100% `Magic` `True damage`)
+- Sylphira (91% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -7830,7 +7837,7 @@ Common buffers are **Rolan**, **Kordan**, **Aliceth**, or **Smokey & Meerky**.
 
 - Himmel (50% `backline-assassin` `backline-inhibit` `self-repositioner`)
 - Soren (50% `counterattack` `self-repositioner`)
-- Evie (42% `backline-assassin` `backline-inhibit` `self-repositioner`)
+- Athalia (48% `backline-assassin` `self-repositioner`)
 
 **Damage**
 
@@ -7864,8 +7871,8 @@ Common buffers are **Rolan**, **Kordan**, **Aliceth**, or **Smokey & Meerky**.
 
 - **Signature skill**: Tempest Shot (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
-- **Behavior tags**: `cc-immunity` `energy-inhibitor` `hp-scaling` `invincibility` `non-ult-utility` `self-repositioner` `ultimate-cancel`
-- **Damage types**: Magic `low`
+- **Behavior tags**: `cc-immunity` `energy-inhibitor` `invincibility` `non-ult-utility` `self-repositioner` `ultimate-cancel`
+- **Damage types**: Magic `low`, True damage `low`
 
 #### Play overview
 
@@ -7952,15 +7959,15 @@ Lily May also requires units **buffing them**
 
 **Similar Skills**
 
-- Athalia (37% `hp-scaling` `non-ult-utility` `self-repositioner`)
-- Granny Dahnie (30% `energy-inhibitor` `hp-scaling`)
-- Kafra (28% `non-ult-utility` `self-repositioner`)
+- Kafra (32% `non-ult-utility` `self-repositioner`)
+- Athalia (28% `non-ult-utility` `self-repositioner`)
+- Cryonaia (25% `cc-immunity` `invincibility`)
 
 **Damage**
 
-- Silven (100% `Magic`)
-- Sylphira (100% `Magic`)
-- Shemira (100% `Magic`)
+- Frieren (100% `Magic` `True damage`)
+- Silven (100% `Magic` `True damage`)
+- Sylphira (100% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -7983,6 +7990,7 @@ Lily May also requires units **buffing them**
 
 - Magic — Single target
 - Max HP-based damage — Single target
+- True damage — Single target — `low`
 
 #### Debuffs provided by Lily May
 
@@ -8077,7 +8085,7 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Parisa**.
 
 Lorsan provides Haste to single targets `average` and Healing over time to single targets `average`.
 
-**37** units include this provider among their top 6 synergy partners. Why the match is common:
+**35** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -8228,8 +8236,8 @@ Lucca provides ATK (Mythic+) to single targets `low` and Magic DEF (Supreme+) in
 **Similar Skills**
 
 - Hepler (60% `ally-shielder` `high-initial-energy`)
-- Saida (40% `ally-shielder` `high-initial-energy`)
 - Valka (40% `ally-shielder` `high-initial-energy`)
+- Pang (40% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
@@ -8511,7 +8519,7 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 - Peggy (45% `ally-shielder` `high-initial-energy` `summoner`)
 - Lamentis (45% `high-initial-energy` `mass-cc` `summoner`)
-- Galahad (42% `ally-shielder` `backline-inhibit` `summoner`)
+- Galahad (37% `ally-shielder` `backline-inhibit` `summoner`)
 
 **Damage**
 
@@ -8553,7 +8561,7 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 - **Signature skill**: Eternal Serenity (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed normal
-- **Behavior tags**: `ally-healer` `aoe-healing`
+- **Behavior tags**: `ally-healer` `aoe-healing` `hp-loss`
 - **Damage types**: Magic `high`, Max HP-based damage `average`
 
 #### Play overview
@@ -8633,7 +8641,6 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 **Best overall replacement**
 
 - Rolan (58% `Healing` `Crowd Control`)
-- Smokey & Meerky (50% `Healing` `Similar Skills`)
 
 **Healing**
 
@@ -8643,15 +8650,15 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 
 **Similar Skills**
 
-- Solise (80% `ally-healer` `aoe-healing`)
-- Smokey & Meerky (80% `ally-healer` `aoe-healing`)
-- Hewynn (80% `ally-healer` `aoe-healing`)
+- Solise (60% `ally-healer` `aoe-healing`)
+- Smokey & Meerky (60% `ally-healer` `aoe-healing`)
+- Hewynn (60% `ally-healer` `aoe-healing`)
 
 **Damage**
 
-- Shemira (100% `Magic` `Max HP-based damage`)
-- Sylphira (99% `Magic`)
-- Lamentis (99% `Magic`)
+- Rolan (95% `Magic`)
+- Saida (91% `Magic`)
+- Galahad (91% `Magic`)
 
 **Crowd Control**
 
@@ -8665,7 +8672,8 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 
 - Magic — All units, Single target
 - DoT — Single target
-- Max HP-based damage — Single target — `average`
+- HP loss — Single target
+- Max HP-based damage — Single target
 
 #### Buffs provided by Ludovic
 
@@ -9124,7 +9132,7 @@ Marcille provides Direct healing (Mythic+) to single targets `high`.
 
 - **Signature skill**: Mid-Air Shot (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
-- **Behavior tags**: `hp-scaling` `self-repositioner`
+- **Behavior tags**: `self-repositioner`
 - **Damage types**: Physical `low`, True damage `low`
 
 #### Play overview
@@ -9211,9 +9219,9 @@ Marilee provides ATK (EX+10) to single targets `low`.
 
 **Best overall replacement**
 
-- Vala (87% `Damage` `Crowd Control`)
-- Nazrik (71% `Damage` `Crowd Control`)
-- Faramor (68% `Damage` `Crowd Control`)
+- Vala (82% `Damage` `Crowd Control`)
+- Faramor (64% `Damage` `Crowd Control`)
+- Nazrik (64% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -9223,15 +9231,15 @@ Marilee provides ATK (EX+10) to single targets `low`.
 
 **Similar Skills**
 
-- Athalia (60% `hp-scaling` `self-repositioner`)
-- Baelran (50% `hp-scaling`)
-- Vala (41% `hp-scaling` `self-repositioner`)
+- Alsa (60% `self-repositioner`)
+- Rhys (60% `self-repositioner`)
+- Kulu (50% `self-repositioner`)
 
 **Damage**
 
+- Himmel (100% `Physical` `True damage`)
 - Faramor (100% `Physical` `True damage`)
 - Athalia (100% `Physical` `True damage`)
-- Baelran (100% `Physical` `True damage`)
 
 **Crowd Control**
 
@@ -9267,7 +9275,7 @@ Marilee provides ATK (EX+10) to single targets `low`.
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
-- **Behavior tags**: `aoe-damage` `enemy-grouping` `life-drain` `mass-cc` `temporary-stat-buffer` `untargetable`
+- **Behavior tags**: `aoe-damage` `enemy-grouping` `hp-loss` `life-drain` `mass-cc` `temporary-stat-buffer` `untargetable`
 - **Damage types**: Magic `low`
 
 #### Play overview
@@ -9366,15 +9374,15 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Eironn (45% `aoe-damage` `enemy-grouping` `mass-cc`)
-- Igor (40% `aoe-damage` `life-drain` `untargetable`)
-- Voracia (37% `aoe-damage` `enemy-grouping` `life-drain`)
+- Eironn (40% `aoe-damage` `enemy-grouping` `mass-cc`)
+- Igor (36% `aoe-damage` `life-drain` `untargetable`)
+- Voracia (33% `aoe-damage` `enemy-grouping` `life-drain`)
 
 **Damage**
 
-- Shadewing (100% `Magic` `DoT`)
-- Zorya (99% `Magic`)
-- Faramor (82% `DoT`)
+- Frieren (100% `DoT` `Magic`)
+- Saida (100% `Magic` `DoT`)
+- Phraesto (99% `Magic`)
 
 **Debuffs on enemies**
 
@@ -9504,8 +9512,8 @@ These are the **4** strongest pairings:
 
 - Dionel (5.0 / 5)
 - Lily May (4.6 / 5)
+- Silven (4.3 / 5)
 - Perseus (4.0 / 5)
-- Silven (3.6 / 5)
 
 ### Units that can act as a replacement for Mikola
 
@@ -9661,8 +9669,8 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 - **Signature skill**: Phantom Chains (Skill 1)
 - **Movement**: mostly stationary (pulls enemies; moves on failed pull); walk speed fast
-- **Behavior tags**: `ally-healer` `assassin` `execute` `heal-inhibitor` `high-initial-energy`
-- **Damage types**: Physical `high`, Max HP-based damage `average`, True damage `high`
+- **Behavior tags**: `ally-healer` `assassin` `execute` `heal-inhibitor` `high-initial-energy` `hp-loss`
+- **Damage types**: Physical `high`, True damage `high`
 
 #### Play overview
 
@@ -9745,15 +9753,15 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 **Similar Skills**
 
-- Niru (51% `ally-healer` `assassin` `heal-inhibitor`)
-- Harak (50% `assassin` `execute` `heal-inhibitor`)
-- Cyran (34% `execute` `high-initial-energy`)
+- Harak (57% `assassin` `execute` `heal-inhibitor` `hp-loss`)
+- Niru (45% `ally-healer` `assassin` `heal-inhibitor`)
+- Ludovic (34% `ally-healer` `hp-loss`)
 
 **Damage**
 
-- Faramor (88% `True damage` `Physical`)
-- Valka (81% `True damage` `Physical`)
-- Athalia (74% `Physical` `True damage`)
+- Frieren (100% `True damage`)
+- Valka (100% `True damage` `Physical`)
+- Faramor (76% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -9773,7 +9781,7 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 - Physical — Single target
 - HP loss — Single target
-- Max HP-based damage — Area — `high`
+- Max HP-based damage — Area
 - True damage — Single target — `high`
 
 #### Buffs provided by Nara
@@ -9885,8 +9893,8 @@ Natsu also requires specific **named allies**
 
 **Best overall replacement**
 
-- Sylphira (62% `Damage`)
-- Lamentis (59% `Damage` `Crowd Control` `Similar Skills`)
+- Marcille (60% `Damage`)
+- Sylphira (52% `Damage`)
 
 **Similar Skills**
 
@@ -9896,8 +9904,9 @@ Natsu also requires specific **named allies**
 
 **Damage**
 
+- Saida (100% `Magic`)
 - Sylphira (100% `Magic`)
-- Silven (88% `Magic`)
+- Marcille (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -9941,7 +9950,7 @@ Natsu also requires specific **named allies**
 
 - **Signature skill**: Rend Rupture (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles); walk speed normal
-- **Behavior tags**: `heal-inhibitor` `hp-scaling` `mark-target`
+- **Behavior tags**: `heal-inhibitor` `mark-target`
 - **Damage types**: Physical `high`, True damage `high`
 
 #### Play overview
@@ -10015,21 +10024,21 @@ Look for units providing: `CRIT`
 
 **Best overall replacement**
 
-- Vala (61% `Damage` `Crowd Control`)
-- Faramor (60% `Damage`)
-- Orion (52% `Damage` `Crowd Control`)
+- Kazim (59% `Damage` `Crowd Control`)
+- Vala (58% `Damage` `Crowd Control`)
+- Faramor (57% `Damage`)
 
 **Similar Skills**
 
-- Silven (48% `hp-scaling` `mark-target`)
-- Satrana (40% `heal-inhibitor` `hp-scaling`)
-- Faramor (34% `heal-inhibitor` `hp-scaling`)
+- Sinbad (40% `heal-inhibitor` `mark-target`)
+- Silvina (40% `heal-inhibitor` `mark-target`)
+- Silven (30% `mark-target`)
 
 **Damage**
 
 - Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical`)
-- Nara (100% `True damage` `Physical`)
+- Valka (100% `True damage` `Physical`)
 
 **Crowd Control**
 
@@ -10156,7 +10165,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 - Bonnie (61% `backline-inhibit` `battle-start-burst` `enemy-debuffer`)
 - Shadewing (57% `dot-specialist` `enemy-debuffer`)
-- Frieren (40% `backline-assassin` `backline-inhibit` `dot-specialist`)
+- Frieren (36% `backline-assassin` `backline-inhibit` `dot-specialist`)
 
 **Damage**
 
@@ -10208,7 +10217,7 @@ Nerion also requires units **applying crowd control** to enemies
 - **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-healer` `assassin` `battle-start-ult` `heal-inhibitor` `hp-scaling`
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
-- **Damage types**: Magic `high`, HP loss `low`
+- **Damage types**: Magic `high`, Lost HP-based damage `average`
 
 #### Play overview
 
@@ -10279,15 +10288,15 @@ Niru also requires enemies **to be defeated**
 
 **Similar Skills**
 
-- Nara (51% `ally-healer` `assassin` `heal-inhibitor`)
+- Nara (45% `ally-healer` `assassin` `heal-inhibitor`)
 - Isabella (41% `ally-healer` `heal-inhibitor`)
-- Nazrik (33% `heal-inhibitor` `hp-scaling`)
+- Silvina (26% `assassin` `heal-inhibitor`)
 
 **Damage**
 
-- Dunlingr (100% `Magic` `HP loss`)
-- Shadewing (100% `Magic` `HP loss`)
-- Zorya (100% `Magic` `HP loss`)
+- Rolan (100% `Magic`)
+- Saida (100% `Magic`)
+- Sylphira (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -10307,7 +10316,7 @@ Niru also requires enemies **to be defeated**
 #### Damage types dealt by Niru
 
 - Magic — All units, Single target
-- HP loss — Single target — `low`
+- Lost HP-based damage — Single target
 
 #### Debuffs provided by Niru
 
@@ -10530,8 +10539,8 @@ Orion provides Shield to multiple targets `low`.
 **Best overall replacement**
 
 - Sylphira (57% `Damage`)
-- Faramor (53% `Damage`)
-- Lamentis (50% `Damage` `Crowd Control`)
+- Faramor (54% `Damage`)
+- Silven (53% `Damage`)
 
 **Buffs on allies**
 
@@ -10542,14 +10551,14 @@ Orion provides Shield to multiple targets `low`.
 **Similar Skills**
 
 - Eryndor (51% `aoe-damage` `enemy-debuffer` `high-damage-ult`)
-- Frieren (44% `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult`)
-- Faramor (40% `aoe-damage` `dot-specialist` `heal-inhibitor`)
+- Faramor (45% `aoe-damage` `dot-specialist` `heal-inhibitor`)
+- Frieren (40% `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult`)
 
 **Damage**
 
+- Silven (100% `Magic`)
 - Sylphira (100% `Magic`)
 - Cyran (100% `Magic`)
-- Lamentis (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -10599,7 +10608,7 @@ Orion provides Shield to multiple targets `low`.
 
 - **Signature skill**: Boxed Blessing (Skill 1)
 - **Movement**: stationary (no finite attack range); walk speed normal
-- **Behavior tags**: `enemy-debuffer` `energy-provider` `heal-inhibitor` `mass-cc` `summoner` `temporary-stat-buffer`
+- **Behavior tags**: `enemy-debuffer` `energy-provider` `heal-inhibitor` `hp-loss` `mass-cc` `summoner` `temporary-stat-buffer`
 - **Ally composition**: rearmost ally enters invincible box, then gains Energy and ATK
 - **Damage types**: Magic `high`, DoT `average`
 
@@ -10695,15 +10704,13 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Thador (42% `enemy-debuffer` `energy-provider` `temporary-stat-buffer`)
-- Cecia (42% `enemy-debuffer` `mass-cc` `summoner`)
-- Hodgkin (37% `enemy-debuffer` `heal-inhibitor` `summoner`)
+- Phraesto (40% `energy-provider` `heal-inhibitor` `hp-loss` `summoner`)
+- Thador (37% `enemy-debuffer` `energy-provider` `temporary-stat-buffer`)
+- Cecia (37% `enemy-debuffer` `mass-cc` `summoner`)
 
 **Damage**
 
 - Frieren (100% `DoT`)
-- Gwyneth (100% `DoT`)
-- Thador (100% `DoT`)
 
 **Debuffs on enemies**
 
@@ -10726,6 +10733,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Pandora
 
 - DoT — All units
+- HP loss — All units
 
 #### Buffs provided by Pandora
 
@@ -10844,7 +10852,7 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 
 **Similar Skills**
 
-- Saida (60% `ally-shielder` `energy-inhibitor` `high-initial-energy`)
+- Saida (50% `ally-shielder` `energy-inhibitor` `high-initial-energy`)
 - Hugin (50% `ally-shielder` `high-initial-energy` `temporary-stat-buffer`)
 - Bryon (41% `energy-inhibitor` `high-initial-energy`)
 
@@ -10974,7 +10982,7 @@ Common buffers are **Smokey & Meerky**, **Mikola**, **Kazim**, or **Twins**.
 
 Parisa provides ATK to multiple targets `high` and ATK SPD to multiple targets `low`.
 
-**29** units include this provider among their top 6 synergy partners. Why the match is common:
+**30** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -10983,7 +10991,7 @@ These are the **4** strongest pairings:
 - Himmel (3.9 / 5)
 - Dionel (3.5 / 5)
 - Lily May (3.4 / 5)
-- Fay (3.2 / 5)
+- Silven (2.4 / 5)
 
 ### Units that can act as a replacement for Parisa
 
@@ -10997,7 +11005,7 @@ These are the **4** strongest pairings:
 
 - Sonja (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 - Perseus (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
-- Tilaya (60% `aoe-damage` `temporary-stat-buffer`)
+- Faramor (60% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -11249,10 +11257,16 @@ Perseus also requires units **buffing them**
 
 Perseus provides ATK to multiple targets `average`, Magic DEF to multiple targets `low`, and Phys DEF to multiple targets `low`.
 
+**5** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **4** strongest pairings: 
+
 - Lily May (3.6 / 5)
 - Faramor (3.5 / 5)
 - Hepler (3.0 / 5)
-- Karma (2.0 / 5)
+- Silven (2.8 / 5)
 
 ### Units that can act as a replacement for Perseus
 
@@ -11272,7 +11286,7 @@ Perseus provides ATK to multiple targets `average`, Magic DEF to multiple target
 
 - Sonja (100% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 - Parisa (75% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
-- Tilaya (66% `aoe-damage` `temporary-stat-buffer`)
+- Faramor (72% `ally-buffer` `aoe-damage` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -11312,7 +11326,7 @@ Perseus provides ATK to multiple targets `average`, Magic DEF to multiple target
 
 - **Signature skill**: Crimson Contract (Skill 1)
 - **Movement**: moving (avg attack range 1.8 tiles); walk speed slow
-- **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `energy-provider` `heal-inhibitor` `summoner`
+- **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `energy-provider` `heal-inhibitor` `hp-loss` `summoner`
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
 - **Damage types**: Magic `high`
@@ -11389,7 +11403,7 @@ Common buffers are **Rowan**, **Mikola**, **Twins**, or **Pandora**.
 
 Phraesto provides Damage taken to single targets `low`.
 
-**13** units include this provider among their top 6 synergy partners. Why the match is common:
+**12** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
 
@@ -11404,9 +11418,7 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Antandra (64% `Crowd Control` `Buffs on allies`)
-- Satrana (56% `Buffs on allies` `Debuffs on enemies` `Damage`)
-- Orion (51% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Antandra (63% `Crowd Control` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -11416,15 +11428,15 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Gunnar (54% `ally-shielder` `aoe-damage` `heal-inhibitor`)
-- Galahad (42% `ally-shielder` `aoe-damage` `summoner`)
-- Dunlingr (40% `ally-buffer` `aoe-damage` `heal-inhibitor`)
+- Galahad (50% `ally-shielder` `aoe-damage` `hp-loss` `summoner`)
+- Gunnar (48% `ally-shielder` `aoe-damage` `heal-inhibitor`)
+- Pandora (40% `energy-provider` `heal-inhibitor` `hp-loss` `summoner`)
 
 **Damage**
 
 - Frieren (100% `Magic`)
-- Silven (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -11448,6 +11460,7 @@ These are the **4** strongest pairings:
 
 - Magic — Area, Single target
 - DoT — Single target
+- HP loss — Single target
 
 #### Buffs provided by Phraesto
 
@@ -11470,8 +11483,8 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
-- **Behavior tags**: `backline-assassin` `backline-inhibit` `enemy-grouping` `energy-inhibitor` `hp-scaling`
-- **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `low`
+- **Behavior tags**: `backline-assassin` `backline-inhibit` `enemy-grouping` `energy-inhibitor`
+- **Damage types**: Magic `high`, True damage `low`
 
 #### Play overview
 
@@ -11519,21 +11532,22 @@ teleported targets fall through portals, taking additional damage
 ### Units improving Pippa
 
 Look for units providing: `Haste`  
-Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
+Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
-- **Pandora**
-  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Ravion**
-  - Haste (multiple targets, average) `signature fuel`
-  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Thador**
   - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
-- **Rowan**
-  - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
-- **Phraesto**
-  - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
-- **Lyca**
-  - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
+  - Enemy defense via Magic DEF debuff (single target, high)
+- **Sinbad**
+  - Enemy defense via Magic DEF debuff (multiple targets, average)
+- **Pandora**
+  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
+  - Enemy defense via Damage taken debuff (single target, low)
+- **Kulu**
+  - Enemy defense via Damage taken debuff (all units, low)
+- **Carolina**
+  - Enemy defense via Magic DEF debuff (area, low)
+- **Cassadee**
+  - Enemy defense via Magic DEF debuff (area, low)
 
 ### Units benefitting most from Pippa
 
@@ -11545,19 +11559,21 @@ Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
 
 **Best overall replacement**
 
-- Sylphira (54% `Damage`)
+- Lily May (57% `Damage` `Debuffs on enemies`)
+- Sylphira (55% `Damage`)
+- Cyran (52% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
-- Lenya (41% `backline-assassin` `backline-inhibit`)
-- Granny Dahnie (40% `energy-inhibitor` `hp-scaling`)
-- Athalia (34% `backline-assassin` `hp-scaling`)
+- Lenya (48% `backline-assassin` `backline-inhibit`)
+- Reinier (40% `backline-assassin` `enemy-grouping`)
+- Voracia (34% `enemy-grouping` `energy-inhibitor`)
 
 **Damage**
 
+- Frieren (100% `Magic` `True damage`)
+- Silven (100% `Magic` `True damage`)
 - Sylphira (100% `Magic` `True damage`)
-- Lamentis (100% `Magic` `True damage`)
-- Indris (93% `True damage`)
 
 **Debuffs on enemies**
 
@@ -11577,8 +11593,8 @@ Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
 
 - Magic — Area, Single target
 - DoT — Area
-- Max HP-based damage — Multiple targets — `average`
-- True damage — Area — `average`
+- Max HP-based damage — Multiple targets
+- True damage — Area — `low`
 
 #### Debuffs provided by Pippa
 
@@ -11603,7 +11619,7 @@ Common buffers are **Lorsan**, **Smokey & Meerky**, **Dunlingr**, or **Twins**.
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-shielder` `backline-assassin` `energy-provider` `self-repositioner` `temporary-stat-buffer`
 - **Ally composition**: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
-- **Damage types**: Physical `low`, HP loss `average`
+- **Damage types**: Physical `low`, Lost HP-based damage `low`
 
 #### Play overview
 
@@ -11674,7 +11690,7 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Twins**.
 
 Ravion provides ATK to multiple targets `high`, Energy to multiple targets `average`, Haste (Mythic+) to multiple targets `average`, and Lifedrain (EX+10) to single targets `low` — conditional (rare).
 
-**99** units include this provider among their top 6 synergy partners. Why the match is common:
+**98** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -11691,7 +11707,8 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Lyca (51% `Debuffs on enemies` `Energy provider`)
+- Lyca (61% `Debuffs on enemies` `Damage` `Energy provider`)
+- Thador (57% `Similar Skills` `Damage` `Buffs on allies` `Energy provider`)
 
 **Buffs on allies**
 
@@ -11706,9 +11723,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Faramor (100% `Physical` `HP loss`)
-- Aliceth (100% `Physical` `HP loss`)
-- Himmel (98% `Physical`)
+- Thador (100% `Physical`)
+- Faramor (100% `Physical` `Lost HP-based damage`)
+- Athalia (100% `Physical` `Lost HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -11727,7 +11744,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Ravion
 
 - Physical — Area, Single target
-- HP loss — Single target — `average`
+- Lost HP-based damage — Single target
 
 #### Buffs provided by Ravion
 
@@ -11839,7 +11856,7 @@ Reinier provides Direct healing to single targets `low` and Damage taken (EX+10)
 
 **Similar Skills**
 
-- Pippa (33% `backline-assassin` `enemy-grouping`)
+- Pippa (40% `backline-assassin` `enemy-grouping`)
 - Indris (25% `interrupt`)
 - Salazer (25% `interrupt`)
 
@@ -11911,7 +11928,7 @@ Reinier provides Direct healing to single targets `low` and Damage taken (EX+10)
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, damage `high`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -11985,7 +12002,7 @@ Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Smokey & Meerky**.
 
 - Atalanta (80% `aoe-damage` `self-repositioner`)
 - Dionel (60% `aoe-damage` `self-repositioner`)
-- Tasi (50% `aoe-damage` `self-repositioner`)
+- Marilee (60% `self-repositioner`)
 
 **Damage**
 
@@ -12019,7 +12036,7 @@ Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Smokey & Meerky**.
 - **Signature skill**: Oath in the Stone (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-buffer` `ally-healer` `cc-immunity` `non-ult-utility` `temporary-stat-buffer`
-- **Damage types**: Magic `high`
+- **Damage types**: Magic `high`, HP loss `average`
 
 #### Play overview
 
@@ -12098,7 +12115,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Kazim**, or **Mikola**.
 
 Rolan provides ATK to all units `high`, Cleanse to all units `high`, Damage taken to all units `average`, Direct healing to all units `high`, Haste to single targets `high`, Max HP to all units `high`, Healing over time (Mythic+) in an area `average`, and DEF Penetration (Supreme+) to all units `low`.
 
-**81** units include this provider among their top 6 synergy partners. Why the match is common:
+**83** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -12123,9 +12140,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
-- Silven (100% `Magic`)
-- Saida (100% `Magic`)
+- Frieren (100% `Magic` `HP loss`)
+- Saida (100% `Magic` `HP loss`)
+- Galahad (93% `Magic`)
 
 **Crowd Control**
 
@@ -12144,6 +12161,7 @@ These are the **4** strongest pairings:
 
 - Magic — Area
 - DoT — Area
+- HP loss — Area — `average`
 
 #### Buffs provided by Rolan
 
@@ -12244,7 +12262,7 @@ Common buffers are **Rolan**, **Twins**, **Kazim**, or **Mikola**.
 
 Rowan provides Direct healing in an area `low`, Energy in an area `high`, Magic DEF (Mythic+) to single targets `average`, and Phys DEF (Mythic+) to single targets `average`.
 
-**38** units include this provider among their top 6 synergy partners. Why the match is common:
+**36** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -12271,8 +12289,8 @@ These are the **4** strongest pairings:
 **Similar Skills**
 
 - Twins (48% `ally-healer` `energy-provider`)
-- Ludovic (40% `ally-healer`)
 - Fay (36% `ally-healer`)
+- Solise (30% `ally-healer`)
 
 **Damage**
 
@@ -12316,8 +12334,8 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Seed Siphon (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
-- **Behavior tags**: `ally-shielder` `cheat-death` `energy-inhibitor` `high-initial-energy`
-- **Damage types**: Magic `high`, DoT `low`
+- **Behavior tags**: `ally-shielder` `cheat-death` `energy-inhibitor` `high-initial-energy` `hp-loss`
+- **Damage types**: Magic `high`, DoT `low`, HP loss `high`
 
 #### Play overview
 
@@ -12385,15 +12403,15 @@ Saida provides Shield (Supreme+) to multiple targets `high`.
 
 **Similar Skills**
 
-- Hepler (40% `ally-shielder` `high-initial-energy`)
-- Valka (40% `ally-shielder` `high-initial-energy`)
-- Peggy (34% `ally-shielder` `high-initial-energy`)
+- Valka (34% `ally-shielder` `high-initial-energy`)
+- Hepler (33% `ally-shielder` `high-initial-energy`)
+- Peggy (30% `ally-shielder` `high-initial-energy`)
 
 **Damage**
 
-- Marcille (73% `Magic`)
-- Sylphira (67% `Magic`)
-- Cryonaia (60% `Magic` `DoT`)
+- Phraesto (100% `Magic`)
+- Mehira (97% `Magic` `DoT`)
+- Frieren (89% `Magic` `HP loss` `DoT`)
 
 **Debuffs on enemies**
 
@@ -12415,6 +12433,7 @@ Saida provides Shield (Supreme+) to multiple targets `high`.
 
 - Magic — All units, Area, Single target
 - DoT — Single target
+- HP loss — Single target — `high`
 
 #### Buffs provided by Saida
 
@@ -12556,7 +12575,7 @@ Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Lyca**.
 
 - **Signature skill**: Fiery Dance (ultimate)
 - **Movement**: moving (avg attack range 1.5 tiles); walk speed normal
-- **Behavior tags**: `dot-specialist` `heal-inhibitor` `hp-scaling` `invincibility` `life-drain`
+- **Behavior tags**: `dot-specialist` `heal-inhibitor` `invincibility` `life-drain`
 - **Ally composition**: place allies within 2 tiles at battle start (Sparks grant)
 - **Damage types**: Magic `high`
 
@@ -12631,15 +12650,15 @@ Satrana provides Magic damage (Mythic+) to single targets `average` and Damage t
 
 **Similar Skills**
 
-- Shakir (48% `heal-inhibitor` `life-drain`)
-- Nazrik (40% `heal-inhibitor` `hp-scaling`)
-- Zorya (40% `hp-scaling` `life-drain`)
+- Shakir (57% `heal-inhibitor` `life-drain`)
+- Brutus (34% `invincibility` `life-drain`)
+- Voracia (34% `dot-specialist` `life-drain`)
 
 **Damage**
 
+- Frieren (100% `Magic`)
+- Rolan (100% `Magic`)
 - Silven (100% `Magic`)
-- Sylphira (100% `Magic`)
-- Shemira (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -12685,7 +12704,7 @@ Satrana provides Magic damage (Mythic+) to single targets `average` and Damage t
 
 - **Signature skill**: Divine Wrath (Mythic+)
 - **Movement**: moving (brief reposition); walk speed fast
-- **Behavior tags**: `ally-shielder` `aoe-damage` `execute` `hp-scaling` `non-ult-utility`
+- **Behavior tags**: `ally-shielder` `aoe-damage` `execute` `non-ult-utility`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -12766,9 +12785,9 @@ Scarlita provides Shield (Supreme+) to single targets `low`.
 
 **Similar Skills**
 
-- Korin (48% `ally-shielder` `hp-scaling`)
-- Aliceth (43% `execute` `hp-scaling` `non-ult-utility`)
-- Daimon (42% `ally-shielder` `hp-scaling` `non-ult-utility`)
+- Ulmus (48% `ally-shielder` `aoe-damage`)
+- Cyran (40% `aoe-damage` `execute`)
+- Bonnie (34% `aoe-damage` `non-ult-utility`)
 
 **Damage**
 
@@ -12814,7 +12833,7 @@ Scarlita provides Shield (Supreme+) to single targets `low`.
 - **Signature skill**: Shadow Strike (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `life-drain`
-- **Damage types**: Physical `low`, HP loss `high`
+- **Damage types**: Physical `low`, Lost HP-based damage `average`
 
 #### Play overview
 
@@ -12862,17 +12881,19 @@ pounce reduces extra Phys DEF when carrying specific buff
 ### Units improving Seth
 
 Look for units providing: `ATK` `Haste` `CRIT` `Energy` `Physical DEF`  
-Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
+Common buffers are **Mikola**, **Kordan**, **Aliceth**, or **Rolan**.
 
-- **Pandora**
-  - ATK (single target, high)
-  - Energy (single target, low) `signature fuel`
-  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Ravion**
   - ATK (multiple targets, high)
   - Haste (multiple targets, average) `signature fuel`
   - Energy (multiple targets, average) `signature fuel`
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
+  - Enemy defense via Phys DEF debuff (single target, average)
+- **Pandora**
+  - ATK (single target, high)
+  - Energy (single target, low) `signature fuel`
+  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
+  - Enemy defense via Damage taken debuff (single target, low)
 - **Rowan**
   - Energy (area, high) `signature fuel`
   - Phys DEF (single target, average)
@@ -12882,12 +12903,12 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
   - Crit (single target, average)
   - Energy (single target, high) `signature fuel`
   - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
+  - Enemy defense via Phys DEF debuff (single target, low)
+- **Laios**
+  - Enemy defense via Phys DEF debuff (area, high)
 - **Sonja**
   - ATK (multiple targets, high)
   - Magic DEF (multiple targets, low)
-- **Tilaya**
-  - DEF (area, high)
-  - DEF (area, high)
 
 ### Units benefitting most from Seth
 
@@ -12899,21 +12920,21 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 
 **Best overall replacement**
 
-- Harak (63% `Damage` `Similar Skills`)
-- Faramor (55% `Damage`)
-- Athalia (52% `Damage`)
+- Kordan (77% `Damage` `Crowd Control`)
+- Kruger (63% `Damage` `Debuffs on enemies`)
+- Gwyneth (61% `Damage` `Debuffs on enemies` `Crowd Control`)
 
 **Similar Skills**
 
-- Harak (60% `assassin` `life-drain`)
+- Harak (48% `assassin` `life-drain`)
 - Kruger (40% `life-drain`)
 - Shakir (30% `life-drain`)
 
 **Damage**
 
-- Himmel (100% `Physical`)
-- Faramor (100% `Physical` `HP loss`)
-- Athalia (100% `Physical`)
+- Faramor (100% `Physical` `Lost HP-based damage`)
+- Athalia (100% `Physical` `Lost HP-based damage`)
+- Kordan (100% `Physical` `Lost HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -12937,7 +12958,7 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 #### Damage types dealt by Seth
 
 - Physical — Single target
-- HP loss — Single target — `high`
+- Lost HP-based damage — Single target
 
 #### Debuffs provided by Seth
 
@@ -12956,7 +12977,7 @@ Common buffers are **Mikola**, **Twins**, **Kazim**, or **Smokey & Meerky**.
 - **Signature skill**: Withering Curse (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `dot-specialist` `enemy-debuffer`
-- **Damage types**: Magic `low`, DoT `low`, HP loss `low`
+- **Damage types**: Magic `low`, DoT `low`, Lost HP-based damage `low`
 
 #### Play overview
 
@@ -13043,9 +13064,9 @@ Shadewing also requires units **dealing continuous damage** to enemies
 
 **Damage**
 
+- Frieren (100% `Magic` `DoT`)
+- Saida (100% `Magic` `DoT`)
 - Mehira (100% `Magic` `DoT`)
-- Dunlingr (100% `Magic` `HP loss`)
-- Niru (100% `Magic` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -13066,7 +13087,7 @@ Shadewing also requires units **dealing continuous damage** to enemies
 
 - Magic — Single target
 - DoT — Single target
-- HP loss — Single target — `low`
+- Lost HP-based damage — Single target
 
 #### Debuffs provided by Shadewing
 
@@ -13152,7 +13173,7 @@ Common buffers are **Rolan**, **Twins**, **Lorsan**, or **Smokey & Meerky**.
 
 Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -13167,7 +13188,7 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Nara (67% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Nara (66% `Damage` `Debuffs on enemies` `Crowd Control`)
 - Kordan (55% `Crowd Control` `Damage`)
 - Kazim (50% `Damage` `Crowd Control`)
 
@@ -13179,9 +13200,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Satrana (48% `heal-inhibitor` `life-drain`)
-- Harak (40% `heal-inhibitor` `life-drain`)
+- Satrana (57% `heal-inhibitor` `life-drain`)
 - Isabella (40% `heal-inhibitor` `temporary-stat-buffer`)
+- Kruger (36% `life-drain`)
 
 **Damage**
 
@@ -13234,7 +13255,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed normal
 - **Behavior tags**: `high-damage-ult` `hp-scaling`
-- **Damage types**: Magic `high`, Max HP-based damage `low`
+- **Damage types**: Magic `high`, True damage `average`
 
 #### Play overview
 
@@ -13316,21 +13337,21 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 **Best overall replacement**
 
-- Natsu (70% `Damage` `Debuffs on enemies`)
 - Sylphira (64% `Damage` `Debuffs on enemies`)
 - Lamentis (57% `Damage` `Debuffs on enemies`)
+- Baelran (52% `Damage` `Debuffs on enemies` `Similar Skills`)
 
 **Similar Skills**
 
 - Baelran (50% `hp-scaling`)
-- Marilee (40% `hp-scaling`)
-- Nazrik (30% `hp-scaling`)
+- Zorya (30% `hp-scaling`)
+- Eryndor (28% `high-damage-ult`)
 
 **Damage**
 
-- Silven (100% `Magic`)
-- Sylphira (100% `Magic`)
-- Ludovic (100% `Magic` `Max HP-based damage`)
+- Frieren (100% `Magic` `True damage`)
+- Silven (100% `Magic` `True damage`)
+- Sylphira (100% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -13343,7 +13364,8 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 #### Damage types dealt by Shemira
 
 - Magic — Area, Single target
-- Max HP-based damage — Area, Single target — `low`
+- Max HP-based damage — Area, Single target
+- True damage — Area, Single target — `low`
 
 #### Debuffs provided by Shemira
 
@@ -13357,8 +13379,8 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 - **Signature skill**: Gravity Collapse (Skill 1)
 - **Movement**: stationary (avg attack range 12.0 tiles); walk speed normal
-- **Behavior tags**: `high-initial-energy` `hp-scaling` `mark-target` `non-ult-utility`
-- **Damage types**: Magic `high`
+- **Behavior tags**: `high-initial-energy` `mark-target` `non-ult-utility`
+- **Damage types**: Magic `high`, Max HP-based damage `low`, True damage `average`
 
 #### Play overview
 
@@ -13407,7 +13429,7 @@ deal bonus damage to enemies with high HP ratio
 ### Units improving Silven
 
 Look for units providing: `ATK SPD / Haste` `Energy` `DEF Penetration` `Physical DEF`  
-Common buffers are **Kordan**, **Evie**, **Rolan**, or **Aliceth**.
+Common buffers are **Mikola**, **Rolan**, **Dunlingr**, or **Smokey & Meerky**.
 
 Silven also requires units **buffing them**
 
@@ -13415,7 +13437,6 @@ Silven also requires units **buffing them**
   - ATK SPD via Haste (single target, low) `signature fuel`
   - Phys DEF (single target, low)
   - Grants 6 distinct temporary stat buffs to Silven
-  - Enemy defense via Magic DEF debuff (single target, low)
 - **Hugin**
   - ATK SPD via Haste (multiple targets, high) `signature fuel`
   - Energy (single target, average, conditional (frequent)) `signature fuel`
@@ -13424,13 +13445,11 @@ Silven also requires units **buffing them**
   - Grants 3 distinct temporary stat buffs to Silven
 - **Koko**
   - Grants 2 distinct temporary stat buffs to Silven
-  - Enemy defense via Damage taken debuff (single target, low)
-- **Sinbad**
-  - Enemy defense via Magic DEF debuff (multiple targets, average)
-- **Mehira**
-  - ATK SPD via Haste (multiple targets, average) `signature fuel`
+- **Sonja**
+  - Grants 2 distinct temporary stat buffs to Silven
+- **Tilaya**
+  - DEF (area, high)
   - Grants 1 distinct temporary stat buff to Silven
-  - Enemy defense via Damage taken debuff (single target, low)
 
 ### Units benefitting most from Silven
 
@@ -13442,19 +13461,21 @@ Silven also requires units **buffing them**
 
 **Best overall replacement**
 
+- Cyran (68% `Damage` `Crowd Control`)
 - Sylphira (68% `Damage` `Crowd Control`)
+- Orion (54% `Damage`)
 
 **Similar Skills**
 
-- Athalia (40% `hp-scaling` `non-ult-utility`)
-- Aliceth (33% `hp-scaling` `mark-target` `non-ult-utility`)
-- Daimon (28% `hp-scaling` `non-ult-utility`)
+- Athalia (24% `non-ult-utility`)
+- Gwyneth (24% `non-ult-utility`)
+- Aliceth (22% `mark-target` `non-ult-utility`)
 
 **Damage**
 
-- Sylphira (100% `Magic`)
-- Shemira (100% `Magic`)
-- Ludovic (100% `Magic`)
+- Sylphira (100% `Magic` `True damage`)
+- Cyran (100% `Magic` `True damage`)
+- Shemira (100% `Magic` `True damage`)
 
 **Crowd Control**
 
@@ -13468,6 +13489,7 @@ Silven also requires units **buffing them**
 
 - Magic — Single target
 - Max HP-based damage — Single target
+- True damage — Single target — `average`
 
 #### Crowd Control provided by Silven
 
@@ -13559,13 +13581,13 @@ Common buffers are **Kordan**, **Aliceth**, **Lyca**, or **Rolan**.
 
 - Hodgkin (80% `Damage` `Debuffs on enemies`)
 - Salazer (72% `Damage`)
-- Nara (63% `Damage`)
+- Sinbad (63% `Damage` `Similar Skills`)
 
 **Similar Skills**
 
 - Sinbad (57% `assassin` `energy-inhibitor` `heal-inhibitor` `mark-target`)
+- Nazrik (40% `heal-inhibitor` `mark-target`)
 - Vala (36% `assassin` `energy-inhibitor` `mark-target`)
-- Nazrik (34% `heal-inhibitor` `mark-target`)
 
 **Damage**
 
@@ -13685,7 +13707,7 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Twins**, or **Dunlingr**.
 
 ### Units benefitting most from Sinbad
 
-**12** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -13822,7 +13844,7 @@ Common buffers are **Contess**, **Evie**, **Mikola**, or **Parisa**.
 
 Smokey & Meerky provides ATK in an area `average`, Direct healing in an area `high`, Energy in an area `low`, Haste in an area `average`, and Healing over time in an area `high`.
 
-**81** units include this provider among their top 6 synergy partners. Why the match is common:
+**78** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -13854,7 +13876,7 @@ These are the **4** strongest pairings:
 
 - Hewynn (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 - Fay (100% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
-- Ludovic (80% `ally-healer` `aoe-healing`)
+- Velara (72% `ally-healer` `aoe-healing` `temporary-stat-buffer`)
 
 **Crowd Control**
 
@@ -13867,6 +13889,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Smokey & Meerky
 
 - DoT — Area
+- HP loss — Area
 
 #### Buffs provided by Smokey & Meerky
 
@@ -13982,7 +14005,7 @@ Solise provides ATK to single targets `low`, Direct healing to all units `high`,
 **Similar Skills**
 
 - Velara (86% `ally-healer` `ally-shielder` `aoe-healing`)
-- Ludovic (80% `ally-healer` `aoe-healing`)
+- Ludovic (60% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (60% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -14093,7 +14116,7 @@ Common buffers are **Rolan**, **Twins**, **Ravion**, or **Kazim**.
 
 Sonja provides ATK to multiple targets `average` and Magic DEF to multiple targets `low`.
 
-**19** units include this provider among their top 6 synergy partners. Why the match is common:
+**18** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -14255,8 +14278,8 @@ Soren provides Shield (Supreme+) to single targets `low`.
 **Similar Skills**
 
 - Lenya (50% `counterattack` `self-repositioner`)
+- Marilee (50% `self-repositioner`)
 - Kulu (40% `self-repositioner`)
-- Alsa (40% `self-repositioner`)
 
 **Damage**
 
@@ -14295,7 +14318,7 @@ Soren provides Shield (Supreme+) to single targets `low`.
 - **Signature skill**: Grand Finale (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `energy-inhibitor` `high-initial-energy` `interrupt` `life-drain` `mass-cc`
-- **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `low`
+- **Damage types**: Magic `high`, True damage `average`
 
 #### Play overview
 
@@ -14370,7 +14393,8 @@ Common buffers are **Kazim**, **Mikola**, **Ravion**, or **Smokey & Meerky**.
 **Best overall replacement**
 
 - Pippa (56% `Damage` `Debuffs on enemies`)
-- Natsu (50% `Damage`)
+- Baelran (55% `Damage` `Crowd Control`)
+- Lily May (52% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -14380,9 +14404,9 @@ Common buffers are **Kazim**, **Mikola**, **Ravion**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Natsu (95% `Magic`)
-- Pippa (89% `Magic` `True damage`)
-- Lamentis (88% `Magic` `True damage`)
+- Athalia (100% `True damage`)
+- Orion (100% `Magic`)
+- Faramor (95% `True damage`)
 
 **Debuffs on enemies**
 
@@ -14406,8 +14430,8 @@ Common buffers are **Kazim**, **Mikola**, **Ravion**, or **Smokey & Meerky**.
 #### Damage types dealt by Sylphira
 
 - Magic — Area, Single target
-- Max HP-based damage — Single target — `average`
-- True damage — Area — `average`
+- Max HP-based damage — Area, Single target
+- True damage — Area, Single target — `average`
 
 #### Debuffs provided by Sylphira
 
@@ -14430,7 +14454,7 @@ Common buffers are **Kazim**, **Mikola**, **Ravion**, or **Smokey & Meerky**.
 - **Signature skill**: Gaia Force (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed veryfast
 - **Behavior tags**: `execute` `high-damage-ult` `invincibility` `non-ult-utility` `temporary-stat-buffer`
-- **Damage types**: Physical `high`, HP loss `average`
+- **Damage types**: Physical `high`, HP loss `high`
 
 #### Play overview
 
@@ -14507,7 +14531,7 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Aliceth (55% `Damage`)
+- Rolan (55% `Damage` `Crowd Control` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -14523,9 +14547,8 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Athalia (100% `Physical`)
-- Faramor (100% `Physical` `HP loss`)
-- Himmel (100% `Physical`)
+- Nara (94% `Physical`)
+- Harak (85% `Physical` `HP loss`)
 
 **Crowd Control**
 
@@ -14538,7 +14561,8 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Taichi & Agumon
 
 - Physical — Area, Single target
-- HP loss — Area — `average`
+- HP loss — Area — `high`
+- Lost HP-based damage — Area
 
 #### Buffs provided by Taichi & Agumon
 
@@ -14880,9 +14904,9 @@ Common buffers are **Smokey & Meerky**, **Kazim**, **Mikola**, or **Twins**.
 
 **Damage**
 
-- Nara (100% `Physical` `True damage`)
-- Korin (100% `Physical` `True damage`)
-- Valka (97% `Physical` `True damage`)
+- Himmel (100% `Physical` `True damage`)
+- Faramor (100% `Physical` `True damage`)
+- Athalia (100% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -15000,7 +15024,7 @@ Common buffers are **Rolan**, **Twins**, **Smokey & Meerky**, or **Ravion**.
 
 Thador provides Crit to single targets `low`, Shield to multiple targets `average`, and Energy (EX+10) to single targets `high`.
 
-**49** units include this provider among their top 6 synergy partners. Why the match is common:
+**48** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -15062,7 +15086,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Resurrection (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
-- **Behavior tags**: `cheat-death` `counterattack` `life-drain`
+- **Behavior tags**: `cheat-death` `counterattack` `hp-loss` `life-drain`
 - **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
 - **Damage types**: Physical `average`
 
@@ -15135,15 +15159,15 @@ Look for units providing: `Max HP` `Energy`
 
 **Similar Skills**
 
-- Zorya (60% `cheat-death` `life-drain`)
-- Brutus (40% `cheat-death` `life-drain`)
-- Igor (34% `cheat-death` `life-drain`)
+- Zorya (48% `cheat-death` `life-drain`)
+- Brutus (34% `cheat-death` `life-drain`)
+- Igor (30% `cheat-death` `life-drain`)
 
 **Damage**
 
-- Himmel (100% `Physical`)
-- Faramor (100% `Physical`)
-- Athalia (100% `Physical`)
+- Nara (100% `Physical`)
+- Granny Dahnie (100% `Physical`)
+- Harak (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -15251,7 +15275,7 @@ Common buffers are **Rolan**, **Twins**, **Contess**, or **Evie**.
 
 Tilaya provides DEF (EX+10) in an area `high` and Max HP (EX+10) in an area `average`.
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -15387,7 +15411,7 @@ Common buffers are **Smokey & Meerky**, **Lorsan**, **Rolan**, or **Dunlingr**.
 
 Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `average`, Energy to multiple targets `low`, Haste to all units `high`, Max HP to multiple targets `average`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**74** units include this provider among their top 6 synergy partners. Why the match is common:
+**73** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -15542,13 +15566,13 @@ Look for units providing: `Shield` `Energy`
 
 **Best overall replacement**
 
-- Scarlita (51% `Damage` `Crowd Control`)
+- Scarlita (54% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
 - Talene (60% `aoe-damage` `cheat-death`)
 - Tasi (57% `aoe-damage` `cheat-death`)
-- Saida (48% `ally-shielder` `cheat-death`)
+- Scarlita (48% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -15588,7 +15612,7 @@ Look for units providing: `Shield` `Energy`
 - **Signature skill**: Swift Shift (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `energy-inhibitor` `hp-scaling` `mark-target` `self-repositioner` `stealth` `untargetable`
-- **Damage types**: Physical `average`, True damage `average`
+- **Damage types**: Physical `average`, True damage `high`
 
 #### Play overview
 
@@ -15683,21 +15707,21 @@ Vala also requires enemies **to be defeated**
 
 **Best overall replacement**
 
-- Nazrik (66% `Damage` `Crowd Control`)
+- Nazrik (63% `Damage` `Crowd Control`)
 - Orion (58% `Damage` `Crowd Control`)
-- Faramor (54% `Damage`)
+- Faramor (52% `Damage`)
 
 **Similar Skills**
 
-- Marilee (41% `hp-scaling` `self-repositioner`)
 - Sinbad (40% `assassin` `energy-inhibitor` `mark-target`)
 - Berial (40% `assassin` `energy-inhibitor` `stealth`)
+- Silvina (36% `assassin` `energy-inhibitor` `mark-target`)
 
 **Damage**
 
-- Faramor (100% `True damage` `Physical` `HP loss`)
+- Himmel (100% `True damage` `Physical`)
+- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical`)
-- Nazrik (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -15722,6 +15746,7 @@ Vala also requires enemies **to be defeated**
 #### Damage types dealt by Vala
 
 - Physical — Single target
+- Lost HP-based damage — Single target
 - True damage — Single target — `average`
 
 #### Debuffs provided by Vala
@@ -15876,7 +15901,7 @@ Common buffers are **Kordan**, **Aliceth**, **Rolan**, or **Smokey & Meerky**.
 - **Signature skill**: Phantom Slasher (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `ally-shielder` `counterattack` `high-initial-energy`
-- **Damage types**: Physical `high`
+- **Damage types**: Physical `high`, True damage `high`
 
 #### Play overview
 
@@ -15963,9 +15988,9 @@ Valka provides ATK SPD to multiple targets `low`.
 
 **Damage**
 
-- Nara (100% `True damage` `Physical`)
-- Temesia (100% `Physical` `True damage`)
-- Hodgkin (100% `Physical`)
+- Frieren (100% `True damage`)
+- Himmel (100% `True damage` `Physical`)
+- Faramor (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -15985,6 +16010,7 @@ Valka provides ATK SPD to multiple targets `low`.
 
 - Physical — Area
 - Max HP-based damage — Single target
+- True damage — Single target — `high`
 
 #### Buffs provided by Valka
 
@@ -16157,8 +16183,8 @@ Velara provides Basic stats to all units `high` and Direct healing to multiple t
 
 - **Signature skill**: Crimson Waltz (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed slow
-- **Behavior tags**: `aoe-damage` `dot-specialist` `energy-inhibitor`
-- **Damage types**: Magic `average`
+- **Behavior tags**: `aoe-damage` `dot-specialist` `energy-inhibitor` `hp-loss`
+- **Damage types**: Magic `average`, HP loss `low`
 
 #### Play overview
 
@@ -16234,21 +16260,21 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 **Best overall replacement**
 
-- Berial (68% `Damage` `Debuffs on enemies`)
-- Pippa (68% `Damage` `Debuffs on enemies`)
-- Voracia (62% `Damage` `Similar Skills`)
+- Saida (60% `Damage` `Debuffs on enemies`)
+- Galahad (53% `Damage`)
+- Ludovic (50% `Damage`)
 
 **Similar Skills**
 
-- Voracia (72% `aoe-damage` `dot-specialist` `energy-inhibitor`)
-- Arden (60% `aoe-damage` `dot-specialist`)
-- Hodgkin (40% `aoe-damage` `energy-inhibitor`)
+- Voracia (60% `aoe-damage` `dot-specialist` `energy-inhibitor`)
+- Arden (48% `aoe-damage` `dot-specialist`)
+- Faramor (34% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
-- Frieren (100% `Magic`)
-- Rolan (100% `Magic`)
-- Silven (100% `Magic`)
+- Frieren (100% `Magic` `HP loss`)
+- Rolan (100% `Magic` `HP loss`)
+- Saida (100% `Magic` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -16262,6 +16288,7 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 - Magic — All units, Single target
 - DoT — All units
+- HP loss — All units — `low`
 
 #### Debuffs provided by Viperian
 
@@ -16361,9 +16388,9 @@ Common buffers are **Evie**, **Kordan**, **Aliceth**, or **Rolan**.
 
 **Similar Skills**
 
-- Viperian (72% `aoe-damage` `dot-specialist` `energy-inhibitor`)
+- Viperian (60% `aoe-damage` `dot-specialist` `energy-inhibitor`)
 - Arden (40% `aoe-damage` `dot-specialist`)
-- Mehira (37% `aoe-damage` `enemy-grouping` `life-drain`)
+- Satrana (34% `dot-specialist` `life-drain`)
 
 **Damage**
 
@@ -16481,6 +16508,10 @@ Look for units providing: `Max HP` `Shield` `CRIT`
 
 ### Units that can act as a replacement for Walker
 
+**Best overall replacement**
+
+- Valen (54% `Crowd Control` `Damage`)
+
 **Similar Skills**
 
 - Kazim (66% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
@@ -16489,9 +16520,9 @@ Look for units providing: `Max HP` `Shield` `CRIT`
 
 **Damage**
 
-- Gunnar (100% `Physical`)
 - Himmel (100% `Physical`)
 - Gwyneth (100% `Physical`)
+- Thador (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -16525,7 +16556,7 @@ Look for units providing: `Max HP` `Shield` `CRIT`
 
 - **Signature skill**: Cocytus Breath (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
-- **Behavior tags**: `aoe-damage` `aoe-healing` `mass-cc` `non-ult-utility` `self-repositioner`
+- **Behavior tags**: `aoe-damage` `aoe-healing` `hp-loss` `mass-cc` `non-ult-utility` `self-repositioner`
 - **Damage types**: Magic `high`, DoT `average`
 
 #### Play overview
@@ -16603,6 +16634,10 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 ### Units that can act as a replacement for Yamato & Gabumon
 
+**Best overall replacement**
+
+- Galahad (54% `Damage` `Crowd Control`)
+
 **Healing**
 
 - Smokey & Meerky (83% `Healing over time` `Healing`)
@@ -16611,15 +16646,14 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 **Similar Skills**
 
-- Tasi (50% `aoe-damage` `mass-cc` `self-repositioner`)
-- Rhys (48% `aoe-damage` `self-repositioner`)
-- Valen (48% `aoe-damage` `mass-cc`)
+- Tasi (42% `aoe-damage` `mass-cc` `self-repositioner`)
+- Rhys (40% `aoe-damage` `self-repositioner`)
+- Valen (40% `aoe-damage` `mass-cc`)
 
 **Damage**
 
-- Cryonaia (100% `Magic` `DoT`)
-- Voracia (100% `Magic` `DoT`)
-- Cyran (93% `Magic` `DoT`)
+- Frieren (100% `DoT` `Magic`)
+- Galahad (100% `Magic`)
 
 **Crowd Control**
 
@@ -16633,6 +16667,7 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 - Magic — Area
 - DoT — Area
+- HP loss — Area
 
 #### Buffs provided by Yamato & Gabumon
 
@@ -16711,7 +16746,7 @@ Common buffers are **Rolan**, **Twins**, or **Pandora**.
 
 Zandrok provides Haste in an area `average` — conditional (frequent), Lifedrain in an area `high` — conditional (frequent), and Max HP to multiple targets `low`.
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -16728,7 +16763,7 @@ These are the **4** strongest pairings:
 
 - Tilaya (50% `aoe-damage` `temporary-stat-buffer`)
 - Lorsan (48% `aoe-damage` `temporary-stat-buffer`)
-- Faramor (42% `aoe-damage` `hp-scaling` `temporary-stat-buffer`)
+- Kordan (41% `hp-scaling` `temporary-stat-buffer`)
 
 **Crowd Control**
 
@@ -16841,7 +16876,7 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Rolan**.
 ### Units benefitting most from Zanie
 
 - Florabelle (2.0 / 5)
-- Lenya (1.9 / 5)
+- Harak (2.0 / 5)
 - Eryndor (1.4 / 5)
 
 ### Units that can act as a replacement for Zanie
@@ -16895,7 +16930,7 @@ Common buffers are **Kazim**, **Mikola**, **Smokey & Meerky**, or **Rolan**.
 - **Signature skill**: Guardian's Ring (ultimate)
 - **Movement**: moving (inactive while dormant); walk speed slow
 - **Behavior tags**: `cheat-death` `hp-scaling` `life-drain`
-- **Damage types**: Magic `high`, HP loss `high`
+- **Damage types**: Magic `high`, Lost HP-based damage `average`
 
 #### Play overview
 
@@ -16989,15 +17024,15 @@ Zorya also requires allies **casting ultimates**
 
 **Similar Skills**
 
-- Thoran (60% `cheat-death` `life-drain`)
+- Thoran (48% `cheat-death` `life-drain`)
 - Igor (41% `cheat-death` `life-drain`)
 - Baelran (40% `hp-scaling`)
 
 **Damage**
 
-- Dunlingr (100% `Magic` `HP loss`)
-- Shadewing (100% `Magic` `HP loss`)
-- Niru (100% `Magic` `HP loss`)
+- Saida (94% `Magic`)
+- Niru (94% `Magic` `Lost HP-based damage`)
+- Eironn (91% `Magic`)
 
 **Debuffs on enemies**
 
@@ -17021,7 +17056,7 @@ Zorya also requires allies **casting ultimates**
 #### Damage types dealt by Zorya
 
 - Magic — Arc, Area, Single target
-- HP loss — Single target — `high`
+- Lost HP-based damage — Single target
 
 #### Debuffs provided by Zorya
 

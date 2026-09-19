@@ -114,7 +114,9 @@ just validate
   mixes a primary-target CC with splash/AoE (or summoner all-enemy damage
   with capped summon multi-target CC), give each effect its own reach — do not
   inherit Area/All units from a neighboring clause.
-- **True damage hierarchy:** keep HP loss / max-HP subtypes; drop generic True when subtype applies.
+- **True damage categories:** keep direct HP loss separate from True damage.
+  Max-HP and lost-HP labels describe formulas. When a clause explicitly uses
+  a delivery type together with an HP formula, keep the delivery label.
 - **Freeze/frozen** → Bind CC type.
 - **Disarm/disarming** → Disarm CC type.
 - **Polarity:** buff vs debuff via effect `type`, not label suffix.

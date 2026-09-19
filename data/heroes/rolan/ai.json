@@ -346,9 +346,9 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "dot",
-                "name": "DoT",
-                "damage_type": "dot",
-                "label": "dot",
+                "name": "HP loss",
+                "damage_type": "hp_loss",
+                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
@@ -357,6 +357,25 @@
                 ],
                 "duration": -1,
                 "tick": 1
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "name": "HP loss",
+                "damage_type": "hp_loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40
+                  }
+                ]
               }
             ],
             "summon_effects": [],

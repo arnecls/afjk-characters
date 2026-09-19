@@ -44,9 +44,9 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "dot",
-                "damage_type": "dot",
-                "name": "DoT",
-                "label": "dot",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
@@ -55,6 +55,24 @@
                 ],
                 "duration": 3,
                 "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 160.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -356,6 +374,7 @@
   },
   "behavior_tags": [
     "energy-inhibitor",
+    "hp-loss",
     "hp-scaling",
     "taunt"
   ],

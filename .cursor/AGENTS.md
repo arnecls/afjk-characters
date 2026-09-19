@@ -51,23 +51,23 @@ that fight — i.e. its Assistance effects, not any hero's abilities.
   - Physical
   - Magic
   - Ranged
-- True damage tyes
-  - True damage (classic, no HP scaling in the phrase)
-  - HP loss — extra/true damage scaling on **the target's lost HP**
-  - Max HP-based damage — damage scaling on **the target's max HP**
+- True damage categories
+  - True damage — a defence-bypassing damage delivery type
+  - HP loss — direct HP reduction through an HP-loss effect
+  - Max HP-based damage — damage calculated from **the target's max HP**
+  - Lost HP-based damage — damage calculated from **the target's lost HP**
 - Damage over time (DoT)
 
 Damage over time needs to derived from text by look for indicators like "deals
 damage for 2s".
 
-True damage types ignore defensive stats and shields.
+True damage and HP loss ignore defensive stats and shields. Max HP-based and
+Lost HP-based damage are formulas; their shield and defence behavior depends on
+the delivery path used by the individual skill.
 
-**Hierarchy:** Max HP-based damage and HP loss are specialized forms of true
-damage. When both a generic `True damage` label and a concrete subtype apply
-to the same scaling phrase, keep the subtype and drop generic True. Never
-drop Max HP-based damage or HP loss in favor of generic True damage—the
-subtype labels are more precise (including `plus extra true damage equal to …
-max HP` riders).
+When one clause explicitly contains both True damage and an HP formula, keep
+both labels so the card exposes the delivery type and the formula. Otherwise
+use the applicable formula label.
 
 ## Targeting
 
@@ -154,8 +154,9 @@ roster** (same effect label), not same-role peers only.
   all heroes (quantiles when enough data); debuffs also reward
   `all enemies` reach. `assign_magnitudes()` in `analysis/magnitudes.py`.
 - **Crowd control** — duration-based (≥5s → high, ≥2s → average).
-- **HP loss / max-HP / true damage** — composite score from %, targeting, and
-  frequency; roster-wide quantiles in `assign_damage_magnitudes()`.
+- **HP loss / max-HP / lost-HP / true damage** — composite score from %,
+  targeting, and frequency; roster-wide quantiles in
+  `assign_damage_magnitudes()`.
 
 **Tier** in parentheses (`Mythic+`, `Level 3`, …) is unlock level, not
 strength. **Conditional (rare)** lowers magnitude by two steps; some labels
@@ -255,9 +256,9 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   500 at full build and first cast within ~5s) or a free/guaranteed early
   ultimate cast (`battle-start-ult`); passive battle-start setup alone does
   not count.
-  When any tier deals **HP loss**, **Max HP-based damage**, or **True
-  damage**, a final `- **True damage**: {type} \`{mag}\`, …` line lists types
-  (peak per type across tiers; p75 for non-ultimate).
+  When any tier deals **HP loss**, **Max HP-based damage**, **Lost HP-based
+  damage**, or **True damage**, a final `- **True damage**: {type} \`{mag}\`,
+  …` line lists types (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
   `analysis/behavior.py`; stored in `behavior.skill_overview`. Speed uses
   `compute_per_skill_speeds()` roster-wide quantiles. Damage scores per skill
@@ -438,7 +439,12 @@ skill effect.
   bonus such as "Gains extra N initial Energy"). Aligns with fast ult fill
   (~≤ 5s at 100 energy/s). Not the same as `battle-start-ult` (free or
   guaranteed early cast without relying on IE fill).
-- hp-scaling: Damage, survivability, or effects scale strongly with HP values.
+- hp-scaling: Non-damage survivability or combat effects scale strongly with
+  HP values, such as max-HP growth, HP-based recovery, or HP-cost defenses.
+  Do not use this tag for damage formulas.
+- hp-loss: Relies on repeated or defining direct enemy HP-loss effects where
+  skill text says an enemy or target loses HP. Do not use for self/ally HP
+  costs or damage calculated from lost HP.
 - invincibility: Grants damage and/or control immunity windows to self or allies.
 - life-drain: Sustains through lifesteal or HP recovery tied to dealing damage.
 - mark-target: Marks or designates units so allies or self can focus amplified damage.

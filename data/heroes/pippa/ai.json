@@ -343,8 +343,7 @@
     "backline-assassin",
     "backline-inhibit",
     "enemy-grouping",
-    "energy-inhibitor",
-    "hp-scaling"
+    "energy-inhibitor"
   ],
   "summon_profile": null,
   "skill_summaries": {

@@ -423,6 +423,30 @@
                 ],
                 "tick": 1.0,
                 "duration": -1
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_boss"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

@@ -102,10 +102,8 @@ ENEMY_DEFENSE_SELF_SHRED_MULT = 0.5
 _TRUE_FAMILY_DAMAGE_KEYS = frozenset(
     {
         "True damage",
-        "Max HP-based damage",
         "HP loss",
         "true",
-        "max_hp",
         "hp_loss",
     }
 )
@@ -931,7 +929,11 @@ def _effect_is_enemy_persistent_damage(effect: EffectRecord) -> bool:
     if effect["category"] == "damage":
         if effect["label"] == "DoT":
             return True
-        if effect["label"] in ("HP loss", "Max HP-based damage"):
+        if effect["label"] in (
+            "HP loss",
+            "Max HP-based damage",
+            "Lost HP-based damage",
+        ):
             return effect["tick"] is not None or (
                 effect["duration"] is not None and effect["duration"] > 0
             )
@@ -967,7 +969,8 @@ def _format_persistent_damage_detail(effects: list[EffectRecord]) -> str:
         if "persistent zone" not in parts:
             parts.append("DoT")
     if any(
-        effect["category"] == "damage" and effect["label"] == "HP loss"
+        effect["category"] == "damage"
+        and effect["label"] in ("HP loss", "Lost HP-based damage")
         for effect in effects
     ):
         parts.append("recurring HP loss")

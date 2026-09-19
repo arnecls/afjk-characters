@@ -69,6 +69,68 @@ class DetectorSeamTests(unittest.TestCase):
             ),
         )
 
+    def test_damage_classification_separates_hp_formula_and_hp_loss(self) -> None:
+        self.assertEqual(
+            detect_damage_types(
+                "deals extra damage equal to 5% of the enemy's lost HP.",
+                "Physical",
+            ),
+            ["Lost HP-based damage"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "causes the enemy to lose 40% (ATK-based) HP per second.",
+                "Physical",
+            ),
+            ["HP loss"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "deals extra damage equal to 15% of the target's max HP.",
+                "Physical",
+            ),
+            ["Max HP-based damage"],
+        )
+
+    def test_true_delivery_keeps_explicit_hp_formula(self) -> None:
+        self.assertEqual(
+            detect_damage_types(
+                "deals extra true damage equal to 15% of the target's max HP.",
+                "Physical",
+            ),
+            ["True damage", "Max HP-based damage"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "deals extra true damage equal to 5% of the enemy's lost HP.",
+                "Physical",
+            ),
+            ["True damage", "Lost HP-based damage"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "When a battle starts, flying blades deal extra true damage "
+                "equal to 2% of the target's max HP.",
+                "Physical",
+            ),
+            ["True damage", "Max HP-based damage"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "Deals true damage equal to 20% of max HP to nearby enemies.",
+                "Magic",
+            ),
+            ["True damage", "Max HP-based damage"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "deals extra true damage equal to 30% of all enemies' total "
+                "HP lost she has recorded.",
+                "Physical",
+            ),
+            ["True damage", "Lost HP-based damage"],
+        )
+
     def test_cc_duration_reads_seconds(self) -> None:
         self.assertEqual(
             extract_cc_duration("stuns the enemy for 2s.", "Stun"),

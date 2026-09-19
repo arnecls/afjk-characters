@@ -102,6 +102,25 @@
             "tick": 1.0
           },
           {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -119,6 +138,9 @@
           },
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Unaffected — Self"
@@ -463,6 +485,10 @@
       [
         "dot",
         "All units"
+      ],
+      [
+        "hp_loss",
+        "All units"
       ]
     ],
     "benefit_stats": [
@@ -633,7 +659,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "81e4a0467bc8689a2cbc7b1f75722b592bd5c15679b3c57d6abc7003b76d2f2b",
+    "inputs_hash": "28c10d2a412b8f1b78a80c154483bb9968b4adbe788900a119ec51da7033d89c",
     "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

@@ -262,7 +262,6 @@
   },
   "behavior_tags": [
     "heal-inhibitor",
-    "hp-scaling",
     "mark-target"
   ],
   "summon_profile": null,

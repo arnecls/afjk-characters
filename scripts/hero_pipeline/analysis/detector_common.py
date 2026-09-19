@@ -547,10 +547,11 @@ DAMAGE_TYPE_SORT_KEY = {
     "DoT": 4,
     "HP loss": 5,
     "Max HP-based damage": 6,
-    "True damage": 7,
+    "Lost HP-based damage": 7,
+    "True damage": 8,
 }
 
-TRUE_DAMAGE_TYPES = frozenset({"HP loss", "Max HP-based damage", "True damage"})
+TRUE_DAMAGE_TYPES = frozenset({"True damage", "HP loss"})
 
 DAMAGE_TARGETING_WEIGHT = {
     "All units": 5.0,

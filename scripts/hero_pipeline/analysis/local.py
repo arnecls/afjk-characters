@@ -14,7 +14,7 @@ from .postprocess import _postprocess_analyzed_hero
 from .records import HeroRecord
 from .skill_chunks import hero_from_record, load_skills_by_title_from_records
 
-ALGORITHM_VERSION = "local-analysis-v11"
+ALGORITHM_VERSION = "local-analysis-v13"
 
 
 def algorithm_hash() -> str:

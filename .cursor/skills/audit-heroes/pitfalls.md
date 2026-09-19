@@ -86,8 +86,9 @@ Daimon Playtime Plunder (passive Stitchy attack). Still open / different
 pattern: Nara Crimson Vengeance (`damage equal to X% of max HP` without
 `true damage` word), Vala Swift Shift (mixed strike types).
 
-**Convention:** prefer **Max HP-based damage only** for max-HP-scaled true
-hits (not generic True + Max HP).
+**Convention:** when the clause explicitly says **true damage**, prefer
+**True damage** for max-HP-scaled true hits; do not emit a second formula
+label.
 
 ### DoT false positives
 
@@ -496,7 +497,7 @@ Use these to calibrate both passes:
 | Bryon Enhance Force (Supreme+) | Haste buff Self | `haste permanently increases` |
 | Cyran Cursed Grasp | No immunity rows | Targeting priority only |
 | Cyran Mystic Recollection (EX+10) | Artifact block; no Silence CC | Merlin ≠ enemy hero Silence |
-| Shemira Ghastly Tribute | Max HP-based damage only | Not True + Max HP double label |
+| Shemira Ghastly Tribute | True damage only | Not True + Max HP double label |
 | Seth Hunter Instinct | DEF buff Self; Crit buff Self on upgrade | Not ally Crit; not missing combined Phys+Magic DEF |
 | Seth Enhance Force | Phys DEF debuff enemy | Not DEF buff from reduction text |
 | Granny Dahnie Glimmerbloom Blessings | DEF buff Self | Not self DEF debuff; DEF % not from HoT scalar |

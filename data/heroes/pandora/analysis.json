@@ -102,12 +102,34 @@
             "type": "debuff",
             "name": "ATK",
             "label": "debuff_offensive"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ]
           }
         ],
         "initial_energy": 0.0,
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "ATK",
@@ -526,6 +548,10 @@
       [
         "dot",
         "All units"
+      ],
+      [
+        "hp_loss",
+        "All units"
       ]
     ],
     "benefit_stats": [
@@ -735,7 +761,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "97eaefcd2dfb6f65fccefe986389ca61b8a898413b19815982e5784506671203",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a1e6a7520837926ca7af908a732d30b2d986f3cf377de252641990f3e19a921c",
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

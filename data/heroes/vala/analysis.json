@@ -126,6 +126,30 @@
                 "value": 450.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "sword"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
           }
         ],
         "initial_energy": 0.0,
@@ -135,6 +159,9 @@
           },
           {
             "label": "True damage"
+          },
+          {
+            "label": "Lost HP-based damage"
           },
           {
             "label": "Stun — Single target"
@@ -541,6 +568,10 @@
         "Single target"
       ],
       [
+        "lost_hp",
+        "Single target"
+      ],
+      [
         "true",
         "Single target"
       ]
@@ -748,7 +779,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "da79e33458e2725f511c969b457a091df66265d500a3fb967a9c5b58dff991cb",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "9eae4f77a1f380d0eccd8d42dec3c702fe68c68c4852ecf96b401f9cee7ce577",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -48,6 +48,25 @@
                 ],
                 "duration": -1,
                 "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 1.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -293,7 +312,8 @@
   "behavior_tags": [
     "aoe-damage",
     "dot-specialist",
-    "energy-inhibitor"
+    "energy-inhibitor",
+    "hp-loss"
   ],
   "summon_profile": null,
   "skill_summaries": {

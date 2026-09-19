@@ -153,9 +153,9 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "dot",
-                "damage_type": "dot",
-                "name": "DoT",
-                "label": "dot",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
@@ -175,6 +175,25 @@
                 "type": "debuff",
                 "name": "Vitality",
                 "label": "debuff_defensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -310,6 +329,7 @@
     "dot-specialist",
     "heal-inhibitor",
     "high-damage-ult",
+    "hp-loss",
     "self-repositioner"
   ],
   "summon_profile": null,

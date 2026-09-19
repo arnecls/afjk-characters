@@ -222,6 +222,24 @@
                     "value": 6.6
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 6.6
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -293,7 +311,6 @@
   "behavior_tags": [
     "cc-immunity",
     "energy-inhibitor",
-    "hp-scaling",
     "invincibility",
     "non-ult-utility",
     "self-repositioner",

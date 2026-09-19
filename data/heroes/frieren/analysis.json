@@ -277,6 +277,25 @@
             "type": "debuff",
             "name": "Vitality",
             "label": "debuff_defensive"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ]
           }
         ],
         "cooldown": 10.0,
@@ -288,6 +307,9 @@
           },
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "DoT — Area",
@@ -496,6 +518,10 @@
         "All units, Area"
       ],
       [
+        "hp_loss",
+        "Area"
+      ],
+      [
         "true",
         "All units"
       ]
@@ -673,7 +699,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "01d5b451df77b6a43007220f60a406434ff9902896d797d7346fa86049ac0a7b",
+    "inputs_hash": "2feb0086d5c5b67baa50ca7ea8c6a37ed9414ce623e860df437875677326795e",
     "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

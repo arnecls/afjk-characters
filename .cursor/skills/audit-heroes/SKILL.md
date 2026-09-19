@@ -159,7 +159,8 @@ Task progress:
 
 ### Pass 1 — High-level validation
 
-**Scope:** damage types (Physical, Magic, True, HP loss, Max HP-based, DoT),
+**Scope:** damage types (Physical, Magic, True, HP loss, Max HP-based,
+Lost HP-based, DoT),
 healing types (**Direct healing**, **Healing over time**), CC types, buff
 labels, debuff labels.
 
@@ -193,16 +194,12 @@ debuff) and fix detection.
 
 **Finding format:** `Granny Dahnie (Glimmerbloom Blessings): Phys DEF debuff Self -> DEF buff Self`
 
-#### True vs Max HP-based double-label (high-level)
+#### True damage and HP-formula labels (high-level)
 
-When text says **true damage equal to X% of max HP** (any word order), expect
-**Max HP-based damage only** — not both `True damage` and `Max HP-based
-damage` on the same strike. Run the true/max-HP pre-scan below.
-
-**Convention:** max-HP-scaled true hits collapse to **Max HP-based damage**
-(`_apply_true_damage_hierarchy` in `rewrite-summaries.py`). Generic **True
-damage** is correct only when the strike is true without max-HP scaling (e.g.
-flat `+27% true damage` on an ATK-based hit).
+Treat **True damage** and **HP loss** as delivery types. Treat **Max HP-based
+damage** and **Lost HP-based damage** as amount formulas. When a clause
+explicitly combines True damage with an HP formula, keep both labels. Otherwise
+keep the applicable formula label.
 
 **True damage without a hit in the chunk** — conversion / mode-change lines
 still belong on the skill card when they change how other hits work:
@@ -229,7 +226,7 @@ regex only matched contiguous `true damage equal to … of target's max HP`.
 Tests that only assert True **is** detected (not that Max HP is the **only**
 label) let regressions slip through. Re-run pre-scan after detection changes.
 
-**Finding format:** `Shemira (Ghastly Tribute): True + Max HP -> Max HP only`
+**Finding format:** `Shemira (Ghastly Tribute): formula rider -> True damage`
 
 `Character (Skill): found -> expected`
  
@@ -647,8 +644,8 @@ Applies to **single-hero** and **roster** fixes.
 Highest impact on magnitude bands and synergy scoring:
 
 1. **Heal `value: 0`** when text says restore HP
-2. **True + Max HP double-label** on max-HP-scaled true strikes — skews
-   damage-type profiles and magnitude bands
+2. **Delivery/formula mismatch** on HP-derived strikes — skews damage-type
+   profiles and magnitude bands
 3. **Self-targeted debuffs** — almost always false; read every pre-scan hit
    (self DEF/ATK **increase** is usually a buff mis-tag)
 4. **Debuff labels with buff-styled chips** — JSON correct, `TAG_DEFINITIONS` /
@@ -675,8 +672,8 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 
 | Topic | Correct | Reject / watch |
 |-------|---------|----------------|
-| True damage | True / HP loss / Max HP-based only on scored hit | Also tagging Physical/Magic |
-| True + Max HP | **Max HP-based damage only** when `true damage equal to X% of max HP` | Both `True damage` and `Max HP-based damage` rows |
+| True damage | True / HP loss / Max HP-based / Lost HP-based as applicable | Also tagging Physical/Magic |
+| Delivery + formula | Delivery label wins when the clause explicitly names True damage or HP loss | Formula label masking the delivery type |
 | DoT | Sustained enemy damage (`every Ns`, poison ticks) | Channeled magic burst; self/summon HP drain |
 | Direct healing | Instant HP restore (`restoring N% HP`) | HoT phrasing (`per second`, `over Ns`) |
 | Healing over time | Sustained restore to allies | Healing-lock cast cost; enemy HP drain |
@@ -747,13 +744,12 @@ DEF by 50% and Magic DEF by 50%` → **DEF buff Self**; any **Phys/Magic DEF
 debuff Self** row is spurious (self stat increase, not reduction).
 
 **High-level — Shemira Ghastly Tribute:** `deal true damage to a single enemy
-equal to 24% + 3% of their max HP` → **Max HP-based damage only**; pre-scan
-flags `True damage` + `Max HP-based damage` on same skill. Regression tests
-must assert True is **absent**, not merely present.
+equal to 24% + 3% of their max HP` → **True damage** because the clause
+explicitly names the delivery type; do not emit a second formula label.
 
 **High-level — Valka Phantom Slasher:** slash clause has true max-HP damage
-and self-heal in one sentence → still **Max HP-based damage only** (heal must
-not block dedup).
+and self-heal in one sentence → **True damage** (heal must not block delivery
+classification).
 
 **Detailed — Kazim Gale Barrage:** `320% (ATK-based) + 140% damage` is
 Physical only — no Max HP-based damage unless text says `of max HP`.

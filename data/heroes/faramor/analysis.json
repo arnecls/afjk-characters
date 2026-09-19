@@ -85,25 +85,6 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 1,
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 20.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -116,6 +97,25 @@
             ],
             "duration": 1.0,
             "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
@@ -125,10 +125,10 @@
             "label": "True damage"
           },
           {
-            "label": "HP loss"
+            "label": "DoT"
           },
           {
-            "label": "DoT"
+            "label": "Lost HP-based damage"
           }
         ]
       },
@@ -462,7 +462,7 @@
         "Area"
       ],
       [
-        "hp_loss",
+        "lost_hp",
         "Area"
       ],
       [
@@ -649,7 +649,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "257b2d6b878cd7448a05dabcd3d60bd6e085c47c63c9064a71688e96d398a282",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "21e0d45586dc6f0de61833f85993cb71c0a131cb7ea17d266185bcc5ad1a5fa8",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

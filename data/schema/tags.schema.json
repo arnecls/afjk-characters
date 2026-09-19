@@ -42,6 +42,7 @@
         "heal-inhibitor",
         "high-initial-energy",
         "hp-scaling",
+        "hp-loss",
         "invincibility",
         "life-drain",
         "mark-target",

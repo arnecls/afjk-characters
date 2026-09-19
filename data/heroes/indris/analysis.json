@@ -127,6 +127,24 @@
                 "value": 20.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
           }
         ],
         "initial_energy": 200.0,
@@ -136,6 +154,9 @@
           },
           {
             "label": "Max HP-based damage"
+          },
+          {
+            "label": "True damage"
           },
           {
             "label": "Magic DEF",
@@ -698,7 +719,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "d42c2d3480a4655e68765b0390c4511161777715dc893a50a30cfbb3ee326a1b",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "9900fa405ad1907e482753f6f7a0c5c2ea1d8f7bb49f037dc5ba808398bd856c",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

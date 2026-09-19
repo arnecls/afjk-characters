@@ -44,6 +44,7 @@ DAMAGE_TYPE_ORDER = (
     "DoT",
     "HP loss",
     "Max HP-based damage",
+    "Lost HP-based damage",
     "True damage",
 )
 PRYDWEN_TIERS = (
@@ -149,6 +150,7 @@ DAMAGE_COLUMNS = (
     ("True damage", "True DMG"),
     ("HP loss", "HP Loss DMG"),
     ("Max HP-based damage", "Max HP DMG"),
+    ("Lost HP-based damage", "Lost HP DMG"),
 )
 CC_TYPES = (
     "Stun",

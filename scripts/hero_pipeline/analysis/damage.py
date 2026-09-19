@@ -36,7 +36,6 @@ from .detector_common import (
     _MAX_HP_DAMAGE_EXCLUDE_RE,
     _SELF_HP_COST_RE,
     _TARGET_MAX_HP_DAMAGE_RES,
-    _TRUE_DAMAGE_MAX_HP_RE,
     _chunk_is_companion_focused,
     _policy_local,
 )
@@ -343,57 +342,21 @@ def _text_has_max_hp_damage(text: str) -> bool:
                     continue
                 return True
             return True
+    if re.search(
+        r"\b(?:extra |additional )?true damage(?:\s+to[^,]{0,120}?)?"
+        r",?\s+equal to \d+(?:\.\d+)?(?:\s*%\s*"
+        r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?)?\s+of "
+        r"(?:the )?(?:(?:each )?(?:target'?s?|enemies'?|enemy'?s?|their)\s+)?"
+        r"max hp\b",
+        t,
+    ):
+        return True
     return False
 
-def _true_damage_is_composite_atk_rider(text: str) -> bool:
-    """ATK-based hit with an explicit plus-extra-true-damage rider."""
-    t = text.lower()
-    return bool(
-        re.search(r"\(atk-based\)", text, re.I)
-        and re.search(r"plus extra true damage", t)
-    )
-
-def _true_damage_primary_scales_on_max_hp(text: str) -> bool:
-    """True when true damage scales on target max HP."""
-    return bool(_TRUE_DAMAGE_MAX_HP_RE.search(text))
-
-def _true_damage_prefers_max_hp_label(text: str) -> bool:
-    """True when generic True damage should collapse to Max HP-based only."""
-    t = text.lower()
-    if _true_damage_primary_scales_on_max_hp(text):
-        return True
-    return bool(
-        _text_has_max_hp_damage(text) and re.search(r"\btrue damage\b", t)
-    )
-
 def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
-    """Drop redundant generic True when a concrete true-damage subtype applies.
+    """Keep delivery and HP-formula labels when both are explicit."""
+    return types
 
-    Max HP-based damage and HP loss are specialized true-damage forms. Keep
-    the subtype label; never drop Max HP or HP loss in favor of generic True.
-    """
-    if "True damage" not in types:
-        return types
-    out = list(types)
-    if _true_damage_is_composite_atk_rider(text):
-        if _true_damage_prefers_max_hp_label(text):
-            out = [d for d in out if d != "True damage"]
-            if "Max HP-based damage" not in out:
-                out.append("Max HP-based damage")
-        return out
-    if _true_damage_prefers_max_hp_label(text):
-        out = [d for d in out if d != "True damage"]
-        if "Max HP-based damage" not in out:
-            out.append("Max HP-based damage")
-        return out
-    if "Max HP-based damage" in out and _true_damage_primary_scales_on_max_hp(
-        text
-    ):
-        out = [d for d in out if d != "True damage"]
-    if "HP loss" in out and _text_has_lost_hp_damage(text):
-        if not _text_has_primary_true_damage(text):
-            out = [d for d in out if d != "True damage"]
-    return out
 
 def _text_has_lost_hp_damage(text: str) -> bool:
     """True when damage scales on HP already lost (not heal or direct drain)."""
@@ -693,18 +656,29 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
             re.search(r"true damage equal to \d+(?:\.\d+)?(?:\s*%\s*\+\s*"
                       r"\d+(?:\.\d+)?)?(?:\s*%\s*)? of", t)
         )
-        if primary_true:
+        hp_formula = _text_has_max_hp_damage(text) or _text_has_lost_hp_damage(
+            text
+        )
+        if hp_formula:
+            types.append("True damage")
+        elif primary_true:
             types.append("True damage")
         elif (standalone_extra or max_hp_true) and not conditional_rider:
             types.append("True damage")
         elif not re.search(r"extra true damage", t):
             types.append("True damage")
-        if _text_has_lost_hp_damage(text) and "HP loss" not in types:
-            types.append("HP loss")
+        if (
+            _text_has_lost_hp_damage(text)
+            and "Lost HP-based damage" not in types
+        ):
+            types.append("Lost HP-based damage")
         if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
             types.append("Max HP-based damage")
-    if _text_has_lost_hp_damage(text) and "HP loss" not in types:
-        types.append("HP loss")
+    if (
+        _text_has_lost_hp_damage(text)
+        and "Lost HP-based damage" not in types
+    ):
+        types.append("Lost HP-based damage")
     if _text_has_enemy_direct_hp_loss(text) and "HP loss" not in types:
         types.append("HP loss")
     if _text_has_direct_hp_loss_hit(text) and "HP loss" not in types:
@@ -726,12 +700,7 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
             types.append("Magic")
     if _text_has_dot_damage(text) and not _dot_is_discrete_proc(text):
         types.append("DoT")
-    if "True damage" in types and "Max HP-based damage" in types:
-        if re.search(r"\+\s*\d+(?:\.\d+)?%\s+true damage", t):
-            types = [dt for dt in types if dt != "Max HP-based damage"]
     types = _apply_true_damage_hierarchy(types, text)
-    if re.search(r"increases? the true damage dealt to", t):
-        types = [dt for dt in types if dt != "Max HP-based damage"]
     if _dot_is_channeled_skill_damage(text):
         types = [dt for dt in types if dt != "Max HP-based damage"]
     if primary_dmg in types and "DoT" in types and not _has_instant_atk_damage(text):

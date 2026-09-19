@@ -43,6 +43,12 @@ class EnumMappingTests(unittest.TestCase):
     def test_damage_round_trip(self):
         self.assertEqual(hs.to_schema_damage_type("HP loss"), "hp_loss")
         self.assertEqual(hs.to_display_damage_type("hp_loss"), "HP loss")
+        self.assertEqual(
+            hs.to_schema_damage_type("Lost HP-based damage"), "lost_hp"
+        )
+        self.assertEqual(
+            hs.to_display_damage_type("lost_hp"), "Lost HP-based damage"
+        )
         self.assertEqual(hs.to_display_damage_type("dot"), "DoT")
 
     def test_tier_round_trip(self):
@@ -928,6 +934,7 @@ class RoundTripTests(unittest.TestCase):
         forbidden = [
             "atk_spd",
             "hp_loss",
+            "lost_hp",
             "knock_down",
             "legendary+",
             "buff_stat",
@@ -1043,7 +1050,7 @@ class SkillOverviewTests(unittest.TestCase):
             rs.format_behavior_section("Ravion", behavior, hero=hero)
         )
         self.assertIn("- **Damage types**:", text)
-        self.assertIn("HP loss", text)
+        self.assertIn("Lost HP-based damage", text)
         overview_idx = text.index("#### Skill overview")
         damage_idx = text.index("- **Damage types**:")
         self.assertLess(damage_idx, overview_idx)
@@ -1226,7 +1233,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn(summaries["ultimate"], ultimate["summary"])
         ultimate_tags = " ".join(tag_labels(ultimate["tags"]))
         self.assertIn("Physical", ultimate_tags)
-        self.assertIn("HP loss", ultimate_tags)
+        self.assertIn("Lost HP-based damage", ultimate_tags)
         self.assertIn("Unaffected — Self", ultimate_tags)
         self.assertNotIn("`high`", ultimate_tags)
         skill1 = next(c for c in cards if c["category"] == "skill1")

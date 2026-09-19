@@ -37,9 +37,9 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
                 "value": [
                   {
                     "type": "percentage",
@@ -67,6 +67,25 @@
                 ],
                 "duration": 1,
                 "tick": 0.5
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "lost_hp",
+                "name": "Lost HP-based damage",
+                "label": "damage_lost_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -301,7 +320,6 @@
     "aoe-damage",
     "dot-specialist",
     "heal-inhibitor",
-    "hp-scaling",
     "temporary-stat-buffer"
   ],
   "summon_profile": null,

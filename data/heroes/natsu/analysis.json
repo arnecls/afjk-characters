@@ -575,6 +575,10 @@
               {
                 "type": "unit_type",
                 "unit_type": "non_boss"
+              },
+              {
+                "type": "status_condition",
+                "status": "debuffed"
               }
             ],
             "type": "debuff",
@@ -586,45 +590,16 @@
                 "value": 50.0
               }
             ]
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "status_condition",
-                "status": "debuffed"
-              },
-              {
-                "type": "unit_type",
-                "unit_type": "non_boss"
-              }
-            ],
-            "type": "dot",
-            "damage_type": "dot",
-            "name": "DoT",
-            "label": "dot",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 20.0
-              }
-            ],
-            "duration": -1.0,
-            "tick": 0.5
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
           {
-            "label": "DoT (EX+10)"
+            "label": "Max HP",
+            "polarity": "debuff"
           },
           {
-            "label": "Max HP",
+            "label": "Max HP (EX+10)",
             "polarity": "debuff"
           }
         ]
@@ -927,7 +902,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "720ac66e9cb045a077369388b0494b625a45d47390f596976211792153ec5593",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "af214c0c7e72a526293e61000dba2a744a58a6f7b9763964d25dba48550fa4b1",
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

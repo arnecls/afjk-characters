@@ -454,10 +454,9 @@
                     "unit_type": "non_boss"
                   }
                 ],
-                "type": "dot",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
                 "value": [
                   {
                     "type": "percentage",

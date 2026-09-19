@@ -88,7 +88,12 @@ STAT_CATEGORY_LABELS = {
     "defensive": "Defensive Stats",
     "other": "Other Stats",
 }
-TRUE_DAMAGE_TYPES = {"True damage", "HP loss", "Max HP-based damage"}
+TRUE_DAMAGE_TYPES = {
+    "True damage",
+    "HP loss",
+    "Max HP-based damage",
+    "Lost HP-based damage",
+}
 STAT_RANK_SLUG_ALIASES = {
     "elijah-lailah": "twins",
     "smokey-meerky": "smokey-and-meerky",
@@ -139,6 +144,7 @@ def _display_damage_type(token: str) -> str:
         "true": "True damage",
         "hp_loss": "HP loss",
         "max_hp": "Max HP-based damage",
+        "lost_hp": "Lost HP-based damage",
         "dot": "DoT",
     }
     return aliases.get(token, token.replace("_", " ").title())

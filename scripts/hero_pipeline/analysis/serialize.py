@@ -89,6 +89,7 @@ _DAMAGE_SCHEMA_ALIASES = {
     "true damage": "true",
     "hp loss": "hp_loss",
     "max hp-based damage": "max_hp",
+    "lost hp-based damage": "lost_hp",
     "damage over time (dot)": "dot",
     "dot": "dot",
 }
@@ -96,6 +97,7 @@ _DAMAGE_DISPLAY_ALIASES = {
     "true": "True damage",
     "hp_loss": "HP loss",
     "max_hp": "Max HP-based damage",
+    "lost_hp": "Lost HP-based damage",
     "dot": "DoT",
 }
 _TIMING_DISPLAY_ALIASES = {
@@ -331,7 +333,12 @@ def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -
     if category == "damage":
         if label == "DoT":
             return "dot"
-        if label in ("HP loss", "Max HP-based damage", "True damage"):
+        if label in (
+            "HP loss",
+            "Max HP-based damage",
+            "Lost HP-based damage",
+            "True damage",
+        ):
             return f"damage_{to_schema_damage_type(label)}"
         return "damage_normal"
     if category == "buff":

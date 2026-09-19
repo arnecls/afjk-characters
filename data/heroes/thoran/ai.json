@@ -403,6 +403,7 @@
   "behavior_tags": [
     "cheat-death",
     "counterattack",
+    "hp-loss",
     "life-drain"
   ],
   "summon_profile": null,

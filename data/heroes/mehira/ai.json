@@ -264,6 +264,7 @@
   "behavior_tags": [
     "aoe-damage",
     "enemy-grouping",
+    "hp-loss",
     "life-drain",
     "mass-cc",
     "temporary-stat-buffer",

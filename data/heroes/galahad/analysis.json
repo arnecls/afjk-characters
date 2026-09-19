@@ -217,6 +217,30 @@
                 "value": 330.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
           }
         ],
         "cooldown": 8.0,
@@ -225,6 +249,9 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Bind — Single target"
@@ -467,6 +494,10 @@
       [
         "magic",
         "All units, Area, Single target"
+      ],
+      [
+        "hp_loss",
+        "Single target"
       ]
     ],
     "benefit_stats": [
@@ -688,7 +719,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "57df367db137341db81f75d95542fe960b1e3a36e2fde3af9acd6974fd8f5b31",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "0402da901b32fd9bc19f77c105b3b9f73a49a77f3a6dfc032dc94fed74b1d787",
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

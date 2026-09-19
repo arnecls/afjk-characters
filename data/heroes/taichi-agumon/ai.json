@@ -260,6 +260,24 @@
                 "name": "Physical",
                 "damage_type": "physical",
                 "label": "damage_normal"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "name": "Lost HP-based damage",
+                "damage_type": "lost_hp",
+                "label": "damage_lost_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

@@ -96,6 +96,25 @@
                 "value": 28.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 90.0
+              }
+            ]
           }
         ],
         "initial_energy": 400.0,
@@ -105,6 +124,9 @@
           },
           {
             "label": "Max HP-based damage"
+          },
+          {
+            "label": "True damage"
           }
         ]
       },
@@ -180,12 +202,34 @@
                 "value": 100.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           }
         ],
         "cooldown": 8.0,
         "skill_card_tags": [
           {
             "label": "Max HP-based damage"
+          },
+          {
+            "label": "True damage"
           },
           {
             "label": "Shield — Self",
@@ -418,6 +462,10 @@
       [
         "max_hp",
         "Area"
+      ],
+      [
+        "true",
+        "Area"
       ]
     ],
     "benefit_stats": [
@@ -638,7 +686,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e2691ea06e4e047030ab23eeca1f254f83214378dc718867cc4c4d8576455d53",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "f0a91a81c90d423c59f5b6bb85e616978d5cf94d1dfbae05430e6c8ad3909dde",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -257,7 +257,6 @@
     }
   },
   "behavior_tags": [
-    "hp-scaling",
     "self-repositioner"
   ],
   "summon_profile": null,

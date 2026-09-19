@@ -45,6 +45,25 @@
                     "value": 28.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 28.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -99,6 +118,25 @@
                   {
                     "type": "percentage",
                     "value": 100.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
                   }
                 ]
               }

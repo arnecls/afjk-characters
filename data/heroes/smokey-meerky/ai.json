@@ -235,9 +235,9 @@
                   }
                 ],
                 "type": "dot",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
@@ -258,6 +258,31 @@
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 0.1
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 3,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 14.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

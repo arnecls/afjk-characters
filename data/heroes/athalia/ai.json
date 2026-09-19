@@ -35,9 +35,27 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 33.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "lost_hp",
+                "name": "Lost HP-based damage",
+                "label": "damage_lost_hp",
                 "value": [
                   {
                     "type": "percentage",
@@ -361,7 +379,6 @@
   },
   "behavior_tags": [
     "backline-assassin",
-    "hp-scaling",
     "non-ult-utility",
     "self-repositioner"
   ],

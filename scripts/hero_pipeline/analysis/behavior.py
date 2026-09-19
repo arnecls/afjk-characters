@@ -901,6 +901,7 @@ _SKILL_CARD_CC_KEYS: tuple[str, ...] = tuple(
 _SKILL_CARD_DAMAGE_KEYS: tuple[str, ...] = (
     "HP loss",
     "Max HP-based damage",
+    "Lost HP-based damage",
     "True damage",
     "Physical",
     "Magic",

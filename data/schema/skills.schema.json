@@ -218,6 +218,7 @@
         "shield",
         "damage_hp_loss",
         "damage_max_hp",
+        "damage_lost_hp",
         "damage_normal",
         "damage_true",
         "cc",

@@ -210,6 +210,24 @@
                 "target_count": 1,
                 "type": "crowd_control",
                 "cc-type": "knock_up"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "lost_hp",
+                "name": "Lost HP-based damage",
+                "label": "damage_lost_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

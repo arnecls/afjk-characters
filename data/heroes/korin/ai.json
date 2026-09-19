@@ -157,6 +157,25 @@
                     "value": 2.0
                   }
                 ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 2.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -195,8 +214,7 @@
     }
   },
   "behavior_tags": [
-    "ally-shielder",
-    "hp-scaling"
+    "ally-shielder"
   ],
   "summon_profile": null,
   "skill_summaries": {

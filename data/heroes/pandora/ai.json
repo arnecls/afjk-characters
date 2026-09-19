@@ -51,6 +51,25 @@
                 "type": "debuff",
                 "name": "ATK",
                 "label": "debuff_offensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -332,6 +351,7 @@
     "enemy-debuffer",
     "energy-provider",
     "heal-inhibitor",
+    "hp-loss",
     "mass-cc",
     "summoner",
     "temporary-stat-buffer"

@@ -307,11 +307,33 @@
                 "value": 2.0
               }
             ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 2.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "Max HP-based damage"
+          },
+          {
+            "label": "True damage"
           }
         ]
       },
@@ -360,7 +382,7 @@
       ],
       [
         "true",
-        "Single target"
+        "Area, Single target"
       ]
     ],
     "benefit_stats": [
@@ -502,7 +524,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "072ec9599937c20a0740dea81ac7b4b6b5dae74366327d99cf057530ac5b65f4",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "3f3dac0942214fbecbb91ae279eea6a8cd3b601a853a8332b71baab27436b9e7",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

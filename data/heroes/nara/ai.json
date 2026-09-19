@@ -325,7 +325,8 @@
     "assassin",
     "execute",
     "heal-inhibitor",
-    "high-initial-energy"
+    "high-initial-energy",
+    "hp-loss"
   ],
   "summon_profile": null,
   "skill_summaries": {

@@ -102,9 +102,9 @@
             "area": "single",
             "target_count": 1,
             "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
             "value": [
               {
                 "type": "percentage",
@@ -135,7 +135,7 @@
         "initial_cooldown": 6.0,
         "skill_card_tags": [
           {
-            "label": "HP loss"
+            "label": "Lost HP-based damage"
           },
           {
             "label": "Magic"
@@ -364,7 +364,7 @@
         "All units, Single target"
       ],
       [
-        "hp_loss",
+        "lost_hp",
         "Single target"
       ]
     ],
@@ -513,7 +513,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0428cde9085e6f9459b3ef7c53cf167a3ccd0e3b7841ed6f7601667a67766cbc",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "ece885fdc700f8ac242d00a575906bbef76c6a1fe035d75296986a23aed5ee86",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -386,6 +386,24 @@
             "cc-type": "knock_up"
           },
           {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
+          },
+          {
             "tier": "ex+10",
             "targeting_label": "Self",
             "is_max_known": true,
@@ -426,6 +444,9 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Lost HP-based damage"
           },
           {
             "label": "DEF — Self (EX+10)",
@@ -487,6 +508,10 @@
       [
         "physical",
         "Area, Single target"
+      ],
+      [
+        "lost_hp",
+        "Single target"
       ]
     ],
     "benefit_stats": [
@@ -692,7 +717,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "226752ae5790d3bd84a5236a146e90de063b3bf1450ad56bcbf35b4be9931e9e",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "931e28555f489dfd12f9413c91113c0c595c0bc7a7e45d31df7b1f059e9d4e38",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

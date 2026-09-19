@@ -84,6 +84,25 @@
             "target_count": -1,
             "area_count": -1,
             "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
             "damage_type": "max_hp",
             "name": "Max HP-based damage",
             "label": "damage_max_hp",
@@ -100,6 +119,9 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "True damage"
           },
           {
             "label": "Max HP-based damage"
@@ -409,9 +431,9 @@
             "area": "single",
             "target_count": 1,
             "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
             "value": [
               {
                 "type": "percentage",
@@ -422,7 +444,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "HP loss"
+            "label": "True damage"
           },
           {
             "label": "Damage taken",
@@ -472,12 +494,12 @@
         "All units, Multiple targets, Single target"
       ],
       [
-        "hp_loss",
-        "Single target"
-      ],
-      [
         "max_hp",
         "All units"
+      ],
+      [
+        "true",
+        "All units, Single target"
       ]
     ],
     "benefit_stats": [
@@ -659,7 +681,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "bcb7ec49c88ea118ff19544f3004cd61308288338c35e4988f3f60fefb4aa70b",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "fb75fe9806220c9c6eff728733ee5bc85c2cd5825a0c1d65ca4990f9ffe91677",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

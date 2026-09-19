@@ -250,6 +250,24 @@
             ],
             "duration": 6.0,
             "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 2.4
+              }
+            ]
           }
         ],
         "cooldown": 11.0,
@@ -260,6 +278,9 @@
           },
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Vitality",
@@ -434,6 +455,10 @@
       ],
       [
         "dot",
+        "Single target"
+      ],
+      [
+        "hp_loss",
         "Single target"
       ]
     ],
@@ -636,7 +661,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "92c9e5b5011a2b6e2eebe8575d51b8b8530fbf6832acfd848325adc26cc0783f",
+    "inputs_hash": "6b0e112daaed234c734125ad9ac30b81495c22da4f8699d34dde65c46b8189ec",
     "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

@@ -119,7 +119,7 @@
               "low"
             ]
           },
-          "description": "Roster-relative magnitude per special damage type (HP loss, Max HP-based, True damage)."
+          "description": "Roster-relative magnitude per special damage type (HP loss, Max HP-based, Lost HP-based, True damage)."
         },
         "benefit_stats": {
           "type": "array",

@@ -423,12 +423,33 @@
                 "value": 20.0
               }
             ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
             "label": "Max HP-based damage (EX+10)"
+          },
+          {
+            "label": "True damage (EX+10)"
           },
           {
             "label": "ATK",
@@ -561,6 +582,10 @@
       ],
       [
         "max_hp",
+        "Single target"
+      ],
+      [
+        "true",
         "Single target"
       ]
     ],
@@ -768,7 +793,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "863c3fc519f4d5b747fc824a8b4303fe721f8eff0be5964571d96f8bf88d8478",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "ea1420ca3e6fe22b4a2964ab8528999cc76896ba7cda8978a5f51ad21c850b5c",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

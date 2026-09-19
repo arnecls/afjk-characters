@@ -35,15 +35,35 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
+                "damage_type": "lost_hp",
+                "name": "Lost HP-based damage",
+                "label": "damage_lost_hp",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 6.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "tick": 1.0,
+                "duration": 6.0
               },
               {
                 "tier": "base",
@@ -72,6 +92,24 @@
                 "name": "Healing",
                 "label": "healing",
                 "duration": 6.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -317,6 +355,7 @@
     "assassin",
     "execute",
     "heal-inhibitor",
+    "hp-loss",
     "life-drain"
   ],
   "summon_profile": null,

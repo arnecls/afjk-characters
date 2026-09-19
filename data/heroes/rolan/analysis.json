@@ -513,11 +513,33 @@
             ],
             "duration": -1.0,
             "tick": 1.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "HoT — Area",
@@ -624,6 +646,10 @@
       ],
       [
         "dot",
+        "Area"
+      ],
+      [
+        "hp_loss",
         "Area"
       ]
     ],
@@ -847,7 +873,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "2acd98542f5966a9d8ed11c6fac14cb0d359123a921d9467c47065752f3cf1a4",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "39fd8bc39360a7ab85f5cbc885bf80590bb7d87b07a41384858d66f8c770ce8a",
+    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

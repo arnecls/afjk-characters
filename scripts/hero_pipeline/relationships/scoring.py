@@ -193,7 +193,7 @@ def _merge_effects(effects: list[EffectRecord]) -> list[EffectRecord]:
 
 
 
-TRUE_DAMAGE_TYPES = frozenset({"True damage", "Max HP-based damage", "HP loss"})
+TRUE_DAMAGE_TYPES = frozenset({"True damage", "HP loss"})
 DEFAULT_ROLE_CATEGORY = "specialist"
 STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
 
@@ -232,7 +232,7 @@ DAMAGE_DEALER_ROLE = "damage_dealer"
 ENEMY_DEFENSE_BASE_MULT = 2.0
 ENEMY_DEFENSE_SELF_SHRED_MULT = 0.5
 _TRUE_FAMILY_DAMAGE_KEYS = frozenset(
-    {"True damage", "Max HP-based damage", "HP loss", "true", "max_hp", "hp_loss"}
+    {"True damage", "HP loss", "true", "hp_loss"}
 )
 _DEF_DEBUFF_PHYS = frozenset({"Phys DEF"})
 _DEF_DEBUFF_MAGIC = frozenset({"Magic DEF"})
@@ -839,7 +839,11 @@ def _effect_is_enemy_persistent_damage(effect: EffectRecord) -> bool:
     if effect["category"] == "damage":
         if effect["label"] == "DoT":
             return True
-        if effect["label"] in ("HP loss", "Max HP-based damage"):
+        if effect["label"] in (
+            "HP loss",
+            "Max HP-based damage",
+            "Lost HP-based damage",
+        ):
             return effect["tick"] is not None or (
                 effect["duration"] is not None and effect["duration"] > 0
             )
@@ -875,7 +879,8 @@ def _format_persistent_damage_detail(effects: list[EffectRecord]) -> str:
             parts.append("DoT")
     if any(
         (
-            effect["category"] == "damage" and effect["label"] == "HP loss"
+            effect["category"] == "damage"
+            and effect["label"] in ("HP loss", "Lost HP-based damage")
             for effect in effects
         )
     ):
@@ -3174,6 +3179,7 @@ def _damage_type(value: str) -> str:
         "True damage",
         "Max HP-based damage",
         "HP loss",
+        "Lost HP-based damage",
         "DoT",
     }:
         return value
@@ -3183,6 +3189,7 @@ def _damage_type(value: str) -> str:
         "true": "True damage",
         "max_hp": "Max HP-based damage",
         "hp_loss": "HP loss",
+        "lost_hp": "Lost HP-based damage",
         "dot": "DoT",
     }.get(value, value.replace("_", " ").title())
 

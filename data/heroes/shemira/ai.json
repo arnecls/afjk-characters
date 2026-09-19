@@ -93,6 +93,25 @@
                     "value": 33.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 33.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -149,6 +168,24 @@
                 "type": "debuff",
                 "name": "Max HP",
                 "label": "debuff_stat"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 3.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

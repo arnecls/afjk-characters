@@ -458,6 +458,24 @@
             "tick": 1.0
           },
           {
+            "tier": "ex+15",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 160.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "ex+15",
             "immunity_type": "unaffected",
@@ -474,6 +492,9 @@
           },
           {
             "label": "DoT (EX+15)"
+          },
+          {
+            "label": "HP loss (EX+15)"
           },
           {
             "label": "Damage dealt",
@@ -546,6 +567,10 @@
       ],
       [
         "dot",
+        "Single target"
+      ],
+      [
+        "hp_loss",
         "Single target"
       ]
     ],
@@ -787,7 +812,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a385608499787329d6234885baa494bd74014dd811ba52bbc3b2db32386229f4",
+    "inputs_hash": "4d1d42b6c11e9e7218b3793dadaa834a18030605dabd2bb19fac8b9f4f9eddd1",
     "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
   }
 }

@@ -126,6 +126,24 @@
                     "value": 1.5999999999999999
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 1.5999999999999999
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -227,7 +245,6 @@
   },
   "behavior_tags": [
     "high-initial-energy",
-    "hp-scaling",
     "mark-target",
     "non-ult-utility"
   ],

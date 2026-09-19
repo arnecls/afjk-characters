@@ -59,6 +59,25 @@
                 "area_count": 4,
                 "cc-type": "bind",
                 "duration": 3
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "rectangle",
+                "target_count": -1,
+                "type": "damage",
+                "area_count": 4,
+                "name": "HP loss",
+                "damage_type": "hp_loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 36
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -267,6 +286,7 @@
   "behavior_tags": [
     "aoe-damage",
     "aoe-healing",
+    "hp-loss",
     "mass-cc",
     "non-ult-utility",
     "self-repositioner"

@@ -276,9 +276,9 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "dot",
-                "damage_type": "dot",
-                "name": "DoT",
-                "label": "dot",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
@@ -287,6 +287,24 @@
                 ],
                 "duration": 2,
                 "tick": 1.0
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 160.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -343,7 +361,8 @@
     "ally-shielder",
     "cheat-death",
     "energy-inhibitor",
-    "high-initial-energy"
+    "high-initial-energy",
+    "hp-loss"
   ],
   "summon_profile": null,
   "skill_summaries": {
