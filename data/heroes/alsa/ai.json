@@ -84,6 +84,11 @@
                   {
                     "type": "status_condition",
                     "status": "active_state"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "cooldown",
+                    "interval": 7
                   }
                 ]
               }
