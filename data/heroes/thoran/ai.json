@@ -270,7 +270,32 @@
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "fatal_blow",
+                    "self": true
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [
@@ -283,7 +308,7 @@
               {
                 "label": "Cheat death",
                 "tier": "mythic+",
-                "targeting": "Single target",
+                "targeting": "Self",
                 "description": "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP."
               }
             ],
