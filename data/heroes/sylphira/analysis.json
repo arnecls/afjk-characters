@@ -64,16 +64,6 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "crowd_control",
-            "cc-type": "interrupt"
-          },
-          {
-            "tier": "base",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -103,7 +93,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 30.0
+                "value": 25.0
               }
             ],
             "persistence": "unknown"
@@ -178,9 +168,6 @@
             "polarity": "debuff"
           },
           {
-            "label": "Interrupt — Single target"
-          },
-          {
             "label": "Silence — Area"
           },
           {
@@ -234,7 +221,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 120.0
+                "value": 150.0
               }
             ]
           },
@@ -482,11 +469,46 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Area",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 250.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
             "area": "radius",
-            "target_count": -1,
+            "target_count": 3,
             "area_count": 2,
             "type": "damage",
             "damage_type": "true",
@@ -501,11 +523,11 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Area",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
             "area": "radius",
-            "target_count": -1,
+            "target_count": 3,
             "area_count": 2,
             "type": "damage",
             "damage_type": "max_hp",
@@ -536,6 +558,14 @@
           },
           {
             "label": "Max HP-based damage"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
           },
           {
             "label": "Haste — Self",
@@ -627,20 +657,7 @@
       }
     },
     "synergy_profile": {
-      "provides": [
-        {
-          "label": "Dispel debuffs",
-          "tier": "mythic+",
-          "targeting": "Self",
-          "description": "Every time the score plays, it removes all dispellable debuffs from Sylphira and restores 40% of her max HP and 250 Energy."
-        },
-        {
-          "label": "Stacking",
-          "tier": "mythic+",
-          "targeting": "Single target",
-          "description": "While the score is active, collecting more beats makes it play 10% faster and further increases Sylphira's Haste by 3, up to 10 stacks."
-        }
-      ],
+      "provides": [],
       "requires": []
     },
     "damage_entries": [
@@ -650,16 +667,17 @@
       ],
       [
         "max_hp",
-        "Area, Single target"
+        "Multiple targets, Single target"
       ],
       [
         "true",
-        "Area, Single target"
+        "Multiple targets, Single target"
       ]
     ],
     "benefit_stats": [
       "atk",
-      "haste"
+      "haste",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -885,7 +903,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ec9fd006b578d20711544e73fe10c386a956b32e490ed3a29b1aac27ee1c2a0c",
+    "inputs_hash": "7005165060ad428e05ec5496398239dc6b9411e18024dc4913c9698f5c6bbe3a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

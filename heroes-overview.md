@@ -8056,8 +8056,8 @@ Lily May also requires units **buffing them**
 **Crowd Control**
 
 - Saida (100% `Interrupt`)
-- Sylphira (100% `Interrupt`)
 - Reinier (100% `Interrupt`)
+- Gerda (100% `Interrupt`)
 
 ### Summary for Lily May
 
@@ -11636,7 +11636,7 @@ Common buffers are **Evie**, **Kordan**, **Shadewing**, or **Laios**.
 **Best overall replacement**
 
 - Lily May (57% `Damage` `Debuffs on enemies`)
-- Sylphira (55% `Damage`)
+- Sylphira (56% `Damage`)
 - Cyran (52% `Damage` `Crowd Control`)
 
 **Similar Skills**
@@ -14411,7 +14411,7 @@ Soren provides Shield (Supreme+) to single targets `low`.
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -14439,8 +14439,8 @@ enhanced attacks true damage life drain
 
 ### Units improving Sylphira
 
-Look for units providing: `ATK` `Haste`  
-Common buffers are **Ravion**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
+Look for units providing: `ATK` `Haste` `Energy`  
+Common buffers are **Ravion**, **Smokey & Meerky**, **Rolan**, or **Mikola**.
 
 - **Taichi & Agumon**
   - ATK (area, high)
@@ -14467,8 +14467,8 @@ Common buffers are **Ravion**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
 **Best overall replacement**
 
 - Pippa (56% `Damage` `Debuffs on enemies`)
-- Baelran (52% `Damage` `Crowd Control`)
-- Lily May (52% `Damage` `Debuffs on enemies`)
+- Baelran (53% `Damage` `Crowd Control`)
+- Lily May (50% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -14490,21 +14490,17 @@ Common buffers are **Ravion**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
 
 **Crowd Control**
 
-- Baelran (71% `Knock down`)
-- Voracia (71% `Knock down`)
+- Baelran (80% `Knock down`)
+- Voracia (80% `Knock down`)
+- Himmel (50% `Knock down`)
 
 ### Summary for Sylphira
-
-#### Sylphira Provides
-
-- Dispel debuffs (Mythic+) — Self
-- Stacking (Mythic+) — Single target
 
 #### Damage types dealt by Sylphira
 
 - Magic — Area, Single target
-- Max HP-based damage — Area, Single target
-- True damage — Area, Single target — `average`
+- Max HP-based damage — Multiple targets, Single target
+- True damage — Multiple targets, Single target — `average`
 
 #### Debuffs provided by Sylphira
 
@@ -14516,7 +14512,6 @@ Common buffers are **Ravion**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
 - Immune — Self — On skill
 - Unaffected — Self — On skill
 - Cleanse (Mythic+) — Self — On skill
-- Interrupt — Single target — `low`
 - Knock down — Area — `average`
 - Silence — Area — `low`
 
@@ -14991,9 +14986,9 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Twins**, or **Mikola**.
 
 **Crowd Control**
 
-- Sylphira (100% `Knock down` `Interrupt`)
 - Cyran (100% `Knock down`)
 - Lucca (100% `Knock down` `Interrupt`)
+- Baelran (87% `Knock down`)
 
 ### Summary for Temesia
 

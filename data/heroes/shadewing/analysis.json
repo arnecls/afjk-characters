@@ -391,10 +391,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Curse Feast": {
         "category": "skill4",
@@ -796,7 +819,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "75591bd8e47dce92e80282878f28bace442c069daa22b05f03a3267a772754f9",
+    "inputs_hash": "da7e78f2bcdda59fedbbf27beab9fa011ce4dffc41c148369d64c0940a27241e",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
