@@ -199,7 +199,7 @@
       "Boomboom Bash!": {
         "category": "skill2",
         "description": {
-          "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 {{e|rearmost",
+          "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 rearmost enemy on the enemy side of the battlefield and releases all devoured enemies upon impact. Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s. Devoured enemies cannot act or attack and will only take damage from Boomboom. If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges.",
           "active": [
             "Kulu summons Boomboom, which bounces 3 times between enemies.",
             "The first 2 bounces will target the 2 frontmost enemies, devouring them.",
@@ -619,6 +619,26 @@
       ],
       [
         "base",
+        "For the final bounce, Boomboom will target 1 rearmost enemy on the enemy side of the battlefield and releases all devoured enemies upon impact.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Devoured enemies cannot act or attack and will only take damage from Boomboom.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges.",
+        "Skill2"
+      ],
+      [
+        "base",
         "For the final bounce, Boomboom will target 1 {{e|rearmost",
         "Skill2"
       ],
@@ -735,7 +755,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c4fb3c61071d02259394d11acf949d9b965f95fd59b9a77044e58de081d0e44c",
+    "inputs_hash": "da24a54454c60b27dbb864c21123517684a6b10af672516ebae9c568f6485d7d",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

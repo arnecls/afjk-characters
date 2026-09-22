@@ -177,7 +177,7 @@
               "level": "3",
               "unlock": null,
               "text": [
-                "Energy recovery increases to 8 per second."
+                "Recover 8 additional Energy per second for every non-summoned ally affected."
               ]
             },
             {
@@ -311,7 +311,7 @@
       "Hero Focus": {
         "category": "skill3",
         "description": {
-          "raw": "Smokey & Meerky passively increase their ATK by 6%. If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.",
+          "raw": "Smokey & Meerky increase their ATK by 6% during battle. If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 9%.",
           "active": [
             "Smokey & Meerky passively increase their ATK by 6%.",
             "If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%."
@@ -321,14 +321,16 @@
               "level": "2",
               "unlock": null,
               "text": [
-                "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%."
+                "Smokey & Meerky increase their ATK by 8% during battle.",
+                "If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 12%."
               ]
             },
             {
               "level": "3",
               "unlock": null,
               "text": [
-                "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%."
+                "Smokey & Meerky increase their ATK by 10% during battle.",
+                "If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 15%."
               ]
             }
           ]
@@ -551,7 +553,7 @@
       ],
       [
         "base",
-        "Energy recovery increases to 8 per second.",
+        "Recover 8 additional Energy per second for every non-summoned ally affected.",
         "Skill1"
       ],
       [
@@ -581,6 +583,16 @@
       ],
       [
         "Legendary+",
+        "Smokey & Meerky increase their ATK by 6% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 9%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
         "Smokey & Meerky passively increase their ATK by 6%.",
         "Unlocks at Legendary+"
       ],
@@ -591,12 +603,22 @@
       ],
       [
         "Legendary+",
-        "Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%.",
+        "Smokey & Meerky increase their ATK by 8% during battle.",
         "Unlocks at Legendary+"
       ],
       [
         "Legendary+",
-        "Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%.",
+        "If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Smokey & Meerky increase their ATK by 10% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 15%.",
         "Unlocks at Legendary+"
       ],
       [
@@ -637,7 +659,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "04084d8124a73788167f168f312d9c67cc2c1f7b42d97053e19d61792ad14b23",
+    "inputs_hash": "4499654575e6227aa2f93967f131644023de6cd600f1614643e6718ffe6ce200",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

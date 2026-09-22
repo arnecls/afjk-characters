@@ -178,7 +178,7 @@
       "Tidal Assault": {
         "category": "skill1",
         "description": {
-          "raw": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
+          "raw": "Harak dives beneath the surface, swiftly reaching the weakest enemy, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them 1 tile back. While underwater, Harak is invincible and each assist or defeat resets Tidal Assault's cooldown.",
           "active": [
             "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown."
           ],
@@ -556,6 +556,16 @@
       ],
       [
         "base",
+        "Harak dives beneath the surface, swiftly reaching the weakest enemy, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them 1 tile back.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "While underwater, Harak is invincible and each assist or defeat resets Tidal Assault's cooldown.",
+        "Skill1"
+      ],
+      [
+        "base",
         "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.",
         "Skill1"
       ],
@@ -677,7 +687,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "676c671bc1a3a3675622bc69d86f155902b8ea37e7297155511e6a522b776618",
+    "inputs_hash": "c2da2ca2256ff0570d63bd64c6f83faf3cad8ad85198c70b9b04c7082f480486",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

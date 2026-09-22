@@ -201,7 +201,7 @@
       "Botanical Woe": {
         "category": "skill2",
         "description": {
-          "raw": "Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only ls, drifting like a moonflower.",
+          "raw": "Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only 1s, drifting like a moonflower.",
           "active": [
             "Pippa summons magical plants in the area with the most enemies.",
             "The plants cover a 1-tile area and persist for 3s.",
@@ -612,6 +612,11 @@
       ],
       [
         "base",
+        "If this skill goes out of control, the plants last only 1s, drifting like a moonflower.",
+        "Skill2"
+      ],
+      [
+        "base",
         "If this skill goes out of control, the plants last only ls, drifting like a moonflower.",
         "Skill2"
       ],
@@ -708,7 +713,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "14ccfd5f5c7643abd3c6b22457a3e5f1eac570a8985a91d31b6d8af8d6538285",
+    "inputs_hash": "07675e865b3594cda995bebe24975008a6f98c3a11fd9310c2997b669fd4ae9c",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

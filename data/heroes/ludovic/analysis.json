@@ -258,7 +258,7 @@
               "unlock": null,
               "text": [
                 "Ludovic increases his Healing by 11 during battle.",
-                "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
+                "His Healing will increase by an extra 3 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based)."
               ]
             },
             {
@@ -574,7 +574,7 @@
       ],
       [
         "Legendary+",
-        "His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
+        "His Healing will increase by an extra 3 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).",
         "Unlocks at Legendary+"
       ],
       [
@@ -625,7 +625,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3db2dbc75f5e209dc61f1bb5ba4846cb35804d664d73075ef69b2ee75b07181c",
+    "inputs_hash": "122ed0ce00e443b514930f31bf08a26f3844c1e957c79151fd7fd4cf8e953ca6",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

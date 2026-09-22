@@ -18,45 +18,45 @@
       "Grand Finale": {
         "category": "ultimate",
         "description": {
-          "raw": "Passive. Sylphira lights up 1 beats on her score every 1s. 1 extra beats light up whenever an enemy is affected by an interruption effect or defeated; each ally can trigger this once per second per enemy. Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 5% (SP-based) and Haste by 30 + 3 (SP-based). In addition, the musical effect of the skill triggers Resonance, spreading the skill's effect to up to 2 enemies within 2 tiles of the target. Active. Sylphira glides into the 2-tile area with the most enemies, dealing 400% (ATK-based) + 40% (SP-based) damage to enemies within range and creating a 2-tile Harmonic Domain that lasts for 10 + 1 (SP-based)s. Enemies within the domain are silenced while Sylphira becomes unaffected as long as she remains inside. After that, she performs 5 musical phrases, dealing 110% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount.",
+          "raw": "Passive. Sylphira lights up 1 beats on her score every 1s. 1 extra beats light up whenever an enemy is affected by an interruption effect or defeated; each ally can trigger this once per second per enemy. Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 4% (SP-based) and Haste by 25 + 2.5 (SP-based). In addition, the musical effect of the skill triggers Resonance, spreading the skill's effect to up to 2 enemies within 2 tiles of the target. Active. Sylphira glides into the 2-tile area with the most enemies, dealing 400% (ATK-based) + 40% (SP-based) damage to enemies within range and creating a 2-tile Harmonic Domain that lasts for 10 + 1 (SP-based)s. Enemies within the domain are silenced while Sylphira becomes unaffected as long as she remains inside. After that, she performs 5 musical phrases, dealing 120% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount.",
           "passive": [
             "Sylphira lights up 1 beats on her score every 1s.",
             "1 extra beats light up whenever an enemy is affected by an interruption effect or defeated; each ally can trigger this once per second per enemy.",
-            "Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 5% (SP-based) and Haste by 30 + 3 (SP-based).",
+            "Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 4% (SP-based) and Haste by 25 + 2.5 (SP-based).",
             "In addition, the musical effect of the skill triggers Resonance, spreading the skill's effect to up to 2 enemies within 2 tiles of the target."
           ],
           "active": [
             "Sylphira glides into the 2-tile area with the most enemies, dealing 400% (ATK-based) + 40% (SP-based) damage to enemies within range and creating a 2-tile Harmonic Domain that lasts for 10 + 1 (SP-based)s.",
             "Enemies within the domain are silenced while Sylphira becomes unaffected as long as she remains inside.",
-            "After that, she performs 5 musical phrases, dealing 110% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount."
+            "After that, she performs 5 musical phrases, dealing 120% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount."
           ],
           "upgrades": [
             {
               "level": "2",
               "unlock": "Unlocks at Level 51",
               "text": [
-                "Increases the musical phrase damage to 120% (ATK-based) + 20% (SP-based)."
+                "Increases the musical phrase damage to 130% (ATK-based) + 20% (SP-based)."
               ]
             },
             {
               "level": "3",
               "unlock": "Unlocks at Level 111",
               "text": [
-                "Increases the musical phrase damage to 130% (ATK-based) + 20% (SP-based)."
+                "Increases the musical phrase damage to 140% (ATK-based) + 20% (SP-based)."
               ]
             },
             {
               "level": "4",
               "unlock": "Unlocks at Level 171",
               "text": [
-                "Increases the musical phrase damage to 140% (ATK-based) + 20% (SP-based)."
+                "Increases the musical phrase damage to 150% (ATK-based) + 20% (SP-based)."
               ]
             },
             {
               "level": "5",
               "unlock": "Unlocks at Level 231",
               "text": [
-                "Increases the musical phrase damage to 150% (ATK-based) + 20% (SP-based)."
+                "Increases the musical phrase damage to 160% (ATK-based) + 20% (SP-based)."
               ]
             }
           ]
@@ -441,14 +441,14 @@
               "level": "3",
               "unlock": null,
               "text": [
-                "Unlocks at Exclusive Equipment Level 10: Increases the HP recovered to 60%."
+                "Increases the HP recovered to 50%."
               ]
             },
             {
               "level": "4",
               "unlock": null,
               "text": [
-                "Unlocks at Exclusive Equipment Level 15: When the score plays, it also deals true damage equal to 20% of max HP to the nearest 2 enemies within 2 tiles of Sylphira.",
+                "When the score plays, it also deals true damage equal to 25% of max HP to the nearest 2 enemies within 2 tiles of Sylphira.",
                 "This damage cannot exceed 1000% (ATK-based)."
               ]
             }
@@ -495,7 +495,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 20.0
+                "value": 25.0
               }
             ]
           },
@@ -514,7 +514,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 20.0
+                "value": 25.0
               }
             ]
           },
@@ -684,7 +684,7 @@
       ],
       [
         "base",
-        "Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 5% (SP-based) and Haste by 30 + 3 (SP-based).",
+        "Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 4% (SP-based) and Haste by 25 + 2.5 (SP-based).",
         "Ultimate"
       ],
       [
@@ -704,12 +704,7 @@
       ],
       [
         "base",
-        "After that, she performs 5 musical phrases, dealing 110% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount.",
-        "Ultimate"
-      ],
-      [
-        "base",
-        "Increases the musical phrase damage to 120% (ATK-based) + 20% (SP-based).",
+        "After that, she performs 5 musical phrases, dealing 120% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount.",
         "Ultimate"
       ],
       [
@@ -725,6 +720,11 @@
       [
         "base",
         "Increases the musical phrase damage to 150% (ATK-based) + 20% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the musical phrase damage to 160% (ATK-based) + 20% (SP-based).",
         "Ultimate"
       ],
       [
@@ -854,12 +854,12 @@
       ],
       [
         "Mythic+",
-        "Unlocks at Exclusive Equipment Level 10: Increases the HP recovered to 60%.",
+        "Increases the HP recovered to 50%.",
         "Ex. Skill"
       ],
       [
         "Mythic+",
-        "Unlocks at Exclusive Equipment Level 15: When the score plays, it also deals true damage equal to 20% of max HP to the nearest 2 enemies within 2 tiles of Sylphira.",
+        "When the score plays, it also deals true damage equal to 25% of max HP to the nearest 2 enemies within 2 tiles of Sylphira.",
         "Ex. Skill"
       ],
       [
@@ -885,7 +885,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "2e829e45594d55ba1e31a700283dd7ea1aa79e12ccfbf6a33ad14de5362ade3d",
+    "inputs_hash": "ec9fd006b578d20711544e73fe10c386a956b32e490ed3a29b1aac27ee1c2a0c",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

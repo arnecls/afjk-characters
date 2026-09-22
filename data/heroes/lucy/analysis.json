@@ -224,7 +224,7 @@
               "level": "3",
               "unlock": "Unlocks at Level 151",
               "text": [
-                "Increases enemies' taken damage to 370% (ATK-based) + 30% (SP-based)."
+                "Increases enemies' damage taken to 375% (ATK-based) + 30% (SP-based)."
               ]
             },
             {
@@ -597,7 +597,7 @@
       ],
       [
         "base",
-        "Increases enemies' taken damage to 370% (ATK-based) + 30% (SP-based).",
+        "Increases enemies' damage taken to 375% (ATK-based) + 30% (SP-based).",
         "Skill2"
       ],
       [
@@ -648,7 +648,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "352dd67b905ed8f6ac25f0c8ee8ab95b129316dfa52fd1148be525ec3e15193b",
+    "inputs_hash": "5265108d8841fdd61c8d25e6e5c9494105db677ee5e813c3bfe943e0d2998394",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

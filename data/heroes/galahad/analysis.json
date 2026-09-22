@@ -202,11 +202,12 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -399,7 +400,7 @@
       "Time Recast": {
         "category": "skill4",
         "description": {
-          "raw": "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.",
+          "raw": "When a battle starts, Galahad marks the nearest allied hero, prioritizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12 s, inheriting 80% of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.",
           "active": [
             "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
             "When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle.",
@@ -689,7 +690,7 @@
       ],
       [
         "Mythic+",
-        "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
+        "When a battle starts, Galahad marks the nearest allied hero, prioritizing the one behind her.",
         "Ex. Skill"
       ],
       [
@@ -699,12 +700,22 @@
       ],
       [
         "Mythic+",
-        "The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy.",
+        "The shadow remains on the battlefield for 12 s, inheriting 80% of the ally's basic stats and starting with 400 extra Initial Energy.",
         "Ex. Skill"
       ],
       [
         "Mythic+",
         "A shadow is not considered a living hero and cannot be targeted by enemies.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy.",
         "Ex. Skill"
       ],
       [
@@ -740,7 +751,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6837bb0abccc9380972d49631b3ead4d96095297089fdaa149f37e057485f899",
+    "inputs_hash": "ef91c234494e5cddd4df75780ba681b7e272c881f5d9403422b181f0e8619739",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

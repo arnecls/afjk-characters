@@ -211,34 +211,38 @@ shared stat buff; first immunity exit freezes nearby enemies
 
 ### Units improving Alna
 
-Look for units providing: `Max HP`  
-Common buffers are **Rolan**, **Smokey & Meerky**, **Ravion**, or **Lorsan**.
+Look for units providing: `ATK` `Max HP` `Physical DEF` `Magic DEF`  
+Common buffers are **Mikola**, **Rolan**, **Ravion**, or **Twins**.
 
-- **Shakir**
-  - ATK SPD via Haste (area, high) `signature fuel`
-- **Zandrok**
-  - Max HP (multiple targets, low)
-  - ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`
-- **Hewynn**
-  - ATK SPD via Haste (single target, average) `signature fuel`
-- **Kazim**
-  - ATK SPD via Haste (all units, average) `signature fuel`
-- **Dunlingr**
-  - ATK SPD (all units, average) `signature fuel`
-- **Valka**
-  - ATK SPD (multiple targets, average) `signature fuel`
+- **Tilaya**
+  - Max HP (area, average)
+  - DEF (area, high)
+  - DEF (area, high)
+- **Sonja**
+  - ATK (multiple targets, average)
+  - DEF (multiple targets, average)
+  - DEF (multiple targets, average)
+- **Perseus**
+  - ATK (multiple targets, average)
+  - Phys DEF (multiple targets, low)
+  - Magic DEF (multiple targets, low)
+- **Taichi & Agumon**
+  - ATK (area, high)
+- **Isabella**
+  - ATK (single target, low, conditional (frequent))
+  - Phys DEF (single target, low)
+  - Magic DEF (single target, low)
+  - ATK SPD via Haste (single target, low) `signature fuel`
+- **Solise**
+  - ATK (single target, low)
+  - DEF (single target, low)
+  - DEF (single target, low)
 
 ### Units benefitting most from Alna
 
-Alna provides Healing over time to single targets `average`, Max HP to single targets `high`, and Basic stats (Supreme+) to single targets `average`.
+Alna provides Max HP to single targets `high`.
 
-**6** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- ally buffs or enablers that match many receivers' benefit stats or Requires labels
-
-These are the **4** strongest pairings: 
-
-- Dunlingr (3.5 / 5)
+- Zandrok (5.0 / 5)
 - Shadewing (3.3 / 5)
 - Indris (2.8 / 5)
 - Eryndor (2.8 / 5)
@@ -248,14 +252,8 @@ These are the **4** strongest pairings:
 **Buffs on allies**
 
 - Rolan (100% `Max HP`)
-- Himmel (100% `Max HP` `Basic stats`)
-- Tilaya (79% `Max HP`)
-
-**Healing**
-
-- Evie (100% `Healing over time` `Healing`)
-- Hepler (100% `Healing over time` `Healing`)
-- Smokey & Meerky (100% `Healing over time` `Healing`)
+- Himmel (100% `Max HP`)
+- Tilaya (81% `Max HP`)
 
 **Similar Skills**
 
@@ -295,9 +293,7 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Alna
 
-- Healing over time — Single target — `average`
 - Max HP — Single target — `high`
-- Basic stats (Supreme+) — Single target — `average`
 
 #### Debuffs provided by Alna
 
@@ -3092,7 +3088,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Rolan**, or **Mikola**.
 
 Damian provides Direct healing to single targets `average` and Haste (Mythic+) to multiple targets `high` — conditional (frequent).
 
-**23** units include this provider among their top 6 synergy partners. Why the match is common:
+**22** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -3371,9 +3367,6 @@ Common buffers are **Rolan**, **Lorsan**, **Smokey & Meerky**, or **Damian**.
 - **Pandora**
   - Direct healing (single target, high)
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Alna**
-  - Max HP (single target, high)
-  - Healing over time (single target, high)
 - **Hewynn**
   - ATK SPD via Haste (single target, average) `signature fuel`
   - Healing over time (all units, high)
@@ -3386,6 +3379,9 @@ Common buffers are **Rolan**, **Lorsan**, **Smokey & Meerky**, or **Damian**.
 - **Isabella**
   - ATK SPD via Haste (single target, low) `signature fuel`
   - Direct healing (single target, high)
+- **Lyca**
+  - ATK SPD (all units, average) `signature fuel`
+  - Energy via Energy recovery (120 at battle start, all units) `signature fuel`
 
 ### Units benefitting most from Dunlingr
 
@@ -4574,7 +4570,7 @@ Galahad provides Shield to single targets `high`.
 - **Signature skill**: Spring Therapy (Skill 1)
 - **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-healer` `ally-shielder` `aoe-healing` `battle-start-burst` `mass-cc` `self-repositioner`
-- **Damage types**: Physical `average`
+- **Damage types**: Physical `high`
 
 #### Play overview
 
@@ -5592,7 +5588,7 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Mikola**, or **Parisa**.
 
 Hewynn provides Direct healing to single targets `high`, Healing over time to all units `high`, Damage taken (Mythic+) to all units `low`, and Haste (Supreme+) to single targets `average`.
 
-**9** units include this provider among their top 6 synergy partners. Why the match is common:
+**8** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -6368,7 +6364,7 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Twins**, or **Mikola**.
 
 Isabella provides ATK to single targets `low` — conditional (frequent), ATK SPD to single targets `low`, Direct healing to single targets `high`, Haste to single targets `low`, Magic DEF to single targets `low`, Phys DEF to single targets `low`, and Vitality to single targets `low`.
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**11** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -7098,7 +7094,7 @@ Common buffers are **Mikola**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 Kordan provides ATK in an area `high`, Damage dealt in an area `high`, Lifedrain in an area `average`, and DEF Penetration (Supreme+) in an area `high`.
 
-**35** units include this provider among their top 6 synergy partners. Why the match is common:
+**36** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -8158,7 +8154,7 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Mikola**, or **Parisa**.
 
 Lorsan provides Dodge chance to single targets `high`, Haste to single targets `average`, Healing over time to single targets `average`, and Direct healing (Mythic+) to all units `high`.
 
-**32** units include this provider among their top 6 synergy partners. Why the match is common:
+**31** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -8979,7 +8975,7 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Lorsan**, or **Damian**.
 
 Lyca provides ATK SPD to all units `average` and Energy to all units `average`.
 
-**46** units include this provider among their top 6 synergy partners. Why the match is common:
+**45** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -9541,7 +9537,7 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Twins**, or **Lorsan**.
 
 Mikola provides ATK to all units `average`, Direct healing to multiple targets `high`, Haste to multiple targets `average`, Magic DEF to multiple targets `average`, Phys DEF to multiple targets `average`, Ranged DEF to multiple targets `average`, and Vitality (EX+10) to multiple targets `high`.
 
-**57** units include this provider among their top 6 synergy partners. Why the match is common:
+**58** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -10743,7 +10739,7 @@ Common buffers are **Rowan**, **Thador**, **Ravion**, or **Lyca**.
 
 Pandora provides ATK to single targets `high`, Direct healing to single targets `high`, Energy to single targets `high`, and Invincible to single targets `high`.
 
-**85** units include this provider among their top 6 synergy partners. Why the match is common:
+**86** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -11040,7 +11036,7 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Twins**, or **Mikola**.
 
 Parisa provides ATK to multiple targets `high` and ATK SPD to multiple targets `low`.
 
-**36** units include this provider among their top 6 synergy partners. Why the match is common:
+**37** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -11187,8 +11183,8 @@ These are the **4** strongest pairings:
 **Healing**
 
 - Evie (100% `Healing over time` `Healing`)
-- Alna (100% `Healing over time` `Healing`)
 - Hepler (100% `Healing over time` `Healing`)
+- Smokey & Meerky (100% `Healing over time` `Healing`)
 
 **Similar Skills**
 
@@ -11321,7 +11317,7 @@ Perseus also requires units **buffing them**
 
 Perseus provides ATK to multiple targets `average`, Magic DEF to multiple targets `low`, and Phys DEF to multiple targets `low`.
 
-**6** units include this provider among their top 6 synergy partners. Why the match is common:
+**7** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -12000,7 +11996,7 @@ These are the **4** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -12893,7 +12889,7 @@ Scarlita provides Shield to single targets `low`.
 - **Signature skill**: Shadow Strike (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `assassin` `life-drain`
-- **Damage types**: Physical `low`, Lost HP-based damage `average`
+- **Damage types**: Physical `average`, Lost HP-based damage `average`
 
 #### Play overview
 
@@ -13244,7 +13240,7 @@ Common buffers are **Rolan**, **Twins**, **Lorsan**, or **Mikola**.
 
 Shakir provides Damage taken in an area `average` and Haste in an area `average`.
 
-**12** units include this provider among their top 6 synergy partners. Why the match is common:
+**11** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -14177,14 +14173,14 @@ Common buffers are **Rolan**, **Ravion**, **Smokey & Meerky**, or **Mikola**.
 
 Sonja provides ATK to multiple targets `average`, DEF to multiple targets `average`, and Magic DEF to multiple targets `low`.
 
-**12** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
+- Alna (4.0 / 5)
 - Hepler (3.9 / 5)
-- Kordan (3.8 / 5)
 - Lily May (2.6 / 5)
 - Silven (2.5 / 5)
 
@@ -14455,8 +14451,8 @@ Common buffers are **Ravion**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
 **Best overall replacement**
 
 - Pippa (56% `Damage` `Debuffs on enemies`)
-- Lily May (52% `Damage` `Debuffs on enemies`)
 - Baelran (52% `Damage` `Crowd Control`)
+- Lily May (52% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -14702,9 +14698,6 @@ Common buffers are **Rolan**, **Contess**, **Evie**, or **Mikola**.
 - **Ravion**
   - ATK (multiple targets, high)
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
-- **Alna**
-  - Max HP (single target, high)
-  - Healing over time (single target, high)
 - **Taichi & Agumon**
   - ATK (area, high)
 - **Fay**
@@ -14712,6 +14705,9 @@ Common buffers are **Rolan**, **Contess**, **Evie**, or **Mikola**.
   - Direct healing (arc, high)
 - **Hammie**
   - ATK (single target, low)
+  - Direct healing (single target, high)
+- **Koko**
+  - ATK (all units, low)
   - Direct healing (single target, high)
 
 ### Units benefitting most from Talene
@@ -15149,7 +15145,6 @@ These are the **4** strongest pairings:
 - **Signature skill**: Resurrection (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `cheat-death` `counterattack` `hp-loss` `life-drain`
-- **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
 - **Damage types**: Physical `average`
 
 #### Play overview
@@ -15236,7 +15231,6 @@ Common buffers are **Rowan**, **Thador**, **Ravion**, or **Lyca**.
 
 - Cheat death — Self
 - Ally positioning link (Mythic+) — Single target
-- Cheat death (Mythic+) — Single target
 
 #### Damage types dealt by Thoran
 
@@ -15329,16 +15323,16 @@ Common buffers are **Rolan**, **Contess**, **Daimon**, or **Evie**.
 
 Tilaya provides DEF (EX+10) in an area `high` and Max HP (EX+10) in an area `average`.
 
-**12** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
 - Karma (5.0 / 5)
+- Alna (4.2 / 5)
 - Hepler (4.1 / 5)
 - Laios (3.6 / 5)
-- Voracia (2.3 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
@@ -15559,7 +15553,7 @@ These are the **4** strongest pairings:
 - **Movement**: moving (stationary when rooted); walk speed slow
 - **Behavior tags**: `ally-shielder` `aoe-damage` `cheat-death`
 - **Ally composition**: when rooted, shields frontmost ally instead of self
-- **Damage types**: Physical `average`
+- **Damage types**: Physical `high`
 
 #### Play overview
 
@@ -16821,7 +16815,6 @@ Zandrok provides Haste in an area `low` — conditional (frequent), Lifedrain in
 
 - Kazim (5.0 / 5)
 - Zorya (2.6 / 5)
-- Alna (2.3 / 5)
 - Thador (2.3 / 5)
 
 ### Units that can act as a replacement for Zandrok

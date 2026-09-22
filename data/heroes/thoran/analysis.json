@@ -373,7 +373,7 @@
       "Soul Pact": {
         "category": "skill4",
         "description": {
-          "raw": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP. After that, Thoran no longer takes damage for this ally.",
+          "raw": "Before a battle starts, Thoran signs a pact with the ally 1 tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran takes a fatal blow, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this amount. After that, Thoran no longer takes damage for this ally.",
           "active": [
             "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
             "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
@@ -405,24 +405,35 @@
         },
         "effects": [
           {
-            "tier": "ex+5",
+            "tier": "mythic+",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "fatal_blow",
+                "self": true
+              }
+            ],
             "type": "heal",
             "healing_type": "direct",
             "name": "Direct healing",
             "value": [
               {
                 "type": "percentage",
-                "value": 35.0
+                "value": 150.0
               }
             ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Direct healing — Self (EX+5)",
             "polarity": "buff"
@@ -485,12 +496,6 @@
           "tier": "mythic+",
           "targeting": "Single target",
           "description": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends."
-        },
-        {
-          "label": "Cheat death",
-          "tier": "mythic+",
-          "targeting": "Single target",
-          "description": "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP."
         }
       ],
       "requires": []
@@ -638,17 +643,27 @@
       ],
       [
         "Mythic+",
+        "Before a battle starts, Thoran signs a pact with the ally 1 tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When Thoran takes a fatal blow, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this amount.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "After that, Thoran no longer takes damage for this ally.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
         "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
         "Ex. Skill"
       ],
       [
         "Mythic+",
         "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",
-        "Ex. Skill"
-      ],
-      [
-        "Mythic+",
-        "After that, Thoran no longer takes damage for this ally.",
         "Ex. Skill"
       ],
       [
@@ -674,7 +689,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "000e4fcc72dc513b6cb5f38277cc5312c365dbece154f439b26f2a7ca1103fe5",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "30cdd083162f7eefa3f622541afa161818e435f6cfb9b9359a79a7b11c8bed14",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

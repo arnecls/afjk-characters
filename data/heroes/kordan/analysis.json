@@ -397,7 +397,7 @@
               "level": "3",
               "unlock": "Unlocks at EX. +10",
               "text": [
-                "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40, staking up to 3 times.",
+                "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40%, stacking up to 3 times.",
                 "Each assist or defeat also restores 15% of his max HP every second for 3s."
               ]
             },
@@ -474,6 +474,12 @@
             "type": "buff",
             "name": "Phys DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -492,6 +498,12 @@
             "type": "buff",
             "name": "Magic DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -736,7 +748,7 @@
       ],
       [
         "EX+10",
-        "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40, staking up to 3 times.",
+        "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40%, stacking up to 3 times.",
         "Ex. Skill"
       ],
       [
@@ -772,7 +784,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "20a8ba7cdcafc6a7563112dc781a226e538e71a7f05eb6d368ba26cbd8581f9b",
+    "inputs_hash": "f28ff702e5baf45b106aec5978314cb2d032c4d89fe144a9d2a2148494063b00",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

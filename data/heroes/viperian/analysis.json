@@ -400,7 +400,7 @@
       "Crimson Waltz": {
         "category": "skill4",
         "description": {
-          "raw": "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
+          "raw": "Viperian burns 30% (HP-based) HP 10s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
           "active": [
             "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
             "He is Unaffected during the skill casting.",
@@ -574,8 +574,8 @@
       "energy"
     ],
     "scalar_stat_shares": {
-      "atk": 0.8,
-      "max_hp": 0.2
+      "atk": 0.7727272727272727,
+      "max_hp": 0.22727272727272727
     },
     "id": "viperian",
     "display_name": "Viperian",
@@ -697,7 +697,7 @@
       ],
       [
         "Mythic+",
-        "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
+        "Viperian burns 30% (HP-based) HP 10s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
         "Ex. Skill"
       ],
       [
@@ -708,6 +708,11 @@
       [
         "Mythic+",
         "This skill can be triggered once every 30s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
         "Ex. Skill"
       ],
       [
@@ -738,7 +743,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "28fd05f60fb5f70b20ac4f55d99f0622a970d072dd9921e1e041019d988aac2b",
+    "inputs_hash": "408dd61336bcdc42cb79c91b1e0d0196689685df674b6a8b8578c68c1653ea2a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

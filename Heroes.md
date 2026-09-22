@@ -144,8 +144,8 @@ Alna repeatedly swings her spear, striking enemies within a 1-tile arc in front 
 
 Reduces the damage taken by 10% during battle. For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 5 times.
 
-- Level 2: Reduces the damage taken by 14% during battle. For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 6 times.
-- Level 3: Reduces the damage taken by 18% during battle. For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 7 times.
+- Level 2: Reduces damage taken by 14% during battle. For every 10 s the battle lasts, the damage reduction increases by 6%, stacking up to 5 times.
+- Level 3: Reduces damage taken by 18% during battle. For every 10 s the battle lasts, the damage reduction increases by 7%, stacking up to 5 times.
 
 ### Ex. Skill
 
@@ -182,7 +182,7 @@ A graceful Mage skilled at outmaneuvering opponents.
 - Skill Range: 6 tiles
 - Initial Energy: 300
 
-Alsa curls into a ball and moves to the target tile, dealing 300% (ATK-based) + 20% (SP-based) damage to adjacent enemies. Afterward, she enters Combat Stance until the battle ends. In Combat Stance, she consumes 500 Energy to cast Vigorous Slam, hitting the targets and dealing 260% (ATK-based) + 20% (SP-based) damage, stunning them for 2s. Alsa prioritizes Swift Evasion to deal 150% (ATK-based) + 5% (SP-based) damage to adjacent enemies when attacked, reducing their movement speed by 60% for 2s. Alsa rolls away from attackers afterward, gaining a shield equal to 25% of max HP for 7s. This effect occurs once every 7s at most. Alsa becomes immune to control effects when curling into a ball.
+Alsa curls into a ball and moves to the target tile, dealing 300% (ATK-based) + 20% (SP-based) damage to adjacent enemies, then enters Combat Stance until the battle ends. In Combat Stance, Alsa consumes 500 Energy to cast Vigorous Slam and hits the targets, then returns to her original spot, dealing 260% (ATK-based) + 20% (SP-based) damage and stunning them for 2s. Alsa prioritizes casting Swift Evasion to deal 150% (ATK-based) + 5% (SP-based) damage to adjacent enemies when taking damage from them, reducing their movement speed by 60% for 2s. Alsa rolls away from attackers afterward, gaining a shield equal to 25% of max HP for 7s. This effect can trigger once every 7s at most. Alsa becomes immune to control effects when curling into a ball.
 
 - Level 2: Increases Vigorous Slam damage to 270% (ATK-based) + 20% (SP-based).
 - Level 3: Increases Vigorous Slam damage to 280% (ATK-based) + 20% (SP-based).
@@ -643,7 +643,7 @@ While Aurora is dreaming, reality within 2 tiles around her slowly gets overtake
 Aurora increases her ATK by 10% during battle. For every allied summon from a different ally on the battlefield, her ATK increases further by 1%, up to 5 times.
 
 - Level 2: Aurora increases her ATK by 10% during battle. For every allied summon from a different ally on the battlefield, her ATK increases further by 1.5%, up to 5 times.
-- Level 3: Aurora increases her ATK by 10% during battle. For every allied summon from a different ally on the battlefield, her ATK increases further by 2%, up to 5 times.
+- Level 3: Aurora increases her ATK by 16% during battle. For every allied summon from a different ally on the battlefield, her ATK increases further by 2%, up to 5 times.
 
 ### Ex. Skill
 
@@ -2777,7 +2777,7 @@ Galahad increases her ATK by 9% during battle. She also gains an extra 6% ATK wh
 
 - Skill Range: 10 tiles
 
-When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.
+When a battle starts, Galahad marks the nearest allied hero, prioritizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12 s, inheriting 80% of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.
 
 - Level 2 — Unlocks at EX. +5: The summoned shadow now inherits 100% of the marked ally's basic stats.
 - Level 3 — Unlocks at EX. +10: When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer. Every time Magister Merlin casts a skill, a shadow Merlin appears nearby and casts the same skill again, causing 60% as much HP loss as Merlin's original skill does.
@@ -3204,7 +3204,7 @@ Harak launches a vicious assault, striking an enemy 10 times, each dealing 60% (
 - Initial Cooldown: 5s
 - Skill Range: Global
 
-Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown.
+Harak dives beneath the surface, swiftly reaching the weakest enemy, dealing 220% (ATK-based) + 25% (SP-based) damage and knocking them 1 tile back. While underwater, Harak is invincible and each assist or defeat resets Tidal Assault's cooldown.
 
 - Level 2 — Unlocks at Level 71: Increases the damage dealt to 230% (ATK-based) + 25% (SP-based).
 - Level 3 — Unlocks at Level 131: Increases the damage dealt to 240% (ATK-based) + 25% (SP-based).
@@ -3448,7 +3448,7 @@ Himmel delivers 9 consecutive slashes on enemies in a designated frontal area (3
 - Initial Cooldown: 3s
 - Skill Range: Global
 
-Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains while casting this skill.
+Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains unaffected while casting this skill.
 
 - Level 2 — Unlocks at Level 71: Increases the damage dealt to 360% (ATK-based) + 40% (SP-based).
 - Level 3 — Unlocks at Level 131: Increases the damage dealt to 380% (ATK-based) + 40% (SP-based).
@@ -3571,7 +3571,7 @@ Hodgkin increases his ATK by 9% during battle. His ATK increases by an extra 6% 
 
 - Skill Range: Global
 
-Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks. When a unit affected by unvoidbound magic is defeated, they trigger an explosion that deals damage equal to 120% (ATK-based) plus an extra 10% of the defeated unit's max HP to the adjacent enemies. This extra damage cannot exceed 200% (ATK-based) of Hodgkin's ATK. The targeted enemies also lose 200 Energy.
+Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when a battle begins, each inheriting 60% of his HP and 100% of his other stats, and can only launch normal attacks. When a unit affected by voidbound magic is defeated, they trigger an explosion that deals damage equal to 120% (ATK-based) plus an extra 10% of the defeated unit's max HP to the adjacent enemies. This extra damage cannot exceed 200% (ATK-based) of Hodgkin's ATK. The targeted enemies also lose 200 Energy.
 
 - Level 2 — Unlocks at EX. +5: Increases explosion damage to 140% (ATK-based)
 - Level 3 — Unlocks at EX. +10: Applies voidbound magic to any unit hit by Cannon Fire that does not already have it. The energy loss from this kind of explosion is reduced to 70%. The skill also applies voidbound magic to Breakable Walls within range.
@@ -4233,7 +4233,7 @@ Increases ATK by 12% during battle.
 When Kordan achieves his first assist or defeat of a non-summoned enemy within the hunting circle, or after he has fought inside the circle for 20s, his Fury Slash and Sundering Strike become enhanced. Enhanced Fury Slash: Deals extra damage equal to 30% of the target's lost HP, up to 600% (ATK-based). Enhanced Sundering Strike: Allows Kordan to also knock his target into the air, increasing the duration of the subsequent knockdown for 2s and dealing 300% (ATK-based) extra damage.
 
 - Level 2 — Unlocks at EX. +5: Increases the extra damage dealt by Fury Slash to 35% of the target's lost HP, up to 700% (ATK-based). Also increases the extra damage dealt by Sundering Strike to 350%.
-- Level 3 — Unlocks at EX. +10: Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40, staking up to 3 times. Each assist or defeat also restores 15% of his max HP every second for 3s.
+- Level 3 — Unlocks at EX. +10: Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40%, stacking up to 3 times. Each assist or defeat also restores 15% of his max HP every second for 3s.
 - Level 4 — Unlocks at EX. +15: Increases the extra damage dealt by Fury Slash to 40% of the target's lost HP, up to 800% (ATK-based). Also increases the extra damage dealt by Sundering Strike to 400%.
 
 ### Unlocks at Supreme+
@@ -4450,7 +4450,7 @@ Passive. When a battle starts, Kulu bombs the enemy's border tiles closest to yo
 - Initial Cooldown: 2s
 - Skill Range: Global
 
-Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 {{e|rearmost
+Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 rearmost enemy on the enemy side of the battlefield and releases all devoured enemies upon impact. Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s. Devoured enemies cannot act or attack and will only take damage from Boomboom. If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges.
 
 - Level 2 — Unlocks at Level 91: Each bounce deals 120% (ATK-based) + 10% (SP-based) damage.
 - Level 3 — Unlocks at Level 151: Each bounce deals 130% (ATK-based) + 10% (SP-based) damage.
@@ -5114,7 +5114,7 @@ Lucy delivers a powerful kick to the enemy who has dealt the most cumulative dam
 Lucy's Ultimate transforms her into Aquarius for the rest of the battle. While in this form, she conjures water swirls that strike the 1-tile area with the most enemies, dealing 300% (ATK-based) + 30% (SP-based) damage to all enemies in the area. The water swirl also knocks enemies into the air and stuns them for 2s. In Aquarius form, Lucy's attack range extends to 10 tiles.
 
 - Level 2 — Unlocks at Level 91: Increases enemies' taken damage to 350% (ATK-based) + 30% (SP-based).
-- Level 3 — Unlocks at Level 151: Increases enemies' taken damage to 370% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases enemies' damage taken to 375% (ATK-based) + 30% (SP-based).
 - Level 4 — Unlocks at Level 211: Increases enemies' taken damage to 400% (ATK-based) + 30% (SP-based).
 
 ### Unlocks at Legendary+
@@ -5213,7 +5213,7 @@ Ludovic moves the everbloom field near the weakest ally and absorbs 9% + 1% (SP-
 
 Ludovic increases his Healing by 9 during battle. His Healing will increase by an extra 2 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).
 
-- Level 2: Ludovic increases his Healing by 11 during battle. His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).
+- Level 2: Ludovic increases his Healing by 11 during battle. His Healing will increase by an extra 3 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).
 - Level 3: Ludovic increases his Healing by 14 during battle. His Healing will increase by an extra 4 when the everbloom field accumulates a healing amount equal to 2400% (ATK-based).
 
 ### Ex. Skill
@@ -5593,9 +5593,9 @@ A bewitching Hypogean Mage who manipulates her enemies' desire and overpowers th
 Mehira marks a target area with her kiss, striking all enemies within 2 tiles 6 times, with each strike dealing 50% (ATK-based) + 5% (SP-based) damage. After a short delay, she unleashes a powerful blast in the same area, dealing 170% (ATK-based) + 25% (SP-based) damage. Enemies hit by the powerful blast become charmed for 3s.
 
 - Level 2 — Unlocks at Level 51: Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).
-- Level 3 — Unlocks at Level 111: Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).
-- Level 4 — Unlocks at Level 171: Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).
-- Level 5 — Unlocks at Level 231: Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases the powerful blast damage to 210% (ATK-based) + 25% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases the powerful blast damage to 230% (ATK-based) + 25% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases the powerful blast damage to 250% (ATK-based) + 25% (SP-based).
 
 ### Skill1
 
@@ -6937,7 +6937,7 @@ Pippa fires 9 magic missiles at enemies in quick succession, each missile dealin
 - Initial Cooldown: 2s
 - Skill Range: Global
 
-Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only ls, drifting like a moonflower.
+Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only 1s, drifting like a moonflower.
 
 - Level 2 — Unlocks at Level 91: Increases the impact damage to 160% (ATK-based) + 20% (SP-based).
 - Level 3 — Unlocks at Level 151: Increases the impact damage to 180% (ATK-based) + 20% (SP-based).
@@ -7047,7 +7047,7 @@ Ravion increases his ATK by 9% in battle. He further increases his ATK by 6% aft
 After Ravion uses his first Mortal Ace attack, he permanently increases Haste by 25 and ATK by 25% of his initial ATK for himself and any allies who have completed their Objectives.
 
 - Level 2 — Unlocks at EX. +5: Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 30% of his initial ATK.
-- Level 3 — Unlocks at EX. +10: When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5s.
+- Level 3 — Unlocks at EX. +10: When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5 s. If an ally triggers Life Saver, they swap positions with Ravion; if Ravion triggers Life Saver, no position swap occurs, but the cooldown of Phantom Gambit is reset. Each unit can trigger Life Saver 1 time per battle. Allies receive extra shield values based on how much progress they've made on their Objective. The closer to completion, the higher the extra shield value, up to 100%.
 - Level 4 — Unlocks at EX. +15: Increases the permanent ATK boost after Ravion's first Mortal Ace attack to 35% of his initial ATK.
 
 ### Unlocks at Supreme+
@@ -7130,7 +7130,7 @@ Reinier deals 200% (ATK-based) damage to the enemy and knocks them down when cas
 
 - Level 2: Unlocks at Exclusive Weapon level 5: Increases the damage dealt to the enemy to 250% (ATK-based).
 - Level 3: Unlocks at Exclusive Weapon level 10: Reduces the position-switched ally's damage taken by 25% till the battle ends.
-- Level 4: Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based).
+- Level 4: Increases damage dealt to the enemy to 300% (ATK-based).
 
 ### Unlocks at Supreme+
 
@@ -7170,7 +7170,7 @@ Passive. Rhys can move while attacking but he is unable to do so for 8s if under
 
 Passive. Rhys gains 10 + 2 (SP-based) Crit. Active. Rhys gains control immunity when taking control effects.
 
-- Level 2 — Unlocks at Level 71: Restores 120% (ATK-based) upon casting this skill.
+- Level 2 — Unlocks at Level 71: Restores 120% of his ATK as HP upon casting this skill.
 - Level 3 — Unlocks at Level 131: Increases the Passive Crit bonus to 12 + 2 (SP-based).
 - Level 4 — Unlocks at Level 191: Increases the Passive Crit bonus to 15 + 2 (SP-based).
 
@@ -7841,7 +7841,7 @@ Shadewing sinks his claw into an enemy's chest, dealing 70% (ATK-based) damage. 
 
 - Skill Range: 1 tile
 
-When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.
+When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK, the curse lashes out, dealing damage equal to 25% + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.
 
 - Level 2 — Unlocks at Level 91: Increases the damage dealt when the curse lashes out to 30% + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 700% (ATK-based) + 90% (SP-based).
 - Level 3 — Unlocks at Level 151: Increases the damage dealt when the curse lashes out to 35% + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 800% (ATK-based) + 90% (SP-based).
@@ -7942,11 +7942,11 @@ Shakir reduces his damage taken by 9% during battle. His damage taken is further
 **All-Conquering**
 *Unlocks at Mythic+*
 
-Shakir can cast his Ultimate once his Energy exceeds 800. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.
+Shakir can cast his Ultimate once his Energy exceeds 700. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.
 
 - Level 2 — Unlocks at EX. +5: Shakir stays in Wolf Form and consumes no Energy within 7s each time after casting his Ultimate.
 - Level 3 — Unlocks at EX. +10: Each non-summoned ally within Lupine Aura can share the same bonus ATK from Wolf's Will.
-- Level 4 — Unlocks at EX. +15: Shakir can cast Ultimate upon reaching over 700 Energy.
+- Level 4 — Unlocks at EX. +15: Shakir stays in Wolf Form and consumes no Energy within 8s each time after casting his Ultimate.
 
 ### Unlocks at Supreme+
 
@@ -8314,7 +8314,7 @@ After the battle starts, Smokey & Meerky immediately create a special aroma with
 Smokey & Meerky increase the ATK of all allies within the aroma by 16% + 1% (SP-based). Additionally, for each non-summoned ally affected, they recover 5 Energy per second.
 
 - Level 2: ATK buff increases to 18% + 1% (SP-based).
-- Level 3: Energy recovery increases to 8 per second.
+- Level 3: Recover 8 additional Energy per second for every non-summoned ally affected.
 - Level 4: ATK buff increases to 20% + 1% (SP-based).
 
 ### Skill2
@@ -8339,10 +8339,10 @@ Smokey & Meerky instantly heal all allies within the aroma by 90% (ATK-based) + 
 
 - Skill Range: 1 tile
 
-Smokey & Meerky passively increase their ATK by 6%. If there are at least 3 non-summoned allies inside the aroma, their ATK is further increased by 9%.
+Smokey & Meerky increase their ATK by 6% during battle. If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 9%.
 
-- Level 2: Unlocks at level 2: Base ATK buff increases to 8%, additional buff increases to 12%.
-- Level 3: Unlocks at level 3: Base ATK buff increases to 10%, additional buff increases to 15%.
+- Level 2: Smokey & Meerky increase their ATK by 8% during battle. If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 12%.
+- Level 3: Smokey & Meerky increase their ATK by 10% during battle. If 3 or more non-summoned allies other than Smokey & Meerky are within the aroma, they increase their ATK by an additional 15%.
 
 ### Ex. Skill
 
@@ -8622,12 +8622,12 @@ A Rogue who commands the power of melody, capable of defeating enemies by playin
 - Skill Range: Global
 - Initial Energy: 500
 
-Passive. Sylphira lights up 1 beats on her score every 1s. 1 extra beats light up whenever an enemy is affected by an interruption effect or defeated; each ally can trigger this once per second per enemy. Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 5% (SP-based) and Haste by 30 + 3 (SP-based). In addition, the musical effect of the skill triggers Resonance, spreading the skill's effect to up to 2 enemies within 2 tiles of the target. Active. Sylphira glides into the 2-tile area with the most enemies, dealing 400% (ATK-based) + 40% (SP-based) damage to enemies within range and creating a 2-tile Harmonic Domain that lasts for 10 + 1 (SP-based)s. Enemies within the domain are silenced while Sylphira becomes unaffected as long as she remains inside. After that, she performs 5 musical phrases, dealing 110% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount.
+Passive. Sylphira lights up 1 beats on her score every 1s. 1 extra beats light up whenever an enemy is affected by an interruption effect or defeated; each ally can trigger this once per second per enemy. Once 12 beats are lit, Sylphira activates her score, increasing her ATK by 50% + 4% (SP-based) and Haste by 25 + 2.5 (SP-based). In addition, the musical effect of the skill triggers Resonance, spreading the skill's effect to up to 2 enemies within 2 tiles of the target. Active. Sylphira glides into the 2-tile area with the most enemies, dealing 400% (ATK-based) + 40% (SP-based) damage to enemies within range and creating a 2-tile Harmonic Domain that lasts for 10 + 1 (SP-based)s. Enemies within the domain are silenced while Sylphira becomes unaffected as long as she remains inside. After that, she performs 5 musical phrases, dealing 120% (ATK-based) + 20% (SP-based) damage to her target and reducing their max HP by the same amount.
 
-- Level 2 — Unlocks at Level 51: Increases the musical phrase damage to 120% (ATK-based) + 20% (SP-based).
-- Level 3 — Unlocks at Level 111: Increases the musical phrase damage to 130% (ATK-based) + 20% (SP-based).
-- Level 4 — Unlocks at Level 171: Increases the musical phrase damage to 140% (ATK-based) + 20% (SP-based).
-- Level 5 — Unlocks at Level 231: Increases the musical phrase damage to 150% (ATK-based) + 20% (SP-based).
+- Level 2 — Unlocks at Level 51: Increases the musical phrase damage to 130% (ATK-based) + 20% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases the musical phrase damage to 140% (ATK-based) + 20% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases the musical phrase damage to 150% (ATK-based) + 20% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases the musical phrase damage to 160% (ATK-based) + 20% (SP-based).
 
 ### Skill1
 
@@ -8681,8 +8681,8 @@ Increases Haste by 6 during battle. Every time she lights up a beat, she increas
 Once her score is activated, Sylphira starts playing it. The score then plays 1 times automatically every 8s. Every time the score plays, it removes all dispellable debuffs from Sylphira and restores 40% of her max HP and 250 Energy. While the score is active, collecting more beats makes it play 10% faster and further increases Sylphira's Haste by 3, up to 10 stacks.
 
 - Level 2: Unlocks at Exclusive Equipment Level 5: Increases the HP recovered to 50%.
-- Level 3: Unlocks at Exclusive Equipment Level 10: Increases the HP recovered to 60%.
-- Level 4: Unlocks at Exclusive Equipment Level 15: When the score plays, it also deals true damage equal to 20% of max HP to the nearest 2 enemies within 2 tiles of Sylphira. This damage cannot exceed 1000% (ATK-based).
+- Level 3: Increases the HP recovered to 50%.
+- Level 4: When the score plays, it also deals true damage equal to 25% of max HP to the nearest 2 enemies within 2 tiles of Sylphira. This damage cannot exceed 1000% (ATK-based).
 
 ### Unlocks at Supreme+
 
@@ -9173,7 +9173,7 @@ Thoran's normal attacks and skills increase his Energy Recovery by 24%. His Ener
 
 - Skill Range: Global
 
-Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP. After that, Thoran no longer takes damage for this ally.
+Before a battle starts, Thoran signs a pact with the ally 1 tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran takes a fatal blow, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this amount. After that, Thoran no longer takes damage for this ally.
 
 - Level 2 — Unlocks at EX. +5: 25% of the damage dealt by this ally heals Thoran when the pact exists.
 - Level 3 — Unlocks at EX. +10: Increases the healing amount that Thoran receives from the ally's damage dealt to 30%.
@@ -9751,7 +9751,7 @@ Increases Haste by 12 during battle.
 - Initial Cooldown: 10s
 - Skill Range: Global
 
-Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.
+Viperian burns 30% (HP-based) HP 10s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.
 
 - Level 2 — Unlocks at EX. +5: Increases damage to 450% (ATK-based).
 - Level 3 — Unlocks at EX. +10: Darkvipers gain 2 enhancements after the skill is cast.

@@ -36,21 +36,21 @@
               "level": "3",
               "unlock": "Unlocks at Level 111",
               "text": [
-                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+                "Increases the powerful blast damage to 210% (ATK-based) + 25% (SP-based)."
               ]
             },
             {
               "level": "4",
               "unlock": "Unlocks at Level 171",
               "text": [
-                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+                "Increases the powerful blast damage to 230% (ATK-based) + 25% (SP-based)."
               ]
             },
             {
               "level": "5",
               "unlock": "Unlocks at Level 231",
               "text": [
-                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+                "Increases the powerful blast damage to 250% (ATK-based) + 25% (SP-based)."
               ]
             }
           ]
@@ -71,7 +71,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 215.0
+                "value": 275.0
               }
             ]
           },
@@ -530,17 +530,17 @@
       ],
       [
         "base",
-        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Increases the powerful blast damage to 210% (ATK-based) + 25% (SP-based).",
         "Ultimate"
       ],
       [
         "base",
-        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Increases the powerful blast damage to 230% (ATK-based) + 25% (SP-based).",
         "Ultimate"
       ],
       [
         "base",
-        "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based).",
+        "Increases the powerful blast damage to 250% (ATK-based) + 25% (SP-based).",
         "Ultimate"
       ],
       [
@@ -686,7 +686,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "524eb0e069c09380fb47d1d6170a3d7b4d0b64fcc17823bc1f9d477add4a2e5a",
+    "inputs_hash": "16d8871df45bf0cd39f5ceb06f8848662e2962d75f080d79599fc08f30b1cf0d",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

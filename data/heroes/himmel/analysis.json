@@ -131,7 +131,7 @@
       "Heroic Dash": {
         "category": "skill1",
         "description": {
-          "raw": "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains while casting this skill.",
+          "raw": "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains unaffected while casting this skill.",
           "active": [
             "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s.",
             "He then returns to his original position.",
@@ -610,6 +610,11 @@
       ],
       [
         "base",
+        "Himmel remains unaffected while casting this skill.",
+        "Skill1"
+      ],
+      [
+        "base",
         "Himmel remains while casting this skill.",
         "Skill1"
       ],
@@ -726,7 +731,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c68dbd3ef4e6fab042e4c1975c84b1f8f203b73d252d9d312109cab786247cb5",
+    "inputs_hash": "c06db4d7fcb3416dd830e1d7208edd70b724415deda8fd8c04c9cc4f771afb2b",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

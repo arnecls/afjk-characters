@@ -358,7 +358,7 @@
               "level": "4",
               "unlock": null,
               "text": [
-                "Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based)."
+                "Increases damage dealt to the enemy to 300% (ATK-based)."
               ]
             }
           ]
@@ -405,7 +405,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 250.0
+                "value": 300.0
               }
             ]
           },
@@ -655,7 +655,7 @@
       ],
       [
         "Mythic+",
-        "Unlocks at Exclusive Weapon level 15: Increases the damage dealt to the enemy to 250% (ATK-based).",
+        "Increases damage dealt to the enemy to 300% (ATK-based).",
         "Ex. Skill"
       ],
       [
@@ -666,7 +666,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f3458eba6ba9e0bf47411e29d7fa236d2f1e4b493533594b2b8426a14fbfbc80",
+    "inputs_hash": "9285bde6a6c05865dfe3e53544b86dc79a34e81863ffc0e6bf82583cf9423e12",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

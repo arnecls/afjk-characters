@@ -369,7 +369,7 @@
       "All-Conquering": {
         "category": "skill4",
         "description": {
-          "raw": "Shakir can cast his Ultimate once his Energy exceeds 800. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
+          "raw": "Shakir can cast his Ultimate once his Energy exceeds 700. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
           "active": [
             "Shakir can cast his Ultimate once his Energy exceeds 800.",
             "Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate."
@@ -393,7 +393,7 @@
               "level": "4",
               "unlock": "Unlocks at EX. +15",
               "text": [
-                "Shakir can cast Ultimate upon reaching over 700 Energy."
+                "Shakir stays in Wolf Form and consumes no Energy within 8s each time after casting his Ultimate."
               ]
             }
           ]
@@ -600,12 +600,17 @@
       ],
       [
         "Mythic+",
-        "Shakir can cast his Ultimate once his Energy exceeds 800.",
+        "Shakir can cast his Ultimate once his Energy exceeds 700.",
         "Ex. Skill"
       ],
       [
         "Mythic+",
         "Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Shakir can cast his Ultimate once his Energy exceeds 800.",
         "Ex. Skill"
       ],
       [
@@ -620,7 +625,7 @@
       ],
       [
         "EX+15",
-        "Shakir can cast Ultimate upon reaching over 700 Energy.",
+        "Shakir stays in Wolf Form and consumes no Energy within 8s each time after casting his Ultimate.",
         "Ex. Skill"
       ],
       [
@@ -631,7 +636,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "89a8b61fa4e39acf188aaaf3391aae2e65425b19960b9db9897b0499459d5817",
+    "inputs_hash": "4d47f7eec3c9c1d16b57b4ac0b91c349735b673297dc81c4ed175be2cc1bc480",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
