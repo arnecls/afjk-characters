@@ -136,11 +136,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": -1,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "hp_loss",
             "name": "HP loss",
@@ -416,6 +417,23 @@
             ]
           },
           {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "mythic+",
             "immunity_type": "untargetable",
@@ -430,6 +448,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           },
           {
             "label": "Untargetable — Self"
@@ -490,7 +512,7 @@
       ],
       [
         "hp_loss",
-        "Single target"
+        "Arc"
       ]
     ],
     "benefit_stats": [
@@ -686,7 +708,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "16d8871df45bf0cd39f5ceb06f8848662e2962d75f080d79599fc08f30b1cf0d",
+    "inputs_hash": "e7c912e67a760408c23e9af856ce2e34727be49b07ec9611e545e3d938edfd20",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -1893,10 +1893,10 @@ Common buffers are **Contess**, **Daimon**, or **Twins**.
   - Shield (multiple targets, high)
 - **Himmel**
   - Shield (multiple targets, high)
+- **Lucy**
+  - Shield (single target, high)
 - **Saida**
   - Shield (multiple targets, high)
-- **Velara**
-  - Shield (single target, high)
 
 ### Units benefitting most from Callan
 
@@ -2525,7 +2525,7 @@ Common buffers are **Twins** or **Smokey & Meerky**.
 
 Contess provides ATK to single targets `high`, Direct healing to multiple targets `high`, and Shield to single targets `average`.
 
-**34** units include this provider among their top 6 synergy partners. Why the match is common:
+**31** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -2923,7 +2923,7 @@ excess shield value converts to HP
 ### Units improving Daimon
 
 Look for units providing: `Max HP` `Shield`  
-Common buffers are **Contess**, **Thador**, or **Twins**.
+Common buffers are **Thador**, **Contess**, or **Twins**.
 
 - **Aurora**
   - Haste (all summons, high)
@@ -7525,6 +7525,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Kulu
 
 - Physical — All units, Area, Single target
+- Max HP-based damage — Area
 
 #### Debuffs provided by Kulu
 
@@ -8404,7 +8405,7 @@ heal one extra ally per cast
 ### Units improving Lucius
 
 Look for units providing: `Shield`  
-Common buffers are **Twins**, **Smokey & Meerky**, **Contess**, or **Rolan**.
+Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Lorsan**.
 
 - **Thador**
   - Shield (multiple targets, high)
@@ -8582,13 +8583,17 @@ Common buffers are **Rolan**, **Smokey & Meerky**, **Lorsan**, or **Damian**.
 Lucy provides Shield (Mythic+) to single targets `high` and Ranged DEF (EX+10) to single targets `high`.
 
 - Bonnie (4.6 / 5)
+- Callan (3.0 / 5)
+- Lucius (2.7 / 5)
+- Daimon (2.0 / 5)
 
 ### Units that can act as a replacement for Lucy
 
 **Buffs on allies**
 
-- Himmel (54% `Shield`)
-- Saida (54% `Shield`)
+- Himmel (60% `Shield`)
+- Saida (60% `Shield`)
+- Gunnar (51% `Shield` `Ranged DEF`)
 
 **Similar Skills**
 
@@ -9354,7 +9359,7 @@ Common buffers are **Shadewing**, **Kordan**, **Laios**, or **Smokey & Meerky**.
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -9444,7 +9449,7 @@ Mehira provides HP loss modifier to multiple targets `high` and Haste to multipl
 #### Damage types dealt by Mehira
 
 - Magic — Area, Single target
-- HP loss — Single target
+- HP loss — Arc
 
 #### Buffs provided by Mehira
 
