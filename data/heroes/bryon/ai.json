@@ -54,7 +54,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 110.0
+                    "value": 40.0
                   }
                 ],
                 "duration": 2,
@@ -222,6 +222,64 @@
                     "value": 450.0
                   }
                 ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "fatal_blow",
+                    "self": true
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "fatal_blow",
+                    "self": true
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "duration": 5.0,
+                "tick": 1.0
               }
             ],
             "summon_effects": [],
