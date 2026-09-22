@@ -70,14 +70,7 @@
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": [
-              {
-                "label": "Party composition",
-                "tier": "base",
-                "targeting": "Allies",
-                "description": "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class."
-              }
-            ]
+            "special_requires": []
           }
         }
       },
@@ -118,7 +111,18 @@
               }
             ],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "on_skill",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
             "special_provides": [],
             "special_requires": []
           }
@@ -181,12 +185,36 @@
                     "value": 200.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 32.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Party composition",
+                "tier": "base",
+                "targeting": "Allies",
+                "description": "When a battle starts, if at least 1 Mage, 1 Tank, and 1 Support ally are within 1 tile of Himmel, he forms a Hero Party with himself and one ally from each class."
+              }
+            ]
           }
         }
       },
@@ -281,6 +309,23 @@
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
