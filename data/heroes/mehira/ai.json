@@ -43,14 +43,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "HP threshold strike",
-                "tier": "mythic+",
-                "targeting": "Single target",
-                "description": "If Mehira takes a hit that would reduce her HP below 20%, she sacrifices a voidling to block that damage."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -63,11 +56,12 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Arc",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": -1,
+                "area_direction": "front",
                 "type": "damage",
                 "damage_type": "hp_loss",
                 "name": "HP loss",
@@ -242,6 +236,23 @@
                     "value": 60.0
                   }
                 ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -257,7 +268,14 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "HP threshold strike",
+                "tier": "mythic+",
+                "targeting": "Single target",
+                "description": "If Mehira takes a hit that would reduce her HP below 20%, she sacrifices a voidling to block that damage."
+              }
+            ],
             "special_requires": []
           }
         }
