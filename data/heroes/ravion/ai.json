@@ -391,7 +391,7 @@
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
@@ -401,6 +401,7 @@
                     "value": 15.0
                   }
                 ],
+                "duration": 5.0,
                 "persistence": "temporary"
               }
             ],
@@ -411,10 +412,11 @@
                 "tier": "supreme+",
                 "immunity_type": "unaffected",
                 "timing": "conditional",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "target": "ally",
                 "area": "single",
-                "target_count": 1
+                "target_count": 2,
+                "duration": 5.0
               }
             ],
             "special_provides": [],
