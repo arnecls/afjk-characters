@@ -11840,7 +11840,7 @@ These are the **4** strongest pairings:
 #### Crowd Control provided by Ravion
 
 - Unaffected — Self — On skill
-- Unaffected (Supreme+) — Single target — Conditional
+- Unaffected (Supreme+) — Multiple targets — Conditional
 - Knock down — Single target — `low`
 
 ## Reinier

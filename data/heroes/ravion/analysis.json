@@ -595,6 +595,7 @@
                 "value": 15.0
               }
             ],
+            "duration": 5.0,
             "persistence": "temporary"
           },
           {
@@ -602,10 +603,10 @@
             "tier": "supreme+",
             "immunity_type": "unaffected",
             "timing": "conditional",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "target": "ally",
             "area": "single",
-            "target_count": 1
+            "target_count": 3
           }
         ],
         "skill_card_tags": [
@@ -614,7 +615,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Unaffected"
+            "label": "Unaffected — Multiple targets"
           }
         ]
       }
@@ -869,7 +870,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "58bd03aebf6a3489f0fdebff33ba43cee2ad93fbefaaedb24e26c06e1dc7d974",
+    "inputs_hash": "5cd7b4a8b62f9d5a5a6a87dd42d72e5232b63f5fe23c8ec7aedad9c2d40aea29",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
