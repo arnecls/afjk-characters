@@ -49,42 +49,6 @@
                     "status": "active_state"
                   }
                 ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 320.0
-                  }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 320.0
-                  }
-                ]
               }
             ],
             "summon_effects": [
