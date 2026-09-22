@@ -24,7 +24,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 500.0
+                    "value": 550.0
                   }
                 ]
               },
@@ -162,6 +162,25 @@
                     "status": "active_state"
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 220.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -209,7 +228,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 640.0
+                    "value": 320.0
                   }
                 ]
               }
