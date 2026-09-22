@@ -239,6 +239,25 @@
                     "value": 270.0
                   }
                 ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
