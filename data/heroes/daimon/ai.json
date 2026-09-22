@@ -265,7 +265,13 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 18.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

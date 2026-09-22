@@ -135,6 +135,24 @@
                 "type": "debuff",
                 "name": "Energy",
                 "label": "debuff_stat"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -218,20 +236,7 @@
         "is_max_known": true,
         "tiers": {
           "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Haste",
-                "label": "buff_offensive",
-                "persistence": "permanent"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

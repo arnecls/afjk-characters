@@ -136,26 +136,6 @@
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": -1,
-                "area_count": 1,
-                "area_direction": "selected_target",
-                "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 77.0
-                  }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
                 "area": "path",
                 "target_count": -1,
                 "area_count": 1,

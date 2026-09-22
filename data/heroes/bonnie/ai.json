@@ -86,7 +86,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 30.0
+                    "value": 50.0
                   }
                 ]
               },
@@ -151,7 +151,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 180.0
+                    "value": 100.0
                   }
                 ],
                 "duration": 2,
@@ -192,7 +192,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "While in black mist form, Bonnie is invincible."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -237,11 +244,11 @@
             "effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 2,
                 "conditions": [
                   {
                     "type": "stack_count",
@@ -322,6 +329,6 @@
     "skill4": "debuff spreads to new targets on max stack or debuffed unit death",
     "skill5": "max-stack debuffed targets suffer increased magic damage"
   },
-  "play_overview": "[[Bonnie]] opens by placing **Aging** on the rearmost enemy, and two separate allied magic sources accelerate its stacks. At maximum stacks, Aging cuts the target's ATK, deals damage over time, increases magic damage taken, and spreads when the target reaches maximum stacks or dies. Her ultimate converts an Aged target into **bonus damage and stun**, while mist form makes her invincible and repositions her. She is strongest in **[[Bonnie]]–[[Satrana]]–[[Igor]]–[[Dunlingr]]** debuff cores or with **[[Satrana]] plus [[Tasi]]** to spread Aging quickly. Killing [[Bonnie]] before she acts prevents the chain, while controlling her magic partners or cleansing Aging cuts off the payoff.",
+  "play_overview": "[[Bonnie]] opens by placing **Aging** on the rearmost enemy, and two separate allied magic sources accelerate its stacks. At maximum stacks, Aging cuts the target's ATK, deals damage over time, increases magic damage taken, and spreads when the target reaches maximum stacks or dies. Her ultimate converts an Aged target into **bonus damage and stun**, while mist form makes her invincible and repositions her. She is strongest in **[[Bonnie]]\u2013[[Satrana]]\u2013[[Igor]]\u2013[[Dunlingr]]** debuff cores or with **[[Satrana]] plus [[Tasi]]** to spread Aging quickly. Killing [[Bonnie]] before she acts prevents the chain, while controlling her magic partners or cleansing Aging cuts off the payoff.",
   "counter_overview": "[[Bonnie]]'s rearmost Aging target becomes more dangerous as her magic allies stack it, so the cleanest answer is to kill [[Bonnie]] before she acts or pressure those providers before maximum stacks spread. Do not burst into her mist form; use lasting coverage such as [[Frieren]] and control spread partners such as [[Tasi]] with [[Cyran]]. [[Cyran]] is the stronger matchup-specific control answer, while [[Hewynn]] can cleanse the Aged target if Aging is dispellable. Prioritize [[Bonnie]] and her magic partners instead of relying on a generic debuff-shortening pick."
 }

@@ -98,7 +98,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 250.0
+                    "value": 125.0
                   }
                 ]
               },
@@ -120,6 +120,26 @@
                 ],
                 "area_direction": "selected_target",
                 "area_count": 2
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "selected_target",
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

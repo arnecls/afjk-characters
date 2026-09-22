@@ -93,7 +93,7 @@
                 "area": "rectangle",
                 "target_count": -1,
                 "type": "debuff",
-                "name": "Haste",
+                "name": "ATK SPD",
                 "label": "debuff_offensive",
                 "area_direction": "front",
                 "area_count": 3,
@@ -157,7 +157,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 130.0
+                    "value": 160.0
                   }
                 ]
               }
@@ -185,7 +185,13 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 16.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -211,7 +217,13 @@
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 4.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -318,6 +330,6 @@
     "skill4": "protect one ally from the imposed rule",
     "skill5": "rule start grants allies ATK speed or life drain"
   },
-  "play_overview": "Before battle, [[Dunlingr]] chooses either **Spellbind**, which locks Ultimates, or **Curelock**, which prevents units from recovering HP for other units. His bell starts the order, and his Ultimate extends it while shields and damage reduction keep him alive. He also grants allies ATK SPD or Life Drain when he reinforces the order, and protects one ally from its restriction. He is strongest against teams built around enemy Ultimates or ally-heal snowballs, especially in **[[Dunlingr]]–[[Gwyneth]]–[[Gunnar]]** defenses. The order can handicap his own team, so non-Ultimate damage and a fast finish before he reinforces it reduce his impact; **[[Bonnie]]–[[Satrana]]–[[Igor]]–[[Dunlingr]]** instead uses the stall window to spread debuffs.",
+  "play_overview": "Before battle, [[Dunlingr]] chooses either **Spellbind**, which locks Ultimates, or **Curelock**, which prevents units from recovering HP for other units. His bell starts the order, and his Ultimate extends it while shields and damage reduction keep him alive. He also grants allies ATK SPD or Life Drain when he reinforces the order, and protects one ally from its restriction. He is strongest against teams built around enemy Ultimates or ally-heal snowballs, especially in **[[Dunlingr]]\u2013[[Gwyneth]]\u2013[[Gunnar]]** defenses. The order can handicap his own team, so non-Ultimate damage and a fast finish before he reinforces it reduce his impact; **[[Bonnie]]\u2013[[Satrana]]\u2013[[Igor]]\u2013[[Dunlingr]]** instead uses the stall window to spread debuffs.",
   "counter_overview": "[[Dunlingr]]'s pre-battle rule either locks Ultimates or prevents healing for other units, and he can extend it, so choose your response around the selected rule. Against Spellbind, use non-Ultimate damage and pressure the ally he exempts; against Curelock, use direct damage, self-sustain, shields, or your own Ultimate instead of a healer-dependent plan. A [[Dionel]] team works even into [[Dunlingr]], while [[Gwyneth]] or [[filter:backline-assassin]] like [[Ravion]] can pressure the protected carry. Finish quickly before he reinforces the order, and avoid an Ultimate-dependent plan while it is active."
 }

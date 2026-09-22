@@ -18,13 +18,13 @@
                 "target_count": -1,
                 "area_count": 2,
                 "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
-                "label": "damage_normal",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 400.0
+                    "value": 10.0
                   }
                 ]
               },

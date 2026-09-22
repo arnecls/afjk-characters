@@ -227,7 +227,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -376,7 +395,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 200.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

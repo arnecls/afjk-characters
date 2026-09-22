@@ -190,7 +190,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 8.0
+                    "value": 16.0
                   }
                 ],
                 "persistence": "permanent"

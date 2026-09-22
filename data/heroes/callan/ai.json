@@ -232,6 +232,36 @@
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 2.0
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.3,
+                    "comparison": "below"
+                  },
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
