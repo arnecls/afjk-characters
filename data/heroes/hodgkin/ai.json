@@ -280,7 +280,6 @@
     "aoe-damage",
     "enemy-debuffer",
     "energy-inhibitor",
-    "heal-inhibitor",
     "summoner"
   ],
   "summon_profile": {
