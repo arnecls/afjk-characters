@@ -29,7 +29,13 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "crowd_control",
-                "cc-type": "knock_back"
+                "cc-type": "knock_back",
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "ranged"
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -141,6 +147,23 @@
                     "value": 500.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "duration": 15
               }
             ],
             "summon_effects": [],
@@ -279,7 +302,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 40.0
                   }
                 ]
               }
@@ -302,11 +325,51 @@
                   {
                     "type": "unit_type",
                     "unit_type": "non_summoned"
+                  },
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "up_to"
                   }
                 ],
                 "type": "buff",
                 "name": "Phys DEF",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  },
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
                 "persistence": "permanent"
               },
               {
@@ -322,10 +385,18 @@
                     "unit_type": "non_summoned"
                   }
                 ],
-                "type": "buff",
-                "name": "Magic DEF",
-                "label": "buff_defensive",
-                "persistence": "permanent"
+                "type": "heal",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "label": "hot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "duration": 3,
+                "tick": 1.0
               }
             ],
             "summon_effects": [],
