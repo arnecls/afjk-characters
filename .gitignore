@@ -6,4 +6,6 @@ data/.roster_analysis_cache.pkl
 tmp/
 *.pyc
 .pytest_cache/
+.mypy_cache/
 .DS_Store
+.claude/worktrees/
