@@ -4522,8 +4522,8 @@ Galahad provides Shield to single targets `high`.
 **Damage**
 
 - Saida (100% `Magic`)
-- Viperian (86% `Magic`)
 - Ludovic (85% `Magic`)
+- Rolan (76% `Magic`)
 
 **Debuffs on enemies**
 
@@ -14613,7 +14613,6 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Nara (94% `Physical`)
-- Viperian (78% `HP loss`)
 
 **Crowd Control**
 
@@ -16262,7 +16261,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Crimson Waltz (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed slow
 - **Behavior tags**: `aoe-damage` `dot-specialist` `energy-inhibitor` `hp-loss`
-- **Damage types**: Magic `average`, HP loss `low`
+- **Damage types**: Magic `average`
 
 #### Play overview
 
@@ -16338,9 +16337,9 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Shadewing**.
 
 **Best overall replacement**
 
+- Pippa (68% `Damage` `Debuffs on enemies`)
+- Berial (67% `Damage` `Debuffs on enemies`)
 - Saida (60% `Damage` `Debuffs on enemies`)
-- Galahad (53% `Damage`)
-- Ludovic (50% `Damage`)
 
 **Similar Skills**
 
@@ -16350,9 +16349,9 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Shadewing**.
 
 **Damage**
 
+- Frieren (100% `Magic` `HP loss`)
 - Rolan (100% `Magic` `HP loss`)
-- Saida (100% `Magic` `HP loss`)
-- Galahad (100% `Magic`)
+- Silven (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -16366,7 +16365,6 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Shadewing**.
 
 - Magic — All units, Single target
 - DoT — All units
-- HP loss — All units — `low`
 
 #### Debuffs provided by Viperian
 

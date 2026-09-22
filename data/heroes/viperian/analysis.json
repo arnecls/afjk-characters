@@ -103,25 +103,6 @@
           },
           {
             "tier": "base",
-            "targeting_label": "All units",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "zone",
-            "target_count": -1,
-            "area_count": -1,
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 1.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -162,9 +143,6 @@
           },
           {
             "label": "DoT"
-          },
-          {
-            "label": "HP loss"
           },
           {
             "label": "Direct healing — Self",
@@ -504,6 +482,12 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat"
+              }
+            ],
             "type": "heal",
             "healing_type": "direct",
             "name": "Direct healing",
@@ -562,10 +546,6 @@
       ],
       [
         "dot",
-        "All units"
-      ],
-      [
-        "hp_loss",
         "All units"
       ]
     ],
@@ -743,7 +723,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "408dd61336bcdc42cb79c91b1e0d0196689685df674b6a8b8578c68c1653ea2a",
+    "inputs_hash": "baba600e78eccbc1930257400e7bb06d627c8592b900341ce606386d7effc6cf",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
