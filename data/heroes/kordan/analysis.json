@@ -79,6 +79,12 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "ranged"
+              }
+            ],
             "type": "crowd_control",
             "cc-type": "knock_back"
           },
@@ -239,6 +245,23 @@
                 "value": 500.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "duration": 15.0
           }
         ],
         "cooldown": 8.0,
@@ -247,6 +270,10 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -469,6 +496,11 @@
               {
                 "type": "unit_type",
                 "unit_type": "non_summoned"
+              },
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "up_to"
               }
             ],
             "type": "buff",
@@ -493,6 +525,11 @@
               {
                 "type": "unit_type",
                 "unit_type": "non_summoned"
+              },
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "up_to"
               }
             ],
             "type": "buff",
@@ -505,6 +542,31 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "duration": 20.0,
+            "tick": 1.0
           }
         ],
         "skill_range": 1,
@@ -514,6 +576,10 @@
           },
           {
             "label": "Lost HP-based damage"
+          },
+          {
+            "label": "HoT — Self (EX+10)",
+            "polarity": "buff"
           },
           {
             "label": "Magic DEF — Self (EX+10)",
@@ -784,7 +850,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f28ff702e5baf45b106aec5978314cb2d032c4d89fe144a9d2a2148494063b00",
+    "inputs_hash": "4b38d656b0a17dd76a27d8773b37cec353840bad3ea1092ff9d21f328cb8106d",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

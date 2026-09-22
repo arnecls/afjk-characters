@@ -190,6 +190,16 @@
                 "value": 440.0
               }
             ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
           }
         ],
         "cooldown": 10.0,
@@ -200,6 +210,9 @@
           },
           {
             "label": "Knock down — Multiple targets"
+          },
+          {
+            "label": "Unaffected — Self"
           }
         ]
       },
@@ -290,6 +303,23 @@
                 "value": 200.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 32.0
+              }
+            ]
           }
         ],
         "cooldown": 9.0,
@@ -298,6 +328,10 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
           },
           {
             "label": "Basic stats — Multiple targets",
@@ -434,6 +468,23 @@
             "persistence": "permanent"
           },
           {
+            "tier": "mythic+",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "mythic+",
             "immunity_type": "cleanse",
@@ -446,6 +497,10 @@
         ],
         "skill_range": 10,
         "skill_card_tags": [
+          {
+            "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
+          },
           {
             "label": "ATK — Self",
             "polarity": "buff"
@@ -731,7 +786,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c06db4d7fcb3416dd830e1d7208edd70b724415deda8fd8c04c9cc4f771afb2b",
+    "inputs_hash": "c22f6c5d510f45a9fc6d42a9a1de2d9672fb89a23af9fc8578fefb930140bd48",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -462,12 +462,6 @@
     "synergy_profile": {
       "provides": [
         {
-          "label": "Invincibility",
-          "tier": "base",
-          "targeting": "Self",
-          "description": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown."
-        },
-        {
           "label": "Instant defeat",
           "tier": "base",
           "targeting": "Single target",
@@ -687,7 +681,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c2da2ca2256ff0570d63bd64c6f83faf3cad8ad85198c70b9b04c7082f480486",
+    "inputs_hash": "598b6bc45e81eadc076ae6d8d8341603539e172fab1458a2f00f1d96aa8b1ff8",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

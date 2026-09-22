@@ -4253,8 +4253,8 @@ These are the **4** strongest pairings:
 **Similar Skills**
 
 - Zanie (50% `summoner`)
+- Hodgkin (50% `aoe-damage` `summoner`)
 - Galahad (48% `aoe-damage` `summoner`)
-- Lamentis (40% `aoe-damage` `summoner`)
 
 **Damage**
 
@@ -5331,7 +5331,6 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Laios**.
 #### Harak Provides
 
 - Instant defeat — Single target
-- Invincibility — Self
 
 #### Damage types dealt by Harak
 
@@ -5666,9 +5665,9 @@ These are the **4** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
+- **Signature skill**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
 - **Ultimate**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5727,7 +5726,7 @@ Himmel also requires a party **with the right composition** and/or specific **na
 
 ### Units benefitting most from Himmel
 
-Himmel provides Basic stats to multiple targets `average`, Shield to multiple targets `high`, Max HP (Mythic+) to multiple targets `high`, and HP loss modifier (Supreme+) to all units `low`.
+Himmel provides Basic stats to multiple targets `average`, Direct healing to multiple targets `low`, Shield to multiple targets `high`, Max HP (Mythic+) to multiple targets `high`, and HP loss modifier (Supreme+) to all units `low`.
 
 **6** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -5742,11 +5741,21 @@ These are the **4** strongest pairings:
 
 ### Units that can act as a replacement for Himmel
 
+**Best overall replacement**
+
+- Hepler (54% `Buffs on allies` `Healing`)
+
 **Buffs on allies**
 
 - Hepler (81% `Shield`)
 - Hugin (70% `Shield`)
 - Saida (52% `Shield`)
+
+**Healing**
+
+- Rolan (100% `Direct healing` `Healing`)
+- Contess (100% `Direct healing` `Healing`)
+- Twins (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -5782,12 +5791,14 @@ These are the **4** strongest pairings:
 #### Buffs provided by Himmel
 
 - Basic stats — Multiple targets — `average`
+- Direct healing — Multiple targets — `low`
 - Shield — Multiple targets — `high`
 - Max HP (Mythic+) — Multiple targets — `high`
 - HP loss modifier (Supreme+) — All units — `low`
 
 #### Crowd Control provided by Himmel
 
+- Unaffected — Self — On skill
 - Cleanse (Mythic+) — Multiple targets — On skill
 - Knock down — Multiple targets — `average`
 
@@ -5799,7 +5810,7 @@ These are the **4** strongest pairings:
 
 - **Signature skill**: Cannon Fire (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles); walk speed fast
-- **Behavior tags**: `aoe-damage` `enemy-debuffer` `energy-inhibitor` `heal-inhibitor` `summoner`
+- **Behavior tags**: `aoe-damage` `enemy-debuffer` `energy-inhibitor` `summoner`
 - **Damage types**: Physical `high`, Max HP-based damage `average`
 
 #### Play overview
@@ -5878,9 +5889,9 @@ Common buffers are **Contess**, **Daimon**, **Evie**, or **Mikola**.
 
 **Similar Skills**
 
-- Sinbad (51% `enemy-debuffer` `energy-inhibitor` `heal-inhibitor`)
-- Florabelle (40% `aoe-damage` `summoner`)
-- Cassadee (40% `aoe-damage` `enemy-debuffer`)
+- Florabelle (50% `aoe-damage` `summoner`)
+- Cassadee (48% `aoe-damage` `enemy-debuffer`)
+- Bonnie (41% `aoe-damage` `enemy-debuffer`)
 
 **Damage**
 
@@ -6952,7 +6963,7 @@ Koko provides ATK to all units `low`, Damage taken to all units `high`, Direct h
 
 - Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
-- Twins (100% `Direct healing` `Healing`)
+- Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -7033,7 +7044,7 @@ Koko provides ATK to all units `low`, Damage taken to all units `high`, Direct h
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
-- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9789,7 +9800,7 @@ These are the **4** strongest pairings:
 
 - Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
-- Twins (100% `Direct healing` `Healing`)
+- Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -10318,7 +10329,7 @@ Niru provides Direct healing to single targets `low`.
 
 - Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
-- Twins (100% `Direct healing` `Healing`)
+- Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -11920,7 +11931,7 @@ These are the **4** strongest pairings:
 
 - Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
-- Twins (100% `Direct healing` `Healing`)
+- Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -13646,8 +13657,8 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Laios**.
 
 **Best overall replacement**
 
-- Hodgkin (72% `Damage`)
 - Salazer (72% `Damage`)
+- Hodgkin (69% `Damage`)
 - Sinbad (67% `Damage` `Similar Skills`)
 
 **Similar Skills**
@@ -13785,8 +13796,8 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Lorsan**, or **Twins**.
 **Similar Skills**
 
 - Silvina (57% `assassin` `energy-inhibitor` `heal-inhibitor` `mark-target`)
-- Hodgkin (51% `enemy-debuffer` `energy-inhibitor` `heal-inhibitor`)
 - Kafra (51% `assassin` `enemy-debuffer` `mark-target`)
+- Nazrik (40% `heal-inhibitor` `mark-target`)
 
 **Damage**
 
@@ -16177,8 +16188,8 @@ These are the **4** strongest pairings:
 **Best overall replacement**
 
 - Solise (95% `Healing` `Buffs on allies` `Similar Skills`)
+- Himmel (72% `Healing` `Buffs on allies`)
 - Contess (65% `Healing` `Buffs on allies`)
-- Evie (63% `Healing` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -16190,7 +16201,7 @@ These are the **4** strongest pairings:
 
 - Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
-- Twins (100% `Direct healing` `Healing`)
+- Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -16335,7 +16346,7 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Shadewing**.
 
 - Voracia (60% `aoe-damage` `dot-specialist` `energy-inhibitor`)
 - Arden (48% `aoe-damage` `dot-specialist`)
-- Faramor (34% `aoe-damage` `dot-specialist`)
+- Hodgkin (40% `aoe-damage` `energy-inhibitor`)
 
 **Damage**
 
@@ -16947,7 +16958,7 @@ Common buffers are **Rolan**, **Smokey & Meerky**, **Kordan**, or **Mikola**.
 
 - Florabelle (50% `summoner`)
 - Aurora (33% `summoner`)
-- Peggy (28% `summoner`)
+- Hodgkin (30% `summoner`)
 
 **Debuffs on enemies**
 
