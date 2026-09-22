@@ -107,28 +107,8 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown."
-              },
-              {
-                "label": "Instant defeat",
-                "tier": "base",
-                "targeting": "Single target",
-                "description": "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them."
-              }
-            ],
-            "special_requires": [
-              {
-                "label": "Boss encounter",
-                "tier": "base",
-                "targeting": "Allies",
-                "description": "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle."
-              }
-            ]
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -201,8 +181,22 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [],
-            "special_requires": []
+            "special_provides": [
+              {
+                "label": "Instant defeat",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Upon exiting feast mode, Harak loses control and indiscriminately devours the weakest non-summoned unit, whether ally or enemy, instantly defeating them."
+              }
+            ],
+            "special_requires": [
+              {
+                "label": "Boss encounter",
+                "tier": "base",
+                "targeting": "Allies",
+                "description": "In Boss fights, if attempting to devour an ally, Harak prioritizes devouring the unit positioned closest to the front at the start of the battle."
+              }
+            ]
           }
         }
       },
